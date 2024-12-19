@@ -13,8 +13,9 @@ _Rename a file while keeping it in the same directory._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/RenameFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/RenameFile.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Rename a file while keeping it in the same directory._
 | `String` | fileMatcher | Matching files will be renamed. This is a glob expression. | `**/application-*.yml` |
 | `String` | fileName | Just the file name without the folder path that precedes it. | `application.yml` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RenameFileExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RenameFileExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RenameFileExample
 displayName: Rename a file example
 recipeList:
-  - org.openrewrite.RenameFile:
-      fileMatcher: '**/application-*.yml'
+  - org.openrewrite.RenameFile:      fileMatcher: '**/application-*.yml'
       fileName: application.yml
 ```
 

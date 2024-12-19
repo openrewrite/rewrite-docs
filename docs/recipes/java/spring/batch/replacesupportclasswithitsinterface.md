@@ -13,8 +13,9 @@ _As of spring-batch 5.x Listeners has default methods (made possible by a Java 8
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _As of spring-batch 5.x Listeners has default methods (made possible by a Java 8
 | `String` | fullyQualifiedClassName | A fully-qualified class name to be replaced. | `org.springframework.batch.core.listener.JobExecutionListenerSupport` |
 | `String` | fullyQualifiedInterfaceName | A fully-qualified Interface name to replace by. | `org.springframework.batch.core.JobExecutionListener` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceSupportClassWithItsInterfaceExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceSupportClassWithItsInterfaceExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceSupportClassWithItsInterfaceExample
 displayName: Transform classes that extend a given Class to implement the given Interface instead example
 recipeList:
-  - org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface:
-      fullyQualifiedClassName: org.springframework.batch.core.listener.JobExecutionListenerSupport
+  - org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface:      fullyQualifiedClassName: org.springframework.batch.core.listener.JobExecutionListenerSupport
       fullyQualifiedInterfaceName: org.springframework.batch.core.JobExecutionListener
 ```
 

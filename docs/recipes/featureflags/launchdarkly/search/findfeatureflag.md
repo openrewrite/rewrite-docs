@@ -13,8 +13,9 @@ _Find a LaunchDarkly feature flag._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/search/FindFeatureFlag.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
-
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/search/FindFeatureFlag.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Find a LaunchDarkly feature flag._
 | `FeatureFlagType` | flagType | *Optional*. The feature flag's type. Valid options: `Bool`, `Double`, `Int`, `JsonValue`, `Migration`, `String` | `Bool` |
 | `String` | featureKey | *Optional*. The unique key for the feature flag. | `flag-key-123abc` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-feature-flags` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-feature-flags` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

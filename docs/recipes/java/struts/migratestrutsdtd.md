@@ -13,18 +13,23 @@ _Update Struts DTD to reflect the specified version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
-
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | strutsVersion | The Struts version to migrate to. Valid options: `2.3`, `2.5`, `6.0` | `6.0` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.MigrateStrutsDtdExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.MigrateStrutsDtdExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -32,8 +37,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MigrateStrutsDtdExample
 displayName: Migrate DTD to a specific Struts version example
 recipeList:
-  - org.openrewrite.java.struts.MigrateStrutsDtd:
-      strutsVersion: 6.0
+  - org.openrewrite.java.struts.MigrateStrutsDtd:      strutsVersion: 6.0
 ```
 
 Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}` in your build file:

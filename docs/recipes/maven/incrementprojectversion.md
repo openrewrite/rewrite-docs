@@ -13,8 +13,9 @@ _Increase Maven project version by incrementing either the major, minor, or patc
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Increase Maven project version by incrementing either the major, minor, or patc
 | `String` | artifactId | The artifact ID of the Maven project to change its version. This can be a glob expression. | `*` |
 | `SemverDigit` | digit | `MAJOR` increments the first digit, `MINOR` increments the second digit, and `PATCH` increments the third digit. | `PATCH` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.IncrementProjectVersionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.IncrementProjectVersionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.IncrementProjectVersionExample
 displayName: Increment Maven project version example
 recipeList:
-  - org.openrewrite.maven.IncrementProjectVersion:
-      groupId: org.openrewrite
+  - org.openrewrite.maven.IncrementProjectVersion:      groupId: org.openrewrite
       artifactId: '*'
       digit: PATCH
 ```

@@ -13,8 +13,9 @@ _Update the version of Maven used in an existing Maven wrapper._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -32,6 +33,10 @@ Defaults to "bin". Valid options: `bin`, `only-script`, `script`, `source` |  |
 | `String` | repositoryUrl | *Optional*. The URL of the repository to download the Maven wrapper and distribution from. Supports repositories with a Maven layout. Defaults to `https://repo.maven.apache.org/maven2`. | `https://repo.maven.apache.org/maven2` |
 | `Boolean` | addIfMissing | *Optional*. Add a Maven wrapper, if it's missing. Defaults to `true`. |  |
 | `Boolean` | enforceWrapperChecksumVerification | *Optional*. Enforce checksum verification for the maven-wrapper.jar. Enabling this feature may sporadically result in build failures, such as [MWRAPPER-103](https://issues.apache.org/jira/browse/MWRAPPER-103). Defaults to `false`. |  |
+
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

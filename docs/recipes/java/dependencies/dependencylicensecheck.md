@@ -13,7 +13,7 @@ _Locates and reports on all licenses in use._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyLicenseCheck.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -22,25 +22,28 @@ _Locates and reports on all licenses in use._
 | `String` | scope | Match dependencies with the specified scope Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 | `Boolean` | addMarkers | *Optional*. Report each license transitively used by a dependency in search results. |  |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DependencyLicenseCheckExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DependencyLicenseCheckExample
 displayName: Find licenses in use in third-party dependencies example
 recipeList:
-  - org.openrewrite.java.dependencies.DependencyLicenseCheck:
+  - org.openrewrite.java.dependencies.DependencyLicenseCheck: 
       scope: compile
 ```
 
-Now that `com.yourorg.DependencyLicenseCheckExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

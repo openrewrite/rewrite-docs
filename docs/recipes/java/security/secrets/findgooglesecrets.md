@@ -17,15 +17,16 @@ _Locates Google secrets stored in plain text in code._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. Moderne users can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

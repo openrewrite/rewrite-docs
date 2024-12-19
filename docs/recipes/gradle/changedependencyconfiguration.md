@@ -13,8 +13,9 @@ _A common example is the need to change `compile` to `api`/`implementation` as [
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyConfiguration.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _A common example is the need to change `compile` to `api`/`implementation` as [
 | `String` | newConfiguration | A dependency configuration container. | `api` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. | `api` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyConfigurationExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyConfigurationExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyConfigurationExample
 displayName: Change a Gradle dependency configuration example
 recipeList:
-  - org.openrewrite.gradle.ChangeDependencyConfiguration:
-      groupId: com.fasterxml.jackson*
+  - org.openrewrite.gradle.ChangeDependencyConfiguration:      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       newConfiguration: api
       configuration: api

@@ -13,8 +13,9 @@ _Alters the name of XML tags matching the provided expression._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagName.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Alters the name of XML tags matching the provided expression._
 | `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath expression. | `/settings/servers/server/username` |
 | `String` | newName | The new name for the tag. | `user` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeTagNameExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeTagNameExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTagNameExample
 displayName: Change XML tag name example
 recipeList:
-  - org.openrewrite.xml.ChangeTagName:
-      elementName: /settings/servers/server/username
+  - org.openrewrite.xml.ChangeTagName:      elementName: /settings/servers/server/username
       newName: user
 ```
 

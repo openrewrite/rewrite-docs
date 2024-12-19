@@ -13,8 +13,9 @@ _Add or alter the classifier of the specified dependency._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeDependencyClassifier.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeDependencyClassifier.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Add or alter the classifier of the specified dependency._
 | `String` | newClassifier | *Optional*. Classifier to apply to specified Maven dependency. May be omitted, which indicates that no classifier should be added and any existing scope be removed from the dependency. | `jar` |
 | `Boolean` | changeManagedDependency | *Optional*. This flag can be set to explicitly change the classifier in Maven management dependency section. Default `false`. | `true` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyClassifierExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyClassifierExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyClassifierExample
 displayName: Change Maven dependency classifier example
 recipeList:
-  - org.openrewrite.maven.ChangeDependencyClassifier:
-      groupId: com.google.guava
+  - org.openrewrite.maven.ChangeDependencyClassifier:      groupId: com.google.guava
       artifactId: guava
       newClassifier: jar
       changeManagedDependency: true

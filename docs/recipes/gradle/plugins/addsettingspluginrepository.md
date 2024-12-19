@@ -13,8 +13,9 @@ _Add a Gradle settings repository to `settings.gradle(.kts)`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddSettingsPluginRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddSettingsPluginRepository.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Add a Gradle settings repository to `settings.gradle(.kts)`._
 | `String` | type | The type of the artifact repository | `maven` |
 | `String` | url | *Optional*. The url of the artifact repository | `https://repo.spring.io` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddSettingsPluginRepositoryExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddSettingsPluginRepositoryExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddSettingsPluginRepositoryExample
 displayName: Add a Gradle settings repository example
 recipeList:
-  - org.openrewrite.gradle.plugins.AddSettingsPluginRepository:
-      type: maven
+  - org.openrewrite.gradle.plugins.AddSettingsPluginRepository:      type: maven
       url: https://repo.spring.io
 ```
 

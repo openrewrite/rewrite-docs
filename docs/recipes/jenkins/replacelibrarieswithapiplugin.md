@@ -13,8 +13,9 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
-
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 | `String` | pluginVersion | An exact version number. | `1981.v17df70e84a_a_1` |
 | `Set` | replaces | The set of library coordinates replaced by this API Plugin. | <pre>groupId: org.apache.commons<br />artifactId: commons-text</pre> |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceLibrariesWithApiPluginExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceLibrariesWithApiPluginExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceLibrariesWithApiPluginExample
 displayName: Use Jenkins API plugin instead of libraries example
 recipeList:
-  - org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin:
-      pluginGroupId: io.jenkins.plugins
+  - org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin:      pluginGroupId: io.jenkins.plugins
       pluginArtifactId: jackson2-api
       pluginVersion: 1981.v17df70e84a_a_1
       replaces: groupId: org.apache.commons

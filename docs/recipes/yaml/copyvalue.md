@@ -13,8 +13,9 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 | `String` | newKey | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression defining where the value should be written. | `$.dest.kind` |
 | `String` | newFilePath | *Optional*. The file path to the YAML file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.yaml` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.CopyValueExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.CopyValueExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CopyValueExample
 displayName: Copy YAML value example
 recipeList:
-  - org.openrewrite.yaml.CopyValue:
-      oldKeyPath: $.source.kind
+  - org.openrewrite.yaml.CopyValue:      oldKeyPath: $.source.kind
       oldFilePath: src/main/resources/application.yaml
       newKey: $.dest.kind
       newFilePath: src/main/resources/application.yaml

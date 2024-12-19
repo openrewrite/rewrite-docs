@@ -13,8 +13,9 @@ _Finds dependencies, including transitive dependencies, in both Gradle and Maven
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
-
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Finds dependencies, including transitive dependencies, in both Gradle and Maven
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
 | `String` | scope | *Optional*. Match dependencies with the specified Maven scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DependencyInsightExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DependencyInsightExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DependencyInsightExample
 displayName: Dependency insight for Gradle and Maven example
 recipeList:
-  - org.openrewrite.java.dependencies.DependencyInsight:
-      groupIdPattern: com.fasterxml.jackson*
+  - org.openrewrite.java.dependencies.DependencyInsight:      groupIdPattern: com.fasterxml.jackson*
       artifactIdPattern: jackson-*
       version: 1.x
       scope: compile

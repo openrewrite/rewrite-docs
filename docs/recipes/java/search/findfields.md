@@ -13,8 +13,9 @@ _Find uses of a field._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindFields.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindFields.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Find uses of a field._
 | `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |  |
 | `String` | fieldName | The name of a field on the type. | `QUOTE_FIELD_NAMES` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindFieldsExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindFieldsExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindFieldsExample
 displayName: Find fields example
 recipeList:
-  - org.openrewrite.java.search.FindFields:
-      fullyQualifiedTypeName: com.fasterxml.jackson.core.json.JsonWriteFeature
+  - org.openrewrite.java.search.FindFields:      fullyQualifiedTypeName: com.fasterxml.jackson.core.json.JsonWriteFeature
       fieldName: QUOTE_FIELD_NAMES
 ```
 

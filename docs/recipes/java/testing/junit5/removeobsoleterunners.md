@@ -13,18 +13,23 @@ _Some JUnit 4 `@RunWith` annotations do not require replacement with an equivale
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveObsoleteRunners.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
-
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveObsoleteRunners.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `List` | obsoleteRunners | The fully qualified class names of the JUnit 4 runners to be removed. | `org.junit.runners.JUnit4` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveObsoleteRunnersExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveObsoleteRunnersExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -32,8 +37,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveObsoleteRunnersExample
 displayName: Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement example
 recipeList:
-  - org.openrewrite.java.testing.junit5.RemoveObsoleteRunners:
-      obsoleteRunners: org.junit.runners.JUnit4
+  - org.openrewrite.java.testing.junit5.RemoveObsoleteRunners:      obsoleteRunners: org.junit.runners.JUnit4
 ```
 
 Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}` in your build file:

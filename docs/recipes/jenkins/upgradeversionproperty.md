@@ -16,8 +16,9 @@ If the current value is < given version, upgrade it.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeVersionProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
-
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeVersionProperty.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ If the current value is < given version, upgrade it.
 | `String` | key | The name of the property key to change. | `jenkins.version` |
 | `String` | minimumVersion | Value to apply to the matching property if < this. | `2.375.1` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeVersionPropertyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeVersionPropertyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeVersionPropertyExample
 displayName: Upgrade property's value to version example
 recipeList:
-  - org.openrewrite.jenkins.UpgradeVersionProperty:
-      key: jenkins.version
+  - org.openrewrite.jenkins.UpgradeVersionProperty:      key: jenkins.version
       minimumVersion: 2.375.1
 ```
 

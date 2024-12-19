@@ -13,8 +13,9 @@ _Finds occurrences of a Quarkus property key._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
-
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Finds occurrences of a Quarkus property key._
 | `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be searched on all profiles. | `dev` |
 | `Boolean` | searchAllProfiles | *Optional*. If set, the property will be searched on all available profiles. Defaults to `true` if the profile is not defined. | `false` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindQuarkusPropertiesExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindQuarkusPropertiesExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindQuarkusPropertiesExample
 displayName: Find Quarkus property example
 recipeList:
-  - org.openrewrite.quarkus.search.FindQuarkusProperties:
-      propertyKey: quarkus.http.port
+  - org.openrewrite.quarkus.search.FindQuarkusProperties:      propertyKey: quarkus.http.port
       profile: dev
       searchAllProfiles: false
 ```

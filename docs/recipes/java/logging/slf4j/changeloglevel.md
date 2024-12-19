@@ -13,8 +13,9 @@ _Change the log level of SLF4J log statements._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
-
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Change the log level of SLF4J log statements._
 | `Level` | to | The log level to change to. | `DEBUG` |
 | `String` | startsWith | *Optional*. Only change log statements that start with this string. When omitted all log statements of the specified level are changed. | `LaunchDarkly` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeLogLevelExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeLogLevelExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeLogLevelExample
 displayName: Change SLF4J log level example
 recipeList:
-  - org.openrewrite.java.logging.slf4j.ChangeLogLevel:
-      from: INFO
+  - org.openrewrite.java.logging.slf4j.ChangeLogLevel:      from: INFO
       to: DEBUG
       startsWith: LaunchDarkly
 ```

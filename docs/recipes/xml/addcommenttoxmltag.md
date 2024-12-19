@@ -13,8 +13,9 @@ _Adds a comment as the first element in an XML tag._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddCommentToXmlTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddCommentToXmlTag.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Adds a comment as the first element in an XML tag._
 | `String` | xPath | An XPath expression used to find matching tags. | `/project/dependencies/dependency` |
 | `String` | commentText | The text to add as a comment.. | `This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddCommentToXmlTagExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddCommentToXmlTagExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddCommentToXmlTagExample
 displayName: Add a comment to an XML tag example
 recipeList:
-  - org.openrewrite.xml.AddCommentToXmlTag:
-      xPath: /project/dependencies/dependency
+  - org.openrewrite.xml.AddCommentToXmlTag:      xPath: /project/dependencies/dependency
       commentText: This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.
 ```
 

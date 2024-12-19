@@ -13,8 +13,9 @@ _Sets the packaging type of Maven projects. Either adds the packaging tag if it 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePackaging.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePackaging.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Sets the packaging type of Maven projects. Either adds the packaging tag if it 
 | `String` | packaging | The type of packaging to set. If `null` specified the packaging tag will be removed | `jar` |
 | `String` | oldPackaging | *Optional*. The old packaging type. If provided, will only change if the current packaging matches | `jar` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePackagingExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePackagingExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePackagingExample
 displayName: Set Maven project packaging example
 recipeList:
-  - org.openrewrite.maven.ChangePackaging:
-      groupId: org.openrewrite.*
+  - org.openrewrite.maven.ChangePackaging:      groupId: org.openrewrite.*
       artifactId: rewrite-*
       packaging: jar
       oldPackaging: jar

@@ -13,8 +13,9 @@ _Append item to YAML sequence._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Append item to YAML sequence._
 | `List` | existingSequenceValues | *Optional*. If specified, the item will only be appended if the existing sequence matches these values. | `existingValue1` |
 | `Boolean` | matchExistingSequenceValuesInAnyOrder | *Optional*. If specified in combination with the above parameter, the item will only be appended if the existing sequence has the specified values in any order. | `true` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AppendToSequenceExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AppendToSequenceExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AppendToSequenceExample
 displayName: Append to sequence example
 recipeList:
-  - org.openrewrite.yaml.AppendToSequence:
-      sequencePath: $.universe.planets
+  - org.openrewrite.yaml.AppendToSequence:      sequencePath: $.universe.planets
       value: earth
       existingSequenceValues: existingValue1
       matchExistingSequenceValuesInAnyOrder: true

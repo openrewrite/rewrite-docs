@@ -13,18 +13,23 @@ _Checks if the project is a Jenkins plugin by the presence of a managed version 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
-
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | version | The value of the `<jenkins.version>` property. | `[1,)` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.IsJenkinsPluginExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.IsJenkinsPluginExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -32,8 +37,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.IsJenkinsPluginExample
 displayName: Is the project a Jenkins plugin? example
 recipeList:
-  - org.openrewrite.jenkins.IsJenkinsPlugin:
-      version: '[1,)'
+  - org.openrewrite.jenkins.IsJenkinsPlugin:      version: '[1,)'
 ```
 
 Now that `com.yourorg.IsJenkinsPluginExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}` in your build file:

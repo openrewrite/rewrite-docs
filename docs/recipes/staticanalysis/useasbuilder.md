@@ -13,8 +13,9 @@ _Chain calls to builder methods that are on separate lines into one chain of bui
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
-
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Chain calls to builder methods that are on separate lines into one chain of bui
 | `Boolean` | immutable | *Optional*. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |  |
 | `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. | `org.example.Buildable builder()` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UseAsBuilderExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UseAsBuilderExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseAsBuilderExample
 displayName: Chain calls to builder methods example
 recipeList:
-  - org.openrewrite.staticanalysis.UseAsBuilder:
-      builderType: org.example.Buildable.Builder
+  - org.openrewrite.staticanalysis.UseAsBuilder:      builderType: org.example.Buildable.Builder
       builderCreator: org.example.Buildable builder()
 ```
 

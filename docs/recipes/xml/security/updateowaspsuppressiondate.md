@@ -13,8 +13,9 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 | `List` | cveList | Update suppressions having any of the specified CVE tags. | `CVE-2022-1234` |
 | `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. | `2023-01-01` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateOwaspSuppressionDateExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateOwaspSuppressionDateExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpdateOwaspSuppressionDateExample
 displayName: Update OWASP suppression date bounds example
 recipeList:
-  - org.openrewrite.xml.security.UpdateOwaspSuppressionDate:
-      cveList: CVE-2022-1234
+  - org.openrewrite.xml.security.UpdateOwaspSuppressionDate:      cveList: CVE-2022-1234
       untilDate: 2023-01-01
 ```
 

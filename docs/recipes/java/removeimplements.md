@@ -13,8 +13,9 @@ _Removes `implements` clauses from classes implementing the specified interface.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveImplements.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveImplements.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Removes `implements` clauses from classes implementing the specified interface.
 | `String` | interfaceType | The fully qualified name of the interface to remove. | `java.io.Serializable` |
 | `String` | filter | *Optional*. Only apply the interface removal to classes with fully qualified names that begin with this filter. `null` or empty matches all classes. | `com.yourorg.` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveImplementsExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveImplementsExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveImplementsExample
 displayName: Remove interface implementations example
 recipeList:
-  - org.openrewrite.java.RemoveImplements:
-      interfaceType: java.io.Serializable
+  - org.openrewrite.java.RemoveImplements:      interfaceType: java.io.Serializable
       filter: com.yourorg.
 ```
 

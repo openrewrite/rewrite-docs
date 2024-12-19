@@ -13,8 +13,9 @@ _Apply the specified XSLT transformation on matching files. Note that there are 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/XsltTransformation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/XsltTransformation.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Apply the specified XSLT transformation on matching files. Note that there are 
 | `String` | xsltResource | *Optional*. Recipe transformation provided as a classpath resource. | `/changePlugin.xslt` |
 | `String` | filePattern | A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. | `**/*.xml` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.XsltTransformationExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.XsltTransformationExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.XsltTransformationExample
 displayName: XSLT transformation example
 recipeList:
-  - org.openrewrite.xml.XsltTransformation:
-      xslt: <xsl:stylesheet ...>...</xsl:stylesheet>
+  - org.openrewrite.xml.XsltTransformation:      xslt: <xsl:stylesheet ...>...</xsl:stylesheet>
       xsltResource: /changePlugin.xslt
       filePattern: '**/*.xml'
 ```

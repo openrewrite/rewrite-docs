@@ -13,7 +13,7 @@ _Change the version of a GitHub Action in any `.github/workflows/*.yml` file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -22,26 +22,29 @@ _Change the version of a GitHub Action in any `.github/workflows/*.yml` file._
 | `String` | action | Name of the action to update. | `actions/setup-java` |
 | `String` | version | Version to use. | `v4` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeActionVersionExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeActionVersionExample
 displayName: Change GitHub Action version example
 recipeList:
-  - org.openrewrite.github.ChangeActionVersion:
+  - org.openrewrite.github.ChangeActionVersion: 
       action: actions/setup-java
       version: v4
 ```
 
-Now that `com.yourorg.ChangeActionVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

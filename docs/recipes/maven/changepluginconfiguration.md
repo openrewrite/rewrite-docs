@@ -13,8 +13,9 @@ _Apply the specified configuration to a Maven plugin. Will not add the plugin if
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginConfiguration.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Apply the specified configuration to a Maven plugin. Will not add the plugin if
 | `String` | artifactId | The second part of a coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION' of the plugin to modify. | `rewrite-maven-plugin` |
 | `String` | configuration | *Optional*. Plugin configuration provided as raw XML overriding any existing configuration. Configuration inside `<executions>` blocks will not be altered. Supplying `null` will remove any existing configuration. | `<foo>bar</foo>` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePluginConfigurationExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePluginConfigurationExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePluginConfigurationExample
 displayName: Change Maven plugin configuration example
 recipeList:
-  - org.openrewrite.maven.ChangePluginConfiguration:
-      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.ChangePluginConfiguration:      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
       configuration: <foo>bar</foo>
 ```

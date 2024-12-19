@@ -13,8 +13,9 @@ _Change the groupId, artifactId and/or the version of a specified Maven Compiler
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
-
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -28,10 +29,14 @@ _Change the groupId, artifactId and/or the version of a specified Maven Compiler
 | `Boolean` | overrideManagedVersion | *Optional*. If the new annotation processor has a managed version, this flag can be used to explicitly set the version on the annotation processor. The default for this flag is `false`. |  |
 | `Boolean` | enforceManagedVersion | *Optional*. If the new annotation processor has a managed version, this flag can be used to explicitly set the version on the annotation processor with the version of the managed dependency. The default for this flag is `false`. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactIdExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactIdExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -39,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactIdExample
 displayName: Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version example
 recipeList:
-  - io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId:
-      oldGroupId: org.hibernate
+  - io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId:      oldGroupId: org.hibernate
       oldArtifactId: hibernate-jpamodelgen
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-jpamodelgen

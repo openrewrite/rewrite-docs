@@ -13,8 +13,9 @@ _Add a Quarkus configuration property to an existing configuration file if it do
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/AddQuarkusProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
-
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/AddQuarkusProperty.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Add a Quarkus configuration property to an existing configuration file if it do
 | `String` | profile | *Optional*. The profile to add the property to. If not specified, the property will be added to the default profile. | `dev` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", "**/application.properties" and "**/META-INF/microprofile-config.properties". | `["**/application.yaml"]` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddQuarkusPropertyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddQuarkusPropertyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddQuarkusPropertyExample
 displayName: Add a Quarkus configuration property example
 recipeList:
-  - org.openrewrite.quarkus.AddQuarkusProperty:
-      property: quarkus.http.port
+  - org.openrewrite.quarkus.AddQuarkusProperty:      property: quarkus.http.port
       value: 9090
       comment: This is a comment
       profile: dev

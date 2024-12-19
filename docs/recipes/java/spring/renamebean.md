@@ -13,8 +13,9 @@ _Renames a Spring bean, both declaration and references._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/RenameBean.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/RenameBean.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Renames a Spring bean, both declaration and references._
 | `String` | oldName |  | `fooBean` |
 | `String` | newName |  | `barBean` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RenameBeanExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RenameBeanExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RenameBeanExample
 displayName: Rename bean example
 recipeList:
-  - org.openrewrite.java.spring.RenameBean:
-      type: foo.MyType
+  - org.openrewrite.java.spring.RenameBean:      type: foo.MyType
       oldName: fooBean
       newName: barBean
 ```

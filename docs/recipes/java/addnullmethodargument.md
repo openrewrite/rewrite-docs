@@ -13,8 +13,9 @@ _Add a `null` argument to method invocations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddNullMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddNullMethodArgument.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Add a `null` argument to method invocations._
 | `String` | parameterName | *Optional*. The name of the parameter that we add the argument for. | `name` |
 | `Boolean` | explicitCast | *Optional*. Explicitly cast the argument to the parameter type. Useful if the method is overridden with another type. | `true` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddNullMethodArgumentExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddNullMethodArgumentExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddNullMethodArgumentExample
 displayName: Add a `null` method argument example
 recipeList:
-  - org.openrewrite.java.AddNullMethodArgument:
-      methodPattern: com.yourorg.A foo(int, int)
+  - org.openrewrite.java.AddNullMethodArgument:      methodPattern: com.yourorg.A foo(int, int)
       argumentIndex: 0
       parameterType: java.lang.String
       parameterName: name

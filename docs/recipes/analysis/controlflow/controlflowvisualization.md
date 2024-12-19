@@ -13,18 +13,23 @@ _Visualize the control flow of a Java program._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
-
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `boolean` | includeDotfile | Also output with a Dotfile which can be then later visualized by Graphviz. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ControlFlowVisualizationExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ControlFlowVisualizationExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -32,8 +37,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ControlFlowVisualizationExample
 displayName: Control Flow Visualization example
 recipeList:
-  - org.openrewrite.analysis.controlflow.ControlFlowVisualization:
-      includeDotfile: false
+  - org.openrewrite.analysis.controlflow.ControlFlowVisualization:      includeDotfile: false
 ```
 
 Now that `com.yourorg.ControlFlowVisualizationExample` has been defined, activate it and take a dependency on `org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}` in your build file:

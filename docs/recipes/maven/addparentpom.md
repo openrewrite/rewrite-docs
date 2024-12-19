@@ -13,8 +13,9 @@ _Add a parent pom to a Maven pom.xml. Does nothing if a parent pom is already pr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddParentPom.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Add a parent pom to a Maven pom.xml. Does nothing if a parent pom is already pr
 | `String` | relativePath | New relative path attribute for parent lookup. | `../pom.xml` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddParentPomExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddParentPomExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddParentPomExample
 displayName: Add Maven parent example
 recipeList:
-  - org.openrewrite.maven.AddParentPom:
-      groupId: org.springframework.boot
+  - org.openrewrite.maven.AddParentPom:      groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       version: 29.X
       relativePath: ../pom.xml

@@ -13,8 +13,9 @@ _Useful as a precondition to skip over compilation units using the argument type
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/DoesNotUseType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/DoesNotUseType.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Useful as a precondition to skip over compilation units using the argument type
 | `String` | fullyQualifiedTypeName | A fully-qualified type name, that is used to find matching type references. Supports glob expressions. `java..*` finds every type from every subpackage of the `java` package. | `java.util.List` |
 | `Boolean` | includeImplicit | *Optional*. Whether to include implicit type references, such as those in method signatures. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DoesNotUseTypeExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DoesNotUseTypeExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DoesNotUseTypeExample
 displayName: Check whether a type is **not** in use example
 recipeList:
-  - org.openrewrite.java.search.DoesNotUseType:
-      fullyQualifiedTypeName: java.util.List
+  - org.openrewrite.java.search.DoesNotUseType:      fullyQualifiedTypeName: java.util.List
 ```
 
 Now that `com.yourorg.DoesNotUseTypeExample` has been defined, activate it in your build file:

@@ -13,13 +13,18 @@ _Find a GitLab Component in use._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
-
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindComponent.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | component | The component key to look for | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
+
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Definition
@@ -50,7 +55,7 @@ recipeList:
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindComponentExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindComponentExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -58,8 +63,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindComponentExample
 displayName: Find GitLab Component example
 recipeList:
-  - org.openrewrite.gitlab.search.FindComponent:
-      component: $CI_SERVER_FQDN/components/opentofu/full-pipeline
+  - org.openrewrite.gitlab.search.FindComponent:      component: $CI_SERVER_FQDN/components/opentofu/full-pipeline
 ```
 
 Now that `com.yourorg.FindComponentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:

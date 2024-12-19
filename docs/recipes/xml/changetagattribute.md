@@ -13,8 +13,9 @@ _Alters XML attribute value on a specified element._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Alters XML attribute value on a specified element._
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `foo.bar.attribute.value.string` |
 | `Boolean` | regex | *Optional*. Default false. If true, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue`. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeTagAttributeExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeTagAttributeExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTagAttributeExample
 displayName: Change XML attribute example
 recipeList:
-  - org.openrewrite.xml.ChangeTagAttribute:
-      elementName: property
+  - org.openrewrite.xml.ChangeTagAttribute:      elementName: property
       attributeName: name
       newValue: newfoo.bar.attribute.value.string
       oldValue: foo.bar.attribute.value.string

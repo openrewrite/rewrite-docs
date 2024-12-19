@@ -13,8 +13,9 @@ _Change the groupId, artifactId, and version of a Maven annotation processor pat
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
-
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -26,10 +27,14 @@ _Change the groupId, artifactId, and version of a Maven annotation processor pat
 | `String` | newVersion | *Optional*. An version string for the annotation processor path. Version strings that start with 'micronaut.' will be treated specially.  | `micronaut.validation` |
 | `List` | exclusions | *Optional*. A list of exclusions to apply to the annotation processor path in the format groupId:artifactId | `io.micronaut:micronaut-inject` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeAnnotationProcessorPathExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeAnnotationProcessorPathExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -37,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeAnnotationProcessorPathExample
 displayName: Change Maven annotation processor path example
 recipeList:
-  - org.openrewrite.java.micronaut.ChangeAnnotationProcessorPath:
-      oldGroupId: org.openrewrite.recipe
+  - org.openrewrite.java.micronaut.ChangeAnnotationProcessorPath:      oldGroupId: org.openrewrite.recipe
       oldArtifactId: my-deprecated-annotation-processor
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-annotation-processor

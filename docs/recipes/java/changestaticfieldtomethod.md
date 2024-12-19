@@ -13,8 +13,9 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Migrate accesses to a static field to invocations of a static method._
 | `String` | newTarget | *Optional*. An optional method target that can be used to specify a static field within the new class. | `OK_RESPONSE` |
 | `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments. | `of` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeStaticFieldToMethodExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeStaticFieldToMethodExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeStaticFieldToMethodExample
 displayName: Change static field access to static method access example
 recipeList:
-  - org.openrewrite.java.ChangeStaticFieldToMethod:
-      oldClassName: java.util.Collections
+  - org.openrewrite.java.ChangeStaticFieldToMethod:      oldClassName: java.util.Collections
       oldFieldName: EMPTY_LIST
       newClassName: java.util.List
       newTarget: OK_RESPONSE

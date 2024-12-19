@@ -13,18 +13,23 @@ _Prior to Spring Security 6, `@EnableXXXSecurity` implicitly had `@Configuration
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `boolean` | forceAddConfiguration | Force add `@Configuration` regardless current Boot version. | `true` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ConfigurationOverEnableSecurityExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ConfigurationOverEnableSecurityExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -32,8 +37,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ConfigurationOverEnableSecurityExample
 displayName: Add `@Configuration` to classes with `@EnableXXXSecurity` annotations example
 recipeList:
-  - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity:
-      forceAddConfiguration: false
+  - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity:      forceAddConfiguration: false
 ```
 
 Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:

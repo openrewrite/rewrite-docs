@@ -13,14 +13,19 @@ _Replace `boolVariation` invocations for feature key with value, and simplify co
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/RemoveBoolVariation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
-
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/RemoveBoolVariation.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `Boolean` | replacementValue | The value to replace the feature flag check with. | `true` |
+
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Definition
@@ -52,7 +57,7 @@ recipeList:
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveBoolVariationExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveBoolVariationExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -60,8 +65,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveBoolVariationExample
 displayName: Remove LaunchDarkly's `boolVariation` for feature key example
 recipeList:
-  - org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation:
-      featureKey: flag-key-123abc
+  - org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation:      featureKey: flag-key-123abc
       replacementValue: true
 ```
 

@@ -13,8 +13,9 @@ _Add a GitLab component to an existing list, or add a new list where none was pr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
-
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,6 +23,10 @@ _Add a GitLab component to an existing list, or add a new list where none was pr
 | `String` | newComponent | Name of the component to use add. | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
 | `String` | version | Version of the component to add. | `0.10.0` |
 | `List` | inputs | The set of inputs to provide | `opentofu_version: 1.6.1` |
+
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Definition
@@ -66,7 +71,7 @@ recipeList:
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddComponentExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddComponentExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -74,8 +79,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddComponentExample
 displayName: Add GitLab component example
 recipeList:
-  - org.openrewrite.gitlab.AddComponent:
-      newComponent: $CI_SERVER_FQDN/components/opentofu/full-pipeline
+  - org.openrewrite.gitlab.AddComponent:      newComponent: $CI_SERVER_FQDN/components/opentofu/full-pipeline
       version: 0.10.0
       inputs: opentofu_version: 1.6.1
 ```

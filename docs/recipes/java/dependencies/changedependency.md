@@ -13,8 +13,9 @@ _Change the group ID, artifact ID, and/or the version of a specified Gradle or M
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
-
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -28,10 +29,14 @@ _Change the group ID, artifact ID, and/or the version of a specified Gradle or M
 | `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -39,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyExample
 displayName: Change Gradle or Maven dependency example
 recipeList:
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.openrewrite.recipe
+  - org.openrewrite.java.dependencies.ChangeDependency:      oldGroupId: org.openrewrite.recipe
       oldArtifactId: rewrite-testing-frameworks
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: rewrite-testing-frameworks

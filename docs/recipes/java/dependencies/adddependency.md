@@ -13,8 +13,9 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
-
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -34,10 +35,14 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 | `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |  |
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddDependencyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddDependencyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -45,8 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddDependencyExample
 displayName: Add Gradle or Maven dependency example
 recipeList:
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: com.google.guava
+  - org.openrewrite.java.dependencies.AddDependency:      groupId: com.google.guava
       artifactId: guava
       version: 29.X
       versionPattern: '-jre'

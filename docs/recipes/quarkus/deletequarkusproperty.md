@@ -13,8 +13,9 @@ _Delete a property from Quarkus configuration files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/DeleteQuarkusProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
-
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/DeleteQuarkusProperty.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Delete a property from Quarkus configuration files._
 | `Boolean` | deleteFromAllProfiles | *Optional*. If set to true, the property will be removed from all available profiles. Defaults to `true`. | `false` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", "**/application.properties" and "**/META-INF/microprofile-config.properties". | `["**/application.yaml"]` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteQuarkusPropertyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteQuarkusPropertyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteQuarkusPropertyExample
 displayName: Delete Quarkus configuration property example
 recipeList:
-  - org.openrewrite.quarkus.DeleteQuarkusProperty:
-      propertyKey: quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy
+  - org.openrewrite.quarkus.DeleteQuarkusProperty:      propertyKey: quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy
       oldValue: read-sync
       profile: dev
       deleteFromAllProfiles: false

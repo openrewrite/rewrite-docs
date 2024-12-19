@@ -13,8 +13,9 @@ _Migrate from Hamcrest `not(Matcher)` to AssertJ assertions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestNotMatcherToAssertJ.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
-
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestNotMatcherToAssertJ.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Migrate from Hamcrest `not(Matcher)` to AssertJ assertions._
 | `String` | notMatcher | *Optional*. The Hamcrest `not(Matcher)` to migrate to JUnit5. | `equalTo` |
 | `String` | assertion | *Optional*. The AssertJ method to migrate to. | `isNotEqualTo` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

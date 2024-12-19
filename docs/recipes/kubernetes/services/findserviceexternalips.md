@@ -13,7 +13,7 @@ _Find any `Service` whose `externalIP` list contains, or does not contain, one o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServiceExternalIPs.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -23,26 +23,29 @@ _Find any `Service` whose `externalIP` list contains, or does not contain, one o
 | `boolean` | findMissing | *Optional*. Whether to treat this search as finding Services whose externalIPs do not contain any of the query IPs. |  |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindServiceExternalIPsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindServiceExternalIPsExample
 displayName: Find uses of `externalIP` example
 recipeList:
-  - org.openrewrite.kubernetes.services.FindServiceExternalIPs:
+  - org.openrewrite.kubernetes.services.FindServiceExternalIPs: 
       externalIPs: 192.168.0.1
       fileMatcher: '**/pod-*.yml'
 ```
 
-Now that `com.yourorg.FindServiceExternalIPsExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

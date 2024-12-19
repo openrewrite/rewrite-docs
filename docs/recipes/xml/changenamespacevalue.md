@@ -13,8 +13,9 @@ _Alters XML Attribute value within specified element of a specific resource vers
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -27,10 +28,14 @@ _Alters XML Attribute value within specified element of a specific resource vers
 | `String` | newVersion | The new version of the resource | `2.0` |
 | `String` | newSchemaLocation | *Optional*. The new value to be used for the namespace schema location. | `newfoo.bar.attribute.value.string` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeNamespaceValueExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeNamespaceValueExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -38,8 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeNamespaceValueExample
 displayName: Change XML attribute of a specific resource version example
 recipeList:
-  - org.openrewrite.xml.ChangeNamespaceValue:
-      elementName: property
+  - org.openrewrite.xml.ChangeNamespaceValue:      elementName: property
       oldValue: newfoo.bar.attribute.value.string
       newValue: newfoo.bar.attribute.value.string
       versionMatcher: 1.1

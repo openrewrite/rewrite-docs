@@ -13,8 +13,9 @@ _Adds a comment as the first element in a `Maven` dependency._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddCommentToMavenDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddCommentToMavenDependency.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Adds a comment as the first element in a `Maven` dependency._
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
 | `String` | commentText | The text to add as a comment.. | `This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddCommentToMavenDependencyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddCommentToMavenDependencyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddCommentToMavenDependencyExample
 displayName: Add a comment to a `Maven` dependency example
 recipeList:
-  - org.openrewrite.maven.AddCommentToMavenDependency:
-      xPath: /project/dependencies/dependency
+  - org.openrewrite.maven.AddCommentToMavenDependency:      xPath: /project/dependencies/dependency
       groupId: com.google.guava
       artifactId: guava
       commentText: This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.

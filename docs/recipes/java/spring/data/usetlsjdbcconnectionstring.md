@@ -13,8 +13,9 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/data/UseTlsJdbcConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/data/UseTlsJdbcConnectionString.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 | `Integer` | port | The TLS-enabled port to use. | `1234` |
 | `String` | attribute | A connection attribute, if any, indicating to the JDBC provider that this is a TLS connection. | `sslConnection=true` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UseTlsJdbcConnectionStringExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UseTlsJdbcConnectionStringExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseTlsJdbcConnectionStringExample
 displayName: Use TLS for JDBC connection strings example
 recipeList:
-  - org.openrewrite.java.spring.data.UseTlsJdbcConnectionString:
-      propertyKey: spring.datasource.url
+  - org.openrewrite.java.spring.data.UseTlsJdbcConnectionString:      propertyKey: spring.datasource.url
       oldPort: 1234
       port: 1234
       attribute: sslConnection=true

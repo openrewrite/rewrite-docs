@@ -13,7 +13,7 @@ _Find resources of a particular type that have pinned versions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/search/FindPinnedResource.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -21,10 +21,14 @@ _Find resources of a particular type that have pinned versions._
 | -- | -- | -- | -- |
 | `String` | resourceType | *Optional*. The resource type to search for. Leave empty to find all pins. | `git` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-concourse` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. Moderne users can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

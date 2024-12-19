@@ -16,8 +16,9 @@ Currently, Java requires use-site type variance, so if someone has `Function<IN,
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/DeclarationSiteTypeVariance.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
-
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/DeclarationSiteTypeVariance.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -26,10 +27,14 @@ Currently, Java requires use-site type variance, so if someone has `Function<IN,
 | `List` | excludedBounds | *Optional*. A list of bounds that should not receive explicit variance. Globs supported. | `java.lang.*` |
 | `Boolean` | excludeFinalClasses | *Optional*. If true, do not add `? extends` variance to final classes. `? super` variance will be added regardless of finality. |  |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeclarationSiteTypeVarianceExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeclarationSiteTypeVarianceExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -37,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeclarationSiteTypeVarianceExample
 displayName: Properly use declaration-site type variance example
 recipeList:
-  - org.openrewrite.staticanalysis.DeclarationSiteTypeVariance:
-      variantTypes: java.util.function.Function<IN, OUT>
+  - org.openrewrite.staticanalysis.DeclarationSiteTypeVariance:      variantTypes: java.util.function.Function<IN, OUT>
       excludedBounds: java.lang.*
 ```
 

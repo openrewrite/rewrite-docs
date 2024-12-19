@@ -13,18 +13,23 @@ _Move getter from context to ExtendedCamelContext_
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
-
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | oldMethodName | Name of the method on external camel context. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.MoveGetterToExtendedCamelContextExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.MoveGetterToExtendedCamelContextExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -32,8 +37,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MoveGetterToExtendedCamelContextExample
 displayName: Move getter from context to ExtendedCamelContext. example
 recipeList:
-  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
-      oldMethodName: null
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:      oldMethodName: null
 ```
 
 Now that `com.yourorg.MoveGetterToExtendedCamelContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}` in your build file:

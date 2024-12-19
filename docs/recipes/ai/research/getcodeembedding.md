@@ -13,7 +13,7 @@ _This recipe calls an AI model to get an embedding for either classes or methods
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/GetCodeEmbedding.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -21,25 +21,28 @@ _This recipe calls an AI model to get an embedding for either classes or methods
 | -- | -- | -- | -- |
 | `String` | codeSnippetType | Choose whether you want to get an embedding for the classes or methods. Valid options: `methods`, `classes` | `methods` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.GetCodeEmbeddingExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.GetCodeEmbeddingExample
 displayName: Get embeddings for code snippets in code example
 recipeList:
-  - io.moderne.ai.research.GetCodeEmbedding:
+  - io.moderne.ai.research.GetCodeEmbedding: 
       codeSnippetType: methods
 ```
 
-Now that `com.yourorg.GetCodeEmbeddingExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-ai-search:{{VERSION_REWRITE_AI_SEARCH}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

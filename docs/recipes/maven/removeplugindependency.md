@@ -16,8 +16,9 @@ Removes a dependency from the <dependencies> section of a plugin in the pom.xml.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemovePluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemovePluginDependency.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -27,10 +28,14 @@ Removes a dependency from the <dependencies> section of a plugin in the pom.xml.
 | `String` | groupId | The first part of a plugin dependency coordinate. Supports glob. | `com.google.guava` |
 | `String` | artifactId | The second part of a plugin dependency coordinate. Supports glob. | `guava` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemovePluginDependencyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemovePluginDependencyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -38,8 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemovePluginDependencyExample
 displayName: Remove Maven plugin dependency example
 recipeList:
-  - org.openrewrite.maven.RemovePluginDependency:
-      pluginGroupId: org.openrewrite.maven
+  - org.openrewrite.maven.RemovePluginDependency:      pluginGroupId: org.openrewrite.maven
       pluginArtifactId: rewrite-maven-plugin
       groupId: com.google.guava
       artifactId: guava

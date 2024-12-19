@@ -13,8 +13,9 @@ _This recipe replaces the use of `getPeer()` method in `java.awt.*` classes. `co
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceAWTGetPeerMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceAWTGetPeerMethod.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _This recipe replaces the use of `getPeer()` method in `java.awt.*` classes. `co
 | `String` | getPeerMethodPattern | *Optional*. The [method pattern](/reference/method-patterns) to match and replace. | `java.awt.* getPeer()` |
 | `String` | lightweightPeerFQCN | *Optional*. The fully qualified class name of the LightweightPeer interface to replace in `instanceof`. | `java.awt.peer.LightweightPeer` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

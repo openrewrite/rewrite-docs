@@ -13,8 +13,9 @@ _Upgrades the version of java specified in Jenkins groovy scripts. Will not down
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
-
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeJavaVersion.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Upgrades the version of java specified in Jenkins groovy scripts. Will not down
 | `Integer` | version | The Java version to upgrade to. | `17` |
 | `String` | distribution | The distribution of Java to use. When omitted the current distribution is maintained. | `openjdk` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeJavaVersionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeJavaVersionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeJavaVersionExample
 displayName: Upgrade jenkins java version example
 recipeList:
-  - org.openrewrite.jenkins.UpgradeJavaVersion:
-      version: 17
+  - org.openrewrite.jenkins.UpgradeJavaVersion:      version: 17
       distribution: openjdk
 ```
 

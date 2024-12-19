@@ -13,7 +13,7 @@ _Install a CircleCI [orb](https://circleci.com/docs/2.0/orb-intro/) if it is not
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -22,26 +22,29 @@ _Install a CircleCI [orb](https://circleci.com/docs/2.0/orb-intro/) if it is not
 | `String` | orbKey | The orb key to be followed by an orb slug identifying a specific orb version. | `kube` |
 | `String` | slug | A specific orb to install, in the form `<namespace>/<orb-name>@1.2.3`. | `circleci/kubernetes@0.11.0` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.InstallOrbExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.InstallOrbExample
 displayName: Install an orb example
 recipeList:
-  - org.openrewrite.circleci.InstallOrb:
+  - org.openrewrite.circleci.InstallOrb: 
       orbKey: kube
       slug: circleci/kubernetes@0.11.0
 ```
 
-Now that `com.yourorg.InstallOrbExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-circleci:{{VERSION_REWRITE_CIRCLECI}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

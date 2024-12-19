@@ -21,8 +21,9 @@ Transform logging statements using concatenation for messages and variables into
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
-
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -30,10 +31,14 @@ Transform logging statements using concatenation for messages and variables into
 | `String` | methodPattern | A method used to find matching statements to parameterize. | `org.slf4j.Logger info(..)` |
 | `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |  |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ParameterizedLoggingExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ParameterizedLoggingExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -41,8 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ParameterizedLoggingExample
 displayName: Parameterize logging statements example
 recipeList:
-  - org.openrewrite.java.logging.ParameterizedLogging:
-      methodPattern: org.slf4j.Logger info(..)
+  - org.openrewrite.java.logging.ParameterizedLogging:      methodPattern: org.slf4j.Logger info(..)
 ```
 
 Now that `com.yourorg.ParameterizedLoggingExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}` in your build file:

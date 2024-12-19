@@ -13,8 +13,9 @@ _A precondition which returns false if visiting a Maven pom which includes the s
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _A precondition which returns false if visiting a Maven pom which includes the s
 | `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. | `true` |
 | `String` | scope | *Optional*. Default any. If specified, only the requested scope's classpaths will be checked. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DoesNotIncludeDependencyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DoesNotIncludeDependencyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DoesNotIncludeDependencyExample
 displayName: Does not include Maven dependency example
 recipeList:
-  - org.openrewrite.maven.search.DoesNotIncludeDependency:
-      groupId: com.google.guava
+  - org.openrewrite.maven.search.DoesNotIncludeDependency:      groupId: com.google.guava
       artifactId: guava
       onlyDirect: true
       scope: compile

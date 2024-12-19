@@ -13,8 +13,9 @@ _Find a Gradle repository by url._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,6 +23,10 @@ _Find a Gradle repository by url._
 | `String` | type | *Optional*. The type of the artifact repository | `maven` |
 | `String` | url | *Optional*. The url of the artifact repository | `https://repo.spring.io` |
 | `Purpose` | purpose | *Optional*. The purpose of this repository in terms of resolving project or plugin dependencies Valid options: `Project`, `Plugin` |  |
+
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

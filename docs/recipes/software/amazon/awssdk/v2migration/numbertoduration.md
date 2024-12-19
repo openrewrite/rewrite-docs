@@ -13,8 +13,9 @@ _Convert the method parameter from numeric types to duration._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.NumberToDuration), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
-
+[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.NumberToDuration), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Convert the method parameter from numeric types to duration._
 | `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `com.amazonaws.ClientConfiguration setRequestTimeout(int)` |
 | `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value to convert. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.NumberToDurationExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.NumberToDurationExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.NumberToDurationExample
 displayName: Convert the method parameter from numeric type to duration example
 recipeList:
-  - software.amazon.awssdk.v2migration.NumberToDuration:
-      methodPattern: com.amazonaws.ClientConfiguration setRequestTimeout(int)
+  - software.amazon.awssdk.v2migration.NumberToDuration:      methodPattern: com.amazonaws.ClientConfiguration setRequestTimeout(int)
       timeUnit: MILLISECONDS
 ```
 

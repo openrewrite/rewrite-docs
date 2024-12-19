@@ -13,8 +13,9 @@ _Remove the Maven annotation processor path that matches the given groupId and a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/RemoveAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
-
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/RemoveAnnotationProcessorPath.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Remove the Maven annotation processor path that matches the given groupId and a
 | `String` | groupId | The groupId to use. | `corp.internal.openrewrite.recipe` |
 | `String` | artifactId | The artifactId to use. | `my-new-annotation-processor` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveAnnotationProcessorPathExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveAnnotationProcessorPathExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveAnnotationProcessorPathExample
 displayName: Remove Maven annotation processor path example
 recipeList:
-  - org.openrewrite.java.micronaut.RemoveAnnotationProcessorPath:
-      groupId: corp.internal.openrewrite.recipe
+  - org.openrewrite.java.micronaut.RemoveAnnotationProcessorPath:      groupId: corp.internal.openrewrite.recipe
       artifactId: my-new-annotation-processor
 ```
 

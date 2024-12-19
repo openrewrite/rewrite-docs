@@ -13,8 +13,9 @@ _Find XML namespace URIs, optionally restricting the search by a XPath expressio
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/HasNamespaceUri.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/HasNamespaceUri.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Find XML namespace URIs, optionally restricting the search by a XPath expressio
 | `String` | namespaceUri | The Namespace URI to find. | `http://www.w3.org/2001/XMLSchema-instance` |
 | `String` | xPath | *Optional*. An XPath expression used to find namespace URIs. | `/dependencies/dependency` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.HasNamespaceUriExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.HasNamespaceUriExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasNamespaceUriExample
 displayName: Find XML namespace URIs example
 recipeList:
-  - org.openrewrite.xml.search.HasNamespaceUri:
-      namespaceUri: http://www.w3.org/2001/XMLSchema-instance
+  - org.openrewrite.xml.search.HasNamespaceUri:      namespaceUri: http://www.w3.org/2001/XMLSchema-instance
       xPath: /dependencies/dependency
 ```
 

@@ -13,7 +13,7 @@ _Run [Putout](https://github.com/coderaiser/putout) on your projects._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/Putout.java), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -22,10 +22,14 @@ _Run [Putout](https://github.com/coderaiser/putout) on your projects._
 | `Set` | rules | *Optional*. Names of rules to enable. If not provided, putout's default rules are used. |  |
 | `String` | printer | *Optional*. By default Putout uses its own [putout](https://github.com/coderaiser/putout?tab=readme-ov-file#printer) printer for formatting code. You can choose an alternative printer. Valid options: `putout`, `recast`, `babel` |  |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-codemods` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. Moderne users can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

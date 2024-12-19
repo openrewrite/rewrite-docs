@@ -13,7 +13,7 @@ _Finds dependencies in `*.csproj` and `packages.config`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/csharp/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -22,10 +22,14 @@ _Finds dependencies in `*.csproj` and `packages.config`._
 | `String` | packagePattern | *Optional*. Package glob pattern used to match dependencies. | `Microsoft*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. Moderne users can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

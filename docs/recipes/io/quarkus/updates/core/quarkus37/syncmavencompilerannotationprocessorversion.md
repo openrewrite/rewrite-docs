@@ -13,8 +13,9 @@ _Sync Maven Compiler plugin annotation processor version with the one provided b
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
-
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Sync Maven Compiler plugin annotation processor version with the one provided b
 | `String` | groupId | The groupId of the annotation processor. | `org.hibernate.orm` |
 | `String` | artifactId | The artifactId of the annotation processor. | `hibernate-jpamodelgen` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SyncMavenCompilerAnnotationProcessorVersionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SyncMavenCompilerAnnotationProcessorVersionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SyncMavenCompilerAnnotationProcessorVersionExample
 displayName: Sync Maven Compiler plugin annotation processor version with the one provided by the BOM example
 recipeList:
-  - io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion:
-      groupId: org.hibernate.orm
+  - io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion:      groupId: org.hibernate.orm
       artifactId: hibernate-jpamodelgen
 ```
 

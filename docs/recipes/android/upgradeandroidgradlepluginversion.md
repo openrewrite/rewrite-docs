@@ -13,11 +13,8 @@ _Upgrade Android Gradle Plugin (AGP) version and update the Gradle Wrapper versi
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/java/org/openrewrite/android/UpgradeAndroidGradlePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,26 +22,29 @@ This recipe is composed of more than one recipe. If you want to customize the se
 | `String` | agpVersion | The version of the Android Gradle Plugin to use. | `8.6.x` |
 | `String` | gradleWrapperVersion | The version of the Gradle Wrapper to use. | `(8.7, 9]` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeAndroidGradlePluginVersionExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeAndroidGradlePluginVersionExample
 displayName: Upgrade Android Gradle Plugin (AGP) version example
 recipeList:
-  - org.openrewrite.android.UpgradeAndroidGradlePluginVersion:
+  - org.openrewrite.android.UpgradeAndroidGradlePluginVersion: 
       agpVersion: 8.6.x
       gradleWrapperVersion: (8.7, 9]
 ```
 
-Now that `com.yourorg.UpgradeAndroidGradlePluginVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

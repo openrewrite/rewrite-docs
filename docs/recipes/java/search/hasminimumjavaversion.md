@@ -13,8 +13,9 @@ _The oldest Java version in use is the lowest Java version in use in any source 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/HasMinimumJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/HasMinimumJavaVersion.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _The oldest Java version in use is the lowest Java version in use in any source 
 | `String` | version | An exact version number or node-style semver selector used to select the version number. | `17.X` |
 | `Boolean` | checkTargetCompatibility | *Optional*. The source and target compatibility versions can be different. This option allows you to check against the target compatibility version instead of the source compatibility version. | `17.X` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.HasMinimumJavaVersionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.HasMinimumJavaVersionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasMinimumJavaVersionExample
 displayName: Find the oldest Java version in use example
 recipeList:
-  - org.openrewrite.java.search.HasMinimumJavaVersion:
-      version: 17.X
+  - org.openrewrite.java.search.HasMinimumJavaVersion:      version: 17.X
       checkTargetCompatibility: 17.X
 ```
 

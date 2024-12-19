@@ -13,8 +13,9 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
-
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 | `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)` |
 | `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to add to the method invocation. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddTimeUnitArgumentExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddTimeUnitArgumentExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddTimeUnitArgumentExample
 displayName: Adds a TimeUnit argument to the matched method invocations example
 recipeList:
-  - org.openrewrite.apache.httpclient5.AddTimeUnitArgument:
-      methodPattern: org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)
+  - org.openrewrite.apache.httpclient5.AddTimeUnitArgument:      methodPattern: org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)
       timeUnit: MILLISECONDS
 ```
 

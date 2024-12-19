@@ -13,8 +13,9 @@ _Change prefix of property with Camel case_
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
-
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Change prefix of property with Camel case_
 | `String` | oldPropertyKey | The property key to rename. |  |
 | `String` | newPrefix | The prefix to be replaced with. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyKeyWithCaseChangeExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyKeyWithCaseChangeExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyKeyWithCaseChangeExample
 displayName: Change prefix of property with Camel case example
 recipeList:
-  - org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange:
-      oldPropertyKey: null
+  - org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange:      oldPropertyKey: null
       newPrefix: null
 ```
 

@@ -13,8 +13,9 @@ _Simplify AssertJ assertions by replacing them with more expressiove dedicated a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/SimplifyAssertJAssertion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
-
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/SimplifyAssertJAssertion.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Simplify AssertJ assertions by replacing them with more expressiove dedicated a
 | `String` | dedicatedAssertion | The zero argument assertion to adopt instead. | `isEmpty` |
 | `String` | requiredType | The type of the actual assertion argument. | `java.lang.String` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SimplifyAssertJAssertionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SimplifyAssertJAssertionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SimplifyAssertJAssertionExample
 displayName: Simplify AssertJ assertions with literal arguments example
 recipeList:
-  - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion:
-      assertToReplace: hasSize
+  - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion:      assertToReplace: hasSize
       literalArgument: 0
       dedicatedAssertion: isEmpty
       requiredType: java.lang.String

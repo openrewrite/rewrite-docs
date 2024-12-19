@@ -13,8 +13,9 @@ _Replace an Annotation with another one if the annotation pattern matches. Only 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceAnnotation.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Replace an Annotation with another one if the annotation pattern matches. Only 
 | `String` | annotationTemplateToInsert | An annotation template to add instead of original one, will be parsed with `JavaTemplate`. | `@org.jetbrains.annotations.NotNull("Null not permitted")` |
 | `String` | classpathResourceName | *Optional*. If the annotation's type is defined by a jar within the META-INF/rewrite/classpath directory provide its name here so that it can be loaded. When this parameter is not passed the runtime classpath of the recipe is provided to the parser producing the new annotation. This is necessary when the annotation is not on the runtime classpath of the recipe and isn't in the Java standard library. | `annotations` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceAnnotationExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceAnnotationExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceAnnotationExample
 displayName: Replace annotation example
 recipeList:
-  - org.openrewrite.java.ReplaceAnnotation:
-      annotationPatternToReplace: '@org.jetbrains.annotations.NotNull("Test")'
+  - org.openrewrite.java.ReplaceAnnotation:      annotationPatternToReplace: '@org.jetbrains.annotations.NotNull("Test")'
       annotationTemplateToInsert: '@org.jetbrains.annotations.NotNull("Null not permitted")'
       classpathResourceName: annotations
 ```

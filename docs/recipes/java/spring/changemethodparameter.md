@@ -13,8 +13,9 @@ _Change parameter type for a method declaration, identified by a method pattern.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeMethodParameter.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeMethodParameter.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Change parameter type for a method declaration, identified by a method pattern.
 | `String` | parameterType | The new type of the parameter that gets updated. | `java.lang.String` |
 | `Integer` | parameterIndex | A zero-based index that indicates the position at which the parameter will be added. | `0` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodParameterExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodParameterExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodParameterExample
 displayName: Change parameter type for a method declaration example
 recipeList:
-  - org.openrewrite.java.spring.ChangeMethodParameter:
-      methodPattern: com.yourorg.A foo(int, int)
+  - org.openrewrite.java.spring.ChangeMethodParameter:      methodPattern: com.yourorg.A foo(int, int)
       parameterType: java.lang.String
       parameterIndex: 0
 ```

@@ -13,8 +13,9 @@ _For Gradle projects, upgrade the version of a dependency in a `build.gradle` fi
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
-
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -26,10 +27,14 @@ _For Gradle projects, upgrade the version of a dependency in a `build.gradle` fi
 | `Boolean` | overrideManagedVersion | *Optional*. For Maven project only, This flag can be set to explicitly override a managed dependency's version. The default for this flag is `false`. |  |
 | `List` | retainVersions | *Optional*. For Maven project only, accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management after the changes from this recipe, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management. | `com.jcraft:jsch` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeDependencyVersionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeDependencyVersionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -37,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeDependencyVersionExample
 displayName: Upgrade Gradle or Maven dependency versions example
 recipeList:
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.fasterxml.jackson*
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       newVersion: 29.X
       versionPattern: '-jre'

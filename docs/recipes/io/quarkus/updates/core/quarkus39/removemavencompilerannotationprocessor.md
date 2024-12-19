@@ -13,8 +13,9 @@ _Remove an annotation processor from the Maven Compiler plugin configuration._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus39.RemoveMavenCompilerAnnotationProcessor), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
-
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus39.RemoveMavenCompilerAnnotationProcessor), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Remove an annotation processor from the Maven Compiler plugin configuration._
 | `String` | artifactId | The artifactId of the annotation processor. | `hibernate-jpamodelgen` |
 | `String` | processorClass | *Optional*. The fully-qualified class of the annotation processor. | `com.example.MyProcessor` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveMavenCompilerAnnotationProcessorExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveMavenCompilerAnnotationProcessorExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveMavenCompilerAnnotationProcessorExample
 displayName: Remove an annotation processor from the Maven Compiler plugin configuration example
 recipeList:
-  - io.quarkus.updates.core.quarkus39.RemoveMavenCompilerAnnotationProcessor:
-      groupId: org.hibernate.orm
+  - io.quarkus.updates.core.quarkus39.RemoveMavenCompilerAnnotationProcessor:      groupId: org.hibernate.orm
       artifactId: hibernate-jpamodelgen
       processorClass: com.example.MyProcessor
 ```

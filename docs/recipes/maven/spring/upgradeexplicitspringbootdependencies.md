@@ -13,8 +13,9 @@ _Upgrades dependencies according to the specified version of spring boot. Spring
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Upgrades dependencies according to the specified version of spring boot. Spring
 | `String` | fromVersion | XRage pattern for spring version used to limit which projects should be updated | ` 2.7.+` |
 | `String` | toVersion | Upgrade version of `org.springframework.boot` | `3.0.0-M3` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeExplicitSpringBootDependenciesExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeExplicitSpringBootDependenciesExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeExplicitSpringBootDependenciesExample
 displayName: Upgrade Spring dependencies example
 recipeList:
-  - org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies:
-      fromVersion:  2.7.+
+  - org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies:      fromVersion:  2.7.+
       toVersion: 3.0.0-M3
 ```
 

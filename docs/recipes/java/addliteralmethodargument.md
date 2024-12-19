@@ -13,8 +13,9 @@ _Add a literal `String` or `int` argument to method invocations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddLiteralMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddLiteralMethodArgument.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,10 +25,14 @@ _Add a literal `String` or `int` argument to method invocations._
 | `Object` | literal | The literal value that we add the argument for. | `abc` |
 | `String` | primitiveType | *Optional*. The type of the parameter that we add the argument for. Defaults to `String`. Valid options: `String`, `int`, `short`, `long`, `float`, `double`, `boolean`, `char` | `String` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddLiteralMethodArgumentExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddLiteralMethodArgumentExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -35,8 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddLiteralMethodArgumentExample
 displayName: Add a literal method argument example
 recipeList:
-  - org.openrewrite.java.AddLiteralMethodArgument:
-      methodPattern: com.yourorg.A foo(int, int)
+  - org.openrewrite.java.AddLiteralMethodArgument:      methodPattern: com.yourorg.A foo(int, int)
       argumentIndex: 0
       literal: abc
       primitiveType: String

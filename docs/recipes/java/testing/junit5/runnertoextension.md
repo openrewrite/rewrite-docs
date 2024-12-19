@@ -13,8 +13,9 @@ _Replace runners with the JUnit Jupiter extension equivalent._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RunnerToExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
-
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RunnerToExtension.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,10 +23,14 @@ _Replace runners with the JUnit Jupiter extension equivalent._
 | `List` | runners | The fully qualified class names of the JUnit 4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. | `[ org.springframework.test.context.junit4.SpringRunner ]` |
 | `String` | extension | The fully qualified class names of the JUnit Jupiter extension. | `org.springframework.test.context.junit.jupiter.SpringExtension` |
 
+## License
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RunnerToExtensionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RunnerToExtensionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -33,8 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RunnerToExtensionExample
 displayName: JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith` example
 recipeList:
-  - org.openrewrite.java.testing.junit5.RunnerToExtension:
-      runners: [ org.springframework.test.context.junit4.SpringRunner ]
+  - org.openrewrite.java.testing.junit5.RunnerToExtension:      runners: [ org.springframework.test.context.junit4.SpringRunner ]
       extension: org.springframework.test.context.junit.jupiter.SpringExtension
 ```
 

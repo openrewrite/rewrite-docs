@@ -13,7 +13,7 @@ _A secret is a literal that matches any one of the provided patterns._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/secrets/FindSecretsByPattern.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -23,27 +23,30 @@ _A secret is a literal that matches any one of the provided patterns._
 | `String` | keyPattern | *Optional*. A regular expression to match a 'key' against. For example, a key  | `[a-zA-Z0-9+\/=]{88}` |
 | `String` | valuePattern | A regular expression to search for. | `[a-zA-Z0-9+\/=]{88}` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindSecretsByPatternExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindSecretsByPatternExample
 displayName: Find secrets with regular expressions example
 recipeList:
-  - org.openrewrite.java.security.secrets.FindSecretsByPattern:
+  - org.openrewrite.java.security.secrets.FindSecretsByPattern: 
       secretName: AWS Access Key
       keyPattern: '[a-zA-Z0-9+\/=]{88}'
       valuePattern: '[a-zA-Z0-9+\/=]{88}'
 ```
 
-Now that `com.yourorg.FindSecretsByPatternExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

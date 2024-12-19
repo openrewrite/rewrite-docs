@@ -13,7 +13,7 @@ _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circl
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/UpdateImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -21,25 +21,28 @@ _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circl
 | -- | -- | -- | -- |
 | `String` | image | Image to use. | `circleci/openjdk:jdk` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateImageExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpdateImageExample
 displayName: Update CircleCI image example
 recipeList:
-  - org.openrewrite.circleci.UpdateImage:
+  - org.openrewrite.circleci.UpdateImage: 
       image: circleci/openjdk:jdk
 ```
 
-Now that `com.yourorg.UpdateImageExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-circleci:{{VERSION_REWRITE_CIRCLECI}}` in your build file:
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

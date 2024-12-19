@@ -13,8 +13,9 @@ _Change the name of a given type alias._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
-
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +24,14 @@ _Change the name of a given type alias._
 | `String` | newName | Name of the alias type. | `NewAlias` |
 | `String` | fullyQualifiedAliasedType | Fully-qualified class name of the aliased type. | `org.junit.Assume` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RenameTypeAliasExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RenameTypeAliasExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -34,8 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RenameTypeAliasExample
 displayName: Rename type alias example
 recipeList:
-  - org.openrewrite.kotlin.RenameTypeAlias:
-      aliasName: OldAlias
+  - org.openrewrite.kotlin.RenameTypeAlias:      aliasName: OldAlias
       newName: NewAlias
       fullyQualifiedAliasedType: org.junit.Assume
 ```

@@ -16,8 +16,9 @@ Removes a single managed dependency from the <dependencyManagement><dependencies
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveManagedDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveManagedDependency.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -26,10 +27,14 @@ Removes a single managed dependency from the <dependencyManagement><dependencies
 | `String` | artifactId | The second part of a managed dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
 | `String` | scope | *Optional*. Only remove managed dependencies if they are in this scope. If `runtime`, this will also remove managed dependencies in the 'compile' scope because `compile` dependencies are part of the runtime dependency set. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveManagedDependencyExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveManagedDependencyExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -37,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveManagedDependencyExample
 displayName: Remove Maven managed dependency example
 recipeList:
-  - org.openrewrite.maven.RemoveManagedDependency:
-      groupId: com.google.guava
+  - org.openrewrite.maven.RemoveManagedDependency:      groupId: com.google.guava
       artifactId: guava
       scope: compile
 ```

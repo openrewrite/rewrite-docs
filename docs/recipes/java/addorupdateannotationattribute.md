@@ -13,8 +13,9 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 | `Boolean` | addOnly | When set to `true` will not change existing annotation attribute values. |  |
 | `Boolean` | appendArray | If the attribute is an array, setting this option to `true` will append the value(s). In conjunction with `addOnly`, it is possible to control duplicates: `addOnly=true`, always append. `addOnly=false`, only append if the value is not already present. |  |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddOrUpdateAnnotationAttributeExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddOrUpdateAnnotationAttributeExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddOrUpdateAnnotationAttributeExample
 displayName: Add or update annotation attribute example
 recipeList:
-  - org.openrewrite.java.AddOrUpdateAnnotationAttribute:
-      annotationType: org.junit.Test
+  - org.openrewrite.java.AddOrUpdateAnnotationAttribute:      annotationType: org.junit.Test
       attributeName: timeout
       attributeValue: 500
       addOnly: null

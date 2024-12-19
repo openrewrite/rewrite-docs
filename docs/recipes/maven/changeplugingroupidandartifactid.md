@@ -13,8 +13,9 @@ _Change the groupId and/or the artifactId of a specified Maven plugin._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,10 +26,14 @@ _Change the groupId and/or the artifactId of a specified Maven plugin._
 | `String` | newArtifactId | *Optional*. The new artifact ID to use. Defaults to the existing artifact ID. | `my-new-maven-plugin` |
 | `String` | newArtifact | *Optional*. The new artifact ID to use. Defaults to the existing artifact ID. This property is deprecated, use newArtifactId instead. | `my-new-maven-plugin` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePluginGroupIdAndArtifactIdExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangePluginGroupIdAndArtifactIdExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -36,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePluginGroupIdAndArtifactIdExample
 displayName: Change Maven plugin group and artifact ID example
 recipeList:
-  - org.openrewrite.maven.ChangePluginGroupIdAndArtifactId:
-      oldGroupId: org.openrewrite.recipe
+  - org.openrewrite.maven.ChangePluginGroupIdAndArtifactId:      oldGroupId: org.openrewrite.recipe
       oldArtifactId: my-deprecated-maven-plugin
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-maven-plugin

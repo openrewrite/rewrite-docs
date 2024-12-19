@@ -13,7 +13,7 @@ _Update the Java version used by `actions/setup-java` if it is below the expecte
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupJavaUpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## Options
 
@@ -21,10 +21,14 @@ _Update the Java version used by `actions/setup-java` if it is below the expecte
 | -- | -- | -- | -- |
 | `Integer` | minimumJavaMajorVersion | *Optional*.  | `21` |
 
+## License
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-github-actions` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. Moderne users can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

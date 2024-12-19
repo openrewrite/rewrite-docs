@@ -13,8 +13,9 @@ _Upgrades the version of a transitive dependency in a Gradle build file. There a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeTransitiveDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
-
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeTransitiveDependencyVersion.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -26,10 +27,14 @@ _Upgrades the version of a transitive dependency in a Gradle build file. There a
 | `String` | because | *Optional*. The reason for upgrading the transitive dependency. For example, we could be responding to a vulnerability. | `CVE-2021-1234` |
 | `List` | onlyForConfigurations | *Optional*. A list of configurations to consider during the upgrade. For example, For example using `implementation, runtimeOnly`, we could be responding to a deployable asset vulnerability only (ignoring test scoped vulnerabilities). | `implementation, runtimeOnly` |
 
+## License
+
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeTransitiveDependencyVersionExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeTransitiveDependencyVersionExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
@@ -37,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeTransitiveDependencyVersionExample
 displayName: Upgrade transitive Gradle dependencies example
 recipeList:
-  - org.openrewrite.gradle.UpgradeTransitiveDependencyVersion:
-      groupId: com.fasterxml.jackson*
+  - org.openrewrite.gradle.UpgradeTransitiveDependencyVersion:      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       version: 29.X
       versionPattern: '-jre'
