@@ -1,5 +1,7 @@
 # 8.42.0 release (2024-12-18)
 
+_Total recipe count: 2922_
+
 :::info
 This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
 :::
