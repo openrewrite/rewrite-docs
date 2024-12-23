@@ -46,7 +46,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddJaxbRuntimeExample
 displayName: Use latest JAXB API and runtime for Jakarta EE 8 example
 recipeList:
-  - org.openrewrite.java.migrate.javax.AddJaxbRuntime:      runtime: glassfish
+  - org.openrewrite.java.migrate.javax.AddJaxbRuntime:
+      runtime: glassfish
 ```
 
 Now that `com.yourorg.AddJaxbRuntimeExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:

@@ -43,7 +43,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeNamespaceValueExample
 displayName: Change XML attribute of a specific resource version example
 recipeList:
-  - org.openrewrite.xml.ChangeNamespaceValue:      elementName: property
+  - org.openrewrite.xml.ChangeNamespaceValue:
+      elementName: property
       oldValue: newfoo.bar.attribute.value.string
       newValue: newfoo.bar.attribute.value.string
       versionMatcher: 1.1

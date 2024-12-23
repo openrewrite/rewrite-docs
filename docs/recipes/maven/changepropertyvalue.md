@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyValueExample
 displayName: Change Maven project property value example
 recipeList:
-  - org.openrewrite.maven.ChangePropertyValue:      key: junit.version
+  - org.openrewrite.maven.ChangePropertyValue:
+      key: junit.version
       newValue: 4.13
 ```
 

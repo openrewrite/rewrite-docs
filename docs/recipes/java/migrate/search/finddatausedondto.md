@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindDataUsedOnDtoExample
 displayName: Find data used on DTOs example
 recipeList:
-  - org.openrewrite.java.migrate.search.FindDataUsedOnDto:      dtoType: com.example.dto.*
+  - org.openrewrite.java.migrate.search.FindDataUsedOnDto:
+      dtoType: com.example.dto.*
 ```
 
 Now that `com.yourorg.FindDataUsedOnDtoExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:

@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasJavaVersionExample
 displayName: Find files compiled at a specific Java version example
 recipeList:
-  - org.openrewrite.java.search.HasJavaVersion:      version: 17.X
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: 17.X
       checkTargetCompatibility: 17.X
 ```
 

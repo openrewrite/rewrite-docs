@@ -45,7 +45,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveDependencyExample
 displayName: Remove a Gradle or Maven dependency example
 recipeList:
-  - org.openrewrite.java.dependencies.RemoveDependency:      groupId: com.fasterxml.jackson*
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       unlessUsing: org.aspectj.lang.*
       configuration: api

@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodTargetToStaticExample
 displayName: Change method target to static example
 recipeList:
-  - org.openrewrite.java.ChangeMethodTargetToStatic:      methodPattern: com.google.common.collect.ImmutableSet of(..)
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: com.google.common.collect.ImmutableSet of(..)
       fullyQualifiedTargetTypeName: java.util.Set
       returnType: java.util.Set
 ```

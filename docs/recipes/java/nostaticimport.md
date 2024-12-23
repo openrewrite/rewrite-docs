@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.NoStaticImportExample
 displayName: Remove static import example
 recipeList:
-  - org.openrewrite.java.NoStaticImport:      methodPattern: java.util.Collections emptyList()
+  - org.openrewrite.java.NoStaticImport:
+      methodPattern: java.util.Collections emptyList()
 ```
 
 Now that `com.yourorg.NoStaticImportExample` has been defined, activate it in your build file:

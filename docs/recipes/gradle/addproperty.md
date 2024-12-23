@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddPropertyExample
 displayName: Add Gradle property example
 recipeList:
-  - org.openrewrite.gradle.AddProperty:      key: org.gradle.caching
+  - org.openrewrite.gradle.AddProperty:
+      key: org.gradle.caching
       value: true
       overwrite: true
       filePattern: '**/*.properties'

@@ -65,7 +65,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveIsEnabledExample
 displayName: Remove Unleash's `isEnabled` for feature key example
 recipeList:
-  - org.openrewrite.featureflags.unleash.RemoveIsEnabled:      featureKey: flag-key-123abc
+  - org.openrewrite.featureflags.unleash.RemoveIsEnabled:
+      featureKey: flag-key-123abc
       replacementValue: true
 ```
 

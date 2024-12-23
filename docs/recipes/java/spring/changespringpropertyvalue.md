@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeSpringPropertyValueExample
 displayName: Change the value of a spring application property example
 recipeList:
-  - org.openrewrite.java.spring.ChangeSpringPropertyValue:      propertyKey: management.metrics.binders.files.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyValue:
+      propertyKey: management.metrics.binders.files.enabled
       newValue: management.metrics.enable.process.files
       oldValue: false
 ```

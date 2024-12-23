@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CreatePropertiesFileExample
 displayName: Create Properties file example
 recipeList:
-  - org.openrewrite.properties.CreatePropertiesFile:      relativeFileName: foo/bar/baz.properties
+  - org.openrewrite.properties.CreatePropertiesFile:
+      relativeFileName: foo/bar/baz.properties
       fileContents: a.property=value
 ```
 

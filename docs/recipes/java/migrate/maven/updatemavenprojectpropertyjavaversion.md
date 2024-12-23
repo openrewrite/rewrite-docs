@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpdateMavenProjectPropertyJavaVersionExample
 displayName: Update Maven Java project properties example
 recipeList:
-  - org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion:      version: 11
+  - org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion:
+      version: 11
 ```
 
 Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:

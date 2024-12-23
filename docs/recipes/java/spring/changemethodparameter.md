@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodParameterExample
 displayName: Change parameter type for a method declaration example
 recipeList:
-  - org.openrewrite.java.spring.ChangeMethodParameter:      methodPattern: com.yourorg.A foo(int, int)
+  - org.openrewrite.java.spring.ChangeMethodParameter:
+      methodPattern: com.yourorg.A foo(int, int)
       parameterType: java.lang.String
       parameterIndex: 0
 ```

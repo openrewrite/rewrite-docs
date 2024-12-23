@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindFieldsExample
 displayName: Find fields example
 recipeList:
-  - org.openrewrite.java.search.FindFields:      fullyQualifiedTypeName: com.fasterxml.jackson.core.json.JsonWriteFeature
+  - org.openrewrite.java.search.FindFields:
+      fullyQualifiedTypeName: com.fasterxml.jackson.core.json.JsonWriteFeature
       fieldName: QUOTE_FIELD_NAMES
 ```
 

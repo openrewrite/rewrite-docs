@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveBooleanFlagExample
 displayName: Remove a boolean feature flag for feature key example
 recipeList:
-  - org.openrewrite.featureflags.RemoveBooleanFlag:      methodPattern: dev.openfeature.sdk.Client getBooleanValue(String, Boolean)
+  - org.openrewrite.featureflags.RemoveBooleanFlag:
+      methodPattern: dev.openfeature.sdk.Client getBooleanValue(String, Boolean)
       featureKey: flag-key-123abc
       replacementValue: true
 ```

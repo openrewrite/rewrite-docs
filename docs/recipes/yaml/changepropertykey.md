@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyKeyExample
 displayName: Change property key example
 recipeList:
-  - org.openrewrite.yaml.ChangePropertyKey:      oldPropertyKey: management.metrics.binders.*.enabled
+  - org.openrewrite.yaml.ChangePropertyKey:
+      oldPropertyKey: management.metrics.binders.*.enabled
       newPropertyKey: management.metrics.enable.process.files
       except: List.of("group")
       filePattern: .github/workflows/*.yml

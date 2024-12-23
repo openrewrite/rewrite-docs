@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddRuntimeConfigExample
 displayName: Add a configuration option for the Maven runtime example
 recipeList:
-  - org.openrewrite.maven.AddRuntimeConfig:      relativeConfigFileName: maven.config
+  - org.openrewrite.maven.AddRuntimeConfig:
+      relativeConfigFileName: maven.config
       flag: '-T'
       argument: 3
       separator: =

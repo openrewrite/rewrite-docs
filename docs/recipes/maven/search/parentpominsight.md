@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ParentPomInsightExample
 displayName: Maven parent insight example
 recipeList:
-  - org.openrewrite.maven.search.ParentPomInsight:      groupIdPattern: org.springframework.boot
+  - org.openrewrite.maven.search.ParentPomInsight:
+      groupIdPattern: org.springframework.boot
       artifactIdPattern: spring-boot-starter-*
       version: 1.x
 ```

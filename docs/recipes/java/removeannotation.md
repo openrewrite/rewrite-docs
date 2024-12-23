@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveAnnotationExample
 displayName: Remove annotation example
 recipeList:
-  - org.openrewrite.java.RemoveAnnotation:      annotationPattern: '@java.lang.SuppressWarnings("deprecation")'
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: '@java.lang.SuppressWarnings("deprecation")'
 ```
 
 Now that `com.yourorg.RemoveAnnotationExample` has been defined, activate it in your build file:

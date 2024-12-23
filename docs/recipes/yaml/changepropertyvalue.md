@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyValueExample
 displayName: Change YAML property example
 recipeList:
-  - org.openrewrite.yaml.ChangePropertyValue:      propertyKey: management.metrics.binders.*.enabled
+  - org.openrewrite.yaml.ChangePropertyValue:
+      propertyKey: management.metrics.binders.*.enabled
       newValue: newValue
       oldValue: oldValue
       filePattern: .github/workflows/*.yml

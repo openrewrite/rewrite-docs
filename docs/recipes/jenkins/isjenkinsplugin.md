@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.IsJenkinsPluginExample
 displayName: Is the project a Jenkins plugin? example
 recipeList:
-  - org.openrewrite.jenkins.IsJenkinsPlugin:      version: '[1,)'
+  - org.openrewrite.jenkins.IsJenkinsPlugin:
+      version: '[1,)'
 ```
 
 Now that `com.yourorg.IsJenkinsPluginExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}` in your build file:

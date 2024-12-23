@@ -65,7 +65,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveGetBooleanValueExample
 displayName: Remove OpenFeature's `getBooleanValue` for feature key example
 recipeList:
-  - org.openrewrite.featureflags.openfeature.RemoveGetBooleanValue:      featureKey: flag-key-123abc
+  - org.openrewrite.featureflags.openfeature.RemoveGetBooleanValue:
+      featureKey: flag-key-123abc
       replacementValue: true
 ```
 

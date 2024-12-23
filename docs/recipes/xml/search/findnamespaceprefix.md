@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindNamespacePrefixExample
 displayName: Find XML namespace prefixes example
 recipeList:
-  - org.openrewrite.xml.search.FindNamespacePrefix:      namespacePrefix: http://www.w3.org/2001/XMLSchema-instance
+  - org.openrewrite.xml.search.FindNamespacePrefix:
+      namespacePrefix: http://www.w3.org/2001/XMLSchema-instance
       xPath: /dependencies/dependency
 ```
 

@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceAnnotationExample
 displayName: Replace annotation example
 recipeList:
-  - org.openrewrite.java.ReplaceAnnotation:      annotationPatternToReplace: '@org.jetbrains.annotations.NotNull("Test")'
+  - org.openrewrite.java.ReplaceAnnotation:
+      annotationPatternToReplace: '@org.jetbrains.annotations.NotNull("Test")'
       annotationTemplateToInsert: '@org.jetbrains.annotations.NotNull("Null not permitted")'
       classpathResourceName: annotations
 ```

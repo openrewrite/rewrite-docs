@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePackagingExample
 displayName: Set Maven project packaging example
 recipeList:
-  - org.openrewrite.maven.ChangePackaging:      groupId: org.openrewrite.*
+  - org.openrewrite.maven.ChangePackaging:
+      groupId: org.openrewrite.*
       artifactId: rewrite-*
       packaging: jar
       oldPackaging: jar

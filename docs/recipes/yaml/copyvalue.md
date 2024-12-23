@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CopyValueExample
 displayName: Copy YAML value example
 recipeList:
-  - org.openrewrite.yaml.CopyValue:      oldKeyPath: $.source.kind
+  - org.openrewrite.yaml.CopyValue:
+      oldKeyPath: $.source.kind
       oldFilePath: src/main/resources/application.yaml
       newKey: $.dest.kind
       newFilePath: src/main/resources/application.yaml

@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindMultiselectExample
 displayName: Experimental find text with multiselect example
 recipeList:
-  - org.openrewrite.text.FindMultiselect:      find: blacklist
+  - org.openrewrite.text.FindMultiselect:
+      find: blacklist
       filePattern: '**/*.java'
 ```
 

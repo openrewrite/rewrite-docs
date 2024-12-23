@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ResultOfMethodCallIgnoredExample
 displayName: Result of method call ignored example
 recipeList:
-  - org.openrewrite.java.search.ResultOfMethodCallIgnored:      methodPattern: java.io.File mkdir*()
+  - org.openrewrite.java.search.ResultOfMethodCallIgnored:
+      methodPattern: java.io.File mkdir*()
 ```
 
 Now that `com.yourorg.ResultOfMethodCallIgnoredExample` has been defined, activate it in your build file:

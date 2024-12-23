@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveMavenCompilerAnnotationProcessorExample
 displayName: Remove an annotation processor from the Maven Compiler plugin configuration example
 recipeList:
-  - io.quarkus.updates.core.quarkus39.RemoveMavenCompilerAnnotationProcessor:      groupId: org.hibernate.orm
+  - io.quarkus.updates.core.quarkus39.RemoveMavenCompilerAnnotationProcessor:
+      groupId: org.hibernate.orm
       artifactId: hibernate-jpamodelgen
       processorClass: com.example.MyProcessor
 ```

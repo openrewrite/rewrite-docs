@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteSpringPropertyExample
 displayName: Delete a spring configuration property example
 recipeList:
-  - org.openrewrite.java.spring.DeleteSpringProperty:      propertyKey: management.endpoint.configprops.*
+  - org.openrewrite.java.spring.DeleteSpringProperty:
+      propertyKey: management.endpoint.configprops.*
 ```
 
 Now that `com.yourorg.DeleteSpringPropertyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:

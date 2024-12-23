@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeletePropertyExample
 displayName: Delete Property example
 recipeList:
-  - org.openrewrite.properties.DeleteProperty:      propertyKey: management.metrics.binders.files.enabled or management.metrics.*
+  - org.openrewrite.properties.DeleteProperty:
+      propertyKey: management.metrics.binders.files.enabled or management.metrics.*
 ```
 
 Now that `com.yourorg.DeletePropertyExample` has been defined, activate it in your build file:

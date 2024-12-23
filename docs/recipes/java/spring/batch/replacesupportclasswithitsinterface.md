@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceSupportClassWithItsInterfaceExample
 displayName: Transform classes that extend a given Class to implement the given Interface instead example
 recipeList:
-  - org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface:      fullyQualifiedClassName: org.springframework.batch.core.listener.JobExecutionListenerSupport
+  - org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface:
+      fullyQualifiedClassName: org.springframework.batch.core.listener.JobExecutionListenerSupport
       fullyQualifiedInterfaceName: org.springframework.batch.core.JobExecutionListener
 ```
 

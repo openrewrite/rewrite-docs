@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeJavaVersionExample
 displayName: Upgrade jenkins java version example
 recipeList:
-  - org.openrewrite.jenkins.UpgradeJavaVersion:      version: 17
+  - org.openrewrite.jenkins.UpgradeJavaVersion:
+      version: 17
       distribution: openjdk
 ```
 

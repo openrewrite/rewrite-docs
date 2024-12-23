@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DoesNotIncludeDependencyExample
 displayName: Does not include Maven dependency example
 recipeList:
-  - org.openrewrite.maven.search.DoesNotIncludeDependency:      groupId: com.google.guava
+  - org.openrewrite.maven.search.DoesNotIncludeDependency:
+      groupId: com.google.guava
       artifactId: guava
       onlyDirect: true
       scope: compile

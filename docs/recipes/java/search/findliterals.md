@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindLiteralsExample
 displayName: Find literals example
 recipeList:
-  - org.openrewrite.java.search.FindLiterals:      pattern: file://
+  - org.openrewrite.java.search.FindLiterals:
+      pattern: file://
 ```
 
 Now that `com.yourorg.FindLiteralsExample` has been defined, activate it in your build file:

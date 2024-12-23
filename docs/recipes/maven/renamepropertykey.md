@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RenamePropertyKeyExample
 displayName: Rename Maven property key example
 recipeList:
-  - org.openrewrite.maven.RenamePropertyKey:      oldKey: junit.version
+  - org.openrewrite.maven.RenamePropertyKey:
+      oldKey: junit.version
       newKey: version.org.junit
 ```
 

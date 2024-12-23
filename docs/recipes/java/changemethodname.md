@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodNameExample
 displayName: Change method name example
 recipeList:
-  - org.openrewrite.java.ChangeMethodName:      methodPattern: org.mockito.Matchers anyVararg()
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.mockito.Matchers anyVararg()
       newMethodName: any
 ```
 

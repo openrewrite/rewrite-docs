@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SetFilePermissionsExample
 displayName: Set file permission attributes example
 recipeList:
-  - org.openrewrite.SetFilePermissions:      fileMatcher: '**/gradlew.bat'
+  - org.openrewrite.SetFilePermissions:
+      fileMatcher: '**/gradlew.bat'
       isReadable: null
       isWritable: null
       isExecutable: null

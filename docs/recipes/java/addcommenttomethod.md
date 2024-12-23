@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddCommentToMethodExample
 displayName: Add comment example
 recipeList:
-  - org.openrewrite.java.AddCommentToMethod:      comment: This is a comment.
+  - org.openrewrite.java.AddCommentToMethod:
+      comment: This is a comment.
       methodPattern: java.util.List add*(..)
 ```
 

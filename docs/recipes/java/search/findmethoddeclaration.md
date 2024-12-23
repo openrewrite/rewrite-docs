@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindMethodDeclarationExample
 displayName: Find method declaration example
 recipeList:
-  - org.openrewrite.java.search.FindMethodDeclaration:      methodPattern: java.util.List add(..)
+  - org.openrewrite.java.search.FindMethodDeclaration:
+      methodPattern: java.util.List add(..)
 ```
 
 Now that `com.yourorg.FindMethodDeclarationExample` has been defined, activate it in your build file:

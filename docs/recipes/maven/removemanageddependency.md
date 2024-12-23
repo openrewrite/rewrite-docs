@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveManagedDependencyExample
 displayName: Remove Maven managed dependency example
 recipeList:
-  - org.openrewrite.maven.RemoveManagedDependency:      groupId: com.google.guava
+  - org.openrewrite.maven.RemoveManagedDependency:
+      groupId: com.google.guava
       artifactId: guava
       scope: compile
 ```

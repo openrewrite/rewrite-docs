@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteKeyExample
 displayName: Delete key example
 recipeList:
-  - org.openrewrite.json.DeleteKey:      keyPath: $.subjects.kind
+  - org.openrewrite.json.DeleteKey:
+      keyPath: $.subjects.kind
 ```
 
 Now that `com.yourorg.DeleteKeyExample` has been defined, activate it in your build file:

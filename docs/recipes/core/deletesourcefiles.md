@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteSourceFilesExample
 displayName: Delete files example
 recipeList:
-  - org.openrewrite.DeleteSourceFiles:      filePattern: .github/workflows/*.yml
+  - org.openrewrite.DeleteSourceFiles:
+      filePattern: .github/workflows/*.yml
 ```
 
 Now that `com.yourorg.DeleteSourceFilesExample` has been defined, activate it in your build file:

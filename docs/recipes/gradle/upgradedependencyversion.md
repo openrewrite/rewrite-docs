@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeDependencyVersionExample
 displayName: Upgrade Gradle dependency versions example
 recipeList:
-  - org.openrewrite.gradle.UpgradeDependencyVersion:      groupId: com.fasterxml.jackson*
+  - org.openrewrite.gradle.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       newVersion: 29.X
       versionPattern: '-jre'

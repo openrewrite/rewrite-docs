@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradePluginVersionExample
 displayName: Upgrade Maven plugin version example
 recipeList:
-  - org.openrewrite.maven.UpgradePluginVersion:      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
       newVersion: 29.X
       versionPattern: '-jre'

@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddBuildPluginExample
 displayName: Add Gradle plugin example
 recipeList:
-  - org.openrewrite.gradle.plugins.AddBuildPlugin:      pluginId: com.jfrog.bintray
+  - org.openrewrite.gradle.plugins.AddBuildPlugin:
+      pluginId: com.jfrog.bintray
       version: 3.x
       versionPattern: '-jre'
 ```

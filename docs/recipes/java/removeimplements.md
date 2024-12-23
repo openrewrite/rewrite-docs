@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveImplementsExample
 displayName: Remove interface implementations example
 recipeList:
-  - org.openrewrite.java.RemoveImplements:      interfaceType: java.io.Serializable
+  - org.openrewrite.java.RemoveImplements:
+      interfaceType: java.io.Serializable
       filter: com.yourorg.
 ```
 

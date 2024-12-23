@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyGroupIdExample
 displayName: Change Gradle dependency group example
 recipeList:
-  - org.openrewrite.gradle.ChangeDependencyGroupId:      groupId: com.fasterxml.jackson*
+  - org.openrewrite.gradle.ChangeDependencyGroupId:
+      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       newGroupId: corp.internal.jackson
       configuration: api

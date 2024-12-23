@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindKeyExample
 displayName: Find YAML entries example
 recipeList:
-  - org.openrewrite.yaml.search.FindKey:      key: $.subjects.kind
+  - org.openrewrite.yaml.search.FindKey:
+      key: $.subjects.kind
 ```
 
 Now that `com.yourorg.FindKeyExample` has been defined, activate it in your build file:

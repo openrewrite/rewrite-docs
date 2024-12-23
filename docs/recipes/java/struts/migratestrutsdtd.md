@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MigrateStrutsDtdExample
 displayName: Migrate DTD to a specific Struts version example
 recipeList:
-  - org.openrewrite.java.struts.MigrateStrutsDtd:      strutsVersion: 6.0
+  - org.openrewrite.java.struts.MigrateStrutsDtd:
+      strutsVersion: 6.0
 ```
 
 Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}` in your build file:

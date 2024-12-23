@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindPropertyExample
 displayName: Find YAML properties example
 recipeList:
-  - org.openrewrite.yaml.search.FindProperty:      propertyKey: management.metrics.binders.*.enabled
+  - org.openrewrite.yaml.search.FindProperty:
+      propertyKey: management.metrics.binders.*.enabled
       propertyValue: false
 ```
 

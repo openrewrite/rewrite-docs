@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasSourceSetExample
 displayName: Find files in a source set example
 recipeList:
-  - org.openrewrite.java.search.HasSourceSet:      sourceSet: main
+  - org.openrewrite.java.search.HasSourceSet:
+      sourceSet: main
 ```
 
 Now that `com.yourorg.HasSourceSetExample` has been defined, activate it in your build file:

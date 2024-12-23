@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddLicenseHeaderExample
 displayName: Add license header example
 recipeList:
-  - org.openrewrite.java.AddLicenseHeader:      licenseText: Copyright ${CURRENT_YEAR} the original author or authors...
+  - org.openrewrite.java.AddLicenseHeader:
+      licenseText: Copyright ${CURRENT_YEAR} the original author or authors...
 ```
 
 Now that `com.yourorg.AddLicenseHeaderExample` has been defined, activate it in your build file:

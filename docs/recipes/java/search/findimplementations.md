@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindImplementationsExample
 displayName: Find implementing classes example
 recipeList:
-  - org.openrewrite.java.search.FindImplementations:      typeName: org.openrewrite.Recipe
+  - org.openrewrite.java.search.FindImplementations:
+      typeName: org.openrewrite.Recipe
 ```
 
 Now that `com.yourorg.FindImplementationsExample` has been defined, activate it in your build file:

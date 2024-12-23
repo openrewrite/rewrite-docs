@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceStringLiteralWithConstantExample
 displayName: Replace String literal with constant example
 recipeList:
-  - org.openrewrite.java.ReplaceStringLiteralWithConstant:      literalValue: application/json
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: application/json
       fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 ```
 

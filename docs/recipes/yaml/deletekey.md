@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteKeyExample
 displayName: Delete key example
 recipeList:
-  - org.openrewrite.yaml.DeleteKey:      keyPath: $.source.kind
+  - org.openrewrite.yaml.DeleteKey:
+      keyPath: $.source.kind
       filePattern: .github/workflows/*.yml
 ```
 

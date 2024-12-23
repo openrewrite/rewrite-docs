@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTextExample
 displayName: Change text example
 recipeList:
-  - org.openrewrite.text.ChangeText:      toText: Some text.
+  - org.openrewrite.text.ChangeText:
+      toText: Some text.
 ```
 
 Now that `com.yourorg.ChangeTextExample` has been defined, activate it in your build file:

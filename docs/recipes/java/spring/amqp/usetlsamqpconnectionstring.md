@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseTlsAmqpConnectionStringExample
 displayName: Use TLS for AMQP connection strings example
 recipeList:
-  - org.openrewrite.java.spring.amqp.UseTlsAmqpConnectionString:      propertyKey: spring.rabbitmq.addresses
+  - org.openrewrite.java.spring.amqp.UseTlsAmqpConnectionString:
+      propertyKey: spring.rabbitmq.addresses
       oldPort: 1234
       port: 1234
       tlsPropertyKey: spring.rabbitmq.ssl.enabled

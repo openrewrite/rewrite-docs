@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RenameBeanExample
 displayName: Rename bean example
 recipeList:
-  - org.openrewrite.java.spring.RenameBean:      type: foo.MyType
+  - org.openrewrite.java.spring.RenameBean:
+      type: foo.MyType
       oldName: fooBean
       newName: barBean
 ```

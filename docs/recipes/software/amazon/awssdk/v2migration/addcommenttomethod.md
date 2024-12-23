@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddCommentToMethodExample
 displayName: Add a comment to a method example
 recipeList:
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:      methodPattern: org.mockito.Matchers anyVararg()
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: org.mockito.Matchers anyVararg()
       comment: This method is not supported in AWS SDK for Java v2.
 ```
 

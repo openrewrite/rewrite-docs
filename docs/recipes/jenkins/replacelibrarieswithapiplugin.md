@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceLibrariesWithApiPluginExample
 displayName: Use Jenkins API plugin instead of libraries example
 recipeList:
-  - org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin:      pluginGroupId: io.jenkins.plugins
+  - org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin:
+      pluginGroupId: io.jenkins.plugins
       pluginArtifactId: jackson2-api
       pluginVersion: 1981.v17df70e84a_a_1
       replaces: groupId: org.apache.commons

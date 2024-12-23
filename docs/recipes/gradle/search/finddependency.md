@@ -47,7 +47,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindDependencyExample
 displayName: Find Gradle dependency example
 recipeList:
-  - org.openrewrite.gradle.search.FindDependency:      groupId: com.google.guava
+  - org.openrewrite.gradle.search.FindDependency:
+      groupId: com.google.guava
       artifactId: guava
       configuration: api
 ```

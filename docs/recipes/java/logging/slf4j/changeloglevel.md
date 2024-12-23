@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeLogLevelExample
 displayName: Change SLF4J log level example
 recipeList:
-  - org.openrewrite.java.logging.slf4j.ChangeLogLevel:      from: INFO
+  - org.openrewrite.java.logging.slf4j.ChangeLogLevel:
+      from: INFO
       to: DEBUG
       startsWith: LaunchDarkly
 ```

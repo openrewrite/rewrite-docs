@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CreateEmptyJavaClassExample
 displayName: Create Java class example
 recipeList:
-  - org.openrewrite.java.CreateEmptyJavaClass:      sourceRoot: src/main/java
+  - org.openrewrite.java.CreateEmptyJavaClass:
+      sourceRoot: src/main/java
       packageName: org.openrewrite.example
       modifier: public
       className: ExampleClass

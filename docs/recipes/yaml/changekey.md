@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeKeyExample
 displayName: Change key example
 recipeList:
-  - org.openrewrite.yaml.ChangeKey:      oldKeyPath: $.subjects.kind
+  - org.openrewrite.yaml.ChangeKey:
+      oldKeyPath: $.subjects.kind
       newKey: kind
 ```
 

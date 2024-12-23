@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveXmlTagExample
 displayName: Remove XML tag example
 recipeList:
-  - org.openrewrite.xml.RemoveXmlTag:      xPath: /project/dependencies/dependency
+  - org.openrewrite.xml.RemoveXmlTag:
+      xPath: /project/dependencies/dependency
       fileMatcher: '**/application-*.xml'
 ```
 

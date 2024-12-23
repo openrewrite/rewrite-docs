@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddMethodParameterExample
 displayName: Add method parameter to a method declaration example
 recipeList:
-  - org.openrewrite.java.AddMethodParameter:      methodPattern: com.yourorg.A foo(int, int)
+  - org.openrewrite.java.AddMethodParameter:
+      methodPattern: com.yourorg.A foo(int, int)
       parameterType: java.lang.String
       parameterName: name
       parameterIndex: 0

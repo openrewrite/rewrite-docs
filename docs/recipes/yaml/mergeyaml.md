@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MergeYamlExample
 displayName: Merge YAML snippet example
 recipeList:
-  - org.openrewrite.yaml.MergeYaml:      key: $.metadata
+  - org.openrewrite.yaml.MergeYaml:
+      key: $.metadata
       yaml: 'labels:
   label-one: "value-one"'
       objectIdentifyingProperty: name

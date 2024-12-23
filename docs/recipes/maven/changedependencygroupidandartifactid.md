@@ -47,7 +47,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample
 displayName: Change Maven dependency example
 recipeList:
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:      oldGroupId: org.openrewrite.recipe
+  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: org.openrewrite.recipe
       oldArtifactId: rewrite-testing-frameworks
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: rewrite-testing-frameworks

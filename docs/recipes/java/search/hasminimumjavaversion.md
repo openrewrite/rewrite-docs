@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasMinimumJavaVersionExample
 displayName: Find the oldest Java version in use example
 recipeList:
-  - org.openrewrite.java.search.HasMinimumJavaVersion:      version: 17.X
+  - org.openrewrite.java.search.HasMinimumJavaVersion:
+      version: 17.X
       checkTargetCompatibility: 17.X
 ```
 

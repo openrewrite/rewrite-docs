@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ControlFlowVisualizationExample
 displayName: Control Flow Visualization example
 recipeList:
-  - org.openrewrite.analysis.controlflow.ControlFlowVisualization:      includeDotfile: false
+  - org.openrewrite.analysis.controlflow.ControlFlowVisualization:
+      includeDotfile: false
 ```
 
 Now that `com.yourorg.ControlFlowVisualizationExample` has been defined, activate it and take a dependency on `org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}` in your build file:

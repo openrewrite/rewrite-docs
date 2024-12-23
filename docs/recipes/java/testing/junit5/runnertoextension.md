@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RunnerToExtensionExample
 displayName: JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith` example
 recipeList:
-  - org.openrewrite.java.testing.junit5.RunnerToExtension:      runners: [ org.springframework.test.context.junit4.SpringRunner ]
+  - org.openrewrite.java.testing.junit5.RunnerToExtension:
+      runners: [ org.springframework.test.context.junit4.SpringRunner ]
       extension: org.springframework.test.context.junit.jupiter.SpringExtension
 ```
 

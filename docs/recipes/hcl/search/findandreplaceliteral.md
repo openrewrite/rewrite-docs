@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindAndReplaceLiteralExample
 displayName: Find and replace literals in HCL files example
 recipeList:
-  - org.openrewrite.hcl.search.FindAndReplaceLiteral:      find: blacklist
+  - org.openrewrite.hcl.search.FindAndReplaceLiteral:
+      find: blacklist
       replace: denylist
 ```
 

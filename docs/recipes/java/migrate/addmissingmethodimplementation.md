@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddMissingMethodImplementationExample
 displayName: Adds missing method implementations example
 recipeList:
-  - org.openrewrite.java.migrate.AddMissingMethodImplementation:      fullyQualifiedClassName: com.yourorg.FooBar
+  - org.openrewrite.java.migrate.AddMissingMethodImplementation:
+      fullyQualifiedClassName: com.yourorg.FooBar
       methodPattern: '*..* hello(..)'
       methodTemplateString: public String hello() { return \"Hello from #{}!\"; }
 ```

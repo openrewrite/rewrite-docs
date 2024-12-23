@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeStaticFieldToMethodExample
 displayName: Change static field access to static method access example
 recipeList:
-  - org.openrewrite.java.ChangeStaticFieldToMethod:      oldClassName: java.util.Collections
+  - org.openrewrite.java.ChangeStaticFieldToMethod:
+      oldClassName: java.util.Collections
       oldFieldName: EMPTY_LIST
       newClassName: java.util.List
       newTarget: OK_RESPONSE

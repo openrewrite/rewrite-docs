@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTypeExample
 displayName: Change type example
 recipeList:
-  - org.openrewrite.java.ChangeType:      oldFullyQualifiedTypeName: org.junit.Assume
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.junit.Assume
       newFullyQualifiedTypeName: org.junit.jupiter.api.Assumptions
 ```
 

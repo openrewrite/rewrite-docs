@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DependencyInsightExample
 displayName: Maven dependency insight example
 recipeList:
-  - org.openrewrite.maven.search.DependencyInsight:      groupIdPattern: com.fasterxml.jackson.module
+  - org.openrewrite.maven.search.DependencyInsight:
+      groupIdPattern: com.fasterxml.jackson.module
       artifactIdPattern: jackson-module-*
       scope: compile
       version: 1.x

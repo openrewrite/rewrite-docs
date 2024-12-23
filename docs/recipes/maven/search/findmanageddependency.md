@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindManagedDependencyExample
 displayName: Find Maven dependency management entry example
 recipeList:
-  - org.openrewrite.maven.search.FindManagedDependency:      groupId: com.google.guava
+  - org.openrewrite.maven.search.FindManagedDependency:
+      groupId: com.google.guava
       artifactId: guava
       version: 3.0.0
       versionPattern: '-jre'

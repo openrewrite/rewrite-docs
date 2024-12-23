@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddDevelocityMavenExtensionExample
 displayName: Add the Develocity Maven extension example
 recipeList:
-  - org.openrewrite.maven.AddDevelocityMavenExtension:      version: 1.17.4
+  - org.openrewrite.maven.AddDevelocityMavenExtension:
+      version: 1.17.4
       server: https://scans.gradle.com/
       allowUntrustedServer: true
       fileFingerprints: true

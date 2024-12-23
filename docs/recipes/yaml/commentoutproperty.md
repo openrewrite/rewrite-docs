@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CommentOutPropertyExample
 displayName: Comment out property example
 recipeList:
-  - org.openrewrite.yaml.CommentOutProperty:      propertyKey: applicability.singleSource
+  - org.openrewrite.yaml.CommentOutProperty:
+      propertyKey: applicability.singleSource
       commentText: The `foo` property is deprecated, please migrate
       commentOutProperty: true
 ```

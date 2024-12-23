@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeQuarkusPropertyKeyExample
 displayName: Change Quarkus configuration property key example
 recipeList:
-  - org.openrewrite.quarkus.ChangeQuarkusPropertyKey:      oldPropertyKey: quarkus.hibernate-search-orm.automatic-indexing.synchronization.strategy
+  - org.openrewrite.quarkus.ChangeQuarkusPropertyKey:
+      oldPropertyKey: quarkus.hibernate-search-orm.automatic-indexing.synchronization.strategy
       newPropertyKey: quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy
       profile: dev
       changeAllProfiles: false

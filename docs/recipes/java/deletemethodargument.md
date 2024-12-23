@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteMethodArgumentExample
 displayName: Delete method argument example
 recipeList:
-  - org.openrewrite.java.DeleteMethodArgument:      methodPattern: com.yourorg.A foo(int, int)
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: com.yourorg.A foo(int, int)
       argumentIndex: 0
 ```
 

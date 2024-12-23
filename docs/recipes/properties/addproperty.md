@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddPropertyExample
 displayName: Add a new property example
 recipeList:
-  - org.openrewrite.properties.AddProperty:      property: management.metrics.enable.process.files
+  - org.openrewrite.properties.AddProperty:
+      property: management.metrics.enable.process.files
       value: newPropValue
       comment: This is a comment
       delimiter: :

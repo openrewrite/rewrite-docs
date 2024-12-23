@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MoveGetterToExtendedCamelContextExample
 displayName: Move getter from context to ExtendedCamelContext. example
 recipeList:
-  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:      oldMethodName: null
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: null
 ```
 
 Now that `com.yourorg.MoveGetterToExtendedCamelContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}` in your build file:

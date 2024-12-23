@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.IncrementProjectVersionExample
 displayName: Increment Maven project version example
 recipeList:
-  - org.openrewrite.maven.IncrementProjectVersion:      groupId: org.openrewrite
+  - org.openrewrite.maven.IncrementProjectVersion:
+      groupId: org.openrewrite
       artifactId: '*'
       digit: PATCH
 ```

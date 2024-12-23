@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindAnnotationsExample
 displayName: Find annotations example
 recipeList:
-  - org.openrewrite.java.search.FindAnnotations:      annotationPattern: '@java.lang.SuppressWarnings("deprecation")'
+  - org.openrewrite.java.search.FindAnnotations:
+      annotationPattern: '@java.lang.SuppressWarnings("deprecation")'
 ```
 
 Now that `com.yourorg.FindAnnotationsExample` has been defined, activate it in your build file:

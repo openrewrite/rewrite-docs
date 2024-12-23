@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RenameFileExample
 displayName: Rename a file example
 recipeList:
-  - org.openrewrite.RenameFile:      fileMatcher: '**/application-*.yml'
+  - org.openrewrite.RenameFile:
+      fileMatcher: '**/application-*.yml'
       fileName: application.yml
 ```
 

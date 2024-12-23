@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DontOverfetchDtoExample
 displayName: Replace DTO method parameters with data elements example
 recipeList:
-  - org.openrewrite.java.migrate.DontOverfetchDto:      dtoType: animals.Dog
+  - org.openrewrite.java.migrate.DontOverfetchDto:
+      dtoType: animals.Dog
       dtoDataElement: name
 ```
 

@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddSettingsPluginRepositoryExample
 displayName: Add a Gradle settings repository example
 recipeList:
-  - org.openrewrite.gradle.plugins.AddSettingsPluginRepository:      type: maven
+  - org.openrewrite.gradle.plugins.AddSettingsPluginRepository:
+      type: maven
       url: https://repo.spring.io
 ```
 

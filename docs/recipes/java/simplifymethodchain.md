@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SimplifyMethodChainExample
 displayName: Simplify a call chain example
 recipeList:
-  - org.openrewrite.java.SimplifyMethodChain:      methodPatternChain: ['java.util.Map keySet()', 'java.util.Set contains(..)']
+  - org.openrewrite.java.SimplifyMethodChain:
+      methodPatternChain: ['java.util.Map keySet()', 'java.util.Set contains(..)']
       newMethodName: containsKey
       matchOverrides: false
 ```

@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseStaticImportExample
 displayName: Use static import example
 recipeList:
-  - org.openrewrite.java.UseStaticImport:      methodPattern: java.util.Collections emptyList()
+  - org.openrewrite.java.UseStaticImport:
+      methodPattern: java.util.Collections emptyList()
 ```
 
 Now that `com.yourorg.UseStaticImportExample` has been defined, activate it in your build file:

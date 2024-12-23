@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradePluginVersionExample
 displayName: Update a Gradle plugin by id example
 recipeList:
-  - org.openrewrite.gradle.plugins.UpgradePluginVersion:      pluginIdPattern: com.jfrog.bintray
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: com.jfrog.bintray
       newVersion: 29.X
       versionPattern: '-jre'
 ```

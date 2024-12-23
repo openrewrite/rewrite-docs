@@ -43,7 +43,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyExample
 displayName: Change Gradle dependency example
 recipeList:
-  - org.openrewrite.gradle.ChangeDependency:      oldGroupId: org.openrewrite.recipe
+  - org.openrewrite.gradle.ChangeDependency:
+      oldGroupId: org.openrewrite.recipe
       oldArtifactId: rewrite-testing-frameworks
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: rewrite-testing-frameworks

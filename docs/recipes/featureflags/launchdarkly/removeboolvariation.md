@@ -65,7 +65,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveBoolVariationExample
 displayName: Remove LaunchDarkly's `boolVariation` for feature key example
 recipeList:
-  - org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation:      featureKey: flag-key-123abc
+  - org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation:
+      featureKey: flag-key-123abc
       replacementValue: true
 ```
 

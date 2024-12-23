@@ -45,7 +45,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeParentPomExample
 displayName: Change Maven parent example
 recipeList:
-  - org.openrewrite.maven.ChangeParentPom:      oldGroupId: org.springframework.boot
+  - org.openrewrite.maven.ChangeParentPom:
+      oldGroupId: org.springframework.boot
       newGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-parent
       newArtifactId: spring-boot-starter-parent

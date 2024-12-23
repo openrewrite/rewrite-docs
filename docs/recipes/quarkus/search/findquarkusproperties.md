@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindQuarkusPropertiesExample
 displayName: Find Quarkus property example
 recipeList:
-  - org.openrewrite.quarkus.search.FindQuarkusProperties:      propertyKey: quarkus.http.port
+  - org.openrewrite.quarkus.search.FindQuarkusProperties:
+      propertyKey: quarkus.http.port
       profile: dev
       searchAllProfiles: false
 ```

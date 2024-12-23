@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ConfigurationOverEnableSecurityExample
 displayName: Add `@Configuration` to classes with `@EnableXXXSecurity` annotations example
 recipeList:
-  - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity:      forceAddConfiguration: false
+  - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity:
+      forceAddConfiguration: false
 ```
 
 Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:

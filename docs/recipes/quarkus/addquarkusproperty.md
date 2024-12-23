@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddQuarkusPropertyExample
 displayName: Add a Quarkus configuration property example
 recipeList:
-  - org.openrewrite.quarkus.AddQuarkusProperty:      property: quarkus.http.port
+  - org.openrewrite.quarkus.AddQuarkusProperty:
+      property: quarkus.http.port
       value: 9090
       comment: This is a comment
       profile: dev

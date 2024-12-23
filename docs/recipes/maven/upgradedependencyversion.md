@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeDependencyVersionExample
 displayName: Upgrade Maven dependency version example
 recipeList:
-  - org.openrewrite.maven.UpgradeDependencyVersion:      groupId: com.fasterxml.jackson*
+  - org.openrewrite.maven.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       newVersion: 29.X
       versionPattern: '-jre'

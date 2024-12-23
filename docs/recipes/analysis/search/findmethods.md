@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindMethodsExample
 displayName: Find method usages example
 recipeList:
-  - org.openrewrite.analysis.search.FindMethods:      methodPattern: java.util.List add(..)
+  - org.openrewrite.analysis.search.FindMethods:
+      methodPattern: java.util.List add(..)
 ```
 
 Now that `com.yourorg.FindMethodsExample` has been defined, activate it and take a dependency on `org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}` in your build file:

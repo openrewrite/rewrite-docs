@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RenameTypeAliasExample
 displayName: Rename type alias example
 recipeList:
-  - org.openrewrite.kotlin.RenameTypeAlias:      aliasName: OldAlias
+  - org.openrewrite.kotlin.RenameTypeAlias:
+      aliasName: OldAlias
       newName: NewAlias
       fullyQualifiedAliasedType: org.junit.Assume
 ```

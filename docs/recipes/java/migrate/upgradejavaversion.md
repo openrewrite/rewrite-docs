@@ -72,7 +72,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeJavaVersionExample
 displayName: Upgrade Java version example
 recipeList:
-  - org.openrewrite.java.migrate.UpgradeJavaVersion:      version: 11
+  - org.openrewrite.java.migrate.UpgradeJavaVersion:
+      version: 11
 ```
 
 Now that `com.yourorg.UpgradeJavaVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:

@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeMicronautMavenPropertyVersionExample
 displayName: Upgrade `micronaut.version` Maven property example
 recipeList:
-  - org.openrewrite.java.micronaut.UpgradeMicronautMavenPropertyVersion:      newVersion: 4.x
+  - org.openrewrite.java.micronaut.UpgradeMicronautMavenPropertyVersion:
+      newVersion: 4.x
 ```
 
 Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}` in your build file:

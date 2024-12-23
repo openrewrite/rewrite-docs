@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveRepositoryExample
 displayName: Remove repository example
 recipeList:
-  - org.openrewrite.maven.RemoveRepository:      id: repo-id
+  - org.openrewrite.maven.RemoveRepository:
+      id: repo-id
       url: http://myrepo.maven.com/repo
 ```
 

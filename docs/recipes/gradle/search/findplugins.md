@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindPluginsExample
 displayName: Find Gradle plugin example
 recipeList:
-  - org.openrewrite.gradle.search.FindPlugins:      pluginId: '`com.jfrog.bintray`'
+  - org.openrewrite.gradle.search.FindPlugins:
+      pluginId: '`com.jfrog.bintray`'
 ```
 
 Now that `com.yourorg.FindPluginsExample` has been defined, activate it in your build file:

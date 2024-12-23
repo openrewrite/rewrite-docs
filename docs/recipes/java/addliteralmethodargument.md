@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddLiteralMethodArgumentExample
 displayName: Add a literal method argument example
 recipeList:
-  - org.openrewrite.java.AddLiteralMethodArgument:      methodPattern: com.yourorg.A foo(int, int)
+  - org.openrewrite.java.AddLiteralMethodArgument:
+      methodPattern: com.yourorg.A foo(int, int)
       argumentIndex: 0
       literal: abc
       primitiveType: String

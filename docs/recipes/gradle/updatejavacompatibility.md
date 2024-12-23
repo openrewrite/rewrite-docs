@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpdateJavaCompatibilityExample
 displayName: Update Gradle project Java compatibility example
 recipeList:
-  - org.openrewrite.gradle.UpdateJavaCompatibility:      version: 11
+  - org.openrewrite.gradle.UpdateJavaCompatibility:
+      version: 11
 ```
 
 Now that `com.yourorg.UpdateJavaCompatibilityExample` has been defined, activate it in your build file:

@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindGradleProjectExample
 displayName: Find Gradle projects example
 recipeList:
-  - org.openrewrite.gradle.search.FindGradleProject:      searchCriteria: Marker
+  - org.openrewrite.gradle.search.FindGradleProject:
+      searchCriteria: Marker
 ```
 
 Now that `com.yourorg.FindGradleProjectExample` has been defined, activate it in your build file:

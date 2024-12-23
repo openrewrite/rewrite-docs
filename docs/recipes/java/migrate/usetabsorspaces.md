@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseTabsOrSpacesExample
 displayName: Force indentation to either tabs or spaces example
 recipeList:
-  - org.openrewrite.java.migrate.UseTabsOrSpaces:      useTabs: false
+  - org.openrewrite.java.migrate.UseTabsOrSpaces:
+      useTabs: false
 ```
 
 Now that `com.yourorg.UseTabsOrSpacesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:

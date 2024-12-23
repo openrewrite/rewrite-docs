@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ManageDependenciesExample
 displayName: Manage dependencies example
 recipeList:
-  - org.openrewrite.maven.ManageDependencies:      groupPattern: com.google.*
+  - org.openrewrite.maven.ManageDependencies:
+      groupPattern: com.google.*
       artifactPattern: guava*
 ```
 

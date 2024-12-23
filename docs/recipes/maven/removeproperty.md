@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemovePropertyExample
 displayName: Remove Maven project property example
 recipeList:
-  - org.openrewrite.maven.RemoveProperty:      propertyName: junit.version
+  - org.openrewrite.maven.RemoveProperty:
+      propertyName: junit.version
 ```
 
 Now that `com.yourorg.RemovePropertyExample` has been defined, activate it in your build file:

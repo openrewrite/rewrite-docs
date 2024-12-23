@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTagNameExample
 displayName: Change XML tag name example
 recipeList:
-  - org.openrewrite.xml.ChangeTagName:      elementName: /settings/servers/server/username
+  - org.openrewrite.xml.ChangeTagName:
+      elementName: /settings/servers/server/username
       newName: user
 ```
 

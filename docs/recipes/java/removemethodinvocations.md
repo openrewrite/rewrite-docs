@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveMethodInvocationsExample
 displayName: Remove method invocations example
 recipeList:
-  - org.openrewrite.java.RemoveMethodInvocations:      methodPattern: java.lang.StringBuilder append(java.lang.String)
+  - org.openrewrite.java.RemoveMethodInvocations:
+      methodPattern: java.lang.StringBuilder append(java.lang.String)
 ```
 
 Now that `com.yourorg.RemoveMethodInvocationsExample` has been defined, activate it in your build file:

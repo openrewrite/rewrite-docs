@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CommentOutSpringPropertyKeyExample
 displayName: Comment out Spring properties example
 recipeList:
-  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:      propertyKey: management.metrics.binders.files.enabled
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.binders.files.enabled
       comment: This property is deprecated and no longer applicable starting from Spring Boot 3.0.x
 ```
 

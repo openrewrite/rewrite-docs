@@ -46,7 +46,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddDependencyExample
 displayName: Add Gradle dependency example
 recipeList:
-  - org.openrewrite.gradle.AddDependency:      groupId: com.google.guava
+  - org.openrewrite.gradle.AddDependency:
+      groupId: com.google.guava
       artifactId: guava
       version: 29.X
       versionPattern: '-jre'

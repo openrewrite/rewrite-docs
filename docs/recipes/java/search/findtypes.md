@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindTypesExample
 displayName: Find types example
 recipeList:
-  - org.openrewrite.java.search.FindTypes:      fullyQualifiedTypeName: java.util.List
+  - org.openrewrite.java.search.FindTypes:
+      fullyQualifiedTypeName: java.util.List
 ```
 
 Now that `com.yourorg.FindTypesExample` has been defined, activate it in your build file:

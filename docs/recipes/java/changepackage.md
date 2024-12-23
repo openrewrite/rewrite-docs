@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePackageExample
 displayName: Rename package name example
 recipeList:
-  - org.openrewrite.java.ChangePackage:      oldPackageName: com.yourorg.foo
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.yourorg.foo
       newPackageName: com.yourorg.bar
 ```
 

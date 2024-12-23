@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTagAttributeExample
 displayName: Change XML attribute example
 recipeList:
-  - org.openrewrite.xml.ChangeTagAttribute:      elementName: property
+  - org.openrewrite.xml.ChangeTagAttribute:
+      elementName: property
       attributeName: name
       newValue: newfoo.bar.attribute.value.string
       oldValue: foo.bar.attribute.value.string

@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodAccessLevelExample
 displayName: Change method access level example
 recipeList:
-  - org.openrewrite.java.ChangeMethodAccessLevel:      methodPattern: org.mockito.Matchers anyVararg()
+  - org.openrewrite.java.ChangeMethodAccessLevel:
+      methodPattern: org.mockito.Matchers anyVararg()
       newAccessLevel: public
 ```
 

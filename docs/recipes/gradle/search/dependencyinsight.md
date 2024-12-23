@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DependencyInsightExample
 displayName: Gradle dependency insight example
 recipeList:
-  - org.openrewrite.gradle.search.DependencyInsight:      groupIdPattern: com.fasterxml.jackson.module
+  - org.openrewrite.gradle.search.DependencyInsight:
+      groupIdPattern: com.fasterxml.jackson.module
       artifactIdPattern: jackson-module-*
       version: 1.x
       configuration: compileClasspath

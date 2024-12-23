@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasNamespaceUriExample
 displayName: Find XML namespace URIs example
 recipeList:
-  - org.openrewrite.xml.search.HasNamespaceUri:      namespaceUri: http://www.w3.org/2001/XMLSchema-instance
+  - org.openrewrite.xml.search.HasNamespaceUri:
+      namespaceUri: http://www.w3.org/2001/XMLSchema-instance
       xPath: /dependencies/dependency
 ```
 

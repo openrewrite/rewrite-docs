@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveTemplateExample
 displayName: Remove GitLab template example
 recipeList:
-  - org.openrewrite.gitlab.RemoveTemplate:      oldTemplate: Terraform/Base.gitlab-ci.yml
+  - org.openrewrite.gitlab.RemoveTemplate:
+      oldTemplate: Terraform/Base.gitlab-ci.yml
 ```
 
 Now that `com.yourorg.RemoveTemplateExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:

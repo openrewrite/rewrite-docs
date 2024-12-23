@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyValueExample
 displayName: Change property value example
 recipeList:
-  - org.openrewrite.properties.ChangePropertyValue:      propertyKey: management.metrics.binders.*.enabled
+  - org.openrewrite.properties.ChangePropertyValue:
+      propertyKey: management.metrics.binders.*.enabled
       newValue: newValue
       oldValue: oldValue
 ```

@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeParentVersionExample
 displayName: Upgrade Maven parent project version example
 recipeList:
-  - org.openrewrite.maven.UpgradeParentVersion:      groupId: org.springframework.boot
+  - org.openrewrite.maven.UpgradeParentVersion:
+      groupId: org.springframework.boot
       artifactId: spring-boot-parent
       newVersion: 29.X
       versionPattern: '-jre'

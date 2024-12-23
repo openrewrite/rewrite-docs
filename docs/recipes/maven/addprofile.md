@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddProfileExample
 displayName: Add Maven profile example
 recipeList:
-  - org.openrewrite.maven.AddProfile:      id: default
+  - org.openrewrite.maven.AddProfile:
+      id: default
       activation: <activation><foo>foo</foo></activation>
       properties: <properties><foo>foo</foo><bar>bar</bar></properties>
       build: <build><foo>foo</foo></build>

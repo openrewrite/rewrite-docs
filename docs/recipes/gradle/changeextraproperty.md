@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeExtraPropertyExample
 displayName: Change Extra Property example
 recipeList:
-  - org.openrewrite.gradle.ChangeExtraProperty:      key: foo
+  - org.openrewrite.gradle.ChangeExtraProperty:
+      key: foo
       value: bar
 ```
 

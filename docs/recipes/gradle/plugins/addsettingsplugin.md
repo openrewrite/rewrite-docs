@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddSettingsPluginExample
 displayName: Add Gradle settings plugin example
 recipeList:
-  - org.openrewrite.gradle.plugins.AddSettingsPlugin:      pluginId: com.jfrog.bintray
+  - org.openrewrite.gradle.plugins.AddSettingsPlugin:
+      pluginId: com.jfrog.bintray
       version: 3.x
       versionPattern: '-jre'
 ```

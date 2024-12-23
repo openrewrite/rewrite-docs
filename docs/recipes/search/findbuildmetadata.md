@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindBuildMetadataExample
 displayName: Find build metadata example
 recipeList:
-  - org.openrewrite.search.FindBuildMetadata:      key: lstFormatVersion
+  - org.openrewrite.search.FindBuildMetadata:
+      key: lstFormatVersion
       value: 2
 ```
 

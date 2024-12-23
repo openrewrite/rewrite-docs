@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeclarationSiteTypeVarianceExample
 displayName: Properly use declaration-site type variance example
 recipeList:
-  - org.openrewrite.staticanalysis.DeclarationSiteTypeVariance:      variantTypes: java.util.function.Function<IN, OUT>
+  - org.openrewrite.staticanalysis.DeclarationSiteTypeVariance:
+      variantTypes: java.util.function.Function<IN, OUT>
       excludedBounds: java.lang.*
 ```
 

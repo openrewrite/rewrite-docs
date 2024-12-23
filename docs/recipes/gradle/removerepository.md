@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveRepositoryExample
 displayName: Remove repository example
 recipeList:
-  - org.openrewrite.gradle.RemoveRepository:      repository: jcenter
+  - org.openrewrite.gradle.RemoveRepository:
+      repository: jcenter
 ```
 
 Now that `com.yourorg.RemoveRepositoryExample` has been defined, activate it in your build file:

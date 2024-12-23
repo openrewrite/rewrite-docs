@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AppendToSequenceExample
 displayName: Append to sequence example
 recipeList:
-  - org.openrewrite.yaml.AppendToSequence:      sequencePath: $.universe.planets
+  - org.openrewrite.yaml.AppendToSequence:
+      sequencePath: $.universe.planets
       value: earth
       existingSequenceValues: existingValue1
       matchExistingSequenceValuesInAnyOrder: true

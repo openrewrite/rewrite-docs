@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ExplicitContainerImageExample
 displayName: Add image argument to container constructor example
 recipeList:
-  - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:      containerClass: org.testcontainers.containers.NginxContainer
+  - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:
+      containerClass: org.testcontainers.containers.NginxContainer
       image: nginx:1.9.4
 ```
 

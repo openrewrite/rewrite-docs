@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseTlsJdbcConnectionStringExample
 displayName: Use TLS for JDBC connection strings example
 recipeList:
-  - org.openrewrite.java.spring.data.UseTlsJdbcConnectionString:      propertyKey: spring.datasource.url
+  - org.openrewrite.java.spring.data.UseTlsJdbcConnectionString:
+      propertyKey: spring.datasource.url
       oldPort: 1234
       port: 1234
       attribute: sslConnection=true

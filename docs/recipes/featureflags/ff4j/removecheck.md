@@ -65,7 +65,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveCheckExample
 displayName: Remove FF4j's `check` for feature key example
 recipeList:
-  - org.openrewrite.featureflags.ff4j.RemoveCheck:      featureKey: flag-key-123abc
+  - org.openrewrite.featureflags.ff4j.RemoveCheck:
+      featureKey: flag-key-123abc
       replacementValue: true
 ```
 

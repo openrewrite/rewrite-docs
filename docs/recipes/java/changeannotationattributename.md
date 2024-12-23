@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeAnnotationAttributeNameExample
 displayName: Change annotation attribute name example
 recipeList:
-  - org.openrewrite.java.ChangeAnnotationAttributeName:      annotationType: org.junit.Test
+  - org.openrewrite.java.ChangeAnnotationAttributeName:
+      annotationType: org.junit.Test
       oldAttributeName: timeout
       newAttributeName: waitFor
 ```

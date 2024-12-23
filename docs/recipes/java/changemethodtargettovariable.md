@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodTargetToVariableExample
 displayName: Change method target to variable example
 recipeList:
-  - org.openrewrite.java.ChangeMethodTargetToVariable:      methodPattern: org.mycorp.A method(..)
+  - org.openrewrite.java.ChangeMethodTargetToVariable:
+      methodPattern: org.mycorp.A method(..)
       variableName: foo
       variableType: java.lang.String
 ```

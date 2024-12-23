@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteQuarkusPropertyExample
 displayName: Delete Quarkus configuration property example
 recipeList:
-  - org.openrewrite.quarkus.DeleteQuarkusProperty:      propertyKey: quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy
+  - org.openrewrite.quarkus.DeleteQuarkusProperty:
+      propertyKey: quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy
       oldValue: read-sync
       profile: dev
       deleteFromAllProfiles: false

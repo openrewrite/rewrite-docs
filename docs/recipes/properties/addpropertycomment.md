@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddPropertyCommentExample
 displayName: Add comment before property key example
 recipeList:
-  - org.openrewrite.properties.AddPropertyComment:      propertyKey: management.metrics.binders
+  - org.openrewrite.properties.AddPropertyComment:
+      propertyKey: management.metrics.binders
       comment: comment
       commentOutProperty: true
 ```

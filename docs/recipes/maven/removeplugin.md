@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemovePluginExample
 displayName: Remove Maven plugin example
 recipeList:
-  - org.openrewrite.maven.RemovePlugin:      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.RemovePlugin:
+      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
 ```
 

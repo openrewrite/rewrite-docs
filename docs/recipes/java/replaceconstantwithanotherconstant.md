@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceConstantWithAnotherConstantExample
 displayName: Replace constant with another constant example
 recipeList:
-  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:      existingFullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_JSON_VALUE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_JSON_VALUE
       fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 ```
 

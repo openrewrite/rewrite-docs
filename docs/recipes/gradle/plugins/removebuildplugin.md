@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveBuildPluginExample
 displayName: Remove Gradle plugin example
 recipeList:
-  - org.openrewrite.gradle.plugins.RemoveBuildPlugin:      pluginId: com.jfrog.bintray
+  - org.openrewrite.gradle.plugins.RemoveBuildPlugin:
+      pluginId: com.jfrog.bintray
 ```
 
 Now that `com.yourorg.RemoveBuildPluginExample` has been defined, activate it in your build file:

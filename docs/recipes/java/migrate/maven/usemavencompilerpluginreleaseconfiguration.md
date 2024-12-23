@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample
 displayName: Use Maven compiler plugin release configuration example
 recipeList:
-  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration:      releaseVersion: 11
+  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration:
+      releaseVersion: 11
 ```
 
 Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:

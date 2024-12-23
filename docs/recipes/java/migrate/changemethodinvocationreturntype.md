@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodInvocationReturnTypeExample
 displayName: Change method invocation return type example
 recipeList:
-  - org.openrewrite.java.migrate.ChangeMethodInvocationReturnType:      methodPattern: org.mockito.Matchers anyVararg()
+  - org.openrewrite.java.migrate.ChangeMethodInvocationReturnType:
+      methodPattern: org.mockito.Matchers anyVararg()
       newReturnType: long
 ```
 

@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePluginExample
 displayName: Change a Gradle plugin example
 recipeList:
-  - org.openrewrite.gradle.plugins.ChangePlugin:      pluginId: org.openrewrite.rewrite
+  - org.openrewrite.gradle.plugins.ChangePlugin:
+      pluginId: org.openrewrite.rewrite
       newPluginId: org.openrewrite.rewrite
       newVersion: 7.x
 ```

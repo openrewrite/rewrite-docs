@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceConstantExample
 displayName: Replace constant with literal value example
 recipeList:
-  - org.openrewrite.java.ReplaceConstant:      owningType: com.google.common.base.Charsets
+  - org.openrewrite.java.ReplaceConstant:
+      owningType: com.google.common.base.Charsets
       constantName: UTF_8
       literalValue: UTF_8
 ```

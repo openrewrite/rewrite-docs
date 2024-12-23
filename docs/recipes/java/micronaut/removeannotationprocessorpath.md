@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveAnnotationProcessorPathExample
 displayName: Remove Maven annotation processor path example
 recipeList:
-  - org.openrewrite.java.micronaut.RemoveAnnotationProcessorPath:      groupId: corp.internal.openrewrite.recipe
+  - org.openrewrite.java.micronaut.RemoveAnnotationProcessorPath:
+      groupId: corp.internal.openrewrite.recipe
       artifactId: my-new-annotation-processor
 ```
 

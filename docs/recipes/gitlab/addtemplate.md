@@ -72,7 +72,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddTemplateExample
 displayName: Add GitLab template example
 recipeList:
-  - org.openrewrite.gitlab.AddTemplate:      newTemplate: OpenTofu/Base.gitlab-ci.yml
+  - org.openrewrite.gitlab.AddTemplate:
+      newTemplate: OpenTofu/Base.gitlab-ci.yml
 ```
 
 Now that `com.yourorg.AddTemplateExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:

@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveSettingsPluginExample
 displayName: Remove Gradle settings plugin example
 recipeList:
-  - org.openrewrite.gradle.plugins.RemoveSettingsPlugin:      pluginId: com.jfrog.bintray
+  - org.openrewrite.gradle.plugins.RemoveSettingsPlugin:
+      pluginId: com.jfrog.bintray
 ```
 
 Now that `com.yourorg.RemoveSettingsPluginExample` has been defined, activate it in your build file:

@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindPropertiesExample
 displayName: Find Maven project properties example
 recipeList:
-  - org.openrewrite.maven.search.FindProperties:      propertyPattern: guava.*
+  - org.openrewrite.maven.search.FindProperties:
+      propertyPattern: guava.*
       valuePattern: 28.*
 ```
 

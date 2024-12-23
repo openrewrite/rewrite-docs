@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddCommentToMavenDependencyExample
 displayName: Add a comment to a `Maven` dependency example
 recipeList:
-  - org.openrewrite.maven.AddCommentToMavenDependency:      xPath: /project/dependencies/dependency
+  - org.openrewrite.maven.AddCommentToMavenDependency:
+      xPath: /project/dependencies/dependency
       groupId: com.google.guava
       artifactId: guava
       commentText: This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.

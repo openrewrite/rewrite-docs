@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeletePropertyExample
 displayName: Delete property example
 recipeList:
-  - org.openrewrite.yaml.DeleteProperty:      propertyKey: management.metrics.binders.files.enabled
+  - org.openrewrite.yaml.DeleteProperty:
+      propertyKey: management.metrics.binders.files.enabled
       filePattern: .github/workflows/*.yml
 ```
 

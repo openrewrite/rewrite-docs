@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DependencyInsightExample
 displayName: Dependency insight for Gradle and Maven example
 recipeList:
-  - org.openrewrite.java.dependencies.DependencyInsight:      groupIdPattern: com.fasterxml.jackson*
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: com.fasterxml.jackson*
       artifactIdPattern: jackson-*
       version: 1.x
       scope: compile

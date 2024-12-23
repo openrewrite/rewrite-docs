@@ -46,7 +46,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ParameterizedLoggingExample
 displayName: Parameterize logging statements example
 recipeList:
-  - org.openrewrite.java.logging.ParameterizedLogging:      methodPattern: org.slf4j.Logger info(..)
+  - org.openrewrite.java.logging.ParameterizedLogging:
+      methodPattern: org.slf4j.Logger info(..)
 ```
 
 Now that `com.yourorg.ParameterizedLoggingExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}` in your build file:

@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.EffectiveDependenciesExample
 displayName: Effective dependencies example
 recipeList:
-  - org.openrewrite.maven.search.EffectiveDependencies:      scope: compile
+  - org.openrewrite.maven.search.EffectiveDependencies:
+      scope: compile
 ```
 
 Now that `com.yourorg.EffectiveDependenciesExample` has been defined, activate it in your build file:

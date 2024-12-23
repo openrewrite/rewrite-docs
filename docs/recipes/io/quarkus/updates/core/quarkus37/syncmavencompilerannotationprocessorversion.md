@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SyncMavenCompilerAnnotationProcessorVersionExample
 displayName: Sync Maven Compiler plugin annotation processor version with the one provided by the BOM example
 recipeList:
-  - io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion:      groupId: org.hibernate.orm
+  - io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion:
+      groupId: org.hibernate.orm
       artifactId: hibernate-jpamodelgen
 ```
 

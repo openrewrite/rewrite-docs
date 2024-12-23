@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindFlowBetweenMethodsExample
 displayName: Finds flow between two methods example
 recipeList:
-  - org.openrewrite.analysis.search.FindFlowBetweenMethods:      startMethodPattern: java.util.List add(..)
+  - org.openrewrite.analysis.search.FindFlowBetweenMethods:
+      startMethodPattern: java.util.List add(..)
       endMethodPattern: java.util.List add(..)
       target: null
       flow: null

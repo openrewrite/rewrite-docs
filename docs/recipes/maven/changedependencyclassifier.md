@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyClassifierExample
 displayName: Change Maven dependency classifier example
 recipeList:
-  - org.openrewrite.maven.ChangeDependencyClassifier:      groupId: com.google.guava
+  - org.openrewrite.maven.ChangeDependencyClassifier:
+      groupId: com.google.guava
       artifactId: guava
       newClassifier: jar
       changeManagedDependency: true

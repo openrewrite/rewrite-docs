@@ -46,7 +46,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeTransitiveDependencyVersionExample
 displayName: Upgrade transitive Maven dependencies example
 recipeList:
-  - org.openrewrite.maven.UpgradeTransitiveDependencyVersion:      groupId: org.apache.logging.log4j
+  - org.openrewrite.maven.UpgradeTransitiveDependencyVersion:
+      groupId: org.apache.logging.log4j
       artifactId: log4j-bom
       version: latest.release
       scope: import

@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindFeatureFlagExample
 displayName: Find a feature flag example
 recipeList:
-  - org.openrewrite.featureflags.search.FindFeatureFlag:      methodPattern: dev.openfeature.sdk.Client getBooleanValue(String, Boolean)
+  - org.openrewrite.featureflags.search.FindFeatureFlag:
+      methodPattern: dev.openfeature.sdk.Client getBooleanValue(String, Boolean)
       featureKey: flag-key-123abc
 ```
 

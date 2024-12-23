@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddAnnotationProcessorExample
 displayName: Add an annotation processor to `maven-compiler-plugin` example
 recipeList:
-  - org.openrewrite.maven.AddAnnotationProcessor:      groupId: org.projectlombok
+  - org.openrewrite.maven.AddAnnotationProcessor:
+      groupId: org.projectlombok
       artifactId: lombok-mapstruct-binding
       version: 0.2.0
 ```

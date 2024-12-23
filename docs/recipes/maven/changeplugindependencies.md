@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePluginDependenciesExample
 displayName: Change Maven plugin dependencies example
 recipeList:
-  - org.openrewrite.maven.ChangePluginDependencies:      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.ChangePluginDependencies:
+      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
       dependencies: org.openrewrite.recipe:rewrite-spring:1.0.0, org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0
 ```

@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasBuildToolVersionExample
 displayName: Find files with a particular build tool version example
 recipeList:
-  - org.openrewrite.java.search.HasBuildToolVersion:      type: Maven
+  - org.openrewrite.java.search.HasBuildToolVersion:
+      type: Maven
       version: 3.6.0-9999
 ```
 

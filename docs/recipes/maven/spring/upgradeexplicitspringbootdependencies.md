@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeExplicitSpringBootDependenciesExample
 displayName: Upgrade Spring dependencies example
 recipeList:
-  - org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies:      fromVersion:  2.7.+
+  - org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies:
+      fromVersion:  2.7.+
       toVersion: 3.0.0-M3
 ```
 

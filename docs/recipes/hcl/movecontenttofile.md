@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MoveContentToFileExample
 displayName: Move content to another file example
 recipeList:
-  - org.openrewrite.hcl.MoveContentToFile:      contentPath: $.provider
+  - org.openrewrite.hcl.MoveContentToFile:
+      contentPath: $.provider
       fromPath: from.tf
       destinationPath: to.tf
 ```

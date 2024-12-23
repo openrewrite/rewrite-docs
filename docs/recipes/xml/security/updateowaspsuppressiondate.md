@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpdateOwaspSuppressionDateExample
 displayName: Update OWASP suppression date bounds example
 recipeList:
-  - org.openrewrite.xml.security.UpdateOwaspSuppressionDate:      cveList: CVE-2022-1234
+  - org.openrewrite.xml.security.UpdateOwaspSuppressionDate:
+      cveList: CVE-2022-1234
       untilDate: 2023-01-01
 ```
 

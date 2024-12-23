@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindPluginExample
 displayName: Find Maven plugin example
 recipeList:
-  - org.openrewrite.maven.search.FindPlugin:      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.search.FindPlugin:
+      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
 ```
 

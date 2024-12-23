@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DependencyListExample
 displayName: Dependency report example
 recipeList:
-  - org.openrewrite.java.dependencies.DependencyList:      scope: Compile
+  - org.openrewrite.java.dependencies.DependencyList:
+      scope: Compile
       includeTransitive: false
 ```
 

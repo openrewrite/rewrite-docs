@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeVersionPropertyExample
 displayName: Upgrade property's value to version example
 recipeList:
-  - org.openrewrite.jenkins.UpgradeVersionProperty:      key: jenkins.version
+  - org.openrewrite.jenkins.UpgradeVersionProperty:
+      key: jenkins.version
       minimumVersion: 2.375.1
 ```
 

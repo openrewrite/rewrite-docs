@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseAsBuilderExample
 displayName: Chain calls to builder methods example
 recipeList:
-  - org.openrewrite.staticanalysis.UseAsBuilder:      builderType: org.example.Buildable.Builder
+  - org.openrewrite.staticanalysis.UseAsBuilder:
+      builderType: org.example.Buildable.Builder
       builderCreator: org.example.Buildable builder()
 ```
 

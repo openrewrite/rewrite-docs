@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveAnnotationAttributeExample
 displayName: Remove annotation attribute example
 recipeList:
-  - org.openrewrite.java.RemoveAnnotationAttribute:      annotationType: org.junit.Test
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: org.junit.Test
       attributeName: timeout
 ```
 

@@ -63,7 +63,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindTemplateExample
 displayName: Find GitLab Template example
 recipeList:
-  - org.openrewrite.gitlab.search.FindTemplate:      template: Terraform/Base.gitlab-ci.yml
+  - org.openrewrite.gitlab.search.FindTemplate:
+      template: Terraform/Base.gitlab-ci.yml
 ```
 
 Now that `com.yourorg.FindTemplateExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:

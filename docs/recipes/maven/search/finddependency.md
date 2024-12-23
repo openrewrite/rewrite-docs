@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindDependencyExample
 displayName: Find Maven dependency example
 recipeList:
-  - org.openrewrite.maven.search.FindDependency:      groupId: com.google.guava
+  - org.openrewrite.maven.search.FindDependency:
+      groupId: com.google.guava
       artifactId: guava
       version: 3.0.0
       versionPattern: '-jre'

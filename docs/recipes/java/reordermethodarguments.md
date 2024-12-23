@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReorderMethodArgumentsExample
 displayName: Reorder method arguments example
 recipeList:
-  - org.openrewrite.java.ReorderMethodArguments:      methodPattern: com.yourorg.A foo(String, Integer, Integer)
+  - org.openrewrite.java.ReorderMethodArguments:
+      methodPattern: com.yourorg.A foo(String, Integer, Integer)
       newParameterNames: [foo, bar, baz]
       oldParameterNames: [baz, bar, foo]
 ```

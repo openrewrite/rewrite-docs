@@ -43,7 +43,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemovePluginDependencyExample
 displayName: Remove Maven plugin dependency example
 recipeList:
-  - org.openrewrite.maven.RemovePluginDependency:      pluginGroupId: org.openrewrite.maven
+  - org.openrewrite.maven.RemovePluginDependency:
+      pluginGroupId: org.openrewrite.maven
       pluginArtifactId: rewrite-maven-plugin
       groupId: com.google.guava
       artifactId: guava

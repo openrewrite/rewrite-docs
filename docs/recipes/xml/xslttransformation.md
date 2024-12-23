@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.XsltTransformationExample
 displayName: XSLT transformation example
 recipeList:
-  - org.openrewrite.xml.XsltTransformation:      xslt: <xsl:stylesheet ...>...</xsl:stylesheet>
+  - org.openrewrite.xml.XsltTransformation:
+      xslt: <xsl:stylesheet ...>...</xsl:stylesheet>
       xsltResource: /changePlugin.xslt
       filePattern: '**/*.xml'
 ```

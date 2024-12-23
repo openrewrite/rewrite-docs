@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MoveGetterToPluginHelperExample
 displayName: Move getter from context to PluginHelper. example
 recipeList:
-  - org.apache.camel.upgrade.customRecipes.MoveGetterToPluginHelper:      oldMethodName: null
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToPluginHelper:
+      oldMethodName: null
 ```
 
 Now that `com.yourorg.MoveGetterToPluginHelperExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}` in your build file:

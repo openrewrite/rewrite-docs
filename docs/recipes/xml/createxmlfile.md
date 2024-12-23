@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CreateXmlFileExample
 displayName: Create XML file example
 recipeList:
-  - org.openrewrite.xml.CreateXmlFile:      relativeFileName: foo/bar/baz.xml
+  - org.openrewrite.xml.CreateXmlFile:
+      relativeFileName: foo/bar/baz.xml
       fileContents: >
         <?xml version="1.0" encoding="UTF-8"?>
         <root>

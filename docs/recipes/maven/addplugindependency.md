@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddPluginDependencyExample
 displayName: Add Maven plugin dependencies example
 recipeList:
-  - org.openrewrite.maven.AddPluginDependency:      pluginGroupId: org.openrewrite.maven
+  - org.openrewrite.maven.AddPluginDependency:
+      pluginGroupId: org.openrewrite.maven
       pluginArtifactId: rewrite-maven-plugin
       groupId: org.openrewrite.recipe
       artifactId: org.openrewrite.recipe

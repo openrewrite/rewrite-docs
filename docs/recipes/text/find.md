@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindExample
 displayName: Find text example
 recipeList:
-  - org.openrewrite.text.Find:      find: blacklist
+  - org.openrewrite.text.Find:
+      find: blacklist
       filePattern: '**/*.java'
 ```
 

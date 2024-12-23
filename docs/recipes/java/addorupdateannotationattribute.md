@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddOrUpdateAnnotationAttributeExample
 displayName: Add or update annotation attribute example
 recipeList:
-  - org.openrewrite.java.AddOrUpdateAnnotationAttribute:      annotationType: org.junit.Test
+  - org.openrewrite.java.AddOrUpdateAnnotationAttribute:
+      annotationType: org.junit.Test
       attributeName: timeout
       attributeValue: 500
       addOnly: null

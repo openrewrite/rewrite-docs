@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyClassifierExample
 displayName: Change a Gradle dependency classifier example
 recipeList:
-  - org.openrewrite.gradle.ChangeDependencyClassifier:      groupId: com.fasterxml.jackson*
+  - org.openrewrite.gradle.ChangeDependencyClassifier:
+      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       newClassifier: sources
       configuration: api

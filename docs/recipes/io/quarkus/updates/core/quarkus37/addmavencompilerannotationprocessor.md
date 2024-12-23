@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddMavenCompilerAnnotationProcessorExample
 displayName: Add an annotation processor to the Maven Compiler plugin configuration example
 recipeList:
-  - io.quarkus.updates.core.quarkus37.AddMavenCompilerAnnotationProcessor:      groupId: org.hibernate.orm
+  - io.quarkus.updates.core.quarkus37.AddMavenCompilerAnnotationProcessor:
+      groupId: org.hibernate.orm
       artifactId: hibernate-jpamodelgen
       mavenCompilerPluginVersion: hibernate-jpamodelgen
 ```

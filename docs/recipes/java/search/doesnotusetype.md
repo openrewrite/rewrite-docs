@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DoesNotUseTypeExample
 displayName: Check whether a type is **not** in use example
 recipeList:
-  - org.openrewrite.java.search.DoesNotUseType:      fullyQualifiedTypeName: java.util.List
+  - org.openrewrite.java.search.DoesNotUseType:
+      fullyQualifiedTypeName: java.util.List
 ```
 
 Now that `com.yourorg.DoesNotUseTypeExample` has been defined, activate it in your build file:

@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeValueExample
 displayName: Change value example
 recipeList:
-  - org.openrewrite.json.ChangeValue:      oldKeyPath: $.subjects.kind
+  - org.openrewrite.json.ChangeValue:
+      oldKeyPath: $.subjects.kind
       value: 'Deployment'
 ```
 

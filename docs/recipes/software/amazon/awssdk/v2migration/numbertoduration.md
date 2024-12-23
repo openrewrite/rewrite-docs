@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.NumberToDurationExample
 displayName: Convert the method parameter from numeric type to duration example
 recipeList:
-  - software.amazon.awssdk.v2migration.NumberToDuration:      methodPattern: com.amazonaws.ClientConfiguration setRequestTimeout(int)
+  - software.amazon.awssdk.v2migration.NumberToDuration:
+      methodPattern: com.amazonaws.ClientConfiguration setRequestTimeout(int)
       timeUnit: MILLISECONDS
 ```
 

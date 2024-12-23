@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindTagsExample
 displayName: Find XML tags example
 recipeList:
-  - org.openrewrite.xml.search.FindTags:      xPath: //dependencies/dependency
+  - org.openrewrite.xml.search.FindTags:
+      xPath: //dependencies/dependency
 ```
 
 Now that `com.yourorg.FindTagsExample` has been defined, activate it in your build file:

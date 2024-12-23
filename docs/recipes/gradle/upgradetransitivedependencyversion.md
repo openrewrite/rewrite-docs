@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeTransitiveDependencyVersionExample
 displayName: Upgrade transitive Gradle dependencies example
 recipeList:
-  - org.openrewrite.gradle.UpgradeTransitiveDependencyVersion:      groupId: com.fasterxml.jackson*
+  - org.openrewrite.gradle.UpgradeTransitiveDependencyVersion:
+      groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
       version: 29.X
       versionPattern: '-jre'

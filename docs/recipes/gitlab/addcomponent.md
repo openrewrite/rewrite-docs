@@ -79,7 +79,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddComponentExample
 displayName: Add GitLab component example
 recipeList:
-  - org.openrewrite.gitlab.AddComponent:      newComponent: $CI_SERVER_FQDN/components/opentofu/full-pipeline
+  - org.openrewrite.gitlab.AddComponent:
+      newComponent: $CI_SERVER_FQDN/components/opentofu/full-pipeline
       version: 0.10.0
       inputs: opentofu_version: 1.6.1
 ```

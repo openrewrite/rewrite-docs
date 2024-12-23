@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindContentExample
 displayName: Find content example
 recipeList:
-  - org.openrewrite.hcl.search.FindContent:      contentPath: $.provider
+  - org.openrewrite.hcl.search.FindContent:
+      contentPath: $.provider
 ```
 
 Now that `com.yourorg.FindContentExample` has been defined, activate it in your build file:

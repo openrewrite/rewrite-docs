@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindKeyExample
 displayName: Find JSON object members example
 recipeList:
-  - org.openrewrite.json.search.FindKey:      key: $.subjects.kind
+  - org.openrewrite.json.search.FindKey:
+      key: $.subjects.kind
 ```
 
 Now that `com.yourorg.FindKeyExample` has been defined, activate it in your build file:

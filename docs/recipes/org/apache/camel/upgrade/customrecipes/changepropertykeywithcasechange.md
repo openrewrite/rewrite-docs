@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyKeyWithCaseChangeExample
 displayName: Change prefix of property with Camel case example
 recipeList:
-  - org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange:      oldPropertyKey: null
+  - org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange:
+      oldPropertyKey: null
       newPrefix: null
 ```
 

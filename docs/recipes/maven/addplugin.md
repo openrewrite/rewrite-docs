@@ -43,7 +43,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddPluginExample
 displayName: Add Maven plugin example
 recipeList:
-  - org.openrewrite.maven.AddPlugin:      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.AddPlugin:
+      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
       version: 1.0.0
       configuration: <configuration><foo>foo</foo></configuration>

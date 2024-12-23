@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeVariationDefaultExample
 displayName: Change the default value for feature key example
 recipeList:
-  - org.openrewrite.featureflags.launchdarkly.ChangeVariationDefault:      featureKey: flag-key-123abc
+  - org.openrewrite.featureflags.launchdarkly.ChangeVariationDefault:
+      featureKey: flag-key-123abc
       defaultValue: true
 ```
 

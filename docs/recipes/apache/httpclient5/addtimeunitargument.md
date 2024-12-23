@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddTimeUnitArgumentExample
 displayName: Adds a TimeUnit argument to the matched method invocations example
 recipeList:
-  - org.openrewrite.apache.httpclient5.AddTimeUnitArgument:      methodPattern: org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)
+  - org.openrewrite.apache.httpclient5.AddTimeUnitArgument:
+      methodPattern: org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)
       timeUnit: MILLISECONDS
 ```
 

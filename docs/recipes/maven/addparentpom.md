@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddParentPomExample
 displayName: Add Maven parent example
 recipeList:
-  - org.openrewrite.maven.AddParentPom:      groupId: org.springframework.boot
+  - org.openrewrite.maven.AddParentPom:
+      groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       version: 29.X
       relativePath: ../pom.xml

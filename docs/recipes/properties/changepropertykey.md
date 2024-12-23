@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyKeyExample
 displayName: Change property key example
 recipeList:
-  - org.openrewrite.properties.ChangePropertyKey:      oldPropertyKey: management.metrics.binders.files.enabled
+  - org.openrewrite.properties.ChangePropertyKey:
+      oldPropertyKey: management.metrics.binders.files.enabled
       newPropertyKey: management.metrics.enable.process.files
 ```
 

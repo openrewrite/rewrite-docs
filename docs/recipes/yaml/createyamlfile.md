@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CreateYamlFileExample
 displayName: Create YAML file example
 recipeList:
-  - org.openrewrite.yaml.CreateYamlFile:      relativeFileName: foo/bar/baz.yaml
+  - org.openrewrite.yaml.CreateYamlFile:
+      relativeFileName: foo/bar/baz.yaml
       fileContents: >
         a:
           property: value

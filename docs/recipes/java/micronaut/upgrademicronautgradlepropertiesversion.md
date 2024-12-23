@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeMicronautGradlePropertiesVersionExample
 displayName: Upgrade gradle.properties Micronaut version example
 recipeList:
-  - org.openrewrite.java.micronaut.UpgradeMicronautGradlePropertiesVersion:      newVersion: 4.x
+  - org.openrewrite.java.micronaut.UpgradeMicronautGradlePropertiesVersion:
+      newVersion: 4.x
 ```
 
 Now that `com.yourorg.UpgradeMicronautGradlePropertiesVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}` in your build file:

@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteContentExample
 displayName: Delete content example
 recipeList:
-  - org.openrewrite.hcl.DeleteContent:      contentPath: $.provider
+  - org.openrewrite.hcl.DeleteContent:
+      contentPath: $.provider
 ```
 
 Now that `com.yourorg.DeleteContentExample` has been defined, activate it in your build file:

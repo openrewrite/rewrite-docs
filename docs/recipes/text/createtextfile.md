@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CreateTextFileExample
 displayName: Create text file example
 recipeList:
-  - org.openrewrite.text.CreateTextFile:      fileContents: Some text.
+  - org.openrewrite.text.CreateTextFile:
+      fileContents: Some text.
       relativeFileName: foo/bar/baz.txt
 ```
 

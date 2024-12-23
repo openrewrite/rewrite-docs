@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveExclusionExample
 displayName: Remove exclusion example
 recipeList:
-  - org.openrewrite.maven.RemoveExclusion:      groupId: com.google.guava
+  - org.openrewrite.maven.RemoveExclusion:
+      groupId: com.google.guava
       artifactId: guava
       exclusionGroupId: com.google.guava
       exclusionArtifactId: guava

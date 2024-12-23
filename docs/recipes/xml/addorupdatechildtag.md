@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddOrUpdateChildTagExample
 displayName: Add or update child tag example
 recipeList:
-  - org.openrewrite.xml.AddOrUpdateChildTag:      parentXPath: /project//plugin//configuration
+  - org.openrewrite.xml.AddOrUpdateChildTag:
+      parentXPath: /project//plugin//configuration
       newChildTag: <skip>true</skip>
 ```
 

@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.IsInRepositoryExample
 displayName: Is in repository example
 recipeList:
-  - org.openrewrite.IsInRepository:      allowedRepositories: rewrite
+  - org.openrewrite.IsInRepository:
+      allowedRepositories: rewrite
 ```
 
 Now that `com.yourorg.IsInRepositoryExample` has been defined, activate it in your build file:

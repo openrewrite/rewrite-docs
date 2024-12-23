@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeProjectVersionExample
 displayName: Change Maven Project Version example
 recipeList:
-  - org.openrewrite.maven.ChangeProjectVersion:      groupId: org.openrewrite
+  - org.openrewrite.maven.ChangeProjectVersion:
+      groupId: org.openrewrite
       artifactId: '*'
       newVersion: 8.4.2
 ```

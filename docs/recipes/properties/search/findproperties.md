@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindPropertiesExample
 displayName: Find property example
 recipeList:
-  - org.openrewrite.properties.search.FindProperties:      propertyKey: management.metrics.binders.files.enabled
+  - org.openrewrite.properties.search.FindProperties:
+      propertyKey: management.metrics.binders.files.enabled
 ```
 
 Now that `com.yourorg.FindPropertiesExample` has been defined, activate it in your build file:

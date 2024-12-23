@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveEnableFeaturePreviewExample
 displayName: Remove an enabled Gradle preview feature example
 recipeList:
-  - org.openrewrite.gradle.RemoveEnableFeaturePreview:      previewFeatureName: ONE_LOCKFILE_PER_PROJECT
+  - org.openrewrite.gradle.RemoveEnableFeaturePreview:
+      previewFeatureName: ONE_LOCKFILE_PER_PROJECT
 ```
 
 Now that `com.yourorg.RemoveEnableFeaturePreviewExample` has been defined, activate it in your build file:

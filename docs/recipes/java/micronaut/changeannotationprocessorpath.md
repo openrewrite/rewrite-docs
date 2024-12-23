@@ -42,7 +42,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeAnnotationProcessorPathExample
 displayName: Change Maven annotation processor path example
 recipeList:
-  - org.openrewrite.java.micronaut.ChangeAnnotationProcessorPath:      oldGroupId: org.openrewrite.recipe
+  - org.openrewrite.java.micronaut.ChangeAnnotationProcessorPath:
+      oldGroupId: org.openrewrite.recipe
       oldArtifactId: my-deprecated-annotation-processor
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-annotation-processor

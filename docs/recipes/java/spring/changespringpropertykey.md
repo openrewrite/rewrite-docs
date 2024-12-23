@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeSpringPropertyKeyExample
 displayName: Change the key of a spring application property example
 recipeList:
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:      oldPropertyKey: management.metrics.binders.*.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.binders.*.enabled
       newPropertyKey: management.metrics.enable.process.files
       except: jvm
 ```

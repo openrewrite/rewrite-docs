@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeDependencyScopeExample
 displayName: Change Maven dependency scope example
 recipeList:
-  - org.openrewrite.maven.ChangeDependencyScope:      groupId: com.google.guava
+  - org.openrewrite.maven.ChangeDependencyScope:
+      groupId: com.google.guava
       artifactId: guava
       newScope: compile
 ```

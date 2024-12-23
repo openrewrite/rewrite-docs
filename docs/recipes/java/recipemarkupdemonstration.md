@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RecipeMarkupDemonstrationExample
 displayName: Demonstrate rendering of `Markup` markers example
 recipeList:
-  - org.openrewrite.java.RecipeMarkupDemonstration:      level: null
+  - org.openrewrite.java.RecipeMarkupDemonstration:
+      level: null
 ```
 
 Now that `com.yourorg.RecipeMarkupDemonstrationExample` has been defined, activate it in your build file:

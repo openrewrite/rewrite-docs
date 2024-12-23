@@ -41,7 +41,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePluginGroupIdAndArtifactIdExample
 displayName: Change Maven plugin group and artifact ID example
 recipeList:
-  - org.openrewrite.maven.ChangePluginGroupIdAndArtifactId:      oldGroupId: org.openrewrite.recipe
+  - org.openrewrite.maven.ChangePluginGroupIdAndArtifactId:
+      oldGroupId: org.openrewrite.recipe
       oldArtifactId: my-deprecated-maven-plugin
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-maven-plugin

@@ -44,7 +44,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactIdExample
 displayName: Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version example
 recipeList:
-  - io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId:      oldGroupId: org.hibernate
+  - io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId:
+      oldGroupId: org.hibernate
       oldArtifactId: hibernate-jpamodelgen
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-jpamodelgen

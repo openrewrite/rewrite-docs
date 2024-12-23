@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePluginConfigurationExample
 displayName: Change Maven plugin configuration example
 recipeList:
-  - org.openrewrite.maven.ChangePluginConfiguration:      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.ChangePluginConfiguration:
+      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
       configuration: <foo>bar</foo>
 ```

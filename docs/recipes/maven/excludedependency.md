@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ExcludeDependencyExample
 displayName: Exclude Maven dependency example
 recipeList:
-  - org.openrewrite.maven.ExcludeDependency:      groupId: com.google.guava
+  - org.openrewrite.maven.ExcludeDependency:
+      groupId: com.google.guava
       artifactId: guava
       scope: compile
 ```

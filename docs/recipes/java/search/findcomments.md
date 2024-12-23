@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindCommentsExample
 displayName: Find within comments and literals example
 recipeList:
-  - org.openrewrite.java.search.FindComments:      patterns: -----BEGIN RSA PRIVATE KEY-----
+  - org.openrewrite.java.search.FindComments:
+      patterns: -----BEGIN RSA PRIVATE KEY-----
 ```
 
 Now that `com.yourorg.FindCommentsExample` has been defined, activate it in your build file:

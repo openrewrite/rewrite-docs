@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddSpringPropertyExample
 displayName: Add a spring configuration property example
 recipeList:
-  - org.openrewrite.java.spring.AddSpringProperty:      property: management.metrics.enable.process.files
+  - org.openrewrite.java.spring.AddSpringProperty:
+      property: management.metrics.enable.process.files
       value: true
       comment: This is a comment
       pathExpressions: ["**/application.yml"]

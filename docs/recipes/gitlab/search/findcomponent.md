@@ -63,7 +63,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindComponentExample
 displayName: Find GitLab Component example
 recipeList:
-  - org.openrewrite.gitlab.search.FindComponent:      component: $CI_SERVER_FQDN/components/opentofu/full-pipeline
+  - org.openrewrite.gitlab.search.FindComponent:
+      component: $CI_SERVER_FQDN/components/opentofu/full-pipeline
 ```
 
 Now that `com.yourorg.FindComponentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:

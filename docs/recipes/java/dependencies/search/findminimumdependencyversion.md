@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindMinimumDependencyVersionExample
 displayName: Find the oldest matching dependency version in use example
 recipeList:
-  - org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion:      groupIdPattern: com.fasterxml.jackson.module
+  - org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion:
+      groupIdPattern: com.fasterxml.jackson.module
       artifactIdPattern: jackson-module-*
       version: 1.x
 ```

@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveStringFlagExample
 displayName: Remove a String feature flag for feature key example
 recipeList:
-  - org.openrewrite.featureflags.RemoveStringFlag:      methodPattern: dev.openfeature.sdk.Client getBooleanValue(String, Boolean)
+  - org.openrewrite.featureflags.RemoveStringFlag:
+      methodPattern: dev.openfeature.sdk.Client getBooleanValue(String, Boolean)
       featureKey: flag-key-123abc
       replacementValue: topic-456
 ```

@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceStringLiteralValueExample
 displayName: Replace `String` literal example
 recipeList:
-  - org.openrewrite.java.migrate.ReplaceStringLiteralValue:      oldLiteralValue: apple
+  - org.openrewrite.java.migrate.ReplaceStringLiteralValue:
+      oldLiteralValue: apple
       newLiteralValue: orange
 ```
 

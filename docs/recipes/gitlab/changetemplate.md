@@ -67,7 +67,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTemplateExample
 displayName: Change GitLab template example
 recipeList:
-  - org.openrewrite.gitlab.ChangeTemplate:      oldTemplate: Terraform/Base.gitlab-ci.yml
+  - org.openrewrite.gitlab.ChangeTemplate:
+      oldTemplate: Terraform/Base.gitlab-ci.yml
       newTemplate: OpenTofu/Base.gitlab-ci.yml
 ```
 

@@ -47,7 +47,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddRepositoryExample
 displayName: Add repository example
 recipeList:
-  - org.openrewrite.maven.AddRepository:      id: repo-id
+  - org.openrewrite.maven.AddRepository:
+      id: repo-id
       url: http://myrepo.maven.com/repo
       repoName: My Great Repo Name
       layout: default

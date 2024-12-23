@@ -39,7 +39,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePluginExecutionsExample
 displayName: Change Maven plugin executions example
 recipeList:
-  - org.openrewrite.maven.ChangePluginExecutions:      groupId: org.openrewrite.maven
+  - org.openrewrite.maven.ChangePluginExecutions:
+      groupId: org.openrewrite.maven
       artifactId: rewrite-maven-plugin
       executions: <execution><phase>validate</phase><goals><goal>dryRun</goal></goals></execution>
 ```

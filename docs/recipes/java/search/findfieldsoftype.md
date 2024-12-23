@@ -38,7 +38,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindFieldsOfTypeExample
 displayName: Find fields of type example
 recipeList:
-  - org.openrewrite.java.search.FindFieldsOfType:      fullyQualifiedTypeName: org.slf4j.api.Logger
+  - org.openrewrite.java.search.FindFieldsOfType:
+      fullyQualifiedTypeName: org.slf4j.api.Logger
 ```
 
 Now that `com.yourorg.FindFieldsOfTypeExample` has been defined, activate it in your build file:

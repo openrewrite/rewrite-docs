@@ -40,7 +40,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SimplifyAssertJAssertionExample
 displayName: Simplify AssertJ assertions with literal arguments example
 recipeList:
-  - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion:      assertToReplace: hasSize
+  - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion:
+      assertToReplace: hasSize
       literalArgument: 0
       dedicatedAssertion: isEmpty
       requiredType: java.lang.String
