@@ -56,6 +56,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Converts components to use the v4 adapter module](../recipes/codemods/migrate/mui/adapterv)
 * [Deprecated hierarchy separator in title property](../recipes/codemods/cleanup/storybook/hierarchyseparator)
 * [Disallow Jasmine globals](../recipes/codemods/cleanup/jest/nojasmineglobals)
+* [Disallow `if` statements as the only statement in `if` blocks without `else`.](../recipes/codemods/cleanup/javascript/nolonelyif)
 * [Disallow `new Array()`.](../recipes/codemods/cleanup/javascript/nonewarray)
 * [Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals](../recipes/codemods/cleanup/javascript/prefernumericliterals)
 * [Disallow alias methods](../recipes/codemods/cleanup/jest/noaliasmethods)
@@ -67,7 +68,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Disallow equal signs explicitly at the beginning of regular expressions](../recipes/codemods/cleanup/javascript/nodivregex)
 * [Disallow extra closing tags for components without children](../recipes/codemods/format/jsxselfclosingcomp)
 * [Disallow extra closing tags for components without children](../recipes/codemods/cleanup/react/selfclosingcomp)
-* [Disallow if statements as the only statement in else blocks](../recipes/codemods/cleanup/javascript/nolonelyif)
 * [Disallow initializing variables to undefined](../recipes/codemods/cleanup/javascript/noundefinit)
 * [Disallow leading or trailing decimal points in numeric literals](../recipes/codemods/format/nofloatingdecimal)
 * [Disallow member access from `await` expression.](../recipes/codemods/cleanup/javascript/noawaitexpressionmember)
@@ -497,6 +497,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Update to Angular v15](../recipes/codemods/migrate/angular/v15)
 * [Update to Angular v16](../recipes/codemods/migrate/angular/v16)
 * [Update to Angular v17](../recipes/codemods/migrate/angular/v17)
+* [Update to Angular v18](../recipes/codemods/migrate/angular/v18)
+* [Update to Angular v19](../recipes/codemods/migrate/angular/v19)
 * [Upgrade Angular versions](../recipes/codemods/migrate/angular/applyangularcli)
 
 ## rewrite-concourse
@@ -553,6 +555,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-java-security
 
+* [Dependency insight for C#](../recipes/csharp/dependencies/dependencyinsight)
 * [Enable CSRF attack prevention](../recipes/java/security/spring/csrfprotection)
 * [Find AWS secrets](../recipes/java/security/secrets/findawssecrets)
 * [Find Artifactory secrets](../recipes/java/security/secrets/findartifactorysecrets)
@@ -578,7 +581,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find Telegram secrets](../recipes/java/security/secrets/findtelegramsecrets)
 * [Find Twilio secrets](../recipes/java/security/secrets/findtwiliosecrets)
 * [Find Twitter secrets](../recipes/java/security/secrets/findtwittersecrets)
+* [Find and fix vulnerable Nuget dependencies](../recipes/csharp/dependencies/dependencyvulnerabilitycheck)
+* [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck)
 * [Find generic secrets](../recipes/java/security/secrets/findgenericsecrets)
+* [Find licenses in use in third-party dependencies](../recipes/java/dependencies/dependencylicensecheck)
 * [Find passwords used in URLs](../recipes/java/security/secrets/findpasswordinurlsecrets)
 * [Find secrets](../recipes/java/security/secrets/findsecrets)
 * [Find secrets with regular expressions](../recipes/java/security/secrets/findsecretsbypattern)
@@ -600,11 +606,14 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Remediate OWASP A06:2021 Vulnerable and outdated components](../recipes/java/security/owaspa06)
 * [Remediate OWASP A08:2021 Software and data integrity failures](../recipes/java/security/owaspa08)
 * [Remediate vulnerabilities from the OWASP Top Ten](../recipes/java/security/owasptopten)
+* [Remove unused dependencies](../recipes/java/dependencies/removeunuseddependencies)
 * [Secure Spring service exporters](../recipes/java/security/spring/insecurespringserviceexporter)
 * [Secure random](../recipes/java/security/securerandom)
 * [Secure the use of Jackson default typing](../recipes/java/security/marshalling/securejacksondefaulttyping)
 * [Secure the use of SnakeYAML's constructor](../recipes/java/security/marshalling/securesnakeyamlconstructor)
 * [SecureRandom seeds are not constant or predictable](../recipes/java/security/securerandomprefersdefaultseed)
+* [Software bill of materials](../recipes/java/dependencies/softwarebillofmaterials)
+* [Upgrade C# dependency versions](../recipes/csharp/dependencies/upgradedependencyversion)
 * [Use `Files#createTempDirectory`](../recipes/java/security/usefilescreatetempdirectory)
 * [Use secure temporary file creation](../recipes/java/security/securetempfilecreation)
 * [XML parser XXE vulnerability](../recipes/java/security/xmlparserxxevulnerability)
@@ -629,6 +638,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find disallowed image tags](../recipes/kubernetes/search/finddisallowedimagetags)
 * [Find exceeds resource limit](../recipes/kubernetes/resource/findexceedsresourcevalue)
 * [Find exceeds resource ratio](../recipes/kubernetes/resource/findexceedsresourceratio)
+* [Find hardcoded IP addresses](../recipes/kubernetes/search/findharcodedipaddresses)
 * [Find image by name](../recipes/kubernetes/search/findimage)
 * [Find label](../recipes/kubernetes/search/findmissingorinvalidlabel)
 * [Find missing configuration](../recipes/kubernetes/search/findresourcemissingconfiguration)
@@ -676,6 +686,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 ## rewrite-reactive-streams
 
 * [Migrate to Reactor 3.5](../recipes/reactive/reactor/upgradereactor_3_5)
+* [Reactor Best Practices](../recipes/reactive/reactor/reactorbestpractices)
 * [Replace `DirectProcessor.create()` with `Sinks.many().multicast().directBestEffort()`](../recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$directprocessorcreatetosinkrecipe)
 * [Replace `EmitterProcessor.create()` with `Sinks.many().multicast().onBackpressureBuffer()`](../recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreatetosinkrecipe)
 * [Replace `EmitterProcessor.create(Boolean)` with `Sinks.many().multicast().onBackpressureBuffer(Queues.SMALL_BUFFER_SIZE, Boolean)`](../recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreatebooleantosinkrecipe)
@@ -826,3 +837,4 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Set Azure Storage Account default network access to deny](../recipes/terraform/azure/setazurestorageaccountdefaultnetworkaccesstodeny)
 * [Use HTTPS for Cloudfront distribution](../recipes/terraform/aws/usehttpsforcloudfrontdistribution)
 * [Use a long enough byte length for `random` resources](../recipes/terraform/securerandom)
+
