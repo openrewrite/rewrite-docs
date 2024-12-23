@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixPostfixWithRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class SuggestedFixPostfixWith {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class SuggestedFixPostfixWith {
         return SuggestedFix.postfixWith(tree, postfix);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

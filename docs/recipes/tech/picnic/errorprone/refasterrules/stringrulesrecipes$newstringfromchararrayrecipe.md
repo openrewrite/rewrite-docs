@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArrayRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class NewStringFromCharArray {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class NewStringFromCharArray {
         return new String(data);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

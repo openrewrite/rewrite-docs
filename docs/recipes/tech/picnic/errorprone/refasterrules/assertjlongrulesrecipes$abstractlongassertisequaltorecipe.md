@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractLongAssertIsEqualTo {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractLongAssertIsEqualTo {
         return longAssert.isEqualTo(n);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

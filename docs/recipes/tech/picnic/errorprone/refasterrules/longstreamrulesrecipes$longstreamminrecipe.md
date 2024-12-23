@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamMinRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongStreamMin {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongStreamMin {
         return stream.min();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

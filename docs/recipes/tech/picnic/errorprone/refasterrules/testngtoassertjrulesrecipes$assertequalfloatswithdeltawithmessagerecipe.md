@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatsWithDeltaWithMessageRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertEqualFloatsWithDeltaWithMessage {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertEqualFloatsWithDeltaWithMessage {
         assertThat(actual).withFailMessage(message).isCloseTo(expected, offset(delta));
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateAtStartOfDayRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LocalDateAtStartOfDay {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LocalDateAtStartOfDay {
         return localDate.atStartOfDay();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

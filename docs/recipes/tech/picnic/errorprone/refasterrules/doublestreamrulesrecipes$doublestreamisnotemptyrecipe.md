@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamIsNotEmptyRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DoubleStreamIsNotEmpty {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DoubleStreamIsNotEmpty {
         return stream.findAny().isPresent();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

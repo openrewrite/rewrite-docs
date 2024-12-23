@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsZeroRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractIntegerAssertIsZero {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractIntegerAssertIsZero {
         return intAssert.isEqualTo(0);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

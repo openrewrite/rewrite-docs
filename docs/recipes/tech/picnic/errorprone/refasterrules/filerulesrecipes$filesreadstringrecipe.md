@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesReadStringRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class FilesReadString {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class FilesReadString {
         return Files.readString(path);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

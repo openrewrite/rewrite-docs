@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageStringDoesNotThrowAnyExceptionRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatCodeWithFailMessageStringDoesNotThrowAnyException {
     
     @BeforeTemplate
@@ -30,10 +29,8 @@ static final class AssertThatCodeWithFailMessageStringDoesNotThrowAnyException {
         assertThatCode(throwingCallable).withFailMessage(message).doesNotThrowAnyException();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

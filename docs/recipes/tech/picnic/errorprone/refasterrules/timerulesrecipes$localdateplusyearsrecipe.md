@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusYearsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LocalDatePlusYears {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class LocalDatePlusYears {
         return localDate.plusYears(years);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

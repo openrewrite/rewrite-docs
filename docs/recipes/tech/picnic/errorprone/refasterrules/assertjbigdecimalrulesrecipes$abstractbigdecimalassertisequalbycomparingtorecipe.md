@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes$AbstractBigDecimalAssertIsEqualByComparingToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractBigDecimalAssertIsEqualByComparingTo {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractBigDecimalAssertIsEqualByComparingTo {
         return bigDecimalAssert.isEqualByComparingTo(n);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

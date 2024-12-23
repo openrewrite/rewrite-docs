@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusDaysRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ZonedDateTimePlusDays {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class ZonedDateTimePlusDays {
         return zonedDateTime.plusDays(days);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

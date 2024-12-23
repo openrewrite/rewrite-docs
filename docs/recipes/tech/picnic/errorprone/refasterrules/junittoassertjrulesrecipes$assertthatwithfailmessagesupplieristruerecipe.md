@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsTrueRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatWithFailMessageSupplierIsTrue {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatWithFailMessageSupplierIsTrue {
         assertThat(actual).withFailMessage(supplier).isTrue();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

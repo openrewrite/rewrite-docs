@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class OptionalNonEmptyString {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class OptionalNonEmptyString {
         return Optional.ofNullable(str).filter(not(String::isEmpty));
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

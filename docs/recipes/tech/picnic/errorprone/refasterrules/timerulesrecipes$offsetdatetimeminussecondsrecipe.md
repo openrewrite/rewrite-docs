@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeMinusSecondsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class OffsetDateTimeMinusSeconds {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class OffsetDateTimeMinusSeconds {
         return offsetDateTime.minusSeconds(seconds);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

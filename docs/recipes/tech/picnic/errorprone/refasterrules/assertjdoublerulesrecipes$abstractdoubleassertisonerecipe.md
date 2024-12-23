@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsOneRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractDoubleAssertIsOne {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractDoubleAssertIsOne {
         return doubleAssert.isEqualTo(1);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

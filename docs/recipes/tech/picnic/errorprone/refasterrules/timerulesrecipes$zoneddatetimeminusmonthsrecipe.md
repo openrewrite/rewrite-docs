@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusMonthsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ZonedDateTimeMinusMonths {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class ZonedDateTimeMinusMonths {
         return zonedDateTime.minusMonths(months);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

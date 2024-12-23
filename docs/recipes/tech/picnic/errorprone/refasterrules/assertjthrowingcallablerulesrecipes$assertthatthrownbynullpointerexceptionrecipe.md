@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByNullPointerExceptionRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatThrownByNullPointerException {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatThrownByNullPointerException {
         return assertThatThrownBy(throwingCallable).isInstanceOf(NullPointerException.class);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsEqualToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractBooleanAssertIsEqualTo {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractBooleanAssertIsEqualTo {
         return boolAssert.isEqualTo(other);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 @SuppressWarnings(value = "java:S1940")
 static final class Negation {
     
@@ -36,10 +35,8 @@ static final class Negation {
         return a != b;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf5Recipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class TagsOf5 {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class TagsOf5 {
         return Tags.of(tag1, tag2, tag3, tag4, tag5);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

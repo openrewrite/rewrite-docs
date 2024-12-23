@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatHashCodeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class FloatHashCode {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class FloatHashCode {
         return Float.hashCode(f);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

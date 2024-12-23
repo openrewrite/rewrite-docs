@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusYearsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ZonedDateTimeMinusYears {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class ZonedDateTimeMinusYears {
         return zonedDateTime.minusYears(years);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

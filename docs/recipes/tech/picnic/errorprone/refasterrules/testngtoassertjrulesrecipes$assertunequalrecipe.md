@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertUnequal {
     
     @BeforeTemplate
@@ -80,10 +79,8 @@ static final class AssertUnequal {
         assertThat(actual).isNotEqualTo(expected);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

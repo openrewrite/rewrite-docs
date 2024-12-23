@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArraysIrrespectiveOfOrderRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertEqualArraysIrrespectiveOfOrder {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertEqualArraysIrrespectiveOfOrder {
         assertThat(actual).containsExactlyInAnyOrder(expected);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

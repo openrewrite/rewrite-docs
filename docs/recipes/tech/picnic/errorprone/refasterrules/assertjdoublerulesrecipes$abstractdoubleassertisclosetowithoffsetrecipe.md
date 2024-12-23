@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractDoubleAssertIsCloseToWithOffset {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class AbstractDoubleAssertIsCloseToWithOffset {
         return doubleAssert.isCloseTo(n, offset);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceHasSizeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatCharSequenceHasSize {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatCharSequenceHasSize {
         return assertThat(charSequence).hasSize(length);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PatternRulesRecipes$PatternAsPredicateRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class PatternAsPredicate {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class PatternAsPredicate {
         return pattern.asPredicate();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

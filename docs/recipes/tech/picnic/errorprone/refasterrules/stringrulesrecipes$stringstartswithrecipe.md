@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringStartsWithRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class StringStartsWith {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class StringStartsWith {
         return string.startsWith(prefix, fromIndex);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

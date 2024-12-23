@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalLongRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatOptionalLong {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatOptionalLong {
         return assertThat(optional).hasValue(expected);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

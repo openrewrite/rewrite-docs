@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatMatchesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatMatches {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatMatches {
         return assertThat(string).matches(regex);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

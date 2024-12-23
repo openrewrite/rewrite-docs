@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceTreeStartEndRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class SuggestedFixReplaceTreeStartEnd {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class SuggestedFixReplaceTreeStartEnd {
         return SuggestedFix.replace(tree, replaceWith, start, end);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

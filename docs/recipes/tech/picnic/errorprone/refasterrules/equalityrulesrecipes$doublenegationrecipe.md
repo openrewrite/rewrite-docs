@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DoubleNegation {
     
     @BeforeTemplate
@@ -26,10 +25,8 @@ static final class DoubleNegation {
         return b;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsZeroRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractByteAssertIsZero {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractByteAssertIsZero {
         return byteAssert.isEqualTo((byte)0);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

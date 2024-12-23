@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientOptionsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class WebClientOptions {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class WebClientOptions {
         return webClient.options();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

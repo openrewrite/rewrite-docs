@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsNotNegativeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class NumberAssertIsNotNegative {
     
     @BeforeTemplate
@@ -59,10 +58,8 @@ static final class NumberAssertIsNotNegative {
         return numberAssert.isNotNegative();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$InvocationOnMockGetArgumentsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class InvocationOnMockGetArguments {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class InvocationOnMockGetArguments {
         return invocation.getArgument(i);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

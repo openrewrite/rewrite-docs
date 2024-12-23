@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatPathContentUtf8Recipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatPathContentUtf8 {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatPathContentUtf8 {
         return assertThat(path).content(UTF_8);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

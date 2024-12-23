@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToWithOffsetRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractFloatAssertIsCloseToWithOffset {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class AbstractFloatAssertIsCloseToWithOffset {
         return floatAssert.isCloseTo(n, offset);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

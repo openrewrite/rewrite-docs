@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusMinutesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ZonedDateTimePlusMinutes {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class ZonedDateTimePlusMinutes {
         return zonedDateTime.plusMinutes(minutes);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

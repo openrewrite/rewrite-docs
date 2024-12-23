@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimePlusMinutesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LocalTimePlusMinutes {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class LocalTimePlusMinutes {
         return localTime.plusMinutes(minutes);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

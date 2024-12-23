@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAllMatchRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntStreamAllMatch {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntStreamAllMatch {
         return stream.allMatch(predicate);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

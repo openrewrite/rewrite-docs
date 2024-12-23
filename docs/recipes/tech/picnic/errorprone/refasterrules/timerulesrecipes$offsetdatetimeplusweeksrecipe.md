@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimePlusWeeksRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class OffsetDateTimePlusWeeks {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class OffsetDateTimePlusWeeks {
         return offsetDateTime.plusWeeks(weeks);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

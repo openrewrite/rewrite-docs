@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByNullPointerExceptionHasMessageStartingWithRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatThrownByNullPointerExceptionHasMessageStartingWith {
     
     @BeforeTemplate
@@ -26,10 +25,8 @@ static final class AssertThatThrownByNullPointerExceptionHasMessageStartingWith 
         return assertThatThrownBy(throwingCallable).isInstanceOf(NullPointerException.class).hasMessageStartingWith(message);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

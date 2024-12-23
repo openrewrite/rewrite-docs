@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsNotZeroRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractFloatAssertIsNotZero {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractFloatAssertIsNotZero {
         return floatAssert.isNotEqualTo(0);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

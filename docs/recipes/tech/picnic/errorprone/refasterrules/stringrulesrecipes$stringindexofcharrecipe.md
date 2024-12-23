@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class StringIndexOfChar {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class StringIndexOfChar {
         return Math.max(-1, string.indexOf(ch, fromIndex) - fromIndex);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

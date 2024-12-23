@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoLocalDateTimeIsBeforeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ChronoLocalDateTimeIsBefore {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class ChronoLocalDateTimeIsBefore {
         return a.isBefore(b);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

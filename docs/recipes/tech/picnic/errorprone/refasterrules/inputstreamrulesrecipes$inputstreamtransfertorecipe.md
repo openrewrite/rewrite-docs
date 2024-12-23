@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamTransferToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class InputStreamTransferTo {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class InputStreamTransferTo {
         return in.transferTo(out);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

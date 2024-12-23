@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsNullRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatIsNull {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatIsNull {
         assertThat(actual).isNull();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

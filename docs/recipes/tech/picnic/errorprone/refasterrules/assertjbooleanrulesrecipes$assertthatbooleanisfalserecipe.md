@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AssertThatBooleanIsFalseRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatBooleanIsFalse {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatBooleanIsFalse {
         return assertThat(b).isFalse();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

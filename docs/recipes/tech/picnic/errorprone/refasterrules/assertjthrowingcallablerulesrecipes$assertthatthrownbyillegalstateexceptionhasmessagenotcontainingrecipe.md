@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalStateExceptionHasMessageNotContainingRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatThrownByIllegalStateExceptionHasMessageNotContaining {
     
     @BeforeTemplate
@@ -26,10 +25,8 @@ static final class AssertThatThrownByIllegalStateExceptionHasMessageNotContainin
         return assertThatThrownBy(throwingCallable).isInstanceOf(IllegalStateException.class).hasMessageNotContaining(message);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

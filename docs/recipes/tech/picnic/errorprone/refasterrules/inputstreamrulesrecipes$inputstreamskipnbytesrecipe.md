@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamSkipNBytesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class InputStreamSkipNBytes {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class InputStreamSkipNBytes {
         in.skipNBytes(n);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

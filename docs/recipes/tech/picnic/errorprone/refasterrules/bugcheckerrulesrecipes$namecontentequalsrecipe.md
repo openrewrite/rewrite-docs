@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$NameContentEqualsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class NameContentEquals {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class NameContentEquals {
         return name.contentEquals(string);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

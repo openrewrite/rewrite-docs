@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$SplitToStreamRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class SplitToStream {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class SplitToStream {
         return splitter.splitToStream(charSequence);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

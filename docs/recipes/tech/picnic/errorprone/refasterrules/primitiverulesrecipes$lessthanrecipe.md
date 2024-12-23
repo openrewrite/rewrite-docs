@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LessThan {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class LessThan {
         return a < b;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalTenRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class BigDecimalTen {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class BigDecimalTen {
         return BigDecimal.TEN;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

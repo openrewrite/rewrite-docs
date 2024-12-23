@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimeOfInstantRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LocalDateTimeOfInstant {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class LocalDateTimeOfInstant {
         return LocalDateTime.ofInstant(instant, zoneId);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

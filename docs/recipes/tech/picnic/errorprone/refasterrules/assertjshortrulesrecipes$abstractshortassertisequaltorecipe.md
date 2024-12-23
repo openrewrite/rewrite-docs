@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractShortAssertIsEqualTo {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractShortAssertIsEqualTo {
         return shortAssert.isEqualTo(n);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

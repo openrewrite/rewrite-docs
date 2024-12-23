@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongRemainderUnsignedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongRemainderUnsigned {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongRemainderUnsigned {
         return Long.remainderUnsigned(x, y);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

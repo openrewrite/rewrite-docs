@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareUnsignedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongCompareUnsigned {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongCompareUnsigned {
         return Long.compareUnsigned(x, y);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerRemainderUnsignedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntegerRemainderUnsigned {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntegerRemainderUnsigned {
         return Integer.remainderUnsigned(x, y);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

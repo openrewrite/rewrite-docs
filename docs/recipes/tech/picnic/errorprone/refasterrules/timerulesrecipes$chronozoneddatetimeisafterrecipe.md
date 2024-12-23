@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoZonedDateTimeIsAfterRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ChronoZonedDateTimeIsAfter {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class ChronoZonedDateTimeIsAfter {
         return a.isAfter(b);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

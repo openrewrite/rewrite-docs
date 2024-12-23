@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorMatchesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class StepVerifierLastStepVerifyErrorMatches {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class StepVerifierLastStepVerifyErrorMatches {
         return step.verifyErrorMatches(predicate);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

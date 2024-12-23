@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateMinusWeeksRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LocalDateMinusWeeks {
     
     @BeforeTemplate
@@ -29,10 +28,8 @@ static final class LocalDateMinusWeeks {
         return localDate.minusWeeks(weeks);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

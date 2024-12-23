@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongSignumIsNegativeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongSignumIsNegative {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class LongSignumIsNegative {
         return Long.signum(l) == -1;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

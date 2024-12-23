@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantAtZoneRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class InstantAtZone {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class InstantAtZone {
         return instant.atZone(zoneId);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ByteHashCodeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ByteHashCode {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class ByteHashCode {
         return Byte.hashCode(b);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

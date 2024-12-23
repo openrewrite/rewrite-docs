@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsZeroRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class BigDecimalSignumIsZero {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class BigDecimalSignumIsZero {
         return value.signum() == 0;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

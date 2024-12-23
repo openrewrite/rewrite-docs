@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageContainingRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatThrownByHasMessageContaining {
     
     @BeforeTemplate
@@ -26,10 +25,8 @@ static final class AssertThatThrownByHasMessageContaining {
         return assertThatThrownBy(throwingCallable).isInstanceOf(exceptionType).hasMessageContaining(message);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

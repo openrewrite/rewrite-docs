@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamNoneMatchRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongStreamNoneMatch {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongStreamNoneMatch {
         return stream.noneMatch(predicate);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

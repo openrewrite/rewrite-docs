@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class BigDecimalValueOf {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class BigDecimalValueOf {
         return BigDecimal.valueOf(value);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

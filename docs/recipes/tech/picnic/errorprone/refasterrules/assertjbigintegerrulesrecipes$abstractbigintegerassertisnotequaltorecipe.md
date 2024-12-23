@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractBigIntegerAssertIsNotEqualTo {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractBigIntegerAssertIsNotEqualTo {
         return bigIntegerAssert.isNotEqualTo(n);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

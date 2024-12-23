@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsPositiveRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntegerSignumIsPositive {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class IntegerSignumIsPositive {
         return Integer.signum(i) == 1;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringWithRadixRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntegerToUnsignedStringWithRadix {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntegerToUnsignedStringWithRadix {
         return Integer.toUnsignedString(i, radix);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AbstractByteAssertIsNotEqualTo {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class AbstractByteAssertIsNotEqualTo {
         return byteAssert.isNotEqualTo(n);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

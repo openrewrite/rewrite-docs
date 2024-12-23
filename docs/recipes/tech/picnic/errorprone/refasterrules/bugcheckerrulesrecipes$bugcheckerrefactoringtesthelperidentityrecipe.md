@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class BugCheckerRefactoringTestHelperIdentity {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class BugCheckerRefactoringTestHelperIdentity {
         return helper;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

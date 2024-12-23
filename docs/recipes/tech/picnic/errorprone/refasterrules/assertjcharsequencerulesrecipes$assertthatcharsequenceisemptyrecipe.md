@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsEmptyRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatCharSequenceIsEmpty {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatCharSequenceIsEmpty {
         assertThat(charSequence).isEmpty();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

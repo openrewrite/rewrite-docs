@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongParseUnsignedLongWithRadixRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongParseUnsignedLongWithRadix {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongParseUnsignedLongWithRadix {
         return Long.parseUnsignedLong(string, radix);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

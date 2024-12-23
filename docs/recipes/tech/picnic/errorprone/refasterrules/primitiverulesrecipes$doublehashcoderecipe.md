@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleHashCodeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DoubleHashCode {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DoubleHashCode {
         return Double.hashCode(d);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

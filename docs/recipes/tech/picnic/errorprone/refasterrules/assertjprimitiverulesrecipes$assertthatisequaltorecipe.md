@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsEqualToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatIsEqualTo {
     
     @BeforeTemplate
@@ -31,10 +30,8 @@ static final class AssertThatIsEqualTo {
         return assertThat(actual).isEqualTo(expected);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

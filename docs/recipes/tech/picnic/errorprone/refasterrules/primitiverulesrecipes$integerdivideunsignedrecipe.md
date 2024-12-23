@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerDivideUnsignedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntegerDivideUnsigned {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntegerDivideUnsigned {
         return Integer.divideUnsigned(x, y);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

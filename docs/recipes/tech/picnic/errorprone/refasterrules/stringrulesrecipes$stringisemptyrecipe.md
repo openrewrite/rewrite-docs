@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class StringIsEmpty {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class StringIsEmpty {
         return str.isEmpty();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

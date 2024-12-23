@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class CheckIndex {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class CheckIndex {
         return checkIndex(index, size);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

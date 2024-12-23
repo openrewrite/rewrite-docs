@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAnyMatchRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DoubleStreamAnyMatch {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class DoubleStreamAnyMatch {
         return stream.anyMatch(predicate);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

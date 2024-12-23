@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcClockRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class UtcClock {
     
     @BeforeTemplate
@@ -26,10 +25,8 @@ static final class UtcClock {
         return Clock.systemUTC();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

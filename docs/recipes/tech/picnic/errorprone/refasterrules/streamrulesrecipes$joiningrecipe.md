@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$JoiningRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class Joining {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class Joining {
         return joining();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

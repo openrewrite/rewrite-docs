@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$JoinStringsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class JoinStrings {
     
     @BeforeTemplate
@@ -34,10 +33,8 @@ static final class JoinStrings {
         return String.join(delimiter, elements);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfDaysRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DurationOfDays {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DurationOfDays {
         return Duration.ofDays(amount);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

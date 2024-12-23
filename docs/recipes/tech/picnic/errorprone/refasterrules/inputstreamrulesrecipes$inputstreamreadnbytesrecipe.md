@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamReadNBytesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class InputStreamReadNBytes {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class InputStreamReadNBytes {
         return in.readNBytes(n);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

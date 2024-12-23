@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertFalseWithMessageRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertFalseWithMessage {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertFalseWithMessage {
         assertThat(condition).withFailMessage(message).isFalse();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

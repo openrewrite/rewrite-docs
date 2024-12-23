@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsLessThanOrEqualToRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatIsLessThanOrEqualTo {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatIsLessThanOrEqualTo {
         return assertThat(actual).isLessThanOrEqualTo(expected);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

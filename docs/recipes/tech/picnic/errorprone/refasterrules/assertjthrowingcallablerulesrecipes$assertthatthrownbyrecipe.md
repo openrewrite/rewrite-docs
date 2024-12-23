@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatThrownBy {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertThatThrownBy {
         return assertThatThrownBy(throwingCallable).isInstanceOf(exceptionType);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

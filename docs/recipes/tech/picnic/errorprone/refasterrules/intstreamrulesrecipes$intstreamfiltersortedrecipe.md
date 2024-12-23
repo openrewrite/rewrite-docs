@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamFilterSortedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntStreamFilterSorted {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntStreamFilterSorted {
         return stream.filter(predicate).sorted();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

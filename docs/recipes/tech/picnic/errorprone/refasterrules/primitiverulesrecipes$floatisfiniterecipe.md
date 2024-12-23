@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatIsFiniteRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class FloatIsFinite {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class FloatIsFinite {
         return Float.isFinite(f);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

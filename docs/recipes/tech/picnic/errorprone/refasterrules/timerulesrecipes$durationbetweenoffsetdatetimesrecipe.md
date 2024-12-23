@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenOffsetDateTimesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DurationBetweenOffsetDateTimes {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DurationBetweenOffsetDateTimes {
         return Duration.between(a, b);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

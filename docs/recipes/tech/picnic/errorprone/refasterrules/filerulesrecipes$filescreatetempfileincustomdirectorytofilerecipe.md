@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileInCustomDirectoryToFileRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class FilesCreateTempFileInCustomDirectoryToFile {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class FilesCreateTempFileInCustomDirectoryToFile {
         return Files.createTempFile(directory.toPath(), prefix, suffix).toFile();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

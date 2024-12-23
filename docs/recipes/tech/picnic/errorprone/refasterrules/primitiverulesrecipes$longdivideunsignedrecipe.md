@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongDivideUnsignedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongDivideUnsigned {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongDivideUnsigned {
         return Long.divideUnsigned(x, y);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

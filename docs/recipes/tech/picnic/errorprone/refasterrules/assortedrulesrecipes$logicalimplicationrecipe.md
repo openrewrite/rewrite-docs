@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LogicalImplication {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class LogicalImplication {
         return firstTest || secondTest;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

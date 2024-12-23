@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ConstantsFormat {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class ConstantsFormat {
         return Constants.format(value);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

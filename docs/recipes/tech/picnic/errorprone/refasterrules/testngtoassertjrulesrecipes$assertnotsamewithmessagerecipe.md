@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNotSameWithMessageRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertNotSameWithMessage {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertNotSameWithMessage {
         assertThat(actual).withFailMessage(message).isNotSameAs(expected);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

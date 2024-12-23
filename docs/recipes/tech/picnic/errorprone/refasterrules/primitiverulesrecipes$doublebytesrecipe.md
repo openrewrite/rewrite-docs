@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleBytesRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DoubleBytes {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DoubleBytes {
         return Double.BYTES;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

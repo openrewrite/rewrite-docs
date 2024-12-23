@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfUriRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class PathOfUri {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class PathOfUri {
         return Path.of(uri);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

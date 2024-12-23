@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamIsEmptyRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongStreamIsEmpty {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongStreamIsEmpty {
         return stream.findAny().isEmpty();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

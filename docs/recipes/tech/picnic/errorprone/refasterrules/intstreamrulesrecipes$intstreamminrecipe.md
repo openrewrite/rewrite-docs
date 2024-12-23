@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamMinRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntStreamMin {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntStreamMin {
         return stream.min();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

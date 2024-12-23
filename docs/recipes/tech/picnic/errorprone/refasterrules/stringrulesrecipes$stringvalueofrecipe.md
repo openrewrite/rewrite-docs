@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class StringValueOf {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class StringValueOf {
         return String.valueOf(object);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

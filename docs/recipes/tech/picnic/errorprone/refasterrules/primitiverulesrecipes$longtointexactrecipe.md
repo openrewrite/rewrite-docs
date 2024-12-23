@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToIntExactRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongToIntExact {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongToIntExact {
         return Math.toIntExact(l);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

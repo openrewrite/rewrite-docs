@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfMillisRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DurationOfMillis {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DurationOfMillis {
         return Duration.ofMillis(amount);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

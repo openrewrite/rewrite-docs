@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerHashCodeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntegerHashCode {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntegerHashCode {
         return Integer.hashCode(i);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

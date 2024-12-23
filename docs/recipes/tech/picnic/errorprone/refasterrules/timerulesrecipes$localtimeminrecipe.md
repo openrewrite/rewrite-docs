@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LocalTimeMin {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LocalTimeMin {
         return LocalTime.MIN;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

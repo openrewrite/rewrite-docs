@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsNegativeRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class BigDecimalSignumIsNegative {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class BigDecimalSignumIsNegative {
         return value.signum() == -1;
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

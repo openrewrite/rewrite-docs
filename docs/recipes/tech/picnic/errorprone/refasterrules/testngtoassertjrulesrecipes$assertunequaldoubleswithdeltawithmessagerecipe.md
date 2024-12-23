@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalDoublesWithDeltaWithMessageRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertUnequalDoublesWithDeltaWithMessage {
     
     @BeforeTemplate
@@ -25,10 +24,8 @@ static final class AssertUnequalDoublesWithDeltaWithMessage {
         assertThat(actual).withFailMessage(message).isNotCloseTo(expected, offset(delta));
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

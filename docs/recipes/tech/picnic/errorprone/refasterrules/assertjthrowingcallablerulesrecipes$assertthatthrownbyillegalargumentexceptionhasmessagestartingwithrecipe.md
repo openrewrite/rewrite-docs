@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalArgumentExceptionHasMessageStartingWithRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class AssertThatThrownByIllegalArgumentExceptionHasMessageStartingWith {
     
     @BeforeTemplate
@@ -26,10 +25,8 @@ static final class AssertThatThrownByIllegalArgumentExceptionHasMessageStartingW
         return assertThatThrownBy(throwingCallable).isInstanceOf(IllegalArgumentException.class).hasMessageStartingWith(message);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

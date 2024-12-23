@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntegerToUnsignedString {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntegerToUnsignedString {
         return Integer.toUnsignedString(i);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

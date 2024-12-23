@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamTakeWhileRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongStreamTakeWhile {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongStreamTakeWhile {
         return stream.takeWhile(predicate);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

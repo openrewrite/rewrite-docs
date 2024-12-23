@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerCompareUnsignedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class IntegerCompareUnsigned {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class IntegerCompareUnsigned {
         return Integer.compareUnsigned(x, y);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

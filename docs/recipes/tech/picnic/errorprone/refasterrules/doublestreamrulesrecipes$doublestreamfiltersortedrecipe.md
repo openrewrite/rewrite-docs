@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamFilterSortedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DoubleStreamFilterSorted {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DoubleStreamFilterSorted {
         return stream.filter(predicate).sorted();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

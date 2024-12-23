@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatTwoIntStreamsRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class ConcatTwoIntStreams {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class ConcatTwoIntStreams {
         return IntStream.concat(s1, s2);
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

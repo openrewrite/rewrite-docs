@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamMinRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class DoubleStreamMin {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class DoubleStreamMin {
         return stream.min();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 

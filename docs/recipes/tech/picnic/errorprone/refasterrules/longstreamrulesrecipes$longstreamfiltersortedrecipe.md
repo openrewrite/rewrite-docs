@@ -9,9 +9,8 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamFilterSortedRecipe**
 
-```
 Recipe created for the following Refaster template:
-java
+```java
 static final class LongStreamFilterSorted {
     
     @BeforeTemplate
@@ -24,10 +23,8 @@ static final class LongStreamFilterSorted {
         return stream.filter(predicate).sorted();
     }
 }
-
-.
 ```
-
+.
 
 ## Recipe source
 
