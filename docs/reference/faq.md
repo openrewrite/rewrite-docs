@@ -161,8 +161,7 @@ For Maven, that would be using `mvnDebug` instead of `mvn`, and for Gradle, that
 
 ## I want to exclude a single recipe from a collection of recipes.
 
-You can create your own custom recipe based off of an existing recipe most easily through [the Moderne recipe builder](https://app.moderne.io/builder).
-You can [read more about the new recipe builder](https://www.moderne.ai/blog/moderne-engineering-building-the-openrewrite-recipe-builder) on the Moderne blog.
+You can create your own custom recipe based off of an existing recipe most easily through [the Moderne recipe builder](https://app.moderne.io/builder). Check out our doc on [customizing recipes to meet your needs](../running-recipes/customize-recipe.md).
 
 Excluding a single recipe from an existing unmodified recipe list would be quite complicated. For a detailed explanation as to why, check out [this post](https://github.com/openrewrite/rewrite-maven-plugin/pull/569#issuecomment-1576793092).
 
