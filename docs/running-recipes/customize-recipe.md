@@ -82,7 +82,7 @@ You can then run it as you would any other OpenRewrite recipe.
 
 ## Breaking apart recipes
 
-In some situations, you may find that a recipe would change more than what you'd like to commit to. For instance, let's consider the [Migrate to Spring Boot 3.3 recipe](../recipes/java/spring/boot3/upgradespringboot_3_3). This recipe is quite complex and is composed of 2682 other recipes:
+In some situations, you may find that a recipe would change more than what you'd like to commit to. For instance, let's consider the [Migrate to Spring Boot 3.3 recipe](../recipes/java/spring/boot3/upgradespringboot_3_3.md). This recipe is quite complex and is composed of 2682 other recipes:
 
 <figure>
   ![](./assets/spring-boot-visual.png)

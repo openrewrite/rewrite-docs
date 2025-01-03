@@ -31,7 +31,7 @@ CMD ["./mvnw", "spring-boot:run"]
 
 The `rewrite.yml` file will be where we'll define our recipe for updating the base image. In the below example, you can see that we are looking for the exact text of `eclipse-temurin:17-jdk-jammy` in files that match exactly `Dockerfile`. There are many options for this recipe and most of the options allow for regex to increase the flexibility of the recipe.
 
-You can find all of the options for the `FindAndReplace` recipe in the [find and replace recipe doc](../recipes/text/findandreplace).
+You can find all of the options for the `FindAndReplace` recipe in the [find and replace recipe doc](../recipes/text/findandreplace.md).
 
 ```yaml
 ---

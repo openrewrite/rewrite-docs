@@ -61,7 +61,7 @@ In the following section, we will provide some examples of how to use these.
 ### Examples
 
 :::info
-Check out the [Moderne introduction to type-aware code searches](https://docs.moderne.io/user-documentation/introduction-to-type-aware-code-search#using-a-search-recipe) for an example of how method patterns can be used by users running recipes.
+Check out the [Moderne introduction to type-aware code searches](https://docs.moderne.io/user-documentation/moderne-platform/how-to-guides/introduction-to-type-aware-code-search/#using-a-search-recipe) for an example of how method patterns can be used by users running recipes.
 :::
 
 The below table shows some more examples of method patterns and the methods they match:

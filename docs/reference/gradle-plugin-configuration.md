@@ -147,7 +147,7 @@ It is possible to control the active recipe and style using JVM arguments in the
 * To change the active recipe, you can specify either `rewrite.activeRecipe` or `rewrite.activeRecipes` (both do the same thing and take the same input).
 * To change the style, you can specify either `rewrite.activeStyle` or `rewrite.activeStyles` (both do the same thing and take the same input).
 
-Here's an example of what this might look like if you were to use [rewriteRun with an init script](/running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build.md):
+Here's an example of what this might look like if you were to use [rewriteRun with an init script](../running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build.md):
 
 
 ```bash

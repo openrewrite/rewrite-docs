@@ -50,7 +50,7 @@ rootProject {
 
 In the `rootProject` block, we specify a dependency that contains OpenRewrite Spring recipes (`rewrite-spring`). If you wanted, you could also define a `rewrite` section inside of the `rootProject` that has elements like `activeRecipe` or `activeStyle`. In general, though, it's better to [use the command line to specify the recipes or styles](#step-4-run-the-recipe) so that you can keep your init script fairly generic. 
 
-For a full range of options available, please see our [Gradle plugin configuration doc](/reference/gradle-plugin-configuration.md)
+For a full range of options available, please see our [Gradle plugin configuration doc](../reference/gradle-plugin-configuration.md)
 
 ### Step 3: (Optional) Create a custom declarative recipe
 
@@ -80,4 +80,4 @@ gradle rewriteRun --init-script init.gradle -Drewrite.activeRecipe=org.openrewri
 ```
 
 
-For a full list of options that you can use in the Gradle command line, please see our [Gradle plugin configuration doc](/reference/gradle-plugin-configuration.md#jvm-args-that-can-be-added-to-the-gradle-command-line)
+For a full list of options that you can use in the Gradle command line, please see our [Gradle plugin configuration doc](../reference/gradle-plugin-configuration.md#jvm-args-that-can-be-added-to-the-gradle-command-line)

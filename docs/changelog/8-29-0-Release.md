@@ -45,7 +45,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## Changed Recipes
 
-* [org.openrewrite.text.FindAndReplace](../recipes/text/findandreplace) was changed:
+* [org.openrewrite.text.FindAndReplace](../recipes/text/findandreplace.md) was changed:
   * Old Options:
     * `caseSensitive: { type: Boolean, required: false }`
     * `dotAll: { type: Boolean, required: false }`

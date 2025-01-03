@@ -126,7 +126,7 @@ From the command line, try running `mvn rewrite:discover` or `gradle rewriteDisc
 
 ## Step 3: Activate a recipe
 
-Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](/recipes/java/orderimports) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle(.kts)` file so that the sections you modified earlier look like the below example:
+Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](../recipes/java/orderimports.md) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle(.kts)` file so that the sections you modified earlier look like the below example:
 
 <Tabs groupId="projectType">
 <TabItem value="gradle-groovy" label="Gradle (Groovy)">
@@ -218,7 +218,7 @@ From there, you can commit the changes or add additional recipes based on your n
 
 ## Step 5: Run a recipe with YAML configuration
 
-Some recipes are more complex than `OrderImports` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](/recipes/java/changepackage) has three options that need to be configured:
+Some recipes are more complex than `OrderImports` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](../recipes/java/changepackage.md) has three options that need to be configured:
 
 | Type      | Name           | Description                                                        |
 | --------- | -------------- | ------------------------------------------------------------------ |
@@ -325,7 +325,7 @@ At this point, you know how to configure and run any recipe included in OpenRewr
 You can search through all of the recipes in the [OpenRewrite docs](/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included.
 :::
 
-Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project you have. If you take a look at the [Usage section](/recipes/java/spring/boot2/springboot2junit4to5migration#usage) in the [JUnit 4 to 5 migration recipe](/recipes/java/spring/boot2/springboot2junit4to5migration), you'll see what you need to include in your `build.gradle(.kts)` or `pom.xml` file in order to use this recipe.
+Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project you have. If you take a look at the [Usage section](../recipes/java/spring/boot2/springboot2junit4to5migration.md#usage) in the [JUnit 4 to 5 migration recipe](../recipes/java/spring/boot2/springboot2junit4to5migration.md), you'll see what you need to include in your `build.gradle(.kts)` or `pom.xml` file in order to use this recipe.
 
 Below, we'll walk through the [Maven](#maven--external-modules) and [Gradle](#gradle--external-modules) changes and provide some additional context around said changes.
 

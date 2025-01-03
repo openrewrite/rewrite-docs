@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
 Yes. There are two main options for this:
 
-1. (**Recommended**) Use some of the common [preconditions](/reference/yaml-format-reference.md#preconditions) to limit the files or directories the recipe runs on.
+1. (**Recommended**) Use some of the common [preconditions](./yaml-format-reference.md#preconditions) to limit the files or directories the recipe runs on.
 2. Use exclusions to limit the folders the recipe can run on: 
 
 :::info
@@ -61,7 +61,7 @@ As an example of this, consider the case of [rewrite-spring](https://github.com/
 
 ## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
 
-This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](/recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 180 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
+This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](../recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 180 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
 
 This nuance is why we don't support intermediate steps to commit results; it would simply be too much to handle feasibly. Furthermore, we'd have to write out to disk repeatedly, which would slow the migration down even more.
 
@@ -69,7 +69,7 @@ That being said, there are two things you can do:
 
 1. You can run individual parts of the hierarchy. For instance, the [Migrate to Java 17 recipe](../recipes/java/migrate/upgradetojava17.md) contains the [Migrate to Java 11 recipe](../recipes/java/migrate/java8tojava11.md), which contains the [Migrate to Java 8 recipe](../recipes/java/migrate/upgradetojava8.md). You could run each of those child recipes and commit the results - which would limit the number of changes being done at a time.
 
-2. You can also use [Preconditions](/reference/yaml-format-reference.md#preconditions) to limit the changes to a particular [source set](../recipes/java/search/hassourceset.md) or [set of files](../recipes/core/findsourcefiles.md).
+2. You can also use [Preconditions](./yaml-format-reference.md#preconditions) to limit the changes to a particular [source set](../recipes/java/search/hassourceset.md) or [set of files](../recipes/core/findsourcefiles.md).
 
 Using these two approaches together in separate runs means you can likely create something that's feasible to review.
 
@@ -126,25 +126,25 @@ OpenRewrite is likely building up a model of your code and resolving types – t
 ## Can I create a report or summary of the changes made through OpenRewrite?
 
 When recipes run with the OSS Maven and Gradle plugins, they produce a summary of what files where changes by which recipes.
-If you'd like more information, then you can look at the data tables additionally produced through [getting started with data tables guide](/running-recipes/data-tables) for OpenRewrite.
+If you'd like more information, then you can look at the data tables additionally produced through [getting started with data tables guide](../running-recipes/data-tables.md) for OpenRewrite.
 
 Moderne offers this functionality through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) and the [Moderne Platform](https://app.moderne.io/getting-started).
-For more information, check out [getting started with data tables guide](https://docs.moderne.io/user-documentation/data-tables) in the Moderne docs.
+For more information, check out [getting started with data tables guide](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/data-tables/) in the Moderne docs.
 
 ## My recipe runs, but is not making any changes. What's happening?
 
 When a recipe fails to make changes, that's often because of malformed or missing type information.
-You can use the diagnostic [Find missing types recipe](/recipes/java/search/findmissingtypes),
-and [the data table it produces](https://docs.moderne.io/user-documentation/data-tables), to find missing types in your codebase.
+You can use the diagnostic [Find missing types recipe](../recipes/java/search/findmissingtypes.md),
+and [the data table it produces](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/data-tables/), to find missing types in your codebase.
 If there are any missing types you might want to double-check your dependencies are set up correctly, or whether you're using Lombok, as [Lombok leads to missing types](https://github.com/openrewrite/rewrite/issues/1297).
 
 It could also be that a particular file is not parsed correctly. In such cases you'll see log line output which files failed to parse.
-You can use the [Find source files with ParseExceptionResult markers](/recipes/core/findparsefailures) diagnostic recipe to find & report these issues.
-Note that this again [produces a data table](https://docs.moderne.io/user-documentation/data-tables) for you to inspect.
+You can use the [Find source files with ParseExceptionResult markers](../recipes/core/findparsefailures.md) diagnostic recipe to find & report these issues.
+Note that this again [produces a data table](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/data-tables/) for you to inspect.
 
 In some cases missing changes can be attributed to a failure to connect to Artifactory, Nexus, while building up the LST model, or while running recipes.
 Quite a few recipes emit a `org.openrewrite.maven.table.MavenMetadataFailures` data table where such issues were detected.
-You might then want to run the [Dependency resolution diagnostic](/recipes/java/dependencies/dependencyresolutiondiagnostic) recipe to troubleshoot your connectivity.
+You might then want to run the [Dependency resolution diagnostic](../recipes/java/dependencies/dependencyresolutiondiagnostic.md) recipe to troubleshoot your connectivity.
 
 If none of those issues are present, then you might want to look at some diagnostic data tables we produce for each recipe run.
 Once enabled you can get insight into which recipes had results, or errors, and their runtime statistics. Look for these tables in your target folder to learn which recipes had results.
@@ -171,13 +171,13 @@ Visitors can remove LST elements by returning `null` when visiting the element t
 
 For instance, we have [a very simple recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/4608489da8dcdab51e80163a18094264482d88bc/src/main/java/org/openrewrite/staticanalysis/RemoveSystemOutPrintln.java#L44-L49) that checks for certain `System.out.println` methods and removes them. We use this recipe as part of our [Java Recipe best practices](https://github.com/openrewrite/rewrite-recommendations/blob/3d724859e0137bc4ea3d7be845e631f5ed9eddfd/src/main/resources/META-INF/rewrite/openrewrite.yml#L46). However, this can result in incorrect removals as demonstrated in [a PR to OpenRewrite](https://github.com/openrewrite/rewrite/pull/4270#discussion_r1649619823).
 
-To learn more about manipulating LSTs, [check out our recipe conventions and best practices doc](/authoring-recipes/recipe-conventions-and-best-practices.md#recipes-must-not-mutate-lsts).
+To learn more about manipulating LSTs, [check out our recipe conventions and best practices doc](../authoring-recipes/recipe-conventions-and-best-practices.md#recipes-must-not-mutate-lsts).
 
 ## How do I replace one statement with multiple new statements using JavaTemplates?
 
-Conceptually, you will want to modify or replace a [single LST element](/concepts-and-explanations/lst-examples.md) with a single other LST element.
+Conceptually, you will want to modify or replace a [single LST element](../concepts-and-explanations/lst-examples.md) with a single other LST element.
 
-For instance, let's say you wanted to replace `int i = 5` with `int i = 5; i++;`. You might be inclined to set the template string to `"int i = 5; i++;"` - but that wouldn't work. Instead, you should wrap those statements up into a [J.Block](/concepts-and-explanations/lst-examples.md#block): `{ int i = 5; i++; }`.
+For instance, let's say you wanted to replace `int i = 5` with `int i = 5; i++;`. You might be inclined to set the template string to `"int i = 5; i++;"` - but that wouldn't work. Instead, you should wrap those statements up into a [J.Block](../concepts-and-explanations/lst-examples.md#block): `{ int i = 5; i++; }`.
 
 After doing that, you would want to run a `doAfterVisit(new RemoveUnneededBlock.getVisitor())` to remove the unnecessary block again – giving you the desired result.
 

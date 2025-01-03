@@ -2,7 +2,7 @@
 
 _This doc contains all of the recipes with **unique** data tables that have been explicitly added by the recipe author. If a recipe contains only the default data tables, it won't be included in this list._
 
-### [Find colliding source files](../recipes/core/findcollidingsourcefiles)
+### [Find colliding source files](../recipes/core/findcollidingsourcefiles.md)
  
 _org.openrewrite.FindCollidingSourceFiles_
 
@@ -13,7 +13,7 @@ Finds source files which share a path with another source file. There should alw
   * **org.openrewrite.table.CollidingSourceFiles**: *Source files that have the same relative path.*
 
 
-### [Find deserialization errors](../recipes/core/finddeserializationerrors)
+### [Find deserialization errors](../recipes/core/finddeserializationerrors.md)
  
 _org.openrewrite.FindDeserializationErrors_
 
@@ -24,7 +24,7 @@ Produces a data table collecting all deserialization errors of serialized LSTs.
   * **org.openrewrite.table.DeserializationErrorTable**: *Table collecting any LST deserialization errors.*
 
 
-### [Show Git source control metadata](../recipes/core/findgitprovenance)
+### [Show Git source control metadata](../recipes/core/findgitprovenance.md)
  
 _org.openrewrite.FindGitProvenance_
 
@@ -35,7 +35,7 @@ List out the contents of each unique `GitProvenance` marker in the set of source
   * **org.openrewrite.table.DistinctGitProvenance**: *List out the contents of each unique `GitProvenance` marker in the set of source files. When everything is working correctly, exactly one such marker should be printed as all source files are expected to come from the same repository / branch / commit hash.*
 
 
-### [Find LST provenance](../recipes/core/findlstprovenance)
+### [Find LST provenance](../recipes/core/findlstprovenance.md)
  
 _org.openrewrite.FindLstProvenance_
 
@@ -46,7 +46,7 @@ Produces a data table showing what versions of OpenRewrite/Moderne tooling was u
   * **org.openrewrite.table.LstProvenanceTable**: *Table showing which tools were used to produce LSTs.*
 
 
-### [Find source files with `ParseExceptionResult` markers](../recipes/core/findparsefailures)
+### [Find source files with `ParseExceptionResult` markers](../recipes/core/findparsefailures.md)
  
 _org.openrewrite.FindParseFailures_
 
@@ -57,7 +57,7 @@ This recipe explores parse failures after an LST is produced for classifying the
   * **org.openrewrite.table.ParseFailures**: *A list of files that failed to parse along with stack traces of their failures.*
 
 
-### [Find files](../recipes/core/findsourcefiles)
+### [Find files](../recipes/core/findsourcefiles.md)
  
 _org.openrewrite.FindSourceFiles_
 
@@ -68,7 +68,7 @@ Find files by source path.
   * **org.openrewrite.table.SourcesFiles**: *Source files that matched some criteria.*
 
 
-### [List runtime classpath](../recipes/core/listruntimeclasspath)
+### [List runtime classpath](../recipes/core/listruntimeclasspath.md)
  
 _org.openrewrite.ListRuntimeClasspath_
 
@@ -79,7 +79,7 @@ A diagnostic utility which emits the runtime classpath to a data table.
   * **org.openrewrite.table.ClasspathReport**: *Contains a report of the runtime classpath and any other jars found inside each classpath entry.*
 
 
-### [Find committers on repositories](../recipes/search/findcommitters)
+### [Find committers on repositories](../recipes/search/findcommitters.md)
  
 _org.openrewrite.search.FindCommitters_
 
@@ -91,7 +91,7 @@ List the committers on a repository.
   * **org.openrewrite.table.CommitsByDay**: *The commit activity by day by committer.*
 
 
-### [Find parse to print inequality](../recipes/search/findparsetoprintinequality)
+### [Find parse to print inequality](../recipes/search/findparsetoprintinequality.md)
  
 _org.openrewrite.search.FindParseToPrintInequality_
 
@@ -102,7 +102,7 @@ OpenRewrite `Parser` implementations should produce `SourceFile` objects whose `
   * **org.openrewrite.table.ParseToPrintInequalities**: *A list of files that parsers produced `SourceFile` which, when printed, didn't match the original source code.*
 
 
-### [Find text](../recipes/text/find)
+### [Find text](../recipes/text/find.md)
  
 _org.openrewrite.text.Find_
 
@@ -113,7 +113,7 @@ Textual search, optionally using Regular Expression (regex) to query.
   * **org.openrewrite.table.TextMatches**: *Lines matching simple text search.*
 
 
-### [Upgrade transitive Gradle dependencies](../recipes/gradle/upgradetransitivedependencyversion)
+### [Upgrade transitive Gradle dependencies](../recipes/gradle/upgradetransitivedependencyversion.md)
  
 _org.openrewrite.gradle.UpgradeTransitiveDependencyVersion_
 
@@ -124,7 +124,7 @@ Upgrades the version of a transitive dependency in a Gradle build file. There ar
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Add the Develocity Gradle plugin](../recipes/gradle/plugins/adddevelocitygradleplugin)
+### [Add the Develocity Gradle plugin](../recipes/gradle/plugins/adddevelocitygradleplugin.md)
  
 _org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin_
 
@@ -135,7 +135,7 @@ Add the Develocity Gradle plugin to settings.gradle files.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Gradle dependency insight](../recipes/gradle/search/dependencyinsight)
+### [Gradle dependency insight](../recipes/gradle/search/dependencyinsight.md)
  
 _org.openrewrite.gradle.search.DependencyInsight_
 
@@ -146,7 +146,7 @@ Find direct and transitive dependencies matching a group, artifact, and optional
   * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
 
 
-### [Find Gradle wrappers](../recipes/gradle/search/findgradlewrapper)
+### [Find Gradle wrappers](../recipes/gradle/search/findgradlewrapper.md)
  
 _org.openrewrite.gradle.search.FindGradleWrapper_
 
@@ -157,7 +157,7 @@ Find Gradle wrappers.
   * **org.openrewrite.gradle.table.GradleWrappersInUse**: *Gradle wrappers in use.*
 
 
-### [Add Gradle dependency](../recipes/gradle/adddependency)
+### [Add Gradle dependency](../recipes/gradle/adddependency.md)
  
 _org.openrewrite.gradle.AddDependency_
 
@@ -168,7 +168,7 @@ Add a gradle dependency to a `build.gradle` file in the correct configuration ba
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Upgrade Gradle dependency versions](../recipes/gradle/upgradedependencyversion)
+### [Upgrade Gradle dependency versions](../recipes/gradle/upgradedependencyversion.md)
  
 _org.openrewrite.gradle.UpgradeDependencyVersion_
 
@@ -182,7 +182,7 @@ Can update version numbers which are defined earlier in the same file in variabl
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Calculate token length of classes](../recipes/java/ai/classdefinitionlength)
+### [Calculate token length of classes](../recipes/java/ai/classdefinitionlength.md)
  
 _org.openrewrite.java.ai.ClassDefinitionLength_
 
@@ -193,7 +193,7 @@ Locates class definitions and predicts the number of token in each.
   * **org.openrewrite.java.table.TokenCount**: *The number of tokens from a code snippet*
 
 
-### [Calculate token length of method definitions](../recipes/java/ai/methoddefinitionlength)
+### [Calculate token length of method definitions](../recipes/java/ai/methoddefinitionlength.md)
  
 _org.openrewrite.java.ai.MethodDefinitionLength_
 
@@ -204,7 +204,7 @@ Locates method definitions and predicts the number of token in each.
   * **org.openrewrite.java.table.TokenCount**: *The number of tokens from a code snippet*
 
 
-### [Find OpenRewrite recipes](../recipes/java/recipes/findrecipes)
+### [Find OpenRewrite recipes](../recipes/java/recipes/findrecipes.md)
  
 _org.openrewrite.java.recipes.FindRecipes_
 
@@ -215,7 +215,7 @@ This recipe finds all OpenRewrite recipes, primarily to produce a data table tha
   * **org.openrewrite.table.RewriteRecipeSource**: *This table contains the source code of recipes along with their metadata for use in an experiment fine-tuning large language models to produce more recipes.*
 
 
-### [Find class hierarchy](../recipes/java/search/findclasshierarchy)
+### [Find class hierarchy](../recipes/java/search/findclasshierarchy.md)
  
 _org.openrewrite.java.search.FindClassHierarchy_
 
@@ -226,7 +226,7 @@ Discovers all class declarations within a project, recording which files they ap
   * **org.openrewrite.java.table.ClassHierarchy**: *Record the classes*
 
 
-### [Find uses of deprecated methods](../recipes/java/search/finddeprecatedmethods)
+### [Find uses of deprecated methods](../recipes/java/search/finddeprecatedmethods.md)
  
 _org.openrewrite.java.search.FindDeprecatedMethods_
 
@@ -237,7 +237,7 @@ Find uses of deprecated methods in any API.
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Find method usages](../recipes/java/search/findmethods)
+### [Find method usages](../recipes/java/search/findmethods.md)
  
 _org.openrewrite.java.search.FindMethods_
 
@@ -248,7 +248,7 @@ Find method calls by pattern.
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Find types](../recipes/java/search/findtypes)
+### [Find types](../recipes/java/search/findtypes.md)
  
 _org.openrewrite.java.search.FindTypes_
 
@@ -259,7 +259,7 @@ Find type references by name.
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
-### [Study the size of the classpath by source set](../recipes/java/search/classpathtypecounts)
+### [Study the size of the classpath by source set](../recipes/java/search/classpathtypecounts.md)
  
 _org.openrewrite.java.search.ClasspathTypeCounts_
 
@@ -270,7 +270,7 @@ Emit one data table row per source set in a project, with the number of types in
   * **org.openrewrite.java.table.ClasspathTypeCount**: *The number of types in each source set in a project's classpath.*
 
 
-### [Find type mappings](../recipes/java/search/findtypemappings)
+### [Find type mappings](../recipes/java/search/findtypemappings.md)
  
 _org.openrewrite.java.search.FindTypeMappings_
 
@@ -281,7 +281,7 @@ Study the frequency of `J` types and their `JavaType` type attribution.
   * **org.openrewrite.java.table.TypeMappings**: *The types mapped to `J` trees.*
 
 
-### [Add Maven parent](../recipes/maven/addparentpom)
+### [Add Maven parent](../recipes/maven/addparentpom.md)
  
 _org.openrewrite.maven.AddParentPom_
 
@@ -292,7 +292,7 @@ Add a parent pom to a Maven pom.xml. Does nothing if a parent pom is already pre
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Change Maven dependency](../recipes/maven/changedependencygroupidandartifactid)
+### [Change Maven dependency](../recipes/maven/changedependencygroupidandartifactid.md)
  
 _org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId_
 
@@ -303,7 +303,7 @@ Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUS
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Change Maven managed dependency groupId, artifactId and optionally the version](../recipes/maven/changemanageddependencygroupidandartifactid)
+### [Change Maven managed dependency groupId, artifactId and optionally the version](../recipes/maven/changemanageddependencygroupidandartifactid.md)
  
 _org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId_
 
@@ -314,7 +314,7 @@ Change the groupId, artifactId and optionally the version of a specified Maven m
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Change Maven parent](../recipes/maven/changeparentpom)
+### [Change Maven parent](../recipes/maven/changeparentpom.md)
  
 _org.openrewrite.maven.ChangeParentPom_
 
@@ -325,7 +325,7 @@ Change the parent pom of a Maven pom.xml. Identifies the parent pom to be change
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Change Maven plugin group and artifact ID](../recipes/maven/changeplugingroupidandartifactid)
+### [Change Maven plugin group and artifact ID](../recipes/maven/changeplugingroupidandartifactid.md)
  
 _org.openrewrite.maven.ChangePluginGroupIdAndArtifactId_
 
@@ -336,7 +336,7 @@ Change the groupId and/or the artifactId of a specified Maven plugin.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Upgrade Maven plugin version](../recipes/maven/upgradepluginversion)
+### [Upgrade Maven plugin version](../recipes/maven/upgradepluginversion.md)
  
 _org.openrewrite.maven.UpgradePluginVersion_
 
@@ -347,7 +347,7 @@ Upgrade the version of a plugin using Node Semver advanced range selectors, allo
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Maven dependency insight](../recipes/maven/search/dependencyinsight)
+### [Maven dependency insight](../recipes/maven/search/dependencyinsight.md)
  
 _org.openrewrite.maven.search.DependencyInsight_
 
@@ -358,7 +358,7 @@ Find direct and transitive dependencies matching a group, artifact, and scope. R
   * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
 
 
-### [Effective dependencies](../recipes/maven/search/effectivedependencies)
+### [Effective dependencies](../recipes/maven/search/effectivedependencies.md)
  
 _org.openrewrite.maven.search.EffectiveDependencies_
 
@@ -369,7 +369,7 @@ Emit the data of binary dependency relationships.
   * **org.openrewrite.maven.table.DependenciesInUse**: *Relationships between dependencies.*
 
 
-### [Effective managed dependencies](../recipes/maven/search/effectivemanageddependencies)
+### [Effective managed dependencies](../recipes/maven/search/effectivemanageddependencies.md)
  
 _org.openrewrite.maven.search.EffectiveManagedDependencies_
 
@@ -380,7 +380,7 @@ Emit the data of binary dependency relationships.
   * **org.openrewrite.maven.table.DependenciesInUse**: *Relationships between POMs and their ancestors that define managed dependencies.*
 
 
-### [List effective Maven repositories](../recipes/maven/search/effectivemavenrepositories)
+### [List effective Maven repositories](../recipes/maven/search/effectivemavenrepositories.md)
  
 _org.openrewrite.maven.search.EffectiveMavenRepositories_
 
@@ -391,7 +391,7 @@ Lists the Maven repositories that would be used for dependency resolution, in or
   * **org.openrewrite.maven.search.EffectiveMavenRepositoriesTable**: *Table showing which Maven repositories were used in dependency resolution for this POM.*
 
 
-### [Find effective maven settings](../recipes/maven/search/findmavensettings)
+### [Find effective maven settings](../recipes/maven/search/findmavensettings.md)
  
 _org.openrewrite.maven.search.FindMavenSettings_
 
@@ -402,7 +402,7 @@ List the effective maven settings file for the current project.
   * **org.openrewrite.maven.table.EffectiveMavenSettings**: *The maven settings file used by each pom.*
 
 
-### [Find Maven project properties](../recipes/maven/search/findproperties)
+### [Find Maven project properties](../recipes/maven/search/findproperties.md)
  
 _org.openrewrite.maven.search.FindProperties_
 
@@ -413,7 +413,7 @@ Finds the specified Maven project properties within a pom.xml.
   * **org.openrewrite.maven.table.MavenProperties**: *Property and value.*
 
 
-### [Maven repository order](../recipes/maven/search/findrepositoryorder)
+### [Maven repository order](../recipes/maven/search/findrepositoryorder.md)
  
 _org.openrewrite.maven.search.FindRepositoryOrder_
 
@@ -424,7 +424,7 @@ Determine the order in which dependencies will be resolved for each `pom.xml` ba
   * **org.openrewrite.maven.table.MavenRepositoryOrder**: *The order in which dependencies will be resolved for each `pom.xml` based on its defined repositories and effective `settings.xml`.*
 
 
-### [Maven parent insight](../recipes/maven/search/parentpominsight)
+### [Maven parent insight](../recipes/maven/search/parentpominsight.md)
  
 _org.openrewrite.maven.search.ParentPomInsight_
 
@@ -435,7 +435,7 @@ Find Maven parents matching a `groupId` and `artifactId`.
   * **org.openrewrite.maven.table.ParentPomsInUse**: *Projects, GAVs and relativePaths for Maven parent POMs in use.*
 
 
-### [Add Maven dependency](../recipes/maven/adddependency)
+### [Add Maven dependency](../recipes/maven/adddependency.md)
  
 _org.openrewrite.maven.AddDependency_
 
@@ -446,7 +446,7 @@ Add a Maven dependency to a `pom.xml` file in the correct scope based on where i
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Add managed Maven dependency](../recipes/maven/addmanageddependency)
+### [Add managed Maven dependency](../recipes/maven/addmanageddependency.md)
  
 _org.openrewrite.maven.AddManagedDependency_
 
@@ -457,7 +457,7 @@ Add a managed Maven dependency to a `pom.xml` file.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Upgrade Maven dependency version](../recipes/maven/upgradedependencyversion)
+### [Upgrade Maven dependency version](../recipes/maven/upgradedependencyversion.md)
  
 _org.openrewrite.maven.UpgradeDependencyVersion_
 
@@ -468,7 +468,7 @@ Upgrade the version of a dependency by specifying a group and (optionally) an ar
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Upgrade transitive Maven dependencies](../recipes/maven/upgradetransitivedependencyversion)
+### [Upgrade transitive Maven dependencies](../recipes/maven/upgradetransitivedependencyversion.md)
  
 _org.openrewrite.maven.UpgradeTransitiveDependencyVersion_
 
@@ -479,7 +479,7 @@ Upgrades the version of a transitive dependency in a Maven pom file. Leaves dire
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [XML style Auto-detection debug](../recipes/xml/style/autodetectdebug)
+### [XML style Auto-detection debug](../recipes/xml/style/autodetectdebug.md)
  
 _org.openrewrite.xml.style.AutodetectDebug_
 
@@ -490,7 +490,7 @@ Runs XML Autodetect and records the results in data tables and search markers. A
   * **org.openrewrite.xml.table.XmlStyleReport**: *Records style information about XML documents. Used for debugging style auto-detection issues.*
 
 
-### [Find Kotlin sources and collect data metrics](../recipes/kotlin/findkotlinsources)
+### [Find Kotlin sources and collect data metrics](../recipes/kotlin/findkotlinsources.md)
  
 _org.openrewrite.kotlin.FindKotlinSources_
 
@@ -501,7 +501,7 @@ Use data table to collect source files types and counts of files with extensions
   * **org.openrewrite.kotlin.table.KotlinSourceFile**: *Kotlin sources present in LSTs on the SAAS.*
 
 
-### [Find method usages](../recipes/analysis/search/findmethods)
+### [Find method usages](../recipes/analysis/search/findmethods.md)
  
 _org.openrewrite.analysis.search.FindMethods_
 
@@ -512,7 +512,7 @@ Find method usages by pattern.
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Find comments' language distribution](../recipes/ai/findcommentslanguage)
+### [Find comments' language distribution](../recipes/ai/findcommentslanguage.md)
  
 _io.moderne.ai.FindCommentsLanguage_
 
@@ -523,7 +523,7 @@ Finds all comments and uses AI to predict which language the comment is in.
   * **io.moderne.ai.table.LanguageDistribution**: *Shows the distribution of language in comments*
 
 
-### [List all methods used](../recipes/ai/listallmethodsused)
+### [List all methods used](../recipes/ai/listallmethodsused.md)
  
 _io.moderne.ai.ListAllMethodsUsed_
 
@@ -534,7 +534,7 @@ List all methods used in any Java source file.
   * **io.moderne.ai.table.MethodInUse**: *Methods used in any Java source file.*
 
 
-### [Get embeddings for code snippets in code](../recipes/ai/research/getcodeembedding)
+### [Get embeddings for code snippets in code](../recipes/ai/research/getcodeembedding.md)
  
 _io.moderne.ai.research.GetCodeEmbedding_
 
@@ -545,7 +545,7 @@ This recipe calls an AI model to get an embedding for either classes or methods 
   * **io.moderne.ai.table.Embeddings**: *Collects the embeddings for either each classes or methods.*
 
 
-### [Find method invocations that resemble a pattern](../recipes/ai/research/findcodethatresembles)
+### [Find method invocations that resemble a pattern](../recipes/ai/research/findcodethatresembles.md)
  
 _io.moderne.ai.research.FindCodeThatResembles_
 
@@ -560,7 +560,7 @@ This recipe uses two phase AI approach to find a method invocation that resemble
   * **io.moderne.ai.table.SuggestedMethodPatterns**: *As the next step after the AI-based searching for method invocations, you may want to do rule-based method searching using the recommended method patterns.*
 
 
-### [Get recommendations](../recipes/ai/research/getrecommendations)
+### [Get recommendations](../recipes/ai/research/getrecommendations.md)
  
 _io.moderne.ai.research.GetRecommendations_
 
@@ -571,7 +571,7 @@ This recipe calls an AI model to get recommendations for modernizing the code ba
   * **io.moderne.ai.table.Recommendations**: *Collects the recommendations based on sampled methods.*
 
 
-### [Find call graph](../recipes/core/findcallgraph)
+### [Find call graph](../recipes/core/findcallgraph.md)
  
 _org.openrewrite.FindCallGraph_
 
@@ -582,7 +582,7 @@ Produces a data table where each row represents a method call.
   * **org.openrewrite.table.CallGraph**: *Records method callers and the methods they invoke.*
 
 
-### [Find duplicate source files](../recipes/core/findduplicatesourcefiles)
+### [Find duplicate source files](../recipes/core/findduplicatesourcefiles.md)
  
 _org.openrewrite.FindDuplicateSourceFiles_
 
@@ -593,7 +593,7 @@ Record the presence of LSTs with duplicate paths, indicating that the same file 
   * **org.openrewrite.table.DuplicateSourceFiles**: *A list of source files that occur more than once in an LST.*
 
 
-### [Language composition report](../recipes/core/languagecomposition)
+### [Language composition report](../recipes/core/languagecomposition.md)
  
 _org.openrewrite.LanguageComposition_
 
@@ -606,7 +606,7 @@ Counts the number of lines of the various kinds of source code and data formats 
   * **org.openrewrite.table.LanguageCompositionPerFile**: *A list of individual files and their language composition.*
 
 
-### [Lint source code with ESLint](../recipes/codemods/eslint)
+### [Lint source code with ESLint](../recipes/codemods/eslint.md)
  
 _org.openrewrite.codemods.ESLint_
 
@@ -619,7 +619,7 @@ This requires the code to have an existing ESLint configuration.
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [Find uses of docker base images](../recipes/docker/search/finddockerimageuses)
+### [Find uses of docker base images](../recipes/docker/search/finddockerimageuses.md)
  
 _org.openrewrite.docker.search.FindDockerImageUses_
 
@@ -630,7 +630,7 @@ Produce an impact analysis of base images used in Dockerfiles.
   * **org.openrewrite.docker.table.DockerBaseImages**: *Records the `FROM` block of Dockerfiles.*
 
 
-### [Analyze a .NET project using upgrade-assistant](../recipes/dotnet/upgradeassistantanalyze)
+### [Analyze a .NET project using upgrade-assistant](../recipes/dotnet/upgradeassistantanalyze.md)
  
 _org.openrewrite.dotnet.UpgradeAssistantAnalyze_
 
@@ -641,7 +641,7 @@ Run [upgrade-assistant analyze](https://learn.microsoft.com/en-us/dotnet/core/po
   * **org.openrewrite.dotnet.UpgradeAssistantAnalysis**: *.NET project upgrade analysis report generated by upgrade-assistant.*
 
 
-### [Dependency insight for Gradle and Maven](../recipes/java/dependencies/dependencyinsight)
+### [Dependency insight for Gradle and Maven](../recipes/java/dependencies/dependencyinsight.md)
  
 _org.openrewrite.java.dependencies.DependencyInsight_
 
@@ -652,7 +652,7 @@ Finds dependencies, including transitive dependencies, in both Gradle and Maven 
   * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
 
 
-### [Dependency report](../recipes/java/dependencies/dependencylist)
+### [Dependency report](../recipes/java/dependencies/dependencylist.md)
  
 _org.openrewrite.java.dependencies.DependencyList_
 
@@ -663,7 +663,7 @@ Emits a data table detailing all Gradle and Maven dependencies.This recipe makes
   * **org.openrewrite.java.dependencies.table.DependencyListReport**: *Lists all Gradle and Maven dependencies*
 
 
-### [Dependency resolution diagnostic](../recipes/java/dependencies/dependencyresolutiondiagnostic)
+### [Dependency resolution diagnostic](../recipes/java/dependencies/dependencyresolutiondiagnostic.md)
  
 _org.openrewrite.java.dependencies.DependencyResolutionDiagnostic_
 
@@ -679,7 +679,7 @@ The Gradle dependency configuration errors lists all the dependency configuratio
   * **org.openrewrite.java.dependencies.table.GradleDependencyConfigurationErrors**: *Records Gradle dependency configurations which failed to resolve during parsing. Partial success/failure is common, a failure in this list does not mean that every dependency failed to resolve.*
 
 
-### [Find relocated dependencies](../recipes/java/dependencies/relocateddependencycheck)
+### [Find relocated dependencies](../recipes/java/dependencies/relocateddependencycheck.md)
  
 _org.openrewrite.java.dependencies.RelocatedDependencyCheck_
 
@@ -692,7 +692,7 @@ This recipe makes no changes to any source file by default. Add `changeDependenc
   * **org.openrewrite.java.dependencies.table.RelocatedDependencyReport**: *A list of dependencies in use that have relocated.*
 
 
-### [Find the oldest matching dependency version in use](../recipes/java/dependencies/search/findminimumdependencyversion)
+### [Find the oldest matching dependency version in use](../recipes/java/dependencies/search/findminimumdependencyversion.md)
  
 _org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion_
 
@@ -703,7 +703,7 @@ The oldest dependency version in use is the lowest dependency version in use in 
   * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
 
 
-### [Dependency insight for C#](../recipes/csharp/dependencies/dependencyinsight)
+### [Dependency insight for C#](../recipes/csharp/dependencies/dependencyinsight.md)
  
 _org.openrewrite.csharp.dependencies.DependencyInsight_
 
@@ -714,7 +714,7 @@ Finds dependencies in `*.csproj` and `packages.config`.
   * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
 
 
-### [Find sensitive API endpoints](../recipes/java/security/search/findsensitiveapiendpoints)
+### [Find sensitive API endpoints](../recipes/java/security/search/findsensitiveapiendpoints.md)
  
 _org.openrewrite.java.security.search.FindSensitiveApiEndpoints_
 
@@ -725,7 +725,7 @@ Find data models exposed by REST APIs that contain sensitive information like PI
   * **org.openrewrite.java.security.table.SensitiveApiEndpoints**: *The API endpoints that expose sensitive data.*
 
 
-### [Find and fix vulnerable Nuget dependencies](../recipes/csharp/dependencies/dependencyvulnerabilitycheck)
+### [Find and fix vulnerable Nuget dependencies](../recipes/csharp/dependencies/dependencyvulnerabilitycheck.md)
  
 _org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck_
 
@@ -736,7 +736,7 @@ This software composition analysis (SCA) tool detects and upgrades dependencies 
   * **org.openrewrite.csharp.dependencies.table.VulnerabilityReport**: *A vulnerability report that includes detailed information about the affected artifact and the corresponding CVEs.*
 
 
-### [Find licenses in use in third-party dependencies](../recipes/java/dependencies/dependencylicensecheck)
+### [Find licenses in use in third-party dependencies](../recipes/java/dependencies/dependencylicensecheck.md)
  
 _org.openrewrite.java.dependencies.DependencyLicenseCheck_
 
@@ -747,7 +747,7 @@ Locates and reports on all licenses in use.
   * **org.openrewrite.java.dependencies.table.LicenseReport**: *Contains a license report of third-party dependencies.*
 
 
-### [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck)
+### [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck.md)
  
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
@@ -759,7 +759,7 @@ This software composition analysis (SCA) tool detects and upgrades dependencies 
   * **org.openrewrite.java.dependencies.table.VulnerabilityReport**: *A vulnerability report that includes detailed information about the affected artifact and the corresponding CVEs.*
 
 
-### [Find Dropwizard metrics](../recipes/micrometer/dropwizard/finddropwizardmetrics)
+### [Find Dropwizard metrics](../recipes/micrometer/dropwizard/finddropwizardmetrics.md)
  
 _org.openrewrite.micrometer.dropwizard.FindDropwizardMetrics_
 
@@ -770,7 +770,7 @@ Find uses of Dropwizard metrics that could be converted to a more modern metrics
   * **org.openrewrite.micrometer.table.DropwizardMetricsInUse**: *These metrics should be converted to a more moderne metrics instrumentation library.*
 
 
-### [Find which Java version is in use](../recipes/java/migrate/search/aboutjavaversion)
+### [Find which Java version is in use](../recipes/java/migrate/search/aboutjavaversion.md)
  
 _org.openrewrite.java.migrate.search.AboutJavaVersion_
 
@@ -781,7 +781,7 @@ A diagnostic for studying the distribution of Java language version levels (both
   * **org.openrewrite.java.migrate.table.JavaVersionPerSourceSet**: *A per-source set view of Java version in use.*
 
 
-### [Find data used on DTOs](../recipes/java/migrate/search/finddatausedondto)
+### [Find data used on DTOs](../recipes/java/migrate/search/finddatausedondto.md)
  
 _org.openrewrite.java.migrate.search.FindDataUsedOnDto_
 
@@ -792,7 +792,7 @@ Find data elements used on DTOs. This is useful to provide information where dat
   * **org.openrewrite.java.migrate.table.DtoDataUses**: *The use of the data elements of a DTO by the method declaration using it.*
 
 
-### [Find uses of internal javax APIs](../recipes/java/migrate/search/findinternaljavaxapis)
+### [Find uses of internal javax APIs](../recipes/java/migrate/search/findinternaljavaxapis.md)
  
 _org.openrewrite.java.migrate.search.FindInternalJavaxApis_
 
@@ -803,7 +803,7 @@ The libraries that define these APIs will have to be migrated before any of the 
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Find Java versions in use](../recipes/java/migrate/search/findjavaversion)
+### [Find Java versions in use](../recipes/java/migrate/search/findjavaversion.md)
  
 _org.openrewrite.java.migrate.search.FindJavaVersion_
 
@@ -814,7 +814,7 @@ Finds Java versions in use.
   * **org.openrewrite.java.migrate.table.JavaVersionTable**: *Records versions of Java in use*
 
 
-### [Plan a Java version migration](../recipes/java/migrate/search/planjavamigration)
+### [Plan a Java version migration](../recipes/java/migrate/search/planjavamigration.md)
  
 _org.openrewrite.java.migrate.search.PlanJavaMigration_
 
@@ -825,7 +825,7 @@ Study the set of Java versions and associated tools in use across many repositor
   * **org.openrewrite.java.migrate.table.JavaVersionMigrationPlan**: *A per-repository view of the current state of Java versions and associated build tools*
 
 
-### [Find and fix vulnerable npm dependencies](../recipes/nodejs/dependencyvulnerabilitycheck)
+### [Find and fix vulnerable npm dependencies](../recipes/nodejs/dependencyvulnerabilitycheck.md)
  
 _org.openrewrite.nodejs.DependencyVulnerabilityCheck_
 
@@ -836,7 +836,7 @@ This software composition analysis (SCA) tool detects and upgrades dependencies 
   * **org.openrewrite.nodejs.table.VulnerabilityReport**: *A vulnerability report that includes detailed information about the affected artifact and the corresponding CVEs.*
 
 
-### [Node.js dependency insight](../recipes/nodejs/search/dependencyinsight)
+### [Node.js dependency insight](../recipes/nodejs/search/dependencyinsight.md)
  
 _org.openrewrite.nodejs.search.DependencyInsight_
 
@@ -847,7 +847,7 @@ Identify the direct and transitive Node.js dependencies used in a project.
   * **org.openrewrite.nodejs.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
 
 
-### [Find Node.js projects](../recipes/nodejs/search/findnodeprojects)
+### [Find Node.js projects](../recipes/nodejs/search/findnodeprojects.md)
  
 _org.openrewrite.nodejs.search.FindNodeProjects_
 
@@ -858,7 +858,7 @@ Find Node.js projects and summarize data about them.
   * **org.openrewrite.nodejs.table.NodeProjects**: *Summary information about Node.js projects.*
 
 
-### [Find HTTP API calls via `RestTemplate`](../recipes/java/spring/search/findapicalls)
+### [Find HTTP API calls via `RestTemplate`](../recipes/java/spring/search/findapicalls.md)
  
 _org.openrewrite.java.spring.search.FindApiCalls_
 
@@ -869,7 +869,7 @@ Find outbound HTTP API calls made via Spring's `RestTemplate` class.
   * **org.openrewrite.java.spring.table.ApiCalls**: *The API endpoints that applications expose.*
 
 
-### [Find Spring API endpoints](../recipes/java/spring/search/findapiendpoints)
+### [Find Spring API endpoints](../recipes/java/spring/search/findapiendpoints.md)
  
 _org.openrewrite.java.spring.search.FindApiEndpoints_
 
@@ -880,7 +880,7 @@ Find all HTTP API endpoints exposed by Spring applications. More specifically, t
   * **org.openrewrite.java.spring.table.ApiEndpoints**: *The API endpoints that applications expose.*
 
 
-### [Find Spring components](../recipes/java/spring/search/findspringcomponents)
+### [Find Spring components](../recipes/java/spring/search/findspringcomponents.md)
  
 _org.openrewrite.java.spring.search.FindSpringComponents_
 
@@ -892,7 +892,7 @@ Find Spring components, including controllers, services, repositories, return ty
   * **org.openrewrite.java.spring.table.SpringComponentRelationships**: *A table of relationships between Spring components.*
 
 
-### [Change a SQL function name](../recipes/sql/changefunctionname)
+### [Change a SQL function name](../recipes/sql/changefunctionname.md)
  
 _org.openrewrite.sql.ChangeFunctionName_
 
@@ -904,7 +904,7 @@ When migrating between dialects, often one name can be substituted for another. 
   * **org.openrewrite.sql.table.DatabaseFunctions**: *Shows matching SQL functions and the queries that contain them.*
 
 
-### [Find SQL in code and resource files](../recipes/sql/findsql)
+### [Find SQL in code and resource files](../recipes/sql/findsql.md)
  
 _org.openrewrite.sql.FindSql_
 
@@ -915,7 +915,7 @@ Find SQL in code (e.g. in string literals) and in resources like those ending wi
   * **org.openrewrite.sql.table.DatabaseColumnsUsed**: *Shows which database columns are read/written by a SQL statement.*
 
 
-### [Find SQL function](../recipes/sql/search/findfunction)
+### [Find SQL function](../recipes/sql/search/findfunction.md)
  
 _org.openrewrite.sql.search.FindFunction_
 
@@ -927,7 +927,7 @@ Find SQL functions by name.
   * **org.openrewrite.sql.table.DatabaseFunctions**: *Shows matching SQL functions and the queries that contain them.*
 
 
-### [Find Struts actions](../recipes/java/struts/search/findstrutsactions)
+### [Find Struts actions](../recipes/java/struts/search/findstrutsactions.md)
  
 _org.openrewrite.java.struts.search.FindStrutsActions_
 
@@ -938,7 +938,7 @@ Find actions and their associated definitions.
   * **org.openrewrite.java.struts.table.StrutsActions**: *Definition of struts action.*
 
 
-### [Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version](../recipes/io/quarkus/updates/core/quarkus37/changemavencompilerannotationprocessorgroupidandartifactid)
+### [Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version](../recipes/io/quarkus/updates/core/quarkus37/changemavencompilerannotationprocessorgroupidandartifactid.md)
  
 _io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId_
 
@@ -949,7 +949,7 @@ Change the groupId, artifactId and/or the version of a specified Maven Compiler 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Sync Maven Compiler plugin annotation processor version with the one provided by the BOM](../recipes/io/quarkus/updates/core/quarkus37/syncmavencompilerannotationprocessorversion)
+### [Sync Maven Compiler plugin annotation processor version with the one provided by the BOM](../recipes/io/quarkus/updates/core/quarkus37/syncmavencompilerannotationprocessorversion.md)
  
 _io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion_
 

@@ -7,7 +7,7 @@ In this guide we'll look at using OpenRewrite to perform an automated remediatio
 
 ### Example Configuration
 
-The [Common Static Analysis Recipe](/recipes/staticanalysis/commonstaticanalysis) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
+The [Common Static Analysis Recipe](../../recipes/staticanalysis/commonstaticanalysis.md) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
@@ -62,7 +62,7 @@ At this point, you're ready to fix common static analysis issues by running `mvn
 
 ### Before and After
 
-For the full list of changes this recipe will make, see its [reference page](/recipes/staticanalysis/commonstaticanalysis).
+For the full list of changes this recipe will make, see its [reference page](../../recipes/staticanalysis/commonstaticanalysis.md).
 
 #### Use explicit types on lambda arguments
 
