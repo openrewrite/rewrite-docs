@@ -12,7 +12,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Get embeddings for code snippets in code](../recipes/ai/research/getcodeembedding.md)
 * [Get recommendations](../recipes/ai/research/getrecommendations.md)
 * [List all methods used](../recipes/ai/listallmethodsused.md)
-* [SpongeBob-case comments](../recipes/io/moderne/transposecapitalization/spongebobcase.md)
 
 ## rewrite-android
 
