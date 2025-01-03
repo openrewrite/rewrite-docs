@@ -17,7 +17,7 @@ For instance, a [ClassDeclaration](#classdeclaration) is an LST that defines a c
 
 It's important to note that it is possible to manipulate LSTs to create code that will not compile. While OpenRewrite provides some safeguards against grammatically invalid transformations in its type system (such as not allowing import statements to be replaced with a method declaration), it is still possible to write code that is valid according to the Java grammar without being a valid, compilable program.
 
-For example, nothing prevents you from modifying an LST so that a variable is used before it is defined. It is the responsibility of recipe authors to consider language semantics and the full range of possibilities when making changes. In accordance with the principle of [Doing No Harm](/authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm), always err on the side of leaving code untouched rather than making a risky change.
+For example, nothing prevents you from modifying an LST so that a variable is used before it is defined. It is the responsibility of recipe authors to consider language semantics and the full range of possibilities when making changes. In accordance with the principle of [Doing No Harm](../authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm), always err on the side of leaving code untouched rather than making a risky change.
 
 ## LST diagram
 
