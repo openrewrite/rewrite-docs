@@ -127,11 +127,11 @@ We recommend that you use [IntelliJ IDEA](https://www.jetbrains.com/idea/) for d
 
 #### Speed up tests
 
-By default, IntelliJ IDEA uses Gradle to build and run tests with. While that ensures compatibility, it is very slow. To help speed up compilation and testing, we recommend that you change this to use `IntelliJ IDEA` instead. You can update this by going to the IntelliJ settings, searching for Gradle, and clicking on the `Build, Execution, Deployment` -> `Build Tools` -> `Gradle` setting:
+By default, IntelliJ IDEA uses Gradle to build and run tests with. While that ensures compatibility, it is very slow. To help speed up compilation and testing, we recommend that you change this to use `IntelliJ IDEA` instead. You can update this by going to the IntelliJ settings, searching for Gradle, and clicking on the [Settings | Build, Execution, Deployment | Build Tools | Gradle](jetbrains://idea/settings?name=Build%2C+Execution%2C+Deployment--Build+Tools--Gradle) setting:
 
 ![](./assets/gradle-select.png)
 
-As part of doing that, you'll also need to update the `Java Compiler` to set the `-parameters` compiler flag. If your system does not have `UTF-8` as its default character encoding (e.g., Windows), you must also add `-encoding utf8`.
+As part of doing that, you'll also need to update the Java Compiler under [Settings | Build, Execution, Deployment | Compiler | Java Compiler](jetbrains://idea/settings?name=Build%2C+Execution%2C+Deployment--Compiler--Java+Compiler) to set the `-parameters` compiler flag. If your system does not have `UTF-8` as its default character encoding (e.g., Windows), you must also add `-encoding utf8`.
 
 ![](./assets/parameters.png)
 
@@ -151,7 +151,7 @@ If you've previously run tests using Gradle and you update the project to use In
 
 _This will not apply to most people as a typical recipe module will not directly reference compiler internals._
 
-If you need to reference internals of the compiler, please add an override to the compiler parameters for the `rewrite.rewrite-java-17.main` module to have the compilation options of:
+If you need to reference internals of the compiler, please add an override to the compiler parameters under [Settings | Build, Execution, Deployment | Compiler | Java Compiler](jetbrains://idea/settings?name=Build%2C+Execution%2C+Deployment--Compiler--Java+Compiler) for the `rewrite.rewrite-java-17.main` module to have the compilation options of:
 
 ```bash
 -parameters --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
