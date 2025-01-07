@@ -93,7 +93,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
           <failOnDryRunResults>false</failOnDryRunResults>
           <exclusions>
-            <exclude>*/some/irrelevant/or/expensive/directory/**</exclude>
+            <exclusion>*/some/irrelevant/or/expensive/directory/**</exclusion>
           </exclusions>
           <plainTextMasks>
             <plainTextMask>**/.txt</plainTextMask>
