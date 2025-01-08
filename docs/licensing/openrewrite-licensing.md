@@ -1,8 +1,8 @@
-# OpenRewrite licensing
+# Licensing
 
 The core OpenRewrite framework is fully open and Apache licensed, and it will continue to be going forward. If open source software (OSS) authors want to provide software migrations to their users as pure OSS, they can.
 
-OpenRewrite recipes that have significant contributions from Moderne and third-party contributors will be available with the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). This license precludes others from deriving significant commercial value from OpenRewrite without contributing to the community. Individual organizations can consume and apply these recipes to their source code, but the recipes cannot be put into commercial products or be re-sold.
+Recipes modules with significant community involvement are fully Apache Licensed as well. OpenRewrite recipes that have significant contributions from Moderne and third-party contributors will be available with the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). This license precludes others from deriving significant commercial value from OpenRewrite without contributing to the community. Individual organizations can consume and apply these recipes to their source code, but the recipes cannot be put into commercial products or be re-sold.
 
 Moderne and others through partnerships with Moderne can offer commercial recipes.
 
@@ -45,6 +45,6 @@ Source available recipes cannot be packaged for commercial sale. However, this o
 
 ## References
 
-* [OpenRewrite licensing by repository](./repository-licensing.md)
+* [OpenRewrite licensing by repository](../reference/latest-versions-of-every-openrewrite-module.md)
 * [Moderne Proprietary License](https://docs.moderne.io/licensing/overview)
 * [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license)

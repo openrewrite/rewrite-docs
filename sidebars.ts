@@ -253,21 +253,7 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: 'Licensing',
-      link: {
-        type: 'generated-index',
-        title: 'Licensing',
-        description: 'OpenRewrite licensing docs.',
-        slug: '/licensing',
-        keywords: ['license'],
-      },
-      items: [
-        'licensing/openrewrite-licensing',
-        'licensing/repository-licensing',
-      ],
-    },
+    'licensing/openrewrite-licensing',
   ],
 };
 
