@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   height: var(--docusaurus-announcement-bar-height);
-  background-color: var(--ifm-color-white);
-  color: var(--ifm-color-black);
+  background-color: var(--ifm-color-announcement-bar-bg);
+  color: var(--ifm-color-announcement-bar-text);
 
   /*
   Unfortunately we can't make announcement bar render above the navbar
