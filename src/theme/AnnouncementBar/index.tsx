@@ -11,11 +11,10 @@ export default function AnnouncementBar(): JSX.Element | null {
   if (!isActive) {
     return null;
   }
-  const {textColor, isCloseable} = announcementBar!;
+  const {isCloseable} = announcementBar!;
   return (
     <div
       className={styles.announcementBar}
-      style={{backgroundImage: 'linear-gradient(45deg, #b12ade, #2546f0)', color: textColor}}
       role="banner">
       {isCloseable && <div className={styles.announcementBarPlaceholder} />}
       <AnnouncementBarContent className={styles.announcementBarContent} />
