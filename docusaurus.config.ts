@@ -41,32 +41,6 @@ const config: Config = {
       },
       innerHTML: JSON.stringify(structuredData),
     },
-    // <link rel="preconnect" href="https://fonts.googleapis.com">
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.googleapis.com',
-      },
-    },
-    // <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossorigin: 'anonymous',
-      },
-    },
-    // <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap',
-      },
-    },
-
   ],
   tagline: description,
   favicon: "img/favicon.svg",
@@ -129,6 +103,7 @@ const config: Config = {
       id: "code_remix",
       content:
         'Now announcing the inaugural <a href="https://coderemix.ai/"><strong>Code Remix Summit</strong></a> – in Miami May 12th-14th. Use the code <strong>MODERNE3VIP</strong> for an additional $300 off.',
+      textColor: "#E3F2FD",
     },
     image: "img/moderne-poster-logo.svg",
     colorMode: {
@@ -170,7 +145,61 @@ const config: Config = {
       ],
     },
     footer: {
-      copyright: `© Moderne, ${new Date().getFullYear()}`,
+      style: "dark",
+      links: [
+        {
+          title: "Docs",
+          items: [
+            {
+              label: "Moderne",
+              href: "https://docs.moderne.io/",
+            },
+          ],
+        },
+        {
+          title: "OpenRewrite Community",
+          items: [
+            {
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/openrewrite",
+            },
+            {
+              label: "Slack",
+              href: "https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA",
+            },
+            {
+              label: "Discord",
+              href: "https://discord.gg/xk3ZKrhWAb",
+            },
+            {
+              label: "Bluesky",
+              href: "https://bsky.app/profile/openrewrite.github.io",
+            },
+            {
+              label: "X",
+              href: "https://x.com/OpenRewrite",
+            }
+          ],
+        },
+        {
+          title: "Moderne",
+          items: [
+            {
+              label: "Moderne.ai",
+              href: "https://moderne.ai",
+            },
+            {
+              label: "Marketplace",
+              href: "https://app.moderne.io/marketplace",
+            },
+            {
+              label: "X",
+              href: "https://twitter.com/ModerneInc",
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Moderne, Inc.`,
     },
     prism: {
       theme: prismThemes.github,
