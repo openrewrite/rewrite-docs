@@ -25,7 +25,7 @@
   --ifm-color-primary-lightest: #8ca4ed;
   --ifm-color-border: #D9D9D9;
   --ifm-code-font-size: 95%;
-  --ifm-color-base: rgba(4, 24, 52, 0.5);
+  --ifm-color-base: rgba(4, 24, 52);
   --ifm-color-content: var(--ifm-color-base);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-color-announcement-bar-bg: var(--ifm-color-mint);
@@ -47,7 +47,8 @@
   --ifm-menu-color-background-hover: transparent;
   --ifm-menu-color-background-active: transparent;
   --ifm-link-color: #283AF7;
-  --ifm-menu-color: rgba(4, 24, 52, 0.5);
+  --ifm-link-hover-color: var(--ifm-color-content);
+  --ifm-menu-color: rgba(4, 24, 52);
   --ifm-menu-color-active: var(--ifm-link-color);
   --ifm-navbar-link-color: var(--ifm-heading-color);
   --ifm-navbar-shadow: none;
@@ -131,7 +132,7 @@ figure figcaption {
 }
 
 .theme-doc-sidebar-menu > .theme-doc-sidebar-item-link:first-child {
-  display: none;
+  margin-top: 1.5rem;
 }
 
 .theme-doc-sidebar-item-link > strong {
@@ -207,6 +208,10 @@ html[data-theme=dark] .theme-doc-sidebar-menu .menu__link--active + .menu__caret
 
 [class^=docMainContainer_] .breadcrumbs__link {
   color: var(--ifm-heading-color);
+}
+
+html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
+  --ifm-heading-color: #041834;
 }
 
 [class^=docMainContainer_] .breadcrumbs__item:not(:last-child):after {
