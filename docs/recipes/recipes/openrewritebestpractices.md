@@ -35,6 +35,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Remove unused imports](../java/removeunusedimports)
 * [End files with a single newline](../java/format/emptynewlineatendoffile)
 * [Remove trailing whitespace](../java/format/removetrailingwhitespace)
+* [Enum values should be compared with "=="](../staticanalysis/compareenumswithequalityoperator)
 * [Inline variable](../staticanalysis/inlinevariable)
 * [Simplify lambda blocks to expressions](../staticanalysis/lambdablocktoexpression)
 * [Add missing `@Override` to overriding and implementing methods](../staticanalysis/missingoverrideannotation)
@@ -63,6 +64,7 @@ recipeList:
   - org.openrewrite.java.RemoveUnusedImports
   - org.openrewrite.java.format.EmptyNewlineAtEndOfFile
   - org.openrewrite.java.format.RemoveTrailingWhitespace
+  - org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator
   - org.openrewrite.staticanalysis.InlineVariable
   - org.openrewrite.staticanalysis.LambdaBlockToExpression
   - org.openrewrite.staticanalysis.MissingOverrideAnnotation

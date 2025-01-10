@@ -52,7 +52,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Remove annotation attribute](../../java/removeannotationattribute)
   * annotationType: `io.swagger.v3.oas.annotations.Parameter`
   * attributeName: `allowMultiple`
-* [Migrate `@ApiImplicitParam(dataTypeClass=Foo.class)` to `@Parameter(schema=@Schema(implementation=Foo.class))`](../../openapi/swagger/migrateapiimplicitparamdatatypeclass)
+* [Migrate `@ApiImplicitParam` to `@Parameter`](../../openapi/swagger/migrateapiimplicitparam)
 
 </TabItem>
 
@@ -87,7 +87,7 @@ recipeList:
   - org.openrewrite.java.RemoveAnnotationAttribute:
       annotationType: io.swagger.v3.oas.annotations.Parameter
       attributeName: allowMultiple
-  - org.openrewrite.openapi.swagger.MigrateApiImplicitParamDataTypeClass
+  - org.openrewrite.openapi.swagger.MigrateApiImplicitParam
 
 ```
 </TabItem>

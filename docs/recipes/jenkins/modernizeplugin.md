@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.jenkins.ModernizePlugin**
 
-_This recipe is intended to change over time to reflect the most recent tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/)._
+_This recipe is intended to change over time to reflect the recommended tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/)._
 
 ## Recipe source
 
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change Maven parent](../maven/changeparentpom)
   * oldGroupId: `org.jenkins-ci.plugins`
   * oldArtifactId: `plugin`
-  * newVersion: `latest.release`
+  * newVersion: `4.X`
   * allowVersionDowngrades: `false`
 * [Remove annotation](../java/removeannotation)
   * annotationPattern: `@org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement`
@@ -41,11 +41,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `mockito-inline`
   * newGroupId: `org.mockito`
   * newArtifactId: `mockito-core`
-  * newVersion: `5.0.0`
+  * newVersion: `5.13.0`
   * overrideManagedVersion: `false`
 * [Upgrade property's value to version](../jenkins/upgradeversionproperty)
   * key: `jenkins.version`
-  * minimumVersion: `2.440.3`
+  * minimumVersion: `2.452.4`
 * [Remove a Gradle or Maven dependency](../java/dependencies/removedependency)
   * groupId: `org.jenkins-ci`
   * artifactId: `symbol-annotation`
@@ -64,12 +64,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.jenkins.ModernizePlugin
 displayName: Modernize a Jenkins plugin to the latest recommended versions
-description: This recipe is intended to change over time to reflect the most recent tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/).
+description: This recipe is intended to change over time to reflect the recommended tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/).
 recipeList:
   - org.openrewrite.maven.ChangeParentPom:
       oldGroupId: org.jenkins-ci.plugins
       oldArtifactId: plugin
-      newVersion: latest.release
+      newVersion: 4.X
       allowVersionDowngrades: false
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
@@ -79,11 +79,11 @@ recipeList:
       oldArtifactId: mockito-inline
       newGroupId: org.mockito
       newArtifactId: mockito-core
-      newVersion: 5.0.0
+      newVersion: 5.13.0
       overrideManagedVersion: false
   - org.openrewrite.jenkins.UpgradeVersionProperty:
       key: jenkins.version
-      minimumVersion: 2.440.3
+      minimumVersion: 2.452.4
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.jenkins-ci
       artifactId: symbol-annotation

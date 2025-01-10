@@ -16,6 +16,12 @@ _Remove all OWASP suppressions with a suppression end date in the past, as these
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/RemoveOwaspSuppressions.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | cutOffDate | *Optional*. Suppressions will be removed if they expired before the provided date. Default will be yesterday. | `2023-01-01` |
+
 ## License
 
 This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -189,4 +195,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Kevin McCarpenter™️](mailto:kevin@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Kevin McCarpenter™️](mailto:kevin@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [leanne](mailto:leanne@moderne.io), [Leanne Kerford](mailto:lea.kerford@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

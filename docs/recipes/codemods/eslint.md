@@ -31,7 +31,7 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 | `Boolean` | fix | *Optional*. Automatically fix violations when possible. Defaults to `true`. | `false` |
                             | `String` | configFile | *Optional*. Allows specifying the full ESLint configuration file contents as multiline JSON. See [ESLint documentation](https://eslint.org/docs/latest/use/configure/configuration-files) for more details.
 
-Note that this will override any other configuration options. |  |
+Note that this will override any other configuration options. | `{}` |
 
 ## License
 
@@ -40,7 +40,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne run it via the Moderne CLI:
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

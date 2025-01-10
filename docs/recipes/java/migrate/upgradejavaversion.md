@@ -39,6 +39,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade jenkins java version](../../jenkins/upgradejavaversion)
 * [Update Gradle project Java compatibility](../../gradle/updatejavacompatibility)
   * allowDowngrade: `false`
+* [Update SDKMan Java version](../../java/migrate/updatesdkman)
+  * newVersion: `null`
 
 </TabItem>
 
@@ -57,6 +59,8 @@ recipeList:
   - org.openrewrite.jenkins.UpgradeJavaVersion
   - org.openrewrite.gradle.UpdateJavaCompatibility:
       allowDowngrade: false
+  - org.openrewrite.java.migrate.UpdateSdkMan:
+      newVersion: null
 
 ```
 </TabItem>
@@ -204,4 +208,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), Kun Li
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li

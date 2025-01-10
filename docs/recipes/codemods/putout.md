@@ -19,7 +19,7 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `Set` | rules | *Optional*. Names of rules to enable. If not provided, putout's default rules are used. |  |
+| `Set` | rules | *Optional*. Names of rules to enable. If not provided, putout's default rules are used. | `remove-unused-variables` |
 | `String` | printer | *Optional*. By default Putout uses its own [putout](https://github.com/coderaiser/putout?tab=readme-ov-file#printer) printer for formatting code. You can choose an alternative printer. Valid options: `putout`, `recast`, `babel` |  |
 
 ## License
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne run it via the Moderne CLI:
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

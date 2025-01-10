@@ -5,6 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Change S3 method constructors to fluent builder calls](./s3methodsconstructortofluent.md)
+* [Change S3 methods to v2.](./s3methodstov2.md)
 * [Change SDK Exception types from v1 to v2](./changeexceptiontypes.md)
 * [Change SDK core types from v1 to v2](./changesdkcoretypes.md)
 * [Change auth related classes from v1 to v2](./changeauthtypes.md)

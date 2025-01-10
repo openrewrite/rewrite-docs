@@ -32,6 +32,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Prefer the Java 11 standard library instead of Guava](../../../java/migrate/guava/noguavajava11)
+* [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
 * [Prefer `new ArrayList<>()`](../../../java/migrate/guava/noguavalistsnewarraylist)
@@ -68,6 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Math#subtractExact`](../../../java/migrate/guava/prefermathsubtractexact)
 * [Prefer `Math#multiplyExact`](../../../java/migrate/guava/prefermathmultiplyexact)
 * [Prefer `new AtomicReference<>()`](../../../java/migrate/guava/noguavaatomicsnewreference)
+* [Refaster rules related to expressions dealing with `InputStream`s](../../../tech/picnic/errorprone/refasterrules/inputstreamrulesrecipes)
 
 </TabItem>
 
@@ -82,6 +85,8 @@ description: Guava filled in important gaps in the Java standard library and sti
 tags:
   - guava
 recipeList:
+  - org.openrewrite.java.migrate.guava.NoGuavaJava11
+  - org.openrewrite.java.migrate.guava.NoGuavaJava21
   - org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir
   - org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList
@@ -118,6 +123,7 @@ recipeList:
   - org.openrewrite.java.migrate.guava.PreferMathSubtractExact
   - org.openrewrite.java.migrate.guava.PreferMathMultiplyExact
   - org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference
+  - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes
 
 ```
 </TabItem>

@@ -28,6 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change a Gradle dependency configuration](./changedependencyconfiguration.md)
 * [Change a Gradle dependency extension](./changedependencyextension.md)
 * [Dependency constraint to resolution rule](./dependencyconstrainttorule.md)
+* [Enable Develocity build cache](./enabledevelocitybuildcache.md)
 * [Enable Gradle build cache](./enablegradlebuildcache.md)
 * [Enable Gradle parallel execution](./enablegradleparallelexecution.md)
 * [Migrate to Gradle 5 from Gradle 4](./migratetogradle5.md)

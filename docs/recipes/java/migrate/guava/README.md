@@ -32,6 +32,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Integer#compare`](./preferintegercompare.md)
 * [Prefer `Integer#parseUnsignedInt`](./preferintegerparseunsignedint.md)
 * [Prefer `Integer#remainderUnsigned`](./preferintegerremainderunsigned.md)
+* [Prefer JDK methods for Maps and Sets of an expected size](./nomapsandsetswithexpectedsize.md)
 * [Prefer `List.of(..)` in Java 9 or higher](./noguavaimmutablelistof.md)
 * [Prefer `Long#compare`](./preferlongcompare.md)
 * [Prefer `Long#parseUnsignedInt`](./preferlongparseunsignedlong.md)

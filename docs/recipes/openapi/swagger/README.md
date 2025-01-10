@@ -18,7 +18,9 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Convert API response codes to strings](./convertapiresponsecodestostrings.md)
-* [Migrate `@ApiImplicitParam(dataTypeClass=Foo.class)` to `@Parameter(schema=@Schema(implementation=Foo.class))`](./migrateapiimplicitparamdatatypeclass.md)
+* [Migrate `@ApiImplicitParam` to `@Parameter`](./migrateapiimplicitparam.md)
+* [Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`](./migrateapiparamdefaultvalue.md)
 * [Migrate from `@Api` to `@Tag`](./migrateapitotag.md)
+* [Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`](./migrateswaggerdefinitiontoopenapidefinition.md)
 
 

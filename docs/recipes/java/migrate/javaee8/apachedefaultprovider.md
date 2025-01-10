@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider**
 
-_This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors.  Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the  Apache BVal implementation which was used for Bean Validation 1.0 and 1.1._
+_This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1._
 
 ## Recipe source
 
@@ -52,7 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider
 displayName: Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references
-description: This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors.  Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the  Apache BVal implementation which was used for Bean Validation 1.0 and 1.1.
+description: This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1.
 recipeList:
   - org.openrewrite.xml.ChangeTagValue:
       elementName: /validation-config/default-provider

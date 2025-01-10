@@ -1,5 +1,9 @@
 # Lombok
 
+## Categories
+
+* [Log](/recipes/java/migrate/lombok/log)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
@@ -12,5 +16,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert getter methods to annotations](./uselombokgetter.md)
 * [Convert setter methods to annotations](./uselomboksetter.md)
 * [Prefer `final var` over `lombok.val`](./lombokvaltofinalvar.md)
+* [Use `@NoArgsConstructor` where applicable](./usenoargsconstructor.md)
 
 

@@ -32,6 +32,46 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
 * [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
 * [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
 
 </TabItem>
 
@@ -44,6 +84,46 @@ name: software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent
 displayName: Change S3 method constructors to fluent builder calls
 description: Change S3 method constructors to fluent builder calls.
 recipeList:
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
   - software.amazon.awssdk.v2migration.ConstructorToFluent
   - software.amazon.awssdk.v2migration.ConstructorToFluent
   - software.amazon.awssdk.v2migration.ConstructorToFluent

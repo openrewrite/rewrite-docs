@@ -146,4 +146,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Guillaume Smet](mailto:guillaume.smet@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Valentin Delaye, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Guillaume Smet](mailto:guillaume.smet@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Valentin Delaye, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

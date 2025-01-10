@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use Jenkins API plugin instead of libraries](../jenkins/replacelibrarieswithapiplugin)
   * pluginGroupId: `io.jenkins.plugins`
   * pluginArtifactId: `commons-lang3-api`
-  * pluginVersion: `3.12.0-36.vd97de6465d5b_`
+  * pluginVersion: `3.17.0-84.vb_b_938040b_078`
   * replaces: `[ReplaceLibrariesWithApiPlugin.Library(groupId=org.apache.commons, artifactId=commons-lang3)]`
 
 </TabItem>
@@ -45,7 +45,7 @@ recipeList:
   - org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin:
       pluginGroupId: io.jenkins.plugins
       pluginArtifactId: commons-lang3-api
-      pluginVersion: 3.12.0-36.vd97de6465d5b_
+      pluginVersion: 3.17.0-84.vb_b_938040b_078
       replaces: [ReplaceLibrariesWithApiPlugin.Library(groupId=org.apache.commons, artifactId=commons-lang3)]
 
 ```

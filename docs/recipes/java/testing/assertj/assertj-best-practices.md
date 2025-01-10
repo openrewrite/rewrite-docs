@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Hamcrest assertions to AssertJ](../../../java/testing/hamcrest/migratehamcresttoassertj)
 * [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj)
 * [Migrate TestNG assertions to AssertJ](../../../java/testing/testng/testngtoassertj)
+* [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`](../../../java/testing/assertj/isequaltoignoringmillistoisclosetorecipe)
 * [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports)
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions)
 * [Shorten AssertJ assertions](../../../java/testing/assertj/simplifyassertjassertions)
@@ -73,6 +74,7 @@ recipeList:
   - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ
   - org.openrewrite.java.testing.assertj.JUnitToAssertj
   - org.openrewrite.java.testing.testng.TestNgToAssertj
+  - org.openrewrite.java.testing.assertj.IsEqualToIgnoringMillisToIsCloseToRecipe
   - org.openrewrite.java.testing.assertj.StaticImports
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions

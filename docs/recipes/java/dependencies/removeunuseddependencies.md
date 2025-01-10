@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.dependencies.RemoveUnusedDependencies**
 
-_Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files._
+_Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is a complex recipe which has not yet been well tested and exercised. For now it should be treated as making recommendations to further investigate._
 
 ## Recipe source
 
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne run it via the Moderne CLI:
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 

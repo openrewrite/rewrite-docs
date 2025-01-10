@@ -3,6 +3,7 @@
 ## Categories
 
 * [Archunit](/recipes/java/testing/archunit)
+* [Arquillian](/recipes/java/testing/arquillian)
 * [AssertJ](/recipes/java/testing/assertj)
 * [Cleanup](/recipes/java/testing/cleanup)
 * [Datafaker](/recipes/java/testing/datafaker)

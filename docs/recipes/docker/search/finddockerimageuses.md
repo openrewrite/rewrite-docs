@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.docker.search.FindDockerImageUses**
 
-_Produce an impact analysis of base images used in Dockerfiles._
+_Produce an impact analysis of base images used in Dockerfiles, .gitlab-ci files, Kubernetes Deployment file, etc._
 
 ## Recipe source
 
@@ -162,6 +162,7 @@ _Records the `FROM` block of Dockerfiles._
 
 | Column Name | Description |
 | ----------- | ----------- |
+| Source path | The source file containing the image reference. |
 | Image name | The full name of the image. |
 | Tag | The tag, if any. If no tag is specified, this will be empty. |
 
@@ -209,4 +210,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)

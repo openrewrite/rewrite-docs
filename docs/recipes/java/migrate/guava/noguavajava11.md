@@ -33,7 +33,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer the Java standard library instead of Guava](../../../java/migrate/guava/noguava)
 * [Prefer `List.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablelistof)
 * [Prefer `Map.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablemapof)
 * [Prefer `Set.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablesetof)
@@ -58,7 +57,6 @@ tags:
   - guava
   - java11
 recipeList:
-  - org.openrewrite.java.migrate.guava.NoGuava
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableListOf
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf
@@ -249,6 +247,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Tobias Lidskog](mailto:tlidskog@paypal.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Rick Ossendrijver](mailto:rick.ossendrijver@gmail.com)

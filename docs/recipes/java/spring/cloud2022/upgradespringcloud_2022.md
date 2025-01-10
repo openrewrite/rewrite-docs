@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Upgrade dependencies to Spring Cloud 2022](../../../java/spring/cloud2022/dependencyupgrades)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](../../../java/spring/cloud2022/migratecloudsleuthtomicrometertracing)
+* [Migrate `@RequestMapping` on `FeignClient` to `@FeignClient` path attribute](../../../java/spring/cloud2022/migraterequestmappingonfeignclient)
 
 </TabItem>
 
@@ -52,6 +53,7 @@ tags:
 recipeList:
   - org.openrewrite.java.spring.cloud2022.DependencyUpgrades
   - org.openrewrite.java.spring.cloud2022.MigrateCloudSleuthToMicrometerTracing
+  - org.openrewrite.java.spring.cloud2022.MigrateRequestMappingOnFeignClient
 
 ```
 </TabItem>
@@ -235,4 +237,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Kun Li, [Kyle Scully](mailto:scullykns@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), Cathy, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Kun Li, [Kyle Scully](mailto:scullykns@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

@@ -72,6 +72,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.springframework.util.Assert notEmpty(java.util.Map)`
   * argumentIndex: `1`
   * literal: `must not be empty`
+* [Add a literal method argument](../../../java/addliteralmethodargument)
+  * methodPattern: `org.springframework.util.Assert notEmpty(java.util.Collection)`
+  * argumentIndex: `1`
+  * literal: `must not be empty`
 
 </TabItem>
 
@@ -126,6 +130,10 @@ recipeList:
       literal: must not be empty
   - org.openrewrite.java.AddLiteralMethodArgument:
       methodPattern: org.springframework.util.Assert notEmpty(java.util.Map)
+      argumentIndex: 1
+      literal: must not be empty
+  - org.openrewrite.java.AddLiteralMethodArgument:
+      methodPattern: org.springframework.util.Assert notEmpty(java.util.Collection)
       argumentIndex: 1
       literal: must not be empty
 

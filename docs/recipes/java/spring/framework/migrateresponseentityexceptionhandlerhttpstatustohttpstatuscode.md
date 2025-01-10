@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Laurens Westerlaken](mailto:laurens.w@live.nl), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

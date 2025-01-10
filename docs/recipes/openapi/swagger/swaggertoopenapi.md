@@ -52,6 +52,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * oldFullyQualifiedTypeName: `io.swagger.annotations.Tag`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.tags.Tag`
 * [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `io.swagger.annotations.Info`
+  * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.info.Info`
+* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `springfox.documentation.annotations.ApiIgnore`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.Hidden`
 * [Migrate from `@ApiOperation` to `@Operation`](../../openapi/swagger/migrateapioperationtooperation)
@@ -61,6 +64,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Migrate from `@ApiParam` to `@Parameter`](../../openapi/swagger/migrateapiparamtoparameter)
 * [Migrate from `@ApiModelProperty` to `@Schema`](../../openapi/swagger/migrateapimodelpropertytoschema)
 * [Migrate from `@ApiModel` to `@Schema`](../../openapi/swagger/migrateapimodeltoschema)
+* [Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`](../../openapi/swagger/migrateswaggerdefinitiontoopenapidefinition)
 
 </TabItem>
 
@@ -95,6 +99,9 @@ recipeList:
       oldFullyQualifiedTypeName: io.swagger.annotations.Tag
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.tags.Tag
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: io.swagger.annotations.Info
+      newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.info.Info
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: springfox.documentation.annotations.ApiIgnore
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.Hidden
   - org.openrewrite.openapi.swagger.MigrateApiOperationToOperation
@@ -104,6 +111,7 @@ recipeList:
   - org.openrewrite.openapi.swagger.MigrateApiParamToParameter
   - org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema
   - org.openrewrite.openapi.swagger.MigrateApiModelToSchema
+  - org.openrewrite.openapi.swagger.MigrateSwaggerDefinitionToOpenAPIDefinition
 
 ```
 </TabItem>

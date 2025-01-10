@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2**
 
-_Transform usage of V1 S3 non-streaming requests such as CreateBucket and DeleteBucket to V2._
+_Transform usage of V1 S3 non-streaming requests to V2._
 
 ## Recipe source
 

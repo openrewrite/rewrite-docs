@@ -11,6 +11,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Check whether a type is **not** in use](./doesnotusetype.md)
 * [Find annotations](./findannotations.md)
 * [Find class hierarchy](./findclasshierarchy.md)
+* [Find compile errors](./findcompileerrors.md)
 * [Find empty classes](./findemptyclasses.md)
 * [Find fields](./findfields.md)
 * [Find fields of type](./findfieldsoftype.md)

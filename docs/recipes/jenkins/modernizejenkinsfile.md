@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Create text file](../text/createtextfile)
-  * fileContents: `/*  See the documentation for more options:  https://github.com/jenkins-infra/pipeline-library/ */ buildPlugin(   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests   configurations: [     [platform: 'linux', jdk: 21],     [platform: 'windows', jdk: 17], ]) `
+  * fileContents: `/*  See the documentation for more options:  https://github.com/jenkins-infra/pipeline-library/ */ buildPlugin(   forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests   configurations: [     [platform: 'linux', jdk: 21],     [platform: 'windows', jdk: 17], ]) `
   * relativeFileName: `Jenkinsfile`
   * overwriteExisting: `true`
 
@@ -45,7 +45,9 @@ recipeList:
       fileContents: /*
  See the documentation for more options:
  https://github.com/jenkins-infra/pipeline-library/
-*/ buildPlugin(
+*/
+buildPlugin(
+  forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores
   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
   configurations: [
     [platform: 'linux', jdk: 21],

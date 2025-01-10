@@ -37,6 +37,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [V1 S3Object to V2](../../../../software/amazon/awssdk/v2migration/s3streamingresponsetov2)
 * [V1 S3 streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3streamingrequesttov2)
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2)
+* [Change S3 methods to v2.](../../../../software/amazon/awssdk/v2migration/s3methodstov2)
 * [Change S3 method constructors to fluent builder calls](../../../../software/amazon/awssdk/v2migration/s3methodsconstructortofluent)
 * [Change v1 enum getters to v2](../../../../software/amazon/awssdk/v2migration/enumgetterstov2)
 * [Change AWS SDK for Java v1 types to v2 equivalents](../../../../software/amazon/awssdk/v2migration/changesdktype)
@@ -67,6 +68,7 @@ recipeList:
   - software.amazon.awssdk.v2migration.S3StreamingResponseToV2
   - software.amazon.awssdk.v2migration.S3StreamingRequestToV2
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2
+  - software.amazon.awssdk.v2migration.S3MethodsToV2
   - software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent
   - software.amazon.awssdk.v2migration.EnumGettersToV2
   - software.amazon.awssdk.v2migration.ChangeSdkType

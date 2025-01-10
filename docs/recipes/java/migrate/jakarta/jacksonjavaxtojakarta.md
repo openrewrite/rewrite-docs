@@ -133,6 +133,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.datatype.jsr353.JSR353Module`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.datatype.jsonp.JSONPModule`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.jakarta.rs.json.JacksonXmlBindJsonProvider`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule`
 
 </TabItem>
 
@@ -250,6 +256,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.datatype.jsr353.JSR353Module
       newFullyQualifiedTypeName: com.fasterxml.jackson.datatype.jsonp.JSONPModule
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider
+      newFullyQualifiedTypeName: com.fasterxml.jackson.jakarta.rs.json.JacksonXmlBindJsonProvider
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule
+      newFullyQualifiedTypeName: com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule
 
 ```
 </TabItem>

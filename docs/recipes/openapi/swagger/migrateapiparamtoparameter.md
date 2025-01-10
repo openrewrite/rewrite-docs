@@ -40,6 +40,10 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * annotationType: `io.swagger.v3.oas.annotations.Parameter`
   * oldAttributeName: `value`
   * newAttributeName: `description`
+* [Remove annotation attribute](../../java/removeannotationattribute)
+  * annotationType: `io.swagger.v3.oas.annotations.Parameter`
+  * attributeName: `allowMultiple`
+* [Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`](../../openapi/swagger/migrateapiparamdefaultvalue)
 
 </TabItem>
 
@@ -62,6 +66,10 @@ recipeList:
       annotationType: io.swagger.v3.oas.annotations.Parameter
       oldAttributeName: value
       newAttributeName: description
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: io.swagger.v3.oas.annotations.Parameter
+      attributeName: allowMultiple
+  - org.openrewrite.openapi.swagger.MigrateApiParamDefaultValue
 
 ```
 </TabItem>
@@ -243,3 +251,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+SiBorea

@@ -11,5 +11,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add logging.pattern.level for traceId and spanId](./addloggingpatternlevelforsleuth.md)
+* [Migrate `@RequestMapping` on `FeignClient` to `@FeignClient` path attribute](./migraterequestmappingonfeignclient.md)
 
 

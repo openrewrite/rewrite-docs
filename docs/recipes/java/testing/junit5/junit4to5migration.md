@@ -113,6 +113,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.jbehave.core.junit.JUnitStories`
   * newFullyQualifiedTypeName: `org.jbehave.core.junit.JupiterStories`
+* [Use Arquillian JUnit 5 Extension](../../../java/testing/arquillian/arquillianjunit4toarquillianjunit5)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](../../../java/testing/dbrider/migratedbriderspringtodbriderjunit5)
 
 </TabItem>
@@ -209,6 +210,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.jbehave.core.junit.JUnitStories
       newFullyQualifiedTypeName: org.jbehave.core.junit.JupiterStories
+  - org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5
   - org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5
 
 ```
