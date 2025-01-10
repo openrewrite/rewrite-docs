@@ -501,6 +501,17 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Update to Angular v19](../recipes/codemods/migrate/angular/v19.md)
 * [Upgrade Angular versions](../recipes/codemods/migrate/angular/applyangularcli.md)
 
+## rewrite-compiled-analysis
+
+* [Change `List#add` to `List#plus` and verify.](../recipes/io/moderne/compiled/verification/changelistmethodandverify.md)
+* [Verify compilation](../recipes/io/moderne/compiled/verification/verifycompilation.md)
+
+## rewrite-comprehension
+
+* [Comprehend code](../recipes/io/moderne/knowledge/comprehendcode.md)
+* [Update README](../recipes/io/moderne/knowledge/docs/updatereadme.md)
+* [Update the README for an OpenRewrite recipe repository](../recipes/io/moderne/knowledge/docs/updateopenrewritereadme.md)
+
 ## rewrite-concourse
 
 * [Change Concourse value](../recipes/concourse/changevalue.md)

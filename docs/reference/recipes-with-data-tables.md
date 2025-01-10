@@ -61,7 +61,7 @@ This recipe explores parse failures after an LST is produced for classifying the
  
 _org.openrewrite.FindSourceFiles_
 
-Find files by source path.
+Find files by source path. Paths are always interpreted as relative to the repository root.
 
 #### Data tables:
 
@@ -226,6 +226,17 @@ Discovers all class declarations within a project, recording which files they ap
   * **org.openrewrite.java.table.ClassHierarchy**: *Record the classes*
 
 
+### [Find compile errors](../recipes/java/search/findcompileerrors.md)
+ 
+_org.openrewrite.java.search.FindCompileErrors_
+
+Compile errors result in a particular LST structure that can be searched for.
+
+#### Data tables:
+
+  * **org.openrewrite.java.table.CompileErrors**: *The source code of compile errors.*
+
+
 ### [Find uses of deprecated methods](../recipes/java/search/finddeprecatedmethods.md)
  
 _org.openrewrite.java.search.FindDeprecatedMethods_
@@ -279,6 +290,17 @@ Study the frequency of `J` types and their `JavaType` type attribution.
 #### Data tables:
 
   * **org.openrewrite.java.table.TypeMappings**: *The types mapped to `J` trees.*
+
+
+### [Find Kotlin sources and collect data metrics](../recipes/kotlin/findkotlinsources.md)
+ 
+_org.openrewrite.kotlin.FindKotlinSources_
+
+Use data table to collect source files types and counts of files with extensions `.kt`.
+
+#### Data tables:
+
+  * **org.openrewrite.kotlin.table.KotlinSourceFile**: *Kotlin sources present in LSTs on the SAAS.*
 
 
 ### [Add Maven parent](../recipes/maven/addparentpom.md)
@@ -490,17 +512,6 @@ Runs XML Autodetect and records the results in data tables and search markers. A
   * **org.openrewrite.xml.table.XmlStyleReport**: *Records style information about XML documents. Used for debugging style auto-detection issues.*
 
 
-### [Find Kotlin sources and collect data metrics](../recipes/kotlin/findkotlinsources.md)
- 
-_org.openrewrite.kotlin.FindKotlinSources_
-
-Use data table to collect source files types and counts of files with extensions `.kt`.
-
-#### Data tables:
-
-  * **org.openrewrite.kotlin.table.KotlinSourceFile**: *Kotlin sources present in LSTs on the SAAS.*
-
-
 ### [Find method usages](../recipes/analysis/search/findmethods.md)
  
 _org.openrewrite.analysis.search.FindMethods_
@@ -619,11 +630,34 @@ This requires the code to have an existing ESLint configuration.
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
+### [Verify compilation](../recipes/io/moderne/compiled/verification/verifycompilation.md)
+ 
+_io.moderne.compiled.verification.VerifyCompilation_
+
+This is a task that runs after another recipe to verify that the changes made by that recipe would result in a successful compilation.
+
+#### Data tables:
+
+  * **io.moderne.compiled.table.ABITraces**: *ASM trace of the ABI of types needed to perform compile verification.*
+
+
+### [Comprehend code](../recipes/io/moderne/knowledge/comprehendcode.md)
+ 
+_io.moderne.knowledge.ComprehendCode_
+
+Use LLMs to add inferred knowledge to the code.
+
+#### Data tables:
+
+  * **io.moderne.knowledge.table.ClassDescriptions**: *The inferred knowledge about classes in the codebase, as provided by an LLM.*
+  * **io.moderne.knowledge.table.MethodDescriptions**: *The inferred knowledge about methods in the codebase, as provided by an LLM.*
+
+
 ### [Find uses of docker base images](../recipes/docker/search/finddockerimageuses.md)
  
 _org.openrewrite.docker.search.FindDockerImageUses_
 
-Produce an impact analysis of base images used in Dockerfiles.
+Produce an impact analysis of base images used in Dockerfiles, .gitlab-ci files, Kubernetes Deployment file, etc.
 
 #### Data tables:
 
