@@ -86,6 +86,10 @@ html[data-theme='dark'] {
   --ifm-card-background-color: #fff;
 }
 
+.navbar__logo img {
+  height: 33px;
+}
+
 figure img {
   display: block;
   margin-left: auto;
@@ -412,5 +416,21 @@ html[data-theme='dark'] .footer .footer__bottom::before {
   [class^=docMainContainer_] .pagination-nav__link--next .pagination-nav__sublabel {
     order: 99;
     width: 42px;
+  }
+}
+
+/* Custom styles for desktop (screens wider than 768px) */
+@media (min-width: 768px) {
+  .navbar__logo {
+    width: 312px; /* Larger logo for desktop */
+    margin-right: 20px;
+  }
+}
+
+/* Custom styles for mobile (screens smaller than 768px) */
+@media (max-width: 767px) {
+  .navbar__logo {
+    width: 220px; /* Smaller logo for mobile */
+    margin-right: 10px;
   }
 }
