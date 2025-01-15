@@ -82,6 +82,7 @@ The below table shows some more examples of method patterns and the methods they
 | `org.openrewrite.java.* foo(..)`            | Any method named `foo` in a package that starts with `org.openrewrite.java.`. Note that the `.*` after `java` means that the method _must_ be in this package rather than some subsequent subpackages.             |
 | `org.Foo bar(java.util.List)`               | Exactly the `bar` method in the `org.Foo` package that takes in a single `java.util.List` as an argument.                                                                                                          |
 | `org.Foo <constructor>(..)`                 | Matches any constructors in the `org.Foo` package that takes in any number of arguments.                                                                                                                           |
+| `org.Foo bar()`                             | Matches exactly the `bar` method in the `org.Foo` package that has **no** arguments                                                                                                                                |
 
 
 :::info
