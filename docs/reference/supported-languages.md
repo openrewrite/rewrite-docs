@@ -16,16 +16,19 @@ If your project is open-source, you can use the [Moderne CLI](https://docs.moder
 
 ## Data formats
 
-* XML
-* Properties
-* YAML
+* HCL
 * JSON
+* Properties
 * Protobuf
+* TOML
+* XML
+* YAML
 
 ## Build tools
 
 * Maven
 * Gradle
+* Bazel, via the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro)
 
 ## Frameworks
 
