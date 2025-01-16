@@ -3,6 +3,8 @@ name: Update docs
 
 on:
   workflow_dispatch:
+#  schedule:
+#    - cron: 0 0 * * *
 
 concurrency:
   group: "update-docs"
@@ -12,7 +14,7 @@ jobs:
   build:
     name: Update docs
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       # Shared setup
       - uses: actions/setup-java@v4
@@ -49,11 +51,5 @@ jobs:
       - name: Commit and push
         working-directory: rewrite-docs
         run: |
-          export MSG="[Auto] Latest versions as of $(date +'%Y-%m-%d %H:%M')"
-          export DOC=docs/reference/latest-versions-of-every-openrewrite-module.md
-          export JS=src/plugins/latest-versions.js
-          if ! git diff-index --quiet HEAD ${DOC} ${JS};
-          then
-            git commit --message "${MSG}" ${DOC} ${JS};
-            git push origin master;
-          fi
+          git add docs/reference/latest-versions-of-every-openrewrite-module.md src/plugins/latest-versions.js;
+          git diff --quiet HEAD || (git commit -m "[Auto] Latest versions as of $(date +'%Y-%m-%dT%H%M')" && git push origin master)
