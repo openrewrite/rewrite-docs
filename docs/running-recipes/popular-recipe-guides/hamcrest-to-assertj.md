@@ -1,6 +1,6 @@
 # Migrate to AssertJ from Hamcrest
 
-In this tutorial, we'll use OpenRewrite to perform an automated migration from [Hamcrest](https://hamcrest.org/JavaHamcrest/) to [AssertJ](https://assertj.github.io/doc/#assertj-overview). While Hamcrest still _functions_, it hasn't been updated since 2019 and there's a growing number of [issues](https://github.com/hamcrest/JavaHamcrest/issues) and [pull requests](https://github.com/hamcrest/JavaHamcrest/pulls) open on the project. On the other hand, AssertJ has much more activity and is generally favored for testing assertions. 
+In this tutorial, we'll use OpenRewrite to perform an automated migration from [Hamcrest](https://hamcrest.org/JavaHamcrest/) to [AssertJ](https://assertj.github.io/doc/#assertj-overview). AssertJ is more actively maintained than Hamcrest and is generally favored for testing assertions. 
 
 ## Configuration
 
