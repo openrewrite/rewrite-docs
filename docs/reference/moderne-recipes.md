@@ -530,30 +530,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Upgrade to .NET 8.0 using upgrade-assistant](../recipes/dotnet/migratetonet8.md)
 * [Upgrade to .NET 9.0 using upgrade-assistant](../recipes/dotnet/migratetonet9.md)
 
-## rewrite-github-actions
-
-* [Add cron workflow trigger](../recipes/github/addcrontrigger.md)
-* [Add manual workflow trigger](../recipes/github/addmanualtrigger.md)
-* [Cancel in-progress workflow when it is triggered again](../recipes/github/autocancelinprogressworkflow.md)
-* [Change GitHub Action](../recipes/github/changeaction.md)
-* [Change GitHub Action version](../recipes/github/changeactionversion.md)
-* [Change dependabot schedule interval](../recipes/github/changedependabotscheduleinterval.md)
-* [Check for github-actions updates daily](../recipes/github/dependabotcheckforgithubactionsupdatesdaily.md)
-* [Check for github-actions updates weekly](../recipes/github/dependabotcheckforgithubactionsupdatesweekly.md)
-* [Find GitHub action secret references](../recipes/github/findgithubactionsecretreferences.md)
-* [Find jobs missing timeout](../recipes/github/findmissingtimeout.md)
-* [Remove all cron triggers](../recipes/github/removeallcrontriggers.md)
-* [Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`](../recipes/github/gradle/renamegradlebuildactiontosetupgradle.md)
-* [Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`](../recipes/github/gradle/renamewrappervalidationaction.md)
-* [Replace runners for a job](../recipes/github/replacerunners.md)
-* [Setup Java dependency caching](../recipes/github/setupjavacaching.md)
-* [Upgrade `actions/setup-java` `java-version`](../recipes/github/setupjavaupgradejavaversion.md)
-* [Upgrade `slackapi/slack-github-action`](../recipes/github/upgradeslacknotificationversion2.md)
-* [Use `actions/setup-java` IBM `semeru` distribution](../recipes/github/setupjavaadoptopenj9tosemeru.md)
-* [Use `actions/setup-java` `temurin` distribution](../recipes/github/setupjavaadoptopenjdktotemurin.md)
-* [Use `actions/setup-java` `temurin` distribution as they are cached in hosted runners](../recipes/github/prefertemurindistributions.md)
-* [Use `secrets: inherit` if possible](../recipes/github/prefersecretsinheritworkflow.md)
-
 ## rewrite-jackson
 
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](../recipes/java/jackson/codehausclassestofasterxml.md)
