@@ -110,9 +110,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     metadata: [
-      { 
-        name: 'keywords', 
-        content: 'auto-remediation, Java, migrate, Moderne, OpenRewrite, refactoring, SAST, SCA, Spring Boot Migration, security' 
+      {
+        name: 'keywords',
+        content: 'auto-remediation, Java, migrate, Moderne, OpenRewrite, refactoring, SAST, SCA, Spring Boot Migration, security'
       },
     ],
     navbar: {
