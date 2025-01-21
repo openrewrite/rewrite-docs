@@ -103,7 +103,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.nodejs.UpgradeDependencyVersion](../recipes/nodejs/upgradedependencyversion): Upgrade matching Node.js direct dependencies. 
 * [org.openrewrite.nodejs.search.DependencyInsight](../recipes/nodejs/search/dependencyinsight): Identify the direct and transitive Node.js dependencies used in a project. 
 * [org.openrewrite.nodejs.search.FindNodeProjects](../recipes/nodejs/search/findnodeprojects): Find Node.js projects and summarize data about them. 
-* [org.openrewrite.recipes.RecipeNullabilityBestPractices](../recipes/recipes/recipenullabilitybestpractices): Use OpenRewrite internal nullability annotations; drop JetBrains annotations; use `package-info.java` instead. 
+* org.openrewrite.recipes.RecipeNullabilityBestPractices: Use OpenRewrite internal nullability annotations; drop JetBrains annotations; use `package-info.java` instead. 
 * [org.openrewrite.sql.ChangeFunctionName](../recipes/sql/changefunctionname): When migrating between dialects, often one name can be substituted for another. For example, Oracle's NVL function can be replaced with Postgres COALESCE. 
 * [org.openrewrite.sql.search.FindFunction](../recipes/sql/search/findfunction): Find SQL functions by name. 
 
