@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline**
 
-```
-Enforce linebreaks after opening and before closing array brackets in `<template>`
-See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html)
-```
-
+_Enforce linebreaks after opening and before closing array brackets in `<template>` See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html)_
 
 ### Tags
 

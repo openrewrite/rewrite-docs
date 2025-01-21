@@ -9,10 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.jenkins.AddJellyXmlDeclaration**
 
-```
-Ensure the XML declaration `<?jelly escape-by-default='true'?>` is present in all `.jelly` files.
-```
-
+_Ensure the XML declaration `<?jelly escape-by-default='true'?>` is present in all `.jelly` files._
 
 ## Recipe source
 

@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ArrayElementNewline**
 
-```
-Enforce line breaks after each array element in `<template>`
-See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html)
-```
-
+_Enforce line breaks after each array element in `<template>` See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html)_
 
 ### Tags
 

@@ -9,10 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.boot2.ChangeEmbeddedServletContainerCustomizer**
 
-```
-Find any classes implementing `EmbeddedServletContainerCustomizer` and change the interface to `WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>`.
-```
-
+_Find any classes implementing `EmbeddedServletContainerCustomizer` and change the interface to `WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>`._
 
 ## Recipe source
 

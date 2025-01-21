@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing**
 
-```
-Enforce consistent spacing inside array brackets in `<template>`
-See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html)
-```
-
+_Enforce consistent spacing inside array brackets in `<template>` See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html)_
 
 ### Tags
 

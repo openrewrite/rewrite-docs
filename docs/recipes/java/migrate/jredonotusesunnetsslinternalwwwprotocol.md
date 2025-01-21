@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace `String` literal](../../java/migrate/replacestringliteralvalue)
+* [Replace `String` literal](../../java/replacestringliteralvalue)
   * oldLiteralValue: `com.sun.net.ssl.internal.www.protocol`
   * newLiteralValue: `com.ibm.net.ssl.www2.protocol`
 
@@ -46,7 +46,7 @@ description: Do not use the `com.sun.net.ssl.internal.www.protocol` package.
 tags:
   - java11
 recipeList:
-  - org.openrewrite.java.migrate.ReplaceStringLiteralValue:
+  - org.openrewrite.java.ReplaceStringLiteralValue:
       oldLiteralValue: com.sun.net.ssl.internal.www.protocol
       newLiteralValue: com.ibm.net.ssl.www2.protocol
 
@@ -230,6 +230,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

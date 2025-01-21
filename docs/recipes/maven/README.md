@@ -58,10 +58,12 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove unused properties](./removeunusedproperties.md)
 * [Rename Maven property key](./renamepropertykey.md)
 * [Set Maven project packaging](./changepackaging.md)
+* [Update Maven Java project properties](./updatemavenprojectpropertyjavaversion.md)
 * [Update Maven wrapper](./updatemavenwrapper.md)
 * [Upgrade Maven dependency version](./upgradedependencyversion.md)
 * [Upgrade Maven parent project version](./upgradeparentversion.md)
 * [Upgrade Maven plugin version](./upgradepluginversion.md)
 * [Upgrade transitive Maven dependencies](./upgradetransitivedependencyversion.md)
+* [Use Maven compiler plugin release configuration](./usemavencompilerpluginreleaseconfiguration.md)
 
 

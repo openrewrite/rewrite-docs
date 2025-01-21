@@ -1,42 +1,58 @@
 ---
-sidebar_label: "Recipe testing best practices"
+sidebar_label: "Replace @MockBean and @SpyBean"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Recipe testing best practices
+# Replace `@MockBean` and `@SpyBean`
 
-**org.openrewrite.recipes.RecipeTestingBestPractices**
+**org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean**
 
-_Best practices for testing recipes._
+_Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/replace-mock-and-spybean.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [RewriteTest classes should not be public](../java/recipes/rewritetestclassesshouldnotbepublic)
-* [Automatically select recipe examples from the unit test cases of a recipe](../java/recipes/selectrecipeexamples)
-* [Minimal indentation for `SourceSpecs` text blocks](../java/recipes/sourcespectextblockindentation)
-* [Remove `test` prefix from JUnit 5 tests](../java/testing/cleanup/removetestprefix)
-* [Remove `public` visibility of JUnit 5 tests](../java/testing/cleanup/testsshouldnotbepublic)
-* [Fix missing braces](../staticanalysis/needbraces)
-* [Remove `System.out#println` statements](../staticanalysis/removesystemoutprintln)
-* [Use static import](../java/usestaticimport)
-  * methodPattern: `org.openrewrite..Assertions *(..)`
+* [Change annotation attribute name](../../../java/changeannotationattributename)
+  * annotationType: `org.springframework.boot.test.mock.mockito.MockBean`
+  * oldAttributeName: `answer`
+  * newAttributeName: `answers`
+* [Remove annotation attribute](../../../java/removeannotationattribute)
+  * annotationType: `org.springframework.boot.test.mock.mockito.MockBean`
+  * attributeName: `classes`
+* [Remove annotation attribute](../../../java/removeannotationattribute)
+  * annotationType: `org.springframework.boot.test.mock.mockito.MockBean`
+  * attributeName: `value`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.mock.mockito.MockBean`
+  * newFullyQualifiedTypeName: `org.springframework.test.context.bean.override.mockito.MockitoBean`
+* [Remove annotation attribute](../../../java/removeannotationattribute)
+  * annotationType: `org.springframework.boot.test.mock.mockito.SpyBean`
+  * attributeName: `classes`
+* [Remove annotation attribute](../../../java/removeannotationattribute)
+  * annotationType: `org.springframework.boot.test.mock.mockito.SpyBean`
+  * attributeName: `value`
+* [Remove annotation attribute](../../../java/removeannotationattribute)
+  * annotationType: `org.springframework.boot.test.mock.mockito.SpyBean`
+  * attributeName: `proxyTargetAware`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.mock.mockito.SpyBean`
+  * newFullyQualifiedTypeName: `org.springframework.test.context.bean.override.mockito.MockitoSpyBean`
 
 </TabItem>
 
@@ -45,19 +61,35 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.recipes.RecipeTestingBestPractices
-displayName: Recipe testing best practices
-description: Best practices for testing recipes.
+name: org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean
+displayName: Replace `@MockBean` and `@SpyBean`
+description: Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`.
 recipeList:
-  - org.openrewrite.java.recipes.RewriteTestClassesShouldNotBePublic
-  - org.openrewrite.java.recipes.SelectRecipeExamples
-  - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
-  - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
-  - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
-  - org.openrewrite.staticanalysis.NeedBraces
-  - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
-  - org.openrewrite.java.UseStaticImport:
-      methodPattern: org.openrewrite..Assertions *(..)
+  - org.openrewrite.java.ChangeAnnotationAttributeName:
+      annotationType: org.springframework.boot.test.mock.mockito.MockBean
+      oldAttributeName: answer
+      newAttributeName: answers
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: org.springframework.boot.test.mock.mockito.MockBean
+      attributeName: classes
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: org.springframework.boot.test.mock.mockito.MockBean
+      attributeName: value
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.mock.mockito.MockBean
+      newFullyQualifiedTypeName: org.springframework.test.context.bean.override.mockito.MockitoBean
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: org.springframework.boot.test.mock.mockito.SpyBean
+      attributeName: classes
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: org.springframework.boot.test.mock.mockito.SpyBean
+      attributeName: value
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: org.springframework.boot.test.mock.mockito.SpyBean
+      attributeName: proxyTargetAware
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.mock.mockito.SpyBean
+      newFullyQualifiedTypeName: org.springframework.test.context.bean.override.mockito.MockitoSpyBean
 
 ```
 </TabItem>
@@ -65,7 +97,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -77,7 +109,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.recipes.RecipeTestingBestPractices")
+    activeRecipe("org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean")
     setExportDatatables(true)
 }
 
@@ -86,7 +118,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
 }
 ```
 
@@ -107,10 +139,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.recipes.RecipeTestingBestPractices")
+        activeRecipe("org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -145,14 +177,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.recipes.RecipeTestingBestPractices</recipe>
+            <recipe>org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recommendations</artifactId>
-            <version>{{VERSION_REWRITE_RECOMMENDATIONS}}</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -168,7 +200,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-recommendations:RELEASE -Drewrite.activeRecipes=org.openrewrite.recipes.RecipeTestingBestPractices -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -176,12 +208,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RecipeTestingBestPractices
+mod run . --recipe ReplaceMockBeanAndSpyBean
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -190,7 +222,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.recipes.RecipeTestingBestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

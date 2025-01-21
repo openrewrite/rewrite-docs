@@ -9,10 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.lang.UseStringIsEmptyRecipe**
 
-```
-Replace `0 < s.length()` and `s.length() != 0` with `!s.isEmpty()`.
-```
-
+_Replace `0 < s.length()` and `s.length() != 0` with `!s.isEmpty()`._
 
 ## Recipe source
 

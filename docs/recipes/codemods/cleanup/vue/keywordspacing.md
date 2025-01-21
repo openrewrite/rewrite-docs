@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.KeywordSpacing**
 
-```
-Enforce consistent spacing before and after keywords in `<template>`
-See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keyword-spacing.html)
-```
-
+_Enforce consistent spacing before and after keywords in `<template>` See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keyword-spacing.html)_
 
 ### Tags
 

@@ -1,69 +1,29 @@
 ---
-sidebar_label: "Code Health"
+sidebar_label: "JSON indent"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Code Health
+# JSON indent
 
-**org.openrewrite.recommendations.CodeHealth**
+**org.openrewrite.json.format.Indents**
 
-_Used for Code Health metric on moderne radar._
-
-### Tags
-
-* radar
-* health check
+_Format tabs and indents in JSON._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/radar.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/format/Indents.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 ## License
 
 This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [No double brace initialization](../staticanalysis/nodoublebraceinitialization)
-* [CaseInsensitive comparisons do not alter case](../staticanalysis/caseinsensitivecomparisonsdonotchangecase)
-* [Equals avoids null](../staticanalysis/equalsavoidsnull)
-* [Use the diamond operator](../staticanalysis/usediamondoperator)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.recommendations.CodeHealth
-displayName: Code Health
-description: Used for Code Health metric on moderne radar.
-tags:
-  - radar
-  - health check
-recipeList:
-  - org.openrewrite.staticanalysis.NoDoubleBraceInitialization
-  - org.openrewrite.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase
-  - org.openrewrite.staticanalysis.EqualsAvoidsNull
-  - org.openrewrite.staticanalysis.UseDiamondOperator
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -75,7 +35,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.recommendations.CodeHealth")
+    activeRecipe("org.openrewrite.json.format.Indents")
     setExportDatatables(true)
 }
 
@@ -83,11 +43,7 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
-}
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
 
@@ -100,15 +56,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+    dependencies { classpath("org.openrewrite:plugin:latest.release") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
+        rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.recommendations.CodeHealth")
+        activeRecipe("org.openrewrite.json.format.Indents")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -126,7 +82,6 @@ rootProject {
 ```shell title="shell"
 gradle --init-script init.gradle rewriteRun
 ```
-
 </TabItem>
 <TabItem value="maven" label="Maven POM">
 
@@ -143,16 +98,9 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.recommendations.CodeHealth</recipe>
+            <recipe>org.openrewrite.json.format.Indents</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recommendations</artifactId>
-            <version>{{VERSION_REWRITE_RECOMMENDATIONS}}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -163,23 +111,25 @@ gradle --init-script init.gradle rewriteRun
 </TabItem>
 
 <TabItem value="maven-command-line" label="Maven Command Line">
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-recommendations:RELEASE -Drewrite.activeRecipes=org.openrewrite.recommendations.CodeHealth -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.json.format.Indents -Drewrite.exportDatatables=true
 ```
+
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CodeHealth
+mod run . --recipe Indents
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}
+mod config recipes jar install org.openrewrite:rewrite-json:{{VERSION_REWRITE_JSON}}
 ```
 </TabItem>
 </Tabs>
@@ -188,7 +138,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.recommendations.CodeHealth" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.json.format.Indents" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -237,3 +187,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Greg Oledzki](mailto:greg.oledzki@moderne.io)

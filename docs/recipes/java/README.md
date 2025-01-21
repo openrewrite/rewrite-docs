@@ -5,7 +5,6 @@ _Basic building blocks for transforming Java code._
 ## Categories
 
 * [AI tools](/recipes/java/ai)
-* [Boot3](/recipes/java/boot3)
 * [Camel](/recipes/java/camel)
 * [Dependencies](/recipes/java/dependencies)
 * [Format](/recipes/java/format)
@@ -35,6 +34,7 @@ _Basic building blocks for transforming Java code._
 * [Add or update annotation attribute](./addorupdateannotationattribute.md)
 * [Change annotation attribute name](./changeannotationattributename.md)
 * [Change method access level](./changemethodaccesslevel.md)
+* [Change method invocation return type](./changemethodinvocationreturntype.md)
 * [Change method name](./changemethodname.md)
 * [Change method target to static](./changemethodtargettostatic.md)
 * [Change method target to variable](./changemethodtargettovariable.md)
@@ -53,6 +53,7 @@ _Basic building blocks for transforming Java code._
 * [Remove unused imports](./removeunusedimports.md)
 * [Rename package name](./changepackage.md)
 * [Reorder method arguments](./reordermethodarguments.md)
+* [Replace `String` literal](./replacestringliteralvalue.md)
 * [Replace String literal with constant](./replacestringliteralwithconstant.md)
 * [Replace annotation](./replaceannotation.md)
 * [Replace constant with another constant](./replaceconstantwithanotherconstant.md)

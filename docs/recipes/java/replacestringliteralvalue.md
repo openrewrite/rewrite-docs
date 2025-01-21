@@ -1,130 +1,70 @@
 ---
-sidebar_label: "Dependency Management"
+sidebar_label: "Replace String literal"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Dependency Management
+# Replace `String` literal
 
-**org.openrewrite.recommendations.DependencyManagement**
+**org.openrewrite.java.ReplaceStringLiteralValue**
 
-_Used for Dependency Management metric on moderne radar._
-
-### Tags
-
-* radar
-* health check
+_Replace the value of a complete `String` literal._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/radar.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceStringLiteralValue.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldLiteralValue | The `String` value to replace. | `apple` |
+| `String` | newLiteralValue | The `String` value to replace with. | `orange` |
+
 ## License
 
 This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Dependency management dependencies should have a version](../maven/cleanup/dependencymanagementdependencyrequiresversion)
-* [Remove unused imports](../java/removeunusedimports)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.recommendations.DependencyManagement
-displayName: Dependency Management
-description: Used for Dependency Management metric on moderne radar.
-tags:
-  - radar
-  - health check
-recipeList:
-  - org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion
-  - org.openrewrite.java.RemoveUnusedImports
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceStringLiteralValueExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ReplaceStringLiteralValueExample
+displayName: Replace `String` literal example
+recipeList:
+  - org.openrewrite.java.ReplaceStringLiteralValue:
+      oldLiteralValue: apple
+      newLiteralValue: orange
+```
+
+Now that `com.yourorg.ReplaceStringLiteralValueExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
 1. Add the following to your `build.gradle` file:
-
 ```groovy title="build.gradle"
 plugins {
     id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.recommendations.DependencyManagement")
+    activeRecipe("com.yourorg.ReplaceStringLiteralValueExample")
     setExportDatatables(true)
 }
 
 repositories {
     mavenCentral()
 }
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
-}
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.recommendations.DependencyManagement")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
+<TabItem value="maven" label="Maven">
 
 1. Add the following to your `pom.xml` file:
 
@@ -139,43 +79,27 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.recommendations.DependencyManagement</recipe>
+            <recipe>com.yourorg.ReplaceStringLiteralValueExample</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recommendations</artifactId>
-            <version>{{VERSION_REWRITE_RECOMMENDATIONS}}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
 </project>
 ```
-
 2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-recommendations:RELEASE -Drewrite.activeRecipes=org.openrewrite.recommendations.DependencyManagement -Drewrite.exportDatatables=true
-```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DependencyManagement
+mod run . --recipe ReplaceStringLiteralValue --recipe-option "oldLiteralValue=apple" --recipe-option "newLiteralValue=orange"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -184,7 +108,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.recommendations.DependencyManagement" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.ReplaceStringLiteralValue" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -233,3 +157,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io)

@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline**
 
-```
-Enforce consistent line breaks after opening and before closing braces in `<template>`
-See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html)
-```
-
+_Enforce consistent line breaks after opening and before closing braces in `<template>` See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html)_
 
 ### Tags
 

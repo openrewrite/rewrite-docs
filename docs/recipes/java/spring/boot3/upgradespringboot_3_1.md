@@ -57,7 +57,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `2.2.x`
 * [Migrate to Hibernate 6.2.x](../../../hibernate/migratetohibernate62)
-* [Migrate to Reactor 3.5](../../../reactive/reactor/upgradereactor_3_5)
 * [Mockito 4 to 5.x upgrade only](../../../java/testing/mockito/mockito4to5only)
 
 </TabItem>
@@ -98,7 +97,6 @@ recipeList:
       artifactId: *
       newVersion: 2.2.x
   - org.openrewrite.hibernate.MigrateToHibernate62
-  - org.openrewrite.reactive.reactor.UpgradeReactor_3_5
   - org.openrewrite.java.testing.mockito.Mockito4to5Only
 
 ```

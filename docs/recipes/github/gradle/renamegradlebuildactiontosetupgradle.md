@@ -18,18 +18,113 @@ _Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gra
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
-
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/gradle.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 ## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change GitHub Action](../../github/changeaction)
+  * oldAction: `gradle/gradle-build-action`
+  * newAction: `gradle/actions/setup-gradle`
+  * newVersion: `v3`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle
+displayName: Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`
+description: Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v3`.
+tags:
+  - gradle
+  - github
+recipeList:
+  - org.openrewrite.github.ChangeAction:
+      oldAction: gradle/gradle-build-action
+      newAction: gradle/actions/setup-gradle
+      newVersion: v3
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-github-actions` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
+
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
 
 <TabItem value="moderne-cli" label="Moderne CLI">
 
@@ -101,4 +196,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io)

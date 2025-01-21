@@ -35,7 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method name](../../java/changemethodname)
   * methodPattern: `java.util.logging.LogRecord getThreadID()`
   * newMethodName: `getLongThreadID`
-* [Change method invocation return type](../../java/migrate/changemethodinvocationreturntype)
+* [Change method invocation return type](../../java/changemethodinvocationreturntype)
   * methodPattern: `java.util.logging.LogRecord getLongThreadID()`
   * newReturnType: `long`
 * [Change method name](../../java/changemethodname)
@@ -58,7 +58,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.logging.LogRecord getThreadID()
       newMethodName: getLongThreadID
-  - org.openrewrite.java.migrate.ChangeMethodInvocationReturnType:
+  - org.openrewrite.java.ChangeMethodInvocationReturnType:
       methodPattern: java.util.logging.LogRecord getLongThreadID()
       newReturnType: long
   - org.openrewrite.java.ChangeMethodName:
@@ -245,6 +245,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

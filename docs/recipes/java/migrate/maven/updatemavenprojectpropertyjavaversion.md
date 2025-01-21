@@ -27,6 +27,30 @@ _The Java version is determined by several project properties, including:   * `j
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Update Maven Java project properties](../../../maven/updatemavenprojectpropertyjavaversion)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion
+displayName: Update Maven Java project properties
+description: The Java version is determined by several project properties, including: –  –  * `java.version` –  * `jdk.version` –  * `javaVersion` –  * `jdkVersion` –  * `maven.compiler.source` –  * `maven.compiler.target` –  * `maven.compiler.release` –  * `release.version` –  – If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
+
+recipeList:
+  - org.openrewrite.maven.UpdateMavenProjectPropertyJavaVersion
+
+```
+</TabItem>
+</Tabs>
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample`.
@@ -146,4 +170,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [DidierLoiseau](mailto:didierloiseau+github@gmail.com), Chuka Obinabo, [Tim te Beek](mailto:timtebeek@gmail.com), [dpozinen](mailto:dpozinen@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Chuka Obinabo, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

@@ -8,6 +8,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Lombok Best Practices](./lombokbestpractices.md)
 * [Migrate Lombok to a Java 11 compatible version](./updatelomboktojava11.md)
 
 ## Recipes

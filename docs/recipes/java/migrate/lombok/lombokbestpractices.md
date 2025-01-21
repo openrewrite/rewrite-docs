@@ -1,50 +1,49 @@
 ---
-sidebar_label: "OpenRewrite best practices"
+sidebar_label: "Lombok Best Practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# OpenRewrite best practices
+# Lombok Best Practices
 
-**org.openrewrite.recipes.OpenRewriteBestPractices**
+**org.openrewrite.java.migrate.lombok.LombokBestPractices**
 
-_Best practices for OpenRewrite recipe development._
+_Applies all recipes that enforce best practices for using Lombok._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/lombok.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Java Recipe best practices](../recipes/javarecipebestpractices)
-* [Recipe testing best practices](../recipes/recipetestingbestpractices)
-* [Recipe nullability best practices](../recipes/recipenullabilitybestpractices)
-* [Order imports](../java/orderimports)
-* [Remove unused imports](../java/removeunusedimports)
-* [End files with a single newline](../java/format/emptynewlineatendoffile)
-* [Remove trailing whitespace](../java/format/removetrailingwhitespace)
-* [Enum values should be compared with "=="](../staticanalysis/compareenumswithequalityoperator)
-* [Inline variable](../staticanalysis/inlinevariable)
-* [Simplify lambda blocks to expressions](../staticanalysis/lambdablocktoexpression)
-* [Add missing `@Override` to overriding and implementing methods](../staticanalysis/missingoverrideannotation)
-* [Operator wrapping](../staticanalysis/operatorwrap)
-  * wrapOption: `EOL`
-* [Remove unused local variables](../staticanalysis/removeunusedlocalvariables)
-* [Remove unused private fields](../staticanalysis/removeunusedprivatefields)
-* [Remove unused private methods](../staticanalysis/removeunusedprivatemethods)
-* [Use the diamond operator](../staticanalysis/usediamondoperator)
+* [Migrate Lombok to a Java 11 compatible version](../../../java/migrate/lombok/updatelomboktojava11)
+* [Use Lombok logger annotations instead of explicit fields](../../../java/migrate/lombok/log/uselomboklogannotations)
+* [Convert getter methods to annotations](../../../java/migrate/lombok/uselombokgetter)
+* [Convert setter methods to annotations](../../../java/migrate/lombok/uselomboksetter)
+* [Use `@NoArgsConstructor` where applicable](../../../java/migrate/lombok/usenoargsconstructor)
+* [Change Maven dependency scope](../../../maven/changedependencyscope)
+  * groupId: `org.projectlombok`
+  * artifactId: `lombok`
+  * newScope: `provided`
+* [Change Maven dependency scope](../../../maven/changedependencyscope)
+  * groupId: `org.projectlombok`
+  * artifactId: `lombok-mapstruct-binding`
+  * newScope: `provided`
+* [Exclude Maven dependency](../../../maven/excludedependency)
+  * groupId: `org.projectlombok`
+  * artifactId: `lombok`
 
 </TabItem>
 
@@ -53,27 +52,26 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.recipes.OpenRewriteBestPractices
-displayName: OpenRewrite best practices
-description: Best practices for OpenRewrite recipe development.
+name: org.openrewrite.java.migrate.lombok.LombokBestPractices
+displayName: Lombok Best Practices
+description: Applies all recipes that enforce best practices for using Lombok.
 recipeList:
-  - org.openrewrite.recipes.JavaRecipeBestPractices
-  - org.openrewrite.recipes.RecipeTestingBestPractices
-  - org.openrewrite.recipes.RecipeNullabilityBestPractices
-  - org.openrewrite.java.OrderImports
-  - org.openrewrite.java.RemoveUnusedImports
-  - org.openrewrite.java.format.EmptyNewlineAtEndOfFile
-  - org.openrewrite.java.format.RemoveTrailingWhitespace
-  - org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator
-  - org.openrewrite.staticanalysis.InlineVariable
-  - org.openrewrite.staticanalysis.LambdaBlockToExpression
-  - org.openrewrite.staticanalysis.MissingOverrideAnnotation
-  - org.openrewrite.staticanalysis.OperatorWrap:
-      wrapOption: EOL
-  - org.openrewrite.staticanalysis.RemoveUnusedLocalVariables
-  - org.openrewrite.staticanalysis.RemoveUnusedPrivateFields
-  - org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods
-  - org.openrewrite.staticanalysis.UseDiamondOperator
+  - org.openrewrite.java.migrate.lombok.UpdateLombokToJava11
+  - org.openrewrite.java.migrate.lombok.log.UseLombokLogAnnotations
+  - org.openrewrite.java.migrate.lombok.UseLombokGetter
+  - org.openrewrite.java.migrate.lombok.UseLombokSetter
+  - org.openrewrite.java.migrate.lombok.UseNoArgsConstructor
+  - org.openrewrite.maven.ChangeDependencyScope:
+      groupId: org.projectlombok
+      artifactId: lombok
+      newScope: provided
+  - org.openrewrite.maven.ChangeDependencyScope:
+      groupId: org.projectlombok
+      artifactId: lombok-mapstruct-binding
+      newScope: provided
+  - org.openrewrite.maven.ExcludeDependency:
+      groupId: org.projectlombok
+      artifactId: lombok
 
 ```
 </TabItem>
@@ -81,7 +79,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -93,7 +91,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.recipes.OpenRewriteBestPractices")
+    activeRecipe("org.openrewrite.java.migrate.lombok.LombokBestPractices")
     setExportDatatables(true)
 }
 
@@ -102,7 +100,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
 }
 ```
 
@@ -123,10 +121,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.recipes.OpenRewriteBestPractices")
+        activeRecipe("org.openrewrite.java.migrate.lombok.LombokBestPractices")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -161,14 +159,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.recipes.OpenRewriteBestPractices</recipe>
+            <recipe>org.openrewrite.java.migrate.lombok.LombokBestPractices</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recommendations</artifactId>
-            <version>{{VERSION_REWRITE_RECOMMENDATIONS}}</version>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>{{VERSION_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -184,7 +182,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-recommendations:RELEASE -Drewrite.activeRecipes=org.openrewrite.recipes.OpenRewriteBestPractices -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.lombok.LombokBestPractices -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -192,12 +190,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe OpenRewriteBestPractices
+mod run . --recipe LombokBestPractices
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -206,7 +204,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.recipes.OpenRewriteBestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.lombok.LombokBestPractices" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -255,3 +253,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+timo-a, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io)

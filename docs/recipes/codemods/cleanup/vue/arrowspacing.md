@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ArrowSpacing**
 
-```
-Enforce consistent spacing before and after the arrow in arrow functions in `<template>`
-See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html)
-```
-
+_Enforce consistent spacing before and after the arrow in arrow functions in `<template>` See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html)_
 
 ### Tags
 

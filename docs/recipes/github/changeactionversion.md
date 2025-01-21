@@ -13,8 +13,9 @@ _Change the version of a GitHub Action in any `.github/workflows/*.yml` file._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
-
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,27 +25,82 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Usage
 
-This recipe has required configuration parameters and can only be run by users of Moderne.
-To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
-Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
-
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeActionVersionExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeActionVersionExample
 displayName: Change GitHub Action version example
 recipeList:
-  - org.openrewrite.github.ChangeActionVersion: 
+  - org.openrewrite.github.ChangeActionVersion:
       action: actions/setup-java
       version: v4
 ```
 
+Now that `com.yourorg.ChangeActionVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}` in your build file:
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
+
+1. Add the following to your `build.gradle` file:
+
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+}
+
+rewrite {
+    activeRecipe("com.yourorg.ChangeActionVersionExample")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}")
+}
+```
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>com.yourorg.ChangeActionVersionExample</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-github-actions</artifactId>
+            <version>{{VERSION_REWRITE_GITHUB_ACTIONS}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

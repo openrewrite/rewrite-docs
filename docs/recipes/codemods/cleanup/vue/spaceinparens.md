@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.SpaceInParens**
 
-```
-Enforce consistent spacing inside parentheses in `<template>`
-See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-in-parens.html)
-```
-
+_Enforce consistent spacing inside parentheses in `<template>` See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-in-parens.html)_
 
 ### Tags
 

@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ObjectCurlySpacing**
 
-```
-Enforce consistent spacing inside braces in `<template>`
-See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/object-curly-spacing.html)
-```
-
+_Enforce consistent spacing inside braces in `<template>` See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/object-curly-spacing.html)_
 
 ### Tags
 

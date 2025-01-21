@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.QuoteProps**
 
-```
-Require quotes around object literal property names in `<template>`
-See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html)
-```
-
+_Require quotes around object literal property names in `<template>` See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html)_
 
 ### Tags
 

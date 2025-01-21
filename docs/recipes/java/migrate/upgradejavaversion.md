@@ -34,8 +34,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Use Maven compiler plugin release configuration](../../java/migrate/maven/usemavencompilerpluginreleaseconfiguration)
-* [Update Maven Java project properties](../../java/migrate/maven/updatemavenprojectpropertyjavaversion)
+* [Use Maven compiler plugin release configuration](../../maven/usemavencompilerpluginreleaseconfiguration)
+* [Update Maven Java project properties](../../maven/updatemavenprojectpropertyjavaversion)
 * [Upgrade jenkins java version](../../jenkins/upgradejavaversion)
 * [Update Gradle project Java compatibility](../../gradle/updatejavacompatibility)
   * allowDowngrade: `false`
@@ -54,8 +54,8 @@ displayName: Upgrade Java version
 description: Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
 
 recipeList:
-  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration
-  - org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion
+  - org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration
+  - org.openrewrite.maven.UpdateMavenProjectPropertyJavaVersion
   - org.openrewrite.jenkins.UpgradeJavaVersion
   - org.openrewrite.gradle.UpdateJavaCompatibility:
       allowDowngrade: false
@@ -208,4 +208,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li

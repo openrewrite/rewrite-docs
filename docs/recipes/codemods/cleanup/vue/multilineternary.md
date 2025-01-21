@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.MultilineTernary**
 
-```
-Enforce newlines between operands of ternary expressions in `<template>`
-See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html)
-```
-
+_Enforce newlines between operands of ternary expressions in `<template>` See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html)_
 
 ### Tags
 

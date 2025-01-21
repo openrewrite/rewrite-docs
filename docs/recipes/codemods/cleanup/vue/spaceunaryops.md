@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps**
 
-```
-Enforce consistent spacing before or after unary operators in `<template>`
-See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html)
-```
-
+_Enforce consistent spacing before or after unary operators in `<template>` See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html)_
 
 ### Tags
 

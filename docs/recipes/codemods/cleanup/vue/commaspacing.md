@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.CommaSpacing**
 
-```
-Enforce consistent spacing before and after commas in `<template>`
-See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html)
-```
-
+_Enforce consistent spacing before and after commas in `<template>` See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html)_
 
 ### Tags
 

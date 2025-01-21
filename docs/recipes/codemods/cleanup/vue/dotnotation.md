@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.DotNotation**
 
-```
-Enforce dot notation whenever possible in `<template>`
-See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html)
-```
-
+_Enforce dot notation whenever possible in `<template>` See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html)_
 
 ### Tags
 

@@ -1,94 +1,73 @@
 ---
-sidebar_label: "Use QuerydslPredicateExecutor<T>"
+sidebar_label: "Add value to JSON Object"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `QuerydslPredicateExecutor&lt;T&gt;
+# Add value to JSON Object
 
-**org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository**
+**org.openrewrite.json.AddKeyValue**
 
-_`QuerydslJpaRepository<T, ID extends Serializable>` was deprecated in Spring Data 2.1._
+_Adds a `value` at the specified `keyPath` with the specified `key`, if the key doesn't already exist._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/data/MigrateQuerydslJpaRepository.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/AddKeyValue.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | keyPath | A JsonPath expression to locate the *parent* JSON entry. | `'$.subjects.*' or '$.' or '$.x[1].y.*' etc.` |
+| `String` | key | The key to create. | `myKey` |
+| `String` | value | The value to add to the document at the specified key. Can be of any type representing JSON value. String values should be quoted to be inserted as Strings. | ``"myValue"` or `{"a": 1}` or `[ 123 ]`` |
+| `boolean` | prepend | *Optional*. If set to `true` the value will be added to the beginning of the object |  |
+
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddKeyValueExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.AddKeyValueExample
+displayName: Add value to JSON Object example
+recipeList:
+  - org.openrewrite.json.AddKeyValue:
+      keyPath: '$.subjects.*' or '$.' or '$.x[1].y.*' etc.
+      key: myKey
+      value: '`"myValue"` or `{"a": 1}` or `[ 123 ]`'
+```
+
+Now that `com.yourorg.AddKeyValueExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
 1. Add the following to your `build.gradle` file:
-
 ```groovy title="build.gradle"
 plugins {
     id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository")
+    activeRecipe("com.yourorg.AddKeyValueExample")
     setExportDatatables(true)
 }
 
 repositories {
     mavenCentral()
 }
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
-}
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
+<TabItem value="maven" label="Maven">
 
 1. Add the following to your `pom.xml` file:
 
@@ -103,43 +82,27 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository</recipe>
+            <recipe>com.yourorg.AddKeyValueExample</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_REWRITE_SPRING}}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
 </project>
 ```
-
 2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository -Drewrite.exportDatatables=true
-```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateQuerydslJpaRepository
+mod run . --recipe AddKeyValue --recipe-option "keyPath='$.subjects.*' or '$.' or '$.x[1].y.*' etc." --recipe-option "key=myKey" --recipe-option "value='`"myValue"` or `{"a": 1}` or `[ 123 ]`'"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite:rewrite-json:{{VERSION_REWRITE_JSON}}
 ```
 </TabItem>
 </Tabs>
@@ -148,7 +111,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_R
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.json.AddKeyValue" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -199,4 +162,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Kun Li, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com)
+[dpozinen](mailto:dpozinen@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io)

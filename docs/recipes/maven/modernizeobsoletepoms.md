@@ -9,10 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.ModernizeObsoletePoms**
 
-```
-Very old Maven poms are no longer supported by current versions of Maven. This recipe updates poms with `<pomVersion>3</pomVersion>` to `<modelVersion>4.0.0</modelVersion>` of the Maven pom schema. This does not attempt to upgrade old dependencies or plugins and is best regarded as the starting point of a migration rather than an end-point.
-```
-
+_Very old Maven poms are no longer supported by current versions of Maven. This recipe updates poms with `<pomVersion>3</pomVersion>` to `<modelVersion>4.0.0</modelVersion>` of the Maven pom schema. This does not attempt to upgrade old dependencies or plugins and is best regarded as the starting point of a migration rather than an end-point._
 
 ## Recipe source
 

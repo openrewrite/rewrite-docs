@@ -1,47 +1,42 @@
 ---
-sidebar_label: "Code Style"
+sidebar_label: "Replace deprecated setters in RestTemplateBuilder"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Code Style
+# Replace deprecated setters in `RestTemplateBuilder`
 
-**org.openrewrite.recommendations.CodeStyle**
+**org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods**
 
-_Used for Code Style metric on moderne radar._
-
-### Tags
-
-* radar
-* health check
+_Replaces `setConnectTimeout`, `setReadTimeout`, and `setSslBundle` method invocations with `connectTimeout`, `readTimeout`, and `sslBundle` respectively._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/radar.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/replace-methods-rest-template-builder.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Format Java code](../java/format/autoformat)
-* [Blank lines](../java/format/blanklines)
-* [Remove trailing whitespace](../java/format/removetrailingwhitespace)
-* [Wrapping and braces](../java/format/wrappingandbraces)
-* [No C-style array declarations](../staticanalysis/usejavastylearraydeclarations)
-* [Format XML](../xml/format/autoformat)
-* [Format HCL code](../hcl/format/autoformat)
-* [Remove unnecessary parentheses](../staticanalysis/unnecessaryparentheses)
-* [Remove extra semicolons](../staticanalysis/removeextrasemicolons)
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.boot.web.client.RestTemplateBuilder setConnectTimeout(java.time.Duration)`
+  * newMethodName: `connectTimeout`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.boot.web.client.RestTemplateBuilder setReadTimeout(java.time.Duration)`
+  * newMethodName: `readTimeout`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.boot.web.client.RestTemplateBuilder setSslBundle(org.springframework.boot.ssl.SslBundle)`
+  * newMethodName: `sslBundle`
 
 </TabItem>
 
@@ -50,22 +45,19 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.recommendations.CodeStyle
-displayName: Code Style
-description: Used for Code Style metric on moderne radar.
-tags:
-  - radar
-  - health check
+name: org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods
+displayName: Replace deprecated setters in `RestTemplateBuilder`
+description: Replaces `setConnectTimeout`, `setReadTimeout`, and `setSslBundle` method invocations with `connectTimeout`, `readTimeout`, and `sslBundle` respectively.
 recipeList:
-  - org.openrewrite.java.format.AutoFormat
-  - org.openrewrite.java.format.BlankLines
-  - org.openrewrite.java.format.RemoveTrailingWhitespace
-  - org.openrewrite.java.format.WrappingAndBraces
-  - org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations
-  - org.openrewrite.xml.format.AutoFormat
-  - org.openrewrite.hcl.format.AutoFormat
-  - org.openrewrite.staticanalysis.UnnecessaryParentheses
-  - org.openrewrite.staticanalysis.RemoveExtraSemicolons
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.boot.web.client.RestTemplateBuilder setConnectTimeout(java.time.Duration)
+      newMethodName: connectTimeout
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.boot.web.client.RestTemplateBuilder setReadTimeout(java.time.Duration)
+      newMethodName: readTimeout
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.boot.web.client.RestTemplateBuilder setSslBundle(org.springframework.boot.ssl.SslBundle)
+      newMethodName: sslBundle
 
 ```
 </TabItem>
@@ -73,7 +65,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -85,7 +77,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.recommendations.CodeStyle")
+    activeRecipe("org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods")
     setExportDatatables(true)
 }
 
@@ -94,7 +86,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
 }
 ```
 
@@ -115,10 +107,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.recommendations.CodeStyle")
+        activeRecipe("org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -153,14 +145,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.recommendations.CodeStyle</recipe>
+            <recipe>org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recommendations</artifactId>
-            <version>{{VERSION_REWRITE_RECOMMENDATIONS}}</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -176,7 +168,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-recommendations:RELEASE -Drewrite.activeRecipes=org.openrewrite.recommendations.CodeStyle -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -184,12 +176,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CodeStyle
+mod run . --recipe ReplaceRestTemplateBuilderMethods
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{VERSION_REWRITE_RECOMMENDATIONS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -198,7 +190,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-recommendations:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.recommendations.CodeStyle" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.NoExtraParens**
 
-```
-Disallow unnecessary parentheses in `<template>`
-See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html)
-```
-
+_Disallow unnecessary parentheses in `<template>` See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html)_
 
 ### Tags
 

@@ -9,10 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.cleanup.ExplicitPluginGroupId**
 
-```
-Add the default `<groupId>org.apache.maven.plugins</groupId>` to plugins for clarity.
-```
-
+_Add the default `<groupId>org.apache.maven.plugins</groupId>` to plugins for clarity._
 
 ## Recipe source
 
