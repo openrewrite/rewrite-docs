@@ -34,7 +34,7 @@
   --ifm-navbar-padding-vertical: 36px;
   --ifm-navbar-item-padding-horizontal: 1.4rem;
   --ifm-navbar-height: 116px;
-  --ifm-font-family-base: "Poppins", sans-serif;
+  --ifm-font-family-base: "Inter", sans-serif;
   --ifm-heading-font-weight: 400;
   --ifm-heading-line-height: 1;
   --ifm-heading-color: #041834;
@@ -248,6 +248,10 @@ html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
   content: '';
 }
 
+[class^=docMainContainer_] [class^=generatedIndexPage_] .row[class*=list_] > .col {
+  display: flex;
+}
+
 [class^=docMainContainer_] [class^=generatedIndexPage_] .margin-top--lg {
   margin-top: 4.5rem !important;
 }
@@ -258,15 +262,6 @@ html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
 
 html[data-theme='dark'] [class^=docMainContainer_] .card {
   --ifm-heading-color: #041834;
-}
-[class^=docMainContainer_] .cardTitle_HoSo {
-  font-size: 1.25rem;
-  text-transform: uppercase;
-}
-
-[class^=docMainContainer_] [class*=cardDescription_] {
-  color: var(--ifm-heading-color);
-  font-size: inherit;
 }
 
 .markdown {
