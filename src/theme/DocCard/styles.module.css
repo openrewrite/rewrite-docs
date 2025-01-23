@@ -21,7 +21,7 @@
 
 .cardTitle {
   --ifm-heading-margin-bottom: 8px;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.666;
 }
@@ -29,4 +29,11 @@
 .cardDescription {
   color: var(--ifm-heading-color);
   font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: unset;
 }
