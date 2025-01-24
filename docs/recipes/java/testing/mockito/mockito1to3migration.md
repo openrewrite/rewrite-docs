@@ -112,6 +112,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `mockito-junit-jupiter`
   * version: `3.x`
   * onlyIfUsing: `org.mockito.junit.jupiter.*`
+  * scope: `test`
   * acceptTransitive: `true`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
@@ -219,6 +220,7 @@ recipeList:
       artifactId: mockito-junit-jupiter
       version: 3.x
       onlyIfUsing: org.mockito.junit.jupiter.*
+      scope: test
       acceptTransitive: true
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito

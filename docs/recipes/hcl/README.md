@@ -9,5 +9,6 @@
 
 * [Delete content](./deletecontent.md)
 * [Move content to another file](./movecontenttofile.md)
+* [Replace legacy attribute index syntax](./replacelegacyattributeindexsyntax.md)
 
 

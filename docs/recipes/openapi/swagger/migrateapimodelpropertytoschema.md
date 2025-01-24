@@ -47,6 +47,10 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
   * oldAttributeName: `dataType`
   * newAttributeName: `type`
+* [Change annotation attribute name](../../java/changeannotationattributename)
+  * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
+  * oldAttributeName: `nullable`
+  * newAttributeName: `allowEmptyValue`
 
 </TabItem>
 
@@ -76,6 +80,10 @@ recipeList:
       annotationType: io.swagger.v3.oas.annotations.media.Schema
       oldAttributeName: dataType
       newAttributeName: type
+  - org.openrewrite.java.ChangeAnnotationAttributeName:
+      annotationType: io.swagger.v3.oas.annotations.media.Schema
+      oldAttributeName: nullable
+      newAttributeName: allowEmptyValue
 
 ```
 </TabItem>

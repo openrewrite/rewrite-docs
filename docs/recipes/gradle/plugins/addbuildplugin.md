@@ -24,6 +24,7 @@ _Add a build plugin to a Gradle build file's `plugins` block._
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). | `3.x` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | apply | *Optional*. Immediate apply the plugin. Defaults to `true`. Valid options: `true`, `false` |  |
+| `Boolean` | acceptTransitive | *Optional*. Some plugins apply other plugins. When this is set to true no plugin declaration will be added if the plugin is already applied transitively. When this is set to false the plugin will be added explicitly even if it is already applied transitively. Defaults to `true`. Valid options: `true`, `false` |  |
 
 ## License
 

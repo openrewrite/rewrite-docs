@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang\_2\_3**
 
-_Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies  application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
+_Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
 
 ### Tags
 
@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.commons.lang`
   * newPackageName: `org.apache.commons.lang3`
+  * recursive: `true`
 
 </TabItem>
 
@@ -53,7 +54,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3
 displayName: Migrates to Apache Commons Lang 3.x
-description: Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies  application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
+description: Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
 tags:
   - apache
   - lang
@@ -68,6 +69,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.commons.lang
       newPackageName: org.apache.commons.lang3
+      recursive: true
 
 ```
 </TabItem>

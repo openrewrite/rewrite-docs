@@ -20,7 +20,8 @@ _A refactoring operation may result in a checked exception that is no longer thr
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `boolean` | includeJavaLangException | *Optional*. Whether to include java.lang.Exception in the list of checked exceptions to remove. Unlike other checked exceptions, `java.lang.Exception` is also the superclass of unchecked exceptions. So removing `catch(Exception e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
+| `boolean` | includeJavaLangException | *Optional*. Whether to include `java.lang.Exception` in the list of checked exceptions to remove. Unlike other checked exceptions, `java.lang.Exception` is also the superclass of unchecked exceptions. So removing `catch(Exception e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
+| `boolean` | includeJavaLangThrowable | *Optional*. Whether to include `java.lang.Throwable` in the list of exceptions to remove. Unlike other checked exceptions, `java.lang.Throwable` is also the superclass of unchecked exceptions. So removing `catch(Throwable e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
 
 ## License
 
@@ -205,4 +206,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+Tyler Van Gorder, [Auke Schrijnen](mailto:auke@schrijnen.nl), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)

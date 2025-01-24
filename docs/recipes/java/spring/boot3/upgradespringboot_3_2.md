@@ -59,6 +59,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `commons-codec`
   * version: `1.7.x`
   * onlyIfUsing: `org.apache.commons.codec..*`
+  * acceptTransitive: `true`
 * [Migrate to Spring Security 6.2](../../../java/spring/security6/upgradespringsecurity_6_2)
 * [Migrate Spring Boot properties to 3.2](../../../java/spring/boot3/springbootproperties_3_2)
 * [Migrate to Spring Framework 6.1](../../../java/spring/framework/upgradespringframework_6_1)
@@ -125,6 +126,7 @@ recipeList:
       artifactId: commons-codec
       version: 1.7.x
       onlyIfUsing: org.apache.commons.codec..*
+      acceptTransitive: true
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_2
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_1

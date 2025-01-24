@@ -351,7 +351,7 @@ Change the parent pom of a Maven pom.xml. Identifies the parent pom to be change
  
 _org.openrewrite.maven.ChangePluginGroupIdAndArtifactId_
 
-Change the groupId and/or the artifactId of a specified Maven plugin.
+Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version.
 
 #### Data tables:
 
@@ -630,7 +630,7 @@ This requires the code to have an existing ESLint configuration.
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### Verify compilation
+### [Verify compilation](../recipes/io/moderne/compiled/verification/verifycompilation.md)
  
 _io.moderne.compiled.verification.VerifyCompilation_
 
@@ -641,7 +641,7 @@ This is a task that runs after another recipe to verify that the changes made by
   * **io.moderne.compiled.table.ABITraces**: *ASM trace of the ABI of types needed to perform compile verification.*
 
 
-### Comprehend code
+### [Comprehend code](../recipes/io/moderne/knowledge/comprehendcode.md)
  
 _io.moderne.knowledge.ComprehendCode_
 

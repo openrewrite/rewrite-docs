@@ -168,6 +168,7 @@ _Records method callers and the methods they invoke._
 
 | Column Name | Description |
 | ----------- | ----------- |
+| From source set | The source set from which the action is issued. |
 | From class | The fully qualified name of the class from which the action is issued. |
 | From name | The name of the method or scope from which the action is issued. |
 | From arguments | The argument types, if any, to the method or scope from which the action is issued. Expressed as a comma-separated list |

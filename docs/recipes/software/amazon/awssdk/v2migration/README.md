@@ -20,6 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add a comment to a method](./addcommenttomethod.md)
 * [Change AWS SDK for Java v1 types to v2 equivalents](./changesdktype.md)
+* [Convert SdkBytes to ByteBuffer](./sdkbytestobytebuffer.md)
 * [Convert the method parameter from numeric type to duration](./numbertoduration.md)
 * [Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for sync and NettyNioAsyncHttpClient for async](./httpsettingstohttpclient.md)
 * [Moves constructor arguments to fluent setters](./constructortofluent.md)

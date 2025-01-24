@@ -35,6 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change `StringBuilder` and `StringBuffer` character constructor argument to `String`](./newstringbuilderbufferwithcharargument.md)
 * [Changes code to use Java 17's `instanceof` pattern matching](./instanceofpatternmatch.md)
 * [Combine semantically equal catch blocks](./combinesemanticallyequalcatchblocks.md)
+* [Constructors of an `abstract` class should not be declared `public`](./abstractclasspublicconstructor.md)
 * [Control flow statement indentation](./controlflowindentation.md)
 * [Convert `new BufferedWriter(new FileWriter(File))` to `Files.newBufferedWriter(Path)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithfileargumentrecipe.md)
 * [Convert `new BufferedWriter(new FileWriter(File, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithfileandbooleanargumentsrecipe.md)
