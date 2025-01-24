@@ -11,7 +11,9 @@ function remarkTokenReplacer(options) {
       (token) => node.value && node.value.includes(token)
     );
 
-    if (!hasToken) return
+    if (!hasToken) {
+        return
+    }
 
     Object.entries(replacements).forEach(([token, value]) => {
       if (!node.value.includes(token)) {
@@ -58,7 +60,9 @@ function remarkTokenReplacer(options) {
       (token) => node.url && node.url.includes(token)
     );
 
-    if (!hasToken) return;
+    if (!hasToken) {
+        return
+    };
 
     Object.entries(replacements).forEach(([token, value]) => {
       if (!node.url.includes(token)) {
