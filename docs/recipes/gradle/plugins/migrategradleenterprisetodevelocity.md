@@ -160,4 +160,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io)

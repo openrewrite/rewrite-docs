@@ -23,6 +23,7 @@ _Finds occurrences of a Quarkus property key._
 | `String` | propertyKey | The property key to look for. | `quarkus.http.port` |
 | `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be searched on all profiles. | `dev` |
 | `Boolean` | searchAllProfiles | *Optional*. If set, the property will be searched on all available profiles. Defaults to `true` if the profile is not defined. | `false` |
+| `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", "**/application.properties" and "**/META-INF/microprofile-config.properties". | `["**/application.yaml"]` |
 
 ## License
 
@@ -43,6 +44,7 @@ recipeList:
       propertyKey: quarkus.http.port
       profile: dev
       searchAllProfiles: false
+      pathExpressions: ["**/application.yaml"]
 ```
 
 Now that `com.yourorg.FindQuarkusPropertiesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}` in your build file:
@@ -108,7 +110,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindQuarkusProperties --recipe-option "propertyKey=quarkus.http.port" --recipe-option "profile=dev" --recipe-option "searchAllProfiles=false"
+mod run . --recipe FindQuarkusProperties --recipe-option "propertyKey=quarkus.http.port" --recipe-option "profile=dev" --recipe-option "searchAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -173,4 +175,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Adriano Machado, [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+Adriano Machado, Siva_M7, [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

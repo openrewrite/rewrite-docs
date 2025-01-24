@@ -154,6 +154,18 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Change type](../../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.amazonaws.retry.RetryMode`
   * newFullyQualifiedTypeName: `software.amazon.awssdk.core.retry.RetryMode`
+* [Change type](../../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.AmazonWebServiceClient`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.AwsClient`
+* [Change type](../../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.client.builder.AwsSyncClientBuilder`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder`
+* [Change type](../../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.client.builder.AwsClientBuilder`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder`
+* [Change type](../../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.client.builder.AwsAsyncClientBuilder`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder`
 
 </TabItem>
 
@@ -292,6 +304,18 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.amazonaws.retry.RetryMode
       newFullyQualifiedTypeName: software.amazon.awssdk.core.retry.RetryMode
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.AmazonWebServiceClient
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.AwsClient
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.client.builder.AwsSyncClientBuilder
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.client.builder.AwsClientBuilder
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.client.builder.AwsAsyncClientBuilder
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder
 
 ```
 </TabItem>

@@ -1,61 +1,33 @@
 ---
-sidebar_label: "Migrate JavaEE to Quarkus 2"
+sidebar_label: "Constructors of an abstract class should not be declared public"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate JavaEE to Quarkus 2
+# Constructors of an `abstract` class should not be declared `public`
 
-**org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration**
+**org.openrewrite.staticanalysis.AbstractClassPublicConstructor**
 
-_These recipes help with the migration of a JavaEE application using EJBs and Hibernate to Quarkus 2. Additional transformations like JSF, JMS, Quarkus Tests may be necessary._
+_Constructors of `abstract` classes can only be called in constructors of their subclasses. Therefore the visibility of `public` constructors are reduced to `protected`._
+
+### Tags
+
+* [RSPEC-S5993](https://sonarsource.github.io/rspec/#/rspec/S5993)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/javaee7-to-quarkus.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/AbstractClassPublicConstructor.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate JavaEE Maven Dependencies to Quarkus 2](../../../quarkus/migrate/javaee/addquarkus2mavenplugins)
-* [Add Quarkus 2 dependencies](../../../quarkus/migrate/javaee/addquarkus2dependencies)
-* [Remove JavaEE dependencies](../../../quarkus/migrate/javaee/removejavaeedependencies)
-* [Migrate JavaEE Code to Quarkus 2](../../../quarkus/migrate/javaee/javaeetoquarkus2codemigration)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration
-displayName: Migrate JavaEE to Quarkus 2
-description: These recipes help with the migration of a JavaEE application using EJBs and Hibernate to Quarkus 2. Additional transformations like JSF, JMS, Quarkus Tests may be necessary.
-recipeList:
-  - org.openrewrite.quarkus.migrate.javaee.AddQuarkus2MavenPlugins
-  - org.openrewrite.quarkus.migrate.javaee.AddQuarkus2Dependencies
-  - org.openrewrite.quarkus.migrate.javaee.RemoveJavaEEDependencies
-  - org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2CodeMigration
-
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-quarkus` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -67,7 +39,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration")
+    activeRecipe("org.openrewrite.staticanalysis.AbstractClassPublicConstructor")
     setExportDatatables(true)
 }
 
@@ -76,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}")
 }
 ```
 
@@ -97,10 +69,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+        rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration")
+        activeRecipe("org.openrewrite.staticanalysis.AbstractClassPublicConstructor")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -135,14 +107,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration</recipe>
+            <recipe>org.openrewrite.staticanalysis.AbstractClassPublicConstructor</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-quarkus</artifactId>
-            <version>{{VERSION_REWRITE_QUARKUS}}</version>
+            <artifactId>rewrite-static-analysis</artifactId>
+            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -158,7 +130,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-quarkus:RELEASE -Drewrite.activeRecipes=org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.AbstractClassPublicConstructor -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -166,12 +138,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JavaEEtoQuarkus2Migration
+mod run . --recipe AbstractClassPublicConstructor
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>
@@ -180,7 +152,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.AbstractClassPublicConstructor" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -231,4 +203,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+[Karsten Thoms](mailto:karsten.thoms@gmail.com)

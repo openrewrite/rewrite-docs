@@ -34,6 +34,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.CloseableHttpResponse`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.classic.CloseableHttpResponse`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpRequestBase`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.client.entity`
   * newPackageName: `org.apache.hc.client5.http.entity`
@@ -409,6 +412,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.CloseableHttpResponse
       newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.classic.CloseableHttpResponse
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpRequestBase
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.client.entity
       newPackageName: org.apache.hc.client5.http.entity

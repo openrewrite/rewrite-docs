@@ -1,61 +1,29 @@
 ---
-sidebar_label: "Migrate JavaEE to Quarkus 2"
+sidebar_label: "Replace legacy attribute index syntax"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate JavaEE to Quarkus 2
+# Replace legacy attribute index syntax
 
-**org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration**
+**org.openrewrite.hcl.ReplaceLegacyAttributeIndexSyntax**
 
-_These recipes help with the migration of a JavaEE application using EJBs and Hibernate to Quarkus 2. Additional transformations like JSF, JMS, Quarkus Tests may be necessary._
+_Replace legacy attribute index syntax (`.0`) with the new syntax (`[0]`)._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/javaee7-to-quarkus.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/ReplaceLegacyAttributeIndexSyntax.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/)
 ## License
 
 This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate JavaEE Maven Dependencies to Quarkus 2](../../../quarkus/migrate/javaee/addquarkus2mavenplugins)
-* [Add Quarkus 2 dependencies](../../../quarkus/migrate/javaee/addquarkus2dependencies)
-* [Remove JavaEE dependencies](../../../quarkus/migrate/javaee/removejavaeedependencies)
-* [Migrate JavaEE Code to Quarkus 2](../../../quarkus/migrate/javaee/javaeetoquarkus2codemigration)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration
-displayName: Migrate JavaEE to Quarkus 2
-description: These recipes help with the migration of a JavaEE application using EJBs and Hibernate to Quarkus 2. Additional transformations like JSF, JMS, Quarkus Tests may be necessary.
-recipeList:
-  - org.openrewrite.quarkus.migrate.javaee.AddQuarkus2MavenPlugins
-  - org.openrewrite.quarkus.migrate.javaee.AddQuarkus2Dependencies
-  - org.openrewrite.quarkus.migrate.javaee.RemoveJavaEEDependencies
-  - org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2CodeMigration
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-quarkus` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -67,7 +35,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration")
+    activeRecipe("org.openrewrite.hcl.ReplaceLegacyAttributeIndexSyntax")
     setExportDatatables(true)
 }
 
@@ -75,11 +43,7 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
-}
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
 
@@ -92,15 +56,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+    dependencies { classpath("org.openrewrite:plugin:latest.release") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+        rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration")
+        activeRecipe("org.openrewrite.hcl.ReplaceLegacyAttributeIndexSyntax")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -118,7 +82,6 @@ rootProject {
 ```shell title="shell"
 gradle --init-script init.gradle rewriteRun
 ```
-
 </TabItem>
 <TabItem value="maven" label="Maven POM">
 
@@ -135,16 +98,9 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration</recipe>
+            <recipe>org.openrewrite.hcl.ReplaceLegacyAttributeIndexSyntax</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-quarkus</artifactId>
-            <version>{{VERSION_REWRITE_QUARKUS}}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -155,23 +111,25 @@ gradle --init-script init.gradle rewriteRun
 </TabItem>
 
 <TabItem value="maven-command-line" label="Maven Command Line">
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-quarkus:RELEASE -Drewrite.activeRecipes=org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.hcl.ReplaceLegacyAttributeIndexSyntax -Drewrite.exportDatatables=true
 ```
+
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JavaEEtoQuarkus2Migration
+mod run . --recipe ReplaceLegacyAttributeIndexSyntax
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}
+mod config recipes jar install org.openrewrite:rewrite-hcl:{{VERSION_REWRITE_HCL}}
 ```
 </TabItem>
 </Tabs>
@@ -180,7 +138,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hcl.ReplaceLegacyAttributeIndexSyntax" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -231,4 +189,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
