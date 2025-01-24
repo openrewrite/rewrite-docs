@@ -27,6 +27,8 @@ Beyond the fully open license, additional OpenRewrite software and recipes are a
 
 There is a group of OpenRewrite recipes that are created by Moderne specifically for multi-repo code analysis and transformation on our platform, including those designed for large-scale impact analysis and security remediation, as well as those that leverage AI tool calling. These recipes are under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+This proprietary license also includes some additional coverage for framework migrations such as Spring Boot.
+
 ## FAQ
 
 ### Is OpenRewrite open source software (OSS)?
