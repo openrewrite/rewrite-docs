@@ -7,8 +7,6 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 ## New Artifacts
 * rewrite-compiled-analysis
 * rewrite-comprehension
-* rewrite-javascript
-* rewrite-python
 
 ## New Recipes
 
@@ -34,17 +32,10 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5](https://docs.openrewrite.org/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5): Migrates Arquillian JUnit 4 to JUnit 5. 
 * [org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation](https://docs.openrewrite.org/recipes/java/testing/arquillian/replacearquillianinsequenceannotation): Transforms the Arquillian JUnit 4 `@InSequence` to the JUnit Jupiter `@Order`. 
 * [org.openrewrite.java.testing.assertj.IsEqualToIgnoringMillisToIsCloseToRecipe](https://docs.openrewrite.org/recipes/java/testing/assertj/isequaltoignoringmillistoisclosetorecipe): `isEqualToIgnoringMillis()` is deprecated in favor of `isCloseTo()`. 
-* [org.openrewrite.javascript.AddLicenseHeader](https://docs.openrewrite.org/recipes/javascript/addlicenseheader): Adds license headers to JavaScript source files when missing. Does not override existing license headers. 
-* [org.openrewrite.javascript.StaticAnalysis](https://docs.openrewrite.org/recipes/javascript/staticanalysis): Static analysis fixes for JavaScript sources. 
-* [org.openrewrite.javascript.cleanup.UseCaseFallThrough](https://docs.openrewrite.org/recipes/javascript/cleanup/usecasefallthrough): The comma `,` operator evaluates each of its operands (from left to right) and returns the value of the last operand.The logical OR `||` operator only evaluates the first argument.This recipe replaces the comma and logical OR operator with fall-through cases in switch statements. 
-* [org.openrewrite.javascript.format.Spaces](https://docs.openrewrite.org/recipes/javascript/format/spaces): Format whitespace in Java/Type Script code. 
-* [org.openrewrite.javascript.search.FindJavaScriptSources](https://docs.openrewrite.org/recipes/javascript/search/findjavascriptsources): Use data table to collect source files types and counts of files with extensions `.js`, `.jsx`, `.mjs`, `.cjs`, `.ts`, `.tsx`, `.mts`, `.cts`. 
 * [org.openrewrite.maven.EnableDevelocityBuildCache](https://docs.openrewrite.org/recipes/maven/enabledevelocitybuildcache): Add Develocity build cache configuration to any `.mvn/` Develocity configuration file that lack existing configuration. 
 * [org.openrewrite.openapi.swagger.MigrateApiImplicitParam](https://docs.openrewrite.org/recipes/openapi/swagger/migrateapiimplicitparam): Migrate `@ApiImplicitParam` to `@Parameter`. 
 * [org.openrewrite.openapi.swagger.MigrateApiParamDefaultValue](https://docs.openrewrite.org/recipes/openapi/swagger/migrateapiparamdefaultvalue): Migrate `@ApiParam(defaultValue)` to `@Parameter(schema = @Schema(defaultValue))`. 
 * [org.openrewrite.openapi.swagger.MigrateSwaggerDefinitionToOpenAPIDefinition](https://docs.openrewrite.org/recipes/openapi/swagger/migrateswaggerdefinitiontoopenapidefinition): Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`. 
-* [org.openrewrite.python.ChangeMethodName](https://docs.openrewrite.org/recipes/python/changemethodname): Renames a method. 
-* [org.openrewrite.python.format.PythonSpaces](https://docs.openrewrite.org/recipes/python/format/pythonspaces): Standardizes spaces in Python code. Currently limited to formatting method arguments. 
 * [software.amazon.awssdk.v2migration.S3MethodsToV2](https://docs.openrewrite.org/recipes/software/amazon/awssdk/v2migration/s3methodstov2): Change S3 methods to v2. 
 
 ## Removed Recipes
