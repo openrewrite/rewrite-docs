@@ -12,11 +12,11 @@ The OpenRewrite ecosystem is a marketplace of both free and proprietary recipes.
 
 ### Apache License Version 2.0
 
-Core OpenRewrite technology and language libraries in general are fully open sourced under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0). This includes the entirety of [openrewrite/rewrite](https://github.com/openrewrite/rewrite), including rewrite-core and many of the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, Terraform, etc.). It also includes the building-block core recipes like `ChangeMethodName`, `ChangeType`, etc. and recipe repositories that are primarily committed to by third parties. This means that framework/library authors can supply OSS migrations to their consumers.
+Core OpenRewrite technology and language libraries in general are fully open sourced under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0). This includes the entirety of [openrewrite/rewrite](https://github.com/openrewrite/rewrite), including rewrite-core and many of the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, Terraform, etc.). It also includes the building-block core recipes like `ChangeMethodName`, `ChangeType`, etc. and recipe repositories that are primarily committed to by third parties. Lastly, this includes the Maven and Gradle plugins themselves. This means that framework/library authors can supply OSS migrations to their consumers.
 
 ### Moderne Source Available License
 
-Beyond the fully open license, additional OpenRewrite software and recipes are available broadly for users under a [source available license](https://docs.moderne.io/licensing/moderne-source-available-license). The Maven and Gradle plugins are also source available. Because this license allows the right to “use, copy, distribute, make available, and prepare derivative works of the software,” it is possible for individual companies to customize recipes for their needs, such as tailoring recipes to internal APIs or removing optional idiomatic changes. 
+Beyond the fully open license, additional OpenRewrite software and recipes are available broadly for users under a [source available license](https://docs.moderne.io/licensing/moderne-source-available-license). Because this license allows the right to “use, copy, distribute, make available, and prepare derivative works of the software,” it is possible for individual companies to customize recipes for their needs, such as tailoring recipes to internal APIs or removing optional idiomatic changes. 
 
 **There are two primary limitations under this license:**
 
