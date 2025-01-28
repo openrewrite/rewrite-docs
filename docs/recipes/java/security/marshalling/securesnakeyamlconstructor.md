@@ -101,4 +101,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Bryce Tompkins, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Bryce Tompkins, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Kun Li](mailto:kun@moderne.io)

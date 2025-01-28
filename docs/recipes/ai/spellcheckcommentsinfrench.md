@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.ai.SpellCheckCommentsInFrench**
 
-_Use spellchecker to fix mis-encoded French comments. Mis-encoded comments will contain either '?' or '�'._
+_Use spellchecker to fix mis-encoded French comments in comments, JavaDocs, properties or XML files. Mis-encoded comments will contain either '?' or '�'._
 
 ## Recipe source
 

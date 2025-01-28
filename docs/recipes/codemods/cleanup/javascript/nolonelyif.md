@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow if statements as the only statement in if blocks without else."
+sidebar_label: "Disallow if statements as the only statement in else blocks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow `if` statements as the only statement in `if` blocks without `else`.
+# Disallow if statements as the only statement in else blocks
 
 **org.openrewrite.codemods.cleanup.javascript.NoLonelyIf**
 
-_Disallow `if` statements as the only statement in `if` blocks without `else`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-lonely-if.md)_
+_Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)_
 
 ## Recipe source
 

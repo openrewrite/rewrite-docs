@@ -1,19 +1,25 @@
 ---
-sidebar_label: "Fix mis-encoded comments in French in pom.xml files"
+sidebar_label: "Search for a class that uses the given design technique"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Fix mis-encoded comments in French in pom.xml files
+# Search for a class that uses the given design technique
 
-**io.moderne.ai.SpellCheckCommentsInFrenchPomXml**
+**io.moderne.knowledge.search.SearchDesignTechnique**
 
-_Use spellchecker to fix mis-encoded French comments in pom.xml files. Mis-encoded comments will contain either '?' or '�'._
+_Search for a class that uses the given design technique._
 
 ## Recipe source
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | prompt | Query from user to search for. |  |
 
 ## License
 
@@ -22,21 +28,32 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has required configuration parameters and can only be run by users of Moderne.
+To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
+Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
+
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.SearchDesignTechniqueExample
+displayName: Search for a class that uses the given design technique example
+recipeList:
+  - io.moderne.knowledge.search.SearchDesignTechnique: 
+      prompt: null
+```
+
 <Tabs groupId="projectType">
-
-
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe SpellCheckCommentsInFrenchPomXml
+mod run . --recipe SearchDesignTechnique --recipe-option "prompt=null"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-ai-search:{{VERSION_REWRITE_AI_SEARCH}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-comprehension:{{VERSION_REWRITE_COMPREHENSION}}
 ```
 </TabItem>
 </Tabs>
@@ -45,7 +62,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-ai-search:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.ai.SpellCheckCommentsInFrenchPomXml" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.knowledge.search.SearchDesignTechnique" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -94,6 +111,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-[juju](mailto:justine.gehring@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

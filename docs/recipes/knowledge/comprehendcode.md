@@ -62,6 +62,7 @@ _The inferred knowledge about classes in the codebase, as provided by an LLM._
 | Class name | The fully qualified name of the class |
 | Time to infer | The time taken by the LLM to infer the knowledge, in milliseconds. |
 | Description | The description of the inferred knowledge, as provided by the LLM. |
+| Responsibility | The responsibility of the class, as inferred by the LLM. |
 | Pattern in use 1 | An architectural pattern in use in the class. |
 | Pattern in use 2 | An architectural pattern in use in the class. |
 | Pattern in use 3 | An architectural pattern in use in the class. |
@@ -81,6 +82,7 @@ _The inferred knowledge about methods in the codebase, as provided by an LLM._
 | Technology in use 1 | A technique in use in the method. |
 | Technology in use 2 | A technique in use in the method. |
 | Technology in use 3 | A technique in use in the method. |
+| Examples | API examples of the methods in the codebase with the number of occurrences. |
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -126,4 +128,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [justine](mailto:justine.gehring@gmail.com), justine-gehring

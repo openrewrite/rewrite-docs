@@ -3,6 +3,7 @@
 ## Categories
 
 * [Docs](/recipes/knowledge/docs)
+* [Search](/recipes/knowledge/search)
 
 ## Recipes
 

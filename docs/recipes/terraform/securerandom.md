@@ -102,4 +102,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Kun Li](mailto:kun@moderne.io), [pocan101](mailto:jcortesd@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [pocan101](mailto:jcortesd@gmail.com)
