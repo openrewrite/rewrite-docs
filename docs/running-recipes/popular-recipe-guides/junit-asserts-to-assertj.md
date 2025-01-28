@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate from JUnit Asserts to AssertJ
+description: How to migrate from JUnit Asserts to AssertJ.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

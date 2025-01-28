@@ -1,11 +1,15 @@
+---
+description: How to automatically resolve common static analysis issues.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Common Static Analysis Issue Remediation
+# Common static analysis issue remediation
 
 In this guide we'll look at using OpenRewrite to perform an automated remediation for many issues identified by common static analysis tools.
 
-### Example Configuration
+### Example configuration
 
 The [Common Static Analysis Recipe](../../recipes/staticanalysis/commonstaticanalysis.md) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
 

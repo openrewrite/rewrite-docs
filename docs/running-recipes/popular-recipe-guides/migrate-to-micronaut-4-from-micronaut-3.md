@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to Micronaut 4
+description: How to automatically migrate from Micronaut 3 to Micronaut 4.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

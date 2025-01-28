@@ -1,3 +1,7 @@
+---
+description: How to automatically fix checkstyle violations.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

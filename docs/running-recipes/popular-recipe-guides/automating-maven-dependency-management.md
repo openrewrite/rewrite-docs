@@ -1,8 +1,12 @@
+---
+description: How to automate common dependency management tasks.
+---
+
 # Automating Maven dependency management
 
 Dependency management is a complex and often frustrating part of software development. Sometimes a transitive dependency you'd never expect makes it onto your runtime classpath. Sometimes your build tool resolves a conflict between requested dependency versions in an unexpected way. Despite the headaches, it wouldn't make sense for most projects to forgo dependencies.
 
-OpenRewrite can help. In this tutorial, we'll learn how to automate common dependency management tasks by migrating a project from one [slf4j](http://www.slf4j.org/) implementation to another.
+OpenRewrite can help. In this tutorial, we'll learn how to automate common dependency management tasks by migrating a project from one [SLF4J](http://www.slf4j.org/) implementation to another.
 
 ## Setup
 

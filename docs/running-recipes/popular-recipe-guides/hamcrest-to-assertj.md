@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate from Hamcrest to AssertJ
+description: How to migrate from Hamcrest to AssertJ.
+---
+
 # Migrate to AssertJ from Hamcrest
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from [Hamcrest](https://hamcrest.org/JavaHamcrest/) to [AssertJ](https://assertj.github.io/doc/#assertj-overview). AssertJ is more actively maintained than Hamcrest and is generally favored for testing assertions. 

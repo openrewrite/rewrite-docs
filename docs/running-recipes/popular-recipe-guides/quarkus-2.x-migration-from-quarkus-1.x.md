@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to Quarkus 2
+description: How to automatically migrate from Quarkus 1 to Quarkus 2.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -1,3 +1,8 @@
+---
+sidebar_label: Running Rewrite on a Gradle project without modifying the build
+description: How to run OpenRewrite on a Gradle project without modifying any of the build files.
+---
+
 # Running Rewrite on a Gradle project without modifying the build
 
 In this tutorial, we will apply a Rewrite recipe to a repository built with Gradle without modifying the build itself. We will use a [Gradle init script](https://docs.gradle.org/current/userguide/init_scripts.html) to accomplish this.

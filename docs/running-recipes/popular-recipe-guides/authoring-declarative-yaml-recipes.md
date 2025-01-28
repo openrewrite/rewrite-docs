@@ -1,3 +1,7 @@
+---
+description: How to create a declarative YAML recipe.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

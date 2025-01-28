@@ -1,3 +1,8 @@
+---
+sidebar_label: Multi-module Maven projects
+description: How to run OpenRewrite recipes on a Maven project with multiple modules.
+---
+
 # Running OpenRewrite on a multi-module Maven project
 
 If you have a Maven project with multiple modules, you may run into errors finding and running the [OpenRewrite Maven plugin](https://github.com/openrewrite/rewrite-maven-plugin).

@@ -20,7 +20,6 @@ const sidebars: SidebarsConfig = {
         'running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build',
         'running-recipes/multi-module-maven',
         'running-recipes/running-text-based-recipes',
-        'running-recipes/data-tables',
         {
           type: 'category',
           label: 'Popular recipe guides',
@@ -70,6 +69,7 @@ const sidebars: SidebarsConfig = {
         'authoring-recipes/recipe-testing',
         'authoring-recipes/recipe-conventions-and-best-practices',
         'authoring-recipes/modifying-methods-with-javatemplate',
+        'authoring-recipes/data-tables',
         'authoring-recipes/multiple-visitors',
         'authoring-recipes/writing-recipes-over-multiple-source-file-types',
         'authoring-recipes/multiple-versions',

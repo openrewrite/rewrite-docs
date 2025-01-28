@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to JUnit 5
+description: How to automatically migrate from JUnit 4 to JUnit 5.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

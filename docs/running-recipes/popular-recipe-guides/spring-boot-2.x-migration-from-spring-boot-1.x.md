@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to Spring Boot 2 from Spring Boot 1
+description: How to automatically migrate from Spring Boot 1 to Spring Boot 2.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

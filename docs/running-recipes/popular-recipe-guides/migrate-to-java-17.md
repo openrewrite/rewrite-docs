@@ -1,6 +1,6 @@
 ---
 keywords: [OpenRewrite, Java, Java 17, Java Migration]
-description: Automatically migrate from Java 8 to 17
+description: How to automatically migrate from Java 8 to 17.
 ---
 
 import Tabs from '@theme/Tabs';

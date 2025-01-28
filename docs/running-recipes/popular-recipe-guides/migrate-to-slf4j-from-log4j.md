@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to SLF4J
+description: How to automatically migrate from Log4j to SLF4J.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  This guide covers configuring OpenRewrite with Maven or Gradle and using it to
-  run refactoring recipes.
+description: This guide covers configuring OpenRewrite with Maven or Gradle and using it to run refactoring recipes.
 ---
 
 import Tabs from '@theme/Tabs';

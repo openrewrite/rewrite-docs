@@ -1,3 +1,8 @@
+---
+sidebar_label: Running Rewrite on a Maven project without modifying the build
+description: How to run OpenRewrite on a Maven project without modifying any of the build files.
+---
+
 # Running Rewrite on a Maven project without modifying the build
 
 In this tutorial, we will apply a Rewrite [recipe](../concepts-and-explanations/recipes.md) to a source code repository built with Maven without modifying the build itself. The instructions for this differ slightly depending on whether or not the recipe has configuration parameters. Please note that you will need to have [Maven](https://maven.apache.org/download.cgi) installed in order to run the shell commands.

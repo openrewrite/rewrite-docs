@@ -1,3 +1,7 @@
+---
+description: How to automatically refactor logging statements to use SLF4J parameterized logging.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
