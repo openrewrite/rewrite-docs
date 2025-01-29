@@ -1,3 +1,8 @@
+---
+sidebar_label: Creating Refaster template recipes
+description: A step-by-step guide to creating Refaster template recipes and their corresponding tests.
+---
+
 import ReactPlayer from 'react-player';
 
 import Tabs from '@theme/Tabs';

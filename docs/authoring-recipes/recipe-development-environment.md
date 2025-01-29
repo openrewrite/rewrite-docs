@@ -1,3 +1,7 @@
+---
+description: Instructions for setting up your local development environment to create OpenRewrite recipes.
+---
+
 import ReactPlayer from 'react-player';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

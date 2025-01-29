@@ -1,3 +1,7 @@
+---
+description: Describes what the three types of recipes are, and what their advantages/disadvantages are.
+---
+
 # Types of recipes
 
 Before you jump into coding recipes, it's important to figure out what type of recipe you're going to make.

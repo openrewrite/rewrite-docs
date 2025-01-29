@@ -1,3 +1,8 @@
+---
+sidebar_label: Testing recipes
+description: A deep, technical look into how to effectively write tests for OpenRewrite recipes.
+---
+
 import ReactPlayer from 'react-player';
 
 import Tabs from '@theme/Tabs';

@@ -1,3 +1,7 @@
+---
+description: A list of important conventions and best practices to keep in mind when writing OpenRewrite recipes.
+---
+
 # Recipe conventions and best practices
 
 To help you create reliable and scalable recipes, this document will describe an assortment of conventions and best practices to keep in mind when making new recipes.

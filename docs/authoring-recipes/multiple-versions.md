@@ -1,3 +1,8 @@
+---
+sidebar_label: Multiple versions of a library
+description: How to add and use multiple versions of a library in a recipe.
+---
+
 # Using multiple versions of a library in a project
 
 Recipes are commonly grouped based on their goals. Maven recipes are put in the same project as other Maven recipes, Gradle recipes are put in the same project as other Gradle recipes, and so on. This has a variety of benefits: it's easier to share logic between recipes, fewer dependencies are needed, and it's easier to find recipes you care about.

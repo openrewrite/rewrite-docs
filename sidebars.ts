@@ -76,6 +76,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'link',
           label: 'Recipe authoring workshop',
+          description: 'How to create and test recipes with OpenRewrite and Moderne.',
           href: 'https://docs.moderne.io/user-documentation/workshops/recipe-authoring/',
         },
       ],

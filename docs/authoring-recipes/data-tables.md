@@ -1,5 +1,4 @@
 ---
-sidebar_label: Creating recipes with data tables
 description: How to create a recipe that produces a data table.
 ---
 
