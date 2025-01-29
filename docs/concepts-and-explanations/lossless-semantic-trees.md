@@ -1,3 +1,7 @@
+---
+description: An explanation of what an LST is and why it's critical for large-scale automatic refactoring.
+---
+
 # Lossless Semantic Trees (LST)
 
 <figure>

@@ -1,3 +1,7 @@
+---
+description: Demonstrates how to programmatically print out an LST to better understand what an LST looks like.
+---
+
 # TreeVisitingPrinter
 
 When you first begin to look into [Lossless Semantic Trees](./lossless-semantic-trees.md) (LSTs), it can be difficult to understand what code corresponds to what LST. You _could_ use a debugger to step through the tree, but that can take a lot of time and it's easy to get lost in irrelevant elements.

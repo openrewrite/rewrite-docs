@@ -1,3 +1,7 @@
+---
+description: A technical overview of recipes and the lifecycle surrounding them. Includes example code and diagrams.
+---
+
 # Recipes
 
 A recipe represents a group of search and refactoring operations that can be applied to a [Lossless Semantic Tree](./lossless-semantic-trees.md). A recipe can represent a single, stand-alone operation or it can be linked together with other recipes to accomplish a larger goal such as a framework migration.

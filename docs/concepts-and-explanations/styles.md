@@ -1,3 +1,7 @@
+---
+description: A technical overview of styles – including when to use them and how to configure them.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

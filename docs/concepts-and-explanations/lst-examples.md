@@ -1,3 +1,7 @@
+---
+description: Diagrams and explanations of the various Java LST components.
+---
+
 # Java LST examples
 
 When building recipes, it's important to understand how OpenRewrite [Lossless Semantic Trees](./lossless-semantic-trees.md) (LSTs) correspond to code. You couldn't, for example, properly rename a variable with a recipe unless you knew that [J.Identifier](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2310-L2343) is the class used to represent a variable.

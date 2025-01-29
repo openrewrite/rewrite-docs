@@ -1,3 +1,7 @@
+---
+description: Diagrams and explanations of the various YAML LST components.
+---
+
 # YAML LST examples
 
 When building recipes that read or modify YAML files, it's important to understand how the YAML [Lossless Semantic Tree](./lossless-semantic-trees.md) (LST) is constructed.  

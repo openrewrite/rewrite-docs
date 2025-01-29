@@ -1,3 +1,7 @@
+---
+description: A technical overview of what JavaTemplates are and how to use them.
+---
+
 # JavaTemplate
 
 More advanced refactoring recipes often require the construction of complex [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) elements. Manually constructing complex LST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into LST elements ready for use in a [visitor](./visitors.md).
