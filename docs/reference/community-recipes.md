@@ -1,3 +1,7 @@
+---
+description: A list of projects that have created OpenRewrite recipes and integrated them into their projects.
+---
+
 # OpenRewrite recipes created by the community
 
 This doc contains a list of projects that have created OpenRewrite recipes and integrated them into their projects to perform migrations with. 

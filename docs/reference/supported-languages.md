@@ -1,3 +1,7 @@
+---
+description: A list of what languages, formats, build tools, and frameworks supported by OpenRewrite.
+---
+
 # Supported languages
 
 As of January 2025, OpenRewrite supports:

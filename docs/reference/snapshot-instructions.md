@@ -1,3 +1,7 @@
+---
+description: How to configure your project to access snapshot versions of OpenRewrite.
+---
+
 # How to use snapshot versions
 
 Right now, OpenRewrite does a full release once every 2-4 weeks. Between those releases, recipes are consistently being added or changed to meet the needs of our users. For many people, it's fine to wait until a new release to get access to these new features or recipes. Others, however, would like to have access right away.

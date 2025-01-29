@@ -1,3 +1,7 @@
+---
+description: How to build and develop OpenRewrite – including IDE tips and OS caveats.
+---
+
 # Building and developing OpenRewrite
 
 ## Building OpenRewrite

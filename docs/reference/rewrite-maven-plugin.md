@@ -1,3 +1,7 @@
+---
+description: An overview of the OpenRewrite Maven Plugin, including its goals and how to configure them.
+---
+
 # Maven plugin configuration
 
 The OpenRewrite Maven Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Maven build. The OpenRewrite Maven Plugin is compatible with all versions of Maven since 3.6.

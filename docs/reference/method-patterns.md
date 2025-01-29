@@ -1,3 +1,7 @@
+---
+description: How to create and use type-aware method patterns.
+---
+
 import ReactPlayer from 'react-player';
 
 # Method patterns

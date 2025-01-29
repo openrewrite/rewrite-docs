@@ -1,3 +1,7 @@
+---
+description: How to create and configure a recipe using YAML.
+---
+
 # Declarative YAML format
 
 OpenRewrite allows you to create [recipes](../concepts-and-explanations/recipes.md) and [styles](../concepts-and-explanations/styles.md) in [YAML](https://yaml.org). While doing so potentially reduces customizability, it makes up for that with development speed and portability.

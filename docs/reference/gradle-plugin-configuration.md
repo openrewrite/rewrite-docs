@@ -1,3 +1,7 @@
+---
+description: An overview of the OpenRewrite Gradle Plugin, including its tasks and how to configure them.
+---
+
 # Gradle plugin configuration
 
 The OpenRewrite Gradle Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Gradle build. The OpenRewrite Gradle Plugin is compatible with all versions of Gradle since 4.0.
