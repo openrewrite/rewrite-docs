@@ -634,7 +634,7 @@ This requires the code to have an existing ESLint configuration.
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [Verify compilation](../recipes/io/moderne/compiled/verification/verifycompilation.md)
+### [Verify compilation](../recipes/compiled/verification/verifycompilation.md)
  
 _io.moderne.compiled.verification.VerifyCompilation_
 
@@ -645,7 +645,7 @@ This is a task that runs after another recipe to verify that the changes made by
   * **io.moderne.compiled.table.ABITraces**: *ASM trace of the ABI of types needed to perform compile verification.*
 
 
-### [Comprehend code](../recipes/io/moderne/knowledge/comprehendcode.md)
+### [Comprehend code](../recipes/knowledge/comprehendcode.md)
  
 _io.moderne.knowledge.ComprehendCode_
 

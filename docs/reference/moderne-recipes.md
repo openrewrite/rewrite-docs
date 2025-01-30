@@ -506,15 +506,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-compiled-analysis
 
-* [Change `List#add` to `List#plus` and verify.](../recipes/io/moderne/compiled/verification/changelistmethodandverify.md)
-* [Verify compilation](../recipes/io/moderne/compiled/verification/verifycompilation.md)
+* [Change `List#add` to `List#plus` and verify.](../recipes/compiled/verification/changelistmethodandverify.md)
+* [Verify compilation](../recipes/compiled/verification/verifycompilation.md)
 
 ## rewrite-comprehension
 
-* [Comprehend code](../recipes/io/moderne/knowledge/comprehendcode.md)
-* [Search for a class that uses the given design technique](../recipes/io/moderne/knowledge/search/searchdesigntechnique.md)
-* [Update README](../recipes/io/moderne/knowledge/docs/updatereadme.md)
-* [Update the README for an OpenRewrite recipe repository](../recipes/io/moderne/knowledge/docs/updateopenrewritereadme.md)
+* [Comprehend code](../recipes/knowledge/comprehendcode.md)
+* [Search for a class that uses the given design technique](../recipes/knowledge/search/searchdesigntechnique.md)
+* [Update README](../recipes/knowledge/docs/updatereadme.md)
+* [Update the README for an OpenRewrite recipe repository](../recipes/knowledge/docs/updateopenrewritereadme.md)
 
 ## rewrite-concourse
 
