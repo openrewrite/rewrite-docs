@@ -203,12 +203,16 @@ dependencies {
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.0.0-M9</version>
         </plugin>
-        <!-- lombok is optional, but recommended for authoring recipes -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.13.0</version>
             <configuration>
+                <!-- Jackson deserialization requires named parameters -->
+                <compilerArgs>
+                    <arg>-parameters</arg>
+                </compilerArgs>
+                <!-- lombok is optional, but recommended for authoring recipes -->
                 <annotationProcessorPaths>
                     <path>
                         <groupId>org.projectlombok</groupId>
