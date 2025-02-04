@@ -413,6 +413,6 @@ html[data-theme='dark'] .footer .footer__bottom::before {
   }
 }
 
-.markdown h1, .markdown h2, .markdown h3, .markdown h4 {
+h1, .markdown h2, .markdown h3, .markdown h4 {
   font-weight: bold;
 }
