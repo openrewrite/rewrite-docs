@@ -33,6 +33,10 @@ class FooBar {
 }
 ```
 
+:::tip
+We offer an entire [recipe authoring workshop](https://docs.moderne.io/user-documentation/workshops/recipe-authoring/) that walks through everything you'd need to know to get started with recipes – from running them to the dev environment to writing different types of recipes. You may find it useful to work through that, too.
+:::
+
 <ReactPlayer url='https://www.youtube.com/watch?v=O3Se9Q25GCg' controls="true" />
 
 ## Prerequisites
