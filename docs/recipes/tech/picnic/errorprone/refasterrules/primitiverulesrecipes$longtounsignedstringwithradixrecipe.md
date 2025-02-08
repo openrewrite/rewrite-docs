@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Long#toUnsignedString(long,int) over third-party or more verbose alternatives"
+sidebar_label: "Refaster template PrimitiveRules.LongToUnsignedStringWithRadix"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Long#toUnsignedString(long,int)` over third-party or more verbose alternatives
+# Refaster template `PrimitiveRules.LongToUnsignedStringWithRadix`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringWithRadixRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongToUnsignedStringWithRadix {
-    
-    @BeforeTemplate
-    String before(long i, int radix) {
-        return UnsignedLongs.toString(i, radix);
-    }
-    
-    @AfterTemplate
-    String after(long i, int radix) {
-        return Long.toUnsignedString(i, radix);
-    }
-}
-```
-.
+_Prefer JDK's `Long#toUnsignedString(long,int)` over third-party or more verbose alternatives_
 
 ## Recipe source
 

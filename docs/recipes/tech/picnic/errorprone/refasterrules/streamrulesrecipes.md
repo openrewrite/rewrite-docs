@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with Streams"
+sidebar_label: "StreamRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `Stream`s
+# `StreamRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.StreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/StreamRules)._
+_Refaster rules related to expressions dealing with `Stream`s [Source](https://error-prone.picnic.tech/refasterrules/StreamRules)._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `Collectors#joining()` over `Collectors#joining(CharSequence)` with an empty delimiter string](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$joiningrecipe)
+* [Refaster template `StreamRules.Joining`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$joiningrecipe)
 
 </TabItem>
 
@@ -35,8 +35,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.StreamRulesRecipes
-displayName: Refaster rules related to expressions dealing with `Stream`s
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.StreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/StreamRules).
+displayName: `StreamRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `Stream`s [Source](https://error-prone.picnic.tech/refasterrules/StreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$JoiningRecipe
 

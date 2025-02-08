@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#plusMonths(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimePlusMonths"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#plusMonths(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimePlusMonths`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusMonthsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimePlusMonths {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int months) {
-        return zonedDateTime.plus(Period.ofMonths(months));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long months) {
-        return zonedDateTime.plus(months, ChronoUnit.MONTHS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int months) {
-        return zonedDateTime.plusMonths(months);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#plusMonths(long)` over more contrived alternatives_
 
 ## Recipe source
 

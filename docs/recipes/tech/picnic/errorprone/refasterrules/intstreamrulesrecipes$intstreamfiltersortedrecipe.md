@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Apply IntStream#filter(IntPredicate) before IntStream#sorted() to reduce the number of elements to sort"
+sidebar_label: "Refaster template IntStreamRules.IntStreamFilterSorted"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Apply `IntStream#filter(IntPredicate)` before `IntStream#sorted()` to reduce the number of elements to sort
+# Refaster template `IntStreamRules.IntStreamFilterSorted`
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamFilterSortedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntStreamFilterSorted {
-    
-    @BeforeTemplate
-    IntStream before(IntStream stream, IntPredicate predicate) {
-        return stream.sorted().filter(predicate);
-    }
-    
-    @AfterTemplate
-    IntStream after(IntStream stream, IntPredicate predicate) {
-        return stream.filter(predicate).sorted();
-    }
-}
-```
-.
+_Apply `IntStream#filter(IntPredicate)` before `IntStream#sorted()` to reduce the number of elements to sort_
 
 ## Recipe source
 

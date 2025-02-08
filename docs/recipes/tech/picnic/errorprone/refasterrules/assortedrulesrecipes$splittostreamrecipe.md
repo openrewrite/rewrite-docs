@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Splitter#splitToStream(CharSequence) over less efficient alternatives"
+sidebar_label: "Refaster template AssortedRules.SplitToStream"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Splitter#splitToStream(CharSequence)` over less efficient alternatives
+# Refaster template `AssortedRules.SplitToStream`
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$SplitToStreamRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class SplitToStream {
-    
-    @BeforeTemplate
-    Stream<String> before(Splitter splitter, CharSequence charSequence) {
-        return Refaster.anyOf(Streams.stream(splitter.split(charSequence)), splitter.splitToList(charSequence).stream());
-    }
-    
-    @AfterTemplate
-    Stream<String> after(Splitter splitter, CharSequence charSequence) {
-        return splitter.splitToStream(charSequence);
-    }
-}
-```
-.
+_Prefer `Splitter#splitToStream(CharSequence)` over less efficient alternatives_
 
 ## Recipe source
 

@@ -1,30 +1,18 @@
 ---
-sidebar_label: "Prefer SuggestedFix#replace(int, int, String)} over more contrived alternatives"
+sidebar_label: "Refaster template SuggestedFixRules.SuggestedFixReplaceStartEnd"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `SuggestedFix#replace(int, int, String)`} over more contrived alternatives
+# Refaster template `SuggestedFixRules.SuggestedFixReplaceStartEnd`
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceStartEndRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class SuggestedFixReplaceStartEnd {
-    
-    @BeforeTemplate
-    SuggestedFix before(int start, int end, String replaceWith) {
-        return SuggestedFix.builder().replace(start, end, replaceWith).build();
-    }
-    
-    @AfterTemplate
-    SuggestedFix after(int start, int end, String replaceWith) {
-        return SuggestedFix.replace(start, end, replaceWith);
-    }
-}
 ```
-.
+Prefer `SuggestedFix#replace(int, int, String)`} over more contrived alternatives
+```
+
 
 ## Recipe source
 

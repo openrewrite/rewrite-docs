@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#minusSeconds(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimeMinusSeconds"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#minusSeconds(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimeMinusSeconds`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusSecondsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimeMinusSeconds {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int seconds) {
-        return zonedDateTime.minus(Duration.ofSeconds(seconds));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long seconds) {
-        return zonedDateTime.minus(seconds, ChronoUnit.SECONDS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int seconds) {
-        return zonedDateTime.minusSeconds(seconds);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#minusSeconds(long)` over more contrived alternatives_
 
 ## Recipe source
 

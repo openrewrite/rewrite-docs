@@ -1,30 +1,15 @@
 ---
-sidebar_label: "In order to test whether a stream has any element, simply try to find one"
+sidebar_label: "Refaster template LongStreamRules.LongStreamIsNotEmpty"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# In order to test whether a stream has any element, simply try to find one
+# Refaster template `LongStreamRules.LongStreamIsNotEmpty`
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamIsNotEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongStreamIsNotEmpty {
-    
-    @BeforeTemplate
-    boolean before(LongStream stream) {
-        return Refaster.anyOf(stream.count() != 0, stream.count() > 0, stream.count() >= 1, stream.findFirst().isPresent());
-    }
-    
-    @AfterTemplate
-    boolean after(LongStream stream) {
-        return stream.findAny().isPresent();
-    }
-}
-```
-.
+_In order to test whether a stream has any element, simply try to find one_
 
 ## Recipe source
 

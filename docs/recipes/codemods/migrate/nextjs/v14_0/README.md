@@ -3,6 +3,6 @@
 ## Recipes
 
 * [Migrate `ImageResponse` imports](./nextogimport.md)
-* [Use `viewport` export](./useviewportexport.md)
+* [Use `viewport` export](./metadatatoviewportexport.md)
 
 

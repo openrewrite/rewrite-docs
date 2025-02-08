@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer StepVerifier.LastStep#verifyErrorMatches(Predicate) over more verbose alternatives"
+sidebar_label: "Refaster template ReactorRules.StepVerifierLastStepVerifyErrorMatches"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `StepVerifier.LastStep#verifyErrorMatches(Predicate)` over more verbose alternatives
+# Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMatches`
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorMatchesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StepVerifierLastStepVerifyErrorMatches {
-    
-    @BeforeTemplate
-    Duration before(StepVerifier.LastStep step, Predicate<Throwable> predicate) {
-        return step.expectErrorMatches(predicate).verify();
-    }
-    
-    @AfterTemplate
-    Duration after(StepVerifier.LastStep step, Predicate<Throwable> predicate) {
-        return step.verifyErrorMatches(predicate);
-    }
-}
-```
-.
+_Prefer `StepVerifier.LastStep#verifyErrorMatches(Predicate)` over more verbose alternatives_
 
 ## Recipe source
 

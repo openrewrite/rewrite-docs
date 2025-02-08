@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer Name#contentEquals(CharSequence) over more verbose alternatives"
+sidebar_label: "Refaster template BugCheckerRules.NameContentEquals"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Name#contentEquals(CharSequence)` over more verbose alternatives
+# Refaster template `BugCheckerRules.NameContentEquals`
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$NameContentEqualsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class NameContentEquals {
-    
-    @BeforeTemplate
-    boolean before(Name name, CharSequence string) {
-        return name.toString().equals(string.toString());
-    }
-    
-    @BeforeTemplate
-    boolean before(Name name, String string) {
-        return name.toString().equals(string);
-    }
-    
-    @AfterTemplate
-    boolean after(Name name, CharSequence string) {
-        return name.contentEquals(string);
-    }
-}
-```
-.
+_Prefer `Name#contentEquals(CharSequence)` over more verbose alternatives_
 
 ## Recipe source
 

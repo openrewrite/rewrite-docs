@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer WebClient#head() over WebClient#method(HttpMethod) with HttpMethod#HEAD"
+sidebar_label: "Refaster template WebClientRules.WebClientHead"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `WebClient#head()` over `WebClient#method(HttpMethod)` with `HttpMethod#HEAD`
+# Refaster template `WebClientRules.WebClientHead`
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientHeadRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class WebClientHead {
-    
-    @BeforeTemplate
-    RequestHeadersSpec<?> before(WebClient webClient) {
-        return webClient.method(HEAD);
-    }
-    
-    @BeforeTemplate
-    WebTestClient.RequestHeadersSpec<?> before(WebTestClient webClient) {
-        return webClient.method(HEAD);
-    }
-    
-    @AfterTemplate
-    RequestHeadersSpec<?> after(WebClient webClient) {
-        return webClient.head();
-    }
-}
-```
-.
+_Prefer `WebClient#head()` over `WebClient#method(HttpMethod)` with `HttpMethod#HEAD`_
 
 ## Recipe source
 

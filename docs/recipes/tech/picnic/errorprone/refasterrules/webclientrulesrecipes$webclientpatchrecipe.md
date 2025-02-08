@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer WebClient#patch() over WebClient#method(HttpMethod) with HttpMethod#PATCH"
+sidebar_label: "Refaster template WebClientRules.WebClientPatch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `WebClient#patch()` over `WebClient#method(HttpMethod)` with `HttpMethod#PATCH`
+# Refaster template `WebClientRules.WebClientPatch`
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class WebClientPatch {
-    
-    @BeforeTemplate
-    RequestBodyUriSpec before(WebClient webClient) {
-        return webClient.method(PATCH);
-    }
-    
-    @BeforeTemplate
-    WebTestClient.RequestBodyUriSpec before(WebTestClient webClient) {
-        return webClient.method(PATCH);
-    }
-    
-    @AfterTemplate
-    RequestBodyUriSpec after(WebClient webClient) {
-        return webClient.patch();
-    }
-}
-```
-.
+_Prefer `WebClient#patch()` over `WebClient#method(HttpMethod)` with `HttpMethod#PATCH`_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Files#readString(Path, Charset) over more contrived alternatives"
+sidebar_label: "Refaster template FileRules.FilesReadStringWithCharset"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Files#readString(Path, Charset)` over more contrived alternatives
+# Refaster template `FileRules.FilesReadStringWithCharset`
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesReadStringWithCharsetRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class FilesReadStringWithCharset {
-    
-    @BeforeTemplate
-    String before(Path path, Charset charset) throws IOException {
-        return new String(Files.readAllBytes(path), charset);
-    }
-    
-    @AfterTemplate
-    String after(Path path, Charset charset) throws IOException {
-        return Files.readString(path, charset);
-    }
-}
-```
-.
+_Prefer `Files#readString(Path, Charset)` over more contrived alternatives_
 
 ## Recipe source
 

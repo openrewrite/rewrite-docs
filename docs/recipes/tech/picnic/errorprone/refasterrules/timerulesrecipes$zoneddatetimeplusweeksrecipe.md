@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#plusWeeks(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimePlusWeeks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#plusWeeks(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimePlusWeeks`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusWeeksRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimePlusWeeks {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int weeks) {
-        return zonedDateTime.plus(Period.ofWeeks(weeks));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long weeks) {
-        return zonedDateTime.plus(weeks, ChronoUnit.WEEKS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int weeks) {
-        return zonedDateTime.plusWeeks(weeks);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#plusWeeks(long)` over more contrived alternatives_
 
 ## Recipe source
 

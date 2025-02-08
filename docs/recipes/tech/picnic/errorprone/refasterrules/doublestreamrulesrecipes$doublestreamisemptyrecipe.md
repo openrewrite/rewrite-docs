@@ -1,30 +1,15 @@
 ---
-sidebar_label: "In order to test whether a stream has any element, simply try to find one"
+sidebar_label: "Refaster template DoubleStreamRules.DoubleStreamIsEmpty"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# In order to test whether a stream has any element, simply try to find one
+# Refaster template `DoubleStreamRules.DoubleStreamIsEmpty`
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamIsEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleStreamIsEmpty {
-    
-    @BeforeTemplate
-    boolean before(DoubleStream stream) {
-        return Refaster.anyOf(stream.count() == 0, stream.count() <= 0, stream.count() < 1, stream.findFirst().isEmpty());
-    }
-    
-    @AfterTemplate
-    boolean after(DoubleStream stream) {
-        return stream.findAny().isEmpty();
-    }
-}
-```
-.
+_In order to test whether a stream has any element, simply try to find one_
 
 ## Recipe source
 

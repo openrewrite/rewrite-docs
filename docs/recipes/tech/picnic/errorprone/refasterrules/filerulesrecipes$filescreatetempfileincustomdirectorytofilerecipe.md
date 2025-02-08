@@ -9,22 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileInCustomDirectoryToFileRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class FilesCreateTempFileInCustomDirectoryToFile {
-    
-    @BeforeTemplate
-    File before(File directory, String prefix, String suffix) throws IOException {
-        return File.createTempFile(prefix, suffix, directory);
-    }
-    
-    @AfterTemplate
-    File after(File directory, String prefix, String suffix) throws IOException {
-        return Files.createTempFile(directory.toPath(), prefix, suffix).toFile();
-    }
-}
-```
-.
+_Note that `File#createTempFile` treats the given prefix as a path, and ignores all but  its file name. That is, the actual prefix used is derived from all characters following the  final file separator (if any). This is not the case with `Files#createTempFile`, which  will instead throw an `IllegalArgumentException` if the prefix contains any file  separators._
 
 ## Recipe source
 

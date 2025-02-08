@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Byte#hashCode(byte) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.ByteHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Byte#hashCode(byte)` over the Guava alternative
+# Refaster template `PrimitiveRules.ByteHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ByteHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ByteHashCode {
-    
-    @BeforeTemplate
-    int before(byte b) {
-        return Bytes.hashCode(b);
-    }
-    
-    @AfterTemplate
-    int after(byte b) {
-        return Byte.hashCode(b);
-    }
-}
-```
-.
+_Prefer `Byte#hashCode(byte)` over the Guava alternative_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Integer#toUnsignedString(int) over third-party or more verbose alternatives"
+sidebar_label: "Refaster template PrimitiveRules.IntegerToUnsignedString"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Integer#toUnsignedString(int)` over third-party or more verbose alternatives
+# Refaster template `PrimitiveRules.IntegerToUnsignedString`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerToUnsignedString {
-    
-    @BeforeTemplate
-    String before(int i) {
-        return Refaster.anyOf(UnsignedInts.toString(i), Integer.toUnsignedString(i, 10));
-    }
-    
-    @AfterTemplate
-    String after(int i) {
-        return Integer.toUnsignedString(i);
-    }
-}
-```
-.
+_Prefer JDK's `Integer#toUnsignedString(int)` over third-party or more verbose alternatives_
 
 ## Recipe source
 

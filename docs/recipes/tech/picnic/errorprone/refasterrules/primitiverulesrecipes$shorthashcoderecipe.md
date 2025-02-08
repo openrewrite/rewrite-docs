@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Short#hashCode(short) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.ShortHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Short#hashCode(short)` over the Guava alternative
+# Refaster template `PrimitiveRules.ShortHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ShortHashCode {
-    
-    @BeforeTemplate
-    int before(short s) {
-        return Shorts.hashCode(s);
-    }
-    
-    @AfterTemplate
-    int after(short s) {
-        return Short.hashCode(s);
-    }
-}
-```
-.
+_Prefer `Short#hashCode(short)` over the Guava alternative_
 
 ## Recipe source
 

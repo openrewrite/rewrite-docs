@@ -14,7 +14,7 @@ Recipe created for the following Refaster template:
 static final class AssertThatThrownByHasMessage {
     
     @BeforeTemplate
-    @SuppressWarnings(value = "AssertThatThrownBy")
+    @SuppressWarnings(value = "AssertThatThrownByAsInstanceOfThrowable")
     AbstractObjectAssert<?, ?> before(ThrowingCallable throwingCallable, Class<? extends Throwable> exceptionType, String message) {
         return assertThatExceptionOfType(exceptionType).isThrownBy(throwingCallable).withMessage(message);
     }

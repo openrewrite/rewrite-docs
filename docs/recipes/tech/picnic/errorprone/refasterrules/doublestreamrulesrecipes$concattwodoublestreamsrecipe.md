@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer DoubleStream#concat(DoubleStream, DoubleStream) over the Guava alternative"
+sidebar_label: "Refaster template DoubleStreamRules.ConcatTwoDoubleStreams"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `DoubleStream#concat(DoubleStream, DoubleStream)` over the Guava alternative
+# Refaster template `DoubleStreamRules.ConcatTwoDoubleStreams`
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatTwoDoubleStreamsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ConcatTwoDoubleStreams {
-    
-    @BeforeTemplate
-    DoubleStream before(DoubleStream s1, DoubleStream s2) {
-        return Streams.concat(s1, s2);
-    }
-    
-    @AfterTemplate
-    DoubleStream after(DoubleStream s1, DoubleStream s2) {
-        return DoubleStream.concat(s1, s2);
-    }
-}
-```
-.
+_Prefer `DoubleStream#concat(DoubleStream, DoubleStream)` over the Guava alternative_
 
 ## Recipe source
 

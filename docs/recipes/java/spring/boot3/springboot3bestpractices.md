@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Spring Boot 3.x best practices"
+sidebar_label: "Spring Boot 3.3 best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Spring Boot 3.x best practices
+# Spring Boot 3.3 best practices
 
 **org.openrewrite.java.spring.boot3.SpringBoot3BestPractices**
 
@@ -50,7 +50,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.SpringBoot3BestPractices
-displayName: Spring Boot 3.x best practices
+displayName: Spring Boot 3.3 best practices
 description: Applies best practices to Spring Boot 3 applications.
 tags:
   - spring
@@ -247,4 +247,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Anu Ramamoorthy, Kun Li, [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Simon Zilliken, [Shannon Pamperl](mailto:shanman190@gmail.com), BhavanaPidapa, [Tim te Beek](mailto:tim.te.beek@jdriven.com), Cathy, [Kun Li](mailto:kun@moderne.io), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Tim te Beek](mailto:timtebeek@gmail.com), Adam Slaski, [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), Aaron Gershman, Daryl Robbins, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Evie Lau, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Fiete, Marius Barbulescu, ranuradh, nbruno, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Greg Adams](mailto:gadams@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [BoykoAlex](mailto:aboyko@pivotal.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), Aakarshit Uppal, BramliAK, eocantu, Josh Soref, John Burns, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), Anu Ramamoorthy, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Kun Li, [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Simon Zilliken, [Shannon Pamperl](mailto:shanman190@gmail.com), BhavanaPidapa, [Tim te Beek](mailto:tim.te.beek@jdriven.com), Cathy, [Kun Li](mailto:kun@moderne.io), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, [Tim te Beek](mailto:timtebeek@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), Aaron Gershman, Daryl Robbins, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Evie Lau, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Fiete, Marius Barbulescu, ranuradh, nbruno, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Greg Adams](mailto:gadams@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [BoykoAlex](mailto:aboyko@pivotal.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), Aakarshit Uppal, BramliAK, eocantu, Josh Soref, John Burns, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Mike Solomon](mailto:mike@moderne.io)

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Float#isFinite(float) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.FloatIsFinite"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Float#isFinite(float)` over the Guava alternative
+# Refaster template `PrimitiveRules.FloatIsFinite`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatIsFiniteRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class FloatIsFinite {
-    
-    @BeforeTemplate
-    boolean before(float f) {
-        return Floats.isFinite(f);
-    }
-    
-    @AfterTemplate
-    boolean after(float f) {
-        return Float.isFinite(f);
-    }
-}
-```
-.
+_Prefer `Float#isFinite(float)` over the Guava alternative_
 
 ## Recipe source
 

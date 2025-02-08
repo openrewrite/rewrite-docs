@@ -21,7 +21,7 @@ _Update the version of Maven used in an existing Maven wrapper._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | wrapperVersion | *Optional*. An exact version number or node-style semver selector used to select the wrapper version number. | `3.x` |
-                            | `String` | wrapperDistribution | *Optional*. The distribution of the Maven wrapper to use.
+                    | `String` | wrapperDistribution | *Optional*. The distribution of the Maven wrapper to use.
 
 * "bin" uses a `maven-wrapper.jar` compiled binary.
 * "only-script" uses a lite version of `mvnw`/`mvnw.cmd` using wget/curl or powershell. (required wrapper 3.2.0 or newer)

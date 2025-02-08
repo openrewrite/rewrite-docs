@@ -5,11 +5,11 @@ sidebar_label: "Remove <a> Tags From Link Components"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove &lt;a&gt; Tags From Link Components
+# Remove `<a>` Tags From Link Components
 
 **org.openrewrite.codemods.migrate.nextjs.v13\_0.NewLink**
 
-_Remove `<a>` tags inside [Link Components](https://nextjs.org/docs/app/api-reference/components/link), or add a `legacyBehavior` prop to Links that cannot be auto-fixed. In cases where auto-fixing can't be applied, the `legacyBehavior` prop is added. This allows your app to keep functioning using the old behavior for that particular link. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#new-link)   for more information._
+_Remove ``<a>`` tags inside Link Components or add a `legacyBehavior` prop to Links that cannot be auto-fixed._
 
 ### Tags
 

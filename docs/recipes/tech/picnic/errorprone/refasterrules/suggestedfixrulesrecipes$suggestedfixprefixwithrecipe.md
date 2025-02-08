@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer SuggestedFix#prefixWith(Tree, String) over more contrived alternatives"
+sidebar_label: "Refaster template SuggestedFixRules.SuggestedFixPrefixWith"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `SuggestedFix#prefixWith(Tree, String)` over more contrived alternatives
+# Refaster template `SuggestedFixRules.SuggestedFixPrefixWith`
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixPrefixWithRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class SuggestedFixPrefixWith {
-    
-    @BeforeTemplate
-    SuggestedFix before(Tree tree, String prefix) {
-        return SuggestedFix.builder().prefixWith(tree, prefix).build();
-    }
-    
-    @AfterTemplate
-    SuggestedFix after(Tree tree, String prefix) {
-        return SuggestedFix.prefixWith(tree, prefix);
-    }
-}
-```
-.
+_Prefer `SuggestedFix#prefixWith(Tree, String)` over more contrived alternatives_
 
 ## Recipe source
 

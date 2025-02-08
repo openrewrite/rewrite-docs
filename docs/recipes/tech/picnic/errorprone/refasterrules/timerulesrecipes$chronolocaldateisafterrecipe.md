@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer ChronoLocalDate#isBefore(ChronoLocalDate) over explicit comparison, as it yields more readable code"
+sidebar_label: "Refaster template TimeRules.ChronoLocalDateIsAfter"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ChronoLocalDate#isBefore(ChronoLocalDate)` over explicit comparison, as it yields more readable code
+# Refaster template `TimeRules.ChronoLocalDateIsAfter`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoLocalDateIsAfterRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ChronoLocalDateIsAfter {
-    
-    @BeforeTemplate
-    boolean before(ChronoLocalDate a, ChronoLocalDate b) {
-        return a.compareTo(b) > 0;
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(ChronoLocalDate a, ChronoLocalDate b) {
-        return a.isAfter(b);
-    }
-}
-```
-.
+_Prefer `ChronoLocalDate#isBefore(ChronoLocalDate)` over explicit comparison, as it yields more readable code_
 
 ## Recipe source
 

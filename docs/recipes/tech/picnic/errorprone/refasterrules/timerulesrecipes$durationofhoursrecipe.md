@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Duration#ofHours(long) over alternative representations"
+sidebar_label: "Refaster template TimeRules.DurationOfHours"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Duration#ofHours(long)` over alternative representations
+# Refaster template `TimeRules.DurationOfHours`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfHoursRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DurationOfHours {
-    
-    @BeforeTemplate
-    Duration before(long amount) {
-        return Duration.of(amount, ChronoUnit.HOURS);
-    }
-    
-    @AfterTemplate
-    Duration after(long amount) {
-        return Duration.ofHours(amount);
-    }
-}
-```
-.
+_Prefer `Duration#ofHours(long)` over alternative representations_
 
 ## Recipe source
 

@@ -29,7 +29,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace `String` literal](../../../../../java/migrate/replacestringliteralvalue)
+* [Replace `String` literal](../../../../../java/replacestringliteralvalue)
   * oldLiteralValue: `com.sun.net.ssl.internal.ssl.Provider`
   * newLiteralValue: `SunJSSE`
 
@@ -46,7 +46,7 @@ description: The `com.sun.net.ssl.internal.ssl.Provider` provider name was remov
 tags:
   - java17
 recipeList:
-  - org.openrewrite.java.migrate.ReplaceStringLiteralValue:
+  - org.openrewrite.java.ReplaceStringLiteralValue:
       oldLiteralValue: com.sun.net.ssl.internal.ssl.Provider
       newLiteralValue: SunJSSE
 

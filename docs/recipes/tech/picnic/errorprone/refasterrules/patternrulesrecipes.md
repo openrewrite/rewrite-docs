@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to code dealing with regular expressions"
+sidebar_label: "PatternRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to code dealing with regular expressions
+# `PatternRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.PatternRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.PatternRules`. [Source](https://error-prone.picnic.tech/refasterrules/PatternRules)._
+_Refaster rules related to code dealing with regular expressions [Source](https://error-prone.picnic.tech/refasterrules/PatternRules)._
 
 ## Recipe source
 
@@ -28,8 +28,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `Pattern#asPredicate()` over non-JDK alternatives](../../../../tech/picnic/errorprone/refasterrules/patternrulesrecipes$patternaspredicaterecipe)
-* [Prefer `Pattern#asPredicate()` over non-JDK alternatives](../../../../tech/picnic/errorprone/refasterrules/patternrulesrecipes$patterncompileaspredicaterecipe)
+* [Refaster template `PatternRules.PatternAsPredicate`](../../../../tech/picnic/errorprone/refasterrules/patternrulesrecipes$patternaspredicaterecipe)
+* [Refaster template `PatternRules.PatternCompileAsPredicate`](../../../../tech/picnic/errorprone/refasterrules/patternrulesrecipes$patterncompileaspredicaterecipe)
 
 </TabItem>
 
@@ -39,8 +39,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.PatternRulesRecipes
-displayName: Refaster rules related to code dealing with regular expressions
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.PatternRules`. [Source](https://error-prone.picnic.tech/refasterrules/PatternRules).
+displayName: `PatternRules` Refaster recipes
+description: Refaster rules related to code dealing with regular expressions [Source](https://error-prone.picnic.tech/refasterrules/PatternRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.PatternRulesRecipes$PatternAsPredicateRecipe
   - tech.picnic.errorprone.refasterrules.PatternRulesRecipes$PatternCompileAsPredicateRecipe

@@ -1,31 +1,18 @@
 ---
-sidebar_label: "Prefer Mockito#never()} over explicitly specifying that the associated invocation must happen precisely zero times"
+sidebar_label: "Refaster template MockitoRules.Never"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Mockito#never()`} over explicitly specifying that the associated invocation must happen precisely zero times
+# Refaster template `MockitoRules.Never`
 
 **tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$NeverRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class Never {
-    
-    @BeforeTemplate
-    VerificationMode before() {
-        return times(0);
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    VerificationMode after() {
-        return never();
-    }
-}
 ```
-.
+Prefer `Mockito#never()`} over explicitly specifying that the associated invocation must happen precisely zero times
+```
+
 
 ## Recipe source
 

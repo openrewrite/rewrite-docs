@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalTime#minusHours(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalTimeMinusHours"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalTime#minusHours(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalTimeMinusHours`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinusHoursRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalTimeMinusHours {
-    
-    @BeforeTemplate
-    LocalTime before(LocalTime localTime, int hours) {
-        return localTime.minus(Duration.ofHours(hours));
-    }
-    
-    @BeforeTemplate
-    LocalTime before(LocalTime localTime, long hours) {
-        return localTime.minus(hours, ChronoUnit.HOURS);
-    }
-    
-    @AfterTemplate
-    LocalTime after(LocalTime localTime, int hours) {
-        return localTime.minusHours(hours);
-    }
-}
-```
-.
+_Prefer `LocalTime#minusHours(long)` over more contrived alternatives_
 
 ## Recipe source
 

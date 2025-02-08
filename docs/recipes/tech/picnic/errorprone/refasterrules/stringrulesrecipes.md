@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with Strings"
+sidebar_label: "StringRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `String`s
+# `StringRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.StringRules`. [Source](https://error-prone.picnic.tech/refasterrules/StringRules)._
+_Refaster rules related to expressions dealing with `String`s [Source](https://error-prone.picnic.tech/refasterrules/StringRules)._
 
 ## Recipe source
 
@@ -28,23 +28,23 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `String#isEmpty()` over alternatives that consult the string's length](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe)
-* [Prefer `Strings#isNullOrEmpty(String)` over the more verbose alternative](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisnulloremptyrecipe)
-* [Don't use the ternary operator to create an optionally-absent string](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$optionalnonemptystringrecipe)
+* [Refaster template `StringRules.StringIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe)
+* [Refaster template `StringRules.StringIsNullOrEmpty`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisnulloremptyrecipe)
+* [Refaster template `StringRules.OptionalNonEmptyString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$optionalnonemptystringrecipe)
 * [Refaster template `StringRules.FilterEmptyString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$filteremptystringrecipe)
-* [Prefer `String#join(CharSequence, Iterable)` and variants over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$joinstringsrecipe)
-* [Prefer direct invocation of `String#valueOf(Object)` over the indirection introduced by `Objects#toString(Object)`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofrecipe)
-* [Prefer direct invocation of `String#String(char[], int, int)` over the indirection introduced by alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararraysubsequencerecipe)
-* [Prefer direct invocation of `String#String(char[])` over the indirection introduced by alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararrayrecipe)
-* [Don't unnecessarily use the two-argument `String#substring(int, int)`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$substringremainderrecipe)
-* [Prefer `Utf8#encodedLength(CharSequence)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$utf8encodedlengthrecipe)
-* [Prefer `String#indexOf(int, int)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharrecipe)
-* [Prefer `String#indexOf(String, int)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringrecipe)
-* [Prefer `String#lastIndexOf(int, int)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharrecipe)
-* [Prefer `String#lastIndexOf(String, int)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringrecipe)
-* [Prefer `String#lastIndexOf(int, int)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharwithindexrecipe)
-* [Prefer `String#lastIndexOf(String, int)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringwithindexrecipe)
-* [Prefer `String#startsWith(String, int)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringstartswithrecipe)
+* [Refaster template `StringRules.JoinStrings`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$joinstringsrecipe)
+* [Refaster template `StringRules.StringValueOf`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofrecipe)
+* [Refaster template `StringRules.NewStringFromCharArraySubSequence`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararraysubsequencerecipe)
+* [Refaster template `StringRules.NewStringFromCharArray`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararrayrecipe)
+* [Refaster template `StringRules.SubstringRemainder`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$substringremainderrecipe)
+* [Refaster template `StringRules.Utf8EncodedLength`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$utf8encodedlengthrecipe)
+* [Refaster template `StringRules.StringIndexOfChar`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharrecipe)
+* [Refaster template `StringRules.StringIndexOfString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringrecipe)
+* [Refaster template `StringRules.StringLastIndexOfChar`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharrecipe)
+* [Refaster template `StringRules.StringLastIndexOfString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringrecipe)
+* [Refaster template `StringRules.StringLastIndexOfCharWithIndex`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharwithindexrecipe)
+* [Refaster template `StringRules.StringLastIndexOfStringWithIndex`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringwithindexrecipe)
+* [Refaster template `StringRules.StringStartsWith`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringstartswithrecipe)
 
 </TabItem>
 
@@ -54,8 +54,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.StringRulesRecipes
-displayName: Refaster rules related to expressions dealing with `String`s
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.StringRules`. [Source](https://error-prone.picnic.tech/refasterrules/StringRules).
+displayName: `StringRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `String`s [Source](https://error-prone.picnic.tech/refasterrules/StringRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNullOrEmptyRecipe

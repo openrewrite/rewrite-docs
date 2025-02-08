@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetDateTime#isBefore(OffsetDateTime) over explicit comparison, as it yields more readable code"
+sidebar_label: "Refaster template TimeRules.OffsetDateTimeIsAfter"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetDateTime#isBefore(OffsetDateTime)` over explicit comparison, as it yields more readable code
+# Refaster template `TimeRules.OffsetDateTimeIsAfter`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeIsAfterRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetDateTimeIsAfter {
-    
-    @BeforeTemplate
-    boolean before(OffsetDateTime a, OffsetDateTime b) {
-        return a.compareTo(b) > 0;
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(OffsetDateTime a, OffsetDateTime b) {
-        return a.isAfter(b);
-    }
-}
-```
-.
+_Prefer `OffsetDateTime#isBefore(OffsetDateTime)` over explicit comparison, as it yields more readable code_
 
 ## Recipe source
 

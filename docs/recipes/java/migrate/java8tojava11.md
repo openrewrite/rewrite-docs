@@ -88,6 +88,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * localizedOutputStreamMethodMatcher: `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)`
 * [Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`](../../java/migrate/arraystoreexceptiontotypenotpresentexception)
 * [Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method](../../java/migrate/illegalargumentexceptiontoalreadyconnectedexception)
+* [Return String `jks` when  `KeyStore.getDefaultType()` is called](../../java/migrate/changedefaultkeystore)
 
 </TabItem>
 
@@ -158,6 +159,7 @@ recipeList:
       localizedOutputStreamMethodMatcher: java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)
   - org.openrewrite.java.migrate.ArrayStoreExceptionToTypeNotPresentException
   - org.openrewrite.java.migrate.IllegalArgumentExceptionToAlreadyConnectedException
+  - org.openrewrite.java.migrate.ChangeDefaultKeyStore
 
 ```
 </TabItem>

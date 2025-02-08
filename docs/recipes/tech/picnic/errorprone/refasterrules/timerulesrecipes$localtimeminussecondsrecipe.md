@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalTime#minusSeconds(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalTimeMinusSeconds"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalTime#minusSeconds(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalTimeMinusSeconds`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinusSecondsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalTimeMinusSeconds {
-    
-    @BeforeTemplate
-    LocalTime before(LocalTime localTime, int seconds) {
-        return localTime.minus(Duration.ofSeconds(seconds));
-    }
-    
-    @BeforeTemplate
-    LocalTime before(LocalTime localTime, long seconds) {
-        return localTime.minus(seconds, ChronoUnit.SECONDS);
-    }
-    
-    @AfterTemplate
-    LocalTime after(LocalTime localTime, int seconds) {
-        return localTime.minusSeconds(seconds);
-    }
-}
-```
-.
+_Prefer `LocalTime#minusSeconds(long)` over more contrived alternatives_
 
 ## Recipe source
 

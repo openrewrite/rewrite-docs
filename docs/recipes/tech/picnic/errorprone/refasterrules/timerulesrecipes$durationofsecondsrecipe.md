@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Duration#ofSeconds(long) over alternative representations"
+sidebar_label: "Refaster template TimeRules.DurationOfSeconds"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Duration#ofSeconds(long)` over alternative representations
+# Refaster template `TimeRules.DurationOfSeconds`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfSecondsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DurationOfSeconds {
-    
-    @BeforeTemplate
-    Duration before(long amount) {
-        return Duration.of(amount, ChronoUnit.SECONDS);
-    }
-    
-    @AfterTemplate
-    Duration after(long amount) {
-        return Duration.ofSeconds(amount);
-    }
-}
-```
-.
+_Prefer `Duration#ofSeconds(long)` over alternative representations_
 
 ## Recipe source
 

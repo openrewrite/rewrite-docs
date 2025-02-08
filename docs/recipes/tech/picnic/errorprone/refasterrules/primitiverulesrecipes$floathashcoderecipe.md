@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Float#hashCode(float) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.FloatHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Float#hashCode(float)` over the Guava alternative
+# Refaster template `PrimitiveRules.FloatHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class FloatHashCode {
-    
-    @BeforeTemplate
-    int before(float f) {
-        return Floats.hashCode(f);
-    }
-    
-    @AfterTemplate
-    int after(float f) {
-        return Float.hashCode(f);
-    }
-}
-```
-.
+_Prefer `Float#hashCode(float)` over the Guava alternative_
 
 ## Recipe source
 

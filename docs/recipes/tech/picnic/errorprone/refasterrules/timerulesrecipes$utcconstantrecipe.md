@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Use ZoneOffset#UTC when possible"
+sidebar_label: "Refaster template TimeRules.UtcConstant"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `ZoneOffset#UTC` when possible
+# Refaster template `TimeRules.UtcConstant`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcConstantRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class UtcConstant {
-    
-    @BeforeTemplate
-    ZoneId before() {
-        return Refaster.anyOf(ZoneId.of("GMT"), ZoneId.of("UTC"), ZoneId.of("+0"), ZoneId.of("-0"), UTC.normalized(), ZoneId.from(UTC));
-    }
-    
-    @AfterTemplate
-    ZoneOffset after() {
-        return UTC;
-    }
-}
-```
-.
+_Use `ZoneOffset#UTC` when possible_
 
 ## Recipe source
 

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules"
+sidebar_label: "AssortedRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules
+# `AssortedRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssortedRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules)._
+_Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules)._
 
 ## Recipe source
 
@@ -28,9 +28,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `Objects#checkIndex(int, int)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$checkindexrecipe)
-* [Don't unnecessarily repeat boolean expressions](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe)
-* [Prefer `Splitter#splitToStream(CharSequence)` over less efficient alternatives](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$splittostreamrecipe)
+* [Refaster template `AssortedRules.CheckIndex`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$checkindexrecipe)
+* [Refaster template `AssortedRules.LogicalImplication`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe)
+* [Refaster template `AssortedRules.SplitToStream`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$splittostreamrecipe)
 
 </TabItem>
 
@@ -40,8 +40,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssortedRulesRecipes
-displayName: Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssortedRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules).
+displayName: `AssortedRules` Refaster recipes
+description: Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe

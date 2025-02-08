@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to AssertJ expressions and statements"
+sidebar_label: "AssertJRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to AssertJ expressions and statements
+# `AssertJRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.AssertJRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules)._
+_Refaster rules related to AssertJ expressions and statements [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules)._
 
 ## Recipe source
 
@@ -40,8 +40,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
-displayName: Refaster rules related to AssertJ expressions and statements
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules).
+displayName: `AssertJRules` Refaster recipes
+description: Refaster rules related to AssertJ expressions and statements [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalDoubleRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalIntRecipe

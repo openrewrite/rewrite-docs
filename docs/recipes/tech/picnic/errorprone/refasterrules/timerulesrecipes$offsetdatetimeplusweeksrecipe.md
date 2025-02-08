@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetDateTime#plusWeeks(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetDateTimePlusWeeks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetDateTime#plusWeeks(long)` over more contrived alternatives
+# Refaster template `TimeRules.OffsetDateTimePlusWeeks`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimePlusWeeksRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetDateTimePlusWeeks {
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, int weeks) {
-        return offsetDateTime.plus(Period.ofWeeks(weeks));
-    }
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, long weeks) {
-        return offsetDateTime.plus(weeks, ChronoUnit.WEEKS);
-    }
-    
-    @AfterTemplate
-    OffsetDateTime after(OffsetDateTime offsetDateTime, int weeks) {
-        return offsetDateTime.plusWeeks(weeks);
-    }
-}
-```
-.
+_Prefer `OffsetDateTime#plusWeeks(long)` over more contrived alternatives_
 
 ## Recipe source
 

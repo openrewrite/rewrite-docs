@@ -19,7 +19,37 @@ static final class AssertEqual {
     }
     
     @BeforeTemplate
+    void before(boolean actual, Boolean expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Boolean actual, boolean expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Boolean actual, Boolean expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
     void before(byte actual, byte expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(byte actual, Byte expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Byte actual, byte expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Byte actual, Byte expected) {
         assertEquals(actual, expected);
     }
     
@@ -29,7 +59,37 @@ static final class AssertEqual {
     }
     
     @BeforeTemplate
+    void before(char actual, Character expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Character actual, char expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Character actual, Character expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
     void before(short actual, short expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(short actual, Short expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Short actual, short expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Short actual, Short expected) {
         assertEquals(actual, expected);
     }
     
@@ -39,7 +99,37 @@ static final class AssertEqual {
     }
     
     @BeforeTemplate
+    void before(int actual, Integer expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Integer actual, int expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Integer actual, Integer expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
     void before(long actual, long expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(long actual, Long expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Long actual, long expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Long actual, Long expected) {
         assertEquals(actual, expected);
     }
     
@@ -49,7 +139,37 @@ static final class AssertEqual {
     }
     
     @BeforeTemplate
+    void before(float actual, Float expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Float actual, float expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Float actual, Float expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
     void before(double actual, double expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(double actual, Double expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Double actual, double expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Double actual, Double expected) {
         assertEquals(actual, expected);
     }
     

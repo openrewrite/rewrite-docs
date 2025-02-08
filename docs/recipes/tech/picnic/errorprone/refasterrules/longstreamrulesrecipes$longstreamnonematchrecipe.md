@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer LongStream#noneMatch(LongPredicate) over more contrived alternatives"
+sidebar_label: "Refaster template LongStreamRules.LongStreamNoneMatch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LongStream#noneMatch(LongPredicate)` over more contrived alternatives
+# Refaster template `LongStreamRules.LongStreamNoneMatch`
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamNoneMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongStreamNoneMatch {
-    
-    @BeforeTemplate
-    boolean before(LongStream stream, LongPredicate predicate) {
-        return Refaster.anyOf(!stream.anyMatch(predicate), stream.allMatch(predicate.negate()), stream.filter(predicate).findAny().isEmpty());
-    }
-    
-    @AfterTemplate
-    boolean after(LongStream stream, LongPredicate predicate) {
-        return stream.noneMatch(predicate);
-    }
-}
-```
-.
+_Prefer `LongStream#noneMatch(LongPredicate)` over more contrived alternatives_
 
 ## Recipe source
 

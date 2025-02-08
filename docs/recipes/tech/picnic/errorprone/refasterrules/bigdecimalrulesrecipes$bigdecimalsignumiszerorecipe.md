@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer using BigDecimal#signum() over more contrived alternatives"
+sidebar_label: "Refaster template BigDecimalRules.BigDecimalSignumIsZero"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using `BigDecimal#signum()` over more contrived alternatives
+# Refaster template `BigDecimalRules.BigDecimalSignumIsZero`
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsZeroRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BigDecimalSignumIsZero {
-    
-    @BeforeTemplate
-    boolean before(BigDecimal value) {
-        return Refaster.anyOf(value.compareTo(BigDecimal.ZERO) == 0, BigDecimal.ZERO.compareTo(value) == 0);
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(BigDecimal value) {
-        return value.signum() == 0;
-    }
-}
-```
-.
+_Prefer using `BigDecimal#signum()` over more contrived alternatives_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer the more idiomatic Path#of(URI) over Paths#get(URI)"
+sidebar_label: "Refaster template FileRules.PathOfUri"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the more idiomatic `Path#of(URI)` over `Paths#get(URI)`
+# Refaster template `FileRules.PathOfUri`
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfUriRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class PathOfUri {
-    
-    @BeforeTemplate
-    Path before(URI uri) {
-        return Paths.get(uri);
-    }
-    
-    @AfterTemplate
-    Path after(URI uri) {
-        return Path.of(uri);
-    }
-}
-```
-.
+_Prefer the more idiomatic `Path#of(URI)` over `Paths#get(URI)`_
 
 ## Recipe source
 

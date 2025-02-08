@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer the LocalTime#MIN over alternative representations"
+sidebar_label: "Refaster template TimeRules.LocalTimeMin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the `LocalTime#MIN` over alternative representations
+# Refaster template `TimeRules.LocalTimeMin`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalTimeMin {
-    
-    @BeforeTemplate
-    LocalTime before() {
-        return Refaster.anyOf(LocalTime.MIDNIGHT, LocalTime.of(0, 0), LocalTime.of(0, 0, 0), LocalTime.of(0, 0, 0, 0), LocalTime.ofNanoOfDay(0), LocalTime.ofSecondOfDay(0));
-    }
-    
-    @AfterTemplate
-    LocalTime after() {
-        return LocalTime.MIN;
-    }
-}
-```
-.
+_Prefer the `LocalTime#MIN` over alternative representations_
 
 ## Recipe source
 

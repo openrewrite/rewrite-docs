@@ -275,6 +275,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Interactions should be awaited](../recipes/codemods/cleanup/storybook/awaitinteractions.md)
 * [Lifecycle methods should be methods on the prototype, not class fields](../recipes/codemods/cleanup/react/noarrowfunctionlifecycle.md)
 * [Lint TypeScript code using ESLint](../recipes/codemods/ecmascript/eslinttypescriptdefaults.md)
+* [Lint UI5 projects with UI5 linter](../recipes/codemods/ui5.md)
 * [Lint source code with ESLint](../recipes/codemods/eslint.md)
 * [Migrate `ImageResponse` imports](../recipes/codemods/migrate/nextjs/v14_0/nextogimport.md)
 * [Migrate to the New Image Component](../recipes/codemods/migrate/nextjs/v13_0/nextimageexperimental.md)
@@ -473,7 +474,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Updates withWidth higher-order component](../recipes/codemods/migrate/mui/withwidth.md)
 * [Upgrade ECMAScript 5 to ECMAScript 6](../recipes/codemods/ecmascript/5to6/ecmascript6bestpractices.md)
 * [Use Built-in Font](../recipes/codemods/migrate/nextjs/v13_2/builtinnextfont.md)
-* [Use `viewport` export](../recipes/codemods/migrate/nextjs/v14_0/useviewportexport.md)
+* [Use `viewport` export](../recipes/codemods/migrate/nextjs/v14_0/metadatatoviewportexport.md)
 * [Use `withRouter`](../recipes/codemods/migrate/nextjs/v6/urltowithrouter.md)
 * [Use destructured variables over properties.](../recipes/codemods/cleanup/javascript/consistentdestructuring.md)
 * [Use expect from @storybook/jest](../recipes/codemods/cleanup/storybook/usestorybookexpect.md)
@@ -513,6 +514,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 * [Comprehend code](../recipes/knowledge/comprehendcode.md)
 * [Search for a class that uses the given design technique](../recipes/knowledge/search/searchdesigntechnique.md)
+* [Supplements the AI-generated method descriptions with examples of the method being used in unit tests](../recipes/knowledge/comprehendcodewithunittestexamples.md)
 * [Update README](../recipes/knowledge/docs/updatereadme.md)
 * [Update the README for an OpenRewrite recipe repository](../recipes/knowledge/docs/updateopenrewritereadme.md)
 
@@ -533,6 +535,13 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Upgrade to .NET 7.0 using upgrade-assistant](../recipes/dotnet/migratetonet7.md)
 * [Upgrade to .NET 8.0 using upgrade-assistant](../recipes/dotnet/migratetonet8.md)
 * [Upgrade to .NET 9.0 using upgrade-assistant](../recipes/dotnet/migratetonet9.md)
+
+## rewrite-hibernate
+
+* [Find JPQL definitions](../recipes/recipe/hibernate/search/findjpqldefinitions.md)
+* [Fix conflicting class type annotation Hibernate 6.6](../recipes/recipe/hibernate/update66/fixconflictingclasstypeannotations.md)
+* [Migrate to Hibernate 6.6.x](../recipes/recipe/hibernate/migratetohibernate66.md)
+* [Remove table from single table inherited entity](../recipes/recipe/hibernate/update66/removetablefrominheritedentity.md)
 
 ## rewrite-jackson
 
@@ -701,6 +710,25 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Replace `doAfterSuccessOrError` calls with `tap` operator](../recipes/reactive/reactor/reactordoaftersuccessorerrortotap.md)
 * [Replace various `Processor.cache` calls with their `Sinks` equivalent](../recipes/reactive/reactor/reactorprocessorcachetosinkrecipes.md)
 * [Replace various `Processor.create` calls with their `Sinks` equivalent](../recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes.md)
+
+## rewrite-spring
+
+* [Add `@Valid` annotation to fields](../recipes/recipe/spring/boot3/addvalidtoconfigurationpropertiesfields.md)
+* [Comment deprecated methods in Spring 3.4](../recipes/recipe/spring/boot3/commentdeprecations.md)
+* [Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`](../recipes/recipe/spring/boot3/commentonmockandspybeansinconfigspring34.md)
+* [Migrate Spring Boot Management Endpoint Security properties to 3.4](../recipes/recipe/spring/boot3/springbootmanagementendpointproperties_3_4.md)
+* [Migrate Spring Boot properties to 3.4](../recipes/recipe/spring/boot3/springbootproperties_3_4.md)
+* [Migrate `@Endpoint`s `defaultAccess` value](../recipes/recipe/spring/boot3/migrateendpointannotationaccessvaluespring34.md)
+* [Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4](../recipes/recipe/spring/boot3/conditionalonavailableendpointmigrationspring34.md)
+* [Migrate management endpoint access value](../recipes/recipe/spring/boot3/migrateendpointaccessvaluespring34.md)
+* [Migrate to Spring Boot 3.4](../recipes/recipe/spring/boot3/upgradespringboot_3_4.md)
+* [Migrate to Spring Cloud 2024](../recipes/recipe/spring/cloud2024/upgradespringcloud_2024.md)
+* [Migrate to Spring Framework 6.2](../recipes/recipe/spring/framework/upgradespringframework_6_2.md)
+* [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](../recipes/recipe/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md)
+* [Spring Boot 3.4 best practices](../recipes/recipe/spring/boot3/springboot3bestpractices.md)
+* [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](../recipes/recipe/spring/boot3/upgradegradle8spring34.md)
+* [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](../recipes/recipe/spring/boot3/upgradegradle7spring34.md)
+* [Upgrade dependencies to Spring Cloud 2024](../recipes/recipe/spring/cloud2024/dependencyupgrades.md)
 
 ## rewrite-sql
 

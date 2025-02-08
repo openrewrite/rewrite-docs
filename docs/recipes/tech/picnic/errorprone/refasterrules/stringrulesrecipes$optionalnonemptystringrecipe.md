@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Don't use the ternary operator to create an optionally-absent string"
+sidebar_label: "Refaster template StringRules.OptionalNonEmptyString"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't use the ternary operator to create an optionally-absent string
+# Refaster template `StringRules.OptionalNonEmptyString`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OptionalNonEmptyString {
-    
-    @BeforeTemplate
-    Optional<String> before(String str) {
-        return Strings.isNullOrEmpty(str) ? Optional.empty() : Refaster.anyOf(Optional.of(str), Optional.ofNullable(str));
-    }
-    
-    @AfterTemplate
-    Optional<String> after(String str) {
-        return Optional.ofNullable(str).filter(not(String::isEmpty));
-    }
-}
-```
-.
+_Don't use the ternary operator to create an optionally-absent string_
 
 ## Recipe source
 

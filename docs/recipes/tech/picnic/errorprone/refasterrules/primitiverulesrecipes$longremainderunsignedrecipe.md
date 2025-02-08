@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Long#remainderUnsigned(long, long) over third-party alternatives"
+sidebar_label: "Refaster template PrimitiveRules.LongRemainderUnsigned"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Long#remainderUnsigned(long, long)` over third-party alternatives
+# Refaster template `PrimitiveRules.LongRemainderUnsigned`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongRemainderUnsignedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongRemainderUnsigned {
-    
-    @BeforeTemplate
-    long before(long x, long y) {
-        return UnsignedLongs.remainder(x, y);
-    }
-    
-    @AfterTemplate
-    long after(long x, long y) {
-        return Long.remainderUnsigned(x, y);
-    }
-}
-```
-.
+_Prefer JDK's `Long#remainderUnsigned(long, long)` over third-party alternatives_
 
 ## Recipe source
 

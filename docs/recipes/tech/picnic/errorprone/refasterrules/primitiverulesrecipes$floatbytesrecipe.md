@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Float#BYTES over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.FloatBytes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Float#BYTES` over the Guava alternative
+# Refaster template `PrimitiveRules.FloatBytes`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class FloatBytes {
-    
-    @BeforeTemplate
-    int before() {
-        return Floats.BYTES;
-    }
-    
-    @AfterTemplate
-    int after() {
-        return Float.BYTES;
-    }
-}
-```
-.
+_Prefer `Float#BYTES` over the Guava alternative_
 
 ## Recipe source
 

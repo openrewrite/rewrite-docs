@@ -16,9 +16,6 @@ _Migrate `camel3` quarkus application to `camel4` quarkus._
 [GitHub](https://github.com/search?type=code&q=io.quarkus.updates.camel.camel40.CamelQuarkusMigrationRecipe), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 ## License
 
 This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -29,7 +26,6 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate `camel3` application to `camel4.`](../../../../../org/apache/camel/upgrade/camel40/camelmigrationrecipe)
-* [Camel API changes in application.properties](../../../../../java/camel/migrate/changepropertyvalue)
 
 </TabItem>
 
@@ -43,7 +39,6 @@ displayName: Migrate `camel3` application to `camel4.`
 description: Migrate `camel3` quarkus application to `camel4` quarkus.
 recipeList:
   - org.apache.camel.upgrade.camel40.CamelMigrationRecipe
-  - org.openrewrite.java.camel.migrate.ChangePropertyValue
 
 ```
 </TabItem>

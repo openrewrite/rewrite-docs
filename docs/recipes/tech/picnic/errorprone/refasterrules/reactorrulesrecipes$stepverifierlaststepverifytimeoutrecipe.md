@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer StepVerifier.LastStep#verifyTimeout(Duration) over more verbose alternatives"
+sidebar_label: "Refaster template ReactorRules.StepVerifierLastStepVerifyTimeout"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `StepVerifier.LastStep#verifyTimeout(Duration)` over more verbose alternatives
+# Refaster template `ReactorRules.StepVerifierLastStepVerifyTimeout`
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyTimeoutRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StepVerifierLastStepVerifyTimeout {
-    
-    @BeforeTemplate
-    Duration before(StepVerifier.LastStep step, Duration duration) {
-        return step.expectTimeout(duration).verify();
-    }
-    
-    @AfterTemplate
-    Duration after(StepVerifier.LastStep step, Duration duration) {
-        return step.verifyTimeout(duration);
-    }
-}
-```
-.
+_Prefer `StepVerifier.LastStep#verifyTimeout(Duration)` over more verbose alternatives_
 
 ## Recipe source
 

@@ -1,32 +1,15 @@
 ---
-sidebar_label: "Prefer the == operator (with null as the second operand) over Objects#isNull(Object)"
+sidebar_label: "Refaster template NullRules.IsNull"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the `==` operator (with `null` as the second operand) over `Objects#isNull(Object)`
+# Refaster template `NullRules.IsNull`
 
 **tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IsNull {
-    
-    @BeforeTemplate
-    boolean before(@Nullable
-    Object object) {
-        return Refaster.anyOf(null == object, Objects.isNull(object));
-    }
-    
-    @AfterTemplate
-    boolean after(@Nullable
-    Object object) {
-        return object == null;
-    }
-}
-```
-.
+_Prefer the `==` operator (with `null` as the second operand) over `Objects#isNull(Object)`_
 
 ## Recipe source
 

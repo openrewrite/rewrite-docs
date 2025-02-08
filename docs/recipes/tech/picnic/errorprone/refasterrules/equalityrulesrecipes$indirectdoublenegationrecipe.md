@@ -1,42 +1,15 @@
 ---
-sidebar_label: "Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead"
+sidebar_label: "Refaster template EqualityRules.IndirectDoubleNegation"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead
+# Refaster template `EqualityRules.IndirectDoubleNegation`
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$IndirectDoubleNegationRecipe**
 
-Recipe created for the following Refaster template:
-```java
-@SuppressWarnings(value = "java:S1940")
-static final class IndirectDoubleNegation {
-    
-    @BeforeTemplate
-    boolean before(boolean a, boolean b) {
-        return Refaster.anyOf(!(a != b), a ? b : !b);
-    }
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S1244")
-    boolean before(double a, double b) {
-        return !(a != b);
-    }
-    
-    @BeforeTemplate
-    boolean before(Object a, Object b) {
-        return !(a != b);
-    }
-    
-    @AfterTemplate
-    boolean after(boolean a, boolean b) {
-        return a == b;
-    }
-}
-```
-.
+_Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead_
 
 ## Recipe source
 

@@ -7,9 +7,9 @@ import TabItem from '@theme/TabItem';
 
 # Transform AMP HOC into page config
 
-**org.openrewrite.codemods.migrate.nextjs.v8.WithAmpToConfig**
+**org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig**
 
-_Transforms the `withAmp` HOC into Next.js 9 page configuration. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#withamp-to-config)   for more information._
+_Transforms the `withAmp` HOC into Next.js 9 page configuration._
 
 ### Tags
 
@@ -36,7 +36,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe WithAmpToConfig
+mod run . --recipe WithampToConfig
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -50,7 +50,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.codemods.migrate.nextjs.v8.WithAmpToConfig" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

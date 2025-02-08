@@ -29,10 +29,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change method name](../java/changemethodname)
-  * methodPattern: `org.apache.commons.lang3.Validate notNull(Object)`
+  * methodPattern: `org.apache.commons.lang3.Validate notNull(..)`
   * newMethodName: `requireNonNull`
 * [Change method target to static](../java/changemethodtargettostatic)
-  * methodPattern: `org.apache.commons.lang3.Validate requireNonNull(Object)`
+  * methodPattern: `org.apache.commons.lang3.Validate requireNonNull(..)`
   * fullyQualifiedTargetTypeName: `java.util.Objects`
 
 </TabItem>
@@ -47,10 +47,10 @@ displayName: Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#r
 description: Replace `org.apache.commons.lang3.Validate.notNull(Object)` with `Objects.requireNonNull(Object)`.
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.apache.commons.lang3.Validate notNull(Object)
+      methodPattern: org.apache.commons.lang3.Validate notNull(..)
       newMethodName: requireNonNull
   - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.apache.commons.lang3.Validate requireNonNull(Object)
+      methodPattern: org.apache.commons.lang3.Validate requireNonNull(..)
       fullyQualifiedTargetTypeName: java.util.Objects
 
 ```

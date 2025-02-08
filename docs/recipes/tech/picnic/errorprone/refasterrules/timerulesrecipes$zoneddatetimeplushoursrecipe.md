@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#plusHours(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimePlusHours"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#plusHours(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimePlusHours`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusHoursRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimePlusHours {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int hours) {
-        return zonedDateTime.plus(Duration.ofHours(hours));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long hours) {
-        return zonedDateTime.plus(hours, ChronoUnit.HOURS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int hours) {
-        return zonedDateTime.plusHours(hours);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#plusHours(long)` over more contrived alternatives_
 
 ## Recipe source
 

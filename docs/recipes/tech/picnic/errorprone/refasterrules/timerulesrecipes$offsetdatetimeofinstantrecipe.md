@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetDateTime#ofInstant(Instant, ZoneId) over more indirect alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetDateTimeOfInstant"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetDateTime#ofInstant(Instant, ZoneId)` over more indirect alternatives
+# Refaster template `TimeRules.OffsetDateTimeOfInstant`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeOfInstantRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetDateTimeOfInstant {
-    
-    @BeforeTemplate
-    OffsetDateTime before(Instant instant, ZoneId zoneId) {
-        return instant.atZone(zoneId).toOffsetDateTime();
-    }
-    
-    @AfterTemplate
-    OffsetDateTime after(Instant instant, ZoneId zoneId) {
-        return OffsetDateTime.ofInstant(instant, zoneId);
-    }
-}
-```
-.
+_Prefer `OffsetDateTime#ofInstant(Instant, ZoneId)` over more indirect alternatives_
 
 ## Recipe source
 

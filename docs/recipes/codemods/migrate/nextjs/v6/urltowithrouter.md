@@ -7,9 +7,9 @@ import TabItem from '@theme/TabItem';
 
 # Use `withRouter`
 
-**org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithRouter**
+**org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter**
 
-_Transforms the deprecated automatically injected url property on top level pages to using `withRouter` and the `router`  property it injects. Read more here: https://nextjs.org/docs/messages/url-deprecated See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#url-to-withrouter)   for more information._
+_Transforms the deprecated automatically injected url property on top-level pages to using `withRouter` and the `router` property it injects. Read more [here](https://nextjs.org/docs/messages/url-deprecated)._
 
 ### Tags
 
@@ -36,7 +36,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UrlToWithRouter
+mod run . --recipe UrlToWithrouter
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -50,7 +50,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithRouter" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

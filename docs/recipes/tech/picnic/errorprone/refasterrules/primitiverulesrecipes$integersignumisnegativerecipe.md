@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer an Integer#signum(int) comparison to -1 over less clear alternatives"
+sidebar_label: "Refaster template PrimitiveRules.IntegerSignumIsNegative"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer an `Integer#signum(int)` comparison to -1 over less clear alternatives
+# Refaster template `PrimitiveRules.IntegerSignumIsNegative`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsNegativeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerSignumIsNegative {
-    
-    @BeforeTemplate
-    boolean before(int i) {
-        return Refaster.anyOf(Integer.signum(i) < 0, Integer.signum(i) <= -1);
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(int i) {
-        return Integer.signum(i) == -1;
-    }
-}
-```
-.
+_Prefer an `Integer#signum(int)` comparison to -1 over less clear alternatives_
 
 ## Recipe source
 

@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDateTime#minusWeeks(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDateTimeMinusWeeks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDateTime#minusWeeks(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalDateTimeMinusWeeks`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimeMinusWeeksRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDateTimeMinusWeeks {
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, int weeks) {
-        return localDateTime.minus(Period.ofWeeks(weeks));
-    }
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, long weeks) {
-        return localDateTime.minus(weeks, ChronoUnit.WEEKS);
-    }
-    
-    @AfterTemplate
-    LocalDateTime after(LocalDateTime localDateTime, int weeks) {
-        return localDateTime.minusWeeks(weeks);
-    }
-}
-```
-.
+_Prefer `LocalDateTime#minusWeeks(long)` over more contrived alternatives_
 
 ## Recipe source
 

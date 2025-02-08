@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDate#atStartOfDay() over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDateAtStartOfDay"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDate#atStartOfDay()` over more contrived alternatives
+# Refaster template `TimeRules.LocalDateAtStartOfDay`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateAtStartOfDayRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDateAtStartOfDay {
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDate localDate) {
-        return localDate.atTime(LocalTime.MIN);
-    }
-    
-    @AfterTemplate
-    LocalDateTime after(LocalDate localDate) {
-        return localDate.atStartOfDay();
-    }
-}
-```
-.
+_Prefer `LocalDate#atStartOfDay()` over more contrived alternatives_
 
 ## Recipe source
 

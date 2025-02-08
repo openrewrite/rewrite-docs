@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer a BigDecimal#signum() comparison to -1 over more contrived or less clear alternatives"
+sidebar_label: "Refaster template BigDecimalRules.BigDecimalSignumIsNegative"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer a `BigDecimal#signum()` comparison to -1 over more contrived or less clear alternatives
+# Refaster template `BigDecimalRules.BigDecimalSignumIsNegative`
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsNegativeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BigDecimalSignumIsNegative {
-    
-    @BeforeTemplate
-    boolean before(BigDecimal value) {
-        return Refaster.anyOf(value.compareTo(BigDecimal.ZERO) < 0, BigDecimal.ZERO.compareTo(value) > 0, value.signum() < 0, value.signum() <= -1);
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(BigDecimal value) {
-        return value.signum() == -1;
-    }
-}
-```
-.
+_Prefer a `BigDecimal#signum()` comparison to -1 over more contrived or less clear alternatives_
 
 ## Recipe source
 

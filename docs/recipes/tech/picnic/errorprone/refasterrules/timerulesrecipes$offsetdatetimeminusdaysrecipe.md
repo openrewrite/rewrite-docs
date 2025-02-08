@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetDateTime#minusDays(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetDateTimeMinusDays"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetDateTime#minusDays(long)` over more contrived alternatives
+# Refaster template `TimeRules.OffsetDateTimeMinusDays`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeMinusDaysRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetDateTimeMinusDays {
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, int days) {
-        return offsetDateTime.minus(Period.ofDays(days));
-    }
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, long days) {
-        return offsetDateTime.minus(days, ChronoUnit.DAYS);
-    }
-    
-    @AfterTemplate
-    OffsetDateTime after(OffsetDateTime offsetDateTime, int days) {
-        return offsetDateTime.minusDays(days);
-    }
-}
-```
-.
+_Prefer `OffsetDateTime#minusDays(long)` over more contrived alternatives_
 
 ## Recipe source
 

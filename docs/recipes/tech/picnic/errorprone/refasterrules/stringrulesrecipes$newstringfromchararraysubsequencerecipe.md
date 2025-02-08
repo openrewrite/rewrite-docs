@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer direct invocation of String#String(char[], int, int) over the indirection introduced by alternatives"
+sidebar_label: "Refaster template StringRules.NewStringFromCharArraySubSequence"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer direct invocation of `String#String(char[], int, int)` over the indirection introduced by alternatives
+# Refaster template `StringRules.NewStringFromCharArraySubSequence`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArraySubSequenceRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class NewStringFromCharArraySubSequence {
-    
-    @BeforeTemplate
-    String before(char[] data, int offset, int count) {
-        return Refaster.anyOf(String.valueOf(data, offset, count), String.copyValueOf(data, offset, count));
-    }
-    
-    @AfterTemplate
-    String after(char[] data, int offset, int count) {
-        return new String(data, offset, count);
-    }
-}
-```
-.
+_Prefer direct invocation of `String#String(char[], int, int)` over the indirection introduced by alternatives_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Long#toUnsignedString(long) over third-party or more verbose alternatives"
+sidebar_label: "Refaster template PrimitiveRules.LongToUnsignedString"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Long#toUnsignedString(long)` over third-party or more verbose alternatives
+# Refaster template `PrimitiveRules.LongToUnsignedString`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongToUnsignedString {
-    
-    @BeforeTemplate
-    String before(long i) {
-        return Refaster.anyOf(UnsignedLongs.toString(i), Long.toUnsignedString(i, 10));
-    }
-    
-    @AfterTemplate
-    String after(long i) {
-        return Long.toUnsignedString(i);
-    }
-}
-```
-.
+_Prefer JDK's `Long#toUnsignedString(long)` over third-party or more verbose alternatives_
 
 ## Recipe source
 

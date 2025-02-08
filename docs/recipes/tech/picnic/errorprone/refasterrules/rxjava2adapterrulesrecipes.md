@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with RxJava2Adapter"
+sidebar_label: "RxJava2AdapterRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `RxJava2Adapter`
+# `RxJava2AdapterRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.RxJava2AdapterRules`. [Source](https://error-prone.picnic.tech/refasterrules/RxJava2AdapterRules)._
+_Refaster rules related to expressions dealing with `RxJava2Adapter` [Source](https://error-prone.picnic.tech/refasterrules/RxJava2AdapterRules)._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Use the fluent API style when using `RxJava2Adapter#completableToMono`](../../../../tech/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completabletomonorecipe)
+* [Refaster template `RxJava2AdapterRules.CompletableToMono`](../../../../tech/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completabletomonorecipe)
 
 </TabItem>
 
@@ -35,8 +35,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes
-displayName: Refaster rules related to expressions dealing with `RxJava2Adapter`
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.RxJava2AdapterRules`. [Source](https://error-prone.picnic.tech/refasterrules/RxJava2AdapterRules).
+displayName: `RxJava2AdapterRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `RxJava2Adapter` [Source](https://error-prone.picnic.tech/refasterrules/RxJava2AdapterRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe
 

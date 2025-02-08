@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Integer#BYTES over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.IntegerBytes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Integer#BYTES` over the Guava alternative
+# Refaster template `PrimitiveRules.IntegerBytes`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerBytes {
-    
-    @BeforeTemplate
-    int before() {
-        return Ints.BYTES;
-    }
-    
-    @AfterTemplate
-    int after() {
-        return Integer.BYTES;
-    }
-}
-```
-.
+_Prefer `Integer#BYTES` over the Guava alternative_
 
 ## Recipe source
 

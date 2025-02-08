@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Long#divideUnsigned(long, long) over third-party alternatives"
+sidebar_label: "Refaster template PrimitiveRules.LongDivideUnsigned"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Long#divideUnsigned(long, long)` over third-party alternatives
+# Refaster template `PrimitiveRules.LongDivideUnsigned`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongDivideUnsignedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongDivideUnsigned {
-    
-    @BeforeTemplate
-    long before(long x, long y) {
-        return UnsignedLongs.divide(x, y);
-    }
-    
-    @AfterTemplate
-    long after(long x, long y) {
-        return Long.divideUnsigned(x, y);
-    }
-}
-```
-.
+_Prefer JDK's `Long#divideUnsigned(long, long)` over third-party alternatives_
 
 ## Recipe source
 

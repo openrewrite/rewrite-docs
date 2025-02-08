@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer BigDecimal#valueOf(double) over the associated constructor"
+sidebar_label: "Refaster template BigDecimalRules.BigDecimalValueOf"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `BigDecimal#valueOf(double)` over the associated constructor
+# Refaster template `BigDecimalRules.BigDecimalValueOf`
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BigDecimalValueOf {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S2111")
-    BigDecimal before(double value) {
-        return new BigDecimal(value);
-    }
-    
-    @AfterTemplate
-    BigDecimal after(double value) {
-        return BigDecimal.valueOf(value);
-    }
-}
-```
-.
+_Prefer `BigDecimal#valueOf(double)` over the associated constructor_
 
 ## Recipe source
 

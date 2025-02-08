@@ -34,13 +34,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension)
-  * runners: `[org.vertx.testtools.VertxUnitRunner]`
-  * extension: `org.vertx.testtools.VertxExtension`
+  * runners: `[io.vertx.ext.unit.junit.VertxUnitRunner]`
+  * extension: `io.vertx.junit5.VertxExtension`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `io.vertx`
   * artifactId: `vertx-junit5`
   * version: `4.x`
-  * onlyIfUsing: `io.vertx.junit5.VertxExtension`
+  * onlyIfUsing: `io.vertx.ext.unit.junit.VertxUnitRunner`
   * acceptTransitive: `true`
 
 </TabItem>
@@ -58,13 +58,13 @@ tags:
   - testing
 recipeList:
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
-      runners: [org.vertx.testtools.VertxUnitRunner]
-      extension: org.vertx.testtools.VertxExtension
+      runners: [io.vertx.ext.unit.junit.VertxUnitRunner]
+      extension: io.vertx.junit5.VertxExtension
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.vertx
       artifactId: vertx-junit5
       version: 4.x
-      onlyIfUsing: io.vertx.junit5.VertxExtension
+      onlyIfUsing: io.vertx.ext.unit.junit.VertxUnitRunner
       acceptTransitive: true
 
 ```

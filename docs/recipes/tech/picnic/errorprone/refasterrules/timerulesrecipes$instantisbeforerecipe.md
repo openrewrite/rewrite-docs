@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer Instant#isBefore(Instant) over explicit comparison, as it yields more readable code"
+sidebar_label: "Refaster template TimeRules.InstantIsBefore"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Instant#isBefore(Instant)` over explicit comparison, as it yields more readable code
+# Refaster template `TimeRules.InstantIsBefore`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIsBeforeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class InstantIsBefore {
-    
-    @BeforeTemplate
-    boolean before(Instant a, Instant b) {
-        return a.compareTo(b) < 0;
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(Instant a, Instant b) {
-        return a.isBefore(b);
-    }
-}
-```
-.
+_Prefer `Instant#isBefore(Instant)` over explicit comparison, as it yields more readable code_
 
 ## Recipe source
 

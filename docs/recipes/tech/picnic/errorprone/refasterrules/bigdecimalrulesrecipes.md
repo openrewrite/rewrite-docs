@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with BigDecimals"
+sidebar_label: "BigDecimalRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `BigDecimal`s
+# `BigDecimalRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.BigDecimalRules`. [Source](https://error-prone.picnic.tech/refasterrules/BigDecimalRules)._
+_Refaster rules related to expressions dealing with `BigDecimal`s [Source](https://error-prone.picnic.tech/refasterrules/BigDecimalRules)._
 
 ## Recipe source
 
@@ -28,13 +28,13 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer using the constant `BigDecimal#ZERO` when possible](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalzerorecipe)
-* [Prefer using the constant `BigDecimal#ONE` when possible](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalonerecipe)
-* [Prefer using the constant `BigDecimal#TEN` when possible](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimaltenrecipe)
-* [Prefer `BigDecimal#valueOf(double)` over the associated constructor](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe)
-* [Prefer using `BigDecimal#signum()` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumiszerorecipe)
-* [Prefer a `BigDecimal#signum()` comparison to 1 over more contrived or less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumispositiverecipe)
-* [Prefer a `BigDecimal#signum()` comparison to -1 over more contrived or less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumisnegativerecipe)
+* [Refaster template `BigDecimalRules.BigDecimalZero`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalzerorecipe)
+* [Refaster template `BigDecimalRules.BigDecimalOne`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalonerecipe)
+* [Refaster template `BigDecimalRules.BigDecimalTen`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimaltenrecipe)
+* [Refaster template `BigDecimalRules.BigDecimalValueOf`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe)
+* [Refaster template `BigDecimalRules.BigDecimalSignumIsZero`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumiszerorecipe)
+* [Refaster template `BigDecimalRules.BigDecimalSignumIsPositive`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumispositiverecipe)
+* [Refaster template `BigDecimalRules.BigDecimalSignumIsNegative`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumisnegativerecipe)
 
 </TabItem>
 
@@ -44,8 +44,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes
-displayName: Refaster rules related to expressions dealing with `BigDecimal`s
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.BigDecimalRules`. [Source](https://error-prone.picnic.tech/refasterrules/BigDecimalRules).
+displayName: `BigDecimalRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `BigDecimal`s [Source](https://error-prone.picnic.tech/refasterrules/BigDecimalRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalZeroRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalOneRecipe

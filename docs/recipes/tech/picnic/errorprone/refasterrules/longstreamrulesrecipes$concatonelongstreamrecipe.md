@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Don't unnecessarily call Streams#concat(LongStream...)"
+sidebar_label: "Refaster template LongStreamRules.ConcatOneLongStream"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't unnecessarily call `Streams#concat(LongStream...)`
+# Refaster template `LongStreamRules.ConcatOneLongStream`
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$ConcatOneLongStreamRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ConcatOneLongStream {
-    
-    @BeforeTemplate
-    LongStream before(LongStream stream) {
-        return Streams.concat(stream);
-    }
-    
-    @AfterTemplate
-    @CanIgnoreReturnValue
-    LongStream after(LongStream stream) {
-        return stream;
-    }
-}
-```
-.
+_Don't unnecessarily call `Streams#concat(LongStream...)`_
 
 ## Recipe source
 

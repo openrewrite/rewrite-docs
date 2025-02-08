@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with SuggestedFixes"
+sidebar_label: "SuggestedFixRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `SuggestedFix`es
+# `SuggestedFixRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.SuggestedFixRules`. [Source](https://error-prone.picnic.tech/refasterrules/SuggestedFixRules)._
+_Refaster rules related to expressions dealing with `SuggestedFix`es [Source](https://error-prone.picnic.tech/refasterrules/SuggestedFixRules)._
 
 ## Recipe source
 
@@ -28,13 +28,13 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `SuggestedFix#delete(Tree)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixdeleterecipe)
-* [Prefer `SuggestedFix#replace(Tree, String)`} over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacetreerecipe)
-* [Prefer `SuggestedFix#replace(int, int, String)`} over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacestartendrecipe)
-* [Prefer `SuggestedFix#replace(Tree, String, int, int)`} over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacetreestartendrecipe)
-* [Prefer `SuggestedFix#swap(Tree, Tree)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixswaprecipe)
-* [Prefer `SuggestedFix#prefixWith(Tree, String)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixprefixwithrecipe)
-* [Prefer `SuggestedFix#postfixWith(Tree, String)`} over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixpostfixwithrecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixDelete`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixdeleterecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixReplaceTree`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacetreerecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixReplaceStartEnd`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacestartendrecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixReplaceTreeStartEnd`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacetreestartendrecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixSwap`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixswaprecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixPrefixWith`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixprefixwithrecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixPostfixWith`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixpostfixwithrecipe)
 
 </TabItem>
 
@@ -44,8 +44,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes
-displayName: Refaster rules related to expressions dealing with `SuggestedFix`es
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.SuggestedFixRules`. [Source](https://error-prone.picnic.tech/refasterrules/SuggestedFixRules).
+displayName: `SuggestedFixRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `SuggestedFix`es [Source](https://error-prone.picnic.tech/refasterrules/SuggestedFixRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixDeleteRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceTreeRecipe

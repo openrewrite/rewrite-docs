@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Long#compareUnsigned(long, long) over third-party alternatives"
+sidebar_label: "Refaster template PrimitiveRules.LongCompareUnsigned"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Long#compareUnsigned(long, long)` over third-party alternatives
+# Refaster template `PrimitiveRules.LongCompareUnsigned`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareUnsignedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongCompareUnsigned {
-    
-    @BeforeTemplate
-    long before(long x, long y) {
-        return UnsignedLongs.compare(x, y);
-    }
-    
-    @AfterTemplate
-    long after(long x, long y) {
-        return Long.compareUnsigned(x, y);
-    }
-}
-```
-.
+_Prefer JDK's `Long#compareUnsigned(long, long)` over third-party alternatives_
 
 ## Recipe source
 

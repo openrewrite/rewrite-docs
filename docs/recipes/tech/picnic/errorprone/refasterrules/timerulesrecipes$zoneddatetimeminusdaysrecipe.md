@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#minusDays(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimeMinusDays"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#minusDays(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimeMinusDays`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusDaysRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimeMinusDays {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int days) {
-        return zonedDateTime.minus(Period.ofDays(days));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long days) {
-        return zonedDateTime.minus(days, ChronoUnit.DAYS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int days) {
-        return zonedDateTime.minusDays(days);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#minusDays(long)` over more contrived alternatives_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Instant#atOffset(ZoneOffset) over more verbose alternatives"
+sidebar_label: "Refaster template TimeRules.InstantAtOffset"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Instant#atOffset(ZoneOffset)` over more verbose alternatives
+# Refaster template `TimeRules.InstantAtOffset`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantAtOffsetRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class InstantAtOffset {
-    
-    @BeforeTemplate
-    OffsetDateTime before(Instant instant, ZoneOffset zoneOffset) {
-        return OffsetDateTime.ofInstant(instant, zoneOffset);
-    }
-    
-    @AfterTemplate
-    OffsetDateTime after(Instant instant, ZoneOffset zoneOffset) {
-        return instant.atOffset(zoneOffset);
-    }
-}
-```
-.
+_Prefer `Instant#atOffset(ZoneOffset)` over more verbose alternatives_
 
 ## Recipe source
 

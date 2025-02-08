@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with IntStreams"
+sidebar_label: "IntStreamRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `IntStream`s
+# `IntStreamRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.IntStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/IntStreamRules)._
+_Refaster rules related to expressions dealing with `IntStream`s [Source](https://error-prone.picnic.tech/refasterrules/IntStreamRules)._
 
 ## Recipe source
 
@@ -28,15 +28,15 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `IntStream#range(int, int)` over the more contrived alternative](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamclosedopenrangerecipe)
-* [Don't unnecessarily call `Streams#concat(IntStream...)`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$concatoneintstreamrecipe)
-* [Prefer `IntStream#concat(IntStream, IntStream)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$concattwointstreamsrecipe)
-* [Apply `IntStream#filter(IntPredicate)` before `IntStream#sorted()` to reduce the number of elements to sort](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamfiltersortedrecipe)
-* [In order to test whether a stream has any element, simply try to find one](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamisemptyrecipe)
-* [In order to test whether a stream has any element, simply try to find one](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamisnotemptyrecipe)
+* [Refaster template `IntStreamRules.IntStreamClosedOpenRange`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamclosedopenrangerecipe)
+* [Refaster template `IntStreamRules.ConcatOneIntStream`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$concatoneintstreamrecipe)
+* [Refaster template `IntStreamRules.ConcatTwoIntStreams`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$concattwointstreamsrecipe)
+* [Refaster template `IntStreamRules.IntStreamFilterSorted`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamfiltersortedrecipe)
+* [Refaster template `IntStreamRules.IntStreamIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamisemptyrecipe)
+* [Refaster template `IntStreamRules.IntStreamIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamisnotemptyrecipe)
 * [Refaster template `IntStreamRules.IntStreamMin`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamminrecipe)
-* [Prefer `IntStream#noneMatch(IntPredicate)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamnonematchrecipe)
-* [Prefer `IntStream#anyMatch(IntPredicate)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamanymatchrecipe)
+* [Refaster template `IntStreamRules.IntStreamNoneMatch`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamnonematchrecipe)
+* [Refaster template `IntStreamRules.IntStreamAnyMatch`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamanymatchrecipe)
 * [Refaster template `IntStreamRules.IntStreamAllMatch`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamallmatchrecipe)
 * [Refaster template `IntStreamRules.IntStreamTakeWhile`](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamtakewhilerecipe)
 
@@ -48,8 +48,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes
-displayName: Refaster rules related to expressions dealing with `IntStream`s
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.IntStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/IntStreamRules).
+displayName: `IntStreamRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `IntStream`s [Source](https://error-prone.picnic.tech/refasterrules/IntStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamClosedOpenRangeRecipe
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatOneIntStreamRecipe

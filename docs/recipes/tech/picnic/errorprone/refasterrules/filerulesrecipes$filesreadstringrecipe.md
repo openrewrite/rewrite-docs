@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Files#readString(Path) over more verbose alternatives"
+sidebar_label: "Refaster template FileRules.FilesReadString"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Files#readString(Path)` over more verbose alternatives
+# Refaster template `FileRules.FilesReadString`
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesReadStringRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class FilesReadString {
-    
-    @BeforeTemplate
-    String before(Path path) throws IOException {
-        return Files.readString(path, UTF_8);
-    }
-    
-    @AfterTemplate
-    String after(Path path) throws IOException {
-        return Files.readString(path);
-    }
-}
-```
-.
+_Prefer `Files#readString(Path)` over more verbose alternatives_
 
 ## Recipe source
 

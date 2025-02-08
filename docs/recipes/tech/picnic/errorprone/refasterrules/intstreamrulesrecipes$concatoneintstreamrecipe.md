@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Don't unnecessarily call Streams#concat(IntStream...)"
+sidebar_label: "Refaster template IntStreamRules.ConcatOneIntStream"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't unnecessarily call `Streams#concat(IntStream...)`
+# Refaster template `IntStreamRules.ConcatOneIntStream`
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatOneIntStreamRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ConcatOneIntStream {
-    
-    @BeforeTemplate
-    IntStream before(IntStream stream) {
-        return Streams.concat(stream);
-    }
-    
-    @AfterTemplate
-    @CanIgnoreReturnValue
-    IntStream after(IntStream stream) {
-        return stream;
-    }
-}
-```
-.
+_Don't unnecessarily call `Streams#concat(IntStream...)`_
 
 ## Recipe source
 

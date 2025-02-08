@@ -22,6 +22,7 @@ _Emits a data table detailing all Gradle and Maven dependencies.This recipe make
 | -- | -- | -- | -- |
 | `Scope` | scope | The scope of the dependencies to include in the report. Valid options: `Compile`, `Runtime`, `TestRuntime` | `Compile` |
 | `boolean` | includeTransitive | Whether or not to include transitive dependencies in the report. Defaults to including only direct dependencies. | `true` |
+| `boolean` | validateResolvable | When enabled the recipe will attempt to download every dependency it encounters, reporting on any failures. This can be useful for identifying dependencies that have become unavailable since an LST was produced. Valid options: `true`, `false` | `true` |
 
 ## License
 
@@ -41,6 +42,7 @@ recipeList:
   - org.openrewrite.java.dependencies.DependencyList:
       scope: Compile
       includeTransitive: false
+      validateResolvable: false
 ```
 
 Now that `com.yourorg.DependencyListExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
@@ -106,7 +108,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DependencyList --recipe-option "scope=Compile" --recipe-option "includeTransitive=false"
+mod run . --recipe DependencyList --recipe-option "scope=Compile" --recipe-option "includeTransitive=false" --recipe-option "validateResolvable=false"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -142,6 +144,22 @@ _Lists all Gradle and Maven dependencies_
 | Dependency artifact id | The Artifact ID of the dependency. |
 | Dependency version | The version of the dependency. |
 | Direct Dependency | When `true` the project directly depends on the dependency. When `false` the project depends on the dependency transitively through at least one direct dependency. |
+| Resolution failure | The reason why the dependency could not be resolved. Blank when resolution was not attempted. |
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**

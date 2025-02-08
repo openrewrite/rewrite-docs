@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetTime#plusMinutes(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetTimePlusMinutes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetTime#plusMinutes(long)` over more contrived alternatives
+# Refaster template `TimeRules.OffsetTimePlusMinutes`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimePlusMinutesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetTimePlusMinutes {
-    
-    @BeforeTemplate
-    OffsetTime before(OffsetTime offsetTime, int minutes) {
-        return offsetTime.plus(Duration.ofMinutes(minutes));
-    }
-    
-    @BeforeTemplate
-    OffsetTime before(OffsetTime offsetTime, long minutes) {
-        return offsetTime.plus(minutes, ChronoUnit.MINUTES);
-    }
-    
-    @AfterTemplate
-    OffsetTime after(OffsetTime offsetTime, int minutes) {
-        return offsetTime.plusMinutes(minutes);
-    }
-}
-```
-.
+_Prefer `OffsetTime#plusMinutes(long)` over more contrived alternatives_
 
 ## Recipe source
 

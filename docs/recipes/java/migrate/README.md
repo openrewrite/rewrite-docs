@@ -90,6 +90,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment](./replacelocalizedstreammethods.md)
 * [Replace `java.lang.ref.Reference.clone()` with constructor call](./referenceclonemethod.md)
 * [Replace `javax.security.auth.Policy` with `java.security.Policy`](./removedpolicy.md)
+* [Return String `jks` when  `KeyStore.getDefaultType()` is called](./changedefaultkeystore.md)
 * [Update SDKMan Java version](./updatesdkman.md)
 * [Upgrade build to Java 11](./upgradebuildtojava11.md)
 * [Upgrade build to Java 17](./upgradebuildtojava17.md)

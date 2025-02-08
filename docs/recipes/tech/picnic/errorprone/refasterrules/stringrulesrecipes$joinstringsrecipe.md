@@ -1,40 +1,15 @@
 ---
-sidebar_label: "Prefer String#join(CharSequence, Iterable) and variants over the Guava alternative"
+sidebar_label: "Refaster template StringRules.JoinStrings"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#join(CharSequence, Iterable)` and variants over the Guava alternative
+# Refaster template `StringRules.JoinStrings`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$JoinStringsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class JoinStrings {
-    
-    @BeforeTemplate
-    String before(String delimiter, CharSequence[] elements) {
-        return Refaster.anyOf(Joiner.on(delimiter).join(elements), Arrays.stream(elements).collect(joining(delimiter)));
-    }
-    
-    @BeforeTemplate
-    String before(String delimiter, Iterable<? extends CharSequence> elements) {
-        return Refaster.anyOf(Joiner.on(delimiter).join(elements), Streams.stream(elements).collect(joining(delimiter)));
-    }
-    
-    @BeforeTemplate
-    String before(CharSequence delimiter, Collection<? extends CharSequence> elements) {
-        return elements.stream().collect(joining(delimiter));
-    }
-    
-    @AfterTemplate
-    String after(CharSequence delimiter, Iterable<? extends CharSequence> elements) {
-        return String.join(delimiter, elements);
-    }
-}
-```
-.
+_Prefer `String#join(CharSequence, Iterable)` and variants over the Guava alternative_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Avoid redundant conversions from Path to File"
+sidebar_label: "Refaster template FileRules.PathInstance"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid redundant conversions from `Path` to `File`
+# Refaster template `FileRules.PathInstance`
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathInstanceRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class PathInstance {
-    
-    @BeforeTemplate
-    Path before(Path path) {
-        return path.toFile().toPath();
-    }
-    
-    @AfterTemplate
-    Path after(Path path) {
-        return path;
-    }
-}
-```
-.
+_Avoid redundant conversions from `Path` to `File`_
 
 ## Recipe source
 

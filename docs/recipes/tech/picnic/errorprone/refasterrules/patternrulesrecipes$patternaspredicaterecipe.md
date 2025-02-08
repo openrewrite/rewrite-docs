@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Pattern#asPredicate() over non-JDK alternatives"
+sidebar_label: "Refaster template PatternRules.PatternAsPredicate"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Pattern#asPredicate()` over non-JDK alternatives
+# Refaster template `PatternRules.PatternAsPredicate`
 
 **tech.picnic.errorprone.refasterrules.PatternRulesRecipes$PatternAsPredicateRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class PatternAsPredicate {
-    
-    @BeforeTemplate
-    Predicate<CharSequence> before(Pattern pattern) {
-        return Predicates.contains(pattern);
-    }
-    
-    @AfterTemplate
-    Predicate<String> after(Pattern pattern) {
-        return pattern.asPredicate();
-    }
-}
-```
-.
+_Prefer `Pattern#asPredicate()` over non-JDK alternatives_
 
 ## Recipe source
 

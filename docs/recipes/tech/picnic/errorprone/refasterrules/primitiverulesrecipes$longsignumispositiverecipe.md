@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer an Long#signum(long) comparison to 1 over less clear alternatives"
+sidebar_label: "Refaster template PrimitiveRules.LongSignumIsPositive"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer an `Long#signum(long)` comparison to 1 over less clear alternatives
+# Refaster template `PrimitiveRules.LongSignumIsPositive`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongSignumIsPositiveRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongSignumIsPositive {
-    
-    @BeforeTemplate
-    boolean before(long l) {
-        return Refaster.anyOf(Long.signum(l) > 0, Long.signum(l) >= 1);
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(long l) {
-        return Long.signum(l) == 1;
-    }
-}
-```
-.
+_Prefer an `Long#signum(long)` comparison to 1 over less clear alternatives_
 
 ## Recipe source
 

@@ -29,9 +29,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssertJStringRules.AbstractStringAssertStringIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$abstractstringassertstringisemptyrecipe)
-* [Refaster template `AssertJStringRules.AssertThatStringIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringisemptyrecipe)
 * [Refaster template `AssertJStringRules.AbstractStringAssertStringIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$abstractstringassertstringisnotemptyrecipe)
-* [Refaster template `AssertJStringRules.AssertThatStringIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringisnotemptyrecipe)
+* [Refaster template `AssertJStringRules.AssertThatStringContains`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringcontainsrecipe)
+* [Refaster template `AssertJStringRules.AssertThatStringDoesNotContain`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringdoesnotcontainrecipe)
 * [Refaster template `AssertJStringRules.AssertThatMatches`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatmatchesrecipe)
 * [Refaster template `AssertJStringRules.AssertThatDoesNotMatch`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatdoesnotmatchrecipe)
 * [Refaster template `AssertJStringRules.AssertThatPathContent`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatpathcontentrecipe)
@@ -49,9 +49,9 @@ displayName: `AssertJStringRules` Refaster recipes
 description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStringRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsNotEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringContainsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotContainRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatMatchesRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatDoesNotMatchRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatPathContentRecipe

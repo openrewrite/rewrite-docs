@@ -36,6 +36,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Replaces removed method camel EIP](../../../../../org/apache/camel/upgrade/camel40/java/cameleiprecipe)
 * [Camel bean recipe](../../../../../org/apache/camel/upgrade/camel40/java/camelbeanrecipe)
 * [Camel Http Extension changes](../../../../../org/apache/camel/upgrade/camel40/java/camelhttprecipe)
+* [Camel API changes in application.properties](../../../../../org/apache/camel/upgrade/camel40/properties/rejectedpolicy)
 * [Replace context.getExtension(ExtendedCamelContext.class).get* with PluginHelper.get*(context)](../../../../../org/apache/camel/upgrade/camel40/usepluginhelperforcontextgetters)
 * [Migrate moved types between Camel 3.x and Camel 4.x](../../../../../org/apache/camel/upgrade/camel40/changetypes)
 * [Change of method names brought by Camel JMX API changes](../../../../../org/apache/camel/upgrade/camel40/changemanagedchoicembeanmethodname)
@@ -60,6 +61,7 @@ recipeList:
   - org.apache.camel.upgrade.camel40.java.CamelEIPRecipe
   - org.apache.camel.upgrade.camel40.java.CamelBeanRecipe
   - org.apache.camel.upgrade.camel40.java.CamelHttpRecipe
+  - org.apache.camel.upgrade.camel40.properties.rejectedPolicy
   - org.apache.camel.upgrade.camel40.UsePluginHelperForContextGetters
   - org.apache.camel.upgrade.camel40.ChangeTypes
   - org.apache.camel.upgrade.camel40.ChangeManagedChoiceMBeanMethodName

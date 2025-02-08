@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer DoubleStream#noneMatch(DoublePredicate) over more contrived alternatives"
+sidebar_label: "Refaster template DoubleStreamRules.DoubleStreamNoneMatch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `DoubleStream#noneMatch(DoublePredicate)` over more contrived alternatives
+# Refaster template `DoubleStreamRules.DoubleStreamNoneMatch`
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamNoneMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleStreamNoneMatch {
-    
-    @BeforeTemplate
-    boolean before(DoubleStream stream, DoublePredicate predicate) {
-        return Refaster.anyOf(!stream.anyMatch(predicate), stream.allMatch(predicate.negate()), stream.filter(predicate).findAny().isEmpty());
-    }
-    
-    @AfterTemplate
-    boolean after(DoubleStream stream, DoublePredicate predicate) {
-        return stream.noneMatch(predicate);
-    }
-}
-```
-.
+_Prefer `DoubleStream#noneMatch(DoublePredicate)` over more contrived alternatives_
 
 ## Recipe source
 

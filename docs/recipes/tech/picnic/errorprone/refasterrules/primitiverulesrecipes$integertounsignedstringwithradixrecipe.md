@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Integer#toUnsignedString(int,int) over third-party or more verbose alternatives"
+sidebar_label: "Refaster template PrimitiveRules.IntegerToUnsignedStringWithRadix"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Integer#toUnsignedString(int,int)` over third-party or more verbose alternatives
+# Refaster template `PrimitiveRules.IntegerToUnsignedStringWithRadix`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringWithRadixRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerToUnsignedStringWithRadix {
-    
-    @BeforeTemplate
-    String before(int i, int radix) {
-        return UnsignedInts.toString(i, radix);
-    }
-    
-    @AfterTemplate
-    String after(int i, int radix) {
-        return Integer.toUnsignedString(i, radix);
-    }
-}
-```
-.
+_Prefer JDK's `Integer#toUnsignedString(int,int)` over third-party or more verbose alternatives_
 
 ## Recipe source
 

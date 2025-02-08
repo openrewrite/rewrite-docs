@@ -20,7 +20,7 @@ static final class AssertEqualFloatsWithDelta {
     
     @AfterTemplate
     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(float actual, float expected, float delta) {
+    void after(Float actual, float expected, float delta) {
         assertThat(actual).isCloseTo(expected, offset(delta));
     }
 }

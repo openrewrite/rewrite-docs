@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.nextjs.v10.AddMissingReactImport**
 
-_Transforms files that do not import `React` to include the import in order for the new [React JSX](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) transform to work. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#add-missing-react-import)   for more information._
+_Transforms files that do not import `React` to include the import in order for the new React JSX transform to work._
 
 ### Tags
 

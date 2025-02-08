@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with org.springframework.web.reactive.function.client.WebClient and related types"
+sidebar_label: "WebClientRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `org.springframework.web.reactive.function.client.WebClient` and related types
+# `WebClientRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.WebClientRules`. [Source](https://error-prone.picnic.tech/refasterrules/WebClientRules)._
+_Refaster rules related to expressions dealing with `org.springframework.web.reactive.function.client.WebClient` and related types [Source](https://error-prone.picnic.tech/refasterrules/WebClientRules)._
 
 ## Recipe source
 
@@ -28,12 +28,12 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `WebClient#get()` over `WebClient#method(HttpMethod)` with `HttpMethod#GET`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientgetrecipe)
-* [Prefer `WebClient#head()` over `WebClient#method(HttpMethod)` with `HttpMethod#HEAD`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientheadrecipe)
-* [Prefer `WebClient#options()` over `WebClient#method(HttpMethod)` with `HttpMethod#OPTIONS`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientoptionsrecipe)
-* [Prefer `WebClient#patch()` over `WebClient#method(HttpMethod)` with `HttpMethod#PATCH`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientpatchrecipe)
-* [Prefer `WebClient#post()` over `WebClient#method(HttpMethod)` with `HttpMethod#POST`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientpostrecipe)
-* [Prefer `WebClient#put()` over `WebClient#method(HttpMethod)` with `HttpMethod#PUT`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientputrecipe)
+* [Refaster template `WebClientRules.WebClientGet`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientgetrecipe)
+* [Refaster template `WebClientRules.WebClientHead`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientheadrecipe)
+* [Refaster template `WebClientRules.WebClientOptions`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientoptionsrecipe)
+* [Refaster template `WebClientRules.WebClientPatch`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientpatchrecipe)
+* [Refaster template `WebClientRules.WebClientPost`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientpostrecipe)
+* [Refaster template `WebClientRules.WebClientPut`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientputrecipe)
 
 </TabItem>
 
@@ -43,8 +43,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.WebClientRulesRecipes
-displayName: Refaster rules related to expressions dealing with `org.springframework.web.reactive.function.client.WebClient` and related types
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.WebClientRules`. [Source](https://error-prone.picnic.tech/refasterrules/WebClientRules).
+displayName: `WebClientRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `org.springframework.web.reactive.function.client.WebClient` and related types [Source](https://error-prone.picnic.tech/refasterrules/WebClientRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientGetRecipe
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientHeadRecipe

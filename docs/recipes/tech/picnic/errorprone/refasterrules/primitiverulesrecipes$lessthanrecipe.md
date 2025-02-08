@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Avoid contrived ways of expressing the \"less than\" relationship"
+sidebar_label: "Refaster template PrimitiveRules.LessThan"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid contrived ways of expressing the "less than" relationship
+# Refaster template `PrimitiveRules.LessThan`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LessThan {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S1940")
-    boolean before(double a, double b) {
-        return !(a >= b);
-    }
-    
-    @AfterTemplate
-    boolean after(double a, double b) {
-        return a < b;
-    }
-}
-```
-.
+_Avoid contrived ways of expressing the "less than" relationship_
 
 ## Recipe source
 

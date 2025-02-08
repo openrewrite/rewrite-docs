@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Use the fluent API style when using RxJava2Adapter#completableToMono"
+sidebar_label: "Refaster template RxJava2AdapterRules.CompletableToMono"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use the fluent API style when using `RxJava2Adapter#completableToMono`
+# Refaster template `RxJava2AdapterRules.CompletableToMono`
 
 **tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class CompletableToMono {
-    
-    @BeforeTemplate
-    Mono<@Nullable Void> before(Completable completable) {
-        return Refaster.anyOf(RxJava2Adapter.completableToMono(completable), completable.to(RxJava2Adapter::completableToMono));
-    }
-    
-    @AfterTemplate
-    Mono<@Nullable Void> after(Completable completable) {
-        return completable.as(RxJava2Adapter::completableToMono);
-    }
-}
-```
-.
+_Use the fluent API style when using `RxJava2Adapter#completableToMono`_
 
 ## Recipe source
 

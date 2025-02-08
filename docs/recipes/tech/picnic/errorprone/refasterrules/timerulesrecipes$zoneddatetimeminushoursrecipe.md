@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#minusHours(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimeMinusHours"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#minusHours(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimeMinusHours`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusHoursRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimeMinusHours {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int hours) {
-        return zonedDateTime.minus(Duration.ofHours(hours));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long hours) {
-        return zonedDateTime.minus(hours, ChronoUnit.HOURS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int hours) {
-        return zonedDateTime.minusHours(hours);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#minusHours(long)` over more contrived alternatives_
 
 ## Recipe source
 

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to Mockito expressions and statements"
+sidebar_label: "MockitoRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to Mockito expressions and statements
+# `MockitoRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.MockitoRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.MockitoRules`. [Source](https://error-prone.picnic.tech/refasterrules/MockitoRules)._
+_Refaster rules related to Mockito expressions and statements [Source](https://error-prone.picnic.tech/refasterrules/MockitoRules)._
 
 ## Recipe source
 
@@ -28,7 +28,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `Mockito#never()`} over explicitly specifying that the associated invocation must happen precisely zero times](../../../../tech/picnic/errorprone/refasterrules/mockitorulesrecipes$neverrecipe)
+* [Refaster template `MockitoRules.Never`](../../../../tech/picnic/errorprone/refasterrules/mockitorulesrecipes$neverrecipe)
 * [Refaster template `MockitoRules.InvocationOnMockGetArguments`](../../../../tech/picnic/errorprone/refasterrules/mockitorulesrecipes$invocationonmockgetargumentsrecipe)
 
 </TabItem>
@@ -39,8 +39,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.MockitoRulesRecipes
-displayName: Refaster rules related to Mockito expressions and statements
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.MockitoRules`. [Source](https://error-prone.picnic.tech/refasterrules/MockitoRules).
+displayName: `MockitoRules` Refaster recipes
+description: Refaster rules related to Mockito expressions and statements [Source](https://error-prone.picnic.tech/refasterrules/MockitoRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$NeverRecipe
   - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$InvocationOnMockGetArgumentsRecipe

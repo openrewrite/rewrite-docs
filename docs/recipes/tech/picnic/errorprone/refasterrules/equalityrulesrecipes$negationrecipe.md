@@ -1,42 +1,15 @@
 ---
-sidebar_label: "Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead"
+sidebar_label: "Refaster template EqualityRules.Negation"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead
+# Refaster template `EqualityRules.Negation`
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe**
 
-Recipe created for the following Refaster template:
-```java
-@SuppressWarnings(value = "java:S1940")
-static final class Negation {
-    
-    @BeforeTemplate
-    boolean before(boolean a, boolean b) {
-        return Refaster.anyOf(!(a == b), a ? !b : b);
-    }
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S1244")
-    boolean before(double a, double b) {
-        return !(a == b);
-    }
-    
-    @BeforeTemplate
-    boolean before(Object a, Object b) {
-        return !(a == b);
-    }
-    
-    @AfterTemplate
-    boolean after(boolean a, boolean b) {
-        return a != b;
-    }
-}
-```
-.
+_Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead_
 
 ## Recipe source
 

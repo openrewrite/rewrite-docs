@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer using Tags over other immutable collections"
+sidebar_label: "Refaster template MicrometerRules.TagsOf1"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using `Tags` over other immutable collections
+# Refaster template `MicrometerRules.TagsOf1`
 
 **tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class TagsOf1 {
-    
-    @BeforeTemplate
-    ImmutableCollection<Tag> before(Tag tag) {
-        return Refaster.anyOf(ImmutableSet.of(tag), ImmutableList.of(tag));
-    }
-    
-    @AfterTemplate
-    Iterable<Tag> after(Tag tag) {
-        return Tags.of(tag);
-    }
-}
-```
-.
+_Prefer using `Tags` over other immutable collections_
 
 ## Recipe source
 

@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer IntStream#anyMatch(IntPredicate) over more contrived alternatives"
+sidebar_label: "Refaster template IntStreamRules.IntStreamAnyMatch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `IntStream#anyMatch(IntPredicate)` over more contrived alternatives
+# Refaster template `IntStreamRules.IntStreamAnyMatch`
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAnyMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntStreamAnyMatch {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4034")
-    boolean before(IntStream stream, IntPredicate predicate) {
-        return Refaster.anyOf(!stream.noneMatch(predicate), stream.filter(predicate).findAny().isPresent());
-    }
-    
-    @AfterTemplate
-    boolean after(IntStream stream, IntPredicate predicate) {
-        return stream.anyMatch(predicate);
-    }
-}
-```
-.
+_Prefer `IntStream#anyMatch(IntPredicate)` over more contrived alternatives_
 
 ## Recipe source
 

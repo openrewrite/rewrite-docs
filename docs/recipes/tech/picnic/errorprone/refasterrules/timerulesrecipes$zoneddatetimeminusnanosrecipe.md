@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#minusNanos(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimeMinusNanos"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#minusNanos(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimeMinusNanos`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusNanosRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimeMinusNanos {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int nanos) {
-        return zonedDateTime.minus(Duration.ofNanos(nanos));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long nanos) {
-        return zonedDateTime.minus(nanos, ChronoUnit.NANOS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int nanos) {
-        return zonedDateTime.minusNanos(nanos);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#minusNanos(long)` over more contrived alternatives_
 
 ## Recipe source
 

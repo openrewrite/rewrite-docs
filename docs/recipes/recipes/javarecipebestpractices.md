@@ -1,41 +1,45 @@
 ---
-sidebar_label: "Camel API changes in application.properties"
+sidebar_label: "Java Recipe best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Camel API changes in application.properties
+# Java Recipe best practices
 
-**org.openrewrite.java.camel.migrate.ChangePropertyValue**
+**org.openrewrite.recipes.JavaRecipeBestPractices**
 
-_Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties._
+_Best practices for Java recipe development._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.openrewrite.java.camel.migrate.ChangePropertyValue), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/resources/META-INF/rewrite/recipebestpractice.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change property value](../../../properties/changepropertyvalue)
-  * propertyKey: `camel.threadpool.rejectedPolicy`
-  * newValue: `Abort #DiscardOldest has been removed, consider Abort`
-  * oldValue: `DiscardOldest`
-* [Change property value](../../../properties/changepropertyvalue)
-  * propertyKey: `camel.threadpool.rejectedPolicy`
-  * newValue: `Abort #Discard has been removed, consider Abort`
-  * oldValue: `Discard`
+* [Add a blank line around fields with annotations](../java/recipes/blanklinesaroundfieldswithannotations)
+* [Use a standard name for `ExecutionContext`](../java/recipes/executioncontextparametername)
+* [Find missing `@Option` `example` values](../java/recipes/missingoptionexample)
+* [Recipe classes should not have mutable `static` fields](../java/recipes/nomutablestaticfieldsinrecipes)
+* [Use of `@EqualsAndHashCode` on `Recipe`](../java/recipes/recipeequalsandhashcodecallsuper)
+* [Use `Tree.randomId()` in LST constructors](../java/recipes/usetreerandomid)
+* [Fix missing braces](../staticanalysis/needbraces)
+* [Remove `System.out#println` statements](../staticanalysis/removesystemoutprintln)
+* [Remove annotation](../java/removeannotation)
+  * annotationPattern: `@org.openrewrite.NlsRewrite.DisplayName`
+* [Remove annotation](../java/removeannotation)
+  * annotationPattern: `@org.openrewrite.NlsRewrite.Description`
 
 </TabItem>
 
@@ -44,18 +48,22 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.camel.migrate.ChangePropertyValue
-displayName: Camel API changes in application.properties
-description: Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties.
+name: org.openrewrite.recipes.JavaRecipeBestPractices
+displayName: Java Recipe best practices
+description: Best practices for Java recipe development.
 recipeList:
-  - org.openrewrite.properties.ChangePropertyValue:
-      propertyKey: camel.threadpool.rejectedPolicy
-      newValue: Abort #DiscardOldest has been removed, consider Abort
-      oldValue: DiscardOldest
-  - org.openrewrite.properties.ChangePropertyValue:
-      propertyKey: camel.threadpool.rejectedPolicy
-      newValue: Abort #Discard has been removed, consider Abort
-      oldValue: Discard
+  - org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations
+  - org.openrewrite.java.recipes.ExecutionContextParameterName
+  - org.openrewrite.java.recipes.MissingOptionExample
+  - org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes
+  - org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper
+  - org.openrewrite.java.recipes.UseTreeRandomId
+  - org.openrewrite.staticanalysis.NeedBraces
+  - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: @org.openrewrite.NlsRewrite.DisplayName
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: @org.openrewrite.NlsRewrite.Description
 
 ```
 </TabItem>
@@ -63,7 +71,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-rewrite` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -75,7 +83,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.camel.migrate.ChangePropertyValue")
+    activeRecipe("org.openrewrite.recipes.JavaRecipeBestPractices")
     setExportDatatables(true)
 }
 
@@ -84,7 +92,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}")
 }
 ```
 
@@ -105,10 +113,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.camel.migrate.ChangePropertyValue")
+        activeRecipe("org.openrewrite.recipes.JavaRecipeBestPractices")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -143,14 +151,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.camel.migrate.ChangePropertyValue</recipe>
+            <recipe>org.openrewrite.recipes.JavaRecipeBestPractices</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_REWRITE_THIRD_PARTY}}</version>
+            <artifactId>rewrite-rewrite</artifactId>
+            <version>{{VERSION_REWRITE_REWRITE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -166,7 +174,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.camel.migrate.ChangePropertyValue -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-rewrite:RELEASE -Drewrite.activeRecipes=org.openrewrite.recipes.JavaRecipeBestPractices -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -174,12 +182,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangePropertyValue
+mod run . --recipe JavaRecipeBestPractices
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}
 ```
 </TabItem>
 </Tabs>
@@ -188,7 +196,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.camel.migrate.ChangePropertyValue" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.recipes.JavaRecipeBestPractices" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

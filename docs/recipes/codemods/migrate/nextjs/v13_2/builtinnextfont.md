@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.nextjs.v13\_2.BuiltInNextFont**
 
-_This codemod uninstalls the `@next/font` package and transforms `@next/font` imports into the built-in `next/font`. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#built-in-next-font)   for more information._
+_This codemod uninstalls the `@next/font` package and transforms `@next/font` imports into the built-in `next/font`._
 
 ### Tags
 

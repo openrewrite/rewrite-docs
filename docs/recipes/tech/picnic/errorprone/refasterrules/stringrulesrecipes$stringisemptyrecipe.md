@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer String#isEmpty() over alternatives that consult the string's length"
+sidebar_label: "Refaster template StringRules.StringIsEmpty"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#isEmpty()` over alternatives that consult the string's length
+# Refaster template `StringRules.StringIsEmpty`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StringIsEmpty {
-    
-    @BeforeTemplate
-    boolean before(String str) {
-        return Refaster.anyOf(str.length() == 0, str.length() <= 0, str.length() < 1);
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(String str) {
-        return str.isEmpty();
-    }
-}
-```
-.
+_Prefer `String#isEmpty()` over alternatives that consult the string's length_
 
 ## Recipe source
 
