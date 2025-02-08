@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Integer#divideUnsigned(int, int) over third-party alternatives"
+sidebar_label: "Refaster template PrimitiveRules.IntegerDivideUnsigned"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Integer#divideUnsigned(int, int)` over third-party alternatives
+# Refaster template `PrimitiveRules.IntegerDivideUnsigned`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerDivideUnsignedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerDivideUnsigned {
-    
-    @BeforeTemplate
-    int before(int x, int y) {
-        return UnsignedInts.divide(x, y);
-    }
-    
-    @AfterTemplate
-    int after(int x, int y) {
-        return Integer.divideUnsigned(x, y);
-    }
-}
-```
-.
+_Prefer JDK's `Integer#divideUnsigned(int, int)` over third-party alternatives_
 
 ## Recipe source
 

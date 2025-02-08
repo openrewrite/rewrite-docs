@@ -32,8 +32,12 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Upgrade `actions/setup-java` `java-version`](../../../../../github/setupjavaupgradejavaversion)
+* [Upgrade `actions/setup-java` `java-version`](../../../../../io/quarkus/updates/core/quarkus37/setupjavaupgradejavaversion)
   * minimumJavaMajorVersion: `17`
+* [Remove method invocations](../../../../../java/removemethodinvocations)
+  * methodPattern: `java.lang.Runtime traceInstructions(boolean)`
+* [Remove method invocations](../../../../../java/removemethodinvocations)
+  * methodPattern: `java.lang.System traceMethodCalls(boolean)`
 * [Upgrade Maven plugin version](../../../../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-checkstyle-plugin`
@@ -52,8 +56,12 @@ description: This recipe will apply changes commonly needed when migrating to Ja
 tags:
   - java17
 recipeList:
-  - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
+  - io.quarkus.updates.core.quarkus37.SetupJavaUpgradeJavaVersion:
       minimumJavaMajorVersion: 17
+  - org.openrewrite.java.RemoveMethodInvocations:
+      methodPattern: java.lang.Runtime traceInstructions(boolean)
+  - org.openrewrite.java.RemoveMethodInvocations:
+      methodPattern: java.lang.System traceMethodCalls(boolean)
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-checkstyle-plugin

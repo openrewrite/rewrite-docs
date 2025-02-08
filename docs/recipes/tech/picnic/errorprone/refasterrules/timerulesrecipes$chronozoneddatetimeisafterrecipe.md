@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer ChronoZonedDateTime#isBefore(ChronoZonedDateTime) over explicit comparison, as it yields more readable code"
+sidebar_label: "Refaster template TimeRules.ChronoZonedDateTimeIsAfter"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ChronoZonedDateTime#isBefore(ChronoZonedDateTime)` over explicit comparison, as it yields more readable code
+# Refaster template `TimeRules.ChronoZonedDateTimeIsAfter`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoZonedDateTimeIsAfterRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ChronoZonedDateTimeIsAfter {
-    
-    @BeforeTemplate
-    boolean before(ChronoZonedDateTime<?> a, ChronoZonedDateTime<?> b) {
-        return a.compareTo(b) > 0;
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(ChronoZonedDateTime<?> a, ChronoZonedDateTime<?> b) {
-        return a.isAfter(b);
-    }
-}
-```
-.
+_Prefer `ChronoZonedDateTime#isBefore(ChronoZonedDateTime)` over explicit comparison, as it yields more readable code_
 
 ## Recipe source
 

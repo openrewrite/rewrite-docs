@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer IntStream#concat(IntStream, IntStream) over the Guava alternative"
+sidebar_label: "Refaster template IntStreamRules.ConcatTwoIntStreams"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `IntStream#concat(IntStream, IntStream)` over the Guava alternative
+# Refaster template `IntStreamRules.ConcatTwoIntStreams`
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatTwoIntStreamsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ConcatTwoIntStreams {
-    
-    @BeforeTemplate
-    IntStream before(IntStream s1, IntStream s2) {
-        return Streams.concat(s1, s2);
-    }
-    
-    @AfterTemplate
-    IntStream after(IntStream s1, IntStream s2) {
-        return IntStream.concat(s1, s2);
-    }
-}
-```
-.
+_Prefer `IntStream#concat(IntStream, IntStream)` over the Guava alternative_
 
 ## Recipe source
 

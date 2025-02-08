@@ -1,30 +1,18 @@
 ---
-sidebar_label: "Prefer SuggestedFix#postfixWith(Tree, String)} over more contrived alternatives"
+sidebar_label: "Refaster template SuggestedFixRules.SuggestedFixPostfixWith"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `SuggestedFix#postfixWith(Tree, String)`} over more contrived alternatives
+# Refaster template `SuggestedFixRules.SuggestedFixPostfixWith`
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixPostfixWithRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class SuggestedFixPostfixWith {
-    
-    @BeforeTemplate
-    SuggestedFix before(Tree tree, String postfix) {
-        return SuggestedFix.builder().postfixWith(tree, postfix).build();
-    }
-    
-    @AfterTemplate
-    SuggestedFix after(Tree tree, String postfix) {
-        return SuggestedFix.postfixWith(tree, postfix);
-    }
-}
 ```
-.
+Prefer `SuggestedFix#postfixWith(Tree, String)`} over more contrived alternatives
+```
+
 
 ## Recipe source
 

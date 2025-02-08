@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer direct invocation of String#String(char[]) over the indirection introduced by alternatives"
+sidebar_label: "Refaster template StringRules.NewStringFromCharArray"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer direct invocation of `String#String(char[])` over the indirection introduced by alternatives
+# Refaster template `StringRules.NewStringFromCharArray`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArrayRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class NewStringFromCharArray {
-    
-    @BeforeTemplate
-    String before(char[] data) {
-        return Refaster.anyOf(String.valueOf(data), new String(data, 0, data.length));
-    }
-    
-    @AfterTemplate
-    String after(char[] data) {
-        return new String(data);
-    }
-}
-```
-.
+_Prefer direct invocation of `String#String(char[])` over the indirection introduced by alternatives_
 
 ## Recipe source
 

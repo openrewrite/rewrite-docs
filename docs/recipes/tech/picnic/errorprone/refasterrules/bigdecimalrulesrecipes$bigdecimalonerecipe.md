@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer using the constant BigDecimal#ONE when possible"
+sidebar_label: "Refaster template BigDecimalRules.BigDecimalOne"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using the constant `BigDecimal#ONE` when possible
+# Refaster template `BigDecimalRules.BigDecimalOne`
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalOneRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BigDecimalOne {
-    
-    @BeforeTemplate
-    BigDecimal before() {
-        return Refaster.anyOf(BigDecimal.valueOf(1), new BigDecimal("1"));
-    }
-    
-    @AfterTemplate
-    BigDecimal after() {
-        return BigDecimal.ONE;
-    }
-}
-```
-.
+_Prefer using the constant `BigDecimal#ONE` when possible_
 
 ## Recipe source
 

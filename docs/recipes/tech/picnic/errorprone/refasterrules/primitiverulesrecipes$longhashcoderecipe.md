@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Long#hashCode(long) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.LongHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Long#hashCode(long)` over the Guava alternative
+# Refaster template `PrimitiveRules.LongHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongHashCode {
-    
-    @BeforeTemplate
-    int before(long l) {
-        return Longs.hashCode(l);
-    }
-    
-    @AfterTemplate
-    int after(long l) {
-        return Long.hashCode(l);
-    }
-}
-```
-.
+_Prefer `Long#hashCode(long)` over the Guava alternative_
 
 ## Recipe source
 

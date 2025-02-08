@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with (in)equalities"
+sidebar_label: "EqualityRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with (in)equalities
+# `EqualityRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.EqualityRules`. [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules)._
+_Refaster rules related to expressions dealing with (in)equalities [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules)._
 
 ## Recipe source
 
@@ -28,9 +28,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Avoid double negations; this is not Javascript](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe)
-* [Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe)
-* [Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe)
+* [Refaster template `EqualityRules.DoubleNegation`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe)
+* [Refaster template `EqualityRules.Negation`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe)
+* [Refaster template `EqualityRules.IndirectDoubleNegation`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe)
 
 </TabItem>
 
@@ -40,8 +40,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.EqualityRulesRecipes
-displayName: Refaster rules related to expressions dealing with (in)equalities
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.EqualityRules`. [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules).
+displayName: `EqualityRules` Refaster recipes
+description: Refaster rules related to expressions dealing with (in)equalities [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe

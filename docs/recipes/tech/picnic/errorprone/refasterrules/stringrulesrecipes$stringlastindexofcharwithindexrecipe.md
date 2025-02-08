@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer String#lastIndexOf(int, int) over less efficient alternatives"
+sidebar_label: "Refaster template StringRules.StringLastIndexOfCharWithIndex"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#lastIndexOf(int, int)` over less efficient alternatives
+# Refaster template `StringRules.StringLastIndexOfCharWithIndex`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharWithIndexRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StringLastIndexOfCharWithIndex {
-    
-    @BeforeTemplate
-    int before(String string, int ch, int fromIndex) {
-        return string.substring(0, fromIndex).lastIndexOf(ch);
-    }
-    
-    @AfterTemplate
-    int after(String string, int ch, int fromIndex) {
-        return string.lastIndexOf(ch, fromIndex - 1);
-    }
-}
-```
-.
+_Prefer `String#lastIndexOf(int, int)` over less efficient alternatives_
 
 ## Recipe source
 

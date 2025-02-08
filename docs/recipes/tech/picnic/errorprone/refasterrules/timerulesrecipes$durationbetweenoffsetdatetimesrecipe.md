@@ -1,30 +1,18 @@
 ---
-sidebar_label: "Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) < p ><strong>Warning:</strong> this rewrite rule increases precision!"
+sidebar_label: "Refaster template TimeRules.DurationBetweenOffsetDateTimes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) &lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; this rewrite rule increases precision!
+# Refaster template `TimeRules.DurationBetweenOffsetDateTimes`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenOffsetDateTimesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DurationBetweenOffsetDateTimes {
-    
-    @BeforeTemplate
-    Duration before(OffsetDateTime a, OffsetDateTime b) {
-        return Refaster.anyOf(Duration.between(a.toInstant(), b.toInstant()), Duration.ofSeconds(b.toEpochSecond() - a.toEpochSecond()));
-    }
-    
-    @AfterTemplate
-    Duration after(OffsetDateTime a, OffsetDateTime b) {
-        return Duration.between(a, b);
-    }
-}
 ```
-.
+Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) <strong>Warning:</strong> this rewrite rule increases precision!
+```
+
 
 ## Recipe source
 

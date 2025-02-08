@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#plusDays(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimePlusDays"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#plusDays(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimePlusDays`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusDaysRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimePlusDays {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int days) {
-        return zonedDateTime.plus(Period.ofDays(days));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long days) {
-        return zonedDateTime.plus(days, ChronoUnit.DAYS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int days) {
-        return zonedDateTime.plusDays(days);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#plusDays(long)` over more contrived alternatives_
 
 ## Recipe source
 

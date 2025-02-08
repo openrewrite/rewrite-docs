@@ -107,13 +107,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
 * [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `org.mockito`
-  * artifactId: `mockito-junit-jupiter`
-  * version: `3.x`
-  * onlyIfUsing: `org.mockito.junit.jupiter.*`
-  * scope: `test`
-  * acceptTransitive: `true`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
   * artifactId: `*`
@@ -215,13 +208,6 @@ recipeList:
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
   - org.openrewrite.java.testing.mockito.ReplacePowerMockito
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.mockito
-      artifactId: mockito-junit-jupiter
-      version: 3.x
-      onlyIfUsing: org.mockito.junit.jupiter.*
-      scope: test
-      acceptTransitive: true
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: *

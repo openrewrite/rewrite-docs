@@ -19,7 +19,37 @@ static final class AssertEqualWithMessage {
     }
     
     @BeforeTemplate
+    void before(boolean actual, String message, Boolean expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Boolean actual, String message, boolean expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Boolean actual, String message, Boolean expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
     void before(byte actual, String message, byte expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(byte actual, String message, Byte expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Byte actual, String message, byte expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Byte actual, String message, Byte expected) {
         assertEquals(actual, expected, message);
     }
     
@@ -29,7 +59,37 @@ static final class AssertEqualWithMessage {
     }
     
     @BeforeTemplate
+    void before(char actual, String message, Character expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Character actual, String message, char expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Character actual, String message, Character expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
     void before(short actual, String message, short expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(short actual, String message, Short expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Short actual, String message, short expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Short actual, String message, Short expected) {
         assertEquals(actual, expected, message);
     }
     
@@ -39,7 +99,32 @@ static final class AssertEqualWithMessage {
     }
     
     @BeforeTemplate
+    void before(int actual, String message, Integer expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Integer actual, String message, int expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Integer actual, String message, Integer expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
     void before(long actual, String message, long expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Long actual, String message, long expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Long actual, String message, Long expected) {
         assertEquals(actual, expected, message);
     }
     
@@ -49,7 +134,37 @@ static final class AssertEqualWithMessage {
     }
     
     @BeforeTemplate
+    void before(float actual, String message, Float expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Float actual, String message, float expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Float actual, String message, Float expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
     void before(double actual, String message, double expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(double actual, String message, Double expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Double actual, String message, double expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Double actual, String message, Double expected) {
         assertEquals(actual, expected, message);
     }
     

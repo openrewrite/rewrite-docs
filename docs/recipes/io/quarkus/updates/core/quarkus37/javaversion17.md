@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Change Maven Java version property values to 17"
+sidebar_label: "Change Maven and Gradle Java version property values to 17"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Change Maven Java version property values to 17
+# Change Maven and Gradle Java version property values to 17
 
 **io.quarkus.updates.core.quarkus37.JavaVersion17**
 
@@ -33,9 +33,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Upgrade Java version](../../../../../java/migrate/upgradejavaversion)
+* [Upgrade Java version](../../../../../io/quarkus/updates/core/quarkus37/upgradejavaversion)
   * version: `17`
-* [Use Maven compiler plugin release configuration](../../../../../java/migrate/maven/usemavencompilerpluginreleaseconfiguration)
+* [Use Maven compiler plugin release configuration](../../../../../maven/usemavencompilerpluginreleaseconfiguration)
   * releaseVersion: `17`
 
 </TabItem>
@@ -46,15 +46,15 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: io.quarkus.updates.core.quarkus37.JavaVersion17
-displayName: Change Maven Java version property values to 17
+displayName: Change Maven and Gradle Java version property values to 17
 description: Change maven.compiler.source and maven.compiler.target values to 17.
 tags:
   - java17
   - compiler
 recipeList:
-  - org.openrewrite.java.migrate.UpgradeJavaVersion:
+  - io.quarkus.updates.core.quarkus37.UpgradeJavaVersion:
       version: 17
-  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration:
+  - org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration:
       releaseVersion: 17
 
 ```

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Utf8#encodedLength(CharSequence) over less efficient alternatives"
+sidebar_label: "Refaster template StringRules.Utf8EncodedLength"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Utf8#encodedLength(CharSequence)` over less efficient alternatives
+# Refaster template `StringRules.Utf8EncodedLength`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$Utf8EncodedLengthRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class Utf8EncodedLength {
-    
-    @BeforeTemplate
-    int before(String str) {
-        return str.getBytes(UTF_8).length;
-    }
-    
-    @AfterTemplate
-    int after(String str) {
-        return Utf8.encodedLength(str);
-    }
-}
-```
-.
+_Prefer `Utf8#encodedLength(CharSequence)` over less efficient alternatives_
 
 ## Recipe source
 

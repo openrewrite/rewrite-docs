@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Duration#ofMillis(long) over alternative representations"
+sidebar_label: "Refaster template TimeRules.DurationOfMillis"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Duration#ofMillis(long)` over alternative representations
+# Refaster template `TimeRules.DurationOfMillis`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfMillisRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DurationOfMillis {
-    
-    @BeforeTemplate
-    Duration before(long amount) {
-        return Duration.of(amount, ChronoUnit.MILLIS);
-    }
-    
-    @AfterTemplate
-    Duration after(long amount) {
-        return Duration.ofMillis(amount);
-    }
-}
-```
-.
+_Prefer `Duration#ofMillis(long)` over alternative representations_
 
 ## Recipe source
 

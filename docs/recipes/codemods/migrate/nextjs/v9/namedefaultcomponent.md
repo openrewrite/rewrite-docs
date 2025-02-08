@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.nextjs.v9.NameDefaultComponent**
 
-_Transforms anonymous components into named components to make sure they work with [Fast Refresh](https://nextjs.org/blog/next-9-4#fast-refresh). The component will have a camel-cased name based on the name of the file, and it also works with arrow functions. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#name-default-component)   for more information._
+_Transforms anonymous components into named components to make sure they work with Fast Refresh. The component will have a camel-cased name based on the name of the file, and it also works with arrow functions._
 
 ### Tags
 

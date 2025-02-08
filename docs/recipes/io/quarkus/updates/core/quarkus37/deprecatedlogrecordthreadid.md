@@ -35,7 +35,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Change method name](../../../../../java/changemethodname)
   * methodPattern: `java.util.logging.LogRecord getThreadID()`
   * newMethodName: `getLongThreadID`
-* [Change method invocation return type](../../../../../java/migrate/changemethodinvocationreturntype)
+* [Change method invocation return type](../../../../../java/changemethodinvocationreturntype)
   * methodPattern: `java.util.logging.LogRecord getLongThreadID()`
   * newReturnType: `long`
 * [Change method name](../../../../../java/changemethodname)
@@ -58,7 +58,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.logging.LogRecord getThreadID()
       newMethodName: getLongThreadID
-  - org.openrewrite.java.migrate.ChangeMethodInvocationReturnType:
+  - org.openrewrite.java.ChangeMethodInvocationReturnType:
       methodPattern: java.util.logging.LogRecord getLongThreadID()
       newReturnType: long
   - org.openrewrite.java.ChangeMethodName:

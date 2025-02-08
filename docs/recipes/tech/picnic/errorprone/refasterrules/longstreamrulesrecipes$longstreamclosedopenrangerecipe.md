@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer LongStream#range(long, long) over the more contrived alternative"
+sidebar_label: "Refaster template LongStreamRules.LongStreamClosedOpenRange"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LongStream#range(long, long)` over the more contrived alternative
+# Refaster template `LongStreamRules.LongStreamClosedOpenRange`
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamClosedOpenRangeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongStreamClosedOpenRange {
-    
-    @BeforeTemplate
-    LongStream before(long from, long to) {
-        return LongStream.rangeClosed(from, to - 1);
-    }
-    
-    @AfterTemplate
-    LongStream after(long from, long to) {
-        return LongStream.range(from, to);
-    }
-}
-```
-.
+_Prefer `LongStream#range(long, long)` over the more contrived alternative_
 
 ## Recipe source
 

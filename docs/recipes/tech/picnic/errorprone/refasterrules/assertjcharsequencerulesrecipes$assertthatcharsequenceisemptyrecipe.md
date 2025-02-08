@@ -15,7 +15,7 @@ static final class AssertThatCharSequenceIsEmpty {
     
     @BeforeTemplate
     void before(CharSequence charSequence) {
-        Refaster.anyOf(assertThat(charSequence.length()).isEqualTo(0L), assertThat(charSequence.length()).isNotPositive());
+        Refaster.anyOf(assertThat(charSequence.isEmpty()).isTrue(), assertThat(charSequence.length()).isEqualTo(0L), assertThat(charSequence.length()).isNotPositive());
     }
     
     @AfterTemplate

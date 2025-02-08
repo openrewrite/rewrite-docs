@@ -1,20 +1,15 @@
 ---
-sidebar_label: "Use viewport export"
+sidebar_label: "Migrate to Hibernate 6.6.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `viewport` export
+# Migrate to Hibernate 6.6.x
 
-**org.openrewrite.codemods.migrate.nextjs.v14\_0.UseViewportExport**
+**io.moderne.recipe.hibernate.MigrateToHibernate66**
 
-_This codemod migrates certain viewport metadata to `viewport` export. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#metadata-to-viewport-export) for more information._
-
-### Tags
-
-* nextjs
-* codemods
+_This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x._
 
 ## Recipe source
 
@@ -36,12 +31,12 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UseViewportExport
+mod run . --recipe MigrateToHibernate66
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION_REWRITE_CODEMODS}}
+mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_REWRITE_HIBERNATE}}
 ```
 </TabItem>
 </Tabs>
@@ -50,7 +45,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.codemods.migrate.nextjs.v14_0.UseViewportExport" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.recipe.hibernate.MigrateToHibernate66" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -99,3 +94,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io), Simon Zilliken, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

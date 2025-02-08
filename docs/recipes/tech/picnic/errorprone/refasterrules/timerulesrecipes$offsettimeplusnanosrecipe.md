@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetTime#plusNanos(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetTimePlusNanos"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetTime#plusNanos(long)` over more contrived alternatives
+# Refaster template `TimeRules.OffsetTimePlusNanos`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimePlusNanosRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetTimePlusNanos {
-    
-    @BeforeTemplate
-    OffsetTime before(OffsetTime offsetTime, int nanos) {
-        return offsetTime.plus(Duration.ofNanos(nanos));
-    }
-    
-    @BeforeTemplate
-    OffsetTime before(OffsetTime offsetTime, long nanos) {
-        return offsetTime.plus(nanos, ChronoUnit.NANOS);
-    }
-    
-    @AfterTemplate
-    OffsetTime after(OffsetTime offsetTime, int nanos) {
-        return offsetTime.plusNanos(nanos);
-    }
-}
-```
-.
+_Prefer `OffsetTime#plusNanos(long)` over more contrived alternatives_
 
 ## Recipe source
 

@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDate#plusDays(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDatePlusDays"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDate#plusDays(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalDatePlusDays`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusDaysRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDatePlusDays {
-    
-    @BeforeTemplate
-    LocalDate before(LocalDate localDate, int days) {
-        return localDate.plus(Period.ofDays(days));
-    }
-    
-    @BeforeTemplate
-    LocalDate before(LocalDate localDate, long days) {
-        return localDate.plus(days, ChronoUnit.DAYS);
-    }
-    
-    @AfterTemplate
-    LocalDate after(LocalDate localDate, int days) {
-        return localDate.plusDays(days);
-    }
-}
-```
-.
+_Prefer `LocalDate#plusDays(long)` over more contrived alternatives_
 
 ## Recipe source
 

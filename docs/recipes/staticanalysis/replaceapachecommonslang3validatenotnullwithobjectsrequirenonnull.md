@@ -28,8 +28,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](../staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](../staticanalysis/replacevalidatenotnullhavingvarargswithobjectsrequirenonnull)
+* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](../staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull)
 
 </TabItem>
 
@@ -42,8 +42,8 @@ name: org.openrewrite.staticanalysis.ReplaceApacheCommonsLang3ValidateNotNullWit
 displayName: Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
 description: Replace `org.apache.commons.lang3.Validate.notNull(..)` with `Objects.requireNonNull(..)`.
 recipeList:
-  - org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull
   - org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull
+  - org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull
 
 ```
 </TabItem>

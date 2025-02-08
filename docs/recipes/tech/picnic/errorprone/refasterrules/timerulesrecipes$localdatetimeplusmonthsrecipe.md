@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDateTime#plusMonths(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDateTimePlusMonths"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDateTime#plusMonths(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalDateTimePlusMonths`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimePlusMonthsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDateTimePlusMonths {
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, int months) {
-        return localDateTime.plus(Period.ofMonths(months));
-    }
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, long months) {
-        return localDateTime.plus(months, ChronoUnit.MONTHS);
-    }
-    
-    @AfterTemplate
-    LocalDateTime after(LocalDateTime localDateTime, int months) {
-        return localDateTime.plusMonths(months);
-    }
-}
-```
-.
+_Prefer `LocalDateTime#plusMonths(long)` over more contrived alternatives_
 
 ## Recipe source
 

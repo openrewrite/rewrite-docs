@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with DoubleStreams"
+sidebar_label: "DoubleStreamRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `DoubleStream`s
+# `DoubleStreamRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.DoubleStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules)._
+_Refaster rules related to expressions dealing with `DoubleStream`s [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules)._
 
 ## Recipe source
 
@@ -28,14 +28,14 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Don't unnecessarily call `Streams#concat(DoubleStream...)`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$concatonedoublestreamrecipe)
-* [Prefer `DoubleStream#concat(DoubleStream, DoubleStream)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$concattwodoublestreamsrecipe)
-* [Apply `DoubleStream#filter(DoublePredicate)` before `DoubleStream#sorted()` to reduce the number of elements to sort](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamfiltersortedrecipe)
-* [In order to test whether a stream has any element, simply try to find one](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamisemptyrecipe)
-* [In order to test whether a stream has any element, simply try to find one](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamisnotemptyrecipe)
+* [Refaster template `DoubleStreamRules.ConcatOneDoubleStream`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$concatonedoublestreamrecipe)
+* [Refaster template `DoubleStreamRules.ConcatTwoDoubleStreams`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$concattwodoublestreamsrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamFilterSorted`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamfiltersortedrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamisemptyrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamisnotemptyrecipe)
 * [Refaster template `DoubleStreamRules.DoubleStreamMin`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamminrecipe)
-* [Prefer `DoubleStream#noneMatch(DoublePredicate)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamnonematchrecipe)
-* [Prefer `DoubleStream#anyMatch(DoublePredicate)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamanymatchrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamNoneMatch`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamnonematchrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamAnyMatch`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamanymatchrecipe)
 * [Refaster template `DoubleStreamRules.DoubleStreamAllMatch`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamallmatchrecipe)
 * [Refaster template `DoubleStreamRules.DoubleStreamTakeWhile`](../../../../tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamtakewhilerecipe)
 
@@ -47,8 +47,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes
-displayName: Refaster rules related to expressions dealing with `DoubleStream`s
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.DoubleStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
+displayName: `DoubleStreamRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `DoubleStream`s [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatOneDoubleStreamRecipe
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatTwoDoubleStreamsRecipe

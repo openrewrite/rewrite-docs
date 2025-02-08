@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer StepVerifier.LastStep#verifyErrorMessage(String) over more verbose alternatives"
+sidebar_label: "Refaster template ReactorRules.StepVerifierLastStepVerifyErrorMessage"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `StepVerifier.LastStep#verifyErrorMessage(String)` over more verbose alternatives
+# Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMessage`
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorMessageRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StepVerifierLastStepVerifyErrorMessage {
-    
-    @BeforeTemplate
-    Duration before(StepVerifier.LastStep step, String message) {
-        return step.expectErrorMessage(message).verify();
-    }
-    
-    @AfterTemplate
-    Duration after(StepVerifier.LastStep step, String message) {
-        return step.verifyErrorMessage(message);
-    }
-}
-```
-.
+_Prefer `StepVerifier.LastStep#verifyErrorMessage(String)` over more verbose alternatives_
 
 ## Recipe source
 

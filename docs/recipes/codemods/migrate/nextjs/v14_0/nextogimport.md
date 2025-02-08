@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.nextjs.v14\_0.NextOgImport**
 
-_This codemod moves transforms imports from `next/server` to `next/og for` usage of [Dynamic OG Image Generation] (https://nextjs.org/docs/app/building-your-application/upgrading/codemods#next-og-import). See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#migrate-imageresponse-imports) for more information._
+_This codemod moves transforms imports from `next/server` to `next/og` for usage of Dynamic OG Image Generation._
 
 ### Tags
 

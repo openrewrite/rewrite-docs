@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDateTime#minusDays(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDateTimeMinusDays"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDateTime#minusDays(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalDateTimeMinusDays`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimeMinusDaysRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDateTimeMinusDays {
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, int days) {
-        return localDateTime.minus(Period.ofDays(days));
-    }
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, long days) {
-        return localDateTime.minus(days, ChronoUnit.DAYS);
-    }
-    
-    @AfterTemplate
-    LocalDateTime after(LocalDateTime localDateTime, int days) {
-        return localDateTime.minusDays(days);
-    }
-}
-```
-.
+_Prefer `LocalDateTime#minusDays(long)` over more contrived alternatives_
 
 ## Recipe source
 

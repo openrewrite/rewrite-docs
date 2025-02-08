@@ -14,6 +14,7 @@
 * [JUnit Jupiter](/recipes/java/testing/junit5)
 * [Jmockit](/recipes/java/testing/jmockit)
 * [Mockito](/recipes/java/testing/mockito)
+* [Search](/recipes/java/testing/search)
 * [Testcontainers](/recipes/java/testing/testcontainers)
 * [Testng](/recipes/java/testing/testng)
 

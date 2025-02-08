@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer Collectors#joining() over Collectors#joining(CharSequence) with an empty delimiter string"
+sidebar_label: "Refaster template StreamRules.Joining"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Collectors#joining()` over `Collectors#joining(CharSequence)` with an empty delimiter string
+# Refaster template `StreamRules.Joining`
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$JoiningRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class Joining {
-    
-    @BeforeTemplate
-    Collector<CharSequence, ?, String> before() {
-        return joining("");
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    Collector<CharSequence, ?, String> after() {
-        return joining();
-    }
-}
-```
-.
+_Prefer `Collectors#joining()` over `Collectors#joining(CharSequence)` with an empty delimiter string_
 
 ## Recipe source
 

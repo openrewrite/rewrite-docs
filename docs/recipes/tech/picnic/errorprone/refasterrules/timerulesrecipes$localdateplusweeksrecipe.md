@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDate#plusWeeks(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDatePlusWeeks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDate#plusWeeks(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalDatePlusWeeks`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusWeeksRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDatePlusWeeks {
-    
-    @BeforeTemplate
-    LocalDate before(LocalDate localDate, int weeks) {
-        return localDate.plus(Period.ofWeeks(weeks));
-    }
-    
-    @BeforeTemplate
-    LocalDate before(LocalDate localDate, long weeks) {
-        return localDate.plus(weeks, ChronoUnit.WEEKS);
-    }
-    
-    @AfterTemplate
-    LocalDate after(LocalDate localDate, int weeks) {
-        return localDate.plusWeeks(weeks);
-    }
-}
-```
-.
+_Prefer `LocalDate#plusWeeks(long)` over more contrived alternatives_
 
 ## Recipe source
 

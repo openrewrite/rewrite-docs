@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer StepVerifier.LastStep#verifyErrorSatisfies(Consumer) over more verbose alternatives"
+sidebar_label: "Refaster template ReactorRules.StepVerifierLastStepVerifyErrorSatisfies"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `StepVerifier.LastStep#verifyErrorSatisfies(Consumer)` over more verbose alternatives
+# Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorSatisfies`
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorSatisfiesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StepVerifierLastStepVerifyErrorSatisfies {
-    
-    @BeforeTemplate
-    Duration before(StepVerifier.LastStep step, Consumer<Throwable> consumer) {
-        return step.expectErrorSatisfies(consumer).verify();
-    }
-    
-    @AfterTemplate
-    Duration after(StepVerifier.LastStep step, Consumer<Throwable> consumer) {
-        return step.verifyErrorSatisfies(consumer);
-    }
-}
-```
-.
+_Prefer `StepVerifier.LastStep#verifyErrorSatisfies(Consumer)` over more verbose alternatives_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer IntStream#range(int, int) over the more contrived alternative"
+sidebar_label: "Refaster template IntStreamRules.IntStreamClosedOpenRange"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `IntStream#range(int, int)` over the more contrived alternative
+# Refaster template `IntStreamRules.IntStreamClosedOpenRange`
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamClosedOpenRangeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntStreamClosedOpenRange {
-    
-    @BeforeTemplate
-    IntStream before(int from, int to) {
-        return IntStream.rangeClosed(from, to - 1);
-    }
-    
-    @AfterTemplate
-    IntStream after(int from, int to) {
-        return IntStream.range(from, to);
-    }
-}
-```
-.
+_Prefer `IntStream#range(int, int)` over the more contrived alternative_
 
 ## Recipe source
 

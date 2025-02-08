@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Avoid contrived ways of expressing the \"greater than or equal to\" relationship"
+sidebar_label: "Refaster template PrimitiveRules.GreaterThanOrEqualTo"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid contrived ways of expressing the "greater than or equal to" relationship
+# Refaster template `PrimitiveRules.GreaterThanOrEqualTo`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanOrEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class GreaterThanOrEqualTo {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S1940")
-    boolean before(double a, double b) {
-        return !(a < b);
-    }
-    
-    @AfterTemplate
-    boolean after(double a, double b) {
-        return a >= b;
-    }
-}
-```
-.
+_Avoid contrived ways of expressing the "greater than or equal to" relationship_
 
 ## Recipe source
 

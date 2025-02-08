@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDate#plusYears(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDatePlusYears"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDate#plusYears(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalDatePlusYears`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusYearsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDatePlusYears {
-    
-    @BeforeTemplate
-    LocalDate before(LocalDate localDate, int years) {
-        return localDate.plus(Period.ofYears(years));
-    }
-    
-    @BeforeTemplate
-    LocalDate before(LocalDate localDate, long years) {
-        return localDate.plus(years, ChronoUnit.YEARS);
-    }
-    
-    @AfterTemplate
-    LocalDate after(LocalDate localDate, int years) {
-        return localDate.plusYears(years);
-    }
-}
-```
-.
+_Prefer `LocalDate#plusYears(long)` over more contrived alternatives_
 
 ## Recipe source
 

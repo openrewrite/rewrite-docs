@@ -1,32 +1,15 @@
 ---
-sidebar_label: "Avoid double negations; this is not Javascript"
+sidebar_label: "Refaster template EqualityRules.DoubleNegation"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid double negations; this is not Javascript
+# Refaster template `EqualityRules.DoubleNegation`
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleNegation {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S2761")
-    boolean before(boolean b) {
-        return !!b;
-    }
-    
-    @AfterTemplate
-    @CanIgnoreReturnValue
-    boolean after(boolean b) {
-        return b;
-    }
-}
-```
-.
+_Avoid double negations; this is not Javascript_
 
 ## Recipe source
 

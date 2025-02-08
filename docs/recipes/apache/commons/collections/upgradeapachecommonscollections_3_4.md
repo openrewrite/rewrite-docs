@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections\_3\_4**
 
-_Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+_Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 
 ### Tags
 
@@ -59,6 +59,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.commons.collections`
   * newPackageName: `org.apache.commons.collections4`
+  * recursive: `true`
 
 </TabItem>
 
@@ -69,7 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4
 displayName: Migrates to Apache Commons Collections 4.x
-description: Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+description: Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
 tags:
   - apache
   - collections
@@ -100,6 +101,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.commons.collections
       newPackageName: org.apache.commons.collections4
+      recursive: true
 
 ```
 </TabItem>

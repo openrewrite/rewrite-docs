@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Long#parseUnsignedLong(String) over third-party or more verbose alternatives"
+sidebar_label: "Refaster template PrimitiveRules.LongParseUnsignedLong"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Long#parseUnsignedLong(String)` over third-party or more verbose alternatives
+# Refaster template `PrimitiveRules.LongParseUnsignedLong`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongParseUnsignedLongRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongParseUnsignedLong {
-    
-    @BeforeTemplate
-    long before(String string) {
-        return Refaster.anyOf(UnsignedLongs.parseUnsignedLong(string), Long.parseUnsignedLong(string, 10));
-    }
-    
-    @AfterTemplate
-    long after(String string) {
-        return Long.parseUnsignedLong(string);
-    }
-}
-```
-.
+_Prefer JDK's `Long#parseUnsignedLong(String)` over third-party or more verbose alternatives_
 
 ## Recipe source
 

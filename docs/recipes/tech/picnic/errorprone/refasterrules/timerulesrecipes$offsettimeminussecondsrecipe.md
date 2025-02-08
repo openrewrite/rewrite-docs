@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetTime#minusSeconds(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetTimeMinusSeconds"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetTime#minusSeconds(long)` over more contrived alternatives
+# Refaster template `TimeRules.OffsetTimeMinusSeconds`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimeMinusSecondsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetTimeMinusSeconds {
-    
-    @BeforeTemplate
-    OffsetTime before(OffsetTime offsetTime, int seconds) {
-        return offsetTime.minus(Duration.ofSeconds(seconds));
-    }
-    
-    @BeforeTemplate
-    OffsetTime before(OffsetTime offsetTime, long seconds) {
-        return offsetTime.minus(seconds, ChronoUnit.SECONDS);
-    }
-    
-    @AfterTemplate
-    OffsetTime after(OffsetTime offsetTime, int seconds) {
-        return offsetTime.minusSeconds(seconds);
-    }
-}
-```
-.
+_Prefer `OffsetTime#minusSeconds(long)` over more contrived alternatives_
 
 ## Recipe source
 

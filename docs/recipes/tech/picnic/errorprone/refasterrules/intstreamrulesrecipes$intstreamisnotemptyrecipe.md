@@ -1,30 +1,15 @@
 ---
-sidebar_label: "In order to test whether a stream has any element, simply try to find one"
+sidebar_label: "Refaster template IntStreamRules.IntStreamIsNotEmpty"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# In order to test whether a stream has any element, simply try to find one
+# Refaster template `IntStreamRules.IntStreamIsNotEmpty`
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamIsNotEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntStreamIsNotEmpty {
-    
-    @BeforeTemplate
-    boolean before(IntStream stream) {
-        return Refaster.anyOf(stream.count() != 0, stream.count() > 0, stream.count() >= 1, stream.findFirst().isPresent());
-    }
-    
-    @AfterTemplate
-    boolean after(IntStream stream) {
-        return stream.findAny().isPresent();
-    }
-}
-```
-.
+_In order to test whether a stream has any element, simply try to find one_
 
 ## Recipe source
 

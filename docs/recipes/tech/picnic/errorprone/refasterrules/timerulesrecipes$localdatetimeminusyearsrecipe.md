@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDateTime#minusYears(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDateTimeMinusYears"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDateTime#minusYears(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalDateTimeMinusYears`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimeMinusYearsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDateTimeMinusYears {
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, int years) {
-        return localDateTime.minus(Period.ofYears(years));
-    }
-    
-    @BeforeTemplate
-    LocalDateTime before(LocalDateTime localDateTime, long years) {
-        return localDateTime.minus(years, ChronoUnit.YEARS);
-    }
-    
-    @AfterTemplate
-    LocalDateTime after(LocalDateTime localDateTime, int years) {
-        return localDateTime.minusYears(years);
-    }
-}
-```
-.
+_Prefer `LocalDateTime#minusYears(long)` over more contrived alternatives_
 
 ## Recipe source
 

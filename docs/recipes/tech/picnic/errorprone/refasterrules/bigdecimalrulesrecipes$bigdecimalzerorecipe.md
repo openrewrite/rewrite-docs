@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer using the constant BigDecimal#ZERO when possible"
+sidebar_label: "Refaster template BigDecimalRules.BigDecimalZero"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using the constant `BigDecimal#ZERO` when possible
+# Refaster template `BigDecimalRules.BigDecimalZero`
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalZeroRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BigDecimalZero {
-    
-    @BeforeTemplate
-    BigDecimal before() {
-        return Refaster.anyOf(BigDecimal.valueOf(0), new BigDecimal("0"));
-    }
-    
-    @AfterTemplate
-    BigDecimal after() {
-        return BigDecimal.ZERO;
-    }
-}
-```
-.
+_Prefer using the constant `BigDecimal#ZERO` when possible_
 
 ## Recipe source
 

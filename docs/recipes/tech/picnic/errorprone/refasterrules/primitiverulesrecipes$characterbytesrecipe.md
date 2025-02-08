@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Character#BYTES over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.CharacterBytes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Character#BYTES` over the Guava alternative
+# Refaster template `PrimitiveRules.CharacterBytes`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class CharacterBytes {
-    
-    @BeforeTemplate
-    int before() {
-        return Chars.BYTES;
-    }
-    
-    @AfterTemplate
-    int after() {
-        return Character.BYTES;
-    }
-}
-```
-.
+_Prefer `Character#BYTES` over the Guava alternative_
 
 ## Recipe source
 

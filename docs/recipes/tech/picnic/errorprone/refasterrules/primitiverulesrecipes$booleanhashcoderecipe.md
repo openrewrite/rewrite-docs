@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Boolean#hashCode(boolean) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.BooleanHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Boolean#hashCode(boolean)` over the Guava alternative
+# Refaster template `PrimitiveRules.BooleanHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$BooleanHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BooleanHashCode {
-    
-    @BeforeTemplate
-    int before(boolean b) {
-        return Booleans.hashCode(b);
-    }
-    
-    @AfterTemplate
-    int after(boolean b) {
-        return Boolean.hashCode(b);
-    }
-}
-```
-.
+_Prefer `Boolean#hashCode(boolean)` over the Guava alternative_
 
 ## Recipe source
 

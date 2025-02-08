@@ -70,7 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Math#subtractExact`](../../../java/migrate/guava/prefermathsubtractexact)
 * [Prefer `Math#multiplyExact`](../../../java/migrate/guava/prefermathmultiplyexact)
 * [Prefer `new AtomicReference<>()`](../../../java/migrate/guava/noguavaatomicsnewreference)
-* [Refaster rules related to expressions dealing with `InputStream`s](../../../tech/picnic/errorprone/refasterrules/inputstreamrulesrecipes)
+* [`InputStreamRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/inputstreamrulesrecipes)
 
 </TabItem>
 

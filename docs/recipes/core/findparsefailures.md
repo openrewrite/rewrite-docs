@@ -23,6 +23,7 @@ _This recipe explores parse failures after an LST is produced for classifying th
 | `Integer` | maxSnippetLength | *Optional*. When the failure occurs on a granular tree element, its source code will be included as a column in the data table up to this maximum snippet length. |  |
 | `String` | parserType | *Optional*. Only display failures from parsers with this simple name. | `YamlParser` |
 | `String` | stackTrace | *Optional*. Only mark stack traces with a message containing this text. | `RuntimeException` |
+| `String` | createdAfter | *Optional*. Only report on source files that were created after this date. | `2025-01-01` |
 
 ## License
 

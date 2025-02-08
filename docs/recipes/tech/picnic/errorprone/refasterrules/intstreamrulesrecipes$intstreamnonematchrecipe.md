@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer IntStream#noneMatch(IntPredicate) over more contrived alternatives"
+sidebar_label: "Refaster template IntStreamRules.IntStreamNoneMatch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `IntStream#noneMatch(IntPredicate)` over more contrived alternatives
+# Refaster template `IntStreamRules.IntStreamNoneMatch`
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamNoneMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntStreamNoneMatch {
-    
-    @BeforeTemplate
-    boolean before(IntStream stream, IntPredicate predicate) {
-        return Refaster.anyOf(!stream.anyMatch(predicate), stream.allMatch(predicate.negate()), stream.filter(predicate).findAny().isEmpty());
-    }
-    
-    @AfterTemplate
-    boolean after(IntStream stream, IntPredicate predicate) {
-        return stream.noneMatch(predicate);
-    }
-}
-```
-.
+_Prefer `IntStream#noneMatch(IntPredicate)` over more contrived alternatives_
 
 ## Recipe source
 

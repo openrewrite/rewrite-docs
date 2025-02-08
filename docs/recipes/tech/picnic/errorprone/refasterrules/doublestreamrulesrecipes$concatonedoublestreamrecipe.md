@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Don't unnecessarily call Streams#concat(DoubleStream...)"
+sidebar_label: "Refaster template DoubleStreamRules.ConcatOneDoubleStream"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't unnecessarily call `Streams#concat(DoubleStream...)`
+# Refaster template `DoubleStreamRules.ConcatOneDoubleStream`
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatOneDoubleStreamRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ConcatOneDoubleStream {
-    
-    @BeforeTemplate
-    DoubleStream before(DoubleStream stream) {
-        return Streams.concat(stream);
-    }
-    
-    @AfterTemplate
-    @CanIgnoreReturnValue
-    DoubleStream after(DoubleStream stream) {
-        return stream;
-    }
-}
-```
-.
+_Don't unnecessarily call `Streams#concat(DoubleStream...)`_
 
 ## Recipe source
 

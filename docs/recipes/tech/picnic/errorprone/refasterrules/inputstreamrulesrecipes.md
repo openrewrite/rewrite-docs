@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with InputStreams"
+sidebar_label: "InputStreamRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `InputStream`s
+# `InputStreamRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.InputStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/InputStreamRules)._
+_Refaster rules related to expressions dealing with `InputStream`s [Source](https://error-prone.picnic.tech/refasterrules/InputStreamRules)._
 
 ## Recipe source
 
@@ -41,8 +41,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes
-displayName: Refaster rules related to expressions dealing with `InputStream`s
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.InputStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/InputStreamRules).
+displayName: `InputStreamRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `InputStream`s [Source](https://error-prone.picnic.tech/refasterrules/InputStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamTransferToRecipe
   - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamReadAllBytesRecipe

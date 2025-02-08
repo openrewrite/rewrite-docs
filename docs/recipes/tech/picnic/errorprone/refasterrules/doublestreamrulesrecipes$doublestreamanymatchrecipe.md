@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer DoubleStream#anyMatch(DoublePredicate) over more contrived alternatives"
+sidebar_label: "Refaster template DoubleStreamRules.DoubleStreamAnyMatch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `DoubleStream#anyMatch(DoublePredicate)` over more contrived alternatives
+# Refaster template `DoubleStreamRules.DoubleStreamAnyMatch`
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAnyMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleStreamAnyMatch {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4034")
-    boolean before(DoubleStream stream, DoublePredicate predicate) {
-        return Refaster.anyOf(!stream.noneMatch(predicate), stream.filter(predicate).findAny().isPresent());
-    }
-    
-    @AfterTemplate
-    boolean after(DoubleStream stream, DoublePredicate predicate) {
-        return stream.anyMatch(predicate);
-    }
-}
-```
-.
+_Prefer `DoubleStream#anyMatch(DoublePredicate)` over more contrived alternatives_
 
 ## Recipe source
 

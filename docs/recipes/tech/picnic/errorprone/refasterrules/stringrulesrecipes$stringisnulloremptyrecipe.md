@@ -1,32 +1,15 @@
 ---
-sidebar_label: "Prefer Strings#isNullOrEmpty(String) over the more verbose alternative"
+sidebar_label: "Refaster template StringRules.StringIsNullOrEmpty"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Strings#isNullOrEmpty(String)` over the more verbose alternative
+# Refaster template `StringRules.StringIsNullOrEmpty`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNullOrEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StringIsNullOrEmpty {
-    
-    @BeforeTemplate
-    boolean before(@Nullable
-    String str) {
-        return str == null || str.isEmpty();
-    }
-    
-    @AfterTemplate
-    @AlsoNegation
-    boolean after(String str) {
-        return Strings.isNullOrEmpty(str);
-    }
-}
-```
-.
+_Prefer `Strings#isNullOrEmpty(String)` over the more verbose alternative_
 
 ## Recipe source
 

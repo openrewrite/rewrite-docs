@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Math#toIntExact(long) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.LongToIntExact"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Math#toIntExact(long)` over the Guava alternative
+# Refaster template `PrimitiveRules.LongToIntExact`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToIntExactRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongToIntExact {
-    
-    @BeforeTemplate
-    int before(long l) {
-        return Ints.checkedCast(l);
-    }
-    
-    @AfterTemplate
-    int after(long l) {
-        return Math.toIntExact(l);
-    }
-}
-```
-.
+_Prefer `Math#toIntExact(long)` over the Guava alternative_
 
 ## Recipe source
 

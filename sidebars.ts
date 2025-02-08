@@ -162,6 +162,7 @@ const sidebars: SidebarsConfig = {
         keywords: ['changelog'],
       },
       items: [
+        'changelog/8-45-0-Release',
         'changelog/8-44-1-Release',
         'changelog/8-43-0-Release',
         'changelog/8-42-0-Release',

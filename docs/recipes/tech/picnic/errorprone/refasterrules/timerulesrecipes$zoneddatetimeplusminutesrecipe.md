@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#plusMinutes(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimePlusMinutes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#plusMinutes(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimePlusMinutes`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusMinutesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimePlusMinutes {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int minutes) {
-        return zonedDateTime.plus(Duration.ofMinutes(minutes));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long minutes) {
-        return zonedDateTime.plus(minutes, ChronoUnit.MINUTES);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int minutes) {
-        return zonedDateTime.plusMinutes(minutes);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#plusMinutes(long)` over more contrived alternatives_
 
 ## Recipe source
 

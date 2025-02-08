@@ -1,30 +1,18 @@
 ---
-sidebar_label: "Prefer SuggestedFix#replace(Tree, String)} over more contrived alternatives"
+sidebar_label: "Refaster template SuggestedFixRules.SuggestedFixReplaceTree"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `SuggestedFix#replace(Tree, String)`} over more contrived alternatives
+# Refaster template `SuggestedFixRules.SuggestedFixReplaceTree`
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceTreeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class SuggestedFixReplaceTree {
-    
-    @BeforeTemplate
-    SuggestedFix before(Tree tree, String replaceWith) {
-        return SuggestedFix.builder().replace(tree, replaceWith).build();
-    }
-    
-    @AfterTemplate
-    SuggestedFix after(Tree tree, String replaceWith) {
-        return SuggestedFix.replace(tree, replaceWith);
-    }
-}
 ```
-.
+Prefer `SuggestedFix#replace(Tree, String)`} over more contrived alternatives
+```
+
 
 ## Recipe source
 

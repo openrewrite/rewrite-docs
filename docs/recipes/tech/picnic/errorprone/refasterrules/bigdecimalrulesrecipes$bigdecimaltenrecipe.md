@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer using the constant BigDecimal#TEN when possible"
+sidebar_label: "Refaster template BigDecimalRules.BigDecimalTen"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using the constant `BigDecimal#TEN` when possible
+# Refaster template `BigDecimalRules.BigDecimalTen`
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalTenRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BigDecimalTen {
-    
-    @BeforeTemplate
-    BigDecimal before() {
-        return Refaster.anyOf(BigDecimal.valueOf(10), new BigDecimal("10"));
-    }
-    
-    @AfterTemplate
-    BigDecimal after() {
-        return BigDecimal.TEN;
-    }
-}
-```
-.
+_Prefer using the constant `BigDecimal#TEN` when possible_
 
 ## Recipe source
 

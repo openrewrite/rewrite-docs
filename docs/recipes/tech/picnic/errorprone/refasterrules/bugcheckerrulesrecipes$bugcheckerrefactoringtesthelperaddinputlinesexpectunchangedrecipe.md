@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer BugCheckerRefactoringTestHelper.ExpectOutput#expectUnchanged() over repeating the input"
+sidebar_label: "Refaster template BugCheckerRules.BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `BugCheckerRefactoringTestHelper.ExpectOutput#expectUnchanged()` over repeating the input
+# Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged`
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperAddInputLinesExpectUnchangedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged {
-    
-    @BeforeTemplate
-    BugCheckerRefactoringTestHelper before(BugCheckerRefactoringTestHelper helper, String path, String source) {
-        return helper.addInputLines(path, source).addOutputLines(path, source);
-    }
-    
-    @AfterTemplate
-    BugCheckerRefactoringTestHelper after(BugCheckerRefactoringTestHelper helper, String path, String source) {
-        return helper.addInputLines(path, source).expectUnchanged();
-    }
-}
-```
-.
+_Prefer `BugCheckerRefactoringTestHelper.ExpectOutput#expectUnchanged()` over repeating the input_
 
 ## Recipe source
 

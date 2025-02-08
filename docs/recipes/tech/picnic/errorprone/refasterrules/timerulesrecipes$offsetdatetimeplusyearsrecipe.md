@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetDateTime#plusYears(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetDateTimePlusYears"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetDateTime#plusYears(long)` over more contrived alternatives
+# Refaster template `TimeRules.OffsetDateTimePlusYears`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimePlusYearsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetDateTimePlusYears {
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, int years) {
-        return offsetDateTime.plus(Period.ofYears(years));
-    }
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, long years) {
-        return offsetDateTime.plus(years, ChronoUnit.YEARS);
-    }
-    
-    @AfterTemplate
-    OffsetDateTime after(OffsetDateTime offsetDateTime, int years) {
-        return offsetDateTime.plusYears(years);
-    }
-}
-```
-.
+_Prefer `OffsetDateTime#plusYears(long)` over more contrived alternatives_
 
 ## Recipe source
 

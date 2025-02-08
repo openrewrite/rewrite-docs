@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Clock#instant() over Instant#now(Clock), as it is more concise and more \"OOP-py\""
+sidebar_label: "Refaster template TimeRules.ClockInstant"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Clock#instant()` over `Instant#now(Clock)`, as it is more concise and more "OOP-py"
+# Refaster template `TimeRules.ClockInstant`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ClockInstantRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ClockInstant {
-    
-    @BeforeTemplate
-    Instant before(Clock clock) {
-        return Instant.now(clock);
-    }
-    
-    @AfterTemplate
-    Instant after(Clock clock) {
-        return clock.instant();
-    }
-}
-```
-.
+_Prefer `Clock#instant()` over `Instant#now(Clock)`, as it is more concise and more "OOP-py"_
 
 ## Recipe source
 

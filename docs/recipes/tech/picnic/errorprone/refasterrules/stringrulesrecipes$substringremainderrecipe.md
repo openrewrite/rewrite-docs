@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Don't unnecessarily use the two-argument String#substring(int, int)"
+sidebar_label: "Refaster template StringRules.SubstringRemainder"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't unnecessarily use the two-argument `String#substring(int, int)`
+# Refaster template `StringRules.SubstringRemainder`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$SubstringRemainderRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class SubstringRemainder {
-    
-    @BeforeTemplate
-    String before(String str, int index) {
-        return str.substring(index, str.length());
-    }
-    
-    @AfterTemplate
-    String after(String str, int index) {
-        return str.substring(index);
-    }
-}
-```
-.
+_Don't unnecessarily use the two-argument `String#substring(int, int)`_
 
 ## Recipe source
 

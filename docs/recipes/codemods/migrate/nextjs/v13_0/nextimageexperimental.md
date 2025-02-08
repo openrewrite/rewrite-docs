@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.nextjs.v13\_0.NextImageExperimental**
 
-_Dangerously migrates from `next/legacy/image` to the new `next/image` by adding inline styles and removing unused props. - Removes `layout` prop and adds `style`. - Removes `objectFit` prop and adds `style`. - Removes `objectPosition` prop and adds `style`. - Removes `lazyBoundary` prop. - Removes `lazyRoot` prop. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#next-image-experimental)   for more information._
+_Dangerously migrates from `next/legacy/image` to the new `next/image` by adding inline styles and removing unused props._
 
 ### Tags
 

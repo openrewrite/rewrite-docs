@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Duration#isZero() over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.DurationIsZero"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Duration#isZero()` over more contrived alternatives
+# Refaster template `TimeRules.DurationIsZero`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationIsZeroRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DurationIsZero {
-    
-    @BeforeTemplate
-    boolean before(Duration duration) {
-        return Refaster.anyOf(duration.equals(Duration.ZERO), Duration.ZERO.equals(duration));
-    }
-    
-    @AfterTemplate
-    boolean after(Duration duration) {
-        return duration.isZero();
-    }
-}
-```
-.
+_Prefer `Duration#isZero()` over more contrived alternatives_
 
 ## Recipe source
 

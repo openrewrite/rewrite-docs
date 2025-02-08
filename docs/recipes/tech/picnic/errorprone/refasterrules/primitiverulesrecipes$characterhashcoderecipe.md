@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Character#hashCode(char) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.CharacterHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Character#hashCode(char)` over the Guava alternative
+# Refaster template `PrimitiveRules.CharacterHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class CharacterHashCode {
-    
-    @BeforeTemplate
-    int before(char c) {
-        return Chars.hashCode(c);
-    }
-    
-    @AfterTemplate
-    int after(char c) {
-        return Character.hashCode(c);
-    }
-}
-```
-.
+_Prefer `Character#hashCode(char)` over the Guava alternative_
 
 ## Recipe source
 

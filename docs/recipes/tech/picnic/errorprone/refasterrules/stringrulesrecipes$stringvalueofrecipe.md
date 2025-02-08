@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer direct invocation of String#valueOf(Object) over the indirection introduced by Objects#toString(Object)"
+sidebar_label: "Refaster template StringRules.StringValueOf"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer direct invocation of `String#valueOf(Object)` over the indirection introduced by `Objects#toString(Object)`
+# Refaster template `StringRules.StringValueOf`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StringValueOf {
-    
-    @BeforeTemplate
-    String before(Object object) {
-        return Objects.toString(object);
-    }
-    
-    @AfterTemplate
-    String after(Object object) {
-        return String.valueOf(object);
-    }
-}
-```
-.
+_Prefer direct invocation of `String#valueOf(Object)` over the indirection introduced by `Objects#toString(Object)`_
 
 ## Recipe source
 

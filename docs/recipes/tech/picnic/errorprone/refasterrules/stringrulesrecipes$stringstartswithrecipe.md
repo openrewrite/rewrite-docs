@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer String#startsWith(String, int) over less efficient alternatives"
+sidebar_label: "Refaster template StringRules.StringStartsWith"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#startsWith(String, int)` over less efficient alternatives
+# Refaster template `StringRules.StringStartsWith`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringStartsWithRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StringStartsWith {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4635")
-    boolean before(String string, String prefix, int fromIndex) {
-        return string.substring(fromIndex).startsWith(prefix);
-    }
-    
-    @AfterTemplate
-    boolean after(String string, String prefix, int fromIndex) {
-        return string.startsWith(prefix, fromIndex);
-    }
-}
-```
-.
+_Prefer `String#startsWith(String, int)` over less efficient alternatives_
 
 ## Recipe source
 

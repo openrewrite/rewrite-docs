@@ -189,4 +189,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Greg Oledzki](mailto:greg.oledzki@moderne.io)

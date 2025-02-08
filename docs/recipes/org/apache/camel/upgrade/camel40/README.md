@@ -3,6 +3,7 @@
 ## Categories
 
 * [Java](/recipes/org/apache/camel/upgrade/camel40/java)
+* [Properties](/recipes/org/apache/camel/upgrade/camel40/properties)
 * [Xml](/recipes/org/apache/camel/upgrade/camel40/xml)
 * [Yaml](/recipes/org/apache/camel/upgrade/camel40/yaml)
 

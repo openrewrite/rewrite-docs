@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer String#indexOf(int, int) over less efficient alternatives"
+sidebar_label: "Refaster template StringRules.StringIndexOfChar"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#indexOf(int, int)` over less efficient alternatives
+# Refaster template `StringRules.StringIndexOfChar`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StringIndexOfChar {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4635")
-    int before(String string, int ch, int fromIndex) {
-        return string.substring(fromIndex).indexOf(ch);
-    }
-    
-    @AfterTemplate
-    int after(String string, int ch, int fromIndex) {
-        return Math.max(-1, string.indexOf(ch, fromIndex) - fromIndex);
-    }
-}
-```
-.
+_Prefer `String#indexOf(int, int)` over less efficient alternatives_
 
 ## Recipe source
 

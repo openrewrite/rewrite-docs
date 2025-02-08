@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with (possibly) null values"
+sidebar_label: "NullRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with (possibly) null values
+# `NullRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.NullRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.NullRules`. [Source](https://error-prone.picnic.tech/refasterrules/NullRules)._
+_Refaster rules related to expressions dealing with (possibly) null values [Source](https://error-prone.picnic.tech/refasterrules/NullRules)._
 
 ## Recipe source
 
@@ -28,8 +28,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer the `==` operator (with `null` as the second operand) over `Objects#isNull(Object)`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$isnullrecipe)
-* [Prefer the `!=` operator (with `null` as the second operand) over `Objects#nonNull(Object)`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$isnotnullrecipe)
+* [Refaster template `NullRules.IsNull`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$isnullrecipe)
+* [Refaster template `NullRules.IsNotNull`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$isnotnullrecipe)
 
 </TabItem>
 
@@ -39,8 +39,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.NullRulesRecipes
-displayName: Refaster rules related to expressions dealing with (possibly) null values
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.NullRules`. [Source](https://error-prone.picnic.tech/refasterrules/NullRules).
+displayName: `NullRules` Refaster recipes
+description: Refaster rules related to expressions dealing with (possibly) null values [Source](https://error-prone.picnic.tech/refasterrules/NullRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullRecipe
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe

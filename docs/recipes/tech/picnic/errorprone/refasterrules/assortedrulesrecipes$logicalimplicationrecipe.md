@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Don't unnecessarily repeat boolean expressions"
+sidebar_label: "Refaster template AssortedRules.LogicalImplication"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't unnecessarily repeat boolean expressions
+# Refaster template `AssortedRules.LogicalImplication`
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LogicalImplication {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S2589")
-    boolean before(boolean firstTest, boolean secondTest) {
-        return firstTest || (!firstTest && secondTest);
-    }
-    
-    @AfterTemplate
-    boolean after(boolean firstTest, boolean secondTest) {
-        return firstTest || secondTest;
-    }
-}
-```
-.
+_Don't unnecessarily repeat boolean expressions_
 
 ## Recipe source
 

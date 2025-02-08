@@ -1,34 +1,19 @@
 ---
-sidebar_label: "Prefer using the Constants API over more verbose alternatives"
+sidebar_label: "Refaster template ReactorRules.StepVerifierVerifyDuration"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using the `Constants` API over more verbose alternatives
+# Refaster template `ReactorRules.StepVerifierVerifyDuration`
 
-**tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe**
+**tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ConstantsFormat {
-    
-    @BeforeTemplate
-    String before(String value) {
-        return String.format("\"%s\"", Convert.quote(value));
-    }
-    
-    @AfterTemplate
-    String after(String value) {
-        return Constants.format(value);
-    }
-}
-```
-.
+_Prefer `StepVerifier#verify(Duration)` over a dangling `StepVerifier#verifyThenAssertThat(Duration)`_
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
@@ -50,7 +35,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe")
+    activeRecipe("tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe")
     setExportDatatables(true)
 }
 
@@ -83,7 +68,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe")
+        activeRecipe("tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -118,7 +103,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -141,7 +126,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -149,7 +134,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe BugCheckerRulesRecipes$ConstantsFormatRecipe
+mod run . --recipe ReactorRulesRecipes$StepVerifierVerifyDurationRecipe
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -163,7 +148,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

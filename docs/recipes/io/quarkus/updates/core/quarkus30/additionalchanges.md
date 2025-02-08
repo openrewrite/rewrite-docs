@@ -58,6 +58,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * oldGroupId: `io.quarkus`
   * oldArtifactId: `quarkus-bootstrap-maven-plugin`
   * newGroupId: `io.quarkus`
+  * newArtifactId: `quarkus-extension-maven-plugin`
 
 </TabItem>
 
@@ -101,6 +102,7 @@ recipeList:
       oldGroupId: io.quarkus
       oldArtifactId: quarkus-bootstrap-maven-plugin
       newGroupId: io.quarkus
+      newArtifactId: quarkus-extension-maven-plugin
 
 ```
 </TabItem>

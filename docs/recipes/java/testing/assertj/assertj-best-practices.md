@@ -51,7 +51,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJLongRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes)
 * [`AssertJNumberRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes)
 * [`AssertJPrimitiveRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes)
-* [Refaster rules related to AssertJ expressions and statements](../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes)
+* [`AssertJRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes)
 * [`AssertJShortRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjshortrulesrecipes)
 * [`AssertJStringRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes)
 * [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes)

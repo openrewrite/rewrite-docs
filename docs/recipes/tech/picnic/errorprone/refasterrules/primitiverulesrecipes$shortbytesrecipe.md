@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Short#BYTES over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.ShortBytes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Short#BYTES` over the Guava alternative
+# Refaster template `PrimitiveRules.ShortBytes`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ShortBytes {
-    
-    @BeforeTemplate
-    int before() {
-        return Shorts.BYTES;
-    }
-    
-    @AfterTemplate
-    int after() {
-        return Short.BYTES;
-    }
-}
-```
-.
+_Prefer `Short#BYTES` over the Guava alternative_
 
 ## Recipe source
 

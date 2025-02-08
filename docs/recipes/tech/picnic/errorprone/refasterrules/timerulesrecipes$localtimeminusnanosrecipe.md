@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalTime#minusNanos(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.LocalTimeMinusNanos"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalTime#minusNanos(long)` over more contrived alternatives
+# Refaster template `TimeRules.LocalTimeMinusNanos`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinusNanosRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalTimeMinusNanos {
-    
-    @BeforeTemplate
-    LocalTime before(LocalTime localTime, int nanos) {
-        return localTime.minus(Duration.ofNanos(nanos));
-    }
-    
-    @BeforeTemplate
-    LocalTime before(LocalTime localTime, long nanos) {
-        return localTime.minus(nanos, ChronoUnit.NANOS);
-    }
-    
-    @AfterTemplate
-    LocalTime after(LocalTime localTime, int nanos) {
-        return localTime.minusNanos(nanos);
-    }
-}
-```
-.
+_Prefer `LocalTime#minusNanos(long)` over more contrived alternatives_
 
 ## Recipe source
 

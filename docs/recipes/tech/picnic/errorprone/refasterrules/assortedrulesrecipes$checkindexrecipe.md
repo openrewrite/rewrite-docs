@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer Objects#checkIndex(int, int) over the Guava alternative"
+sidebar_label: "Refaster template AssortedRules.CheckIndex"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Objects#checkIndex(int, int)` over the Guava alternative
+# Refaster template `AssortedRules.CheckIndex`
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class CheckIndex {
-    
-    @BeforeTemplate
-    int before(int index, int size) {
-        return checkElementIndex(index, size);
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    int after(int index, int size) {
-        return checkIndex(index, size);
-    }
-}
-```
-.
+_Prefer `Objects#checkIndex(int, int)` over the Guava alternative_
 
 ## Recipe source
 

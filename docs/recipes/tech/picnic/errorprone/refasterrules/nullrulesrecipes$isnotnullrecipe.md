@@ -1,32 +1,15 @@
 ---
-sidebar_label: "Prefer the != operator (with null as the second operand) over Objects#nonNull(Object)"
+sidebar_label: "Refaster template NullRules.IsNotNull"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the `!=` operator (with `null` as the second operand) over `Objects#nonNull(Object)`
+# Refaster template `NullRules.IsNotNull`
 
 **tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IsNotNull {
-    
-    @BeforeTemplate
-    boolean before(@Nullable
-    Object object) {
-        return Refaster.anyOf(null != object, Objects.nonNull(object));
-    }
-    
-    @AfterTemplate
-    boolean after(@Nullable
-    Object object) {
-        return object != null;
-    }
-}
-```
-.
+_Prefer the `!=` operator (with `null` as the second operand) over `Objects#nonNull(Object)`_
 
 ## Recipe source
 

@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Apply DoubleStream#filter(DoublePredicate) before DoubleStream#sorted() to reduce the number of elements to sort"
+sidebar_label: "Refaster template DoubleStreamRules.DoubleStreamFilterSorted"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Apply `DoubleStream#filter(DoublePredicate)` before `DoubleStream#sorted()` to reduce the number of elements to sort
+# Refaster template `DoubleStreamRules.DoubleStreamFilterSorted`
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamFilterSortedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleStreamFilterSorted {
-    
-    @BeforeTemplate
-    DoubleStream before(DoubleStream stream, DoublePredicate predicate) {
-        return stream.sorted().filter(predicate);
-    }
-    
-    @AfterTemplate
-    DoubleStream after(DoubleStream stream, DoublePredicate predicate) {
-        return stream.filter(predicate).sorted();
-    }
-}
-```
-.
+_Apply `DoubleStream#filter(DoublePredicate)` before `DoubleStream#sorted()` to reduce the number of elements to sort_
 
 ## Recipe source
 

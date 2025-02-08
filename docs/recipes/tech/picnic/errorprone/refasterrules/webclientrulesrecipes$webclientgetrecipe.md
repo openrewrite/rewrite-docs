@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer WebClient#get() over WebClient#method(HttpMethod) with HttpMethod#GET"
+sidebar_label: "Refaster template WebClientRules.WebClientGet"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `WebClient#get()` over `WebClient#method(HttpMethod)` with `HttpMethod#GET`
+# Refaster template `WebClientRules.WebClientGet`
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientGetRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class WebClientGet {
-    
-    @BeforeTemplate
-    RequestHeadersSpec<?> before(WebClient webClient) {
-        return webClient.method(GET);
-    }
-    
-    @BeforeTemplate
-    WebTestClient.RequestHeadersSpec<?> before(WebTestClient webClient) {
-        return webClient.method(GET);
-    }
-    
-    @AfterTemplate
-    RequestHeadersSpec<?> after(WebClient webClient) {
-        return webClient.get();
-    }
-}
-```
-.
+_Prefer `WebClient#get()` over `WebClient#method(HttpMethod)` with `HttpMethod#GET`_
 
 ## Recipe source
 

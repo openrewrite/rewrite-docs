@@ -25,6 +25,7 @@ _Merge a YAML snippet with an existing YAML document._
 | `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |  |
 | `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. | `name` |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
+| `String` | insertBefore | *Optional*. Choose an insertion point when multiple mappings exist. Takes the `key` JsonPath into account. | `some-key` |
 
 ## License
 
@@ -47,6 +48,7 @@ recipeList:
   label-one: "value-one"'
       objectIdentifyingProperty: name
       filePattern: .github/workflows/*.yml
+      insertBefore: some-key
 ```
 
 Now that `com.yourorg.MergeYamlExample` has been defined, activate it in your build file:
@@ -101,7 +103,7 @@ repositories {
 
           ```shell title="shell"
           mod run . --recipe MergeYaml --recipe-option "key=$.metadata" --recipe-option "yaml='labels:
-label-one: "value-one"'" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml"
+label-one: "value-one"'" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml" --recipe-option "insertBefore=some-key"
           ```
 
           If the recipe is not available locally, then you can install it using:
@@ -166,4 +168,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jon Brisbin](mailto:jon@jbrisbin.com), [Knut Wannheden](mailto:knut@moderne.io), Dmitry Belyaev, adastraperangusta, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aaron Gershman
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jon Brisbin](mailto:jon@jbrisbin.com), [Knut Wannheden](mailto:knut@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Dmitry Belyaev, adastraperangusta, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aaron Gershman

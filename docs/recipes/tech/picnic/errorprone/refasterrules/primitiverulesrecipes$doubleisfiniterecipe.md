@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Double#isFinite(double) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.DoubleIsFinite"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Double#isFinite(double)` over the Guava alternative
+# Refaster template `PrimitiveRules.DoubleIsFinite`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleIsFiniteRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleIsFinite {
-    
-    @BeforeTemplate
-    boolean before(double d) {
-        return Doubles.isFinite(d);
-    }
-    
-    @AfterTemplate
-    boolean after(double d) {
-        return Double.isFinite(d);
-    }
-}
-```
-.
+_Prefer `Double#isFinite(double)` over the Guava alternative_
 
 ## Recipe source
 

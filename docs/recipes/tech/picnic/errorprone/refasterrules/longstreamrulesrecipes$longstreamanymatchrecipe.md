@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer LongStream#anyMatch(LongPredicate) over more contrived alternatives"
+sidebar_label: "Refaster template LongStreamRules.LongStreamAnyMatch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LongStream#anyMatch(LongPredicate)` over more contrived alternatives
+# Refaster template `LongStreamRules.LongStreamAnyMatch`
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamAnyMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongStreamAnyMatch {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4034")
-    boolean before(LongStream stream, LongPredicate predicate) {
-        return Refaster.anyOf(!stream.noneMatch(predicate), stream.filter(predicate).findAny().isPresent());
-    }
-    
-    @AfterTemplate
-    boolean after(LongStream stream, LongPredicate predicate) {
-        return stream.anyMatch(predicate);
-    }
-}
-```
-.
+_Prefer `LongStream#anyMatch(LongPredicate)` over more contrived alternatives_
 
 ## Recipe source
 

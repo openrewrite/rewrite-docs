@@ -1,32 +1,15 @@
 ---
-sidebar_label: "Use Clock#systemUTC() when possible"
+sidebar_label: "Refaster template TimeRules.UtcClock"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `Clock#systemUTC()` when possible
+# Refaster template `TimeRules.UtcClock`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcClockRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class UtcClock {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "TimeZoneUsage")
-    Clock before() {
-        return Clock.system(UTC);
-    }
-    
-    @AfterTemplate
-    @SuppressWarnings(value = "TimeZoneUsage")
-    Clock after() {
-        return Clock.systemUTC();
-    }
-}
-```
-.
+_Use `Clock#systemUTC()` when possible_
 
 ## Recipe source
 

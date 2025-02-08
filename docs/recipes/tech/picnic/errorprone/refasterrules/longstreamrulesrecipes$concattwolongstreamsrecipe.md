@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer LongStream#concat(LongStream, LongStream) over the Guava alternative"
+sidebar_label: "Refaster template LongStreamRules.ConcatTwoLongStreams"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LongStream#concat(LongStream, LongStream)` over the Guava alternative
+# Refaster template `LongStreamRules.ConcatTwoLongStreams`
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$ConcatTwoLongStreamsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ConcatTwoLongStreams {
-    
-    @BeforeTemplate
-    LongStream before(LongStream s1, LongStream s2) {
-        return Streams.concat(s1, s2);
-    }
-    
-    @AfterTemplate
-    LongStream after(LongStream s1, LongStream s2) {
-        return LongStream.concat(s1, s2);
-    }
-}
-```
-.
+_Prefer `LongStream#concat(LongStream, LongStream)` over the Guava alternative_
 
 ## Recipe source
 

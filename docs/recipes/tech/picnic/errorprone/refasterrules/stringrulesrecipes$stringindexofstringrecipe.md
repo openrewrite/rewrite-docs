@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Prefer String#indexOf(String, int) over less efficient alternatives"
+sidebar_label: "Refaster template StringRules.StringIndexOfString"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#indexOf(String, int)` over less efficient alternatives
+# Refaster template `StringRules.StringIndexOfString`
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StringIndexOfString {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4635")
-    int before(String string, String substring, int fromIndex) {
-        return string.substring(fromIndex).indexOf(substring);
-    }
-    
-    @AfterTemplate
-    int after(String string, String substring, int fromIndex) {
-        return Math.max(-1, string.indexOf(substring, fromIndex) - fromIndex);
-    }
-}
-```
-.
+_Prefer `String#indexOf(String, int)` over less efficient alternatives_
 
 ## Recipe source
 

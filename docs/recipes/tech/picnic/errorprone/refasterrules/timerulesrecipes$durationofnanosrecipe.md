@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Duration#ofNanos(long) over alternative representations"
+sidebar_label: "Refaster template TimeRules.DurationOfNanos"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Duration#ofNanos(long)` over alternative representations
+# Refaster template `TimeRules.DurationOfNanos`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfNanosRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DurationOfNanos {
-    
-    @BeforeTemplate
-    Duration before(long amount) {
-        return Duration.of(amount, ChronoUnit.NANOS);
-    }
-    
-    @AfterTemplate
-    Duration after(long amount) {
-        return Duration.ofNanos(amount);
-    }
-}
-```
-.
+_Prefer `Duration#ofNanos(long)` over alternative representations_
 
 ## Recipe source
 

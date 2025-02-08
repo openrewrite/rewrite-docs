@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with LongStreams"
+sidebar_label: "LongStreamRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with `LongStream`s
+# `LongStreamRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.LongStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/LongStreamRules)._
+_Refaster rules related to expressions dealing with `LongStream`s [Source](https://error-prone.picnic.tech/refasterrules/LongStreamRules)._
 
 ## Recipe source
 
@@ -28,15 +28,15 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `LongStream#range(long, long)` over the more contrived alternative](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamclosedopenrangerecipe)
-* [Don't unnecessarily call `Streams#concat(LongStream...)`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$concatonelongstreamrecipe)
-* [Prefer `LongStream#concat(LongStream, LongStream)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$concattwolongstreamsrecipe)
-* [Apply `LongStream#filter(LongPredicate)` before `LongStream#sorted()` to reduce the number of elements to sort](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamfiltersortedrecipe)
-* [In order to test whether a stream has any element, simply try to find one](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamisemptyrecipe)
-* [In order to test whether a stream has any element, simply try to find one](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamisnotemptyrecipe)
+* [Refaster template `LongStreamRules.LongStreamClosedOpenRange`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamclosedopenrangerecipe)
+* [Refaster template `LongStreamRules.ConcatOneLongStream`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$concatonelongstreamrecipe)
+* [Refaster template `LongStreamRules.ConcatTwoLongStreams`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$concattwolongstreamsrecipe)
+* [Refaster template `LongStreamRules.LongStreamFilterSorted`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamfiltersortedrecipe)
+* [Refaster template `LongStreamRules.LongStreamIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamisemptyrecipe)
+* [Refaster template `LongStreamRules.LongStreamIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamisnotemptyrecipe)
 * [Refaster template `LongStreamRules.LongStreamMin`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamminrecipe)
-* [Prefer `LongStream#noneMatch(LongPredicate)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamnonematchrecipe)
-* [Prefer `LongStream#anyMatch(LongPredicate)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamanymatchrecipe)
+* [Refaster template `LongStreamRules.LongStreamNoneMatch`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamnonematchrecipe)
+* [Refaster template `LongStreamRules.LongStreamAnyMatch`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamanymatchrecipe)
 * [Refaster template `LongStreamRules.LongStreamAllMatch`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamallmatchrecipe)
 * [Refaster template `LongStreamRules.LongStreamTakeWhile`](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamtakewhilerecipe)
 
@@ -48,8 +48,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes
-displayName: Refaster rules related to expressions dealing with `LongStream`s
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.LongStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/LongStreamRules).
+displayName: `LongStreamRules` Refaster recipes
+description: Refaster rules related to expressions dealing with `LongStream`s [Source](https://error-prone.picnic.tech/refasterrules/LongStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamClosedOpenRangeRecipe
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$ConcatOneLongStreamRecipe

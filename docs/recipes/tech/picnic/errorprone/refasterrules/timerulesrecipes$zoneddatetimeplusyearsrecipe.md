@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#plusYears(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimePlusYears"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#plusYears(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimePlusYears`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusYearsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimePlusYears {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int years) {
-        return zonedDateTime.plus(Period.ofYears(years));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long years) {
-        return zonedDateTime.plus(years, ChronoUnit.YEARS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int years) {
-        return zonedDateTime.plusYears(years);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#plusYears(long)` over more contrived alternatives_
 
 ## Recipe source
 

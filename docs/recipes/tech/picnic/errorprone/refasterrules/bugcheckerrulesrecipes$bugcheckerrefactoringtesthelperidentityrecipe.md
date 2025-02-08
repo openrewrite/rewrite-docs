@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Avoid calling BugCheckerRefactoringTestHelper#setFixChooser(FixChooser) or BugCheckerRefactoringTestHelper#setImportOrder(String) with their respective default values"
+sidebar_label: "Refaster template BugCheckerRules.BugCheckerRefactoringTestHelperIdentity"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid calling `BugCheckerRefactoringTestHelper#setFixChooser(FixChooser)` or `BugCheckerRefactoringTestHelper#setImportOrder(String)` with their respective default values
+# Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperIdentity`
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class BugCheckerRefactoringTestHelperIdentity {
-    
-    @BeforeTemplate
-    BugCheckerRefactoringTestHelper before(BugCheckerRefactoringTestHelper helper) {
-        return Refaster.anyOf(helper.setFixChooser(FixChoosers.FIRST), helper.setImportOrder("static-first"));
-    }
-    
-    @AfterTemplate
-    @CanIgnoreReturnValue
-    BugCheckerRefactoringTestHelper after(BugCheckerRefactoringTestHelper helper) {
-        return helper;
-    }
-}
-```
-.
+_Avoid calling `BugCheckerRefactoringTestHelper#setFixChooser(FixChooser)` or `BugCheckerRefactoringTestHelper#setImportOrder(String)` with their respective default values_
 
 ## Recipe source
 

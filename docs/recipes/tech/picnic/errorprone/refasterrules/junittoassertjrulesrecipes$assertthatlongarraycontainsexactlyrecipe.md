@@ -1,27 +1,27 @@
 ---
-sidebar_label: "Refaster template AssertJStringRules.AssertThatStringIsEmpty"
+sidebar_label: "Refaster template JUnitToAssertJRules.AssertThatLongArrayContainsExactly"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster template `AssertJStringRules.AssertThatStringIsEmpty`
+# Refaster template `JUnitToAssertJRules.AssertThatLongArrayContainsExactly`
 
-**tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe**
+**tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe**
 
 Recipe created for the following Refaster template:
 ```java
-static final class AssertThatStringIsEmpty {
+static final class AssertThatLongArrayContainsExactly {
     
     @BeforeTemplate
-    void before(String string) {
-        assertThat(string.isEmpty()).isTrue();
+    void before(long[] actual, long[] expected) {
+        assertArrayEquals(expected, actual);
     }
     
     @AfterTemplate
     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(String string) {
-        assertThat(string).isEmpty();
+    void after(long[] actual, long[] expected) {
+        assertThat(actual).containsExactly(expected);
     }
 }
 ```
@@ -29,7 +29,7 @@ static final class AssertThatStringIsEmpty {
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
@@ -51,7 +51,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe")
+    activeRecipe("tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe")
     setExportDatatables(true)
 }
 
@@ -84,7 +84,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe")
+        activeRecipe("tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -119,7 +119,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -142,7 +142,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -150,7 +150,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe
+mod run . --recipe JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -164,7 +164,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

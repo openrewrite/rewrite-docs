@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to Reactor expressions and statements"
+sidebar_label: "ReactorRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to Reactor expressions and statements
+# `ReactorRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.ReactorRules`. [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules)._
+_Refaster rules related to Reactor expressions and statements [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules)._
 
 ## Recipe source
 
@@ -28,12 +28,15 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `StepVerifier.LastStep#verifyComplete()` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifycompleterecipe)
-* [Prefer `StepVerifier.LastStep#verifyError()` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorrecipe)
-* [Prefer `StepVerifier.LastStep#verifyErrorMatches(Predicate)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrormatchesrecipe)
-* [Prefer `StepVerifier.LastStep#verifyErrorSatisfies(Consumer)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorsatisfiesrecipe)
-* [Prefer `StepVerifier.LastStep#verifyErrorMessage(String)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrormessagerecipe)
-* [Prefer `StepVerifier.LastStep#verifyTimeout(Duration)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifytimeoutrecipe)
+* [Refaster template `ReactorRules.StepVerifierVerify`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierverifyrecipe)
+* [Refaster template `ReactorRules.StepVerifierVerifyDuration`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierverifydurationrecipe)
+* [Refaster template `ReactorRules.StepVerifierVerifyLater`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierverifylaterrecipe)
+* [Refaster template `ReactorRules.StepVerifierLastStepVerifyComplete`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifycompleterecipe)
+* [Refaster template `ReactorRules.StepVerifierLastStepVerifyError`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorrecipe)
+* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMatches`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrormatchesrecipe)
+* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorSatisfies`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorsatisfiesrecipe)
+* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMessage`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrormessagerecipe)
+* [Refaster template `ReactorRules.StepVerifierLastStepVerifyTimeout`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifytimeoutrecipe)
 
 </TabItem>
 
@@ -43,9 +46,12 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ReactorRulesRecipes
-displayName: Refaster rules related to Reactor expressions and statements
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.ReactorRules`. [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules).
+displayName: `ReactorRules` Refaster recipes
+description: Refaster rules related to Reactor expressions and statements [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules).
 recipeList:
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyLaterRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyCompleteRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorMatchesRecipe

@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#minusMonths(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimeMinusMonths"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#minusMonths(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimeMinusMonths`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusMonthsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimeMinusMonths {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int months) {
-        return zonedDateTime.minus(Period.ofMonths(months));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long months) {
-        return zonedDateTime.minus(months, ChronoUnit.MONTHS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int months) {
-        return zonedDateTime.minusMonths(months);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#minusMonths(long)` over more contrived alternatives_
 
 ## Recipe source
 

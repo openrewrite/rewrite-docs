@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Double#hashCode(double) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.DoubleHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Double#hashCode(double)` over the Guava alternative
+# Refaster template `PrimitiveRules.DoubleHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleHashCode {
-    
-    @BeforeTemplate
-    int before(double d) {
-        return Doubles.hashCode(d);
-    }
-    
-    @AfterTemplate
-    int after(double d) {
-        return Double.hashCode(d);
-    }
-}
-```
-.
+_Prefer `Double#hashCode(double)` over the Guava alternative_
 
 ## Recipe source
 

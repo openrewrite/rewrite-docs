@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Instant#EPOCH over alternative representations"
+sidebar_label: "Refaster template TimeRules.EpochInstant"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Instant#EPOCH` over alternative representations
+# Refaster template `TimeRules.EpochInstant`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$EpochInstantRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class EpochInstant {
-    
-    @BeforeTemplate
-    Instant before() {
-        return Refaster.anyOf(Instant.ofEpochMilli(0), Instant.ofEpochSecond(0), Instant.ofEpochSecond(0, 0));
-    }
-    
-    @AfterTemplate
-    Instant after() {
-        return Instant.EPOCH;
-    }
-}
-```
-.
+_Prefer `Instant#EPOCH` over alternative representations_
 
 ## Recipe source
 

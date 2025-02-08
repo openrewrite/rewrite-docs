@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Apply LongStream#filter(LongPredicate) before LongStream#sorted() to reduce the number of elements to sort"
+sidebar_label: "Refaster template LongStreamRules.LongStreamFilterSorted"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Apply `LongStream#filter(LongPredicate)` before `LongStream#sorted()` to reduce the number of elements to sort
+# Refaster template `LongStreamRules.LongStreamFilterSorted`
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamFilterSortedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongStreamFilterSorted {
-    
-    @BeforeTemplate
-    LongStream before(LongStream stream, LongPredicate predicate) {
-        return stream.sorted().filter(predicate);
-    }
-    
-    @AfterTemplate
-    LongStream after(LongStream stream, LongPredicate predicate) {
-        return stream.filter(predicate).sorted();
-    }
-}
-```
-.
+_Apply `LongStream#filter(LongPredicate)` before `LongStream#sorted()` to reduce the number of elements to sort_
 
 ## Recipe source
 

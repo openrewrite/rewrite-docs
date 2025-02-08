@@ -34,6 +34,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.mockito`
+  * artifactId: `mockito-junit-jupiter`
+  * version: `4.x`
+  * onlyIfUsing: `org.mockito..MockitoJUnit*Runner`
+  * scope: `test`
+  * acceptTransitive: `true`
 * [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](../../../java/testing/mockito/mockitojunitrunnersilenttoextension)
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension)
@@ -55,6 +62,13 @@ tags:
   - testing
   - mockito
 recipeList:
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.mockito
+      artifactId: mockito-junit-jupiter
+      version: 4.x
+      onlyIfUsing: org.mockito..MockitoJUnit*Runner
+      scope: test
+      acceptTransitive: true
   - org.openrewrite.java.testing.mockito.Mockito1to4Migration
   - org.openrewrite.java.testing.mockito.MockitoJUnitRunnerSilentToExtension
   - org.openrewrite.java.testing.junit5.RunnerToExtension:

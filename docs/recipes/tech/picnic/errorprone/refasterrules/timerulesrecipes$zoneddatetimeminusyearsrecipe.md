@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer ZonedDateTime#minusYears(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.ZonedDateTimeMinusYears"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `ZonedDateTime#minusYears(long)` over more contrived alternatives
+# Refaster template `TimeRules.ZonedDateTimeMinusYears`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusYearsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class ZonedDateTimeMinusYears {
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, int years) {
-        return zonedDateTime.minus(Period.ofYears(years));
-    }
-    
-    @BeforeTemplate
-    ZonedDateTime before(ZonedDateTime zonedDateTime, long years) {
-        return zonedDateTime.minus(years, ChronoUnit.YEARS);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(ZonedDateTime zonedDateTime, int years) {
-        return zonedDateTime.minusYears(years);
-    }
-}
-```
-.
+_Prefer `ZonedDateTime#minusYears(long)` over more contrived alternatives_
 
 ## Recipe source
 

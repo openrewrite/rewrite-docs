@@ -1,31 +1,15 @@
 ---
-sidebar_label: "Avoid contrived ways of expressing the \"less than or equal to\" relationship"
+sidebar_label: "Refaster template PrimitiveRules.LessThanOrEqualTo"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid contrived ways of expressing the "less than or equal to" relationship
+# Refaster template `PrimitiveRules.LessThanOrEqualTo`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanOrEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LessThanOrEqualTo {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S1940")
-    boolean before(double a, double b) {
-        return !(a > b);
-    }
-    
-    @AfterTemplate
-    boolean after(double a, double b) {
-        return a <= b;
-    }
-}
-```
-.
+_Avoid contrived ways of expressing the "less than or equal to" relationship_
 
 ## Recipe source
 

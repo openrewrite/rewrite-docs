@@ -1,30 +1,18 @@
 ---
-sidebar_label: "Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) < p ><strong>Warning:</strong> this rewrite rule increases precision!"
+sidebar_label: "Refaster template TimeRules.DurationBetweenInstants"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) &lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; this rewrite rule increases precision!
+# Refaster template `TimeRules.DurationBetweenInstants`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenInstantsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DurationBetweenInstants {
-    
-    @BeforeTemplate
-    Duration before(Instant a, Instant b) {
-        return Duration.ofMillis(b.toEpochMilli() - a.toEpochMilli());
-    }
-    
-    @AfterTemplate
-    Duration after(Instant a, Instant b) {
-        return Duration.between(a, b);
-    }
-}
 ```
-.
+Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) <strong>Warning:</strong> this rewrite rule increases precision!
+```
+
 
 ## Recipe source
 

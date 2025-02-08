@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Double#BYTES over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.DoubleBytes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Double#BYTES` over the Guava alternative
+# Refaster template `PrimitiveRules.DoubleBytes`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleBytes {
-    
-    @BeforeTemplate
-    int before() {
-        return Doubles.BYTES;
-    }
-    
-    @AfterTemplate
-    int after() {
-        return Double.BYTES;
-    }
-}
-```
-.
+_Prefer `Double#BYTES` over the Guava alternative_
 
 ## Recipe source
 

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with files"
+sidebar_label: "FileRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with files
+# `FileRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.FileRules`. [Source](https://error-prone.picnic.tech/refasterrules/FileRules)._
+_Refaster rules related to expressions dealing with files [Source](https://error-prone.picnic.tech/refasterrules/FileRules)._
 
 ## Recipe source
 
@@ -28,10 +28,10 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer the more idiomatic `Path#of(URI)` over `Paths#get(URI)`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$pathofurirecipe)
-* [Avoid redundant conversions from `Path` to `File`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$pathinstancerecipe)
-* [Prefer `Files#readString(Path, Charset)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesreadstringwithcharsetrecipe)
-* [Prefer `Files#readString(Path)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesreadstringrecipe)
+* [Refaster template `FileRules.PathOfUri`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$pathofurirecipe)
+* [Refaster template `FileRules.PathInstance`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$pathinstancerecipe)
+* [Refaster template `FileRules.FilesReadStringWithCharset`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesreadstringwithcharsetrecipe)
+* [Refaster template `FileRules.FilesReadString`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesreadstringrecipe)
 * [Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfiletofilerecipe)
 * [Prefer `Files#createTempFile(Path, String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfileincustomdirectorytofilerecipe)
 
@@ -43,8 +43,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.FileRulesRecipes
-displayName: Refaster rules related to expressions dealing with files
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.FileRules`. [Source](https://error-prone.picnic.tech/refasterrules/FileRules).
+displayName: `FileRules` Refaster recipes
+description: Refaster rules related to expressions dealing with files [Source](https://error-prone.picnic.tech/refasterrules/FileRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfUriRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathInstanceRecipe

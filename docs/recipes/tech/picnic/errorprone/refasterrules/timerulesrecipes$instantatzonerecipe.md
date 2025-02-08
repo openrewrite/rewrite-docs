@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Instant#atZone(ZoneId) over more verbose alternatives"
+sidebar_label: "Refaster template TimeRules.InstantAtZone"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Instant#atZone(ZoneId)` over more verbose alternatives
+# Refaster template `TimeRules.InstantAtZone`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantAtZoneRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class InstantAtZone {
-    
-    @BeforeTemplate
-    ZonedDateTime before(Instant instant, ZoneId zoneId) {
-        return ZonedDateTime.ofInstant(instant, zoneId);
-    }
-    
-    @AfterTemplate
-    ZonedDateTime after(Instant instant, ZoneId zoneId) {
-        return instant.atZone(zoneId);
-    }
-}
-```
-.
+_Prefer `Instant#atZone(ZoneId)` over more verbose alternatives_
 
 ## Recipe source
 

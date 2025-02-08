@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer LocalDate#ofInstant(Instant, ZoneId) over more indirect alternatives"
+sidebar_label: "Refaster template TimeRules.LocalDateOfInstant"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `LocalDate#ofInstant(Instant, ZoneId)` over more indirect alternatives
+# Refaster template `TimeRules.LocalDateOfInstant`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateOfInstantRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LocalDateOfInstant {
-    
-    @BeforeTemplate
-    LocalDate before(Instant instant, ZoneId zoneId) {
-        return Refaster.anyOf(instant.atZone(zoneId).toLocalDate(), LocalDateTime.ofInstant(instant, zoneId).toLocalDate(), OffsetDateTime.ofInstant(instant, zoneId).toLocalDate());
-    }
-    
-    @BeforeTemplate
-    LocalDate before(Instant instant, ZoneOffset zoneId) {
-        return instant.atOffset(zoneId).toLocalDate();
-    }
-    
-    @AfterTemplate
-    LocalDate after(Instant instant, ZoneId zoneId) {
-        return LocalDate.ofInstant(instant, zoneId);
-    }
-}
-```
-.
+_Prefer `LocalDate#ofInstant(Instant, ZoneId)` over more indirect alternatives_
 
 ## Recipe source
 

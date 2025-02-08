@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with Micrometer"
+sidebar_label: "MicrometerRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with Micrometer
+# `MicrometerRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.MicrometerRules`. [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules)._
+_Refaster rules related to expressions dealing with Micrometer [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules)._
 
 ## Recipe source
 
@@ -28,11 +28,11 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer using `Tags` over other immutable collections](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof1recipe)
-* [Prefer using `Tags` over other immutable collections](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof2recipe)
-* [Prefer using `Tags` over other immutable collections](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof3recipe)
-* [Prefer using `Tags` over other immutable collections](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof4recipe)
-* [Prefer using `Tags` over other immutable collections](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof5recipe)
+* [Refaster template `MicrometerRules.TagsOf1`](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof1recipe)
+* [Refaster template `MicrometerRules.TagsOf2`](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof2recipe)
+* [Refaster template `MicrometerRules.TagsOf3`](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof3recipe)
+* [Refaster template `MicrometerRules.TagsOf4`](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof4recipe)
+* [Refaster template `MicrometerRules.TagsOf5`](../../../../tech/picnic/errorprone/refasterrules/micrometerrulesrecipes$tagsof5recipe)
 
 </TabItem>
 
@@ -42,8 +42,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes
-displayName: Refaster rules related to expressions dealing with Micrometer
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.MicrometerRules`. [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules).
+displayName: `MicrometerRules` Refaster recipes
+description: Refaster rules related to expressions dealing with Micrometer [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe
   - tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf2Recipe

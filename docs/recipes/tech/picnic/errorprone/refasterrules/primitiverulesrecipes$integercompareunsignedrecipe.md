@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Integer#compareUnsigned(int, int) over third-party alternatives"
+sidebar_label: "Refaster template PrimitiveRules.IntegerCompareUnsigned"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Integer#compareUnsigned(int, int)` over third-party alternatives
+# Refaster template `PrimitiveRules.IntegerCompareUnsigned`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerCompareUnsignedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerCompareUnsigned {
-    
-    @BeforeTemplate
-    int before(int x, int y) {
-        return UnsignedInts.compare(x, y);
-    }
-    
-    @AfterTemplate
-    int after(int x, int y) {
-        return Integer.compareUnsigned(x, y);
-    }
-}
-```
-.
+_Prefer JDK's `Integer#compareUnsigned(int, int)` over third-party alternatives_
 
 ## Recipe source
 

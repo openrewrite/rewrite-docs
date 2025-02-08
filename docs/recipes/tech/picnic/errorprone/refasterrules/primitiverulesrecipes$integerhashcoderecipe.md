@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Integer#hashCode(int) over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.IntegerHashCode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Integer#hashCode(int)` over the Guava alternative
+# Refaster template `PrimitiveRules.IntegerHashCode`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerHashCodeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerHashCode {
-    
-    @BeforeTemplate
-    int before(int i) {
-        return Ints.hashCode(i);
-    }
-    
-    @AfterTemplate
-    int after(int i) {
-        return Integer.hashCode(i);
-    }
-}
-```
-.
+_Prefer `Integer#hashCode(int)` over the Guava alternative_
 
 ## Recipe source
 

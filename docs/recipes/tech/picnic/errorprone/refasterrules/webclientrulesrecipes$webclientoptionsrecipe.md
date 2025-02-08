@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer WebClient#options() over WebClient#method(HttpMethod) with HttpMethod#OPTIONS"
+sidebar_label: "Refaster template WebClientRules.WebClientOptions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `WebClient#options()` over `WebClient#method(HttpMethod)` with `HttpMethod#OPTIONS`
+# Refaster template `WebClientRules.WebClientOptions`
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientOptionsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class WebClientOptions {
-    
-    @BeforeTemplate
-    RequestHeadersSpec<?> before(WebClient webClient) {
-        return webClient.method(OPTIONS);
-    }
-    
-    @BeforeTemplate
-    WebTestClient.RequestHeadersSpec<?> before(WebTestClient webClient) {
-        return webClient.method(OPTIONS);
-    }
-    
-    @AfterTemplate
-    RequestHeadersSpec<?> after(WebClient webClient) {
-        return webClient.options();
-    }
-}
-```
-.
+_Prefer `WebClient#options()` over `WebClient#method(HttpMethod)` with `HttpMethod#OPTIONS`_
 
 ## Recipe source
 

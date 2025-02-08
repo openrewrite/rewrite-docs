@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer Long#BYTES over the Guava alternative"
+sidebar_label: "Refaster template PrimitiveRules.LongBytes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Long#BYTES` over the Guava alternative
+# Refaster template `PrimitiveRules.LongBytes`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongBytes {
-    
-    @BeforeTemplate
-    int before() {
-        return Longs.BYTES;
-    }
-    
-    @AfterTemplate
-    int after() {
-        return Long.BYTES;
-    }
-}
-```
-.
+_Prefer `Long#BYTES` over the Guava alternative_
 
 ## Recipe source
 

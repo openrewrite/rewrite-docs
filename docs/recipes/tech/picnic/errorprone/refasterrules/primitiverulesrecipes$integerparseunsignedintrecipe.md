@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Prefer JDK's Integer#parseUnsignedInt(String) over third-party or more verbose alternatives"
+sidebar_label: "Refaster template PrimitiveRules.IntegerParseUnsignedInt"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JDK's `Integer#parseUnsignedInt(String)` over third-party or more verbose alternatives
+# Refaster template `PrimitiveRules.IntegerParseUnsignedInt`
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerParseUnsignedIntRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntegerParseUnsignedInt {
-    
-    @BeforeTemplate
-    int before(String string) {
-        return Refaster.anyOf(UnsignedInts.parseUnsignedInt(string), Integer.parseUnsignedInt(string, 10));
-    }
-    
-    @AfterTemplate
-    int after(String string) {
-        return Integer.parseUnsignedInt(string);
-    }
-}
-```
-.
+_Prefer JDK's `Integer#parseUnsignedInt(String)` over third-party or more verbose alternatives_
 
 ## Recipe source
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.nextjs.v13\_0.NextImageToLegacyImage**
 
-_Safely renames `next/image` imports in existing Next.js 10, 11, or 12 applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`. See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#next-image-to-legacy-image)   for more information._
+_Safely renames `next/image` imports in existing Next.js `10` `11` or `12` applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`._
 
 ### Tags
 

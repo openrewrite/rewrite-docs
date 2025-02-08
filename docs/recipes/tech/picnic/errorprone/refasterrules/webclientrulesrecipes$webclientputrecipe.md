@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer WebClient#put() over WebClient#method(HttpMethod) with HttpMethod#PUT"
+sidebar_label: "Refaster template WebClientRules.WebClientPut"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `WebClient#put()` over `WebClient#method(HttpMethod)` with `HttpMethod#PUT`
+# Refaster template `WebClientRules.WebClientPut`
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPutRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class WebClientPut {
-    
-    @BeforeTemplate
-    RequestBodyUriSpec before(WebClient webClient) {
-        return webClient.method(PUT);
-    }
-    
-    @BeforeTemplate
-    WebTestClient.RequestBodyUriSpec before(WebTestClient webClient) {
-        return webClient.method(PUT);
-    }
-    
-    @AfterTemplate
-    RequestBodyUriSpec after(WebClient webClient) {
-        return webClient.put();
-    }
-}
-```
-.
+_Prefer `WebClient#put()` over `WebClient#method(HttpMethod)` with `HttpMethod#PUT`_
 
 ## Recipe source
 

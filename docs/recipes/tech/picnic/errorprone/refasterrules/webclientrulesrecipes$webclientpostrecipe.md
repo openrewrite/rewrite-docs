@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer WebClient#post() over WebClient#method(HttpMethod) with HttpMethod#POST"
+sidebar_label: "Refaster template WebClientRules.WebClientPost"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `WebClient#post()` over `WebClient#method(HttpMethod)` with `HttpMethod#POST`
+# Refaster template `WebClientRules.WebClientPost`
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPostRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class WebClientPost {
-    
-    @BeforeTemplate
-    RequestBodyUriSpec before(WebClient webClient) {
-        return webClient.method(POST);
-    }
-    
-    @BeforeTemplate
-    WebTestClient.RequestBodyUriSpec before(WebTestClient webClient) {
-        return webClient.method(POST);
-    }
-    
-    @AfterTemplate
-    RequestBodyUriSpec after(WebClient webClient) {
-        return webClient.post();
-    }
-}
-```
-.
+_Prefer `WebClient#post()` over `WebClient#method(HttpMethod)` with `HttpMethod#POST`_
 
 ## Recipe source
 

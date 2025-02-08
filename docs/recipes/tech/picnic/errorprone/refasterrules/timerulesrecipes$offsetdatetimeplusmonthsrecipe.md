@@ -1,35 +1,15 @@
 ---
-sidebar_label: "Prefer OffsetDateTime#plusMonths(long) over more contrived alternatives"
+sidebar_label: "Refaster template TimeRules.OffsetDateTimePlusMonths"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `OffsetDateTime#plusMonths(long)` over more contrived alternatives
+# Refaster template `TimeRules.OffsetDateTimePlusMonths`
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimePlusMonthsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OffsetDateTimePlusMonths {
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, int months) {
-        return offsetDateTime.plus(Period.ofMonths(months));
-    }
-    
-    @BeforeTemplate
-    OffsetDateTime before(OffsetDateTime offsetDateTime, long months) {
-        return offsetDateTime.plus(months, ChronoUnit.MONTHS);
-    }
-    
-    @AfterTemplate
-    OffsetDateTime after(OffsetDateTime offsetDateTime, int months) {
-        return offsetDateTime.plusMonths(months);
-    }
-}
-```
-.
+_Prefer `OffsetDateTime#plusMonths(long)` over more contrived alternatives_
 
 ## Recipe source
 

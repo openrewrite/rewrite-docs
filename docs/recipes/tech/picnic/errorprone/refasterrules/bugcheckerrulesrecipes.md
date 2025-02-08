@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Refaster rules related to com.google.errorprone.bugpatterns.BugChecker classes"
+sidebar_label: "BugCheckerRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to `com.google.errorprone.bugpatterns.BugChecker` classes
+# `BugCheckerRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.BugCheckerRules`. [Source](https://error-prone.picnic.tech/refasterrules/BugCheckerRules)._
+_Refaster rules related to `com.google.errorprone.bugpatterns.BugChecker` classes [Source](https://error-prone.picnic.tech/refasterrules/BugCheckerRules)._
 
 ## Recipe source
 
@@ -28,10 +28,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Avoid calling `BugCheckerRefactoringTestHelper#setFixChooser(FixChooser)` or `BugCheckerRefactoringTestHelper#setImportOrder(String)` with their respective default values](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperidentityrecipe)
-* [Prefer `BugCheckerRefactoringTestHelper.ExpectOutput#expectUnchanged()` over repeating the input](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperaddinputlinesexpectunchangedrecipe)
-* [Prefer using the `Constants` API over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$constantsformatrecipe)
-* [Prefer `Name#contentEquals(CharSequence)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$namecontentequalsrecipe)
+* [Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperIdentity`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperidentityrecipe)
+* [Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperaddinputlinesexpectunchangedrecipe)
+* [Refaster template `BugCheckerRules.NameContentEquals`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$namecontentequalsrecipe)
 
 </TabItem>
 
@@ -41,12 +40,11 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes
-displayName: Refaster rules related to `com.google.errorprone.bugpatterns.BugChecker` classes
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.BugCheckerRules`. [Source](https://error-prone.picnic.tech/refasterrules/BugCheckerRules).
+displayName: `BugCheckerRules` Refaster recipes
+description: Refaster rules related to `com.google.errorprone.bugpatterns.BugChecker` classes [Source](https://error-prone.picnic.tech/refasterrules/BugCheckerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperAddInputLinesExpectUnchangedRecipe
-  - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$NameContentEqualsRecipe
 
 ```
