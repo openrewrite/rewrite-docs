@@ -1,7 +1,3 @@
----
-description: What's changed in OpenRewrite version: 8.45.0.
----
-
 # 8.45.0 release (2025-02-08)
 
 _Total recipe count: 3041_
