@@ -35,19 +35,26 @@ Update the `package.json` file inside of your repository and add your dependency
 }
 ```
 
-You'll then need to ensure that the place where you are building your recipe JAR in is able to resolve these dependencies from the registry of your choosing (this could be a public NPM registry like `npmjs` or `unpkg` or a private one – like one setup in Artifactory).
+After that, ensure that the environment where you're building your recipe JAR can resolve the necessary dependencies from your chosen registry. This might be a public NPM registry like `npmjs` or `unpkg`, or a private one such as an Artifactory setup.
 
-After that, you'll also need to to ensure that the dependencies are available as a resource in the recipe JAR. Without that, your recipe will not work when you publish it.
+Next, make sure these dependencies are bundled as resources within the recipe JAR. Failing to do so will result in the published recipe (and the underlying Java artifact created) not knowing where dependencies are located
 
-For our `rewrite-codemods` repository, we use a Gradle plugin to [npm install dependencies as a resource in the JAR](https://github.com/moderneinc/rewrite-codemods/blob/main/build.gradle.kts#L25-L29):
+For example, in our `rewrite-codemods` repository, we use the [gradle-node-plugin](https://github.com/node-gradle/gradle-node-plugin) to run `npm install` and package the node modules into the JAR. You can see how we implement this in our [build.gradle.kts file](https://github.com/moderneinc/rewrite-codemods/blob/main/build.gradle.kts#L25-L29):
 
 ```kotlin title="build.gradle.kts"
+plugins {
+    id("org.openrewrite.build.recipe-library") version "latest.release"
+    id("com.github.node-gradle.node") version "latest.release"
+}
+
 node {
     nodeProjectDir.set(file("build/resources/main/codemods"))
     download.set(true)
     version.set("20.18.1")
 }
 ```
+
+An example of how node modules are extracted and made accessible to Java recipes via their dependency paths can be found in our [RecipeResources.java file](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/RecipeResources.java#L39).
 
 ## Step 3: Create the recipe
 
