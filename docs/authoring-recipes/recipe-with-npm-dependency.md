@@ -26,7 +26,7 @@ We'd strongly recommend forking our [rewrite-codemods repository](https://github
 
 Update the `package.json` file inside of your repository and add your dependency or dependencies:
 
-```json title="Package.json"
+```json title="package.json"
 {
   "dependencies": {
     "eslint": "^8.56.0",
@@ -37,7 +37,8 @@ Update the `package.json` file inside of your repository and add your dependency
 
 You'll then need to ensure that the place where you are building your recipe JAR in is able to resolve these dependencies from the registry of your choosing (this could be a public NPM registry like `npmjs` or `unpkg` or a private one – like one setup in Artifactory).
 
-:::info
+After that, you'll also need to to ensure that the dependencies are available as a resource in the recipe JAR. Without that, your recipe will not work when you publish it.
+
 For our `rewrite-codemods` repository, we use a Gradle plugin to [npm install dependencies as a resource in the JAR](https://github.com/moderneinc/rewrite-codemods/blob/main/build.gradle.kts#L25-L29):
 
 ```kotlin title="build.gradle.kts"
@@ -47,7 +48,6 @@ node {
     version.set("20.18.1")
 }
 ```
-:::
 
 ## Step 3: Create the recipe
 
