@@ -17,6 +17,7 @@ circleci
 classdeclaration
 cmn
 codebases
+codemod
 codemods
 CODEOWNERS
 commonstaticanalysis
