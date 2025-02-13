@@ -62,6 +62,8 @@ If you want to create a recipe that uses a custom ESLint plugin, you should crea
 
 If you want to create a recipe that uses a custom CLI tool, you should create a new recipe that extends `NodeBaseRecipe`. Check out our [ESLint recipe](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ESLint.java) for a full example of this.
 
+Keep in mind that the **business logic** of a codemod can be written entirely in JavaScript or TypeScript. The [NodeBasedRecipe](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/NodeBasedRecipe.java) is just a wrapper that allows Moderne to run the codemod or any npm published tool. For example, in the `rewrite-codemods` repository, we have a JS class called [putout](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/config/putout.js) – which is where the core logic is. There's then a [Java NodeBasedRecipe wrapper](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/Putout.java) that creates the recipe so it can be run in Moderne.
+
 :::tip
 You may find it useful to add code so that your recipe produces a [data table](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/data-tables/). Data tables are tabular data that people can use for analysis purposes. They also can be useful for creating visualizations of the results.
 
