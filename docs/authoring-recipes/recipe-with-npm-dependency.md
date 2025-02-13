@@ -1,9 +1,9 @@
 ---
-sidebar_label: Creating recipes with NPM dependencies
+sidebar_label: Creating recipes that run ESLint plugins
 description: How to create a recipe that uses custom ESLint plugins or other CLI tools.
 ---
 
-# Creating recipes with NPM dependencies
+# Creating recipes that run ESLint plugins
 
 Many people have custom ESLint plugins or other CLI tools that they want to use inside of a recipe so that they can apply it to a large number of repositories.
 
