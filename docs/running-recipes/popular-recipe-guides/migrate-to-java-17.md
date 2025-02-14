@@ -18,7 +18,7 @@ This recipe covers the following themes:
 
 ## Example Configuration
 
-The Java 17 migration recipe can be applied by including OpenRewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
+The Java 17 migration recipe can be applied by including OpenRewrite's plugin to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
@@ -147,7 +147,7 @@ public class Example {
 ```
 
 :::info
-The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.&#x20;
+The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.
 :::
 
 ### Maven pom

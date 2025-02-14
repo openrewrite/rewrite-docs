@@ -34,6 +34,7 @@ const sidebars: SidebarsConfig = {
             'running-recipes/popular-recipe-guides/common-static-analysis-issue-remediation',
             'running-recipes/popular-recipe-guides/automatically-fix-checkstyle-violations',
             'running-recipes/popular-recipe-guides/migrate-to-java-17',
+            'running-recipes/popular-recipe-guides/migrate-to-java-21',
             'running-recipes/popular-recipe-guides/migrate-from-junit-4-to-junit-5',
             'running-recipes/popular-recipe-guides/migrate-to-spring-3',
             'running-recipes/popular-recipe-guides/spring-boot-2.x-migration-from-spring-boot-1.x',
