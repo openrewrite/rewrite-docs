@@ -61,7 +61,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema
 displayName: Migrate from `@ApiModelProperty` to `@Schema`
-description: Converts the `@ApiModelProperty` annotation to `@Schema` and converts the "value" attribute to "description".
+description: |
+  Converts the `@ApiModelProperty` annotation to `@Schema` and converts the "value" attribute to "description".
 tags:
   - openapi
   - swagger
@@ -112,7 +113,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_REWRITE_OPENAPI}}")
+    rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}")
 }
 ```
 
@@ -133,7 +134,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_REWRITE_OPENAPI}}")
+        rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema")
@@ -178,7 +179,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-openapi</artifactId>
-            <version>{{VERSION_REWRITE_OPENAPI}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -207,7 +208,7 @@ mod run . --recipe MigrateApiModelPropertyToSchema
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-openapi:{{VERSION_REWRITE_OPENAPI}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-openapi:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}
 ```
 </TabItem>
 </Tabs>

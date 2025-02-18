@@ -105,7 +105,7 @@ mod run . --recipe ChangePropertyValue --recipe-option "propertyKey=management.m
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_REWRITE_YAML}}
+mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_ORG_OPENREWRITE_REWRITE_YAML}}
 ```
 </TabItem>
 </Tabs>

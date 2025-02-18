@@ -52,7 +52,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
 }
 ```
 
@@ -73,7 +73,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}")
+        rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.dependencies.DependencyResolutionDiagnostic")
@@ -118,7 +118,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>{{VERSION_REWRITE_JAVA_DEPENDENCIES}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -147,7 +147,7 @@ mod run . --recipe DependencyResolutionDiagnostic
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}
 ```
 </TabItem>
 </Tabs>

@@ -52,13 +52,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.micrometer.UpgradeMicrometer_1_13
 displayName: Migrate to Micrometer 1.13
-description: Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide).
+description: |
+  Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide).
 tags:
   - micrometer
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: io.micrometer
-      artifactId: *
+      artifactId: "*"
       newVersion: 1.13.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: io.micrometer.prometheus
@@ -94,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_REWRITE_MICROMETER}}")
+    rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}")
 }
 ```
 
@@ -115,7 +116,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_REWRITE_MICROMETER}}")
+        rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.micrometer.UpgradeMicrometer_1_13")
@@ -160,7 +161,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micrometer</artifactId>
-            <version>{{VERSION_REWRITE_MICROMETER}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -189,7 +190,7 @@ mod run . --recipe UpgradeMicrometer_1_13
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-micrometer:{{VERSION_REWRITE_MICROMETER}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}
 ```
 </TabItem>
 </Tabs>

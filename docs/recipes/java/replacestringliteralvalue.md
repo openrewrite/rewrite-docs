@@ -99,7 +99,7 @@ mod run . --recipe ReplaceStringLiteralValue --recipe-option "oldLiteralValue=ap
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>

@@ -53,7 +53,7 @@ mod run . --recipe ApplyAngularCLI --recipe-option "version=17"
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-codemods-ng:{{VERSION_REWRITE_CODEMODS_NG}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-codemods-ng:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS_NG}}
 ```
 </TabItem>
 </Tabs>

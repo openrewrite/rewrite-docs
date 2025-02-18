@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_REWRITE_CUCUMBER_JVM}}")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}")
 }
 ```
 
@@ -65,7 +65,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_REWRITE_CUCUMBER_JVM}}")
+        rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.cucumber.jvm.CucumberJava8HookDefinitionToCucumberJava")
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>{{VERSION_REWRITE_CUCUMBER_JVM}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,7 +139,7 @@ mod run . --recipe CucumberJava8HookDefinitionToCucumberJava
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_REWRITE_CUCUMBER_JVM}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}
 ```
 </TabItem>
 </Tabs>

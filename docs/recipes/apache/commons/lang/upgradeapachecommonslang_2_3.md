@@ -54,7 +54,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3
 displayName: Migrates to Apache Commons Lang 3.x
-description: Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
+description: |
+  Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
 tags:
   - apache
   - lang
@@ -98,7 +99,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
 }
 ```
 
@@ -119,7 +120,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3")
@@ -164,7 +165,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_REWRITE_APACHE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -193,7 +194,7 @@ mod run . --recipe UpgradeApacheCommonsLang_2_3
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
 ```
 </TabItem>
 </Tabs>

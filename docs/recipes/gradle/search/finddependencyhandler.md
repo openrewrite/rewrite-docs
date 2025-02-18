@@ -38,7 +38,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gradle.search.FindDependencyHandler
 displayName: Find Gradle `dependencies` blocks
-description: Find the dependency handler containing any number of dependency definitions.
+description: |
+  Find the dependency handler containing any number of dependency definitions.
 recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: RewriteGradleProject dependencies(groovy.lang.Closure)
@@ -121,7 +122,7 @@ mod run . --recipe FindDependencyHandler
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_REWRITE_GRADLE}}
+mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}}
 ```
 </TabItem>
 </Tabs>

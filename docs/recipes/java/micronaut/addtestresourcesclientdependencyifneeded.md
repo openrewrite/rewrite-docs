@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}")
 }
 ```
 
@@ -65,7 +65,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}")
+        rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.micronaut.AddTestResourcesClientDependencyIfNeeded")
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>{{VERSION_REWRITE_MICRONAUT}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,7 +139,7 @@ mod run . --recipe AddTestResourcesClientDependencyIfNeeded
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}
 ```
 </TabItem>
 </Tabs>

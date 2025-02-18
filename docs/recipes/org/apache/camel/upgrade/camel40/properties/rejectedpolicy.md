@@ -46,7 +46,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.camel40.properties.rejectedPolicy
 displayName: Camel API changes in application.properties
-description: Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties.
+description: |
+  Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties.
 recipeList:
   - org.openrewrite.properties.ChangePropertyValue:
       propertyKey: camel.threadpool.rejectedPolicy
@@ -84,7 +85,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -105,7 +106,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
         activeRecipe("org.apache.camel.upgrade.camel40.properties.rejectedPolicy")
@@ -150,7 +151,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_REWRITE_THIRD_PARTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -179,7 +180,7 @@ mod run . --recipe rejectedPolicy
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>

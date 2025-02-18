@@ -43,7 +43,7 @@ recipeList:
       toVersion: 3.0.0-M3
 ```
 
-Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:
+Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}` in your build file:
 <Tabs groupId="projectType">
 
 <TabItem value="maven" label="Maven">
@@ -68,7 +68,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_REWRITE_SPRING}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -88,7 +88,7 @@ mod run . --recipe UpgradeExplicitSpringBootDependencies --recipe-option "fromVe
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>

@@ -48,7 +48,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin
 displayName: Upgrade Surefire Plugin
-description: Upgrades the Maven Surefire Plugin to the latest version if still using an older Maven version.
+description: |
+  Upgrades the Maven Surefire Plugin to the latest version if still using an older Maven version.
 recipeList:
   - org.openrewrite.maven.AddPlugin:
       groupId: org.apache.maven.plugins
@@ -88,7 +89,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
 }
 ```
 
@@ -109,7 +110,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin")
@@ -154,7 +155,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>{{VERSION_REWRITE_TESTING_FRAMEWORKS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -183,7 +184,7 @@ mod run . --recipe UpgradeSurefirePlugin
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>

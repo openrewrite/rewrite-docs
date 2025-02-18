@@ -103,7 +103,7 @@ mod run . --recipe AddProperty --recipe-option "property=management.metrics.enab
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-properties:{{VERSION_REWRITE_PROPERTIES}}
+mod config recipes jar install org.openrewrite:rewrite-properties:{{VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES}}
 ```
 </TabItem>
 </Tabs>

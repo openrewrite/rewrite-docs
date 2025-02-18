@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}")
+    rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}")
 }
 ```
 
@@ -69,7 +69,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}")
+        rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.kotlin.cleanup.EqualsMethodUsage")
@@ -114,7 +114,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>{{VERSION_REWRITE_KOTLIN}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -143,7 +143,7 @@ mod run . --recipe EqualsMethodUsage
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}
+mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}
 ```
 </TabItem>
 </Tabs>

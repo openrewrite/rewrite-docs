@@ -129,7 +129,7 @@ mod run . --recipe OmitParenthesesFormat
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-groovy:{{VERSION_REWRITE_GROOVY}}
+mod config recipes jar install org.openrewrite:rewrite-groovy:{{VERSION_ORG_OPENREWRITE_REWRITE_GROOVY}}
 ```
 </TabItem>
 </Tabs>

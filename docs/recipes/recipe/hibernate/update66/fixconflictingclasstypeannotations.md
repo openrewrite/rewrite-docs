@@ -36,7 +36,7 @@ mod run . --recipe FixConflictingClassTypeAnnotations
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_REWRITE_HIBERNATE}}
+mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_IO_MODERNE_RECIPE_REWRITE_HIBERNATE}}
 ```
 </TabItem>
 </Tabs>

@@ -48,7 +48,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: io.quarkus.updates.core.quarkus37.UpgradeJavaVersion
 displayName: Upgrade Java version
-description: Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
+description: |
+  Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
 
 recipeList:
   - org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration
@@ -74,7 +75,7 @@ recipeList:
       version: 17
 ```
 
-Now that `com.yourorg.UpgradeJavaVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}` in your build file:
+Now that `com.yourorg.UpgradeJavaVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -95,7 +96,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -122,7 +123,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_REWRITE_THIRD_PARTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -142,7 +143,7 @@ mod run . --recipe UpgradeJavaVersion --recipe-option "version=17"
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>

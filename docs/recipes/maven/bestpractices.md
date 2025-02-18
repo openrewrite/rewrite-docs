@@ -44,7 +44,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.maven.BestPractices
 displayName: Apache Maven best practices
-description: Applies best practices to Maven POMs.
+description: |
+  Applies best practices to Maven POMs.
 recipeList:
   - org.openrewrite.maven.cleanup.ExplicitPluginGroupId
   - org.openrewrite.maven.cleanup.ExplicitPluginVersion
@@ -108,7 +109,7 @@ mod run . --recipe BestPractices
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_REWRITE_MAVEN}}
+mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
 ```
 </TabItem>
 </Tabs>

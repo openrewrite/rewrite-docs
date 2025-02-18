@@ -36,7 +36,7 @@ mod run . --recipe ReactorProcessorCreateToSinkRecipes
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-reactive-streams:{{VERSION_REWRITE_REACTIVE_STREAMS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-reactive-streams:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REACTIVE_STREAMS}}
 ```
 </TabItem>
 </Tabs>

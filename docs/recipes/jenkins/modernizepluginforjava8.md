@@ -53,7 +53,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.jenkins.ModernizePluginForJava8
 displayName: Modernize a Jenkins plugin to the latest versions supported by Java 8
-description: This recipe is intended to break down the modernization of very old plugins into distinct steps. It allows modernizing all tooling up to the last versions that supported Java 8. This can then be followed by another recipe that makes the jump to Java 11.
+description: |
+  This recipe is intended to break down the modernization of very old plugins into distinct steps. It allows modernizing all tooling up to the last versions that supported Java 8. This can then be followed by another recipe that makes the jump to Java 11.
 recipeList:
   - org.openrewrite.maven.security.UseHttpsForRepositories
   - org.openrewrite.jenkins.DisableLocalResolutionForParentPom
@@ -98,7 +99,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
 }
 ```
 
@@ -119,7 +120,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.jenkins.ModernizePluginForJava8")
@@ -164,7 +165,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>{{VERSION_REWRITE_JENKINS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -193,7 +194,7 @@ mod run . --recipe ModernizePluginForJava8
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}
 ```
 </TabItem>
 </Tabs>

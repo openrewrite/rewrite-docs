@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_REWRITE_MICROMETER}}")
+    rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}")
 }
 ```
 
@@ -65,7 +65,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_REWRITE_MICROMETER}}")
+        rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.micrometer.dropwizard.FindDropwizardMetrics")
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micrometer</artifactId>
-            <version>{{VERSION_REWRITE_MICROMETER}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,7 +139,7 @@ mod run . --recipe FindDropwizardMetrics
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-micrometer:{{VERSION_REWRITE_MICROMETER}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}
 ```
 </TabItem>
 </Tabs>

@@ -44,7 +44,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.TypeDescriptorToType
 displayName: Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`
-description: Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system
+description: |
+  Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.hibernate.type.descriptor.java.JavaTypeDescriptor
@@ -80,7 +81,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_REWRITE_HIBERNATE}}")
+    rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
 }
 ```
 
@@ -101,7 +102,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_REWRITE_HIBERNATE}}")
+        rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.hibernate.TypeDescriptorToType")
@@ -146,7 +147,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-hibernate</artifactId>
-            <version>{{VERSION_REWRITE_HIBERNATE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -175,7 +176,7 @@ mod run . --recipe TypeDescriptorToType
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSION_REWRITE_HIBERNATE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}
 ```
 </TabItem>
 </Tabs>

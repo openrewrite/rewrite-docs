@@ -55,7 +55,7 @@ mod run . --recipe FindCodeThatResembles --recipe-option "resembles=HTTP request
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-ai-search:{{VERSION_REWRITE_AI_SEARCH}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-ai-search:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_AI_SEARCH}}
 ```
 </TabItem>
 </Tabs>

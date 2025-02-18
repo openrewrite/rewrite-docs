@@ -68,7 +68,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.wicket.MigrateToWicket10
 displayName: Migrate to Wicket 10.x
-description: Migrates Wicket 9.x to Wicket 10.x, as well as Java 17 and Jakarta.
+description: |
+  Migrates Wicket 9.x to Wicket 10.x, as well as Java 17 and Jakarta.
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava17
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
@@ -89,16 +90,16 @@ recipeList:
       artifactId: wicket-http2-*
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.wicket
-      artifactId: *
+      artifactId: "*"
       newVersion: 10.x
       versionPattern: -SNAPSHOT
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.wicket.experimental.wicket9
-      artifactId: *
+      artifactId: "*"
       newVersion: 10.x
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.wicket.experimental.wicket9
-      artifactId: *
+      artifactId: "*"
       newVersion: 10.x
 
 ```
@@ -128,7 +129,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -149,7 +150,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
         activeRecipe("org.apache.wicket.MigrateToWicket10")
@@ -194,7 +195,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_REWRITE_THIRD_PARTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -223,7 +224,7 @@ mod run . --recipe MigrateToWicket10
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>

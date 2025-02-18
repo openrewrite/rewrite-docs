@@ -49,7 +49,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
 }
 ```
 
@@ -70,7 +70,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.commons.codec.ApacheBase64ToJavaBase64")
@@ -115,7 +115,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_REWRITE_APACHE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -144,7 +144,7 @@ mod run . --recipe ApacheBase64ToJavaBase64
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
 ```
 </TabItem>
 </Tabs>

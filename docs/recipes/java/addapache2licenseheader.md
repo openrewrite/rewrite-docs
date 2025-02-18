@@ -41,7 +41,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.AddApache2LicenseHeader
 displayName: Add ASLv2 license header
-description: Adds the Apache Software License Version 2.0 to Java source files which are missing a license header.
+description: |
+  Adds the Apache Software License Version 2.0 to Java source files which are missing a license header.
 tags:
   - oss
 recipeList:
@@ -172,7 +173,7 @@ mod run . --recipe AddApache2LicenseHeader
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>

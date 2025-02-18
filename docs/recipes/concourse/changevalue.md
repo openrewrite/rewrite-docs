@@ -59,7 +59,7 @@ mod run . --recipe ChangeValue --recipe-option "keyPath=$.resources[?(@.type == 
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-concourse:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CONCOURSE}}
 ```
 </TabItem>
 </Tabs>

@@ -40,7 +40,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.jenkins.CommonsLang3ToApiPlugin
 displayName: Use commons-lang3 API Plugin
-description: Updates `pom.xml` to depend on `commons-lang3-api` and exclude `commons-lang3` where it is brought in transitively.
+description: |
+  Updates `pom.xml` to depend on `commons-lang3-api` and exclude `commons-lang3` where it is brought in transitively.
 recipeList:
   - org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin:
       pluginGroupId: io.jenkins.plugins
@@ -75,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
 }
 ```
 
@@ -96,7 +97,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.jenkins.CommonsLang3ToApiPlugin")
@@ -141,7 +142,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>{{VERSION_REWRITE_JENKINS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -170,7 +171,7 @@ mod run . --recipe CommonsLang3ToApiPlugin
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}
 ```
 </TabItem>
 </Tabs>

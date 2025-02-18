@@ -105,7 +105,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.CommonStaticAnalysis
 displayName: Common static analysis issues
-description: Resolve common static analysis issues (also known as SAST issues).
+description: |
+  Resolve common static analysis issues (also known as SAST issues).
 recipeList:
   - org.openrewrite.staticanalysis.AbstractClassPublicConstructor
   - org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet
@@ -202,7 +203,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
 }
 ```
 
@@ -223,7 +224,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}")
+        rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.staticanalysis.CommonStaticAnalysis")
@@ -268,7 +269,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -297,7 +298,7 @@ mod run . --recipe CommonStaticAnalysis
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>

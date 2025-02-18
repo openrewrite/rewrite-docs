@@ -36,7 +36,7 @@ mod run . --recipe UpdateOpenRewriteReadme
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-comprehension:{{VERSION_REWRITE_COMPREHENSION}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-comprehension:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_COMPREHENSION}}
 ```
 </TabItem>
 </Tabs>

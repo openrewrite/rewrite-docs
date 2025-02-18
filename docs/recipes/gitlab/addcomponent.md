@@ -49,7 +49,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gitlab.AddComponent
 displayName: Add GitLab component
-description: Add a GitLab component to an existing list, or add a new list where none was present.
+description: |
+  Add a GitLab component to an existing list, or add a new list where none was present.
 
 
 inputs: []
@@ -85,7 +86,7 @@ recipeList:
       inputs: opentofu_version: 1.6.1
 ```
 
-Now that `com.yourorg.AddComponentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:
+Now that `com.yourorg.AddComponentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -106,7 +107,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}")
+    rewrite("org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -133,7 +134,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-gitlab</artifactId>
-            <version>{{VERSION_REWRITE_GITLAB}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -153,7 +154,7 @@ mod run . --recipe AddComponent --recipe-option "newComponent=$CI_SERVER_FQDN/co
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}
 ```
 </TabItem>
 </Tabs>

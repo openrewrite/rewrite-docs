@@ -57,7 +57,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.mockito.Mockito4to5Only
 displayName: Mockito 4 to 5.x upgrade only
-description: Upgrade Mockito from 4.x to 5.x. Does not include 1.x to 4.x migration.
+description: |
+  Upgrade Mockito from 4.x to 5.x. Does not include 1.x to 4.x migration.
 tags:
   - testing
   - mockito
@@ -69,7 +70,7 @@ recipeList:
       newArtifactId: mockito-core
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
-      artifactId: *
+      artifactId: "*"
       newVersion: 5.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: net.bytebuddy
@@ -104,7 +105,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
 }
 ```
 
@@ -125,7 +126,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.mockito.Mockito4to5Only")
@@ -170,7 +171,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>{{VERSION_REWRITE_TESTING_FRAMEWORKS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -199,7 +200,7 @@ mod run . --recipe Mockito4to5Only
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>

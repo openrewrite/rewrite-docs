@@ -36,7 +36,7 @@ mod run . --recipe MigrateToAndroidGradlePlugin_8_1
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-android:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_ANDROID}}
 ```
 </TabItem>
 </Tabs>

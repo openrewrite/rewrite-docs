@@ -49,7 +49,7 @@ recipeList:
       interval: weekly
 ```
 
-Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}` in your build file:
+Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -70,7 +70,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -97,7 +97,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>{{VERSION_REWRITE_GITHUB_ACTIONS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -117,7 +117,7 @@ mod run . --recipe ChangeDependabotScheduleInterval --recipe-option "packageEcos
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}
 ```
 </TabItem>
 </Tabs>

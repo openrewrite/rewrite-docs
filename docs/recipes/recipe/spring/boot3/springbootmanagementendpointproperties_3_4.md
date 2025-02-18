@@ -41,7 +41,7 @@ mod run . --recipe SpringBootManagementEndpointProperties_3_4
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
+mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>

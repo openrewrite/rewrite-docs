@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}")
+    rewrite("org.openrewrite.meta:rewrite-analysis:{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}")
 }
 ```
 
@@ -65,7 +65,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}")
+        rewrite("org.openrewrite.meta:rewrite-analysis:{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.analysis.search.UriCreatedWithHttpScheme")
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>{{VERSION_REWRITE_ANALYSIS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,7 +139,7 @@ mod run . --recipe UriCreatedWithHttpScheme
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}
+mod config recipes jar install org.openrewrite.meta:rewrite-analysis:{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>

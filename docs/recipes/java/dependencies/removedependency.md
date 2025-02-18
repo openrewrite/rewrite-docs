@@ -53,7 +53,7 @@ recipeList:
       scope: compile
 ```
 
-Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
+Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -74,7 +74,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -101,7 +101,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>{{VERSION_REWRITE_JAVA_DEPENDENCIES}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -121,7 +121,7 @@ mod run . --recipe RemoveDependency --recipe-option "groupId=com.fasterxml.jacks
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}
 ```
 </TabItem>
 </Tabs>

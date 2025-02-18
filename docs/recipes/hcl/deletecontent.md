@@ -97,7 +97,7 @@ mod run . --recipe DeleteContent --recipe-option "contentPath=$.provider"
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-hcl:{{VERSION_REWRITE_HCL}}
+mod config recipes jar install org.openrewrite:rewrite-hcl:{{VERSION_ORG_OPENREWRITE_REWRITE_HCL}}
 ```
 </TabItem>
 </Tabs>

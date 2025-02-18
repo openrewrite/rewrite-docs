@@ -153,7 +153,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.struts.migrate6.MigrateStruts6Constants
 displayName: Migrate to Struts 6.0 constants
-description: All Xwork constants had been already deprecated, with this version all of them have been removed and Struts constants have been used instead.
+description: |
+  All Xwork constants had been already deprecated, with this version all of them have been removed and Struts constants have been used instead.
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: constant
@@ -298,7 +299,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}")
+    rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}")
 }
 ```
 
@@ -319,7 +320,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}")
+        rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.struts.migrate6.MigrateStruts6Constants")
@@ -364,7 +365,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-struts</artifactId>
-            <version>{{VERSION_REWRITE_STRUTS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -393,7 +394,7 @@ mod run . --recipe MigrateStruts6Constants
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-struts:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}
 ```
 </TabItem>
 </Tabs>

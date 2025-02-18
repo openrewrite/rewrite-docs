@@ -5,7 +5,7 @@ sidebar_label: "Use Uni<T extends ReactivePanacheMongoEntityBase>"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;
+# Use `Uni&lt;T extends ReactivePanacheMongoEntityBase>`
 
 **org.openrewrite.quarkus.quarkus2.UseReactivePanacheMongoEntityBaseUniT**
 
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}")
 }
 ```
 
@@ -65,7 +65,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.quarkus.quarkus2.UseReactivePanacheMongoEntityBaseUniT")
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>{{VERSION_REWRITE_QUARKUS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,7 +139,7 @@ mod run . --recipe UseReactivePanacheMongoEntityBaseUniT
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}
 ```
 </TabItem>
 </Tabs>

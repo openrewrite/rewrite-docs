@@ -42,7 +42,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration
 displayName: Use Maven compiler plugin release configuration
-description: Replaces any explicit `source` or `target` configuration (if present) on the `maven-compiler-plugin` with `release`, and updates the `release` value if needed. Will not downgrade the Java version if the current version is higher.
+description: |
+  Replaces any explicit `source` or `target` configuration (if present) on the `maven-compiler-plugin` with `release`, and updates the `release` value if needed. Will not downgrade the Java version if the current version is higher.
 
 recipeList:
   - org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration
@@ -65,7 +66,7 @@ recipeList:
       releaseVersion: 11
 ```
 
-Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:
+Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}` in your build file:
 <Tabs groupId="projectType">
 
 <TabItem value="maven" label="Maven">
@@ -90,7 +91,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_REWRITE_MIGRATE_JAVA}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +111,7 @@ mod run . --recipe UseMavenCompilerPluginReleaseConfiguration --recipe-option "r
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>

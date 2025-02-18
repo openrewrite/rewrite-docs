@@ -56,7 +56,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.maven.cleanup.PrefixlessExpressions
 displayName: Drop prefixless expressions in POM
-description: MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing.
+description: |
+  MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing.
 recipeList:
   - org.openrewrite.maven.RenamePropertyKey:
       oldKey: basedir
@@ -132,7 +133,7 @@ mod run . --recipe PrefixlessExpressions
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_REWRITE_MAVEN}}
+mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
 ```
 </TabItem>
 </Tabs>

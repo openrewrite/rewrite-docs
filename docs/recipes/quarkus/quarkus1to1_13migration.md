@@ -84,7 +84,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.quarkus.Quarkus1to1_13Migration
 displayName: Quarkus 1.13 migration from Quarkus 1.11
-description: Migrates Quarkus 1.11 to 1.13.
+description: |
+  Migrates Quarkus 1.11 to 1.13.
 recipeList:
   - org.openrewrite.quarkus.ConfigPropertiesToConfigMapping
   - org.openrewrite.quarkus.MultiTransformHotStreamToMultiHotStream
@@ -160,7 +161,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}")
 }
 ```
 
@@ -181,7 +182,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.quarkus.Quarkus1to1_13Migration")
@@ -226,7 +227,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>{{VERSION_REWRITE_QUARKUS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -255,7 +256,7 @@ mod run . --recipe Quarkus1to1_13Migration
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}
 ```
 </TabItem>
 </Tabs>

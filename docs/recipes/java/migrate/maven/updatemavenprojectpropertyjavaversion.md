@@ -42,7 +42,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion
 displayName: Update Maven Java project properties
-description: The Java version is determined by several project properties, including: –  –  * `java.version` –  * `jdk.version` –  * `javaVersion` –  * `jdkVersion` –  * `maven.compiler.source` –  * `maven.compiler.target` –  * `maven.compiler.release` –  * `release.version` –  – If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
+description: |
+  The Java version is determined by several project properties, including:
+  
+   * `java.version`
+   * `jdk.version`
+   * `javaVersion`
+   * `jdkVersion`
+   * `maven.compiler.source`
+   * `maven.compiler.target`
+   * `maven.compiler.release`
+   * `release.version`
+  
+  If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
 
 recipeList:
   - org.openrewrite.maven.UpdateMavenProjectPropertyJavaVersion
@@ -65,7 +77,7 @@ recipeList:
       version: 11
 ```
 
-Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:
+Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}` in your build file:
 <Tabs groupId="projectType">
 
 <TabItem value="maven" label="Maven">
@@ -90,7 +102,7 @@ Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been def
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_REWRITE_MIGRATE_JAVA}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +122,7 @@ mod run . --recipe UpdateMavenProjectPropertyJavaVersion --recipe-option "versio
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>

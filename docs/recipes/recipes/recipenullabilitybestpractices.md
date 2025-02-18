@@ -48,7 +48,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.recipes.RecipeNullabilityBestPractices
 displayName: Recipe nullability best practices
-description: Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
+description: |
+  Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
 recipeList:
   - org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations
   - org.openrewrite.java.RemoveAnnotation:
@@ -88,7 +89,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}")
+    rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
 }
 ```
 
@@ -109,7 +110,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}")
+        rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.recipes.RecipeNullabilityBestPractices")
@@ -154,7 +155,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-rewrite</artifactId>
-            <version>{{VERSION_REWRITE_REWRITE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -183,7 +184,7 @@ mod run . --recipe RecipeNullabilityBestPractices
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}
 ```
 </TabItem>
 </Tabs>

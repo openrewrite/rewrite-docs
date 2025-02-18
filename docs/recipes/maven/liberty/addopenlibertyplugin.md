@@ -39,7 +39,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.maven.liberty.AddOpenLibertyPlugin
 displayName: Add Liberty Maven plugin
-description: This recipe adds the Liberty Maven plugin, which provides several goals for managing a Liberty server and applications.
+description: |
+  This recipe adds the Liberty Maven plugin, which provides several goals for managing a Liberty server and applications.
 recipeList:
   - org.openrewrite.maven.AddPlugin:
       groupId: io.openliberty.tools
@@ -77,7 +78,7 @@ This recipe has no required configuration options. It can be activated by adding
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>{{VERSION_REWRITE_LIBERTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -106,7 +107,7 @@ mod run . --recipe AddOpenLibertyPlugin
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-liberty:{{VERSION_REWRITE_LIBERTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}
 ```
 </TabItem>
 </Tabs>

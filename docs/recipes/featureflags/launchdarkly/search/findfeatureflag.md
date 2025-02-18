@@ -51,7 +51,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}}")
+    rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}")
 }
 ```
 
@@ -72,7 +72,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}}")
+        rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.featureflags.launchdarkly.search.FindFeatureFlag")
@@ -117,7 +117,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-feature-flags</artifactId>
-            <version>{{VERSION_REWRITE_FEATURE_FLAGS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -146,7 +146,7 @@ mod run . --recipe FindFeatureFlag
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}
 ```
 </TabItem>
 </Tabs>
