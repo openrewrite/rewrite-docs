@@ -40,7 +40,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.jenkins.migrate.hudson.UtilGetPastTimeStringToGetTimeSpanString
 displayName: Replace `hudson.Util.getPastTimeString` with `getTimeSpanString`
-description: `hudson.Util.getPastTimeString` has been [deprecated](https://github.com/jenkinsci/jenkins/pull/4174) since the [2.204.1 LTS release](https://www.jenkins.io/changelog-stable/#v2.204.1) on 2019-12-18.
+description: |
+  `hudson.Util.getPastTimeString` has been [deprecated](https://github.com/jenkinsci/jenkins/pull/4174) since the [2.204.1 LTS release](https://www.jenkins.io/changelog-stable/#v2.204.1) on 2019-12-18.
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: hudson.Util getPastTimeString(long)
@@ -75,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
 }
 ```
 
@@ -96,7 +97,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.jenkins.migrate.hudson.UtilGetPastTimeStringToGetTimeSpanString")
@@ -141,7 +142,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>{{VERSION_REWRITE_JENKINS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -170,7 +171,7 @@ mod run . --recipe UtilGetPastTimeStringToGetTimeSpanString
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}
 ```
 </TabItem>
 </Tabs>

@@ -63,25 +63,26 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gradle.MigrateToGradle6
 displayName: Migrate to Gradle 6 from Gradle 5
-description: Migrate to version 6.x. See the Gradle upgrade guide from [version 5.x to 6.0](https://docs.gradle.org/current/userguide/upgrading_version_5.html) for more information.
+description: |
+  Migrate to version 6.x. See the Gradle upgrade guide from [version 5.x to 6.0](https://docs.gradle.org/current/userguide/upgrading_version_5.html) for more information.
 recipeList:
   - org.openrewrite.gradle.MigrateToGradle5
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: 6.x
       addIfMissing: false
   - org.openrewrite.gradle.ChangeDependencyConfiguration:
-      groupId: *
-      artifactId: *
+      groupId: "*"
+      artifactId: "*"
       newConfiguration: runtimeOnly
       configuration: runtime
   - org.openrewrite.gradle.ChangeDependencyConfiguration:
-      groupId: *
-      artifactId: *
+      groupId: "*"
+      artifactId: "*"
       newConfiguration: testImplementation
       configuration: testCompile
   - org.openrewrite.gradle.ChangeDependencyConfiguration:
-      groupId: *
-      artifactId: *
+      groupId: "*"
+      artifactId: "*"
       newConfiguration: testRuntimeOnly
       configuration: testRuntime
   - org.openrewrite.gradle.RemoveEnableFeaturePreview:
@@ -168,7 +169,7 @@ mod run . --recipe MigrateToGradle6
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_REWRITE_GRADLE}}
+mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}}
 ```
 </TabItem>
 </Tabs>

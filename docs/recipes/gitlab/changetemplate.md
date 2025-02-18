@@ -45,7 +45,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gitlab.ChangeTemplate
 displayName: Change GitLab template
-description: Change a GitLab template in use.
+description: |
+  Change a GitLab template in use.
 
 
 recipeList:
@@ -72,7 +73,7 @@ recipeList:
       newTemplate: OpenTofu/Base.gitlab-ci.yml
 ```
 
-Now that `com.yourorg.ChangeTemplateExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:
+Now that `com.yourorg.ChangeTemplateExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -93,7 +94,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}")
+    rewrite("org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -120,7 +121,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-gitlab</artifactId>
-            <version>{{VERSION_REWRITE_GITLAB}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -140,7 +141,7 @@ mod run . --recipe ChangeTemplate --recipe-option "oldTemplate=Terraform/Base.gi
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}
 ```
 </TabItem>
 </Tabs>

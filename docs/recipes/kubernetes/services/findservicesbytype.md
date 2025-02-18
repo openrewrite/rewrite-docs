@@ -55,7 +55,7 @@ mod run . --recipe FindServicesByType --recipe-option "serviceType=NodePort" --r
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_KUBERNETES}}
 ```
 </TabItem>
 </Tabs>

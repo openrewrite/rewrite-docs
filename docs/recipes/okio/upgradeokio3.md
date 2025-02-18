@@ -36,7 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.okio.UpgradeOkio3
 displayName: Migrate to Okio 3.x
-description: This recipe will apply changes commonly needed when migrating to Okio 3.x.
+description: |
+  This recipe will apply changes commonly needed when migrating to Okio 3.x.
 recipeList:
   - org.openrewrite.okio.UpgradeOkio3Dependencies
 
@@ -67,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-okhttp:{{VERSION_REWRITE_OKHTTP}}")
+    rewrite("org.openrewrite.recipe:rewrite-okhttp:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OKHTTP}}")
 }
 ```
 
@@ -88,7 +89,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-okhttp:{{VERSION_REWRITE_OKHTTP}}")
+        rewrite("org.openrewrite.recipe:rewrite-okhttp:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OKHTTP}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.okio.UpgradeOkio3")
@@ -133,7 +134,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-okhttp</artifactId>
-            <version>{{VERSION_REWRITE_OKHTTP}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OKHTTP}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -162,7 +163,7 @@ mod run . --recipe UpgradeOkio3
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-okhttp:{{VERSION_REWRITE_OKHTTP}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-okhttp:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OKHTTP}}
 ```
 </TabItem>
 </Tabs>

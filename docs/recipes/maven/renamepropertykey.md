@@ -81,7 +81,7 @@ mod run . --recipe RenamePropertyKey --recipe-option "oldKey=junit.version" --re
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_REWRITE_MAVEN}}
+mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
 ```
 </TabItem>
 </Tabs>

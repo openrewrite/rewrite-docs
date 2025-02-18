@@ -49,7 +49,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.search.FindDeprecatedUses
 displayName: Find uses of deprecated classes, methods, and fields
-description: Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside deprecated scopes.
+description: |
+  Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside deprecated scopes.
 
 
 
@@ -170,7 +171,7 @@ mod run . --recipe FindDeprecatedUses
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>

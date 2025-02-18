@@ -106,7 +106,7 @@ mod run . --recipe FindAndReplace --recipe-option "find=blacklist" --recipe-opti
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_REWRITE_CORE}}
+mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}
 ```
 </TabItem>
 </Tabs>

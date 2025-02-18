@@ -47,7 +47,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.cucumber.jvm.UpgradeCucumber5x
 displayName: Upgrade to Cucumber-JVM 5.x
-description: Upgrade to Cucumber-JVM 5.x from any previous version.
+description: |
+  Upgrade to Cucumber-JVM 5.x from any previous version.
 tags:
   - cucumber
   - testing
@@ -84,7 +85,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_REWRITE_CUCUMBER_JVM}}")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}")
 }
 ```
 
@@ -105,7 +106,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_REWRITE_CUCUMBER_JVM}}")
+        rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.cucumber.jvm.UpgradeCucumber5x")
@@ -150,7 +151,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>{{VERSION_REWRITE_CUCUMBER_JVM}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -179,7 +180,7 @@ mod run . --recipe UpgradeCucumber5x
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_REWRITE_CUCUMBER_JVM}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}}
 ```
 </TabItem>
 </Tabs>

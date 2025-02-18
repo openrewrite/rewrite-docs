@@ -61,11 +61,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.htmlunit.UpgradeHtmlUnit_3
 displayName: Migrate to HtmlUnit 3.x
-description: Automates the HtmlUnit [migration guide](https://htmlunit.sourceforge.io/migration.html) from 2.x to 3.x.
+description: |
+  Automates the HtmlUnit [migration guide](https://htmlunit.sourceforge.io/migration.html) from 2.x to 3.x.
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: net.sourceforge.htmlunit
-      oldArtifactId: *
+      oldArtifactId: "*"
       newGroupId: org.htmlunit
       newVersion: 3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
@@ -114,7 +115,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
 }
 ```
 
@@ -135,7 +136,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.htmlunit.UpgradeHtmlUnit_3")
@@ -180,7 +181,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>{{VERSION_REWRITE_JENKINS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -209,7 +210,7 @@ mod run . --recipe UpgradeHtmlUnit_3
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}
 ```
 </TabItem>
 </Tabs>

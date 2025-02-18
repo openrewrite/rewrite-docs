@@ -55,7 +55,7 @@ mod run . --recipe UpgradeDependencyVersion --recipe-option "packagePattern=Micr
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-security:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_SECURITY}}
 ```
 </TabItem>
 </Tabs>

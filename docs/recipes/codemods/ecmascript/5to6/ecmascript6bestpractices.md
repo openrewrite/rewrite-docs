@@ -18,19 +18,163 @@ _A collection of common ECMAScript 5 to ECMAScript 6 updates._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
-
+[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/ecmascript.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 ## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Replace all function expressions with only `return` statement with simple arrow](../../../codemods/ecmascript/5to6/simplearrow)
+* [Convert `var` to `let`](../../../codemods/ecmascript/5to6/vartolet)
+* [Generate named exports from CommonJS modules](../../../codemods/ecmascript/5to6/namedexportgeneration)
+* [Remove "use strict" directives](../../../codemods/ecmascript/5to6/nostrict)
+* [Transform AMD style `define()` calls to ES6 `import` statements](../../../codemods/ecmascript/5to6/amdtoesm)
+* [Transform CommonJS style `require()` calls to ES6 `import` statements](../../../codemods/ecmascript/5to6/cjstoesm)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices
+displayName: Upgrade ECMAScript 5 to ECMAScript 6
+description: |
+  A collection of common ECMAScript 5 to ECMAScript 6 updates.
+  
+tags:
+  - codemods
+  - 5to6
+recipeList:
+  - org.openrewrite.codemods.ecmascript.5to6.simpleArrow
+  - org.openrewrite.codemods.ecmascript.5to6.varToLet
+  - org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration
+  - org.openrewrite.codemods.ecmascript.5to6.noStrict
+  - org.openrewrite.codemods.ecmascript.5to6.amdToEsm
+  - org.openrewrite.codemods.ecmascript.5to6.cjsToEsm
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-codemods` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-codemods</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-codemods:RELEASE -Drewrite.activeRecipes=org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -41,7 +185,7 @@ mod run . --recipe ECMAScript6BestPractices
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION_REWRITE_CODEMODS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}
 ```
 </TabItem>
 </Tabs>

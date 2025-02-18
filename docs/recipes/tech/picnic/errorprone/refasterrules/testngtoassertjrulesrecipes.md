@@ -23,8 +23,7 @@ Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard
  ```java
  List<Map<String, Object>> myMaps = new ArrayList<>();
  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
- ```
- . [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
+ ```. [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 
 ## Recipe source
 
@@ -90,12 +89,22 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes
 displayName: Refaster rules that replace TestNG assertions with equivalent AssertJ assertions
 description: |
-  Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type –  bounds (`<?>`), while the associated AssertJ `@AfterTemplate`s reference stricter –  type bounds. This introduces the risk of producing invalid code. We do this anyway, because –  TestNG's wildcard types can cause javac to infer less specific types than AssertJ requires, while –  the appropriate (more specific) types _will_ be inferred properly when plugged into AssertJ's –  API. –  –  The following is an example of a TestNG statement, which would not be rewritten if it weren't –  for the wildcard matching (note that the type parameters of the map on the right-hand side will –  be inferred to be `<Object, Object>` rather than `<String, Object>`).
-  ```java
-  List<Map<String, Object>> myMaps = new ArrayList<>();
- assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
-  ```
- . [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
+  Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type
+   bounds (`<?>`), while the associated AssertJ `@AfterTemplate`s reference stricter
+   type bounds. This introduces the risk of producing invalid code. We do this anyway, because
+   TestNG's wildcard types can cause javac to infer less specific types than AssertJ requires, while
+   the appropriate (more specific) types _will_ be inferred properly when plugged into AssertJ's
+   API.
+  
+   The following is an example of a TestNG statement, which would not be rewritten if it weren't
+   for the wildcard matching (note that the type parameters of the map on the right-hand side will
+   be inferred to be `<Object, Object>` rather than `<String, Object>`).
+  
+   ```java
+   List<Map<String, Object>> myMaps = new ArrayList<>();
+   assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
+   ```
+  [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailRecipe
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailWithMessageRecipe
@@ -161,7 +170,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -182,7 +191,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
         activeRecipe("tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes")
@@ -227,7 +236,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_REWRITE_THIRD_PARTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -256,7 +265,7 @@ mod run . --recipe TestNGToAssertJRulesRecipes
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>

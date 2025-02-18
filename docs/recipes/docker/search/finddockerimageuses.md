@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-docker:{{VERSION_REWRITE_DOCKER}}")
+    rewrite("org.openrewrite.recipe:rewrite-docker:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}")
 }
 ```
 
@@ -65,7 +65,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-docker:{{VERSION_REWRITE_DOCKER}}")
+        rewrite("org.openrewrite.recipe:rewrite-docker:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.docker.search.FindDockerImageUses")
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-docker</artifactId>
-            <version>{{VERSION_REWRITE_DOCKER}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,7 +139,7 @@ mod run . --recipe FindDockerImageUses
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-docker:{{VERSION_REWRITE_DOCKER}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-docker:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}
 ```
 </TabItem>
 </Tabs>

@@ -60,7 +60,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations
 displayName: Migrate from OpenRewrite annotations to JSpecify
-description: Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify.
+description: |
+  Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify.
 recipeList:
   - org.openrewrite.staticanalysis.java.MoveFieldAnnotationToType:
       annotationType: org.openrewrite.internal.lang.*
@@ -197,7 +198,7 @@ mod run . --recipe MigrateFromOpenRewriteAnnotations
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_REWRITE_CORE}}
+mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}
 ```
 </TabItem>
 </Tabs>

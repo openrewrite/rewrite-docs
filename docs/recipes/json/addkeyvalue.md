@@ -102,7 +102,7 @@ mod run . --recipe AddKeyValue --recipe-option "keyPath='$.subjects.*' or '$.' o
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-json:{{VERSION_REWRITE_JSON}}
+mod config recipes jar install org.openrewrite:rewrite-json:{{VERSION_ORG_OPENREWRITE_REWRITE_JSON}}
 ```
 </TabItem>
 </Tabs>

@@ -55,7 +55,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices
 displayName: OpenRewrite Recipe best practices
-description: Best practices for OpenRewrite recipe development.
+description: |
+  Best practices for OpenRewrite recipe development.
 recipeList:
   - org.openrewrite.recipes.JavaRecipeBestPractices
   - org.openrewrite.recipes.RecipeTestingBestPractices
@@ -102,7 +103,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}")
+    rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
 }
 ```
 
@@ -123,7 +124,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}")
+        rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices")
@@ -168,7 +169,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-rewrite</artifactId>
-            <version>{{VERSION_REWRITE_REWRITE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -197,7 +198,7 @@ mod run . --recipe OpenRewriteRecipeBestPractices
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-rewrite:{{VERSION_REWRITE_REWRITE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}
 ```
 </TabItem>
 </Tabs>

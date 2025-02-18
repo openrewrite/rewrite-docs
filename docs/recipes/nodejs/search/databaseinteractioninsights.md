@@ -36,7 +36,7 @@ mod run . --recipe DatabaseInteractionInsights
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-nodejs:{{VERSION_REWRITE_NODEJS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-nodejs:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_NODEJS}}
 ```
 </TabItem>
 </Tabs>

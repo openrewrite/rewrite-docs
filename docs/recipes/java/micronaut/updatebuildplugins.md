@@ -81,7 +81,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.micronaut.UpdateBuildPlugins
 displayName: Add Micronaut build plugins to 4.x
-description: This recipe will update the shadow jar plugin to 8.x and the Micronaut build plugins to 4.x for a Gradle build.
+description: |
+  This recipe will update the shadow jar plugin to 8.x and the Micronaut build plugins to 4.x for a Gradle build.
 recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: com.github.johnrengelman.shadow
@@ -154,7 +155,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}")
 }
 ```
 
@@ -175,7 +176,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}")
+        rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.micronaut.UpdateBuildPlugins")
@@ -220,7 +221,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>{{VERSION_REWRITE_MICRONAUT}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -249,7 +250,7 @@ mod run . --recipe UpdateBuildPlugins
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}
 ```
 </TabItem>
 </Tabs>

@@ -48,7 +48,7 @@ This recipe has no required configuration options. It can be activated by adding
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_REWRITE_APACHE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -77,7 +77,7 @@ mod run . --recipe MavenSharedStringUtilsRecipes$TrimRecipe
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
 ```
 </TabItem>
 </Tabs>

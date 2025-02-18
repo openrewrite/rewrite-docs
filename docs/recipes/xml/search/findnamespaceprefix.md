@@ -99,7 +99,7 @@ mod run . --recipe FindNamespacePrefix --recipe-option "namespacePrefix=http://w
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_REWRITE_XML}}
+mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_ORG_OPENREWRITE_REWRITE_XML}}
 ```
 </TabItem>
 </Tabs>

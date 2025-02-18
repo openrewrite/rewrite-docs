@@ -53,7 +53,7 @@ mod run . --recipe FindResource --recipe-option "resourceName=aws_ebs_volume"
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-terraform:{{VERSION_REWRITE_TERRAFORM}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-terraform:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TERRAFORM}}
 ```
 </TabItem>
 </Tabs>

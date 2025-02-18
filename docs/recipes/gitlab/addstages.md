@@ -47,7 +47,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gitlab.AddStages
 displayName: Add GitLab stages
-description: Add or Update the set of stages defined in `.gitlab-ci.yml`.
+description: |
+  Add or Update the set of stages defined in `.gitlab-ci.yml`.
 stages: []
 
 
@@ -77,7 +78,7 @@ recipeList:
       stages: build,test,deploy
 ```
 
-Now that `com.yourorg.AddStagesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:
+Now that `com.yourorg.AddStagesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -98,7 +99,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}")
+    rewrite("org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -125,7 +126,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-gitlab</artifactId>
-            <version>{{VERSION_REWRITE_GITLAB}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -145,7 +146,7 @@ mod run . --recipe AddStages --recipe-option "stages=build,test,deploy"
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}
 ```
 </TabItem>
 </Tabs>

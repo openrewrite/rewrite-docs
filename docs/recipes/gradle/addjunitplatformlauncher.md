@@ -42,7 +42,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gradle.AddJUnitPlatformLauncher
 displayName: Add JUnit Platform Launcher
-description: Add the JUnit Platform Launcher to the buildscript dependencies.
+description: |
+  Add the JUnit Platform Launcher to the buildscript dependencies.
 recipeList:
   - org.openrewrite.gradle.AddDependency:
       groupId: org.junit.platform
@@ -129,7 +130,7 @@ mod run . --recipe AddJUnitPlatformLauncher
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_REWRITE_GRADLE}}
+mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}}
 ```
 </TabItem>
 </Tabs>

@@ -41,7 +41,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.search.FindSecrets
 displayName: Find plain text secrets
-description: Find secrets stored in plain text in code.
+description: |
+  Find secrets stored in plain text in code.
 tags:
   - security
 recipeList:
@@ -160,7 +161,7 @@ mod run . --recipe FindSecrets
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>

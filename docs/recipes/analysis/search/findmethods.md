@@ -43,7 +43,7 @@ recipeList:
       methodPattern: java.util.List add(..)
 ```
 
-Now that `com.yourorg.FindMethodsExample` has been defined, activate it and take a dependency on `org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}` in your build file:
+Now that `com.yourorg.FindMethodsExample` has been defined, activate it and take a dependency on `org.openrewrite.meta:rewrite-analysis:{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -64,7 +64,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}")
+    rewrite("org.openrewrite.meta:rewrite-analysis:{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -91,7 +91,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>{{VERSION_REWRITE_ANALYSIS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -111,7 +111,7 @@ mod run . --recipe FindMethods --recipe-option "methodPattern=java.util.List add
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}
+mod config recipes jar install org.openrewrite.meta:rewrite-analysis:{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>

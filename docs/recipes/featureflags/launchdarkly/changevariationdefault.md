@@ -43,7 +43,7 @@ recipeList:
       defaultValue: true
 ```
 
-Now that `com.yourorg.ChangeVariationDefaultExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}}` in your build file:
+Now that `com.yourorg.ChangeVariationDefaultExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -64,7 +64,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}}")
+    rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -91,7 +91,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-feature-flags</artifactId>
-            <version>{{VERSION_REWRITE_FEATURE_FLAGS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -111,7 +111,7 @@ mod run . --recipe ChangeVariationDefault --recipe-option "featureKey=flag-key-1
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}
 ```
 </TabItem>
 </Tabs>

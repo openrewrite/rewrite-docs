@@ -52,7 +52,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.maven.shared.MavenSharedStringUtilsRecipes
 displayName: `MavenSharedStringUtils` Refaster recipes
-description: Refaster template recipes for `org.openrewrite.apache.maven.shared.MavenSharedStringUtils`.
+description: |
+  Refaster template recipes for `org.openrewrite.apache.maven.shared.MavenSharedStringUtils`.
 recipeList:
   - org.openrewrite.apache.maven.shared.MavenSharedStringUtilsRecipes$AbbreviateRecipe
   - org.openrewrite.apache.maven.shared.MavenSharedStringUtilsRecipes$CapitaliseRecipe
@@ -100,7 +101,7 @@ This recipe has no required configuration options. It can be activated by adding
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_REWRITE_APACHE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -129,7 +130,7 @@ mod run . --recipe MavenSharedStringUtilsRecipes
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
 ```
 </TabItem>
 </Tabs>

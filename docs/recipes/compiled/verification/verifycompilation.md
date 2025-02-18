@@ -42,7 +42,7 @@ mod run . --recipe VerifyCompilation
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-compiled-analysis:{{VERSION_REWRITE_COMPILED_ANALYSIS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-compiled-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_COMPILED_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>

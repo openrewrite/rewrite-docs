@@ -47,7 +47,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods
 displayName: Use `getSSOCookieFromSSOToken` and `logout`
-description: This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application Server Version 8.5 and might be removed in a future release. They are not available on Liberty.
+description: |
+  This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application Server Version 8.5 and might be removed in a future release. They are not available on Liberty.
 recipeList:
   - org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod
   - org.openrewrite.java.ChangeMethodName:
@@ -86,7 +87,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_REWRITE_LIBERTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}")
 }
 ```
 
@@ -107,7 +108,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_REWRITE_LIBERTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods")
@@ -152,7 +153,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>{{VERSION_REWRITE_LIBERTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -181,7 +182,7 @@ mod run . --recipe WebSphereUnavailableSSOMethods
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-liberty:{{VERSION_REWRITE_LIBERTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}
 ```
 </TabItem>
 </Tabs>

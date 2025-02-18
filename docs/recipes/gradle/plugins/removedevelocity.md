@@ -47,7 +47,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gradle.plugins.RemoveDevelocity
 displayName: Remove Develocity
-description: Remove the Develocity plugin and configuration from the Gradle build and settings files.
+description: |
+  Remove the Develocity plugin and configuration from the Gradle build and settings files.
 recipeList:
   - org.openrewrite.gradle.plugins.RemoveBuildPlugin:
       pluginId: com.gradle.develocity
@@ -136,7 +137,7 @@ mod run . --recipe RemoveDevelocity
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_REWRITE_GRADLE}}
+mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}}
 ```
 </TabItem>
 </Tabs>
