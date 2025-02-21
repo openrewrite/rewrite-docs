@@ -39,17 +39,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.inject-api`
   * newGroupId: `jakarta.inject`
   * newArtifactId: `jakarta.inject-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.inject`
   * oldArtifactId: `javax.inject`
   * newGroupId: `jakarta.inject`
   * newArtifactId: `jakarta.inject-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.inject`
   * artifactId: `jakarta.inject-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.inject`
   * newPackageName: `jakarta.inject`
@@ -76,17 +76,17 @@ recipeList:
       oldArtifactId: javax.inject-api
       newGroupId: jakarta.inject
       newArtifactId: jakarta.inject-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.inject
       oldArtifactId: javax.inject
       newGroupId: jakarta.inject
       newArtifactId: jakarta.inject-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.inject
       artifactId: jakarta.inject-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.inject
       newPackageName: jakarta.inject

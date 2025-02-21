@@ -68,6 +68,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `ErrorProperties#IncludeStacktrace.ON_PARAM`](../../../java/spring/boot2/migrateerrorpropertiesincludestacktraceconstants)
 * [Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`](../../../java/spring/boot2/geterrorattributes)
 * [Migrate Spring Boot properties to 2.3](../../../java/spring/boot2/springbootproperties_2_3)
+* [Upgrade MyBatis to Spring Boot 2.3](../../../java/spring/boot3/upgrademybatistospringboot_2_3)
 
 </TabItem>
 
@@ -119,6 +120,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateErrorPropertiesIncludeStackTraceConstants
   - org.openrewrite.java.spring.boot2.GetErrorAttributes
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_3
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_3
 
 ```
 </TabItem>

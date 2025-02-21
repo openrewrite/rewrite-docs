@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.el-api`
   * newGroupId: `jakarta.el`
   * newArtifactId: `jakarta.el-api`
-  * newVersion: `latest.release`
+  * newVersion: `4.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.el`
   * artifactId: `jakarta.el-api`
-  * newVersion: `latest.release`
+  * newVersion: `4.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.el`
   * newPackageName: `jakarta.el`
@@ -60,11 +60,11 @@ recipeList:
       oldArtifactId: javax.el-api
       newGroupId: jakarta.el
       newArtifactId: jakarta.el-api
-      newVersion: latest.release
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.el
       artifactId: jakarta.el-api
-      newVersion: latest.release
+      newVersion: 4.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.el
       newPackageName: jakarta.el

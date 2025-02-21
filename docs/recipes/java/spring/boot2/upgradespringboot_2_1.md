@@ -60,6 +60,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`](../../../java/spring/boot2/migrateresttemplatebuildertimeoutbyint)
 * [Use `MultipartConfigFactory` with `DataSize` arguments](../../../java/spring/boot2/migratemultipartconfigfactory)
 * [Migrate Spring Boot properties to 2.1](../../../java/spring/boot2/springbootproperties_2_1)
+* [Upgrade MyBatis to Spring Boot 2.1](../../../java/spring/boot3/upgrademybatistospringboot_2_1)
 
 </TabItem>
 
@@ -103,6 +104,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderTimeoutByInt
   - org.openrewrite.java.spring.boot2.MigrateMultipartConfigFactory
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_1
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_1
 
 ```
 </TabItem>

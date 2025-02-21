@@ -203,4 +203,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Josh Soref, Marklinzi, [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Josh Soref, [Knut Wannheden](mailto:knut@moderne.io), Marklinzi, [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)

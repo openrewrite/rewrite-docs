@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.ChangeDependencyClassifier**
 
-_Finds dependencies declared in `build.gradle` files._
+_Changes classifier of an existing dependency declared in `build.gradle` files._
 
 ## Recipe source
 
@@ -139,4 +139,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

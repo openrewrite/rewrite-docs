@@ -232,4 +232,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)

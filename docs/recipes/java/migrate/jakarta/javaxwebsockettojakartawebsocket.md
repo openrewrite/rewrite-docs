@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.websocket-api`
   * newGroupId: `jakarta.websocket`
   * newArtifactId: `jakarta.websocket-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.websocket`
   * artifactId: `jakarta.websocket-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.websocket`
   * newPackageName: `jakarta.websocket`
@@ -60,11 +60,11 @@ recipeList:
       oldArtifactId: javax.websocket-api
       newGroupId: jakarta.websocket
       newArtifactId: jakarta.websocket-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.websocket
       artifactId: jakarta.websocket-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.websocket
       newPackageName: jakarta.websocket

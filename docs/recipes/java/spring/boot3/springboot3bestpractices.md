@@ -21,9 +21,6 @@ _Applies best practices to Spring Boot 3 applications._
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/best-practices.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 ## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
@@ -33,14 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Java 21](../../../java/migrate/upgradetojava21)
 * [Migrate to Spring Boot 3.3](../../../java/spring/boot3/upgradespringboot_3_3)
-* [Enable Virtual Threads on Java 21](../../../java/spring/boot3/enablevirtualthreads)
-* [Remove `public` from `@Bean` methods](../../../java/spring/framework/beanmethodsnotpublic)
-* [Replace String literals with `HttpHeaders` constants](../../../java/spring/http/replacestringliteralswithhttpheadersconstants)
-* [Replace String literals with `MediaType` constants](../../../java/spring/http/replacestringliteralswithmediatypeconstants)
-* [Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls](../../../java/spring/http/simplifymediatypeparsecalls)
-* [Simplify WebTestClient expressions](../../../java/spring/http/simplifywebtestclientcalls)
 
 </TabItem>
 
@@ -57,14 +47,7 @@ tags:
   - spring
   - boot
 recipeList:
-  - org.openrewrite.java.migrate.UpgradeToJava21
   - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3
-  - org.openrewrite.java.spring.boot3.EnableVirtualThreads
-  - org.openrewrite.java.spring.framework.BeanMethodsNotPublic
-  - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants
-  - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants
-  - org.openrewrite.java.spring.http.SimplifyMediaTypeParseCalls
-  - org.openrewrite.java.spring.http.SimplifyWebTestClientCalls
 
 ```
 </TabItem>
@@ -248,4 +231,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), Anu Ramamoorthy, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Kun Li, [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Simon Zilliken, [Shannon Pamperl](mailto:shanman190@gmail.com), BhavanaPidapa, [Tim te Beek](mailto:tim.te.beek@jdriven.com), Cathy, [Kun Li](mailto:kun@moderne.io), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, [Tim te Beek](mailto:timtebeek@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), Aaron Gershman, Daryl Robbins, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Evie Lau, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Fiete, Marius Barbulescu, ranuradh, nbruno, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Greg Adams](mailto:gadams@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [BoykoAlex](mailto:aboyko@pivotal.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), Aakarshit Uppal, BramliAK, eocantu, Josh Soref, John Burns, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Chuka Obinabo, [Joan Viladrosa](mailto:joan@moderne.io), Kun Li, [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, Anu Ramamoorthy, [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Simon Zilliken, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), Cathy, [Curtis](mailto:curtis@mail.ustc.edu.cn), [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Tim te Beek](mailto:timtebeek@gmail.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Evie Lau, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Adam Slaski, Aaron Gershman, Daryl Robbins, ranuradh, nbruno, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [BoykoAlex](mailto:aboyko@pivotal.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Josh Soref, John Burns, Aakarshit Uppal, BramliAK, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)

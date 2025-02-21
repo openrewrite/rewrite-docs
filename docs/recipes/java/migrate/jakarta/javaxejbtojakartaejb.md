@@ -33,17 +33,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.ejb-api`
   * newGroupId: `jakarta.ejb`
   * newArtifactId: `jakarta.ejb-api`
-  * newVersion: `latest.release`
+  * newVersion: `4.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.glassfish.main`
   * oldArtifactId: `javax.ejb`
   * newGroupId: `jakarta.ejb`
   * newArtifactId: `jakarta.ejb-api`
-  * newVersion: `latest.release`
+  * newVersion: `4.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.ejb`
   * artifactId: `jakarta.ejb-api`
-  * newVersion: `latest.release`
+  * newVersion: `4.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.ejb`
   * newPackageName: `jakarta.ejb`
@@ -66,17 +66,17 @@ recipeList:
       oldArtifactId: javax.ejb-api
       newGroupId: jakarta.ejb
       newArtifactId: jakarta.ejb-api
-      newVersion: latest.release
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.glassfish.main
       oldArtifactId: javax.ejb
       newGroupId: jakarta.ejb
       newArtifactId: jakarta.ejb-api
-      newVersion: latest.release
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.ejb
       artifactId: jakarta.ejb-api
-      newVersion: latest.release
+      newVersion: 4.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.ejb
       newPackageName: jakarta.ejb

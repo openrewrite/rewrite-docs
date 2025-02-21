@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)

@@ -39,22 +39,22 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `jaxws-api`
   * newGroupId: `jakarta.xml.ws`
   * newArtifactId: `jakarta.xml.ws-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.xml.ws`
   * artifactId: `jakarta.xml.ws-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
-  * version: `latest.release`
+  * version: `3.x`
   * onlyIfUsing: `javax.xml.ws..*`
   * scope: `runtime`
   * acceptTransitive: `true`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
-  * newVersion: `latest.release`
+  * newVersion: `3.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.xml.ws`
   * newPackageName: `jakarta.xml.ws`
@@ -81,22 +81,22 @@ recipeList:
       oldArtifactId: jaxws-api
       newGroupId: jakarta.xml.ws
       newArtifactId: jakarta.xml.ws-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.xml.ws
       artifactId: jakarta.xml.ws-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
-      version: latest.release
+      version: 3.x
       onlyIfUsing: javax.xml.ws..*
       scope: runtime
       acceptTransitive: true
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
-      newVersion: latest.release
+      newVersion: 3.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.xml.ws
       newPackageName: jakarta.xml.ws

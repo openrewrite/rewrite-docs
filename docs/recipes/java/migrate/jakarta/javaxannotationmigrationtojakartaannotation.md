@@ -39,13 +39,13 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.annotation-api`
   * newGroupId: `jakarta.annotation`
   * newArtifactId: `jakarta.annotation-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.glassfish.main`
   * oldArtifactId: `javax.annotation`
   * newGroupId: `jakarta.annotation`
   * newArtifactId: `jakarta.annotation-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.annotation`
   * newPackageName: `jakarta.annotation`
@@ -53,6 +53,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `jakarta.annotation.processing`
   * newPackageName: `javax.annotation.processing`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `jakarta.annotation.concurrent`
+  * newPackageName: `javax.annotation.concurrent`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.annotation.Nullable`
+  * newFullyQualifiedTypeName: `javax.annotation.Nullable`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.annotation.Nonnull`
+  * newFullyQualifiedTypeName: `javax.annotation.Nonnull`
 
 </TabItem>
 
@@ -75,13 +84,13 @@ recipeList:
       oldArtifactId: javax.annotation-api
       newGroupId: jakarta.annotation
       newArtifactId: jakarta.annotation-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.glassfish.main
       oldArtifactId: javax.annotation
       newGroupId: jakarta.annotation
       newArtifactId: jakarta.annotation-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.annotation
       newPackageName: jakarta.annotation
@@ -89,6 +98,15 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: jakarta.annotation.processing
       newPackageName: javax.annotation.processing
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: jakarta.annotation.concurrent
+      newPackageName: javax.annotation.concurrent
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.annotation.Nullable
+      newFullyQualifiedTypeName: javax.annotation.Nullable
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.annotation.Nonnull
+      newFullyQualifiedTypeName: javax.annotation.Nonnull
 
 ```
 </TabItem>

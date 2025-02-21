@@ -20,7 +20,7 @@ _Remove method invocations if syntactically safe._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A pattern to match method invocations for removal. | `java.lang.StringBuilder append(java.lang.String)` |
+| `String` | methodPattern | A pattern to match method invocations for removal. To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.lang.StringBuilder append(java.lang.String)` |
 
 ## License
 
@@ -157,4 +157,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)
+[Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)

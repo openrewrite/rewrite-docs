@@ -20,7 +20,7 @@ _Find uses of deprecated methods in any API._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | *Optional*. A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `java.util.List add(..)` |
+| `String` | methodPattern | *Optional*. To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add(..)` |
 | `Boolean` | ignoreDeprecatedScopes | *Optional*. When set to `true` deprecated methods used within deprecated methods or classes will be ignored. |  |
 
 ## License

@@ -39,6 +39,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `5.8.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `spring-security-oauth2-authorization-server`
+  * newVersion: `0.4.x`
+  * overrideManagedVersion: `false`
 * [Convert `HttpSecurity` chained calls into Lambda DSL](../../../java/spring/boot2/httpsecuritylambdadsl)
 * [Convert `ServerHttpSecurity` chained calls into Lambda DSL](../../../java/spring/boot2/serverhttpsecuritylambdadsl)
 * [Convert `HeadersConfigurer` chained calls into Lambda DSL](../../../java/spring/boot2/headersconfigurerlambdadsl)
@@ -71,6 +76,11 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 5.8.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: spring-security-oauth2-authorization-server
+      newVersion: 0.4.x
       overrideManagedVersion: false
   - org.openrewrite.java.spring.boot2.HttpSecurityLambdaDsl
   - org.openrewrite.java.spring.boot2.ServerHttpSecurityLambdaDsl

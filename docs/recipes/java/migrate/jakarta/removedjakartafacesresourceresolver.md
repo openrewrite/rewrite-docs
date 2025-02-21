@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver**
 
-_The `ResourceResolver` class was removed in Jakarta Faces 4.0.  The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class._
+_The `ResourceResolver` class was removed in Jakarta Faces 4.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class._
 
 ## Recipe source
 
@@ -47,7 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver
 displayName: Replace `ResourceResolver` with `ResourceHandler`
 description: |
-  The `ResourceResolver` class was removed in Jakarta Faces 4.0.  The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
+  The `ResourceResolver` class was removed in Jakarta Faces 4.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.view.facelets.ResourceResolver

@@ -426,4 +426,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jeremy Grelle](mailto:grellej@unityfoundation.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Jeremy Grelle](mailto:grellej@unityfoundation.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [lingenj](mailto:jacob.van.lingen@moderne.io)

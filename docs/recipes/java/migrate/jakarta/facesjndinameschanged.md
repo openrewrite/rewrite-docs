@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged**
 
-_The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`,  and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys._
+_The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys._
 
 ## Recipe source
 
@@ -47,7 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged
 displayName: JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`
 description: |
-  The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`,  and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys.
+  The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys.
 recipeList:
   - org.openrewrite.xml.ChangeTagValue:
       elementName: //env-entry-name

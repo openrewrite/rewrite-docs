@@ -26,6 +26,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Boot 2.4](./upgradespringboot_2_4.md)
 * [Migrate to Spring Boot 2.6](./upgradespringboot_2_6.md)
 * [Migrate to Spring Boot 2.7](./upgradespringboot_2_7.md)
+* [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](./maybeaddspringbootstarteractuator.md)
 * [Spring Boot 2.x best practices](./springboot2bestpractices.md)
 * [Upgrade to Spring Boot 2.5](./upgradespringboot_2_5.md)
 * [Use `WebServerFactoryCustomizer`](./migratetowebserverfactorycustomizer.md)

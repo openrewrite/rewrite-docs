@@ -43,6 +43,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Remove annotation attribute](../../java/removeannotationattribute)
   * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
   * attributeName: `position`
+* [Remove annotation attribute](../../java/removeannotationattribute)
+  * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
+  * attributeName: `notes`
 * [Change annotation attribute name](../../java/changeannotationattributename)
   * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
   * oldAttributeName: `dataType`
@@ -77,6 +80,9 @@ recipeList:
   - org.openrewrite.java.RemoveAnnotationAttribute:
       annotationType: io.swagger.v3.oas.annotations.media.Schema
       attributeName: position
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: io.swagger.v3.oas.annotations.media.Schema
+      attributeName: notes
   - org.openrewrite.java.ChangeAnnotationAttributeName:
       annotationType: io.swagger.v3.oas.annotations.media.Schema
       oldAttributeName: dataType

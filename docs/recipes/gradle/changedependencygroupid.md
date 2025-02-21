@@ -139,4 +139,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Tim te Beek](mailto:tim@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com)

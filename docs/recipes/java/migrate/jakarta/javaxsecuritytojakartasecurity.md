@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.security.enterprise-api`
   * newGroupId: `jakarta.security.enterprise`
   * newArtifactId: `jakarta.security.enterprise-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.security.enterprise`
   * artifactId: `jakarta.security.enterprise-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.security.enterprise`
   * newPackageName: `jakarta.security.enterprise`
@@ -60,11 +60,11 @@ recipeList:
       oldArtifactId: javax.security.enterprise-api
       newGroupId: jakarta.security.enterprise
       newArtifactId: jakarta.security.enterprise-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.security.enterprise
       artifactId: jakarta.security.enterprise-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.security.enterprise
       newPackageName: jakarta.security.enterprise

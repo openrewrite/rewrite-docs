@@ -68,6 +68,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.WebProperties$Resources`
 * [Migrate Spring Boot properties to 2.5](../../../java/spring/boot2/springbootproperties_2_5)
 * [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](../../../java/spring/boot2/databasecomponentandbeaninitializationordering)
+* [Upgrade MyBatis to Spring Boot 2.5](../../../java/spring/boot3/upgrademybatistospringboot_2_5)
 
 </TabItem>
 
@@ -121,6 +122,7 @@ recipeList:
       newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.WebProperties$Resources
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_5
   - org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_5
 
 ```
 </TabItem>
@@ -304,4 +306,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), SiBorea, Fabian Krüger, Kun Li, nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Kun Li](mailto:kun@moderne.io), Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman, Josh Soref, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), eocantu
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), SiBorea, Fabian Krüger, Kun Li, nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), Tyler Van Gorder, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman, Josh Soref, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), eocantu

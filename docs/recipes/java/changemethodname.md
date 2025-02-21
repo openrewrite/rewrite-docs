@@ -20,7 +20,7 @@ _Rename a method._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
+| `String` | methodPattern | To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `org.mockito.Matchers anyVararg()` |
 | `String` | newMethodName | The method name that will replace the existing name. | `any` |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |  |
 | `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |

@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta)
+* [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](../../../java/migrate/jakarta/migrationtojakarta10apis)
 * [JSF 2.x to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces2xmigrationtojakarta4x)
 * [Use `isParametersProvided()`](../../../java/migrate/jakarta/removedisparmetersprovidedmethod)
 * [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](../../../java/migrate/jakarta/removedsoapelementfactory)
@@ -47,7 +48,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate xmlns entries and javax. packages in `validation.xml` files](../../../java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml)
 * [Rename CDI Extension to Jakarta](../../../java/migrate/jakarta/javaxtojakartacdiextensions)
 * [Update Jakarta EE Platform Dependencies to 10.0.0](../../../java/migrate/jakarta/updatejakartaplatform10)
-* [Update Jakarta EE annotation Dependencies to 2.1.x.](../../../java/migrate/jakarta/updatejakartaannotations2)
 
 </TabItem>
 
@@ -64,6 +64,7 @@ tags:
   - jakarta
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
+  - org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis
   - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakarta4x
   - org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod
   - org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory
@@ -78,7 +79,6 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxBeanValidationXmlToJakartaBeanValidationXml
   - org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions
   - org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform10
-  - org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2
 
 ```
 </TabItem>

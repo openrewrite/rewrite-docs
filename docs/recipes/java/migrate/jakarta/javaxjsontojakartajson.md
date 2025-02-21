@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.json-api`
   * newGroupId: `jakarta.json`
   * newArtifactId: `jakarta.json-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.json`
   * artifactId: `jakarta.json-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.json`
   * newPackageName: `jakarta.json`
@@ -60,11 +60,11 @@ recipeList:
       oldArtifactId: javax.json-api
       newGroupId: jakarta.json
       newArtifactId: jakarta.json-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.json
       artifactId: jakarta.json-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.json
       newPackageName: jakarta.json

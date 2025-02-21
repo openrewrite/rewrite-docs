@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.faces-api`
   * newGroupId: `jakarta.faces`
   * newArtifactId: `jakarta.faces-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.faces`
   * artifactId: `jakarta.faces-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.faces`
   * newPackageName: `jakarta.faces`
@@ -60,11 +60,11 @@ recipeList:
       oldArtifactId: javax.faces-api
       newGroupId: jakarta.faces
       newArtifactId: jakarta.faces-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.faces
       artifactId: jakarta.faces-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.faces
       newPackageName: jakarta.faces

@@ -6,6 +6,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Find AWS secrets](./findawssecrets.md)
 * [Find Artifactory secrets](./findartifactorysecrets.md)
+* [Find Facebook secrets](./findfacebooksecrets.md)
 * [Find GitHub secrets](./findgithubsecrets.md)
 * [Find Google secrets](./findgooglesecrets.md)
 * [Find MailChimp secrets](./findmailchimpsecrets.md)

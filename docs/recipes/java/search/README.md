@@ -24,7 +24,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find method declaration](./findmethoddeclaration.md)
 * [Find method usages](./findmethods.md)
 * [Find methods with empty bodies](./findemptymethods.md)
-* [Find missing type information on Java ASTs](./findmissingtypes.md)
+* [Find missing type information on Java LSTs](./findmissingtypes.md)
 * [Find plain text secrets](./findsecrets.md)
 * [Find source files with imports](./findimports.md)
 * [Find sources that are likely tests](./islikelytest.md)

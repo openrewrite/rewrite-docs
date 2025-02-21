@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Aleksandar A Simpson](mailto:alek@asu.me), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Aleksandar A Simpson](mailto:alek@asu.me), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

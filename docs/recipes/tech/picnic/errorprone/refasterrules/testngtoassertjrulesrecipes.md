@@ -105,7 +105,7 @@ description: |
    List<Map<String, Object>> myMaps = new ArrayList<>();
    assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
    ```
-   [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
+  [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailRecipe
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailWithMessageRecipe

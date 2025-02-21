@@ -39,6 +39,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `6.2.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `spring-security-oauth2-authorization-server`
+  * newVersion: `1.2.x`
+  * overrideManagedVersion: `false`
 * [Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL](../../../java/spring/security6/applytowithlambdadsl)
 
 </TabItem>
@@ -61,6 +66,11 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 6.2.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: spring-security-oauth2-authorization-server
+      newVersion: 1.2.x
       overrideManagedVersion: false
   - org.openrewrite.java.spring.security6.ApplyToWithLambdaDsl
 

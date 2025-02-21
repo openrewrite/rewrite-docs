@@ -28,8 +28,8 @@ Finds dependencies declared in `build.gradle` files. See the [reference](https:/
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.guava` |
-| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
+| `String` | groupId | The first part of a dependency coordinate identifying its publisher. | `com.google.guava` |
+| `String` | artifactId | The second part of a dependency coordinate uniquely identifying it among artifacts from the same publisher. | `guava` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. If omitted then all configurations will be searched. | `api` |
 
 ## License

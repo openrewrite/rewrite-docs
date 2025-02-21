@@ -40,17 +40,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.security.auth.message-api`
   * newGroupId: `jakarta.authentication`
   * newArtifactId: `jakarta.authentication-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.glassfish.main`
   * oldArtifactId: `javax.security.auth.message`
   * newGroupId: `jakarta.authentication`
   * newArtifactId: `jakarta.authentication-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.authentication`
   * artifactId: `jakarta.authentication-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.security.auth.message`
   * newPackageName: `jakarta.security.auth.message`
@@ -78,17 +78,17 @@ recipeList:
       oldArtifactId: javax.security.auth.message-api
       newGroupId: jakarta.authentication
       newArtifactId: jakarta.authentication-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.glassfish.main
       oldArtifactId: javax.security.auth.message
       newGroupId: jakarta.authentication
       newArtifactId: jakarta.authentication-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.authentication
       artifactId: jakarta.authentication-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.security.auth.message
       newPackageName: jakarta.security.auth.message

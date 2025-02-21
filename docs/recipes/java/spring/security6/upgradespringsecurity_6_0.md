@@ -39,6 +39,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `6.0.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `spring-security-oauth2-authorization-server`
+  * newVersion: `1.0.x`
+  * overrideManagedVersion: `false`
 * [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](../../../java/spring/security6/usesha256inrememberme)
 * [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](../../../java/spring/security6/propagateauthenticationserviceexceptions)
 * [Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in](../../../java/spring/security6/requireexplicitsavingofsecuritycontextrepository)
@@ -67,6 +72,11 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 6.0.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: spring-security-oauth2-authorization-server
+      newVersion: 1.0.x
       overrideManagedVersion: false
   - org.openrewrite.java.spring.security6.UseSha256InRememberMe
   - org.openrewrite.java.spring.security6.PropagateAuthenticationServiceExceptions

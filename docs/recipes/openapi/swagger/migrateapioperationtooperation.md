@@ -48,6 +48,10 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * annotationType: `io.swagger.v3.oas.annotations.Operation`
   * oldAttributeName: `nickname`
   * newAttributeName: `operationId`
+* [Change annotation attribute name](../../java/changeannotationattributename)
+  * annotationType: `io.swagger.v3.oas.annotations.Operation`
+  * oldAttributeName: `httpMethod`
+  * newAttributeName: `method`
 * [Remove annotation attribute](../../java/removeannotationattribute)
   * annotationType: `io.swagger.v3.oas.annotations.Operation`
   * attributeName: `response`
@@ -88,6 +92,10 @@ recipeList:
       annotationType: io.swagger.v3.oas.annotations.Operation
       oldAttributeName: nickname
       newAttributeName: operationId
+  - org.openrewrite.java.ChangeAnnotationAttributeName:
+      annotationType: io.swagger.v3.oas.annotations.Operation
+      oldAttributeName: httpMethod
+      newAttributeName: method
   - org.openrewrite.java.RemoveAnnotationAttribute:
       annotationType: io.swagger.v3.oas.annotations.Operation
       attributeName: response
