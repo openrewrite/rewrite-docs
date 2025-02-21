@@ -36,7 +36,7 @@ This quickstart guide assumes that you:
 The first step in this process is making sure you have some code to work with. We've prepared a [sample repository](https://github.com/openrewrite/spring-petclinic-migration) that you can use if you'd like. However, as all of the steps in this guide apply to any Java project built with Maven or Gradle, please feel free to use your own and skip to [Step 2](#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
 
 :::warning
-The sample **spring-petclinic project** requires JDK version 11 to build (OpenRewrite does not have this requirement -- just this sample project). Newer JDK versions will not work. Get OpenJDK 11 [here](https://adoptium.net/temurin/releases/?version=11) if you do not already have that version installed.
+The sample **spring-petclinic project** requires JDK version 11+ to build (OpenRewrite does not have this requirement -- just this sample project). Get OpenJDK 11 [here](https://adoptium.net/temurin/releases/?version=11) if you do not already have that version installed.
 
 If you are building the project in IntelliJ and are using Gradle, make sure that you set your Gradle JVM to 11 (Build, Execution, Deployment → Build Tools → Gradle → Gradle JVM).
 :::
