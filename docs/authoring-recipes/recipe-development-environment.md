@@ -49,7 +49,7 @@ gradle init
 <TabItem value="maven" label="Maven">
 
 ```bash
-mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5
 ```
 
 </TabItem>
@@ -118,11 +118,23 @@ dependencies {
 <dependencyManagement>
   <dependencies>
       <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-recipe-bom</artifactId>
           <version>{{VERSION_REWRITE_RECIPE_BOM}}</version>
           <type>pom</type>
           <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.36</version>
       </dependency>
   </dependencies>
 </dependencyManagement>
@@ -201,7 +213,6 @@ dependencies {
     <plugins>
         <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M9</version>
         </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -217,7 +228,6 @@ dependencies {
                     <path>
                         <groupId>org.projectlombok</groupId>
                         <artifactId>lombok</artifactId>
-                        <version>1.18.32</version>
                     </path>
                 </annotationProcessorPaths>
             </configuration>
