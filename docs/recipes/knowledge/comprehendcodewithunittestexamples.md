@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Supplements the AI-generated method descriptions with examples of the method being used in unit tests"
+sidebar_label: "Code comprehension with unit test examples"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Supplements the AI-generated method descriptions with examples of the method being used in unit tests
+# Code comprehension with unit test examples
 
 **io.moderne.knowledge.ComprehendCodeWithUnitTestExamples**
 
@@ -96,4 +96,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-justine-gehring
+justine-gehring, [justine](mailto:justine.gehring@gmail.com)

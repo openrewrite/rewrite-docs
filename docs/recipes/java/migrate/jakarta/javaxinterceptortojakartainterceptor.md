@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.interceptor-api`
   * newGroupId: `jakarta.interceptor`
   * newArtifactId: `jakarta.interceptor-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.interceptor`
   * artifactId: `jakarta.interceptor-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.interceptor`
   * newPackageName: `jakarta.interceptor`
@@ -60,11 +60,11 @@ recipeList:
       oldArtifactId: javax.interceptor-api
       newGroupId: jakarta.interceptor
       newArtifactId: jakarta.interceptor-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.interceptor
       artifactId: jakarta.interceptor-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.interceptor
       newPackageName: jakarta.interceptor

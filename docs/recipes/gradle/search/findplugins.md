@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.search.FindPlugins**
 
-_Find a Gradle plugin by id._
+_Find a Gradle plugin by id and/or class name. For best results both should be specified, as one cannot automatically be used to infer the other._
 
 ## Recipe source
 
@@ -20,7 +20,8 @@ _Find a Gradle plugin by id._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | pluginId | The `ID` part of `plugin { ID }`. | ``com.jfrog.bintray`` |
+| `String` | pluginId | The unique identifier used to apply a plugin in the `plugins` block. Note that this alone is insufficient to search for plugins applied by fully qualified class name and the `buildscript` block. | ``com.jfrog.bintray`` |
+| `String` | pluginClass | *Optional*. The fully qualified name of a class implementing a Gradle plugin.  | `com.jfrog.bintray.gradle.BintrayPlugin` |
 
 ## License
 
@@ -39,6 +40,7 @@ displayName: Find Gradle plugin example
 recipeList:
   - org.openrewrite.gradle.search.FindPlugins:
       pluginId: '`com.jfrog.bintray`'
+      pluginClass: com.jfrog.bintray.gradle.BintrayPlugin
 ```
 
 Now that `com.yourorg.FindPluginsExample` has been defined, activate it in your build file:
@@ -68,7 +70,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindPlugins --recipe-option "pluginId='`com.jfrog.bintray`'"
+mod run . --recipe FindPlugins --recipe-option "pluginId='`com.jfrog.bintray`'" --recipe-option "pluginClass=com.jfrog.bintray.gradle.BintrayPlugin"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -133,4 +135,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -20,7 +20,7 @@ _Change the access level (public, protected, private, package private) of a meth
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
+| `String` | methodPattern | To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `org.mockito.Matchers anyVararg()` |
 | `String` | newAccessLevel | New method access level to apply to the method. Valid options: `private`, `protected`, `package`, `public` | `public` |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |  |
 

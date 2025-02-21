@@ -39,21 +39,21 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `jaxb-api`
   * newGroupId: `jakarta.xml.bind`
   * newArtifactId: `jakarta.xml.bind-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.sun.xml.bind`
   * oldArtifactId: `jaxb-impl`
   * newGroupId: `org.glassfish.jaxb`
   * newArtifactId: `jaxb-runtime`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.glassfish.jaxb`
   * artifactId: `jaxb-runtime`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.xml.bind`
   * newPackageName: `jakarta.xml.bind`
@@ -88,21 +88,21 @@ recipeList:
       oldArtifactId: jaxb-api
       newGroupId: jakarta.xml.bind
       newArtifactId: jakarta.xml.bind-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.sun.xml.bind
       oldArtifactId: jaxb-impl
       newGroupId: org.glassfish.jaxb
       newArtifactId: jaxb-runtime
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.glassfish.jaxb
       artifactId: jaxb-runtime
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.xml.bind
       newPackageName: jakarta.xml.bind

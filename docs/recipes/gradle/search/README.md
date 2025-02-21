@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Find Gradle JVMTestSuite plugin configuration](./findjvmtestsuites.md)
 * [Find Gradle `dependencies` blocks](./finddependencyhandler.md)
 * [Find Gradle dependency](./finddependency.md)
 * [Find Gradle plugin](./findplugins.md)

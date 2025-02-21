@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate to 4.9.0"
+sidebar_label: "Migrate to 4.10.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to 4.9.0
+# Migrate to 4.10.0
 
 **org.apache.camel.upgrade.CamelMigrationRecipe**
 
-_Migrates Apache Camel application to 4.9.0_
+_Migrates Apache Camel application to 4.10.0_
 
 ## Recipe source
 
@@ -28,25 +28,27 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Java 17](../../../../java/migrate/upgradetojava17)
+* [Migrates `camel 4.9` application to `camel 4.10`](../../../../org/apache/camel/upgrade/camel410/camelmigrationrecipe)
 * [Migrates `camel 4.8` application to `camel 4.9`](../../../../org/apache/camel/upgrade/camel49/camelmigrationrecipe)
 * [Migrates `camel 4.6` application to `camel 4.7`](../../../../org/apache/camel/upgrade/camel47/camelmigrationrecipe)
 * [Migrates `camel 4.5` application to `camel 4.6`](../../../../org/apache/camel/upgrade/camel46/camelmigrationrecipe)
 * [Migrates `camel 4.4` application to `camel 4.5`](../../../../org/apache/camel/upgrade/camel45/camelmigrationrecipe)
 * [Migrates `camel 4.0` application to `camel 4.4`](../../../../org/apache/camel/upgrade/camel44/camelmigrationrecipe)
 * [Migrate `camel3` application to `camel4.`](../../../../org/apache/camel/upgrade/camel40/camelmigrationrecipe)
+* [Migrate to Java 17](../../../../org/apache/camel/upgrade/upgradetojava17)
+* [Change Maven Java version property values to 17](../../../../org/apache/camel/upgrade/javaversion17)
 * [Upgrade Maven dependency version](../../../../maven/upgradedependencyversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.9.0`
+  * newVersion: `4.10.0`
 * [Upgrade Maven plugin version](../../../../maven/upgradepluginversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.9.0`
+  * newVersion: `4.10.0`
 * [Upgrade Maven parent project version](../../../../maven/upgradeparentversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.9.0`
+  * newVersion: `4.10.0`
 
 </TabItem>
 
@@ -56,29 +58,31 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.CamelMigrationRecipe
-displayName: Migrate to 4.9.0
+displayName: Migrate to 4.10.0
 description: |
-  Migrates Apache Camel application to 4.9.0
+  Migrates Apache Camel application to 4.10.0
 recipeList:
-  - org.openrewrite.java.migrate.UpgradeToJava17
+  - org.apache.camel.upgrade.camel410.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel49.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel47.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel46.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel45.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel44.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel40.CamelMigrationRecipe
+  - org.apache.camel.upgrade.UpgradeToJava17
+  - org.apache.camel.upgrade.JavaVersion17
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.9.0
+      newVersion: 4.10.0
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.9.0
+      newVersion: 4.10.0
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.9.0
+      newVersion: 4.10.0
 
 ```
 </TabItem>
@@ -260,6 +264,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, eocantu, [Shannon Pamperl](mailto:shanman190@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li, Josh Soref

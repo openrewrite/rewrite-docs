@@ -33,17 +33,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.jws-api`
   * newGroupId: `jakarta.jws`
   * newArtifactId: `jakarta.jws-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.glassfish.main`
   * oldArtifactId: `javax.jws`
   * newGroupId: `jakarta.jws`
   * newArtifactId: `jakarta.jws-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.jws`
   * artifactId: `jakarta.jws-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.jws`
   * newPackageName: `jakarta.jws`
@@ -66,17 +66,17 @@ recipeList:
       oldArtifactId: javax.jws-api
       newGroupId: jakarta.jws
       newArtifactId: jakarta.jws-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.glassfish.main
       oldArtifactId: javax.jws
       newGroupId: jakarta.jws
       newArtifactId: jakarta.jws-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.jws
       artifactId: jakarta.jws-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.jws
       newPackageName: jakarta.jws

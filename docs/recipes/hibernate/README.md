@@ -3,6 +3,8 @@
 ## Categories
 
 * [Migratetohypersistenceutilshibernate6](/recipes/hibernate/migratetohypersistenceutilshibernate6)
+* [Search](/recipes/hibernate/search)
+* [Update66](/recipes/hibernate/update66)
 * [Validator](/recipes/hibernate/validator)
 
 ## Composite Recipes
@@ -16,6 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Hibernate 6.3.x](./migratetohibernate63.md)
 * [Migrate to Hibernate 6.4.x](./migratetohibernate64.md)
 * [Migrate to Hibernate 6.5.x](./migratetohibernate65.md)
+* [Migrate to Hibernate 6.6.x](./migratetohibernate66.md)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](./typedescriptortotype.md)
 
 ## Recipes

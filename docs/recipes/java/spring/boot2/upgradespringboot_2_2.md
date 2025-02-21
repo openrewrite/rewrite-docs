@@ -69,6 +69,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.test.rule.OutputCapture`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.system.OutputCaptureRule`
+* [Upgrade MyBatis to Spring Boot 2.2](../../../java/spring/boot3/upgrademybatistospringboot_2_2)
 
 </TabItem>
 
@@ -121,6 +122,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.test.rule.OutputCapture
       newFullyQualifiedTypeName: org.springframework.boot.test.system.OutputCaptureRule
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_2
 
 ```
 </TabItem>

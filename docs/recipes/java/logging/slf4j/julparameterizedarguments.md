@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Wojtek, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+Wojtek, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

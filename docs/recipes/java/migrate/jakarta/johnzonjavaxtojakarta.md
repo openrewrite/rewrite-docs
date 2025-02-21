@@ -35,7 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `jakarta.json`
   * artifactId: `jakarta.json-api`
-  * version: `2.1.X`
+  * version: `2.1.x`
   * onlyIfUsing: `org.apache.johnzon..*`
   * scope: `provided`
 
@@ -58,7 +58,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: jakarta.json
       artifactId: jakarta.json-api
-      version: 2.1.X
+      version: 2.1.x
       onlyIfUsing: org.apache.johnzon..*
       scope: provided
 

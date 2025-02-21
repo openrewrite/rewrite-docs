@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Update Jakarta EE Java Faces Dependencies to 4.0.x.](../../../java/migrate/jakarta/updatejakartafacesapi4)
 * [Faces XHTML migration for Jakarta EE 10](../../../java/migrate/jakarta/jakartafacesxhtml)
 * [Migrate JSF values inside EcmaScript files](../../../java/migrate/jakarta/jakartafacesecmascript)
 * [Migrate xmlns entries in `faces-config.xml` files](../../../java/migrate/jakarta/javaxfacesconfigxmltojakartafacesconfigxml)
@@ -64,6 +65,7 @@ tags:
   - jsf
   - jakarta
 recipeList:
+  - org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4
   - org.openrewrite.java.migrate.jakarta.JakartaFacesXhtml
   - org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript
   - org.openrewrite.java.migrate.jakarta.JavaxFacesConfigXmlToJakartaFacesConfigXml

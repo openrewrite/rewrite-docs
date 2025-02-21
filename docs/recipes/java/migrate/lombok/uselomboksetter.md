@@ -203,4 +203,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-timo-a
+timo-a, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

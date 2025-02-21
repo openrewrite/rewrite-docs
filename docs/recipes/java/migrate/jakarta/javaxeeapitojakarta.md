@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javaee-api`
   * newGroupId: `jakarta.platform`
   * newArtifactId: `jakarta.jakartaee-api`
-  * newVersion: `9.0.0`
+  * newVersion: `9.1.0`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.platform`
   * artifactId: `*`
-  * newVersion: `9.0.0`
+  * newVersion: `9.1.0`
 
 </TabItem>
 
@@ -56,11 +56,11 @@ recipeList:
       oldArtifactId: javaee-api
       newGroupId: jakarta.platform
       newArtifactId: jakarta.jakartaee-api
-      newVersion: 9.0.0
+      newVersion: 9.1.0
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.platform
       artifactId: "*"
-      newVersion: 9.0.0
+      newVersion: 9.1.0
 
 ```
 </TabItem>

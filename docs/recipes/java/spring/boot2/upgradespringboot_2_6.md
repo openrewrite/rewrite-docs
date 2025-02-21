@@ -61,6 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `spring-cloud-dependencies`
   * newVersion: `2021.0.X`
   * overrideManagedVersion: `false`
+* [Upgrade MyBatis to Spring Boot 2.6](../../../java/spring/boot3/upgrademybatistospringboot_2_6)
 
 </TabItem>
 
@@ -105,6 +106,7 @@ recipeList:
       artifactId: spring-cloud-dependencies
       newVersion: 2021.0.X
       overrideManagedVersion: false
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_6
 
 ```
 </TabItem>
@@ -288,4 +290,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, SiBorea, [Kyle Scully](mailto:scullykns@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Fabian Krüger, Kun Li, nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), Tyler Van Gorder, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman, Josh Soref, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), eocantu
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, SiBorea, [Kyle Scully](mailto:scullykns@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Fabian Krüger, Kun Li, nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), Tyler Van Gorder, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman, Josh Soref, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), eocantu

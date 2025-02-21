@@ -73,6 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](../../../java/spring/boot2/migrateloggingsystempropertyconstants)
 * [Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`](../../../java/spring/boot2/migratehsqlembeddeddatabaseconnection)
 * [Migrate Spring Boot properties to 2.4](../../../java/spring/boot2/springbootproperties_2_4)
+* [Upgrade MyBatis to Spring Boot 2.4](../../../java/spring/boot3/upgrademybatistospringboot_2_4)
 
 </TabItem>
 
@@ -129,6 +130,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateLoggingSystemPropertyConstants
   - org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_4
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_4
 
 ```
 </TabItem>
@@ -312,4 +314,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kun Li](mailto:kun@moderne.io), Aaron Gershman, Josh Soref, eocantu
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Tyler Van Gorder, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kun Li](mailto:kun@moderne.io), Aaron Gershman, Josh Soref, eocantu

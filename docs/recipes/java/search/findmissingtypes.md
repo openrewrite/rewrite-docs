@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Find missing type information on Java ASTs"
+sidebar_label: "Find missing type information on Java LSTs"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find missing type information on Java ASTs
+# Find missing type information on Java LSTs
 
 **org.openrewrite.java.search.FindMissingTypes**
 
-_This is a diagnostic recipe to highlight where ASTs are missing type attribution information._
+_This is a diagnostic recipe to highlight where LSTs are missing type attribution information._
 
 ## Recipe source
 

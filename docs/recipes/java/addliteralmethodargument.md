@@ -20,7 +20,7 @@ _Add a literal `String` or `int` argument to method invocations._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `com.yourorg.A foo(int, int)` |
+| `String` | methodPattern | To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `com.yourorg.A foo(int, int)` |
 | `int` | argumentIndex | A zero-based index that indicates which argument will be added as null to the method invocation. | `0` |
 | `Object` | literal | The literal value that we add the argument for. | `abc` |
 | `String` | primitiveType | *Optional*. The type of the parameter that we add the argument for. Defaults to `String`. Valid options: `String`, `int`, `short`, `long`, `float`, `double`, `boolean`, `char` | `String` |
@@ -163,4 +163,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Peter Streef](mailto:peter@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Peter Streef](mailto:peter@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com)

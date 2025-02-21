@@ -73,6 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `org.springframework.boot.web.servlet.error.ErrorController`](../../../java/spring/boot2/migrateerrorcontrollerpackagename)
 * [Use `javax.validation.constraints`](../../../java/spring/boot2/migratehibernateconstraintstojavax)
 * [Use `org.springframework.boot.web.server.LocalServerPort`](../../../java/spring/boot2/migratelocalserverportannotation)
+* [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](../../../java/spring/boot2/maybeaddspringbootstarteractuator)
 * [Migrate Spring Boot properties to 2.0](../../../java/spring/boot2/springbootproperties_2_0)
 * [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `spring.main.banner-mode`
@@ -85,6 +86,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Spring Boot 2.x best practices](../../../java/spring/boot2/springboot2bestpractices)
 * [Migrates to Apache Commons Lang 3.x](../../../apache/commons/lang/upgradeapachecommonslang_2_3)
 * [Make AuditorAware.getCurrentAuditor return `Optional`](../../../java/spring/data/migrateauditorawaretooptional)
+* [Upgrade MyBatis to Spring Boot 2.0](../../../java/spring/boot3/upgrademybatistospringboot_2_0)
 
 </TabItem>
 
@@ -141,6 +143,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName
   - org.openrewrite.java.spring.boot2.MigrateHibernateConstraintsToJavax
   - org.openrewrite.java.spring.boot2.MigrateLocalServerPortAnnotation
+  - org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_0
   - org.openrewrite.java.spring.ChangeSpringPropertyValue:
       propertyKey: spring.main.banner-mode
@@ -153,6 +156,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.SpringBoot2BestPractices
   - org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3
   - org.openrewrite.java.spring.data.MigrateAuditorAwareToOptional
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_0
 
 ```
 </TabItem>
@@ -336,4 +340,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Kevin McCarpenter](mailto:kevin@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), SiBorea, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, Kun Li, Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Josh Soref, nbruno, [Kun Li](mailto:kun@moderne.io), eocantu
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Kevin McCarpenter](mailto:kevin@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), SiBorea, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Josh Soref, nbruno, [Kun Li](mailto:kun@moderne.io), eocantu

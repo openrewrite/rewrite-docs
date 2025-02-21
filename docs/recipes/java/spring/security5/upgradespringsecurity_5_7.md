@@ -38,6 +38,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `5.7.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `spring-security-oauth2-authorization-server`
+  * newVersion: `0.3.x`
+  * overrideManagedVersion: `false`
 * [Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean](../../../java/spring/security5/websecurityconfigureradapter)
 
 </TabItem>
@@ -59,6 +64,11 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 5.7.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: spring-security-oauth2-authorization-server
+      newVersion: 0.3.x
       overrideManagedVersion: false
   - org.openrewrite.java.spring.security5.WebSecurityConfigurerAdapter
 

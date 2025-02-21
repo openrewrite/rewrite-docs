@@ -76,7 +76,9 @@ _The inferred knowledge about methods in the codebase, as provided by an LLM._
 | ----------- | ----------- |
 | Class name | The fully qualified name of the class |
 | Method signature | The code element at which the knowledge is inferred. |
+| Number of Characters | The number of characters in the method. |
 | Time to infer | The time taken by the LLM to infer the knowledge, in milliseconds. |
+| Time to get API examples | The time taken by tool to get API examples. |
 | Description | The description of the inferred knowledge, as provided by the LLM. |
 | Return type description | What is contained in the returned type. |
 | Technology in use 1 | A technique in use in the method. |

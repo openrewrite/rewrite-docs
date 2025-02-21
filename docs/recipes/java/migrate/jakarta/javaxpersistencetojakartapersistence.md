@@ -33,17 +33,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.persistence-api`
   * newGroupId: `jakarta.persistence`
   * newArtifactId: `jakarta.persistence-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.persistence`
   * oldArtifactId: `javax.persistence`
   * newGroupId: `jakarta.persistence`
   * newArtifactId: `jakarta.persistence-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.persistence`
   * artifactId: `jakarta.persistence-api`
-  * newVersion: `latest.release`
+  * newVersion: `3.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.persistence`
   * newPackageName: `jakarta.persistence`
@@ -66,17 +66,17 @@ recipeList:
       oldArtifactId: javax.persistence-api
       newGroupId: jakarta.persistence
       newArtifactId: jakarta.persistence-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.persistence
       oldArtifactId: javax.persistence
       newGroupId: jakarta.persistence
       newArtifactId: jakarta.persistence-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.persistence
       artifactId: jakarta.persistence-api
-      newVersion: latest.release
+      newVersion: 3.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.persistence
       newPackageName: jakarta.persistence

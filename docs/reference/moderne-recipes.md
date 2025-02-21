@@ -56,9 +56,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-comprehension
 
+* [Code comprehension with unit test examples](../recipes/knowledge/comprehendcodewithunittestexamples.md)
 * [Comprehend code](../recipes/knowledge/comprehendcode.md)
 * [Search for a class that uses the given design technique](../recipes/knowledge/search/searchdesigntechnique.md)
-* [Supplements the AI-generated method descriptions with examples of the method being used in unit tests](../recipes/knowledge/comprehendcodewithunittestexamples.md)
 * [Update README](../recipes/knowledge/docs/updatereadme.md)
 * [Update the README for an OpenRewrite recipe repository](../recipes/knowledge/docs/updateopenrewritereadme.md)
 
@@ -82,10 +82,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-hibernate
 
-* [Find JPQL definitions](../recipes/recipe/hibernate/search/findjpqldefinitions.md)
-* [Fix conflicting class type annotation Hibernate 6.6](../recipes/recipe/hibernate/update66/fixconflictingclasstypeannotations.md)
-* [Migrate to Hibernate 6.6.x](../recipes/recipe/hibernate/migratetohibernate66.md)
-* [Remove table from single table inherited entity](../recipes/recipe/hibernate/update66/removetablefrominheritedentity.md)
+* [Find JPQL definitions](../recipes/hibernate/search/findjpqldefinitions.md)
+* [Fix conflicting class type annotation Hibernate 6.6](../recipes/hibernate/update66/fixconflictingclasstypeannotations.md)
+* [Migrate to Hibernate 6.6.x](../recipes/hibernate/migratetohibernate66.md)
+* [Remove table from single table inherited entity](../recipes/hibernate/update66/removetablefrominheritedentity.md)
 
 ## rewrite-jackson
 
@@ -105,6 +105,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find Artifactory secrets](../recipes/java/security/secrets/findartifactorysecrets.md)
 * [Find Azure secrets](../recipes/java/security/secrets/findazuresecrets.md)
 * [Find Discord secrets](../recipes/java/security/secrets/finddiscordsecrets.md)
+* [Find Facebook secrets](../recipes/java/security/secrets/findfacebooksecrets.md)
 * [Find GitHub secrets](../recipes/java/security/secrets/findgithubsecrets.md)
 * [Find Google secrets](../recipes/java/security/secrets/findgooglesecrets.md)
 * [Find Heroku secrets](../recipes/java/security/secrets/findherokusecrets.md)
@@ -257,22 +258,24 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-spring
 
-* [Add `@Valid` annotation to fields](../recipes/recipe/spring/boot3/addvalidtoconfigurationpropertiesfields.md)
-* [Comment deprecated methods in Spring 3.4](../recipes/recipe/spring/boot3/commentdeprecations.md)
-* [Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`](../recipes/recipe/spring/boot3/commentonmockandspybeansinconfigspring34.md)
-* [Migrate Spring Boot Management Endpoint Security properties to 3.4](../recipes/recipe/spring/boot3/springbootmanagementendpointproperties_3_4.md)
-* [Migrate Spring Boot properties to 3.4](../recipes/recipe/spring/boot3/springbootproperties_3_4.md)
-* [Migrate `@Endpoint`s `defaultAccess` value](../recipes/recipe/spring/boot3/migrateendpointannotationaccessvaluespring34.md)
-* [Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4](../recipes/recipe/spring/boot3/conditionalonavailableendpointmigrationspring34.md)
-* [Migrate management endpoint access value](../recipes/recipe/spring/boot3/migrateendpointaccessvaluespring34.md)
-* [Migrate to Spring Boot 3.4](../recipes/recipe/spring/boot3/upgradespringboot_3_4.md)
-* [Migrate to Spring Cloud 2024](../recipes/recipe/spring/cloud2024/upgradespringcloud_2024.md)
-* [Migrate to Spring Framework 6.2](../recipes/recipe/spring/framework/upgradespringframework_6_2.md)
-* [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](../recipes/recipe/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md)
-* [Spring Boot 3.4 best practices](../recipes/recipe/spring/boot3/springboot3bestpractices.md)
-* [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](../recipes/recipe/spring/boot3/upgradegradle8spring34.md)
-* [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](../recipes/recipe/spring/boot3/upgradegradle7spring34.md)
-* [Upgrade dependencies to Spring Cloud 2024](../recipes/recipe/spring/cloud2024/dependencyupgrades.md)
+* [Add `@Valid` annotation to fields](../recipes/java/spring/boot3/addvalidtoconfigurationpropertiesfields.md)
+* [Comment deprecated methods in Spring 3.4](../recipes/java/spring/boot3/commentdeprecations.md)
+* [Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`](../recipes/java/spring/boot3/commentonmockandspybeansinconfigspring34.md)
+* [Migrate Spring Boot Management Endpoint Security properties to 3.4](../recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
+* [Migrate Spring Boot properties to 3.4](../recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [Migrate `@Endpoint`s `defaultAccess` value](../recipes/java/spring/boot3/migrateendpointannotationaccessvaluespring34.md)
+* [Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4](../recipes/java/spring/boot3/conditionalonavailableendpointmigrationspring34.md)
+* [Migrate management endpoint access value](../recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md)
+* [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4.md)
+* [Migrate to Spring Cloud 2024](../recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
+* [Migrate to Spring Framework 6.2](../recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring Security 6.4](../recipes/java/spring/security6/upgradespringsecurity_6_4.md)
+* [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](../recipes/java/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md)
+* [Spring Boot 3.4 best practices](../recipes/java/spring/boot3/springboot3bestpractices.md)
+* [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle8spring34.md)
+* [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle7spring34.md)
+* [Upgrade MyBatis to Spring Boot 3.4](../recipes/java/spring/boot3/upgrademybatistospringboot_3_4.md)
+* [Upgrade dependencies to Spring Cloud 2024](../recipes/java/spring/cloud2024/dependencyupgrades.md)
 
 ## rewrite-sql
 

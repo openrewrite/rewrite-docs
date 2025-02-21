@@ -40,17 +40,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.security.jacc-api`
   * newGroupId: `jakarta.authorization`
   * newArtifactId: `jakarta.authorization-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.glassfish.main`
   * oldArtifactId: `javax.security.jacc`
   * newGroupId: `jakarta.authorization`
   * newArtifactId: `jakarta.authorization-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.authorization`
   * artifactId: `jakarta.authorization-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.security.jacc`
   * newPackageName: `jakarta.security.jacc`
@@ -78,17 +78,17 @@ recipeList:
       oldArtifactId: javax.security.jacc-api
       newGroupId: jakarta.authorization
       newArtifactId: jakarta.authorization-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.glassfish.main
       oldArtifactId: javax.security.jacc
       newGroupId: jakarta.authorization
       newArtifactId: jakarta.authorization-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.authorization
       artifactId: jakarta.authorization-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.security.jacc
       newPackageName: jakarta.security.jacc

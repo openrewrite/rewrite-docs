@@ -39,6 +39,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `6.1.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `spring-security-oauth2-authorization-server`
+  * newVersion: `1.1.x`
+  * overrideManagedVersion: `false`
 * [Convert `OAuth2LoginConfigurer` chained calls into Lambda DSL](../../../java/spring/security6/oauth2/client/oauth2loginlambdadsl)
 * [Convert `OAuth2ClientConfigurer` chained calls into Lambda DSL](../../../java/spring/security6/oauth2/client/oauth2clientlambdadsl)
 * [Convert `OAuth2ResourceServerConfigurer` chained calls into Lambda DSL](../../../java/spring/security6/oauth2/server/resource/oauth2resourceserverlambdadsl)
@@ -63,6 +68,11 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 6.1.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: spring-security-oauth2-authorization-server
+      newVersion: 1.1.x
       overrideManagedVersion: false
   - org.openrewrite.java.spring.security6.oauth2.client.OAuth2LoginLambdaDsl
   - org.openrewrite.java.spring.security6.oauth2.client.OAuth2ClientLambdaDsl

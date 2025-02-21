@@ -23,8 +23,7 @@ Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard
  ```java
  List<Map<String, Object>> myMaps = new ArrayList<>();
  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
- ```
-[Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
+ ```. [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 
 ## Recipe source
 
@@ -105,7 +104,7 @@ description: |
    List<Map<String, Object>> myMaps = new ArrayList<>();
    assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
    ```
-   [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
+  [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailRecipe
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailWithMessageRecipe

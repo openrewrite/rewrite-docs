@@ -33,11 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.mail-api`
   * newGroupId: `jakarta.mail`
   * newArtifactId: `jakarta.mail-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.mail`
   * artifactId: `jakarta.mail-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.mail`
   * newPackageName: `jakarta.mail`
@@ -60,11 +60,11 @@ recipeList:
       oldArtifactId: javax.mail-api
       newGroupId: jakarta.mail
       newArtifactId: jakarta.mail-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.mail
       artifactId: jakarta.mail-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.mail
       newPackageName: jakarta.mail

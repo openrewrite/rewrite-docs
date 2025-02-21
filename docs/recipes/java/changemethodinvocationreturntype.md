@@ -20,7 +20,7 @@ _Changes the return type of a method invocation._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
+| `String` | methodPattern | To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `org.mockito.Matchers anyVararg()` |
 | `String` | newReturnType | The fully qualified new return type of method invocation. | `long` |
 
 ## License
@@ -159,4 +159,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com)

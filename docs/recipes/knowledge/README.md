@@ -9,7 +9,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Supplements the AI-generated method descriptions with examples of the method being used in unit tests](./comprehendcodewithunittestexamples.md)
+* [Code comprehension with unit test examples](./comprehendcodewithunittestexamples.md)
 
 ## Recipes
 

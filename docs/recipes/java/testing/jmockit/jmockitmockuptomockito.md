@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-SiBorea, [Shivani Sharma](mailto:s.happyrose@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+SiBorea, [Shivani Sharma](mailto:s.happyrose@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

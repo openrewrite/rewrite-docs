@@ -270,4 +270,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jeremy Grelle](mailto:grellej@unityfoundation.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, Aaron Gershman, [Joan Viladrosa](mailto:joan@moderne.io)
+[Jeremy Grelle](mailto:grellej@unityfoundation.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [lingenj](mailto:jacob.van.lingen@moderne.io), Aaron Gershman, [Joan Viladrosa](mailto:joan@moderne.io)

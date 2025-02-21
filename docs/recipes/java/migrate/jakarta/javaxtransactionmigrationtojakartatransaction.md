@@ -39,17 +39,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.transaction-api`
   * newGroupId: `jakarta.transaction`
   * newArtifactId: `jakarta.transaction-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.glassfish.main`
   * oldArtifactId: `javax.transaction`
   * newGroupId: `jakarta.transaction`
   * newArtifactId: `jakarta.transaction-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.transaction`
   * artifactId: `jakarta.transaction-api`
-  * newVersion: `latest.release`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.transaction`
   * newPackageName: `jakarta.transaction`
@@ -76,17 +76,17 @@ recipeList:
       oldArtifactId: javax.transaction-api
       newGroupId: jakarta.transaction
       newArtifactId: jakarta.transaction-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.glassfish.main
       oldArtifactId: javax.transaction
       newGroupId: jakarta.transaction
       newArtifactId: jakarta.transaction-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.transaction
       artifactId: jakarta.transaction-api
-      newVersion: latest.release
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.transaction
       newPackageName: jakarta.transaction

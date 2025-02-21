@@ -21,7 +21,7 @@ _Add a comment to a Java source file._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | comment | The comment to add. | `This is a comment.` |
-| `String` | methodPattern | A pattern to match methods to add the comment to. | `java.util.List add*(..)` |
+| `String` | methodPattern | A pattern to match methods to add the comment to. To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add*(..)` |
 | `Boolean` | isMultiline | *Optional*. Comments use by default single line // but they can use multiline /* */. |  |
 
 ## License
@@ -160,4 +160,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Antonio Goncalves](mailto:antonio.goncalves@gmail.com)
+[Antonio Goncalves](mailto:antonio.goncalves@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)
