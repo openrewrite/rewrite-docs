@@ -351,7 +351,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
             // ...
 
             // Add a method body
-            addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody());
+            methodDeclaration = addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody());
 
             return methodDeclaration;
         }
