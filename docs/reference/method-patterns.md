@@ -43,6 +43,10 @@ The three pieces of information we need to know to identify the method would be:
 * `baz` - the method name itself
 * `String, int` – the method's argument types
 
+:::info
+Each of these are **type-sensitive**. Please make sure your capitalization exactly matches what you're looking for.
+:::
+
 Combining the three would make this method pattern:
 
 ```java
