@@ -55,13 +55,15 @@ mvn rewrite:run -Drewrite.exclusions="folderA,folderB"
 
 ## Why do artifact scanners detect vulnerabilities in recipe artifacts/JARs?
 
+:::tip
+If you're getting this warning from running the `recipeDependencies` Gradle task, you should consider using [TypeTables](../authoring-recipes/multiple-versions.md#type-tables) instead. Not only will it greatly reduce the size of your dependencies, but it won't be flagged by a vulnerability scanner.
+:::
+
 In order to modernize and upgrade old or vulnerable code, some OpenRewrite recipe modules bundle copies of old libraries. Libraries bundled into recipe modules are never executed. That being said, these libraries are **never executed**.
 
 OpenRewrite exercises the Java compiler internally to compile code patterns that exist in these old and/or vulnerable libraries. These patterns are then used to **match** old or vulnerable code for the sake of modernizing or repairing it.
 
 Using a library in compilation in this way **does not trigger class initialization** in the way that reflection might, for example. In other words, code paths in libraries used in compilation are **never executed**.
-
-As an example of this, consider the case of [rewrite-spring](https://github.com/openrewrite/rewrite-spring). It has libraries bundled inside of the [META-INF/rewrite/classpath directory](https://github.com/openrewrite/rewrite-spring/tree/main/src/main/resources/META-INF/rewrite). However, those JARs are not made into a Fat Jar or a shaded library in the traditional sense. It is not possible that by using `rewrite-spring` that one of those libraries gets called.
 
 ## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
 
