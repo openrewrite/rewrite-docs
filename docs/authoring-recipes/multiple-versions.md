@@ -59,7 +59,7 @@ After the plugin has been applied, you can run the `createTypeTable` task. This 
 
 That file is a [TypeTable](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/internal/parser/TypeTable.java) – which is a tab separated values file that contains references to public API elements such as methods or fields.
 
-The benefit of a TypeTable is that you don't need to pull down the entire JAR to be able to compile specific types. As this TypeTable is not a class, and it can't be re-hydrated into anything executable, it does not trigger security vulnerability scanners ([which was a concern with the previous recipeDependcies task](../reference/faq.md#why-do-artifact-scanners-detect-vulnerabilities-in-recipe-artifactsjars) – more on that below). Furthermore, it greatly reduces the size of your dependencies (by roughly 90%), which makes releases significantly smaller.
+The benefit of a TypeTable is that you don't need to pull down the entire JAR to be able to compile specific types. As this TypeTable is not a class, and it can't be re-hydrated into anything executable, it does not trigger security vulnerability scanners ([which was a concern with the previous recipeDependencies task](../reference/faq.md#why-do-artifact-scanners-detect-vulnerabilities-in-recipe-artifactsjars) – more on that below). Furthermore, it greatly reduces the size of your dependencies (by roughly 90%), which makes releases significantly smaller.
 
 With the TypeTable file created, you can use the `classpathFromResources` function [in the same way as above](#manually-copying-jars-and-using-the-classpathfromresources-function).
 

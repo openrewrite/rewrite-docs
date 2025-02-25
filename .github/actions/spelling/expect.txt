@@ -3,6 +3,7 @@ Adoptium
 allprojects
 anynestedcondition
 APKCXEA
+artifactsjars
 assertj
 autoconfigure
 autocrlf
@@ -15,10 +16,10 @@ changepackage
 checkstyle
 circleci
 classdeclaration
+classpathfromresources
 cmn
 codebases
 codemod
-codemods
 CODEOWNERS
 commonstaticanalysis
 compilationunit
@@ -147,6 +148,7 @@ timestamped
 TML
 toc
 TODOs
+tsv
 TVP
 unpkg
 upgradespringboot
