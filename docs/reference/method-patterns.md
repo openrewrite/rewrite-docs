@@ -88,9 +88,10 @@ The below table shows some more examples of method patterns and the methods they
 | `*..* foo(..)`                              | Any method named `foo` which accepts any number of arguments. This is the equivalent of doing a generic text search for methods named `foo`.                                                                       |
 | `org..* foo(..)`                            | Any method named `foo` in a package that starts with `org`. This could be `org.meow` or it could be `org.springframework` or so on.                                                                                |
 | `org.openrewrite.java.* foo(..)`            | Any method named `foo` in a package that starts with `org.openrewrite.java.`. Note that the `.*` after `java` means that the method _must_ be in this package rather than some subsequent subpackages.             |
-| `org.Foo bar(java.util.List)`               | Exactly the `bar` method in the `org.Foo` class that takes in a single `java.util.List` as an argument.                                                                                                          |
-| `org.Foo <constructor>(..)`                 | Matches any constructors in the `org.Foo` class that takes in any number of arguments.                                                                                                                           |
-| `org.Foo bar()`                             | Matches exactly the `bar` method in the `org.Foo` class that has **no** arguments                                                                                                                                |
+| `org.Foo bar(java.util.List)`               | Exactly the `bar` method in the `org.Foo` class that takes in a single `java.util.List` as an argument.                                                                                                            |
+| `org.Foo <constructor>(..)`                 | Matches any constructors in the `org.Foo` class that takes in any number of arguments.                                                                                                                             |
+| `org.Foo bar()`                             | Matches exactly the `bar` method in the `org.Foo` class that has **no** arguments                                                                                                                                  |
+| `org.Foo#bar()`                             | Matches the same thing as the previous line. Demonstrates that `#` can be used to replace a space – which may be useful for certain types of input such as a CLI.                                                  |
 
 
 :::info
