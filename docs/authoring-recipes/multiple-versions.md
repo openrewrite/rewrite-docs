@@ -63,9 +63,9 @@ The benefit of a TypeTable is that you don't need to pull down the entire JAR to
 
 With the TypeTable file created, you can use the `classpathFromResources` function [in the same way as above](#manually-copying-jars-and-using-the-classpathfromresources-function).
 
-### `recipeDependencies` task
+### `downloadRecipeDependencies` task
 
-Similar to the above `createTypeTable` task, there is also a `recipeDependencies` task available. This will download the corresponding JAR for _every_ dependency specified in `recipeDependencies` and put them in the `src/main/resources/META-INF/rewrite` directory. From there, you could use the `classpathFromResources` function [in the same way as above](#manually-copying-jars-and-using-the-classpathfromresources-function).
+Similar to the above `createTypeTable` task, there is also a `downloadRecipeDependencies` task available. This will download the corresponding JAR for _every_ dependency specified in `downloadRecipeDependencies` and put them in the `src/main/resources/META-INF/rewrite` directory. From there, you could use the `classpathFromResources` function [in the same way as above](#manually-copying-jars-and-using-the-classpathfromresources-function).
 
 The main downside of this task is that it can [result in security vulnerability scanners incorrectly flagging these JARs as a concern](../reference/faq.md#why-do-artifact-scanners-detect-vulnerabilities-in-recipe-artifactsjars).
 
