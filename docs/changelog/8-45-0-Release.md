@@ -7,7 +7,7 @@ description: What's changed in OpenRewrite version 8.45.0.
 _Total recipe count: 3041_
 
 :::info
-This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
+This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the releases page.
 :::
 
 ## New Artifacts
@@ -15,55 +15,55 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [io.moderne.knowledge.ComprehendCodeWithUnitTestExamples](https://docs.openrewrite.org/recipes/knowledge/comprehendcodewithunittestexamples): First runs a scanning recipe to grab all unit tests, then supplements the unit tests examples for the AI-generate descriptions.
-* [io.moderne.knowledge.search.SearchDesignTechnique](https://docs.openrewrite.org/recipes/knowledge/search/searchdesigntechnique): Search for a class that uses the given design technique.
-* [io.moderne.recipe.hibernate.MigrateToHibernate66](https://docs.openrewrite.org/recipes/recipe/hibernate/migratetohibernate66): This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
-* [io.moderne.recipe.hibernate.search.FindJPQLDefinitions](https://docs.openrewrite.org/recipes/recipe/hibernate/search/findjpqldefinitions): Find Java Persistence Query Language definitions in the codebase.
-* [io.moderne.recipe.hibernate.update66.FixConflictingClassTypeAnnotations](https://docs.openrewrite.org/recipes/recipe/hibernate/update66/fixconflictingclasstypeannotations): Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`.For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table)but still accepted and therefore stays.
-* [io.moderne.recipe.hibernate.update66.RemoveTableFromInheritedEntity](https://docs.openrewrite.org/recipes/recipe/hibernate/update66/removetablefrominheritedentity): For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error.
-* [io.moderne.recipe.spring.boot3.AddValidToConfigurationPropertiesFields](https://docs.openrewrite.org/recipes/recipe/spring/boot3/addvalidtoconfigurationpropertiesfields): In Spring Boot 3.4, validation of `@ConfigurationProperties` classes annotated with `@Validated` now follows the Bean Validation specification, only cascading to nested properties if the corresponding field is annotated with `@Valid`. The recipe will add a `@Valid` annotation to each field which has a type that has a field which is annotated with a `jakarta.validation.constraints.*` annotation.
-* [io.moderne.recipe.spring.boot3.CommentDeprecations](https://docs.openrewrite.org/recipes/recipe/spring/boot3/commentdeprecations): Spring Boot 3.4 deprecates methods that are not commonly used or need manual interaction.
-* [io.moderne.recipe.spring.boot3.CommentOnMockAndSpyBeansInConfigSpring34](https://docs.openrewrite.org/recipes/recipe/spring/boot3/commentonmockandspybeansinconfigspring34): As stated in [Spring Docs](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-mockitobean.html) `@MockitoSpyBean` and `@MockitoBean` will only work in tests, explicitly not in `@Configuration` annotated classes.
-* [io.moderne.recipe.spring.boot3.ConditionalOnAvailableEndpointMigrationSpring34](https://docs.openrewrite.org/recipes/recipe/spring/boot3/conditionalonavailableendpointmigrationspring34): Migrate `@ConditionalOnAvailableEndpoint(EndpointExposure.CLOUD_FOUNDRY)` to `@ConditionalOnAvailableEndpoint(EndpointExposure.WEB)` for Spring Boot 3.4.
-* [io.moderne.recipe.spring.boot3.MigrateEndpointAccessValueSpring34](https://docs.openrewrite.org/recipes/recipe/spring/boot3/migrateendpointaccessvaluespring34): Migrate manage endpoint access value from `false` to `none` and `true` to `read-only`.
-* [io.moderne.recipe.spring.boot3.MigrateEndpointAnnotationAccessValueSpring34](https://docs.openrewrite.org/recipes/recipe/spring/boot3/migrateendpointannotationaccessvaluespring34): Since Spring Boot 3.4 the `@Endpoint` access configuration values are no longer `true|false` but `none|read-only|unrestricted`
-* [io.moderne.recipe.spring.boot3.RemoveReplaceNoneFromAutoConfigureTestDatabase](https://docs.openrewrite.org/recipes/recipe/spring/boot3/removereplacenonefromautoconfiguretestdatabase): `Replace.NONE` is the default value for `@AutoConfigureTestDatabase` since Spring Boot 3.4.
-* [io.moderne.recipe.spring.boot3.SpringBoot3BestPractices](https://docs.openrewrite.org/recipes/recipe/spring/boot3/springboot3bestpractices): Applies best practices to Spring Boot 3.4+ applications.
-* [io.moderne.recipe.spring.boot3.SpringBootManagementEndpointProperties_3_4](https://docs.openrewrite.org/recipes/recipe/spring/boot3/springbootmanagementendpointproperties_3_4): Migrate the settings for Management Endpoint Security from `true`|`false` to `read-only`|`none`.
-* [io.moderne.recipe.spring.boot3.SpringBootProperties_3_4](https://docs.openrewrite.org/recipes/recipe/spring/boot3/springbootproperties_3_4): Migrate properties found in `application.properties` and `application.yml`.
-* [io.moderne.recipe.spring.boot3.UpgradeGradle7Spring34](https://docs.openrewrite.org/recipes/recipe/spring/boot3/upgradegradle7spring34): Spring Boot 3.4 requires Gradle 7.6.4.
-* [io.moderne.recipe.spring.boot3.UpgradeGradle8Spring34](https://docs.openrewrite.org/recipes/recipe/spring/boot3/upgradegradle8spring34): Spring Boot 3.4 requires Gradle 8.4+.
-* [io.moderne.recipe.spring.boot3.UpgradeSpringBoot_3_4](https://docs.openrewrite.org/recipes/recipe/spring/boot3/upgradespringboot_3_4): Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4.
-* [io.moderne.recipe.spring.cloud2024.DependencyUpgrades](https://docs.openrewrite.org/recipes/recipe/spring/cloud2024/dependencyupgrades): Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version.
-* [io.moderne.recipe.spring.cloud2024.UpgradeSpringCloud_2024](https://docs.openrewrite.org/recipes/recipe/spring/cloud2024/upgradespringcloud_2024): Migrate applications to the latest Spring Cloud 2024 (Leyton) release.
-* [io.moderne.recipe.spring.framework.UpgradeSpringFramework_6_2](https://docs.openrewrite.org/recipes/recipe/spring/framework/upgradespringframework_6_2): Migrate applications to the latest Spring Framework 6.2 release.
-* [io.quarkus.updates.core.quarkus318.RemoveFlywayCleanOnValidationError](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus318/removeflywaycleanonvalidationerror):
-* [io.quarkus.updates.core.quarkus37.SetupJavaUpgradeJavaVersion](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus37/setupjavaupgradejavaversion): Update the Java version used by `actions/setup-java` if it is below the expected version number.
-* [io.quarkus.updates.core.quarkus37.UpgradeJavaVersion](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus37/upgradejavaversion): Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
-* [org.apache.camel.upgrade.CamelMigrationRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camelmigrationrecipe): Migrates Apache Camel application to 4.9.0
-* [org.apache.camel.upgrade.camel40.properties.rejectedPolicy](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel40/properties/rejectedpolicy): Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties.
-* [org.apache.camel.upgrade.camel49.AwsSecretRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/awssecretrecipe): The syntax for retrieving a single field of a secret has been changed..
-* [org.apache.camel.upgrade.camel49.AzureSecretRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/azuresecretrecipe): The syntax for retrieving a single field of a secret has been changed..
-* [org.apache.camel.upgrade.camel49.CamelMigrationRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/camelmigrationrecipe): Migrates `camel 4.8` application to `camel 4.9`.
-* [org.apache.camel.upgrade.camel49.DebeziumChangeTypes](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/debeziumchangetypes): each camel-debezium module has its own subpackage corresponding to the database type. So for example, all the classes of the module camel-debezium-postgres have been moved to a dedicated package which is org.apache.camel.component.debezium.postgres instead of having everything under the root package org.apache.camel.component.debezium.
-* [org.apache.camel.upgrade.camel49.GcpSecretRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/gcpsecretrecipe): The syntax for retrieving a single field of a secret has been changed..
-* [org.apache.camel.upgrade.camel49.HashicorpSecretRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/hashicorpsecretrecipe): The syntax for retrieving a single field of a secret has been changed..
-* [org.apache.camel.upgrade.camel49.removedDependencies](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/removeddependencies): Removed deprecated components (camel-groovy-dsl, camel-js-dsl, camel-jsh-dsl, camel-kotlin-api, camel-kotlin-dsl).
-* [org.apache.camel.upgrade.camel49.renamedAPIs](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel49/renamedapis): Renamed classes for API.
-* [org.apache.camel.upgrade.customRecipes.LiteralRegexpConverterRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/customrecipes/literalregexpconverterrecipe): Replaces literal, groups from regexp can be used as ${0}, ${1}, ...
-* [org.openrewrite.codemods.UI5](https://docs.openrewrite.org/recipes/codemods/ui5): Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings.
-* [org.openrewrite.codemods.migrate.nextjs.v14_0.MetadataToViewportExport](https://docs.openrewrite.org/recipes/codemods/migrate/nextjs/v14_0/metadatatoviewportexport): This codemod migrates certain viewport metadata to `viewport` export.
-* [org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter](https://docs.openrewrite.org/recipes/codemods/migrate/nextjs/v6/urltowithrouter): Transforms the deprecated automatically injected url property on top-level pages to using `withRouter` and the `router` property it injects. Read more [here](https://nextjs.org/docs/messages/url-deprecated).
-* [org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig](https://docs.openrewrite.org/recipes/codemods/migrate/nextjs/v8/withamptoconfig): Transforms the `withAmp` HOC into Next.js 9 page configuration.
-* [org.openrewrite.java.migrate.ChangeDefaultKeyStore](https://docs.openrewrite.org/recipes/java/migrate/changedefaultkeystore): In Java 11 the default keystore was updated from JKS to PKCS12. As a result, applications relying on KeyStore.getDefaultType() may encounter issues after migrating, unless their JKS keystore has been converted to PKCS12. This recipe returns default key store of `jks` when `KeyStore.getDefaultType()` method is called to use the pre Java 11 default keystore.
-* [org.openrewrite.java.testing.search.FindUnitTests](https://docs.openrewrite.org/recipes/java/testing/search/findunittests): Produces a data table showing how methods are used in unit tests.
-* [org.openrewrite.json.format.AutoFormat](https://docs.openrewrite.org/recipes/json/format/autoformat): Format JSON code using a standard comprehensive set of JSON formatting recipes.
-* [org.openrewrite.json.format.WrappingAndBraces](https://docs.openrewrite.org/recipes/json/format/wrappingandbraces): Split members into separate lines in JSON.
-* [org.openrewrite.recipes.JavaRecipeBestPractices](https://docs.openrewrite.org/recipes/recipes/javarecipebestpractices): Best practices for Java recipe development.
-* [org.openrewrite.recipes.RecipeNullabilityBestPractices](https://docs.openrewrite.org/recipes/recipes/recipenullabilitybestpractices): Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
-* [org.openrewrite.recipes.RecipeTestingBestPractices](https://docs.openrewrite.org/recipes/recipes/recipetestingbestpractices): Best practices for testing recipes.
-* [org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices](https://docs.openrewrite.org/recipes/recipes/rewrite/openrewriterecipebestpractices): Best practices for OpenRewrite recipe development.
-* [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringContainsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipesusdassertthatstringcontainsrecipe): Recipe created for the following Refaster template:
+* io.moderne.knowledge.ComprehendCodeWithUnitTestExamples: First runs a scanning recipe to grab all unit tests, then supplements the unit tests examples for the AI-generate descriptions.
+* io.moderne.knowledge.search.SearchDesignTechnique: Search for a class that uses the given design technique.
+* io.moderne.recipe.hibernate.MigrateToHibernate66: This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
+* io.moderne.recipe.hibernate.search.FindJPQLDefinitions: Find Java Persistence Query Language definitions in the codebase.
+* io.moderne.recipe.hibernate.update66.FixConflictingClassTypeAnnotations: Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`.For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to Single Table Inheritancebut still accepted and therefore stays.
+* io.moderne.recipe.hibernate.update66.RemoveTableFromInheritedEntity: For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error.
+* io.moderne.recipe.spring.boot3.AddValidToConfigurationPropertiesFields: In Spring Boot 3.4, validation of `@ConfigurationProperties` classes annotated with `@Validated` now follows the Bean Validation specification, only cascading to nested properties if the corresponding field is annotated with `@Valid`. The recipe will add a `@Valid` annotation to each field which has a type that has a field which is annotated with a `jakarta.validation.constraints.*` annotation.
+* io.moderne.recipe.spring.boot3.CommentDeprecations: Spring Boot 3.4 deprecates methods that are not commonly used or need manual interaction.
+* io.moderne.recipe.spring.boot3.CommentOnMockAndSpyBeansInConfigSpring34: As stated in Spring Docs `@MockitoSpyBean` and `@MockitoBean` will only work in tests, explicitly not in `@Configuration` annotated classes.
+* io.moderne.recipe.spring.boot3.ConditionalOnAvailableEndpointMigrationSpring34: Migrate `@ConditionalOnAvailableEndpoint(EndpointExposure.CLOUD_FOUNDRY)` to `@ConditionalOnAvailableEndpoint(EndpointExposure.WEB)` for Spring Boot 3.4.
+* io.moderne.recipe.spring.boot3.MigrateEndpointAccessValueSpring34: Migrate manage endpoint access value from `false` to `none` and `true` to `read-only`.
+* io.moderne.recipe.spring.boot3.MigrateEndpointAnnotationAccessValueSpring34: Since Spring Boot 3.4 the `@Endpoint` access configuration values are no longer `true|false` but `none|read-only|unrestricted`
+* io.moderne.recipe.spring.boot3.RemoveReplaceNoneFromAutoConfigureTestDatabase: `Replace.NONE` is the default value for `@AutoConfigureTestDatabase` since Spring Boot 3.4.
+* io.moderne.recipe.spring.boot3.SpringBoot3BestPractices: Applies best practices to Spring Boot 3.4+ applications.
+* io.moderne.recipe.spring.boot3.SpringBootManagementEndpointProperties_3_4: Migrate the settings for Management Endpoint Security from `true`|`false` to `read-only`|`none`.
+* io.moderne.recipe.spring.boot3.SpringBootProperties_3_4: Migrate properties found in `application.properties` and `application.yml`.
+* io.moderne.recipe.spring.boot3.UpgradeGradle7Spring34: Spring Boot 3.4 requires Gradle 7.6.4.
+* io.moderne.recipe.spring.boot3.UpgradeGradle8Spring34: Spring Boot 3.4 requires Gradle 8.4+.
+* io.moderne.recipe.spring.boot3.UpgradeSpringBoot_3_4: Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4.
+* io.moderne.recipe.spring.cloud2024.DependencyUpgrades: Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version.
+* io.moderne.recipe.spring.cloud2024.UpgradeSpringCloud_2024: Migrate applications to the latest Spring Cloud 2024 (Leyton) release.
+* io.moderne.recipe.spring.framework.UpgradeSpringFramework_6_2: Migrate applications to the latest Spring Framework 6.2 release.
+* io.quarkus.updates.core.quarkus318.RemoveFlywayCleanOnValidationError:
+* io.quarkus.updates.core.quarkus37.SetupJavaUpgradeJavaVersion: Update the Java version used by `actions/setup-java` if it is below the expected version number.
+* io.quarkus.updates.core.quarkus37.UpgradeJavaVersion: Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
+* org.apache.camel.upgrade.CamelMigrationRecipe: Migrates Apache Camel application to 4.9.0
+* org.apache.camel.upgrade.camel40.properties.rejectedPolicy: Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties.
+* org.apache.camel.upgrade.camel49.AwsSecretRecipe: The syntax for retrieving a single field of a secret has been changed..
+* org.apache.camel.upgrade.camel49.AzureSecretRecipe: The syntax for retrieving a single field of a secret has been changed..
+* org.apache.camel.upgrade.camel49.CamelMigrationRecipe: Migrates `camel 4.8` application to `camel 4.9`.
+* org.apache.camel.upgrade.camel49.DebeziumChangeTypes: each camel-debezium module has its own subpackage corresponding to the database type. So for example, all the classes of the module camel-debezium-postgres have been moved to a dedicated package which is org.apache.camel.component.debezium.postgres instead of having everything under the root package org.apache.camel.component.debezium.
+* org.apache.camel.upgrade.camel49.GcpSecretRecipe: The syntax for retrieving a single field of a secret has been changed..
+* org.apache.camel.upgrade.camel49.HashicorpSecretRecipe: The syntax for retrieving a single field of a secret has been changed..
+* org.apache.camel.upgrade.camel49.removedDependencies: Removed deprecated components (camel-groovy-dsl, camel-js-dsl, camel-jsh-dsl, camel-kotlin-api, camel-kotlin-dsl).
+* org.apache.camel.upgrade.camel49.renamedAPIs: Renamed classes for API.
+* org.apache.camel.upgrade.customRecipes.LiteralRegexpConverterRecipe: Replaces literal, groups from regexp can be used as ${0}, ${1}, ...
+* org.openrewrite.codemods.UI5: Runs the UI5 Linter, a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings.
+* org.openrewrite.codemods.migrate.nextjs.v14_0.MetadataToViewportExport: This codemod migrates certain viewport metadata to `viewport` export.
+* org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter: Transforms the deprecated automatically injected url property on top-level pages to using `withRouter` and the `router` property it injects. Read more here.
+* org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig: Transforms the `withAmp` HOC into Next.js 9 page configuration.
+* org.openrewrite.java.migrate.ChangeDefaultKeyStore: In Java 11 the default keystore was updated from JKS to PKCS12. As a result, applications relying on KeyStore.getDefaultType() may encounter issues after migrating, unless their JKS keystore has been converted to PKCS12. This recipe returns default key store of `jks` when `KeyStore.getDefaultType()` method is called to use the pre Java 11 default keystore.
+* org.openrewrite.java.testing.search.FindUnitTests: Produces a data table showing how methods are used in unit tests.
+* org.openrewrite.json.format.AutoFormat: Format JSON code using a standard comprehensive set of JSON formatting recipes.
+* org.openrewrite.json.format.WrappingAndBraces: Split members into separate lines in JSON.
+* org.openrewrite.recipes.JavaRecipeBestPractices: Best practices for Java recipe development.
+* org.openrewrite.recipes.RecipeNullabilityBestPractices: Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
+* org.openrewrite.recipes.RecipeTestingBestPractices: Best practices for testing recipes.
+* org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices: Best practices for OpenRewrite recipe development.
+* tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringContainsRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatStringContains {
     
@@ -80,7 +80,7 @@ static final class AssertThatStringContains {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotContainRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipesusdassertthatstringdoesnotcontainrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotContainRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatStringDoesNotContain {
     
@@ -97,7 +97,7 @@ static final class AssertThatStringDoesNotContain {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIOExceptionRootCauseHasMessageRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipesusdassertthatthrownbyioexceptionrootcausehasmessagerecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIOExceptionRootCauseHasMessageRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatThrownByIOExceptionRootCauseHasMessage {
     
@@ -115,7 +115,7 @@ static final class AssertThatThrownByIOExceptionRootCauseHasMessage {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalArgumentExceptionRootCauseHasMessageRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipesusdassertthatthrownbyillegalargumentexceptionrootcausehasmessagerecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalArgumentExceptionRootCauseHasMessageRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatThrownByIllegalArgumentExceptionRootCauseHasMessage {
     
@@ -133,7 +133,7 @@ static final class AssertThatThrownByIllegalArgumentExceptionRootCauseHasMessage
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalStateExceptionRootCauseHasMessageRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipesusdassertthatthrownbyillegalstateexceptionrootcausehasmessagerecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalStateExceptionRootCauseHasMessageRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatThrownByIllegalStateExceptionRootCauseHasMessage {
     
@@ -151,7 +151,7 @@ static final class AssertThatThrownByIllegalStateExceptionRootCauseHasMessage {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByNullPointerExceptionRootCauseHasMessageRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipesusdassertthatthrownbynullpointerexceptionrootcausehasmessagerecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByNullPointerExceptionRootCauseHasMessageRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatThrownByNullPointerExceptionRootCauseHasMessage {
     
@@ -169,7 +169,7 @@ static final class AssertThatThrownByNullPointerExceptionRootCauseHasMessage {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByRootCauseHasMessageRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipesusdassertthatthrownbyrootcausehasmessagerecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByRootCauseHasMessageRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatThrownByRootCauseHasMessage {
     
@@ -187,9 +187,9 @@ static final class AssertThatThrownByRootCauseHasMessage {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/charsequencerulesrecipes): Refaster rules related to expressions dealing with `CharSequence`s [Source](https://error-prone.picnic.tech/refasterrules/CharSequenceRules).
-* [tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes$CharSequenceIsEmptyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/charsequencerulesrecipesusdcharsequenceisemptyrecipe): Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequence's length
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatbooleanarraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes: Refaster rules related to expressions dealing with `CharSequence`s Source.
+* tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes$CharSequenceIsEmptyRecipe: Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequence's length
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatBooleanArrayContainsExactly {
     
@@ -206,7 +206,7 @@ static final class AssertThatBooleanArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatbooleanarraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatBooleanArrayWithFailMessageContainsExactly {
     
@@ -223,7 +223,7 @@ static final class AssertThatBooleanArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatbooleanarraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatBooleanArrayWithFailMessageSupplierContainsExactly {
     
@@ -240,7 +240,7 @@ static final class AssertThatBooleanArrayWithFailMessageSupplierContainsExactly 
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatbytearraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatByteArrayContainsExactly {
     
@@ -257,7 +257,7 @@ static final class AssertThatByteArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatbytearraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatByteArrayWithFailMessageContainsExactly {
     
@@ -274,7 +274,7 @@ static final class AssertThatByteArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatbytearraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatByteArrayWithFailMessageSupplierContainsExactly {
     
@@ -291,7 +291,7 @@ static final class AssertThatByteArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatchararraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatCharArrayContainsExactly {
     
@@ -308,7 +308,7 @@ static final class AssertThatCharArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatchararraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatCharArrayWithFailMessageContainsExactly {
     
@@ -325,7 +325,7 @@ static final class AssertThatCharArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatchararraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatCharArrayWithFailMessageSupplierContainsExactly {
     
@@ -342,7 +342,7 @@ static final class AssertThatCharArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatdoublearraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoubleArrayContainsExactly {
     
@@ -359,7 +359,7 @@ static final class AssertThatDoubleArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayContainsExactlyWithOffsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatdoublearraycontainsexactlywithoffsetrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayContainsExactlyWithOffsetRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoubleArrayContainsExactlyWithOffset {
     
@@ -376,7 +376,7 @@ static final class AssertThatDoubleArrayContainsExactlyWithOffset {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatdoublearraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoubleArrayWithFailMessageContainsExactly {
     
@@ -393,7 +393,7 @@ static final class AssertThatDoubleArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageContainsExactlyWithOffsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatdoublearraywithfailmessagecontainsexactlywithoffsetrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageContainsExactlyWithOffsetRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoubleArrayWithFailMessageContainsExactlyWithOffset {
     
@@ -410,7 +410,7 @@ static final class AssertThatDoubleArrayWithFailMessageContainsExactlyWithOffset
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatdoublearraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactly {
     
@@ -427,7 +427,7 @@ static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatdoublearraywithfailmessagesuppliercontainsexactlywithoffsetrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffset {
     
@@ -444,7 +444,7 @@ static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWi
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatfloatarraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatFloatArrayContainsExactly {
     
@@ -461,7 +461,7 @@ static final class AssertThatFloatArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayContainsExactlyWithOffsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatfloatarraycontainsexactlywithoffsetrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayContainsExactlyWithOffsetRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatFloatArrayContainsExactlyWithOffset {
     
@@ -478,7 +478,7 @@ static final class AssertThatFloatArrayContainsExactlyWithOffset {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatfloatarraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatFloatArrayWithFailMessageContainsExactly {
     
@@ -495,7 +495,7 @@ static final class AssertThatFloatArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageContainsExactlyWithOffsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatfloatarraywithfailmessagecontainsexactlywithoffsetrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageContainsExactlyWithOffsetRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatFloatArrayWithFailMessageContainsExactlyWithOffset {
     
@@ -512,7 +512,7 @@ static final class AssertThatFloatArrayWithFailMessageContainsExactlyWithOffset 
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatfloatarraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactly {
     
@@ -529,7 +529,7 @@ static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatfloatarraywithfailmessagesuppliercontainsexactlywithoffsetrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffset {
     
@@ -546,7 +546,7 @@ static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWit
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatintarraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIntArrayContainsExactly {
     
@@ -563,7 +563,7 @@ static final class AssertThatIntArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatintarraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIntArrayWithFailMessageContainsExactly {
     
@@ -580,7 +580,7 @@ static final class AssertThatIntArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatintarraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIntArrayWithFailMessageSupplierContainsExactly {
     
@@ -597,7 +597,7 @@ static final class AssertThatIntArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatlongarraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatLongArrayContainsExactly {
     
@@ -614,7 +614,7 @@ static final class AssertThatLongArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatlongarraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatLongArrayWithFailMessageContainsExactly {
     
@@ -631,7 +631,7 @@ static final class AssertThatLongArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatlongarraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatLongArrayWithFailMessageSupplierContainsExactly {
     
@@ -648,7 +648,7 @@ static final class AssertThatLongArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatobjectarraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatObjectArrayContainsExactly {
     
@@ -665,7 +665,7 @@ static final class AssertThatObjectArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatobjectarraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatObjectArrayWithFailMessageContainsExactly {
     
@@ -682,7 +682,7 @@ static final class AssertThatObjectArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatobjectarraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatObjectArrayWithFailMessageSupplierContainsExactly {
     
@@ -699,7 +699,7 @@ static final class AssertThatObjectArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatshortarraycontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatShortArrayContainsExactly {
     
@@ -716,7 +716,7 @@ static final class AssertThatShortArrayContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatshortarraywithfailmessagecontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatShortArrayWithFailMessageContainsExactly {
     
@@ -733,7 +733,7 @@ static final class AssertThatShortArrayWithFailMessageContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageSupplierContainsExactlyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipesusdassertthatshortarraywithfailmessagesuppliercontainsexactlyrecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageSupplierContainsExactlyRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatShortArrayWithFailMessageSupplierContainsExactly {
     
@@ -750,10 +750,10 @@ static final class AssertThatShortArrayWithFailMessageSupplierContainsExactly {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipesusdstepverifierverifydurationrecipe): Prefer `StepVerifier#verify(Duration)` over a dangling `StepVerifier#verifyThenAssertThat(Duration)`
-* [tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyLaterRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipesusdstepverifierverifylaterrecipe): Don't unnecessarily invoke `StepVerifier#verifyLater()` multiple times
-* [tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipesusdstepverifierverifyrecipe): Prefer `StepVerifier#verify()` over a dangling `StepVerifier#verifyThenAssertThat()`
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoubleArraysWithDeltaRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipesusdassertequaldoublearrayswithdeltarecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe: Prefer `StepVerifier#verify(Duration)` over a dangling `StepVerifier#verifyThenAssertThat(Duration)`
+* tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyLaterRecipe: Don't unnecessarily invoke `StepVerifier#verifyLater()` multiple times
+* tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyRecipe: Prefer `StepVerifier#verify()` over a dangling `StepVerifier#verifyThenAssertThat()`
+* tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoubleArraysWithDeltaRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertEqualDoubleArraysWithDelta {
     
@@ -770,7 +770,7 @@ static final class AssertEqualDoubleArraysWithDelta {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoubleArraysWithDeltaWithMessageRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipesusdassertequaldoublearrayswithdeltawithmessagerecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoubleArraysWithDeltaWithMessageRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertEqualDoubleArraysWithDeltaWithMessage {
     
@@ -787,7 +787,7 @@ static final class AssertEqualDoubleArraysWithDeltaWithMessage {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatArraysWithDeltaRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipesusdassertequalfloatarrayswithdeltarecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatArraysWithDeltaRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertEqualFloatArraysWithDelta {
     
@@ -804,7 +804,7 @@ static final class AssertEqualFloatArraysWithDelta {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatArraysWithDeltaWithMessageRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipesusdassertequalfloatarrayswithdeltawithmessagerecipe): Recipe created for the following Refaster template:
+* tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatArraysWithDeltaWithMessageRecipe: Recipe created for the following Refaster template:
 ```java
 static final class AssertEqualFloatArraysWithDeltaWithMessage {
     
@@ -821,21 +821,21 @@ static final class AssertEqualFloatArraysWithDeltaWithMessage {
 }
 ```
 .
-* [tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIdentityRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/timerulesrecipesusdinstantidentityrecipe): Don't unnecessarily transform an `Instant` to an equivalent instance
-* [tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToMillisecondsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/timerulesrecipesusdinstanttruncatedtomillisecondsrecipe): Note that `Instant#toEpochMilli()` throws an `ArithmeticException` for dates
+* tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIdentityRecipe: Don't unnecessarily transform an `Instant` to an equivalent instance
+* tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToMillisecondsRecipe: Note that `Instant#toEpochMilli()` throws an `ArithmeticException` for dates
   very far in the past or future, while the suggested alternative doesn't.
-* [tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToSecondsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/timerulesrecipesusdinstanttruncatedtosecondsrecipe): Prefer `Instant#truncatedTo(TemporalUnit)` over less obvious alternatives
+* tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToSecondsRecipe: Prefer `Instant#truncatedTo(TemporalUnit)` over less obvious alternatives
 
 ## Removed Recipes
 
 * **io.moderne.ai.SpellCheckCommentsInFrenchPomXml**: Use spellchecker to fix mis-encoded French comments in pom.xml files. Mis-encoded comments will contain either '?' or '�'.
 * **org.openrewrite.codemods.migrate.nextjs.v14_0.UseViewportExport**: This codemod migrates certain viewport metadata to `viewport` export.
-  See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#metadata-to-viewport-export) for more information.
+  See documentation for more information.
 * **org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithRouter**: Transforms the deprecated automatically injected url property on top level pages to using `withRouter` and the `router`  property it injects. Read more here: https://nextjs.org/docs/messages/url-deprecated
-  See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#url-to-withrouter)
+  See documentation
   for more information.
 * **org.openrewrite.codemods.migrate.nextjs.v8.WithAmpToConfig**: Transforms the `withAmp` HOC into Next.js 9 page configuration.
-  See [documentation](https://nextjs.org/docs/app/building-your-application/upgrading/codemods#withamp-to-config)
+  See documentation
   for more information.
 * **org.openrewrite.java.camel.migrate.ChangePropertyValue**: Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties.
 * **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsEmptyRecipe**: Recipe created for the following Refaster template:
@@ -908,7 +908,7 @@ static final class ConstantsFormat {
 
 ## Changed Recipes
 
-* [org.openrewrite.FindParseFailures](https://docs.openrewrite.org/recipes/core/findparsefailures) was changed:
+* org.openrewrite.FindParseFailures was changed:
   * Old Options:
     * `maxSnippetLength: { type: Integer, required: false }`
     * `parserType: { type: String, required: false }`
@@ -918,7 +918,7 @@ static final class ConstantsFormat {
     * `maxSnippetLength: { type: Integer, required: false }`
     * `parserType: { type: String, required: false }`
     * `stackTrace: { type: String, required: false }`
-* [org.openrewrite.java.dependencies.DependencyList](https://docs.openrewrite.org/recipes/java/dependencies/dependencylist) was changed:
+* org.openrewrite.java.dependencies.DependencyList was changed:
   * Old Options:
     * `includeTransitive: { type: boolean, required: true }`
     * `scope: { type: Scope, required: true }`
@@ -926,7 +926,7 @@ static final class ConstantsFormat {
     * `includeTransitive: { type: boolean, required: true }`
     * `scope: { type: Scope, required: true }`
     * `validateResolvable: { type: boolean, required: true }`
-* [org.openrewrite.yaml.MergeYaml](https://docs.openrewrite.org/recipes/yaml/mergeyaml) was changed:
+* org.openrewrite.yaml.MergeYaml was changed:
   * Old Options:
     * `acceptTheirs: { type: Boolean, required: false }`
     * `filePattern: { type: String, required: false }`
