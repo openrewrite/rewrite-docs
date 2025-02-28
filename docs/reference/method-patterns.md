@@ -182,7 +182,7 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
 
         // The enclosing class of a J.MethodDeclaration must be known for a MethodMatcher to match it
         if (methodMatcher.matches(method, classDecl)) {
-            JavaType.Method type = m.getType();
+            JavaType.Method type = m.getMethodType();
 
             // Note that both the name and the type information on the declaration are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
@@ -190,8 +190,8 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
                 type = type.withName(newMethodName);
             }
 
-            m = m.withName(m.getName().withName(newMethodName))
-                    .withType(type);
+            m = m.withName(m.getName().withSimpleName(newMethodName).withType(type))
+                                .withMethodType(type);
         }
 
         return m;
@@ -203,7 +203,7 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
 
         // Type information stored in the J.MethodInvocation indicates the class so no second argument is necessary
         if (methodMatcher.matches(method)) {
-            JavaType.Method type = m.getType();
+            JavaType.Method type = m.getMethodType();
 
             // Note that both the name and the type information on the invocation are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
@@ -211,8 +211,8 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
                 type = type.withName(newMethodName);
             }
 
-            m = m.withName(m.getName().withName(newMethodName))
-                    .withType(type);
+           m = m.withName(m.getName().withSimpleName(newMethodName).withType(type))
+                                .withMethodType(type);
         }
 
         return m;
