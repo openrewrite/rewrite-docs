@@ -14,7 +14,7 @@ The use of the "bill of materials" means that a developer will only need to spec
 
 | Module                                                                                                                | Version    | License |
 |-----------------------------------------------------------------------------------------------------------------------| ---------- | ------- |
-| [**org.openrewrite:rewrite-bom**](https://github.com/openrewrite/rewrite)                                             | **[8.47.3](https://github.com/openrewrite/rewrite/releases/tag/v8.47.3)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [**org.openrewrite:rewrite-bom**](https://github.com/openrewrite/rewrite)                                             | **[8.47.4](https://github.com/openrewrite/rewrite/releases/tag/v8.47.4)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[6.2.2](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.2.2)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[7.1.7](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v7.1.7)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                    | **[3.3.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.3.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
