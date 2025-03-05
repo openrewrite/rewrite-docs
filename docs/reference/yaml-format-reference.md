@@ -193,3 +193,7 @@ To put this style in effect for any formatting performed by OpenRewrite within t
 2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](rewrite-maven-plugin.md) with `com.yourorg.YesTabsNoStarImports` listed as the active style
 
 The next time any OpenRewrite recipe is run in that project, any formatting it performs will take these styles into account.
+
+## Testing
+
+For information on how to test declarative YAML recipes, check out our [recipe testing guide](../authoring-recipes/recipe-testing.md#declarative-recipe-testing)
