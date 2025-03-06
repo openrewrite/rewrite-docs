@@ -94,4 +94,3 @@
 ^src/
 ^static/
 ignore$
-^Arewrite
