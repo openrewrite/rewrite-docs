@@ -301,3 +301,15 @@ Time savings estimates provide you with a general idea of how much time was save
 The assumption is that this time saved number represents how long it would take a developer to change the code, create a PR to review said change, and then merge/deploy it once it was reviewed. It _does not_ estimate how long it would take a developer to find this issue in the code (which, in some cases, can be quite a bit longer than making the change itself).
 
 [You can export data tables with those results per recipe](../running-recipes/data-tables.md).
+
+## Is there a way to tell `rewriteTest` to ignore formatting when comparing before and after? Likewise, can we just compare LST equivalence while ignoring static imports or fully qualified types?
+
+No there is not -- and very intentionally not so.
+
+The reason is that these differences can be indicative of underlying issues. For example:
+
+* Ignoring formatting differences might overlook cases where incorrect formatting affects code behavior or leads to compilation issues.
+
+* Ignoring import differences might cause problems if a necessary type is missing or not properly imported.
+
+Additionally, if `rewriteTest` ignores these issues, it could lead to problems composing multiple recipes together. The output of one recipe becomes the input for the next, and if that output contains formatting or import issues, it can cause issues downstream.
