@@ -137,12 +137,30 @@ The main advantage of context-free templates is that they only need to be parsed
 
 A **context-sensitive** JavaTemplate, on the other hand, is aware of and adapts to the surrounding LST. It can capture elements from the existing code, such as variable names, types, or method parameters.
 
-For instance, in the following example, `#{any(String)}` acts as a placeholder that will be replaced by an appropriate `String` expression from the surrounding context when applied:
+An example can help this make more sense. Let's presume we have code that looks like this:
 
 ```java
-JavaTemplate.builder("System.out.println(#{any(String)});")
+public void logMessage() {
+    String message = "Application started";
+    System.out.println(message);
+}
+```
+
+We want to change the `System.out.println` to be a logging method, but we don't want to use the variable `message`. We could write a template like:
+
+```java
+JavaTemplate.builder("logger.info(#{any(String)});")
             .contextSensitive()
             .build();
+```
+
+When applied, the template might generate:
+
+```java
+public void logMessage() {
+    String message = "Application started";
+    logger.info(message);
+}
 ```
 
 This context of the surrounding code comes with a performance impact, though. That's not to say that you _shouldn't_ use them but, rather, that you should be aware of the cost of using them.
