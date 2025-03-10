@@ -120,6 +120,33 @@ JavaTemplate.builder("Duration.ofMillis(#{any(int)})")
 There are many examples of `JavaTemplate` stubs in [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and [rewrite-spring](https://github.com/openrewrite/rewrite-spring).
 :::
 
+## Context-free vs. Context-sensitive JavaTemplates
+
+There are two types of JavaTemplates – each having their own advantages/disadvantages:
+
+A **context-free** JavaTemplate does not depend on the surrounding LST. It is a static template that simply replaces or inserts code without considering the broader context of the source file. This is particularly useful for simple transformations like replacing method calls or inserting boilerplate code.
+
+For instance, the following template, when applied, would not check the existing imports or variables in scope:
+
+```java
+JavaTemplate.builder("System.out.println(\"Hello, World!\");")
+            .build();
+```
+
+The main advantage of context-free templates is that they only need to be parsed once before their parameters can be substituted. This has a much smaller performance impact on recipe runs.
+
+A **context-sensitive** JavaTemplate, on the other hand, is aware of and adapts to the surrounding LST. It can capture elements from the existing code, such as variable names, types, or method parameters.
+
+For instance, in the following example, `#{any(String)}` acts as a placeholder that will be replaced by an appropriate `String` expression from the surrounding context when applied:
+
+```java
+JavaTemplate.builder("System.out.println(#{any(String)});")
+            .contextSensitive()
+            .build();
+```
+
+This context of the surrounding code comes with a performance impact, though. That's not to say that you _shouldn't_ use them but, rather, that you should be aware of the cost of using them.
+
 ## Usage
 
 Once an instance of the template has been created it can be applied to an LST element with the method `JavaTemplate apply(..)`. This example visitor uses a template to replace all method invocations of `countLetters(String)` with `withString(String).length()`:
