@@ -126,7 +126,7 @@ There are two types of JavaTemplates – each having their own advantages/disadv
 
 A **context-free** JavaTemplate does not depend on the surrounding LST. It is a self-contained template that simply replaces or inserts code which doesn't require knowledge of the broader context of the source file. This is particularly useful for simple transformations like replacing method calls or inserting boilerplate code.
 
-For instance, the following template, when applied, would not check the existing imports or variables in scope:
+For instance, the following template only refers to declarations (`java.lang.System`, `java.lang.System#out`, and `java.io.PrintStream#println(String)`) that are accessible from the Java compiler's classpath:
 
 ```java
 JavaTemplate.builder("System.out.println(\"Hello, World!\");")
@@ -135,7 +135,7 @@ JavaTemplate.builder("System.out.println(\"Hello, World!\");")
 
 The main advantage of context-free templates is that they only need to be parsed once before their parameters can be substituted. This has a much smaller performance impact on recipe runs.
 
-A **context-sensitive** JavaTemplate, on the other hand, is aware of and adapts to the surrounding LST. It can capture elements from the existing code, such as variable names, types, or method parameters.
+A **context-sensitive** JavaTemplate, on the other hand, can refer to declarations within the surrounding LST it will end up getting embedded into. It can refer to declarations in the scope of the existing code, such as variables, fields, locally declared or imported types, or method parameters.
 
 An example can help this make more sense. Let's presume we have code that looks like this:
 
