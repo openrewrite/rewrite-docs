@@ -163,7 +163,9 @@ public void logMessage() {
 }
 ```
 
-This context of the surrounding code comes with a performance impact, though. That's not to say that you _shouldn't_ use them but, rather, that you should be aware of the cost of using them.
+This context of the surrounding code comes with a performance impact, though. Every time a context-sensitive JavaTemplate is applied, a small Java source file capturing all imports and declarations that are in scope needs to be generated and compiled using the Java compiler.
+
+Of course, that's not to say that you _shouldn't_ use them but, rather, that you should be aware of the cost of using them.
 
 ## Usage
 
