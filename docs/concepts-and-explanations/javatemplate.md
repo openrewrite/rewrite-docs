@@ -211,3 +211,63 @@ You might want to replace the entire method declaration with the template result
 :::info
 There are thousands of possible coordinates, many with no practical application. To avoid wasting effort implementing coordinates no one would ever use, coordinates have been implemented on an as-needed basis. If existing coordinates are insufficient to your needs, come tell us about it in the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared\_invite/zt-nj42n3ea-b\~62rIHzb3Vo0E1APKCXEA) or [file an issue](https://github.com/openrewrite/rewrite/issues).
 :::
+
+## Using JavaTemplates to match existing code
+
+As you've seen previously in this doc, JavaTemplates can be used to "generate" code that can be inserted into the LST model. That's not their only use-case, however. They can also be used to match existing code in the LST model.
+
+We extensively use this functionality in our [Refaster template recipes](../authoring-recipes/types-of-recipes.md#refaster-template-recipes). It can also be quite useful for tests.
+
+To help make this clearer, let's take a look at the [SimplifyTernary recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/SimplifyTernary.java#L46-L62):
+
+```java
+@RecipeDescriptor(
+        name = "Replace `booleanExpression ? false : true` with `!booleanExpression`",
+        description = "Replace ternary expressions like `booleanExpression ? false : true` with `!booleanExpression`."
+)
+public static class SimplifyTernaryFalseTrue {
+
+    @BeforeTemplate
+    boolean before(boolean expr) {
+        return expr ? false : true;
+    }
+
+    @AfterTemplate
+    boolean after(boolean expr) {
+        // We wrap the expression in parentheses as the input expression might be a complex expression
+        return !(expr);
+    }
+}
+```
+
+Behind the scenes, that recipe gets translated into the following code. Notice how we create JavaTemplates but only use them for _matching_.
+
+```java
+@NullMarked
+public static class SimplifyTernaryFalseTrueRecipe extends Recipe {
+    public SimplifyTernaryFalseTrueRecipe() {
+    }
+
+    public String getDisplayName() {
+        return "Replace `booleanExpression ? false : true` with `!booleanExpression`";
+    }
+
+    public String getDescription() {
+        return "Replace ternary expressions like `booleanExpression ? false : true` with `!booleanExpression`.";
+    }
+
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return new AbstractRefasterJavaVisitor() {
+            final JavaTemplate before = JavaTemplate.builder("#{expr:any(boolean)} ? false : true").build();
+            final JavaTemplate after = JavaTemplate.builder("!(#{expr:any(boolean)})").build();
+
+            public J visitTernary(J.Ternary elem, ExecutionContext ctx) {
+                JavaTemplate.Matcher matcher;
+                return (matcher = this.before.matcher(this.getCursor())).find() ? this.embed(this.after.apply(this.getCursor(), elem.getCoordinates().replace(), new Object[]{matcher.parameter(0)}), this.getCursor(), ctx, new AbstractRefasterJavaVisitor.EmbeddingOption[]{EmbeddingOption.REMOVE_PARENS, EmbeddingOption.SHORTEN_NAMES, EmbeddingOption.SIMPLIFY_BOOLEANS}) : super.visitTernary(elem, ctx);
+            }
+        };
+    }
+}
+```
+
+Another useful example to look at is our [JavaTemplateMatchTest class](https://github.com/openrewrite/rewrite/blob/main/rewrite-java-test/src/test/java/org/openrewrite/java/JavaTemplateMatchTest.java#L32). In there, you can see how we create a JavaTemplate for the use case of matching/finding code rather than replacing it.
