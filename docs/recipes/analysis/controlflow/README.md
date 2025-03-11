@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Control Flow Visualization](./controlflowvisualization.md)
+* [Control flow visualization](./controlflowvisualization.md)
 
 

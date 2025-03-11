@@ -50,6 +50,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Wrap the region string provided on the SDK client builder with Region.of](../../../../software/amazon/awssdk/v2migration/wrapsdkclientbuilderregionstr)
 * [V1 Enum Casing to V2](../../../../software/amazon/awssdk/v2migration/enumcasingtov2)
 * [Convert SdkBytes to ByteBuffer](../../../../software/amazon/awssdk/v2migration/sdkbytestobytebuffer)
+* [Convert ByteBuffer to SdkBytes](../../../../software/amazon/awssdk/v2migration/bytebuffertosdkbytes)
+* [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2complex)
 
 </TabItem>
 
@@ -83,6 +85,8 @@ recipeList:
   - software.amazon.awssdk.v2migration.WrapSdkClientBuilderRegionStr
   - software.amazon.awssdk.v2migration.EnumCasingToV2
   - software.amazon.awssdk.v2migration.SdkBytesToByteBuffer
+  - software.amazon.awssdk.v2migration.ByteBufferToSdkBytes
+  - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2Complex
 
 ```
 </TabItem>

@@ -51,17 +51,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPackageName: `jakarta.annotation`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `jakarta.annotation.processing`
-  * newPackageName: `javax.annotation.processing`
+  * oldPackageName: `javax.annotation.processing`
+  * newPackageName: `jakarta.annotation.processing`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `jakarta.annotation.concurrent`
-  * newPackageName: `javax.annotation.concurrent`
+  * oldPackageName: `javax.annotation.concurrent`
+  * newPackageName: `jakarta.annotation.concurrent`
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.annotation.Nullable`
-  * newFullyQualifiedTypeName: `javax.annotation.Nullable`
+  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Nullable`
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.annotation.Nonnull`
-  * newFullyQualifiedTypeName: `javax.annotation.Nonnull`
+  * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Nonnull`
 
 </TabItem>
 
@@ -96,17 +96,17 @@ recipeList:
       newPackageName: jakarta.annotation
       recursive: true
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: jakarta.annotation.processing
-      newPackageName: javax.annotation.processing
+      oldPackageName: javax.annotation.processing
+      newPackageName: jakarta.annotation.processing
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: jakarta.annotation.concurrent
-      newPackageName: javax.annotation.concurrent
+      oldPackageName: javax.annotation.concurrent
+      newPackageName: jakarta.annotation.concurrent
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.annotation.Nullable
-      newFullyQualifiedTypeName: javax.annotation.Nullable
+      oldFullyQualifiedTypeName: javax.annotation.Nullable
+      newFullyQualifiedTypeName: jakarta.annotation.Nullable
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.annotation.Nonnull
-      newFullyQualifiedTypeName: javax.annotation.Nonnull
+      oldFullyQualifiedTypeName: javax.annotation.Nonnull
+      newFullyQualifiedTypeName: jakarta.annotation.Nonnull
 
 ```
 </TabItem>

@@ -91,14 +91,14 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
-### JVMTestSuites defined
+### `JVMTestSuites` 
 **org.openrewrite.gradle.table.JVMTestSuitesDefined**
 
-_JVMTestSuites defined._
+_The Gradle `JVMTestSuites` that are configured in a build._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| JVMTestSuite name | Name of the defined JVMTestSuite. |
+| `JVMTestSuite` name | Name of the defined `JVMTestSuite`. |
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**

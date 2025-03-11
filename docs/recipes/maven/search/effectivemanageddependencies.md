@@ -89,7 +89,7 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 ### Managed dependency graph
-**org.openrewrite.maven.table.DependenciesInUse**
+**org.openrewrite.maven.table.ManagedDependencyGraph**
 
 _Relationships between POMs and their ancestors that define managed dependencies._
 

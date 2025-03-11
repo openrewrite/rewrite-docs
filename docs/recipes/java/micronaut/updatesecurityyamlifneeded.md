@@ -32,6 +32,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * key: `$.micronaut.security.token`
   * yaml: `generator:   access-token:     expiration: cookie:   enabled:   cookie-max-age:   cookie-path:   cookie-domain:   cookie-same-site: bearer:   enabled:`
   * acceptTheirs: `true`
+  * createNewKeys: `true`
 * [Copy YAML value](../../yaml/copyvalue)
   * oldKeyPath: `$.micronaut.security.token.jwt.generator.access-token.expiration`
   * newKey: `$.micronaut.security.token.generator.access-token.expiration`
@@ -87,6 +88,7 @@ cookie:
 bearer:
   enabled:
       acceptTheirs: true
+      createNewKeys: true
   - org.openrewrite.yaml.CopyValue:
       oldKeyPath: $.micronaut.security.token.jwt.generator.access-token.expiration
       newKey: $.micronaut.security.token.generator.access-token.expiration

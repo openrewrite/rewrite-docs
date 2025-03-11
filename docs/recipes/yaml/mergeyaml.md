@@ -27,6 +27,7 @@ _Merge a YAML snippet with an existing YAML document._
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 | `InsertMode` | insertMode | *Optional*. Choose an insertion point when multiple mappings exist. Default is `Last`. Valid options: `Before`, `After`, `Last` |  |
 | `String` | insertProperty | *Optional*. Define the key for the insertion mode. Takes the `key` JsonPath into account. Only useful when `insert mode` is either `Before` or `After`. | `some-key` |
+| `Boolean` | createNewKeys | *Optional*. When the key path does _not_ match any keys, create new keys on the spot. Default is `true`. |  |
 
 ## License
 
@@ -169,4 +170,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jon Brisbin](mailto:jon@jbrisbin.com), [Knut Wannheden](mailto:knut@moderne.io), Dmitry Belyaev, adastraperangusta, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aaron Gershman
+[Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jon Brisbin](mailto:jon@jbrisbin.com), [Sam Snyder](mailto:sam@moderne.io), Dmitry Belyaev, adastraperangusta, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aaron Gershman

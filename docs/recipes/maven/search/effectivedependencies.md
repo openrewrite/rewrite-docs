@@ -96,7 +96,7 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 ### Dependency graph
-**org.openrewrite.maven.table.DependenciesInUse**
+**org.openrewrite.maven.table.DependencyGraph**
 
 _Relationships between dependencies._
 

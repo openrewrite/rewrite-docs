@@ -21,7 +21,7 @@ _Add a comment to a Java source file._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | comment | The comment to add. | `This is a comment.` |
-| `String` | methodPattern | A pattern to match methods to add the comment to. To find all method invocations in the Guava library, use the pattern `com.google.common..*#*(..)`. The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. `..*` includes all subpackages of `com.google.common`. `*(..)` matches any method name with any number of arguments. For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add*(..)` |
+| `String` | methodPattern | A pattern to match methods to add the comment to. A [[method pattern](/reference/method-patterns)](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add*(..)` |
 | `Boolean` | isMultiline | *Optional*. Comments use by default single line // but they can use multiline /* */. |  |
 
 ## License
@@ -160,4 +160,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Antonio Goncalves](mailto:antonio.goncalves@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Antonio Goncalves](mailto:antonio.goncalves@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

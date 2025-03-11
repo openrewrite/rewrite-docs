@@ -39,6 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * acceptTheirs: `false`
   * objectIdentifyingProperty: `component`
   * filePattern: `.gitlab-ci.yml`
+  * createNewKeys: `true`
 
 </TabItem>
 
@@ -65,6 +66,7 @@ recipeList:
       acceptTheirs: false
       objectIdentifyingProperty: component
       filePattern: .gitlab-ci.yml
+      createNewKeys: true
 
 ```
 </TabItem>

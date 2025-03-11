@@ -231,4 +231,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Evie Lau, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+Evie Lau, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

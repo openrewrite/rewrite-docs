@@ -58,6 +58,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 * [Code comprehension with unit test examples](../recipes/knowledge/comprehendcodewithunittestexamples.md)
 * [Comprehend code](../recipes/knowledge/comprehendcode.md)
+* [Improve recipe descriptors](../recipes/moddy/improverecipedescriptors.md)
 * [Search for a class that uses the given design technique](../recipes/knowledge/search/searchdesigntechnique.md)
 * [Update README](../recipes/knowledge/docs/updatereadme.md)
 * [Update the README for an OpenRewrite recipe repository](../recipes/knowledge/docs/updateopenrewritereadme.md)

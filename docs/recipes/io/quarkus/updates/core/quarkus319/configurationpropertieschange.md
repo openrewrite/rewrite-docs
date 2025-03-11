@@ -1,36 +1,38 @@
 ---
-sidebar_label: "URLConstructorsToURI Refaster recipes"
+sidebar_label: "io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# `URLConstructorsToURI` Refaster recipes
+# io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange
 
-**org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes**
+**io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange**
 
-_Refaster template recipes for `org.openrewrite.java.migrate.net.URLConstructorsToURI`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/URLConstructorsToURI.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Convert `new URL(String)` to `URI.create(String).toURL()`](../../../java/migrate/net/urlconstructorstourirecipes$urlsingleargumentconstructorrecipe)
-* [Convert `new URL(String, String, String)` to `new URI(...).toURL()`](../../../java/migrate/net/urlconstructorstourirecipes$urlthreeargumentconstructorrecipe)
-* [Convert `new URL(String, String, int, String)` to `new URI(...).toURL()`](../../../java/migrate/net/urlconstructorstourirecipes$urlfourargumentconstructorrecipe)
+* [Change Quarkus configuration property key](../../../../../quarkus/changequarkuspropertykey)
+  * oldPropertyKey: `quarkus\.http\.cors`
+  * newPropertyKey: `quarkus.http.cors.enabled`
+* [Change Quarkus configuration property key](../../../../../quarkus/changequarkuspropertykey)
+  * oldPropertyKey: `quarkus\.log\.(console|file|syslog|socket)\.json`
+  * newPropertyKey: `quarkus.log.$1.json.enabled`
 
 </TabItem>
 
@@ -39,14 +41,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes
-displayName: `URLConstructorsToURI` Refaster recipes
+name: io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange
+displayName: io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange
 description: |
-  Refaster template recipes for `org.openrewrite.java.migrate.net.URLConstructorsToURI`.
+  
 recipeList:
-  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes$URLSingleArgumentConstructorRecipe
-  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes$URLThreeArgumentConstructorRecipe
-  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes$URLFourArgumentConstructorRecipe
+  - org.openrewrite.quarkus.ChangeQuarkusPropertyKey:
+      oldPropertyKey: quarkus\.http\.cors
+      newPropertyKey: quarkus.http.cors.enabled
+  - org.openrewrite.quarkus.ChangeQuarkusPropertyKey:
+      oldPropertyKey: quarkus\.log\.(console|file|syslog|socket)\.json
+      newPropertyKey: quarkus.log.$1.json.enabled
 
 ```
 </TabItem>
@@ -54,7 +59,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -66,7 +71,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes")
+    activeRecipe("io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange")
     setExportDatatables(true)
 }
 
@@ -75,7 +80,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -96,10 +101,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes")
+        activeRecipe("io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -134,14 +139,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes</recipe>
+            <recipe>io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
+            <artifactId>rewrite-third-party</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -157,7 +162,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -165,12 +170,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe URLConstructorsToURIRecipes
+mod run . --recipe ConfigurationPropertiesChange
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>
@@ -179,7 +184,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
