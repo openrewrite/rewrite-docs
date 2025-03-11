@@ -313,3 +313,5 @@ The reason is that these differences can be indicative of underlying issues. For
 * Ignoring import differences might cause problems if a necessary type is missing or not properly imported.
 
 Additionally, if `rewriteTest` ignores these issues, it could lead to problems composing multiple recipes together. The output of one recipe becomes the input for the next, and if that output contains formatting or import issues, it can cause issues downstream.
+
+Because of that, we recommend fixing the underlying causes of those differences.
