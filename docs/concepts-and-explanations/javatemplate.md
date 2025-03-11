@@ -124,7 +124,7 @@ There are many examples of `JavaTemplate` stubs in [rewrite-testing-frameworks](
 
 There are two types of JavaTemplates – each having their own advantages/disadvantages:
 
-A **context-free** JavaTemplate does not depend on the surrounding LST. It is a static template that simply replaces or inserts code without considering the broader context of the source file. This is particularly useful for simple transformations like replacing method calls or inserting boilerplate code.
+A **context-free** JavaTemplate does not depend on the surrounding LST. It is a self-contained template that simply replaces or inserts code which doesn't require knowledge of the broader context of the source file. This is particularly useful for simple transformations like replacing method calls or inserting boilerplate code.
 
 For instance, the following template, when applied, would not check the existing imports or variables in scope:
 
