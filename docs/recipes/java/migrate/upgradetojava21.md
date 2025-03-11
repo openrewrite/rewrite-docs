@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade build to Java 21](../../java/migrate/upgradebuildtojava21)
 * [Remove illegal semicolons](../../java/migrate/removeillegalsemicolons)
 * [Replace `Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` with `throw new UnsupportedOperationException()`](../../java/migrate/lang/threadstopunsupported)
-* [`URLConstructorsToURI` Refaster recipes](../../java/migrate/net/urlconstructorstourirecipes)
+* [Convert `new URL(String)` to `URI.create(String).toURL()`](../../java/migrate/net/urlconstructortouricreate)
 * [Adopt `SequencedCollection`](../../java/migrate/util/sequencedcollection)
 * [Prefer `Locale.of(..)` over `new Locale(..)`](../../java/migrate/util/uselocaleof)
 * [Replace deprecated `Runtime#exec()` methods](../../staticanalysis/replacedeprecatedruntimeexecmethods)
@@ -63,7 +63,7 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradeBuildToJava21
   - org.openrewrite.java.migrate.RemoveIllegalSemicolons
   - org.openrewrite.java.migrate.lang.ThreadStopUnsupported
-  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes
+  - org.openrewrite.java.migrate.net.URLConstructorToURICreate
   - org.openrewrite.java.migrate.util.SequencedCollection
   - org.openrewrite.java.migrate.util.UseLocaleOf
   - org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods
@@ -254,4 +254,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, [Shannon Pamperl](mailto:shanman190@gmail.com), eocantu, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Kun Li, Josh Soref
+Chuka Obinabo, [Tim te Beek](mailto:tim@moderne.io), Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, [karthikNousher](mailto:emailkarthik369@gmail.com), Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, [Shannon Pamperl](mailto:shanman190@gmail.com), eocantu, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Kun Li, Josh Soref, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

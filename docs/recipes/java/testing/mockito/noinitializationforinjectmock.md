@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.mockito.NoInitializationForInjectMock**
 
-_Removes unnecessary initialization for fields annotated with `@InjectMocks` in Mockito tests._
+_Removes unnecessary initialization for fields annotated with `@InjectMocks` in Mockito tests. If the field was final, the final modifier is removed._
 
 ## Recipe source
 
@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

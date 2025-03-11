@@ -85,7 +85,7 @@ _The inferred knowledge about methods in the codebase, as provided by an LLM._
 | Technology in use 2 | A technique in use in the method. |
 | Technology in use 3 | A technique in use in the method. |
 | Examples | API examples of the methods in the codebase with the number of occurrences. |
-| Examples of Unit Tests | Examples of the method declaration being used in the unit test. |
+| Examples of unit tests | Examples of the method declaration being used in the unit test. |
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -131,4 +131,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), justine-gehring, [justine](mailto:justine.gehring@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [justine](mailto:justine.gehring@gmail.com), justine-gehring, [Tim te Beek](mailto:tim@moderne.io)

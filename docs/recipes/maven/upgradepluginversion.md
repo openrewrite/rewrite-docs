@@ -162,4 +162,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Sam Snyder](mailto:sam@moderne.io)
+Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Filipe Roque](mailto:froque@premium-minds.com)

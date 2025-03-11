@@ -74,6 +74,48 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.services.s3.AmazonS3 getBucketWebsiteConfiguration(com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest)`
   * newMethodName: `getBucketWebsite`
 * [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 deleteVersion(com.amazonaws.services.s3.model.DeleteObjectRequest)`
+  * newMethodName: `deleteObject`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketPolicy(com.amazonaws.services.s3.model.PutBucketPolicyRequest)`
+  * newMethodName: `putBucketPolicy`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 copyPart(com.amazonaws.services.s3.model.CopyPartRequest)`
+  * newMethodName: `uploadPartCopy`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketAccelerateConfiguration(com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest)`
+  * newMethodName: `putBucketAccelerateConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketAnalyticsConfiguration(com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest)`
+  * newMethodName: `putBucketAnalyticsConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketIntelligentTieringConfiguration(com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest)`
+  * newMethodName: `putBucketIntelligentTieringConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketInventoryConfiguration(com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest)`
+  * newMethodName: `putBucketInventoryConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketLifecycleConfiguration(com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest)`
+  * newMethodName: `putBucketLifecycleConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketMetricsConfiguration(com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest)`
+  * newMethodName: `putBucketMetricsConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketNotificationConfiguration(com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest)`
+  * newMethodName: `putBucketNotificationConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketOwnershipControls(com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest)`
+  * newMethodName: `putBucketOwnershipControls`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketReplicationConfiguration(com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest)`
+  * newMethodName: `putBucketReplication`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketTaggingConfiguration(com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest)`
+  * newMethodName: `putBucketTagging`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)`
+  * newMethodName: `putBucketWebsite`
+* [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.AmazonS3Client getObjectMetadata(com.amazonaws.services.s3.model.GetObjectMetadataRequest)`
   * newMethodName: `headObject`
 * [Change method name](../../../../java/changemethodname)
@@ -119,6 +161,48 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.services.s3.AmazonS3Client getBucketWebsiteConfiguration(com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest)`
   * newMethodName: `getBucketWebsite`
 * [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client deleteVersion(com.amazonaws.services.s3.model.DeleteObjectRequest)`
+  * newMethodName: `deleteObject`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketPolicy(com.amazonaws.services.s3.model.PutBucketPolicyRequest)`
+  * newMethodName: `putBucketPolicy`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client copyPart(com.amazonaws.services.s3.model.CopyPartRequest)`
+  * newMethodName: `uploadPartCopy`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketAccelerateConfiguration(com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest)`
+  * newMethodName: `putBucketAccelerateConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketAnalyticsConfiguration(com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest)`
+  * newMethodName: `putBucketAnalyticsConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketIntelligentTieringConfiguration(com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest)`
+  * newMethodName: `putBucketIntelligentTieringConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketInventoryConfiguration(com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest)`
+  * newMethodName: `putBucketInventoryConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketLifecycleConfiguration(com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest)`
+  * newMethodName: `putBucketLifecycleConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketMetricsConfiguration(com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest)`
+  * newMethodName: `putBucketMetricsConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketNotificationConfiguration(com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest)`
+  * newMethodName: `putBucketNotificationConfiguration`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketOwnershipControls(com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest)`
+  * newMethodName: `putBucketOwnershipControls`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketReplicationConfiguration(com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest)`
+  * newMethodName: `putBucketReplication`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketTaggingConfiguration(com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest)`
+  * newMethodName: `putBucketTagging`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)`
+  * newMethodName: `putBucketWebsite`
+* [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.BucketCrossOriginConfiguration withRules(com.amazonaws.services.s3.model.CORSRule...)`
   * newMethodName: `withCorsRules`
 * [Change method name](../../../../java/changemethodname)
@@ -127,6 +211,21 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.ListObjectsV2Request withBucketName(String)`
   * newMethodName: `withBucket`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.CopyPartRequest withSourceBucketName(String)`
+  * newMethodName: `withSourceBucket`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.CopyPartRequest withDestinationBucketName(String)`
+  * newMethodName: `withDestinationBucket`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination withBucketArn(String)`
+  * newMethodName: `withBucket`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withBucketName(String)`
+  * newMethodName: `withBucket`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withPartETags(java.util.List)`
+  * newMethodName: `withMultipartUpload`
 
 </TabItem>
 
@@ -186,6 +285,48 @@ recipeList:
       methodPattern: com.amazonaws.services.s3.AmazonS3 getBucketWebsiteConfiguration(com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest)
       newMethodName: getBucketWebsite
   - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 deleteVersion(com.amazonaws.services.s3.model.DeleteObjectRequest)
+      newMethodName: deleteObject
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketPolicy(com.amazonaws.services.s3.model.PutBucketPolicyRequest)
+      newMethodName: putBucketPolicy
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 copyPart(com.amazonaws.services.s3.model.CopyPartRequest)
+      newMethodName: uploadPartCopy
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketAccelerateConfiguration(com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest)
+      newMethodName: putBucketAccelerateConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketAnalyticsConfiguration(com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest)
+      newMethodName: putBucketAnalyticsConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketIntelligentTieringConfiguration(com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest)
+      newMethodName: putBucketIntelligentTieringConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketInventoryConfiguration(com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest)
+      newMethodName: putBucketInventoryConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketLifecycleConfiguration(com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest)
+      newMethodName: putBucketLifecycleConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketMetricsConfiguration(com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest)
+      newMethodName: putBucketMetricsConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketNotificationConfiguration(com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest)
+      newMethodName: putBucketNotificationConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketOwnershipControls(com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest)
+      newMethodName: putBucketOwnershipControls
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketReplicationConfiguration(com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest)
+      newMethodName: putBucketReplication
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketTaggingConfiguration(com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest)
+      newMethodName: putBucketTagging
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)
+      newMethodName: putBucketWebsite
+  - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.AmazonS3Client getObjectMetadata(com.amazonaws.services.s3.model.GetObjectMetadataRequest)
       newMethodName: headObject
   - org.openrewrite.java.ChangeMethodName:
@@ -231,6 +372,48 @@ recipeList:
       methodPattern: com.amazonaws.services.s3.AmazonS3Client getBucketWebsiteConfiguration(com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest)
       newMethodName: getBucketWebsite
   - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client deleteVersion(com.amazonaws.services.s3.model.DeleteObjectRequest)
+      newMethodName: deleteObject
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketPolicy(com.amazonaws.services.s3.model.PutBucketPolicyRequest)
+      newMethodName: putBucketPolicy
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client copyPart(com.amazonaws.services.s3.model.CopyPartRequest)
+      newMethodName: uploadPartCopy
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketAccelerateConfiguration(com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest)
+      newMethodName: putBucketAccelerateConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketAnalyticsConfiguration(com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest)
+      newMethodName: putBucketAnalyticsConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketIntelligentTieringConfiguration(com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest)
+      newMethodName: putBucketIntelligentTieringConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketInventoryConfiguration(com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest)
+      newMethodName: putBucketInventoryConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketLifecycleConfiguration(com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest)
+      newMethodName: putBucketLifecycleConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketMetricsConfiguration(com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest)
+      newMethodName: putBucketMetricsConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketNotificationConfiguration(com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest)
+      newMethodName: putBucketNotificationConfiguration
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketOwnershipControls(com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest)
+      newMethodName: putBucketOwnershipControls
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketReplicationConfiguration(com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest)
+      newMethodName: putBucketReplication
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketTaggingConfiguration(com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest)
+      newMethodName: putBucketTagging
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)
+      newMethodName: putBucketWebsite
+  - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.BucketCrossOriginConfiguration withRules(com.amazonaws.services.s3.model.CORSRule...)
       newMethodName: withCorsRules
   - org.openrewrite.java.ChangeMethodName:
@@ -239,6 +422,21 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.ListObjectsV2Request withBucketName(String)
       newMethodName: withBucket
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.CopyPartRequest withSourceBucketName(String)
+      newMethodName: withSourceBucket
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.CopyPartRequest withDestinationBucketName(String)
+      newMethodName: withDestinationBucket
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination withBucketArn(String)
+      newMethodName: withBucket
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withBucketName(String)
+      newMethodName: withBucket
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withPartETags(java.util.List)
+      newMethodName: withMultipartUpload
 
 ```
 </TabItem>

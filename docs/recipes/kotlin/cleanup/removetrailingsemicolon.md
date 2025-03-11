@@ -13,8 +13,8 @@ _Some Java programmers may mistakenly add semicolons at the end when writing Kot
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/RemoveTrailingSemicolon.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/RemoveTrailingSemicolon.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 ## License
 
@@ -23,7 +23,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-kotlin` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -43,11 +43,7 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}")
-}
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
 
@@ -60,12 +56,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+    dependencies { classpath("org.openrewrite:plugin:latest.release") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}")
+        rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
         activeRecipe("org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon")
@@ -86,7 +82,6 @@ rootProject {
 ```shell title="shell"
 gradle --init-script init.gradle rewriteRun
 ```
-
 </TabItem>
 <TabItem value="maven" label="Maven POM">
 
@@ -106,13 +101,6 @@ gradle --init-script init.gradle rewriteRun
             <recipe>org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite</groupId>
-            <artifactId>rewrite-kotlin</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -123,11 +111,13 @@ gradle --init-script init.gradle rewriteRun
 </TabItem>
 
 <TabItem value="maven-command-line" label="Maven Command Line">
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-kotlin:RELEASE -Drewrite.activeRecipes=org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon -Drewrite.exportDatatables=true
 ```
+
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
@@ -199,4 +189,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Kun Li, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Knut Wannheden](mailto:knut@moderne.io)

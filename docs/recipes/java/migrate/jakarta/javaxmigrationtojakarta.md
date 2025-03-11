@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to JavaEE8](../../../java/migrate/javaee8-recipe)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](../../../java/migrate/jakarta/javaxactivationmigrationtojakartaactivation)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](../../../java/migrate/jakarta/javaxannotationmigrationtojakartaannotation)
 * [Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`](../../../java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication)
@@ -69,7 +70,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](../../../java/migrate/jakarta/restassuredjavaxtojakarta)
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](../../../java/migrate/jakarta/applicationpathwildcardnolongeraccepted)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](../../../java/migrate/jakarta/updateapachewssecuritypackages)
-* [Migrate to JavaEE8](../../../java/migrate/javaee8-recipe)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](../../../java/migrate/jakarta/javaxeeapitojakarta)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](../../../java/migrate/jakarta/removejakartaannotationdependency)
 
@@ -89,6 +89,7 @@ tags:
   - jaxws
   - jakarta
 recipeList:
+  - org.openrewrite.java.migrate.javaee8
   - org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation
   - org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
   - org.openrewrite.java.migrate.jakarta.JavaxAuthenticationMigrationToJakartaAuthentication
@@ -124,7 +125,6 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted
   - org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages
-  - org.openrewrite.java.migrate.javaee8
   - org.openrewrite.java.migrate.jakarta.JavaxEEApiToJakarta
   - org.openrewrite.java.migrate.jakarta.RemoveJakartaAnnotationDependency
 

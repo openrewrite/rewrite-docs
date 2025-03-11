@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Control Flow Visualization"
+sidebar_label: "Control flow visualization"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Control Flow Visualization
+# Control flow visualization
 
 **org.openrewrite.analysis.controlflow.ControlFlowVisualization**
 
@@ -35,7 +35,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ControlFlowVisualizationExample
-displayName: Control Flow Visualization example
+displayName: Control flow visualization example
 recipeList:
   - org.openrewrite.analysis.controlflow.ControlFlowVisualization:
       includeDotfile: false
@@ -169,4 +169,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [lingenj](mailto:jacob.van.lingen@moderne.io), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

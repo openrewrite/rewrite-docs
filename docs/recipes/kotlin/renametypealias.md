@@ -13,8 +13,8 @@ _Change the name of a given type alias._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 ## Options
 
@@ -45,12 +45,11 @@ recipeList:
       fullyQualifiedAliasedType: org.junit.Assume
 ```
 
-Now that `com.yourorg.RenameTypeAliasExample` has been defined, activate it and take a dependency on `org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}` in your build file:
+Now that `com.yourorg.RenameTypeAliasExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
 1. Add the following to your `build.gradle` file:
-
 ```groovy title="build.gradle"
 plugins {
     id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
@@ -63,10 +62,6 @@ rewrite {
 
 repositories {
     mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -89,13 +84,6 @@ dependencies {
             <recipe>com.yourorg.RenameTypeAliasExample</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite</groupId>
-            <artifactId>rewrite-kotlin</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -173,4 +161,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Knut Wannheden](mailto:knut@moderne.io)

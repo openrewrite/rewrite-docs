@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * yaml: `stages:   - `
   * objectIdentifyingProperty: `stages`
   * filePattern: `.gitlab-ci.yml`
+  * createNewKeys: `true`
 
 </TabItem>
 
@@ -59,6 +60,7 @@ recipeList:
   - 
       objectIdentifyingProperty: stages
       filePattern: .gitlab-ci.yml
+      createNewKeys: true
 
 ```
 </TabItem>

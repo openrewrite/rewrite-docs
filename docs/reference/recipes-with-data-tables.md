@@ -180,7 +180,7 @@ Find Gradle JVMTestSuite plugin configurations and produce a data table.
 
 #### Data tables:
 
-  * **org.openrewrite.gradle.table.JVMTestSuitesDefined**: *JVMTestSuites defined.*
+  * **org.openrewrite.gradle.table.JVMTestSuitesDefined**: *The Gradle `JVMTestSuites` that are configured in a build.*
 
 
 ### [Add Gradle dependency](../recipes/gradle/adddependency.md)
@@ -414,7 +414,7 @@ Emit the data of binary dependency relationships.
 
 #### Data tables:
 
-  * **org.openrewrite.maven.table.DependenciesInUse**: *Relationships between dependencies.*
+  * **org.openrewrite.maven.table.DependencyGraph**: *Relationships between dependencies.*
 
 
 ### [Effective managed dependencies](../recipes/maven/search/effectivemanageddependencies.md)
@@ -425,7 +425,7 @@ Emit the data of binary dependency relationships.
 
 #### Data tables:
 
-  * **org.openrewrite.maven.table.DependenciesInUse**: *Relationships between POMs and their ancestors that define managed dependencies.*
+  * **org.openrewrite.maven.table.ManagedDependencyGraph**: *Relationships between POMs and their ancestors that define managed dependencies.*
 
 
 ### [List effective Maven repositories](../recipes/maven/search/effectivemavenrepositories.md)
@@ -823,7 +823,7 @@ Locates and reports on all licenses in use.
  
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).
 
 #### Data tables:
 
