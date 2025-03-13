@@ -151,7 +151,7 @@ m = JavaTemplate.builder("#{any(String)}, StandardCharsets.UTF_8")
 
 This has to be context-sensitive because, for the type attribution, it needs to be generated as part of a call to the correct method.
 
-In other words, context sensitivity makes the most sense when you want to refeference a field that's awkward/difficult to get a type attributed reference of.
+In other words, context sensitivity makes the most sense when you want to reference a field that's awkward/difficult to get a type attributed reference of.
 
 This context of the surrounding code comes with a performance impact, though. Every time a context-sensitive JavaTemplate is applied, a small Java source file capturing all imports and declarations that are in scope needs to be generated and compiled using the Java compiler.
 
