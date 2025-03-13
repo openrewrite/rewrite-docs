@@ -137,31 +137,21 @@ The main advantage of context-free templates is that they only need to be parsed
 
 A **context-sensitive** JavaTemplate, on the other hand, can refer to declarations within the surrounding LST it will end up getting embedded into. It can refer to declarations in the scope of the existing code, such as variables, fields, locally declared or imported types, or method parameters.
 
-An example can help this make more sense. Let's presume we have code that looks like this:
+An example can help this make more sense. Let's take a look at [a JavaTemplate in rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/MigrateURLDecoderDecode.java#L57-L63):
 
 ```java
-public void logMessage() {
-    String message = "Application started";
-    System.out.println(message);
-}
+m = JavaTemplate.builder("#{any(String)}, StandardCharsets.UTF_8")
+                .contextSensitive()
+                .imports("java.nio.charset.StandardCharsets")
+                .build().apply(
+                        getCursor(),
+                        m.getCoordinates().replaceArguments(),
+                        m.getArguments().toArray());
 ```
 
-We want to change the `System.out.println` to be a logging method, but we don't want to use the variable `message`. We could write a template like:
+This has to be context-sensitive because, for the type attribution, it needs to be generated as part of a call to the correct method.
 
-```java
-JavaTemplate.builder("logger.info(#{any(String)});")
-            .contextSensitive()
-            .build();
-```
-
-When applied, the template might generate:
-
-```java
-public void logMessage() {
-    String message = "Application started";
-    logger.info(message);
-}
-```
+In other words, context sensitivity makes the most sense when you want to refeference a field that's awkward/difficult to get a type attributed reference of.
 
 This context of the surrounding code comes with a performance impact, though. Every time a context-sensitive JavaTemplate is applied, a small Java source file capturing all imports and declarations that are in scope needs to be generated and compiled using the Java compiler.
 
@@ -245,29 +235,43 @@ Behind the scenes, that recipe gets translated into the following code. Notice h
 ```java
 @NullMarked
 public static class SimplifyTernaryFalseTrueRecipe extends Recipe {
-    public SimplifyTernaryFalseTrueRecipe() {
-    }
 
+    @Override
     public String getDisplayName() {
         return "Replace `booleanExpression ? false : true` with `!booleanExpression`";
     }
 
+    @Override
     public String getDescription() {
         return "Replace ternary expressions like `booleanExpression ? false : true` with `!booleanExpression`.";
     }
 
+    @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
         return new AbstractRefasterJavaVisitor() {
             final JavaTemplate before = JavaTemplate.builder("#{expr:any(boolean)} ? false : true").build();
             final JavaTemplate after = JavaTemplate.builder("!(#{expr:any(boolean)})").build();
 
+            @Override
             public J visitTernary(J.Ternary elem, ExecutionContext ctx) {
                 JavaTemplate.Matcher matcher;
-                return (matcher = this.before.matcher(this.getCursor())).find() ? this.embed(this.after.apply(this.getCursor(), elem.getCoordinates().replace(), new Object[]{matcher.parameter(0)}), this.getCursor(), ctx, new AbstractRefasterJavaVisitor.EmbeddingOption[]{EmbeddingOption.REMOVE_PARENS, EmbeddingOption.SHORTEN_NAMES, EmbeddingOption.SIMPLIFY_BOOLEANS}) : super.visitTernary(elem, ctx);
+                if ((matcher = before.matcher(getCursor())).find()) {
+                    return embed(
+                            after.apply(getCursor(), elem.getCoordinates().replace(), matcher.parameter(0)),
+                            getCursor(),
+                            ctx,
+                            REMOVE_PARENS, SHORTEN_NAMES, SIMPLIFY_BOOLEANS
+                    );
+                }
+                return super.visitTernary(elem, ctx);
             }
         };
     }
 }
 ```
 
-Another useful example to look at is our [JavaTemplateMatchTest class](https://github.com/openrewrite/rewrite/blob/main/rewrite-java-test/src/test/java/org/openrewrite/java/JavaTemplateMatchTest.java#L32). In there, you can see how we create a JavaTemplate for the use case of matching/finding code rather than replacing it.
+When a JavaTemplate is used for matching, then the `Matcher` can be used to "extract" the matched parameters. For instance, if you had an LST expression such as `foo.isOk() ? true : false` (where `foo` is a local variable or a method parameter), then this will be "matched". If you called `matcher.parameter(0)`, then the return would be the `foo.isOk()` expression.
+
+This can then be passed into another JavaTemplate to generate some new code (such as what was done with the `after` template above).
+
+Another useful example that doesn't involve Refaster recipes is our [JavaTemplateMatchTest class](https://github.com/openrewrite/rewrite/blob/main/rewrite-java-test/src/test/java/org/openrewrite/java/JavaTemplateMatchTest.java#L32). In there, you can see how we create a JavaTemplate for the use case of matching/finding code rather than replacing it.
