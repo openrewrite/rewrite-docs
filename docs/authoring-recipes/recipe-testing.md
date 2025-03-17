@@ -44,12 +44,6 @@ dependencies {
     // The RewriteTest class needed for testing recipes
     testImplementation("org.openrewrite:rewrite-test")
 
-    // Optional dependency to make SLF4J logging work.
-    // Any SLF4J implementation can work here.
-    // Also requires a logback.xml file like:
-    // https://gist.github.com/mike-solomon/dabcb2cbd9bca33e4ffeee8fc1c09454
-    testRuntimeOnly("ch.qos.logback:logback-classic:1.2.+")
-
     // Refaster style recipes need the rewrite-templating annotation processor and dependency for generated recipes
     // https://github.com/openrewrite/rewrite-templating/releases
     annotationProcessor("org.openrewrite:rewrite-templating:latest.release")
@@ -165,16 +159,6 @@ public class LowercasePackage extends Recipe {
     public String getDescription() {
         return "By convention, all Java package names should contain only lowercase letters, numbers, and dashes. " +
                 "This recipe converts any uppercase letters in package names to be lowercase.";
-    }
-
-    @Override
-    public Set<String> getTags() {
-        return Collections.singleton("RSPEC-120");
-    }
-
-    @Override
-    public @Nullable Duration getEstimatedEffortPerOccurrence() {
-        return Duration.ofMinutes(5);
     }
 
     @Override
