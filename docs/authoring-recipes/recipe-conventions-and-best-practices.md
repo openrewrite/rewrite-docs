@@ -180,18 +180,18 @@ Because of that, whenever shared state is needed within a single visitor or reci
 
 ### Remember multi-module projects exist
 
-It is a common mistake to write recipes that behave as if there is only ever one project/module in a repository.
-Each project within a multi-project repository has its own code and dependencies and may have any relationship - or no relationship at all - with the other projects in the repository.
+One common mistake we see is people writing recipes that behaves as if there is only ever one project/module in a repository.
+
+In reality, there are numerous repositories that have multiple projects in them. Each project has its own code and dependencies. They _may_ have a relationship with one another, but they also may have none.
+
 This typically isn't an issue for recipes that operate on only a single file at a time, but `ScanningRecipe`s can unintentionally conflate repository-level information with project-level information.
-Unit tests obviously won't catch this mistake because you won't write a test for it unless you're already thinking about it.
 
-The `JavaProject` marker exists to help differentiate which project/module a particular `SourceFile` is associated with.
-These markers are added at parse time by the build plugins but in unit tests must be placed manually by the test author.
-Within a scanning recipe it is common to make a map of `Map<JavaProject, T>` to keep track of per-project information of type `T`.
+Unit tests won't catch this mistake because you won't write a test for it unless you're already thinking about it.=
 
-A warning sign of this mistake is a `ScanningRecipe` with a `boolean` field in its accumulator.
-That is appropriate if it is truly something repository-level being evaluated, for example checking the presence of a gradle wrapper or contents of a .gitignore file.
-But if the recipe is looking at anything at all related to code or dependencies it should be tracked per `JavaProject`.
+The `JavaProject` marker exists to help differentiate which project/module a particular `SourceFile` is associated with. These markers are added at parse time by the build plugins. In unit tests, however, they must be placed manually by the test author. Within a scanning recipe it is common to make a map of `Map<JavaProject, T>` to keep track of per-project information of type `T`.
 
-Here's [an example](https://github.com/openrewrite/rewrite/commit/f7c5e926fc6c08a971a53081190a7946d0f750f9) of fixing a mistake of this type in the Gradle `AddDependency` recipe.
-Any time you see a boolean in a scanning recipe's accumulator ask yourself if it should be a `Map<JavaProject, Boolean>` instead.
+A warning sign of this mistake is a `ScanningRecipe` with a `boolean` field in its accumulator. That is appropriate if it is truly something repository-level being evaluated – such as checking the presence of a Gradle wrapper or a `.gitignore` file. However, if the recipe is looking at anything at all related to code or dependencies, it should be tracked per `JavaProject`.
+
+We recently saw this mistake in the Gradle `AddDependency` recipe. Check out [how we fixed that](https://github.com/openrewrite/rewrite/commit/f7c5e926fc6c08a971a53081190a7946d0f750f9).
+
+Any time you see a boolean in a scanning recipe's accumulator, ask yourself if it should be a `Map<JavaProject, Boolean>` instead.
