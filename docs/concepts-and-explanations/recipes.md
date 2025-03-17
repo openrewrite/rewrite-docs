@@ -105,7 +105,7 @@ recipeList:
 ```
 
 :::info
-Note that values passed to declarative recipes are subject to YAML interpretation. So `1.20` would be interpreted as a float, causing the trailing 0 to be dropped. Wrapping the value in single or dobules quotes will resolve this.
+Note that values passed to declarative recipes are subject to YAML interpretation. So `1.20` would be interpreted as a float, causing the trailing 0 to be dropped. Wrapping the value in single or double quotes will resolve this.
 For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](../reference/yaml-format-reference.md).
 :::
 
