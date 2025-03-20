@@ -16,6 +16,7 @@ Let's look at a simple example where a Java recipe performs an operation to chan
 
 ```java
 public class ChangeType extends Recipe {
+    // Standard recipe description and name ...
 
     private final String oldFullyQualifiedTypeName;
     private final String newFullyQualifiedTypeName;

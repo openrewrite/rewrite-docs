@@ -37,6 +37,10 @@ Here is an example of what a Refaster template looks like:
 import com.google.errorprone.refaster.annotation.AfterTemplate;
 import com.google.errorprone.refaster.annotation.BeforeTemplate;
 
+@RecipeDescriptor(
+    name = "Prefer StringIsEmpty",
+    description = "Prefer String#isEmpty() over alternatives that check the string's length."
+)
 public class StringIsEmpty {
   @BeforeTemplate
   boolean equalsEmptyString(String string) {
