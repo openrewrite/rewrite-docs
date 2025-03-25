@@ -20,7 +20,7 @@ Beyond the fully open license, additional OpenRewrite software and recipes are a
 
 **There are two primary limitations under this license:**
 
-* The software may not be commercialized or provided to others as a managed service.
+* The software may not be commercialized or provided to others as a managed third-party service. In other words, you can't take these recipes and sell them to others – but you _can_ run these recipes internally at your company.
 * No user may remove or obscure any licensing, copyright, or other notices.
 
 ### Moderne Proprietary License
