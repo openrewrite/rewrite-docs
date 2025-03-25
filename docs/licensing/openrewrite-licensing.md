@@ -20,8 +20,12 @@ Beyond the fully open license, additional OpenRewrite software and recipes are a
 
 **There are two primary limitations under this license:**
 
-* The software may not be commercialized or provided to others as a managed third-party service. In other words, you can't take these recipes and sell them to others – but you _can_ run these recipes internally at your company.
+* The software may not be commercialized or provided to others as a managed third-party service.
 * No user may remove or obscure any licensing, copyright, or other notices.
+
+In other words, you can't take these recipes and sell them to others and you can't provide consulting/professional services where you charge people and run these recipes.
+
+That being said, if you work at a company and you want to run these recipes on your own code you are free to do so.
 
 ### Moderne Proprietary License
 
@@ -43,7 +47,11 @@ The foundational purpose of OpenRewrite is to enable developers to more easily u
 
 ### How does this impact those companies that are selling OpenRewrite recipes as part of their solutions?
 
-Source available recipes cannot be packaged for commercial sale. However, this opens the door to partnership negotiation, balancing the interests of both third parties and Moderne as the primary sponsor and contributor to the OpenRewrite project.
+Source available recipes cannot be packaged for commercial sale. These recipes also can't be used by consultancies who want to take the recipes and sell the results to customers.
+
+Think of it like a concert ticket. You can buy tickets and attend the concert, but you can't resell them for profit.
+
+That being said, it's possible for places to reach out and negotiate this – where we can balance the interests of third parties and Moderne as the primary sponsor and contributor to the OpenRewrite project.
 
 ## References
 
