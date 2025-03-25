@@ -20,9 +20,9 @@ _Simplify `a.b().c()` to `a.d()`._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `List` | methodPatternChain | A list of [method patterns](/reference/method-patterns) that are called in sequence | `['java.util.Map keySet()', 'java.util.Set contains(..)']` |
+| `List` | methodPatternChain | A list of method patterns that are called in sequence | `['java.util.Map keySet()', 'java.util.Set contains(..)']` |
 | `String` | newMethodName | The method name that will replace the existing name. The new method name target is assumed to have the same arguments as the last method in the chain. | `containsKey` |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). | `false` |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. | `false` |
 
 ## License
 

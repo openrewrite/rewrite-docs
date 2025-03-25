@@ -20,7 +20,7 @@ _Add a comment to a method._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `org.mockito.Matchers anyVararg()` |
+| `String` | methodPattern | A method pattern that is used to find matching method invocations. | `org.mockito.Matchers anyVararg()` |
 | `String` | comment | A comment to add to this method. | `This method is not supported in AWS SDK for Java v2.` |
 
 ## License

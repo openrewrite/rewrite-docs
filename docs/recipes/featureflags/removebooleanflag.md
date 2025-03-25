@@ -20,7 +20,7 @@ _Replace method invocations for feature key with value, and simplify constant if
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) to match against. The first argument must be the feature key as `String`. | `dev.openfeature.sdk.Client getBooleanValue(String, Boolean)` |
+| `String` | methodPattern | A method pattern to match against. The first argument must be the feature key as `String`. | `dev.openfeature.sdk.Client getBooleanValue(String, Boolean)` |
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `Boolean` | replacementValue | The value to replace the feature flag check with. | `true` |
 

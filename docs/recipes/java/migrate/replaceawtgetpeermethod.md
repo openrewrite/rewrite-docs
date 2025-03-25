@@ -20,7 +20,7 @@ _This recipe replaces the use of `getPeer()` method in `java.awt.*` classes. `co
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | getPeerMethodPattern | *Optional*. The [method pattern](/reference/method-patterns) to match and replace. | `java.awt.* getPeer()` |
+| `String` | getPeerMethodPattern | *Optional*. The method pattern to match and replace. | `java.awt.* getPeer()` |
 | `String` | lightweightPeerFQCN | *Optional*. The fully qualified class name of the LightweightPeer interface to replace in `instanceof`. | `java.awt.peer.LightweightPeer` |
 
 ## License

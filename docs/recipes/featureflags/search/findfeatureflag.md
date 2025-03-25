@@ -20,7 +20,7 @@ _Find a feature flag matching method pattern._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) to match against. The first argument must be the feature key as `String`. | `dev.openfeature.sdk.Client getBooleanValue(String, Boolean)` |
+| `String` | methodPattern | A method pattern to match against. The first argument must be the feature key as `String`. | `dev.openfeature.sdk.Client getBooleanValue(String, Boolean)` |
 | `String` | featureKey | *Optional*. The unique key for the feature flag. | `flag-key-123abc` |
 
 ## License

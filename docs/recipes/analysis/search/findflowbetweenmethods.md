@@ -20,10 +20,10 @@ _Takes two patterns for the start/end methods to find flow between._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | startMethodPattern | A [method pattern](/reference/method-patterns) that is used to find matching the start point's method invocations. | `java.util.List add(..)` |
-| `Boolean` | startMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |  |
-| `String` | endMethodPattern | A [method pattern](/reference/method-patterns) that is used to find matching the end point's method invocations. | `java.util.List add(..)` |
-| `Boolean` | endMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |  |
+| `String` | startMethodPattern | A method pattern that is used to find matching the start point's method invocations. | `java.util.List add(..)` |
+| `Boolean` | startMatchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
+| `String` | endMethodPattern | A method pattern that is used to find matching the end point's method invocations. | `java.util.List add(..)` |
+| `Boolean` | endMatchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 | `String` | target | The part of the method flow should traverse to Valid options: `Select`, `Arguments`, `Both` |  |
 | `String` | flow | When enabled, show the data or taint flow of the method invocation. Valid options: `Data`, `Taint` |  |
 

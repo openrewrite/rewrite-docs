@@ -20,7 +20,7 @@ _Replace an Annotation with another one if the annotation pattern matches. Only 
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | annotationPatternToReplace | An annotation matcher, expressed as a [method pattern](/reference/method-patterns) to replace. | `@org.jetbrains.annotations.NotNull("Test")` |
+| `String` | annotationPatternToReplace | An annotation matcher, expressed as a method pattern to replace. | `@org.jetbrains.annotations.NotNull("Test")` |
 | `String` | annotationTemplateToInsert | An annotation template to add instead of original one, will be parsed with `JavaTemplate`. | `@org.jetbrains.annotations.NotNull("Null not permitted")` |
 | `String` | classpathResourceName | *Optional*. If the annotation's type is defined by a jar within the META-INF/rewrite/classpath directory provide its name here so that it can be loaded. When this parameter is not passed the runtime classpath of the recipe is provided to the parser producing the new annotation. This is necessary when the annotation is not on the runtime classpath of the recipe and isn't in the Java standard library. | `annotations` |
 

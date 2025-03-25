@@ -20,7 +20,7 @@ _Changes the return type of a method invocation._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
+| `String` | methodPattern | A method pattern that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
 | `String` | newReturnType | The fully qualified new return type of method invocation. | `long` |
 
 ## License

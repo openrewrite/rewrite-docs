@@ -20,7 +20,7 @@ _The libraries that define these APIs will have to be migrated before any of the
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | *Optional*. Optionally limit the search to declarations that match the provided [method pattern](/reference/method-patterns). | `java.util.List add(..)` |
+| `String` | methodPattern | *Optional*. Optionally limit the search to declarations that match the provided method pattern. | `java.util.List add(..)` |
 
 ## License
 

@@ -20,7 +20,7 @@ _Change parameter type for a method declaration, identified by a method pattern.
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find the method declarations to modify. | `com.yourorg.A foo(int, int)` |
+| `String` | methodPattern | A method pattern that is used to find the method declarations to modify. | `com.yourorg.A foo(int, int)` |
 | `String` | parameterType | The new type of the parameter that gets updated. | `java.lang.String` |
 | `Integer` | parameterIndex | A zero-based index that indicates the position at which the parameter will be added. | `0` |
 

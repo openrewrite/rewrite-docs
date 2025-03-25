@@ -20,7 +20,7 @@ _Find all annotations matching the annotation pattern._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns). | `@java.lang.SuppressWarnings("deprecation")` |
+| `String` | annotationPattern | An annotation pattern, expressed as a method pattern. | `@java.lang.SuppressWarnings("deprecation")` |
 | `Boolean` | matchMetaAnnotations | *Optional*. When enabled, matches on meta annotations of the annotation pattern. |  |
 
 ## License

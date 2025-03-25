@@ -20,8 +20,8 @@ _Find method usages by pattern._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `java.util.List add(..)` |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |  |
+| `String` | methodPattern | A method pattern that is used to find matching method invocations. | `java.util.List add(..)` |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 | `String` | flow | *Optional*. When enabled, show the data or taint flow of the method invocation. Valid options: `none`, `data`, `taint` |  |
 
 ## License

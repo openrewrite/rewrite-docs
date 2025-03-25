@@ -20,7 +20,7 @@ _Convert the method parameter from numeric types to duration._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `com.amazonaws.ClientConfiguration setRequestTimeout(int)` |
+| `String` | methodPattern | A method pattern that is used to find matching method invocations. | `com.amazonaws.ClientConfiguration setRequestTimeout(int)` |
 | `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value to convert. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 
 ## License

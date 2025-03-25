@@ -20,7 +20,7 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. | `org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)` |
+| `String` | methodPattern | A method pattern that is used to find matching method invocations. | `org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)` |
 | `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to add to the method invocation. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 
 ## License

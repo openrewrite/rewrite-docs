@@ -20,7 +20,7 @@ _Adds a new method parameter to an existing method declaration._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find the method declarations to modify. | `com.yourorg.A foo(int, int)` |
+| `String` | methodPattern | A method pattern that is used to find the method declarations to modify. | `com.yourorg.A foo(int, int)` |
 | `String` | parameterType | The type of the parameter that gets added. | `java.lang.String` |
 | `String` | parameterName | The name of the parameter that gets added. | `name` |
 | `Integer` | parameterIndex | *Optional*. A zero-based index that indicates the position at which the parameter will be added. At the end by default. | `0` |

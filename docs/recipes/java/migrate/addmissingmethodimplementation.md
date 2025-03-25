@@ -21,7 +21,7 @@ _Check for missing methods required by interfaces and adds them._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | fullyQualifiedClassName | A fully qualified class being implemented with missing method. | `com.yourorg.FooBar` |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) for matching required method definition. | `*..* hello(..)` |
+| `String` | methodPattern | A method pattern for matching required method definition. | `*..* hello(..)` |
 | `String` | methodTemplateString | Template of method to add | `public String hello() { return \"Hello from #{}!\"; }` |
 
 ## License

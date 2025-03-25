@@ -20,7 +20,7 @@ _Remove matching annotations wherever they occur._
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns). | `@java.lang.SuppressWarnings("deprecation")` |
+| `String` | annotationPattern | An annotation pattern, expressed as a method pattern. | `@java.lang.SuppressWarnings("deprecation")` |
 
 ## License
 

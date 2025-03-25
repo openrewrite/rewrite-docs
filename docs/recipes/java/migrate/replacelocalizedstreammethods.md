@@ -20,8 +20,8 @@ _Replaces `Runtime.getLocalizedInputStream(InputStream)` and `Runtime.getLocaliz
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | localizedInputStreamMethodMatcher | *Optional*. The [method pattern](/reference/method-patterns) to match and replace. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
-| `String` | localizedOutputStreamMethodMatcher | *Optional*. The [method pattern](/reference/method-patterns) to match and replace. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
+| `String` | localizedInputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
+| `String` | localizedOutputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
 
 ## License
 
