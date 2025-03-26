@@ -24,6 +24,7 @@ CODEOWNERS
 commonstaticanalysis
 compilationunit
 conditionalonbean
+consultancies
 corba
 ctx
 cursoring
