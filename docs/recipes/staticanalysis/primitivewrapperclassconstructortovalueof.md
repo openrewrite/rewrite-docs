@@ -203,4 +203,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com)
+Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com), Derek Sharpe

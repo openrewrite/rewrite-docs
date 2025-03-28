@@ -24,7 +24,7 @@ _Search for text, treating all textual sources as plain text. This version of th
 | `Boolean` | regex | *Optional*. If true, `find` will be interpreted as a Regular Expression. Default `false`. |  |
                     | `Set` | regexOptions | *Optional*. Regex processing options. Multiple options may be specified. These options do nothing if `regex` mode is not enabled.
 * Case-sensitive - The search will be sensitive to letter case. * Multiline - Allows `^` and `$` to match the beginning and end of lines, respectively.* Dot all - Allows `.` to match line terminators. Valid options: `Case-sensitive`, `Multiline`, `Dot all` |  |
-| `String` | filePattern | A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*.java` |
+| `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*.java` |
 
 ## License
 
@@ -162,4 +162,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

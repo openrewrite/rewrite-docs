@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes
 displayName: `RxJava2AdapterRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `RxJava2Adapter` [Source](https://error-prone.picnic.tech/refasterrules/RxJava2AdapterRules).
+  Refaster rules related to expressions dealing with `RxJava2Adapter`
+  [Source](https://error-prone.picnic.tech/refasterrules/RxJava2AdapterRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe
 

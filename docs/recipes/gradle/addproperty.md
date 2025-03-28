@@ -23,7 +23,7 @@ _Add a property to the `gradle.properties` file._
 | `String` | key | The name of the property to add. | `org.gradle.caching` |
 | `String` | value | The value of the property to add. | `true` |
 | `Boolean` | overwrite | If a property with the same key exists, overwrite. | `true` |
-| `String` | filePattern | A glob expression that can be used to constrain which directories or source files should be searched. When not set, all source files are searched. | `**/*.properties` |
+| `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. When not set, all source files are searched. | `**/*.properties` |
 
 ## License
 

@@ -22,6 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](./anytonullable.md)
 * [Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic](./mockitowhenonstatictomockstatic.md)
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](./powermockitomockstatictomockito.md)
+* [Replace `PowerMockito.whenNew` with Mockito counterpart](./powermockitowhennewtomockito.md)
 * [Replace `verifyZeroInteractions() to `verifyNoMoreInteractions()](./verifyzerotonomoreinteractions.md)
 * [Use static form of Mockito `MockUtil`](./mockutilstostatic.md)
 

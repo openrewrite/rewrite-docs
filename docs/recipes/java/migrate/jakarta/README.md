@@ -60,6 +60,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `ResourceResolver` with `ResourceHandler`](./removedjakartafacesresourceresolver.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
 * [Substitute deprecated Faces Managed Beans](./facesmanagedbeansremoved.md)
+* [Update Apache Commons Email to Email2 for Jakarta](./updateapachecommonsemaildependencies.md)
+* [Update Apache Shiro Dependencies to 2.0.x](./updateapacheshirodependencies.md)
+* [Update GlassFish Jersey Dependencies to 3.1.x](./updatejerseydependencies.md)
 * [Update Jakarta EE XML Web Services Dependencies for EE 10.](./updatejakartaxmlwsee10.md)
 * [Update Jakarta EE annotation Dependencies to 2.1.x.](./updatejakartaannotations2.md)
 * [Upgrade Faces open source libraries](./upgradefacesopensourcelibraries.md)
@@ -69,14 +72,16 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Migrate Bean Validation messages](./beanvalidationmessages.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
 * [Remove `Bean.isNullable()`](./removebeanisnullable.md)
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](./applicationpathwildcardnolongeraccepted.md)
 * [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)
 * [Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`](./updateaddannotatedtypes.md)
+* [Update Eclipse Yasson Dependencies to 3.0.x](./updateyassondependencies.md)
+* [Update EclipseLink Dependencies to 4.x](./updateeclipselinkdependencies.md)
 * [Update Jakarta EE Java Faces Dependencies to 4.0.x.](./updatejakartafacesapi4.md)
 * [Update Jakarta EE Platform Dependencies to 10.0.0](./updatejakartaplatform10.md)
+* [Update annotation attributes using `javax` to `jakarta`](./updateannotationattributejavaxtojakarta.md)
 * [Update `fireEvent()` and `createInjectionTarget()` calls](./updatebeanmanagermethods.md)
 * [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](./updategetrealpath.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)

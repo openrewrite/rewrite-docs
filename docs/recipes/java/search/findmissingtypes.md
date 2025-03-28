@@ -16,6 +16,12 @@ _This is a diagnostic recipe to highlight where LSTs are missing type attributio
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMissingTypes.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `boolean` | checkDocumentation | *Optional*. When set to `true` any references in documentation (i.e. Javadoc for Java) will also be checked. Default is `false`. |  |
+
 ## License
 
 This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).

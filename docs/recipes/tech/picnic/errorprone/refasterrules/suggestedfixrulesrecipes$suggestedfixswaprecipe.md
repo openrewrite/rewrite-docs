@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixSwapRecipe**
 
-_Prefer `SuggestedFix#swap(Tree, Tree)` over more contrived alternatives_
+_Prefer `SuggestedFix#swap(Tree, Tree, VisitorState)` over more contrived alternatives_
 
 ## Recipe source
 

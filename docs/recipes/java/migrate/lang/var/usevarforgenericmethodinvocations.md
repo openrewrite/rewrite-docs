@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Apply var to Generic Method Invocations"
+sidebar_label: "Apply var to generic method invocations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Apply `var` to Generic Method Invocations
+# Apply `var` to generic method invocations
 
 **org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations**
 
-_Apply `var` to variables initialized by invocations of Generic Methods. This recipe ignores generic factory methods without parameters, because open rewrite cannot handle them correctly ATM._
+_Apply `var` to variables initialized by invocations of generic methods. This recipe ignores generic factory methods without parameters, because open rewrite cannot handle them correctly ATM._
 
 ## Recipe source
 
@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

@@ -1,58 +1,29 @@
 ---
-sidebar_label: "Replace Font.setBoldweight(short) with Font.setBold(boolean)"
+sidebar_label: "Replace PowerMockito.whenNew with Mockito counterpart"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`
+# Replace `PowerMockito.whenNew` with Mockito counterpart
 
-**org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes**
+**org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito**
 
-_Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`._
+_Replaces `PowerMockito.whenNew` calls with respective `Mockito.whenConstructed` calls._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/poi/ReplaceSetBoldweightWithSetBold.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/PowerMockitoWhenNewToMockito.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Replace `Font.setBoldweight(Font.BOLDWEIGHT_NORMAL)` with `Font.setBold(false)`](../../apache/poi/replacesetboldweightwithsetboldrecipes$replacesetboldweightnormalwithsetboldfalserecipe)
-* [Replace `Font.setBoldweight(Font.BOLDWEIGHT_BOLD)` with `Font.setBold(true)`](../../apache/poi/replacesetboldweightwithsetboldrecipes$replacesetboldweightboldwithsetboldtruerecipe)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes
-displayName: Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`
-description: |
-  Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`.
-recipeList:
-  - org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe
-  - org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightBoldWithSetBoldTrueRecipe
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -64,7 +35,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes")
+    activeRecipe("org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito")
     setExportDatatables(true)
 }
 
@@ -73,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
 }
 ```
 
@@ -94,10 +65,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes")
+        activeRecipe("org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -132,14 +103,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes</recipe>
+            <recipe>org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
+            <artifactId>rewrite-testing-frameworks</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -155,7 +126,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-apache:RELEASE -Drewrite.activeRecipes=org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -163,12 +134,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceSetBoldweightWithSetBoldRecipes
+mod run . --recipe PowerMockitoWhenNewToMockito
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>
@@ -177,7 +148,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -226,3 +197,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Greg Oledzki](mailto:greg.oledzki@moderne.io)

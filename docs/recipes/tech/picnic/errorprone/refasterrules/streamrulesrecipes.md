@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.StreamRulesRecipes
 displayName: `StreamRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `Stream`s [Source](https://error-prone.picnic.tech/refasterrules/StreamRules).
+  Refaster rules related to expressions dealing with `Stream`s
+  [Source](https://error-prone.picnic.tech/refasterrules/StreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$JoiningRecipe
 

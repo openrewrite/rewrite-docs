@@ -1,29 +1,61 @@
 ---
-sidebar_label: "Migrate Bean Validation messages"
+sidebar_label: "Spring Boot 3.3 best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Bean Validation messages
+# Spring Boot 3.3 best practices
 
-**org.openrewrite.java.migrate.jakarta.BeanValidationMessages**
+**org.openrewrite.java.spring.boot3.SpringBoot33BestPractices**
 
-_Migrate `javax.validation.constraints` messages found in Java files to `jakarta.validation.constraints` equivalents._
+_Applies best practices to Spring Boot 3 applications._
+
+### Tags
+
+* spring
+* boot
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/jakarta/BeanValidationMessages.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/best-practices.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Spring Boot 3.3](../../../java/spring/boot3/upgradespringboot_3_3)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot3.SpringBoot33BestPractices
+displayName: Spring Boot 3.3 best practices
+description: |
+  Applies best practices to Spring Boot 3 applications.
+tags:
+  - spring
+  - boot
+recipeList:
+  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3
+
+```
+</TabItem>
+</Tabs>
+
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -35,7 +67,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.jakarta.BeanValidationMessages")
+    activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot33BestPractices")
     setExportDatatables(true)
 }
 
@@ -44,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
 }
 ```
 
@@ -65,10 +97,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.jakarta.BeanValidationMessages")
+        activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot33BestPractices")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -103,14 +135,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.jakarta.BeanValidationMessages</recipe>
+            <recipe>org.openrewrite.java.spring.boot3.SpringBoot33BestPractices</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -126,7 +158,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.BeanValidationMessages -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.SpringBoot33BestPractices -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -134,12 +166,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe BeanValidationMessages
+mod run . --recipe SpringBoot33BestPractices
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -148,7 +180,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.BeanValidationMessages" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.SpringBoot33BestPractices" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -199,4 +231,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Melloware](mailto:mellowaredev@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Joan Viladrosa](mailto:joan@moderne.io), Chuka Obinabo, Kun Li, [Jonathan Schneider](mailto:jkschneider@gmail.com), Anu Ramamoorthy, [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Simon Zilliken, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Cathy, [Curtis](mailto:curtis@mail.ustc.edu.cn), [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Evie Lau, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, ranuradh, nbruno, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [BoykoAlex](mailto:aboyko@pivotal.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Josh Soref, John Burns, Aakarshit Uppal, BramliAK, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)

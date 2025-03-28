@@ -203,4 +203,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

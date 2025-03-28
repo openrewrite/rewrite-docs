@@ -20,6 +20,7 @@ _These recipes help with the Migration to Jakarta EE 10, flagging and updating d
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -42,12 +43,22 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace  deprecated Jakarta Servlet methods and classes](../../../java/migrate/jakarta/removalsservletjakarta10)
 * [Remove deprecated API's not supported in CDI4.0](../../../java/migrate/jakarta/deprecatedcdiapisremoved40)
 * [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](../../../java/migrate/beandiscovery)
-* [Migrate Bean Validation messages](../../../java/migrate/jakarta/beanvalidationmessages)
+* [Update annotation attributes using `javax` to `jakarta`](../../../java/migrate/jakarta/updateannotationattributejavaxtojakarta)
+  * signature: `@jakarta.ejb..*`
+* [Update annotation attributes using `javax` to `jakarta`](../../../java/migrate/jakarta/updateannotationattributejavaxtojakarta)
+  * signature: `@jakarta.jms..*`
+* [Update annotation attributes using `javax` to `jakarta`](../../../java/migrate/jakarta/updateannotationattributejavaxtojakarta)
+  * signature: `@jakarta.validation.constraints..*`
 * [Migrate xmlns entries in `beans.xml` files](../../../java/migrate/jakarta/javaxbeansxmltojakartabeansxml)
 * [Migrate xmlns entries and javax. packages in `ejb-jar.xml` files](../../../java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml)
 * [Migrate xmlns entries and javax. packages in `validation.xml` files](../../../java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml)
 * [Rename CDI Extension to Jakarta](../../../java/migrate/jakarta/javaxtojakartacdiextensions)
 * [Update Jakarta EE Platform Dependencies to 10.0.0](../../../java/migrate/jakarta/updatejakartaplatform10)
+* [Update GlassFish Jersey Dependencies to 3.1.x](../../../java/migrate/jakarta/updatejerseydependencies)
+* [Update Apache Commons Email to Email2 for Jakarta](../../../java/migrate/jakarta/updateapachecommonsemaildependencies)
+* [Update Apache Shiro Dependencies to 2.0.x](../../../java/migrate/jakarta/updateapacheshirodependencies)
+* [Update EclipseLink Dependencies to 4.x](../../../java/migrate/jakarta/updateeclipselinkdependencies)
+* [Update Eclipse Yasson Dependencies to 3.0.x](../../../java/migrate/jakarta/updateyassondependencies)
 
 </TabItem>
 
@@ -73,12 +84,22 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10
   - org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40
   - org.openrewrite.java.migrate.BeanDiscovery
-  - org.openrewrite.java.migrate.jakarta.BeanValidationMessages
+  - org.openrewrite.java.migrate.jakarta.UpdateAnnotationAttributeJavaxToJakarta:
+      signature: @jakarta.ejb..*
+  - org.openrewrite.java.migrate.jakarta.UpdateAnnotationAttributeJavaxToJakarta:
+      signature: @jakarta.jms..*
+  - org.openrewrite.java.migrate.jakarta.UpdateAnnotationAttributeJavaxToJakarta:
+      signature: @jakarta.validation.constraints..*
   - org.openrewrite.java.migrate.jakarta.JavaxBeansXmlToJakartaBeansXml
   - org.openrewrite.java.migrate.jakarta.JavaxEjbJarXmlToJakartaEjbJarXml
   - org.openrewrite.java.migrate.jakarta.JavaxBeanValidationXmlToJakartaBeanValidationXml
   - org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions
   - org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform10
+  - org.openrewrite.java.migrate.jakarta.UpdateJerseyDependencies
+  - org.openrewrite.java.migrate.jakarta.UpdateApacheCommonsEmailDependencies
+  - org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies
+  - org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies
+  - org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies
 
 ```
 </TabItem>
@@ -262,4 +283,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, Evie Lau, ranuradh, [Melloware](mailto:mellowaredev@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+Chuka Obinabo, Anu Ramamoorthy, [Melloware](mailto:mellowaredev@gmail.com), Evie Lau, ranuradh, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

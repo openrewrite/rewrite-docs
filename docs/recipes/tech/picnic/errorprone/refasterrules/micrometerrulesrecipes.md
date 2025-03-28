@@ -16,6 +16,7 @@ _Refaster rules related to expressions dealing with Micrometer [Source](https://
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -44,7 +45,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes
 displayName: `MicrometerRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with Micrometer [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules).
+  Refaster rules related to expressions dealing with Micrometer
+  [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe
   - tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf2Recipe

@@ -20,6 +20,7 @@ _Uses of `equals()` and `hashCode()` cause `java.net.URL` to make blocking inter
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/URLEqualsHashCode.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::

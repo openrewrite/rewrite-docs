@@ -20,6 +20,7 @@ _This recipe will apply changes commonly needed when upgrading to Java 7. This r
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-7.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -238,4 +239,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, Daryl Robbins, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+Chuka Obinabo, Anu Ramamoorthy, Daryl Robbins, [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

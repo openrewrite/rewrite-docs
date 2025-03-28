@@ -1,21 +1,28 @@
 ---
-sidebar_label: "Replace Font.setBoldweight(Font.BOLDWEIGHT_NORMAL) with Font.setBold(false)"
+sidebar_label: "Configure logback logger level"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `Font.setBoldweight(Font.BOLDWEIGHT_NORMAL)` with `Font.setBold(false)`
+# Configure logback logger level
 
-**org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe**
+**org.openrewrite.java.logging.logback.ConfigureLoggerLevel**
 
-_Replace `Font.setBoldweight(Font.BOLDWEIGHT_NORMAL)` or equivalent with `Font.setBold(false)`._
+_Within logback.xml configuration files sets the specified log level for a particular class. Will not create a logback.xml if one does not already exist._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/poi/ReplaceSetBoldweightWithSetBold.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/ConfigureLoggerLevel.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | className | The fully qualified class name to configure the log level for | `com.example.MyClass` |
+| `LogLevel` | logLevel | The log level to set for the class Valid options: `trace`, `debug`, `info`, `warn`, `error`, `off` | `off` |
+
 ## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
@@ -23,7 +30,20 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ConfigureLoggerLevelExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ConfigureLoggerLevelExample
+displayName: Configure logback logger level example
+recipeList:
+  - org.openrewrite.java.logging.logback.ConfigureLoggerLevel:
+      className: com.example.MyClass
+      logLevel: off
+```
+
+Now that `com.yourorg.ConfigureLoggerLevelExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -35,7 +55,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe")
+    activeRecipe("com.yourorg.ConfigureLoggerLevelExample")
     setExportDatatables(true)
 }
 
@@ -44,51 +64,12 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
 }
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
+<TabItem value="maven" label="Maven">
 
 1. Add the following to your `pom.xml` file:
 
@@ -103,14 +84,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe</recipe>
+            <recipe>com.yourorg.ConfigureLoggerLevelExample</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
+            <artifactId>rewrite-logging-frameworks</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -118,28 +99,19 @@ gradle --init-script init.gradle rewriteRun
   </build>
 </project>
 ```
-
 2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-apache:RELEASE -Drewrite.activeRecipes=org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe -Drewrite.exportDatatables=true
-```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe
+mod run . --recipe ConfigureLoggerLevel --recipe-option "className=com.example.MyClass" --recipe-option "logLevel=off"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>
@@ -148,7 +120,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.logging.logback.ConfigureLoggerLevel" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -197,3 +169,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Sam Snyder](mailto:sam@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io)

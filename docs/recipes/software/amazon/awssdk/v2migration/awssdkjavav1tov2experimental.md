@@ -21,6 +21,7 @@ _This recipe will apply changes required for migrating from the AWS SDK for Java
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2Experimental), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -52,7 +53,10 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Wrap the region string provided on the SDK client builder with Region.of](../../../../software/amazon/awssdk/v2migration/wrapsdkclientbuilderregionstr)
 * [V1 Enum Casing to V2](../../../../software/amazon/awssdk/v2migration/enumcasingtov2)
 * [Convert SdkBytes to ByteBuffer](../../../../software/amazon/awssdk/v2migration/sdkbytestobytebuffer)
+* [Convert ByteBuffer to SdkBytes](../../../../software/amazon/awssdk/v2migration/bytebuffertosdkbytes)
+* [Convert Date to Instant](../../../../software/amazon/awssdk/v2migration/datetoinstant)
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2complex)
+* [V1 S3 PutObjectRequest, AmazonS3.putObject(PutObjectRequest), and TransferManager.upload(PutObjectRequest) to V2](../../../../software/amazon/awssdk/v2migration/s3putobjectrequesttov2)
 * [Transfer Manager Methods to V2](../../../../software/amazon/awssdk/v2migration/transfermanagermethodstov2)
 
 </TabItem>
@@ -89,7 +93,10 @@ recipeList:
   - software.amazon.awssdk.v2migration.WrapSdkClientBuilderRegionStr
   - software.amazon.awssdk.v2migration.EnumCasingToV2
   - software.amazon.awssdk.v2migration.SdkBytesToByteBuffer
+  - software.amazon.awssdk.v2migration.ByteBufferToSdkBytes
+  - software.amazon.awssdk.v2migration.DateToInstant
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2Complex
+  - software.amazon.awssdk.v2migration.S3PutObjectRequestToV2
   - software.amazon.awssdk.v2migration.TransferManagerMethodsToV2
 
 ```

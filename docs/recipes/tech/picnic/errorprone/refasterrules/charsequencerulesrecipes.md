@@ -37,7 +37,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes
 displayName: `CharSequenceRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `CharSequence`s [Source](https://error-prone.picnic.tech/refasterrules/CharSequenceRules).
+  Refaster rules related to expressions dealing with `CharSequence`s
+  [Source](https://error-prone.picnic.tech/refasterrules/CharSequenceRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes$CharSequenceIsEmptyRecipe
 

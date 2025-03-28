@@ -16,6 +16,7 @@ _Change S3 methods to v2._
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsToV2), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -226,6 +227,15 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withPartETags(java.util.List)`
   * newMethodName: `withMultipartUpload`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.PutObjectRequest withBucketName(String)`
+  * newMethodName: `withBucket`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.PutObjectRequest withCannedAcl(com.amazonaws.services.s3.model.CannedAccessControlList)`
+  * newMethodName: `withAcl`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.PutObjectRequest withRequesterPays(boolean)`
+  * newMethodName: `withRequestPayer`
 
 </TabItem>
 
@@ -437,6 +447,15 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withPartETags(java.util.List)
       newMethodName: withMultipartUpload
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.PutObjectRequest withBucketName(String)
+      newMethodName: withBucket
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.PutObjectRequest withCannedAcl(com.amazonaws.services.s3.model.CannedAccessControlList)
+      newMethodName: withAcl
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.PutObjectRequest withRequesterPays(boolean)
+      newMethodName: withRequestPayer
 
 ```
 </TabItem>

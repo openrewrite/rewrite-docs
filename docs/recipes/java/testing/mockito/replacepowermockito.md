@@ -21,6 +21,7 @@ _PowerMockito with raw Mockito; best executed as part of a Mockito upgrade._
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/powermockito.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -52,6 +53,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.powermock.api.mockito.PowerMockito when(..)`
   * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](../../../java/testing/mockito/powermockitomockstatictomockito)
+* [Replace `PowerMockito.whenNew` with Mockito counterpart](../../../java/testing/mockito/powermockitowhennewtomockito)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.powermock`
   * artifactId: `powermock-api-mockito*`
@@ -93,6 +95,7 @@ recipeList:
       methodPattern: org.powermock.api.mockito.PowerMockito when(..)
       fullyQualifiedTargetTypeName: org.mockito.Mockito
   - org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito
+  - org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.powermock
       artifactId: powermock-api-mockito*
@@ -282,4 +285,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)

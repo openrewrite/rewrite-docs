@@ -1,29 +1,29 @@
 ---
-sidebar_label: "Replace Cell.setCellType(Cell.CELL_TYPE_STRING) with Cell.setCellType(CellType.STRING)"
+sidebar_label: "Refaster template FileRules.FileMkDirsFileExists"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `Cell.setCellType(Cell.CELL_TYPE_STRING)` with `Cell.setCellType(CellType.STRING)`
+# Refaster template `FileRules.FileMkDirsFileExists`
 
-**org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeStringRecipe**
+**tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe**
 
-_Replace `Cell.setCellType(Cell.CELL_TYPE_STRING)` with `Cell.setCellType(CellType.STRING)`._
+_Invoke `File#mkdirs()` before `File#exists()` to avoid concurrency issues_
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/poi/ReplaceSetCellType.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -35,7 +35,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeStringRecipe")
+    activeRecipe("tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe")
     setExportDatatables(true)
 }
 
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -65,10 +65,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeStringRecipe")
+        activeRecipe("tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -103,14 +103,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeStringRecipe</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
+            <artifactId>rewrite-third-party</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -126,7 +126,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-apache:RELEASE -Drewrite.activeRecipes=org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeStringRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -134,12 +134,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceSetCellTypeRecipes$ReplaceSetCellTypeStringRecipe
+mod run . --recipe FileRulesRecipes$FileMkDirsFileExistsRecipe
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>
@@ -148,7 +148,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeStringRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

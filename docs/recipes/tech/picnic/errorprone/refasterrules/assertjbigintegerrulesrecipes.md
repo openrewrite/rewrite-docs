@@ -16,6 +16,7 @@ _Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigI
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -44,7 +45,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes
 displayName: `AssertJBigIntegerRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigIntegerRules`.
+  [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToRecipe

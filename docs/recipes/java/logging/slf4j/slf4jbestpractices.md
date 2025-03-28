@@ -21,6 +21,7 @@ _Applies best practices to logging with SLF4J._
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/slf4j.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -37,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](../../../java/logging/slf4j/completeexceptionlogging)
+* [Catch block log level](../../../java/logging/catchblockloglevel)
 
 </TabItem>
 
@@ -57,6 +59,7 @@ recipeList:
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
   - org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant
   - org.openrewrite.java.logging.slf4j.CompleteExceptionLogging
+  - org.openrewrite.java.logging.CatchBlockLogLevel
 
 ```
 </TabItem>
@@ -240,4 +243,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Aaron Gershman, [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Md Riyazul Islam, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Joan Viladrosa](mailto:joan@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)
+Aaron Gershman, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), Md Riyazul Islam, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)

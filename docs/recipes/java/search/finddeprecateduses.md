@@ -16,6 +16,7 @@ _Find deprecated uses of methods, fields, and types. Optionally ignore those cla
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedUses.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::

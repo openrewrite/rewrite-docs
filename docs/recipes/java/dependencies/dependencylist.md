@@ -20,9 +20,9 @@ _Emits a data table detailing all Gradle and Maven dependencies.This recipe make
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `Scope` | scope | The scope of the dependencies to include in the report. Valid options: `Compile`, `Runtime`, `TestRuntime` | `Compile` |
-| `boolean` | includeTransitive | Whether or not to include transitive dependencies in the report. Defaults to including only direct dependencies. | `true` |
-| `boolean` | validateResolvable | When enabled the recipe will attempt to download every dependency it encounters, reporting on any failures. This can be useful for identifying dependencies that have become unavailable since an LST was produced. Valid options: `true`, `false` | `true` |
+| `Scope` | scope | *Optional*. The scope of the dependencies to include in the report.Defaults to "Compile" Valid options: `Compile`, `Runtime`, `TestRuntime` | `Compile` |
+| `boolean` | includeTransitive | *Optional*. Whether or not to include transitive dependencies in the report. Defaults to including only direct dependencies.Defaults to false. | `true` |
+| `boolean` | validateResolvable | *Optional*. When enabled the recipe will attempt to download every dependency it encounters, reporting on any failures. This can be useful for identifying dependencies that have become unavailable since an LST was produced.Defaults to false. Valid options: `true`, `false` | `true` |
 
 ## License
 
@@ -31,21 +31,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DependencyListExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.DependencyListExample
-displayName: Dependency report example
-recipeList:
-  - org.openrewrite.java.dependencies.DependencyList:
-      scope: Compile
-      includeTransitive: false
-      validateResolvable: false
-```
-
-Now that `com.yourorg.DependencyListExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-dependencies` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -57,7 +43,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.DependencyListExample")
+    activeRecipe("org.openrewrite.java.dependencies.DependencyList")
     setExportDatatables(true)
 }
 
@@ -69,9 +55,48 @@ dependencies {
     rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
 }
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-<TabItem value="maven" label="Maven">
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.dependencies.DependencyList")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
 
 1. Add the following to your `pom.xml` file:
 
@@ -86,7 +111,7 @@ dependencies {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.DependencyListExample</recipe>
+            <recipe>org.openrewrite.java.dependencies.DependencyList</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -101,14 +126,23 @@ dependencies {
   </build>
 </project>
 ```
+
 2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-dependencies:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.dependencies.DependencyList -Drewrite.exportDatatables=true
+```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DependencyList --recipe-option "scope=Compile" --recipe-option "includeTransitive=false" --recipe-option "validateResolvable=false"
+mod run . --recipe DependencyList
 ```
 
 If the recipe is not available locally, then you can install it using:

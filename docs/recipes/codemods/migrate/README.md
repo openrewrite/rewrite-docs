@@ -8,6 +8,5 @@ _Recipes that modernize JavaScript code._
 * [Lodash](/recipes/codemods/migrate/lodash)
 * [Mui](/recipes/codemods/migrate/mui)
 * [Next.js](/recipes/codemods/migrate/nextjs)
-* [React](/recipes/codemods/migrate/react)
 
 
