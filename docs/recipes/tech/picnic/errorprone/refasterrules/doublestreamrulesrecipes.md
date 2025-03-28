@@ -16,6 +16,7 @@ _Refaster rules related to expressions dealing with `DoubleStream`s [Source](htt
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -49,7 +50,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes
 displayName: `DoubleStreamRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `DoubleStream`s [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
+  Refaster rules related to expressions dealing with `DoubleStream`s
+  [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatOneDoubleStreamRecipe
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatTwoDoubleStreamsRecipe

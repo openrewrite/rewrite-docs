@@ -22,6 +22,7 @@ _Migrates usage of Java Util Logging (JUL) to using SLF4J directly._
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/slf4j.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::

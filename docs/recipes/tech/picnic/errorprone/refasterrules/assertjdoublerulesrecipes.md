@@ -16,6 +16,7 @@ _Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoub
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -45,7 +46,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes
 displayName: `AssertJDoubleRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoubleRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoubleRules`.
+  [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToRecipe

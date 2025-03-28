@@ -16,6 +16,7 @@ _For reasons of consistency we prefer `org.assertj.core.api.Assertions#assertTha
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -69,7 +70,8 @@ displayName: Refaster rules related to AssertJ assertions over expressions that 
 description: |
   For reasons of consistency we prefer `org.assertj.core.api.Assertions#assertThatThrownBy` over static methods for specific exception
    types. Note that only the most common assertion expressions are rewritten here; covering all
-   cases would require the implementation of an Error Prone check instead. [Source](https://error-prone.picnic.tech/refasterrules/AssertJThrowingCallableRules).
+   cases would require the implementation of an Error Prone check instead.
+  [Source](https://error-prone.picnic.tech/refasterrules/AssertJThrowingCallableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalArgumentExceptionRecipe
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalArgumentExceptionHasMessageRecipe

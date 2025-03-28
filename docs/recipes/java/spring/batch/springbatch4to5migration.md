@@ -21,6 +21,7 @@ _Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 r
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-batch-5.0.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::

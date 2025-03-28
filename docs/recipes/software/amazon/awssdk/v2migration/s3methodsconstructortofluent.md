@@ -16,6 +16,7 @@ _Change S3 method constructors to fluent builder calls._
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -28,6 +29,16 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
+* [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
 * [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
 * [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
 * [Moves constructor arguments to fluent setters](../../../../software/amazon/awssdk/v2migration/constructortofluent)
@@ -108,6 +119,16 @@ displayName: Change S3 method constructors to fluent builder calls
 description: |
   Change S3 method constructors to fluent builder calls.
 recipeList:
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
+  - software.amazon.awssdk.v2migration.ConstructorToFluent
   - software.amazon.awssdk.v2migration.ConstructorToFluent
   - software.amazon.awssdk.v2migration.ConstructorToFluent
   - software.amazon.awssdk.v2migration.ConstructorToFluent

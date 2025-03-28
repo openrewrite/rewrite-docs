@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Spring Boot 3.3 best practices"
+sidebar_label: "Spring Boot 3.4 best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Spring Boot 3.3 best practices
+# Spring Boot 3.4 best practices
 
-**org.openrewrite.java.spring.boot3.SpringBoot3BestPractices**
+**io.moderne.java.spring.boot3.SpringBoot3BestPractices**
 
-_Applies best practices to Spring Boot 3 applications._
+_Applies best practices to Spring Boot 3.4+ applications._
 
 ### Tags
 
@@ -18,149 +18,19 @@ _Applies best practices to Spring Boot 3 applications._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/best-practices.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Boot 3.3](../../../java/spring/boot3/upgradespringboot_3_3)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.boot3.SpringBoot3BestPractices
-displayName: Spring Boot 3.3 best practices
-description: |
-  Applies best practices to Spring Boot 3 applications.
-tags:
-  - spring
-  - boot
-recipeList:
-  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3
-
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
 
-1. Add the following to your `build.gradle` file:
 
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot3BestPractices")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
-}
-```
-
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot3BestPractices")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.spring.boot3.SpringBoot3BestPractices</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.SpringBoot3BestPractices -Drewrite.exportDatatables=true
-```
-</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -171,7 +41,7 @@ mod run . --recipe SpringBoot3BestPractices
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -180,7 +50,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.SpringBoot3BestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.SpringBoot3BestPractices" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -231,4 +101,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Chuka Obinabo, [Joan Viladrosa](mailto:joan@moderne.io), Kun Li, [Jonathan Schneider](mailto:jkschneider@gmail.com), Anu Ramamoorthy, [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Simon Zilliken, [Shannon Pamperl](mailto:shanman190@gmail.com), Cathy, [Curtis](mailto:curtis@mail.ustc.edu.cn), [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Tim te Beek](mailto:timtebeek@gmail.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Evie Lau, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Adam Slaski, Aaron Gershman, Daryl Robbins, ranuradh, nbruno, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [BoykoAlex](mailto:aboyko@pivotal.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Josh Soref, John Burns, Aakarshit Uppal, BramliAK, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Joan Viladrosa](mailto:joan@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Chuka Obinabo, Kun Li, [Jonathan Schneider](mailto:jkschneider@gmail.com), Anu Ramamoorthy, Patrick Way, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), Simon Zilliken, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Cathy, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), Evie Lau, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, ranuradh, nbruno, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Greg Adams](mailto:gadams@gmail.com), Sandeep Nagaraj, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [BoykoAlex](mailto:aboyko@pivotal.io), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Josh Soref, Adriano Machado, John Burns, Aakarshit Uppal, BramliAK, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)

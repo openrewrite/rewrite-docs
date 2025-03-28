@@ -24,6 +24,7 @@ _This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 appli
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::

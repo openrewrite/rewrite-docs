@@ -11,6 +11,7 @@ import TabItem from '@theme/TabItem';
 
 Recipe created for the following Refaster template:
 ```java
+@SuppressWarnings(value = "java:S1448")
 static final class AssertEqualWithMessage {
     
     @BeforeTemplate
@@ -115,6 +116,11 @@ static final class AssertEqualWithMessage {
     
     @BeforeTemplate
     void before(long actual, String message, long expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(long actual, String message, Long expected) {
         assertEquals(actual, expected, message);
     }
     

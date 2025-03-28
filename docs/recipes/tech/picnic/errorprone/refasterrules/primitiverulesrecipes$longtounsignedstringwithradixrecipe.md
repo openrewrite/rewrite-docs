@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringWithRadixRecipe**
 
-_Prefer JDK's `Long#toUnsignedString(long,int)` over third-party or more verbose alternatives_
+_Prefer JDK's `Long#toUnsignedString(long,int)` over third-party alternatives_
 
 ## Recipe source
 

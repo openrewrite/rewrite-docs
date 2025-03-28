@@ -21,6 +21,7 @@ _Migrates to the last Apache POI 3.x release. This recipe modifies build files a
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-poi-3-17.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -43,8 +44,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.poi`
   * artifactId: `poi*`
   * newVersion: `3.x`
-* [Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`](../../apache/poi/replacesetboldweightwithsetboldrecipes)
-* [Replace `Cell.setCellType(int)` with `Cell.setCellType(CellType)`](../../apache/poi/replacesetcelltyperecipes)
 * [Change method invocation return type](../../java/migrate/changemethodinvocationreturntype)
   * methodPattern: `org.apache.poi.ss.usermodel.Cell getCellType()`
   * newReturnType: `org.apache.poi.ss.usermodel.CellType`
@@ -248,8 +247,6 @@ recipeList:
       groupId: org.apache.poi
       artifactId: poi*
       newVersion: 3.x
-  - org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes
-  - org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes
   - org.openrewrite.java.migrate.ChangeMethodInvocationReturnType:
       methodPattern: org.apache.poi.ss.usermodel.Cell getCellType()
       newReturnType: org.apache.poi.ss.usermodel.CellType

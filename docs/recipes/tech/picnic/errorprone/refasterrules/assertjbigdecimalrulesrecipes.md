@@ -16,6 +16,7 @@ _Note that, contrary to collections of Refaster rules for other `org.assertj.cor
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -44,7 +45,8 @@ description: |
   Note that, contrary to collections of Refaster rules for other `org.assertj.core.api.NumberAssert` subtypes, these rules do not rewrite to/from `BigDecimalAssert#isEqualTo(Object)` and `BigDecimalAssert#isNotEqualTo(Object)`. This is
    because `BigDecimal#equals(Object)` considers not only the numeric value of compared
    instances, but also their scale. As a result various seemingly straightforward transformations
-   would actually subtly change the assertion's semantics. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigDecimalRules).
+   would actually subtly change the assertion's semantics.
+  [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigDecimalRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes$AbstractBigDecimalAssertIsEqualByComparingToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes$AbstractBigDecimalAssertIsNotEqualByComparingToRecipe

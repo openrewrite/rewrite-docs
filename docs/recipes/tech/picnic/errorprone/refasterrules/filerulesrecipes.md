@@ -16,6 +16,7 @@ _Refaster rules related to expressions dealing with files [Source](https://error
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -34,6 +35,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Refaster template `FileRules.FilesReadString`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesreadstringrecipe)
 * [Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfiletofilerecipe)
 * [Prefer `Files#createTempFile(Path, String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfileincustomdirectorytofilerecipe)
+* [Refaster template `FileRules.PathToFileMkDirsFilesExists`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$pathtofilemkdirsfilesexistsrecipe)
+* [Refaster template `FileRules.FileMkDirsFileExists`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filemkdirsfileexistsrecipe)
 
 </TabItem>
 
@@ -45,7 +48,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.FileRulesRecipes
 displayName: `FileRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with files [Source](https://error-prone.picnic.tech/refasterrules/FileRules).
+  Refaster rules related to expressions dealing with files
+  [Source](https://error-prone.picnic.tech/refasterrules/FileRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfUriRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathInstanceRecipe
@@ -53,6 +57,8 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesReadStringRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileInCustomDirectoryToFileRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathToFileMkDirsFilesExistsRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe
 
 ```
 </TabItem>

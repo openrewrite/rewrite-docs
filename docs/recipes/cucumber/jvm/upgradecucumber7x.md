@@ -21,6 +21,7 @@ _Upgrade to Cucumber-JVM 7.x from any previous version._
 [GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::

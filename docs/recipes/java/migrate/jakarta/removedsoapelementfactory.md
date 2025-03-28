@@ -16,6 +16,7 @@ _XML Web Services prior to 4.0 provides the deprecated SOAPElementFactory class,
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::

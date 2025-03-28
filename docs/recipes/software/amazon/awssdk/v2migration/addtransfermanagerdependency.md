@@ -33,7 +33,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
   * groupId: `software.amazon.awssdk`
   * artifactId: `s3-transfer-manager`
-  * version: `2.30.36`
+  * version: `2.31.8`
   * onlyIfUsing: `com.amazonaws.services.s3.transfer.TransferManager`
 
 </TabItem>
@@ -54,7 +54,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: software.amazon.awssdk
       artifactId: s3-transfer-manager
-      version: 2.30.36
+      version: 2.31.8
       onlyIfUsing: com.amazonaws.services.s3.transfer.TransferManager
 
 ```

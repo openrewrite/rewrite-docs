@@ -21,6 +21,7 @@ _Upgrade Mockito from 1.x to 4.x._
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -252,4 +253,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), Patrick Way, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:timtebeek@gmail.com), Josh Soref, Aaron Gershman
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:timtebeek@gmail.com), Josh Soref, Aaron Gershman

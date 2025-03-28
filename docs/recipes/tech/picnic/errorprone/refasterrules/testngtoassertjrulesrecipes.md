@@ -24,14 +24,15 @@ Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard
  List<Map<String, Object>> myMaps = new ArrayList<>();
  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
  ```
- 
- [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
+.
+[Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -106,6 +107,7 @@ description: |
    List<Map<String, Object>> myMaps = new ArrayList<>();
    assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
    ```
+  .
   [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailRecipe

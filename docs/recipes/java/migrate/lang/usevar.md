@@ -22,6 +22,7 @@ _Apply local variable type inference (`var`) for primitives and objects. These r
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-lang-var.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -37,7 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `var` for reference-typed variables](../../../java/migrate/lang/var/usevarforobject)
 * [Use `var` for primitive-typed variables](../../../java/migrate/lang/var/usevarforprimitive)
 * [Apply `var` to Generic Constructors](../../../java/migrate/lang/var/usevarforgenericsconstructors)
-* [Apply `var` to Generic Method Invocations](../../../java/migrate/lang/var/usevarforgenericmethodinvocations)
+* [Apply `var` to generic method invocations](../../../java/migrate/lang/var/usevarforgenericmethodinvocations)
 
 </TabItem>
 

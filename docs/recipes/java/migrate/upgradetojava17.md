@@ -20,6 +20,7 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -294,4 +295,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, eocantu, [Shannon Pamperl](mailto:shanman190@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li, Josh Soref
+Chuka Obinabo, Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, eocantu, [Shannon Pamperl](mailto:shanman190@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li, Josh Soref

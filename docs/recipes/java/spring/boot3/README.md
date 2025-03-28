@@ -58,7 +58,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove `SolrAutoConfiguration`](./removesolrautoconfigurationexclude.md)
 * [Remove Unnecessary `@ConstructorBinding`](./removeconstructorbindingannotation.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
-* [Spring Boot 3.3 best practices](./springboot3bestpractices.md)
+* [Spring Boot 3.3 best practices](./springboot33bestpractices.md)
 * [Upgrade MyBatis to Spring Boot 2.0](./upgrademybatistospringboot_2_0.md)
 
 

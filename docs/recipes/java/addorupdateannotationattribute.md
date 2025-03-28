@@ -22,10 +22,10 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 | -- | -- | -- | -- |
 | `String` | annotationType | The fully qualified name of the annotation. | `org.junit.Test` |
 | `String` | attributeName | *Optional*. The name of attribute to change. If omitted defaults to 'value'. | `timeout` |
-| `String` | attributeValue | The value to set the attribute to. Set to `null` to remove the attribute. | `500` |
-| `String` | oldAttributeValue | The current value of the attribute, this can be used to filter where the change is applied. Set to `null` for wildcard behavior. | `400` |
-| `Boolean` | addOnly | When set to `true` will not change existing annotation attribute values. |  |
-| `Boolean` | appendArray | If the attribute is an array, setting this option to `true` will append the value(s). In conjunction with `addOnly`, it is possible to control duplicates: `addOnly=true`, always append. `addOnly=false`, only append if the value is not already present. |  |
+| `String` | attributeValue | *Optional*. The value to set the attribute to. Set to `null` to remove the attribute. | `500` |
+| `String` | oldAttributeValue | *Optional*. The current value of the attribute, this can be used to filter where the change is applied. Set to `null` for wildcard behavior. | `400` |
+| `Boolean` | addOnly | *Optional*. When set to `true` will not change existing annotation attribute values. |  |
+| `Boolean` | appendArray | *Optional*. If the attribute is an array, setting this option to `true` will append the value(s). In conjunction with `addOnly`, it is possible to control duplicates: `addOnly=true`, always append. `addOnly=false`, only append if the value is not already present. |  |
 
 ## License
 
@@ -47,8 +47,6 @@ recipeList:
       attributeName: timeout
       attributeValue: 500
       oldAttributeValue: 400
-      addOnly: null
-      appendArray: null
 ```
 
 Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined, activate it in your build file:
@@ -102,7 +100,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddOrUpdateAnnotationAttribute --recipe-option "annotationType=org.junit.Test" --recipe-option "attributeName=timeout" --recipe-option "attributeValue=500" --recipe-option "oldAttributeValue=400" --recipe-option "addOnly=null" --recipe-option "appendArray=null"
+mod run . --recipe AddOrUpdateAnnotationAttribute --recipe-option "annotationType=org.junit.Test" --recipe-option "attributeName=timeout" --recipe-option "attributeValue=500" --recipe-option "oldAttributeValue=400"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -167,4 +165,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Marcel Reiter, [Filipe Roque](mailto:froque@premium-minds.com), SiBorea, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Daniel Shamis
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Marcel Reiter, [Filipe Roque](mailto:froque@premium-minds.com), SiBorea, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), Daniel Shamis

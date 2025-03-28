@@ -22,6 +22,7 @@ _Transforms code written using SLF4J to use Log4j 2.x API._
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -81,7 +82,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.apache.logging.log4j.Marker`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.slf4j.MDC.MDCCloseable`
-  * newFullyQualifiedTypeName: `org.apache.logging.log4j.CloseableThreadContext.Instance`
+  * newFullyQualifiedTypeName: `org.apache.logging.log4j.CloseableThreadContext$Instance`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.slf4j.MDC`
   * newFullyQualifiedTypeName: `org.apache.logging.log4j.CloseableThreadContext`
@@ -158,7 +159,7 @@ recipeList:
       newFullyQualifiedTypeName: org.apache.logging.log4j.Marker
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.slf4j.MDC.MDCCloseable
-      newFullyQualifiedTypeName: org.apache.logging.log4j.CloseableThreadContext.Instance
+      newFullyQualifiedTypeName: org.apache.logging.log4j.CloseableThreadContext$Instance
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.slf4j.MDC
       newFullyQualifiedTypeName: org.apache.logging.log4j.CloseableThreadContext

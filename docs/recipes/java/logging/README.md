@@ -18,6 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Catch block log level](./catchblockloglevel.md)
 * [Parameterize logging statements](./parameterizedlogging.md)
 * [Use logger instead of `System.err` print statements](./systemerrtologging.md)
 * [Use logger instead of `System.out` print statements](./systemouttologging.md)

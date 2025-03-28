@@ -16,6 +16,7 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
@@ -33,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javaee-api`
   * newGroupId: `jakarta.platform`
   * newArtifactId: `jakarta.jakartaee-api`
+  * newVersion: `9.1.0`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `javax`
+  * oldArtifactId: `javaee-web-api`
+  * newGroupId: `jakarta.platform`
+  * newArtifactId: `jakarta.jakartaee-web-api`
   * newVersion: `9.1.0`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.platform`
@@ -56,6 +63,12 @@ recipeList:
       oldArtifactId: javaee-api
       newGroupId: jakarta.platform
       newArtifactId: jakarta.jakartaee-api
+      newVersion: 9.1.0
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax
+      oldArtifactId: javaee-web-api
+      newGroupId: jakarta.platform
+      newArtifactId: jakarta.jakartaee-web-api
       newVersion: 9.1.0
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.platform

@@ -11,6 +11,7 @@
 * [Quarkus318](/recipes/io/quarkus/updates/core/quarkus318)
 * [Quarkus319](/recipes/io/quarkus/updates/core/quarkus319)
 * [Quarkus32](/recipes/io/quarkus/updates/core/quarkus32)
+* [Quarkus321](/recipes/io/quarkus/updates/core/quarkus321)
 * [Quarkus33](/recipes/io/quarkus/updates/core/quarkus33)
 * [Quarkus35](/recipes/io/quarkus/updates/core/quarkus35)
 * [Quarkus36](/recipes/io/quarkus/updates/core/quarkus36)
