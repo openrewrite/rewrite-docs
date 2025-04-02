@@ -10,10 +10,10 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes](../recipes/apache/poi/replacesetboldweightwithsetboldrecipes): Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`.
+* org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes: Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`.
 * org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightBoldWithSetBoldTrueRecipe: Replace `Font.setBoldweight(Font.BOLDWEIGHT_BOLD)` or equivalent with `Font.setBold(true)`.
 * org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBoldRecipes$ReplaceSetBoldweightNormalWithSetBoldFalseRecipe: Replace `Font.setBoldweight(Font.BOLDWEIGHT_NORMAL)` or equivalent with `Font.setBold(false)`.
-* [org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes](../recipes/apache/poi/replacesetcelltyperecipes): Replace `Cell.setCellType(int)` with equivalent `Cell.setCellType(CellType)`.
+* org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes: Replace `Cell.setCellType(int)` with equivalent `Cell.setCellType(CellType)`.
 * org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeBlankRecipe: Replace `Cell.setCellType(Cell.CELL_TYPE_BLANK)` with `Cell.setCellType(CellType.BLANK)`.
 * org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeBooleanRecipe: Replace `Cell.setCellType(Cell.CELL_TYPE_BOOLEAN)` with `Cell.setCellType(CellType.BOOLEAN)`.
 * org.openrewrite.apache.poi.ReplaceSetCellTypeRecipes$ReplaceSetCellTypeErrorRecipe: Replace `Cell.setCellType(Cell.CELL_TYPE_ERROR)` with `Cell.setCellType(CellType.ERROR)`.
