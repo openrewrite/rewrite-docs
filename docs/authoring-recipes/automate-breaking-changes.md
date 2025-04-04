@@ -24,7 +24,7 @@ Specifically, we want to:
   * This can be done with the [org.openrewrite.java.ChangePackage recipe](../recipes/java/changepackage.md).
 2. Change the type of `com.example.springboot2.starter.MyConfig` to `com.example.springboot3.starter.MyNewConfig`
   * This can be done with the [org.openrewrite.java.ChangeType recipe](../recipes/java/changetype.md)
-3. Upgrade the version of our library from `1.0.0` to `2.0.x` in the Gradle or Maven build file (e.g., `com.example.coolstuff:cool-utils:1.0.0` --> `com.example.coolstuff:cool-utils:2.0.x`)
+3. Upgrade the version of our library from `1.0.0` to `2.0.x` in the Gradle or Maven build file (e.g., `com.acme:inhouse-starter:1.0.0` --> `com.acme:inhouse-starter:2.0.x`)
   * This can be done with the [org.openrewrite.java.dependencies.UpgradeDependencyVersion recipe](../recipes/java/dependencies/upgradedependencyversion.md)
 
 ### Example changes
@@ -70,7 +70,7 @@ repositories {
 }
 
 dependencies {
-  implementation("com.example.coolstuff:cool-utils:1.0.0")
+  implementation("com.acme:inhouse-starter:1.0.0")
 }
 ```
 
@@ -84,7 +84,7 @@ repositories {
 }
 
 dependencies {
-  implementation("com.example.coolstuff:cool-utils:2.0.x")
+  implementation("com.acme:inhouse-starter:2.0.x")
 }
 ```
 </TabItem>
@@ -92,9 +92,9 @@ dependencies {
 
 ## Step 2: Fork the `rewrite-recipe-starter` project
 
-To assist with recipe development, we've created a [rewrite-recipe-starter repository](https://github.com/moderneinc/rewrite-recipe-starter) that contains all of the things you need to get started with recipe development – along with example recipes you can borrow from.
+To assist with recipe development, we've created a [rewrite-recipe-starter repository](https://github.com/moderneinc/rewrite-recipe-starter) that contains all the things you need to get started with recipe development – along with example recipes you can borrow from.
 
-Fork this repository and clone your fork down to your local machine. Test that it builds and runs by running either `./gradlew build` or `./mvnw clean verify`.
+Fork this repository and clone your fork down to your local machine. Test that it builds and runs by running either `./gradlew build` or `./mvnw verify`.
 
 ## Step 3: Write the recipe
 
@@ -109,7 +109,7 @@ Here is what our declarative recipe looks like:
 ```yaml title="our-test-recipe.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.UpgradeToSpringBoot3
+name: com.acme.UpgradeToSpringBoot3
 displayName: Upgrade internal tools to Spring Boot 3
 description: Upgrades our imaginary internal tools to Spring Boot 3.
 recipeList:
@@ -120,8 +120,8 @@ recipeList:
       oldPackageName: com.example.springboot2.starter
       newPackageName: com.example.springboot3.starter
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.example.coolstuff
-      artifactId: cool-utils
+      groupId: com.acme
+      artifactId: inhouse-starter
       newVersion: 2.0.x
 ```
 
@@ -138,7 +138,7 @@ Declarative recipes can be tested like any other Java recipe – with a few mino
 ```java
 @Override
 public void defaults(RecipeSpec spec) {
-  spec.recipeFromResources("com.yourorg.UpgradeToSpringBoot3");
+  spec.recipeFromResources("com.acme.UpgradeToSpringBoot3");
 }
 ```
 
@@ -149,8 +149,8 @@ Another point worth noting is that you can test multiple types of files at once 
 Here is an example of what a test might look like that tests both Gradle and Java changes:
 </summary>
 
-```java title="MyTests.java"
-package com.yourorg;
+```java title="UpgradeToSpringBoot3Test.java"
+package com.acme;
 
 import org.junit.jupiter.api.Test;
 import org.openrewrite.java.JavaParser;
@@ -160,13 +160,13 @@ import org.openrewrite.test.RewriteTest;
 import static org.openrewrite.java.Assertions.java;
 import static org.openrewrite.gradle.Assertions.buildGradle;
 
-class MyTests implements RewriteTest {
+class UpgradeToSpringBoot3Test implements RewriteTest {
 
   @Override
   public void defaults(RecipeSpec spec) {
       // Note: You normally wouldn't have the snippet of `dependsOn`. 
       //       This was done simply for having an example that works.
-      spec.recipeFromResources("com.yourorg.UpgradeToSpringBoot3")
+      spec.recipeFromResources("com.acme.UpgradeToSpringBoot3")
         .parser(JavaParser.fromJavaVersion().dependsOn(
           """
           package com.example.springboot2.starter;
@@ -181,7 +181,7 @@ class MyTests implements RewriteTest {
   @Test
   void replacesStringEquals() {
     rewriteRun(
-      // Note: This test will actually fail due to the fact that `cool-utils` doesn't exist 
+      // Note: This test will actually fail due to the fact that `inhouse-starter` doesn't exist 
       //       so `2.0.x` won't figure out the latest minor version as there is none. 
       //       For a real library, this would work fine, though.
       //language=groovy
@@ -194,7 +194,7 @@ class MyTests implements RewriteTest {
                 mavenCentral()
             }
             dependencies {
-                implementation("com.example.coolstuff:cool-utils:1.0.0")
+                implementation("com.acme:inhouse-starter:1.0.0")
             }
             """,
         """
@@ -205,7 +205,7 @@ class MyTests implements RewriteTest {
                 mavenCentral()
             }
             dependencies {
-                implementation("com.example.coolstuff:cool-utils:2.0.x")
+                implementation("com.acme:inhouse-starter:2.0.x")
             }
             """
       ),
