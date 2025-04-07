@@ -25,7 +25,8 @@ commonstaticanalysis
 compilationunit
 conditionalonbean
 consultancies
-coolstuff
+acme
+inhouse
 corba
 ctx
 cursoring
