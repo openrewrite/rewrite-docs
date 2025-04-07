@@ -246,7 +246,9 @@ class UpgradeToSpringBoot3Test implements RewriteTest {
 
 Once you've finished creating/testing your recipe, the next thing you'll need to do is figure out how you want to distribute it to others.
 
-TODO: What should we say here?
+You can package and distribute recipes as you would any other library – via Maven Central or via an in-house Artifactory/Nexus repository.
+
+We'd recommend **creating a separate library** to contain the recipes rather than merging recipes into any existing library. This will make it easier to independently develop and release recipes for upcoming versions. Furthermore, it will allow you to chain your recipes together to make larger migration recipes.
 
 ## Step 6: Run the recipe in the repositories that need it
 
