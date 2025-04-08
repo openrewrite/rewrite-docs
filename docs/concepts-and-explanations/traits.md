@@ -234,7 +234,7 @@ This visitor functionality is also quite useful for recipe creation – which we
 
 Now that we've seen more about what a trait is and how it's defined, let's take a look at how to _use_ traits in recipes.
 
-Specifically, let's take a look at the [HasNamedspaceUri recipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/HasNamespaceUri.java) and how it uses the [Namespaced trait](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/trait/Namespaced.java).
+Specifically, let's take a look at the [HasNamespaceUri recipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/HasNamespaceUri.java) and how it uses the [Namespaced trait](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/trait/Namespaced.java).
 
 <details>
 <summary>
