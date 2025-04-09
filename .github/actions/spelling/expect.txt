@@ -160,6 +160,7 @@ variabledeclarations
 Versioning
 WORKDIR
 workflows
+XPaths
 XRange
 xsi
 Yoda
