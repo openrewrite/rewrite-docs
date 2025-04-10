@@ -89,3 +89,454 @@ Install the latest versions of all the OpenRewrite recipe modules into the Moder
 ```bash
 mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_IO_MODERNE_RECIPE_REWRITE_HIBERNATE}} io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}} org.openrewrite:rewrite-cobol:{{VERSION_ORG_OPENREWRITE_REWRITE_COBOL}} org.openrewrite:rewrite-core:{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}} org.openrewrite:rewrite-csharp:{{VERSION_ORG_OPENREWRITE_REWRITE_CSHARP}} org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}} org.openrewrite:rewrite-groovy:{{VERSION_ORG_OPENREWRITE_REWRITE_GROOVY}} org.openrewrite:rewrite-hcl:{{VERSION_ORG_OPENREWRITE_REWRITE_HCL}} org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}} org.openrewrite:rewrite-javascript:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVASCRIPT}} org.openrewrite:rewrite-json:{{VERSION_ORG_OPENREWRITE_REWRITE_JSON}} org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}} org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}} org.openrewrite:rewrite-polyglot:{{VERSION_ORG_OPENREWRITE_REWRITE_POLYGLOT}} org.openrewrite:rewrite-properties:{{VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES}} org.openrewrite:rewrite-protobuf:{{VERSION_ORG_OPENREWRITE_REWRITE_PROTOBUF}} org.openrewrite:rewrite-python:{{VERSION_ORG_OPENREWRITE_REWRITE_PYTHON}} org.openrewrite:rewrite-templating:{{VERSION_ORG_OPENREWRITE_REWRITE_TEMPLATING}} org.openrewrite:rewrite-toml:{{VERSION_ORG_OPENREWRITE_REWRITE_TOML}} org.openrewrite:rewrite-xml:{{VERSION_ORG_OPENREWRITE_REWRITE_XML}} org.openrewrite:rewrite-yaml:{{VERSION_ORG_OPENREWRITE_REWRITE_YAML}} org.openrewrite.meta:rewrite-analysis:{{VERSION_ORG_OPENREWRITE_META_REWRITE_ANALYSIS}} org.openrewrite.recipe:rewrite-ai-search:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_AI_SEARCH}} org.openrewrite.recipe:rewrite-all:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_ALL}} org.openrewrite.recipe:rewrite-android:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_ANDROID}} org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}} org.openrewrite.recipe:rewrite-circleci:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CIRCLECI}} org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}} org.openrewrite.recipe:rewrite-codemods-ng:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS_NG}} org.openrewrite.recipe:rewrite-compiled-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_COMPILED_ANALYSIS}} org.openrewrite.recipe:rewrite-comprehension:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_COMPREHENSION}} org.openrewrite.recipe:rewrite-concourse:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CONCOURSE}} org.openrewrite.recipe:rewrite-cucumber-jvm:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM}} org.openrewrite.recipe:rewrite-docker:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}} org.openrewrite.recipe:rewrite-dotnet:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOTNET}} org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}} org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}} org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}} org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}} org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}} org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}} org.openrewrite.recipe:rewrite-java-security:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_SECURITY}} org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}} org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_KUBERNETES}} org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}} org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}} org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}} org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}} org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}} org.openrewrite.recipe:rewrite-nodejs:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_NODEJS}} org.openrewrite.recipe:rewrite-okhttp:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OKHTTP}} org.openrewrite.recipe:rewrite-openapi:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}} org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}} org.openrewrite.recipe:rewrite-reactive-streams:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REACTIVE_STREAMS}} org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}} org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}} org.openrewrite.recipe:rewrite-sql:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SQL}} org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}} org.openrewrite.recipe:rewrite-struts:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}} org.openrewrite.recipe:rewrite-terraform:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TERRAFORM}} org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}} org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}} 
 ```
+
+## Moderne Installation
+
+Install the latest versions of all the OpenRewrite [recipe modules into Moderne](https://docs.moderne.io/administrator-documentation/moderne-dx/how-to-guides/deploying-recipe-artifacts-in-moderne-dx) using the GraphQL endpoint.
+
+<details>
+<summary>
+Show GraphQL mutation.
+</summary>
+
+```graphql
+mutation seedOpenRewriteArtifacts() {
+
+  load_io.moderne.recipe_rewrite_hibernate: loadRecipesAsync(
+    groupId: "io.moderne.recipe"
+    artifactId: "rewrite-hibernate"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_io.moderne.recipe_rewrite_spring: loadRecipesAsync(
+    groupId: "io.moderne.recipe"
+    artifactId: "rewrite-spring"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_cobol: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-cobol"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_core: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-core"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_csharp: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-csharp"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_gradle: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-gradle"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_groovy: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-groovy"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_hcl: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-hcl"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_java: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-java"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_javascript: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-javascript"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_json: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-json"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_kotlin: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-kotlin"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_maven: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-maven"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_polyglot: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-polyglot"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_properties: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-properties"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_protobuf: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-protobuf"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_python: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-python"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_templating: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-templating"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_toml: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-toml"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_xml: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-xml"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite_rewrite_yaml: loadRecipesAsync(
+    groupId: "org.openrewrite"
+    artifactId: "rewrite-yaml"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.meta_rewrite_analysis: loadRecipesAsync(
+    groupId: "org.openrewrite.meta"
+    artifactId: "rewrite-analysis"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_ai_search: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-ai-search"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_all: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-all"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_android: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-android"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_apache: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-apache"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_circleci: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-circleci"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_codemods: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-codemods"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_codemods_ng: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-codemods-ng"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_compiled_analysis: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-compiled-analysis"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_comprehension: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-comprehension"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_concourse: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-concourse"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_cucumber_jvm: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-cucumber-jvm"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_docker: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-docker"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_dotnet: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-dotnet"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_feature_flags: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-feature-flags"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_github_actions: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-github-actions"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_gitlab: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-gitlab"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_hibernate: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-hibernate"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_jackson: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-jackson"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_java_dependencies: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-java-dependencies"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_java_security: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-java-security"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_jenkins: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-jenkins"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_kubernetes: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-kubernetes"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_liberty: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-liberty"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_logging_frameworks: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-logging-frameworks"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_micrometer: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-micrometer"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_micronaut: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-micronaut"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_migrate_java: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-migrate-java"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_nodejs: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-nodejs"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_okhttp: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-okhttp"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_openapi: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-openapi"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_quarkus: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-quarkus"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_reactive_streams: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-reactive-streams"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_rewrite: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-rewrite"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_spring: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-spring"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_sql: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-sql"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_static_analysis: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-static-analysis"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_struts: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-struts"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_terraform: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-terraform"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_testing_frameworks: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-testing-frameworks"
+    version: "LATEST"
+  ) {
+    id
+  }
+  load_org.openrewrite.recipe_rewrite_third_party: loadRecipesAsync(
+    groupId: "org.openrewrite.recipe"
+    artifactId: "rewrite-third-party"
+    version: "LATEST"
+  ) {
+    id
+  }
+}
+```
+
+</details>
