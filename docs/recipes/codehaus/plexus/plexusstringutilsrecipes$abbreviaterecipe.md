@@ -14,7 +14,7 @@ _Replace Plexus `StringUtils.abbreviate(String str, int maxWidth)` with JDK prov
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/codehaus/plexus/PlexusStringUtils.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 ## License
 

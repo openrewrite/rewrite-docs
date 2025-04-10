@@ -14,7 +14,7 @@ _Assorted Refaster rules that do not (yet) belong in one of the other classes wi
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

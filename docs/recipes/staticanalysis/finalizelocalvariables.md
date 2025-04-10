@@ -14,7 +14,7 @@ _Adds the `final` modifier keyword to local variables which are not reassigned._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FinalizeLocalVariables.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## License
 

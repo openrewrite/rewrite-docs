@@ -19,7 +19,7 @@ _Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comm
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/stylistic.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## License
 

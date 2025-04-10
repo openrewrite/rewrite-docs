@@ -14,7 +14,7 @@ _OpenJPA persists the fields of attributes of type `java.sql.Date`, `java.sql.Ti
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/javax/RemoveTemporalAnnotation.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 ## License
 

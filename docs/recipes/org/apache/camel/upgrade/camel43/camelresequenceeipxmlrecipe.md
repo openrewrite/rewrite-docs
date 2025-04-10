@@ -14,7 +14,7 @@ _Batch and stream attributes were renamed in Resequence EIP XML DSL._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel43.CamelResequenceEIPXmlRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

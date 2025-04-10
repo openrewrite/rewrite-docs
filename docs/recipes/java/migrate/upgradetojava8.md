@@ -18,7 +18,7 @@ _This recipe will apply changes commonly needed when upgrading to Java 8. This r
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-8.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info

@@ -14,7 +14,7 @@ _A recipe that takes constructor arguments and moves them to the specified fluen
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ConstructorToFluent), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

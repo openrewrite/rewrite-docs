@@ -21,7 +21,7 @@ _Migrate xmlns entries in WebLogic EJB 3.2 schema files to WebLogic 14.1.2_
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

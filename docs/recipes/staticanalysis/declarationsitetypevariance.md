@@ -14,7 +14,7 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/DeclarationSiteTypeVariance.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## Options
 

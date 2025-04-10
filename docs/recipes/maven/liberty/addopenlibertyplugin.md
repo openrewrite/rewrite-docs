@@ -14,7 +14,7 @@ _This recipe adds the Liberty Maven plugin, which provides several goals for man
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/)
 ## License
 

@@ -14,7 +14,7 @@ _Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` w
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## License
 

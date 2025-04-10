@@ -14,7 +14,7 @@ _Prefer the lombok annotation `@CommonsLog` over explicitly written out `org.apa
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lombok/log/UseCommonsLog.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 ## Options
 

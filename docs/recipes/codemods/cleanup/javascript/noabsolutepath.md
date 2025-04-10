@@ -14,7 +14,7 @@ _Forbid import of modules using absolute paths See rule details for [import/no-a
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-import.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## License
 

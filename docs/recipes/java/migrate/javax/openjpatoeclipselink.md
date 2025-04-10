@@ -19,7 +19,7 @@ _These recipes help migrate Java Persistence applications using OpenJPA to Eclip
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/openjpa-to-eclipselink.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info

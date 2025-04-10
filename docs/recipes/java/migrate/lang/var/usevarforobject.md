@@ -14,7 +14,7 @@ _Try to apply local variable type inference `var` to variables containing Object
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/var/UseVarForObject.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 ## License
 

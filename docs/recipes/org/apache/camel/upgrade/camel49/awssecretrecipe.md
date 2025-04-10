@@ -14,7 +14,7 @@ _The syntax for retrieving a single field of a secret has been changed.._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel49.AwsSecretRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

@@ -20,7 +20,7 @@ _Enforce Promise or callback style in nextTick See rule details for [vue/next-ti
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-vue.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## License
 

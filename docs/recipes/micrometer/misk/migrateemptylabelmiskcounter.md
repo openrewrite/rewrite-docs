@@ -14,7 +14,7 @@ _Convert a Misk (Prometheus) counter to a Micrometer counter._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/misk/MigrateEmptyLabelMiskCounter.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 ## License
 

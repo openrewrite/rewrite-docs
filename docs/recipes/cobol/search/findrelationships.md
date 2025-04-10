@@ -14,7 +14,7 @@ _Build a list of relationships for diagramming and exploration._
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-cobol/blob/main/src/main/java/org/openrewrite/cobol/search/FindRelationships.java), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-cobol/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-cobol/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-cobol/)
 ## License
 

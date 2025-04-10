@@ -19,7 +19,7 @@ Recipe descriptions should be cleanly formatted. This recipe forces correct spac
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/CorrectlySpacedDescriptions.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 ## License
 

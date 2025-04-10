@@ -14,7 +14,7 @@ _Finds occurrences of a Quarkus property key._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 ## Options
 

@@ -14,7 +14,7 @@ _Sync Maven Compiler plugin annotation processor version with the one provided b
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 

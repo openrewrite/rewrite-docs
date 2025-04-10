@@ -14,7 +14,7 @@ _Prior to Spring Security 6, `@EnableXXXSecurity` implicitly had `@Configuration
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 

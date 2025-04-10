@@ -14,7 +14,7 @@ _Find a feature flag matching method pattern._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/search/FindFeatureFlag.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 ## Options
 

@@ -14,7 +14,7 @@ _Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`.
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/poi/ReplaceSetBoldweightWithSetBold.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 ## License
 

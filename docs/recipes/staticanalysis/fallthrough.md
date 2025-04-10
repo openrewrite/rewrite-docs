@@ -18,7 +18,7 @@ _Checks for fall-through in switch statements, adding `break` statements in loca
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FallThrough.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## License
 

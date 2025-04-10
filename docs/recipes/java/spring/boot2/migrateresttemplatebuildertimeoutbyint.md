@@ -14,7 +14,7 @@ _`RestTemplateBuilder#setConnectTimeout(int)` and `RestTemplateBuilder#setReadTi
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateRestTemplateBuilderTimeoutByInt.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## License
 

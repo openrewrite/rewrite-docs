@@ -20,7 +20,7 @@ _This recipe will update Spring Framework default servlet handler if empty, as n
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

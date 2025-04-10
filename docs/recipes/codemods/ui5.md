@@ -14,7 +14,7 @@ _Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysi
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/UI5.java), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## License
 

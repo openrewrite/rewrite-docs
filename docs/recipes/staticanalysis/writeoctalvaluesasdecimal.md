@@ -18,7 +18,7 @@ _Developers may not recognize octal values as such, mistaking them instead for d
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/WriteOctalValuesAsDecimal.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## License
 

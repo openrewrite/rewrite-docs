@@ -14,7 +14,7 @@ _Relocate classes that have been moved to different packages in Spring Boot 3.2.
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-32.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info

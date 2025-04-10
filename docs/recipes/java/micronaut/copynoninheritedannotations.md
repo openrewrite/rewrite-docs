@@ -14,7 +14,7 @@ _As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/mi
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/CopyNonInheritedAnnotations.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 ## License
 

@@ -22,7 +22,7 @@ _Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespa
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

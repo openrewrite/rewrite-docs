@@ -18,7 +18,7 @@ _Adds `@Nested` to inner classes that contain JUnit 5 tests._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/AddMissingNested.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 

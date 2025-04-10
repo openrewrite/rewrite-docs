@@ -14,7 +14,7 @@ _This recipe will update the WebLogic version to 14.1.2 for Maven build._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1412), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

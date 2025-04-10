@@ -14,7 +14,7 @@ _Apache Camel Core migration from version 4.0 to 4.1._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel42.CamelSagaRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

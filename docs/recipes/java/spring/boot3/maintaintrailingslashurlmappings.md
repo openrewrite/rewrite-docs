@@ -14,7 +14,7 @@ _This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Frame
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/MaintainTrailingSlashURLMappings.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## License
 

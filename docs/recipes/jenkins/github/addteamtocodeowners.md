@@ -14,7 +14,7 @@ _Adds the `{artifactId}-plugin-developers` team to all files in `.github/CODEOWN
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/github/AddTeamToCodeowners.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## License
 

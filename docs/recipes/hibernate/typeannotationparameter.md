@@ -14,7 +14,7 @@ _Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/TypeAnnotationParameter.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 ## License
 

@@ -14,7 +14,7 @@ _Replace `System.out` and `System.err` print statements with a logger._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/SystemPrintToLogging.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 :::info

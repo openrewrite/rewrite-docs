@@ -14,7 +14,7 @@ _Replace Bean method return types with concrete types being returned. This is re
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/PreciseBeanType.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## License
 

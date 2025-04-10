@@ -14,7 +14,7 @@ _Rewrites JMockit `MockUp` blocks to Mockito statements. This recipe will not re
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/jmockit/JMockitMockUpToMockito.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 

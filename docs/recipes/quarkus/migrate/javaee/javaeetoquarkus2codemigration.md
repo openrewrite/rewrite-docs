@@ -14,7 +14,7 @@ _Migrate Standard JavaEE Code to Quarkus 2._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/javaee7-to-quarkus.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 :::info

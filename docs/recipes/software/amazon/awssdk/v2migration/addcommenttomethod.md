@@ -14,7 +14,7 @@ _Add a comment to a method._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddCommentToMethod), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 

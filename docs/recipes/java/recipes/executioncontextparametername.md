@@ -14,7 +14,7 @@ _Visitors that are parameterized with `ExecutionContext` should use the paramete
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/ExecutionContextParameterName.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 ## License
 

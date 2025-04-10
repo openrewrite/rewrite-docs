@@ -14,7 +14,7 @@ _Find actions and their associated definitions._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsActions.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-struts/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 ## License
 

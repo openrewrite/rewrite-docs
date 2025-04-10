@@ -14,7 +14,7 @@ _Transforms V1 enum constants from pascal case to screaming snake case for v2._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.EnumCasingToV2), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

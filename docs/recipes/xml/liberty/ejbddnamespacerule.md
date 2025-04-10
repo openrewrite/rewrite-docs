@@ -14,7 +14,7 @@ _Namespace values in ejb-jar.xml must be consistent with the descriptor version.
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/)
 
 :::info

@@ -14,7 +14,7 @@ _Enforce props indentation in JSX See rule details for [react/jsx-indent-props](
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-react.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## License
 

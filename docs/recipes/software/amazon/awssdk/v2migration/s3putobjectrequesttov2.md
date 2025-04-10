@@ -14,7 +14,7 @@ _Transform V1 S3 PutObjectRequest to V2, as well as methods that take it as an a
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3PutObjectRequestToV2), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

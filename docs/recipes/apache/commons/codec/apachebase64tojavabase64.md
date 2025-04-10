@@ -19,7 +19,7 @@ _Prefer the Java standard library's `java.util.Base64` over third-party usage of
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/codec/ApacheBase64ToJavaBase64.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 ## License
 

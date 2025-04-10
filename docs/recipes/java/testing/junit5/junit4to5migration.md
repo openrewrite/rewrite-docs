@@ -19,7 +19,7 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 :::info

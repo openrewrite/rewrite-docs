@@ -14,7 +14,7 @@ _Apache Camel XML DSL migration from version 4.6 o 4.7._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel47.XmlDsl47Recipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

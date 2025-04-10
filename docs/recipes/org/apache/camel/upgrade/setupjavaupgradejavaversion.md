@@ -14,7 +14,7 @@ _Update the Java version used by `actions/setup-java` if it is below the expecte
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.SetupJavaUpgradeJavaVersion), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 

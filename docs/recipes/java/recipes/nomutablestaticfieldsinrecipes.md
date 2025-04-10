@@ -14,7 +14,7 @@ _Remove mutable static fields from Recipe classes to discourage their use._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/NoMutableStaticFieldsInRecipes.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 ## License
 

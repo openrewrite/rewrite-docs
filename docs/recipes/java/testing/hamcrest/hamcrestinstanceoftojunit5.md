@@ -14,7 +14,7 @@ _Migrate from Hamcrest `instanceOf` and `isA` matcher to JUnit5 `assertInstanceO
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestInstanceOfToJUnit5.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 

@@ -14,7 +14,7 @@ _Migrate `@ApiImplicitParam` to `@Parameter`._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiImplicitParam.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 ## License
 

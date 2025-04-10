@@ -14,7 +14,7 @@ _This recipe will update relocated security config keys in Micronaut configurati
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpdateSecurityPropertiesIfNeeded.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 
 :::info

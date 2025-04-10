@@ -14,7 +14,7 @@ _Produce an impact analysis of base images used in Dockerfiles, .gitlab-ci files
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-docker/blob/main/src/main/java/org/openrewrite/docker/search/FindDockerImageUses.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-docker/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-docker/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-docker/)
 ## License
 

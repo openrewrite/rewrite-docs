@@ -20,7 +20,7 @@ _Migrate applications to the latest Apache Commons Collections 4.x release. This
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-commons-collections-3-4.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 :::info

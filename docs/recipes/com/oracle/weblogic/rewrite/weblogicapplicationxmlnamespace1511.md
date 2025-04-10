@@ -20,7 +20,7 @@ _This recipe will update the `xmlns` entries in `weblogic-application.xml` files
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1511), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

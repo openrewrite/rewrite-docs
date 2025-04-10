@@ -14,7 +14,7 @@ _Starting in Micronaut 3.0 all filters are executed once per request. Directly i
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/OncePerRequestHttpServerFilterToHttpServerFilter.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 ## License
 

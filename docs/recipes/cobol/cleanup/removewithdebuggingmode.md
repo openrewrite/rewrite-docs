@@ -18,7 +18,7 @@ _Remove debugging mode from SOURCE-COMPUTER paragraphs._
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-cobol/blob/main/src/main/java/org/openrewrite/cobol/cleanup/RemoveWithDebuggingMode.java), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-cobol/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-cobol/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-cobol/)
 ## Options
 

@@ -19,7 +19,7 @@ _This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer 
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddTransferManagerDependency), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 

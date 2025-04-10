@@ -14,7 +14,7 @@ _SpotBugs is the [preferred replacement](https://www.jenkins.io/doc/developer/tu
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/jsr-305.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 :::info

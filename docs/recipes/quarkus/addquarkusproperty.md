@@ -14,7 +14,7 @@ _Add a Quarkus configuration property to an existing configuration file if it do
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/AddQuarkusProperty.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 ## Options
 

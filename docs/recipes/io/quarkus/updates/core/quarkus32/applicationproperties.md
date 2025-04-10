@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus32.ApplicationProperties), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

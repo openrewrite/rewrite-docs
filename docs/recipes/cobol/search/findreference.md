@@ -14,7 +14,7 @@ _Finds an identifier by an exact match or regex pattern in COBOL, copybooks, and
 ## Recipe source
 
 [GitHub](https://github.com/moderneinc/rewrite-cobol/blob/main/src/main/java/org/openrewrite/cobol/search/FindReference.java), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-cobol/blob/main//issues), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-cobol/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-cobol/)
 ## Options
 

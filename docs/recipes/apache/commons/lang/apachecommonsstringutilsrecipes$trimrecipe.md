@@ -14,7 +14,7 @@ _Replace Apache Commons `StringUtils.trim(String str)` with JDK provided API._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/lang/ApacheCommonsStringUtils.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 ## License
 

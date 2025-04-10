@@ -14,7 +14,7 @@ _Find Maven and Gradle dependencies and Maven plugins that have relocated to a n
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RelocatedDependencyCheck.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 ## Options
 

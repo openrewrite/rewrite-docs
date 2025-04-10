@@ -14,7 +14,7 @@ _This recipe will move Misk metrics to Micrometer, where that is possible to do 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/resources/META-INF/rewrite/misk.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 
 :::info

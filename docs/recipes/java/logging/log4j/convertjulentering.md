@@ -14,7 +14,7 @@ _Replaces JUL's Logger#entering method calls to Log4j API Logger#traceEntry call
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/log4j/ConvertJulEntering.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 ## License
 

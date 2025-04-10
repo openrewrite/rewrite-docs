@@ -19,7 +19,7 @@ _Migrate from Swagger to OpenAPI._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 
 :::info

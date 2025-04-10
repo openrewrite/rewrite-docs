@@ -14,7 +14,7 @@ _Removes `@GeneratedValue` annotation from fields that are not also annotated wi
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/RemoveInvalidHibernateGeneratedValueAnnotation.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 ## License
 

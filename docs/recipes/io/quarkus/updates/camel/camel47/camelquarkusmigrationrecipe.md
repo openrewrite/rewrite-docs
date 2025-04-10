@@ -14,7 +14,7 @@ _Migrates `camel 4.4` quarkus application to `camel 4.8`._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=io.quarkus.updates.camel.camel47.CamelQuarkusMigrationRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

@@ -14,7 +14,7 @@ _This recipe will any usage of TaskExecutors.IO to TaskExecutors.BLOCKING in ord
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 ## License
 

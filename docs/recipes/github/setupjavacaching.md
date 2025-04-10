@@ -14,7 +14,7 @@ _GitHub actions supports dependency caching on Maven and Gradle projects. See th
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupJavaCaching.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 ## License
 

@@ -14,7 +14,7 @@ _Replace calls to `Logger.log(Level, String, Throwable)` with the corresponding 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulToSlf4jSimpleCallsWithThrowable.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 :::info

@@ -14,7 +14,7 @@ _Ensure the XML declaration `<?jelly escape-by-default='true'?>` is present in a
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/AddJellyXmlDeclaration.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## License
 

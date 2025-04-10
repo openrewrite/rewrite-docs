@@ -14,7 +14,7 @@ _Find method usages by pattern._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/blob/main//issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 ## Options
 
