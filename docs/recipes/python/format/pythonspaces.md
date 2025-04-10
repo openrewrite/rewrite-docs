@@ -14,7 +14,7 @@ _Standardizes spaces in Python code. Currently limited to formatting method argu
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-python/blob/main/rewrite-python/src/main/java/org/openrewrite/python/format/PythonSpaces.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-python/blob/main/rewrite-python/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/)
 ## License
 

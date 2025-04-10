@@ -14,7 +14,7 @@ _Merge a YAML snippet with an existing YAML document._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 ## Options
 

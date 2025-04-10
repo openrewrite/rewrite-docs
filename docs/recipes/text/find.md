@@ -14,7 +14,7 @@ _Textual search, optionally using Regular Expression (regex) to query._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/Find.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 ## Options
 

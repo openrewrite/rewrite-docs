@@ -14,7 +14,7 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 ## Options
 

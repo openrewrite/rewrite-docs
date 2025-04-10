@@ -14,7 +14,7 @@ _Apply the specified XSLT transformation on matching files. Note that there are 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/XsltTransformation.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 ## Options
 

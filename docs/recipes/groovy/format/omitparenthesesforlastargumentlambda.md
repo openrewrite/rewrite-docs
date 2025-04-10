@@ -14,7 +14,7 @@ _Groovy allows a shorthand syntax that allows a closure to be placed outside of 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesForLastArgumentLambda.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/)
 ## License
 

@@ -14,7 +14,7 @@ _Format whitespace in Java/Type Script code._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-javascript/blob/main/rewrite-javascript/src/main/java/org/openrewrite/javascript/format/JavaScriptSpaces.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-javascript/blob/main/rewrite-javascript/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-javascript/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 ## License
 

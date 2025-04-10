@@ -14,7 +14,7 @@ _This recipe will remove a file or directory from the .gitignore file. If the fi
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/ExcludeFileFromGitignore.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 ## Options
 

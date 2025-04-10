@@ -14,7 +14,7 @@ _In Gradle, dependencies can be expressed as a `String` like `"groupId:artifactI
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/DependencyUseStringNotation.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 ## License
 

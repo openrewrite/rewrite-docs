@@ -14,7 +14,7 @@ _Upgrade the version of a dependency by specifying a group and (optionally) an a
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeDependencyVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 

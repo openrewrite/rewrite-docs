@@ -14,7 +14,7 @@ _Static analysis fixes for JavaScript sources._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-javascript/blob/main/rewrite-javascript/src/main/resources/META-INF/rewrite/static-analysis-cleanup.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-javascript/blob/main/rewrite-javascript/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-javascript/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 
 :::info

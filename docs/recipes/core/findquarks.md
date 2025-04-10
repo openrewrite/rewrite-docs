@@ -14,7 +14,7 @@ _`Quark` source files are pointers to the existence of a file without capturing 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindQuarks.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 ## License
 

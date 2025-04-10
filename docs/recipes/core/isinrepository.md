@@ -14,7 +14,7 @@ _A search recipe which marks files that are in a repository with one of the supp
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/IsInRepository.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 ## Options
 

@@ -18,7 +18,7 @@ _Find secrets stored in plain text in code._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/find-plaintext-secrets.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## License
 

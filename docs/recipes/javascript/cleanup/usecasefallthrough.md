@@ -18,7 +18,7 @@ _The comma `,` operator evaluates each of its operands (from left to right) and 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-javascript/blob/main/rewrite-javascript/src/main/java/org/openrewrite/javascript/cleanup/UseCaseFallThrough.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-javascript/blob/main/rewrite-javascript/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-javascript/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 ## License
 

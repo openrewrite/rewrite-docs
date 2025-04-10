@@ -14,7 +14,7 @@ _Add a new configuration option for the Maven runtime if not already present._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRuntimeConfig.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 

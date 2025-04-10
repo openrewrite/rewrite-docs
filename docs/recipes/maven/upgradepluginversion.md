@@ -14,7 +14,7 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 

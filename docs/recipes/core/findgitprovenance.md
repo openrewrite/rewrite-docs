@@ -14,7 +14,7 @@ _List out the contents of each unique `GitProvenance` marker in the set of sourc
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindGitProvenance.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 ## License
 

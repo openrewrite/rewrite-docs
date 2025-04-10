@@ -14,7 +14,7 @@ _Move whitespace to the outermost LST element possible._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/NormalizeFormat.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/)
 ## License
 

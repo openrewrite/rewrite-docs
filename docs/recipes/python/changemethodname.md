@@ -14,7 +14,7 @@ _Renames a method._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-python/blob/main/rewrite-python/src/main/java/org/openrewrite/python/ChangeMethodName.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-python/blob/main/rewrite-python/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/)
 ## Options
 

@@ -14,7 +14,7 @@ _Emit one data table row per source set in a project, with the number of types i
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/ClasspathTypeCounts.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## License
 

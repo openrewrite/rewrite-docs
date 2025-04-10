@@ -14,7 +14,7 @@ _Delete a YAML mapping entry key._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/DeleteKey.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 ## Options
 

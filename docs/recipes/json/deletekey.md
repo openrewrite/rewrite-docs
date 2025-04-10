@@ -14,7 +14,7 @@ _Delete a JSON mapping entry key._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/DeleteKey.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 ## Options
 

@@ -14,7 +14,7 @@ _Removes unnecessary receiver types from static method invocations. For example,
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/UseStaticImport.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## Options
 
