@@ -17,28 +17,6 @@ Find Java Persistence Query Language definitions in the codebase.
   * **io.moderne.hibernate.search.JPQLQueries**: *Shows matching JPQL queries.*
 
 
-### [Find copybook usage](../recipes/cobol/search/findcopybook.md)
- 
-_org.openrewrite.cobol.search.FindCopybook_
-
-Find all copy statements with the copybook name.
-
-#### Data tables:
-
-  * **org.openrewrite.cobol.table.CopybookSource**: *Information about copybook references in a COBOL source.*
-
-
-### [Find COBOL relationships](../recipes/cobol/search/findrelationships.md)
- 
-_org.openrewrite.cobol.search.FindRelationships_
-
-Build a list of relationships for diagramming and exploration.
-
-#### Data tables:
-
-  * **org.openrewrite.cobol.table.CobolRelationships**: *Relationships between different COBOL resources.*
-
-
 ### [Find colliding source files](../recipes/core/findcollidingsourcefiles.md)
  
 _org.openrewrite.FindCollidingSourceFiles_
@@ -338,17 +316,6 @@ Study the frequency of `J` types and their `JavaType` type attribution.
 #### Data tables:
 
   * **org.openrewrite.java.table.TypeMappings**: *The types mapped to `J` trees.*
-
-
-### [Find JavaScript sources and collect data metrics](../recipes/javascript/search/findjavascriptsources.md)
- 
-_org.openrewrite.javascript.search.FindJavaScriptSources_
-
-Use data table to collect source files types and counts of files with extensions `.js`, `.jsx`, `.mjs`, `.cjs`, `.ts`, `.tsx`, `.mts`, `.cts`.
-
-#### Data tables:
-
-  * **org.openrewrite.javascript.table.JavaScriptSourceFile**: *JavaScript or TypeScript sources present in LSTs on the SAAS.*
 
 
 ### [Find Kotlin sources and collect data metrics](../recipes/kotlin/findkotlinsources.md)
