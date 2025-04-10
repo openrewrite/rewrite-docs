@@ -5,6 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange](./configurationpropertieschange.md)
+* [io.quarkus.updates.core.quarkus319.HibernateORMValidationMode](./hibernateormvalidationmode.md)
 
 ## Recipes
 

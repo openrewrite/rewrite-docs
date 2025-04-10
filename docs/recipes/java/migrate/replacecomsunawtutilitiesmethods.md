@@ -30,7 +30,7 @@ _This recipe replaces several static calls  in `com.sun.awt.AWTUtilities` with t
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

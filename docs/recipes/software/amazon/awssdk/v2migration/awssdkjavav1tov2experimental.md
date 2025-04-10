@@ -27,7 +27,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -41,6 +41,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2)
 * [Change S3 methods to v2.](../../../../software/amazon/awssdk/v2migration/s3methodstov2)
 * [Change S3 method constructors to fluent builder calls](../../../../software/amazon/awssdk/v2migration/s3methodsconstructortofluent)
+* [Convert v1 AmazonS3URI to v2 S3Uri](../../../../software/amazon/awssdk/v2migration/s3uritov2)
 * [Change v1 enum getters to v2](../../../../software/amazon/awssdk/v2migration/enumgetterstov2)
 * [Change SDK TransferManager types from v1 to v2](../../../../software/amazon/awssdk/v2migration/changetransfermanagertypes)
 * [Change AWS SDK for Java v1 types to v2 equivalents](../../../../software/amazon/awssdk/v2migration/changesdktype)
@@ -57,6 +58,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Convert Date to Instant](../../../../software/amazon/awssdk/v2migration/datetoinstant)
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2complex)
 * [V1 S3 PutObjectRequest, AmazonS3.putObject(PutObjectRequest), and TransferManager.upload(PutObjectRequest) to V2](../../../../software/amazon/awssdk/v2migration/s3putobjectrequesttov2)
+* [Convert V1 setters to V2 toBuilder setters](../../../../software/amazon/awssdk/v2migration/setterstobuilderv2)
 * [Transfer Manager Methods to V2](../../../../software/amazon/awssdk/v2migration/transfermanagermethodstov2)
 
 </TabItem>
@@ -81,6 +83,7 @@ recipeList:
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2
   - software.amazon.awssdk.v2migration.S3MethodsToV2
   - software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent
+  - software.amazon.awssdk.v2migration.S3UriToV2
   - software.amazon.awssdk.v2migration.EnumGettersToV2
   - software.amazon.awssdk.v2migration.ChangeTransferManagerTypes
   - software.amazon.awssdk.v2migration.ChangeSdkType
@@ -97,6 +100,7 @@ recipeList:
   - software.amazon.awssdk.v2migration.DateToInstant
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2Complex
   - software.amazon.awssdk.v2migration.S3PutObjectRequestToV2
+  - software.amazon.awssdk.v2migration.SettersToBuilderV2
   - software.amazon.awssdk.v2migration.TransferManagerMethodsToV2
 
 ```

@@ -28,7 +28,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -259,4 +259,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Greg Adams](mailto:greg@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), John Burns, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Scott Jungling](mailto:scott.jungling@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman, [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Tyler Van Gorder
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Greg Adams](mailto:greg@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), John Burns, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Scott Jungling](mailto:scott.jungling@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Andrii Rodionov](mailto:andrii@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman, [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Tyler Van Gorder

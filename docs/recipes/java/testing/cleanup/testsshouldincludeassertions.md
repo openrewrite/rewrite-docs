@@ -28,7 +28,7 @@ _For tests not having any assertions, wrap the statements with JUnit Jupiter's `
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

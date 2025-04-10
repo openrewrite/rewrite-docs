@@ -7,25 +7,212 @@ import TabItem from '@theme/TabItem';
 
 # Migrate to Spring Framework 6.2
 
-**io.moderne.java.spring.framework.UpgradeSpringFramework\_6\_2**
+**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_6\_2**
 
 _Migrate applications to the latest Spring Framework 6.2 release._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-62.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 ## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Spring Framework 6.1](../../../java/spring/framework/upgradespringframework_6_1)
+* [Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`](../../../java/spring/framework/migratebase64utils)
+* [Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`](../../../java/spring/framework/migratehandlerresulthasexceptionhandlermethod)
+* [Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method](../../../java/spring/framework/migratehandlerresultsetexceptionhandlermethod)
+* [Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`](../../../java/spring/framework/migratemethodargumentnotvalidexceptionerrormethod)
+* [Migrate `ResourceHttpMessageWriter.addHeaders`](../../../java/spring/framework/migrateresourcehttpmessagewriteraddheadersmethod)
+* [Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`](../../../java/spring/framework/migrateuricomponentsbuildermethods)
+* [Migrate `WebExchangeBindException.resolveErrorMessages`](../../../java/spring/framework/migratewebexchangebindexceptionresolveerrormethod)
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.http.client.ClientHttpResponse getRawStatusCode()`
+  * newMethodName: `getStatusCode`
+* [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME`
+  * fullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME`
+* [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.springframework.web.reactive.function.client.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME`
+  * fullyQualifiedConstantName: `org.springframework.web.reactive.function.client.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.web.filter.reactive.ServerWebExchangeContextFilter get(reactor.util.context.Context)`
+  * newMethodName: `getExchange`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.web.reactive.function.client.support.WebClientAdapter forClient(org.springframework.web.reactive.function.client.WebClient)`
+  * newMethodName: `create`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.web.reactive.socket.client.JettyWebSocketClient`
+  * newFullyQualifiedTypeName: `org.springframework.web.reactive.socket.client.StandardWebSocketClient`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.web.socket.client.jetty.JettyWebSocketClient`
+  * newFullyQualifiedTypeName: `org.springframework.web.socket.client.standard.StandardWebSocketClient`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2
+displayName: Migrate to Spring Framework 6.2
+description: |
+  Migrate applications to the latest Spring Framework 6.2 release.
+recipeList:
+  - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_1
+  - org.openrewrite.java.spring.framework.MigrateBase64Utils
+  - org.openrewrite.java.spring.framework.MigrateHandlerResultHasExceptionHandlerMethod
+  - org.openrewrite.java.spring.framework.MigrateHandlerResultSetExceptionHandlerMethod
+  - org.openrewrite.java.spring.framework.MigrateMethodArgumentNotValidExceptionErrorMethod
+  - org.openrewrite.java.spring.framework.MigrateResourceHttpMessageWriterAddHeadersMethod
+  - org.openrewrite.java.spring.framework.MigrateUriComponentsBuilderMethods
+  - org.openrewrite.java.spring.framework.MigrateWebExchangeBindExceptionResolveErrorMethod
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.http.client.ClientHttpResponse getRawStatusCode()
+      newMethodName: getStatusCode
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.springframework.http.client.observation.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME
+      fullyQualifiedConstantName: org.springframework.http.client.observation.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.springframework.web.reactive.function.client.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME
+      fullyQualifiedConstantName: org.springframework.web.reactive.function.client.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.web.filter.reactive.ServerWebExchangeContextFilter get(reactor.util.context.Context)
+      newMethodName: getExchange
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.web.reactive.function.client.support.WebClientAdapter forClient(org.springframework.web.reactive.function.client.WebClient)
+      newMethodName: create
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.web.reactive.socket.client.JettyWebSocketClient
+      newFullyQualifiedTypeName: org.springframework.web.reactive.socket.client.StandardWebSocketClient
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.web.socket.client.jetty.JettyWebSocketClient
+      newFullyQualifiedTypeName: org.springframework.web.socket.client.standard.StandardWebSocketClient
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2 -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -36,7 +223,7 @@ mod run . --recipe UpgradeSpringFramework_6_2
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -45,7 +232,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.framework.UpgradeSpringFramework_6_2" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -96,4 +283,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Patrick](mailto:patway99@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), SiBorea, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Knut Wannheden](mailto:knut@moderne.io), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Adriano Machado, [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+[Joan Viladrosa](mailto:joan@moderne.io), Cathy, [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, Kushank24, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Patrick](mailto:patway99@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), SiBorea, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Kun Li, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Adriano Machado, [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)

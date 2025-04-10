@@ -18,7 +18,7 @@ _Adds pattern variables to `instanceof` expressions wherever the same (side effe
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage
@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Knut Wannheden](mailto:knut.wannheden@gmail.com), [aboyko](mailto:aboyko@vmware.com), [Ko Turk](mailto:ko.turk@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Hoan Nguyen](mailto:nguyenanhhoan@gmail.com), [Kun Li](mailto:kun@moderne.io)
+[Knut Wannheden](mailto:knut.wannheden@gmail.com), [aboyko](mailto:aboyko@vmware.com), [Christian Ortlepp](mailto:me@cortlepp.net), [Ko Turk](mailto:ko.turk@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Hoan Nguyen](mailto:nguyenanhhoan@gmail.com), [Kun Li](mailto:kun@moderne.io)

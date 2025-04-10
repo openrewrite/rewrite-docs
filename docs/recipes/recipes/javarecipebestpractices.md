@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -30,6 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Add a blank line around fields with annotations](../java/recipes/blanklinesaroundfieldswithannotations)
+* [Correctly spaced descriptions](../java/recipes/correctlyspaceddescriptions)
 * [Use a standard name for `ExecutionContext`](../java/recipes/executioncontextparametername)
 * [Find missing `@Option` `example` values](../java/recipes/missingoptionexample)
 * [Recipe classes should not have mutable `static` fields](../java/recipes/nomutablestaticfieldsinrecipes)
@@ -55,6 +56,7 @@ description: |
   Best practices for Java recipe development.
 recipeList:
   - org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations
+  - org.openrewrite.java.recipes.CorrectlySpacedDescriptions
   - org.openrewrite.java.recipes.ExecutionContextParameterName
   - org.openrewrite.java.recipes.MissingOptionExample
   - org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes

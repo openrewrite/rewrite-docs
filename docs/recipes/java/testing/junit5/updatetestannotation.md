@@ -18,7 +18,7 @@ _Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit 5's `org.junit
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage
@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Aaron Gershman, [Greg Adams](mailto:greg@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Patrick](mailto:patway99@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Patrick Way
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman, [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Scott Jungling](mailto:scott.jungling@gmail.com), [Patrick](mailto:patway99@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Patrick Way

@@ -1,15 +1,20 @@
 ---
-sidebar_label: "SpongeBob-case comments"
+sidebar_label: "Migrate to Spring Kafka 3.3"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# SpongeBob-case comments
+# Migrate to Spring Kafka 3.3
 
-**io.moderne.transposeCapitalization.SpongeBobCase**
+**io.moderne.java.spring.boot3.UpgradeSpringKafka\_3\_3**
 
-_Change all your comments to be SpongeBob-case._
+_Migrate applications to the latest Spring Kafka 3.3 release._
+
+### Tags
+
+* spring
+* kafka
 
 ## Recipe source
 
@@ -17,7 +22,7 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
 
 ## Usage
@@ -31,12 +36,12 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe SpongeBobCase
+mod run . --recipe UpgradeSpringKafka_3_3
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-ai-search:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_AI_SEARCH}}
+mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -45,7 +50,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-ai-search:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.transposeCapitalization.SpongeBobCase" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.UpgradeSpringKafka_3_3" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -96,4 +101,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-justine-gehring, [Tim te Beek](mailto:tim@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)

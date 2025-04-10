@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -39,6 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryreadtimeout)
 * [Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode](../../../java/spring/framework/migrateresponseentityexceptionhandlerhttpstatustohttpstatuscode)
 * [Migrate breaking changes in `ResponseStatusException`](../../../java/spring/framework/migrateresponsestatusexception)
+* [Convert `JdbcTemplate.queryForLong(..)` to `queryForObject(..)`](../../../java/spring/data/jdbctemplatequeryforlongmigration)
 
 </TabItem>
 
@@ -62,6 +63,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryReadTimeout
   - org.openrewrite.java.spring.framework.MigrateResponseEntityExceptionHandlerHttpStatusToHttpStatusCode
   - org.openrewrite.java.spring.framework.MigrateResponseStatusException
+  - org.openrewrite.java.spring.data.JdbcTemplateQueryForLongMigration
 
 ```
 </TabItem>
@@ -245,4 +247,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Patrick](mailto:patway99@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), SiBorea, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Knut Wannheden](mailto:knut@moderne.io), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Adriano Machado, [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+[Joan Viladrosa](mailto:joan@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, Kushank24, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Patrick](mailto:patway99@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), SiBorea, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Kun Li, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Adriano Machado, [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)

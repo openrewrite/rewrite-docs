@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests"
+sidebar_label: "Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter @Parameterized tests"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests
+# Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests
 
 **org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized**
 
@@ -18,7 +18,7 @@ _Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest e
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage
@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Patrick](mailto:patway99@gmail.com)
+Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Patrick](mailto:patway99@gmail.com)

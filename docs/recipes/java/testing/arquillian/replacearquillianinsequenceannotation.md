@@ -18,7 +18,7 @@ _Transforms the Arquillian JUnit 4 `@InSequence` to the JUnit Jupiter `@Order`._
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage
@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[James R. Perkins](mailto:jperkins@redhat.com)
+[James R. Perkins](mailto:jperkins@redhat.com), [Tim te Beek](mailto:tim@moderne.io)

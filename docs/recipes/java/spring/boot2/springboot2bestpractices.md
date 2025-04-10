@@ -27,7 +27,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -245,4 +245,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Kevin McCarpenter](mailto:kevin@moderne.io), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Kun Li, Aaron Gershman, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), nbruno
+[Kevin McCarpenter](mailto:kevin@moderne.io), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Kun Li, Aaron Gershman, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), nbruno

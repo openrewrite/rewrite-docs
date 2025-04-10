@@ -5,6 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [AssertJ best practices](./assertj-best-practices.md)
+* [Migrate Fest 2.x to AssertJ](./festtoassertj.md)
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
 * [Shorten AssertJ assertions](./simplifyassertjassertions.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertions.md)
@@ -26,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit `assertTrue` to AssertJ](./junitasserttruetoassertthat.md)
 * [JUnit fail to AssertJ](./junitfailtoassertjfail.md)
 * [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`](./isequaltoignoringmillistoisclosetorecipe.md)
+* [Simplify AssertJ assertions with `hasSize` argument](./simplifyhassizeassertion.md)
 * [Simplify AssertJ assertions with literal arguments](./simplifyassertjassertion.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertion.md)
 

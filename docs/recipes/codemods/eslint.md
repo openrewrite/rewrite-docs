@@ -13,8 +13,8 @@ _Run [ESLint](https://eslint.org/) across the code to fix common static analysis
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ESLint.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ESLint.java), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## Options
 
@@ -36,7 +36,7 @@ Note that this will override any other configuration options. | `{}` |
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

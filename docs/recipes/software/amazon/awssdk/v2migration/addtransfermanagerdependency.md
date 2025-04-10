@@ -23,7 +23,7 @@ _This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -33,7 +33,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
   * groupId: `software.amazon.awssdk`
   * artifactId: `s3-transfer-manager`
-  * version: `2.31.8`
+  * version: `2.31.18`
   * onlyIfUsing: `com.amazonaws.services.s3.transfer.TransferManager`
 
 </TabItem>
@@ -54,7 +54,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: software.amazon.awssdk
       artifactId: s3-transfer-manager
-      version: 2.31.8
+      version: 2.31.18
       onlyIfUsing: com.amazonaws.services.s3.transfer.TransferManager
 
 ```

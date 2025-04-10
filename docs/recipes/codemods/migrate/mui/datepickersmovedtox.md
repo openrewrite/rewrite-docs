@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.mui.DatePickersMovedToX**
 
-_See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#date-pickers-moved-to-x)_
+_See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#date-pickers-moved-to-x)._
 
 ### Tags
 
@@ -19,12 +19,12 @@ _See Material UI codemod projects for more [details](https://github.com/mui/mate
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/material-ui.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/material-ui.yml), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Applies a codemod to all source files](../../../codemods/applycodemod)
-  * transform: `v5.0.0/date-pickers-moved-to-x`
+  * transform: `@mui/codemod/node/v5.0.0/date-pickers-moved-to-x`
   * executable: `@mui/codemod/codemod.js`
 
 </TabItem>
@@ -45,15 +45,14 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.mui.DatePickersMovedToX
 displayName: Moves date pickers to `@mui/x-date-picker`
 description: |
-  See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#date-pickers-moved-to-x)
-  
+  See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#date-pickers-moved-to-x).
 tags:
   - mui
   - codemods
   - material-ui
 recipeList:
   - org.openrewrite.codemods.ApplyCodemod:
-      transform: v5.0.0/date-pickers-moved-to-x
+      transform: @mui/codemod/node/v5.0.0/date-pickers-moved-to-x
       executable: @mui/codemod/codemod.js
 
 ```

@@ -13,17 +13,17 @@ _Replaces occurrences of `UUID.randomUUID()` with `Tree.randomId()` when passed 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/UseTreeRandomId.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/UseTreeRandomId.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-rewrite` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -43,7 +43,11 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
+}
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
 
@@ -56,12 +60,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:latest.release") }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-java")
+        rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.recipes.UseTreeRandomId")
@@ -82,6 +86,7 @@ rootProject {
 ```shell title="shell"
 gradle --init-script init.gradle rewriteRun
 ```
+
 </TabItem>
 <TabItem value="maven" label="Maven POM">
 
@@ -101,6 +106,13 @@ gradle --init-script init.gradle rewriteRun
             <recipe>org.openrewrite.java.recipes.UseTreeRandomId</recipe>
           </activeRecipes>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-rewrite</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -111,13 +123,11 @@ gradle --init-script init.gradle rewriteRun
 </TabItem>
 
 <TabItem value="maven-command-line" label="Maven Command Line">
-
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.recipes.UseTreeRandomId -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-rewrite:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.recipes.UseTreeRandomId -Drewrite.exportDatatables=true
 ```
-
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
@@ -129,7 +139,7 @@ mod run . --recipe UseTreeRandomId
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}
 ```
 </TabItem>
 </Tabs>
@@ -189,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Kushagra Nigam, [Tim te Beek](mailto:tim@moderne.io)
+[JohannisK](mailto:johan.kragt@moderne.io)

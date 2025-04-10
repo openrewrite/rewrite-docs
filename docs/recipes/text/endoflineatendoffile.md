@@ -18,7 +18,7 @@ _Ensure that the file ends with the newline character.  *Note*: If this recipe m
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

@@ -19,6 +19,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Boot 3.2](./upgradespringboot_3_2.md)
 * [Migrate to Spring Boot 3.3](./upgradespringboot_3_3.md)
 * [Migrate to Spring Boot 3.4](./upgradespringboot_3_4.md)
+* [Migrate to Spring Kafka 3.3](./upgradespringkafka_3_3.md)
 * [Relocate Launcher Classes](./relocatelauncherclasses.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
 * [Replace `@MockBean` and `@SpyBean`](./replacemockbeanandspybean.md)
@@ -60,5 +61,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
 * [Spring Boot 3.3 best practices](./springboot33bestpractices.md)
 * [Upgrade MyBatis to Spring Boot 2.0](./upgrademybatistospringboot_2_0.md)
+* [Use `kafkaAwareTransactionManager` setter](./replacekafkatransactionmanagersetter.md)
 
 

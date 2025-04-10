@@ -18,7 +18,7 @@ _Scramble the IDs. This was intended as a utility to test _en masse_ different t
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

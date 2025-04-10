@@ -18,7 +18,7 @@ _Replace JUnit 4's `@Before`, `@BeforeClass`, `@After`, and `@AfterClass` annota
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage
@@ -199,4 +199,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Greg Adams](mailto:gadams@gmail.com), Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Amitoj Duggal](mailto:amitojduggal@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Greg Adams](mailto:gadams@gmail.com), Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Amitoj Duggal](mailto:amitojduggal@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

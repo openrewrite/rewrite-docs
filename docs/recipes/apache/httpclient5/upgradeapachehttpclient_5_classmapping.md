@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -218,6 +218,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpClient`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.HttpClient`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpRequestRetryHandler`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpRequestRetryStrategy`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.ConnectionBackoffStrategy`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.ConnectionBackoffStrategy`
@@ -597,6 +600,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.HttpClient
       newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.HttpClient
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.HttpRequestRetryHandler
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.HttpRequestRetryStrategy
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.ConnectionBackoffStrategy
       newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.ConnectionBackoffStrategy

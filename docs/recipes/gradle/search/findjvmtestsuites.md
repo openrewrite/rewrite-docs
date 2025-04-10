@@ -25,7 +25,7 @@ _Find Gradle JVMTestSuite plugin configurations and produce a data table._
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
@@ -144,4 +144,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Shannon Pamperl](mailto:shanman190@gmail.com)

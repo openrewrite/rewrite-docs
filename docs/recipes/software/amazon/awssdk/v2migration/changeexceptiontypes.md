@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -63,11 +63,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.AmazonServiceException getRawResponseContent()`
   * newMethodName: `awsErrorDetails().rawResponse().asUtf8String`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.AmazonServiceException getErrorType()`
-  * comment: `getErrorType is not supported in v2. AwsServiceException is a service error in v2. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.AmazonServiceException getProxyHost()`
-  * comment: `getProxyHost is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Change type](../../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.amazonaws.AmazonServiceException`
   * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.exception.AwsServiceException`
@@ -135,12 +131,8 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.AmazonServiceException getRawResponseContent()
       newMethodName: awsErrorDetails().rawResponse().asUtf8String
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.AmazonServiceException getErrorType()
-      comment: getErrorType is not supported in v2. AwsServiceException is a service error in v2. Consider removing it.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.AmazonServiceException getProxyHost()
-      comment: getProxyHost is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.amazonaws.AmazonServiceException
       newFullyQualifiedTypeName: software.amazon.awssdk.awscore.exception.AwsServiceException

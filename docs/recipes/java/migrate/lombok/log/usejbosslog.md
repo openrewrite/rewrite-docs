@@ -24,7 +24,7 @@ _Prefer the lombok annotation `@JBossLog` over explicitly written out `org.jboss
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

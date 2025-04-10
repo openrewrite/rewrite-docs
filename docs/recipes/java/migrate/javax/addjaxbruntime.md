@@ -33,7 +33,7 @@ _Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

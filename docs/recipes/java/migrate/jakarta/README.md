@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](./migrationtojakarta10apis.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)
+* [Migrate XJC Bindings to Jakata XML](./javaxxmltojakartaxmlxjcbinding.md)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](./javaxeeapitojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](./javaxactivationmigrationtojakartaactivation.md)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](./javaxannotationmigrationtojakartaannotation.md)

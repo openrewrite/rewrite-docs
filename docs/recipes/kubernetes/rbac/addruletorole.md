@@ -29,7 +29,7 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
 
 ## Usage

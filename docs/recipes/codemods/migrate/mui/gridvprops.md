@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.mui.GridVProps**
 
-_See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-v2-props)_
+_See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-v2-props)._
 
 ### Tags
 
@@ -19,12 +19,12 @@ _See Material UI codemod projects for more [details](https://github.com/mui/mate
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/material-ui.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/material-ui.yml), 
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Applies a codemod to all source files](../../../codemods/applycodemod)
-  * transform: `v6.0.0/grid-v2-props`
+  * transform: `@mui/codemod/node/v6.0.0/grid-v2-props`
   * executable: `@mui/codemod/codemod.js`
 
 </TabItem>
@@ -45,15 +45,14 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.mui.GridVProps
 displayName: Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs.
 description: |
-  See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-v2-props)
-  
+  See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-v2-props).
 tags:
   - mui
   - codemods
   - material-ui
 recipeList:
   - org.openrewrite.codemods.ApplyCodemod:
-      transform: v6.0.0/grid-v2-props
+      transform: @mui/codemod/node/v6.0.0/grid-v2-props
       executable: @mui/codemod/codemod.js
 
 ```

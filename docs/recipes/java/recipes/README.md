@@ -6,6 +6,7 @@ _Apply best practices to OpenRewrite recipes._
 
 * [Add a blank line around fields with annotations](./blanklinesaroundfieldswithannotations.md)
 * [Automatically select recipe examples from the unit test cases of a recipe](./selectrecipeexamples.md)
+* [Correctly spaced descriptions](./correctlyspaceddescriptions.md)
 * [Find OpenRewrite recipes](./findrecipes.md)
 * [Find missing `@Option` `example` values](./missingoptionexample.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)

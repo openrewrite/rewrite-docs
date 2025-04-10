@@ -24,7 +24,7 @@ _Add the `JDeprScan` Maven plugin to scan class files for uses of deprecated API
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

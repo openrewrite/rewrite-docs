@@ -130,6 +130,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find and fix vulnerable Nuget dependencies](../recipes/csharp/dependencies/dependencyvulnerabilitycheck.md)
 * [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck.md)
 * [Find generic secrets](../recipes/java/security/secrets/findgenericsecrets.md)
+* [Find hard-coded private IPv4 addresses](../recipes/text/findhardcodedprivateipaddresses.md)
 * [Find licenses in use in third-party dependencies](../recipes/java/dependencies/dependencylicensecheck.md)
 * [Find passwords used in URLs](../recipes/java/security/secrets/findpasswordinurlsecrets.md)
 * [Find secrets](../recipes/java/security/secrets/findsecrets.md)
@@ -270,6 +271,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4.md)
 * [Migrate to Spring Cloud 2024](../recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
 * [Migrate to Spring Framework 6.2](../recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring Kafka 3.3](../recipes/java/spring/boot3/upgradespringkafka_3_3.md)
 * [Migrate to Spring Security 6.4](../recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](../recipes/java/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md)
 * [Spring Boot 3.4 best practices](../recipes/java/spring/boot3/springboot3bestpractices.md)
@@ -277,6 +279,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle7spring34.md)
 * [Upgrade MyBatis to Spring Boot 3.4](../recipes/java/spring/boot3/upgrademybatistospringboot_3_4.md)
 * [Upgrade dependencies to Spring Cloud 2024](../recipes/java/spring/cloud2024/dependencyupgrades.md)
+* [Use `kafkaAwareTransactionManager` setter](../recipes/java/spring/boot3/replacekafkatransactionmanagersetter.md)
 
 ## rewrite-sql
 

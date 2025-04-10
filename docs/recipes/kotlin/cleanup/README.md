@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Remove method invocation parentheses around single lambda argument](./removelambdaargumentparentheses.md)
 * [Remove trailing comma in Kotlin](./removetrailingcomma.md)
 * [Remove unnecessary parentheses on Kotlin types](./unnecessarytypeparentheses.md)
 * [Remove unnecessary trailing semicolon](./removetrailingsemicolon.md)

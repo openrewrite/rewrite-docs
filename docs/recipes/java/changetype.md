@@ -26,7 +26,7 @@ _Change a given type to another._
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
@@ -160,4 +160,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nassim Jahnke](mailto:jahnke.nassim@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [zac.kim](mailto:zaccoding725@gmail.com), Michał Kosmulski, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Ralph Sanders, Josh Soref, Adriano Machado, [Patrick](mailto:patway99@gmail.com)
+[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nassim Jahnke](mailto:jahnke.nassim@gmail.com), [Kun Li](mailto:kun@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [zac.kim](mailto:zaccoding725@gmail.com), Michał Kosmulski, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Ralph Sanders, Josh Soref, Adriano Machado, [Patrick](mailto:patway99@gmail.com)
