@@ -22,11 +22,11 @@ _Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition

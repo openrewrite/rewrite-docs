@@ -14,11 +14,11 @@ _Replace legacy attribute index syntax (`.0`) with the new syntax (`[0]`)._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/ReplaceLegacyAttributeIndexSyntax.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

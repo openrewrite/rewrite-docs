@@ -20,7 +20,7 @@ _Change the schedule interval for a given package-ecosystem in a `dependabot.yml
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeDependabotScheduleInterval.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 ## Options
 
@@ -31,7 +31,7 @@ _Change the schedule interval for a given package-ecosystem in a `dependabot.yml
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

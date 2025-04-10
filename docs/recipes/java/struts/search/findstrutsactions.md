@@ -14,11 +14,11 @@ _Find actions and their associated definitions._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsActions.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-struts/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

@@ -14,7 +14,7 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 ## Options
 
@@ -37,7 +37,7 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

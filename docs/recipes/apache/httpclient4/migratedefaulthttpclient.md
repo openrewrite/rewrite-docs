@@ -18,11 +18,11 @@ _Since `DefaultHttpClient` is deprecated, we need to change it to the `Closeable
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient4/MigrateDefaultHttpClient.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

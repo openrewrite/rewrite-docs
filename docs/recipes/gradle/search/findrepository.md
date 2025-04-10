@@ -14,7 +14,7 @@ _Find a Gradle repository by url._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 ## Options
 
@@ -26,7 +26,7 @@ _Find a Gradle repository by url._
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

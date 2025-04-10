@@ -14,7 +14,7 @@ _List the effective maven settings file for the current project._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindMavenSettings.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
@@ -24,7 +24,7 @@ _List the effective maven settings file for the current project._
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

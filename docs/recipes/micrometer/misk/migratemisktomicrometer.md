@@ -14,7 +14,7 @@ _This recipe will move Misk metrics to Micrometer, where that is possible to do 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/resources/META-INF/rewrite/misk.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 
 :::info
@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition

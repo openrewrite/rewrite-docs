@@ -14,7 +14,7 @@ _This recipe will apply changes commonly needed when migrating to Hibernate 6.1.
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.1.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
 :::info
@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition

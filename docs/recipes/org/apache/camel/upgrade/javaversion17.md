@@ -19,7 +19,7 @@ _Change maven.compiler.source and maven.compiler.target values to 17._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.JavaVersion17), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -27,7 +27,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition

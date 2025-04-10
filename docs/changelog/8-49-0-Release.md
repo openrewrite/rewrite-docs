@@ -12,8 +12,8 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
+* [io.quakus.updates.minio.minio38.UpdateAll](https://docs.openrewrite.org/recipes/io/quakus/updates/minio/minio38/updateall):  
 * [io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus321/tlsregistrysplitpackagesfix):  
-* [io.quarkus.updates.minio.minio38.UpdateAll](https://docs.openrewrite.org/recipes/io/quarkus/updates/minio/minio38/updateall):
 * [io.quarkus.updates.minio.minio38.UpdateProperties](https://docs.openrewrite.org/recipes/io/quarkus/updates/minio/minio38/updateproperties):  
 * [io.quarkus.updates.quarkiverse.minio.minio38.AdjustURLPropertyValue](https://docs.openrewrite.org/recipes/io/quarkus/updates/quarkiverse/minio/minio38/adjusturlpropertyvalue): Adjust quarkus.minio.url property key to quarkus.minio.host. 
 * [org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBold](https://docs.openrewrite.org/recipes/apache/poi/replacesetboldweightwithsetbold): Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`. 

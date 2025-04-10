@@ -14,7 +14,7 @@ _Change a JSON mapping entry key, while leaving the value intact._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/ChangeKey.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 ## Options
 
@@ -25,7 +25,7 @@ _Change a JSON mapping entry key, while leaving the value intact._
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

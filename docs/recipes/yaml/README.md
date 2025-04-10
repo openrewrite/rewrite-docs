@@ -22,5 +22,6 @@ _Basic building blocks for transforming YAML._
 * [Delete key](./deletekey.md)
 * [Delete property](./deleteproperty.md)
 * [Merge YAML snippet](./mergeyaml.md)
+* [Unfold YAML properties](./unfoldproperties.md)
 
 

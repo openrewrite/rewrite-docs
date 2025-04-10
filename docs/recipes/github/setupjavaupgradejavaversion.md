@@ -14,7 +14,7 @@ _Update the Java version used by `actions/setup-java` if it is below the expecte
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupJavaUpgradeJavaVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 ## Options
 
@@ -24,7 +24,7 @@ _Update the Java version used by `actions/setup-java` if it is below the expecte
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

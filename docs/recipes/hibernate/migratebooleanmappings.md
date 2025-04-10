@@ -14,11 +14,11 @@ _Replaces type mapping of booleans with appropriate attribute converters._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateBooleanMappings.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

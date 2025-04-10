@@ -14,7 +14,7 @@ _Add an annotation processor to the Maven Compiler plugin configuration._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.AddMavenCompilerAnnotationProcessor), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 ## Options
 
@@ -27,7 +27,7 @@ _Add an annotation processor to the Maven Compiler plugin configuration._
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

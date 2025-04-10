@@ -14,7 +14,7 @@ _Replace `boolVariation` invocations for feature key with value, and simplify co
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/RemoveStringVariation.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 ## Options
 
@@ -25,7 +25,7 @@ _Replace `boolVariation` invocations for feature key with value, and simplify co
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition

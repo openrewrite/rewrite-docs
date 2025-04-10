@@ -14,7 +14,7 @@ _Checks if the project is a Jenkins plugin by the presence of a managed version 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## Options
 
@@ -24,7 +24,7 @@ _Checks if the project is a Jenkins plugin by the presence of a managed version 
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

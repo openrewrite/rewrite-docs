@@ -19,7 +19,7 @@ _Consistently use a static import rather than inlining the `Assertions` class na
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 :::info
@@ -27,19 +27,13 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.assertj.core.api.AssertionsForClassTypes assertThat(..)`
-  * fullyQualifiedTargetTypeName: `org.assertj.core.api.Assertions`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.assertj.core.api.AssertionsForInterfaceTypes assertThat(..)`
-  * fullyQualifiedTargetTypeName: `org.assertj.core.api.Assertions`
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.assertj.core.api.Fail fail(..)`
   * fullyQualifiedTargetTypeName: `org.assertj.core.api.Assertions`
@@ -61,12 +55,6 @@ tags:
   - testing
   - assertj
 recipeList:
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.assertj.core.api.AssertionsForClassTypes assertThat(..)
-      fullyQualifiedTargetTypeName: org.assertj.core.api.Assertions
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.assertj.core.api.AssertionsForInterfaceTypes assertThat(..)
-      fullyQualifiedTargetTypeName: org.assertj.core.api.Assertions
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.assertj.core.api.Fail fail(..)
       fullyQualifiedTargetTypeName: org.assertj.core.api.Assertions

@@ -9,12 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.ChangePluginGroupIdAndArtifactId**
 
-_Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version._
+_Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version. This recipe does not perform any validation and assumes all values passed are valid._
 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 ## Options
 
@@ -22,13 +22,13 @@ _Change the groupId and/or the artifactId of a specified Maven plugin. Optionall
 | -- | -- | -- | -- |
 | `String` | oldGroupId | The old group ID to replace. The group ID is the first part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `org.openrewrite.recipe` |
 | `String` | oldArtifactId | The old artifactId to replace. The artifact ID is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `my-deprecated-maven-plugin` |
-| `String` | newGroupId | *Optional*. The new group ID to use. Defaults to the existing group ID. | `corp.internal.openrewrite.recipe` |
-| `String` | newArtifactId | *Optional*. The new artifact ID to use. Defaults to the existing artifact ID. | `my-new-maven-plugin` |
-| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. | `29.X` |
+| `String` | newGroupId | *Optional*. The new group ID to use. | `corp.internal.openrewrite.recipe` |
+| `String` | newArtifactId | *Optional*. The new artifact ID to use. | `my-new-maven-plugin` |
+| `String` | newVersion | *Optional*. An exact version number. | `29.X` |
 
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
@@ -162,4 +162,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[George Gastaldi](mailto:gegastaldi@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JesseEstum](mailto:jesse.estum@gmail.com), [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[George Gastaldi](mailto:gegastaldi@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JesseEstum](mailto:jesse.estum@gmail.com), [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

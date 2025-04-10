@@ -14,7 +14,7 @@ _Change config related classes from v1 to v2._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeConfigTypes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -36,7 +36,6 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.ClientConfiguration setRequestTimeout(int)`
   * newMethodName: `withApiCallAttemptTimeout`
 * [Convert the method parameter from numeric type to duration](../../../../software/amazon/awssdk/v2migration/numbertoduration)
-  * methodPattern: `com.amazonaws.ClientConfiguration withApiCallAttemptTimeout(int)`
   * timeUnit: `MILLISECONDS`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.ClientConfiguration withClientExecutionTimeout(int)`
@@ -45,25 +44,20 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.ClientConfiguration setClientExecutionTimeout(int)`
   * newMethodName: `withApiCallTimeout`
 * [Convert the method parameter from numeric type to duration](../../../../software/amazon/awssdk/v2migration/numbertoduration)
-  * methodPattern: `com.amazonaws.ClientConfiguration withApiCallTimeout(int)`
   * timeUnit: `MILLISECONDS`
 * [Convert the method parameter from numeric type to duration](../../../../software/amazon/awssdk/v2migration/numbertoduration)
-  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionTimeout(int)`
   * timeUnit: `MILLISECONDS`
 * [Convert the method parameter from numeric type to duration](../../../../software/amazon/awssdk/v2migration/numbertoduration)
-  * methodPattern: `com.amazonaws.ClientConfiguration withSocketTimeout(int)`
   * timeUnit: `MILLISECONDS`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.ClientConfiguration withConnectionMaxIdleMillis(long)`
   * newMethodName: `withConnectionMaxIdleTime`
 * [Convert the method parameter from numeric type to duration](../../../../software/amazon/awssdk/v2migration/numbertoduration)
-  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionMaxIdleTime(long)`
   * timeUnit: `MILLISECONDS`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.ClientConfiguration withConnectionTTL(long)`
   * newMethodName: `withConnectionTimeToLive`
 * [Convert the method parameter from numeric type to duration](../../../../software/amazon/awssdk/v2migration/numbertoduration)
-  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionTimeToLive(long)`
   * timeUnit: `MILLISECONDS`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.ClientConfiguration withRetryMode(..)`
@@ -78,77 +72,29 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.ClientConfiguration setHeader(String, String)`
   * newMethodName: `withPutHeader`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setMaxConsecutiveRetriesBeforeThrottling(int)`
-  * comment: `maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withMaxConsecutiveRetriesBeforeThrottling(int)`
-  * comment: `maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setCacheResponseMetadata(boolean)`
-  * comment: `cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withCacheResponseMetadata(boolean)`
-  * comment: `cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withDisableHostPrefixInjection(boolean)`
-  * comment: `disableHostPrefixInjection is deprecated and not supported removed in v2. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setDisableHostPrefixInjection(boolean)`
-  * comment: `disableHostPrefixInjection is deprecated and not supported in v2. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setDnsResolver(..)`
-  * comment: `dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withDnsResolver(..)`
-  * comment: `dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setGzip(boolean)`
-  * comment: `gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withGzip(boolean)`
-  * comment: `gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setLocalAddress(..)`
-  * comment: `localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withLocalAddress(..)`
-  * comment: `localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setSecureRandom(.*)`
-  * comment: `secureRandom is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withSecureRandom(.*)`
-  * comment: `secureRandom is supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setUseExpectContinue(boolean)`
-  * comment: `useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withUseExpectContinue(boolean)`
-  * comment: `useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withProtocol(.*)`
-  * comment: `protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setProtocol(.*)`
-  * comment: `protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withUserAgent(String)`
-  * comment: `userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setUserAgent(String)`
-  * comment: `userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withUserAgentPrefix(String)`
-  * comment: `userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setUserAgentPrefix(String)`
-  * comment: `userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration withUserAgentSuffix(String)`
-  * comment: `userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
-  * methodPattern: `com.amazonaws.ClientConfiguration setUserAgentSuffix(String)`
-  * comment: `userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
 * [Change type](../../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.amazonaws.ClientConfiguration`
   * newFullyQualifiedTypeName: `software.amazon.awssdk.core.client.config.ClientOverrideConfiguration`
@@ -187,7 +133,6 @@ recipeList:
       methodPattern: com.amazonaws.ClientConfiguration setRequestTimeout(int)
       newMethodName: withApiCallAttemptTimeout
   - software.amazon.awssdk.v2migration.NumberToDuration:
-      methodPattern: com.amazonaws.ClientConfiguration withApiCallAttemptTimeout(int)
       timeUnit: MILLISECONDS
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.ClientConfiguration withClientExecutionTimeout(int)
@@ -196,25 +141,20 @@ recipeList:
       methodPattern: com.amazonaws.ClientConfiguration setClientExecutionTimeout(int)
       newMethodName: withApiCallTimeout
   - software.amazon.awssdk.v2migration.NumberToDuration:
-      methodPattern: com.amazonaws.ClientConfiguration withApiCallTimeout(int)
       timeUnit: MILLISECONDS
   - software.amazon.awssdk.v2migration.NumberToDuration:
-      methodPattern: com.amazonaws.ClientConfiguration withConnectionTimeout(int)
       timeUnit: MILLISECONDS
   - software.amazon.awssdk.v2migration.NumberToDuration:
-      methodPattern: com.amazonaws.ClientConfiguration withSocketTimeout(int)
       timeUnit: MILLISECONDS
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.ClientConfiguration withConnectionMaxIdleMillis(long)
       newMethodName: withConnectionMaxIdleTime
   - software.amazon.awssdk.v2migration.NumberToDuration:
-      methodPattern: com.amazonaws.ClientConfiguration withConnectionMaxIdleTime(long)
       timeUnit: MILLISECONDS
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.ClientConfiguration withConnectionTTL(long)
       newMethodName: withConnectionTimeToLive
   - software.amazon.awssdk.v2migration.NumberToDuration:
-      methodPattern: com.amazonaws.ClientConfiguration withConnectionTimeToLive(long)
       timeUnit: MILLISECONDS
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.ClientConfiguration withRetryMode(..)
@@ -228,78 +168,30 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.ClientConfiguration setHeader(String, String)
       newMethodName: withPutHeader
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setMaxConsecutiveRetriesBeforeThrottling(int)
-      comment: maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withMaxConsecutiveRetriesBeforeThrottling(int)
-      comment: maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setCacheResponseMetadata(boolean)
-      comment: cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withCacheResponseMetadata(boolean)
-      comment: cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withDisableHostPrefixInjection(boolean)
-      comment: disableHostPrefixInjection is deprecated and not supported removed in v2. Consider removing it.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setDisableHostPrefixInjection(boolean)
-      comment: disableHostPrefixInjection is deprecated and not supported in v2. Consider removing it.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setDnsResolver(..)
-      comment: dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withDnsResolver(..)
-      comment: dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setGzip(boolean)
-      comment: gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withGzip(boolean)
-      comment: gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setLocalAddress(..)
-      comment: localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withLocalAddress(..)
-      comment: localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setSecureRandom(.*)
-      comment: secureRandom is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withSecureRandom(.*)
-      comment: secureRandom is supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setUseExpectContinue(boolean)
-      comment: useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withUseExpectContinue(boolean)
-      comment: useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withProtocol(.*)
-      comment: protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setProtocol(.*)
-      comment: protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withUserAgent(String)
-      comment: userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setUserAgent(String)
-      comment: userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withUserAgentPrefix(String)
-      comment: userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setUserAgentPrefix(String)
-      comment: userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration withUserAgentSuffix(String)
-      comment: userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
-  - software.amazon.awssdk.v2migration.AddCommentToMethod:
-      methodPattern: com.amazonaws.ClientConfiguration setUserAgentSuffix(String)
-      comment: userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.amazonaws.ClientConfiguration
       newFullyQualifiedTypeName: software.amazon.awssdk.core.client.config.ClientOverrideConfiguration

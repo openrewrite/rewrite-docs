@@ -14,11 +14,11 @@ _In Spring Security 5.8 some `Pbkdf2PasswordEncoder` constructors have been depr
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security5/UpdatePbkdf2PasswordEncoder.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

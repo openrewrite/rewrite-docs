@@ -14,7 +14,7 @@ _Add a spring configuration property to a configuration file if it does not alre
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## Options
 
@@ -27,7 +27,7 @@ _Add a spring configuration property to a configuration file if it does not alre
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

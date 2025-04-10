@@ -14,11 +14,11 @@ _Will migrate the usage of `org.hibernate.annotations.ResultCheckStyle` to `org.
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateResultCheckStyleToExpectation.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

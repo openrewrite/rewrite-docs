@@ -17,6 +17,28 @@ Find Java Persistence Query Language definitions in the codebase.
   * **io.moderne.hibernate.search.JPQLQueries**: *Shows matching JPQL queries.*
 
 
+### [Find copybook usage](../recipes/cobol/search/findcopybook.md)
+ 
+_org.openrewrite.cobol.search.FindCopybook_
+
+Find all copy statements with the copybook name.
+
+#### Data tables:
+
+  * **org.openrewrite.cobol.table.CopybookSource**: *Information about copybook references in a COBOL source.*
+
+
+### [Find COBOL relationships](../recipes/cobol/search/findrelationships.md)
+ 
+_org.openrewrite.cobol.search.FindRelationships_
+
+Build a list of relationships for diagramming and exploration.
+
+#### Data tables:
+
+  * **org.openrewrite.cobol.table.CobolRelationships**: *Relationships between different COBOL resources.*
+
+
 ### [Find colliding source files](../recipes/core/findcollidingsourcefiles.md)
  
 _org.openrewrite.FindCollidingSourceFiles_
@@ -128,6 +150,17 @@ Textual search, optionally using Regular Expression (regex) to query.
   * **org.openrewrite.table.TextMatches**: *Lines matching simple text search.*
 
 
+### [Change Gradle dependency](../recipes/gradle/changedependency.md)
+ 
+_org.openrewrite.gradle.ChangeDependency_
+
+Change a Gradle dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 ### [Upgrade transitive Gradle dependencies](../recipes/gradle/upgradetransitivedependencyversion.md)
  
 _org.openrewrite.gradle.UpgradeTransitiveDependencyVersion_
@@ -230,17 +263,6 @@ Locates method definitions and predicts the number of token in each.
   * **org.openrewrite.java.table.TokenCount**: *The number of tokens from a code snippet*
 
 
-### [Find OpenRewrite recipes](../recipes/java/recipes/findrecipes.md)
- 
-_org.openrewrite.java.recipes.FindRecipes_
-
-This recipe finds all OpenRewrite recipes, primarily to produce a data table that is being used to experiment with fine-tuning a large language model to produce more recipes.
-
-#### Data tables:
-
-  * **org.openrewrite.table.RewriteRecipeSource**: *This table contains the source code of recipes along with their metadata for use in an experiment fine-tuning large language models to produce more recipes.*
-
-
 ### [Find class hierarchy](../recipes/java/search/findclasshierarchy.md)
  
 _org.openrewrite.java.search.FindClassHierarchy_
@@ -318,6 +340,17 @@ Study the frequency of `J` types and their `JavaType` type attribution.
   * **org.openrewrite.java.table.TypeMappings**: *The types mapped to `J` trees.*
 
 
+### [Find JavaScript sources and collect data metrics](../recipes/javascript/search/findjavascriptsources.md)
+ 
+_org.openrewrite.javascript.search.FindJavaScriptSources_
+
+Use data table to collect source files types and counts of files with extensions `.js`, `.jsx`, `.mjs`, `.cjs`, `.ts`, `.tsx`, `.mts`, `.cts`.
+
+#### Data tables:
+
+  * **org.openrewrite.javascript.table.JavaScriptSourceFile**: *JavaScript or TypeScript sources present in LSTs on the SAAS.*
+
+
 ### [Find Kotlin sources and collect data metrics](../recipes/kotlin/findkotlinsources.md)
  
 _org.openrewrite.kotlin.FindKotlinSources_
@@ -377,7 +410,7 @@ Change the parent pom of a Maven pom.xml. Identifies the parent pom to be change
  
 _org.openrewrite.maven.ChangePluginGroupIdAndArtifactId_
 
-Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version.
+Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version. This recipe does not perform any validation and assumes all values passed are valid.
 
 #### Data tables:
 
@@ -823,7 +856,7 @@ Locates and reports on all licenses in use.
  
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-04-07T1102.
 
 #### Data tables:
 
@@ -928,6 +961,17 @@ Find Node.js projects and summarize data about them.
 #### Data tables:
 
   * **org.openrewrite.nodejs.table.NodeProjects**: *Summary information about Node.js projects.*
+
+
+### [Find OpenRewrite recipes](../recipes/java/recipes/findrecipes.md)
+ 
+_org.openrewrite.java.recipes.FindRecipes_
+
+This recipe finds all OpenRewrite recipes, primarily to produce a data table that is being used to experiment with fine-tuning a large language model to produce more recipes.
+
+#### Data tables:
+
+  * **org.openrewrite.table.RewriteRecipeSource**: *This table contains the source code of recipes along with their metadata for use in an experiment fine-tuning large language models to produce more recipes.*
 
 
 ### [Find HTTP API calls via `RestTemplate`](../recipes/java/spring/search/findapicalls.md)

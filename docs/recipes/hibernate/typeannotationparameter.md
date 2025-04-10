@@ -5,7 +5,7 @@ sidebar_label: "@Type annotation type parameter migration"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# @Type annotation type parameter migration
+# `@Type` annotation type parameter migration
 
 **org.openrewrite.hibernate.TypeAnnotationParameter**
 
@@ -14,11 +14,11 @@ _Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/TypeAnnotationParameter.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

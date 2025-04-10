@@ -14,11 +14,11 @@ _`DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for re
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateDiskSpaceHealthIndicatorConstructor.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

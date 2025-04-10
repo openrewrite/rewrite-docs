@@ -14,7 +14,7 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 ## Options
 
@@ -25,7 +25,7 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

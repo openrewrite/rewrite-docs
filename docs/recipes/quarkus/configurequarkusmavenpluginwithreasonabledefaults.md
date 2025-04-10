@@ -14,11 +14,11 @@ _Configures the `quarkus-maven-plugin` with reasonable defaults, such as default
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ConfigureQuarkusMavenPluginWithReasonableDefaults.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

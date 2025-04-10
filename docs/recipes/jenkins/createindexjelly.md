@@ -14,11 +14,11 @@ _Jenkins tooling [requires](https://github.com/jenkinsci/maven-hpi-plugin/pull/3
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/CreateIndexJelly.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

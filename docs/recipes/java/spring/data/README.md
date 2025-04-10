@@ -11,6 +11,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Convert `JdbcTemplate.queryForLong(..)` to `queryForObject(..)`](./jdbctemplatequeryforlongmigration.md)
 * [Make AuditorAware.getCurrentAuditor return `Optional`](./migrateauditorawaretooptional.md)
 * [Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`](./usejparepositorydeleteallinbatch.md)
 * [Use `JpaRepository#getById(ID id)`](./usejparepositorygetbyid.md)

@@ -14,7 +14,7 @@ _Replace `check()` invocations for `featureKey` with `replacementValue`, and sim
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/ff4j/RemoveCheck.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 ## Options
 
@@ -25,7 +25,7 @@ _Replace `check()` invocations for `featureKey` with `replacementValue`, and sim
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition

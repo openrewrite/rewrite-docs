@@ -14,11 +14,11 @@ _Remove the use of invalid JNDI properties from Hashtable._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/RemoveWas2LibertyNonPortableJndiLookup.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

@@ -14,7 +14,7 @@ _Change S3 methods to v2._
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsToV2), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -47,6 +47,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.AmazonS3 getBucketCrossOriginConfiguration(com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest)`
   * newMethodName: `getBucketCors`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketVersioningConfiguration(com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest)`
+  * newMethodName: `putBucketVersioning`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.AmazonS3 getBucketVersioningConfiguration(com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest)`
   * newMethodName: `getBucketVersioning`
@@ -117,6 +120,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.services.s3.AmazonS3 setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)`
   * newMethodName: `putBucketWebsite`
 * [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3 restoreObjectV2(com.amazonaws.services.s3.model.RestoreObjectRequest)`
+  * newMethodName: `restoreObject`
+* [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.AmazonS3Client getObjectMetadata(com.amazonaws.services.s3.model.GetObjectMetadataRequest)`
   * newMethodName: `headObject`
 * [Change method name](../../../../java/changemethodname)
@@ -134,6 +140,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.AmazonS3Client getBucketCrossOriginConfiguration(com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest)`
   * newMethodName: `getBucketCors`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketVersioningConfiguration(com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest)`
+  * newMethodName: `putBucketVersioning`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.AmazonS3Client getBucketVersioningConfiguration(com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest)`
   * newMethodName: `getBucketVersioning`
@@ -204,38 +213,29 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
   * methodPattern: `com.amazonaws.services.s3.AmazonS3Client setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)`
   * newMethodName: `putBucketWebsite`
 * [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.AmazonS3Client restoreObjectV2(com.amazonaws.services.s3.model.RestoreObjectRequest)`
+  * newMethodName: `restoreObject`
+* [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.BucketCrossOriginConfiguration withRules(com.amazonaws.services.s3.model.CORSRule...)`
   * newMethodName: `withCorsRules`
 * [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.services.s3.model.ListObjectsRequest withBucketName(String)`
-  * newMethodName: `withBucket`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.services.s3.model.ListObjectsV2Request withBucketName(String)`
-  * newMethodName: `withBucket`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.services.s3.model.CopyPartRequest withSourceBucketName(String)`
-  * newMethodName: `withSourceBucket`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.services.s3.model.CopyPartRequest withDestinationBucketName(String)`
-  * newMethodName: `withDestinationBucket`
-* [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination withBucketArn(String)`
-  * newMethodName: `withBucket`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withBucketName(String)`
   * newMethodName: `withBucket`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withPartETags(java.util.List)`
   * newMethodName: `withMultipartUpload`
 * [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.services.s3.model.PutObjectRequest withBucketName(String)`
-  * newMethodName: `withBucket`
+  * methodPattern: `com.amazonaws.services.s3.model.PutObjectRequest withRedirectLocation(String)`
+  * newMethodName: `withWebsiteRedirectLocation`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.PutObjectRequest withCannedAcl(com.amazonaws.services.s3.model.CannedAccessControlList)`
   * newMethodName: `withAcl`
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.services.s3.model.PutObjectRequest withRequesterPays(boolean)`
   * newMethodName: `withRequestPayer`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.services.s3.model.SetBucketPolicyRequest withPolicyText(String)`
+  * newMethodName: `withPolicy`
 
 </TabItem>
 
@@ -267,6 +267,9 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.AmazonS3 getBucketCrossOriginConfiguration(com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest)
       newMethodName: getBucketCors
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketVersioningConfiguration(com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest)
+      newMethodName: putBucketVersioning
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.AmazonS3 getBucketVersioningConfiguration(com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest)
       newMethodName: getBucketVersioning
@@ -337,6 +340,9 @@ recipeList:
       methodPattern: com.amazonaws.services.s3.AmazonS3 setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)
       newMethodName: putBucketWebsite
   - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3 restoreObjectV2(com.amazonaws.services.s3.model.RestoreObjectRequest)
+      newMethodName: restoreObject
+  - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.AmazonS3Client getObjectMetadata(com.amazonaws.services.s3.model.GetObjectMetadataRequest)
       newMethodName: headObject
   - org.openrewrite.java.ChangeMethodName:
@@ -354,6 +360,9 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.AmazonS3Client getBucketCrossOriginConfiguration(com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest)
       newMethodName: getBucketCors
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketVersioningConfiguration(com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest)
+      newMethodName: putBucketVersioning
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.AmazonS3Client getBucketVersioningConfiguration(com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest)
       newMethodName: getBucketVersioning
@@ -424,38 +433,29 @@ recipeList:
       methodPattern: com.amazonaws.services.s3.AmazonS3Client setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)
       newMethodName: putBucketWebsite
   - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.AmazonS3Client restoreObjectV2(com.amazonaws.services.s3.model.RestoreObjectRequest)
+      newMethodName: restoreObject
+  - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.BucketCrossOriginConfiguration withRules(com.amazonaws.services.s3.model.CORSRule...)
       newMethodName: withCorsRules
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.services.s3.model.ListObjectsRequest withBucketName(String)
-      newMethodName: withBucket
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.services.s3.model.ListObjectsV2Request withBucketName(String)
-      newMethodName: withBucket
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.services.s3.model.CopyPartRequest withSourceBucketName(String)
-      newMethodName: withSourceBucket
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.services.s3.model.CopyPartRequest withDestinationBucketName(String)
-      newMethodName: withDestinationBucket
-  - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination withBucketArn(String)
-      newMethodName: withBucket
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withBucketName(String)
       newMethodName: withBucket
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.CompleteMultipartUploadRequest withPartETags(java.util.List)
       newMethodName: withMultipartUpload
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.services.s3.model.PutObjectRequest withBucketName(String)
-      newMethodName: withBucket
+      methodPattern: com.amazonaws.services.s3.model.PutObjectRequest withRedirectLocation(String)
+      newMethodName: withWebsiteRedirectLocation
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.PutObjectRequest withCannedAcl(com.amazonaws.services.s3.model.CannedAccessControlList)
       newMethodName: withAcl
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.services.s3.model.PutObjectRequest withRequesterPays(boolean)
       newMethodName: withRequestPayer
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.services.s3.model.SetBucketPolicyRequest withPolicyText(String)
+      newMethodName: withPolicy
 
 ```
 </TabItem>

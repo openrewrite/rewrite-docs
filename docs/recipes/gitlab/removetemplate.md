@@ -14,7 +14,7 @@ _Remove a GitLab template from use._
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/RemoveTemplate.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 ## Options
 
@@ -24,7 +24,7 @@ _Remove a GitLab template from use._
 
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage

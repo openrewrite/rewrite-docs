@@ -14,11 +14,11 @@ _In Groovy [GStrings](https://docs.groovy-lang.org/latest/html/api/groovy/lang/G
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/GStringCurlyBraces.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/)
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage

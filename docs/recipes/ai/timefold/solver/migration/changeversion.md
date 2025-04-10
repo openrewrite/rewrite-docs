@@ -14,7 +14,7 @@ _Replaces the version of Timefold_
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.ChangeVersion), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -22,7 +22,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -31,27 +31,27 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.ai.timefold.solver`
-  * newValue: `1.20.1`
+  * newValue: `1.21.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.timefold`
-  * newValue: `1.20.1`
+  * newValue: `1.21.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `ai.timefold.solver.version`
-  * newValue: `1.20.1`
+  * newValue: `1.21.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefold.version`
-  * newValue: `1.20.1`
+  * newValue: `1.21.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefoldVersion`
-  * newValue: `1.20.1`
+  * newValue: `1.21.0`
   * addIfMissing: `false`
   * trustParent: `true`
 
@@ -69,27 +69,27 @@ description: |
 recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.ai.timefold.solver
-      newValue: 1.20.1
+      newValue: 1.21.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.timefold
-      newValue: 1.20.1
+      newValue: 1.21.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: ai.timefold.solver.version
-      newValue: 1.20.1
+      newValue: 1.21.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefold.version
-      newValue: 1.20.1
+      newValue: 1.21.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefoldVersion
-      newValue: 1.20.1
+      newValue: 1.21.0
       addIfMissing: false
       trustParent: true
 

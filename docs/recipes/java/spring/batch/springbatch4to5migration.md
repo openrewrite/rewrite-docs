@@ -19,7 +19,7 @@ _Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 r
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-batch-5.0.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -27,7 +27,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 :::
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -54,6 +54,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.configuration.annotation.ScopeConfiguration`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.configuration.support.ScopeConfiguration`
+* [Convert receive type in some invocation of StepExecution.xx()](../../../java/spring/batch/convertreceivetypewhencallstepexecutionmethod)
+* [Migration invocation of JobParameter.toString to JobParameter.getValue.toString](../../../java/spring/batch/jobparametertostring)
+* [Add class argument to `JobParameters`](../../../java/spring/batch/migratejobparameter)
+* [Migrate method when it annotated by Spring Batch API](../../../java/spring/batch/migratemethodannotatedbybatchapi)
 
 </TabItem>
 
@@ -90,6 +94,10 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.configuration.annotation.ScopeConfiguration
       newFullyQualifiedTypeName: org.springframework.batch.core.configuration.support.ScopeConfiguration
+  - org.openrewrite.java.spring.batch.ConvertReceiveTypeWhenCallStepExecutionMethod
+  - org.openrewrite.java.spring.batch.JobParameterToString
+  - org.openrewrite.java.spring.batch.MigrateJobParameter
+  - org.openrewrite.java.spring.batch.MigrateMethodAnnotatedByBatchAPI
 
 ```
 </TabItem>
@@ -273,4 +281,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-pdesprez, [Curtis](mailto:curtis@mail.ustc.edu.cn), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Kun Li
+[qwtfps](mailto:qwtfps@163.com), pdesprez, [Curtis](mailto:curtis@mail.ustc.edu.cn), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Kun Li

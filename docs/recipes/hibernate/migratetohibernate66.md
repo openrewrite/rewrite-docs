@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.hibernate.MigrateToHibernate66**
 
-_This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x._
+_This recipe will apply changes commonly needed when migrating to Hibernate 6.6.x._
 
 ## Recipe source
 
@@ -17,7 +17,7 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 ## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
 
 ## Usage

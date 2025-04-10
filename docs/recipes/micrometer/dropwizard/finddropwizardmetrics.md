@@ -14,11 +14,11 @@ _Find uses of Dropwizard metrics that could be converted to a more modern metric
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/dropwizard/FindDropwizardMetrics.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/blob/main//issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 ## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Usage
