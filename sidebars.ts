@@ -115,6 +115,7 @@ const sidebars: SidebarsConfig = {
         'reference/latest-versions-of-every-openrewrite-module',
         'reference/moderne-recipes',
         'reference/recipes-with-data-tables',
+        'reference/scanning-recipes',
         'reference/rewrite-maven-plugin',
         'reference/gradle-plugin-configuration',
         'reference/supported-languages',
