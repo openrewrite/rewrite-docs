@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion**
 
-_Simplify AssertJ assertions by replacing them with more expressiove dedicated assertions._
+_Simplify AssertJ assertions by replacing them with more expressive dedicated assertions._
 
 ## Recipe source
 
