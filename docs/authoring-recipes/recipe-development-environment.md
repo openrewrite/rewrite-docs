@@ -55,6 +55,10 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 </TabItem>
 </Tabs>
 
+:::tip
+If you are using Gradle, it is highly-recommended that you apply the [`org.openrewrite.build.recipe-library-base` plugin](https://plugins.gradle.org/plugin/org.openrewrite.build.recipe-library-base). The plugin automatically configures the project with meaningful conventions like necessary compiler options.
+:::
+
 ### Dependencies & dependency management
 
 Rewrite provides a bill of materials (BOM) that, when imported into your build, will manage the versions of any rewrite dependencies that are included within a project.
@@ -108,11 +112,7 @@ dependencies {
 
 ```xml title="pom.xml"
 <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.testSource>17</maven.compiler.testSource>
-    <maven.compiler.testTarget>17</maven.compiler.testTarget>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties>
 
 <dependencyManagement>
@@ -219,10 +219,6 @@ dependencies {
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.13.0</version>
             <configuration>
-                <!-- Jackson deserialization requires named parameters -->
-                <compilerArgs>
-                    <arg>-parameters</arg>
-                </compilerArgs>
                 <!-- lombok is optional, but recommended for authoring recipes -->
                 <annotationProcessorPaths>
                     <path>
@@ -279,6 +275,43 @@ tasks.compileJava {
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+```
+</TabItem>
+</Tabs>
+
+### Jackson deserialization
+
+Some recipe implementations may use [Jackson deserialization](https://github.com/FasterXML/jackson-annotations) by defining annotations such as `@JsonCreator` and `@JsonProperty`.
+
+In order to deserialize Java classes, you need to add the `-parameters` compiler argument. This is necessary for Jackson to be able to deserialize the constructor parameters of a class.
+
+<Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
+
+```groovy title="build.gradle"
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add('-parameters')
+}
+```
+</TabItem>
+
+<TabItem value="maven" label="Maven">
+
+```xml title="pom.xml"
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.14.0</version>
+            <configuration>
+                <compilerArgs>
+                    <arg>-parameters</arg>
+                </compilerArgs>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 ```
 </TabItem>
 </Tabs>
