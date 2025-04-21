@@ -55,7 +55,7 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 </TabItem>
 </Tabs>
 
-:::info
+:::tip
 If you are using Gradle, it is highly-recommended that you apply the [`org.openrewrite.build.recipe-library-base` plugin](https://plugins.gradle.org/plugin/org.openrewrite.build.recipe-library-base). The plugin automatically configures the project with meaningful conventions like necessary compiler options.
 :::
 
