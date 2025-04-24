@@ -25,7 +25,6 @@ _Applies best practices to tests._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -76,6 +75,209 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Before;
+
+public class Example {
+    @Before
+    public void initialize() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.BeforeEach;
+
+class Example {
+    @BeforeEach
+    void initialize() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.Before;
++import org.junit.jupiter.api.BeforeEach;
+
+@@ -3,3 +3,3 @@
+import org.junit.Before;
+
+-public class Example {
+-   @Before
+-   public void initialize() {
++class Example {
++   @BeforeEach
++   void initialize() {
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Assertions;
+
+public class Test {
+    void method() {
+        Assertions.assertTrue(true);
+    }
+}
+```
+
+###### After
+```java
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class Test {
+    void method() {
+        assertTrue(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.jupiter.api.Assertions;
++import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@@ -5,1 +5,1 @@
+public class Test {
+    void method() {
+-       Assertions.assertTrue(true);
++       assertTrue(true);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Before;
+
+public class Example {
+    @Before
+    public void initialize() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.BeforeEach;
+
+class Example {
+    @BeforeEach
+    void initialize() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.Before;
++import org.junit.jupiter.api.BeforeEach;
+
+@@ -3,3 +3,3 @@
+import org.junit.Before;
+
+-public class Example {
+-   @Before
+-   public void initialize() {
++class Example {
++   @BeforeEach
++   void initialize() {
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Assertions;
+
+public class Test {
+    void method() {
+        Assertions.assertTrue(true);
+    }
+}
+```
+
+###### After
+```java
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class Test {
+    void method() {
+        assertTrue(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.jupiter.api.Assertions;
++import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@@ -5,1 +5,1 @@
+public class Test {
+    void method() {
+-       Assertions.assertTrue(true);
++       assertTrue(true);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -211,6 +413,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -225,6 +430,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -235,6 +444,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -253,6 +466,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 Yeikel, [Aleksandar A Simpson](mailto:alek@asu.me), [Patrick](mailto:patway99@gmail.com), Adriano Machado, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Ties van de Ven, [Tim te Beek](mailto:timtebeek@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), timo-abele

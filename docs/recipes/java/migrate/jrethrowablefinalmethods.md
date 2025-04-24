@@ -9,16 +9,110 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.JREThrowableFinalMethods**
 
-_The recipe renames  `getSuppressed()` and `addSuppressed(Throwable exception)` methods  in classes that extend `java.lang.Throwable` to `myGetSuppressed` and `myAddSuppressed(Throwable)`.These methods were added to Throwable in Java 7 and are marked final which cannot be overridden._
+_The recipe renames  `getSuppressed()` and `addSuppressed(Throwable exception)` methods  in classes that extend `java.lang.Throwable` to `myGetSuppressed` and `myAddSuppressed(Throwable)`. These methods were added to Throwable in Java 7 and are marked final which cannot be overridden._
 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/JREThrowableFinalMethods.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.test;
+public class ThrowableWithIllegalOverrrides extends Throwable {
+    public void add1Suppressed(Throwable exception) {
+    }
+
+    public Throwable[] get1Suppressed() {
+        return null;
+    }
+}
+```
+
+###### After
+```java
+package com.test;
+public class ThrowableWithIllegalOverrrides extends Throwable {
+    public void myAddSuppressed(Throwable exception) {
+    }
+
+    public Throwable[] myGetSuppressed() {
+        return null;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package com.test;
+public class ThrowableWithIllegalOverrrides extends Throwable {
+-   public void add1Suppressed(Throwable exception) {
++   public void myAddSuppressed(Throwable exception) {
+    }
+@@ -6,1 +6,1 @@
+    }
+
+-   public Throwable[] get1Suppressed() {
++   public Throwable[] myGetSuppressed() {
+        return null;
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.test.ThrowableWithIllegalOverrrides;
+class ClassUsingException {
+    void methodUsingException(ThrowableWithIllegalOverrrides t1) {
+        t1.add1Suppressed(null);
+        t1.get1Suppressed();
+    }
+}
+```
+
+###### After
+```java
+import com.test.ThrowableWithIllegalOverrrides;
+class ClassUsingException {
+    void methodUsingException(ThrowableWithIllegalOverrrides t1) {
+        t1.myAddSuppressed(null);
+        t1.myGetSuppressed();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,2 +4,2 @@
+class ClassUsingException {
+    void methodUsingException(ThrowableWithIllegalOverrrides t1) {
+-       t1.add1Suppressed(null);
+-       t1.get1Suppressed();
++       t1.myAddSuppressed(null);
++       t1.myGetSuppressed();
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +249,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +266,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +280,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +302,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 Anu Ramamoorthy, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

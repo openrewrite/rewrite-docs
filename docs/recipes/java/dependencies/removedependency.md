@@ -9,17 +9,16 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.dependencies.RemoveDependency**
 
-```
-For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`.
-For Maven project, removes a single dependency from the <dependencies> section of the pom.xml.
-```
-
+_For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `<dependencies>` section of the pom.xml._
 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveDependency.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -30,9 +29,156 @@ For Maven project, removes a single dependency from the <dependencies> section o
 | `String` | configuration | *Optional*. The dependency configuration to remove from. | `api` |
 | `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
-## License
+## Examples
+##### Example 1
+Remove a Gradle dependency
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`org.springframework.boot`|
+|artifactId|`spring-boot*`|
+|unlessUsing|`null`|
+|configuration|`null`|
+|scope|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web:2.7.0") {
+        exclude group: "junit"
+    }
+    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,3 +10,0 @@
+
+dependencies {
+-   implementation("org.springframework.boot:spring-boot-starter-web:2.7.0") {
+-       exclude group: "junit"
+-   }
+    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+Remove a Maven dependency
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`junit`|
+|artifactId|`junit`|
+|unlessUsing|`null`|
+|configuration|`null`|
+|scope|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -14,6 +14,0 @@
+      <version>29.0-jre</version>
+    </dependency>
+-   <dependency>
+-     <groupId>junit</groupId>
+-     <artifactId>junit</artifactId>
+-     <version>4.13.1</version>
+-     <scope>test</scope>
+-   </dependency>
+  </dependencies>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -137,6 +283,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -151,6 +300,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -161,6 +314,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -179,3 +336,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

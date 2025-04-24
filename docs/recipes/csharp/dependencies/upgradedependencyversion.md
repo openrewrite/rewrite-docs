@@ -15,6 +15,9 @@ _Upgrades dependencies in `*.csproj` and `packages.config`._
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,9 +25,50 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 | `String` | packagePattern | Package glob pattern used to match dependencies. | `Microsoft*` |
 | `String` | newVersion | An exact version number. | `12.3` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|packagePattern|`Microsoft.*`|
+|newVersion|`2.1.2`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="Microsoft.Web.Xdt" version="2.1.1" targetFramework="net46" />
+  <package id="WebActivatorEx" version="2.1.0" targetFramework="net46" />
+</packages>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="Microsoft.Web.Xdt" version="2.1.2" targetFramework="net46" />
+  <package id="WebActivatorEx" version="2.1.0" targetFramework="net46" />
+</packages>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+- <package id="Microsoft.Web.Xdt" version="2.1.1" targetFramework="net46" />
++ <package id="Microsoft.Web.Xdt" version="2.1.2" targetFramework="net46" />
+  <package id="WebActivatorEx" version="2.1.0" targetFramework="net46" />
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -71,6 +115,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -85,6 +132,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -95,6 +146,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -113,6 +168,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tim te Beek](mailto:timtebeek@gmail.com)

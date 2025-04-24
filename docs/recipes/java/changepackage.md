@@ -16,6 +16,9 @@ _A recipe that will rename a package name in package statements, imports, and fu
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,9 +27,152 @@ _A recipe that will rename a package name in package statements, imports, and fu
 | `String` | newPackageName | New package name to replace the old package name with. | `com.yourorg.bar` |
 | `Boolean` | recursive | *Optional*. Recursively change subpackage names |  |
 
-## License
+## Examples
+##### Example 1
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPackageName|`a.b`|
+|newPackageName|`x.y`|
+|recursive|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="groovy" label="groovy">
+
+
+###### Before
+```groovy
+package a.b
+class Original {}
+```
+
+###### After
+```groovy
+package x.y
+class Original {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-package a.b
++package x.y
+class Original {}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="groovy" label="groovy">
+
+
+###### Before
+```groovy
+import a.b.Original
+
+class A {
+    Original type
+}
+```
+
+###### After
+```groovy
+import x.y.Original
+
+class A {
+    Original type
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import a.b.Original
++import x.y.Original
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPackageName|`a.b`|
+|newPackageName|`x.y`|
+|recursive|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+package a.b
+class Original
+```
+
+###### After
+```kotlin
+package x.y
+class Original
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-package a.b
++package x.y
+class Original
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+import a.b.Original
+
+class A {
+    val type = Original()
+}
+```
+
+###### After
+```kotlin
+import x.y.Original
+
+class A {
+    val type = Original()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import a.b.Original
++import x.y.Original
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -116,6 +262,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -130,6 +279,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -140,6 +293,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -158,6 +315,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrik Ivarsson, Patrick Way, [Roberto Cortez](mailto:radcortez@yahoo.com), Dinar Shagaliev

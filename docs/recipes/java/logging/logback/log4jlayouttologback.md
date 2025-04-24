@@ -16,9 +16,95 @@ _Migrates custom Log4j 2.x Layout components to `logback-classic`. This recipe o
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jLayoutToLogback.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.log4j.Layout;
+import org.apache.log4j.spi.LoggingEvent;
+
+class TrivialLayout extends Layout {
+
+    @Override
+    public void activateOptions() {
+        // there are no options to activate
+    }
+
+    @Override
+    public String format(LoggingEvent loggingEvent) {
+        return loggingEvent.getRenderedMessage();
+    }
+
+    @Override
+    public boolean ignoresThrowable() {
+        return true;
+    }
+}
+```
+
+###### After
+```java
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.LayoutBase;
+
+class TrivialLayout extends LayoutBase<ILoggingEvent> {
+
+    @Override
+    public String doLayout(ILoggingEvent loggingEvent) {
+        return loggingEvent.getMessage();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.apache.log4j.Layout;
+-import org.apache.log4j.spi.LoggingEvent;
++import ch.qos.logback.classic.spi.ILoggingEvent;
++import ch.qos.logback.core.LayoutBase;
+
+@@ -4,1 +4,1 @@
+import org.apache.log4j.spi.LoggingEvent;
+
+-class TrivialLayout extends Layout {
++class TrivialLayout extends LayoutBase<ILoggingEvent> {
+
+@@ -7,2 +7,2 @@
+
+    @Override
+-   public void activateOptions() {
+-       // there are no options to activate
++   public String doLayout(ILoggingEvent loggingEvent) {
++       return loggingEvent.getMessage();
+    }
+@@ -10,10 +10,0 @@
+        // there are no options to activate
+    }
+-
+-   @Override
+-   public String format(LoggingEvent loggingEvent) {
+-       return loggingEvent.getRenderedMessage();
+-   }
+-
+-   @Override
+-   public boolean ignoresThrowable() {
+-       return true;
+-   }
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +241,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +258,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +272,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +294,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 Aaron Gershman, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Tim te Beek](mailto:tim@moderne.io)

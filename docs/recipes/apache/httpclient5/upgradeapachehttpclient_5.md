@@ -25,7 +25,6 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -94,6 +93,331 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.util.EntityUtils;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.client.methods.HttpUriRequest;
+-import org.apache.http.util.EntityUtils;
++import org.apache.hc.core5.http.io.entity.EntityUtils;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = AuthScope.ANY;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = new AuthScope(null, -1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.auth.AuthScope;
++import org.apache.hc.client5.http.auth.AuthScope;
+
+@@ -5,1 +5,1 @@
+class A {
+    void method() {
+-       AuthScope any = AuthScope.ANY;
++       AuthScope any = new AuthScope(null, -1);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.config.CookieSpecs;
+
+class A {
+    void method() {
+        String c1 = CookieSpecs.IGNORE_COOKIES;
+        String c2 = CookieSpecs.STANDARD;
+        String c3 = CookieSpecs.STANDARD_STRICT;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+class A {
+    void method() {
+        String c1 = StandardCookieSpec.IGNORE;
+        String c2 = StandardCookieSpec.RELAXED;
+        String c3 = StandardCookieSpec.STRICT;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.client.config.CookieSpecs;
++import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+@@ -5,3 +5,3 @@
+class A {
+    void method() {
+-       String c1 = CookieSpecs.IGNORE_COOKIES;
+-       String c2 = CookieSpecs.STANDARD;
+-       String c3 = CookieSpecs.STANDARD_STRICT;
++       String c1 = StandardCookieSpec.IGNORE;
++       String c2 = StandardCookieSpec.RELAXED;
++       String c3 = StandardCookieSpec.STRICT;
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.util.EntityUtils;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.client.methods.HttpUriRequest;
+-import org.apache.http.util.EntityUtils;
++import org.apache.hc.core5.http.io.entity.EntityUtils;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = AuthScope.ANY;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = new AuthScope(null, -1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.auth.AuthScope;
++import org.apache.hc.client5.http.auth.AuthScope;
+
+@@ -5,1 +5,1 @@
+class A {
+    void method() {
+-       AuthScope any = AuthScope.ANY;
++       AuthScope any = new AuthScope(null, -1);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.config.CookieSpecs;
+
+class A {
+    void method() {
+        String c1 = CookieSpecs.IGNORE_COOKIES;
+        String c2 = CookieSpecs.STANDARD;
+        String c3 = CookieSpecs.STANDARD_STRICT;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+class A {
+    void method() {
+        String c1 = StandardCookieSpec.IGNORE;
+        String c2 = StandardCookieSpec.RELAXED;
+        String c3 = StandardCookieSpec.STRICT;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.client.config.CookieSpecs;
++import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+@@ -5,3 +5,3 @@
+class A {
+    void method() {
+-       String c1 = CookieSpecs.IGNORE_COOKIES;
+-       String c2 = CookieSpecs.STANDARD;
+-       String c3 = CookieSpecs.STANDARD_STRICT;
++       String c1 = StandardCookieSpec.IGNORE;
++       String c2 = StandardCookieSpec.RELAXED;
++       String c3 = StandardCookieSpec.STRICT;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -229,6 +553,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -243,6 +570,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -253,6 +584,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -271,6 +606,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Joan Viladrosa](mailto:joan@moderne.io), SiBorea, Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io)

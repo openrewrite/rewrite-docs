@@ -15,9 +15,67 @@ _Finds all comments and uses AI to predict which language the comment is in._
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
-## License
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import kong.unirest.*;
+class Test {
+    void test() {
+    /* this is comments
+    still a comment
+    */
+          Unirest.post("https://httpbin.org/post")
+                  .header("Content-Type", "application/json")
+                  .body("1")
+                  .asString(); // This is a comment
+    }
+}
+```
+
+###### After
+```java
+import kong.unirest.*;
+class Test {
+    void test() {
+    /*~~>*//* this is comments
+    still a comment
+    */
+          Unirest.post("https://httpbin.org/post")
+                  .header("Content-Type", "application/json")
+                  .body("1")
+                  .asString(); /*~~>*/// This is a comment
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+class Test {
+    void test() {
+-   /* this is comments
++   /*~~>*//* this is comments
+    still a comment
+@@ -10,1 +10,1 @@
+                  .header("Content-Type", "application/json")
+                  .body("1")
+-                 .asString(); // This is a comment
++                 .asString(); /*~~>*/// This is a comment
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -52,6 +110,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="io.moderne.ai.table.LanguageDistribution" label="LanguageDistribution">
+
 ### Comment language distribution
 **io.moderne.ai.table.LanguageDistribution**
 
@@ -62,6 +123,10 @@ _Shows the distribution of language in comments_
 | Source file | The source file that the comment was in occurred in. |
 | Comment | The comment found |
 | Language | Language the AI predicted the comment was in |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -77,6 +142,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -87,6 +156,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -105,6 +178,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [juju](mailto:justine.gehring@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

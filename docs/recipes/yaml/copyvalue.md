@@ -16,6 +16,9 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,9 +28,45 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 | `String` | newKey | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression defining where the value should be written. | `$.dest.kind` |
 | `String` | newFilePath | *Optional*. The file path to the YAML file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.yaml` |
 
-## License
+## Example
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldKeyPath|`$.source`|
+|oldFilePath|`null`|
+|newKey|`$.destination`|
+|newFilePath|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+source: value
+destination: original
+```
+
+###### After
+```yaml
+source: value
+destination: value
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+source: value
+-destination: original
++destination: value
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -119,6 +158,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -133,6 +175,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -143,6 +189,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -161,3 +211,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -20,7 +20,6 @@ _Change SDK Exception types from v1 to v2._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -63,7 +62,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * methodPattern: `com.amazonaws.AmazonServiceException getRawResponseContent()`
   * newMethodName: `awsErrorDetails().rawResponse().asUtf8String`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.AmazonServiceException getErrorType()`
+  * comment: `getErrorType is not supported in v2. AwsServiceException is a service error in v2. Consider removing it.`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.AmazonServiceException getProxyHost()`
+  * comment: `getProxyHost is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
 * [Change type](../../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.amazonaws.AmazonServiceException`
   * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.exception.AwsServiceException`
@@ -131,8 +134,12 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.AmazonServiceException getRawResponseContent()
       newMethodName: awsErrorDetails().rawResponse().asUtf8String
-  - software.amazon.awssdk.v2migration.AddCommentToMethod
-  - software.amazon.awssdk.v2migration.AddCommentToMethod
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.AmazonServiceException getErrorType()
+      comment: getErrorType is not supported in v2. AwsServiceException is a service error in v2. Consider removing it.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.AmazonServiceException getProxyHost()
+      comment: getProxyHost is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.amazonaws.AmazonServiceException
       newFullyQualifiedTypeName: software.amazon.awssdk.awscore.exception.AwsServiceException
@@ -293,6 +300,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -307,6 +317,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -317,6 +331,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -335,3 +353,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

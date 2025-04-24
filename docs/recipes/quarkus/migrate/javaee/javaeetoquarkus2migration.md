@@ -20,7 +20,6 @@ _These recipes help with the migration of a JavaEE application using EJBs and Hi
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -54,6 +53,715 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openrewrite.sample</groupId>
+  <name>Sample Java EE7 EJB Module</name>
+  <artifactId>ee7-ejb</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openrewrite.sample</groupId>
+  <artifactId>ee7-ejb</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Sample Java EE7 EJB Module</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.quarkus.platform</groupId>
+        <artifactId>quarkus-bom</artifactId>
+        <version>2.16.12.Final</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-h2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-jackson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-undertow</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-junit5</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.quarkus.platform</groupId>
+        <artifactId>quarkus-maven-plugin</artifactId>
+        <version>2.16.12.Final</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build</goal>
+              <goal>generate-code</goal>
+              <goal>generate-code-tests</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <compilerArgs>
+            <arg>-parameters</arg>
+          </compilerArgs>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <systemPropertyVariables>
+            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+            <maven.home>${maven.home}</maven.home>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <systemPropertyVariables>
+            <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
+            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+            <maven.home>${maven.home}</maven.home>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>native</id>
+      <activation>
+        <property>
+          <name>native</name>
+        </property>
+      </activation>
+      <properties>
+        <skipITs>false</skipITs>
+        <quarkus.package.type>native</quarkus.package.type>
+      </properties>
+    </profile>
+  </profiles>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,0 @@
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openrewrite.sample</groupId>
+- <name>Sample Java EE7 EJB Module</name>
+  <artifactId>ee7-ejb</artifactId>
+@@ -8,1 +7,1 @@
+  <artifactId>ee7-ejb</artifactId>
+  <version>1.0-SNAPSHOT</version>
+- <packaging>war</packaging>
++ <name>Sample Java EE7 EJB Module</name>
+
+@@ -13,2 +12,2 @@
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+-   <maven.compiler.source>1.8</maven.compiler.source>
+-   <maven.compiler.target>1.8</maven.compiler.target>
++   <maven.compiler.source>11</maven.compiler.source>
++   <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+@@ -16,0 +15,11 @@
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
++ <dependencyManagement>
++   <dependencies>
++     <dependency>
++       <groupId>io.quarkus.platform</groupId>
++       <artifactId>quarkus-bom</artifactId>
++       <version>2.16.12.Final</version>
++       <type>pom</type>
++       <scope>import</scope>
++     </dependency>
++   </dependencies>
++ </dependencyManagement>
+
+@@ -19,4 +29,2 @@
+  <dependencies>
+    <dependency>
+-     <groupId>javax</groupId>
+-     <artifactId>javaee-api</artifactId>
+-     <version>7.0</version>
+-     <scope>provided</scope>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-arc</artifactId>
+    </dependency>
+@@ -25,4 +33,2 @@
+    </dependency>
+    <dependency>
+-     <groupId>javax.annotation</groupId>
+-     <artifactId>javax.annotation-api</artifactId>
+-     <version>1.3.2</version>
+-     <scope>provided</scope>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-hibernate-orm</artifactId>
+    </dependency>
+@@ -30,0 +36,26 @@
+      <scope>provided</scope>
+    </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-jdbc-h2</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-resteasy</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-resteasy-jackson</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-undertow</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-junit5</artifactId>
++     <scope>test</scope>
++   </dependency>
++   <dependency>
++     <groupId>io.rest-assured</groupId>
++     <artifactId>rest-assured</artifactId>
++     <scope>test</scope>
++   </dependency>
+  </dependencies>
+@@ -31,0 +63,73 @@
+    </dependency>
+  </dependencies>
++ <build>
++   <plugins>
++     <plugin>
++       <groupId>io.quarkus.platform</groupId>
++       <artifactId>quarkus-maven-plugin</artifactId>
++       <version>2.16.12.Final</version>
++       <executions>
++         <execution>
++           <goals>
++             <goal>build</goal>
++             <goal>generate-code</goal>
++             <goal>generate-code-tests</goal>
++           </goals>
++         </execution>
++       </executions>
++     </plugin>
++     <plugin>
++       <groupId>org.apache.maven.plugins</groupId>
++       <artifactId>maven-compiler-plugin</artifactId>
++       <version>3.13.0</version>
++       <configuration>
++         <compilerArgs>
++           <arg>-parameters</arg>
++         </compilerArgs>
++       </configuration>
++     </plugin>
++     <plugin>
++       <groupId>org.apache.maven.plugins</groupId>
++       <artifactId>maven-surefire-plugin</artifactId>
++       <version>3.3.1</version>
++       <configuration>
++         <systemPropertyVariables>
++           <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
++           <maven.home>${maven.home}</maven.home>
++         </systemPropertyVariables>
++       </configuration>
++     </plugin>
++     <plugin>
++       <groupId>org.apache.maven.plugins</groupId>
++       <artifactId>maven-failsafe-plugin</artifactId>
++       <version>3.3.1</version>
++       <executions>
++         <execution>
++           <goals>
++             <goal>integration-test</goal>
++             <goal>verify</goal>
++           </goals>
++         </execution>
++       </executions>
++       <configuration>
++         <systemPropertyVariables>
++           <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
++           <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
++           <maven.home>${maven.home}</maven.home>
++         </systemPropertyVariables>
++       </configuration>
++     </plugin>
++   </plugins>
++ </build>
++ <profiles>
++   <profile>
++     <id>native</id>
++     <activation>
++       <property>
++         <name>native</name>
++       </property>
++     </activation>
++     <properties>
++       <skipITs>false</skipITs>
++       <quarkus.package.type>native</quarkus.package.type>
++     </properties>
++   </profile>
++ </profiles>
+</project>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openrewrite.sample</groupId>
+  <name>Sample Java EE7 EJB Module</name>
+  <artifactId>ee7-ejb</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openrewrite.sample</groupId>
+  <artifactId>ee7-ejb</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Sample Java EE7 EJB Module</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.quarkus.platform</groupId>
+        <artifactId>quarkus-bom</artifactId>
+        <version>2.16.12.Final</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-h2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-jackson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-undertow</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-junit5</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.quarkus.platform</groupId>
+        <artifactId>quarkus-maven-plugin</artifactId>
+        <version>2.16.12.Final</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build</goal>
+              <goal>generate-code</goal>
+              <goal>generate-code-tests</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <compilerArgs>
+            <arg>-parameters</arg>
+          </compilerArgs>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <systemPropertyVariables>
+            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+            <maven.home>${maven.home}</maven.home>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <systemPropertyVariables>
+            <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
+            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+            <maven.home>${maven.home}</maven.home>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>native</id>
+      <activation>
+        <property>
+          <name>native</name>
+        </property>
+      </activation>
+      <properties>
+        <skipITs>false</skipITs>
+        <quarkus.package.type>native</quarkus.package.type>
+      </properties>
+    </profile>
+  </profiles>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,0 @@
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openrewrite.sample</groupId>
+- <name>Sample Java EE7 EJB Module</name>
+  <artifactId>ee7-ejb</artifactId>
+@@ -8,1 +7,1 @@
+  <artifactId>ee7-ejb</artifactId>
+  <version>1.0-SNAPSHOT</version>
+- <packaging>war</packaging>
++ <name>Sample Java EE7 EJB Module</name>
+
+@@ -13,2 +12,2 @@
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+-   <maven.compiler.source>1.8</maven.compiler.source>
+-   <maven.compiler.target>1.8</maven.compiler.target>
++   <maven.compiler.source>11</maven.compiler.source>
++   <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+@@ -16,0 +15,11 @@
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
++ <dependencyManagement>
++   <dependencies>
++     <dependency>
++       <groupId>io.quarkus.platform</groupId>
++       <artifactId>quarkus-bom</artifactId>
++       <version>2.16.12.Final</version>
++       <type>pom</type>
++       <scope>import</scope>
++     </dependency>
++   </dependencies>
++ </dependencyManagement>
+
+@@ -19,4 +29,2 @@
+  <dependencies>
+    <dependency>
+-     <groupId>javax</groupId>
+-     <artifactId>javaee-api</artifactId>
+-     <version>7.0</version>
+-     <scope>provided</scope>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-arc</artifactId>
+    </dependency>
+@@ -25,4 +33,2 @@
+    </dependency>
+    <dependency>
+-     <groupId>javax.annotation</groupId>
+-     <artifactId>javax.annotation-api</artifactId>
+-     <version>1.3.2</version>
+-     <scope>provided</scope>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-hibernate-orm</artifactId>
+    </dependency>
+@@ -30,0 +36,26 @@
+      <scope>provided</scope>
+    </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-jdbc-h2</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-resteasy</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-resteasy-jackson</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-undertow</artifactId>
++   </dependency>
++   <dependency>
++     <groupId>io.quarkus</groupId>
++     <artifactId>quarkus-junit5</artifactId>
++     <scope>test</scope>
++   </dependency>
++   <dependency>
++     <groupId>io.rest-assured</groupId>
++     <artifactId>rest-assured</artifactId>
++     <scope>test</scope>
++   </dependency>
+  </dependencies>
+@@ -31,0 +63,73 @@
+    </dependency>
+  </dependencies>
++ <build>
++   <plugins>
++     <plugin>
++       <groupId>io.quarkus.platform</groupId>
++       <artifactId>quarkus-maven-plugin</artifactId>
++       <version>2.16.12.Final</version>
++       <executions>
++         <execution>
++           <goals>
++             <goal>build</goal>
++             <goal>generate-code</goal>
++             <goal>generate-code-tests</goal>
++           </goals>
++         </execution>
++       </executions>
++     </plugin>
++     <plugin>
++       <groupId>org.apache.maven.plugins</groupId>
++       <artifactId>maven-compiler-plugin</artifactId>
++       <version>3.13.0</version>
++       <configuration>
++         <compilerArgs>
++           <arg>-parameters</arg>
++         </compilerArgs>
++       </configuration>
++     </plugin>
++     <plugin>
++       <groupId>org.apache.maven.plugins</groupId>
++       <artifactId>maven-surefire-plugin</artifactId>
++       <version>3.3.1</version>
++       <configuration>
++         <systemPropertyVariables>
++           <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
++           <maven.home>${maven.home}</maven.home>
++         </systemPropertyVariables>
++       </configuration>
++     </plugin>
++     <plugin>
++       <groupId>org.apache.maven.plugins</groupId>
++       <artifactId>maven-failsafe-plugin</artifactId>
++       <version>3.3.1</version>
++       <executions>
++         <execution>
++           <goals>
++             <goal>integration-test</goal>
++             <goal>verify</goal>
++           </goals>
++         </execution>
++       </executions>
++       <configuration>
++         <systemPropertyVariables>
++           <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
++           <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
++           <maven.home>${maven.home}</maven.home>
++         </systemPropertyVariables>
++       </configuration>
++     </plugin>
++   </plugins>
++ </build>
++ <profiles>
++   <profile>
++     <id>native</id>
++     <activation>
++       <property>
++         <name>native</name>
++       </property>
++     </activation>
++     <properties>
++       <skipITs>false</skipITs>
++       <quarkus.package.type>native</quarkus.package.type>
++     </properties>
++   </profile>
++ </profiles>
+</project>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -189,6 +897,28 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -203,6 +933,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -213,6 +947,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -231,6 +969,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com)

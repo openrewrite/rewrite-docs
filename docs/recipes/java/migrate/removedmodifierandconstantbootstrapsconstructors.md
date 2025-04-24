@@ -20,7 +20,6 @@ _The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -58,6 +57,171 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.lang.invoke.ConstantBootstraps;
+import java.lang.reflect.Modifier;
+
+class RemovedModifierAndConstantBootstrapsConstructorsApp {
+     public void testModifier() throws Exception {
+         Modifier modifier = new Modifier();
+         modifier.classModifiers();
+         modifier.fieldModifiers();
+         modifier.isFinal(1);
+         modifier.isStatic(1);
+         Modifier.isPublic(0);
+     }
+     public void testConstantBootstraps() throws Exception {
+         ConstantBootstraps constantBootstraps = new ConstantBootstraps();
+         constantBootstraps.enumConstant(null,null,null);
+         constantBootstraps.primitiveClass(null,null,null);
+         ConstantBootstraps.nullConstant(null, null, null);
+     }
+}
+```
+
+###### After
+```java
+import java.lang.invoke.ConstantBootstraps;
+import java.lang.reflect.Modifier;
+
+class RemovedModifierAndConstantBootstrapsConstructorsApp {
+     public void testModifier() throws Exception {
+         Modifier modifier = new Modifier();
+         Modifier.classModifiers();
+         Modifier.fieldModifiers();
+         Modifier.isFinal(1);
+         Modifier.isStatic(1);
+         Modifier.isPublic(0);
+     }
+     public void testConstantBootstraps() throws Exception {
+         ConstantBootstraps constantBootstraps = new ConstantBootstraps();
+         ConstantBootstraps.enumConstant(null,null,null);
+         ConstantBootstraps.primitiveClass(null,null,null);
+         ConstantBootstraps.nullConstant(null, null, null);
+     }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,4 +7,4 @@
+     public void testModifier() throws Exception {
+         Modifier modifier = new Modifier();
+-        modifier.classModifiers();
+-        modifier.fieldModifiers();
+-        modifier.isFinal(1);
+-        modifier.isStatic(1);
++        Modifier.classModifiers();
++        Modifier.fieldModifiers();
++        Modifier.isFinal(1);
++        Modifier.isStatic(1);
+         Modifier.isPublic(0);
+@@ -15,2 +15,2 @@
+     public void testConstantBootstraps() throws Exception {
+         ConstantBootstraps constantBootstraps = new ConstantBootstraps();
+-        constantBootstraps.enumConstant(null,null,null);
+-        constantBootstraps.primitiveClass(null,null,null);
++        ConstantBootstraps.enumConstant(null,null,null);
++        ConstantBootstraps.primitiveClass(null,null,null);
+         ConstantBootstraps.nullConstant(null, null, null);
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.lang.invoke.ConstantBootstraps;
+import java.lang.reflect.Modifier;
+
+class RemovedModifierAndConstantBootstrapsConstructorsApp {
+     public void testModifier() throws Exception {
+         Modifier modifier = new Modifier();
+         modifier.classModifiers();
+         modifier.fieldModifiers();
+         modifier.isFinal(1);
+         modifier.isStatic(1);
+         Modifier.isPublic(0);
+     }
+     public void testConstantBootstraps() throws Exception {
+         ConstantBootstraps constantBootstraps = new ConstantBootstraps();
+         constantBootstraps.enumConstant(null,null,null);
+         constantBootstraps.primitiveClass(null,null,null);
+         ConstantBootstraps.nullConstant(null, null, null);
+     }
+}
+```
+
+###### After
+```java
+import java.lang.invoke.ConstantBootstraps;
+import java.lang.reflect.Modifier;
+
+class RemovedModifierAndConstantBootstrapsConstructorsApp {
+     public void testModifier() throws Exception {
+         Modifier modifier = new Modifier();
+         Modifier.classModifiers();
+         Modifier.fieldModifiers();
+         Modifier.isFinal(1);
+         Modifier.isStatic(1);
+         Modifier.isPublic(0);
+     }
+     public void testConstantBootstraps() throws Exception {
+         ConstantBootstraps constantBootstraps = new ConstantBootstraps();
+         ConstantBootstraps.enumConstant(null,null,null);
+         ConstantBootstraps.primitiveClass(null,null,null);
+         ConstantBootstraps.nullConstant(null, null, null);
+     }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,4 +7,4 @@
+     public void testModifier() throws Exception {
+         Modifier modifier = new Modifier();
+-        modifier.classModifiers();
+-        modifier.fieldModifiers();
+-        modifier.isFinal(1);
+-        modifier.isStatic(1);
++        Modifier.classModifiers();
++        Modifier.fieldModifiers();
++        Modifier.isFinal(1);
++        Modifier.isStatic(1);
+         Modifier.isPublic(0);
+@@ -15,2 +15,2 @@
+     public void testConstantBootstraps() throws Exception {
+         ConstantBootstraps constantBootstraps = new ConstantBootstraps();
+-        constantBootstraps.enumConstant(null,null,null);
+-        constantBootstraps.primitiveClass(null,null,null);
++        ConstantBootstraps.enumConstant(null,null,null);
++        ConstantBootstraps.primitiveClass(null,null,null);
+         ConstantBootstraps.nullConstant(null, null, null);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -193,6 +357,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -207,6 +374,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -217,6 +388,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -235,3 +410,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -20,9 +20,111 @@ _A `catch` clause that only rethrows the caught exception is unnecessary. Lettin
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/CatchClauseOnlyRethrows.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.FileReader;
+import java.io.IOException;
+
+class A {
+    void foo() throws IOException {
+        try {
+            new FileReader("").read();
+        } catch (IOException e) {
+            throw e;
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.io.FileReader;
+import java.io.IOException;
+
+class A {
+    void foo() throws IOException {
+        new FileReader("").read();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,5 +6,1 @@
+class A {
+    void foo() throws IOException {
+-       try {
+-           new FileReader("").read();
+-       } catch (IOException e) {
+-           throw e;
+-       }
++       new FileReader("").read();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    void foo() throws IllegalAccessException {
+        try {
+            throw new IllegalAccessException();
+        } catch (Exception e) {
+            throw e; // `e` is removed below
+        }
+    }
+}
+```
+
+###### After
+```java
+class A {
+    void foo() throws IllegalAccessException {
+        throw new IllegalAccessException();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,5 +3,1 @@
+class A {
+    void foo() throws IllegalAccessException {
+-       try {
+-           throw new IllegalAccessException();
+-       } catch (Exception e) {
+-           throw e; // `e` is removed below
+-       }
++       throw new IllegalAccessException();
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -159,6 +261,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -173,6 +278,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -183,6 +292,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -201,6 +314,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

@@ -16,6 +16,9 @@ _Removes XML tags matching the provided expression._
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,9 +26,45 @@ _Removes XML tags matching the provided expression._
 | `String` | xPath | An XPath expression used to find matching tags. | `/project/dependencies/dependency` |
 | `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. | `'**/application-*.xml'` |
 
-## License
+## Example
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|xPath|`//bean`|
+|fileMatcher|`**/beans.xml`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<beans>
+    <bean id='myBean.subpackage.subpackage2'/>
+    <other id='myBean.subpackage.subpackage2'/>
+</beans>
+```
+
+###### After
+```xml
+<beans>
+    <other id='myBean.subpackage.subpackage2'/>
+</beans>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+<beans>
+-   <bean id='myBean.subpackage.subpackage2'/>
+    <other id='myBean.subpackage.subpackage2'/>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -115,6 +154,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -129,6 +171,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -139,6 +185,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -157,6 +207,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 Mark Brophy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Valentin Delaye, [Tim te Beek](mailto:tim@moderne.io)

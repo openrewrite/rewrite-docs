@@ -1,11 +1,16 @@
 # V2migration
 
+## Categories
+
+* [Openrewrite](/recipes/software/amazon/awssdk/v2migration/openrewrite)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Change S3 method constructors to fluent builder calls](./s3methodsconstructortofluent.md)
 * [Change S3 methods to v2.](./s3methodstov2.md)
+* [Change S3 types to v2.](./s3typestov2.md)
 * [Change SDK Exception types from v1 to v2](./changeexceptiontypes.md)
 * [Change SDK TransferManager types from v1 to v2](./changetransfermanagertypes.md)
 * [Change SDK core types from v1 to v2](./changesdkcoretypes.md)
@@ -22,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](./addtransfermanagerdependency.md)
 * [Add a comment to a method](./addcommenttomethod.md)
+* [Add imports and comments to unsupported S3 transforms.](./s3addimportsandcomments.md)
 * [Change AWS SDK for Java v1 types to v2 equivalents](./changesdktype.md)
 * [Convert ByteBuffer to SdkBytes](./bytebuffertosdkbytes.md)
 * [Convert Date to Instant](./datetoinstant.md)

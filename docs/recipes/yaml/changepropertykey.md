@@ -16,6 +16,9 @@ _Change a YAML property key while leaving the value intact. Expects dot notation
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyKey.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -26,9 +29,182 @@ _Change a YAML property key while leaving the value intact. Expects dot notation
 | `List` | except | *Optional*. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. | `List.of("group")` |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 
-## License
+## Examples
+##### Example 1
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPropertyKey|`management.metrics.binders.*.enabled`|
+|newPropertyKey|`management.metrics.enable.process.files`|
+|relaxedBinding|`null`|
+|except|`null`|
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+management.metrics.binders.files.enabled: true
+```
+
+###### After
+```yaml
+management.metrics.enable.process.files: true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-management.metrics.binders.files.enabled: true
++management.metrics.enable.process.files: true
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPropertyKey|`a.b.c.d`|
+|newPropertyKey|`a.b.c`|
+|relaxedBinding|`null`|
+|except|`null`|
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+a.b.c.d: true
+```
+
+###### After
+```yaml
+a.b.c: true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-a.b.c.d: true
++a.b.c: true
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPropertyKey|`spring.profiles`|
+|newPropertyKey|`spring.config.activate.on-profile`|
+|relaxedBinding|`null`|
+|except|`null`|
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+spring.profiles.group.prod: proddb,prodmq,prodmetrics
+```
+
+###### After
+```yaml
+spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-spring.profiles.group.prod: proddb,prodmq,prodmetrics
++spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPropertyKey|`spring.profiles`|
+|newPropertyKey|`spring.config.activate.on-profile`|
+|relaxedBinding|`null`|
+|except|`List.of("group", "active", "include")`|
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+spring:
+  profiles:
+    active: allEnvs
+    include: baseProfile
+    foo: bar
+    group:
+      prod: proddb,prodmq,prodmetrics
+```
+
+###### After
+```yaml
+spring:
+  profiles:
+    active: allEnvs
+    include: baseProfile
+    group:
+      prod: proddb,prodmq,prodmetrics
+  config.activate.on-profile:
+    foo: bar
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,0 @@
+    active: allEnvs
+    include: baseProfile
+-   foo: bar
+    group:
+@@ -8,0 +7,2 @@
+    group:
+      prod: proddb,prodmq,prodmetrics
++ config.activate.on-profile:
++   foo: bar
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -120,6 +296,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -134,6 +313,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -144,6 +327,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -162,6 +349,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Mike Solomon](mailto:mike@moderne.io), Sandeep Nagaraj, [Thomas Zub](mailto:thomas.zub@outlook.de), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io)

@@ -16,6 +16,9 @@ _Migrate from Hamcrest `Matcher` to AssertJ assertions._
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestMatcherToAssertJ.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,9 +27,73 @@ _Migrate from Hamcrest `Matcher` to AssertJ assertions._
 | `String` | assertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
 | `String` | argumentType | *Optional*. The type of the argument to the Hamcrest `Matcher`. | `java.math.BigDecimal` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|matcher|`equalTo`|
+|assertion|`isEqualTo`|
+|argumentType|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
+class ATest {
+    @Test
+    void test() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1, equalTo(str2));
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class ATest {
+    @Test
+    void test() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1).isEqualTo(str2);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,1 @@
+import org.junit.jupiter.api.Test;
+
+-import static org.hamcrest.MatcherAssert.assertThat;
+-import static org.hamcrest.Matchers.equalTo;
++import static org.assertj.core.api.Assertions.assertThat;
+
+@@ -11,1 +10,1 @@
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+-       assertThat(str1, equalTo(str2));
++       assertThat(str1).isEqualTo(str2);
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -163,6 +230,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -177,6 +247,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -187,6 +261,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -205,6 +283,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aleksandar A Simpson](mailto:alek@asu.me)

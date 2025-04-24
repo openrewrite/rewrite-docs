@@ -25,7 +25,6 @@ _This recipe will apply changes commonly needed when migrating from EasyMock to 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -310,6 +309,399 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.easymock.EasyMockRunner;
+import org.easymock.Mock;
+import org.easymock.EasyMock;
+import org.easymock.TestSubject;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+import static org.easymock.EasyMock.createNiceMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+
+@RunWith(EasyMockRunner.class)
+public class ExampleTest {
+
+    private Service service;
+    private Dependency dependency;
+
+    @Mock
+    private Dependency dependency2;
+
+    @TestSubject
+    Service service2 = new Service();
+
+    @Before
+    public void setUp() {
+        dependency = createNiceMock(Dependency.class);
+        service = new Service(dependency);
+    }
+
+    @Test
+    public void testServiceMethod() {
+        expect(dependency.performAction()).andReturn("Mocked Result");
+        EasyMock.replay(dependency);
+        replay(dependency);
+        assertEquals("Mocked Result", service.useDependency());
+        verify(dependency);
+    }
+
+    class Service {
+        private Dependency dependency;
+
+        Service() {}
+
+        Service(Dependency dependency) {
+            this.dependency = dependency;
+        }
+
+        String useDependency() {
+            return dependency.performAction();
+        }
+    }
+
+    interface Dependency {
+        String performAction();
+    }
+}
+```
+
+###### After
+```java
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+@RunWith(MockitoJUnitRunner.class)
+public class ExampleTest {
+
+    private Service service;
+    private Dependency dependency;
+
+    @Mock
+    private Dependency dependency2;
+
+    @InjectMocks
+    Service service2;
+
+    @Before
+    public void setUp() {
+        dependency = mock(Dependency.class);
+        service = new Service(dependency);
+    }
+
+    @Test
+    public void testServiceMethod() {
+        when(dependency.performAction()).thenReturn("Mocked Result");
+        assertEquals("Mocked Result", service.useDependency());
+        verify(dependency).performAction();
+    }
+
+    class Service {
+        private Dependency dependency;
+
+        Service() {}
+
+        Service(Dependency dependency) {
+            this.dependency = dependency;
+        }
+
+        String useDependency() {
+            return dependency.performAction();
+        }
+    }
+
+    interface Dependency {
+        String performAction();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,0 @@
+-import org.easymock.EasyMockRunner;
+-import org.easymock.Mock;
+-import org.easymock.EasyMock;
+-import org.easymock.TestSubject;
+import org.junit.Before;
+@@ -8,0 +4,3 @@
+import org.junit.Test;
+import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.junit.MockitoJUnitRunner;
+
+@@ -10,4 +9,3 @@
+
+import static org.junit.Assert.assertEquals;
+-import static org.easymock.EasyMock.createNiceMock;
+-import static org.easymock.EasyMock.expect;
+-import static org.easymock.EasyMock.replay;
+-import static org.easymock.EasyMock.verify;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
+
+@@ -15,1 +13,1 @@
+import static org.easymock.EasyMock.verify;
+
+-@RunWith(EasyMockRunner.class)
++@RunWith(MockitoJUnitRunner.class)
+public class ExampleTest {
+@@ -24,2 +22,2 @@
+    private Dependency dependency2;
+
+-   @TestSubject
+-   Service service2 = new Service();
++   @InjectMocks
++   Service service2;
+
+@@ -29,1 +27,1 @@
+    @Before
+    public void setUp() {
+-       dependency = createNiceMock(Dependency.class);
++       dependency = mock(Dependency.class);
+        service = new Service(dependency);
+@@ -35,3 +33,1 @@
+    @Test
+    public void testServiceMethod() {
+-       expect(dependency.performAction()).andReturn("Mocked Result");
+-       EasyMock.replay(dependency);
+-       replay(dependency);
++       when(dependency.performAction()).thenReturn("Mocked Result");
+        assertEquals("Mocked Result", service.useDependency());
+@@ -39,1 +35,1 @@
+        replay(dependency);
+        assertEquals("Mocked Result", service.useDependency());
+-       verify(dependency);
++       verify(dependency).performAction();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.easymock.EasyMockRunner;
+import org.easymock.Mock;
+import org.easymock.EasyMock;
+import org.easymock.TestSubject;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+import static org.easymock.EasyMock.createNiceMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+
+@RunWith(EasyMockRunner.class)
+public class ExampleTest {
+
+    private Service service;
+    private Dependency dependency;
+
+    @Mock
+    private Dependency dependency2;
+
+    @TestSubject
+    Service service2 = new Service();
+
+    @Before
+    public void setUp() {
+        dependency = createNiceMock(Dependency.class);
+        service = new Service(dependency);
+    }
+
+    @Test
+    public void testServiceMethod() {
+        expect(dependency.performAction()).andReturn("Mocked Result");
+        EasyMock.replay(dependency);
+        replay(dependency);
+        assertEquals("Mocked Result", service.useDependency());
+        verify(dependency);
+    }
+
+    class Service {
+        private Dependency dependency;
+
+        Service() {}
+
+        Service(Dependency dependency) {
+            this.dependency = dependency;
+        }
+
+        String useDependency() {
+            return dependency.performAction();
+        }
+    }
+
+    interface Dependency {
+        String performAction();
+    }
+}
+```
+
+###### After
+```java
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+@RunWith(MockitoJUnitRunner.class)
+public class ExampleTest {
+
+    private Service service;
+    private Dependency dependency;
+
+    @Mock
+    private Dependency dependency2;
+
+    @InjectMocks
+    Service service2;
+
+    @Before
+    public void setUp() {
+        dependency = mock(Dependency.class);
+        service = new Service(dependency);
+    }
+
+    @Test
+    public void testServiceMethod() {
+        when(dependency.performAction()).thenReturn("Mocked Result");
+        assertEquals("Mocked Result", service.useDependency());
+        verify(dependency).performAction();
+    }
+
+    class Service {
+        private Dependency dependency;
+
+        Service() {}
+
+        Service(Dependency dependency) {
+            this.dependency = dependency;
+        }
+
+        String useDependency() {
+            return dependency.performAction();
+        }
+    }
+
+    interface Dependency {
+        String performAction();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,0 @@
+-import org.easymock.EasyMockRunner;
+-import org.easymock.Mock;
+-import org.easymock.EasyMock;
+-import org.easymock.TestSubject;
+import org.junit.Before;
+@@ -8,0 +4,3 @@
+import org.junit.Test;
+import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.junit.MockitoJUnitRunner;
+
+@@ -10,4 +9,3 @@
+
+import static org.junit.Assert.assertEquals;
+-import static org.easymock.EasyMock.createNiceMock;
+-import static org.easymock.EasyMock.expect;
+-import static org.easymock.EasyMock.replay;
+-import static org.easymock.EasyMock.verify;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
+
+@@ -15,1 +13,1 @@
+import static org.easymock.EasyMock.verify;
+
+-@RunWith(EasyMockRunner.class)
++@RunWith(MockitoJUnitRunner.class)
+public class ExampleTest {
+@@ -24,2 +22,2 @@
+    private Dependency dependency2;
+
+-   @TestSubject
+-   Service service2 = new Service();
++   @InjectMocks
++   Service service2;
+
+@@ -29,1 +27,1 @@
+    @Before
+    public void setUp() {
+-       dependency = createNiceMock(Dependency.class);
++       dependency = mock(Dependency.class);
+        service = new Service(dependency);
+@@ -35,3 +33,1 @@
+    @Test
+    public void testServiceMethod() {
+-       expect(dependency.performAction()).andReturn("Mocked Result");
+-       EasyMock.replay(dependency);
+-       replay(dependency);
++       when(dependency.performAction()).thenReturn("Mocked Result");
+        assertEquals("Mocked Result", service.useDependency());
+@@ -39,1 +35,1 @@
+        replay(dependency);
+        assertEquals("Mocked Result", service.useDependency());
+-       verify(dependency);
++       verify(dependency).performAction();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -445,6 +837,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -459,6 +854,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -469,6 +868,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -487,6 +890,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Sander Knauff](mailto:sanderknauff@hotmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Adam Birem](mailto:adam.birem@praxedo.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Sander Knauff](mailto:sanderknauff@hotmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Adam Birem](mailto:adam.birem@praxedo.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Tim te Beek](mailto:timtebeek@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, Aaron Gershman

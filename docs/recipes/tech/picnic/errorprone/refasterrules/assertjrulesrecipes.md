@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJRulesRecipes**
 
-_Refaster rules related to AssertJ expressions and statements [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules)._
+_Refaster rules related to AssertJ expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules)._
 
 ## Recipe source
 
@@ -20,7 +20,6 @@ _Refaster rules related to AssertJ expressions and statements [Source](https://e
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -32,6 +31,34 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJRules.AssertThatOptionalDouble`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatoptionaldoublerecipe)
 * [Refaster template `AssertJRules.AssertThatOptionalInt`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatoptionalintrecipe)
 * [Refaster template `AssertJRules.AssertThatOptionalLong`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatoptionallongrecipe)
+* [Refaster template `AssertJRules.ObjectEnumerableContainsOneElement`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$objectenumerablecontainsoneelementrecipe)
+* [Refaster template `AssertJRules.ObjectEnumerableDoesNotContainOneElement`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$objectenumerabledoesnotcontainoneelementrecipe)
+* [Refaster template `AssertJRules.AssertThatSetContainsExactlyOneElement`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatsetcontainsexactlyoneelementrecipe)
+* [Refaster template `AssertJRules.AssertThatListsAreEqual`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatlistsareequalrecipe)
+* [Refaster template `AssertJRules.AssertThatSetsAreEqual`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatsetsareequalrecipe)
+* [Refaster template `AssertJRules.AssertThatMultisetsAreEqual`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatmultisetsareequalrecipe)
+* [Refaster template `AssertJRules.AssertThatMapContainsEntry`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatmapcontainsentryrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsAnyElementsOf`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsanyelementsofrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsAnyOf`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsanyofrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsAll`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsallrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContains`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyElementsOf`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyelementsofrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsExactly`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyInAnyOrderElementsOf`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyinanyorderelementsofrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyInAnyOrder`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyinanyorderrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsSequence`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainssequencerecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsSubsequence`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainssubsequencerecipe)
+* [Refaster template `AssertJRules.AssertThatStreamDoesNotContainAnyElementsOf`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainanyelementsofrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamDoesNotContain`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamDoesNotContainSequence`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainsequencerecipe)
+* [Refaster template `AssertJRules.AssertThatStreamHasSameElementsAs`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamhassameelementsasrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamContainsOnly`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsonlyrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamIsSubsetOf`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamissubsetofrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamisemptyrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamisnotemptyrecipe)
+* [Refaster template `AssertJRules.AssertThatStreamHasSize`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamhassizerecipe)
+* [Refaster template `AssertJRules.AssertThatPredicateAccepts`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatpredicateacceptsrecipe)
+* [Refaster template `AssertJRules.AssertThatPredicateRejects`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatpredicaterejectsrecipe)
 
 </TabItem>
 
@@ -43,12 +70,40 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
 displayName: `AssertJRules` Refaster recipes
 description: |
-  Refaster rules related to AssertJ expressions and statements
+  Refaster rules related to AssertJ expressions and statements.
   [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalDoubleRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalIntRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalLongRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$ObjectEnumerableContainsOneElementRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$ObjectEnumerableDoesNotContainOneElementRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatSetContainsExactlyOneElementRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatListsAreEqualRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatSetsAreEqualRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatMultisetsAreEqualRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatMapContainsEntryRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAnyElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAnyOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAllRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyInAnyOrderElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyInAnyOrderRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsSequenceRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsSubsequenceRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainAnyElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainSequenceRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamHasSameElementsAsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsOnlyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsSubsetOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamHasSizeRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatPredicateAcceptsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatPredicateRejectsRecipe
 
 ```
 </TabItem>
@@ -188,6 +243,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -202,6 +260,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -212,6 +274,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -230,3 +296,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

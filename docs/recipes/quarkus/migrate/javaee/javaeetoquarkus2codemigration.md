@@ -20,7 +20,6 @@ _Migrate Standard JavaEE Code to Quarkus 2._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -146,6 +145,411 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.acme;
+
+import javax.ejb.EJB;
+import javax.ejb.Local;
+import javax.ejb.SessionContext;
+import javax.ejb.Singleton;
+import javax.ejb.Stateful;
+import javax.ejb.Stateless;
+
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+@Stateless
+public class PingEJBSLS {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Resource
+    private SessionContext context;
+
+    @EJB
+    private PingEJBLocal pingEJBLocal;
+
+    @EJB(lookup = "java:global/PingEJBSingleton")
+    private PingEJBSingleton pingEJBSingleton;
+
+    public String getMsg() {
+        return "PingEJBSLS: " + pingEJBLocal.getMsg() + " " + pingEJBSingleton.getMsg();
+    }
+
+}
+
+@Stateful
+@Local
+public class PingEJBLocal {
+
+    private static int hitCount;
+
+    public String getMsg() {
+        return "PingEJBLocal: " + hitCount++;
+    }
+
+}
+
+@Singleton
+public class PingEJBSingleton {
+
+      private static int hitCount;
+
+      @PersistenceContext
+      private EntityManager entityManager;
+
+      public String getMsg() {
+           return "PingEJBSingleton: " + hitCount++;
+      }
+}
+```
+
+###### After
+```java
+package org.acme;
+
+import javax.ejb.SessionContext;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+
+@Dependent
+public class PingEJBSLS {
+
+    @Inject
+    private EntityManager entityManager;
+
+    @Resource
+    private SessionContext context;
+
+    @Inject
+    private PingEJBLocal pingEJBLocal;
+
+    @Inject
+    private PingEJBSingleton pingEJBSingleton;
+
+    public String getMsg() {
+        return "PingEJBSLS: " + pingEJBLocal.getMsg() + " " + pingEJBSingleton.getMsg();
+    }
+
+}
+
+@SessionScoped
+public class PingEJBLocal {
+
+    private static int hitCount;
+
+    public String getMsg() {
+        return "PingEJBLocal: " + hitCount++;
+    }
+
+}
+
+@ApplicationScoped
+public class PingEJBSingleton {
+
+      private static int hitCount;
+
+      @Inject
+      private EntityManager entityManager;
+
+      public String getMsg() {
+           return "PingEJBSingleton: " + hitCount++;
+      }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,0 @@
+package org.acme;
+
+-import javax.ejb.EJB;
+-import javax.ejb.Local;
+import javax.ejb.SessionContext;
+@@ -6,4 +4,4 @@
+import javax.ejb.Local;
+import javax.ejb.SessionContext;
+-import javax.ejb.Singleton;
+-import javax.ejb.Stateful;
+-import javax.ejb.Stateless;
+-
++import javax.enterprise.context.ApplicationScoped;
++import javax.enterprise.context.Dependent;
++import javax.enterprise.context.SessionScoped;
++import javax.inject.Inject;
+import javax.annotation.Resource;
+@@ -12,1 +10,0 @@
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+-import javax.persistence.PersistenceContext;
+
+@@ -14,1 +11,1 @@
+import javax.persistence.PersistenceContext;
+
+-@Stateless
++@Dependent
+public class PingEJBSLS {
+@@ -17,1 +14,1 @@
+public class PingEJBSLS {
+
+-   @PersistenceContext
++   @Inject
+    private EntityManager entityManager;
+@@ -23,1 +20,1 @@
+    private SessionContext context;
+
+-   @EJB
++   @Inject
+    private PingEJBLocal pingEJBLocal;
+@@ -26,1 +23,1 @@
+    private PingEJBLocal pingEJBLocal;
+
+-   @EJB(lookup = "java:global/PingEJBSingleton")
++   @Inject
+    private PingEJBSingleton pingEJBSingleton;
+@@ -35,2 +32,1 @@
+}
+
+-@Stateful
+-@Local
++@SessionScoped
+public class PingEJBLocal {
+@@ -47,1 +43,1 @@
+}
+
+-@Singleton
++@ApplicationScoped
+public class PingEJBSingleton {
+@@ -52,1 +48,1 @@
+      private static int hitCount;
+
+-     @PersistenceContext
++     @Inject
+      private EntityManager entityManager;
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.acme;
+
+import javax.ejb.EJB;
+import javax.ejb.Local;
+import javax.ejb.SessionContext;
+import javax.ejb.Singleton;
+import javax.ejb.Stateful;
+import javax.ejb.Stateless;
+
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+@Stateless
+public class PingEJBSLS {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Resource
+    private SessionContext context;
+
+    @EJB
+    private PingEJBLocal pingEJBLocal;
+
+    @EJB(lookup = "java:global/PingEJBSingleton")
+    private PingEJBSingleton pingEJBSingleton;
+
+    public String getMsg() {
+        return "PingEJBSLS: " + pingEJBLocal.getMsg() + " " + pingEJBSingleton.getMsg();
+    }
+
+}
+
+@Stateful
+@Local
+public class PingEJBLocal {
+
+    private static int hitCount;
+
+    public String getMsg() {
+        return "PingEJBLocal: " + hitCount++;
+    }
+
+}
+
+@Singleton
+public class PingEJBSingleton {
+
+      private static int hitCount;
+
+      @PersistenceContext
+      private EntityManager entityManager;
+
+      public String getMsg() {
+           return "PingEJBSingleton: " + hitCount++;
+      }
+}
+```
+
+###### After
+```java
+package org.acme;
+
+import javax.ejb.SessionContext;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+
+@Dependent
+public class PingEJBSLS {
+
+    @Inject
+    private EntityManager entityManager;
+
+    @Resource
+    private SessionContext context;
+
+    @Inject
+    private PingEJBLocal pingEJBLocal;
+
+    @Inject
+    private PingEJBSingleton pingEJBSingleton;
+
+    public String getMsg() {
+        return "PingEJBSLS: " + pingEJBLocal.getMsg() + " " + pingEJBSingleton.getMsg();
+    }
+
+}
+
+@SessionScoped
+public class PingEJBLocal {
+
+    private static int hitCount;
+
+    public String getMsg() {
+        return "PingEJBLocal: " + hitCount++;
+    }
+
+}
+
+@ApplicationScoped
+public class PingEJBSingleton {
+
+      private static int hitCount;
+
+      @Inject
+      private EntityManager entityManager;
+
+      public String getMsg() {
+           return "PingEJBSingleton: " + hitCount++;
+      }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,0 @@
+package org.acme;
+
+-import javax.ejb.EJB;
+-import javax.ejb.Local;
+import javax.ejb.SessionContext;
+@@ -6,4 +4,4 @@
+import javax.ejb.Local;
+import javax.ejb.SessionContext;
+-import javax.ejb.Singleton;
+-import javax.ejb.Stateful;
+-import javax.ejb.Stateless;
+-
++import javax.enterprise.context.ApplicationScoped;
++import javax.enterprise.context.Dependent;
++import javax.enterprise.context.SessionScoped;
++import javax.inject.Inject;
+import javax.annotation.Resource;
+@@ -12,1 +10,0 @@
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+-import javax.persistence.PersistenceContext;
+
+@@ -14,1 +11,1 @@
+import javax.persistence.PersistenceContext;
+
+-@Stateless
++@Dependent
+public class PingEJBSLS {
+@@ -17,1 +14,1 @@
+public class PingEJBSLS {
+
+-   @PersistenceContext
++   @Inject
+    private EntityManager entityManager;
+@@ -23,1 +20,1 @@
+    private SessionContext context;
+
+-   @EJB
++   @Inject
+    private PingEJBLocal pingEJBLocal;
+@@ -26,1 +23,1 @@
+    private PingEJBLocal pingEJBLocal;
+
+-   @EJB(lookup = "java:global/PingEJBSingleton")
++   @Inject
+    private PingEJBSingleton pingEJBSingleton;
+@@ -35,2 +32,1 @@
+}
+
+-@Stateful
+-@Local
++@SessionScoped
+public class PingEJBLocal {
+@@ -47,1 +43,1 @@
+}
+
+-@Singleton
++@ApplicationScoped
+public class PingEJBSingleton {
+@@ -52,1 +48,1 @@
+      private static int hitCount;
+
+-     @PersistenceContext
++     @Inject
+      private EntityManager entityManager;
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -281,6 +685,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -295,6 +702,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -305,6 +716,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -323,3 +738,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

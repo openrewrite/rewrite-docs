@@ -16,6 +16,9 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -25,9 +28,126 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 | `String` | pluginVersion | An exact version number. | `1981.v17df70e84a_a_1` |
 | `Set` | replaces | The set of library coordinates replaced by this API Plugin. | <pre>groupId: org.apache.commons<br />artifactId: commons-text</pre> |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|pluginGroupId|`io.jenkins.plugins`|
+|pluginArtifactId|`commons-text-api`|
+|pluginVersion|`1.9-5.v7ea_44fe6061c`|
+|replaces|`Set.of(new ReplaceLibrariesWithApiPlugin.Library("org.apache.commons", "commons-text"))`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.86</version>
+        <relativePath />
+    </parent>
+    <artifactId>foo</artifactId>
+
+    <properties>
+        <jenkins.version>2.440.3</jenkins.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.turbine</groupId>
+            <artifactId>turbine</artifactId>
+            <version>5.1</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.86</version>
+        <relativePath />
+    </parent>
+    <artifactId>foo</artifactId>
+
+    <properties>
+        <jenkins.version>2.440.3</jenkins.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.jenkins.plugins</groupId>
+            <artifactId>commons-text-api</artifactId>
+            <version>1.9-5.v7ea_44fe6061c</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.turbine</groupId>
+            <artifactId>turbine</artifactId>
+            <version>5.1</version>
+            <exclusions>
+                <exclusion>
+                    <!-- brought in by io.jenkins.plugins:commons-text-api -->
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-text</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -16,0 +16,5 @@
+    <dependencies>
+        <dependency>
++           <groupId>io.jenkins.plugins</groupId>
++           <artifactId>commons-text-api</artifactId>
++           <version>1.9-5.v7ea_44fe6061c</version>
++       </dependency>
++       <dependency>
+            <groupId>org.apache.turbine</groupId>
+@@ -19,0 +24,7 @@
+            <artifactId>turbine</artifactId>
+            <version>5.1</version>
++           <exclusions>
++               <exclusion>
++                   <!-- brought in by io.jenkins.plugins:commons-text-api -->
++                   <groupId>org.apache.commons</groupId>
++                   <artifactId>commons-text</artifactId>
++               </exclusion>
++           </exclusions>
+        </dependency>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -133,6 +253,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -147,6 +270,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -157,6 +284,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -175,6 +306,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

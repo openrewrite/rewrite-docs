@@ -16,9 +16,73 @@ _Update the Slack GitHub Action to use version 2.0._
 [GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/UpgradeSlackNotificationVersion2.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+jobs:
+  build:
+    steps:
+      - name: Send notification on error
+        if: failure() && inputs.send-notification
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          channel-id: "##foo-alerts"
+          slack-message: ":boom: Unable run dependency check on: <${{ steps.get_failed_check_link.outputs.failed-check-link }}|${{ inputs.organization }}/${{ inputs.repository }}>"
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_MORTY_BOT_TOKEN }}
+```
+
+###### After
+```yaml
+jobs:
+  build:
+    steps:
+      - name: Send notification on error
+        if: failure() && inputs.send-notification
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_MORTY_BOT_TOKEN }}
+          payload: |
+            channel: "##foo-alerts"
+            text: ":boom: Unable run dependency check on: <${{ steps.get_failed_check_link.outputs.failed-check-link }}|${{ inputs.organization }}/${{ inputs.repository }}>"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+      - name: Send notification on error
+        if: failure() && inputs.send-notification
+-       uses: slackapi/slack-github-action@v1.27.0
++       uses: slackapi/slack-github-action@v2.0.0
+        with:
+@@ -8,4 +8,5 @@
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+-         channel-id: "##foo-alerts"
+-         slack-message: ":boom: Unable run dependency check on: <${{ steps.get_failed_check_link.outputs.failed-check-link }}|${{ inputs.organization }}/${{ inputs.repository }}>"
+-       env:
+-         SLACK_BOT_TOKEN: ${{ secrets.SLACK_MORTY_BOT_TOKEN }}
++         method: chat.postMessage
++         token: ${{ secrets.SLACK_MORTY_BOT_TOKEN }}
++         payload: |
++           channel: "##foo-alerts"
++           text: ":boom: Unable run dependency check on: <${{ steps.get_failed_check_link.outputs.failed-check-link }}|${{ inputs.organization }}/${{ inputs.repository }}>"
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +219,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +236,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +250,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +272,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-[Scott Jungling](mailto:scott@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [lingenj](mailto:jacob.van.lingen@moderne.io)
+[Scott Jungling](mailto:scott@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io)

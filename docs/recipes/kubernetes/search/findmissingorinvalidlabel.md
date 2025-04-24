@@ -15,6 +15,9 @@ _Find labels that optionally match a given regex._
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,9 +26,101 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 | `String` | value | *Optional*. An optional regex that will validate values that match. | `value(.*)` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|labelName|`mylabel`|
+|value|`null`|
+|fileMatcher|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod1
+  labels:
+    something: "hasvalue"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod2
+  labels:
+    mylabel: "novalue"
+---
+apiVersion: apps/v1
+kind: Deployment
+spec:
+    template:
+        spec:
+            metadata:
+                labels:
+                    something: "hasvalue"
+            containers:
+            - name: app
+              image: repo/app:latest
+            - name: sidecar
+              image: repo/sidecar:dev
+```
+
+###### After
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod1
+  ~~(missing:mylabel)~~>labels:
+    something: "hasvalue"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod2
+  labels:
+    mylabel: "novalue"
+---
+apiVersion: apps/v1
+kind: Deployment
+spec:
+    template:
+        spec:
+            metadata:
+                ~~(missing:mylabel)~~>labels:
+                    something: "hasvalue"
+            containers:
+            - name: app
+              image: repo/app:latest
+            - name: sidecar
+              image: repo/sidecar:dev
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+metadata:
+  name: mypod1
+- labels:
++ ~~(missing:mylabel)~~>labels:
+    something: "hasvalue"
+@@ -21,1 +21,1 @@
+        spec:
+            metadata:
+-               labels:
++               ~~(missing:mylabel)~~>labels:
+                    something: "hasvalue"
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -73,6 +168,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -87,6 +185,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -97,6 +199,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -115,6 +221,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Jon Brisbin](mailto:jon@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), Tyler Van Gorder

@@ -20,6 +20,9 @@ _Many AssertJ chained assertions have dedicated assertions that function the sam
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/SimplifyChainedAssertJAssertion.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -29,9 +32,56 @@ _Many AssertJ chained assertions have dedicated assertions that function the sam
 | `String` | dedicatedAssertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
 | `String` | requiredType | *Optional*. The type of the actual assertion argument. | `java.lang.String` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|chainedAssertion|`isEmpty`|
+|assertToReplace|`isTrue`|
+|dedicatedAssertion|`isEmpty`|
+|requiredType|`java.lang.String`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class MyTest {
+    void testMethod() {
+        assertThat("hello world".isEmpty()).isTrue();
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class MyTest {
+    void testMethod() {
+        assertThat("hello world").isEmpty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class MyTest {
+    void testMethod() {
+-       assertThat("hello world".isEmpty()).isTrue();
++       assertThat("hello world").isEmpty();
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -168,6 +218,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -182,6 +235,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -192,6 +249,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -210,6 +271,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Aleksandar A Simpson](mailto:alek@asu.me), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Marvin, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Tymes](mailto:jeremy@jtymes.net)

@@ -26,7 +26,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -88,6 +87,263 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+     xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/validation/configuration
+     http://xmlns.jcp.org/xml/ns/validation/configuration/validation-configuration2.0.xsd"
+     version="2.0">
+
+    <default-provider>javax.acme.ValidationProvider</default-provider>
+
+    <message-interpolator>javax.acme.MessageInterpolator</message-interpolator>
+    <traversable-resolver>javax.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+        javax.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+    <parameter-name-provider>javax.acme.ParameterNameProvider</parameter-name-provider>
+
+    <executable-validation enabled="true">
+        <default-validated-executable-types>
+            <executable-type>CONSTRUCTORS</executable-type>
+            <executable-type>NON_GETTER_METHODS</executable-type>
+            <executable-type>GETTER_METHODS</executable-type>
+        </default-validated-executable-types>
+    </executable-validation>
+
+    <constraint-mapping>META-INF/validation/constraints-car.xml</constraint-mapping>
+
+    <property name="javax.validator.fail_fast">false</property>
+</validation-config>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+     xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
+     version="3.0">
+
+    <default-provider>jakarta.acme.ValidationProvider</default-provider>
+
+    <message-interpolator>jakarta.acme.MessageInterpolator</message-interpolator>
+    <traversable-resolver>jakarta.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+        jakarta.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+    <parameter-name-provider>jakarta.acme.ParameterNameProvider</parameter-name-provider>
+
+    <executable-validation enabled="true">
+        <default-validated-executable-types>
+            <executable-type>CONSTRUCTORS</executable-type>
+            <executable-type>NON_GETTER_METHODS</executable-type>
+            <executable-type>GETTER_METHODS</executable-type>
+        </default-validated-executable-types>
+    </executable-validation>
+
+    <constraint-mapping>META-INF/validation/constraints-car.xml</constraint-mapping>
+
+    <property name="jakarta.validator.fail_fast">false</property>
+</validation-config>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+-    xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
++    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -5,3 +5,2 @@
+     xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/validation/configuration
+-    http://xmlns.jcp.org/xml/ns/validation/configuration/validation-configuration2.0.xsd"
+-    version="2.0">
++    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
++    version="3.0">
+
+@@ -9,1 +8,1 @@
+     version="2.0">
+
+-   <default-provider>javax.acme.ValidationProvider</default-provider>
++   <default-provider>jakarta.acme.ValidationProvider</default-provider>
+
+@@ -11,2 +10,2 @@
+    <default-provider>javax.acme.ValidationProvider</default-provider>
+
+-   <message-interpolator>javax.acme.MessageInterpolator</message-interpolator>
+-   <traversable-resolver>javax.acme.TraversableResolver</traversable-resolver>
++   <message-interpolator>jakarta.acme.MessageInterpolator</message-interpolator>
++   <traversable-resolver>jakarta.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+@@ -14,1 +13,1 @@
+    <traversable-resolver>javax.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+-       javax.acme.ConstraintValidatorFactory
++       jakarta.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+@@ -16,1 +15,1 @@
+        javax.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+-   <parameter-name-provider>javax.acme.ParameterNameProvider</parameter-name-provider>
++   <parameter-name-provider>jakarta.acme.ParameterNameProvider</parameter-name-provider>
+
+@@ -28,1 +27,1 @@
+    <constraint-mapping>META-INF/validation/constraints-car.xml</constraint-mapping>
+
+-   <property name="javax.validator.fail_fast">false</property>
++   <property name="jakarta.validator.fail_fast">false</property>
+</validation-config>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+     xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/validation/configuration
+     http://xmlns.jcp.org/xml/ns/validation/configuration/validation-configuration2.0.xsd"
+     version="2.0">
+
+    <default-provider>javax.acme.ValidationProvider</default-provider>
+
+    <message-interpolator>javax.acme.MessageInterpolator</message-interpolator>
+    <traversable-resolver>javax.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+        javax.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+    <parameter-name-provider>javax.acme.ParameterNameProvider</parameter-name-provider>
+
+    <executable-validation enabled="true">
+        <default-validated-executable-types>
+            <executable-type>CONSTRUCTORS</executable-type>
+            <executable-type>NON_GETTER_METHODS</executable-type>
+            <executable-type>GETTER_METHODS</executable-type>
+        </default-validated-executable-types>
+    </executable-validation>
+
+    <constraint-mapping>META-INF/validation/constraints-car.xml</constraint-mapping>
+
+    <property name="javax.validator.fail_fast">false</property>
+</validation-config>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+     xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
+     version="3.0">
+
+    <default-provider>jakarta.acme.ValidationProvider</default-provider>
+
+    <message-interpolator>jakarta.acme.MessageInterpolator</message-interpolator>
+    <traversable-resolver>jakarta.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+        jakarta.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+    <parameter-name-provider>jakarta.acme.ParameterNameProvider</parameter-name-provider>
+
+    <executable-validation enabled="true">
+        <default-validated-executable-types>
+            <executable-type>CONSTRUCTORS</executable-type>
+            <executable-type>NON_GETTER_METHODS</executable-type>
+            <executable-type>GETTER_METHODS</executable-type>
+        </default-validated-executable-types>
+    </executable-validation>
+
+    <constraint-mapping>META-INF/validation/constraints-car.xml</constraint-mapping>
+
+    <property name="jakarta.validator.fail_fast">false</property>
+</validation-config>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+-    xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
++    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -5,3 +5,2 @@
+     xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/validation/configuration
+-    http://xmlns.jcp.org/xml/ns/validation/configuration/validation-configuration2.0.xsd"
+-    version="2.0">
++    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
++    version="3.0">
+
+@@ -9,1 +8,1 @@
+     version="2.0">
+
+-   <default-provider>javax.acme.ValidationProvider</default-provider>
++   <default-provider>jakarta.acme.ValidationProvider</default-provider>
+
+@@ -11,2 +10,2 @@
+    <default-provider>javax.acme.ValidationProvider</default-provider>
+
+-   <message-interpolator>javax.acme.MessageInterpolator</message-interpolator>
+-   <traversable-resolver>javax.acme.TraversableResolver</traversable-resolver>
++   <message-interpolator>jakarta.acme.MessageInterpolator</message-interpolator>
++   <traversable-resolver>jakarta.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+@@ -14,1 +13,1 @@
+    <traversable-resolver>javax.acme.TraversableResolver</traversable-resolver>
+    <constraint-validator-factory>
+-       javax.acme.ConstraintValidatorFactory
++       jakarta.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+@@ -16,1 +15,1 @@
+        javax.acme.ConstraintValidatorFactory
+    </constraint-validator-factory>
+-   <parameter-name-provider>javax.acme.ParameterNameProvider</parameter-name-provider>
++   <parameter-name-provider>jakarta.acme.ParameterNameProvider</parameter-name-provider>
+
+@@ -28,1 +27,1 @@
+    <constraint-mapping>META-INF/validation/constraints-car.xml</constraint-mapping>
+
+-   <property name="javax.validator.fail_fast">false</property>
++   <property name="jakarta.validator.fail_fast">false</property>
+</validation-config>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -223,6 +479,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -237,6 +496,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -247,6 +510,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -265,3 +532,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

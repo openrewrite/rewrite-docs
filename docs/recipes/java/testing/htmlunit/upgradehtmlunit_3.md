@@ -20,7 +20,6 @@ _Automates the HtmlUnit [migration guide](https://htmlunit.sourceforge.io/migrat
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -92,6 +91,183 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlForm;
+import com.gargoylesoftware.htmlunit.html.HtmlInput;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+import java.io.IOException;
+
+public class HtmlUnitUse {
+    void run() throws IOException {
+        try (WebClient webClient = new WebClient()) {
+            HtmlPage page = webClient.getPage("https://htmlunit.sourceforge.io/");
+            HtmlForm form = page.getFormByName("config");
+            HtmlInput a = form.getInputByName("a");
+            String value = a.getValueAttribute();
+            assert "".equals(value);
+            a.setAttribute("value", "up2");
+            a.setAttribute("value2", "leave");
+            a.setValueAttribute("updated");
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.htmlunit.WebClient;
+import org.htmlunit.html.HtmlForm;
+import org.htmlunit.html.HtmlInput;
+import org.htmlunit.html.HtmlPage;
+
+import java.io.IOException;
+
+public class HtmlUnitUse {
+    void run() throws IOException {
+        try (WebClient webClient = new WebClient()) {
+            HtmlPage page = webClient.getPage("https://htmlunit.sourceforge.io/");
+            HtmlForm form = page.getFormByName("config");
+            HtmlInput a = form.getInputByName("a");
+            String value = a.getValue();
+            assert "".equals(value);
+            a.setAttribute("value", "up2");
+            a.setAttribute("value2", "leave");
+            a.setValue("updated");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import com.gargoylesoftware.htmlunit.WebClient;
+-import com.gargoylesoftware.htmlunit.html.HtmlForm;
+-import com.gargoylesoftware.htmlunit.html.HtmlInput;
+-import com.gargoylesoftware.htmlunit.html.HtmlPage;
++import org.htmlunit.WebClient;
++import org.htmlunit.html.HtmlForm;
++import org.htmlunit.html.HtmlInput;
++import org.htmlunit.html.HtmlPage;
+
+@@ -14,1 +14,1 @@
+            HtmlForm form = page.getFormByName("config");
+            HtmlInput a = form.getInputByName("a");
+-           String value = a.getValueAttribute();
++           String value = a.getValue();
+            assert "".equals(value);
+@@ -18,1 +18,1 @@
+            a.setAttribute("value", "up2");
+            a.setAttribute("value2", "leave");
+-           a.setValueAttribute("updated");
++           a.setValue("updated");
+        }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlForm;
+import com.gargoylesoftware.htmlunit.html.HtmlInput;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+import java.io.IOException;
+
+public class HtmlUnitUse {
+    void run() throws IOException {
+        try (WebClient webClient = new WebClient()) {
+            HtmlPage page = webClient.getPage("https://htmlunit.sourceforge.io/");
+            HtmlForm form = page.getFormByName("config");
+            HtmlInput a = form.getInputByName("a");
+            String value = a.getValueAttribute();
+            assert "".equals(value);
+            a.setAttribute("value", "up2");
+            a.setAttribute("value2", "leave");
+            a.setValueAttribute("updated");
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.htmlunit.WebClient;
+import org.htmlunit.html.HtmlForm;
+import org.htmlunit.html.HtmlInput;
+import org.htmlunit.html.HtmlPage;
+
+import java.io.IOException;
+
+public class HtmlUnitUse {
+    void run() throws IOException {
+        try (WebClient webClient = new WebClient()) {
+            HtmlPage page = webClient.getPage("https://htmlunit.sourceforge.io/");
+            HtmlForm form = page.getFormByName("config");
+            HtmlInput a = form.getInputByName("a");
+            String value = a.getValue();
+            assert "".equals(value);
+            a.setAttribute("value", "up2");
+            a.setAttribute("value2", "leave");
+            a.setValue("updated");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import com.gargoylesoftware.htmlunit.WebClient;
+-import com.gargoylesoftware.htmlunit.html.HtmlForm;
+-import com.gargoylesoftware.htmlunit.html.HtmlInput;
+-import com.gargoylesoftware.htmlunit.html.HtmlPage;
++import org.htmlunit.WebClient;
++import org.htmlunit.html.HtmlForm;
++import org.htmlunit.html.HtmlInput;
++import org.htmlunit.html.HtmlPage;
+
+@@ -14,1 +14,1 @@
+            HtmlForm form = page.getFormByName("config");
+            HtmlInput a = form.getInputByName("a");
+-           String value = a.getValueAttribute();
++           String value = a.getValue();
+            assert "".equals(value);
+@@ -18,1 +18,1 @@
+            a.setAttribute("value", "up2");
+            a.setAttribute("value2", "leave");
+-           a.setValueAttribute("updated");
++           a.setValue("updated");
+        }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -227,6 +403,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -241,6 +420,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -251,6 +434,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -269,3 +456,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -20,7 +20,6 @@ _Resolve common static analysis issues (also known as SAST issues)._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -315,6 +314,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -329,6 +331,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -339,6 +345,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -357,6 +367,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Kun Li](mailto:kun@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), punkratz312, [Tim te Beek](mailto:timtebeek@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), Aaron Gershman, Greg Oledzki, [Yurii](mailto:yusheng.email@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Karsten Thoms](mailto:karsten.thoms@gmail.com), Guliver, Kun Li, [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, [Peter Streef](mailto:p.streef@gmail.com), Josh Soref, [Jorge Otero](mailto:jorgeor@ext.inditex.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Knut Wannheden](mailto:knut.wannheden@gmail.com), timo-abele, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Peter Streef](mailto:peter@moderne.io), [Greg Adams](mailto:greg@moderne.io), Michel Gonzalez, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Mike Sol, [pstreef](mailto:p.streef@gmail.com), Derek Sharpe, [Scott Jungling](mailto:scott.jungling@gmail.com), [Martin Panzer](mailto:postremus1996@googlemail.com), [Mike Solomon](mailto:mike@moderne.io), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [xshen053](mailto:shenxiaxi26@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Kun Li](mailto:kun@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), punkratz312, [Tim te Beek](mailto:timtebeek@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), Aaron Gershman, Greg Oledzki, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Yurii](mailto:yusheng.email@gmail.com), [Karsten Thoms](mailto:karsten.thoms@gmail.com), Guliver, Kun Li, [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, [Peter Streef](mailto:p.streef@gmail.com), [Jammy Louie](mailto:jammy@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), Josh Soref, [Jorge Otero](mailto:jorgeor@ext.inditex.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Knut Wannheden](mailto:knut.wannheden@gmail.com), timo-abele, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Peter Streef](mailto:peter@moderne.io), [Greg Adams](mailto:greg@moderne.io), Michel Gonzalez, Mike Sol, [pstreef](mailto:p.streef@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Derek Sharpe, [Scott Jungling](mailto:scott.jungling@gmail.com), [Martin Panzer](mailto:postremus1996@googlemail.com), [Mike Solomon](mailto:mike@moderne.io), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [xshen053](mailto:shenxiaxi26@gmail.com)

@@ -16,7 +16,6 @@ _Counts the number of lines of the various kinds of source code and data formats
 [GitHub](https://github.com/openrewrite/rewrite-all/blob/main/src/main/java/org/openrewrite/LanguageComposition.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-all/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-all/)
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -155,6 +154,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.LanguageCompositionPerRepository" label="LanguageCompositionPerRepository">
+
 ### Language composition report
 **org.openrewrite.table.LanguageCompositionPerRepository**
 
@@ -165,6 +167,10 @@ _Counts the number of files and lines of source code in the various formats Open
 | Language | Language of the source file. |
 | File count | Count of files of this language. |
 | Line count | Count of lines of this language. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.LanguageCompositionPerFolder" label="LanguageCompositionPerFolder">
 
 ### Per-folder language composition report
 **org.openrewrite.table.LanguageCompositionPerFolder**
@@ -178,6 +184,10 @@ _A list of folders and the language composition and line counts of their content
 | File count | Count of files of this language. |
 | Line count | Count of lines of this language. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.LanguageCompositionPerFile" label="LanguageCompositionPerFile">
+
 ### Per-file language composition report
 **org.openrewrite.table.LanguageCompositionPerFile**
 
@@ -190,6 +200,10 @@ _A list of individual files and their language composition._
 | LST type | The Lossless Semantic Tree type of this source file. |
 | Lines of text | The number of lines of text in the source file. No language-specific knowledge to skip comments, blank lines, or any other non-code line. |
 | Has parse failures | True if the file failed to parse, otherwise false. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -205,6 +219,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -215,6 +233,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -233,3 +255,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

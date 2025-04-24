@@ -16,6 +16,9 @@ _To integrate the Develocity Maven extension into Maven projects, ensure that th
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddDevelocityMavenExtension.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -27,9 +30,78 @@ _To integrate the Develocity Maven extension into Maven projects, ensure that th
 | `Boolean` | uploadInBackground | *Optional*. When set to `false` the extension will not upload build scan in the background. By default, build scans are uploaded in the background after the build has finished to avoid blocking the build process. | `false` |
 | `PublishCriteria` | publishCriteria | *Optional*. When set to `Always` the extension will publish build scans of every single build. This is the default behavior when omitted.When set to `Failure` the extension will only publish build scans when the build fails. When set to `Demand` the extension will only publish build scans when explicitly requested. Valid options: `Always`, `Failure`, `Demand` | `Always` |
 
-## License
+## Example
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|version|`1.17`|
+|server|`https://foo`|
+|allowUntrustedServer|`null`|
+|fileFingerprints|`null`|
+|uploadInBackground|`null`|
+|publishCriteria|`null`|
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+</project>
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+</extensions>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+  <extension>
+    <groupId>com.gradle</groupId>
+    <artifactId>gradle-enterprise-maven-extension</artifactId>
+    <version>1.17</version>
+  </extension>
+</extensions>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
++ <extension>
++   <groupId>com.gradle</groupId>
++   <artifactId>gradle-enterprise-maven-extension</artifactId>
++   <version>1.17</version>
++ </extension>
+</extensions>
+```
+</TabItem>
+</Tabs>
+
+
+###### New file
+```xml
+<gradleEnterprise>
+  <server>
+    <url>https://foo</url>
+  </server>
+</gradleEnterprise>
+```
+
 
 
 ## Usage
@@ -105,6 +177,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -119,6 +194,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -129,6 +208,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -147,3 +230,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

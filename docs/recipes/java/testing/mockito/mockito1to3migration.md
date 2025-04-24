@@ -25,7 +25,6 @@ _Upgrade Mockito from 1.x to 3.x._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -84,7 +83,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.mockito.MockedStatic verify(org.mockito.verification.VerificationMode, org.mockito.MockedStatic.Verification)`
   * newParameterNames: `[verification, mode]`
   * oldParameterNames: `[mode, verification]`
-* [Replace `verifyZeroInteractions() to `verifyNoMoreInteractions()](../../../java/testing/mockito/verifyzerotonomoreinteractions)
+* [Replace `verifyZeroInteractions()` to `verifyNoMoreInteractions()](../../../java/testing/mockito/verifyzerotonomoreinteractions)
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.mockito.Mockito verifyZeroInteractions(..)`
   * newMethodName: `verifyNoInteractions`
@@ -107,6 +106,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
+* [Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners](../../../java/testing/mockito/removeinitmocksifrunnersspecified)
 * [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
@@ -209,6 +209,7 @@ recipeList:
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
+  - org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified
   - org.openrewrite.java.testing.mockito.ReplacePowerMockito
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
@@ -226,6 +227,195 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.anySetOf;
+import static org.mockito.ArgumentMatchers.anyMapOf;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
+    }
+}
+```
+
+###### After
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyList())).thenReturn(true);
+        when(mockFoo.addSet(anySet())).thenReturn(true);
+        when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,3 +7,3 @@
+import java.util.Set;
+
+-import static org.mockito.ArgumentMatchers.anyListOf;
+-import static org.mockito.ArgumentMatchers.anySetOf;
+-import static org.mockito.ArgumentMatchers.anyMapOf;
++import static org.mockito.ArgumentMatchers.anyList;
++import static org.mockito.ArgumentMatchers.anySet;
++import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+@@ -21,3 +21,3 @@
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+-       when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+-       when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+-       when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
++       when(mockFoo.addList(anyList())).thenReturn(true);
++       when(mockFoo.addSet(anySet())).thenReturn(true);
++       when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.anySetOf;
+import static org.mockito.ArgumentMatchers.anyMapOf;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
+    }
+}
+```
+
+###### After
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyList())).thenReturn(true);
+        when(mockFoo.addSet(anySet())).thenReturn(true);
+        when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,3 +7,3 @@
+import java.util.Set;
+
+-import static org.mockito.ArgumentMatchers.anyListOf;
+-import static org.mockito.ArgumentMatchers.anySetOf;
+-import static org.mockito.ArgumentMatchers.anyMapOf;
++import static org.mockito.ArgumentMatchers.anyList;
++import static org.mockito.ArgumentMatchers.anySet;
++import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+@@ -21,3 +21,3 @@
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+-       when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+-       when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+-       when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
++       when(mockFoo.addList(anyList())).thenReturn(true);
++       when(mockFoo.addSet(anySet())).thenReturn(true);
++       when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -361,6 +551,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -375,6 +568,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -385,6 +582,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -403,6 +604,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:timtebeek@gmail.com), Josh Soref, Aaron Gershman
+[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, Aaron Gershman

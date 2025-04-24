@@ -16,9 +16,111 @@ _Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`. Removes the `@P
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/PowerMockitoMockStaticToMockito.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.mockito.Mockito.mockStatic;
+
+import java.util.Calendar;
+
+import org.junit.jupiter.api.Test;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+
+@PrepareForTest({Calendar.class})
+public class MyTest {
+
+    @Test
+    void testStaticMethod() {
+        mockStatic(Calendar.class);
+    }
+}
+```
+
+###### After
+```java
+import static org.mockito.Mockito.mockStatic;
+
+import java.util.Calendar;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+
+public class MyTest {
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+    @BeforeEach
+    void setUpStaticMocks() {
+        mockedCalendar = mockStatic(Calendar.class);
+    }
+
+    @AfterEach
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+    }
+
+    @Test
+    void testStaticMethod() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,0 +5,2 @@
+import java.util.Calendar;
+
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+@@ -6,1 +8,1 @@
+
+import org.junit.jupiter.api.Test;
+-import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.mockito.MockedStatic;
+
+@@ -8,1 +10,0 @@
+import org.powermock.core.classloader.annotations.PrepareForTest;
+
+-@PrepareForTest({Calendar.class})
+public class MyTest {
+@@ -11,0 +12,12 @@
+public class MyTest {
+
++   private MockedStatic<Calendar> mockedCalendar;
++
++   @BeforeEach
++   void setUpStaticMocks() {
++       mockedCalendar = mockStatic(Calendar.class);
++   }
++
++   @AfterEach
++   void tearDownStaticMocks() {
++       mockedCalendar.closeOnDemand();
++   }
++
+    @Test
+@@ -13,1 +26,0 @@
+    @Test
+    void testStaticMethod() {
+-       mockStatic(Calendar.class);
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +257,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +274,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +288,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +310,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)

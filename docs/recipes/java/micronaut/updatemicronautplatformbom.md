@@ -16,7 +16,6 @@ _This recipe will update a Gradle or Maven build to reference the Micronaut 4 pl
 [GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -52,6 +51,67 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+###### Unchanged
+```properties
+micronautVersion=3.9.1
+```
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.7.9"
+    id("io.micronaut.minimal.application") version "3.7.9"
+    id("io.micronaut.aot") version "3.7.9"
+    id("io.micronaut.component") version "3.7.9"
+    id("io.micronaut.crac") version "3.7.9"
+    id("io.micronaut.docker") version "3.7.9"
+    id("io.micronaut.graalvm") version "3.7.9"
+    id("io.micronaut.library") version "3.7.9"
+    id("io.micronaut.minimal.library") version "3.7.9"
+    id("io.micronaut.test-resources") version "3.5.1"
+}
+
+repositories {
+    mavenCentral()
+}
+```
+
+---
+
+##### Example 2
+
+
+###### Unchanged
+```properties
+micronautVersion=3.9.1
+```
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.7.9"
+    id("io.micronaut.minimal.application") version "3.7.9"
+    id("io.micronaut.aot") version "3.7.9"
+    id("io.micronaut.component") version "3.7.9"
+    id("io.micronaut.crac") version "3.7.9"
+    id("io.micronaut.docker") version "3.7.9"
+    id("io.micronaut.graalvm") version "3.7.9"
+    id("io.micronaut.library") version "3.7.9"
+    id("io.micronaut.minimal.library") version "3.7.9"
+    id("io.micronaut.test-resources") version "3.5.1"
+}
+
+repositories {
+    mavenCentral()
+}
+```
+
 
 ## Usage
 
@@ -187,6 +247,28 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -201,6 +283,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -211,6 +297,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -229,3 +319,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

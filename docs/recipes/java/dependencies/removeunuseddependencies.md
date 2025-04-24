@@ -15,9 +15,288 @@ _Scans through source code collecting references to types and methods, removing 
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
-## License
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,7 +5,0 @@
+    <artifactId>app</artifactId>
+    <version>1</version>
+-   <dependencies>
+-       <dependency>
+-           <groupId>com.google.guava</groupId>
+-           <artifactId>guava</artifactId>
+-           <version>29.0-jre</version>
+-       </dependency>
+-   </dependencies>
+</project>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+import java.util.List;
+import java.util.ArrayList;
+public class A {
+    List<String> a = new ArrayList<>();
+}
+```
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 2
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+      <groupId>com.mycompany</groupId>
+      <artifactId>root</artifactId>
+      <version>1</version>
+      <modules>
+          <module>uses-guava</module>
+          <module>no-guava</module>
+      </modules>
+</project>
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>uses-guava</artifactId>
+    <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### Unchanged
+```java
+import com.google.common.collect.Lists;
+import java.util.List;
+public class A {
+    List<String> a = Lists.newArrayList();
+}
+```
+
+###### Unchanged
+```mavenProject
+uses-guava
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>no-guava</artifactId>
+    <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>no-guava</artifactId>
+    <version>1</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,7 +5,0 @@
+    <artifactId>no-guava</artifactId>
+    <version>1</version>
+-   <dependencies>
+-       <dependency>
+-           <groupId>com.google.guava</groupId>
+-           <artifactId>guava</artifactId>
+-           <version>29.0-jre</version>
+-       </dependency>
+-   </dependencies>
+</project>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+import java.util.List;
+import java.util.ArrayList;
+public class B {
+    List<String> b = new ArrayList<>();
+}
+```
+
+###### Unchanged
+```mavenProject
+no-guava
+```
+
+###### Unchanged
+```mavenProject
+root
+```
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation 'com.google.guava:guava:29.0-jre'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -8,1 +8,0 @@
+}
+dependencies {
+-   implementation 'com.google.guava:guava:29.0-jre'
+}
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+import java.util.List;
+import java.util.ArrayList;
+public class A {
+    List<String> a = new ArrayList<>();
+}
+```
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 4
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation 'com.google.guava:guava:29.0-jre'
+}
+```
+
+###### Unchanged
+```java
+import com.google.common.collect.Lists;
+import java.util.List;
+public class A {
+    List<String> a = Lists.newArrayList();
+}
+```
+
+###### Unchanged
+```mavenProject
+project
+```
 
 
 ## Usage
@@ -52,6 +331,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -66,6 +348,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -76,6 +362,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -94,3 +384,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

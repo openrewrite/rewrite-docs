@@ -24,7 +24,6 @@ _This recipe will migrate to JSpecify annotations from various other nullability
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -58,6 +57,389 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+public class Test {
+    @Nonnull
+    public String field1;
+    @Nullable
+    public String field2;
+    @Nullable
+    public Foo.Bar foobar;
+}
+
+interface Foo {
+  class Bar {
+    @Nonnull
+    public String barField;
+  }
+}
+```
+
+###### After
+```java
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+public class Test {
+    @NonNull
+    public String field1;
+    @Nullable
+    public String field2;
+
+    public Foo.@Nullable Bar foobar;
+}
+
+interface Foo {
+  class Bar {
+    @NonNull
+    public String barField;
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import javax.annotation.Nonnull;
+-import javax.annotation.Nullable;
++import org.jspecify.annotations.NonNull;
++import org.jspecify.annotations.Nullable;
+
+@@ -5,1 +5,1 @@
+
+public class Test {
+-   @Nonnull
++   @NonNull
+    public String field1;
+@@ -9,2 +9,2 @@
+    @Nullable
+    public String field2;
+-   @Nullable
+-   public Foo.Bar foobar;
++
++   public Foo.@Nullable Bar foobar;
+}
+@@ -15,1 +15,1 @@
+interface Foo {
+  class Bar {
+-   @Nonnull
++   @NonNull
+    public String barField;
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+@ParametersAreNonnullByDefault
+package org.openrewrite.example;
+
+import javax.annotation.ParametersAreNonnullByDefault;
+```
+
+###### After
+```java
+@NullMarked
+package org.openrewrite.example;
+
+import org.jspecify.annotations.NullMarked;
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-@ParametersAreNonnullByDefault
++@NullMarked
+package org.openrewrite.example;
+@@ -4,1 +4,1 @@
+package org.openrewrite.example;
+
+-import javax.annotation.ParametersAreNonnullByDefault;
++import org.jspecify.annotations.NullMarked;
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,0 +12,5 @@
+            <version>1.3.2</version>
+        </dependency>
++       <dependency>
++           <groupId>org.jspecify</groupId>
++           <artifactId>jspecify</artifactId>
++           <version>1.0.0</version>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+foo
+```
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+public class Test {
+    @Nonnull
+    public String field1;
+    @Nullable
+    public String field2;
+    @Nullable
+    public Foo.Bar foobar;
+}
+
+interface Foo {
+  class Bar {
+    @Nonnull
+    public String barField;
+  }
+}
+```
+
+###### After
+```java
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+public class Test {
+    @NonNull
+    public String field1;
+    @Nullable
+    public String field2;
+
+    public Foo.@Nullable Bar foobar;
+}
+
+interface Foo {
+  class Bar {
+    @NonNull
+    public String barField;
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import javax.annotation.Nonnull;
+-import javax.annotation.Nullable;
++import org.jspecify.annotations.NonNull;
++import org.jspecify.annotations.Nullable;
+
+@@ -5,1 +5,1 @@
+
+public class Test {
+-   @Nonnull
++   @NonNull
+    public String field1;
+@@ -9,2 +9,2 @@
+    @Nullable
+    public String field2;
+-   @Nullable
+-   public Foo.Bar foobar;
++
++   public Foo.@Nullable Bar foobar;
+}
+@@ -15,1 +15,1 @@
+interface Foo {
+  class Bar {
+-   @Nonnull
++   @NonNull
+    public String barField;
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+@ParametersAreNonnullByDefault
+package org.openrewrite.example;
+
+import javax.annotation.ParametersAreNonnullByDefault;
+```
+
+###### After
+```java
+@NullMarked
+package org.openrewrite.example;
+
+import org.jspecify.annotations.NullMarked;
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-@ParametersAreNonnullByDefault
++@NullMarked
+package org.openrewrite.example;
+@@ -4,1 +4,1 @@
+package org.openrewrite.example;
+
+-import javax.annotation.ParametersAreNonnullByDefault;
++import org.jspecify.annotations.NullMarked;
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,0 +12,5 @@
+            <version>1.3.2</version>
+        </dependency>
++       <dependency>
++           <groupId>org.jspecify</groupId>
++           <artifactId>jspecify</artifactId>
++           <version>1.0.0</version>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+foo
+```
+
 
 ## Usage
 
@@ -193,6 +575,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -207,6 +592,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -217,6 +606,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -235,3 +628,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

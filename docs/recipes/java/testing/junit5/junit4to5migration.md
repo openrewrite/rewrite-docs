@@ -25,7 +25,6 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -48,7 +47,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add Hamcrest JUnit dependency](../../../java/testing/junit5/addhamcrestjunitdependency)
 * [Use `MatcherAssert#assertThat(..)`](../../../java/testing/junit5/usehamcrestassertthat)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](../../../java/testing/junit5/migrateassumptions)
-* [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension)
 * [Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`](../../../java/testing/junit5/usetestmethodorder)
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](../../../java/testing/junit5/migratejunittestcase)
 * [Change method name](../../../java/changemethodname)
@@ -71,6 +69,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use Vert.x JUnit 5 Extension](../../../java/testing/junit5/vertxunittovertxjunit5)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](../../../java/testing/junit5/enclosedtonested)
 * [JUnit 5 inner test classes should be annotated with `@Nested`](../../../java/testing/junit5/addmissingnested)
+* [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension)
 * [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused)
 * [Use XMLUnit Legacy for JUnit 5](../../../java/testing/junit5/usexmlunitlegacy)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
@@ -100,7 +99,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter-params`
   * version: `5.x`
-  * onlyIfUsing: `org.junit.jupiter.params.ParameterizedTest`
+  * onlyIfUsing: `org.junit.runners.Parameterized`
   * scope: `test`
   * acceptTransitive: `true`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
@@ -147,7 +146,6 @@ recipeList:
   - org.openrewrite.java.testing.junit5.AddHamcrestJUnitDependency
   - org.openrewrite.java.testing.junit5.UseHamcrestAssertThat
   - org.openrewrite.java.testing.junit5.MigrateAssumptions
-  - org.openrewrite.java.testing.junit5.UseMockitoExtension
   - org.openrewrite.java.testing.junit5.UseTestMethodOrder
   - org.openrewrite.java.testing.junit5.MigrateJUnitTestCase
   - org.openrewrite.java.ChangeMethodName:
@@ -170,6 +168,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5
   - org.openrewrite.java.testing.junit5.EnclosedToNested
   - org.openrewrite.java.testing.junit5.AddMissingNested
+  - org.openrewrite.java.testing.junit5.UseMockitoExtension
   - org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
   - org.openrewrite.java.testing.junit5.UseXMLUnitLegacy
   - org.openrewrite.java.dependencies.RemoveDependency:
@@ -199,7 +198,7 @@ recipeList:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter-params
       version: 5.x
-      onlyIfUsing: org.junit.jupiter.params.ParameterizedTest
+      onlyIfUsing: org.junit.runners.Parameterized
       scope: test
       acceptTransitive: true
   - org.openrewrite.maven.UpgradePluginVersion:
@@ -220,6 +219,531 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+
+@RunWith(Enclosed.class)
+public class RootTest {
+    public static class InnerTest {
+        @Test
+        public void test() {
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+public class RootTest {
+    @Nested
+    public class InnerTest {
+        @Test
+        public void test() {
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,2 @@
+-import org.junit.Test;
+-import org.junit.experimental.runners.Enclosed;
+-import org.junit.runner.RunWith;
++import org.junit.jupiter.api.Nested;
++import org.junit.jupiter.api.Test;
+
+@@ -5,1 +4,0 @@
+import org.junit.runner.RunWith;
+
+-@RunWith(Enclosed.class)
+public class RootTest {
+@@ -7,1 +5,2 @@
+@RunWith(Enclosed.class)
+public class RootTest {
+-   public static class InnerTest {
++   @Nested
++   public class InnerTest {
+        @Test
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Assert;
+import org.junit.Test;
+
+import static java.util.Arrays.asList;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
+public class SampleTest {
+    @SuppressWarnings("ALL")
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+        Assert.assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+
+import static java.util.Arrays.asList;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
+public class SampleTest {
+    @SuppressWarnings("ALL")
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+        assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.junit.Assert;
+-import org.junit.Test;
++import org.junit.jupiter.api.Test;
+
+@@ -5,0 +4,1 @@
+
+import static java.util.Arrays.asList;
++import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+@@ -11,1 +11,1 @@
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+-       Assert.assertThat(asList("1", "2", "3"),
++       assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    @Mock
+    List<String> mockedList;
+
+    @Before
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+}
+```
+
+###### After
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    private AutoCloseable mocks;
+    @Mock
+    List<String> mockedList;
+
+    @BeforeEach
+    public void initMocks() {
+        mocks = MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        mocks.close();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,3 @@
+package org.openrewrite.java.testing.junit5;
+
+-import org.junit.Before;
+-import org.junit.Test;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+@@ -13,0 +14,1 @@
+
+public class MockitoTests {
++   private AutoCloseable mocks;
+    @Mock
+@@ -16,1 +18,1 @@
+    List<String> mockedList;
+
+-   @Before
++   @BeforeEach
+    public void initMocks() {
+@@ -18,1 +20,1 @@
+    @Before
+    public void initMocks() {
+-       MockitoAnnotations.initMocks(this);
++       mocks = MockitoAnnotations.openMocks(this);
+    }
+@@ -30,0 +32,5 @@
+        verify(mockedList).clear();
+    }
++
++   @AfterEach
++   void tearDown() throws Exception {
++       mocks.close();
++   }
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+
+@RunWith(Enclosed.class)
+public class RootTest {
+    public static class InnerTest {
+        @Test
+        public void test() {
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+public class RootTest {
+    @Nested
+    public class InnerTest {
+        @Test
+        public void test() {
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,2 @@
+-import org.junit.Test;
+-import org.junit.experimental.runners.Enclosed;
+-import org.junit.runner.RunWith;
++import org.junit.jupiter.api.Nested;
++import org.junit.jupiter.api.Test;
+
+@@ -5,1 +4,0 @@
+import org.junit.runner.RunWith;
+
+-@RunWith(Enclosed.class)
+public class RootTest {
+@@ -7,1 +5,2 @@
+@RunWith(Enclosed.class)
+public class RootTest {
+-   public static class InnerTest {
++   @Nested
++   public class InnerTest {
+        @Test
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Assert;
+import org.junit.Test;
+
+import static java.util.Arrays.asList;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
+public class SampleTest {
+    @SuppressWarnings("ALL")
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+        Assert.assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+
+import static java.util.Arrays.asList;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
+public class SampleTest {
+    @SuppressWarnings("ALL")
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+        assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.junit.Assert;
+-import org.junit.Test;
++import org.junit.jupiter.api.Test;
+
+@@ -5,0 +4,1 @@
+
+import static java.util.Arrays.asList;
++import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+@@ -11,1 +11,1 @@
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+-       Assert.assertThat(asList("1", "2", "3"),
++       assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    @Mock
+    List<String> mockedList;
+
+    @Before
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+}
+```
+
+###### After
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    private AutoCloseable mocks;
+    @Mock
+    List<String> mockedList;
+
+    @BeforeEach
+    public void initMocks() {
+        mocks = MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        mocks.close();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,3 @@
+package org.openrewrite.java.testing.junit5;
+
+-import org.junit.Before;
+-import org.junit.Test;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+@@ -13,0 +14,1 @@
+
+public class MockitoTests {
++   private AutoCloseable mocks;
+    @Mock
+@@ -16,1 +18,1 @@
+    List<String> mockedList;
+
+-   @Before
++   @BeforeEach
+    public void initMocks() {
+@@ -18,1 +20,1 @@
+    @Before
+    public void initMocks() {
+-       MockitoAnnotations.initMocks(this);
++       mocks = MockitoAnnotations.openMocks(this);
+    }
+@@ -30,0 +32,5 @@
+        verify(mockedList).clear();
+    }
++
++   @AfterEach
++   void tearDown() throws Exception {
++       mocks.close();
++   }
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -355,6 +879,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -369,6 +896,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -379,6 +910,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -397,3 +932,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

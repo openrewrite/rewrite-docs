@@ -16,15 +16,14 @@ _List the committers on a repository._
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindCommitters.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | fromDate | *Optional*. Optional. Take into account only commits since this date (inclusive). Default will be the entire history. | `2023-01-01` |
-
-## License
-
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
@@ -151,6 +150,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.DistinctCommitters" label="DistinctCommitters">
+
 ### Repository committers
 **org.openrewrite.table.DistinctCommitters**
 
@@ -163,6 +165,10 @@ _The distinct set of committers per repository._
 | Last commit | The date of this committer's last commit. |
 | Number of commits | The number of commits made by this committer. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.CommitsByDay" label="CommitsByDay">
+
 ### Commits by day
 **org.openrewrite.table.CommitsByDay**
 
@@ -174,6 +180,10 @@ _The commit activity by day by committer._
 | Email | The email of the committer. |
 | Date | The date of the day. |
 | Number of commits | The number of commits made by this committer on this day. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -189,6 +199,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -199,6 +213,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -217,6 +235,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:peter@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

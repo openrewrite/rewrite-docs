@@ -16,9 +16,97 @@ _Replace usages of JUnit 4's `@Rule ExpectedException` with JUnit 5's `Assertion
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/ExpectedExceptionToAssertThrows.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+class MyTest {
+
+    @Rule
+    ExpectedException thrown = ExpectedException.none();
+
+    @Test
+    public void testEmptyPath() {
+        this.thrown.expect(IllegalArgumentException.class);
+        this.thrown.expectMessage("Invalid location: gs://");
+        foo();
+    }
+    void foo() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class MyTest {
+
+    @Test
+    public void testEmptyPath() {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () ->
+            foo());
+        assertTrue(exception.getMessage().contains("Invalid location: gs://"));
+    }
+    void foo() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import org.junit.Rule;
+import org.junit.Test;
+@@ -3,1 +2,0 @@
+import org.junit.Rule;
+import org.junit.Test;
+-import org.junit.rules.ExpectedException;
+
+@@ -5,0 +3,3 @@
+import org.junit.rules.ExpectedException;
+
++import static org.junit.jupiter.api.Assertions.assertThrows;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
+class MyTest {
+@@ -7,3 +8,0 @@
+class MyTest {
+
+-   @Rule
+-   ExpectedException thrown = ExpectedException.none();
+-
+    @Test
+@@ -12,3 +10,3 @@
+    @Test
+    public void testEmptyPath() {
+-       this.thrown.expect(IllegalArgumentException.class);
+-       this.thrown.expectMessage("Invalid location: gs://");
+-       foo();
++       Throwable exception = assertThrows(IllegalArgumentException.class, () ->
++           foo());
++       assertTrue(exception.getMessage().contains("Invalid location: gs://"));
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +243,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +260,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +274,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +296,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Tim te Beek](mailto:tim@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com)

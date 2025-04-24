@@ -16,9 +16,83 @@ _Introduce a SLF4J `Logger` field and replace calls to `getLogger()` with calls 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/codehaus/plexus/AbstractLogEnabledToSlf4j.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.codehaus.plexus.logging.AbstractLogEnabled;
+import org.codehaus.plexus.logging.Logger;
+
+class A extends AbstractLogEnabled {
+    void method() {
+        getLogger().info("Hello");
+    }
+    void method2() {
+        Logger log = getLogger();
+        log.info("Hello");
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+class A {
+    private static final Logger LOGGER = LoggerFactory.getLogger(A.class);
+
+    void method() {
+        LOGGER.info("Hello");
+    }
+    void method2() {
+        Logger log = LOGGER;
+        log.info("Hello");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.codehaus.plexus.logging.AbstractLogEnabled;
+-import org.codehaus.plexus.logging.Logger;
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
+
+@@ -4,1 +4,3 @@
+import org.codehaus.plexus.logging.Logger;
+
+-class A extends AbstractLogEnabled {
++class A {
++   private static final Logger LOGGER = LoggerFactory.getLogger(A.class);
++
+    void method() {
+@@ -6,1 +8,1 @@
+class A extends AbstractLogEnabled {
+    void method() {
+-       getLogger().info("Hello");
++       LOGGER.info("Hello");
+    }
+@@ -9,1 +11,1 @@
+    }
+    void method2() {
+-       Logger log = getLogger();
++       Logger log = LOGGER;
+        log.info("Hello");
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +229,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +246,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +260,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +282,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

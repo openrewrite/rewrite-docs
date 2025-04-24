@@ -16,9 +16,95 @@ _This recipe finds all OpenRewrite recipes, primarily to produce a data table th
 [GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/FindRecipes.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.Option;
+import org.openrewrite.internal.lang.NonNullApi;
+import org.openrewrite.Recipe;
+import org.openrewrite.internal.lang.Nullable;
+
+@NonNullApi
+class MyRecipe extends Recipe {
+  @Option(displayName = "Method pattern",
+          description = "A method pattern that is used to find matching method declarations/invocations.",
+          example = "org.mockito.Matchers anyVararg()")
+  String methodPattern;
+
+  @Option(displayName = "New access level",
+          description = "New method access level to apply to the method, like \"public\".",
+          example = "public",
+          valid = {"private", "protected", "package", "public"},
+          required = false)
+  String newAccessLevel;
+
+  @Override
+  public String getDisplayName() {
+      return "My recipe";
+  }
+
+  @Override
+  public String getDescription() {
+      return "This is my recipe.";
+  }
+}
+```
+
+###### After
+```java
+import org.openrewrite.Option;
+import org.openrewrite.internal.lang.NonNullApi;
+import org.openrewrite.Recipe;
+import org.openrewrite.internal.lang.Nullable;
+
+@NonNullApi
+class /*~~>*/MyRecipe extends Recipe {
+  @Option(displayName = "Method pattern",
+          description = "A method pattern that is used to find matching method declarations/invocations.",
+          example = "org.mockito.Matchers anyVararg()")
+  String methodPattern;
+
+  @Option(displayName = "New access level",
+          description = "New method access level to apply to the method, like \"public\".",
+          example = "public",
+          valid = {"private", "protected", "package", "public"},
+          required = false)
+  String newAccessLevel;
+
+  @Override
+  public String getDisplayName() {
+      return "My recipe";
+  }
+
+  @Override
+  public String getDescription() {
+      return "This is my recipe.";
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+
+@NonNullApi
+-class MyRecipe extends Recipe {
++class /*~~>*/MyRecipe extends Recipe {
+  @Option(displayName = "Method pattern",
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +241,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.RewriteRecipeSource" label="RewriteRecipeSource">
+
 ### Rewrite recipe source code
 **org.openrewrite.table.RewriteRecipeSource**
 
@@ -167,6 +256,10 @@ _This table contains the source code of recipes along with their metadata for us
 | Recipe type | Differentiate between Java and YAML recipes, as they may be two independent data sets used in LLM fine-tuning. |
 | Recipe source code | The full source code of the recipe. |
 | Recipe options | JSON format of recipe options. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -182,6 +275,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -192,6 +289,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -210,6 +311,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [JohannisK](mailto:johan.kragt@moderne.io)

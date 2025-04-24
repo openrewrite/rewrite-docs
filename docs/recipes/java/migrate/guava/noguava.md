@@ -24,7 +24,6 @@ _Guava filled in important gaps in the Java standard library and still does. But
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -130,6 +129,315 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.MoreObjects;
+
+class A {
+    Object foo(Object obj) {
+        return MoreObjects.firstNonNull(obj, "default");
+    }
+}
+```
+
+###### After
+```java
+import java.util.Objects;
+
+class A {
+    Object foo(Object obj) {
+        return Objects.requireNonNullElse(obj, "default");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.MoreObjects;
++import java.util.Objects;
+
+@@ -5,1 +5,1 @@
+class A {
+    Object foo(Object obj) {
+-       return MoreObjects.firstNonNull(obj, "default");
++       return Objects.requireNonNullElse(obj, "default");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.absent();
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.empty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -5,1 +5,1 @@
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (IllegalStateException e) {
+            return "";
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -7,1 +7,1 @@
+        try {
+            return optional.get();
+-       } catch (IllegalStateException e) {
++       } catch (NoSuchElementException e) {
+            return "";
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.MoreObjects;
+
+class A {
+    Object foo(Object obj) {
+        return MoreObjects.firstNonNull(obj, "default");
+    }
+}
+```
+
+###### After
+```java
+import java.util.Objects;
+
+class A {
+    Object foo(Object obj) {
+        return Objects.requireNonNullElse(obj, "default");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.MoreObjects;
++import java.util.Objects;
+
+@@ -5,1 +5,1 @@
+class A {
+    Object foo(Object obj) {
+-       return MoreObjects.firstNonNull(obj, "default");
++       return Objects.requireNonNullElse(obj, "default");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.absent();
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.empty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -5,1 +5,1 @@
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (IllegalStateException e) {
+            return "";
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -7,1 +7,1 @@
+        try {
+            return optional.get();
+-       } catch (IllegalStateException e) {
++       } catch (NoSuchElementException e) {
+            return "";
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -265,6 +573,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -279,6 +590,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -289,6 +604,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -307,6 +626,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Tobias Lidskog](mailto:tlidskog@paypal.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Rick Ossendrijver](mailto:rick.ossendrijver@gmail.com)

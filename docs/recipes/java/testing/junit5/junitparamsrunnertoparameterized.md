@@ -16,9 +16,128 @@ _Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest e
 [GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/JUnitParamsRunnerToParameterized.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
+
+@RunWith(JUnitParamsRunner.class)
+public class PersonTests {
+
+    @Test
+    @Parameters
+    public void personIsAdult(int age, boolean valid) {
+    }
+
+    private Object[] parametersForPersonIsAdult() {
+        return new Object[]{new Object[]{13, false}, new Object[]{17, false}};
+    }
+
+    @Test
+    @Parameters
+    public void personIsChild(int age, boolean valid) {
+    }
+
+    private Object[] parametersForPersonIsChild() {
+        return new Object[]{new Object[]{3, false}, new Object[]{7, false}};
+    }
+
+    @Test
+    public void regularTest() {}
+}
+```
+
+###### After
+```java
+import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+public class PersonTests {
+
+    @ParameterizedTest
+    @MethodSource("parametersForPersonIsAdult")
+    public void personIsAdult(int age, boolean valid) {
+    }
+
+    private static Object[] parametersForPersonIsAdult() {
+        return new Object[]{new Object[]{13, false}, new Object[]{17, false}};
+    }
+
+    @ParameterizedTest
+    @MethodSource("parametersForPersonIsChild")
+    public void personIsChild(int age, boolean valid) {
+    }
+
+    private static Object[] parametersForPersonIsChild() {
+        return new Object[]{new Object[]{3, false}, new Object[]{7, false}};
+    }
+
+    @Test
+    public void regularTest() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,3 +2,2 @@
+import org.junit.Test;
+-import org.junit.runner.RunWith;
+-import junitparams.JUnitParamsRunner;
+-import junitparams.Parameters;
++import org.junit.jupiter.params.ParameterizedTest;
++import org.junit.jupiter.params.provider.MethodSource;
+
+@@ -6,1 +5,0 @@
+import junitparams.Parameters;
+
+-@RunWith(JUnitParamsRunner.class)
+public class PersonTests {
+@@ -9,2 +7,2 @@
+public class PersonTests {
+
+-   @Test
+-   @Parameters
++   @ParameterizedTest
++   @MethodSource("parametersForPersonIsAdult")
+    public void personIsAdult(int age, boolean valid) {
+@@ -14,1 +12,1 @@
+    }
+
+-   private Object[] parametersForPersonIsAdult() {
++   private static Object[] parametersForPersonIsAdult() {
+        return new Object[]{new Object[]{13, false}, new Object[]{17, false}};
+@@ -18,2 +16,2 @@
+    }
+
+-   @Test
+-   @Parameters
++   @ParameterizedTest
++   @MethodSource("parametersForPersonIsChild")
+    public void personIsChild(int age, boolean valid) {
+@@ -23,1 +21,1 @@
+    }
+
+-   private Object[] parametersForPersonIsChild() {
++   private static Object[] parametersForPersonIsChild() {
+        return new Object[]{new Object[]{3, false}, new Object[]{7, false}};
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +274,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +291,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +305,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +327,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Patrick](mailto:patway99@gmail.com)
+Patrick Way, Anshuman Mishra, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

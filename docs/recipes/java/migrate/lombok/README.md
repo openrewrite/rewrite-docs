@@ -17,6 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert getter methods to annotations](./uselombokgetter.md)
 * [Convert setter methods to annotations](./uselomboksetter.md)
 * [Prefer `final var` over `lombok.val`](./lombokvaltofinalvar.md)
+* [Rename getter methods to fit Lombok](./adoptlombokgettermethodnames.md)
 * [Use `@NoArgsConstructor` where applicable](./usenoargsconstructor.md)
 
 

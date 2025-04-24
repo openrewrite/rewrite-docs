@@ -61,6 +61,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
 * [Spring Boot 3.3 best practices](./springboot33bestpractices.md)
 * [Upgrade MyBatis to Spring Boot 2.0](./upgrademybatistospringboot_2_0.md)
+* [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](./upgradespringcloudawstospringboot_3_4.md)
 * [Use `kafkaAwareTransactionManager` setter](./replacekafkatransactionmanagersetter.md)
 
 
