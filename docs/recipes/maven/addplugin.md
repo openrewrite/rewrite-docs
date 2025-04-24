@@ -39,11 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |groupId|`org.openrewrite.maven`|
 |artifactId|`rewrite-maven-plugin`|
 |version|`100.0`|
-|configuration|`<configuration>
-<activeRecipes>
-<recipe>io.moderne.FindTest</recipe>
-</activeRecipes>
-</configuration>`|
+|configuration|`<configuration><activeRecipes><recipe>io.moderne.FindTest</recipe></activeRecipes></configuration>`|
 |dependencies|`null`|
 |executions|`null`|
 |filePattern|`null`|
