@@ -16,6 +16,9 @@ _Set the parent pom version number according to a [version selector](https://doc
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -26,9 +29,127 @@ _Set the parent pom version number according to a [version selector](https://doc
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | onlyExternal | *Optional*. Only upgrade `<parent>` if external to the project, i.e. it has an empty `<relativePath>`. Defaults to `false`. |  |
 
-## License
+## Examples
+##### Example 1
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`org.jenkins-ci`|
+|artifactId|`jenkins`|
+|newVersion|`1.125`|
+|versionPattern|`null`|
+|onlyExternal|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>jenkins</artifactId>
+        <version>1.124</version>
+    </parent>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>jenkins</artifactId>
+        <version>1.125</version>
+    </parent>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,1 @@
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>jenkins</artifactId>
+-       <version>1.124</version>
++       <version>1.125</version>
+    </parent>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`*`|
+|artifactId|`*`|
+|newVersion|`latest.patch`|
+|versionPattern|`null`|
+|onlyExternal|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <parent>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>credentials</artifactId>
+      <version>2.3.0</version>
+  </parent>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
+https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>credentials</artifactId>
+      <version>2.3.0</version>
+  </parent>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -2,1 +2,2 @@
+<project>
+- <parent>
++ <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
++https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
+      <groupId>org.jenkins-ci.plugins</groupId>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -102,6 +223,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -116,6 +240,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -126,6 +254,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -144,6 +276,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

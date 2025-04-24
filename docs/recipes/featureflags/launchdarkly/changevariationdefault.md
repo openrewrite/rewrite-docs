@@ -16,6 +16,9 @@ _Change the default value for `Variation` invocations for feature key._
 [GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/ChangeVariationDefault.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,9 +26,232 @@ _Change the default value for `Variation` invocations for feature key._
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `String` | defaultValue | The default value to use in feature flag invocations. | `true` |
 
-## License
+## Examples
+##### Example 1
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|featureKey|`flag-key-123abc`|
+|defaultValue|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.boolVariation("flag-key-123abc", context, false)) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+###### After
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.boolVariation("flag-key-123abc", context, true)) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+-       if (client.boolVariation("flag-key-123abc", context, false)) {
++       if (client.boolVariation("flag-key-123abc", context, true)) {
+            System.out.println("Feature is on");
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|featureKey|`flag-key-123abc`|
+|defaultValue|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.stringVariation("flag-key-123abc", context, "foo")) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+###### After
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.stringVariation("flag-key-123abc", context, "true")) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+-       if (client.stringVariation("flag-key-123abc", context, "foo")) {
++       if (client.stringVariation("flag-key-123abc", context, "true")) {
+            System.out.println("Feature is on");
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|featureKey|`flag-key-123abc`|
+|defaultValue|`4.56`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.doubleVariation("flag-key-123abc", context, 1.23)) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+###### After
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.doubleVariation("flag-key-123abc", context, 4.56)) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+-       if (client.doubleVariation("flag-key-123abc", context, 1.23)) {
++       if (client.doubleVariation("flag-key-123abc", context, 4.56)) {
+            System.out.println("Feature is on");
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|featureKey|`flag-key-123abc`|
+|defaultValue|`456`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.intVariation("flag-key-123abc", context, 123)) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+###### After
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+class Foo {
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+        if (client.intVariation("flag-key-123abc", context, 456)) {
+            System.out.println("Feature is on");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    private LDClient client = new LDClient("sdk-key-123abc");
+    void bar(LDContext context) {
+-       if (client.intVariation("flag-key-123abc", context, 123)) {
++       if (client.intVariation("flag-key-123abc", context, 456)) {
+            System.out.println("Feature is on");
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -127,6 +353,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -141,6 +370,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -151,6 +384,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -169,6 +406,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

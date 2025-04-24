@@ -20,7 +20,6 @@ _Applies best practices to Maven POMs._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -35,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Order POM elements](../maven/orderpomelements)
 * [Remove duplicate Maven dependencies](../maven/removeduplicatedependencies)
 * [Remove redundant explicit dependency and plugin versions](../maven/removeredundantdependencyversions)
+* [Migrate to `maven-dependency-plugin` goal `resolve-sources`](../maven/plugin/dependencyplugingoalresolvesources)
 
 </TabItem>
 
@@ -54,6 +54,7 @@ recipeList:
   - org.openrewrite.maven.OrderPomElements
   - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.maven.RemoveRedundantDependencyVersions
+  - org.openrewrite.maven.plugin.DependencyPluginGoalResolveSources
 
 ```
 </TabItem>
@@ -126,6 +127,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -140,6 +144,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -150,6 +158,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -168,6 +180,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Patrick Way, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adriano Machado, [DidierLoiseau](mailto:didierloiseau+git@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Ryan Hudson, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)
+[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Patrick Way, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adriano Machado, [DidierLoiseau](mailto:didierloiseau+git@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Ryan Hudson, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)

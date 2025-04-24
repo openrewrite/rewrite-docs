@@ -25,7 +25,6 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -38,24 +37,25 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Fest 2.x to AssertJ](../../../java/testing/assertj/festtoassertj)
 * [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj)
 * [Migrate TestNG assertions to AssertJ](../../../java/testing/testng/testngtoassertj)
+* [Adopt AssertJ Duration assertions](../../../java/testing/assertj/adoptassertjdurationassertions)
 * [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`](../../../java/testing/assertj/isequaltoignoringmillistoisclosetorecipe)
 * [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports)
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions)
 * [Shorten AssertJ assertions](../../../java/testing/assertj/simplifyassertjassertions)
 * [Simplify AssertJ assertions with `hasSize` argument](../../../java/testing/assertj/simplifyhassizeassertion)
 * [Refaster rules related to AssertJ assertions over `BigDecimal`s](../../../tech/picnic/errorprone/refasterrules/assertjbigdecimalrulesrecipes)
-* [`AssertJBigIntegerRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes)
+* [Adopt AssertJ BigInteger Assertions](../../../java/testing/assertj/assertjbigintegerrulesrecipes)
 * [`AssertJBooleanRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbooleanrulesrecipes)
-* [`AssertJByteRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbyterulesrecipes)
+* [Adopt AssertJ Byte Assertions](../../../java/testing/assertj/assertjbyterulesrecipes)
 * [`AssertJCharSequenceRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes)
-* [`AssertJDoubleRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjdoublerulesrecipes)
-* [`AssertJFloatRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjfloatrulesrecipes)
-* [`AssertJIntegerRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjintegerrulesrecipes)
-* [`AssertJLongRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes)
+* [Adopt AssertJ Double Assertions](../../../java/testing/assertj/assertjdoublerulesrecipes)
+* [Adopt AssertJ Float Assertions](../../../java/testing/assertj/assertjfloatrulesrecipes)
+* [Adopt AssertJ Integer Assertions](../../../java/testing/assertj/assertjintegerrulesrecipes)
+* [Adopt AssertJ Long Assertions](../../../java/testing/assertj/assertjlongrulesrecipes)
 * [`AssertJNumberRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes)
 * [`AssertJPrimitiveRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes)
 * [`AssertJRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes)
-* [`AssertJShortRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjshortrulesrecipes)
+* [Adopt AssertJ Short Assertions](../../../java/testing/assertj/assertjshortrulesrecipes)
 * [`AssertJStringRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes)
 * [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes)
 * [Collapse consecutive `assertThat` statements](../../../java/testing/assertj/collapseconsecutiveassertthatstatements)
@@ -79,24 +79,25 @@ recipeList:
   - org.openrewrite.java.testing.assertj.FestToAssertj
   - org.openrewrite.java.testing.assertj.JUnitToAssertj
   - org.openrewrite.java.testing.testng.TestNgToAssertj
+  - org.openrewrite.java.testing.assertj.AdoptAssertJDurationAssertions
   - org.openrewrite.java.testing.assertj.IsEqualToIgnoringMillisToIsCloseToRecipe
   - org.openrewrite.java.testing.assertj.StaticImports
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyHasSizeAssertion
   - tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes
-  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes
+  - org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes
-  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes
+  - org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes
-  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes
-  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes
-  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes
-  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes
+  - org.openrewrite.java.testing.assertj.AssertJDoubleRulesRecipes
+  - org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes
+  - org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes
+  - org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
-  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes
+  - org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes
   - org.openrewrite.java.testing.assertj.CollapseConsecutiveAssertThatStatements
@@ -104,6 +105,185 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+class Test {
+    void test() {
+        assertThat("test").isEqualTo("");
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+class Test {
+    void test() {
+        assertThat("test").isEmpty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+class Test {
+    void test() {
+-       assertThat("test").isEqualTo("");
++       assertThat("test").isEmpty();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.testng.Assert.fail;
+
+class Test {
+    void test() {
+        fail("foo");
+        fail("foo", new IllegalStateException());
+        fail();
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.fail;
+
+class Test {
+    void test() {
+        fail("foo");
+        fail("foo", new IllegalStateException());
+        fail();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import static org.testng.Assert.fail;
++import static org.assertj.core.api.Assertions.fail;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+class Test {
+    void test() {
+        assertThat("test").isEqualTo("");
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+class Test {
+    void test() {
+        assertThat("test").isEmpty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+class Test {
+    void test() {
+-       assertThat("test").isEqualTo("");
++       assertThat("test").isEmpty();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.testng.Assert.fail;
+
+class Test {
+    void test() {
+        fail("foo");
+        fail("foo", new IllegalStateException());
+        fail();
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.fail;
+
+class Test {
+    void test() {
+        fail("foo");
+        fail("foo", new IllegalStateException());
+        fail();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import static org.testng.Assert.fail;
++import static org.assertj.core.api.Assertions.fail;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -239,6 +419,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -253,6 +436,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -263,6 +450,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -281,6 +472,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Marvin, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Yeikel, [Sasha Sheikin](mailto:myminitrue@gmail.com), [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Tymes](mailto:jeremy@jtymes.net), [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Ties van de Ven, [Philippe GRANET](mailto:philippe.granet@gmail.com), [Jeroen Meijer](mailto:jjgmeijer@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Aaron Gershman
+[Tim te Beek](mailto:tim@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Marvin, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Yeikel, [Sasha Sheikin](mailto:myminitrue@gmail.com), [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), Lewis Birks, [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Tymes](mailto:jeremy@jtymes.net), [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com), Ties van de Ven, [Philippe GRANET](mailto:philippe.granet@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Aaron Gershman, [Jeroen Meijer](mailto:jjgmeijer@gmail.com)

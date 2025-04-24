@@ -15,9 +15,206 @@ _As of reactor-core 3.5 the `doAfterSuccessOrError` method is removed, this reci
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
-## License
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import reactor.core.publisher.Mono;
+
+class SomeClass {
+    void doSomething(Mono<String> mono) {
+        mono.doAfterSuccessOrError((result, error) -> {
+            if (error != null) {
+                System.out.println("error" + error);
+            } else {
+                System.out.println("success" + result);
+            }
+            System.out.println("other logs");
+        }).subscribe();
+    }
+}
+```
+
+###### After
+```java
+import reactor.core.observability.DefaultSignalListener;
+import reactor.core.publisher.Mono;
+import reactor.core.publisher.Operators;
+import reactor.core.publisher.SignalType;
+import reactor.util.context.Context;
+
+class SomeClass {
+    void doSomething(Mono<String> mono) {
+        mono.tap(() -> new DefaultSignalListener<>() {
+            String result;
+            Throwable error;
+            boolean done;
+            boolean processedOnce;
+            Context currentContext;
+
+            @Override
+            public synchronized void doFinally(SignalType signalType) {
+                if (processedOnce) {
+                    return;
+                }
+                processedOnce = true;
+                if (signalType == SignalType.CANCEL) {
+                    return;
+                }
+                if (error != null) {
+                    System.out.println("error" + error);
+                } else {
+                    System.out.println("success" + result);
+                }
+                System.out.println("other logs");
+            }
+
+            @Override
+            public synchronized void doOnNext(String result) {
+                if (done) {
+                    Operators.onDiscard(result, currentContext);
+                    return;
+                }
+                this.result = result;
+            }
+
+            @Override
+            public synchronized void doOnComplete() {
+                this.done = true;
+            }
+
+            @Override
+            public synchronized void doOnError(Throwable error) {
+                if (done) {
+                    Operators.onErrorDropped(error, currentContext);
+                    return;
+                }
+                this.error = error;
+                this.done = true;
+            }
+
+            @Override
+            public Context addToContext(Context originalContext) {
+                currentContext = originalContext;
+                return originalContext;
+            }
+
+            @Override
+            public synchronized void doOnCancel() {
+                if (done) {
+                    return;
+                }
+                this.done = true;
+                if (result != null) {
+                    Operators.onDiscard(result, currentContext);
+                }
+            }
+        }).subscribe();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,1 @@
++import reactor.core.observability.DefaultSignalListener;
+import reactor.core.publisher.Mono;
+@@ -2,0 +3,3 @@
+import reactor.core.publisher.Mono;
++import reactor.core.publisher.Operators;
++import reactor.core.publisher.SignalType;
++import reactor.util.context.Context;
+
+@@ -5,5 +9,22 @@
+class SomeClass {
+    void doSomething(Mono<String> mono) {
+-       mono.doAfterSuccessOrError((result, error) -> {
+-           if (error != null) {
+-               System.out.println("error" + error);
+-           } else {
+-               System.out.println("success" + result);
++       mono.tap(() -> new DefaultSignalListener<>() {
++           String result;
++           Throwable error;
++           boolean done;
++           boolean processedOnce;
++           Context currentContext;
++
++           @Override
++           public synchronized void doFinally(SignalType signalType) {
++               if (processedOnce) {
++                   return;
++               }
++               processedOnce = true;
++               if (signalType == SignalType.CANCEL) {
++                   return;
++               }
++               if (error != null) {
++                   System.out.println("error" + error);
++               } else {
++                   System.out.println("success" + result);
++               }
++               System.out.println("other logs");
+            }
+@@ -11,1 +32,41 @@
+                System.out.println("success" + result);
+            }
+-           System.out.println("other logs");
++
++           @Override
++           public synchronized void doOnNext(String result) {
++               if (done) {
++                   Operators.onDiscard(result, currentContext);
++                   return;
++               }
++               this.result = result;
++           }
++
++           @Override
++           public synchronized void doOnComplete() {
++               this.done = true;
++           }
++
++           @Override
++           public synchronized void doOnError(Throwable error) {
++               if (done) {
++                   Operators.onErrorDropped(error, currentContext);
++                   return;
++               }
++               this.error = error;
++               this.done = true;
++           }
++
++           @Override
++           public Context addToContext(Context originalContext) {
++               currentContext = originalContext;
++               return originalContext;
++           }
++
++           @Override
++           public synchronized void doOnCancel() {
++               if (done) {
++                   return;
++               }
++               this.done = true;
++               if (result != null) {
++                   Operators.onDiscard(result, currentContext);
++               }
++           }
+        }).subscribe();
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -52,6 +249,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -66,6 +266,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -76,6 +280,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -94,6 +302,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

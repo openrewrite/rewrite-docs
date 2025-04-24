@@ -16,7 +16,6 @@ _When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-ee-7.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -50,6 +49,183 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+    <persistence-unit name="JPAService">
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService1">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService2">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService3">s
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService4">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+    </persistence-unit>
+</persistence>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+    <persistence-unit name="JPAService">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService1">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService2">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService3">s
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService4">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+    </persistence-unit>
+</persistence>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+             version="1.0">
+    <persistence-unit name="JPAService">
+-       <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
++       <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+    <persistence-unit name="JPAService">
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService1">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService2">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService3">s
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService4">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+    </persistence-unit>
+</persistence>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+    <persistence-unit name="JPAService">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService1">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService2">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService3">s
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+        <class>my.jpa.Account</class>
+    </persistence-unit>
+    <persistence-unit name="JPAService4">
+        <provider>com.ibm.websphere.persistence.PersistenceProviderImpl</provider>
+    </persistence-unit>
+</persistence>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+             version="1.0">
+    <persistence-unit name="JPAService">
+-       <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
++       <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>java:comp/env/jdbc/DB2Connection</jta-data-source>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -185,6 +361,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -199,6 +378,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -209,6 +392,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -227,3 +414,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -26,7 +26,6 @@ _Migrates usage of Java Util Logging (JUL) to using SLF4J directly._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -74,6 +73,349 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger) {
+        logger.finest("finest");
+        logger.finer("finer");
+        logger.fine("fine");
+        logger.config("config");
+        logger.info("info");
+        logger.warning("warning");
+        logger.severe("severe");
+
+        logger.log(Level.FINEST, "finest");
+        logger.log(Level.FINER, "finer");
+        logger.log(Level.FINE, "fine");
+        logger.log(Level.CONFIG, "config");
+        logger.log(Level.INFO, "info");
+        logger.log(Level.WARNING, "warning");
+        logger.log(Level.SEVERE, "severe");
+
+        logger.log(Level.ALL, "all");
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+
+class Test {
+    void method(Logger logger) {
+        logger.trace("finest");
+        logger.trace("finer");
+        logger.debug("fine");
+        logger.info("config");
+        logger.info("info");
+        logger.warn("warning");
+        logger.error("severe");
+
+        logger.trace("finest");
+        logger.trace("finer");
+        logger.debug("fine");
+        logger.info("config");
+        logger.info("info");
+        logger.warn("warning");
+        logger.error("severe");
+
+        logger.trace("all");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
++import org.slf4j.Logger;
+
+@@ -6,4 +5,4 @@
+class Test {
+    void method(Logger logger) {
+-       logger.finest("finest");
+-       logger.finer("finer");
+-       logger.fine("fine");
+-       logger.config("config");
++       logger.trace("finest");
++       logger.trace("finer");
++       logger.debug("fine");
++       logger.info("config");
+        logger.info("info");
+@@ -11,2 +10,2 @@
+        logger.config("config");
+        logger.info("info");
+-       logger.warning("warning");
+-       logger.severe("severe");
++       logger.warn("warning");
++       logger.error("severe");
+
+@@ -14,7 +13,7 @@
+        logger.severe("severe");
+
+-       logger.log(Level.FINEST, "finest");
+-       logger.log(Level.FINER, "finer");
+-       logger.log(Level.FINE, "fine");
+-       logger.log(Level.CONFIG, "config");
+-       logger.log(Level.INFO, "info");
+-       logger.log(Level.WARNING, "warning");
+-       logger.log(Level.SEVERE, "severe");
++       logger.trace("finest");
++       logger.trace("finer");
++       logger.debug("fine");
++       logger.info("config");
++       logger.info("info");
++       logger.warn("warning");
++       logger.error("severe");
+
+@@ -22,1 +21,1 @@
+        logger.log(Level.SEVERE, "severe");
+
+-       logger.log(Level.ALL, "all");
++       logger.trace("all");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger, String param1) {
+        logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+
+class Test {
+    void method(Logger logger, String param1) {
+        logger.info("INFO Log entry, param1: {}", param1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
++import org.slf4j.Logger;
+
+@@ -6,1 +5,1 @@
+class Test {
+    void method(Logger logger, String param1) {
+-       logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
++       logger.info("INFO Log entry, param1: {}", param1);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger) {
+        logger.finest("finest");
+        logger.finer("finer");
+        logger.fine("fine");
+        logger.config("config");
+        logger.info("info");
+        logger.warning("warning");
+        logger.severe("severe");
+
+        logger.log(Level.FINEST, "finest");
+        logger.log(Level.FINER, "finer");
+        logger.log(Level.FINE, "fine");
+        logger.log(Level.CONFIG, "config");
+        logger.log(Level.INFO, "info");
+        logger.log(Level.WARNING, "warning");
+        logger.log(Level.SEVERE, "severe");
+
+        logger.log(Level.ALL, "all");
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+
+class Test {
+    void method(Logger logger) {
+        logger.trace("finest");
+        logger.trace("finer");
+        logger.debug("fine");
+        logger.info("config");
+        logger.info("info");
+        logger.warn("warning");
+        logger.error("severe");
+
+        logger.trace("finest");
+        logger.trace("finer");
+        logger.debug("fine");
+        logger.info("config");
+        logger.info("info");
+        logger.warn("warning");
+        logger.error("severe");
+
+        logger.trace("all");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
++import org.slf4j.Logger;
+
+@@ -6,4 +5,4 @@
+class Test {
+    void method(Logger logger) {
+-       logger.finest("finest");
+-       logger.finer("finer");
+-       logger.fine("fine");
+-       logger.config("config");
++       logger.trace("finest");
++       logger.trace("finer");
++       logger.debug("fine");
++       logger.info("config");
+        logger.info("info");
+@@ -11,2 +10,2 @@
+        logger.config("config");
+        logger.info("info");
+-       logger.warning("warning");
+-       logger.severe("severe");
++       logger.warn("warning");
++       logger.error("severe");
+
+@@ -14,7 +13,7 @@
+        logger.severe("severe");
+
+-       logger.log(Level.FINEST, "finest");
+-       logger.log(Level.FINER, "finer");
+-       logger.log(Level.FINE, "fine");
+-       logger.log(Level.CONFIG, "config");
+-       logger.log(Level.INFO, "info");
+-       logger.log(Level.WARNING, "warning");
+-       logger.log(Level.SEVERE, "severe");
++       logger.trace("finest");
++       logger.trace("finer");
++       logger.debug("fine");
++       logger.info("config");
++       logger.info("info");
++       logger.warn("warning");
++       logger.error("severe");
+
+@@ -22,1 +21,1 @@
+        logger.log(Level.SEVERE, "severe");
+
+-       logger.log(Level.ALL, "all");
++       logger.trace("all");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger, String param1) {
+        logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+
+class Test {
+    void method(Logger logger, String param1) {
+        logger.info("INFO Log entry, param1: {}", param1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
++import org.slf4j.Logger;
+
+@@ -6,1 +5,1 @@
+class Test {
+    void method(Logger logger, String param1) {
+-       logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
++       logger.info("INFO Log entry, param1: {}", param1);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -209,6 +551,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -223,6 +568,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -233,6 +582,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -251,6 +604,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Piotr P. Karwasz](mailto:piotr.github@karwasz.org), Wojtek, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Md Riyazul Islam, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Adriano Machado, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Piotr P. Karwasz](mailto:piotr.github@karwasz.org), Wojtek, [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Md Riyazul Islam, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Mike Solomon](mailto:mike@moderne.io)

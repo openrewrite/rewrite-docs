@@ -16,6 +16,9 @@ _Change a given type to another._
 [GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,9 +27,208 @@ _Change a given type to another._
 | `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. | `org.junit.jupiter.api.Assumptions` |
 | `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |
 
-## License
+## Examples
+##### Example 1
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldFullyQualifiedTypeName|`file`|
+|newFullyQualifiedTypeName|`newFile`|
+|ignoreDefinition|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="groovy" label="groovy">
+
+
+###### Before
+```groovy
+class file {
+}
+```
+
+###### After
+```groovy
+class newFile {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class file {
++class newFile {
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldFullyQualifiedTypeName|`file`|
+|newFullyQualifiedTypeName|`newFile`|
+|ignoreDefinition|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+class file {
+}
+```
+
+###### After
+```kotlin
+class newFile {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class file {
++class newFile {
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldFullyQualifiedTypeName|`java.util.logging.Logger`|
+|newFullyQualifiedTypeName|`org.apache.logging.log4j.Logger`|
+|ignoreDefinition|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger) {
+      logger.exiting("Test", "method");
+      logger.exiting("Test", "method", "result");
+    }
+}
+```
+
+###### After
+```java
+import org.apache.logging.log4j.Logger;
+
+class Test {
+    void method(Logger logger) {
+      logger.traceExit();
+      logger.traceExit("result");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.logging.Logger;
++import org.apache.logging.log4j.Logger;
+
+@@ -5,2 +5,2 @@
+class Test {
+    void method(Logger logger) {
+-     logger.exiting("Test", "method");
+-     logger.exiting("Test", "method", "result");
++     logger.traceExit();
++     logger.traceExit("result");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldFullyQualifiedTypeName|`java.util.logging.Logger`|
+|newFullyQualifiedTypeName|`org.apache.logging.log4j.Logger`|
+|ignoreDefinition|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger) {
+      logger.entering("Test", "method");
+      logger.entering("Test", "method", "param");
+      logger.entering("Test", "method", new Object[]{"param1", "param2"});
+    }
+}
+```
+
+###### After
+```java
+import org.apache.logging.log4j.Logger;
+
+class Test {
+    void method(Logger logger) {
+      logger.traceEntry();
+      logger.traceEntry(null, "param");
+      logger.traceEntry(null, new Object[]{"param1", "param2"});
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.logging.Logger;
++import org.apache.logging.log4j.Logger;
+
+@@ -5,3 +5,3 @@
+class Test {
+    void method(Logger logger) {
+-     logger.entering("Test", "method");
+-     logger.entering("Test", "method", "param");
+-     logger.entering("Test", "method", new Object[]{"param1", "param2"});
++     logger.traceEntry();
++     logger.traceEntry(null, "param");
++     logger.traceEntry(null, new Object[]{"param1", "param2"});
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -116,6 +318,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -130,6 +335,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -140,6 +349,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -158,6 +371,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nassim Jahnke](mailto:jahnke.nassim@gmail.com), [Kun Li](mailto:kun@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [zac.kim](mailto:zaccoding725@gmail.com), Michał Kosmulski, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Ralph Sanders, Josh Soref, Adriano Machado, [Patrick](mailto:patway99@gmail.com)

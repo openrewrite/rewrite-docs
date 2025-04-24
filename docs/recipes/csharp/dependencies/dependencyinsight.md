@@ -15,6 +15,9 @@ _Finds dependencies in `*.csproj` and `packages.config`._
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,9 +25,60 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 | `String` | packagePattern | *Optional*. Package glob pattern used to match dependencies. | `Microsoft*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|packagePattern|`null`|
+|version|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<Project ToolsVersion="4.0" DefaultTargets="FullPublish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
+    <PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
+      <ExcludeAssets>compile</ExcludeAssets>
+      <PrivateAssets>contentFiles</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
+```
+
+###### After
+```xml
+<Project ToolsVersion="4.0" DefaultTargets="FullPublish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <!--~~(Contoso.Utility.UsefulStuff:3.6.*)~~>--><PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
+    <!--~~(Contoso.Utility.SomeOtherUsefulStuff:3.6.0)~~>--><PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
+      <ExcludeAssets>compile</ExcludeAssets>
+      <PrivateAssets>contentFiles</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,2 @@
+<Project ToolsVersion="4.0" DefaultTargets="FullPublish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+-   <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
+-   <PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
++   <!--~~(Contoso.Utility.UsefulStuff:3.6.*)~~>--><PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
++   <!--~~(Contoso.Utility.SomeOtherUsefulStuff:3.6.0)~~>--><PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
+      <ExcludeAssets>compile</ExcludeAssets>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -59,6 +113,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.DependenciesInUse" label="DependenciesInUse">
+
 ### Dependencies in use
 **org.openrewrite.maven.table.DependenciesInUse**
 
@@ -75,6 +132,10 @@ _Direct and transitive dependencies in use._
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -89,6 +150,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -99,6 +164,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -117,6 +186,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tim te Beek](mailto:timtebeek@gmail.com)

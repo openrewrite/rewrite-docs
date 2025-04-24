@@ -4,6 +4,7 @@
 
 * [Cleanup](/recipes/maven/cleanup)
 * [Liberty](/recipes/maven/liberty)
+* [Plugin](/recipes/maven/plugin)
 * [Search](/recipes/maven/search)
 * [Security](/recipes/maven/security)
 * [Spring](/recipes/maven/spring)

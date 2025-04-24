@@ -20,9 +20,89 @@ _Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is 
 [GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupJavaAdoptOpenJDKToTemurin.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+jobs:
+  build:
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: set-up-jdk-0
+        uses: actions/setup-java@v2.3.0
+        with:
+          distribution: "adopt"
+          java-version: "11"
+      - name: set-up-jdk-1
+        uses: actions/setup-java@v2.3.0
+        with:
+          distribution: "adopt-hotspot"
+          java-version: "11"
+      - name: set-up-jdk-2
+        uses: actions/setup-java@v2.3.0
+        with:
+          distribution: "adopt-openj9"
+          java-version: "11"
+      - name: build
+        run: ./gradlew build test
+```
+
+###### After
+```yaml
+jobs:
+  build:
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: set-up-jdk-0
+        uses: actions/setup-java@v2.3.0
+        with:
+          distribution: "temurin"
+          java-version: "11"
+      - name: set-up-jdk-1
+        uses: actions/setup-java@v2.3.0
+        with:
+          distribution: "temurin"
+          java-version: "11"
+      - name: set-up-jdk-2
+        uses: actions/setup-java@v2.3.0
+        with:
+          distribution: "adopt-openj9"
+          java-version: "11"
+      - name: build
+        run: ./gradlew build test
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,1 +10,1 @@
+        uses: actions/setup-java@v2.3.0
+        with:
+-         distribution: "adopt"
++         distribution: "temurin"
+          java-version: "11"
+@@ -15,1 +15,1 @@
+        uses: actions/setup-java@v2.3.0
+        with:
+-         distribution: "adopt-hotspot"
++         distribution: "temurin"
+          java-version: "11"
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -159,6 +239,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -173,6 +256,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -183,6 +270,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -201,6 +292,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Yeikel](mailto:email@yeikel.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

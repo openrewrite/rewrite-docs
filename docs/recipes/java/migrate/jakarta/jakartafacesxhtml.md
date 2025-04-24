@@ -26,7 +26,6 @@ _Find and replace legacy JSF namespaces and javax references with Jakarta Faces 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -208,6 +207,219 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pe="http://primefaces.org/ui/extensions">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<p:outputPanel id="container" layout="block">
+    <h:panelGrid columns="4">
+        <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.mushrooms}" />
+        <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.onions}" />
+    </h:panelGrid>
+    <c:forEach items="#{sheetDynamicController.hoursOfDay}" var="hourOfDay" varStatus="status">
+            <pe:sheetcolumn styleClass="htRight #{row.cells[status.index].style}"
+                            headerText="#{hourOfDay}"
+                            value="#{row.cells[status.index].value}"
+                            readonlyCell="#{row.readOnly}"
+                            colType="numeric">
+                <f:converter converterId="javax.faces.Integer"/>
+            </pe:sheetcolumn>
+    </c:forEach>
+</p:outputPanel>
+</ui:composition>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="jakarta.faces.core"
+        xmlns:h="jakarta.faces.html"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:c="jakarta.tags.core"
+        xmlns:p="primefaces"
+        xmlns:pe="primefaces.extensions">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<p:outputPanel id="container" layout="block">
+    <h:panelGrid columns="4">
+        <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.mushrooms}" />
+        <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.onions}" />
+    </h:panelGrid>
+    <c:forEach items="#{sheetDynamicController.hoursOfDay}" var="hourOfDay" varStatus="status">
+            <pe:sheetcolumn styleClass="htRight #{row.cells[status.index].style}"
+                            headerText="#{hourOfDay}"
+                            value="#{row.cells[status.index].value}"
+                            readonlyCell="#{row.readOnly}"
+                            colType="numeric">
+                <f:converter converterId="jakarta.faces.Integer"/>
+            </pe:sheetcolumn>
+    </c:forEach>
+</p:outputPanel>
+</ui:composition>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,6 +4,6 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+-       xmlns:f="http://java.sun.com/jsf/core"
+-       xmlns:h="http://java.sun.com/jsf/html"
+-       xmlns:ui="http://java.sun.com/jsf/facelets"
+-       xmlns:c="http://java.sun.com/jsp/jstl/core"
+-       xmlns:p="http://primefaces.org/ui"
+-       xmlns:pe="http://primefaces.org/ui/extensions">
++       xmlns:f="jakarta.faces.core"
++       xmlns:h="jakarta.faces.html"
++       xmlns:ui="jakarta.faces.facelets"
++       xmlns:c="jakarta.tags.core"
++       xmlns:p="primefaces"
++       xmlns:pe="primefaces.extensions">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+@@ -13,2 +13,2 @@
+<p:outputPanel id="container" layout="block">
+    <h:panelGrid columns="4">
+-       <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.mushrooms}" />
+-       <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.onions}" />
++       <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.mushrooms}" />
++       <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.onions}" />
+    </h:panelGrid>
+@@ -22,1 +22,1 @@
+                            readonlyCell="#{row.readOnly}"
+                            colType="numeric">
+-               <f:converter converterId="javax.faces.Integer"/>
++               <f:converter converterId="jakarta.faces.Integer"/>
+            </pe:sheetcolumn>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pe="http://primefaces.org/ui/extensions">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<p:outputPanel id="container" layout="block">
+    <h:panelGrid columns="4">
+        <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.mushrooms}" />
+        <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.onions}" />
+    </h:panelGrid>
+    <c:forEach items="#{sheetDynamicController.hoursOfDay}" var="hourOfDay" varStatus="status">
+            <pe:sheetcolumn styleClass="htRight #{row.cells[status.index].style}"
+                            headerText="#{hourOfDay}"
+                            value="#{row.cells[status.index].value}"
+                            readonlyCell="#{row.readOnly}"
+                            colType="numeric">
+                <f:converter converterId="javax.faces.Integer"/>
+            </pe:sheetcolumn>
+    </c:forEach>
+</p:outputPanel>
+</ui:composition>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="jakarta.faces.core"
+        xmlns:h="jakarta.faces.html"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:c="jakarta.tags.core"
+        xmlns:p="primefaces"
+        xmlns:pe="primefaces.extensions">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<p:outputPanel id="container" layout="block">
+    <h:panelGrid columns="4">
+        <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.mushrooms}" />
+        <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.onions}" />
+    </h:panelGrid>
+    <c:forEach items="#{sheetDynamicController.hoursOfDay}" var="hourOfDay" varStatus="status">
+            <pe:sheetcolumn styleClass="htRight #{row.cells[status.index].style}"
+                            headerText="#{hourOfDay}"
+                            value="#{row.cells[status.index].value}"
+                            readonlyCell="#{row.readOnly}"
+                            colType="numeric">
+                <f:converter converterId="jakarta.faces.Integer"/>
+            </pe:sheetcolumn>
+    </c:forEach>
+</p:outputPanel>
+</ui:composition>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,6 +4,6 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+-       xmlns:f="http://java.sun.com/jsf/core"
+-       xmlns:h="http://java.sun.com/jsf/html"
+-       xmlns:ui="http://java.sun.com/jsf/facelets"
+-       xmlns:c="http://java.sun.com/jsp/jstl/core"
+-       xmlns:p="http://primefaces.org/ui"
+-       xmlns:pe="http://primefaces.org/ui/extensions">
++       xmlns:f="jakarta.faces.core"
++       xmlns:h="jakarta.faces.html"
++       xmlns:ui="jakarta.faces.facelets"
++       xmlns:c="jakarta.tags.core"
++       xmlns:p="primefaces"
++       xmlns:pe="primefaces.extensions">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+@@ -13,2 +13,2 @@
+<p:outputPanel id="container" layout="block">
+    <h:panelGrid columns="4">
+-       <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.mushrooms}" />
+-       <p:inputText converter="javax.faces.Integer" value="#{basicGChartController.onions}" />
++       <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.mushrooms}" />
++       <p:inputText converter="jakarta.faces.Integer" value="#{basicGChartController.onions}" />
+    </h:panelGrid>
+@@ -22,1 +22,1 @@
+                            readonlyCell="#{row.readOnly}"
+                            colType="numeric">
+-               <f:converter converterId="javax.faces.Integer"/>
++               <f:converter converterId="jakarta.faces.Integer"/>
+            </pe:sheetcolumn>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -343,6 +555,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -357,6 +572,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -367,6 +586,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -385,3 +608,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

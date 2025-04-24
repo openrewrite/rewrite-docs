@@ -20,7 +20,6 @@ _This recipe is intended to break down the modernization of very old plugins int
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -76,6 +75,263 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.42</version>
+    </parent>
+    <artifactId>example-plugin</artifactId>
+    <version>0.8-SNAPSHOT</version>
+    <properties>
+        <jenkins.version>2.303.3</jenkins.version>
+        <java.level>8</java.level>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>junit</artifactId>
+            <version>1.12</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.51</version>
+        <relativePath />
+    </parent>
+    <artifactId>example-plugin</artifactId>
+    <version>0.8-SNAPSHOT</version>
+    <properties>
+        <jenkins.version>2.346.3</jenkins.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.346.x</artifactId>
+                <version>1763.v092b_8980a_f5e</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,2 @@
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+-       <version>4.42</version>
++       <version>4.51</version>
++       <relativePath />
+    </parent>
+@@ -10,2 +11,1 @@
+    <version>0.8-SNAPSHOT</version>
+    <properties>
+-       <jenkins.version>2.303.3</jenkins.version>
+-       <java.level>8</java.level>
++       <jenkins.version>2.346.3</jenkins.version>
+    </properties>
+@@ -13,0 +13,11 @@
+        <java.level>8</java.level>
+    </properties>
++   <dependencyManagement>
++       <dependencies>
++           <dependency>
++               <groupId>io.jenkins.tools.bom</groupId>
++               <artifactId>bom-2.346.x</artifactId>
++               <version>1763.v092b_8980a_f5e</version>
++               <type>pom</type>
++               <scope>import</scope>
++           </dependency>
++       </dependencies>
++   </dependencyManagement>
+    <dependencies>
+@@ -17,1 +28,0 @@
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>junit</artifactId>
+-           <version>1.12</version>
+        </dependency>
+@@ -23,1 +33,1 @@
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+-           <url>http://repo.jenkins-ci.org/public/</url>
++           <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.42</version>
+    </parent>
+    <artifactId>example-plugin</artifactId>
+    <version>0.8-SNAPSHOT</version>
+    <properties>
+        <jenkins.version>2.303.3</jenkins.version>
+        <java.level>8</java.level>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>junit</artifactId>
+            <version>1.12</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.51</version>
+        <relativePath />
+    </parent>
+    <artifactId>example-plugin</artifactId>
+    <version>0.8-SNAPSHOT</version>
+    <properties>
+        <jenkins.version>2.346.3</jenkins.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.346.x</artifactId>
+                <version>1763.v092b_8980a_f5e</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,2 @@
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+-       <version>4.42</version>
++       <version>4.51</version>
++       <relativePath />
+    </parent>
+@@ -10,2 +11,1 @@
+    <version>0.8-SNAPSHOT</version>
+    <properties>
+-       <jenkins.version>2.303.3</jenkins.version>
+-       <java.level>8</java.level>
++       <jenkins.version>2.346.3</jenkins.version>
+    </properties>
+@@ -13,0 +13,11 @@
+        <java.level>8</java.level>
+    </properties>
++   <dependencyManagement>
++       <dependencies>
++           <dependency>
++               <groupId>io.jenkins.tools.bom</groupId>
++               <artifactId>bom-2.346.x</artifactId>
++               <version>1763.v092b_8980a_f5e</version>
++               <type>pom</type>
++               <scope>import</scope>
++           </dependency>
++       </dependencies>
++   </dependencyManagement>
+    <dependencies>
+@@ -17,1 +28,0 @@
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>junit</artifactId>
+-           <version>1.12</version>
+        </dependency>
+@@ -23,1 +33,1 @@
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+-           <url>http://repo.jenkins-ci.org/public/</url>
++           <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -211,6 +467,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -225,6 +484,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -235,6 +498,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -253,6 +520,28 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Steve Hill](mailto:sghill.dev@gmail.com), [Valentin Delaye](mailto:jonesbusy@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Valentin Delaye, [Knut Wannheden](mailto:knut@moderne.io)

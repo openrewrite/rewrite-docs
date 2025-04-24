@@ -15,6 +15,9 @@ _This recipe uses two phase AI approach to find a method invocation that resembl
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -22,9 +25,58 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 | `String` | resembles | The text, either a natural language description or a code sample, that you are looking for. | `HTTP request with Content-Type application/json` |
 | `int` | k | Since AI based matching has a higher latency than rules based matching, we do a first pass to find the top k methods using embeddings. To narrow the scope, you can specify the top k methods as method filters. | `5` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|resembles|`HTTP request with Content-Type application/json`|
+|k|`4`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import kong.unirest.*;
+class Test {
+    void test() {
+          Unirest.post("https://httpbin.org/post")
+                  .header("Content-Type", "application/json")
+                  .body("1")
+                  .asString();
+    }
+}
+```
+
+###### After
+```java
+import kong.unirest.*;
+class Test {
+    void test() {
+          /*~~>*/Unirest.post("https://httpbin.org/post")
+                  .header("Content-Type", "application/json")
+                  .body("1")
+                  .asString();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+class Test {
+    void test() {
+-         Unirest.post("https://httpbin.org/post")
++         /*~~>*/Unirest.post("https://httpbin.org/post")
+                  .header("Content-Type", "application/json")
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -71,6 +123,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="io.moderne.ai.table.CodeSearch" label="CodeSearch">
+
 ### Code Search
 **io.moderne.ai.table.CodeSearch**
 
@@ -85,6 +140,10 @@ _Searches for method invocations that resemble a natural language query._
 | Called second model | True if the generative model was used. |
 | Result of second model | Second generative model's result. |
 
+</TabItem>
+
+<TabItem value="io.moderne.ai.table.TopKMethodMatcher" label="TopKMethodMatcher">
+
 ### Top-K Method Matcher
 **io.moderne.ai.table.TopKMethodMatcher**
 
@@ -96,6 +155,10 @@ _Result from the scanning recipe for top-k method patterns that match the query.
 | Method Signature | Method invocation signature. |
 | Distance | The distance between the query and the method invocation. |
 | Query | The natural language search query. |
+
+</TabItem>
+
+<TabItem value="io.moderne.ai.table.EmbeddingPerformance" label="EmbeddingPerformance">
 
 ### Embedding performance
 **io.moderne.ai.table.EmbeddingPerformance**
@@ -109,6 +172,10 @@ _Latency characteristics of uses of embedding models._
 | Histogram | The latency histogram of the requests made to the model (counts). The histogram is a non-cumulative fixed distribution of 100 buckets of 0.01 second each. |
 | Max latency | The maximum embedding latency. |
 
+</TabItem>
+
+<TabItem value="io.moderne.ai.table.GenerativeModelPerformance" label="GenerativeModelPerformance">
+
 ### Generative model performance
 **io.moderne.ai.table.GenerativeModelPerformance**
 
@@ -121,6 +188,10 @@ _Latency characteristics of uses of generative models._
 | Histogram | The latency histogram of the requests made to the model (counts). The histogram is a non-cumulative fixed distribution of 100 buckets of 1 second each. |
 | Max latency | The maximum embedding latency. |
 
+</TabItem>
+
+<TabItem value="io.moderne.ai.table.SuggestedMethodPatterns" label="SuggestedMethodPatterns">
+
 ### Suggested method patterns
 **io.moderne.ai.table.SuggestedMethodPatterns**
 
@@ -131,6 +202,10 @@ _As the next step after the AI-based searching for method invocations, you may w
 | Method | Method invocation |
 | Method Pattern | Method invocation pattern. |
 | Query | The natural language search query. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -146,6 +221,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -156,6 +235,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -174,3 +257,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

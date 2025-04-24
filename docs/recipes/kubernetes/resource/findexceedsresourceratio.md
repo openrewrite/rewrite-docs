@@ -15,6 +15,9 @@ _Find resource manifests that have requests to limits ratios beyond a specific m
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,9 +26,93 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 | `String` | ratioLimit | The maximum ratio allowed between requests and limits. | `2` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|resourceType|`memory`|
+|ratioLimit|`2`|
+|fileMatcher|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: application
+spec:
+  containers:
+  - image: nginx:latest
+    resources:
+        limits:
+            cpu: "2Gi"
+            memory: "1Gi"
+        requests:
+            cpu: "100Mi"
+            memory: "64m"
+  - image: k8s.gcr.io/test-webserver
+    resources:
+        limits:
+            cpu: "2Gi"
+            memory: "1Gi"
+        requests:
+            cpu: "100Mi"
+            memory: "64m"
+```
+
+###### After
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: application
+spec:
+  containers:
+  - image: nginx:latest
+    ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+        limits:
+            cpu: "2Gi"
+            memory: "1Gi"
+        requests:
+            cpu: "100Mi"
+            memory: "64m"
+  - image: k8s.gcr.io/test-webserver
+    ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+        limits:
+            cpu: "2Gi"
+            memory: "1Gi"
+        requests:
+            cpu: "100Mi"
+            memory: "64m"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,1 +9,1 @@
+  containers:
+  - image: nginx:latest
+-   resources:
++   ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+        limits:
+@@ -17,1 +17,1 @@
+            memory: "64m"
+  - image: k8s.gcr.io/test-webserver
+-   resources:
++   ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+        limits:
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -73,6 +160,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -87,6 +177,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -97,6 +191,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -115,6 +213,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Jon Brisbin](mailto:jon@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Aaron Gershman

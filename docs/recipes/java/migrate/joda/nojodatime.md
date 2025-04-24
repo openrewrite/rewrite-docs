@@ -24,7 +24,6 @@ _Before Java 8, Java lacked a robust date and time library, leading to the wides
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -64,6 +63,277 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
+class A {
+    void foo() {
+        DateTime dt = new DateTime();
+        DateTime dt1 = new DateTime().plusDays(1);
+        Interval i = new Interval(dt, dt1);
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+###### After
+```java
+import org.threeten.extra.Interval;
+
+import java.time.ZonedDateTime;
+
+class A {
+    void foo() {
+        ZonedDateTime dt = ZonedDateTime.now();
+        ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
+        Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.joda.time.DateTime;
+-import org.joda.time.Interval;
++import org.threeten.extra.Interval;
+
+@@ -4,0 +3,2 @@
+import org.joda.time.Interval;
+
++import java.time.ZonedDateTime;
++
+class A {
+@@ -6,3 +7,3 @@
+class A {
+    void foo() {
+-       DateTime dt = new DateTime();
+-       DateTime dt1 = new DateTime().plusDays(1);
+-       Interval i = new Interval(dt, dt1);
++       ZonedDateTime dt = ZonedDateTime.now();
++       ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
++       Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threeten-extra</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,0 +12,5 @@
+            <version>2.12.3</version>
+        </dependency>
++       <dependency>
++           <groupId>org.threeten</groupId>
++           <artifactId>threeten-extra</artifactId>
++           <version>1.8.0</version>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+foo
+```
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
+class A {
+    void foo() {
+        DateTime dt = new DateTime();
+        DateTime dt1 = new DateTime().plusDays(1);
+        Interval i = new Interval(dt, dt1);
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+###### After
+```java
+import org.threeten.extra.Interval;
+
+import java.time.ZonedDateTime;
+
+class A {
+    void foo() {
+        ZonedDateTime dt = ZonedDateTime.now();
+        ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
+        Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.joda.time.DateTime;
+-import org.joda.time.Interval;
++import org.threeten.extra.Interval;
+
+@@ -4,0 +3,2 @@
+import org.joda.time.Interval;
+
++import java.time.ZonedDateTime;
++
+class A {
+@@ -6,3 +7,3 @@
+class A {
+    void foo() {
+-       DateTime dt = new DateTime();
+-       DateTime dt1 = new DateTime().plusDays(1);
+-       Interval i = new Interval(dt, dt1);
++       ZonedDateTime dt = ZonedDateTime.now();
++       ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
++       Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threeten-extra</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,0 +12,5 @@
+            <version>2.12.3</version>
+        </dependency>
++       <dependency>
++           <groupId>org.threeten</groupId>
++           <artifactId>threeten-extra</artifactId>
++           <version>1.8.0</version>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+foo
+```
+
 
 ## Usage
 
@@ -199,6 +469,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -213,6 +486,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -223,6 +500,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -241,3 +522,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -20,9 +20,80 @@ _The constructor of all primitive types has been deprecated in favor of using th
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/PrimitiveWrapperClassConstructorToValueOf.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    Boolean bool = new Boolean(true);
+    Byte b = new Byte("1");
+    Character c = new Character('c');
+    Double d = new Double(1.0);
+    Float f = new Float(1.1f);
+    Long l = new Long(1);
+    Short sh = new Short("12");
+    short s3 = 3;
+    Short sh3 = new Short(s3);
+    Integer i = new Integer(1);
+}
+```
+
+###### After
+```java
+class A {
+    Boolean bool = Boolean.valueOf(true);
+    Byte b = Byte.valueOf("1");
+    Character c = Character.valueOf('c');
+    Double d = Double.valueOf(1.0);
+    Float f = Float.valueOf(1.1f);
+    Long l = Long.valueOf(1);
+    Short sh = Short.valueOf("12");
+    short s3 = 3;
+    Short sh3 = Short.valueOf(s3);
+    Integer i = Integer.valueOf(1);
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,7 +2,7 @@
+class A {
+-   Boolean bool = new Boolean(true);
+-   Byte b = new Byte("1");
+-   Character c = new Character('c');
+-   Double d = new Double(1.0);
+-   Float f = new Float(1.1f);
+-   Long l = new Long(1);
+-   Short sh = new Short("12");
++   Boolean bool = Boolean.valueOf(true);
++   Byte b = Byte.valueOf("1");
++   Character c = Character.valueOf('c');
++   Double d = Double.valueOf(1.0);
++   Float f = Float.valueOf(1.1f);
++   Long l = Long.valueOf(1);
++   Short sh = Short.valueOf("12");
+    short s3 = 3;
+@@ -10,2 +10,2 @@
+    Short sh = new Short("12");
+    short s3 = 3;
+-   Short sh3 = new Short(s3);
+-   Integer i = new Integer(1);
++   Short sh3 = Short.valueOf(s3);
++   Integer i = Integer.valueOf(1);
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -159,6 +230,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -173,6 +247,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -183,6 +261,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -201,6 +283,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com), Derek Sharpe

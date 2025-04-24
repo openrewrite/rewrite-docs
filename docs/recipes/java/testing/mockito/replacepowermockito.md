@@ -25,7 +25,6 @@ _PowerMockito with raw Mockito; best executed as part of a Mockito upgrade._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -106,6 +105,327 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @Test
+    void testWithCalendar() {
+        PowerMockito.mockStatic(Calendar.class);
+        PowerMockito.mockStatic(Currency.class);
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
+    }
+}
+```
+
+###### After
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class StaticMethodTest {
+
+    private MockedStatic<Currency> mockedCurrency;
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @BeforeMethod
+    void setUpStaticMocks() {
+        mockedCurrency = Mockito.mockStatic(Currency.class);
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+        mockedCurrency.closeOnDemand();
+    }
+
+    @Test
+    void testWithCalendar() {
+        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,0 +7,1 @@
+import java.util.Locale;
+
++import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+@@ -8,2 +9,1 @@
+
+import org.mockito.Mockito;
+-import org.powermock.api.mockito.PowerMockito;
+-import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+@@ -11,0 +11,1 @@
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
++import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+@@ -13,1 +14,0 @@
+import org.testng.annotations.Test;
+
+-@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
+@@ -16,0 +16,4 @@
+public class StaticMethodTest {
+
++   private MockedStatic<Currency> mockedCurrency;
++
++   private MockedStatic<Calendar> mockedCalendar;
++
+    private Calendar calendarMock;
+@@ -23,0 +27,12 @@
+    }
+
++   @BeforeMethod
++   void setUpStaticMocks() {
++       mockedCurrency = Mockito.mockStatic(Currency.class);
++       mockedCalendar = Mockito.mockStatic(Calendar.class);
++   }
++
++   @AfterMethod(alwaysRun = true)
++   void tearDownStaticMocks() {
++       mockedCalendar.closeOnDemand();
++       mockedCurrency.closeOnDemand();
++   }
++
+    @Test
+@@ -25,3 +41,1 @@
+    @Test
+    void testWithCalendar() {
+-       PowerMockito.mockStatic(Calendar.class);
+-       PowerMockito.mockStatic(Currency.class);
+-       Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++       mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+@@ -29,1 +43,1 @@
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+-       Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
++       mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @Test
+    void testWithCalendar() {
+        PowerMockito.mockStatic(Calendar.class);
+        PowerMockito.mockStatic(Currency.class);
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
+    }
+}
+```
+
+###### After
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class StaticMethodTest {
+
+    private MockedStatic<Currency> mockedCurrency;
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @BeforeMethod
+    void setUpStaticMocks() {
+        mockedCurrency = Mockito.mockStatic(Currency.class);
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+        mockedCurrency.closeOnDemand();
+    }
+
+    @Test
+    void testWithCalendar() {
+        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,0 +7,1 @@
+import java.util.Locale;
+
++import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+@@ -8,2 +9,1 @@
+
+import org.mockito.Mockito;
+-import org.powermock.api.mockito.PowerMockito;
+-import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+@@ -11,0 +11,1 @@
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
++import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+@@ -13,1 +14,0 @@
+import org.testng.annotations.Test;
+
+-@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
+@@ -16,0 +16,4 @@
+public class StaticMethodTest {
+
++   private MockedStatic<Currency> mockedCurrency;
++
++   private MockedStatic<Calendar> mockedCalendar;
++
+    private Calendar calendarMock;
+@@ -23,0 +27,12 @@
+    }
+
++   @BeforeMethod
++   void setUpStaticMocks() {
++       mockedCurrency = Mockito.mockStatic(Currency.class);
++       mockedCalendar = Mockito.mockStatic(Calendar.class);
++   }
++
++   @AfterMethod(alwaysRun = true)
++   void tearDownStaticMocks() {
++       mockedCalendar.closeOnDemand();
++       mockedCurrency.closeOnDemand();
++   }
++
+    @Test
+@@ -25,3 +41,1 @@
+    @Test
+    void testWithCalendar() {
+-       PowerMockito.mockStatic(Calendar.class);
+-       PowerMockito.mockStatic(Currency.class);
+-       Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++       mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+@@ -29,1 +43,1 @@
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+-       Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
++       mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -241,6 +561,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -255,6 +578,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -265,6 +592,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -283,6 +614,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)

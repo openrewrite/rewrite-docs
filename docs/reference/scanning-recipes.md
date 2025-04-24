@@ -297,8 +297,8 @@ For Maven project, removes a single dependency from the `<dependencies>` section
 _org.openrewrite.java.dependencies.UpgradeDependencyVersion_
 
 For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:
-* `String` notation: `"group:artifact:version"` 
-* `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
+ * `String` notation: `"group:artifact:version"` 
+ * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
 It is possible to update version numbers which are defined earlier in the same file in variable declarations.
 
 For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
@@ -313,6 +313,14 @@ _org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion_
 
 The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11.
 
+### [Find minimum JUnit version](../recipes/java/dependencies/search/findminimumjunitversion.md)
+_org.openrewrite.java.dependencies.search.FindMinimumJUnitVersion_
+
+A recipe to find the minimum version of JUnit dependencies. This recipe is designed to return the minimum version of JUnit in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the minimum version of JUnit 4.
+If a minimumVersion is provided, the recipe will search to see if the minimum version of JUnit used by the project is no lower than the minimumVersion.
+For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7.
+Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
+
 ### [Find and fix vulnerable Nuget dependencies](../recipes/csharp/dependencies/dependencyvulnerabilitycheck.md)
 _org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck_
 
@@ -326,7 +334,7 @@ Locates and reports on all licenses in use.
 ### [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck.md)
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-04-07T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-04-21T1102.
 
 ### [Remove unused dependencies](../recipes/java/dependencies/removeunuseddependencies.md)
 _org.openrewrite.java.dependencies.RemoveUnusedDependencies_
@@ -418,6 +426,17 @@ _org.openrewrite.java.migrate.joda.JodaTimeRecipe_
 
 Prefer the Java standard library over third-party usage of Joda Time.
 
+### [Rename getter methods to fit Lombok](../recipes/java/migrate/lombok/adoptlombokgettermethodnames.md)
+_org.openrewrite.java.migrate.lombok.AdoptLombokGetterMethodNames_
+
+Rename methods that are effectively getter to the name Lombok would give them.
+
+Limitations:
+ - If two methods in a class are effectively the same getter then one's name will be corrected and the others name will be left as it is.
+ - If the correct name for a method is already taken by another method then the name will not be corrected.
+ - Method name swaps or circular renaming within a class cannot be performed because the names block each other.
+E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is.
+
 ### [Convert `@lombok.Value` class to Record](../recipes/java/migrate/lombok/lombokvaluetorecord.md)
 _org.openrewrite.java.migrate.lombok.LombokValueToRecord_
 
@@ -442,6 +461,11 @@ Identify the direct and transitive Node.js dependencies used in a project.
 _org.openrewrite.nodejs.search.FindNodeProjects_
 
 Find Node.js projects and summarize data about them.
+
+### [Extract documentation examples from tests](../recipes/java/recipes/examplesextractor.md)
+_org.openrewrite.java.recipes.ExamplesExtractor_
+
+Extract the before/after sources from tests annotated with `@DocumentExample`, and generate a YAML file with those examples to be shown in the documentation to show usage.
 
 ### [Rename bean](../recipes/java/spring/renamebean.md)
 _org.openrewrite.java.spring.RenameBean_
@@ -476,7 +500,7 @@ Spring Integration now reuses an available `TaskScheduler` rather than configuri
 ### [Applications using logging shutdown hooks](../recipes/java/spring/boot2/search/loggingshutdownhooks.md)
 _org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks_
 
-Spring Boot registers a logging shutdown hook by default for JAR-based applications to ensure that logging resources are released when the JVM exits. If your application is deployed as a WAR then the shutdown hook is not registered since the servlet container usually handles logging concerns.
+Spring Boot registers a logging shutdown hook by default for JAR-based applications to ensure that logging resources are released when the JVM exits. If your application is deployed as a WAR then the shutdown hook is not registered since the servlet container usually handles logging concerns. 
 
 Most applications will want the shutdown hook. However, if your application has complex context hierarchies, then you may need to disable it. You can use the `logging.register-shutdown-hook` property to do that.
 
@@ -535,7 +559,7 @@ _org.openrewrite.java.testing.mockito.AnyToNullable_
 
 Since Mockito 2.10 `anyString()` and `any()` no longer matches null values. Use `nullable(Class)` instead.
 
-### [Replace `verifyZeroInteractions() to `verifyNoMoreInteractions()](../recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
+### [Replace `verifyZeroInteractions()` to `verifyNoMoreInteractions()](../recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
 _org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions_
 
 Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version < 3.x.

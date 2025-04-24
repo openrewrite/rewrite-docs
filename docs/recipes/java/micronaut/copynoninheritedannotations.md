@@ -16,9 +16,115 @@ _As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/mi
 [GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/CopyNonInheritedAnnotations.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package abc;
+import io.micronaut.runtime.context.scope.Refreshable;
+
+@Refreshable
+public abstract class BaseController {
+}
+
+public abstract class MiddleController extends BaseController {
+}
+```
+
+###### After
+```java
+package abc;
+import io.micronaut.runtime.context.scope.Refreshable;
+
+@Refreshable
+public abstract class BaseController {
+}
+
+@Refreshable
+public abstract class MiddleController extends BaseController {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,0 +8,1 @@
+}
+
++@Refreshable
+public abstract class MiddleController extends BaseController {
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package abc;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+
+public class SuperClass {
+
+    @Controller
+    public class MyController extends MiddleController {
+        @Get
+        public String info() {
+            return "system info: ";
+        }
+    }
+}
+```
+
+###### After
+```java
+package abc;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.runtime.context.scope.Refreshable;
+
+public class SuperClass {
+
+    @Controller
+    @Refreshable
+    public class MyController extends MiddleController {
+        @Get
+        public String info() {
+            return "system info: ";
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,1 @@
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
++import io.micronaut.runtime.context.scope.Refreshable;
+
+@@ -8,0 +9,1 @@
+
+    @Controller
++   @Refreshable
+    public class MyController extends MiddleController {
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +261,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +278,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +292,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,3 +314,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

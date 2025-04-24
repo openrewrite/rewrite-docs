@@ -20,7 +20,6 @@ _This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.js
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -74,6 +73,127 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+    xmlns="http://jboss.org/xml/ns/javax/validation/configuration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/configuration validation-configuration-1.1.xsd"
+    version="1.1">
+    <default-provider>org.apache.bval.jsr303.ApacheValidationProvider</default-provider>
+    <message-interpolator>org.apache.bval.jsr.DefaultMessageInterpolator</message-interpolator>
+    <traversable-resolver>org.apache.bval.jsr.resolver.DefaultTraversableResolver</traversable-resolver>
+    <constraint-validator-factory>org.apache.bval.jsr.DefaultConstraintValidatorFactory</constraint-validator-factory>
+    <parameter-name-provider>org.apache.bval.jsr.parameter.DefaultParameterNameProvider</parameter-name-provider>
+</validation-config>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+    xmlns="http://jboss.org/xml/ns/javax/validation/configuration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/configuration validation-configuration-1.1.xsd"
+    version="1.1">
+    <default-provider>org.hibernate.validator.HibernateValidator</default-provider>
+    <message-interpolator>org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator</message-interpolator>
+    <traversable-resolver>org.hibernate.validator.engine.resolver.DefaultTraversableResolver</traversable-resolver>
+    <constraint-validator-factory>org.hibernate.validator.engine.ConstraintValidatorFactoryImpl</constraint-validator-factory>
+</validation-config>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,5 +7,4 @@
+    xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/configuration validation-configuration-1.1.xsd"
+    version="1.1">
+-   <default-provider>org.apache.bval.jsr303.ApacheValidationProvider</default-provider>
+-   <message-interpolator>org.apache.bval.jsr.DefaultMessageInterpolator</message-interpolator>
+-   <traversable-resolver>org.apache.bval.jsr.resolver.DefaultTraversableResolver</traversable-resolver>
+-   <constraint-validator-factory>org.apache.bval.jsr.DefaultConstraintValidatorFactory</constraint-validator-factory>
+-   <parameter-name-provider>org.apache.bval.jsr.parameter.DefaultParameterNameProvider</parameter-name-provider>
++   <default-provider>org.hibernate.validator.HibernateValidator</default-provider>
++   <message-interpolator>org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator</message-interpolator>
++   <traversable-resolver>org.hibernate.validator.engine.resolver.DefaultTraversableResolver</traversable-resolver>
++   <constraint-validator-factory>org.hibernate.validator.engine.ConstraintValidatorFactoryImpl</constraint-validator-factory>
+</validation-config>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+    xmlns="http://jboss.org/xml/ns/javax/validation/configuration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/configuration validation-configuration-1.1.xsd"
+    version="1.1">
+    <default-provider>org.apache.bval.jsr303.ApacheValidationProvider</default-provider>
+    <message-interpolator>org.apache.bval.jsr.DefaultMessageInterpolator</message-interpolator>
+    <traversable-resolver>org.apache.bval.jsr.resolver.DefaultTraversableResolver</traversable-resolver>
+    <constraint-validator-factory>org.apache.bval.jsr.DefaultConstraintValidatorFactory</constraint-validator-factory>
+    <parameter-name-provider>org.apache.bval.jsr.parameter.DefaultParameterNameProvider</parameter-name-provider>
+</validation-config>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+    xmlns="http://jboss.org/xml/ns/javax/validation/configuration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/configuration validation-configuration-1.1.xsd"
+    version="1.1">
+    <default-provider>org.hibernate.validator.HibernateValidator</default-provider>
+    <message-interpolator>org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator</message-interpolator>
+    <traversable-resolver>org.hibernate.validator.engine.resolver.DefaultTraversableResolver</traversable-resolver>
+    <constraint-validator-factory>org.hibernate.validator.engine.ConstraintValidatorFactoryImpl</constraint-validator-factory>
+</validation-config>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,5 +7,4 @@
+    xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/configuration validation-configuration-1.1.xsd"
+    version="1.1">
+-   <default-provider>org.apache.bval.jsr303.ApacheValidationProvider</default-provider>
+-   <message-interpolator>org.apache.bval.jsr.DefaultMessageInterpolator</message-interpolator>
+-   <traversable-resolver>org.apache.bval.jsr.resolver.DefaultTraversableResolver</traversable-resolver>
+-   <constraint-validator-factory>org.apache.bval.jsr.DefaultConstraintValidatorFactory</constraint-validator-factory>
+-   <parameter-name-provider>org.apache.bval.jsr.parameter.DefaultParameterNameProvider</parameter-name-provider>
++   <default-provider>org.hibernate.validator.HibernateValidator</default-provider>
++   <message-interpolator>org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator</message-interpolator>
++   <traversable-resolver>org.hibernate.validator.engine.resolver.DefaultTraversableResolver</traversable-resolver>
++   <constraint-validator-factory>org.hibernate.validator.engine.ConstraintValidatorFactoryImpl</constraint-validator-factory>
+</validation-config>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -209,6 +329,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -223,6 +346,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -233,6 +360,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -251,3 +382,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

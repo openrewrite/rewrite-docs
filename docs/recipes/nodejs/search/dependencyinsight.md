@@ -15,6 +15,9 @@ _Identify the direct and transitive Node.js dependencies used in a project._
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,9 +26,100 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
 | `Boolean` | onlyDirect | *Optional*. If enabled, transitive dependencies will not be considered. All dependencies are searched by default. | `true` |
 
-## License
+## Example
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|namePattern|`lodash*`|
+|version|`null`|
+|onlyDirect|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="json" label="json">
+
+
+###### Before
+```json
+{
+  "name": "example",
+  "version": "1.0.0",
+  "dependencies": {
+    "jwt-decode": "^4.0.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.kebabcase": "^4.1.0"
+  }
+}
+```
+
+###### After
+```json
+{
+  "name": "example",
+  "version": "1.0.0",
+  "dependencies": {
+    "jwt-decode": "^4.0.0",
+    /*~~(4.3.0)~~>*/"lodash.camelcase": "^4.3.0",
+    /*~~(4.1.1)~~>*/"lodash.kebabcase": "^4.1.0"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,2 +6,2 @@
+  "dependencies": {
+    "jwt-decode": "^4.0.0",
+-   "lodash.camelcase": "^4.3.0",
+-   "lodash.kebabcase": "^4.1.0"
++   /*~~(4.3.0)~~>*/"lodash.camelcase": "^4.3.0",
++   /*~~(4.1.1)~~>*/"lodash.kebabcase": "^4.1.0"
+  }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```json
+{
+  "name": "example",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "example",
+      "version": "1.0.0",
+      "dependencies": {
+        "jwt-decode": "^4.0.0",
+        "lodash.camelcase": "^4.3.0",
+        "lodash.kebabcase": "^4.1.0"
+      }
+    },
+    "node_modules/jwt-decode": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/jwt-decode/-/jwt-decode-4.0.0.tgz",
+      "integrity": "sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==",
+      "engines": {
+        "node": ">=18"
+      }
+    },
+    "node_modules/lodash.camelcase": {
+      "version": "4.3.0",
+      "resolved": "https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz",
+      "integrity": "sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA=="
+    },
+    "node_modules/lodash.kebabcase": {
+      "version": "4.1.1",
+      "resolved": "https://registry.npmjs.org/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz",
+      "integrity": "sha512-N8XRTIMMqqDgSy4VLKPnJ/+hpGZN+PHQiJnSenYqPaVV/NCqEogTnAdZLQiGKhxX+JCs8waWq2t1XHWKOmlY8g=="
+    }
+  }
+}
+```
 
 
 ## Usage
@@ -73,6 +167,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.nodejs.table.DependenciesInUse" label="DependenciesInUse">
+
 ### Dependencies in use
 **org.openrewrite.nodejs.table.DependenciesInUse**
 
@@ -83,6 +180,10 @@ _Direct and transitive dependencies in use._
 | Name | The name of the node package. |
 | Requested version | The requested version. |
 | Version | The resolved version. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -98,6 +199,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -108,6 +213,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -126,3 +235,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -16,6 +16,9 @@ _Recipes which manipulate dependencies must be able to successfully access the a
 [GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyResolutionDiagnostic.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -24,9 +27,47 @@ _Recipes which manipulate dependencies must be able to successfully access the a
 | `String` | artifactId | *Optional*. The artifact ID of a dependency to attempt to download from the repository. Default value is "jackson-core". If this dependency is not found in the repository the error will be noted in the report. There is no need to specify an alternate value for this parameter unless the repository is known not to contain jackson-core. | `jackson-core` |
 | `String` | version | *Optional*. The version of a dependency to attempt to download from the repository. Default value is "2.16.0". If this dependency is not found in the repository the error will be noted in the report. There is no need to specify an alternate value for this parameter unless the repository is known not to contain jackson-core. | `2.16.0` |
 
-## License
+## Example
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`null`|
+|artifactId|`null`|
+|version|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id("java")
+}
+```
+
+###### After
+```groovy title="build.gradle"
+/*~~(build.gradle is a Gradle build file, but it is missing a GradleProject marker.)~~>*/plugins {
+    id("java")
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -1,1 +1,1 @@
+-plugins {
++/*~~(build.gradle is a Gradle build file, but it is missing a GradleProject marker.)~~>*/plugins {
+    id("java")
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -163,6 +204,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.dependencies.table.RepositoryAccessibilityReport" label="RepositoryAccessibilityReport">
+
 ### Repository accessibility report
 **org.openrewrite.java.dependencies.table.RepositoryAccessibilityReport**
 
@@ -177,6 +221,10 @@ _Listing of all dependency repositories and whether they are accessible._
 | Dependency resolution exception type | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the type of exception encountered when attempting to access the repository. |
 | Dependency resolution error message | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the error message encountered when attempting to access the repository. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.java.dependencies.table.GradleDependencyConfigurationErrors" label="GradleDependencyConfigurationErrors">
+
 ### Gradle dependency configuration errors
 **org.openrewrite.java.dependencies.table.GradleDependencyConfigurationErrors**
 
@@ -188,6 +236,10 @@ _Records Gradle dependency configurations which failed to resolve during parsing
 | Configuration name | The name of the dependency configuration which failed to resolve. |
 | Exception type | The type of exception encountered when attempting to resolve the dependency configuration. |
 | Error message | The error message encountered when attempting to resolve the dependency configuration. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -203,6 +255,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -213,6 +269,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -231,3 +291,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

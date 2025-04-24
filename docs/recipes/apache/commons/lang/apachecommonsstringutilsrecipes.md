@@ -20,7 +20,6 @@ _Refaster template recipes for `org.openrewrite.apache.commons.lang.ApacheCommon
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -80,6 +79,285 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.lang3.StringUtils;
+
+class Foo {
+    void bar(String in, CharSequence cs) {
+        // Reuse output variables for readability
+        String[] array;
+        boolean bool;
+        int integer;
+        String string;
+
+        // Test all methods in alphabetical order to only execute the slow recipes once
+        string = StringUtils.abbreviate(in, 10);
+        string = StringUtils.capitalize(in);
+        string = StringUtils.center(in, 10);
+        string = StringUtils.center(in, 10, ' ');
+        string = StringUtils.center(in, 10, " ");
+        string = StringUtils.chomp(in);
+        string = StringUtils.chop(in);
+
+        bool = StringUtils.contains(in, "search");
+
+        integer = StringUtils.countMatches(in, '|');
+        integer = StringUtils.countMatches(in, "|");
+
+        string = StringUtils.defaultString(in);
+        string = StringUtils.defaultString(in, "nil");
+        string = StringUtils.deleteWhitespace(in);
+
+        //bool = StringUtils.endsWithIgnoreCase(in, "suffix");
+        bool = StringUtils.equalsIgnoreCase(in, "other");
+        bool = StringUtils.equals(in, "other");
+        bool = StringUtils.equals(cs, "other");
+        bool = StringUtils.equals(cs, cs);
+
+        //integer = StringUtils.indexOfAny(in, "search");
+
+        bool = StringUtils.isAlphanumericSpace(in);
+        bool = StringUtils.isAlphanumeric(in);
+        bool = StringUtils.isAlphaSpace(in);
+        bool = StringUtils.isAlpha(in);
+        bool = StringUtils.isEmpty(in);
+
+        string = StringUtils.join(in);
+        string = StringUtils.joinWith(",", in);
+        string = StringUtils.left(in, 4);
+        string = StringUtils.leftPad(in, 4);
+        string = StringUtils.leftPad(in, 4, ' ');
+        string = StringUtils.leftPad(in, 4, " ");
+        string = StringUtils.lowerCase(in);
+        string = StringUtils.mid(in, 3, 4);
+        string = StringUtils.overlay(in, "overlay", 3, 5);
+
+        string = StringUtils.remove(in, "r");
+        string = StringUtils.removeEnd(in, "suffix");
+        string = StringUtils.repeat(in, 4);
+        string = StringUtils.repeat(in, ",", 4);
+        string = StringUtils.replace(in, "search", "replacement");
+        //string = StringUtils.replaceOnce(in, "search", "replacement");
+        string = StringUtils.reverse(in);
+        string = StringUtils.right(in, 5);
+        string = StringUtils.rightPad(in, 5);
+        string = StringUtils.rightPad(in, 5, ' ');
+        string = StringUtils.rightPad(in, 5, " ");
+
+        array = StringUtils.split(in);
+        //array = StringUtils.split(in, "*");
+        bool = StringUtils.startsWith(in, "prefix");
+        bool = StringUtils.startsWithAny(in, "prefix");
+        bool = StringUtils.startsWithIgnoreCase(in, "prefix");
+        array = StringUtils.stripAll(in);
+
+        string = StringUtils.strip(in);
+        string = StringUtils.stripEnd(in, "suffix");
+        string = StringUtils.stripStart(in, "chars");
+
+        bool = StringUtils.startsWith(in, "prefix");
+
+        string = StringUtils.substringAfter(in, "|");
+        string = StringUtils.substring(in, 2, 4);
+        string = StringUtils.swapCase(in);
+        string = StringUtils.trimToEmpty(in);
+        string = StringUtils.trimToNull(in);
+        string = StringUtils.trim(in);
+        string = StringUtils.upperCase(in);
+        string = StringUtils.uncapitalize(in);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Objects;
+
+class Foo {
+    void bar(String in, CharSequence cs) {
+        // Reuse output variables for readability
+        String[] array;
+        boolean bool;
+        int integer;
+        String string;
+
+        // Test all methods in alphabetical order to only execute the slow recipes once
+        string = in == null || in.length() <= 10 ? in : in.substring(0, 10 - 3) + "...";
+        string = in == null || in.isEmpty() || Character.isTitleCase(in.charAt(0)) ? in : Character.toTitleCase(in.charAt(0)) + in.substring(1);
+        string = StringUtils.center(in, 10);
+        string = StringUtils.center(in, 10, ' ');
+        string = StringUtils.center(in, 10, " ");
+        string = StringUtils.chomp(in);
+        string = StringUtils.chop(in);
+
+        bool = StringUtils.contains(in, "search");
+
+        integer = StringUtils.countMatches(in, '|');
+        integer = StringUtils.countMatches(in, "|");
+
+        string = Objects.toString(in, "");
+        string = Objects.toString(in, "nil");
+        string = in == null ? null : in.replaceAll("\\s+", "");
+
+        //bool = StringUtils.endsWithIgnoreCase(in, "suffix");
+        bool = in == null ? false : in.equalsIgnoreCase("other");
+        bool = Objects.equals(in, "other");
+        bool = StringUtils.equals(cs, "other");
+        bool = StringUtils.equals(cs, cs);
+
+        //integer = StringUtils.indexOfAny(in, "search");
+
+        bool = StringUtils.isAlphanumericSpace(in);
+        bool = StringUtils.isAlphanumeric(in);
+        bool = StringUtils.isAlphaSpace(in);
+        bool = StringUtils.isAlpha(in);
+        bool = StringUtils.isEmpty(in);
+
+        string = StringUtils.join(in);
+        string = StringUtils.joinWith(",", in);
+        string = StringUtils.left(in, 4);
+        string = StringUtils.leftPad(in, 4);
+        string = StringUtils.leftPad(in, 4, ' ');
+        string = StringUtils.leftPad(in, 4, " ");
+        string = in == null ? null : in.toLowerCase();
+        string = StringUtils.mid(in, 3, 4);
+        string = StringUtils.overlay(in, "overlay", 3, 5);
+
+        string = StringUtils.remove(in, "r");
+        string = in == null || in.isEmpty() || !in.endsWith("suffix") ? in : in.substring(0, in.length() - "suffix".length());
+        string = StringUtils.repeat(in, 4);
+        string = StringUtils.repeat(in, ",", 4);
+        string = in == null || in.isEmpty() ? in : in.replace("search", "replacement");
+        //string = StringUtils.replaceOnce(in, "search", "replacement");
+        string = in == null ? null : new StringBuilder(in).reverse().toString();
+        string = StringUtils.right(in, 5);
+        string = StringUtils.rightPad(in, 5);
+        string = StringUtils.rightPad(in, 5, ' ');
+        string = StringUtils.rightPad(in, 5, " ");
+
+        array = in == null ? null : in.split("\\s+");
+        //array = StringUtils.split(in, "*");
+        bool = StringUtils.startsWith(in, "prefix");
+        bool = StringUtils.startsWithAny(in, "prefix");
+        bool = StringUtils.startsWithIgnoreCase(in, "prefix");
+        array = StringUtils.stripAll(in);
+
+        string = in == null ? null : in.trim();
+        string = StringUtils.stripEnd(in, "suffix");
+        string = StringUtils.stripStart(in, "chars");
+
+        bool = StringUtils.startsWith(in, "prefix");
+
+        string = StringUtils.substringAfter(in, "|");
+        string = StringUtils.substring(in, 2, 4);
+        string = StringUtils.swapCase(in);
+        string = in == null ? "" : in.trim();
+        string = in == null || in.trim().isEmpty() ? null : in.trim();
+        string = in == null ? null : in.trim();
+        string = in == null ? null : in.toUpperCase();
+        string = StringUtils.uncapitalize(in);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,2 @@
+import org.apache.commons.lang3.StringUtils;
+
++import java.util.Objects;
++
+class Foo {
+@@ -12,2 +14,2 @@
+
+        // Test all methods in alphabetical order to only execute the slow recipes once
+-       string = StringUtils.abbreviate(in, 10);
+-       string = StringUtils.capitalize(in);
++       string = in == null || in.length() <= 10 ? in : in.substring(0, 10 - 3) + "...";
++       string = in == null || in.isEmpty() || Character.isTitleCase(in.charAt(0)) ? in : Character.toTitleCase(in.charAt(0)) + in.substring(1);
+        string = StringUtils.center(in, 10);
+@@ -25,3 +27,3 @@
+        integer = StringUtils.countMatches(in, "|");
+
+-       string = StringUtils.defaultString(in);
+-       string = StringUtils.defaultString(in, "nil");
+-       string = StringUtils.deleteWhitespace(in);
++       string = Objects.toString(in, "");
++       string = Objects.toString(in, "nil");
++       string = in == null ? null : in.replaceAll("\\s+", "");
+
+@@ -30,2 +32,2 @@
+
+        //bool = StringUtils.endsWithIgnoreCase(in, "suffix");
+-       bool = StringUtils.equalsIgnoreCase(in, "other");
+-       bool = StringUtils.equals(in, "other");
++       bool = in == null ? false : in.equalsIgnoreCase("other");
++       bool = Objects.equals(in, "other");
+        bool = StringUtils.equals(cs, "other");
+@@ -49,1 +51,1 @@
+        string = StringUtils.leftPad(in, 4, ' ');
+        string = StringUtils.leftPad(in, 4, " ");
+-       string = StringUtils.lowerCase(in);
++       string = in == null ? null : in.toLowerCase();
+        string = StringUtils.mid(in, 3, 4);
+@@ -54,1 +56,1 @@
+
+        string = StringUtils.remove(in, "r");
+-       string = StringUtils.removeEnd(in, "suffix");
++       string = in == null || in.isEmpty() || !in.endsWith("suffix") ? in : in.substring(0, in.length() - "suffix".length());
+        string = StringUtils.repeat(in, 4);
+@@ -57,1 +59,1 @@
+        string = StringUtils.repeat(in, 4);
+        string = StringUtils.repeat(in, ",", 4);
+-       string = StringUtils.replace(in, "search", "replacement");
++       string = in == null || in.isEmpty() ? in : in.replace("search", "replacement");
+        //string = StringUtils.replaceOnce(in, "search", "replacement");
+@@ -59,1 +61,1 @@
+        string = StringUtils.replace(in, "search", "replacement");
+        //string = StringUtils.replaceOnce(in, "search", "replacement");
+-       string = StringUtils.reverse(in);
++       string = in == null ? null : new StringBuilder(in).reverse().toString();
+        string = StringUtils.right(in, 5);
+@@ -65,1 +67,1 @@
+        string = StringUtils.rightPad(in, 5, " ");
+
+-       array = StringUtils.split(in);
++       array = in == null ? null : in.split("\\s+");
+        //array = StringUtils.split(in, "*");
+@@ -72,1 +74,1 @@
+        array = StringUtils.stripAll(in);
+
+-       string = StringUtils.strip(in);
++       string = in == null ? null : in.trim();
+        string = StringUtils.stripEnd(in, "suffix");
+@@ -81,4 +83,4 @@
+        string = StringUtils.substring(in, 2, 4);
+        string = StringUtils.swapCase(in);
+-       string = StringUtils.trimToEmpty(in);
+-       string = StringUtils.trimToNull(in);
+-       string = StringUtils.trim(in);
+-       string = StringUtils.upperCase(in);
++       string = in == null ? "" : in.trim();
++       string = in == null || in.trim().isEmpty() ? null : in.trim();
++       string = in == null ? null : in.trim();
++       string = in == null ? null : in.toUpperCase();
+        string = StringUtils.uncapitalize(in);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -215,6 +493,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -229,6 +510,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -239,6 +524,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -257,3 +546,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

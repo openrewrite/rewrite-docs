@@ -26,7 +26,6 @@ _Migrate Hamcrest `assertThat(..)` to JUnit Jupiter `Assertions`._
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -82,6 +81,145 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
+
+class ATest {
+    @Test
+    void testEquals() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1, is(equalTo(str2)));
+        assertThat(str1, is(not(equalTo(str2 + "!"))));
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+class ATest {
+    @Test
+    void testEquals() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertEquals(str1, str2);
+        assertNotEquals(str1, str2 + "!");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,4 +2,2 @@
+import org.junit.jupiter.api.Test;
+-import static org.hamcrest.MatcherAssert.assertThat;
+-import static org.hamcrest.Matchers.equalTo;
+-import static org.hamcrest.Matchers.is;
+-import static org.hamcrest.Matchers.not;
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+@@ -12,2 +10,2 @@
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+-       assertThat(str1, is(equalTo(str2)));
+-       assertThat(str1, is(not(equalTo(str2 + "!"))));
++       assertEquals(str1, str2);
++       assertNotEquals(str1, str2 + "!");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
+
+class ATest {
+    @Test
+    void testEquals() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1, is(equalTo(str2)));
+        assertThat(str1, is(not(equalTo(str2 + "!"))));
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+class ATest {
+    @Test
+    void testEquals() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertEquals(str1, str2);
+        assertNotEquals(str1, str2 + "!");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,4 +2,2 @@
+import org.junit.jupiter.api.Test;
+-import static org.hamcrest.MatcherAssert.assertThat;
+-import static org.hamcrest.Matchers.equalTo;
+-import static org.hamcrest.Matchers.is;
+-import static org.hamcrest.Matchers.not;
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+@@ -12,2 +10,2 @@
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+-       assertThat(str1, is(equalTo(str2)));
+-       assertThat(str1, is(not(equalTo(str2 + "!"))));
++       assertEquals(str1, str2);
++       assertNotEquals(str1, str2 + "!");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -217,6 +355,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -231,6 +372,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -241,6 +386,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -259,6 +408,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 matusmatokpt, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aleksandar A Simpson](mailto:alek@asu.me)

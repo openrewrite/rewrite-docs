@@ -16,9 +16,105 @@ _OpenJPA persists the fields of attributes of type `java.sql.Date`, `java.sql.Ti
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/javax/RemoveTemporalAnnotation.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
+
+public class TemporalDates {
+    @Temporal(TemporalType.DATE)
+    private Date dateDate;
+
+    @Temporal(TemporalType.TIME)
+    private Date dateTime;
+
+    @Temporal(TemporalType.DATE)
+    private Time timeDate;
+
+    @Temporal(TemporalType.TIME)
+    private java.sql.Time timeTime;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private java.sql.Time timeTimestamp;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private java.sql.Timestamp timestampTimestamp;
+}
+```
+
+###### After
+```java
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
+
+public class TemporalDates {
+    private Date dateDate;
+
+    private Date dateTime;
+
+    private Time timeDate;
+
+    private java.sql.Time timeTime;
+
+    private java.sql.Time timeTimestamp;
+
+    private java.sql.Timestamp timestampTimestamp;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,0 @@
+
+public class TemporalDates {
+-   @Temporal(TemporalType.DATE)
+    private Date dateDate;
+@@ -11,1 +10,0 @@
+    private Date dateDate;
+
+-   @Temporal(TemporalType.TIME)
+    private Date dateTime;
+@@ -14,1 +12,0 @@
+    private Date dateTime;
+
+-   @Temporal(TemporalType.DATE)
+    private Time timeDate;
+@@ -17,1 +14,0 @@
+    private Time timeDate;
+
+-   @Temporal(TemporalType.TIME)
+    private java.sql.Time timeTime;
+@@ -20,1 +16,0 @@
+    private java.sql.Time timeTime;
+
+-   @Temporal(TemporalType.TIMESTAMP)
+    private java.sql.Time timeTimestamp;
+@@ -23,1 +18,0 @@
+    private java.sql.Time timeTimestamp;
+
+-   @Temporal(TemporalType.TIMESTAMP)
+    private java.sql.Timestamp timestampTimestamp;
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +251,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +268,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +282,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +304,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 Evie Lau, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

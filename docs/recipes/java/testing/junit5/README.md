@@ -39,6 +39,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Make lifecycle methods non private](./lifecyclenonprivate.md)
 * [Migrate JUnit 4 `@Test` annotations to JUnit 5](./updatetestannotation.md)
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](./migratejunittestcase.md)
+* [Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension](./environmentvariables.md)
 * [Migrate JUnit 4 lifecycle annotations to JUnit Jupiter](./updatebeforeafterannotations.md)
 * [Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`](./usetestmethodorder.md)
 * [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](./updatemockwebserver.md)

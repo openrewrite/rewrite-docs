@@ -20,7 +20,6 @@ _Applies all recipes that replace logger declarations with class level annotatio
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -56,6 +55,417 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(A.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+class A {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,3 @@
++import lombok.extern.slf4j.Slf4j;
++
++@Slf4j
+class A {
+@@ -2,1 +5,0 @@
+class A {
+-   private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(A.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+class B {
+    private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+class B {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.logging.log4j.Logger;
+-import org.apache.logging.log4j.LogManager;
++import lombok.extern.log4j.Log4j2;
++
++@Log4j2
+class B {
+@@ -4,1 +5,0 @@
+import org.apache.logging.log4j.LogManager;
+class B {
+-   private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Logger;
+class C {
+    private static final Logger log = Logger.getLogger(C.class.getName());
+}
+```
+
+###### After
+```java
+import lombok.extern.java.Log;
+
+@Log
+class C {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,3 @@
+-import java.util.logging.Logger;
++import lombok.extern.java.Log;
++
++@Log
+class C {
+@@ -3,1 +5,0 @@
+import java.util.logging.Logger;
+class C {
+-   private static final Logger log = Logger.getLogger(C.class.getName());
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.jboss.logging.Logger;
+class D {
+    private static final Logger log = Logger.getLogger(D.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.jbosslog.JBossLog;
+
+@JBossLog
+class D {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,3 @@
+-import org.jboss.logging.Logger;
++import lombok.extern.jbosslog.JBossLog;
++
++@JBossLog
+class D {
+@@ -3,1 +5,0 @@
+import org.jboss.logging.Logger;
+class D {
+-   private static final Logger log = Logger.getLogger(D.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+class E {
+    private static final Log log = LogFactory.getLog(E.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.apachecommons.CommonsLog;
+
+@CommonsLog
+class E {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.commons.logging.Log;
+-import org.apache.commons.logging.LogFactory;
++import lombok.extern.apachecommons.CommonsLog;
++
++@CommonsLog
+class E {
+@@ -4,1 +5,0 @@
+import org.apache.commons.logging.LogFactory;
+class E {
+-   private static final Log log = LogFactory.getLog(E.class);
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(A.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+class A {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,3 @@
++import lombok.extern.slf4j.Slf4j;
++
++@Slf4j
+class A {
+@@ -2,1 +5,0 @@
+class A {
+-   private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(A.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+class B {
+    private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+class B {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.logging.log4j.Logger;
+-import org.apache.logging.log4j.LogManager;
++import lombok.extern.log4j.Log4j2;
++
++@Log4j2
+class B {
+@@ -4,1 +5,0 @@
+import org.apache.logging.log4j.LogManager;
+class B {
+-   private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Logger;
+class C {
+    private static final Logger log = Logger.getLogger(C.class.getName());
+}
+```
+
+###### After
+```java
+import lombok.extern.java.Log;
+
+@Log
+class C {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,3 @@
+-import java.util.logging.Logger;
++import lombok.extern.java.Log;
++
++@Log
+class C {
+@@ -3,1 +5,0 @@
+import java.util.logging.Logger;
+class C {
+-   private static final Logger log = Logger.getLogger(C.class.getName());
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.jboss.logging.Logger;
+class D {
+    private static final Logger log = Logger.getLogger(D.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.jbosslog.JBossLog;
+
+@JBossLog
+class D {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,3 @@
+-import org.jboss.logging.Logger;
++import lombok.extern.jbosslog.JBossLog;
++
++@JBossLog
+class D {
+@@ -3,1 +5,0 @@
+import org.jboss.logging.Logger;
+class D {
+-   private static final Logger log = Logger.getLogger(D.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+class E {
+    private static final Log log = LogFactory.getLog(E.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.apachecommons.CommonsLog;
+
+@CommonsLog
+class E {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.commons.logging.Log;
+-import org.apache.commons.logging.LogFactory;
++import lombok.extern.apachecommons.CommonsLog;
++
++@CommonsLog
+class E {
+@@ -4,1 +5,0 @@
+import org.apache.commons.logging.LogFactory;
+class E {
+-   private static final Log log = LogFactory.getLog(E.class);
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -191,6 +601,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -205,6 +618,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -215,6 +632,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -233,3 +654,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

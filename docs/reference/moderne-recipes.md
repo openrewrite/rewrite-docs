@@ -278,6 +278,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle8spring34.md)
 * [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle7spring34.md)
 * [Upgrade MyBatis to Spring Boot 3.4](../recipes/java/spring/boot3/upgrademybatistospringboot_3_4.md)
+* [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](../recipes/java/spring/boot3/upgradespringcloudawstospringboot_3_4.md)
 * [Upgrade dependencies to Spring Cloud 2024](../recipes/java/spring/cloud2024/dependencyupgrades.md)
 * [Use `kafkaAwareTransactionManager` setter](../recipes/java/spring/boot3/replacekafkatransactionmanagersetter.md)
 

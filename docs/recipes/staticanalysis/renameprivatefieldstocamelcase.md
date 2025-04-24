@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.RenamePrivateFieldsToCamelCase**
 
-_Reformat private field names to camelCase to comply with Java naming convention. The recipe will not rename fields with default, protected or public access modifiers.The recipe will not rename private constants.The first character is set to lower case and existing capital letters are preserved. Special characters that are allowed in java field names `$` and `_` are removed. If a special character is removed the next valid alphanumeric will be capitalized. The recipe will not rename a field if the result already exists in the class, conflicts with a java reserved keyword, or the result is blank._
+_Reformat private field names to camelCase to comply with Java naming convention. The recipe will not rename fields with default, protected or public access modifiers. The recipe will not rename private constants. The first character is set to lower case and existing capital letters are preserved. Special characters that are allowed in java field names `$` and `_` are removed. If a special character is removed the next valid alphanumeric will be capitalized. The recipe will not rename a field if the result already exists in the class, conflicts with a java reserved keyword, or the result is blank._
 
 ### Tags
 
@@ -21,9 +21,88 @@ _Reformat private field names to camelCase to comply with Java naming convention
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RenamePrivateFieldsToCamelCase.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    private int DoChange = 10;
+    public int DoNotChangePublicMember;
+    int DoNotChangeDefaultMember;
+
+    public int getTen() {
+        return DoChange;
+    }
+
+    public int getTwenty() {
+        return this.DoChange * 2;
+    }
+
+    public int getThirty() {
+        return DoChange * 3;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    private int doChange = 10;
+    public int DoNotChangePublicMember;
+    int DoNotChangeDefaultMember;
+
+    public int getTen() {
+        return doChange;
+    }
+
+    public int getTwenty() {
+        return this.doChange * 2;
+    }
+
+    public int getThirty() {
+        return doChange * 3;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Test {
+-   private int DoChange = 10;
++   private int doChange = 10;
+    public int DoNotChangePublicMember;
+@@ -7,1 +7,1 @@
+
+    public int getTen() {
+-       return DoChange;
++       return doChange;
+    }
+@@ -11,1 +11,1 @@
+
+    public int getTwenty() {
+-       return this.DoChange * 2;
++       return this.doChange * 2;
+    }
+@@ -15,1 +15,1 @@
+
+    public int getThirty() {
+-       return DoChange * 3;
++       return doChange * 3;
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -160,6 +239,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -174,6 +256,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -184,6 +270,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -202,6 +292,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 Guliver, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [pstreef](mailto:p.streef@gmail.com)

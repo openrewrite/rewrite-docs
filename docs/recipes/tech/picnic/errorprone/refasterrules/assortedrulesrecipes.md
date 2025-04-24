@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes**
 
-_Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules)._
+_Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules. [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules)._
 
 ## Recipe source
 
@@ -20,7 +20,6 @@ _Assorted Refaster rules that do not (yet) belong in one of the other classes wi
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -30,7 +29,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssortedRules.CheckIndex`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$checkindexrecipe)
+* [Refaster template `AssortedRules.IteratorGetNextOrDefault`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$iteratorgetnextordefaultrecipe)
 * [Refaster template `AssortedRules.LogicalImplication`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe)
+* [Refaster template `AssortedRules.UnboundedSingleElementStream`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$unboundedsingleelementstreamrecipe)
+* [Refaster template `AssortedRules.DisjointSets`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$disjointsetsrecipe)
+* [Refaster template `AssortedRules.DisjointCollections`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$disjointcollectionsrecipe)
+* [Refaster template `AssortedRules.IterableIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$iterableisemptyrecipe)
 * [Refaster template `AssortedRules.SplitToStream`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$splittostreamrecipe)
 
 </TabItem>
@@ -43,11 +47,16 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssortedRulesRecipes
 displayName: `AssortedRules` Refaster recipes
 description: |
-  Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules
+  Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules.
   [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IteratorGetNextOrDefaultRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$UnboundedSingleElementStreamRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointSetsRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointCollectionsRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IterableIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$SplitToStreamRecipe
 
 ```
@@ -188,6 +197,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -202,6 +214,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -212,6 +228,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -230,3 +250,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -20,7 +20,6 @@ _Refaster template recipes for `org.openrewrite.apache.maven.shared.MavenSharedS
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -74,6 +73,137 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.maven.shared.utils.StringUtils;
+
+class Foo {
+    void bar(String in, CharSequence cs) {
+        // Reuse output variables for readability
+        String[] array;
+        boolean bool;
+        String string;
+
+        // Test all methods in alphabetical order to only execute the slow recipes once
+        string = StringUtils.abbreviate(in, 10);
+        string = StringUtils.capitalise(in);
+        string = StringUtils.defaultString(in);
+        string = StringUtils.defaultString(in, "nil");
+        string = StringUtils.deleteWhitespace(in);
+
+        bool = StringUtils.equalsIgnoreCase(in, "other");
+        bool = StringUtils.equals(in, "other");
+        //bool = StringUtils.equals(cs, "other");
+        bool = StringUtils.isEmpty(in);
+
+        string = StringUtils.lowerCase(in);
+        string = StringUtils.replace(in, "search", "replacement");
+        string = StringUtils.reverse(in);
+        array = StringUtils.split(in);
+        string = StringUtils.strip(in);
+        string = StringUtils.trim(in);
+        string = StringUtils.upperCase(in);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.maven.shared.utils.StringUtils;
+
+import java.util.Objects;
+
+class Foo {
+    void bar(String in, CharSequence cs) {
+        // Reuse output variables for readability
+        String[] array;
+        boolean bool;
+        String string;
+
+        // Test all methods in alphabetical order to only execute the slow recipes once
+        string = in.length() <= 10 ? in : in.substring(0, 10 - 3) + "...";
+        string = in == null || in.isEmpty() ? in : Character.toTitleCase(in.charAt(0)) + in.substring(1);
+        string = Objects.toString(in, "");
+        string = Objects.toString(in, "nil");
+        string = in.replaceAll("\\s+", "");
+
+        bool = in == null ? false : in.equalsIgnoreCase("other");
+        bool = Objects.equals(in, "other");
+        //bool = StringUtils.equals(cs, "other");
+        bool = StringUtils.isEmpty(in);
+
+        string = in == null ? null : in.toLowerCase();
+        string = in == null || in.isEmpty() ? in : in.replace("search", "replacement");
+        string = in == null ? null : new StringBuffer(in).reverse().toString();
+        array = in.split("\\s+");
+        string = in == null ? null : in.trim();
+        string = in == null ? null : in.trim();
+        string = in == null ? null : in.toUpperCase();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,2 @@
+import org.apache.maven.shared.utils.StringUtils;
+
++import java.util.Objects;
++
+class Foo {
+@@ -11,5 +13,5 @@
+
+        // Test all methods in alphabetical order to only execute the slow recipes once
+-       string = StringUtils.abbreviate(in, 10);
+-       string = StringUtils.capitalise(in);
+-       string = StringUtils.defaultString(in);
+-       string = StringUtils.defaultString(in, "nil");
+-       string = StringUtils.deleteWhitespace(in);
++       string = in.length() <= 10 ? in : in.substring(0, 10 - 3) + "...";
++       string = in == null || in.isEmpty() ? in : Character.toTitleCase(in.charAt(0)) + in.substring(1);
++       string = Objects.toString(in, "");
++       string = Objects.toString(in, "nil");
++       string = in.replaceAll("\\s+", "");
+
+@@ -17,2 +19,2 @@
+        string = StringUtils.deleteWhitespace(in);
+
+-       bool = StringUtils.equalsIgnoreCase(in, "other");
+-       bool = StringUtils.equals(in, "other");
++       bool = in == null ? false : in.equalsIgnoreCase("other");
++       bool = Objects.equals(in, "other");
+        //bool = StringUtils.equals(cs, "other");
+@@ -22,7 +24,7 @@
+        bool = StringUtils.isEmpty(in);
+
+-       string = StringUtils.lowerCase(in);
+-       string = StringUtils.replace(in, "search", "replacement");
+-       string = StringUtils.reverse(in);
+-       array = StringUtils.split(in);
+-       string = StringUtils.strip(in);
+-       string = StringUtils.trim(in);
+-       string = StringUtils.upperCase(in);
++       string = in == null ? null : in.toLowerCase();
++       string = in == null || in.isEmpty() ? in : in.replace("search", "replacement");
++       string = in == null ? null : new StringBuffer(in).reverse().toString();
++       array = in.split("\\s+");
++       string = in == null ? null : in.trim();
++       string = in == null ? null : in.trim();
++       string = in == null ? null : in.toUpperCase();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -147,6 +277,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -161,6 +294,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -171,6 +308,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -189,3 +330,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

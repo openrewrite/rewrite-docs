@@ -9,13 +9,16 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.dependencies.DependencyList**
 
-_Emits a data table detailing all Gradle and Maven dependencies.This recipe makes no changes to any source file._
+_Emits a data table detailing all Gradle and Maven dependencies. This recipe makes no changes to any source file._
 
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyList.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
@@ -23,10 +26,6 @@ _Emits a data table detailing all Gradle and Maven dependencies.This recipe make
 | `Scope` | scope | *Optional*. The scope of the dependencies to include in the report.Defaults to "Compile" Valid options: `Compile`, `Runtime`, `TestRuntime` | `Compile` |
 | `boolean` | includeTransitive | *Optional*. Whether or not to include transitive dependencies in the report. Defaults to including only direct dependencies.Defaults to false. | `true` |
 | `boolean` | validateResolvable | *Optional*. When enabled the recipe will attempt to download every dependency it encounters, reporting on any failures. This can be useful for identifying dependencies that have become unavailable since an LST was produced.Defaults to false. Valid options: `true`, `false` | `true` |
-
-## License
-
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
@@ -163,6 +162,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.dependencies.table.DependencyListReport" label="DependencyListReport">
+
 ### Dependency report
 **org.openrewrite.java.dependencies.table.DependencyListReport**
 
@@ -180,6 +182,10 @@ _Lists all Gradle and Maven dependencies_
 | Direct Dependency | When `true` the project directly depends on the dependency. When `false` the project depends on the dependency transitively through at least one direct dependency. |
 | Resolution failure | The reason why the dependency could not be resolved. Blank when resolution was not attempted. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
 ### Maven metadata failures
 **org.openrewrite.maven.table.MavenMetadataFailures**
 
@@ -195,6 +201,10 @@ _Attempts to resolve maven metadata that failed._
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -209,6 +219,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -219,6 +233,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -237,6 +255,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

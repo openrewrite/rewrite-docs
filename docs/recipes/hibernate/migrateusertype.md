@@ -16,9 +16,253 @@ _With Hibernate 6 the `UserType` interface received a type parameter making it m
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateUserType.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.usertype.UserType;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.util.Objects;
+
+public class BigDecimalAsString implements UserType {
+
+    @Override
+    public int[] sqlTypes() {
+        return new int[]{Types.VARCHAR};
+    }
+
+    @Override
+    public Class returnedClass() {
+        return BigDecimal.class;
+    }
+
+    @Override
+    public boolean equals(Object x, Object y) {
+        return Objects.equals(x, y);
+    }
+
+    @Override
+    public int hashCode(Object x) {
+        return Objects.hashCode(x);
+    }
+
+    @Override
+    public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws SQLException {
+        String string = rs.getString(names[0]);
+        return string == null || rs.wasNull() ? null : new BigDecimal(string);
+    }
+
+    @Override
+    public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws SQLException {
+        if (value == null) {
+            st.setNull(index, Types.VARCHAR);
+        } else {
+            st.setString(index, value.toString());
+        }
+    }
+
+    @Override
+    public Object deepCopy(Object value1) {
+        return value1;
+    }
+
+    @Override
+    public boolean isMutable() {
+        return false;
+    }
+
+    @Override
+    public Serializable disassemble(Object value) {
+        return (BigDecimal) value;
+    }
+
+    @Override
+    public Object assemble(Serializable cached, Object owner) {
+        return cached;
+    }
+
+    @Override
+    public Object replace(Object original, Object target, Object owner) {
+        return original;
+    }
+}
+```
+
+###### After
+```java
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.usertype.UserType;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.util.Objects;
+
+public class BigDecimalAsString implements UserType<BigDecimal> {
+
+    @Override
+    public int getSqlType() {
+        return Types.VARCHAR;
+    }
+
+    @Override
+    public Class<BigDecimal> returnedClass() {
+        return BigDecimal.class;
+    }
+
+    @Override
+    public boolean equals(BigDecimal x, BigDecimal y) {
+        return Objects.equals(x, y);
+    }
+
+    @Override
+    public int hashCode(BigDecimal x) {
+        return Objects.hashCode(x);
+    }
+
+    @Override
+    public BigDecimal nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, Object owner) throws SQLException {
+        String string = rs.getString(position);
+        return string == null || rs.wasNull() ? null : new BigDecimal(string);
+    }
+
+    @Override
+    public void nullSafeSet(PreparedStatement st, BigDecimal value, int index, SharedSessionContractImplementor session) throws SQLException {
+        if (value == null) {
+            st.setNull(index, Types.VARCHAR);
+        } else {
+            st.setString(index, value.toString());
+        }
+    }
+
+    @Override
+    public BigDecimal deepCopy(BigDecimal value1) {
+        return value1;
+    }
+
+    @Override
+    public boolean isMutable() {
+        return false;
+    }
+
+    @Override
+    public Serializable disassemble(BigDecimal value) {
+        return value;
+    }
+
+    @Override
+    public BigDecimal assemble(Serializable cached, Object owner) {
+        return (BigDecimal) cached;
+    }
+
+    @Override
+    public BigDecimal replace(BigDecimal original, BigDecimal target, Object owner) {
+        return original;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -13,1 +13,1 @@
+import java.util.Objects;
+
+-public class BigDecimalAsString implements UserType {
++public class BigDecimalAsString implements UserType<BigDecimal> {
+
+@@ -16,2 +16,2 @@
+
+    @Override
+-   public int[] sqlTypes() {
+-       return new int[]{Types.VARCHAR};
++   public int getSqlType() {
++       return Types.VARCHAR;
+    }
+@@ -21,1 +21,1 @@
+
+    @Override
+-   public Class returnedClass() {
++   public Class<BigDecimal> returnedClass() {
+        return BigDecimal.class;
+@@ -26,1 +26,1 @@
+
+    @Override
+-   public boolean equals(Object x, Object y) {
++   public boolean equals(BigDecimal x, BigDecimal y) {
+        return Objects.equals(x, y);
+@@ -31,1 +31,1 @@
+
+    @Override
+-   public int hashCode(Object x) {
++   public int hashCode(BigDecimal x) {
+        return Objects.hashCode(x);
+@@ -36,2 +36,2 @@
+
+    @Override
+-   public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws SQLException {
+-       String string = rs.getString(names[0]);
++   public BigDecimal nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, Object owner) throws SQLException {
++       String string = rs.getString(position);
+        return string == null || rs.wasNull() ? null : new BigDecimal(string);
+@@ -42,1 +42,1 @@
+
+    @Override
+-   public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws SQLException {
++   public void nullSafeSet(PreparedStatement st, BigDecimal value, int index, SharedSessionContractImplementor session) throws SQLException {
+        if (value == null) {
+@@ -51,1 +51,1 @@
+
+    @Override
+-   public Object deepCopy(Object value1) {
++   public BigDecimal deepCopy(BigDecimal value1) {
+        return value1;
+@@ -61,2 +61,2 @@
+
+    @Override
+-   public Serializable disassemble(Object value) {
+-       return (BigDecimal) value;
++   public Serializable disassemble(BigDecimal value) {
++       return value;
+    }
+@@ -66,2 +66,2 @@
+
+    @Override
+-   public Object assemble(Serializable cached, Object owner) {
+-       return cached;
++   public BigDecimal assemble(Serializable cached, Object owner) {
++       return (BigDecimal) cached;
+    }
+@@ -71,1 +71,1 @@
+
+    @Override
+-   public Object replace(Object original, Object target, Object owner) {
++   public BigDecimal replace(BigDecimal original, BigDecimal target, Object owner) {
+        return original;
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -155,6 +399,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +416,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -179,6 +430,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -197,6 +452,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

@@ -25,7 +25,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -86,6 +85,289 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+    version="3.0">
+    <enterprise-beans>
+        <session>
+            <ejb-name>HelloSessionBean</ejb-name>
+            <mapped-name>ejb/HelloSessionBean</mapped-name>
+            <business-local>com.mydomain.HelloSessionBeanLocal</business-local>
+            <business-remote>com.mydomain.HelloSessionBeanRemote</business-remote>
+            <ejb-class>com.mydomain.HelloSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <message-driven>
+            <ejb-name>MessageBean</ejb-name>
+            <ejb-class>samples.mdb.ejb.MessageBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <message-driven-destination>
+                <destination-type>javax.jms.Queue</destination-type>
+            </message-driven-destination>
+            <resource-ref>
+                <res-ref-name>jms/QueueConnectionFactory</res-ref-name>
+                <res-type>javax.jms.QueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+        </message-driven>
+        <assembly-descriptor>
+            <container-transaction>
+                <method>
+                    <ejb-name>MessageBean</ejb-name>
+                    <method-intf>Bean</method-intf>
+                    <method-name>onMessage</method-name>
+                    <method-params>
+                        <method-param>javax.jms.Message</method-param>
+                    </method-params>
+                </method>
+                <trans-attribute>NotSupported</trans-attribute>
+            </container-transaction>
+        </assembly-descriptor>
+    </enterprise-beans>
+</ejb-jar>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/ejb-jar_4_0.xsd"
+    version="4.0">
+    <enterprise-beans>
+        <session>
+            <ejb-name>HelloSessionBean</ejb-name>
+            <mapped-name>ejb/HelloSessionBean</mapped-name>
+            <business-local>com.mydomain.HelloSessionBeanLocal</business-local>
+            <business-remote>com.mydomain.HelloSessionBeanRemote</business-remote>
+            <ejb-class>com.mydomain.HelloSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <message-driven>
+            <ejb-name>MessageBean</ejb-name>
+            <ejb-class>samples.mdb.ejb.MessageBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <message-driven-destination>
+                <destination-type>jakarta.jms.Queue</destination-type>
+            </message-driven-destination>
+            <resource-ref>
+                <res-ref-name>jms/QueueConnectionFactory</res-ref-name>
+                <res-type>jakarta.jms.QueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+        </message-driven>
+        <assembly-descriptor>
+            <container-transaction>
+                <method>
+                    <ejb-name>MessageBean</ejb-name>
+                    <method-intf>Bean</method-intf>
+                    <method-name>onMessage</method-name>
+                    <method-params>
+                        <method-param>jakarta.jms.Message</method-param>
+                    </method-params>
+                </method>
+                <trans-attribute>NotSupported</trans-attribute>
+            </container-transaction>
+        </assembly-descriptor>
+    </enterprise-beans>
+</ejb-jar>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+<?xml version="1.0" encoding="UTF-8"?>
+-<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
++<ejb-jar xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -4,2 +4,2 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+-   version="3.0">
++   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/ejb-jar_4_0.xsd"
++   version="4.0">
+    <enterprise-beans>
+@@ -21,1 +21,1 @@
+            <transaction-type>Container</transaction-type>
+            <message-driven-destination>
+-               <destination-type>javax.jms.Queue</destination-type>
++               <destination-type>jakarta.jms.Queue</destination-type>
+            </message-driven-destination>
+@@ -25,1 +25,1 @@
+            <resource-ref>
+                <res-ref-name>jms/QueueConnectionFactory</res-ref-name>
+-               <res-type>javax.jms.QueueConnectionFactory</res-type>
++               <res-type>jakarta.jms.QueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+@@ -36,1 +36,1 @@
+                    <method-name>onMessage</method-name>
+                    <method-params>
+-                       <method-param>javax.jms.Message</method-param>
++                       <method-param>jakarta.jms.Message</method-param>
+                    </method-params>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+    version="3.0">
+    <enterprise-beans>
+        <session>
+            <ejb-name>HelloSessionBean</ejb-name>
+            <mapped-name>ejb/HelloSessionBean</mapped-name>
+            <business-local>com.mydomain.HelloSessionBeanLocal</business-local>
+            <business-remote>com.mydomain.HelloSessionBeanRemote</business-remote>
+            <ejb-class>com.mydomain.HelloSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <message-driven>
+            <ejb-name>MessageBean</ejb-name>
+            <ejb-class>samples.mdb.ejb.MessageBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <message-driven-destination>
+                <destination-type>javax.jms.Queue</destination-type>
+            </message-driven-destination>
+            <resource-ref>
+                <res-ref-name>jms/QueueConnectionFactory</res-ref-name>
+                <res-type>javax.jms.QueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+        </message-driven>
+        <assembly-descriptor>
+            <container-transaction>
+                <method>
+                    <ejb-name>MessageBean</ejb-name>
+                    <method-intf>Bean</method-intf>
+                    <method-name>onMessage</method-name>
+                    <method-params>
+                        <method-param>javax.jms.Message</method-param>
+                    </method-params>
+                </method>
+                <trans-attribute>NotSupported</trans-attribute>
+            </container-transaction>
+        </assembly-descriptor>
+    </enterprise-beans>
+</ejb-jar>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/ejb-jar_4_0.xsd"
+    version="4.0">
+    <enterprise-beans>
+        <session>
+            <ejb-name>HelloSessionBean</ejb-name>
+            <mapped-name>ejb/HelloSessionBean</mapped-name>
+            <business-local>com.mydomain.HelloSessionBeanLocal</business-local>
+            <business-remote>com.mydomain.HelloSessionBeanRemote</business-remote>
+            <ejb-class>com.mydomain.HelloSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <message-driven>
+            <ejb-name>MessageBean</ejb-name>
+            <ejb-class>samples.mdb.ejb.MessageBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <message-driven-destination>
+                <destination-type>jakarta.jms.Queue</destination-type>
+            </message-driven-destination>
+            <resource-ref>
+                <res-ref-name>jms/QueueConnectionFactory</res-ref-name>
+                <res-type>jakarta.jms.QueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+        </message-driven>
+        <assembly-descriptor>
+            <container-transaction>
+                <method>
+                    <ejb-name>MessageBean</ejb-name>
+                    <method-intf>Bean</method-intf>
+                    <method-name>onMessage</method-name>
+                    <method-params>
+                        <method-param>jakarta.jms.Message</method-param>
+                    </method-params>
+                </method>
+                <trans-attribute>NotSupported</trans-attribute>
+            </container-transaction>
+        </assembly-descriptor>
+    </enterprise-beans>
+</ejb-jar>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+<?xml version="1.0" encoding="UTF-8"?>
+-<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
++<ejb-jar xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -4,2 +4,2 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+-   version="3.0">
++   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/ejb-jar_4_0.xsd"
++   version="4.0">
+    <enterprise-beans>
+@@ -21,1 +21,1 @@
+            <transaction-type>Container</transaction-type>
+            <message-driven-destination>
+-               <destination-type>javax.jms.Queue</destination-type>
++               <destination-type>jakarta.jms.Queue</destination-type>
+            </message-driven-destination>
+@@ -25,1 +25,1 @@
+            <resource-ref>
+                <res-ref-name>jms/QueueConnectionFactory</res-ref-name>
+-               <res-type>javax.jms.QueueConnectionFactory</res-type>
++               <res-type>jakarta.jms.QueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+@@ -36,1 +36,1 @@
+                    <method-name>onMessage</method-name>
+                    <method-params>
+-                       <method-param>javax.jms.Message</method-param>
++                       <method-param>jakarta.jms.Message</method-param>
+                    </method-params>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -221,6 +503,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -235,6 +520,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -245,6 +534,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -263,3 +556,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

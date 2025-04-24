@@ -2,6 +2,7 @@
 
 ## Categories
 
+* [Gradle8](/recipes/gradle/gradle8)
 * [Plugins](/recipes/gradle/plugins)
 * [Search](/recipes/gradle/search)
 * [Security](/recipes/gradle/security)

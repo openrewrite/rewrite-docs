@@ -28,7 +28,6 @@ Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -87,6 +86,99 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.swagger.annotations.ApiResponse;
+
+class A {
+    @ApiResponse(code = 200, message = "OK")
+    void method() {}
+}
+```
+
+###### After
+```java
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
+class A {
+    @ApiResponse(responseCode = "200", description = "OK")
+    void method() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.swagger.annotations.ApiResponse;
++import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
+@@ -4,1 +4,1 @@
+
+class A {
+-   @ApiResponse(code = 200, message = "OK")
++   @ApiResponse(responseCode = "200", description = "OK")
+    void method() {}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.swagger.annotations.ApiResponse;
+
+class A {
+    @ApiResponse(code = 200, message = "OK")
+    void method() {}
+}
+```
+
+###### After
+```java
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
+class A {
+    @ApiResponse(responseCode = "200", description = "OK")
+    void method() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.swagger.annotations.ApiResponse;
++import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
+@@ -4,1 +4,1 @@
+
+class A {
+-   @ApiResponse(code = 200, message = "OK")
++   @ApiResponse(responseCode = "200", description = "OK")
+    void method() {}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -222,6 +314,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -236,6 +331,10 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -246,6 +345,10 @@ _The details of all errors produced by a recipe run._
 | Source path | The file that failed to parse. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
 
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
@@ -264,6 +367,9 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>
 
 ## Contributors
 [Tim te Beek](mailto:tim@moderne.io)
