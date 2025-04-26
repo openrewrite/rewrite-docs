@@ -170,8 +170,6 @@ A `ScanningRecipe` extends the normal `Recipe` and adds two key objects: an [acc
 The `accumulator` object is a custom data structure defined by the recipe itself to store any information the recipe needs to function.
 The `scanner` object is a `visitor` which populates the `accumulator` with data.
 
-Scanning recipes may not be used as preconditions for declarative YAML recipes.
-
 Scanning recipes have three phases:
 
 1. A scanning phase that collects information while making no new code changes. In this phase, the `scanner` is called for each source file and information is added to the `accumulator` that the recipe will need for future steps.

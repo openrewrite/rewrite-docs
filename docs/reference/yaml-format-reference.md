@@ -52,7 +52,7 @@ You can find the full recipe schema [here](https://github.com/openrewrite/rewrit
 
 ### Preconditions
 
-Preconditions are used to limit which source files a recipe is run on. This is commonly used to target specific files or directories, but any recipe which is not a `ScanningRecipe` can be used as a precondition. 
+Preconditions are used to limit which source files a recipe is run on. This is commonly used to target specific files or directories, but any recipe can be used as a precondition. 
 
 :::info
 Preconditions are a **per-file** check. If a file passes the precondition check, all recipes will be run on it.
