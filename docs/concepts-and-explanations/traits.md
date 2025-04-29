@@ -46,7 +46,7 @@ public interface Trait<T extends Tree> {
 
 ## A real-world example: the Annotated trait
 
-The [src/main/java/com/yourorg/FindSpringBeans.java recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/FindSpringBeans.java) in the recipe starter project is a good example of how to use traits.
+The [FindSpringBeans recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/FindSpringBeans.java) in the recipe starter project is a good example of how to use traits.
 
 To get a better idea of why you may want to use or create a trait, let's consider a real-world example: Java annotations. In Java, you can annotate methods and pass in a `String` to said annotation. _Syntactically_, this can be done in a few ways while keeping the same _semantic_ meaning. For example, you could write:
 
