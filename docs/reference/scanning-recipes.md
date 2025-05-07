@@ -3171,10 +3171,10 @@ Require static class names in template to be in a separate class attribute
 See rule details for [vue/prefer-separate-static-class](https://eslint.vuejs.org/rules/prefer-separate-static-class.html)
 
 
-### [Enforce consistent indentation in <script>](../recipes/codemods/cleanup/vue/scriptindent.md)
+### [Enforce consistent indentation in `<script>`](../recipes/codemods/cleanup/vue/scriptindent.md)
 _org.openrewrite.codemods.cleanup.vue.ScriptIndent_
 
-Enforce consistent indentation in <script>
+Enforce consistent indentation in `<script>`
 See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html)
 
 
@@ -6430,7 +6430,7 @@ Migrate applications to the latest Spring Security 6.0 release. This recipe will
 ### [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](../recipes/java/spring/security6/removeuseauthorizationmanager.md)
 _org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager_
 
-In Spring Security 6, <websocket-message-broker> defaults use-authorization-manager to true. So, the 'use-authorization-manager' attribute for message security is no longer needed and can be removed.
+In Spring Security 6, `<websocket-message-broker>` defaults `use-authorization-manager` to `true`. So, the `use-authorization-manager` attribute for message security is no longer needed and can be removed.
 
 ### [Migrate to Spring Data 2.5](../recipes/java/spring/data/upgradespringdata_2_5.md)
 _org.openrewrite.java.spring.data.UpgradeSpringData_2_5_

@@ -4528,11 +4528,11 @@ See rule details for [vue/prefer-separate-static-class](https://eslint.vuejs.org
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [Enforce consistent indentation in <script>](../recipes/codemods/cleanup/vue/scriptindent.md)
+### [Enforce consistent indentation in `<script>`](../recipes/codemods/cleanup/vue/scriptindent.md)
  
 _org.openrewrite.codemods.cleanup.vue.ScriptIndent_
 
-Enforce consistent indentation in <script>
+Enforce consistent indentation in `<script>`
 See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html)
 
 
