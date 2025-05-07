@@ -26,6 +26,50 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldPackageName | The package name to replace. | `com.yourorg.foo` |
 | `String` | newPackageName | New package name to replace the old package name with. | `com.yourorg.bar` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPackageName|`javax.type`|
+|newPackageName|`jakarta.type`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    String ref = "javax.type.A";
+    String extendedRef = "there is a type reference here -> javax.type.A <- hopefully it only replaces that";
+}
+```
+
+###### After
+```java
+class Test {
+    String ref = "jakarta.type.A";
+    String extendedRef = "there is a type reference here -> jakarta.type.A <- hopefully it only replaces that";
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,2 +2,2 @@
+class Test {
+-   String ref = "javax.type.A";
+-   String extendedRef = "there is a type reference here -> javax.type.A <- hopefully it only replaces that";
++   String ref = "jakarta.type.A";
++   String extendedRef = "there is a type reference here -> jakarta.type.A <- hopefully it only replaces that";
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -160,12 +204,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

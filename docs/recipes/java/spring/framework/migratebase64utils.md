@@ -19,6 +19,86 @@ _Replaces usages of deprecated `org.springframework.util.Base64Utils` with `java
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.nio.charset.StandardCharsets;
+import org.springframework.util.Base64Utils;
+
+class Test {
+    void test(byte[] bBytes) {
+        String key = "abc";
+        byte[] encoded1 = Base64Utils.encode(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded1 = Base64Utils.decode(key.getBytes(StandardCharsets.UTF_8));
+        byte[] encoded2 = Base64Utils.encodeUrlSafe(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded2 = Base64Utils.decodeUrlSafe(key.getBytes(StandardCharsets.UTF_8));
+        String encoded3 = Base64Utils.encodeToString(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded3 = Base64Utils.decodeFromString(key);
+        String encoded4 = Base64Utils.encodeToUrlSafeString(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded4 = Base64Utils.decodeFromUrlSafeString(key);
+    }
+}
+```
+
+###### After
+```java
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+class Test {
+    void test(byte[] bBytes) {
+        String key = "abc";
+        byte[] encoded1 = Base64.getEncoder().encode(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded1 = Base64.getDecoder().decode(key.getBytes(StandardCharsets.UTF_8));
+        byte[] encoded2 = Base64.getUrlEncoder().encode(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded2 = Base64.getUrlDecoder().decode(key.getBytes(StandardCharsets.UTF_8));
+        String encoded3 = Base64.getEncoder().encodeToString(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded3 = Base64.getDecoder().decode(key);
+        String encoded4 = Base64.getUrlEncoder().encodeToString(key.getBytes(StandardCharsets.UTF_8));
+        byte[] decoded4 = Base64.getUrlDecoder().decode(key);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import java.nio.charset.StandardCharsets;
+-import org.springframework.util.Base64Utils;
++import java.util.Base64;
+
+@@ -7,8 +7,8 @@
+    void test(byte[] bBytes) {
+        String key = "abc";
+-       byte[] encoded1 = Base64Utils.encode(key.getBytes(StandardCharsets.UTF_8));
+-       byte[] decoded1 = Base64Utils.decode(key.getBytes(StandardCharsets.UTF_8));
+-       byte[] encoded2 = Base64Utils.encodeUrlSafe(key.getBytes(StandardCharsets.UTF_8));
+-       byte[] decoded2 = Base64Utils.decodeUrlSafe(key.getBytes(StandardCharsets.UTF_8));
+-       String encoded3 = Base64Utils.encodeToString(key.getBytes(StandardCharsets.UTF_8));
+-       byte[] decoded3 = Base64Utils.decodeFromString(key);
+-       String encoded4 = Base64Utils.encodeToUrlSafeString(key.getBytes(StandardCharsets.UTF_8));
+-       byte[] decoded4 = Base64Utils.decodeFromUrlSafeString(key);
++       byte[] encoded1 = Base64.getEncoder().encode(key.getBytes(StandardCharsets.UTF_8));
++       byte[] decoded1 = Base64.getDecoder().decode(key.getBytes(StandardCharsets.UTF_8));
++       byte[] encoded2 = Base64.getUrlEncoder().encode(key.getBytes(StandardCharsets.UTF_8));
++       byte[] decoded2 = Base64.getUrlDecoder().decode(key.getBytes(StandardCharsets.UTF_8));
++       String encoded3 = Base64.getEncoder().encodeToString(key.getBytes(StandardCharsets.UTF_8));
++       byte[] decoded3 = Base64.getDecoder().decode(key);
++       String encoded4 = Base64.getUrlEncoder().encodeToString(key.getBytes(StandardCharsets.UTF_8));
++       byte[] decoded4 = Base64.getUrlDecoder().decode(key);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +280,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

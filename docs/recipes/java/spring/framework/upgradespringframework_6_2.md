@@ -29,6 +29,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Spring Framework 6.1](../../../java/spring/framework/upgradespringframework_6_1)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework`
+  * artifactId: `*`
+  * newVersion: `6.2.x`
 * [Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`](../../../java/spring/framework/migratebase64utils)
 * [Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`](../../../java/spring/framework/migratehandlerresulthasexceptionhandlermethod)
 * [Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method](../../../java/spring/framework/migratehandlerresultsetexceptionhandlermethod)
@@ -71,6 +75,10 @@ description: |
   Migrate applications to the latest Spring Framework 6.2 release.
 recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_1
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: "*"
+      newVersion: 6.2.x
   - org.openrewrite.java.spring.framework.MigrateBase64Utils
   - org.openrewrite.java.spring.framework.MigrateHandlerResultHasExceptionHandlerMethod
   - org.openrewrite.java.spring.framework.MigrateHandlerResultSetExceptionHandlerMethod
@@ -284,12 +292,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

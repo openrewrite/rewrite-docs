@@ -87,24 +87,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class Test {
-    void method(Logger logger) {
-        logger.finest("finest");
-        logger.finer("finer");
-        logger.fine("fine");
-        logger.config("config");
-        logger.info("info");
-        logger.warning("warning");
-        logger.severe("severe");
-
-        logger.log(Level.FINEST, "finest");
-        logger.log(Level.FINER, "finer");
-        logger.log(Level.FINE, "fine");
-        logger.log(Level.CONFIG, "config");
-        logger.log(Level.INFO, "info");
-        logger.log(Level.WARNING, "warning");
-        logger.log(Level.SEVERE, "severe");
-
-        logger.log(Level.ALL, "all");
+    void method(Logger logger, String param1) {
+        logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
     }
 }
 ```
@@ -114,24 +98,8 @@ class Test {
 import org.slf4j.Logger;
 
 class Test {
-    void method(Logger logger) {
-        logger.trace("finest");
-        logger.trace("finer");
-        logger.debug("fine");
-        logger.info("config");
-        logger.info("info");
-        logger.warn("warning");
-        logger.error("severe");
-
-        logger.trace("finest");
-        logger.trace("finer");
-        logger.debug("fine");
-        logger.info("config");
-        logger.info("info");
-        logger.warn("warning");
-        logger.error("severe");
-
-        logger.trace("all");
+    void method(Logger logger, String param1) {
+        logger.info("INFO Log entry, param1: {}", param1);
     }
 }
 ```
@@ -145,49 +113,11 @@ class Test {
 -import java.util.logging.Logger;
 +import org.slf4j.Logger;
 
-@@ -6,4 +5,4 @@
+@@ -6,1 +5,1 @@
 class Test {
-    void method(Logger logger) {
--       logger.finest("finest");
--       logger.finer("finer");
--       logger.fine("fine");
--       logger.config("config");
-+       logger.trace("finest");
-+       logger.trace("finer");
-+       logger.debug("fine");
-+       logger.info("config");
-        logger.info("info");
-@@ -11,2 +10,2 @@
-        logger.config("config");
-        logger.info("info");
--       logger.warning("warning");
--       logger.severe("severe");
-+       logger.warn("warning");
-+       logger.error("severe");
-
-@@ -14,7 +13,7 @@
-        logger.severe("severe");
-
--       logger.log(Level.FINEST, "finest");
--       logger.log(Level.FINER, "finer");
--       logger.log(Level.FINE, "fine");
--       logger.log(Level.CONFIG, "config");
--       logger.log(Level.INFO, "info");
--       logger.log(Level.WARNING, "warning");
--       logger.log(Level.SEVERE, "severe");
-+       logger.trace("finest");
-+       logger.trace("finer");
-+       logger.debug("fine");
-+       logger.info("config");
-+       logger.info("info");
-+       logger.warn("warning");
-+       logger.error("severe");
-
-@@ -22,1 +21,1 @@
-        logger.log(Level.SEVERE, "severe");
-
--       logger.log(Level.ALL, "all");
-+       logger.trace("all");
+    void method(Logger logger, String param1) {
+-       logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
++       logger.info("INFO Log entry, param1: {}", param1);
     }
 ```
 </TabItem>
@@ -208,6 +138,127 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class Test {
+    void method(Logger logger) {
+        logger.finest("finest");
+        logger.finer("finer");
+        logger.fine("fine");
+        logger.config("config");
+        logger.info("info");
+        logger.warning("warning");
+        logger.severe("severe");
+
+        logger.log(Level.FINEST, "finest");
+        logger.log(Level.FINER, "finer");
+        logger.log(Level.FINE, "fine");
+        logger.log(Level.CONFIG, "config");
+        logger.log(Level.INFO, "info");
+        logger.log(Level.WARNING, "warning");
+        logger.log(Level.SEVERE, "severe");
+
+        logger.log(Level.ALL, "all");
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+
+class Test {
+    void method(Logger logger) {
+        logger.trace("finest");
+        logger.trace("finer");
+        logger.debug("fine");
+        logger.info("config");
+        logger.info("info");
+        logger.warn("warning");
+        logger.error("severe");
+
+        logger.trace("finest");
+        logger.trace("finer");
+        logger.debug("fine");
+        logger.info("config");
+        logger.info("info");
+        logger.warn("warning");
+        logger.error("severe");
+
+        logger.trace("all");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
++import org.slf4j.Logger;
+
+@@ -6,4 +5,4 @@
+class Test {
+    void method(Logger logger) {
+-       logger.finest("finest");
+-       logger.finer("finer");
+-       logger.fine("fine");
+-       logger.config("config");
++       logger.trace("finest");
++       logger.trace("finer");
++       logger.debug("fine");
++       logger.info("config");
+        logger.info("info");
+@@ -11,2 +10,2 @@
+        logger.config("config");
+        logger.info("info");
+-       logger.warning("warning");
+-       logger.severe("severe");
++       logger.warn("warning");
++       logger.error("severe");
+
+@@ -14,7 +13,7 @@
+        logger.severe("severe");
+
+-       logger.log(Level.FINEST, "finest");
+-       logger.log(Level.FINER, "finer");
+-       logger.log(Level.FINE, "fine");
+-       logger.log(Level.CONFIG, "config");
+-       logger.log(Level.INFO, "info");
+-       logger.log(Level.WARNING, "warning");
+-       logger.log(Level.SEVERE, "severe");
++       logger.trace("finest");
++       logger.trace("finer");
++       logger.debug("fine");
++       logger.info("config");
++       logger.info("info");
++       logger.warn("warning");
++       logger.error("severe");
+
+@@ -22,1 +21,1 @@
+        logger.log(Level.SEVERE, "severe");
+
+-       logger.log(Level.ALL, "all");
++       logger.trace("all");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class Test {
     void method(Logger logger, String param1) {
         logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
     }
@@ -246,7 +297,7 @@ class Test {
 
 ---
 
-##### Example 3
+##### Example 4
 
 
 <Tabs groupId="beforeAfter">
@@ -360,57 +411,6 @@ class Test {
 
 -       logger.log(Level.ALL, "all");
 +       logger.trace("all");
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 4
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-class Test {
-    void method(Logger logger, String param1) {
-        logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
-    }
-}
-```
-
-###### After
-```java
-import org.slf4j.Logger;
-
-class Test {
-    void method(Logger logger, String param1) {
-        logger.info("INFO Log entry, param1: {}", param1);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,1 @@
--import java.util.logging.Level;
--import java.util.logging.Logger;
-+import org.slf4j.Logger;
-
-@@ -6,1 +5,1 @@
-class Test {
-    void method(Logger logger, String param1) {
--       logger.log(Level.INFO, "INFO Log entry, param1: {0}", param1);
-+       logger.info("INFO Log entry, param1: {}", param1);
     }
 ```
 </TabItem>
@@ -597,12 +597,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

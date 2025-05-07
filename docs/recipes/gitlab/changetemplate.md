@@ -56,6 +56,44 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldTemplate|`Terraform/Base.gitlab-ci.yml`|
+|newTemplate|`OpenTofu/Base.gitlab-ci.yml`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+include:
+  - template: Terraform/Base.gitlab-ci.yml
+```
+
+###### After
+```yaml
+include:
+  - template: OpenTofu/Base.gitlab-ci.yml
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+include:
+- - template: Terraform/Base.gitlab-ci.yml
++ - template: OpenTofu/Base.gitlab-ci.yml
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -202,12 +240,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

@@ -19,6 +19,71 @@ _Replace `KafkaTestUtils` methods that take a `long` argument with methods that 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.kafka.clients.consumer.Consumer;
+import org.springframework.kafka.test.utils.KafkaTestUtils;
+
+class Foo {
+    void bar(Consumer<String, String> consumer) {
+        KafkaTestUtils.getRecords(consumer, 1000L);
+        KafkaTestUtils.getRecords(consumer, 1000L, 1);
+        KafkaTestUtils.getSingleRecord(consumer, "topic", 1000L);
+        KafkaTestUtils.getOneRecord("topic", "key", "value", 1, true, true, 1000L);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.kafka.clients.consumer.Consumer;
+import org.springframework.kafka.test.utils.KafkaTestUtils;
+
+import java.time.Duration;
+
+class Foo {
+    void bar(Consumer<String, String> consumer) {
+        KafkaTestUtils.getRecords(consumer, Duration.ofMillis(1000L));
+        KafkaTestUtils.getRecords(consumer, Duration.ofMillis(1000L), 1);
+        KafkaTestUtils.getSingleRecord(consumer, "topic", Duration.ofMillis(1000L));
+        KafkaTestUtils.getOneRecord("topic", "key", "value", 1, true, true, Duration.ofMillis(1000L));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,2 @@
+import org.springframework.kafka.test.utils.KafkaTestUtils;
+
++import java.time.Duration;
++
+class Foo {
+@@ -6,4 +8,4 @@
+class Foo {
+    void bar(Consumer<String, String> consumer) {
+-       KafkaTestUtils.getRecords(consumer, 1000L);
+-       KafkaTestUtils.getRecords(consumer, 1000L, 1);
+-       KafkaTestUtils.getSingleRecord(consumer, "topic", 1000L);
+-       KafkaTestUtils.getOneRecord("topic", "key", "value", 1, true, true, 1000L);
++       KafkaTestUtils.getRecords(consumer, Duration.ofMillis(1000L));
++       KafkaTestUtils.getRecords(consumer, Duration.ofMillis(1000L), 1);
++       KafkaTestUtils.getSingleRecord(consumer, "topic", Duration.ofMillis(1000L));
++       KafkaTestUtils.getOneRecord("topic", "key", "value", 1, true, true, Duration.ofMillis(1000L));
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +265,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

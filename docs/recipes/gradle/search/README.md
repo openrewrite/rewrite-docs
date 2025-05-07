@@ -10,5 +10,6 @@
 * [Find Gradle repository](./findrepository.md)
 * [Find Gradle wrappers](./findgradlewrapper.md)
 * [Gradle dependency insight](./dependencyinsight.md)
+* [Module has plugin](./modulehasplugin.md)
 
 

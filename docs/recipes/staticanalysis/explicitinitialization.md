@@ -33,6 +33,49 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Before
 ```java
+class A {
+    // C#: int? a
+    Nullable<Integer> a = null;
+    // C#: int? a = 0
+    Nullable<Integer> a = new Nullable<>(0);
+}
+```
+
+###### After
+```java
+class A {
+    // C#: int? a
+    Nullable<Integer> a;
+    // C#: int? a = 0
+    Nullable<Integer> a = new Nullable<>(0);
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class A {
+    // C#: int? a
+-   Nullable<Integer> a = null;
++   Nullable<Integer> a;
+    // C#: int? a = 0
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
 class Test {
     private int a = 0;
     private long b = 0L;
@@ -116,49 +159,6 @@ class Test {
 -   int[] l = null;
 +   int[] l;
     int[] m = new int[0];
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class A {
-    // C#: int? a
-    Nullable<Integer> a = null;
-    // C#: int? a = 0
-    Nullable<Integer> a = new Nullable<>(0);
-}
-```
-
-###### After
-```java
-class A {
-    // C#: int? a
-    Nullable<Integer> a;
-    // C#: int? a = 0
-    Nullable<Integer> a = new Nullable<>(0);
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-class A {
-    // C#: int? a
--   Nullable<Integer> a = null;
-+   Nullable<Integer> a;
-    // C#: int? a = 0
 ```
 </TabItem>
 </Tabs>
@@ -344,12 +344,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

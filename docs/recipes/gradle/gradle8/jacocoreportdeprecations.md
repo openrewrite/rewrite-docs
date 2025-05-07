@@ -19,6 +19,83 @@ _Set the `enabled` to `required` and the `destination` to `outputLocation` for R
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id "java"
+    id "jacoco"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = false
+        csv.enabled = true
+        html.enabled = false
+
+        xml.destination = layout.buildDirectory.dir('jacocoXml')
+        csv.destination = layout.buildDirectory.dir('jacocoCsv')
+        html.destination = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id "java"
+    id "jacoco"
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = false
+        csv.required = true
+        html.required = false
+
+        xml.outputLocation = layout.buildDirectory.dir('jacocoXml')
+        csv.outputLocation = layout.buildDirectory.dir('jacocoCsv')
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -8,3 +8,3 @@
+jacocoTestReport {
+    reports {
+-       xml.enabled = false
+-       csv.enabled = true
+-       html.enabled = false
++       xml.required = false
++       csv.required = true
++       html.required = false
+
+@@ -12,3 +12,3 @@
+        html.enabled = false
+
+-       xml.destination = layout.buildDirectory.dir('jacocoXml')
+-       csv.destination = layout.buildDirectory.dir('jacocoCsv')
+-       html.destination = layout.buildDirectory.dir('jacocoHtml')
++       xml.outputLocation = layout.buildDirectory.dir('jacocoXml')
++       csv.outputLocation = layout.buildDirectory.dir('jacocoCsv')
++       html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -155,16 +232,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jente Sondervorst](mailto:jentesondervorst@gmail.com)

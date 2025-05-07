@@ -27,6 +27,144 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). Defaults to `latest.release`. | `29.X` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 
+## Examples
+##### Example 1
+Upgrading a build plugin
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|pluginIdPattern|`org.openrewrite.rewrite`|
+|newVersion|`latest.patch`|
+|versionPattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'org.openrewrite.rewrite' version '5.40.0'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'org.openrewrite.rewrite' version '5.40.6'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -2,1 +2,1 @@
+plugins {
+-   id 'org.openrewrite.rewrite' version '5.40.0'
++   id 'org.openrewrite.rewrite' version '5.40.6'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+Upgrading a settings plugin
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|pluginIdPattern|`com.gradle.enterprise`|
+|newVersion|`3.10.x`|
+|versionPattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="settingsGradle" label="settingsGradle">
+
+
+###### Before
+```settingsGradle
+plugins {
+    id 'com.gradle.enterprise' version '3.10'
+}
+```
+
+###### After
+```settingsGradle
+plugins {
+    id 'com.gradle.enterprise' version '3.10.3'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+plugins {
+-   id 'com.gradle.enterprise' version '3.10'
++   id 'com.gradle.enterprise' version '3.10.3'
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+Upgrading a build plugin with version in gradle.properties
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|pluginIdPattern|`org.openrewrite.rewrite`|
+|newVersion|`5.40.x`|
+|versionPattern|`null`|
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id 'org.openrewrite.rewrite' version "$rewriteVersion"
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+rewriteVersion=5.40.0
+```
+
+###### After
+```properties
+rewriteVersion=5.40.6
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-rewriteVersion=5.40.0
++rewriteVersion=5.40.6
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -138,12 +276,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

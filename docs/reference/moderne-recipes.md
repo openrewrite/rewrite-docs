@@ -265,15 +265,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`](../recipes/java/spring/boot3/commentonmockandspybeansinconfigspring34.md)
 * [Migrate Spring Boot Management Endpoint Security properties to 3.4](../recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
 * [Migrate Spring Boot properties to 3.4](../recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [Migrate Spring Boot properties to 3.5](../recipes/java/spring/boot3/springbootproperties_3_5.md)
 * [Migrate `@Endpoint`s `defaultAccess` value](../recipes/java/spring/boot3/migrateendpointannotationaccessvaluespring34.md)
 * [Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4](../recipes/java/spring/boot3/conditionalonavailableendpointmigrationspring34.md)
 * [Migrate management endpoint access value](../recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md)
 * [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4.md)
+* [Migrate to Spring Boot 3.5](../recipes/java/spring/boot3/upgradespringboot_3_5.md)
 * [Migrate to Spring Cloud 2024](../recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
-* [Migrate to Spring Framework 6.2](../recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrate to Spring Kafka 3.3](../recipes/java/spring/boot3/upgradespringkafka_3_3.md)
 * [Migrate to Spring Security 6.4](../recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](../recipes/java/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md)
+* [Remove `TestRestTemplate.HttpClientOption.ENABLE_REDIRECTS` option](../recipes/java/spring/boot3/removetestresttemplateenableredirectsoptionrecipe.md)
+* [Replace `taskExecutor` with `applicationTaskExecutor`](../recipes/java/spring/boot3/resolvetaskexecutorfromcontext.md)
 * [Spring Boot 3.4 best practices](../recipes/java/spring/boot3/springboot3bestpractices.md)
 * [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle8spring34.md)
 * [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle7spring34.md)
@@ -281,6 +284,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](../recipes/java/spring/boot3/upgradespringcloudawstospringboot_3_4.md)
 * [Upgrade dependencies to Spring Cloud 2024](../recipes/java/spring/cloud2024/dependencyupgrades.md)
 * [Use `kafkaAwareTransactionManager` setter](../recipes/java/spring/boot3/replacekafkatransactionmanagersetter.md)
+* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](../recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md)
 
 ## rewrite-sql
 

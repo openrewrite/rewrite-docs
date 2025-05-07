@@ -36,7 +36,7 @@ class A {
     StringBuffer buffer = new StringBuffer('a');
     StringBuilder builder = new StringBuilder('a');
     char notALiteral = 'c';
-    StringBuffer buffer = new StringBuffer(notALiteral);
+    StringBuffer buffer2 = new StringBuffer(notALiteral);
 }
 ```
 
@@ -46,7 +46,7 @@ class A {
     StringBuffer buffer = new StringBuffer("a");
     StringBuilder builder = new StringBuilder("a");
     char notALiteral = 'c';
-    StringBuffer buffer = new StringBuffer(String.valueOf(notALiteral));
+    StringBuffer buffer2 = new StringBuffer(String.valueOf(notALiteral));
 }
 ```
 
@@ -64,8 +64,8 @@ class A {
 @@ -5,1 +5,1 @@
     StringBuilder builder = new StringBuilder('a');
     char notALiteral = 'c';
--   StringBuffer buffer = new StringBuffer(notALiteral);
-+   StringBuffer buffer = new StringBuffer(String.valueOf(notALiteral));
+-   StringBuffer buffer2 = new StringBuffer(notALiteral);
++   StringBuffer buffer2 = new StringBuffer(String.valueOf(notALiteral));
 }
 ```
 </TabItem>
@@ -252,12 +252,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

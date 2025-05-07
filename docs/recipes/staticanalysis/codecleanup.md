@@ -49,6 +49,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Chain `StringBuilder.append()` calls](../staticanalysis/chainstringbuilderappendcalls)
 * [Replace `StringBuilder#append` with `String`](../staticanalysis/replacestringbuilderwithstring)
 * [Add imports for fully qualified references to types](../java/shortenfullyqualifiedtypereferences)
+* [Custom import order](../staticanalysis/customimportorder)
 
 </TabItem>
 
@@ -83,6 +84,7 @@ recipeList:
   - org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
   - org.openrewrite.java.ShortenFullyQualifiedTypeReferences
+  - org.openrewrite.staticanalysis.CustomImportOrder
 
 ```
 </TabItem>
@@ -268,16 +270,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), punkratz312, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jammy Louie](mailto:jammy@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), Michel Gonzalez, [Greg Adams](mailto:greg@moderne.io), Josh Soref, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), punkratz312, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jammy Louie](mailto:jammy@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Serhii Manko](mailto:mankoffserg@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), Michel Gonzalez, [Greg Adams](mailto:greg@moderne.io), Josh Soref, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Mike Solomon](mailto:mike@moderne.io)

@@ -19,6 +19,63 @@ _`JobBuilderFactory` was deprecated in spring-batch 5.x: replaced by `JobBuilder
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+import org.springframework.batch.item.ItemWriter;
+
+public class ConsoleItemWriter<T> implements ItemWriter<T> {
+
+    @Override
+    public void write(final List<? extends T> items) throws Exception {
+        for (final T item : items) {
+            System.out.println(item.toString());
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.batch.item.Chunk;
+import org.springframework.batch.item.ItemWriter;
+
+public class ConsoleItemWriter<T> implements ItemWriter<T> {
+
+    @Override
+    public void write(final Chunk<? extends T> items) throws Exception {
+        for (final T item : items) {
+            System.out.println(item.toString());
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.List;
++import org.springframework.batch.item.Chunk;
+import org.springframework.batch.item.ItemWriter;
+@@ -7,1 +7,1 @@
+
+    @Override
+-   public void write(final List<? extends T> items) throws Exception {
++   public void write(final Chunk<? extends T> items) throws Exception {
+        for (final T item : items) {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +257,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

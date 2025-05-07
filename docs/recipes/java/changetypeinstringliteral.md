@@ -26,6 +26,56 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. | `org.junit.Assume` |
 | `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. | `org.junit.jupiter.api.Assumptions` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldFullyQualifiedTypeName|`javax.type.A`|
+|newFullyQualifiedTypeName|`jakarta.type.B`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    String ref = "javax.type.A";
+    String refNested = "javax.type.other.A";
+    String extendedRef = "there is a type reference here -> javax.type.A <- hopefully it only replaces that";
+}
+```
+
+###### After
+```java
+class Test {
+    String ref = "jakarta.type.B";
+    String refNested = "javax.type.other.A";
+    String extendedRef = "there is a type reference here -> jakarta.type.B <- hopefully it only replaces that";
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Test {
+-   String ref = "javax.type.A";
++   String ref = "jakarta.type.B";
+    String refNested = "javax.type.other.A";
+@@ -4,1 +4,1 @@
+    String ref = "javax.type.A";
+    String refNested = "javax.type.other.A";
+-   String extendedRef = "there is a type reference here -> javax.type.A <- hopefully it only replaces that";
++   String extendedRef = "there is a type reference here -> jakarta.type.B <- hopefully it only replaces that";
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -160,12 +210,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

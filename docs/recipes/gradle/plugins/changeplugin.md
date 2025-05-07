@@ -27,6 +27,49 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newPluginId | The new Gradle plugin id. | `org.openrewrite.rewrite` |
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). | `7.x` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|pluginId|`org.openrewrite.rewrite`|
+|newPluginId|`io.moderne.rewrite`|
+|newVersion|`0.x`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id "org.openrewrite.rewrite" version "6.0.0"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id "io.moderne.rewrite" version "0.39.0"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -2,1 +2,1 @@
+plugins {
+-   id "org.openrewrite.rewrite" version "6.0.0"
++   id "io.moderne.rewrite" version "0.39.0"
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -138,12 +181,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

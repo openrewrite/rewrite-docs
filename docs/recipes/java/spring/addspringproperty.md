@@ -28,6 +28,76 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yml", and "**/application.properties". | `["**/application.yml"]` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|property|`server.servlet.path`|
+|value|`/tmp/my-server-path`|
+|comment|`null`|
+|pathExpressions|`List.of("*")`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+server.port=8080
+```
+
+###### After
+```properties
+server.port=8080
+server.servlet.path=/tmp/my-server-path
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+server.port=8080
++server.servlet.path=/tmp/my-server-path
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+server:
+  port: 8080
+```
+
+###### After
+```yaml
+server:
+  port: 8080
+  servlet:
+    path: /tmp/my-server-path
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,2 @@
+server:
+  port: 8080
++ servlet:
++   path: /tmp/my-server-path
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -176,12 +246,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

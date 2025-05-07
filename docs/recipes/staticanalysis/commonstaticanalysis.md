@@ -95,6 +95,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Structural equality tests should use `==` or `!=`](../kotlin/cleanup/equalsmethodusage)
 * [`it` shouldn't be used as a lambda parameter name](../kotlin/cleanup/implicitparameterinlambda)
 * [Replace `Char#toInt()` with `Char#code`](../kotlin/cleanup/replacechartointwithcode)
+* [Custom import order](../staticanalysis/customimportorder)
 
 </TabItem>
 
@@ -175,6 +176,7 @@ recipeList:
   - org.openrewrite.kotlin.cleanup.EqualsMethodUsage
   - org.openrewrite.kotlin.cleanup.ImplicitParameterInLambda
   - org.openrewrite.kotlin.cleanup.ReplaceCharToIntWithCode
+  - org.openrewrite.staticanalysis.CustomImportOrder
 
 ```
 </TabItem>
@@ -360,16 +362,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Kun Li](mailto:kun@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), punkratz312, [Tim te Beek](mailto:timtebeek@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), Aaron Gershman, Greg Oledzki, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Yurii](mailto:yusheng.email@gmail.com), [Karsten Thoms](mailto:karsten.thoms@gmail.com), Guliver, Kun Li, [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, [Peter Streef](mailto:p.streef@gmail.com), [Jammy Louie](mailto:jammy@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), Josh Soref, [Jorge Otero](mailto:jorgeor@ext.inditex.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Knut Wannheden](mailto:knut.wannheden@gmail.com), timo-abele, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Peter Streef](mailto:peter@moderne.io), [Greg Adams](mailto:greg@moderne.io), Michel Gonzalez, Mike Sol, [pstreef](mailto:p.streef@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Derek Sharpe, [Scott Jungling](mailto:scott.jungling@gmail.com), [Martin Panzer](mailto:postremus1996@googlemail.com), [Mike Solomon](mailto:mike@moderne.io), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [xshen053](mailto:shenxiaxi26@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Kun Li](mailto:kun@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), punkratz312, [Tim te Beek](mailto:timtebeek@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), Aaron Gershman, [Jammy Louie](mailto:jammy@moderne.io), Greg Oledzki, [Yurii](mailto:yusheng.email@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Karsten Thoms](mailto:karsten.thoms@gmail.com), [Serhii Manko](mailto:mankoffserg@gmail.com), Guliver, Kun Li, [Joan Viladrosa](mailto:joan@moderne.io), [Peter Streef](mailto:p.streef@gmail.com), Tyler Van Gorder, [Greg Oledzki](mailto:greg.oledzki@moderne.io), Josh Soref, [Jorge Otero](mailto:jorgeor@ext.inditex.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Niels de Bruin](mailto:nielsdebruin@gmail.com), timo-abele, [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Peter Streef](mailto:peter@moderne.io), [Greg Adams](mailto:greg@moderne.io), Michel Gonzalez, Mike Sol, [pstreef](mailto:p.streef@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Derek Sharpe, [Mike Solomon](mailto:mike@moderne.io), [xshen053](mailto:shenxiaxi26@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Martin Panzer](mailto:postremus1996@googlemail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com)

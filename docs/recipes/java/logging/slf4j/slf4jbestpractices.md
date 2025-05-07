@@ -38,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](../../../java/logging/slf4j/completeexceptionlogging)
 * [Catch block log level](../../../java/logging/catchblockloglevel)
+* [Wrap expensive log statements in conditionals](../../../java/logging/slf4j/wrapexpensivelogstatementsinconditionals)
 
 </TabItem>
 
@@ -59,6 +60,7 @@ recipeList:
   - org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant
   - org.openrewrite.java.logging.slf4j.CompleteExceptionLogging
   - org.openrewrite.java.logging.CatchBlockLogLevel
+  - org.openrewrite.java.logging.slf4j.WrapExpensiveLogStatementsInConditionals
 
 ```
 </TabItem>
@@ -393,16 +395,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-Aaron Gershman, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), Md Riyazul Islam, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)
+Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), Md Riyazul Islam, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Johan Kragt](mailto:johan.kragt@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)

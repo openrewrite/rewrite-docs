@@ -19,6 +19,111 @@ _Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention` as 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micrometer.core.instrument.Tag;
+import io.micrometer.core.instrument.Tags;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.boot.actuate.metrics.web.servlet.WebMvcTags;
+import org.springframework.boot.actuate.metrics.web.servlet.WebMvcTagsProvider;
+
+class CustomWebMvcTagsProvider implements WebMvcTagsProvider {
+
+    @Override
+    public Iterable<Tag> getTags(HttpServletRequest request, HttpServletResponse response, Object handler, Throwable exception) {
+        Tags tags = Tags.of(WebMvcTags.method(request), WebMvcTags.uri(request, response), WebMvcTags.status(response), WebMvcTags.outcome(response));
+
+        String customHeader = request.getHeader("X-Custom-Header");
+        if (customHeader != null) {
+            tags = tags.and("custom.header", customHeader);
+        }
+        return tags;
+    }
+}
+```
+
+###### After
+```java
+import io.micrometer.common.KeyValue;
+import io.micrometer.common.KeyValues;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.server.observation.DefaultServerRequestObservationConvention;
+import org.springframework.http.server.observation.ServerRequestObservationContext;
+
+class CustomWebMvcTagsProvider extends DefaultServerRequestObservationConvention {
+
+    @Override
+    public KeyValues getHighCardinalityKeyValues(ServerRequestObservationContext context) {
+        HttpServletRequest request = context.getCarrier();
+        KeyValues values = super.getHighCardinalityKeyValues(context);
+
+        String customHeader = request.getHeader("X-Custom-Header");
+        if (customHeader != null) {
+            values.and(KeyValue.of("custom.header", customHeader));
+        }
+        return values;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import io.micrometer.core.instrument.Tag;
+-import io.micrometer.core.instrument.Tags;
++import io.micrometer.common.KeyValue;
++import io.micrometer.common.KeyValues;
+import jakarta.servlet.http.HttpServletRequest;
+@@ -4,3 +4,2 @@
+import io.micrometer.core.instrument.Tags;
+import jakarta.servlet.http.HttpServletRequest;
+-import jakarta.servlet.http.HttpServletResponse;
+-import org.springframework.boot.actuate.metrics.web.servlet.WebMvcTags;
+-import org.springframework.boot.actuate.metrics.web.servlet.WebMvcTagsProvider;
++import org.springframework.http.server.observation.DefaultServerRequestObservationConvention;
++import org.springframework.http.server.observation.ServerRequestObservationContext;
+
+@@ -8,1 +7,1 @@
+import org.springframework.boot.actuate.metrics.web.servlet.WebMvcTagsProvider;
+
+-class CustomWebMvcTagsProvider implements WebMvcTagsProvider {
++class CustomWebMvcTagsProvider extends DefaultServerRequestObservationConvention {
+
+@@ -11,2 +10,3 @@
+
+    @Override
+-   public Iterable<Tag> getTags(HttpServletRequest request, HttpServletResponse response, Object handler, Throwable exception) {
+-       Tags tags = Tags.of(WebMvcTags.method(request), WebMvcTags.uri(request, response), WebMvcTags.status(response), WebMvcTags.outcome(response));
++   public KeyValues getHighCardinalityKeyValues(ServerRequestObservationContext context) {
++       HttpServletRequest request = context.getCarrier();
++       KeyValues values = super.getHighCardinalityKeyValues(context);
+
+@@ -16,1 +16,1 @@
+        String customHeader = request.getHeader("X-Custom-Header");
+        if (customHeader != null) {
+-           tags = tags.and("custom.header", customHeader);
++           values.and(KeyValue.of("custom.header", customHeader));
+        }
+@@ -18,1 +18,1 @@
+            tags = tags.and("custom.header", customHeader);
+        }
+-       return tags;
++       return values;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +305,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

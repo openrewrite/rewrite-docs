@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate to 4.10.0"
+sidebar_label: "Migrate to 4.11.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to 4.10.0
+# Migrate to 4.11.0
 
 **org.apache.camel.upgrade.CamelMigrationRecipe**
 
-_Migrates Apache Camel application to 4.10.0_
+_Migrates Apache Camel application to 4.11.0_
 
 ## Recipe source
 
@@ -28,6 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrates `camel 4.10` application to `camel 4.11`](../../../../org/apache/camel/upgrade/camel411/camelmigrationrecipe)
 * [Migrates `camel 4.9` application to `camel 4.10`](../../../../org/apache/camel/upgrade/camel410/camelmigrationrecipe)
 * [Migrates `camel 4.8` application to `camel 4.9`](../../../../org/apache/camel/upgrade/camel49/camelmigrationrecipe)
 * [Migrates `camel 4.6` application to `camel 4.7`](../../../../org/apache/camel/upgrade/camel47/camelmigrationrecipe)
@@ -37,18 +38,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate `camel3` application to `camel4.`](../../../../org/apache/camel/upgrade/camel40/camelmigrationrecipe)
 * [Migrate to Java 17](../../../../org/apache/camel/upgrade/upgradetojava17)
 * [Change Maven Java version property values to 17](../../../../org/apache/camel/upgrade/javaversion17)
+* [Update properties and yaml configurations file](../../../../org/apache/camel/upgrade/updatepropertiesandyamlkeys)
 * [Upgrade Maven dependency version](../../../../maven/upgradedependencyversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.10.0`
+  * newVersion: `4.11.0`
 * [Upgrade Maven plugin version](../../../../maven/upgradepluginversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.10.0`
+  * newVersion: `4.11.0`
 * [Upgrade Maven parent project version](../../../../maven/upgradeparentversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.10.0`
+  * newVersion: `4.11.0`
 
 </TabItem>
 
@@ -58,10 +60,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.CamelMigrationRecipe
-displayName: Migrate to 4.10.0
+displayName: Migrate to 4.11.0
 description: |
-  Migrates Apache Camel application to 4.10.0
+  Migrates Apache Camel application to 4.11.0
 recipeList:
+  - org.apache.camel.upgrade.camel411.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel410.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel49.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel47.CamelMigrationRecipe
@@ -71,18 +74,19 @@ recipeList:
   - org.apache.camel.upgrade.camel40.CamelMigrationRecipe
   - org.apache.camel.upgrade.UpgradeToJava17
   - org.apache.camel.upgrade.JavaVersion17
+  - org.apache.camel.upgrade.UpdatePropertiesAndYamlKeys
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.10.0
+      newVersion: 4.11.0
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.10.0
+      newVersion: 4.11.0
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.10.0
+      newVersion: 4.11.0
 
 ```
 </TabItem>
@@ -268,12 +272,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

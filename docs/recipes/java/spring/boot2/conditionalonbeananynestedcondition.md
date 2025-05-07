@@ -19,6 +19,127 @@ _Migrate multi-condition `@ConditionalOnBean` annotations to `AnyNestedCondition
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Bean;
+
+class ThingOne {}
+
+class ThingTwo {}
+
+class ConfigClass {
+    @Bean
+    @ConditionalOnBean({Aa.class, Bb.class})
+    public ThingOne thingOne() {
+        return new ThingOne();
+    }
+    @Bean
+    @ConditionalOnBean({Bb.class, Aa.class})
+    public ThingTwo thingTwo() {
+        return new ThingTwo();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
+
+class ThingOne {}
+
+class ThingTwo {}
+
+class ConfigClass {
+    @Bean
+    @Conditional(ConditionAaOrBb.class)
+    public ThingOne thingOne() {
+        return new ThingOne();
+    }
+
+    @Bean
+    @Conditional(ConditionAaOrBb.class)
+    public ThingTwo thingTwo() {
+        return new ThingTwo();
+    }
+
+    private static class ConditionAaOrBb extends AnyNestedCondition {
+        ConditionAaOrBb() {
+            super(ConfigurationPhase.REGISTER_BEAN);
+        }
+
+        @ConditionalOnBean(Aa.class)
+        class AaCondition {
+        }
+
+        @ConditionalOnBean(Bb.class)
+        class BbCondition {
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,1 @@
++import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+@@ -3,0 +4,1 @@
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Bean;
++import org.springframework.context.annotation.Conditional;
+
+@@ -10,1 +12,1 @@
+class ConfigClass {
+    @Bean
+-   @ConditionalOnBean({Aa.class, Bb.class})
++   @Conditional(ConditionAaOrBb.class)
+    public ThingOne thingOne() {
+@@ -14,0 +16,1 @@
+        return new ThingOne();
+    }
++
+    @Bean
+@@ -15,1 +18,1 @@
+    }
+    @Bean
+-   @ConditionalOnBean({Bb.class, Aa.class})
++   @Conditional(ConditionAaOrBb.class)
+    public ThingTwo thingTwo() {
+@@ -19,0 +22,14 @@
+        return new ThingTwo();
+    }
++
++   private static class ConditionAaOrBb extends AnyNestedCondition {
++       ConditionAaOrBb() {
++           super(ConfigurationPhase.REGISTER_BEAN);
++       }
++
++       @ConditionalOnBean(Aa.class)
++       class AaCondition {
++       }
++
++       @ConditionalOnBean(Bb.class)
++       class BbCondition {
++       }
++   }
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +321,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

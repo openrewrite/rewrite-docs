@@ -13,7 +13,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Framework 6.0](./upgradespringframework_6_0.md)
 * [Migrate to Spring Framework 6.1](./upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)
-* [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)
 
 ## Recipes
 

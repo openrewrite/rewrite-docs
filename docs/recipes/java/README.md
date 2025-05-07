@@ -60,6 +60,7 @@ _Basic building blocks for transforming Java code._
 * [Replace annotation](./replaceannotation.md)
 * [Replace constant with another constant](./replaceconstantwithanotherconstant.md)
 * [Replace constant with literal value](./replaceconstant.md)
+* [Replace method invocation with constant](./replacemethodinvocationwithconstant.md)
 * [Simplify a call chain](./simplifymethodchain.md)
 * [Transform calls to `Objects.isNull(..)` and `Objects.nonNull(..)`](./removeobjectsisnull.md)
 * [Update source positions](./updatesourcepositions.md)

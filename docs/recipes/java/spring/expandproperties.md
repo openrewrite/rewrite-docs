@@ -25,6 +25,53 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | sourceFileMask | *Optional*. An optional source file path mask use to restrict which YAML files will be expanded by this recipe. | `**/application*.yml` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|sourceFileMask|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+management: test
+spring.application:
+  name: main
+  description: a description
+```
+
+###### After
+```yaml
+management: test
+spring:
+  application:
+    name: main
+    description: a description
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,3 +2,4 @@
+management: test
+-spring.application:
+- name: main
+- description: a description
++spring:
++ application:
++   name: main
++   description: a description
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -206,12 +253,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

@@ -42,10 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * scope: `test`
   * acceptTransitive: `true`
 * [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration)
-* [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](../../../java/testing/mockito/mockitojunitrunnersilenttoextension)
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension)
-  * runners: `[org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]`
-  * extension: `org.mockito.junit.jupiter.MockitoExtension`
+* [Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension](../../../java/testing/mockito/mockitojunitrunnertoextension)
 
 </TabItem>
 
@@ -71,10 +68,7 @@ recipeList:
       scope: test
       acceptTransitive: true
   - org.openrewrite.java.testing.mockito.Mockito1to4Migration
-  - org.openrewrite.java.testing.mockito.MockitoJUnitRunnerSilentToExtension
-  - org.openrewrite.java.testing.junit5.RunnerToExtension:
-      runners: [org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]
-      extension: org.mockito.junit.jupiter.MockitoExtension
+  - org.openrewrite.java.testing.mockito.MockitoJUnitRunnerToExtension
 
 ```
 </TabItem>
@@ -260,16 +254,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[Andrii Rodionov](mailto:andrii@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Greg Adams](mailto:greg@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), John Burns, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Anshuman Mishra, SiBorea, [Tim te Beek](mailto:timtebeek@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, Aaron Gershman, [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Tyler Van Gorder
+[Andrii Rodionov](mailto:andrii@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), Anshuman Mishra, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Tim te Beek](mailto:timtebeek@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, Aaron Gershman

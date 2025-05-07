@@ -19,6 +19,69 @@ _Replaces any references to the deprecated `EnvironmentTestUtils` with `TestProp
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.mycompany;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import static org.springframework.boot.test.util.EnvironmentTestUtils.addEnvironment;
+
+public class MyClass {
+    public void myMethod() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        String pair = "pair";
+        addEnvironment(context, pair);
+    }
+}
+```
+
+###### After
+```java
+package com.mycompany;
+
+import org.springframework.boot.test.util.TestPropertyValues;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class MyClass {
+    public void myMethod() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        String pair = "pair";
+        TestPropertyValues.of(pair).applyTo(context);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,1 @@
+package com.mycompany;
+
++import org.springframework.boot.test.util.TestPropertyValues;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+@@ -4,1 +5,0 @@
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+-import static org.springframework.boot.test.util.EnvironmentTestUtils.addEnvironment;
+
+@@ -10,1 +10,1 @@
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        String pair = "pair";
+-       addEnvironment(context, pair);
++       TestPropertyValues.of(pair).applyTo(context);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +263,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

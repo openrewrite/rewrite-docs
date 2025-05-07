@@ -19,6 +19,61 @@ _As of Spring boot 2.0, the `AuditorAware.getCurrentAuditor` method should retur
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.data.domain.AuditorAware;
+
+public class MyAuditorAware implements AuditorAware<String> {
+    @Override
+    public String getCurrentAuditor() {
+        return "admin";
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.data.domain.AuditorAware;
+
+import java.util.Optional;
+
+public class MyAuditorAware implements AuditorAware<String> {
+    @Override
+    public Optional<java.lang.String> getCurrentAuditor() {
+        return Optional.ofNullable("admin");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,2 @@
+import org.springframework.data.domain.AuditorAware;
+
++import java.util.Optional;
++
+public class MyAuditorAware implements AuditorAware<String> {
+@@ -5,2 +7,2 @@
+public class MyAuditorAware implements AuditorAware<String> {
+    @Override
+-   public String getCurrentAuditor() {
+-       return "admin";
++   public Optional<java.lang.String> getCurrentAuditor() {
++       return Optional.ofNullable("admin");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +255,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

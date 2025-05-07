@@ -23,6 +23,109 @@ _Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
+
+@RestController
+@RequestMapping("/users")
+public class UsersController {
+    @RequestMapping(method = HEAD)
+    public ResponseEntity<List<String>> getUsersHead() {
+        return null;
+    }
+
+    @RequestMapping(method = GET)
+    public ResponseEntity<List<String>> getUsers() {
+        return null;
+    }
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<String> getUser(@PathVariable("id") Long id) {
+        return null;
+    }
+
+    @RequestMapping
+    public ResponseEntity<List<String>> getUsersNoRequestMethod() {
+        return null;
+    }
+}
+```
+
+###### After
+```java
+import java.util.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
+
+@RestController
+@RequestMapping("/users")
+public class UsersController {
+    @RequestMapping(method = HEAD)
+    public ResponseEntity<List<String>> getUsersHead() {
+        return null;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<String>> getUsers() {
+        return null;
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<String> getUser(@PathVariable("id") Long id) {
+        return null;
+    }
+
+    @RequestMapping
+    public ResponseEntity<List<String>> getUsersNoRequestMethod() {
+        return null;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,1 @@
+import java.util.*;
+import org.springframework.http.ResponseEntity;
++import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+@@ -4,1 +5,0 @@
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+-import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
+@@ -15,1 +15,1 @@
+    }
+
+-   @RequestMapping(method = GET)
++   @GetMapping
+    public ResponseEntity<List<String>> getUsers() {
+@@ -20,1 +20,1 @@
+    }
+
+-   @RequestMapping(path = "/{id}", method = RequestMethod.GET)
++   @GetMapping("/{id}")
+    public ResponseEntity<String> getUser(@PathVariable("id") Long id) {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -204,12 +307,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

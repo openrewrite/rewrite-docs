@@ -29,50 +29,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ###### Before
 ```java
 package abc;
-import io.micronaut.runtime.context.scope.Refreshable;
-
-@Refreshable
-public abstract class BaseController {
-}
-
-public abstract class MiddleController extends BaseController {
-}
-```
-
-###### After
-```java
-package abc;
-import io.micronaut.runtime.context.scope.Refreshable;
-
-@Refreshable
-public abstract class BaseController {
-}
-
-@Refreshable
-public abstract class MiddleController extends BaseController {
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -8,0 +8,1 @@
-}
-
-+@Refreshable
-public abstract class MiddleController extends BaseController {
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-package abc;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 
@@ -122,6 +78,50 @@ import io.micronaut.http.annotation.Get;
     @Controller
 +   @Refreshable
     public class MyController extends MiddleController {
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package abc;
+import io.micronaut.runtime.context.scope.Refreshable;
+
+@Refreshable
+public abstract class BaseController {
+}
+
+public abstract class MiddleController extends BaseController {
+}
+```
+
+###### After
+```java
+package abc;
+import io.micronaut.runtime.context.scope.Refreshable;
+
+@Refreshable
+public abstract class BaseController {
+}
+
+@Refreshable
+public abstract class MiddleController extends BaseController {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,0 +8,1 @@
+}
+
++@Refreshable
+public abstract class MiddleController extends BaseController {
 ```
 </TabItem>
 </Tabs>
@@ -307,12 +307,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
