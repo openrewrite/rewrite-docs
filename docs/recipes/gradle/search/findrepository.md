@@ -27,6 +27,140 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | url | *Optional*. The url of the artifact repository | `https://repo.spring.io` |
 | `Purpose` | purpose | *Optional*. The purpose of this repository in terms of resolving project or plugin dependencies Valid options: `Project`, `Plugin` |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|type|`null`|
+|url|`https://oss.sonatype.org/content/repositories/snapshots`|
+|purpose|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+buildscript {
+  repositories {
+    maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+    maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+    maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  }
+}
+
+repositories {
+  maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+  maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+  maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+  maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+}
+```
+
+###### After
+```groovy title="build.gradle"
+buildscript {
+  repositories {
+    /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+    /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+    /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+    /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  }
+}
+
+repositories {
+  /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+  /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+  /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+  /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -3,4 +3,4 @@
+buildscript {
+  repositories {
+-   maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+-   maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+-   maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+-   maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
++   /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
++   /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
++   /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
++   /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  }
+@@ -11,4 +11,4 @@
+
+repositories {
+- maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+- maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+- maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+- maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
++ /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
++ /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
++ /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
++ /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="settingsGradle" label="settingsGradle">
+
+
+###### Before
+```settingsGradle
+pluginManagement {
+  repositories {
+    maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+    maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+    maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  }
+}
+```
+
+###### After
+```settingsGradle
+pluginManagement {
+  repositories {
+    /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+    /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+    /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+    /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,4 +3,4 @@
+pluginManagement {
+  repositories {
+-   maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+-   maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+-   maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+-   maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
++   /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
++   /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
++   /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
++   /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -163,12 +297,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

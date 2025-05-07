@@ -19,6 +19,61 @@ _`org.springframework.http.codec.ResourceHttpMessageWriter.addHeaders` was depre
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.web.reactive.HandlerResult;
+import org.springframework.http.ReactiveHttpOutputMessage;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
+import java.util.Map;
+import org.springframework.http.codec.ResourceHttpMessageWriter;
+
+class A {
+    void writeResourceWithHeaders(ReactiveHttpOutputMessage message, Resource resource, MediaType contentType, Map<String, Object> hints) {
+        ResourceHttpMessageWriter writer = new ResourceHttpMessageWriter();
+        writer.addHeaders(message, resource, contentType, hints);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.web.reactive.HandlerResult;
+import org.springframework.http.ReactiveHttpOutputMessage;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
+import java.util.Map;
+import org.springframework.http.codec.ResourceHttpMessageWriter;
+
+class A {
+    void writeResourceWithHeaders(ReactiveHttpOutputMessage message, Resource resource, MediaType contentType, Map<String, Object> hints) {
+        ResourceHttpMessageWriter writer = new ResourceHttpMessageWriter();
+        writer.addDefaultHeaders(message, resource, contentType, hints).block();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -11,1 +11,1 @@
+    void writeResourceWithHeaders(ReactiveHttpOutputMessage message, Resource resource, MediaType contentType, Map<String, Object> hints) {
+        ResourceHttpMessageWriter writer = new ResourceHttpMessageWriter();
+-       writer.addHeaders(message, resource, contentType, hints);
++       writer.addDefaultHeaders(message, resource, contentType, hints).block();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +255,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

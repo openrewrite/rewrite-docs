@@ -159,6 +159,1033 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.7.3</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.3</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.7.3</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.0.13</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <classifier>jakarta</classifier>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+-   <version>2.7.3</version>
++   <version>3.0.13</version>
+  </parent>
+@@ -15,1 +15,1 @@
+
+  <properties>
+-   <java.version>1.8</java.version>
++   <java.version>17</java.version>
+  </properties>
+@@ -20,0 +20,4 @@
+  <dependencies>
+    <dependency>
++     <groupId>jakarta.xml.bind</groupId>
++     <artifactId>jakarta.xml.bind-api</artifactId>
++   </dependency>
++   <dependency>
+      <groupId>org.springframework.boot</groupId>
+@@ -30,0 +34,1 @@
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
++     <classifier>jakarta</classifier>
+    </dependency>
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "specialties")
+public class Specialty implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+}
+```
+
+###### After
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "specialties")
+public class Specialty implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,6 +5,6 @@
+import java.io.Serializable;
+
+-import javax.persistence.Column;
+-import javax.persistence.Entity;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Id;
+-import javax.persistence.Table;
++import jakarta.persistence.Column;
++import jakarta.persistence.Entity;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Id;
++import jakarta.persistence.Table;
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.xml.bind.annotation.XmlElement;
+
+@Entity
+@Table(name = "vets")
+public class Vet implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "first_name")
+    @NotEmpty
+    private String firstName;
+
+    @Column(name = "last_name")
+    @NotEmpty
+    private String lastName;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
+            inverseJoinColumns = @JoinColumn(name = "specialty_id"))
+    private Set<Specialty> specialties;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    protected Set<Specialty> getSpecialtiesInternal() {
+        if (this.specialties == null) {
+            this.specialties = new HashSet<>();
+        }
+        return this.specialties;
+    }
+
+    protected void setSpecialtiesInternal(Set<Specialty> specialties) {
+        this.specialties = specialties;
+    }
+
+    @XmlElement
+    public List<Specialty> getSpecialties() {
+        List<Specialty> sortedSpecs = new ArrayList<>(getSpecialtiesInternal());
+        return Collections.unmodifiableList(sortedSpecs);
+    }
+
+    public int getNrOfSpecialties() {
+        return getSpecialtiesInternal().size();
+    }
+
+    public void addSpecialty(Specialty specialty) {
+        getSpecialtiesInternal().add(specialty);
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
+```
+
+###### After
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.xml.bind.annotation.XmlElement;
+
+@Entity
+@Table(name = "vets")
+public class Vet implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "first_name")
+    @NotEmpty
+    private String firstName;
+
+    @Column(name = "last_name")
+    @NotEmpty
+    private String lastName;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
+            inverseJoinColumns = @JoinColumn(name = "specialty_id"))
+    private Set<Specialty> specialties;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    protected Set<Specialty> getSpecialtiesInternal() {
+        if (this.specialties == null) {
+            this.specialties = new HashSet<>();
+        }
+        return this.specialties;
+    }
+
+    protected void setSpecialtiesInternal(Set<Specialty> specialties) {
+        this.specialties = specialties;
+    }
+
+    @XmlElement
+    public List<Specialty> getSpecialties() {
+        List<Specialty> sortedSpecs = new ArrayList<>(getSpecialtiesInternal());
+        return Collections.unmodifiableList(sortedSpecs);
+    }
+
+    public int getNrOfSpecialties() {
+        return getSpecialtiesInternal().size();
+    }
+
+    public void addSpecialty(Specialty specialty) {
+        getSpecialtiesInternal().add(specialty);
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,12 +10,12 @@
+import java.util.Set;
+
+-import javax.persistence.Column;
+-import javax.persistence.Entity;
+-import javax.persistence.FetchType;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Id;
+-import javax.persistence.JoinColumn;
+-import javax.persistence.JoinTable;
+-import javax.persistence.ManyToMany;
+-import javax.persistence.Table;
+-import javax.validation.constraints.NotEmpty;
+-import javax.xml.bind.annotation.XmlElement;
++import jakarta.persistence.Column;
++import jakarta.persistence.Entity;
++import jakarta.persistence.FetchType;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Id;
++import jakarta.persistence.JoinColumn;
++import jakarta.persistence.JoinTable;
++import jakarta.persistence.ManyToMany;
++import jakarta.persistence.Table;
++import jakarta.validation.constraints.NotEmpty;
++import jakarta.xml.bind.annotation.XmlElement;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.7.3</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.3</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.7.3</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.0.13</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <classifier>jakarta</classifier>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+-   <version>2.7.3</version>
++   <version>3.0.13</version>
+  </parent>
+@@ -15,1 +15,1 @@
+
+  <properties>
+-   <java.version>1.8</java.version>
++   <java.version>17</java.version>
+  </properties>
+@@ -20,0 +20,4 @@
+  <dependencies>
+    <dependency>
++     <groupId>jakarta.xml.bind</groupId>
++     <artifactId>jakarta.xml.bind-api</artifactId>
++   </dependency>
++   <dependency>
+      <groupId>org.springframework.boot</groupId>
+@@ -30,0 +34,1 @@
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
++     <classifier>jakarta</classifier>
+    </dependency>
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "specialties")
+public class Specialty implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+}
+```
+
+###### After
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "specialties")
+public class Specialty implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,6 +5,6 @@
+import java.io.Serializable;
+
+-import javax.persistence.Column;
+-import javax.persistence.Entity;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Id;
+-import javax.persistence.Table;
++import jakarta.persistence.Column;
++import jakarta.persistence.Entity;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Id;
++import jakarta.persistence.Table;
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.xml.bind.annotation.XmlElement;
+
+@Entity
+@Table(name = "vets")
+public class Vet implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "first_name")
+    @NotEmpty
+    private String firstName;
+
+    @Column(name = "last_name")
+    @NotEmpty
+    private String lastName;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
+            inverseJoinColumns = @JoinColumn(name = "specialty_id"))
+    private Set<Specialty> specialties;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    protected Set<Specialty> getSpecialtiesInternal() {
+        if (this.specialties == null) {
+            this.specialties = new HashSet<>();
+        }
+        return this.specialties;
+    }
+
+    protected void setSpecialtiesInternal(Set<Specialty> specialties) {
+        this.specialties = specialties;
+    }
+
+    @XmlElement
+    public List<Specialty> getSpecialties() {
+        List<Specialty> sortedSpecs = new ArrayList<>(getSpecialtiesInternal());
+        return Collections.unmodifiableList(sortedSpecs);
+    }
+
+    public int getNrOfSpecialties() {
+        return getSpecialtiesInternal().size();
+    }
+
+    public void addSpecialty(Specialty specialty) {
+        getSpecialtiesInternal().add(specialty);
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
+```
+
+###### After
+```java
+package org.springframework.samples.petclinic.vet;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.xml.bind.annotation.XmlElement;
+
+@Entity
+@Table(name = "vets")
+public class Vet implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "first_name")
+    @NotEmpty
+    private String firstName;
+
+    @Column(name = "last_name")
+    @NotEmpty
+    private String lastName;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
+            inverseJoinColumns = @JoinColumn(name = "specialty_id"))
+    private Set<Specialty> specialties;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    protected Set<Specialty> getSpecialtiesInternal() {
+        if (this.specialties == null) {
+            this.specialties = new HashSet<>();
+        }
+        return this.specialties;
+    }
+
+    protected void setSpecialtiesInternal(Set<Specialty> specialties) {
+        this.specialties = specialties;
+    }
+
+    @XmlElement
+    public List<Specialty> getSpecialties() {
+        List<Specialty> sortedSpecs = new ArrayList<>(getSpecialtiesInternal());
+        return Collections.unmodifiableList(sortedSpecs);
+    }
+
+    public int getNrOfSpecialties() {
+        return getSpecialtiesInternal().size();
+    }
+
+    public void addSpecialty(Specialty specialty) {
+        getSpecialtiesInternal().add(specialty);
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,12 +10,12 @@
+import java.util.Set;
+
+-import javax.persistence.Column;
+-import javax.persistence.Entity;
+-import javax.persistence.FetchType;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Id;
+-import javax.persistence.JoinColumn;
+-import javax.persistence.JoinTable;
+-import javax.persistence.ManyToMany;
+-import javax.persistence.Table;
+-import javax.validation.constraints.NotEmpty;
+-import javax.xml.bind.annotation.XmlElement;
++import jakarta.persistence.Column;
++import jakarta.persistence.Entity;
++import jakarta.persistence.FetchType;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Id;
++import jakarta.persistence.JoinColumn;
++import jakarta.persistence.JoinTable;
++import jakarta.persistence.ManyToMany;
++import jakarta.persistence.Table;
++import jakarta.validation.constraints.NotEmpty;
++import jakarta.xml.bind.annotation.XmlElement;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
 
 ## Usage
 
@@ -340,12 +1367,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
@@ -371,4 +1398,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), Anu Ramamoorthy, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [qwtfps](mailto:qwtfps@163.com), pdesprez, [Kyle Scully](mailto:scullykns@gmail.com), Patrick Way, SiBorea, Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Melloware](mailto:mellowaredev@gmail.com), BhavanaPidapa, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Cathy, Fabian Krüger, [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Simon Zilliken, Kushank24, Evie Lau, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Shannon Pamperl](mailto:shanman190@gmail.com), Aaron Gershman, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Daryl Robbins, ranuradh, nbruno, [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Sandeep Nagaraj, Michel Gonzalez, [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Tyler Van Gorder, [Michael Keppler](mailto:bananeweizen@gmx.de), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aakarshit Uppal, BramliAK, eocantu, Josh Soref, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), Anu Ramamoorthy, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [qwtfps](mailto:qwtfps@163.com), pdesprez, [Kyle Scully](mailto:scullykns@gmail.com), Patrick Way, SiBorea, Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Melloware](mailto:mellowaredev@gmail.com), BhavanaPidapa, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Cathy, Fabian Krüger, [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Simon Zilliken, Kushank24, Evie Lau, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Shannon Pamperl](mailto:shanman190@gmail.com), Aaron Gershman, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Daryl Robbins, ranuradh, nbruno, [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Sandeep Nagaraj, Michel Gonzalez, [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Tyler Van Gorder, [Michael Keppler](mailto:bananeweizen@gmx.de), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aakarshit Uppal, BramliAK, eocantu, Josh Soref, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)

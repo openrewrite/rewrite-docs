@@ -22,56 +22,6 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ##### Example 1
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <groupId>com.mycompany</groupId>
-    <artifactId>app</artifactId>
-    <version>1</version>
-    <dependencies>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>29.0-jre</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <groupId>com.mycompany</groupId>
-    <artifactId>app</artifactId>
-    <version>1</version>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -5,7 +5,0 @@
-    <artifactId>app</artifactId>
-    <version>1</version>
--   <dependencies>
--       <dependency>
--           <groupId>com.google.guava</groupId>
--           <artifactId>guava</artifactId>
--           <version>29.0-jre</version>
--       </dependency>
--   </dependencies>
-</project>
-```
-</TabItem>
-</Tabs>
-
 ###### Unchanged
 ```java
 import java.util.List;
@@ -86,54 +36,6 @@ public class A {
 project
 ```
 
----
-
-##### Example 2
-
-
-###### Unchanged
-```xml title="pom.xml"
-<project>
-      <groupId>com.mycompany</groupId>
-      <artifactId>root</artifactId>
-      <version>1</version>
-      <modules>
-          <module>uses-guava</module>
-          <module>no-guava</module>
-      </modules>
-</project>
-```
-
-###### Unchanged
-```xml title="pom.xml"
-<project>
-    <groupId>com.mycompany</groupId>
-    <artifactId>uses-guava</artifactId>
-    <version>1</version>
-    <dependencies>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>29.0-jre</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### Unchanged
-```java
-import com.google.common.collect.Lists;
-import java.util.List;
-public class A {
-    List<String> a = Lists.newArrayList();
-}
-```
-
-###### Unchanged
-```mavenProject
-uses-guava
-```
-
 <Tabs groupId="beforeAfter">
 <TabItem value="pom.xml" label="pom.xml">
 
@@ -142,7 +44,7 @@ uses-guava
 ```xml title="pom.xml"
 <project>
     <groupId>com.mycompany</groupId>
-    <artifactId>no-guava</artifactId>
+    <artifactId>app</artifactId>
     <version>1</version>
     <dependencies>
         <dependency>
@@ -158,7 +60,7 @@ uses-guava
 ```xml title="pom.xml"
 <project>
     <groupId>com.mycompany</groupId>
-    <artifactId>no-guava</artifactId>
+    <artifactId>app</artifactId>
     <version>1</version>
 </project>
 ```
@@ -170,7 +72,7 @@ uses-guava
 --- pom.xml
 +++ pom.xml
 @@ -5,7 +5,0 @@
-    <artifactId>no-guava</artifactId>
+    <artifactId>app</artifactId>
     <version>1</version>
 -   <dependencies>
 -       <dependency>
@@ -183,6 +85,20 @@ uses-guava
 ```
 </TabItem>
 </Tabs>
+
+---
+
+##### Example 2
+
+
+###### Unchanged
+```java
+import com.google.common.collect.Lists;
+import java.util.List;
+public class A {
+    List<String> a = Lists.newArrayList();
+}
+```
 
 ###### Unchanged
 ```java
@@ -201,6 +117,90 @@ no-guava
 ###### Unchanged
 ```mavenProject
 root
+```
+
+###### Unchanged
+```mavenProject
+uses-guava
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+      <groupId>com.mycompany</groupId>
+      <artifactId>root</artifactId>
+      <version>1</version>
+      <modules>
+          <module>uses-guava</module>
+          <module>no-guava</module>
+      </modules>
+</project>
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>no-guava</artifactId>
+    <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>no-guava</artifactId>
+    <version>1</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,7 +5,0 @@
+    <artifactId>no-guava</artifactId>
+    <version>1</version>
+-   <dependencies>
+-       <dependency>
+-           <groupId>com.google.guava</groupId>
+-           <artifactId>guava</artifactId>
+-           <version>29.0-jre</version>
+-       </dependency>
+-   </dependencies>
+</project>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany</groupId>
+    <artifactId>uses-guava</artifactId>
+    <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+    </dependencies>
+</project>
 ```
 
 ---
@@ -377,12 +377,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

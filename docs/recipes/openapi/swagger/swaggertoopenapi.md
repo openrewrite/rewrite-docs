@@ -49,9 +49,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newGroupId: `io.swagger.core.v3`
   * newVersion: `2.2.x`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `io.swagger.annotations.Tag`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.tags.Tag`
-* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `io.swagger.annotations.Info`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.info.Info`
 * [Change type](../../java/changetype)
@@ -96,9 +93,6 @@ recipeList:
       oldArtifactId: swagger-models
       newGroupId: io.swagger.core.v3
       newVersion: 2.2.x
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: io.swagger.annotations.Tag
-      newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.tags.Tag
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.swagger.annotations.Info
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.info.Info
@@ -465,12 +459,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

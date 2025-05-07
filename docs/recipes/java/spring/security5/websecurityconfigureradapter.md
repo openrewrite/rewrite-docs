@@ -19,6 +19,111 @@ _The Spring Security `WebSecurityConfigurerAdapter` was deprecated 5.7, this rec
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.websecuritydemo;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
+@Configuration
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests((authz) -> authz
+                .anyRequest().authenticated()
+            )
+            .httpBasic(withDefaults());
+    }
+
+    void someMethod() {}
+
+}
+```
+
+###### After
+```java
+package com.example.websecuritydemo;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfiguration {
+
+    @Bean
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests((authz) -> authz
+                .anyRequest().authenticated()
+            )
+            .httpBasic(withDefaults());
+        return http.build();
+    }
+
+    void someMethod() {}
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,2 @@
+
+import static org.springframework.security.config.Customizer.withDefaults;
++
++import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+@@ -5,1 +7,0 @@
+import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.context.annotation.Configuration;
+-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+@@ -7,0 +8,1 @@
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
++import org.springframework.security.web.SecurityFilterChain;
+
+@@ -9,1 +11,1 @@
+
+@Configuration
+-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
++public class SecurityConfiguration {
+
+@@ -11,2 +13,2 @@
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+-   @Override
+-   protected void configure(HttpSecurity http) throws Exception {
++   @Bean
++   SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+@@ -18,0 +20,1 @@
+            )
+            .httpBasic(withDefaults());
++       return http.build();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +305,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

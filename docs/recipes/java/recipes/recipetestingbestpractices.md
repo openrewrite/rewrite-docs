@@ -30,6 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [RewriteTest classes should not be public](../../java/recipes/rewritetestclassesshouldnotbepublic)
 * [Automatically select recipe examples from the unit test cases of a recipe](../../java/recipes/selectrecipeexamples)
+* [Show `@DocumentExample`s first](../../java/recipes/reordertestmethods)
 * [New line at the end of `SourceSpecs` text blocks](../../java/recipes/sourcespectextblocknewline)
 * [Minimal indentation for `SourceSpecs` text blocks](../../java/recipes/sourcespectextblockindentation)
 * [Remove `test` prefix from JUnit 5 tests](../../java/testing/cleanup/removetestprefix)
@@ -53,6 +54,7 @@ description: |
 recipeList:
   - org.openrewrite.java.recipes.RewriteTestClassesShouldNotBePublic
   - org.openrewrite.java.recipes.SelectRecipeExamples
+  - org.openrewrite.java.recipes.ReorderTestMethods
   - org.openrewrite.java.recipes.SourceSpecTextBlockNewLine
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
@@ -246,12 +248,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

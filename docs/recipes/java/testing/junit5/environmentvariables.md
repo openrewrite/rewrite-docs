@@ -19,6 +19,114 @@ _Replaces usage of the JUnit 4 `@Rule EnvironmentVariables` with the JUnit 5-com
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.contrib.java.lang.system.EnvironmentVariables;
+import org.junit.Rule;
+import org.junit.jupiter.api.Test;
+
+public class RuleTest {
+    @Rule
+    public EnvironmentVariables environmentVariables = new EnvironmentVariables()
+            .set("testSetInline", "valueSetInline").clear("testClearInline");
+
+    @BeforeEach
+    public void setUp() {
+        System.out.println("Setting up...");
+    }
+
+    @Test
+    public void test() {
+        environmentVariables.clear();
+        environmentVariables.set("testSet", "valueSet").clear("testClear");
+        environmentVariables.clear("clear1", "clear2").clear();
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
+import uk.org.webcompere.systemstubs.jupiter.SystemStub;
+import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
+
+@ExtendWith(SystemStubsExtension.class)
+public class RuleTest {
+    @SystemStub
+    public EnvironmentVariables environmentVariables = new EnvironmentVariables()
+            .set("testSetInline", "valueSetInline").remove("testClearInline");
+
+    @BeforeEach
+    public void setUp() {
+        System.out.println("Setting up...");
+    }
+
+    @Test
+    public void test() {
+        environmentVariables.set("testSet", "valueSet").remove("testClear");
+        environmentVariables.remove("clear1").remove("clear2");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,2 +2,0 @@
+import org.junit.jupiter.api.BeforeEach;
+-import org.junit.contrib.java.lang.system.EnvironmentVariables;
+-import org.junit.Rule;
+import org.junit.jupiter.api.Test;
+@@ -5,0 +3,4 @@
+import org.junit.Rule;
+import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
++import uk.org.webcompere.systemstubs.jupiter.SystemStub;
++import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
+
+@@ -6,0 +8,1 @@
+import org.junit.jupiter.api.Test;
+
++@ExtendWith(SystemStubsExtension.class)
+public class RuleTest {
+@@ -7,1 +10,1 @@
+
+public class RuleTest {
+-   @Rule
++   @SystemStub
+    public EnvironmentVariables environmentVariables = new EnvironmentVariables()
+@@ -9,1 +12,1 @@
+    @Rule
+    public EnvironmentVariables environmentVariables = new EnvironmentVariables()
+-           .set("testSetInline", "valueSetInline").clear("testClearInline");
++           .set("testSetInline", "valueSetInline").remove("testClearInline");
+
+@@ -18,3 +21,2 @@
+    @Test
+    public void test() {
+-       environmentVariables.clear();
+-       environmentVariables.set("testSet", "valueSet").clear("testClear");
+-       environmentVariables.clear("clear1", "clear2").clear();
++       environmentVariables.set("testSet", "valueSet").remove("testClear");
++       environmentVariables.remove("clear1").remove("clear2");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +308,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

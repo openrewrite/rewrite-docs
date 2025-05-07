@@ -48,14 +48,23 @@ class AbstractIntegrationTest {
 import org.junit.Rule
 import org.junit.rules.TemporaryFolder
 
+import java.io.File
+import java.io.IOException
+
 class AbstractIntegrationTest {
     @TempDir
     File temporaryFolder
 
     def setup() {
         projectDir = temporaryFolder.root
-        buildFile = File.createTempFile('build.gradle', null, temporaryFolder)
-        settingsFile = File.createTempFile('settings.gradle', null, temporaryFolder)
+        buildFile = newFile(temporaryFolder, 'build.gradle')
+        settingsFile = newFile(temporaryFolder, 'settings.gradle')
+    }
+
+    private static File newFile(File parent, String child) throws IOException {
+        File result = new File(parent, child)
+        result.createNewFile()
+        return result
     }
 }
 ```
@@ -64,7 +73,14 @@ class AbstractIntegrationTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,2 +5,2 @@
+@@ -4,0 +4,3 @@
+import org.junit.rules.TemporaryFolder
+
++import java.io.File
++import java.io.IOException
++
+class AbstractIntegrationTest {
+@@ -5,2 +8,2 @@
 
 class AbstractIntegrationTest {
 -   @Rule
@@ -72,14 +88,24 @@ class AbstractIntegrationTest {
 +   @TempDir
 +   File temporaryFolder
 
-@@ -10,2 +10,2 @@
+@@ -10,2 +13,2 @@
     def setup() {
         projectDir = temporaryFolder.root
 -       buildFile = temporaryFolder.newFile('build.gradle')
 -       settingsFile = temporaryFolder.newFile('settings.gradle')
-+       buildFile = File.createTempFile('build.gradle', null, temporaryFolder)
-+       settingsFile = File.createTempFile('settings.gradle', null, temporaryFolder)
++       buildFile = newFile(temporaryFolder, 'build.gradle')
++       settingsFile = newFile(temporaryFolder, 'settings.gradle')
     }
+@@ -13,0 +16,6 @@
+        settingsFile = temporaryFolder.newFile('settings.gradle')
+    }
++
++   private static File newFile(File parent, String child) throws IOException {
++       File result = new File(parent, child)
++       result.createNewFile()
++       return result
++   }
+}
 ```
 </TabItem>
 </Tabs>
@@ -265,16 +291,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com), Patrick Way, [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Patrick](mailto:patway99@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+Anshuman Mishra, [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com)

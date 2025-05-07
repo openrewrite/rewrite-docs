@@ -19,6 +19,85 @@ _`JobBuilderFactory` was deprecated in spring-batch 5.x. It is replaced by `JobB
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+
+public class MyJobConfig {
+
+    @Autowired
+    private JobBuilderFactory jobBuilderFactory;
+
+    @Bean
+    Job myJob(Step step) {
+        return this.jobBuilderFactory.get("myJob")
+            .start(step)
+            .build();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.context.annotation.Bean;
+
+public class MyJobConfig {
+
+    @Bean
+    Job myJob(Step step, JobRepository jobRepository) {
+        return new JobBuilder("myJob", jobRepository)
+            .start(step)
+            .build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,2 @@
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+-import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+-import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.batch.core.job.builder.JobBuilder;
++import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.context.annotation.Bean;
+@@ -9,3 +9,0 @@
+public class MyJobConfig {
+
+-   @Autowired
+-   private JobBuilderFactory jobBuilderFactory;
+-
+    @Bean
+@@ -13,2 +10,2 @@
+
+    @Bean
+-   Job myJob(Step step) {
+-       return this.jobBuilderFactory.get("myJob")
++   Job myJob(Step step, JobRepository jobRepository) {
++       return new JobBuilder("myJob", jobRepository)
+            .start(step)
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +279,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

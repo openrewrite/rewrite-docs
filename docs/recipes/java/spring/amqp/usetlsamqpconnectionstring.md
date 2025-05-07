@@ -29,6 +29,82 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | tlsPropertyKey | *Optional*. The Spring property key to enable default TLS mode against. If this value is specified, the specified property will be used when updating the default TLS mode, otherwise a default of `spring.rabbitmq.ssl.enabled` will be used instead. | `spring.rabbitmq.ssl.enabled` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", and "**/application.properties". | `**/application.yml` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|propertyKey|`null`|
+|oldPort|`5672`|
+|port|`5671`|
+|tlsPropertyKey|`null`|
+|pathExpressions|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+spring:
+  rabbitmq:
+    addresses: host1:5672
+```
+
+###### After
+```yaml
+spring:
+  rabbitmq:
+    addresses: host1:5671
+    ssl:
+      enabled: true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,3 @@
+spring:
+  rabbitmq:
+-   addresses: host1:5672
++   addresses: host1:5671
++   ssl:
++     enabled: true
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+spring.rabbitmq.addresses=host1:5672
+```
+
+###### After
+```properties
+spring.rabbitmq.addresses=host1:5671
+spring.rabbitmq.ssl.enabled=true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,2 @@
+-spring.rabbitmq.addresses=host1:5672
++spring.rabbitmq.addresses=host1:5671
++spring.rabbitmq.ssl.enabled=true
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -178,12 +254,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

@@ -68,5 +68,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUL `logger.log(Level.WARNING, e, Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
 * [Replace parameterized JUL level call with corresponding SLF4J method calls](./julparameterizedarguments.md)
 * [SLF4J logging statements should begin with constants](./slf4jlogshouldbeconstant.md)
+* [Wrap expensive log statements in conditionals](./wrapexpensivelogstatementsinconditionals.md)
 
 

@@ -202,12 +202,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.client.utils.DateUtils`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.utils.DateUtils`
+* [Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`](../../apache/httpclient5/credentialsstoresetcredentials)
+* [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](../../apache/httpclient5/credentialsstoreclear)
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.CredentialsProvider`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.CredentialsProvider`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.client`
   * newPackageName: `org.apache.hc.client5.http`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.CredentialsProvider`
-  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.CredentialsProvider`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.AuthCache`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.AuthCache`
@@ -584,12 +586,14 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.client.utils.DateUtils
       newFullyQualifiedTypeName: org.apache.hc.client5.http.utils.DateUtils
+  - org.openrewrite.apache.httpclient5.CredentialsStoreSetCredentials
+  - org.openrewrite.apache.httpclient5.CredentialsStoreClear
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.CredentialsProvider
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.CredentialsProvider
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.client
       newPackageName: org.apache.hc.client5.http
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.hc.client5.http.CredentialsProvider
-      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.CredentialsProvider
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.AuthCache
       newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.AuthCache
@@ -964,12 +968,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

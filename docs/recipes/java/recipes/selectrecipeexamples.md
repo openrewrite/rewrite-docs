@@ -38,6 +38,7 @@ import org.openrewrite.test.RewriteTest;
 import static org.openrewrite.java.Assertions.java;
 
 class UnnecessaryParenthesesTest implements RewriteTest {
+
     @Override
     public void defaults(RecipeSpec spec) {
         spec.recipe(Recipe.noop());
@@ -86,6 +87,7 @@ import org.openrewrite.test.RewriteTest;
 import static org.openrewrite.java.Assertions.java;
 
 class UnnecessaryParenthesesTest implements RewriteTest {
+
     @Override
     public void defaults(RecipeSpec spec) {
         spec.recipe(Recipe.noop());
@@ -131,7 +133,7 @@ class UnnecessaryParenthesesTest implements RewriteTest {
 import org.junit.jupiter.api.Test;
 +import org.openrewrite.DocumentExample;
 import org.openrewrite.Recipe;
-@@ -16,0 +17,1 @@
+@@ -17,0 +18,1 @@
     }
 
 +   @DocumentExample
@@ -321,16 +323,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[JohannisK](mailto:johan.kragt@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+[JohannisK](mailto:johan.kragt@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

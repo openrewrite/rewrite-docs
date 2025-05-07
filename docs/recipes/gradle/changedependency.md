@@ -31,6 +31,74 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | overrideManagedVersion | *Optional*. If the old dependency has a managed version, this flag can be used to explicitly set the version on the new dependency. WARNING: No check is done on the NEW dependency to verify if it is managed, it relies on whether the OLD dependency had a managed version. The default for this flag is `false`. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldGroupId|`commons-lang`|
+|oldArtifactId|`commons-lang`|
+|newGroupId|`org.apache.commons`|
+|newArtifactId|`commons-lang3`|
+|newVersion|`3.11.x`|
+|versionPattern|`null`|
+|overrideManagedVersion|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "commons-lang:commons-lang:2.6"
+    implementation group: "commons-lang", name: "commons-lang", version: "2.6"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.apache.commons:commons-lang3:3.11"
+    implementation group: "org.apache.commons", name: "commons-lang3", version: "3.11"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,2 +10,2 @@
+
+dependencies {
+-   implementation "commons-lang:commons-lang:2.6"
+-   implementation group: "commons-lang", name: "commons-lang", version: "2.6"
++   implementation "org.apache.commons:commons-lang3:3.11"
++   implementation group: "org.apache.commons", name: "commons-lang3", version: "3.11"
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -164,12 +232,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

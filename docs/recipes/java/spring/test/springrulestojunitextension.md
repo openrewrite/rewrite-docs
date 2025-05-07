@@ -19,6 +19,68 @@ _Replace JUnit 4's `SpringClassRule` and `SpringMethodRule` with JUnit 5's `Spri
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.rules.SpringClassRule;
+import org.springframework.test.context.junit4.rules.SpringMethodRule;
+import org.junit.ClassRule;
+import org.junit.Rule;
+
+@SpringBootTest
+class SomeTest {
+
+    @ClassRule
+    public static final SpringClassRule springClassRule = new SpringClassRule();
+
+    @Rule
+    public final SpringMethodRule springMethodRule = new SpringMethodRule();
+
+}
+```
+
+###### After
+```java
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SomeTest {
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,4 +2,0 @@
+import org.springframework.boot.test.context.SpringBootTest;
+-import org.springframework.test.context.junit4.rules.SpringClassRule;
+-import org.springframework.test.context.junit4.rules.SpringMethodRule;
+-import org.junit.ClassRule;
+-import org.junit.Rule;
+
+@@ -10,6 +6,0 @@
+class SomeTest {
+
+-   @ClassRule
+-   public static final SpringClassRule springClassRule = new SpringClassRule();
+-
+-   @Rule
+-   public final SpringMethodRule springMethodRule = new SpringMethodRule();
+-
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +262,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

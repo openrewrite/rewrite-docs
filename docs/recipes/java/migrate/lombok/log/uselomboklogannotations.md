@@ -102,48 +102,6 @@ class A {
 
 ###### Before
 ```java
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-class B {
-    private static final Logger log = LogManager.getLogger(B.class);
-}
-```
-
-###### After
-```java
-import lombok.extern.log4j.Log4j2;
-
-@Log4j2
-class B {
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,3 @@
--import org.apache.logging.log4j.Logger;
--import org.apache.logging.log4j.LogManager;
-+import lombok.extern.log4j.Log4j2;
-+
-+@Log4j2
-class B {
-@@ -4,1 +5,0 @@
-import org.apache.logging.log4j.LogManager;
-class B {
--   private static final Logger log = LogManager.getLogger(B.class);
-}
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
 import java.util.logging.Logger;
 class C {
     private static final Logger log = Logger.getLogger(C.class.getName());
@@ -173,46 +131,6 @@ class C {
 import java.util.logging.Logger;
 class C {
 -   private static final Logger log = Logger.getLogger(C.class.getName());
-}
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.jboss.logging.Logger;
-class D {
-    private static final Logger log = Logger.getLogger(D.class);
-}
-```
-
-###### After
-```java
-import lombok.extern.jbosslog.JBossLog;
-
-@JBossLog
-class D {
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,3 @@
--import org.jboss.logging.Logger;
-+import lombok.extern.jbosslog.JBossLog;
-+
-+@JBossLog
-class D {
-@@ -3,1 +5,0 @@
-import org.jboss.logging.Logger;
-class D {
--   private static final Logger log = Logger.getLogger(D.class);
 }
 ```
 </TabItem>
@@ -255,6 +173,88 @@ class E {
 import org.apache.commons.logging.LogFactory;
 class E {
 -   private static final Log log = LogFactory.getLog(E.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+class B {
+    private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+class B {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.logging.log4j.Logger;
+-import org.apache.logging.log4j.LogManager;
++import lombok.extern.log4j.Log4j2;
++
++@Log4j2
+class B {
+@@ -4,1 +5,0 @@
+import org.apache.logging.log4j.LogManager;
+class B {
+-   private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.jboss.logging.Logger;
+class D {
+    private static final Logger log = Logger.getLogger(D.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.jbosslog.JBossLog;
+
+@JBossLog
+class D {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,3 @@
+-import org.jboss.logging.Logger;
++import lombok.extern.jbosslog.JBossLog;
++
++@JBossLog
+class D {
+@@ -3,1 +5,0 @@
+import org.jboss.logging.Logger;
+class D {
+-   private static final Logger log = Logger.getLogger(D.class);
 }
 ```
 </TabItem>
@@ -308,48 +308,6 @@ class A {
 
 ###### Before
 ```java
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-class B {
-    private static final Logger log = LogManager.getLogger(B.class);
-}
-```
-
-###### After
-```java
-import lombok.extern.log4j.Log4j2;
-
-@Log4j2
-class B {
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,3 @@
--import org.apache.logging.log4j.Logger;
--import org.apache.logging.log4j.LogManager;
-+import lombok.extern.log4j.Log4j2;
-+
-+@Log4j2
-class B {
-@@ -4,1 +5,0 @@
-import org.apache.logging.log4j.LogManager;
-class B {
--   private static final Logger log = LogManager.getLogger(B.class);
-}
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
 import java.util.logging.Logger;
 class C {
     private static final Logger log = Logger.getLogger(C.class.getName());
@@ -379,46 +337,6 @@ class C {
 import java.util.logging.Logger;
 class C {
 -   private static final Logger log = Logger.getLogger(C.class.getName());
-}
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.jboss.logging.Logger;
-class D {
-    private static final Logger log = Logger.getLogger(D.class);
-}
-```
-
-###### After
-```java
-import lombok.extern.jbosslog.JBossLog;
-
-@JBossLog
-class D {
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,3 @@
--import org.jboss.logging.Logger;
-+import lombok.extern.jbosslog.JBossLog;
-+
-+@JBossLog
-class D {
-@@ -3,1 +5,0 @@
-import org.jboss.logging.Logger;
-class D {
--   private static final Logger log = Logger.getLogger(D.class);
 }
 ```
 </TabItem>
@@ -461,6 +379,88 @@ class E {
 import org.apache.commons.logging.LogFactory;
 class E {
 -   private static final Log log = LogFactory.getLog(E.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+class B {
+    private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+class B {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.logging.log4j.Logger;
+-import org.apache.logging.log4j.LogManager;
++import lombok.extern.log4j.Log4j2;
++
++@Log4j2
+class B {
+@@ -4,1 +5,0 @@
+import org.apache.logging.log4j.LogManager;
+class B {
+-   private static final Logger log = LogManager.getLogger(B.class);
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.jboss.logging.Logger;
+class D {
+    private static final Logger log = Logger.getLogger(D.class);
+}
+```
+
+###### After
+```java
+import lombok.extern.jbosslog.JBossLog;
+
+@JBossLog
+class D {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,3 @@
+-import org.jboss.logging.Logger;
++import lombok.extern.jbosslog.JBossLog;
++
++@JBossLog
+class D {
+@@ -3,1 +5,0 @@
+import org.jboss.logging.Logger;
+class D {
+-   private static final Logger log = Logger.getLogger(D.class);
 }
 ```
 </TabItem>
@@ -647,12 +647,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

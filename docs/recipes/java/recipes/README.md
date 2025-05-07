@@ -23,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Recipe classes should not have mutable `static` fields](./nomutablestaticfieldsinrecipes.md)
 * [RewriteTest classes should not be public](./rewritetestclassesshouldnotbepublic.md)
 * [Set default estimated effort](./setdefaultestimatedeffortperoccurrence.md)
+* [Show `@DocumentExample`s first](./reordertestmethods.md)
 * [Use `Tree.randomId()` in LST constructors](./usetreerandomid.md)
 * [Use a standard name for `ExecutionContext`](./executioncontextparametername.md)
 * [Use of `@EqualsAndHashCode` on `Recipe`](./recipeequalsandhashcodecallsuper.md)

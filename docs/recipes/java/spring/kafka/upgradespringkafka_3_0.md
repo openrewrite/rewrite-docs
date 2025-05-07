@@ -89,6 +89,309 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.util.concurrent.ListenableFutureCallback;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        ListenableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
+        future.addCallback(new ListenableFutureCallback<>() {
+            @Override
+            public void onSuccess(SendResult<String, String> result) {
+                System.out.println(result.getRecordMetadata());
+            }
+
+            @Override
+            public void onFailure(Throwable ex) {
+                System.err.println(ex.getMessage());
+            }
+        });
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+
+import java.util.concurrent.CompletableFuture;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        CompletableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
+        future.whenComplete((SendResult<String, String> result, Throwable ex) -> {
+            if (ex == null) {
+                System.out.println(result.getRecordMetadata());
+            } else {
+                System.err.println(ex.getMessage());
+            }
+        });
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,0 @@
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+-import org.springframework.util.concurrent.ListenableFuture;
+-import org.springframework.util.concurrent.ListenableFutureCallback;
+
+@@ -6,0 +4,2 @@
+import org.springframework.util.concurrent.ListenableFutureCallback;
+
++import java.util.concurrent.CompletableFuture;
++
+class Foo {
+@@ -8,4 +8,3 @@
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+-       ListenableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
+-       future.addCallback(new ListenableFutureCallback<>() {
+-           @Override
+-           public void onSuccess(SendResult<String, String> result) {
++       CompletableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
++       future.whenComplete((SendResult<String, String> result, Throwable ex) -> {
++           if (ex == null) {
+                System.out.println(result.getRecordMetadata());
+@@ -13,4 +12,1 @@
+            public void onSuccess(SendResult<String, String> result) {
+                System.out.println(result.getRecordMetadata());
+-           }
+-
+-           @Override
+-           public void onFailure(Throwable ex) {
++           } else {
+                System.err.println(ex.getMessage());
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.core.KafkaOperations2;
+import org.springframework.kafka.support.SendResult;
+import java.util.concurrent.CompletableFuture;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+import java.util.concurrent.CompletableFuture;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.KafkaOperations;
+-import org.springframework.kafka.core.KafkaOperations2;
+import org.springframework.kafka.support.SendResult;
+@@ -9,1 +8,1 @@
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+-       KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
++       KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.util.concurrent.ListenableFutureCallback;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        ListenableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
+        future.addCallback(new ListenableFutureCallback<>() {
+            @Override
+            public void onSuccess(SendResult<String, String> result) {
+                System.out.println(result.getRecordMetadata());
+            }
+
+            @Override
+            public void onFailure(Throwable ex) {
+                System.err.println(ex.getMessage());
+            }
+        });
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+
+import java.util.concurrent.CompletableFuture;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        CompletableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
+        future.whenComplete((SendResult<String, String> result, Throwable ex) -> {
+            if (ex == null) {
+                System.out.println(result.getRecordMetadata());
+            } else {
+                System.err.println(ex.getMessage());
+            }
+        });
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,0 @@
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+-import org.springframework.util.concurrent.ListenableFuture;
+-import org.springframework.util.concurrent.ListenableFutureCallback;
+
+@@ -6,0 +4,2 @@
+import org.springframework.util.concurrent.ListenableFutureCallback;
+
++import java.util.concurrent.CompletableFuture;
++
+class Foo {
+@@ -8,4 +8,3 @@
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+-       ListenableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
+-       future.addCallback(new ListenableFutureCallback<>() {
+-           @Override
+-           public void onSuccess(SendResult<String, String> result) {
++       CompletableFuture<SendResult<String,String>> future = kafkaOperations.send("topic", "key", "value");
++       future.whenComplete((SendResult<String, String> result, Throwable ex) -> {
++           if (ex == null) {
+                System.out.println(result.getRecordMetadata());
+@@ -13,4 +12,1 @@
+            public void onSuccess(SendResult<String, String> result) {
+                System.out.println(result.getRecordMetadata());
+-           }
+-
+-           @Override
+-           public void onFailure(Throwable ex) {
++           } else {
+                System.err.println(ex.getMessage());
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.core.KafkaOperations2;
+import org.springframework.kafka.support.SendResult;
+import java.util.concurrent.CompletableFuture;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.support.SendResult;
+import java.util.concurrent.CompletableFuture;
+
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+        KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.KafkaOperations;
+-import org.springframework.kafka.core.KafkaOperations2;
+import org.springframework.kafka.support.SendResult;
+@@ -9,1 +8,1 @@
+class Foo {
+    void bar(KafkaOperations<String, String> kafkaOperations) {
+-       KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
++       KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -270,12 +573,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

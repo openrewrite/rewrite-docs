@@ -42,6 +42,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert `new BufferedWriter(new FileWriter(String))` to `Files.newBufferedWriter(Path)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithstringargumentrecipe.md)
 * [Convert `new BufferedWriter(new FileWriter(String, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithstringandbooleanargumentsrecipe.md)
 * [Covariant equals](./covariantequals.md)
+* [Custom import order](./customimportorder.md)
 * [Default comes last](./defaultcomeslast.md)
 * [Don't use final on local variables](./nofinalizedlocalvariables.md)
 * [Enum values should be compared with "=="](./compareenumswithequalityoperator.md)

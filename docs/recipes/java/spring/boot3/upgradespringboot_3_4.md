@@ -7,9 +7,9 @@ import TabItem from '@theme/TabItem';
 
 # Migrate to Spring Boot 3.4
 
-**io.moderne.java.spring.boot3.UpgradeSpringBoot\_3\_4**
+**org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_4**
 
-_Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4._
+_Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs._
 
 ### Tags
 
@@ -18,71 +18,218 @@ _Migrate applications to the latest Spring Boot 3.4 release. This recipe will mo
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-34.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Definition
 
-## Examples
-##### Example 1
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Spring Boot 3.3](../../../java/spring/boot3/upgradespringboot_3_3)
+* [Migrate to Spring Framework 6.2](../../../java/spring/framework/upgradespringframework_6_2)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `*`
+  * newVersion: `3.4.x`
+  * overrideManagedVersion: `false`
+* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-maven-plugin`
+  * newVersion: `3.4.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework`
+  * artifactId: `*`
+  * newVersion: `6.2.x`
+* [Upgrade Maven parent project version](../../../maven/upgradeparentversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-parent`
+  * newVersion: `3.4.x`
+* [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion)
+  * pluginIdPattern: `org.springframework.boot`
+  * newVersion: `3.4.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springdoc`
+  * artifactId: `*`
+  * newVersion: `2.8.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.webjars`
+  * oldArtifactId: `webjars-locator-core`
+  * newGroupId: `org.webjars`
+  * newArtifactId: `webjars-locator-lite`
+  * newVersion: `1.0.x`
+* [Replace deprecated setters in `RestTemplateBuilder`](../../../java/spring/boot3/replaceresttemplatebuildermethods)
+* [Add `@Valid` to nested properties in `@ConfigurationProperties`](../../../java/spring/boot3/addvalidtonestedconfigproperties)
 
+</TabItem>
 
-###### Unchanged
-```xml title="pom.xml"
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>fooservice</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
-    </parent>
-</project>
-```
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
 
-###### Unchanged
-```mavenProject
-project
-```
-
+```yaml
 ---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4
+displayName: Migrate to Spring Boot 3.4
+description: |
+  Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
+tags:
+  - spring
+  - boot
+recipeList:
+  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3
+  - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.boot
+      artifactId: "*"
+      newVersion: 3.4.x
+      overrideManagedVersion: false
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-maven-plugin
+      newVersion: 3.4.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: "*"
+      newVersion: 6.2.x
+  - org.openrewrite.maven.UpgradeParentVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-parent
+      newVersion: 3.4.x
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: org.springframework.boot
+      newVersion: 3.4.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springdoc
+      artifactId: "*"
+      newVersion: 2.8.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.webjars
+      oldArtifactId: webjars-locator-core
+      newGroupId: org.webjars
+      newArtifactId: webjars-locator-lite
+      newVersion: 1.0.x
+  - org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods
+  - org.openrewrite.java.spring.boot3.AddValidToNestedConfigProperties
 
-##### Example 2
-
-
-###### Unchanged
-```xml title="pom.xml"
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>fooservice</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
-    </parent>
-</project>
 ```
-
-###### Unchanged
-```mavenProject
-project
-```
-
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4 -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -93,7 +240,7 @@ mod run . --recipe UpgradeSpringBoot_3_4
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -102,7 +249,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.UpgradeSpringBoot_3_4" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -155,12 +302,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
@@ -186,4 +333,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Joan Viladrosa](mailto:joan@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Chuka Obinabo, Kun Li, [Jonathan Schneider](mailto:jkschneider@gmail.com), Anu Ramamoorthy, Patrick Way, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), [qwtfps](mailto:qwtfps@163.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), Simon Zilliken, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), Cathy, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Kushank24, [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Melloware](mailto:mellowaredev@gmail.com), [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), Evie Lau, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, ranuradh, nbruno, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Greg Adams](mailto:gadams@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Josh Soref, Adriano Machado, John Burns, Aakarshit Uppal, BramliAK, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Joan Viladrosa](mailto:joan@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Chuka Obinabo, Kun Li, [Jonathan Schneider](mailto:jkschneider@gmail.com), Cathy, Anu Ramamoorthy, Patrick Way, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), [qwtfps](mailto:qwtfps@163.com), pdesprez, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Simon Zilliken, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Kushank24, [Andrii Rodionov](mailto:andrii@moderne.io), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Melloware](mailto:mellowaredev@gmail.com), [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), Evie Lau, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, ranuradh, nbruno, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Greg Adams](mailto:gadams@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Anshuman Mishra, Josh Soref, Adriano Machado, John Burns, Aakarshit Uppal, BramliAK, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)

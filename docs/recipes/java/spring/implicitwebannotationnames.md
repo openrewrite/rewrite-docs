@@ -19,6 +19,61 @@ _Removes implicit web annotation names._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UsersController {
+    @GetMapping("/{id}")
+    public ResponseEntity<String> getUser(@PathVariable("id") Long id,
+                                          @PathVariable(required = false) Long p2,
+                                          @PathVariable(value = "p3") Long anotherName) {
+        System.out.println(anotherName);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UsersController {
+    @GetMapping("/{id}")
+    public ResponseEntity<String> getUser(@PathVariable Long id,
+                                          @PathVariable(required = false) Long p2,
+                                          @PathVariable(value = "p3") Long anotherName) {
+        System.out.println(anotherName);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+public class UsersController {
+    @GetMapping("/{id}")
+-   public ResponseEntity<String> getUser(@PathVariable("id") Long id,
++   public ResponseEntity<String> getUser(@PathVariable Long id,
+                                          @PathVariable(required = false) Long p2,
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +255,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

@@ -35,7 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|ignoreVariablesNamed|`J.NewArray(padding=org.openrewrite.java.tree.J$NewArray$Padding@67a695e, id=80000000-0001-e160-0000-000000000000, prefix=Space(comments=<0 comments>, whitespace=<empty>), markers=Markers(id=82a4a787-dc66-4b09-88a9-5321e92ebf2a, markers=[]), typeExpression=String, dimensions=[[0]], initializer=null, type=java.lang.String[])`|
+|ignoreVariablesNamed|`null`|
 |withSideEffects|`null`|
 
 
@@ -258,12 +258,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

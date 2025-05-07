@@ -26,8 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `String` | defaultValue | The default value to use in feature flag invocations. | `true` |
 
-## Examples
-##### Example 1
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -77,177 +76,6 @@ class Foo {
     void bar(LDContext context) {
 -       if (client.boolVariation("flag-key-123abc", context, false)) {
 +       if (client.boolVariation("flag-key-123abc", context, true)) {
-            System.out.println("Feature is on");
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|featureKey|`flag-key-123abc`|
-|defaultValue|`true`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.launchdarkly.sdk.LDContext;
-import com.launchdarkly.sdk.server.LDClient;
-class Foo {
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
-        if (client.stringVariation("flag-key-123abc", context, "foo")) {
-            System.out.println("Feature is on");
-        }
-    }
-}
-```
-
-###### After
-```java
-import com.launchdarkly.sdk.LDContext;
-import com.launchdarkly.sdk.server.LDClient;
-class Foo {
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
-        if (client.stringVariation("flag-key-123abc", context, "true")) {
-            System.out.println("Feature is on");
-        }
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -6,1 +6,1 @@
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
--       if (client.stringVariation("flag-key-123abc", context, "foo")) {
-+       if (client.stringVariation("flag-key-123abc", context, "true")) {
-            System.out.println("Feature is on");
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 3
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|featureKey|`flag-key-123abc`|
-|defaultValue|`4.56`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.launchdarkly.sdk.LDContext;
-import com.launchdarkly.sdk.server.LDClient;
-class Foo {
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
-        if (client.doubleVariation("flag-key-123abc", context, 1.23)) {
-            System.out.println("Feature is on");
-        }
-    }
-}
-```
-
-###### After
-```java
-import com.launchdarkly.sdk.LDContext;
-import com.launchdarkly.sdk.server.LDClient;
-class Foo {
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
-        if (client.doubleVariation("flag-key-123abc", context, 4.56)) {
-            System.out.println("Feature is on");
-        }
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -6,1 +6,1 @@
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
--       if (client.doubleVariation("flag-key-123abc", context, 1.23)) {
-+       if (client.doubleVariation("flag-key-123abc", context, 4.56)) {
-            System.out.println("Feature is on");
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 4
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|featureKey|`flag-key-123abc`|
-|defaultValue|`456`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.launchdarkly.sdk.LDContext;
-import com.launchdarkly.sdk.server.LDClient;
-class Foo {
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
-        if (client.intVariation("flag-key-123abc", context, 123)) {
-            System.out.println("Feature is on");
-        }
-    }
-}
-```
-
-###### After
-```java
-import com.launchdarkly.sdk.LDContext;
-import com.launchdarkly.sdk.server.LDClient;
-class Foo {
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
-        if (client.intVariation("flag-key-123abc", context, 456)) {
-            System.out.println("Feature is on");
-        }
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -6,1 +6,1 @@
-    private LDClient client = new LDClient("sdk-key-123abc");
-    void bar(LDContext context) {
--       if (client.intVariation("flag-key-123abc", context, 123)) {
-+       if (client.intVariation("flag-key-123abc", context, 456)) {
             System.out.println("Feature is on");
 ```
 </TabItem>
@@ -399,12 +227,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

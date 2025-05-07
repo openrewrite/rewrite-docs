@@ -19,6 +19,109 @@ _As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
+import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm;
+
+import static org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm.SHA256;
+
+class T {
+    void qualifiedFieldAccess(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, RememberMeTokenAlgorithm.SHA256);
+    }
+    void staticImport(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, SHA256);
+    }
+    void localVariable(UserDetailsService userDetailsService) {
+        final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
+    }
+    void classField(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
+    }
+    void constantInOtherClass(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, X.ALGORITHM);
+    }
+    final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
+}
+class X {
+    static final RememberMeTokenAlgorithm ALGORITHM = RememberMeTokenAlgorithm.SHA256;
+}
+```
+
+###### After
+```java
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
+import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm;
+
+import static org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm.SHA256;
+
+class T {
+    void qualifiedFieldAccess(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+    void staticImport(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+    void localVariable(UserDetailsService userDetailsService) {
+        final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+    void classField(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+    void constantInOtherClass(UserDetailsService userDetailsService) {
+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, X.ALGORITHM);
+    }
+    final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
+}
+class X {
+    static final RememberMeTokenAlgorithm ALGORITHM = RememberMeTokenAlgorithm.SHA256;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,1 +9,1 @@
+class T {
+    void qualifiedFieldAccess(UserDetailsService userDetailsService) {
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, RememberMeTokenAlgorithm.SHA256);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+@@ -12,1 +12,1 @@
+    }
+    void staticImport(UserDetailsService userDetailsService) {
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, SHA256);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+@@ -16,1 +16,1 @@
+    void localVariable(UserDetailsService userDetailsService) {
+        final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+@@ -19,1 +19,1 @@
+    }
+    void classField(UserDetailsService userDetailsService) {
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +303,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

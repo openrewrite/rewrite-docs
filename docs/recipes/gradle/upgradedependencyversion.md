@@ -28,6 +28,71 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). Defaults to `latest.release`. | `29.X` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'newVersion' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`com.google.guava`|
+|artifactId|`guava`|
+|newVersion|`30.x`|
+|versionPattern|`-jre`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+  id 'java-library'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly 'com.google.guava:guava:29.0-jre'
+  runtimeOnly ('com.google.guava:guava:29.0-jre')
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+  id 'java-library'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly 'com.google.guava:guava:30.1.1-jre'
+  runtimeOnly ('com.google.guava:guava:30.1.1-jre')
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,2 +10,2 @@
+
+dependencies {
+- compileOnly 'com.google.guava:guava:29.0-jre'
+- runtimeOnly ('com.google.guava:guava:29.0-jre')
++ compileOnly 'com.google.guava:guava:30.1.1-jre'
++ runtimeOnly ('com.google.guava:guava:30.1.1-jre')
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -159,12 +224,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

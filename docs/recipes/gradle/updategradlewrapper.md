@@ -29,6 +29,60 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution. Lookup of available versions still requires access to https://services.gradle.org When this is specified the exact literal values supplied for `version` and `distribution` will be interpolated into this string wherever `${version}` and `${distribution}` appear respectively. Defaults to https://services.gradle.org/distributions/gradle-`${version}`-`${distribution}`.zip. | `https://services.gradle.org/distributions/gradle-${version}-${distribution}.zip` |
 | `String` | distributionChecksum | *Optional*. The SHA-256 checksum of the Gradle distribution. If specified, the recipe will add the checksum along with the custom distribution URL. | `29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|version|`7.4.2`|
+|distribution|`null`|
+|addIfMissing|`null`|
+|wrapperUri|`null`|
+|distributionChecksum|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
+
+###### After
+```properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+@@ -6,0 +6,1 @@
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
++distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -165,12 +219,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

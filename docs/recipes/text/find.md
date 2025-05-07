@@ -30,6 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | dotAll | *Optional*. When performing a regex search setting this to `true` allows "." to match line terminators.Has no effect when not performing a regex search. Default `false`. |  |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched. | `**/*.java` |
 | `Boolean` | description | *Optional*. Add the matched value(s) as description on the search result marker.  Default `false`. |  |
+| `Integer` | contextSize | *Optional*. The number of characters to include in the datatable before and after the match. Default `0`, `-1` indicates that the whole text should be used. | `50` |
 
 
 ## Usage
@@ -45,6 +46,7 @@ recipeList:
   - org.openrewrite.text.Find:
       find: blacklist
       filePattern: '**/*.java'
+      contextSize: 50
 ```
 
 Now that `com.yourorg.FindExample` has been defined, activate it in your build file:
@@ -98,7 +100,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe Find --recipe-option "find=blacklist" --recipe-option "filePattern='**/*.java'"
+mod run . --recipe Find --recipe-option "find=blacklist" --recipe-option "filePattern='**/*.java'" --recipe-option "contextSize=50"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -179,16 +181,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

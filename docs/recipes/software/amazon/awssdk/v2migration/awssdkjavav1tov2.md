@@ -33,16 +33,20 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Add AWS SDK for Java v2 S3 Event Notification dependency if needed](../../../../software/amazon/awssdk/v2migration/adds3eventnotificationdependency)
 * [Change v1 Maven/Gradle dependencies to v2](../../../../software/amazon/awssdk/v2migration/upgradesdkdependencies)
 * [Add imports and comments to unsupported S3 transforms.](../../../../software/amazon/awssdk/v2migration/s3addimportsandcomments)
+* [S3 Event Notification method to v2](../../../../software/amazon/awssdk/v2migration/s3eventnotificationmethodtov2)
 * [Change S3 types to v2.](../../../../software/amazon/awssdk/v2migration/s3typestov2)
 * [V1 S3Object to V2](../../../../software/amazon/awssdk/v2migration/s3streamingresponsetov2)
 * [V1 S3 streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3streamingrequesttov2)
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2)
 * [Change S3 methods to v2.](../../../../software/amazon/awssdk/v2migration/s3methodstov2)
+* [Change S3EventNotification methods to v2.](../../../../software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2)
 * [Change S3 method constructors to fluent builder calls](../../../../software/amazon/awssdk/v2migration/s3methodsconstructortofluent)
 * [Convert v1 AmazonS3URI to v2 S3Uri](../../../../software/amazon/awssdk/v2migration/s3uritov2)
 * [Change v1 enum getters to v2](../../../../software/amazon/awssdk/v2migration/enumgetterstov2)
+* [Change SDK S3EventNotification types from v1 to v2](../../../../software/amazon/awssdk/v2migration/changes3eventnotificationtypes)
 * [Change AWS SDK for Java v1 types to v2 equivalents](../../../../software/amazon/awssdk/v2migration/changesdktype)
 * [Change SDK core types from v1 to v2](../../../../software/amazon/awssdk/v2migration/changesdkcoretypes)
 * [V1 client builder variations to builder()](../../../../software/amazon/awssdk/v2migration/v1buildervariationstov2builder)
@@ -74,16 +78,20 @@ tags:
   - sdk
   - aws
 recipeList:
+  - software.amazon.awssdk.v2migration.AddS3EventNotificationDependency
   - software.amazon.awssdk.v2migration.UpgradeSdkDependencies
   - software.amazon.awssdk.v2migration.S3AddImportsAndComments
+  - software.amazon.awssdk.v2migration.S3EventNotificationMethodToV2
   - software.amazon.awssdk.v2migration.S3TypesToV2
   - software.amazon.awssdk.v2migration.S3StreamingResponseToV2
   - software.amazon.awssdk.v2migration.S3StreamingRequestToV2
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2
   - software.amazon.awssdk.v2migration.S3MethodsToV2
+  - software.amazon.awssdk.v2migration.S3EventNotificationMethodsToV2
   - software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent
   - software.amazon.awssdk.v2migration.S3UriToV2
   - software.amazon.awssdk.v2migration.EnumGettersToV2
+  - software.amazon.awssdk.v2migration.ChangeS3EventNotificationTypes
   - software.amazon.awssdk.v2migration.ChangeSdkType
   - software.amazon.awssdk.v2migration.ChangeSdkCoreTypes
   - software.amazon.awssdk.v2migration.V1BuilderVariationsToV2Builder
@@ -284,12 +292,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

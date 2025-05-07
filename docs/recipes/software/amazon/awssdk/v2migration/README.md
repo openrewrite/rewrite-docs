@@ -11,7 +11,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change S3 method constructors to fluent builder calls](./s3methodsconstructortofluent.md)
 * [Change S3 methods to v2.](./s3methodstov2.md)
 * [Change S3 types to v2.](./s3typestov2.md)
+* [Change S3EventNotification methods to v2.](./s3eventnotificationmethodstov2.md)
 * [Change SDK Exception types from v1 to v2](./changeexceptiontypes.md)
+* [Change SDK S3EventNotification types from v1 to v2](./changes3eventnotificationtypes.md)
 * [Change SDK TransferManager types from v1 to v2](./changetransfermanagertypes.md)
 * [Change SDK core types from v1 to v2](./changesdkcoretypes.md)
 * [Change auth related classes from v1 to v2](./changeauthtypes.md)
@@ -25,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add AWS SDK for Java v2 S3 Event Notification dependency if needed](./adds3eventnotificationdependency.md)
 * [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](./addtransfermanagerdependency.md)
 * [Add a comment to a method](./addcommenttomethod.md)
 * [Add imports and comments to unsupported S3 transforms.](./s3addimportsandcomments.md)
@@ -37,6 +40,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert v1 AmazonS3URI to v2 S3Uri](./s3uritov2.md)
 * [Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for sync and NettyNioAsyncHttpClient for async](./httpsettingstohttpclient.md)
 * [Moves constructor arguments to fluent setters](./constructortofluent.md)
+* [S3 Event Notification method to v2](./s3eventnotificationmethodtov2.md)
 * [Transfer Manager Methods to V2](./transfermanagermethodstov2.md)
 * [Transform 'new' expressions to builders](./newclasstobuilder.md)
 * [Transform 'new' expressions to static factory methods](./newclasstostaticfactory.md)

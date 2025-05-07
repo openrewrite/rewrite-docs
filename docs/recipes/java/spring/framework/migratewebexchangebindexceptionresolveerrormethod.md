@@ -19,6 +19,65 @@ _`org.springframework.web.bind.support.WebExchangeBindException.resolveErrorMess
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.context.MessageSource;
+import java.util.Locale;
+import org.springframework.web.bind.support.WebExchangeBindException;
+import java.util.Map;
+import org.springframework.validation.ObjectError;
+
+class A {
+    public void handleValidationError(WebExchangeBindException ex, MessageSource messageSource, Locale locale) {
+        Map<ObjectError, String> errorMessages = ex.resolveErrorMessages(messageSource, locale);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.context.MessageSource;
+import java.util.Locale;
+import org.springframework.web.bind.support.WebExchangeBindException;
+import org.springframework.web.util.BindErrorUtils;
+
+import java.util.Map;
+import org.springframework.validation.ObjectError;
+
+class A {
+    public void handleValidationError(WebExchangeBindException ex, MessageSource messageSource, Locale locale) {
+        Map<ObjectError, String> errorMessages = BindErrorUtils.resolve(ex.getAllErrors(), messageSource, locale);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,2 @@
+import java.util.Locale;
+import org.springframework.web.bind.support.WebExchangeBindException;
++import org.springframework.web.util.BindErrorUtils;
++
+import java.util.Map;
+@@ -9,1 +11,1 @@
+class A {
+    public void handleValidationError(WebExchangeBindException ex, MessageSource messageSource, Locale locale) {
+-       Map<ObjectError, String> errorMessages = ex.resolveErrorMessages(messageSource, locale);
++       Map<ObjectError, String> errorMessages = BindErrorUtils.resolve(ex.getAllErrors(), messageSource, locale);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +259,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

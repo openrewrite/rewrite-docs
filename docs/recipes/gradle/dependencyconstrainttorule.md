@@ -19,6 +19,77 @@ _Gradle [dependency constraints](https://docs.gradle.org/current/userguide/depen
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories { mavenCentral() }
+dependencies {
+    constraints {
+        implementation('com.fasterxml.jackson.core:jackson-core:2.12.5') {
+            because 'CVE-2024-BAD'
+        }
+    }
+    implementation 'org.openrewrite:rewrite-java:7.0.0'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories { mavenCentral() }
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == 'com.fasterxml.jackson.core' && details.requested.name == 'jackson-core') {
+            details.useVersion('2.12.5')
+            details.because('CVE-2024-BAD')
+        }
+    }
+}
+dependencies {
+    implementation 'org.openrewrite:rewrite-java:7.0.0'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,4 +5,5 @@
+}
+repositories { mavenCentral() }
+-dependencies {
+-   constraints {
+-       implementation('com.fasterxml.jackson.core:jackson-core:2.12.5') {
+-           because 'CVE-2024-BAD'
++configurations.all {
++   resolutionStrategy.eachDependency { details ->
++       if (details.requested.group == 'com.fasterxml.jackson.core' && details.requested.name == 'jackson-core') {
++           details.useVersion('2.12.5')
++           details.because('CVE-2024-BAD')
+        }
+@@ -11,0 +12,2 @@
+        }
+    }
++}
++dependencies {
+    implementation 'org.openrewrite:rewrite-java:7.0.0'
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -155,12 +226,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

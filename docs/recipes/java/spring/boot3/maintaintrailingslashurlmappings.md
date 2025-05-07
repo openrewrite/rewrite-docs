@@ -19,6 +19,55 @@ _This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Frame
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class ExampleController {
+
+    @GetMapping("/get")
+    public String getExample() {
+        return "This is a GET example.";
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class ExampleController {
+
+    @GetMapping({"/get", "/get/"})
+    public String getExample() {
+        return "This is a GET example.";
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+public class ExampleController {
+
+-   @GetMapping("/get")
++   @GetMapping({"/get", "/get/"})
+    public String getExample() {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -200,12 +249,12 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 

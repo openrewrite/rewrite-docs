@@ -30,6 +30,139 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | because | *Optional*. The reason for upgrading the transitive dependency. For example, we could be responding to a vulnerability. | `CVE-2021-1234` |
 | `List` | onlyForConfigurations | *Optional*. A list of configurations to consider during the upgrade. For example, For example using `implementation, runtimeOnly`, we could be responding to a deployable asset vulnerability only (ignoring test scoped vulnerabilities). | `implementation, runtimeOnly` |
 
+## Examples
+##### Example 1
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`com.fasterxml*`|
+|artifactId|`jackson-core`|
+|version|`2.12.5`|
+|versionPattern|`null`|
+|because|`CVE-2024-BAD`|
+|onlyForConfigurations|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+repositories { mavenCentral() }
+
+dependencies {
+    implementation 'org.openrewrite:rewrite-java:7.0.0'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+repositories { mavenCentral() }
+
+dependencies {
+    constraints {
+        implementation('com.fasterxml.jackson.core:jackson-core:2.12.5') {
+            because 'CVE-2024-BAD'
+        }
+    }
+
+    implementation 'org.openrewrite:rewrite-java:7.0.0'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -7,0 +7,6 @@
+
+dependencies {
++   constraints {
++       implementation('com.fasterxml.jackson.core:jackson-core:2.12.5') {
++           because 'CVE-2024-BAD'
++       }
++   }
++
+    implementation 'org.openrewrite:rewrite-java:7.0.0'
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`org.apache.commons`|
+|artifactId|`commons-lang3`|
+|version|`3.14.0`|
+|versionPattern|`null`|
+|because|`null`|
+|onlyForConfigurations|`List.of("implementation", "runtimeOnly")`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'info.solidsoft.pitest' version '1.15.0'
+    id 'java'
+}
+repositories { mavenCentral() }
+dependencies {
+    compileOnly 'org.apache.activemq:artemis-jakarta-server:2.28.0'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'info.solidsoft.pitest' version '1.15.0'
+    id 'java'
+}
+repositories { mavenCentral() }
+dependencies {
+    constraints {
+        implementation('org.apache.commons:commons-lang3:3.14.0')
+    }
+
+    compileOnly 'org.apache.activemq:artemis-jakarta-server:2.28.0'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -7,0 +7,4 @@
+repositories { mavenCentral() }
+dependencies {
++   constraints {
++       implementation('org.apache.commons:commons-lang3:3.14.0')
++   }
++
+    compileOnly 'org.apache.activemq:artemis-jakarta-server:2.28.0'
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -163,16 +296,16 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
+| Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
 
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io)
