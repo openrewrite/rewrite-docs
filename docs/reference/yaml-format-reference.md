@@ -125,23 +125,12 @@ In this example, if a file matches `**/my.json` OR `**/your.json*` OR `**/our.js
 
 A common mistake new users make is to assume that if a precondition matches any file, then the recipe will apply to the entire repository.
 
-For example, attempting to use `FindPlugins` as a precondition for `CommonStaticAnalysis` to apply the static analysis fixes to only Gradle projects applying the sonar plugin:
-```yaml
-type: specs.openrewrite.org/v1beta/recipe
-name: org.sample.FlawedSonarStaticAnalysis
-displayName: Fix sonar issues 
-description: >- 
-  This recipe is intended to apply common static analysis issues only to gradle projects that apply the sonar plugin. 
-  In practice this precondition will limit changes to apply ONLY to build.gradle(.kts) files. 
-  But common static analysis issues are found within the sources, not the build scripts, so no changes will ever be made.
-preconditions:
-  - org.openrewrite.gradle.search.FindPlugins:
-      pluginId: org.sonarqube
-recipeList:
-  - org.openrewrite.staticanalysis.CommonStaticAnalysis
-```
+For example, you might be tempted to use `FindPlugins` as a precondition for `CommonStaticAnalysis` with the idea that you only want static analysis fixes on Gradle projects that apply a specific plugin. 
 
-`FindPlugins` is not suitable for this scenario, but `ModuleHasPlugin` recipe can be used for this purpose:
+However, if you were to do this, you wouldn't get the results you expected as the `FindPlugins` recipe flags the plugin in `build.gradle` files. In other words, the `CommonStaticAnalysis` recipe would only be run against those `build.gradle` files.
+
+Fortunately, there are recipes that _can_ be used in this type of situation. For instance, the `ModuleHasPlugin` recipe will mark _all_ files within a project if a specific plugin is found:
+
 ```yaml
 type: specs.openrewrite.org/v1beta/recipe
 name: org.sample.FixedSonarStaticAnalysis
@@ -156,12 +145,13 @@ recipeList:
   - org.openrewrite.staticanalysis.CommonStaticAnalysis
 ```
 
-It isn't obvious from just the names of the recipes that `FindPlugins` and `ModuleHasPlugin` behave differently.
-The best way to know whether a particular recipe will be suitable as a precondition for your scenario is to run it on its own.
-If that recipe marks as search results or suggests edits every individual source file you want changes made to it is suitable as your precondition.
+It isn't obvious from just the names of the recipes that `FindPlugins` and `ModuleHasPlugin` behave differently. Because of that, the best way for you to know whether a particular recipe is suitable as a precondition or not is to run that recipe on its own.
 
-:::info
-Before OpenRewrite 8.52.0 `ScanningRecipe`s were not supported as yaml preconditions.
+If the recipe adds search markers or edits to every individual source file you want changes made to, it is suitable as a precondition. If not, then you'll need to find another recipe.
+
+:::warning
+Before OpenRewrite 8.52.0 `ScanningRecipe`s were not supported as YAML preconditions.
+
 If you encounter errors attempting to use recipes like `ModuleHasPlugin` as preconditions ensure you are using a recent version of OpenRewrite.
 :::
 

@@ -133,6 +133,7 @@ slf
 smallrye
 smushed
 snakeyaml
+sonarqube
 Sonatype
 sourced
 sourcespec
