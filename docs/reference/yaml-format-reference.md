@@ -39,35 +39,32 @@ Please keep these conventions in mind when you're creating OpenRewrite YAML file
 You can find the full recipe schema [here](https://github.com/openrewrite/rewrite/blob/241e146a8996a917a8a460b27d17136108b3d50a/rewrite-core/openrewrite.json#L32-L75).
 :::
 
-| Key                                                | Type                                                                                                        | Description                                                                                     |
-| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| type                                               | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                                               |
-| name                                               | string                                                                                                      | A fully qualified, unique name for this recipe                                                  |
-| displayName                                        | string                                                                                                      | A human-readable name for this recipe (does not end with a period)                              |
-| description                                        | string                                                                                                      | A human-readable description for this recipe (ends with a period)                               |
-| tags                                               | array of strings                                                                                            | A list of strings that help categorize this recipe                                              |
-| estimatedEffortPerOccurrence                       | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something                         |
-| causesAnotherCycle                                 | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)                          |
-| [recipeList](yaml-format-reference.md#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                                                  |
+| Key                                                | Type                                                                                                        | Description                                                             |
+|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| type                                               | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                       |
+| name                                               | string                                                                                                      | A fully qualified, unique name for this recipe                          |
+| displayName                                        | string                                                                                                      | A human-readable name for this recipe (does not end with a period)      |
+| description                                        | string                                                                                                      | A human-readable description for this recipe (ends with a period)       |
+| tags                                               | array of strings                                                                                            | A list of strings that help categorize this recipe                      |
+| estimatedEffortPerOccurrence                       | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something |
+| causesAnotherCycle                                 | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)  |
+| [recipeList](yaml-format-reference.md#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                          |
 
 ### Preconditions
 
-Preconditions are used to limit which source files a recipe is run on. This is commonly used to target specific files or directories, but any recipe can be used as a precondition. 
+Preconditions are used to limit which source files a recipe is allowed to make edits to.
+This is commonly used to target specific files or directories.
+Technically almost any recipe can be used as a precondition, but generally it is lightweight and fast search recipes that are used for this purpose.
 
-:::info
-Preconditions are a **per-file** check. If a file passes the precondition check, all recipes will be run on it.
-
-If you need to check if **your repository** meets certain criteria, instead (e.g., ensuring that a test source set exists), then you will need to write a custom `ScanningRecipe`.
-:::
-
-When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition. When more than one recipe is used as a precondition, _all_ of them must make a change to the file for it to be considered to meet the precondition. 
-
-Only when all preconditions are met will the recipes in the recipe list be run. When applying preconditions to `ScanningRecipes` they limit both the scanning phase and the edit phase.
+When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition.
+When more than one recipe is used as preconditions, _all_ of them must make a change to the file for it to be considered to meet the precondition. 
 
 :::info 
 Changes made by preconditions are not included in the final result of the recipe.
-Changes made by preconditions are used _only_ to determine if the recipe should be run.
+Changes made by preconditions are used _only_ to determine if the recipe should edit a particular source file.
 :::
+
+#### Adding preconditions to a YAML recipe
 
 To create these top-level preconditions, you'll need to add the `preconditions` map to your declarative recipe's YAML. This object is a list of one or more recipes (formatted the same way as the [recipeList](#recipe-list)).
 
@@ -108,7 +105,8 @@ preconditions:
   - org.sample.FindAnyJson
 recipeList:
   - org.openrewrite.json.ChangeKey:
-      qwe: qwe
+      oldKeyPath: $.foo
+      newKey: bar
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.sample.FindAnyJson
@@ -122,6 +120,50 @@ recipeList:
 ```
 
 In this example, if a file matches `**/my.json` OR `**/your.json*` OR `**/our.json`, then the precondition has passed and the `ChangeKey` recipe will be applied to it.
+
+#### Precondition scope
+
+A common mistake new users make is to assume that if a precondition matches any file, then the recipe will apply to the entire repository.
+
+For example, attempting to use `FindPlugins` as a precondition for `CommonStaticAnalysis` to apply the static analysis fixes to only Gradle projects applying the sonar plugin:
+```yaml
+type: specs.openrewrite.org/v1beta/recipe
+name: org.sample.FlawedSonarStaticAnalysis
+displayName: Fix sonar issues 
+description: >- 
+  This recipe is intended to apply common static analysis issues only to gradle projects that apply the sonar plugin. 
+  In practice this precondition will limit changes to apply ONLY to build.gradle(.kts) files. 
+  But common static analysis issues are found within the sources, not the build scripts, so no changes will ever be made.
+preconditions:
+  - org.openrewrite.gradle.search.FindPlugins:
+      pluginId: org.sonarqube
+recipeList:
+  - org.openrewrite.staticanalysis.CommonStaticAnalysis
+```
+
+`FindPlugins` is not suitable for this scenario, but `ModuleHasPlugin` recipe can be used for this purpose:
+```yaml
+type: specs.openrewrite.org/v1beta/recipe
+name: org.sample.FixedSonarStaticAnalysis
+displayName: Fix sonar issues 
+description: >- 
+  This recipe applies common static analysis issues only to gradle projects that apply the sonar plugin. 
+  This works because ModuleHasPlugin will mark all files within a project that applies the plugin.
+preconditions:
+  - org.openrewrite.gradle.search.ModuleHasPlugin:
+      pluginId: org.sonarqube
+recipeList:
+  - org.openrewrite.staticanalysis.CommonStaticAnalysis
+```
+
+It isn't obvious from just the names of the recipes that `FindPlugins` and `ModuleHasPlugin` behave differently.
+The best way to know whether a particular recipe will be suitable as a precondition for your scenario is to run it on its own.
+If that recipe marks as search results or suggests edits every individual source file you want changes made to it is suitable as your precondition.
+
+:::info
+Before OpenRewrite 8.52.0 `ScanningRecipe`s were not supported as yaml preconditions.
+If you encounter errors attempting to use recipes like `ModuleHasPlugin` as preconditions ensure you are using a recent version of OpenRewrite.
+:::
 
 ### Recipe list
 
