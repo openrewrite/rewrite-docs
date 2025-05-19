@@ -154,6 +154,7 @@ toc
 TODOs
 tsv
 TVP
+typetable
 unpkg
 upgradespringboot
 varargs
