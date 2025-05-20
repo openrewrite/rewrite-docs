@@ -42,21 +42,6 @@ That file is a [TypeTable](https://github.com/openrewrite/rewrite/blob/main/rewr
 
 The benefit of a TypeTable is that you don't need to pull down the entire JAR to be able to compile specific types. As this TypeTable is not a class, and it can't be re-hydrated into anything executable, it does not trigger security vulnerability scanners ([which was a concern with the previous recipeDependencies task](../reference/faq.md#why-do-artifact-scanners-detect-vulnerabilities-in-recipe-artifactsjars) – more on that below). Furthermore, it greatly reduces the size of your dependencies (by roughly 90%), which makes releases significantly smaller.
 
-#### Using TypeTables in your tests
-
-With the TypeTable file created, you can use the `classpath(String...)` function in your tests. For instance, if you want to default to using `junit-4.13.2` and `mockito-core-3.12.4` in your tests, you could add this to your test file:
-
-```java
-@Override
-public void defaults(RecipeSpec spec) {
-    spec
-        .parser(JavaParser.fromJavaVersion()
-            .classpath("junit-4.13.2", "mockito-core-3.12.4"));
-}
-```
-
-If you wanted to use a different version of these libraries in another test or in another file, all you would need to do is specify the new version in the `classpath` function (presuming you've added the corresponding dependency to your `recipeDependencies` section).
-
 ### `downloadRecipeDependencies` task
 
 Similar to the above `createTypeTable` task, there is also a `downloadRecipeDependencies` task available. This will download the corresponding JAR for _every_ dependency specified in `recipeDependencies` and put them in the `src/main/resources/META-INF/rewrite` directory. From there, you could use the `classpathFromResources` function.
