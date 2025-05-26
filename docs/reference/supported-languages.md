@@ -15,7 +15,7 @@ As of January 2025, OpenRewrite supports:
 :::info
 [Moderne](https://docs.moderne.io/) offers support for additional languages and frameworks (such as JavaScript, C#, Python, Ruby, COBOL, etc.). Consider checking that out if OpenRewrite doesn't meet your needs.
 
-If your project is open-source, you can use the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) to run many of the Moderne exclusive recipes against your project.
+If your project is open-source, you can use the [Moderne CLI](https://docs.moder  ne.io/user-documentation/moderne-cli/getting-started/cli-intro) to run many of the Moderne exclusive recipes against your project.
 :::
 
 ## Data formats
