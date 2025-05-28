@@ -58,19 +58,21 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 3 [label="org.junit.jupiter:junit-jupiter-api:5.7.0"];
 4 [label="org.junit.jupiter:junit-jupiter-params:5.7.0"];
 5 [label="org.junit.jupiter:junit-jupiter-engine:5.7.0"];
-6 [label="org.apiguardian:apiguardian-api:1.1.0"];
-7 [label="org.opentest4j:opentest4j:1.2.0"];
-8 [label="org.junit.platform:junit-platform-commons:1.7.0"];
-9 [label="org.junit.platform:junit-platform-engine:1.7.0"];
+6 [label="org.junit:junit-bom:5.7.0"];
+7 [label="org.apiguardian:apiguardian-api:1.1.0"];
+8 [label="org.opentest4j:opentest4j:1.2.0"];
+9 [label="org.junit.platform:junit-platform-commons:1.7.0"];
+10 [label="org.junit.platform:junit-platform-engine:1.7.0"];
 0 -> 1 [taillabel="Compile"];
 0 -> 2 [taillabel="Test"];
 2 -> 3 [taillabel="Test"];
-3 -> 6 [taillabel="Test"];
 3 -> 7 [taillabel="Test"];
 3 -> 8 [taillabel="Test"];
+3 -> 9 [taillabel="Test"];
 2 -> 4 [taillabel="Test"];
 2 -> 5 [taillabel="Test"];
-5 -> 9 [taillabel="Test"];
+5 -> 10 [taillabel="Test"];
+2 -> 6 [taillabel="Test"];
 })~~>--><project>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -98,7 +100,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -1,1 +1,21 @@
+@@ -1,1 +1,23 @@
 -<project>
 +<!--~~(digraph main {
 +0 [label="com.mycompany.app:my-app:1"];
@@ -107,19 +109,21 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 +3 [label="org.junit.jupiter:junit-jupiter-api:5.7.0"];
 +4 [label="org.junit.jupiter:junit-jupiter-params:5.7.0"];
 +5 [label="org.junit.jupiter:junit-jupiter-engine:5.7.0"];
-+6 [label="org.apiguardian:apiguardian-api:1.1.0"];
-+7 [label="org.opentest4j:opentest4j:1.2.0"];
-+8 [label="org.junit.platform:junit-platform-commons:1.7.0"];
-+9 [label="org.junit.platform:junit-platform-engine:1.7.0"];
++6 [label="org.junit:junit-bom:5.7.0"];
++7 [label="org.apiguardian:apiguardian-api:1.1.0"];
++8 [label="org.opentest4j:opentest4j:1.2.0"];
++9 [label="org.junit.platform:junit-platform-commons:1.7.0"];
++10 [label="org.junit.platform:junit-platform-engine:1.7.0"];
 +0 -> 1 [taillabel="Compile"];
 +0 -> 2 [taillabel="Test"];
 +2 -> 3 [taillabel="Test"];
-+3 -> 6 [taillabel="Test"];
 +3 -> 7 [taillabel="Test"];
 +3 -> 8 [taillabel="Test"];
++3 -> 9 [taillabel="Test"];
 +2 -> 4 [taillabel="Test"];
 +2 -> 5 [taillabel="Test"];
-+5 -> 9 [taillabel="Test"];
++5 -> 10 [taillabel="Test"];
++2 -> 6 [taillabel="Test"];
 +})~~>--><project>
   <groupId>com.mycompany.app</groupId>
 ```

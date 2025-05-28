@@ -60,8 +60,8 @@ public class ExampleTest {
 ###### After
 ```java
 import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.createNiceMock;
 import static org.mockito.Mockito.verify;
+import static org.easymock.EasyMock.createNiceMock;
 
 public class ExampleTest {
     public void testServiceMethod() {
@@ -100,8 +100,8 @@ public class ExampleTest {
 @@ -1,1 +1,3 @@
 -import static org.easymock.EasyMock.*;
 +import static org.easymock.EasyMock.expect;
-+import static org.easymock.EasyMock.createNiceMock;
 +import static org.mockito.Mockito.verify;
++import static org.easymock.EasyMock.createNiceMock;
 
 @@ -17,3 +19,6 @@
         expect(dependency3.action3(3.3)).andReturn("result");
@@ -313,4 +313,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Anshuman Mishra

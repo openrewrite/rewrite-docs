@@ -78,11 +78,9 @@ recipeList:
 ###### Before
 ```java
 import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 class Test {
     Logger logger0 = Logger.getLogger(Test.class);
-    Logger logger1 = LogManager.getLogger(Test.class);
 }
 ```
 
@@ -93,7 +91,6 @@ import org.slf4j.LoggerFactory;
 
 class Test {
     Logger logger0 = LoggerFactory.getLogger(Test.class);
-    Logger logger1 = LoggerFactory.getLogger(Test.class);
 }
 ```
 
@@ -101,19 +98,16 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,2 +1,2 @@
+@@ -1,1 +1,2 @@
 -import org.apache.log4j.Logger;
--import org.apache.log4j.LogManager;
 +import org.slf4j.Logger;
 +import org.slf4j.LoggerFactory;
 
-@@ -5,2 +5,2 @@
+@@ -4,1 +5,1 @@
 
 class Test {
 -   Logger logger0 = Logger.getLogger(Test.class);
--   Logger logger1 = LogManager.getLogger(Test.class);
 +   Logger logger0 = LoggerFactory.getLogger(Test.class);
-+   Logger logger1 = LoggerFactory.getLogger(Test.class);
 }
 ```
 </TabItem>
@@ -131,11 +125,9 @@ class Test {
 ###### Before
 ```java
 import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 class Test {
     Logger logger0 = Logger.getLogger(Test.class);
-    Logger logger1 = LogManager.getLogger(Test.class);
 }
 ```
 
@@ -146,7 +138,6 @@ import org.slf4j.LoggerFactory;
 
 class Test {
     Logger logger0 = LoggerFactory.getLogger(Test.class);
-    Logger logger1 = LoggerFactory.getLogger(Test.class);
 }
 ```
 
@@ -154,19 +145,16 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,2 +1,2 @@
+@@ -1,1 +1,2 @@
 -import org.apache.log4j.Logger;
--import org.apache.log4j.LogManager;
 +import org.slf4j.Logger;
 +import org.slf4j.LoggerFactory;
 
-@@ -5,2 +5,2 @@
+@@ -4,1 +5,1 @@
 
 class Test {
 -   Logger logger0 = Logger.getLogger(Test.class);
--   Logger logger1 = LogManager.getLogger(Test.class);
 +   Logger logger0 = LoggerFactory.getLogger(Test.class);
-+   Logger logger1 = LoggerFactory.getLogger(Test.class);
 }
 ```
 </TabItem>

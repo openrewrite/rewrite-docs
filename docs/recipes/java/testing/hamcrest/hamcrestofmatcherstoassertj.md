@@ -47,7 +47,6 @@ class MyTest {
 ```java
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasLength;
@@ -55,7 +54,7 @@ import static org.hamcrest.Matchers.hasLength;
 class MyTest {
     @Test
     void testMethod() {
-        assertThat("hello world")
+        org.assertj.core.api.Assertions.assertThat("hello world")
                 .satisfies(
                         arg -> assertThat(arg, equalTo("hello world")),
                         arg -> assertThat(arg, hasLength(12))
@@ -68,21 +67,16 @@ class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,0 +3,1 @@
-import org.junit.jupiter.api.Test;
-
-+import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.MatcherAssert.assertThat;
-@@ -4,1 +5,0 @@
+@@ -4,1 +4,0 @@
 
 import static org.hamcrest.MatcherAssert.assertThat;
 -import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.equalTo;
-@@ -11,1 +11,5 @@
+@@ -11,1 +10,5 @@
     @Test
     void testMethod() {
 -       assertThat("hello world", allOf(equalTo("hello world"), hasLength(12)));
-+       assertThat("hello world")
++       org.assertj.core.api.Assertions.assertThat("hello world")
 +               .satisfies(
 +                       arg -> assertThat(arg, equalTo("hello world")),
 +                       arg -> assertThat(arg, hasLength(12))

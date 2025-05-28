@@ -77,31 +77,31 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-common`
   * newArtifactId: `springdoc-openapi-starter-common`
-  * newVersion: `2.1.x`
+  * newVersion: `2.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webmvc-core`
   * newArtifactId: `springdoc-openapi-starter-webmvc-api`
-  * newVersion: `2.1.x`
+  * newVersion: `2.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webflux-core`
   * newArtifactId: `springdoc-openapi-starter-webflux-api`
-  * newVersion: `2.1.x`
+  * newVersion: `2.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-ui`
   * newArtifactId: `springdoc-openapi-starter-webmvc-ui`
-  * newVersion: `2.1.x`
+  * newVersion: `2.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webflux-ui`
   * newArtifactId: `springdoc-openapi-starter-webflux-ui`
-  * newVersion: `2.1.x`
+  * newVersion: `2.x`
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springdoc`
   * artifactId: `*`
-  * newVersion: `2.1.x`
+  * newVersion: `2.x`
 
 </TabItem>
 
@@ -162,31 +162,31 @@ recipeList:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-common
       newArtifactId: springdoc-openapi-starter-common
-      newVersion: 2.1.x
+      newVersion: 2.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webmvc-core
       newArtifactId: springdoc-openapi-starter-webmvc-api
-      newVersion: 2.1.x
+      newVersion: 2.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webflux-core
       newArtifactId: springdoc-openapi-starter-webflux-api
-      newVersion: 2.1.x
+      newVersion: 2.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-ui
       newArtifactId: springdoc-openapi-starter-webmvc-ui
-      newVersion: 2.1.x
+      newVersion: 2.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webflux-ui
       newArtifactId: springdoc-openapi-starter-webflux-ui
-      newVersion: 2.1.x
+      newVersion: 2.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springdoc
       artifactId: "*"
-      newVersion: 2.1.x
+      newVersion: 2.x
 
 ```
 </TabItem>

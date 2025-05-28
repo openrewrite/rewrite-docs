@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Do not use java.xml.ws module in WebSphere Liberty"
+sidebar_label: "Do not package java.xml.ws module in WebSphere Liberty applications"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Do not use `java.xml.ws` module in WebSphere Liberty
+# Do not package `java.xml.ws` module in WebSphere Liberty applications
 
 **org.openrewrite.java.migrate.RemovedJavaXMLWSModuleProvided**
 
-_The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe removes the `javax.xml.ws` module from the application's build dependency in favor of the Websphere Liberty implementation to avoid class loading issues._
+_The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe updates the `javax.xml.ws` dependency to use the `provided` scope to avoid class loading issues._
 
 ### Tags
 
@@ -21,6 +21,10 @@ _The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -28,9 +32,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
+* [Change Maven dependency scope](../../maven/changedependencyscope)
   * groupId: `javax.xml.ws`
   * artifactId: `jaxws-api`
+  * newScope: `provided`
+* [Change a Gradle dependency configuration](../../gradle/changedependencyconfiguration)
+  * groupId: `javax.xml.ws`
+  * artifactId: `jaxws-api`
+  * newConfiguration: `compileOnly`
 
 </TabItem>
 
@@ -40,15 +49,20 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemovedJavaXMLWSModuleProvided
-displayName: Do not use `java.xml.ws` module in WebSphere Liberty
+displayName: Do not package `java.xml.ws` module in WebSphere Liberty applications
 description: |
-  The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe removes the `javax.xml.ws` module from the application's build dependency in favor of the Websphere Liberty implementation to avoid class loading issues.
+  The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe updates the `javax.xml.ws` dependency to use the `provided` scope to avoid class loading issues.
 tags:
   - java11
 recipeList:
-  - org.openrewrite.java.dependencies.RemoveDependency:
+  - org.openrewrite.maven.ChangeDependencyScope:
       groupId: javax.xml.ws
       artifactId: jaxws-api
+      newScope: provided
+  - org.openrewrite.gradle.ChangeDependencyConfiguration:
+      groupId: javax.xml.ws
+      artifactId: jaxws-api
+      newConfiguration: compileOnly
 
 ```
 </TabItem>

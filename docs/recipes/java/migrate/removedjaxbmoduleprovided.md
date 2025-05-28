@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Do not use java.xml.bind and java.activation modules in WebSphere Liberty"
+sidebar_label: "Do not package java.xml.bind and java.activation modules in WebSphere Liberty applications"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Do not use `java.xml.bind` and `java.activation` modules in WebSphere Liberty
+# Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications
 
 **org.openrewrite.java.migrate.RemovedJaxBModuleProvided**
 
-_The `java.xml.bind` and `java.activation` modules were removed in Java11. Websphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe removes the `javax.xml.bind` and `javax.activation` modules from the application's build dependency in favor of the Websphere Liberty implementation to avoid class loading issues._
+_The `java.xml.bind` and `java.activation` modules were removed in Java11. Websphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe updates the `javax.xml.bind` and `javax.activation` dependencies to use the `provided` scope to avoid class loading issues._
 
 ### Tags
 
@@ -32,12 +32,22 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
+* [Change Maven dependency scope](../../maven/changedependencyscope)
   * groupId: `javax.xml.bind`
   * artifactId: `jaxb-api`
-* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
+  * newScope: `provided`
+* [Change a Gradle dependency configuration](../../gradle/changedependencyconfiguration)
+  * groupId: `javax.xml.bind`
+  * artifactId: `jaxb-api`
+  * newConfiguration: `compileOnly`
+* [Change Maven dependency scope](../../maven/changedependencyscope)
   * groupId: `javax.activation`
   * artifactId: `activation`
+  * newScope: `provided`
+* [Change a Gradle dependency configuration](../../gradle/changedependencyconfiguration)
+  * groupId: `javax.activation`
+  * artifactId: `activation`
+  * newConfiguration: `compileOnly`
 
 </TabItem>
 
@@ -47,18 +57,28 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemovedJaxBModuleProvided
-displayName: Do not use `java.xml.bind` and `java.activation` modules in WebSphere Liberty
+displayName: Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications
 description: |
-  The `java.xml.bind` and `java.activation` modules were removed in Java11. Websphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe removes the `javax.xml.bind` and `javax.activation` modules from the application's build dependency in favor of the Websphere Liberty implementation to avoid class loading issues.
+  The `java.xml.bind` and `java.activation` modules were removed in Java11. Websphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe updates the `javax.xml.bind` and `javax.activation` dependencies to use the `provided` scope to avoid class loading issues.
 tags:
   - java11
 recipeList:
-  - org.openrewrite.java.dependencies.RemoveDependency:
+  - org.openrewrite.maven.ChangeDependencyScope:
       groupId: javax.xml.bind
       artifactId: jaxb-api
-  - org.openrewrite.java.dependencies.RemoveDependency:
+      newScope: provided
+  - org.openrewrite.gradle.ChangeDependencyConfiguration:
+      groupId: javax.xml.bind
+      artifactId: jaxb-api
+      newConfiguration: compileOnly
+  - org.openrewrite.maven.ChangeDependencyScope:
       groupId: javax.activation
       artifactId: activation
+      newScope: provided
+  - org.openrewrite.gradle.ChangeDependencyConfiguration:
+      groupId: javax.activation
+      artifactId: activation
+      newConfiguration: compileOnly
 
 ```
 </TabItem>

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.cloud2023.UpgradeSpringCloud\_2023**
 
-_Migrate applications to the latest Spring Cloud 2023 release._
+_Migrate applications to the latest Spring Cloud 2023 (Leyton) release._
 
 ### Tags
 
@@ -46,7 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.cloud2023.UpgradeSpringCloud_2023
 displayName: Migrate to Spring Cloud 2023
 description: |
-  Migrate applications to the latest Spring Cloud 2023 release.
+  Migrate applications to the latest Spring Cloud 2023 (Leyton) release.
 tags:
   - spring
   - cloud

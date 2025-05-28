@@ -264,9 +264,11 @@ _The API endpoints that applications expose._
 | Column Name | Description |
 | ----------- | ----------- |
 | Source path | The path to the source file containing the API endpoint definition. |
+| Method Signature | The method signature of the API endpoint. |
 | Method name | The name of the method that defines the API endpoint. |
 | Method | The HTTP method of the API endpoint. |
 | Path | The path of the API endpoint. |
+| Leading Annotations | The Leading annotations of the API endpoint. |
 
 </TabItem>
 

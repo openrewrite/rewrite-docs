@@ -26,69 +26,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add(..)` |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|methodPattern|`java.lang.Integer decode(..)`|
-|matchOverrides|`false`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-import java.lang.Integer
-import java.lang.Integer.decode
-
-val i1 = java.lang.Integer.decode("1")
-val i2 = Integer.decode("1")
-val i3 = decode("1")
-val i4 = listOf("1").map {Integer::decode}
-val i5 = listOf("1").map {::decode}
-val i6 = listOf("1").map {::`decode`}
-```
-
-###### After
-```kotlin
-import java.lang.Integer
-import java.lang.Integer.decode
-
-val i1 = /*~~>*/java.lang.Integer.decode("1")
-val i2 = /*~~>*/Integer.decode("1")
-val i3 = /*~~>*/decode("1")
-val i4 = listOf("1").map {Integer::/*~~>*/decode}
-val i5 = listOf("1").map {::/*~~>*/decode}
-val i6 = listOf("1").map {::/*~~>*/`decode`}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -4,6 +4,6 @@
-import java.lang.Integer.decode
-
--val i1 = java.lang.Integer.decode("1")
--val i2 = Integer.decode("1")
--val i3 = decode("1")
--val i4 = listOf("1").map {Integer::decode}
--val i5 = listOf("1").map {::decode}
--val i6 = listOf("1").map {::`decode`}
-+val i1 = /*~~>*/java.lang.Integer.decode("1")
-+val i2 = /*~~>*/Integer.decode("1")
-+val i3 = /*~~>*/decode("1")
-+val i4 = listOf("1").map {Integer::/*~~>*/decode}
-+val i5 = listOf("1").map {::/*~~>*/decode}
-+val i6 = listOf("1").map {::/*~~>*/`decode`}
-
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 

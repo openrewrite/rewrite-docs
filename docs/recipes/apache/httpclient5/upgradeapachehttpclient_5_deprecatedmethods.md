@@ -40,6 +40,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method name](../../java/changemethodname)
   * methodPattern: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase getURI()`
   * newMethodName: `getUri`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase releaseConnection()`
+  * newMethodName: `reset`
 
 </TabItem>
 
@@ -65,6 +68,9 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase getURI()
       newMethodName: getUri
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase releaseConnection()
+      newMethodName: reset
 
 ```
 </TabItem>

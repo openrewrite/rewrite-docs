@@ -28,7 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `@MockBean` and `@SpyBean`](./replacemockbeanandspybean.md)
 * [Replace deprecated setters in `RestTemplateBuilder`](./replaceresttemplatebuildermethods.md)
 * [Spring Boot 3.3 best practices (only)](./springboot3bestpracticesonly.md)
-* [Spring Boot 3.4 best practices](./springboot3bestpractices.md)
+* [Spring Boot 3.5 best practices](./springboot3bestpractices.md)
 * [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](./upgradegradle8spring34.md)
 * [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](./upgradegradle7spring34.md)
 * [Upgrade MyBatis to Spring Boot 2.1](./upgrademybatistospringboot_2_1.md)

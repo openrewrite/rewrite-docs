@@ -44,17 +44,25 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.xml.ws`
   * artifactId: `jakarta.xml.ws-api`
   * newVersion: `3.0.x`
+* [Change Maven dependency scope](../../../maven/changedependencyscope)
+  * groupId: `jakarta.xml.ws`
+  * artifactId: `jakarta.xml.ws-api`
+  * newScope: `provided`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `com.sun.xml.ws`
+  * artifactId: `jaxws-rt`
+  * newVersion: `3.x`
+* [Change Maven dependency scope](../../../maven/changedependencyscope)
+  * groupId: `com.sun.xml.ws`
+  * artifactId: `jaxws-rt`
+  * newScope: `provided`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
   * version: `3.x`
   * onlyIfUsing: `javax.xml.ws..*`
-  * scope: `runtime`
+  * scope: `provided`
   * acceptTransitive: `true`
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `com.sun.xml.ws`
-  * artifactId: `jaxws-rt`
-  * newVersion: `3.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.xml.ws`
   * newPackageName: `jakarta.xml.ws`
@@ -86,17 +94,25 @@ recipeList:
       groupId: jakarta.xml.ws
       artifactId: jakarta.xml.ws-api
       newVersion: 3.0.x
+  - org.openrewrite.maven.ChangeDependencyScope:
+      groupId: jakarta.xml.ws
+      artifactId: jakarta.xml.ws-api
+      newScope: provided
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.sun.xml.ws
+      artifactId: jaxws-rt
+      newVersion: 3.x
+  - org.openrewrite.maven.ChangeDependencyScope:
+      groupId: com.sun.xml.ws
+      artifactId: jaxws-rt
+      newScope: provided
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
       version: 3.x
       onlyIfUsing: javax.xml.ws..*
-      scope: runtime
+      scope: provided
       acceptTransitive: true
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.sun.xml.ws
-      artifactId: jaxws-rt
-      newVersion: 3.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.xml.ws
       newPackageName: jakarta.xml.ws

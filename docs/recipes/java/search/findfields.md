@@ -27,62 +27,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |  |
 | `String` | fieldName | The name of a field on the type. | `QUOTE_FIELD_NAMES` |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|fullyQualifiedTypeName|`java.lang.Integer`|
-|matchInherited|`false`|
-|fieldName|`MAX_VALUE`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-import java.lang.Integer
-import java.lang.Integer.MAX_VALUE
-
-val i1 = java.lang.Integer.MAX_VALUE
-val i2 = Integer.MAX_VALUE
-val i3 = MAX_VALUE
-val i4 = `MAX_VALUE`
-```
-
-###### After
-```kotlin
-import java.lang.Integer
-import java.lang.Integer.MAX_VALUE
-
-val i1 = /*~~>*/java.lang.Integer.MAX_VALUE
-val i2 = /*~~>*/Integer.MAX_VALUE
-val i3 = /*~~>*/MAX_VALUE
-val i4 = /*~~>*/`MAX_VALUE`
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -4,4 +4,4 @@
-import java.lang.Integer.MAX_VALUE
-
--val i1 = java.lang.Integer.MAX_VALUE
--val i2 = Integer.MAX_VALUE
--val i3 = MAX_VALUE
--val i4 = `MAX_VALUE`
-+val i1 = /*~~>*/java.lang.Integer.MAX_VALUE
-+val i2 = /*~~>*/Integer.MAX_VALUE
-+val i3 = /*~~>*/MAX_VALUE
-+val i4 = /*~~>*/`MAX_VALUE`
-
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 

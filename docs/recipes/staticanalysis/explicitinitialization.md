@@ -33,49 +33,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Before
 ```java
-class A {
-    // C#: int? a
-    Nullable<Integer> a = null;
-    // C#: int? a = 0
-    Nullable<Integer> a = new Nullable<>(0);
-}
-```
-
-###### After
-```java
-class A {
-    // C#: int? a
-    Nullable<Integer> a;
-    // C#: int? a = 0
-    Nullable<Integer> a = new Nullable<>(0);
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-class A {
-    // C#: int? a
--   Nullable<Integer> a = null;
-+   Nullable<Integer> a;
-    // C#: int? a = 0
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
 class Test {
     private int a = 0;
     private long b = 0L;
@@ -159,6 +116,49 @@ class Test {
 -   int[] l = null;
 +   int[] l;
     int[] m = new int[0];
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    // C#: int? a
+    Nullable<Integer> a = null;
+    // C#: int? a = 0
+    Nullable<Integer> a = new Nullable<>(0);
+}
+```
+
+###### After
+```java
+class A {
+    // C#: int? a
+    Nullable<Integer> a;
+    // C#: int? a = 0
+    Nullable<Integer> a = new Nullable<>(0);
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class A {
+    // C#: int? a
+-   Nullable<Integer> a = null;
++   Nullable<Integer> a;
+    // C#: int? a = 0
 ```
 </TabItem>
 </Tabs>

@@ -19,7 +19,18 @@ _Remove the `final` modifier keyword from local variables regardless of whether 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Boolean` | excludeMethodParameters | *Optional*. If true, do not remove final from method parameters. |  |
+
 ## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|excludeMethodParameters|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -269,4 +280,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)

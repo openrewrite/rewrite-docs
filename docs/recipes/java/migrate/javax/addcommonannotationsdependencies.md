@@ -41,11 +41,16 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `jakarta.annotation`
   * newArtifactId: `jakarta.annotation-api`
   * newVersion: `1.3.x`
+* [Change Maven dependency scope](../../../maven/changedependencyscope)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * newScope: `provided`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
   * version: `1.3.x`
   * onlyIfUsing: `javax.annotation..*`
+  * scope: `provided`
   * acceptTransitive: `true`
 
 </TabItem>
@@ -71,11 +76,16 @@ recipeList:
       newGroupId: jakarta.annotation
       newArtifactId: jakarta.annotation-api
       newVersion: 1.3.x
+  - org.openrewrite.maven.ChangeDependencyScope:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      newScope: provided
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: jakarta.annotation
       artifactId: jakarta.annotation-api
       version: 1.3.x
       onlyIfUsing: javax.annotation..*
+      scope: provided
       acceptTransitive: true
 
 ```

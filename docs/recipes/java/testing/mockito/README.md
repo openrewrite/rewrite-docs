@@ -15,6 +15,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Call to Mockito method "verify", "when" or "given" should be simplified](./simplifymockitoverifywhengiven.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
+* [Close unclosed static mocks](./closeunclosedstaticmocks.md)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](./mockitojunitrunnersilenttoextension.md)
 * [Remove `Mockito.times(0)` and `Mockito.times(1)`](./removetimeszeroandone.md)
 * [Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners](./removeinitmocksifrunnersspecified.md)

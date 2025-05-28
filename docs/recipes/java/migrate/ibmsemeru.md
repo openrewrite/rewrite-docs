@@ -36,8 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](../../java/migrate/jredonotusesunnetsslinternalwwwprotocol)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](../../java/migrate/jredonotusesunnetsslinternalsslprovider)
 * [Use `javax.net.ssl` instead of `com.sun.net.ssl`](../../java/migrate/jredonotusesunnetsslapis)
-* [Do not use `java.xml.ws` module in WebSphere Liberty](../../java/migrate/removedjavaxmlwsmoduleprovided)
-* [Do not use `java.xml.bind` and `java.activation` modules in WebSphere Liberty](../../java/migrate/removedjaxbmoduleprovided)
+* [Do not package `java.xml.ws` module in WebSphere Liberty applications](../../java/migrate/removedjavaxmlwsmoduleprovided)
+* [Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications](../../java/migrate/removedjaxbmoduleprovided)
 
 </TabItem>
 

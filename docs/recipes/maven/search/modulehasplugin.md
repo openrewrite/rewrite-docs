@@ -26,6 +26,133 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `org.openrewrite.maven` |
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`org.openrewrite.maven`|
+|artifactId|`rewrite-maven-plugin`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {}
+```
+
+###### After
+```java
+/*~~(Module has plugin: org.openrewrite.maven:rewrite-maven-plugin)~~>*/class A {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class A {}
++/*~~(Module has plugin: org.openrewrite.maven:rewrite-maven-plugin)~~>*/class A {}
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+class B {}
+```
+
+###### Unchanged
+```mavenProject
+multi-project-build
+```
+
+###### Unchanged
+```mavenProject
+other-project
+```
+
+###### Unchanged
+```mavenProject
+project-applies-openrewrite-plugin
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>org.openrewrite.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>6.18.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<!--~~(Module has plugin: org.openrewrite.maven:rewrite-maven-plugin)~~>--><project>
+    <groupId>org.openrewrite.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>6.18.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -1,1 +1,1 @@
+-<project>
++<!--~~(Module has plugin: org.openrewrite.maven:rewrite-maven-plugin)~~>--><project>
+    <groupId>org.openrewrite.example</groupId>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>org.openrewrite.example</groupId>
+    <artifactId>other-project</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>not-rewrite-maven-plugin</artifactId>
+                <version>6.18.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
 
 ## Usage
 

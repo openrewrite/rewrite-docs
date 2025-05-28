@@ -87,6 +87,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jakarta.websocket-api`
   * newVersion: `2.1.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.websocket`
+  * artifactId: `jakarta.websocket-client-api`
+  * newVersion: `2.1.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.websocket`
+  * artifactId: `jakarta.websocket-all`
+  * newVersion: `2.1.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.jms`
   * artifactId: `jakarta.jms-api`
   * newVersion: `3.1.x`
@@ -166,6 +174,14 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.websocket
       artifactId: jakarta.websocket-api
+      newVersion: 2.1.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.websocket
+      artifactId: jakarta.websocket-client-api
+      newVersion: 2.1.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.websocket
+      artifactId: jakarta.websocket-all
       newVersion: 2.1.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.jms

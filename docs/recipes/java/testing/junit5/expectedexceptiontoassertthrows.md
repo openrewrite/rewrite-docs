@@ -52,8 +52,9 @@ class MyTest {
 ```java
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MyTest {
 
@@ -61,7 +62,7 @@ class MyTest {
     public void testEmptyPath() {
         Throwable exception = assertThrows(IllegalArgumentException.class, () ->
             foo());
-        assertTrue(exception.getMessage().contains("Invalid location: gs://"));
+        assertThat(exception.getMessage(), containsString("Invalid location: gs://"));
     }
     void foo() {
     }
@@ -80,21 +81,22 @@ import org.junit.Rule;
 import org.junit.Test;
 -import org.junit.rules.ExpectedException;
 
-@@ -5,0 +3,3 @@
+@@ -5,0 +3,4 @@
 import org.junit.rules.ExpectedException;
 
++import static org.hamcrest.CoreMatchers.containsString;
++import static org.hamcrest.MatcherAssert.assertThat;
 +import static org.junit.jupiter.api.Assertions.assertThrows;
-+import static org.junit.jupiter.api.Assertions.assertTrue;
 +
 class MyTest {
-@@ -7,3 +8,0 @@
+@@ -7,3 +9,0 @@
 class MyTest {
 
 -   @Rule
 -   ExpectedException thrown = ExpectedException.none();
 -
     @Test
-@@ -12,3 +10,3 @@
+@@ -12,3 +11,3 @@
     @Test
     public void testEmptyPath() {
 -       this.thrown.expect(IllegalArgumentException.class);
@@ -102,7 +104,7 @@ class MyTest {
 -       foo();
 +       Throwable exception = assertThrows(IllegalArgumentException.class, () ->
 +           foo());
-+       assertTrue(exception.getMessage().contains("Invalid location: gs://"));
++       assertThat(exception.getMessage(), containsString("Invalid location: gs://"));
     }
 ```
 </TabItem>
@@ -301,4 +303,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Tim te Beek](mailto:tim@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com)
+Anshuman Mishra, [Greg Adams](mailto:greg@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Patrick Way, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Andrii Rodionov](mailto:andrii@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Shivani Sharma](mailto:s.happyrose@gmail.com)

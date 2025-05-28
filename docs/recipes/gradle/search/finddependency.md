@@ -10,10 +10,10 @@ import TabItem from '@theme/TabItem';
 **org.openrewrite.gradle.search.FindDependency**
 
 ```
-Finds dependencies declared in `build.gradle` files. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.
+Finds dependencies declared in gradle build files. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.
 
 <img alt="Gradle compile classpath" src="https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-main.png" width="200px"/>
- A project's test classpath is based on these configurations.
+A project's test classpath is based on these configurations.
 
 <img alt="Gradle test classpath" src="https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-test.png" width="200px"/>.
 ```
@@ -218,4 +218,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:tim@moderne.io)

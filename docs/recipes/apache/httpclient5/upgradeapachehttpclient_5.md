@@ -36,6 +36,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrates to ApacheHttpClient 4.5.x](../../apache/httpclient4/upgradeapachehttpclient_4_5)
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.apache.httpcomponents`
+  * oldArtifactId: `httpmime`
+  * newGroupId: `org.apache.httpcomponents.client5`
+  * newArtifactId: `httpclient5`
+  * newVersion: `5.4.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.apache.httpcomponents`
   * oldArtifactId: `httpclient`
   * newGroupId: `org.apache.httpcomponents.client5`
   * newArtifactId: `httpclient5`
@@ -46,6 +52,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `org.apache.httpcomponents.core5`
   * newArtifactId: `httpcore5`
   * newVersion: `5.3.x`
+* [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
+  * groupId: `org.apache.httpcomponents.client5`
+  * artifactId: `httpclient5`
+  * version: `5.4.x`
+  * onlyIfUsing: `org.apache.http.impl.client.*`
+* [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 * [Migrate `RequestConfig` to httpclient5](../../apache/httpclient5/migraterequestconfig)
 * [Migrate `UsernamePasswordCredentials` to httpclient5](../../apache/httpclient5/usernamepasswordcredentials)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_classmapping)
@@ -72,6 +84,12 @@ recipeList:
   - org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.httpcomponents
+      oldArtifactId: httpmime
+      newGroupId: org.apache.httpcomponents.client5
+      newArtifactId: httpclient5
+      newVersion: 5.4.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.apache.httpcomponents
       oldArtifactId: httpclient
       newGroupId: org.apache.httpcomponents.client5
       newArtifactId: httpclient5
@@ -82,6 +100,12 @@ recipeList:
       newGroupId: org.apache.httpcomponents.core5
       newArtifactId: httpcore5
       newVersion: 5.3.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.apache.httpcomponents.client5
+      artifactId: httpclient5
+      version: 5.4.x
+      onlyIfUsing: org.apache.http.impl.client.*
+  - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.apache.httpclient5.MigrateRequestConfig
   - org.openrewrite.apache.httpclient5.UsernamePasswordCredentials
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping
@@ -106,11 +130,18 @@ recipeList:
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MinimalField;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.util.EntityUtils;
 
 class A {
     void method(HttpEntity entity, String urlStr) throws Exception {
         HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MinimalField field = new MinimalField("A", "B");
         EntityUtils.consume(entity);
     }
 }
@@ -118,14 +149,21 @@ class A {
 
 ###### After
 ```java
+import org.apache.hc.core5.http.ContentType;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.entity.mime.MimeField;
+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
+import org.apache.hc.client5.http.entity.mime.StringBody;
 
 class A {
     void method(HttpEntity entity, String urlStr) throws Exception {
         HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MimeField field = new MimeField("A", "B");
         EntityUtils.consume(entity);
     }
 }
@@ -135,16 +173,30 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,4 +1,4 @@
+@@ -1,8 +1,8 @@
 -import org.apache.http.HttpEntity;
 -import org.apache.http.client.methods.HttpGet;
 -import org.apache.http.client.methods.HttpUriRequest;
+-import org.apache.http.entity.ContentType;
+-import org.apache.http.entity.mime.MinimalField;
+-import org.apache.http.entity.mime.MultipartEntityBuilder;
+-import org.apache.http.entity.mime.content.StringBody;
 -import org.apache.http.util.EntityUtils;
++import org.apache.hc.core5.http.ContentType;
 +import org.apache.hc.core5.http.io.entity.EntityUtils;
 +import org.apache.hc.core5.http.HttpEntity;
 +import org.apache.hc.client5.http.classic.methods.HttpGet;
 +import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
++import org.apache.hc.client5.http.entity.mime.MimeField;
++import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
++import org.apache.hc.client5.http.entity.mime.StringBody;
 
+@@ -15,1 +15,1 @@
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+-       MinimalField field = new MinimalField("A", "B");
++       MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
 ```
 </TabItem>
 </Tabs>
@@ -269,11 +321,18 @@ class A {
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MinimalField;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.util.EntityUtils;
 
 class A {
     void method(HttpEntity entity, String urlStr) throws Exception {
         HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MinimalField field = new MinimalField("A", "B");
         EntityUtils.consume(entity);
     }
 }
@@ -281,14 +340,21 @@ class A {
 
 ###### After
 ```java
+import org.apache.hc.core5.http.ContentType;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.entity.mime.MimeField;
+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
+import org.apache.hc.client5.http.entity.mime.StringBody;
 
 class A {
     void method(HttpEntity entity, String urlStr) throws Exception {
         HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MimeField field = new MimeField("A", "B");
         EntityUtils.consume(entity);
     }
 }
@@ -298,16 +364,30 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,4 +1,4 @@
+@@ -1,8 +1,8 @@
 -import org.apache.http.HttpEntity;
 -import org.apache.http.client.methods.HttpGet;
 -import org.apache.http.client.methods.HttpUriRequest;
+-import org.apache.http.entity.ContentType;
+-import org.apache.http.entity.mime.MinimalField;
+-import org.apache.http.entity.mime.MultipartEntityBuilder;
+-import org.apache.http.entity.mime.content.StringBody;
 -import org.apache.http.util.EntityUtils;
++import org.apache.hc.core5.http.ContentType;
 +import org.apache.hc.core5.http.io.entity.EntityUtils;
 +import org.apache.hc.core5.http.HttpEntity;
 +import org.apache.hc.client5.http.classic.methods.HttpGet;
 +import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
++import org.apache.hc.client5.http.entity.mime.MimeField;
++import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
++import org.apache.hc.client5.http.entity.mime.StringBody;
 
+@@ -15,1 +15,1 @@
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+-       MinimalField field = new MinimalField("A", "B");
++       MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
 ```
 </TabItem>
 </Tabs>

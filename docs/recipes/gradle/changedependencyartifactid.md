@@ -213,4 +213,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Patrick](mailto:patway99@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Patrick](mailto:patway99@gmail.com)

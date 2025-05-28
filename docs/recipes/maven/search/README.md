@@ -15,6 +15,7 @@
 * [Maven dependency insight](./dependencyinsight.md)
 * [Maven parent insight](./parentpominsight.md)
 * [Maven repository order](./findrepositoryorder.md)
+* [Module has dependency](./modulehasdependency.md)
 * [Module has plugin](./modulehasplugin.md)
 
 

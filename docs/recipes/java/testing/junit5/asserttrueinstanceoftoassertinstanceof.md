@@ -38,7 +38,7 @@ class ATest {
     @Test
     void testJUnit5() {
         List<String> list = new ArrayList<>();
-        assertTrue(list instanceof Iterable);
+        assertTrue(list instanceof List);
     }
 }
 ```
@@ -55,7 +55,7 @@ class ATest {
     @Test
     void testJUnit5() {
         List<String> list = new ArrayList<>();
-        assertInstanceOf(Iterable.class, list);
+        assertInstanceOf(List.class, list);
     }
 }
 ```
@@ -73,8 +73,8 @@ import java.util.List;
 @@ -11,1 +11,1 @@
     void testJUnit5() {
         List<String> list = new ArrayList<>();
--       assertTrue(list instanceof Iterable);
-+       assertInstanceOf(Iterable.class, list);
+-       assertTrue(list instanceof List);
++       assertInstanceOf(List.class, list);
     }
 ```
 </TabItem>
@@ -273,4 +273,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-matusmatokpt, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+matusmatokpt, [Tim te Beek](mailto:timtebeek@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

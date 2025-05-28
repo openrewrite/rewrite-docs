@@ -19,57 +19,6 @@ _Any fully qualified references to Java types will be replaced with correspondin
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="groovy" label="groovy">
-
-
-###### Before
-```groovy
-package foo
-
-/* comment */
-import java.util.List
-
-class Test {
-    List<String> l = new java.util.ArrayList<>()
-}
-```
-
-###### After
-```groovy
-package foo
-
-/* comment */
-import java.util.ArrayList
-import java.util.List
-
-class Test {
-    List<String> l = new ArrayList<>()
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -4,0 +4,1 @@
-
-/* comment */
-+import java.util.ArrayList
-import java.util.List
-@@ -7,1 +8,1 @@
-
-class Test {
--   List<String> l = new java.util.ArrayList<>()
-+   List<String> l = new ArrayList<>()
-}
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 

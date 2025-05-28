@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.yaml.DeleteProperty**
 
-_Delete a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e.  as Spring Boot interprets application.yml files like `a.b.c.d` or `a.b.c:d`._
+_Delete a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e. as Spring Boot interprets application.yml files like `a.b.c.d` or `a.b.c:d`._
 
 ## Recipe source
 
@@ -190,4 +190,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), Patrick Way, [Tim te Beek](mailto:tim@moderne.io), [Alex Serbin](mailto:aleksanderserbin@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), Patrick Way, [Tim te Beek](mailto:tim@moderne.io), [Alex Serbin](mailto:aleksanderserbin@gmail.com), [Mike Solomon](mailto:mike@moderne.io)

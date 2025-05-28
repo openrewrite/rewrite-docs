@@ -24,6 +24,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [`@Type` annotation type parameter migration](./typeannotationparameter.md)
+* [AddScalarPreferStandardBasicTypesForHibernate5](./addscalarpreferstandardbasictypes.md)
 * [Migrate `UserType` to Hibernate 6](./migrateusertype.md)
 * [Migration of `ResultCheckStyle` to `Expectation`](./migrateresultcheckstyletoexpectation.md)
 * [Remove invalid `@GeneratedValue` annotation](./removeinvalidhibernategeneratedvalueannotation.md)

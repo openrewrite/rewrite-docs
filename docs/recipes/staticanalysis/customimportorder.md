@@ -19,6 +19,57 @@ _Updates and reorders Java import declarations according to group and order sett
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example;
+
+import org.apache.commons.lang3.StringUtils;
+import java.util.Collections;
+import static java.util.Collections.*;
+
+class Test {}
+```
+
+###### After
+```java
+package com.example;
+
+import static java.util.Collections.*;
+
+import java.util.Collections;
+import org.apache.commons.lang3.StringUtils;
+
+class Test {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,0 @@
+package com.example;
+
+-import org.apache.commons.lang3.StringUtils;
+-import java.util.Collections;
+import static java.util.Collections.*;
+@@ -7,0 +5,3 @@
+import static java.util.Collections.*;
+
++import java.util.Collections;
++import org.apache.commons.lang3.StringUtils;
++
+class Test {}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -212,4 +263,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Serhii Manko](mailto:mankoffserg@gmail.com)
+[Serhii Manko](mailto:mankoffserg@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com)

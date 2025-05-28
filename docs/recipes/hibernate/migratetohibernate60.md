@@ -29,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate Hibernate dependencies to 6.0.x](../hibernate/migratetohibernatedependencies60)
+* [AddScalarPreferStandardBasicTypesForHibernate5](../hibernate/addscalarpreferstandardbasictypes)
 * [Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector`](../hibernate/emptyinterceptortointerface)
 * [Replace boolean type mappings with converters](../hibernate/migratebooleanmappings)
 * [`@Type` annotation type parameter migration](../hibernate/typeannotationparameter)
@@ -50,6 +51,7 @@ description: |
   This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernateDependencies60
+  - org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes
   - org.openrewrite.hibernate.EmptyInterceptorToInterface
   - org.openrewrite.hibernate.MigrateBooleanMappings
   - org.openrewrite.hibernate.TypeAnnotationParameter
@@ -254,4 +256,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), Simon Zilliken, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), Simon Zilliken, [Guillaume Husta](mailto:guillaume.husta@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

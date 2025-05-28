@@ -23,14 +23,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `List` | exclusions | A list of [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expressions to specify keys that should not be unfolded. | `$..[org.springframework.security]` |
+| `List` | exclusions | An optional list of [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expressions to specify keys that should not be unfolded. | `$..[org.springframework.security]` |
+| `List` | applyTo | An optional list of [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expressions that specify which keys the recipe should target only. Only the properties matching these expressions will be unfolded. | `$..[org.springframework.security]` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|exclusions|`null`|
+|exclusions|`List.of("$..[logging.level][?(@property.match(/.*/))]", "$..[enable.process.files]")`|
+|applyTo||
 
 
 <Tabs groupId="beforeAfter">
@@ -39,6 +41,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Before
 ```yaml
+spring.application.name: my-app
+logging.level:
+  root: INFO
+  org.springframework.web: DEBUG
 management:
   metrics.enable.process.files: true
   endpoint.health:
@@ -48,11 +54,16 @@ management:
 
 ###### After
 ```yaml
+spring:
+  application:
+    name: my-app
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
 management:
   metrics:
-    enable:
-      process:
-        files: true
+    enable.process.files: true
   endpoint:
     health:
       show-components: always
@@ -63,16 +74,28 @@ management:
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -2,4 +2,8 @@
+@@ -1,4 +1,7 @@
+-spring.application.name: my-app
+-logging.level:
+- root: INFO
+- org.springframework.web: DEBUG
++spring:
++ application:
++   name: my-app
++logging:
++ level:
++   root: INFO
++   org.springframework.web: DEBUG
+management:
+@@ -6,4 +9,6 @@
+  org.springframework.web: DEBUG
 management:
 - metrics.enable.process.files: true
 - endpoint.health:
 -   show-components: always
 -   show-details: always
 + metrics:
-+   enable:
-+     process:
-+       files: true
++   enable.process.files: true
 + endpoint:
 +   health:
 +     show-components: always
@@ -95,6 +118,7 @@ displayName: Unfold YAML properties example
 recipeList:
   - org.openrewrite.yaml.UnfoldProperties:
       exclusions: $..[org.springframework.security]
+      applyTo: $..[org.springframework.security]
 ```
 
 Now that `com.yourorg.UnfoldPropertiesExample` has been defined, activate it in your build file:
@@ -148,7 +172,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UnfoldProperties --recipe-option "exclusions=$..[org.springframework.security]"
+mod run . --recipe UnfoldProperties --recipe-option "exclusions=$..[org.springframework.security]" --recipe-option "applyTo=$..[org.springframework.security]"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -227,4 +251,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[lingenj](mailto:jacob.van.lingen@moderne.io)
+[Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [JohannisK](mailto:johan.kragt@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

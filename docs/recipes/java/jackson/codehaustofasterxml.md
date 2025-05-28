@@ -47,7 +47,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 class Test {
     private static ObjectMapper initializeObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        return mapper.setSerializationInclusion(Include.NON_NULL);
     }
 }
 ```
@@ -66,7 +66,7 @@ class Test {
     private static ObjectMapper initializeObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
 -       return mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
-+       return mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
++       return mapper.setSerializationInclusion(Include.NON_NULL);
     }
 ```
 </TabItem>
@@ -102,7 +102,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 class Test {
     private static ObjectMapper initializeObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        return mapper.setSerializationInclusion(Include.NON_NULL);
     }
 }
 ```
@@ -121,7 +121,7 @@ class Test {
     private static ObjectMapper initializeObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
 -       return mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
-+       return mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
++       return mapper.setSerializationInclusion(Include.NON_NULL);
     }
 ```
 </TabItem>

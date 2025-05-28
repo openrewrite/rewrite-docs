@@ -26,49 +26,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fullyQualifiedTypeName | A fully-qualified type name, that is used to find matching type references. Supports glob expressions. `java..*` finds every type from every subpackage of the `java` package. | `java.util.List` |
 | `Boolean` | checkAssignability | *Optional*. When enabled, find type references that are assignable to the provided type. |  |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|fullyQualifiedTypeName|`org.junit.jupiter.api.Test`|
-|checkAssignability|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="groovy" label="groovy">
-
-
-###### Before
-```groovy
-import org.junit.jupiter.api.Test
-class A {
-    Test t
-}
-```
-
-###### After
-```groovy
-import org.junit.jupiter.api.Test
-class A {
-    /*~~>*/Test t
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-import org.junit.jupiter.api.Test
-class A {
--   Test t
-+   /*~~>*/Test t
-}
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 

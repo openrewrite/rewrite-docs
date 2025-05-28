@@ -38,6 +38,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.ws.rs`
   * artifactId: `jakarta.ws.rs-api`
   * newVersion: `3.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.ws.rs`
+  * artifactId: `jakarta.ws.rs-api`
+  * version: `3.0.x`
+  * onlyIfUsing: `javax.ws.rs.core.*`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.ws`
   * newPackageName: `jakarta.ws`
@@ -65,6 +70,11 @@ recipeList:
       groupId: jakarta.ws.rs
       artifactId: jakarta.ws.rs-api
       newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.ws.rs
+      artifactId: jakarta.ws.rs-api
+      version: 3.0.x
+      onlyIfUsing: javax.ws.rs.core.*
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.ws
       newPackageName: jakarta.ws

@@ -36,14 +36,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `//*[namespace-uri() = 'http://java.sun.com/xml/ns/jaxb' and local-name() = 'bindings']`
-  * attributeName: `version`
-  * newValue: `3.0`
-  * oldValue: `1.0`
-* [Change XML attribute](../../../xml/changetagattribute)
-  * elementName: `//*[namespace-uri() = 'http://java.sun.com/xml/ns/jaxb' and local-name() = 'bindings']`
   * attributeName: `xmlns:jxb`
   * newValue: `https://jakarta.ee/xml/ns/jaxb`
   * oldValue: `http://java.sun.com/xml/ns/jaxb`
+* [Change XML attribute](../../../xml/changetagattribute)
+  * elementName: `//*[namespace-uri() = 'https://jakarta.ee/xml/ns/jaxb' and local-name() = 'bindings']`
+  * attributeName: `version`
+  * newValue: `3.0`
+  * oldValue: `1.0`
 
 </TabItem>
 
@@ -63,14 +63,14 @@ tags:
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: //*[namespace-uri() = 'http://java.sun.com/xml/ns/jaxb' and local-name() = 'bindings']
-      attributeName: version
-      newValue: 3.0
-      oldValue: 1.0
-  - org.openrewrite.xml.ChangeTagAttribute:
-      elementName: //*[namespace-uri() = 'http://java.sun.com/xml/ns/jaxb' and local-name() = 'bindings']
       attributeName: xmlns:jxb
       newValue: https://jakarta.ee/xml/ns/jaxb
       oldValue: http://java.sun.com/xml/ns/jaxb
+  - org.openrewrite.xml.ChangeTagAttribute:
+      elementName: //*[namespace-uri() = 'https://jakarta.ee/xml/ns/jaxb' and local-name() = 'bindings']
+      attributeName: version
+      newValue: 3.0
+      oldValue: 1.0
 
 ```
 </TabItem>

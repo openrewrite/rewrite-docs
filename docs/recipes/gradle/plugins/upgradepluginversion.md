@@ -40,22 +40,22 @@ Upgrading a build plugin
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="build.gradle" label="build.gradle">
+<TabItem value="buildGradleKts" label="buildGradleKts">
 
 
 ###### Before
-```groovy title="build.gradle"
+```buildGradleKts
 plugins {
-    id 'org.openrewrite.rewrite' version '5.40.0'
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id("org.openrewrite.rewrite") version("5.40.0")
+    id("com.github.johnrengelman.shadow") version("6.1.0")
 }
 ```
 
 ###### After
-```groovy title="build.gradle"
+```buildGradleKts
 plugins {
-    id 'org.openrewrite.rewrite' version '5.40.6'
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id("org.openrewrite.rewrite") version("5.40.6")
+    id("com.github.johnrengelman.shadow") version("6.1.0")
 }
 ```
 
@@ -63,13 +63,11 @@ plugins {
 <TabItem value="diff" label="Diff" >
 
 ```diff
---- build.gradle
-+++ build.gradle
 @@ -2,1 +2,1 @@
 plugins {
--   id 'org.openrewrite.rewrite' version '5.40.0'
-+   id 'org.openrewrite.rewrite' version '5.40.6'
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+-   id("org.openrewrite.rewrite") version("5.40.0")
++   id("org.openrewrite.rewrite") version("5.40.6")
+    id("com.github.johnrengelman.shadow") version("6.1.0")
 ```
 </TabItem>
 </Tabs>
@@ -231,6 +229,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

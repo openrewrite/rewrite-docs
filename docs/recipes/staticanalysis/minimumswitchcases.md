@@ -334,4 +334,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Josh Soref, [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+[Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [JohannisK](mailto:johan.kragt@moderne.io), Josh Soref, [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com)

@@ -46,22 +46,20 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `jakarta.annotation`
   * newArtifactId: `jakarta.annotation-api`
   * newVersion: `2.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.annotation`
   * newPackageName: `jakarta.annotation`
-  * recursive: `true`
+  * recursive: `false`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `javax.annotation.processing`
-  * newPackageName: `jakarta.annotation.processing`
+  * oldPackageName: `javax.annotation.security`
+  * newPackageName: `jakarta.annotation.security`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `javax.annotation.concurrent`
-  * newPackageName: `jakarta.annotation.concurrent`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Nullable`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Nonnull`
+  * oldPackageName: `javax.annotation.sql`
+  * newPackageName: `jakarta.annotation.sql`
 
 </TabItem>
 
@@ -91,22 +89,20 @@ recipeList:
       newGroupId: jakarta.annotation
       newArtifactId: jakarta.annotation-api
       newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.annotation
       newPackageName: jakarta.annotation
-      recursive: true
+      recursive: false
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: javax.annotation.processing
-      newPackageName: jakarta.annotation.processing
+      oldPackageName: javax.annotation.security
+      newPackageName: jakarta.annotation.security
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: javax.annotation.concurrent
-      newPackageName: jakarta.annotation.concurrent
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nullable
-      newFullyQualifiedTypeName: jakarta.annotation.Nullable
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nonnull
-      newFullyQualifiedTypeName: jakarta.annotation.Nonnull
+      oldPackageName: javax.annotation.sql
+      newPackageName: jakarta.annotation.sql
 
 ```
 </TabItem>

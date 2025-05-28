@@ -6,6 +6,7 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 
 * [Amqp](/recipes/java/spring/amqp)
 * [Cloud2024](/recipes/java/spring/cloud2024)
+* [Cloud2025](/recipes/java/spring/cloud2025)
 * [Http](/recipes/java/spring/http)
 * [Search](/recipes/java/spring/search)
 * [Spring Batch](/recipes/java/spring/batch)

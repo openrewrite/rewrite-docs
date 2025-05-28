@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Remove redundant explicit dependency versions"
+sidebar_label: "Remove redundant explicit dependencies and versions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove redundant explicit dependency versions
+# Remove redundant explicit dependencies and versions
 
 **org.openrewrite.gradle.RemoveRedundantDependencyVersions**
 
-_Remove explicitly-specified dependency versions that are managed by a Gradle `platform`/`enforcedPlatform`._
+_Remove explicitly-specified dependencies and dependency versions that are managed by a Gradle `platform`/`enforcedPlatform`._
 
 ## Recipe source
 
@@ -26,7 +26,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupPattern | *Optional*. Group glob expression pattern used to match dependencies that should be managed.Group is the first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.*` |
 | `String` | artifactPattern | *Optional*. Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava*` |
 | `Comparator` | onlyIfManagedVersionIs | *Optional*. Only remove the explicit version if the managed version has the specified comparative relationship to the explicit version. For example, `gte` will only remove the explicit version if the managed version is the same or newer. Default `eq`. Valid options: `ANY`, `EQ`, `LT`, `LTE`, `GT`, `GTE` |  |
-| `List` | except | *Optional*. Accepts a list of GAVs. Dependencies matching a GAV will be ignored by this recipe. GAV versions are ignored if provided. | `com.jcraft:jsch` |
 
 ## Example
 
@@ -36,7 +35,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |groupPattern|`null`|
 |artifactPattern|`null`|
 |onlyIfManagedVersionIs|`null`|
-|except|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -239,4 +237,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io)
+[Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

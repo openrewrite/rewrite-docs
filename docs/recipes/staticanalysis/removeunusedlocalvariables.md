@@ -28,6 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String[]` | ignoreVariablesNamed | *Optional*. An array of variable identifier names for local variables to ignore, even if the local variable is unused. | `[unused, notUsed, IGNORE_ME]` |
+| `String` | withType | *Optional*. A fully qualified class name. Only unused local variables whose type matches this will be removed. If empty or not set, all unused local variables are considered for removal. | `java.lang.String` |
 | `Boolean` | withSideEffects | *Optional*. Whether to remove unused local variables despite side effects in the initializer. Default false. |  |
 
 ## Example
@@ -36,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Parameter | Value |
 | -- | -- |
 |ignoreVariablesNamed|`null`|
+|withType|`null`|
 |withSideEffects|`null`|
 
 
@@ -270,4 +272,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [David Tran](mailto:david.tran@snowflake.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Bartosz Gałek](mailto:bartosz@galek.com.pl), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [David Tran](mailto:david.tran@snowflake.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com)

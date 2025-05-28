@@ -38,6 +38,26 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.websocket`
   * artifactId: `jakarta.websocket-api`
   * newVersion: `2.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `javax.websocket`
+  * oldArtifactId: `javax.websocket-client-api`
+  * newGroupId: `jakarta.websocket`
+  * newArtifactId: `jakarta.websocket-client-api`
+  * newVersion: `2.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.websocket`
+  * artifactId: `jakarta.websocket-client-api`
+  * newVersion: `2.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `javax.websocket`
+  * oldArtifactId: `javax.websocket-all`
+  * newGroupId: `jakarta.websocket`
+  * newArtifactId: `jakarta.websocket-all`
+  * newVersion: `2.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.websocket`
+  * artifactId: `jakarta.websocket-all`
+  * newVersion: `2.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.websocket`
   * newPackageName: `jakarta.websocket`
@@ -64,6 +84,26 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.websocket
       artifactId: jakarta.websocket-api
+      newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax.websocket
+      oldArtifactId: javax.websocket-client-api
+      newGroupId: jakarta.websocket
+      newArtifactId: jakarta.websocket-client-api
+      newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.websocket
+      artifactId: jakarta.websocket-client-api
+      newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax.websocket
+      oldArtifactId: javax.websocket-all
+      newGroupId: jakarta.websocket
+      newArtifactId: jakarta.websocket-all
+      newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.websocket
+      artifactId: jakarta.websocket-all
       newVersion: 2.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.websocket

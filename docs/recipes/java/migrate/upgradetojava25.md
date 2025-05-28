@@ -32,8 +32,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Java 21](../../java/migrate/upgradetojava21)
 * [Remove Security Policy](../../java/migrate/removesecuritypolicy)
 * [Remove Security SecurityManager](../../java/migrate/removesecuritymanager)
+* [Replace `System.getSecurityManager()` with `null`](../../java/migrate/systemgetsecuritymanagertonull)
 
 </TabItem>
 
@@ -49,8 +51,10 @@ description: |
 tags:
   - java25
 recipeList:
+  - org.openrewrite.java.migrate.UpgradeToJava21
   - org.openrewrite.java.migrate.RemoveSecurityPolicy
   - org.openrewrite.java.migrate.RemoveSecurityManager
+  - org.openrewrite.java.migrate.SystemGetSecurityManagerToNull
 
 ```
 </TabItem>
@@ -245,4 +249,26 @@ _Statistics used in analyzing the performance of recipes._
 
 </TabItem>
 
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 </Tabs>
+
+## Contributors
+Chuka Obinabo, [Tim te Beek](mailto:tim@moderne.io), Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), BhavanaPidapa, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Tyler Van Gorder, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [karthikNousher](mailto:emailkarthik369@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, [Shannon Pamperl](mailto:shanman190@gmail.com), eocantu, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Kun Li, Cathy, Josh Soref, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

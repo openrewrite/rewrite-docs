@@ -11,7 +11,7 @@
 * [Enforce Promise or callback style in nextTick](./nexttickstyle.md)
 * [Enforce consistent brace style for blocks in `<template>`](./bracestyle.md)
 * [Enforce consistent comma style in `<template>`](./commastyle.md)
-* [Enforce consistent indentation in \<script\>](./scriptindent.md)
+* [Enforce consistent indentation in `\<script\>`](./scriptindent.md)
 * [Enforce consistent indentation in HTML comments](./htmlcommentindent.md)
 * [Enforce consistent line breaks after opening and before closing braces in `<template>`](./objectcurlynewline.md)
 * [Enforce consistent linebreak style for operators in `<template>`](./operatorlinebreak.md)

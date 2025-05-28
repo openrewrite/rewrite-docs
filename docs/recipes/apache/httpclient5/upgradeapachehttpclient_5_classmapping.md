@@ -142,12 +142,24 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.entity`
   * newPackageName: `org.apache.hc.core5.http.io.entity`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.hc.core5.http.io.entity.mime`
+  * newPackageName: `org.apache.hc.client5.http.entity.mime`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.hc.client5.http.entity.mime.content`
+  * newPackageName: `org.apache.hc.client5.http.entity.mime`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.io.entity.ContentLengthStrategy`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ContentLengthStrategy`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.io.entity.ContentType`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ContentType`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.MinimalField`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.MimeField`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.entity.mime.MinimalField`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.MimeField`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.impl.bootstrap`
   * newPackageName: `org.apache.hc.core5.http.impl.bootstrap`
@@ -526,12 +538,24 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.entity
       newPackageName: org.apache.hc.core5.http.io.entity
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.hc.core5.http.io.entity.mime
+      newPackageName: org.apache.hc.client5.http.entity.mime
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.hc.client5.http.entity.mime.content
+      newPackageName: org.apache.hc.client5.http.entity.mime
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.io.entity.ContentLengthStrategy
       newFullyQualifiedTypeName: org.apache.hc.core5.http.ContentLengthStrategy
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.io.entity.ContentType
       newFullyQualifiedTypeName: org.apache.hc.core5.http.ContentType
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.MinimalField
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.MimeField
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.entity.mime.MinimalField
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.MimeField
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.impl.bootstrap
       newPackageName: org.apache.hc.core5.http.impl.bootstrap

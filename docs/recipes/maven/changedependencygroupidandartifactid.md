@@ -280,4 +280,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), ashakirin, [Shannon Pamperl](mailto:shanman190@gmail.com), [Tobias Lidskog](mailto:tlidskog@paypal.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Valentin Delaye, [Jon Black](mailto:code@jonblack.me)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Nick McKinney](mailto:mckinneynicholas@gmail.com), ashakirin, [Shannon Pamperl](mailto:shanman190@gmail.com), [Tobias Lidskog](mailto:tlidskog@paypal.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Valentin Delaye, [Jon Black](mailto:code@jonblack.me)

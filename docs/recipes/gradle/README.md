@@ -35,7 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Gradle 5 from Gradle 4](./migratetogradle5.md)
 * [Remove a Gradle dependency](./removedependency.md)
 * [Remove an enabled Gradle preview feature](./removeenablefeaturepreview.md)
-* [Remove redundant explicit dependency versions](./removeredundantdependencyversions.md)
+* [Remove redundant explicit dependencies and versions](./removeredundantdependencyversions.md)
 * [Remove repository](./removerepository.md)
 * [Update Gradle project Java compatibility](./updatejavacompatibility.md)
 * [Update Gradle wrapper](./updategradlewrapper.md)

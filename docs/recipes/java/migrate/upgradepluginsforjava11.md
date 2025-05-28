@@ -83,101 +83,73 @@ recipeList:
 ##### Example 1
 
 
-###### Unchanged
-```mavenProject
-project
-```
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
 
-###### Unchanged
+
+###### Before
 ```xml title="pom.xml"
 <project>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
+  <properties>
+    <wro4j.version>1.8.0</wro4j.version>
+  </properties>
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>2.3.1</version>
+        <groupId>ro.isdc.wro4j</groupId>
+        <artifactId>wro4j-maven-plugin</artifactId>
+        <version>${wro4j.version}</version>
       </plugin>
     </plugins>
   </build>
 </project>
 ```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <properties>
+    <wro4j.version>1.10.1</wro4j.version>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>ro.isdc.wro4j</groupId>
+        <artifactId>wro4j-maven-plugin</artifactId>
+        <version>${wro4j.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,1 +6,1 @@
+  <version>1</version>
+  <properties>
+-   <wro4j.version>1.8.0</wro4j.version>
++   <wro4j.version>1.10.1</wro4j.version>
+  </properties>
+```
+</TabItem>
+</Tabs>
 
 ---
 
 ##### Example 2
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <properties>
-    <wro4j.version>1.8.0</wro4j.version>
-  </properties>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <properties>
-    <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -6,1 +6,1 @@
-  <version>1</version>
-  <properties>
--   <wro4j.version>1.8.0</wro4j.version>
-+   <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 3
-
-
 ###### Unchanged
 ```mavenProject
 project
@@ -203,7 +175,7 @@ project
 
 ---
 
-##### Example 4
+##### Example 3
 
 
 <Tabs groupId="beforeAfter">
@@ -267,6 +239,34 @@ project
 ```
 </TabItem>
 </Tabs>
+
+---
+
+##### Example 4
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.3.1</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
 
 
 ## Usage

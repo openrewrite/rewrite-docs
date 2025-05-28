@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | newComponent | Name of the component to use add. | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
 | `String` | version | Version of the component to add. | `0.10.0` |
-| `List` | inputs | The set of inputs to provide | `opentofu_version: 1.6.1` |
+| `List` | inputs | *Optional*. The set of inputs to provide | `opentofu_version: 1.6.1` |
 
 
 ## Definition
@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Merge YAML snippet](../yaml/mergeyaml)
   * key: `$`
-  * yaml: `include:  - component: null@null    inputs: `
+  * yaml: `include:  - component: null@null `
   * acceptTheirs: `false`
   * objectIdentifyingProperty: `component`
   * filePattern: `.gitlab-ci.yml`
@@ -59,7 +59,6 @@ recipeList:
       key: $
       yaml: include:
  - component: null@null
-   inputs:
 
       acceptTheirs: false
       objectIdentifyingProperty: component

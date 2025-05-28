@@ -123,7 +123,8 @@ recipeList:
 
 ###### Before
 ```java
-import java.util.logging.Level;import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 class Test {
     void method(Logger logger) {
@@ -179,11 +180,12 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,1 @@
--import java.util.logging.Level;import java.util.logging.Logger;
+@@ -1,2 +1,1 @@
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
 +import org.apache.logging.log4j.Logger;
 
-@@ -5,8 +5,0 @@
+@@ -6,8 +5,0 @@
 class Test {
     void method(Logger logger) {
 -       logger.config("Hello");
@@ -195,7 +197,7 @@ class Test {
 -       logger.finest("Hello");
 -       logger.finest(() -> "Hello");
         logger.info("Hello");
-@@ -15,4 +7,12 @@
+@@ -16,4 +7,12 @@
         logger.info("Hello");
         logger.info(() -> "Hello");
 -       logger.severe("Hello");
@@ -215,7 +217,7 @@ class Test {
 +       logger.warn("Hello");
 +       logger.warn(() -> "Hello");
 
-@@ -20,2 +20,2 @@
+@@ -21,2 +20,2 @@
         logger.warning(() -> "Hello");
 
 -       logger.log(Level.INFO, "Hello");
@@ -238,7 +240,8 @@ class Test {
 
 ###### Before
 ```java
-import java.util.logging.Level;import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 class Test {
     void method(Logger logger) {
@@ -294,11 +297,12 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,1 @@
--import java.util.logging.Level;import java.util.logging.Logger;
+@@ -1,2 +1,1 @@
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
 +import org.apache.logging.log4j.Logger;
 
-@@ -5,8 +5,0 @@
+@@ -6,8 +5,0 @@
 class Test {
     void method(Logger logger) {
 -       logger.config("Hello");
@@ -310,7 +314,7 @@ class Test {
 -       logger.finest("Hello");
 -       logger.finest(() -> "Hello");
         logger.info("Hello");
-@@ -15,4 +7,12 @@
+@@ -16,4 +7,12 @@
         logger.info("Hello");
         logger.info(() -> "Hello");
 -       logger.severe("Hello");
@@ -330,7 +334,7 @@ class Test {
 +       logger.warn("Hello");
 +       logger.warn(() -> "Hello");
 
-@@ -20,2 +20,2 @@
+@@ -21,2 +20,2 @@
         logger.warning(() -> "Hello");
 
 -       logger.log(Level.INFO, "Hello");

@@ -27,76 +27,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldAttributeName | The name of attribute to change. | `timeout` |
 | `String` | newAttributeName | The new attribute name to use. | `waitFor` |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|annotationType|`org.junit.jupiter.api.Tag`|
-|oldAttributeName|`value`|
-|newAttributeName|`newValue`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-package sample
-
-import org.junit.jupiter.api.Tag
-import org.junit.jupiter.api.Tags
-
-class SampleTest {
-
-    @Tags(
-        value = [
-            Tag(value = "Sample01"),
-            Tag(value = "Sample02"),
-        ]
-    )
-    fun run() {
-    }
-}
-```
-
-###### After
-```kotlin
-package sample
-
-import org.junit.jupiter.api.Tag
-import org.junit.jupiter.api.Tags
-
-class SampleTest {
-
-    @Tags(
-        value = [
-            Tag(newValue = "Sample01"),
-            Tag(newValue = "Sample02"),
-        ]
-    )
-    fun run() {
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -10,2 +10,2 @@
-    @Tags(
-        value = [
--           Tag(value = "Sample01"),
--           Tag(value = "Sample02"),
-+           Tag(newValue = "Sample01"),
-+           Tag(newValue = "Sample02"),
-        ]
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 
@@ -244,4 +174,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tobias Lidskog](mailto:tlidskog@paypal.com), [Knut Wannheden](mailto:knut@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tobias Lidskog](mailto:tlidskog@paypal.com), [steve-aom-elliott](mailto:steve@moderne.io), [Knut Wannheden](mailto:knut@moderne.io)

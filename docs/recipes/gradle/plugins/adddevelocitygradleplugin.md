@@ -197,4 +197,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Alexis Tual](mailto:atual@gradle.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Alexis Tual](mailto:atual@gradle.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

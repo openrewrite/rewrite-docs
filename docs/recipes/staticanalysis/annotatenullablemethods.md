@@ -290,4 +290,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Niels de Bruin](mailto:nielsdebruin@gmail.com), [JohannisK](mailto:johannis.kragt@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Niels de Bruin](mailto:nielsdebruin@gmail.com), [JohannisK](mailto:johannis.kragt@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

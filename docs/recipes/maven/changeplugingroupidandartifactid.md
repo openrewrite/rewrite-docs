@@ -358,4 +358,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[George Gastaldi](mailto:gegastaldi@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JesseEstum](mailto:jesse.estum@gmail.com), [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[George Gastaldi](mailto:gegastaldi@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [JesseEstum](mailto:jesse.estum@gmail.com), [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Kevin Carpenter™️](mailto:kevin@moderne.io)

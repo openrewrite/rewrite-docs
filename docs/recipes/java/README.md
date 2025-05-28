@@ -7,6 +7,7 @@ _Basic building blocks for transforming Java code._
 * [AI tools](/recipes/java/ai)
 * [Camel](/recipes/java/camel)
 * [Dependencies](/recipes/java/dependencies)
+* [Dropwizard](/recipes/java/dropwizard)
 * [Format](/recipes/java/format)
 * [Jackson](/recipes/java/jackson)
 * [Jspecify](/recipes/java/jspecify)
