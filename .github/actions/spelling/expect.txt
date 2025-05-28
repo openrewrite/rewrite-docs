@@ -7,6 +7,7 @@ artifactsjars
 assertj
 autoconfigure
 autocrlf
+azul
 azzert
 baz
 Bazel
@@ -36,10 +37,12 @@ datasource
 datatable
 defaultimpl
 dependencyresolutiondiagnostic
+diffblue
 diffing
 diffs
 Dockerfiles
 dotnet
+dropwizard
 DSL
 dto
 errorprone
@@ -160,6 +163,7 @@ upgradespringboot
 varargs
 variabledeclarations
 Versioning
+vulncheck
 WORKDIR
 workflows
 XPaths
