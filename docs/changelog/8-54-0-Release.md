@@ -2,19 +2,26 @@
 description: What's changed in OpenRewrite version 8.54.0.
 ---
 
-# 8.54.0 release (2025-05-28)
+# 8.54.0 release (2025-05-29)
 
-_Total recipe count: 3773_
+_Total recipe count: 3778_
 
 :::info
 This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
 :::
 
 ## New Artifacts
+* rewrite-azul
 * rewrite-dropwizard
+* rewrite-vulncheck
 
 ## New Recipes
 
+* [io.moderne.azul.EliminateUnusedClasses](https://docs.openrewrite.org/recipes/azul/eliminateunusedclasses): Deprecate and later delete classes that are unused, as detected by Azul Intelligence Cloud. 
+* [io.moderne.azul.search.FindReachableMethods](https://docs.openrewrite.org/recipes/azul/search/findreachablemethods): Find all methods defined in the repository's source code that are reachable. 
+* [io.moderne.java.spring.cloud2025.DependencyUpgrades](https://docs.openrewrite.org/recipes/java/spring/cloud2025/dependencyupgrades): Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version. 
+* [io.moderne.java.spring.cloud2025.UpgradeSpringCloud_2025](https://docs.openrewrite.org/recipes/java/spring/cloud2025/upgradespringcloud_2025): Migrate applications to the latest Spring Cloud 2025 (Northfields) release. 
+* [io.moderne.vulncheck.FixVulnCheckVulnerabilities](https://docs.openrewrite.org/recipes/vulncheck/fixvulncheckvulnerabilities): This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from VulnCheck Vulnerability Intelligence. The recipe has an option to limit fixes to only those vulnerabilities that have evidence of exploitation at various levels of severity. 
 * [org.openrewrite.gradle.search.ModuleHasDependency](https://docs.openrewrite.org/recipes/gradle/search/modulehasdependency): Searches for Gradle Projects (modules) that have a dependency matching the specified id or implementing class. Places a `SearchResult` marker on all sources within a project with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file that use the dependency, use the `FindDependency` recipe instead. 
 * [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](https://docs.openrewrite.org/recipes/hibernate/addscalarpreferstandardbasictypes): Prefer the use of `StandardBasicTypes.*` in `NativeQuery.addScalar(...)` invocations. 
 * [org.openrewrite.java.dependencies.search.ModuleHasDependency](https://docs.openrewrite.org/recipes/java/dependencies/search/modulehasdependency): Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead. 

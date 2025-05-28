@@ -16,6 +16,11 @@ _io.moderne.java.spring.boot3.MigrateEndpointAccessValueSpring34_
 
 Migrate manage endpoint access value from `false` to `none` and `true` to `read-only`.
 
+### [Use [VulnCheck Exploit Intelligence](https://docs.vulncheck.com/products/exploit-and-vulnerability-intelligence/exploit-intelligence) to fix vulnerabilities](../recipes/vulncheck/fixvulncheckvulnerabilities.md)
+_io.moderne.vulncheck.FixVulnCheckVulnerabilities_
+
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from VulnCheck Vulnerability Intelligence. The recipe has an option to limit fixes to only those vulnerabilities that have evidence of exploitation at various levels of severity.
+
 ### [Remove ignoral of files or directories from .gitignore](../recipes/core/excludefilefromgitignore.md)
 _org.openrewrite.ExcludeFileFromGitignore_
 
@@ -80,14 +85,24 @@ Update the version of Gradle used in an existing Gradle wrapper. Queries service
 _org.openrewrite.gradle.UpgradeDependencyVersion_
 
 Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:
-* `String` notation: `"group:artifact:version"` 
-* `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
+ * `String` notation: `"group:artifact:version"` 
+ * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
 Can update version numbers which are defined earlier in the same file in variable declarations.
+
+### [Upgrade transitive Gradle dependencies](../recipes/gradle/upgradetransitivedependencyversion.md)
+_org.openrewrite.gradle.UpgradeTransitiveDependencyVersion_
+
+Upgrades the version of a transitive dependency in a Gradle build file. There are many ways to do this in Gradle, so the mechanism for upgrading a transitive dependency must be considered carefully depending on your style of dependency management.
 
 ### [Update a Gradle plugin by id](../recipes/gradle/plugins/upgradepluginversion.md)
 _org.openrewrite.gradle.plugins.UpgradePluginVersion_
 
 Update a Gradle plugin by id to a later version.
+
+### [Module has dependency](../recipes/gradle/search/modulehasdependency.md)
+_org.openrewrite.gradle.search.ModuleHasDependency_
+
+Searches for Gradle Projects (modules) that have a dependency matching the specified id or implementing class. Places a `SearchResult` marker on all sources within a project with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file that use the dependency, use the `FindDependency` recipe instead.
 
 ### [Module has plugin](../recipes/gradle/search/modulehasplugin.md)
 _org.openrewrite.gradle.search.ModuleHasPlugin_
@@ -169,6 +184,11 @@ _org.openrewrite.maven.UpgradeTransitiveDependencyVersion_
 
 Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
 
+### [Module has dependency](../recipes/maven/search/modulehasdependency.md)
+_org.openrewrite.maven.search.ModuleHasDependency_
+
+Searches for Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindDependency` recipe instead.
+
 ### [Module has plugin](../recipes/maven/search/modulehasplugin.md)
 _org.openrewrite.maven.search.ModuleHasPlugin_
 
@@ -223,6 +243,16 @@ Record the presence of LSTs with duplicate paths, indicating that the same file 
 _org.openrewrite.LanguageComposition_
 
 Counts the number of lines of the various kinds of source code and data formats parsed by OpenRewrite. Comments are not included in line counts. This recipe emits its results as two data tables, making no changes to any source file. One data table is per-file, the other is per-repository.
+
+### [Eliminate unused classes](../recipes/azul/eliminateunusedclasses.md)
+_io.moderne.azul.EliminateUnusedClasses_
+
+Deprecate and later delete classes that are unused, as detected by Azul Intelligence Cloud.
+
+### [Find reachable methods](../recipes/azul/search/findreachablemethods.md)
+_io.moderne.azul.search.FindReachableMethods_
+
+Find all methods defined in the repository's source code that are reachable.
 
 ### [Applies a codemod to all source files](../recipes/codemods/applycodemod.md)
 _org.openrewrite.codemods.ApplyCodemod_
@@ -336,6 +366,16 @@ If a minimumVersion is provided, the recipe will search to see if the minimum ve
 For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7.
 Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
 
+### [Module has dependency](../recipes/java/dependencies/search/modulehasdependency.md)
+_org.openrewrite.java.dependencies.search.ModuleHasDependency_
+
+Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
+
+### [Repository has dependency](../recipes/java/dependencies/search/repositoryhasdependency.md)
+_org.openrewrite.java.dependencies.search.RepositoryHasDependency_
+
+Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a repository with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use a springframework dependency, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
+
 ### [Find and fix vulnerable Nuget dependencies](../recipes/csharp/dependencies/dependencyvulnerabilitycheck.md)
 _org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck_
 
@@ -349,7 +389,7 @@ Locates and reports on all licenses in use.
 ### [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck.md)
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-05-05T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-05-26T1102.
 
 ### [Remove unused dependencies](../recipes/java/dependencies/removeunuseddependencies.md)
 _org.openrewrite.java.dependencies.RemoveUnusedDependencies_

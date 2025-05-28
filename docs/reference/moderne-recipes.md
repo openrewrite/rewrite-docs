@@ -35,6 +35,11 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Upgrade to Android SDK 34](../recipes/android/upgradetoandroidsdk34.md)
 * [Upgrade to Android SDK 35](../recipes/android/upgradetoandroidsdk35.md)
 
+## rewrite-azul
+
+* [Eliminate unused classes](../recipes/azul/eliminateunusedclasses.md)
+* [Find reachable methods](../recipes/azul/search/findreachablemethods.md)
+
 ## rewrite-circleci
 
 * [Install an orb](../recipes/circleci/installorb.md)
@@ -271,18 +276,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Migrate management endpoint access value](../recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md)
 * [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4.md)
 * [Migrate to Spring Boot 3.5](../recipes/java/spring/boot3/upgradespringboot_3_5.md)
-* [Migrate to Spring Cloud 2024](../recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
+* [Migrate to Spring Cloud 2025](../recipes/java/spring/cloud2025/upgradespringcloud_2025.md)
 * [Migrate to Spring Kafka 3.3](../recipes/java/spring/boot3/upgradespringkafka_3_3.md)
 * [Migrate to Spring Security 6.4](../recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](../recipes/java/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md)
 * [Remove `TestRestTemplate.HttpClientOption.ENABLE_REDIRECTS` option](../recipes/java/spring/boot3/removetestresttemplateenableredirectsoptionrecipe.md)
 * [Replace `taskExecutor` with `applicationTaskExecutor`](../recipes/java/spring/boot3/resolvetaskexecutorfromcontext.md)
-* [Spring Boot 3.4 best practices](../recipes/java/spring/boot3/springboot3bestpractices.md)
+* [Spring Boot 3.5 best practices](../recipes/java/spring/boot3/springboot3bestpractices.md)
 * [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle8spring34.md)
 * [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](../recipes/java/spring/boot3/upgradegradle7spring34.md)
 * [Upgrade MyBatis to Spring Boot 3.4](../recipes/java/spring/boot3/upgrademybatistospringboot_3_4.md)
 * [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](../recipes/java/spring/boot3/upgradespringcloudawstospringboot_3_4.md)
-* [Upgrade dependencies to Spring Cloud 2024](../recipes/java/spring/cloud2024/dependencyupgrades.md)
+* [Upgrade dependencies to Spring Cloud 2025](../recipes/java/spring/cloud2025/dependencyupgrades.md)
 * [Use `kafkaAwareTransactionManager` setter](../recipes/java/spring/boot3/replacekafkatransactionmanagersetter.md)
 * [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](../recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md)
 
@@ -412,4 +417,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Set Azure Storage Account default network access to deny](../recipes/terraform/azure/setazurestorageaccountdefaultnetworkaccesstodeny.md)
 * [Use HTTPS for Cloudfront distribution](../recipes/terraform/aws/usehttpsforcloudfrontdistribution.md)
 * [Use a long enough byte length for `random` resources](../recipes/terraform/securerandom.md)
+
+## rewrite-vulncheck
+
+* [Use [VulnCheck Exploit Intelligence](https://docs.vulncheck.com/products/exploit-and-vulnerability-intelligence/exploit-intelligence) to fix vulnerabilities](../recipes/vulncheck/fixvulncheckvulnerabilities.md)
 
