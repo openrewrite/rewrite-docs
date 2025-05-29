@@ -104,7 +104,7 @@ Show GraphQL mutation.
 </summary>
 
 ```graphql
-mutation seedOpenRewriteArtifacts() {
+mutation seedOpenRewriteArtifacts {
 
   load_io_moderne_recipe_rewrite_hibernate: loadRecipesAsync(
     groupId: "io.moderne.recipe"
