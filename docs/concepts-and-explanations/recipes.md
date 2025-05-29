@@ -177,9 +177,25 @@ Scanning recipes have three phases:
 2. An _optional_ generating phase where new files are created (if any are needed). In this phase, the `accumulator` can be accessed to determine whether or not a file should be created.
 3. An editing phase where the recipe makes changes, same as a regular `Recipe`. Like the generating phase, the `accumulator` can be accessed to inform how changes are made. Like a regular `Recipe` this phase makes changes to files one at a time, no random access to other source files is provided.
 
+:::tip
+If you create a declarative recipe and put two scanning recipes in the list of recipes, the execution cycle will look like:
+
+1. Scan A
+2. Scan B
+3. Generate A
+4. Generate B
+5. Edit A
+6. Edit B
+
+What this means is that all scanning visitors will see the state before any changes are made by any recipe edit visitor. Furthermore, scanning visitors will not see newly generated files.
+:::
+
 ### Example
 
-[AddManagedDependency code](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java)
+<details>
+<summary>
+The `AddManagedDependency` scanning recipe.
+</summary>
 
 ```java
 // imports
@@ -296,6 +312,9 @@ public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Sc
   }
 }
 ```
+</details>
+
+[Link to the code](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java)
 
 ## Recipe Execution Pipeline
 
