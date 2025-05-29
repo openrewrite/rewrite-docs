@@ -301,6 +301,11 @@ _org.openrewrite.concourse.ChangeValue_
 
 Change every value matching the key pattern.
 
+### [Generate unit tests](../recipes/diffblue/generateunittests.md)
+_io.moderne.diffblue.GenerateUnitTests_
+
+Use the Diffblue Cover tool to generate unit tests for Java classes.
+
 ### [Upgrade a .NET project using upgrade-assistant](../recipes/dotnet/upgradeassistant.md)
 _org.openrewrite.dotnet.UpgradeAssistant_
 

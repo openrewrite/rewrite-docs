@@ -77,6 +77,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find resource](../recipes/concourse/findresource.md)
 * [Update git resource `source.uri` references](../recipes/concourse/updategitresourceuri.md)
 
+## rewrite-diffblue
+
+* [Generate unit tests](../recipes/diffblue/generateunittests.md)
+
 ## rewrite-dotnet
 
 * [Analyze a .NET project using upgrade-assistant](../recipes/dotnet/upgradeassistantanalyze.md)

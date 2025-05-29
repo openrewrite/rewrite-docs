@@ -4,7 +4,7 @@ description: What's changed in OpenRewrite version 8.54.0.
 
 # 8.54.0 release (2025-05-29)
 
-_Total recipe count: 3778_
+_Total recipe count: 3779_
 
 :::info
 This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
@@ -12,6 +12,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Artifacts
 * rewrite-azul
+* rewrite-diffblue
 * rewrite-dropwizard
 * rewrite-vulncheck
 
@@ -19,6 +20,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 * [io.moderne.azul.EliminateUnusedClasses](https://docs.openrewrite.org/recipes/azul/eliminateunusedclasses): Deprecate and later delete classes that are unused, as detected by Azul Intelligence Cloud. 
 * [io.moderne.azul.search.FindReachableMethods](https://docs.openrewrite.org/recipes/azul/search/findreachablemethods): Find all methods defined in the repository's source code that are reachable. 
+* [io.moderne.diffblue.GenerateUnitTests](https://docs.openrewrite.org/recipes/diffblue/generateunittests): Use the Diffblue Cover tool to generate unit tests for Java classes.
 * [io.moderne.java.spring.cloud2025.DependencyUpgrades](https://docs.openrewrite.org/recipes/java/spring/cloud2025/dependencyupgrades): Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version. 
 * [io.moderne.java.spring.cloud2025.UpgradeSpringCloud_2025](https://docs.openrewrite.org/recipes/java/spring/cloud2025/upgradespringcloud_2025): Migrate applications to the latest Spring Cloud 2025 (Northfields) release. 
 * [io.moderne.vulncheck.FixVulnCheckVulnerabilities](https://docs.openrewrite.org/recipes/vulncheck/fixvulncheckvulnerabilities): This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from VulnCheck Vulnerability Intelligence. The recipe has an option to limit fixes to only those vulnerabilities that have evidence of exploitation at various levels of severity. 
@@ -62,8 +64,8 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## Removed Recipes
 
-* **io.moderne.java.spring.cloud2024.DependencyUpgrades**: Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version. 
-* **io.moderne.java.spring.cloud2024.UpgradeSpringCloud_2024**: Migrate applications to the latest Spring Cloud 2024 (Leyton) release. 
+* **io.moderne.java.spring.cloud2024.DependencyUpgrades**: Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version.
+* **io.moderne.java.spring.cloud2024.UpgradeSpringCloud_2024**: Migrate applications to the latest Spring Cloud 2024 (Leyton) release.
 
 ## Changed Recipes
 
