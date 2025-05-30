@@ -37,6 +37,7 @@ datasource
 datatable
 defaultimpl
 dependencyresolutiondiagnostic
+devcenter
 diffblue
 diffing
 diffs
