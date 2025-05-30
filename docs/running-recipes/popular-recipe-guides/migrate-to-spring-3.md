@@ -8,11 +8,11 @@ import ReactPlayer from 'react-player';
 
 # Migrate to Spring Boot 3 from Spring Boot 2
 
-In this tutorial, we'll use OpenRewrite to perform an automated migration from Spring Boot 2.x to Spring Boot 3.2.
+In this tutorial, we'll use OpenRewrite to perform an automated migration from Spring Boot 2.x to Spring Boot 3.5.
 
 ## Configuration
 
-See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/spring/boot3/upgradespringboot_3_2.md). This is also where you can find the full list of changes it will make.
+See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/spring/boot3/upgradespringboot_3_5.md). This is also where you can find the full list of changes it will make.
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -215,7 +215,7 @@ management.server.base-path=/manage
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.0</version>
+    <version>3.5.0</version>
 </parent>
 
 <properties>
@@ -233,7 +233,7 @@ management.server.base-path=/manage
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
-        <version>3.2.0</version>
+        <version>3.5.0</version>
     </dependency>
 </dependencies>
 ```
@@ -242,7 +242,7 @@ management.server.base-path=/manage
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
