@@ -188,7 +188,7 @@ If you create a declarative recipe and put two scanning recipes in the list of r
 6. Edit B
 
 What this means is that all scanning visitors will see the state before any changes are made by any recipe edit visitor.
-However, scanning visitors _will_ see prior newly generated files, as those are visited separately before moving to the edit phase.
+However, scanning visitors [_will_ see prior newly generated files](https://github.com/openrewrite/rewrite/blob/0a2f1551826861d29c5a2297d81174d49fec6254/rewrite-core/src/main/java/org/openrewrite/scheduling/RecipeRunCycle.java#L133-L134), as those are visited separately before moving to the edit phase.
 :::
 
 ### Example
