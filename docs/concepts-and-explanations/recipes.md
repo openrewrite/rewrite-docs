@@ -187,7 +187,8 @@ If you create a declarative recipe and put two scanning recipes in the list of r
 5. Edit A
 6. Edit B
 
-What this means is that all scanning visitors will see the state before any changes are made by any recipe edit visitor. Furthermore, scanning visitors will not see newly generated files.
+What this means is that all scanning visitors will see the state before any changes are made by any recipe edit visitor.
+However, scanning visitors _will_ see newly generated files, as those are visited separately before moving to the edit phase.
 :::
 
 ### Example
