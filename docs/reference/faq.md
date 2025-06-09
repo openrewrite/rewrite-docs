@@ -315,3 +315,7 @@ The reason is that these differences can be indicative of underlying issues. For
 Additionally, if `rewriteTest` ignores these issues, it could lead to problems composing multiple recipes together. The output of one recipe becomes the input for the next, and if that output contains formatting or import issues, it can cause issues downstream.
 
 Because of that, we recommend fixing the underlying causes of those differences.
+
+## How can I run OpenRewrite against Ant projects?
+
+One of our community members graciously [outlined how they did this](https://github.com/openrewrite/rewrite-docs/issues/247#issuecomment-2943431802). Please see that issue for more information on this.
