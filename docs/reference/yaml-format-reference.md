@@ -53,15 +53,26 @@ You can find the full recipe schema [here](https://github.com/openrewrite/rewrit
 ### Preconditions
 
 Preconditions are used to limit which source files a recipe is allowed to make edits to.
-This is commonly used to target specific files or directories.
-Technically almost any recipe can be used as a precondition, but generally it is lightweight and fast search recipes that are used for this purpose.
+They act as filters, allowing you to target specific files, directories, or patterns.
+This is particularly useful when you want a recipe to run only on a subset of the codebase.
+Technically, almost any recipe can serve as a precondition, but in practice, lightweight and fast recipes—often based on simple searches—are preferred.
+These ensure performance remains optimal during large-scale code transformations.
 
-When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition.
-When more than one recipe is used as preconditions, _all_ of them must make a change to the file for it to be considered to meet the precondition. 
+When a recipe is used as a precondition, it determines whether a source file should be considered eligible for transformation.
+In other words, preconditions don’t make changes themselves—they just decide if the targeted recipe(s) should be allowed to make changes to a file.
+If a file does not satisfy the precondition, the recipe list is skipped for _that_ file entirely.
+When multiple recipes are used as preconditions, _all_ of them must make a change to the file for it to be considered to meet the precondition.
 
 :::info 
 Changes made by preconditions are not included in the final result of the recipe.
 Changes made by preconditions are used _only_ to determine if the recipe should edit a particular source file.
+:::
+
+:::warning
+Preconditions only apply to files that already exist in the source set.
+They cannot prevent the creation of new files.
+If a recipe generates files during the `generate` phase, those files will always be created—because preconditions cannot evaluate files that aren't part of the current source set.
+To conditionally generate files, implement a custom scanning recipe. You can define logic in the scanning phase based on existing source files, and use that context in the generate phase to control whether a file should be created.
 :::
 
 #### Adding preconditions to a YAML recipe
@@ -124,11 +135,8 @@ In this example, if a file matches `**/my.json` OR `**/your.json*` OR `**/our.js
 #### Precondition scope
 
 A common mistake new users make is to assume that if a precondition matches any file, then the recipe will apply to the entire repository.
-
 For example, you might be tempted to use `FindPlugins` as a precondition for `CommonStaticAnalysis` with the idea that you only want static analysis fixes on Gradle projects that apply a specific plugin. 
-
 However, if you were to do this, you wouldn't get the results you expected as the `FindPlugins` recipe flags the plugin in `build.gradle` files. In other words, the `CommonStaticAnalysis` recipe would only be run against those `build.gradle` files.
-
 Fortunately, there are recipes that _can_ be used in this type of situation. For instance, the `ModuleHasPlugin` recipe will mark _all_ files within a project if a specific plugin is found:
 
 ```yaml
