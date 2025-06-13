@@ -70,7 +70,8 @@ Changes made by preconditions are used _only_ to determine if the recipe should 
 
 :::warning
 Preconditions only apply to files that already exist in the source set.
-They cannot prevent the creation of new files. If a recipe generates files during the `generate` phase, those files will always be created—since preconditions have no way to evaluate non-existent input.
+They cannot prevent the creation of new files.
+If a recipe generates files during the `generate` phase, those files will always be created—because preconditions cannot evaluate files that aren't part of the current source set.
 To conditionally generate files, implement a custom scanning recipe. You can define logic in the scanning phase based on existing source files, and use that context in the generate phase to control whether a file should be created.
 :::
 
