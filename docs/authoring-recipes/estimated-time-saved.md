@@ -28,3 +28,7 @@ public class MyCustomRecipe extends Recipe {
 ```
 
 You can decide to return a static value or a dynamic value based on the context of the recipe. For example, you could return a different value based on the size of the codebase or the number of files that will be modified by the recipe.
+
+## Viewing the estimated time saved after running a recipe
+
+After running a recipe, you can view the estimated time saved in the SourcesFileResults table. The `estimatedTimeSaving` column will show the total time saved for all occurrences of the recipe that were run in seconds. This value is calculated by multiplying the number of occurrences of the recipe by the estimated time saved per occurrence.
