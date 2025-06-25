@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID**
 
-_Annotation any `serialVersionUID` fields with `@Serial` to indicate it's part of the serialization mechanism._
+_Annotate any `serialVersionUID` fields with `@Serial` to indicate it's part of the serialization mechanism._
 
 ## Recipe source
 
@@ -73,7 +73,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -255,4 +255,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-jbessels, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+jbessels, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve@moderne.io), iddeepak

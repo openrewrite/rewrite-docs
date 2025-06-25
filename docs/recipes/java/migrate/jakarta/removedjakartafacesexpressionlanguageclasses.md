@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesExpressionLanguageClasses**
 
-_Several classes were removed and replaced in Jakarta Faces 4.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface._
+_Several classes were removed and replaced in Jakarta Faces 3.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-4.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-3.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
@@ -29,39 +29,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.MethodBinding`
+  * oldFullyQualifiedTypeName: `javax.faces.el.MethodBinding`
   * newFullyQualifiedTypeName: `jakarta.el.MethodExpression`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.PropertyResolver`
-  * newFullyQualifiedTypeName: `jakarta.el.ELResolver`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.ValueBinding`
-  * newFullyQualifiedTypeName: `jakarta.el.ValueExpression`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.VariableResolver`
-  * newFullyQualifiedTypeName: `jakarta.el.ELResolver`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.EvaluationException`
-  * newFullyQualifiedTypeName: `jakarta.el.ELException`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.MethodNotFoundException`
-  * newFullyQualifiedTypeName: `jakarta.el.MethodNotFoundException`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.PropertyNotFoundException`
-  * newFullyQualifiedTypeName: `jakarta.el.PropertyNotFoundException`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.el.ReferenceSyntaxException`
-  * newFullyQualifiedTypeName: `jakarta.el.ELException`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.faces.el.MethodBinding`
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.MethodBinding`
   * newFullyQualifiedTypeName: `jakarta.el.MethodExpression`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
@@ -69,7 +41,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `jakarta.el.ELResolver`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.PropertyResolver`
+  * newFullyQualifiedTypeName: `jakarta.el.ELResolver`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.el.ValueBinding`
+  * newFullyQualifiedTypeName: `jakarta.el.ValueExpression`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.ValueBinding`
   * newFullyQualifiedTypeName: `jakarta.el.ValueExpression`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
@@ -77,7 +57,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `jakarta.el.ELResolver`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.VariableResolver`
+  * newFullyQualifiedTypeName: `jakarta.el.ELResolver`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.el.EvaluationException`
+  * newFullyQualifiedTypeName: `jakarta.el.ELException`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.EvaluationException`
   * newFullyQualifiedTypeName: `jakarta.el.ELException`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
@@ -85,11 +73,23 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `jakarta.el.MethodNotFoundException`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.MethodNotFoundException`
+  * newFullyQualifiedTypeName: `jakarta.el.MethodNotFoundException`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.el.PropertyNotFoundException`
   * newFullyQualifiedTypeName: `jakarta.el.PropertyNotFoundException`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.PropertyNotFoundException`
+  * newFullyQualifiedTypeName: `jakarta.el.PropertyNotFoundException`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.el.ReferenceSyntaxException`
+  * newFullyQualifiedTypeName: `jakarta.el.ELException`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `jakarta.faces.el.ReferenceSyntaxException`
   * newFullyQualifiedTypeName: `jakarta.el.ELException`
   * ignoreDefinition: `true`
 
@@ -103,42 +103,14 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesExpressionLanguageClasses
 displayName: Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`
 description: |
-  Several classes were removed and replaced in Jakarta Faces 4.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface.
+  Several classes were removed and replaced in Jakarta Faces 3.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface.
 recipeList:
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.MethodBinding
+      oldFullyQualifiedTypeName: javax.faces.el.MethodBinding
       newFullyQualifiedTypeName: jakarta.el.MethodExpression
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.PropertyResolver
-      newFullyQualifiedTypeName: jakarta.el.ELResolver
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.ValueBinding
-      newFullyQualifiedTypeName: jakarta.el.ValueExpression
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.VariableResolver
-      newFullyQualifiedTypeName: jakarta.el.ELResolver
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.EvaluationException
-      newFullyQualifiedTypeName: jakarta.el.ELException
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.MethodNotFoundException
-      newFullyQualifiedTypeName: jakarta.el.MethodNotFoundException
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.PropertyNotFoundException
-      newFullyQualifiedTypeName: jakarta.el.PropertyNotFoundException
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.el.ReferenceSyntaxException
-      newFullyQualifiedTypeName: jakarta.el.ELException
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.faces.el.MethodBinding
+      oldFullyQualifiedTypeName: jakarta.faces.el.MethodBinding
       newFullyQualifiedTypeName: jakarta.el.MethodExpression
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
@@ -146,7 +118,15 @@ recipeList:
       newFullyQualifiedTypeName: jakarta.el.ELResolver
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.faces.el.PropertyResolver
+      newFullyQualifiedTypeName: jakarta.el.ELResolver
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.el.ValueBinding
+      newFullyQualifiedTypeName: jakarta.el.ValueExpression
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.faces.el.ValueBinding
       newFullyQualifiedTypeName: jakarta.el.ValueExpression
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
@@ -154,7 +134,15 @@ recipeList:
       newFullyQualifiedTypeName: jakarta.el.ELResolver
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.faces.el.VariableResolver
+      newFullyQualifiedTypeName: jakarta.el.ELResolver
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.el.EvaluationException
+      newFullyQualifiedTypeName: jakarta.el.ELException
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.faces.el.EvaluationException
       newFullyQualifiedTypeName: jakarta.el.ELException
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
@@ -162,11 +150,23 @@ recipeList:
       newFullyQualifiedTypeName: jakarta.el.MethodNotFoundException
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.faces.el.MethodNotFoundException
+      newFullyQualifiedTypeName: jakarta.el.MethodNotFoundException
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.el.PropertyNotFoundException
       newFullyQualifiedTypeName: jakarta.el.PropertyNotFoundException
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.faces.el.PropertyNotFoundException
+      newFullyQualifiedTypeName: jakarta.el.PropertyNotFoundException
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.el.ReferenceSyntaxException
+      newFullyQualifiedTypeName: jakarta.el.ELException
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.faces.el.ReferenceSyntaxException
       newFullyQualifiedTypeName: jakarta.el.ELException
       ignoreDefinition: true
 
@@ -183,15 +183,12 @@ recipeList:
 
 ###### Before
 ```java
-package com.test;
-
 import jakarta.faces.el.MethodBinding;
 import jakarta.faces.el.PropertyResolver;
 import jakarta.faces.el.ValueBinding;
 
-public class Test {
-
-     public void testJakarta() {
+class Test {
+     void testJakarta() {
           MethodBinding methodBinding = null;
           PropertyResolver propertyResolver = null;
           ValueBinding valueBinding = null;
@@ -201,15 +198,12 @@ public class Test {
 
 ###### After
 ```java
-package com.test;
-
 import jakarta.el.ELResolver;
 import jakarta.el.MethodExpression;
 import jakarta.el.ValueExpression;
 
-public class Test {
-
-     public void testJakarta() {
+class Test {
+     void testJakarta() {
           MethodExpression methodBinding = null;
           ELResolver propertyResolver = null;
           ValueExpression valueBinding = null;
@@ -221,9 +215,7 @@ public class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,3 +3,3 @@
-package com.test;
-
+@@ -1,3 +1,3 @@
 -import jakarta.faces.el.MethodBinding;
 -import jakarta.faces.el.PropertyResolver;
 -import jakarta.faces.el.ValueBinding;
@@ -231,9 +223,9 @@ package com.test;
 +import jakarta.el.MethodExpression;
 +import jakarta.el.ValueExpression;
 
-@@ -10,3 +10,3 @@
-
-     public void testJakarta() {
+@@ -7,3 +7,3 @@
+class Test {
+     void testJakarta() {
 -         MethodBinding methodBinding = null;
 -         PropertyResolver propertyResolver = null;
 -         ValueBinding valueBinding = null;
@@ -256,15 +248,12 @@ package com.test;
 
 ###### Before
 ```java
-package com.test;
-
 import jakarta.faces.el.MethodBinding;
 import jakarta.faces.el.PropertyResolver;
 import jakarta.faces.el.ValueBinding;
 
-public class Test {
-
-     public void testJakarta() {
+class Test {
+     void testJakarta() {
           MethodBinding methodBinding = null;
           PropertyResolver propertyResolver = null;
           ValueBinding valueBinding = null;
@@ -274,15 +263,12 @@ public class Test {
 
 ###### After
 ```java
-package com.test;
-
 import jakarta.el.ELResolver;
 import jakarta.el.MethodExpression;
 import jakarta.el.ValueExpression;
 
-public class Test {
-
-     public void testJakarta() {
+class Test {
+     void testJakarta() {
           MethodExpression methodBinding = null;
           ELResolver propertyResolver = null;
           ValueExpression valueBinding = null;
@@ -294,9 +280,7 @@ public class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,3 +3,3 @@
-package com.test;
-
+@@ -1,3 +1,3 @@
 -import jakarta.faces.el.MethodBinding;
 -import jakarta.faces.el.PropertyResolver;
 -import jakarta.faces.el.ValueBinding;
@@ -304,9 +288,9 @@ package com.test;
 +import jakarta.el.MethodExpression;
 +import jakarta.el.ValueExpression;
 
-@@ -10,3 +10,3 @@
-
-     public void testJakarta() {
+@@ -7,3 +7,3 @@
+class Test {
+     void testJakarta() {
 -         MethodBinding methodBinding = null;
 -         PropertyResolver propertyResolver = null;
 -         ValueBinding valueBinding = null;
@@ -329,7 +313,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

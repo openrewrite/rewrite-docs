@@ -59,10 +59,7 @@ recipeList:
 
 ###### Before
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.demo</groupId>
     <artifactId>app-name</artifactId>
@@ -96,10 +93,7 @@ recipeList:
 
 ###### After
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.demo</groupId>
     <artifactId>app-name</artifactId>
@@ -142,7 +136,7 @@ recipeList:
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -31,0 +31,5 @@
+@@ -28,0 +28,5 @@
                 <version>3.3.2</version>
             </plugin>
 +           <plugin>
@@ -166,10 +160,7 @@ recipeList:
 
 ###### Before
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.demo</groupId>
     <artifactId>app-name</artifactId>
@@ -203,10 +194,7 @@ recipeList:
 
 ###### After
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.demo</groupId>
     <artifactId>app-name</artifactId>
@@ -249,7 +237,7 @@ recipeList:
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -31,0 +31,5 @@
+@@ -28,0 +28,5 @@
                 <version>3.3.2</version>
             </plugin>
 +           <plugin>

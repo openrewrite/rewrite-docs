@@ -14,6 +14,7 @@
 * [Is in repository](./isinrepository.md)
 * [Language composition report](./languagecomposition.md)
 * [List runtime classpath](./listruntimeclasspath.md)
+* [Move a file](./movefile.md)
 * [Remove ignoral of files or directories from .gitignore](./excludefilefromgitignore.md)
 * [Rename a file](./renamefile.md)
 * [Set file permission attributes](./setfilepermissions.md)

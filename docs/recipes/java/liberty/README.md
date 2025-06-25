@@ -10,6 +10,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Removes invalid JNDI properties](./removewas2libertynonportablejndilookup.md)
+* [Replace `WSPrincipal.getCredential()` with `WSSubject` lookup](./replacewsprincipalgetcredential.md)
 * [Replace `revokeSSOCookies` with `logout`](./websphereunavailablessocookiemethod.md)
 * [Use `getProperty("wlp.server.name")`](./servername.md)
 

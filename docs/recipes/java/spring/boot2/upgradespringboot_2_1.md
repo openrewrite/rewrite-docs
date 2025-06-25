@@ -120,7 +120,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -321,4 +321,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), Patrick Way, [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), SiBorea, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Kun Li, Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Josh Soref, [Kun Li](mailto:kun@moderne.io), eocantu
+[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io), Patrick Way, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), SiBorea, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Kun Li, Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Josh Soref, rob-valor, [Kun Li](mailto:kun@moderne.io), eocantu

@@ -25,6 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `List` | stages | Stages to add. | `build,test,deploy` |
 | `Boolean` | acceptTheirs | *Optional*. When the set of stages would conflict, prefer the original value. |  |
+| `InsertMode` | insertMode | *Optional*. Choose an insertion point when multiple mappings exist. Default is `Last`. Valid options: `Before`, `After`, `Last` |  |
 
 
 ## Definition
@@ -36,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * yaml: `stages:   - `
   * objectIdentifyingProperty: `stages`
   * filePattern: `.gitlab-ci.yml`
+  * insertMode: `Before`
 
 </TabItem>
 
@@ -51,6 +53,8 @@ description: |
 stages: []
 
 
+insertMode: Before
+
 recipeList:
   - org.openrewrite.yaml.MergeYaml:
       key: $
@@ -58,6 +62,7 @@ recipeList:
   - 
       objectIdentifyingProperty: stages
       filePattern: .gitlab-ci.yml
+      insertMode: Before
 
 ```
 </TabItem>
@@ -69,6 +74,7 @@ recipeList:
 | -- | -- |
 |stages|`List.of("build", "test", "deploy")`|
 |acceptTheirs|`false`|
+|insertMode|`null`|
 
 
 
@@ -104,7 +110,7 @@ Now that `com.yourorg.AddStagesExample` has been defined, activate it and take a
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -238,4 +244,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Steven Tompkins](mailto:steven.tompkins.jr@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com)
+[Steven Tompkins](mailto:steven.tompkins.jr@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)

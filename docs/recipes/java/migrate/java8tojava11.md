@@ -40,7 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `java.util.Base64` instead of `sun.misc`](../../java/migrate/usejavautilbase64)
   * useMimeCoder: `false`
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](../../java/migrate/castarraysaslisttolist)
-* [Add explicit JAXB dependencies](../../java/migrate/javax/addjaxbdependencies)
+* [Add explicit JAXB API dependencies and runtime](../../java/migrate/javax/addjaxbdependencieswithruntime)
 * [Add explicit JAX-WS dependencies](../../java/migrate/javax/addjaxwsdependencies)
 * [Add explicit Inject dependencies](../../java/migrate/javax/addinjectdependencies)
 * [Add explicit Common Annotations dependencies](../../java/migrate/javax/addcommonannotationsdependencies)
@@ -112,7 +112,7 @@ recipeList:
   - org.openrewrite.java.migrate.UseJavaUtilBase64:
       useMimeCoder: false
   - org.openrewrite.java.migrate.CastArraysAsListToList
-  - org.openrewrite.java.migrate.javax.AddJaxbDependencies
+  - org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithRuntime
   - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
   - org.openrewrite.java.migrate.javax.AddInjectDependencies
   - org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies
@@ -283,7 +283,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

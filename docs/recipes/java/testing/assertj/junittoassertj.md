@@ -49,7 +49,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.assertj`
   * artifactId: `assertj-core`
   * version: `3.x`
-  * onlyIfUsing: `org.assertj.core.api.Assertions`
+  * onlyIfUsing: `org.junit.jupiter.api.Assertions`
   * acceptTransitive: `true`
 * [Refaster rules to replace JUnit assertions with AssertJ equivalents](../../../tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes)
 
@@ -84,7 +84,7 @@ recipeList:
       groupId: org.assertj
       artifactId: assertj-core
       version: 3.x
-      onlyIfUsing: org.assertj.core.api.Assertions
+      onlyIfUsing: org.junit.jupiter.api.Assertions
       acceptTransitive: true
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes
 
@@ -102,7 +102,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

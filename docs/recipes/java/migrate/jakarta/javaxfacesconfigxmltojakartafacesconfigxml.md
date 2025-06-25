@@ -19,7 +19,7 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-4.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-3.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `faces-config`
   * attributeName: `version`
-  * newValue: `4.0`
+  * newValue: `3.0`
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `faces-config`
   * attributeName: `xmlns`
@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `faces-config`
   * attributeName: `xsi:schemaLocation`
-  * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd`
+  * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd`
 * [Find and replace](../../../text/findandreplace)
   * find: `javax.`
   * replace: `jakarta.`
@@ -70,7 +70,7 @@ recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: faces-config
       attributeName: version
-      newValue: 4.0
+      newValue: 3.0
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: faces-config
       attributeName: xmlns
@@ -78,7 +78,7 @@ recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: faces-config
       attributeName: xsi:schemaLocation
-      newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd
+      newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd
   - org.openrewrite.text.FindAndReplace:
       find: javax.
       replace: jakarta.
@@ -117,8 +117,8 @@ recipeList:
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config xmlns="https://jakarta.ee/xml/ns/jakartaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd"
-              version="4.0">
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd"
+              version="3.0">
     <render-kit>
         <renderer>
             <component-family>jakarta.faces.Output</component-family>
@@ -143,8 +143,8 @@ recipeList:
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 -             xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_1.0.xsd"
 -             version="1.0">
-+             xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd"
-+             version="4.0">
++             xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd"
++             version="3.0">
     <render-kit>
 @@ -8,2 +8,2 @@
     <render-kit>
@@ -189,8 +189,8 @@ recipeList:
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config xmlns="https://jakarta.ee/xml/ns/jakartaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd"
-              version="4.0">
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd"
+              version="3.0">
     <render-kit>
         <renderer>
             <component-family>jakarta.faces.Output</component-family>
@@ -215,8 +215,8 @@ recipeList:
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 -             xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_1.0.xsd"
 -             version="1.0">
-+             xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd"
-+             version="4.0">
++             xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd"
++             version="3.0">
     <render-kit>
 @@ -8,2 +8,2 @@
     <render-kit>
@@ -241,7 +241,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

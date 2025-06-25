@@ -90,7 +90,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -272,4 +272,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Bartosz Gałek](mailto:bartosz@galek.com.pl), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [David Tran](mailto:david.tran@snowflake.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Bartosz Gałek](mailto:bartosz@galek.com.pl), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [David Tran](mailto:david.tran@snowflake.com), [steve-aom-elliott](mailto:steve@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)

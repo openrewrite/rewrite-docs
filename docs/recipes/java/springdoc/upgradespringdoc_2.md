@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Upgrade SpringDoc"
+sidebar_label: "Upgrade to SpringDoc 2.1"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Upgrade SpringDoc
+# Upgrade to SpringDoc 2.1
 
 **org.openrewrite.java.springdoc.UpgradeSpringDoc\_2**
 
-_Upgrade to SpringDoc v2, as described in the [upgrade guide](https://springdoc.org/#migrating-from-springdoc-v1)._
+_Upgrade to SpringDoc v2.1, as described in the [upgrade guide](https://springdoc.org/#migrating-from-springdoc-v1)._
 
 ### Tags
 
@@ -77,31 +77,31 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-common`
   * newArtifactId: `springdoc-openapi-starter-common`
-  * newVersion: `2.x`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webmvc-core`
   * newArtifactId: `springdoc-openapi-starter-webmvc-api`
-  * newVersion: `2.x`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webflux-core`
   * newArtifactId: `springdoc-openapi-starter-webflux-api`
-  * newVersion: `2.x`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-ui`
   * newArtifactId: `springdoc-openapi-starter-webmvc-ui`
-  * newVersion: `2.x`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webflux-ui`
   * newArtifactId: `springdoc-openapi-starter-webflux-ui`
-  * newVersion: `2.x`
+  * newVersion: `2.1.x`
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springdoc`
   * artifactId: `*`
-  * newVersion: `2.x`
+  * newVersion: `2.1.x`
 
 </TabItem>
 
@@ -111,9 +111,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.springdoc.UpgradeSpringDoc_2
-displayName: Upgrade SpringDoc
+displayName: Upgrade to SpringDoc 2.1
 description: |
-  Upgrade to SpringDoc v2, as described in the [upgrade guide](https://springdoc.org/#migrating-from-springdoc-v1).
+  Upgrade to SpringDoc v2.1, as described in the [upgrade guide](https://springdoc.org/#migrating-from-springdoc-v1).
 tags:
   - springdoc
 recipeList:
@@ -162,31 +162,31 @@ recipeList:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-common
       newArtifactId: springdoc-openapi-starter-common
-      newVersion: 2.x
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webmvc-core
       newArtifactId: springdoc-openapi-starter-webmvc-api
-      newVersion: 2.x
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webflux-core
       newArtifactId: springdoc-openapi-starter-webflux-api
-      newVersion: 2.x
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-ui
       newArtifactId: springdoc-openapi-starter-webmvc-ui
-      newVersion: 2.x
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webflux-ui
       newArtifactId: springdoc-openapi-starter-webflux-ui
-      newVersion: 2.x
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springdoc
       artifactId: "*"
-      newVersion: 2.x
+      newVersion: 2.1.x
 
 ```
 </TabItem>
@@ -255,7 +255,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

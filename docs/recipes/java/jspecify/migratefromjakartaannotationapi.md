@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jspecify`
   * version: `1.0.0`
   * onlyIfUsing: `jakarta.annotation.*ull*`
+  * acceptTransitive: `true`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `jakarta.annotation.Nullable`
   * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
@@ -61,6 +62,7 @@ recipeList:
       artifactId: jspecify
       version: 1.0.0
       onlyIfUsing: jakarta.annotation.*ull*
+      acceptTransitive: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: jakarta.annotation.Nullable
       newFullyQualifiedTypeName: org.jspecify.annotations.Nullable
@@ -86,7 +88,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

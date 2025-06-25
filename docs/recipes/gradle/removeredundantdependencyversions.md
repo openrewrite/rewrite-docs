@@ -100,7 +100,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -237,4 +237,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+[Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.seleniumhq.selenium`
   * oldArtifactId: `htmlunit-driver`
   * newArtifactId: `htmlunit3-driver`
+  * newVersion: `4.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `com.gargoylesoftware.htmlunit`
   * newPackageName: `org.htmlunit`
@@ -83,6 +84,7 @@ recipeList:
       oldGroupId: org.seleniumhq.selenium
       oldArtifactId: htmlunit-driver
       newArtifactId: htmlunit3-driver
+      newVersion: 4.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.gargoylesoftware.htmlunit
       newPackageName: org.htmlunit
@@ -287,7 +289,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

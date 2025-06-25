@@ -69,7 +69,7 @@ Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defi
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -203,4 +203,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jeremy Grelle](mailto:grellej@unityfoundation.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Aaron Gershman
+[Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jeremy Grelle](mailto:grellej@unityfoundation.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Aaron Gershman

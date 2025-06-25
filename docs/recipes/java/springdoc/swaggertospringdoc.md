@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate from Swagger to OpenAPI](../../openapi/swagger/swaggertoopenapi)
+* [Removes @Import(BeanValidatorPluginsConfiguration.class)](../../java/spring/doc/removebeanvalidatorpluginsconfiguration)
 * [Delete a spring configuration property](../../java/spring/deletespringproperty)
   * propertyKey: `swagger.title`
 * [Delete a spring configuration property](../../java/spring/deletespringproperty)
@@ -44,6 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
   * groupId: `io.swagger.core.v3`
   * artifactId: `swagger-annotations`
+* [Remove annotation](../../java/removeannotation)
+  * annotationPattern: `@springfox.documentation.swagger2.annotations.EnableSwagger2`
+* [Migrate `Docket` to `GroupedOpenAPI`](../../java/spring/doc/migratedocketbeantogroupedopenapibean)
 
 </TabItem>
 
@@ -62,6 +66,7 @@ tags:
   - swagger
 recipeList:
   - org.openrewrite.openapi.swagger.SwaggerToOpenAPI
+  - org.openrewrite.java.spring.doc.RemoveBeanValidatorPluginsConfiguration
   - org.openrewrite.java.spring.DeleteSpringProperty:
       propertyKey: swagger.title
   - org.openrewrite.java.spring.DeleteSpringProperty:
@@ -71,6 +76,9 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: io.swagger.core.v3
       artifactId: swagger-annotations
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: @springfox.documentation.swagger2.annotations.EnableSwagger2
+  - org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean
 
 ```
 </TabItem>
@@ -86,7 +94,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -268,4 +276,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-SiBorea, Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com)
+SiBorea, Tyler Van Gorder, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [adammak](mailto:maka9@mcmaster.ca), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com)

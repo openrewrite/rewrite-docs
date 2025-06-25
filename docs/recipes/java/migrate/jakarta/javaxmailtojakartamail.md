@@ -44,6 +44,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.mail`
   * artifactId: `jakarta.mail-api`
   * newVersion: `2.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.mail`
+  * artifactId: `jakarta.mail-api`
+  * version: `2.0.x`
+  * onlyIfUsing: `javax.mail.*`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.mail`
   * newPackageName: `jakarta.mail`
@@ -77,6 +82,11 @@ recipeList:
       groupId: jakarta.mail
       artifactId: jakarta.mail-api
       newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.mail
+      artifactId: jakarta.mail-api
+      version: 2.0.x
+      onlyIfUsing: javax.mail.*
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.mail
       newPackageName: jakarta.mail
@@ -96,7 +106,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

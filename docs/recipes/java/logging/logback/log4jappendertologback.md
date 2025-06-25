@@ -33,8 +33,8 @@ import org.apache.log4j.spi.LoggingEvent;
 
 class TrivialAppender extends AppenderSkeleton {
     @Override
-    protected void append(LoggingEvent loggingEvent) {
-        String s = this.layout.format(loggingEvent);
+    protected void append(LoggingEvent event) {
+        String s = this.layout.format(event);
         System.out.println(s);
     }
 
@@ -57,8 +57,8 @@ import ch.qos.logback.core.AppenderBase;
 
 class TrivialAppender extends AppenderBase<ILoggingEvent> {
     @Override
-    protected void append(ILoggingEvent loggingEvent) {
-        String s = this.layout.doLayout(loggingEvent);
+    protected void append(ILoggingEvent event) {
+        String s = this.layout.doLayout(event);
         System.out.println(s);
     }
 }
@@ -83,10 +83,10 @@ import org.apache.log4j.spi.LoggingEvent;
 @@ -6,2 +6,2 @@
 class TrivialAppender extends AppenderSkeleton {
     @Override
--   protected void append(LoggingEvent loggingEvent) {
--       String s = this.layout.format(loggingEvent);
-+   protected void append(ILoggingEvent loggingEvent) {
-+       String s = this.layout.doLayout(loggingEvent);
+-   protected void append(LoggingEvent event) {
+-       String s = this.layout.format(event);
++   protected void append(ILoggingEvent event) {
++       String s = this.layout.doLayout(event);
         System.out.println(s);
 @@ -10,10 +10,0 @@
         System.out.println(s);
@@ -117,7 +117,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

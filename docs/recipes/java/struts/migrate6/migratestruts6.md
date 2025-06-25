@@ -31,6 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Struts 2.0 interceptors to action "aware" interfaces](../../../java/struts/migrate6/migrateawareinterfaces)
 * [Migrate OpenSymphony classes to Struts 6.0](../../../java/struts/migrate6/migrateopensymphonyclasses)
 * [Upgrade Struts 6.0 dependencies](../../../java/struts/migrate6/upgradestruts6dependencies)
+* [Migrate to Struts 6.0 constants](../../../java/struts/migrate6/migratestruts6constants)
 * [Migrate DTD to a specific Struts version](../../../java/struts/migratestrutsdtd)
   * strutsVersion: `6.0`
 
@@ -49,6 +50,7 @@ recipeList:
   - org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces
   - org.openrewrite.java.struts.migrate6.MigrateOpenSymphonyClasses
   - org.openrewrite.java.struts.migrate6.UpgradeStruts6Dependencies
+  - org.openrewrite.java.struts.migrate6.MigrateStruts6Constants
   - org.openrewrite.java.struts.MigrateStrutsDtd:
       strutsVersion: 6.0
 
@@ -66,7 +68,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -248,4 +250,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

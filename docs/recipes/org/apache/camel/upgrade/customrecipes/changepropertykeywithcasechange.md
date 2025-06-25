@@ -52,7 +52,7 @@ Now that `com.yourorg.ChangePropertyKeyWithCaseChangeExample` has been defined, 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

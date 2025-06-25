@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [JSpecify best practices](./jspecifybestpractices.md)
 * [Migrate from Jakarta annotation API to JSpecify](./migratefromjakartaannotationapi.md)
 * [Migrate from JetBrains annotations to JSpecify](./migratefromjetbrainsannotations.md)
 * [Migrate from OpenRewrite annotations to JSpecify](./migratefromopenrewriteannotations.md)

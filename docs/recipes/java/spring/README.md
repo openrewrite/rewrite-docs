@@ -5,8 +5,11 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 ## Categories
 
 * [Amqp](/recipes/java/spring/amqp)
+* [Cloud2020](/recipes/java/spring/cloud2020)
+* [Cloud2021](/recipes/java/spring/cloud2021)
 * [Cloud2024](/recipes/java/spring/cloud2024)
 * [Cloud2025](/recipes/java/spring/cloud2025)
+* [Doc](/recipes/java/spring/doc)
 * [Http](/recipes/java/spring/http)
 * [Search](/recipes/java/spring/search)
 * [Spring Batch](/recipes/java/spring/batch)
@@ -31,7 +34,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add a spring configuration property](./addspringproperty.md)
 * [Change parameter type for a method declaration](./changemethodparameter.md)
-* [Change the key of a spring application property](./changespringpropertykey.md)
+* [Change the key of a Spring application property](./changespringpropertykey.md)
 * [Change the value of a spring application property](./changespringpropertyvalue.md)
 * [Comment out Spring properties](./commentoutspringpropertykey.md)
 * [Delete a spring configuration property](./deletespringproperty.md)

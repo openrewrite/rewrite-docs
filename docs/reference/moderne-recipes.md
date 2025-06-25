@@ -77,9 +77,25 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find resource](../recipes/concourse/findresource.md)
 * [Update git resource `source.uri` references](../recipes/concourse/updategitresourceuri.md)
 
-## rewrite-diffblue
+## rewrite-cryptography
 
-* [Generate unit tests](../recipes/diffblue/generateunittests.md)
+* [Find SSL configuration](../recipes/cryptography/findsslconfiguration.md)
+* [Find `Security.setProperty(..)` calls for certain properties](../recipes/cryptography/findsecuritysetproperties.md)
+* [Find hardcoded PEM certificates](../recipes/cryptography/findhardcodedcertificate.md)
+* [Find hardcoded PEM private keys](../recipes/cryptography/findhardcodedprivatekey.md)
+* [Find hardcoded algorithms in `KeyPairGenerator`](../recipes/cryptography/findhardcodedkeypairgenerator.md)
+* [Find hardcoded algorithms in `SecretKeySpec`](../recipes/cryptography/findhardcodedsecretkeyspec.md)
+* [Find hardcoded cipher suites on SSL sockets](../recipes/cryptography/findhardcodedciphersuitesonsslsocket.md)
+* [Find hardcoded numbers passed into `RSAKeyGenParameterSpec`](../recipes/cryptography/findhardcodedrsakeygenparameterspec.md)
+* [Find hardcoded protocol choice](../recipes/cryptography/findhardcodedprotocolchoice.md)
+* [Find hardcoded protocols on SSL socket creation](../recipes/cryptography/findhardcodedprotocolsonsslsocketcreation.md)
+* [Find hardcoded protocols on SSL sockets](../recipes/cryptography/findhardcodedprotocolsonsslsocketsetprotocols.md)
+* [Find programmatic edits of `Security` provider list](../recipes/cryptography/findsecurityproviderediting.md)
+* [Find where `SSLContext` is set as system default](../recipes/cryptography/findsslcontextdefault.md)
+* [Hardcoded algorithm choice](../recipes/cryptography/findhardcodedalgorithmchoice.md)
+* [Hardcoded algorithm specific parameters](../recipes/cryptography/findhardcodedalgorithmspecificparameters.md)
+* [Hardcoded ciphersuite choice](../recipes/cryptography/findhardcodedciphersuitechoice.md)
+* [Post quantum cryptography](../recipes/cryptography/postquantumcryptography.md)
 
 ## rewrite-dotnet
 
@@ -95,6 +111,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find JPQL definitions](../recipes/hibernate/search/findjpqldefinitions.md)
 * [Fix conflicting class type annotation Hibernate 6.6](../recipes/hibernate/update66/fixconflictingclasstypeannotations.md)
 * [Migrate to Hibernate 6.6.x](../recipes/hibernate/migratetohibernate66.md)
+* [Migrate to Hibernate 7.0.x](../recipes/hibernate/migratetohibernate70.md)
 * [Remove table from single table inherited entity](../recipes/hibernate/update66/removetablefrominheritedentity.md)
 
 ## rewrite-jackson
@@ -270,11 +287,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 ## rewrite-spring
 
 * [Add `@Valid` annotation to fields](../recipes/java/spring/boot3/addvalidtoconfigurationpropertiesfields.md)
+* [Change Deprecated Spring Cloud Gateway Artifacts](../recipes/java/spring/cloud2025/changedeprecatedartifacts.md)
 * [Comment deprecated methods in Spring 3.4](../recipes/java/spring/boot3/commentdeprecations.md)
 * [Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`](../recipes/java/spring/boot3/commentonmockandspybeansinconfigspring34.md)
 * [Migrate Spring Boot Management Endpoint Security properties to 3.4](../recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
 * [Migrate Spring Boot properties to 3.4](../recipes/java/spring/boot3/springbootproperties_3_4.md)
 * [Migrate Spring Boot properties to 3.5](../recipes/java/spring/boot3/springbootproperties_3_5.md)
+* [Migrate Spring Cloud properties to 2020](../recipes/java/spring/cloud2020/springcloudproperties_2020.md)
+* [Migrate Spring Cloud properties to 2021](../recipes/java/spring/cloud2021/springcloudproperties_2021.md)
+* [Migrate Spring Cloud properties to 2022](../recipes/java/spring/cloud2022/springcloudproperties_2022.md)
+* [Migrate Spring Cloud properties to 2023](../recipes/java/spring/cloud2023/springcloudproperties_2023.md)
+* [Migrate Spring Cloud properties to 2024](../recipes/java/spring/cloud2024/springcloudproperties_2024.md)
+* [Migrate Spring Cloud properties to 2025](../recipes/java/spring/cloud2025/springcloudproperties_2025.md)
 * [Migrate `@Endpoint`s `defaultAccess` value](../recipes/java/spring/boot3/migrateendpointannotationaccessvaluespring34.md)
 * [Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4](../recipes/java/spring/boot3/conditionalonavailableendpointmigrationspring34.md)
 * [Migrate management endpoint access value](../recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md)
@@ -424,5 +448,5 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-vulncheck
 
-* [Use [VulnCheck Exploit Intelligence](https://docs.vulncheck.com/products/exploit-and-vulnerability-intelligence/exploit-intelligence) to fix vulnerabilities](../recipes/vulncheck/fixvulncheckvulnerabilities.md)
+* [Use VulnCheck Exploit Intelligence to fix vulnerabilities](../recipes/vulncheck/fixvulncheckvulnerabilities.md)
 

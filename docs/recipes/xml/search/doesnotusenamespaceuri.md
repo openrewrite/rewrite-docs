@@ -25,6 +25,32 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `String` | namespaceUri | The Namespace URI to check. | `http://www.w3.org/2001/XMLSchema-instance` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|namespaceUri|`http://example.com/dummy`|
+
+
+
+###### New file
+```xml
+<!--~~>--><beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <jaxws:client name="{http://cxf.apache.org/hello_world_soap_http}SoapPort" createdFromAPI="true" xmlns:jaxws="http://cxf.apache.org/jaxws">
+        <jaxws:conduitSelector>
+            <bean class="org.apache.cxf.endpoint.DeferredConduitSelector"/>
+        </jaxws:conduitSelector>
+    </jaxws:client>
+</beans>
+```
+
+
 
 ## Usage
 
@@ -47,7 +73,7 @@ Now that `com.yourorg.DoesNotUseNamespaceUriExample` has been defined, activate 
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -170,4 +196,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:tim@moderne.io)

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.TypecastParenPad**
 
-_Fixes whitespace padding between a typecast type identifier and the enclosing left and right parenthesis. For example, when configured to remove spacing, `( int ) 0L;` becomes `(int) 0L;`._
+_Fixes whitespace padding between a typecast type identifier and the enclosing left and right parentheses. For example, when configured to remove spacing, `( int ) 0L;` becomes `(int) 0L;`._
 
 ## Recipe source
 
@@ -18,6 +18,59 @@ _Fixes whitespace padding between a typecast type identifier and the enclosing l
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    void m() {
+        int i = ( int ) 0L;
+        int j = (int) 0L;
+        int k = (int)0L;
+        int l = ( int )0L;
+    }
+}
+```
+
+###### After
+```java
+class A {
+    void m() {
+        int i = (int) 0L;
+        int j = (int) 0L;
+        int k = (int) 0L;
+        int l = (int) 0L;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class A {
+    void m() {
+-       int i = ( int ) 0L;
++       int i = (int) 0L;
+        int j = (int) 0L;
+@@ -5,2 +5,2 @@
+        int i = ( int ) 0L;
+        int j = (int) 0L;
+-       int k = (int)0L;
+-       int l = ( int )0L;
++       int k = (int) 0L;
++       int l = (int) 0L;
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -30,7 +83,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -212,4 +265,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), iddeepak

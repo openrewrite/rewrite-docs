@@ -19,6 +19,68 @@ _Ensures that all `mockStatic` calls are properly closed. If `mockStatic` is in 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mockStatic;
+
+class TestClass {
+    @Test
+    void test() {
+        mockStatic(A.class);
+        assertEquals(A.getNumber(), 42);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mockStatic;
+
+class TestClass {
+    @Test
+    void test() {
+        try (MockedStatic<A> mockedStaticA = mockStatic(A.class)) {
+            assertEquals(A.getNumber(), 42);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import org.junit.jupiter.api.Test;
++import org.mockito.MockedStatic;
+
+@@ -9,2 +10,3 @@
+    @Test
+    void test() {
+-       mockStatic(A.class);
+-       assertEquals(A.getNumber(), 42);
++       try (MockedStatic<A> mockedStaticA = mockStatic(A.class)) {
++           assertEquals(A.getNumber(), 42);
++       }
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -30,7 +92,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -212,4 +274,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Anshuman Mishra
+Anshuman Mishra, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

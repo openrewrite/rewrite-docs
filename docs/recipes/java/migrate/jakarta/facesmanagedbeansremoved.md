@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Substitute deprecated Faces Managed Beans"
+sidebar_label: "Substitute removed Faces Managed Beans"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Substitute deprecated Faces Managed Beans
+# Substitute removed Faces Managed Beans
 
 **org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved**
 
@@ -76,6 +76,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `jakarta.faces.bean.ViewScoped`
   * newFullyQualifiedTypeName: `jakarta.faces.view.ViewScoped`
   * ignoreDefinition: `true`
+* [Update Faces `@ManagedBean` to use CDI `@Named`](../../../java/migrate/jakarta/updatemanagedbeantonamed)
 
 </TabItem>
 
@@ -85,7 +86,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved
-displayName: Substitute deprecated Faces Managed Beans
+displayName: Substitute removed Faces Managed Beans
 description: |
   This recipe substitutes Faces Managed Beans, which were deprecated in JavaServer Faces 2.3 and have been removed from Jakarta Faces 4.0.
 recipeList:
@@ -137,6 +138,7 @@ recipeList:
       oldFullyQualifiedTypeName: jakarta.faces.bean.ViewScoped
       newFullyQualifiedTypeName: jakarta.faces.view.ViewScoped
       ignoreDefinition: true
+  - org.openrewrite.java.migrate.jakarta.UpdateManagedBeanToNamed
 
 ```
 </TabItem>
@@ -301,7 +303,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -481,3 +483,6 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+Evie Lau, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

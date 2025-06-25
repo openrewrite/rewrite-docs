@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider**
 
-_When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors,  the recipe removes the flagged OpenJPA provider from the persistence.xml._
+_When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml._
 
 ## Recipe source
 
@@ -39,7 +39,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider
 displayName: Removed OpenJPA providers in the persistence.xml file
 description: |
-  When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors,  the recipe removes the flagged OpenJPA provider from the persistence.xml.
+  When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml.
 recipeList:
   - org.openrewrite.xml.ChangeTagValue:
       elementName: /persistence/persistence-unit/provider
@@ -237,7 +237,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

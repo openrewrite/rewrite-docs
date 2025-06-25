@@ -202,7 +202,7 @@ import java.util.concurrent.CompletableFuture;
 
 class Foo {
     void bar(KafkaOperations<String, String> kafkaOperations) {
-        KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
+        KafkaOperations2<String, String> k2 = kafkaOperations.usingCompletableFuture();
     }
 }
 ```
@@ -216,7 +216,7 @@ import java.util.concurrent.CompletableFuture;
 
 class Foo {
     void bar(KafkaOperations<String, String> kafkaOperations) {
-        KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+        KafkaOperations<String, String> k2 = kafkaOperations;
     }
 }
 ```
@@ -233,8 +233,8 @@ import org.springframework.kafka.support.SendResult;
 @@ -9,1 +8,1 @@
 class Foo {
     void bar(KafkaOperations<String, String> kafkaOperations) {
--       KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
-+       KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+-       KafkaOperations2<String, String> k2 = kafkaOperations.usingCompletableFuture();
++       KafkaOperations<String, String> k2 = kafkaOperations;
     }
 ```
 </TabItem>
@@ -354,7 +354,7 @@ import java.util.concurrent.CompletableFuture;
 
 class Foo {
     void bar(KafkaOperations<String, String> kafkaOperations) {
-        KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
+        KafkaOperations2<String, String> k2 = kafkaOperations.usingCompletableFuture();
     }
 }
 ```
@@ -368,7 +368,7 @@ import java.util.concurrent.CompletableFuture;
 
 class Foo {
     void bar(KafkaOperations<String, String> kafkaOperations) {
-        KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+        KafkaOperations<String, String> k2 = kafkaOperations;
     }
 }
 ```
@@ -385,8 +385,8 @@ import org.springframework.kafka.support.SendResult;
 @@ -9,1 +8,1 @@
 class Foo {
     void bar(KafkaOperations<String, String> kafkaOperations) {
--       KafkaOperations2<String, String> kafkaOperations2 = kafkaOperations.usingCompletableFuture();
-+       KafkaOperations<String, String> kafkaOperations2 = kafkaOperations;
+-       KafkaOperations2<String, String> k2 = kafkaOperations.usingCompletableFuture();
++       KafkaOperations<String, String> k2 = kafkaOperations;
     }
 ```
 </TabItem>
@@ -403,7 +403,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

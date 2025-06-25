@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Change `com.datastax.oss` to `org.apache.cassandra`](./changecassandragroupid.md)
 * [Comment deprecated methods in Spring 3.4](./commentdeprecations.md)
 * [Enable Virtual Threads on Java 21](./enablevirtualthreads.md)
 * [Migrate Spring Boot Management Endpoint Security properties to 3.4](./springbootmanagementendpointproperties_3_4.md)

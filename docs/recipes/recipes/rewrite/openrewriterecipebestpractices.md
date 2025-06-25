@@ -46,6 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove unused private fields](../../staticanalysis/removeunusedprivatefields)
 * [Remove unused private methods](../../staticanalysis/removeunusedprivatemethods)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
+* [Replace static `Traits` methods with constructor calls](../../java/recipes/migrate/removetraitsusagerecipes)
 
 </TabItem>
 
@@ -77,6 +78,7 @@ recipeList:
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateFields
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods
   - org.openrewrite.staticanalysis.UseDiamondOperator
+  - org.openrewrite.java.recipes.migrate.RemoveTraitsUsageRecipes
 
 ```
 </TabItem>
@@ -92,7 +94,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

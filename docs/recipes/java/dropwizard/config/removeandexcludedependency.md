@@ -82,7 +82,7 @@ Now that `com.yourorg.RemoveAndExcludeDependencyExample` has been defined, activ
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -216,4 +216,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Karl-Erik Hein
+Karl-Erik Hein, [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)

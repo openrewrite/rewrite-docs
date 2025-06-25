@@ -24,6 +24,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change SLF4J log level](./changeloglevel.md)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](./completeexceptionlogging.md)
 * [Loggers should be named for their enclosing classes](./loggersnamedforenclosingclass.md)
+* [Match `if (is*Enabled())` with logging statements](./matchisloglevelenabledwithlogstatements.md)
 * [Replace JUL `Level.ALL` logging with SLF4J's trace level](./jullevelalltotracerecipe.md)
 * [Replace JUL `Logger.config(Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierconfigrecipe.md)
 * [Replace JUL `Logger.fine(Supplier<String>)` with SLF4J's `Logger.atDebug().log(Supplier<String>)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerecipe.md)
@@ -68,6 +69,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUL `logger.log(Level.WARNING, e, Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
 * [Replace parameterized JUL level call with corresponding SLF4J method calls](./julparameterizedarguments.md)
 * [SLF4J logging statements should begin with constants](./slf4jlogshouldbeconstant.md)
+* [Strip `toString()` from arguments](./striptostringfromarguments.md)
 * [Wrap expensive log statements in conditionals](./wrapexpensivelogstatementsinconditionals.md)
 
 

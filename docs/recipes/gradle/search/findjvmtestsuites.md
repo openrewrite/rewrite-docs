@@ -23,7 +23,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `Boolean` | definesDependencies | Whether the test suite configuration defines dependencies to be resolved. Defaults to false. |  |
 | `Boolean` | insertRows | Whether to insert rows into the table. Defaults to true. |  |
 
 
@@ -38,7 +37,6 @@ name: com.yourorg.FindJVMTestSuitesExample
 displayName: Find Gradle JVMTestSuite plugin configuration example
 recipeList:
   - org.openrewrite.gradle.search.FindJVMTestSuites:
-      definesDependencies: null
       insertRows: null
 ```
 
@@ -49,7 +47,7 @@ Now that `com.yourorg.FindJVMTestSuitesExample` has been defined, activate it in
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -69,7 +67,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindJVMTestSuites --recipe-option "definesDependencies=null" --recipe-option "insertRows=null"
+mod run . --recipe FindJVMTestSuites --recipe-option "insertRows=null"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -161,4 +159,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Shannon Pamperl](mailto:shanman190@gmail.com)
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [BrendanHart](mailto:brendan.hart@gs.com), [Shannon Pamperl](mailto:shanman190@gmail.com)

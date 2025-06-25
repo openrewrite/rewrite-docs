@@ -90,7 +90,7 @@ Now that `com.yourorg.DeleteKeyExample` has been defined, activate it in your bu
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -213,4 +213,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Maurice Zeijen](mailto:maurice@zeijen.net), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)

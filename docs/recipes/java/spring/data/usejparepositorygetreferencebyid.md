@@ -65,20 +65,6 @@ recipeList:
 ##### Example 1
 
 
-###### Unchanged
-```java
-package foo;
-public class Book {}
-```
-
-###### Unchanged
-```java
-package foo;
-import org.springframework.data.jpa.repository.JpaRepository;
-public interface BookRepository extends JpaRepository<Book, Long> {
-}
-```
-
 <Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">
 
@@ -122,26 +108,26 @@ class A {
 ```
 </TabItem>
 </Tabs>
+
+###### Unchanged
+```java
+package foo;
+import org.springframework.data.jpa.repository.JpaRepository;
+public interface BookRepository extends JpaRepository<Book, Long> {
+}
+```
+
+###### Unchanged
+```java
+package foo;
+public class Book {}
+```
 
 ---
 
 ##### Example 2
 
 
-###### Unchanged
-```java
-package foo;
-public class Book {}
-```
-
-###### Unchanged
-```java
-package foo;
-import org.springframework.data.jpa.repository.JpaRepository;
-public interface BookRepository extends JpaRepository<Book, Long> {
-}
-```
-
 <Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">
 
@@ -185,6 +171,20 @@ class A {
 ```
 </TabItem>
 </Tabs>
+
+###### Unchanged
+```java
+package foo;
+import org.springframework.data.jpa.repository.JpaRepository;
+public interface BookRepository extends JpaRepository<Book, Long> {
+}
+```
+
+###### Unchanged
+```java
+package foo;
+public class Book {}
+```
 
 
 ## Usage
@@ -197,7 +197,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Removed OpenJPA providers in the persistence.xml file](../../java/migrate/javaee7/openjpapersistenceprovider)
 * [Disable the persistence unit second-level cache](../../java/migrate/jpacacheproperties)
 * [Change `beans.xml` `schemaLocation` to match XML namespace](../../java/migrate/beansxmlnamespace)
+* [Adds `static` modifier to `@Produces` fields that are in session beans](../../java/migrate/addstaticvariableonproducersessionbean)
 
 </TabItem>
 
@@ -57,6 +58,7 @@ recipeList:
   - org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider
   - org.openrewrite.java.migrate.JpaCacheProperties
   - org.openrewrite.java.migrate.BeansXmlNamespace
+  - org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean
 
 ```
 </TabItem>
@@ -72,7 +74,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -254,4 +256,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Evie Lau, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+Chuka Obinabo, Evie Lau, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)

@@ -34,7 +34,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Remove `@RequestMapping` annotations](../../../java/spring/norequestmappingannotation)
-* [Remove implicit web annotation names](../../../java/spring/implicitwebannotationnames)
 * [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension)
 * [Remove the `@Autowired` annotation on inferred constructor](../../../java/spring/noautowiredonconstructor)
 * [Migrate `RestTemplateBuilder`](../../../java/spring/boot2/resttemplatebuilderrequestfactory)
@@ -56,7 +55,6 @@ tags:
   - boot
 recipeList:
   - org.openrewrite.java.spring.NoRequestMappingAnnotation
-  - org.openrewrite.java.spring.ImplicitWebAnnotationNames
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
   - org.openrewrite.java.spring.NoAutowiredOnConstructor
   - org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory
@@ -76,7 +74,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -258,4 +256,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Kevin McCarpenter](mailto:kevin@moderne.io), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, [traceyyoshima](mailto:tracey.yoshima@gmail.com), Kun Li, Aaron Gershman, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Kevin McCarpenter](mailto:kevin@moderne.io), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Patrick](mailto:patway99@gmail.com), Kun Li, Aaron Gershman, [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

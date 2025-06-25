@@ -68,7 +68,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -250,4 +250,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Yeikel, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Laurens-W](mailto:laurens.w@live.nl), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Michel Gonzalez, [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+Yeikel, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Laurens-W](mailto:laurens.w@live.nl), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Michel Gonzalez, [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), Alex, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com)

@@ -23,6 +23,93 @@ _Order POM elements according to the [recommended](https://maven.apache.org/deve
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>my-project</artifactId>
+    <groupId>my.org.project</groupId>
+    <version>4.3.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+                <version>3.8.1</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>my.org.project</groupId>
+    <artifactId>my-project</artifactId>
+    <version>4.3.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -3,1 +3,0 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+-   <artifactId>my-project</artifactId>
+    <groupId>my.org.project</groupId>
+@@ -5,0 +4,1 @@
+    <artifactId>my-project</artifactId>
+    <groupId>my.org.project</groupId>
++   <artifactId>my-project</artifactId>
+    <version>4.3.0</version>
+@@ -9,0 +9,3 @@
+        <plugins>
+            <plugin>
++               <groupId>org.apache.maven.plugins</groupId>
++               <artifactId>maven-compiler-plugin</artifactId>
++               <version>3.8.1</version>
+                <configuration>
+@@ -13,3 +16,0 @@
+                    <target>1.8</target>
+                </configuration>
+-               <version>3.8.1</version>
+-               <artifactId>maven-compiler-plugin</artifactId>
+-               <groupId>org.apache.maven.plugins</groupId>
+            </plugin>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

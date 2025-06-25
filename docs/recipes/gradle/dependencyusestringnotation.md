@@ -19,7 +19,8 @@ _In Gradle, dependencies can be expressed as a `String` like `"groupId:artifactI
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Example
+## Examples
+##### Example 1
 
 
 <Tabs groupId="beforeAfter">
@@ -76,6 +77,67 @@ dependencies {
 </TabItem>
 </Tabs>
 
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="buildGradleKts" label="buildGradleKts">
+
+
+###### Before
+```buildGradleKts
+plugins {
+    `java-library`
+}
+
+repositories {
+    mavenCentral()
+}
+
+val version = "latest.release"
+
+dependencies {
+    api(group = "org.openrewrite", name = "rewrite-core", version = "latest.release")
+    implementation(group = "org.openrewrite", name = "rewrite-core", version = version, classifier = "sources")
+}
+```
+
+###### After
+```buildGradleKts
+plugins {
+    `java-library`
+}
+
+repositories {
+    mavenCentral()
+}
+
+val version = "latest.release"
+
+dependencies {
+    api("org.openrewrite:rewrite-core:latest.release")
+    implementation("org.openrewrite:rewrite-core:$version:sources")
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -12,2 +12,2 @@
+
+dependencies {
+-   api(group = "org.openrewrite", name = "rewrite-core", version = "latest.release")
+-   implementation(group = "org.openrewrite", name = "rewrite-core", version = version, classifier = "sources")
++   api("org.openrewrite:rewrite-core:latest.release")
++   implementation("org.openrewrite:rewrite-core:$version:sources")
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -87,7 +149,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

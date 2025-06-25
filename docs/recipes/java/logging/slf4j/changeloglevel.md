@@ -108,7 +108,7 @@ Now that `com.yourorg.ChangeLogLevelExample` has been defined, activate it and t
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

@@ -72,7 +72,7 @@ Now that `com.yourorg.AddDependencyExample` has been defined, activate it and ta
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
