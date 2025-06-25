@@ -319,3 +319,34 @@ Because of that, we recommend fixing the underlying causes of those differences.
 ## How can I run OpenRewrite against Ant projects?
 
 One of our community members graciously [outlined how they did this](https://github.com/openrewrite/rewrite-docs/issues/247#issuecomment-2943431802). Please see that issue for more information on this.
+
+## Why doesn't OpenRewrite recipe X fully migrate my code?
+OpenRewrite recipes are designed with a focus on correctness over completeness.
+This means that what a recipe changes, it changes correctly, deterministically, and reproducibly.
+OpenRewrite endorses the [do no harm](../authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm) principle, thus it will never apply a transformation unless it can do so with full confidence that the change is both syntactically and semantically correct for your codebase.
+
+In contrast, completeness refers to whether a recipe covers all possible cases or patterns needed to fully migrate a given technology, framework, or API usage.
+Not every recipe is exhaustive.
+Some recipes are intentionally scoped to handle a subset of migration patterns, often to avoid unintended side effects in complex or edge-case scenarios. Additionally, recipes include constraints or guards that ensure transformations only occur when it's safe—if your code doesn't meet those conditions, the recipe may choose not to act.
+
+This approach is deliberate. Moderne prioritizes deterministic correctness over attempting to guess what the user intended, which can lead to broken code.
+This is fundamentally different from AI-assisted code generation tools, which may appear to do a "complete" migration but can introduce subtle bugs or inconsistencies because they rely on probabilistic models rather than formal LST and semantic analysis.
+
+### What about cases the recipe doesn't cover?
+If a recipe doesn't seem to result in a complete migration, it typically means one of two things:
+1. The recipe doesn't yet cover certain patterns (a completeness gap).
+2. The recipe contains safeguards that didn't match your code's context (a correctness constraint).
+
+:::info
+There's another practical reason why that's often overlooked; sometimes it isn't worth creating a recipe.
+If a particular migration pattern only affects a very small number of cases, the time and effort to write, test, and maintain a recipe might outweigh the benefit.
+In such cases, it's often more efficient to perform the change manually.
+:::
+
+### What should I do if the recipe isn't complete?
+- _Check whether combining existing recipes solves it._ Many recipes are designed to be composable.
+- _Contribute enhancements or request improvements._ The ecosystem grows because developers surface missing patterns.
+- _Evaluate whether manual fixes are the right trade-off._ For very rare or project-specific patterns, it may be faster and more practical to skip automation.
+
+The key is knowing OpenRewrite recipes apply changes with a strong focus on being correct, safe, and deterministic.
+Even if they aren’t exhaustive.
