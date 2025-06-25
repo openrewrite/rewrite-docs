@@ -135,7 +135,7 @@ Now that `com.yourorg.RemoveCheckExample` has been defined, activate it and take
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

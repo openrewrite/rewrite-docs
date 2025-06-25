@@ -93,7 +93,7 @@ Now that `com.yourorg.ChangePackageInStringLiteralExample` has been defined, act
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -216,4 +216,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com)
+[Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tim te Beek](mailto:tim@moderne.io)

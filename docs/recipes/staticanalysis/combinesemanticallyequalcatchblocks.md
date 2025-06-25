@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.CombineSemanticallyEqualCatchBlocks**
 
-_Combine catches in a try that contain semantically equivalent blocks. No change will be made when a caught exception exists if combing catches may change application behavior or type attribution is missing._
+_Combine catches in a try that contain semantically equivalent blocks. No change will be made when a caught exception exists if combining catches may change application behavior or type attribution is missing._
 
 ### Tags
 
@@ -34,7 +34,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -216,4 +216,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Josh Soref, [Knut Wannheden](mailto:knut@moderne.io), Marklinzi, [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Josh Soref, Marklinzi, [Sam Snyder](mailto:sam@moderne.io), [steve-aom-elliott](mailto:steve@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), iddeepak

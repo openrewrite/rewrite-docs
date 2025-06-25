@@ -33,6 +33,55 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Before
 ```java
+class A {
+    void foo() throws IllegalAccessException {
+        try {
+            throw new IllegalAccessException();
+        } catch (Exception e) {
+            throw e; // `e` is removed below
+        }
+    }
+}
+```
+
+###### After
+```java
+class A {
+    void foo() throws IllegalAccessException {
+        throw new IllegalAccessException();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,5 +3,1 @@
+class A {
+    void foo() throws IllegalAccessException {
+-       try {
+-           throw new IllegalAccessException();
+-       } catch (Exception e) {
+-           throw e; // `e` is removed below
+-       }
++       throw new IllegalAccessException();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -77,55 +126,6 @@ class A {
 </TabItem>
 </Tabs>
 
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class A {
-    void foo() throws IllegalAccessException {
-        try {
-            throw new IllegalAccessException();
-        } catch (Exception e) {
-            throw e; // `e` is removed below
-        }
-    }
-}
-```
-
-###### After
-```java
-class A {
-    void foo() throws IllegalAccessException {
-        throw new IllegalAccessException();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,5 +3,1 @@
-class A {
-    void foo() throws IllegalAccessException {
--       try {
--           throw new IllegalAccessException();
--       } catch (Exception e) {
--           throw e; // `e` is removed below
--       }
-+       throw new IllegalAccessException();
-    }
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 
@@ -137,7 +137,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

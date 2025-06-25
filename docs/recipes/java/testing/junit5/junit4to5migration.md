@@ -75,19 +75,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `junit`
   * artifactId: `junit`
-* [Exclude Maven dependency](../../../maven/excludedependency)
-  * groupId: `junit`
-  * artifactId: `junit`
-* [Remove exclusion](../../../maven/removeexclusion)
-  * groupId: `org.testcontainers`
-  * artifactId: `*`
-  * exclusionGroupId: `junit`
-  * exclusionArtifactId: `junit`
-* [Remove exclusion](../../../maven/removeexclusion)
-  * groupId: `org.springframework.boot`
-  * artifactId: `spring-boot-testcontainers`
-  * exclusionGroupId: `junit`
-  * exclusionArtifactId: `junit`
+* [Exclude JUnit 4, unless Testcontainers is used](../../../java/testing/junit5/excludejunit4unlessusingtestcontainers)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.junit.vintage`
   * artifactId: `junit-vintage-engine`
@@ -174,19 +162,7 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: junit
       artifactId: junit
-  - org.openrewrite.maven.ExcludeDependency:
-      groupId: junit
-      artifactId: junit
-  - org.openrewrite.maven.RemoveExclusion:
-      groupId: org.testcontainers
-      artifactId: "*"
-      exclusionGroupId: junit
-      exclusionArtifactId: junit
-  - org.openrewrite.maven.RemoveExclusion:
-      groupId: org.springframework.boot
-      artifactId: spring-boot-testcontainers
-      exclusionGroupId: junit
-      exclusionArtifactId: junit
+  - org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.junit.vintage
       artifactId: junit-vintage-engine
@@ -755,7 +731,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

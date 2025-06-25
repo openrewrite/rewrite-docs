@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Parameter | Value |
 | -- | -- |
 |exclusions|`List.of("$..[logging.level][?(@property.match(/.*/))]", "$..[enable.process.files]")`|
-|applyTo||
+|applyTo|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -128,7 +128,7 @@ Now that `com.yourorg.UnfoldPropertiesExample` has been defined, activate it in 
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

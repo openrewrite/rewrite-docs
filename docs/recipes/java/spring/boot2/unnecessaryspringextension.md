@@ -19,6 +19,55 @@ _`@SpringBootTest` and all test slice annotations already applies `@SpringExtens
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
+class Test {
+}
+```
+
+###### After
+```java
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.test.context.SpringBootTest;
+@@ -3,1 +2,0 @@
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.test.context.SpringBootTest;
+-import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+@@ -6,1 +4,0 @@
+
+@SpringBootTest
+-@ExtendWith(SpringExtension.class)
+class Test {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -30,7 +79,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

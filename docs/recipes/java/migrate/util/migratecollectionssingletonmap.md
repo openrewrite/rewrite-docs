@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap**
 
-_Prefer `Map.Of(..)` instead of using `Collections.singletonMap()` in Java 9 or higher._
+_Prefer `Map.of(..)` instead of using `Collections.singletonMap()` in Java 9 or higher._
 
 ## Recipe source
 
@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -212,4 +212,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Yeikel, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Patrick](mailto:patway99@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+Yeikel, [Knut Wannheden](mailto:knut@moderne.io), Alex, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)

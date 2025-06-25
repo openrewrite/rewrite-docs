@@ -42,6 +42,34 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 
 <Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+spring.rabbitmq.addresses=host1:5672
+```
+
+###### After
+```properties
+spring.rabbitmq.addresses=host1:5671
+spring.rabbitmq.ssl.enabled=true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,2 @@
+-spring.rabbitmq.addresses=host1:5672
++spring.rabbitmq.addresses=host1:5671
++spring.rabbitmq.ssl.enabled=true
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
 <TabItem value="yaml" label="yaml">
 
 
@@ -77,34 +105,6 @@ spring:
 </TabItem>
 </Tabs>
 
-<Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
-
-
-###### Before
-```properties
-spring.rabbitmq.addresses=host1:5672
-```
-
-###### After
-```properties
-spring.rabbitmq.addresses=host1:5671
-spring.rabbitmq.ssl.enabled=true
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,2 @@
--spring.rabbitmq.addresses=host1:5672
-+spring.rabbitmq.addresses=host1:5671
-+spring.rabbitmq.ssl.enabled=true
-
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 
@@ -132,7 +132,7 @@ Now that `com.yourorg.UseTlsAmqpConnectionStringExample` has been defined, activ
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

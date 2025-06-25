@@ -64,6 +64,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2complex)
 * [V1 S3 PutObjectRequest, AmazonS3.putObject(PutObjectRequest), and TransferManager.upload(PutObjectRequest) to V2](../../../../software/amazon/awssdk/v2migration/s3putobjectrequesttov2)
 * [Convert V1 setters to V2 toBuilder setters](../../../../software/amazon/awssdk/v2migration/setterstobuilderv2)
+* [Add imports and comments to unsupported S3 transfer manager transforms.](../../../../software/amazon/awssdk/v2migration/s3tmaddcomments)
+* [Change TransferManager simple methods to v2.](../../../../software/amazon/awssdk/v2migration/changetransfermanagersimplemethods)
 * [Transfer Manager Methods to V2](../../../../software/amazon/awssdk/v2migration/transfermanagermethodstov2)
 
 </TabItem>
@@ -112,6 +114,8 @@ recipeList:
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2Complex
   - software.amazon.awssdk.v2migration.S3PutObjectRequestToV2
   - software.amazon.awssdk.v2migration.SettersToBuilderV2
+  - software.amazon.awssdk.v2migration.S3TmAddComments
+  - software.amazon.awssdk.v2migration.ChangeTransferManagerSimpleMethods
   - software.amazon.awssdk.v2migration.TransferManagerMethodsToV2
 
 ```
@@ -128,7 +132,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

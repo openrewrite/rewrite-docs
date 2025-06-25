@@ -2,6 +2,10 @@
 
 _Apply best practices to OpenRewrite recipes._
 
+## Categories
+
+* [Migrate](/recipes/java/recipes/migrate)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
@@ -21,9 +25,10 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)
 * [New line at the end of `SourceSpecs` text blocks](./sourcespectextblocknewline.md)
 * [Recipe classes should not have mutable `static` fields](./nomutablestaticfieldsinrecipes.md)
+* [Refaster template `IsLiteralNull`](./isliteralnullrecipe.md)
 * [RewriteTest classes should not be public](./rewritetestclassesshouldnotbepublic.md)
-* [Set default estimated effort](./setdefaultestimatedeffortperoccurrence.md)
 * [Show `@DocumentExample`s first](./reordertestmethods.md)
+* [Single `@DocumentExample` per test class](./singledocumentexample.md)
 * [Use `Tree.randomId()` in LST constructors](./usetreerandomid.md)
 * [Use a standard name for `ExecutionContext`](./executioncontextparametername.md)
 * [Use of `@EqualsAndHashCode` on `Recipe`](./recipeequalsandhashcodecallsuper.md)

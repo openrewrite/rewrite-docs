@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver**
 
-_The `ResourceResolver` class was removed in Jakarta Faces 4.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class._
+_The `ResourceResolver` class was removed in Jakarta Faces 3.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-4.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-3.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
@@ -47,7 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver
 displayName: Replace `ResourceResolver` with `ResourceHandler`
 description: |
-  The `ResourceResolver` class was removed in Jakarta Faces 4.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
+  The `ResourceResolver` class was removed in Jakarta Faces 3.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.view.facelets.ResourceResolver
@@ -217,7 +217,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

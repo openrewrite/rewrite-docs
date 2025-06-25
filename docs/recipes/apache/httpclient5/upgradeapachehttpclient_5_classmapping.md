@@ -160,6 +160,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.entity.mime.MinimalField`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.MimeField`
+* [Replace `new StringEntity(String, String)` with `new StringEntity(String, Charset)`](../../apache/httpclient5/migratestringentitystringcharsetconstructor)
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.impl.bootstrap`
   * newPackageName: `org.apache.hc.core5.http.impl.bootstrap`
@@ -556,6 +557,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.entity.mime.MinimalField
       newFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.MimeField
+  - org.openrewrite.apache.httpclient5.MigrateStringEntityStringCharsetConstructor
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.impl.bootstrap
       newPackageName: org.apache.hc.core5.http.impl.bootstrap
@@ -822,7 +824,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -1002,3 +1004,6 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+[steve-aom-elliott](mailto:steve@moderne.io)

@@ -22,10 +22,6 @@ _Migrate applications to the latest Spring Cloud 2023 (Leyton) release._
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -33,7 +29,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Cloud 2022](../../../java/spring/cloud2022/upgradespringcloud_2022)
 * [Upgrade dependencies to Spring Cloud 2023](../../../java/spring/cloud2023/dependencyupgrades)
 
 </TabItem>
@@ -51,7 +46,6 @@ tags:
   - spring
   - cloud
 recipeList:
-  - org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022
   - org.openrewrite.java.spring.cloud2023.DependencyUpgrades
 
 ```
@@ -68,7 +62,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -248,6 +242,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), Cathy, [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Kun Li, [Kyle Scully](mailto:scullykns@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

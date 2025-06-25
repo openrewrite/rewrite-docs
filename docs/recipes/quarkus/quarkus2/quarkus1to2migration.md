@@ -365,7 +365,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -566,4 +566,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Aaron Gershman](mailto:aegershman@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)

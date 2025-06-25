@@ -33,65 +33,65 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.health.status.http-mapping`
   * newPropertyKey: `management.endpoint.health.status.http-mapping`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.health.status.order`
   * newPropertyKey: `management.endpoint.health.status.order`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.metrics.web.client.requests-metric-name`
   * newPropertyKey: `management.metrics.web.client.request.metric-name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.metrics.web.server.auto-time-requests`
   * newPropertyKey: `management.metrics.web.server.request.autotime.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.metrics.web.server.requests-metric-name`
   * newPropertyKey: `management.metrics.web.server.request.metric-name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.date-format`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.extended-format`
   * newPropertyKey: `server.jetty.accesslog.format`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.locale`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.log-cookies`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.log-latency`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.log-server`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.time-zone`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.use-forward-headers`
   * newPropertyKey: `server.forward-headers-strategy`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.jmx-enabled`
   * newPropertyKey: `spring.datasource.tomcat.jmx-enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.jackson.joda-date-time-format`
   * newPropertyKey: `dateFormat`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.rabbitmq.listener.simple.transaction-size`
   * newPropertyKey: `spring.rabbitmq.listener.simple.batch-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.rabbitmq.publisher-confirms`
   * newPropertyKey: `spring.rabbitmq.publisher-confirm-type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.reactor.stacktrace-mode.enabled`
   * newPropertyKey: `spring.reactor.debug-agent.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `logging.file`
   * newPropertyKey: `logging.file.name`
   * except: `[.+]`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `logging.path`
   * newPropertyKey: `logging.file.path`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
@@ -318,7 +318,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -500,4 +500,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-ashakirin, Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com)
+[Knut Wannheden](mailto:knut@moderne.io), ashakirin, Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

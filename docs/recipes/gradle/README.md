@@ -19,6 +19,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add Gradle dependency](./adddependency.md)
+* [Add Gradle platform dependency](./addplatformdependency.md)
 * [Add Gradle property](./addproperty.md)
 * [Add JUnit Platform Launcher](./addjunitplatformlauncher.md)
 * [Change Extra Property](./changeextraproperty.md)

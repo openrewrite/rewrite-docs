@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](../../../java/migrate/jakarta/migrationtojakarta10apis)
-* [JSF 2.x to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces2xmigrationtojakarta4x)
+* [Upgrade to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces3xmigrationtofaces4x)
 * [Use `isParametersProvided()`](../../../java/migrate/jakarta/removedisparmetersprovidedmethod)
 * [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](../../../java/migrate/jakarta/removedsoapelementfactory)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](../../../java/migrate/jakarta/wswsocservercontainerdeprecation)
@@ -75,7 +75,7 @@ tags:
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
   - org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis
-  - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakarta4x
+  - org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x
   - org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod
   - org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory
   - org.openrewrite.java.migrate.jakarta.WsWsocServerContainerDeprecation
@@ -211,7 +211,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -412,4 +412,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Melloware](mailto:mellowaredev@gmail.com), Evie Lau, ranuradh, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+Chuka Obinabo, Anu Ramamoorthy, [Melloware](mailto:mellowaredev@gmail.com), Evie Lau, ranuradh, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

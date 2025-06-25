@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -212,4 +212,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut.wannheden@gmail.com), [aboyko](mailto:aboyko@vmware.com), [Christian Ortlepp](mailto:me@cortlepp.net), [Ko Turk](mailto:ko.turk@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Hoan Nguyen](mailto:nguyenanhhoan@gmail.com), [Kun Li](mailto:kun@moderne.io)
+[Knut Wannheden](mailto:knut.wannheden@gmail.com), [aboyko](mailto:aboyko@vmware.com), Daniel Meier, [Christian Ortlepp](mailto:me@cortlepp.net), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Ko Turk](mailto:ko.turk@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Hoan Nguyen](mailto:nguyenanhhoan@gmail.com), [steve-aom-elliott](mailto:steve@moderne.io), [Kun Li](mailto:kun@moderne.io)

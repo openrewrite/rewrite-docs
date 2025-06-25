@@ -70,7 +70,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -252,4 +252,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, Kushank24, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Patrick](mailto:patway99@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), SiBorea, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Kun Li, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Adriano Machado, [Sam Snyder](mailto:sam@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+[Joan Viladrosa](mailto:joan@moderne.io), [steve-aom-elliott](mailto:steve@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, Kushank24, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Patrick](mailto:patway99@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), SiBorea, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Kun Li, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), Adriano Machado, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)

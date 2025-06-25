@@ -44,7 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](../../../java/migrate/jakarta/javaxejbtojakartaejb)
 * [Migrate deprecated `javax.el` packages to `jakarta.el`](../../../java/migrate/jakarta/javaxeltojakartael)
 * [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](../../../java/migrate/jakarta/javaxenterprisetojakartaenterprise)
-* [Migrate deprecated `javax.faces` packages to `jakarta.faces`](../../../java/migrate/jakarta/javaxfacestojakartafaces)
+* [JSF 2.x to Jakarta Faces 3.x](../../../java/migrate/jakarta/faces2xmigrationtojakartafaces3x)
 * [Migrate deprecated `javax.inject` packages to `jakarta.inject`](../../../java/migrate/jakarta/javaxinjectmigrationtojakartainject)
 * [Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`](../../../java/migrate/jakarta/javaxinterceptortojakartainterceptor)
 * [Migrate deprecated `javax.jms` packages to `jakarta.jms`](../../../java/migrate/jakarta/javaxjmstojakartajms)
@@ -99,7 +99,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb
   - org.openrewrite.java.migrate.jakarta.JavaxElToJakartaEl
   - org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise
-  - org.openrewrite.java.migrate.jakarta.JavaxFacesToJakartaFaces
+  - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x
   - org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject
   - org.openrewrite.java.migrate.jakarta.JavaxInterceptorToJakartaInterceptor
   - org.openrewrite.java.migrate.jakarta.JavaxJmsToJakartaJms
@@ -211,7 +211,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -412,4 +412,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

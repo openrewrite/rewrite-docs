@@ -38,7 +38,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](../../../java/logging/slf4j/completeexceptionlogging)
 * [Catch block log level](../../../java/logging/catchblockloglevel)
+* [Change logger fields to `private`](../../../java/logging/changeloggerstoprivate)
+* [Match `if (is*Enabled())` with logging statements](../../../java/logging/slf4j/matchisloglevelenabledwithlogstatements)
 * [Wrap expensive log statements in conditionals](../../../java/logging/slf4j/wrapexpensivelogstatementsinconditionals)
+* [Strip `toString()` from arguments](../../../java/logging/slf4j/striptostringfromarguments)
 
 </TabItem>
 
@@ -60,7 +63,10 @@ recipeList:
   - org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant
   - org.openrewrite.java.logging.slf4j.CompleteExceptionLogging
   - org.openrewrite.java.logging.CatchBlockLogLevel
+  - org.openrewrite.java.logging.ChangeLoggersToPrivate
+  - org.openrewrite.java.logging.slf4j.MatchIsLogLevelEnabledWithLogStatements
   - org.openrewrite.java.logging.slf4j.WrapExpensiveLogStatementsInConditionals
+  - org.openrewrite.java.logging.slf4j.StripToStringFromArguments
 
 ```
 </TabItem>
@@ -96,7 +102,7 @@ class Test {
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 class Test {
-    Logger logger = LoggerFactory.getLogger(Test.class);
+    private Logger logger = LoggerFactory.getLogger(Test.class);
     void test() {
         Object obj1 = new Object();
         Object obj2 = new Object();
@@ -117,7 +123,7 @@ class Test {
 import org.slf4j.LoggerFactory;
 class Test {
 -   Logger logger = LoggerFactory.getLogger(String.class);
-+   Logger logger = LoggerFactory.getLogger(Test.class);
++   private Logger logger = LoggerFactory.getLogger(Test.class);
     void test() {
 @@ -8,1 +8,1 @@
         Object obj1 = new Object();
@@ -171,7 +177,7 @@ class Test {
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 class Test {
-    Logger logger = LoggerFactory.getLogger(Test.class);
+    private Logger logger = LoggerFactory.getLogger(Test.class);
     void test() {
         Object obj1 = new Object();
         Object obj2 = new Object();
@@ -192,7 +198,7 @@ class Test {
 import org.slf4j.LoggerFactory;
 class Test {
 -   Logger logger = LoggerFactory.getLogger(String.class);
-+   Logger logger = LoggerFactory.getLogger(Test.class);
++   private Logger logger = LoggerFactory.getLogger(Test.class);
     void test() {
 @@ -8,1 +8,1 @@
         Object obj1 = new Object();
@@ -225,7 +231,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -407,4 +413,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), Md Riyazul Islam, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)
+Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), jhl221123, [Pierre Delagrave](mailto:pierre@moderne.io), Md Riyazul Islam, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)

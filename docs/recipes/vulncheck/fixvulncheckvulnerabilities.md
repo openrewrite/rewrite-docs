@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use [VulnCheck Exploit Intelligence](https://docs.vulncheck.com/products/exploit-and-vulnerability-intelligence/exploit-intelligence) to fix vulnerabilities"
+sidebar_label: "Use VulnCheck Exploit Intelligence to fix vulnerabilities"
 ---
 
 import Tabs from '@theme/Tabs';

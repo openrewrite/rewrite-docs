@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.text.FindHardcodedPrivateIPAddresses**
 
-_Locates mentions of hard-coded IPv4 addresses from private IP ranges._
+_Locates mentions of hard-coded IPv4 addresses from private IP ranges. Private IP ranges include:   * `192.168.0.0` to `192.168.255.255`  * `10.0.0.0` to `10.255.255.255`  * `172.16.0.0` to `172.31.255.255`  It is not detecting the localhost subnet `127.0.0.0` to `127.255.255.255`._
 
 ## Recipe source
 
@@ -18,87 +18,7 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
-## Examples
-##### Example 1
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class Test {
-    void ipTest() {
-        String privateAddress1 = "10.10.20.20";
-        String privateAddress2 = "192.168.20.20";
-        String privateAddress3 = "172.16.20.20";
-        String wordBoundaries = "1000000192.168.1.1aaa";
-        String nonPrivate = "1.1.1.1";
-        String nonAddress = "256.0.0.0";
-        String springVersion = "5.2.2";
-        String adding = "4.3+4.5";
-        // address in a comment: 10.1.2.3
-        // address in a comment: 192.168.2.3
-        // address in a comment: 172.16.2.3
-        String date = "30.11.2017";
-        String ikeaProduct = "805.721.99";
-    }
-}
-```
-
-###### After
-```java
-class Test {
-    void ipTest() {
-        String privateAddress1 = "~~>10.10.20.20";
-        String privateAddress2 = "~~>192.168.20.20";
-        String privateAddress3 = "~~>172.16.20.20";
-        String wordBoundaries = "1000000192.168.1.1aaa";
-        String nonPrivate = "1.1.1.1";
-        String nonAddress = "256.0.0.0";
-        String springVersion = "5.2.2";
-        String adding = "4.3+4.5";
-        // address in a comment: ~~>10.1.2.3
-        // address in a comment: ~~>192.168.2.3
-        // address in a comment: ~~>172.16.2.3
-        String date = "30.11.2017";
-        String ikeaProduct = "805.721.99";
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,3 +3,3 @@
-class Test {
-    void ipTest() {
--       String privateAddress1 = "10.10.20.20";
--       String privateAddress2 = "192.168.20.20";
--       String privateAddress3 = "172.16.20.20";
-+       String privateAddress1 = "~~>10.10.20.20";
-+       String privateAddress2 = "~~>192.168.20.20";
-+       String privateAddress3 = "~~>172.16.20.20";
-        String wordBoundaries = "1000000192.168.1.1aaa";
-@@ -11,3 +11,3 @@
-        String springVersion = "5.2.2";
-        String adding = "4.3+4.5";
--       // address in a comment: 10.1.2.3
--       // address in a comment: 192.168.2.3
--       // address in a comment: 172.16.2.3
-+       // address in a comment: ~~>10.1.2.3
-+       // address in a comment: ~~>192.168.2.3
-+       // address in a comment: ~~>172.16.2.3
-        String date = "30.11.2017";
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -209,6 +129,21 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.text.table.HardcodedPrivateIPAddresses" label="HardcodedPrivateIPAddresses">
+
+### Hardcoded private IP addresses
+**org.openrewrite.text.table.HardcodedPrivateIPAddresses**
+
+_This table lists locations of hardcoded private IPv4 addresses and their value found in source files._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source Path | The path to the source file containing the hard-coded IP address. |
+| IP Address | The hard-coded private IPv4 address found in the source file. |
+| Line Number | The line number in the source file where the hard-coded IP address is found. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -264,3 +199,6 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

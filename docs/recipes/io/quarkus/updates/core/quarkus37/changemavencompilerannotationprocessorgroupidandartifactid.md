@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | overrideManagedVersion | *Optional*. If the new annotation processor has a managed version, this flag can be used to explicitly set the version on the annotation processor. The default for this flag is `false`. |  |
 | `Boolean` | enforceManagedVersion | *Optional*. If the new annotation processor has a managed version, this flag can be used to explicitly set the version on the annotation processor with the version of the managed dependency. The default for this flag is `false`. |  |
+| `Boolean` | removeVersionIfManaged | *Optional*. If the new annotation processor has a managed version, this flag can be used to remove the version on the annotation processor. The default for this flag is `false`. |  |
 
 
 ## Usage
@@ -60,7 +61,7 @@ Now that `com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

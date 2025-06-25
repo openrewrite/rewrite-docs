@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.testcontainers`
   * artifactId: `*`
-  * newVersion: `1.19.x`
+  * newVersion: `1.21.x`
 * [Explicit container images and versions](../../../java/testing/testcontainers/explicitcontainerimages)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](../../../java/testing/testcontainers/gethostmigration)
 
@@ -50,7 +50,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.testcontainers
       artifactId: "*"
-      newVersion: 1.19.x
+      newVersion: 1.21.x
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImages
   - org.openrewrite.java.testing.testcontainers.GetHostMigration
 
@@ -153,7 +153,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

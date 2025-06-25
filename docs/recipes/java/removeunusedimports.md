@@ -34,7 +34,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -206,4 +206,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Thomas Zub](mailto:thomas.zub@outlook.de), tclayton-newr, [Greg Adams](mailto:greg@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, Tyler Van Gorder, [Scott Jungling](mailto:scott.jungling@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Thomas Zub](mailto:thomas.zub@outlook.de), tclayton-newr, [Greg Adams](mailto:greg@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, Tyler Van Gorder, [Scott Jungling](mailto:scott.jungling@gmail.com), e5LA, [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io)

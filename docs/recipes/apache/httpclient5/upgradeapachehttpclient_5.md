@@ -57,6 +57,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `httpclient5`
   * version: `5.4.x`
   * onlyIfUsing: `org.apache.http.impl.client.*`
+* [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](../../apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping)
 * [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 * [Migrate `RequestConfig` to httpclient5](../../apache/httpclient5/migraterequestconfig)
 * [Migrate `UsernamePasswordCredentials` to httpclient5](../../apache/httpclient5/usernamepasswordcredentials)
@@ -105,6 +106,7 @@ recipeList:
       artifactId: httpclient5
       version: 5.4.x
       onlyIfUsing: org.apache.http.impl.client.*
+  - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioClassMapping
   - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.apache.httpclient5.MigrateRequestConfig
   - org.openrewrite.apache.httpclient5.UsernamePasswordCredentials
@@ -261,6 +263,170 @@ class A {
 
 ###### Before
 ```java
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.ProtocolVersion;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+        String method = httpGet.getRequestLine().getMethod();
+        String uri = httpGet.getRequestLine().getUri();
+        ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.core5.http.ProtocolVersion;
+import org.apache.hc.core5.http.message.RequestLine;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
+        String method = new RequestLine(httpGet).getMethod();
+        String uri = new RequestLine(httpGet).getUri();
+        ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.ProtocolVersion;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.core5.http.ProtocolVersion;
++import org.apache.hc.core5.http.message.RequestLine;
+
+@@ -7,4 +8,4 @@
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+-       System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+-       String method = httpGet.getRequestLine().getMethod();
+-       String uri = httpGet.getRequestLine().getUri();
+-       ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
++       System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
++       String method = new RequestLine(httpGet).getMethod();
++       String uri = new RequestLine(httpGet).getUri();
++       ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.ProtocolVersion;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+        int statusCode = response.getStatusLine().getStatusCode();
+        String reason = response.getStatusLine().getReasonPhrase();
+        ProtocolVersion version = response.getStatusLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+import org.apache.hc.core5.http.ProtocolVersion;
+import org.apache.hc.core5.http.message.StatusLine;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + new StatusLine(response));
+        int statusCode = response.getCode();
+        String reason = response.getReasonPhrase();
+        ProtocolVersion version = response.getVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,6 +1,7 @@
+-import org.apache.http.HttpStatus;
+-import org.apache.http.client.methods.CloseableHttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClientBuilder;
+-import org.apache.http.ProtocolVersion;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
++import org.apache.hc.core5.http.HttpStatus;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
++import org.apache.hc.core5.http.ProtocolVersion;
++import org.apache.hc.core5.http.message.StatusLine;
+
+@@ -16,4 +17,4 @@
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+-       System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+-       int statusCode = response.getStatusLine().getStatusCode();
+-       String reason = response.getStatusLine().getReasonPhrase();
+-       ProtocolVersion version = response.getStatusLine().getProtocolVersion();
++       System.out.println("response.getStatusLine() :: " + new StatusLine(response));
++       int statusCode = response.getCode();
++       String reason = response.getReasonPhrase();
++       ProtocolVersion version = response.getVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
 import org.apache.http.client.config.CookieSpecs;
 
 class A {
@@ -309,7 +475,7 @@ class A {
 
 ---
 
-##### Example 4
+##### Example 6
 
 
 <Tabs groupId="beforeAfter">
@@ -394,7 +560,7 @@ class A {
 
 ---
 
-##### Example 5
+##### Example 7
 
 
 <Tabs groupId="beforeAfter">
@@ -443,7 +609,171 @@ class A {
 
 ---
 
-##### Example 6
+##### Example 8
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.ProtocolVersion;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+        String method = httpGet.getRequestLine().getMethod();
+        String uri = httpGet.getRequestLine().getUri();
+        ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.core5.http.ProtocolVersion;
+import org.apache.hc.core5.http.message.RequestLine;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
+        String method = new RequestLine(httpGet).getMethod();
+        String uri = new RequestLine(httpGet).getUri();
+        ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.ProtocolVersion;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.core5.http.ProtocolVersion;
++import org.apache.hc.core5.http.message.RequestLine;
+
+@@ -7,4 +8,4 @@
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+-       System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+-       String method = httpGet.getRequestLine().getMethod();
+-       String uri = httpGet.getRequestLine().getUri();
+-       ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
++       System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
++       String method = new RequestLine(httpGet).getMethod();
++       String uri = new RequestLine(httpGet).getUri();
++       ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 9
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.ProtocolVersion;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+        int statusCode = response.getStatusLine().getStatusCode();
+        String reason = response.getStatusLine().getReasonPhrase();
+        ProtocolVersion version = response.getStatusLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+import org.apache.hc.core5.http.ProtocolVersion;
+import org.apache.hc.core5.http.message.StatusLine;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + new StatusLine(response));
+        int statusCode = response.getCode();
+        String reason = response.getReasonPhrase();
+        ProtocolVersion version = response.getVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,6 +1,7 @@
+-import org.apache.http.HttpStatus;
+-import org.apache.http.client.methods.CloseableHttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClientBuilder;
+-import org.apache.http.ProtocolVersion;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
++import org.apache.hc.core5.http.HttpStatus;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
++import org.apache.hc.core5.http.ProtocolVersion;
++import org.apache.hc.core5.http.message.StatusLine;
+
+@@ -16,4 +17,4 @@
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+-       System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+-       int statusCode = response.getStatusLine().getStatusCode();
+-       String reason = response.getStatusLine().getReasonPhrase();
+-       ProtocolVersion version = response.getStatusLine().getProtocolVersion();
++       System.out.println("response.getStatusLine() :: " + new StatusLine(response));
++       int statusCode = response.getCode();
++       String reason = response.getReasonPhrase();
++       ProtocolVersion version = response.getVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 10
 
 
 <Tabs groupId="beforeAfter">
@@ -509,7 +839,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -691,4 +1021,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), SiBorea, Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+[Joan Viladrosa](mailto:joan@moderne.io), [steve-aom-elliott](mailto:steve@moderne.io), SiBorea, Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

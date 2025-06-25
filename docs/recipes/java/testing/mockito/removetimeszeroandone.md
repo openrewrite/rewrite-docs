@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.mockito.RemoveTimesZeroAndOne**
 
-_Remove `Mockito.times(0)` and `Mockito.times(0)` from `Mockito.verify()` calls._
+_Remove `Mockito.times(0)` and `Mockito.times(1)` from `Mockito.verify()` calls._
 
 ## Recipe source
 
@@ -81,7 +81,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

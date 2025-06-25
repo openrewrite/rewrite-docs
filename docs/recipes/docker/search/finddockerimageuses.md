@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -227,4 +227,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Migrate to JSpecify
 
-**org.openrewrite.java.jspecify.MigrateToJspecify**
+**org.openrewrite.java.jspecify.MigrateToJSpecify**
 
 _This recipe will migrate to JSpecify annotations from various other nullability annotation standards._
 
@@ -43,7 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jspecify.MigrateToJspecify
+name: org.openrewrite.java.jspecify.MigrateToJSpecify
 displayName: Migrate to JSpecify
 description: |
   This recipe will migrate to JSpecify annotations from various other nullability annotation standards.
@@ -57,389 +57,6 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
-## Examples
-##### Example 1
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-@ParametersAreNonnullByDefault
-package org.openrewrite.example;
-
-import javax.annotation.ParametersAreNonnullByDefault;
-```
-
-###### After
-```java
-@NullMarked
-package org.openrewrite.example;
-
-import org.jspecify.annotations.NullMarked;
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--@ParametersAreNonnullByDefault
-+@NullMarked
-package org.openrewrite.example;
-@@ -4,1 +4,1 @@
-package org.openrewrite.example;
-
--import javax.annotation.ParametersAreNonnullByDefault;
-+import org.jspecify.annotations.NullMarked;
-
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-public class Test {
-    @Nonnull
-    public String field1;
-    @Nullable
-    public String field2;
-    @Nullable
-    public Foo.Bar foobar;
-}
-
-interface Foo {
-  class Bar {
-    @Nonnull
-    public String barField;
-  }
-}
-```
-
-###### After
-```java
-import org.jspecify.annotations.NonNull;
-import org.jspecify.annotations.Nullable;
-
-public class Test {
-    @NonNull
-    public String field1;
-    @Nullable
-    public String field2;
-
-    public Foo.@Nullable Bar foobar;
-}
-
-interface Foo {
-  class Bar {
-    @NonNull
-    public String barField;
-  }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,2 @@
--import javax.annotation.Nonnull;
--import javax.annotation.Nullable;
-+import org.jspecify.annotations.NonNull;
-+import org.jspecify.annotations.Nullable;
-
-@@ -5,1 +5,1 @@
-
-public class Test {
--   @Nonnull
-+   @NonNull
-    public String field1;
-@@ -9,2 +9,2 @@
-    @Nullable
-    public String field2;
--   @Nullable
--   public Foo.Bar foobar;
-+
-+   public Foo.@Nullable Bar foobar;
-}
-@@ -15,1 +15,1 @@
-interface Foo {
-  class Bar {
--   @Nonnull
-+   @NonNull
-    public String barField;
-```
-</TabItem>
-</Tabs>
-
-###### Unchanged
-```mavenProject
-foo
-```
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jspecify</groupId>
-            <artifactId>jspecify</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,0 +12,5 @@
-            <version>1.3.2</version>
-        </dependency>
-+       <dependency>
-+           <groupId>org.jspecify</groupId>
-+           <artifactId>jspecify</artifactId>
-+           <version>1.0.0</version>
-+       </dependency>
-    </dependencies>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-@ParametersAreNonnullByDefault
-package org.openrewrite.example;
-
-import javax.annotation.ParametersAreNonnullByDefault;
-```
-
-###### After
-```java
-@NullMarked
-package org.openrewrite.example;
-
-import org.jspecify.annotations.NullMarked;
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--@ParametersAreNonnullByDefault
-+@NullMarked
-package org.openrewrite.example;
-@@ -4,1 +4,1 @@
-package org.openrewrite.example;
-
--import javax.annotation.ParametersAreNonnullByDefault;
-+import org.jspecify.annotations.NullMarked;
-
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-public class Test {
-    @Nonnull
-    public String field1;
-    @Nullable
-    public String field2;
-    @Nullable
-    public Foo.Bar foobar;
-}
-
-interface Foo {
-  class Bar {
-    @Nonnull
-    public String barField;
-  }
-}
-```
-
-###### After
-```java
-import org.jspecify.annotations.NonNull;
-import org.jspecify.annotations.Nullable;
-
-public class Test {
-    @NonNull
-    public String field1;
-    @Nullable
-    public String field2;
-
-    public Foo.@Nullable Bar foobar;
-}
-
-interface Foo {
-  class Bar {
-    @NonNull
-    public String barField;
-  }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,2 @@
--import javax.annotation.Nonnull;
--import javax.annotation.Nullable;
-+import org.jspecify.annotations.NonNull;
-+import org.jspecify.annotations.Nullable;
-
-@@ -5,1 +5,1 @@
-
-public class Test {
--   @Nonnull
-+   @NonNull
-    public String field1;
-@@ -9,2 +9,2 @@
-    @Nullable
-    public String field2;
--   @Nullable
--   public Foo.Bar foobar;
-+
-+   public Foo.@Nullable Bar foobar;
-}
-@@ -15,1 +15,1 @@
-interface Foo {
-  class Bar {
--   @Nonnull
-+   @NonNull
-    public String barField;
-```
-</TabItem>
-</Tabs>
-
-###### Unchanged
-```mavenProject
-foo
-```
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jspecify</groupId>
-            <artifactId>jspecify</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,0 +12,5 @@
-            <version>1.3.2</version>
-        </dependency>
-+       <dependency>
-+           <groupId>org.jspecify</groupId>
-+           <artifactId>jspecify</artifactId>
-+           <version>1.0.0</version>
-+       </dependency>
-    </dependencies>
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 
@@ -451,11 +68,11 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jspecify.MigrateToJspecify")
+    activeRecipe("org.openrewrite.java.jspecify.MigrateToJSpecify")
     setExportDatatables(true)
 }
 
@@ -488,7 +105,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jspecify.MigrateToJspecify")
+        activeRecipe("org.openrewrite.java.jspecify.MigrateToJSpecify")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -523,7 +140,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jspecify.MigrateToJspecify</recipe>
+            <recipe>org.openrewrite.java.jspecify.MigrateToJSpecify</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -546,7 +163,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jspecify.MigrateToJspecify -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jspecify.MigrateToJSpecify -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -554,7 +171,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToJspecify
+mod run . --recipe MigrateToJSpecify
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -568,7 +185,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jspecify.MigrateToJspecify" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jspecify.MigrateToJSpecify" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

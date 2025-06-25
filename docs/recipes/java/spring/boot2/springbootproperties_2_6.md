@@ -33,73 +33,73 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.metrics.export.dynatrace.device-id`
   * newPropertyKey: `management.metrics.export.dynatrace.v1.device-id`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.metrics.export.dynatrace.group`
   * newPropertyKey: `management.metrics.export.dynatrace.v1.group`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.metrics.export.dynatrace.technology-type`
   * newPropertyKey: `management.metrics.export.dynatrace.v1.technology-type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.elasticsearch.client.reactive.connection-timeout`
   * newPropertyKey: `spring.elasticsearch.connection-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.elasticsearch.client.reactive.endpoints`
   * newPropertyKey: `spring.elasticsearch.uris`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.elasticsearch.client.reactive.max-in-memory-size`
   * newPropertyKey: `spring.elasticsearch.webclient.max-in-memory-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.elasticsearch.client.reactive.password`
   * newPropertyKey: `spring.elasticsearch.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.elasticsearch.client.reactive.socket-timeout`
   * newPropertyKey: `spring.elasticsearch.socket-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.elasticsearch.client.reactive.username`
   * newPropertyKey: `spring.elasticsearch.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.elasticsearch.rest.connection-timeout`
   * newPropertyKey: `spring.elasticsearch.connection-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.elasticsearch.rest.password`
   * newPropertyKey: `spring.elasticsearch.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.elasticsearch.rest.read-timeout`
   * newPropertyKey: `spring.elasticsearch.socket-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.elasticsearch.rest.sniffer.delay-after-failure`
   * newPropertyKey: `spring.elasticsearch.restclient.sniffer.delay-after-failure`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.elasticsearch.rest.sniffer.interval`
   * newPropertyKey: `spring.elasticsearch.restclient.sniffer.interval`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.elasticsearch.rest.uris`
   * newPropertyKey: `spring.elasticsearch.uris`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.elasticsearch.rest.username`
   * newPropertyKey: `spring.elasticsearch.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.flyway.ignore-future-migrations`
   * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.flyway.ignore-ignored-migrations`
   * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.flyway.ignore-missing-migrations`
   * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.flyway.ignore-pending-migrations`
   * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.flyway.oracle-kerberos-config-file`
   * newPropertyKey: `spring.flyway.kerberos-config-file`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.resources.chain.gzipped`
   * newPropertyKey: `spring.web.resources.chain.compressed`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.webflux.session.cookie.same-site`
   * newPropertyKey: `server.reactive.session.cookie.same-site`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
@@ -232,7 +232,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -414,4 +414,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), ashakirin, [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com)
+[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

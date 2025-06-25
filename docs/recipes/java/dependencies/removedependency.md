@@ -207,7 +207,7 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

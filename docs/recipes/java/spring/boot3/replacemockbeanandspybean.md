@@ -53,6 +53,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.test.mock.mockito.SpyBean`
   * newFullyQualifiedTypeName: `org.springframework.test.context.bean.override.mockito.MockitoSpyBean`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.mock.mockito.MockReset`
+  * newFullyQualifiedTypeName: `org.springframework.test.context.bean.override.mockito.MockReset`
 
 </TabItem>
 
@@ -91,6 +94,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.test.mock.mockito.SpyBean
       newFullyQualifiedTypeName: org.springframework.test.context.bean.override.mockito.MockitoSpyBean
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.mock.mockito.MockReset
+      newFullyQualifiedTypeName: org.springframework.test.context.bean.override.mockito.MockReset
 
 ```
 </TabItem>
@@ -199,7 +205,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

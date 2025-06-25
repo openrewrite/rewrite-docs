@@ -34,7 +34,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [JSF 2.x to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces2xmigrationtojakarta4x)
+* [JSF 2.x to Jakarta Faces 3.x](../../../java/migrate/jakarta/faces2xmigrationtojakartafaces3x)
+* [Upgrade to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces3xmigrationtofaces4x)
 * [Update Jakarta EE Java Faces Dependencies to 4.1.x](../../../java/migrate/jakarta/updatejakartafacesapi41)
 * [OmniFaces Namespace Migration](../../../java/migrate/jakarta/omnifacesnamespacemigration)
 * [Upgrade Faces open source libraries](../../../java/migrate/jakarta/upgradefaces41opensourcelibraries)
@@ -55,7 +56,8 @@ tags:
   - jsf
   - jakarta
 recipeList:
-  - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakarta4x
+  - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x
+  - org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x
   - org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41
   - org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration
   - org.openrewrite.java.migrate.jakarta.UpgradeFaces41OpenSourceLibraries
@@ -74,7 +76,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -254,3 +256,6 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+Evie Lau, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

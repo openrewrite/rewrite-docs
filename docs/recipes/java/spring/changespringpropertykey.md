@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Change the key of a spring application property"
+sidebar_label: "Change the key of a Spring application property"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Change the key of a spring application property
+# Change the key of a Spring application property
 
 **org.openrewrite.java.spring.ChangeSpringPropertyKey**
 
-_Change spring application property keys existing in either Properties or Yaml files._
+_Change Spring application property keys existing in either Properties or YAML files, and in `@Value` annotations._
 
 ## Recipe source
 
@@ -101,7 +101,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeSpringPropertyKeyExample
-displayName: Change the key of a spring application property example
+displayName: Change the key of a Spring application property example
 recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.metrics.binders.*.enabled
@@ -117,7 +117,7 @@ Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined, activate
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -251,4 +251,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com)
+[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

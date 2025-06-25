@@ -82,7 +82,7 @@ Now that `com.yourorg.PropertiesAndYamlKeyUpdateExample` has been defined, activ
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

@@ -38,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPatternChain: `[org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getProtocolVersion()]`
   * newMethodName: `getVersion`
 * [Replaces deprecated `HttpResponse::getStatusLine()`](../../apache/httpclient5/newstatusline)
+* [Replaces deprecated `HttpRequestBase::getRequestLine()`](../../apache/httpclient5/newrequestline)
 
 </TabItem>
 
@@ -61,6 +62,7 @@ recipeList:
       methodPatternChain: [org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getProtocolVersion()]
       newMethodName: getVersion
   - org.openrewrite.apache.httpclient5.NewStatusLine
+  - org.openrewrite.apache.httpclient5.NewRequestLine
 
 ```
 </TabItem>
@@ -76,7 +78,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -258,4 +260,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), Adriano Machado, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[steve-aom-elliott](mailto:steve@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), Adriano Machado, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

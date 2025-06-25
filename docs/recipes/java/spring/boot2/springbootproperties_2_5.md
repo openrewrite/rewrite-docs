@@ -33,61 +33,61 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.artemis.host`
   * newPropertyKey: `spring.artemis.broker-url`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.artemis.port`
   * newPropertyKey: `spring.artemis.broker-url`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.initialize-schema`
   * newPropertyKey: `spring.batch.jdbc.initialize-schema`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.initializer.enabled`
   * newPropertyKey: `spring.batch.jdbc.initialize-schema`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.schema`
   * newPropertyKey: `spring.batch.jdbc.schema`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.table-prefix`
   * newPropertyKey: `spring.batch.jdbc.table-prefix`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.neo4j.username`
   * newPropertyKey: `spring.neo4j.authentication.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.continue-on-error`
   * newPropertyKey: `spring.sql.init.continue-on-error`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.data`
   * newPropertyKey: `spring.sql.init.data-locations`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.data-password`
   * newPropertyKey: `spring.sql.init.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.data-username`
   * newPropertyKey: `spring.sql.init.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.initialization-mode`
   * newPropertyKey: `spring.sql.init.mode`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.platform`
   * newPropertyKey: `spring.sql.init.platform`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.schema`
   * newPropertyKey: `spring.sql.init.schema-locations`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.schema-password`
   * newPropertyKey: `spring.sql.init.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.schema-username`
   * newPropertyKey: `spring.sql.init.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.separator`
   * newPropertyKey: `spring.sql.init.separator`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.sql-script-encoding`
   * newPropertyKey: `spring.sql.init.encoding`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.sql.init.enabled`
   * newPropertyKey: `spring.sql.init.mode`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
@@ -472,7 +472,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -654,4 +654,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-ashakirin, Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)
+ashakirin, [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com)

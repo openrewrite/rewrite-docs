@@ -39,7 +39,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate TestNG assertions to AssertJ](../../../java/testing/testng/testngtoassertj)
 * [Adopt AssertJ Duration assertions](../../../java/testing/assertj/adoptassertjdurationassertions)
 * [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`](../../../java/testing/assertj/isequaltoignoringmillistoisclosetorecipe)
-* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports)
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions)
 * [Shorten AssertJ assertions](../../../java/testing/assertj/simplifyassertjassertions)
 * [Simplify AssertJ assertions with `hasSize` argument](../../../java/testing/assertj/simplifyhassizeassertion)
@@ -48,17 +47,25 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJBooleanRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbooleanrulesrecipes)
 * [Adopt AssertJ Byte Assertions](../../../java/testing/assertj/assertjbyterulesrecipes)
 * [`AssertJCharSequenceRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes)
+* [`AssertJComparableRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjcomparablerulesrecipes)
 * [Adopt AssertJ Double Assertions](../../../java/testing/assertj/assertjdoublerulesrecipes)
+* [`AssertJEnumerableRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes)
 * [Adopt AssertJ Float Assertions](../../../java/testing/assertj/assertjfloatrulesrecipes)
 * [Adopt AssertJ Integer Assertions](../../../java/testing/assertj/assertjintegerrulesrecipes)
+* [`AssertJIterableRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes)
+* [`AssertJIteratorRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjiteratorrulesrecipes)
 * [Adopt AssertJ Long Assertions](../../../java/testing/assertj/assertjlongrulesrecipes)
+* [`AssertJMapRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes)
 * [`AssertJNumberRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes)
+* [`AssertJObjectRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes)
+* [`AssertJOptionalRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjoptionalrulesrecipes)
 * [`AssertJPrimitiveRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes)
 * [`AssertJRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes)
 * [Adopt AssertJ Short Assertions](../../../java/testing/assertj/assertjshortrulesrecipes)
 * [`AssertJStringRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes)
 * [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes)
 * [Collapse consecutive `assertThat` statements](../../../java/testing/assertj/collapseconsecutiveassertthatstatements)
+* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports)
 
 </TabItem>
 
@@ -81,7 +88,6 @@ recipeList:
   - org.openrewrite.java.testing.testng.TestNgToAssertj
   - org.openrewrite.java.testing.assertj.AdoptAssertJDurationAssertions
   - org.openrewrite.java.testing.assertj.IsEqualToIgnoringMillisToIsCloseToRecipe
-  - org.openrewrite.java.testing.assertj.StaticImports
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyHasSizeAssertion
@@ -90,17 +96,25 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJDoubleRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes
   - org.openrewrite.java.testing.assertj.CollapseConsecutiveAssertThatStatements
+  - org.openrewrite.java.testing.assertj.StaticImports
 
 ```
 </TabItem>
@@ -295,7 +309,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

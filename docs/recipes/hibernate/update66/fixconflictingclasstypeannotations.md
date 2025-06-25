@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.hibernate.update66.FixConflictingClassTypeAnnotations**
 
-_Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`.For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table)but still accepted and therefore stays._
+_Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`. For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table) but still accepted and therefore stays._
 
 ## Recipe source
 
@@ -150,4 +150,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:tim@moderne.io)
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:tim@moderne.io)

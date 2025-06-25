@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.jakarta.RemovedStateManagerMethods**
 
-_Methods that were removed from the `jakarta.faces.application.StateManager` and `javax.faces.application.StateManager` classes in Jakarta Faces 4.0 are replaced by `jakarta.faces.view.StateManagementStrategy` or `javax.faces.view.StateManagementStrategy` based on Jakarta10 migration in Faces 4.0._
+_Faces 3.0 introduced using `StateManagementStrategy` in favor of `StateManager`, which was later removed in Faces 4.0._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-4.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-3.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
@@ -49,11 +49,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newMethodName: `saveView`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `jakarta.faces.application.StateManager`
+  * oldFullyQualifiedTypeName: `javax.faces.application.StateManager`
   * newFullyQualifiedTypeName: `jakarta.faces.view.StateManagementStrategy`
   * ignoreDefinition: `true`
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.faces.application.StateManager`
+  * oldFullyQualifiedTypeName: `jakarta.faces.application.StateManager`
   * newFullyQualifiedTypeName: `jakarta.faces.view.StateManagementStrategy`
   * ignoreDefinition: `true`
 
@@ -67,7 +67,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.RemovedStateManagerMethods
 displayName: Use `StateManagementStrategy`
 description: |
-  Methods that were removed from the `jakarta.faces.application.StateManager` and `javax.faces.application.StateManager` classes in Jakarta Faces 4.0 are replaced by `jakarta.faces.view.StateManagementStrategy` or `javax.faces.view.StateManagementStrategy` based on Jakarta10 migration in Faces 4.0.
+  Faces 3.0 introduced using `StateManagementStrategy` in favor of `StateManager`, which was later removed in Faces 4.0.
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: *.faces.application.StateManager getComponentStateToSave(*.faces.context.FacesContext)
@@ -90,11 +90,11 @@ recipeList:
       newMethodName: saveView
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.faces.application.StateManager
+      oldFullyQualifiedTypeName: javax.faces.application.StateManager
       newFullyQualifiedTypeName: jakarta.faces.view.StateManagementStrategy
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.faces.application.StateManager
+      oldFullyQualifiedTypeName: jakarta.faces.application.StateManager
       newFullyQualifiedTypeName: jakarta.faces.view.StateManagementStrategy
       ignoreDefinition: true
 
@@ -277,7 +277,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

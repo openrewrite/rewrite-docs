@@ -30,6 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [RewriteTest classes should not be public](../../java/recipes/rewritetestclassesshouldnotbepublic)
 * [Automatically select recipe examples from the unit test cases of a recipe](../../java/recipes/selectrecipeexamples)
+* [Single `@DocumentExample` per test class](../../java/recipes/singledocumentexample)
 * [Show `@DocumentExample`s first](../../java/recipes/reordertestmethods)
 * [New line at the end of `SourceSpecs` text blocks](../../java/recipes/sourcespectextblocknewline)
 * [Minimal indentation for `SourceSpecs` text blocks](../../java/recipes/sourcespectextblockindentation)
@@ -54,6 +55,7 @@ description: |
 recipeList:
   - org.openrewrite.java.recipes.RewriteTestClassesShouldNotBePublic
   - org.openrewrite.java.recipes.SelectRecipeExamples
+  - org.openrewrite.java.recipes.SingleDocumentExample
   - org.openrewrite.java.recipes.ReorderTestMethods
   - org.openrewrite.java.recipes.SourceSpecTextBlockNewLine
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
@@ -78,7 +80,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

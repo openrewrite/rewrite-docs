@@ -26,7 +26,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. Defaults to the latest release available from services.gradle.org if not specified. | `7.x` |
 | `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". Valid options: `bin`, `all` |  |
 | `Boolean` | addIfMissing | *Optional*. Add a Gradle wrapper, if it's missing. Defaults to `true`. |  |
-| `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution. Lookup of available versions still requires access to https://services.gradle.org When this is specified the exact literal values supplied for `version` and `distribution` will be interpolated into this string wherever `${version}` and `${distribution}` appear respectively. Defaults to https://services.gradle.org/distributions/gradle-`${version}`-`${distribution}`.zip. | `https://services.gradle.org/distributions/gradle-${version}-${distribution}.zip` |
+                    | `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution.
+Specifies a custom location from which to download the Gradle wrapper scripts (gradlew, gradlew.bat, etc.). This is useful for setting up the Gradle wrapper without relying on Gradle's official distribution services.
+
+When this option is set, the version and distribution fields must not be specified — only one source of truth is allowed. The URI should point to a valid and reachable Gradle wrapper distribution (typically a .zip archive containing the wrapper files).
+This is particularly helpful in environments where access to Gradle's central services is restricted or where custom Gradle wrapper setups are required.
+If the URI is inaccessible, the recipe will leave the existing wrapper files in the repository unchanged, as they are generally compatible with various Gradle versions. | `https://services.gradle.org/distributions/gradle-8.5-bin.zip` |
 | `String` | distributionChecksum | *Optional*. The SHA-256 checksum of the Gradle distribution. If specified, the recipe will add the checksum along with the custom distribution URL. | `29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda` |
 
 ## Example
@@ -94,7 +99,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 **org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses**
 
 ```
-Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -> responseCode, message -> description).
+Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -> responseCode, message -> description, response -> content).
 ```
 
 
@@ -51,6 +51,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldAttributeName: `message`
   * newAttributeName: `description`
 * [Convert API response codes to strings](../../openapi/swagger/convertapiresponsecodestostrings)
+* [Convert API response to content annotation](../../openapi/swagger/convertapiresponsetocontent)
 
 </TabItem>
 
@@ -62,7 +63,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses
 displayName: Migrate from `@ApiResponses` to `@ApiResponses`
 description: |
-  Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -> responseCode, message -> description).
+  Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -> responseCode, message -> description, response -> content).
 tags:
   - openapi
   - swagger
@@ -82,6 +83,7 @@ recipeList:
       oldAttributeName: message
       newAttributeName: description
   - org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings
+  - org.openrewrite.openapi.swagger.ConvertApiResponseToContent
 
 ```
 </TabItem>
@@ -97,20 +99,24 @@ recipeList:
 ###### Before
 ```java
 import io.swagger.annotations.ApiResponse;
+import org.springframework.http.ResponseEntity;
 
 class A {
-    @ApiResponse(code = 200, message = "OK")
-    void method() {}
+    @ApiResponse(code = 200, message = "OK", response = User.class)
+    ResponseEntity<User> method() { return null; }
 }
 ```
 
 ###### After
 ```java
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.http.ResponseEntity;
 
 class A {
-    @ApiResponse(responseCode = "200", description = "OK")
-    void method() {}
+    @ApiResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class)))
+    ResponseEntity<User> method() { return null; }
 }
 ```
 
@@ -118,16 +124,18 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,1 @@
+@@ -1,1 +1,3 @@
 -import io.swagger.annotations.ApiResponse;
++import io.swagger.v3.oas.annotations.media.Content;
++import io.swagger.v3.oas.annotations.media.Schema;
 +import io.swagger.v3.oas.annotations.responses.ApiResponse;
-
-@@ -4,1 +4,1 @@
+import org.springframework.http.ResponseEntity;
+@@ -5,1 +7,1 @@
 
 class A {
--   @ApiResponse(code = 200, message = "OK")
-+   @ApiResponse(responseCode = "200", description = "OK")
-    void method() {}
+-   @ApiResponse(code = 200, message = "OK", response = User.class)
++   @ApiResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class)))
+    ResponseEntity<User> method() { return null; }
 ```
 </TabItem>
 </Tabs>
@@ -144,20 +152,24 @@ class A {
 ###### Before
 ```java
 import io.swagger.annotations.ApiResponse;
+import org.springframework.http.ResponseEntity;
 
 class A {
-    @ApiResponse(code = 200, message = "OK")
-    void method() {}
+    @ApiResponse(code = 200, message = "OK", response = User.class)
+    ResponseEntity<User> method() { return null; }
 }
 ```
 
 ###### After
 ```java
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.http.ResponseEntity;
 
 class A {
-    @ApiResponse(responseCode = "200", description = "OK")
-    void method() {}
+    @ApiResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class)))
+    ResponseEntity<User> method() { return null; }
 }
 ```
 
@@ -165,16 +177,18 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,1 @@
+@@ -1,1 +1,3 @@
 -import io.swagger.annotations.ApiResponse;
++import io.swagger.v3.oas.annotations.media.Content;
++import io.swagger.v3.oas.annotations.media.Schema;
 +import io.swagger.v3.oas.annotations.responses.ApiResponse;
-
-@@ -4,1 +4,1 @@
+import org.springframework.http.ResponseEntity;
+@@ -5,1 +7,1 @@
 
 class A {
--   @ApiResponse(code = 200, message = "OK")
-+   @ApiResponse(responseCode = "200", description = "OK")
-    void method() {}
+-   @ApiResponse(code = 200, message = "OK", response = User.class)
++   @ApiResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class)))
+    ResponseEntity<User> method() { return null; }
 ```
 </TabItem>
 </Tabs>
@@ -190,7 +204,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -372,4 +386,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [adammak](mailto:maka9@mcmaster.ca), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com)

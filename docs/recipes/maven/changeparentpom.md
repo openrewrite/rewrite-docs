@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.ChangeParentPom**
 
-_Change the parent pom of a Maven pom.xml. Identifies the parent pom to be changed by its groupId and artifactId._
+_Change the parent pom of a Maven pom.xml by matching the existing parent via groupId and artifactId, and updating it to a new groupId, artifactId, version, and optional relativePath. Also updates the project to retain dependency management and properties previously inherited from the old parent that are no longer provided by the new parent. Removes redundant dependency versions already managed by the new parent._
 
 ## Recipe source
 
@@ -349,4 +349,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Valentin Delaye, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [DidierLoiseau](mailto:didierloiseau+github@gmail.com), Valentin Delaye, Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

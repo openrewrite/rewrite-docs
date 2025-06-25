@@ -91,7 +91,7 @@ Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -225,4 +225,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

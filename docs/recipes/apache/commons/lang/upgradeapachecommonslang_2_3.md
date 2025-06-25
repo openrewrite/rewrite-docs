@@ -44,6 +44,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `org.apache.commons.lang`
   * newPackageName: `org.apache.commons.lang3`
   * recursive: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.commons.lang3.exception.ExceptionUtils getFullStackTrace(..)`
+  * newMethodName: `getStackTrace`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.lang3.NullArgumentException`
+  * newFullyQualifiedTypeName: `java.lang.NullPointerException`
 
 </TabItem>
 
@@ -71,6 +77,12 @@ recipeList:
       oldPackageName: org.apache.commons.lang
       newPackageName: org.apache.commons.lang3
       recursive: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.commons.lang3.exception.ExceptionUtils getFullStackTrace(..)
+      newMethodName: getStackTrace
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.lang3.NullArgumentException
+      newFullyQualifiedTypeName: java.lang.NullPointerException
 
 ```
 </TabItem>
@@ -191,7 +203,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

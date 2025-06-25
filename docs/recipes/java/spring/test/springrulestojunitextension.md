@@ -48,8 +48,11 @@ class SomeTest {
 
 ###### After
 ```java
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 class SomeTest {
 
@@ -60,14 +63,23 @@ class SomeTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -2,4 +2,0 @@
+@@ -1,0 +1,1 @@
++import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.test.context.SpringBootTest;
+@@ -2,4 +3,1 @@
 import org.springframework.boot.test.context.SpringBootTest;
 -import org.springframework.test.context.junit4.rules.SpringClassRule;
 -import org.springframework.test.context.junit4.rules.SpringMethodRule;
 -import org.junit.ClassRule;
 -import org.junit.Rule;
++import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@@ -10,6 +6,0 @@
+@@ -7,0 +5,1 @@
+import org.junit.Rule;
+
++@ExtendWith(SpringExtension.class)
+@SpringBootTest
+@@ -10,6 +9,0 @@
 class SomeTest {
 
 -   @ClassRule
@@ -92,7 +104,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

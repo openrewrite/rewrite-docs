@@ -19,6 +19,67 @@ _Adds `@Valid` annotation to fields in `@ConfigurationProperties` classes that c
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.demo;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
+
+@ConfigurationProperties("app")
+@Validated
+public class AppProperties {
+
+    private String name;
+
+    private NestedProperties nested;
+}
+```
+
+###### After
+```java
+package com.example.demo;
+
+import jakarta.validation.Valid;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
+
+@ConfigurationProperties("app")
+@Validated
+public class AppProperties {
+
+    private String name;
+
+    @Valid
+    private NestedProperties nested;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,1 @@
+package com.example.demo;
+
++import jakarta.validation.Valid;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+@@ -12,0 +13,1 @@
+    private String name;
+
++   @Valid
+    private NestedProperties nested;
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -30,7 +91,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

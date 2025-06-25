@@ -50,7 +50,7 @@ Now that `com.yourorg.RemoveAnnotationProcessorPathExample` has been defined, ac
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -184,4 +184,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jeremy Grelle](mailto:grellej@unityfoundation.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Jeremy Grelle](mailto:grellej@unityfoundation.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

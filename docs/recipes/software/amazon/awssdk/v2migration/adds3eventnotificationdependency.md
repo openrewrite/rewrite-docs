@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
   * groupId: `software.amazon.awssdk`
   * artifactId: `s3-event-notifications`
-  * version: `2.31.49`
+  * version: `2.31.68`
   * onlyIfUsing: `com.amazonaws.services.s3.event.S3EventNotification`
 
 </TabItem>
@@ -53,7 +53,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: software.amazon.awssdk
       artifactId: s3-event-notifications
-      version: 2.31.49
+      version: 2.31.68
       onlyIfUsing: com.amazonaws.services.s3.event.S3EventNotification
 
 ```
@@ -70,7 +70,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

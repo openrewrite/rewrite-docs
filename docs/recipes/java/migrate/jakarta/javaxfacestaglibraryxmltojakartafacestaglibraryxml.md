@@ -19,7 +19,7 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-4.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-3.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `facelet-taglib`
   * attributeName: `version`
-  * newValue: `4.0`
+  * newValue: `3.0`
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `facelet-taglib`
   * attributeName: `xmlns`
@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `facelet-taglib`
   * attributeName: `xsi:schemaLocation`
-  * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_4_0.xsd`
+  * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_3_0.xsd`
 * [Find and replace](../../../text/findandreplace)
   * find: `javax.`
   * replace: `jakarta.`
@@ -70,7 +70,7 @@ recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: facelet-taglib
       attributeName: version
-      newValue: 4.0
+      newValue: 3.0
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: facelet-taglib
       attributeName: xmlns
@@ -78,7 +78,7 @@ recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: facelet-taglib
       attributeName: xsi:schemaLocation
-      newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_4_0.xsd
+      newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_3_0.xsd
   - org.openrewrite.text.FindAndReplace:
       find: javax.
       replace: jakarta.
@@ -113,10 +113,10 @@ recipeList:
 ###### After
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<facelet-taglib version="4.0"
+<facelet-taglib version="3.0"
                 xmlns="https://jakarta.ee/xml/ns/jakartaee"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_4_0.xsd">
+                xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_3_0.xsd">
     <function>
         <function-name>getFileContent</function-name>
         <function-class>jakarta.util.ShowcaseUtil</function-class>
@@ -133,14 +133,14 @@ recipeList:
 <?xml version="1.0" encoding="UTF-8"?>
 -<facelet-taglib version="1.0"
 -               xmlns="http://java.sun.com/xml/ns/javaee"
-+<facelet-taglib version="4.0"
++<facelet-taglib version="3.0"
 +               xmlns="https://jakarta.ee/xml/ns/jakartaee"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 @@ -5,1 +5,1 @@
                 xmlns="http://java.sun.com/xml/ns/javaee"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 -               xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_1.0.xsd">
-+               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_4_0.xsd">
++               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_3_0.xsd">
     <function>
 @@ -8,1 +8,1 @@
     <function>
@@ -179,10 +179,10 @@ recipeList:
 ###### After
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<facelet-taglib version="4.0"
+<facelet-taglib version="3.0"
                 xmlns="https://jakarta.ee/xml/ns/jakartaee"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_4_0.xsd">
+                xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_3_0.xsd">
     <function>
         <function-name>getFileContent</function-name>
         <function-class>jakarta.util.ShowcaseUtil</function-class>
@@ -199,14 +199,14 @@ recipeList:
 <?xml version="1.0" encoding="UTF-8"?>
 -<facelet-taglib version="1.0"
 -               xmlns="http://java.sun.com/xml/ns/javaee"
-+<facelet-taglib version="4.0"
++<facelet-taglib version="3.0"
 +               xmlns="https://jakarta.ee/xml/ns/jakartaee"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 @@ -5,1 +5,1 @@
                 xmlns="http://java.sun.com/xml/ns/javaee"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 -               xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_1.0.xsd">
-+               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_4_0.xsd">
++               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facelettaglibrary_3_0.xsd">
     <function>
 @@ -8,1 +8,1 @@
     <function>
@@ -229,7 +229,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

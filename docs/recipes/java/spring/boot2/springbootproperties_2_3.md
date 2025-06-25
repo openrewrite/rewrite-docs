@@ -33,124 +33,124 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.health.probes.enabled`
   * newPropertyKey: `management.endpoint.health.probes.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.metrics.distribution.sla`
   * newPropertyKey: `management.metrics.distribution.slo`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.acceptors`
   * newPropertyKey: `server.jetty.threads.acceptors`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.max-queue-capacity`
   * newPropertyKey: `server.jetty.threads.max-queue-capacity`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.max-threads`
   * newPropertyKey: `server.jetty.threads.max`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.min-threads`
   * newPropertyKey: `server.jetty.threads.min`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.selectors`
   * newPropertyKey: `server.jetty.threads.selectors`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.thread-idle-timeout`
   * newPropertyKey: `server.jetty.threads.idle-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.host-header`
   * newPropertyKey: `server.tomcat.remoteip.host-header`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.internal-proxies`
   * newPropertyKey: `server.tomcat.remoteip.internal-proxies`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.max-threads`
   * newPropertyKey: `server.tomcat.threads.max`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.min-spare-threads`
   * newPropertyKey: `server.tomcat.threads.min-spare`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.port-header`
   * newPropertyKey: `server.tomcat.remote.port-header`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.protocol-header`
   * newPropertyKey: `server.tomcat.remoteip.protocol-header`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.protocol-header-https-value`
   * newPropertyKey: `server.tomcat.remoteip.protocol-header-https-value`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.tomcat.remote-ip-header`
   * newPropertyKey: `server.tomcat.remoteip.remote-ip-header`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.undertow.io-threads`
   * newPropertyKey: `server.undertow.threads.io`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.undertow.worker-threads`
   * newPropertyKey: `server.undertow.threads.worker`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.couchbase.bootstrap-hosts`
   * newPropertyKey: `spring.couchbase.connection-string`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.couchbase.env.endpoints.queryservice.max-endpoints`
   * newPropertyKey: `spring.couchbase.env.io.max-endpoints`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.couchbase.env.endpoints.queryservice.min-endpoints`
   * newPropertyKey: `spring.couchbase.env.io.min-endpoints`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.couchbase.env.endpoints.viewservice.max-endpoints`
   * newPropertyKey: `spring.couchbase.env.io.max-endpoints`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.couchbase.env.endpoints.viewservice.min-endpoints`
   * newPropertyKey: `spring.couchbase.env.io.min-endpoints`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.cluster-name`
   * newPropertyKey: `spring.data.cassandra.session-name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.connect-timeout`
   * newPropertyKey: `spring.data.cassandra.connection.init-query-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.consistency-level`
   * newPropertyKey: `spring.data.cassandra.request.consistency`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.fetch-size`
   * newPropertyKey: `spring.data.cassandra.request.page-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.pool.max-queue-size`
   * newPropertyKey: `spring.data.cassandra.request.throttler.max-queue-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.read-timeout`
   * newPropertyKey: `spring.data.cassandra.request.timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.serial-consistency-level`
   * newPropertyKey: `spring.data.cassandra.request.serial-consistency`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.converters.preferred-json-mapper`
   * newPropertyKey: `spring.mvc.converters.preferred-json-mapper`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.encoding.charset`
   * newPropertyKey: `server.servlet.encoding.charset`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.encoding.enabled`
   * newPropertyKey: `server.servlet.encoding.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.encoding.force`
   * newPropertyKey: `server.servlet.encoding.force`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.encoding.force-request`
   * newPropertyKey: `server.servlet.encoding.force-request`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.encoding.force-response`
   * newPropertyKey: `server.servlet.encoding.force-response`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.encoding.mapping`
   * newPropertyKey: `server.servlet.encoding.mapping`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.http.log-request-details`
   * newPropertyKey: `spring.mvc.log-request-details`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.mvc.date-format`
   * newPropertyKey: `spring.mvc.format.date`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.webflux.date-format`
   * newPropertyKey: `spring.webflux.format.date`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
@@ -586,7 +586,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -768,4 +768,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-ashakirin, Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com)
+[Knut Wannheden](mailto:knut@moderne.io), ashakirin, Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

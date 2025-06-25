@@ -31,6 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add a blank line around fields with annotations](../../java/recipes/blanklinesaroundfieldswithannotations)
 * [Correctly spaced descriptions](../../java/recipes/correctlyspaceddescriptions)
 * [Use a standard name for `ExecutionContext`](../../java/recipes/executioncontextparametername)
+* [Refaster template `IsLiteralNull`](../../java/recipes/isliteralnullrecipe)
 * [Find missing `@Option` `example` values](../../java/recipes/missingoptionexample)
 * [Recipe classes should not have mutable `static` fields](../../java/recipes/nomutablestaticfieldsinrecipes)
 * [Use of `@EqualsAndHashCode` on `Recipe`](../../java/recipes/recipeequalsandhashcodecallsuper)
@@ -57,6 +58,7 @@ recipeList:
   - org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations
   - org.openrewrite.java.recipes.CorrectlySpacedDescriptions
   - org.openrewrite.java.recipes.ExecutionContextParameterName
+  - org.openrewrite.java.recipes.IsLiteralNullRecipe
   - org.openrewrite.java.recipes.MissingOptionExample
   - org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes
   - org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper
@@ -82,7 +84,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

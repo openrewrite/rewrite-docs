@@ -39,8 +39,8 @@ class TrivialLayout extends Layout {
     }
 
     @Override
-    public String format(LoggingEvent loggingEvent) {
-        return loggingEvent.getRenderedMessage();
+    public String format(LoggingEvent event) {
+        return event.getRenderedMessage();
     }
 
     @Override
@@ -58,8 +58,8 @@ import ch.qos.logback.core.LayoutBase;
 class TrivialLayout extends LayoutBase<ILoggingEvent> {
 
     @Override
-    public String doLayout(ILoggingEvent loggingEvent) {
-        return loggingEvent.getMessage();
+    public String doLayout(ILoggingEvent event) {
+        return event.getMessage();
     }
 }
 ```
@@ -85,16 +85,16 @@ import org.apache.log4j.spi.LoggingEvent;
     @Override
 -   public void activateOptions() {
 -       // there are no options to activate
-+   public String doLayout(ILoggingEvent loggingEvent) {
-+       return loggingEvent.getMessage();
++   public String doLayout(ILoggingEvent event) {
++       return event.getMessage();
     }
 @@ -10,10 +10,0 @@
         // there are no options to activate
     }
 -
 -   @Override
--   public String format(LoggingEvent loggingEvent) {
--       return loggingEvent.getRenderedMessage();
+-   public String format(LoggingEvent event) {
+-       return event.getRenderedMessage();
 -   }
 -
 -   @Override
@@ -117,7 +117,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {

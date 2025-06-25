@@ -28,6 +28,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change method invocation return type](../../../../software/amazon/awssdk/v2migration/openrewrite/changemethodinvocationreturntype)
+  * methodPattern: `com.amazonaws.services.s3.transfer.TransferManager resumeDownload(..)`
+  * newReturnType: `software.amazon.awssdk.transfer.s3.model.FileDownload`
+* [Change method invocation return type](../../../../software/amazon/awssdk/v2migration/openrewrite/changemethodinvocationreturntype)
+  * methodPattern: `com.amazonaws.services.s3.transfer.TransferManager resumeUpload(..)`
+  * newReturnType: `software.amazon.awssdk.transfer.s3.model.FileUpload`
 * [Change type](../../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.amazonaws.services.s3.transfer.TransferManager`
   * newFullyQualifiedTypeName: `software.amazon.awssdk.transfer.s3.S3TransferManager`
@@ -95,6 +101,12 @@ displayName: Change SDK TransferManager types from v1 to v2
 description: |
   Change SDK TransferManager types from v1 to v2.
 recipeList:
+  - software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType:
+      methodPattern: com.amazonaws.services.s3.transfer.TransferManager resumeDownload(..)
+      newReturnType: software.amazon.awssdk.transfer.s3.model.FileDownload
+  - software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType:
+      methodPattern: com.amazonaws.services.s3.transfer.TransferManager resumeUpload(..)
+      newReturnType: software.amazon.awssdk.transfer.s3.model.FileUpload
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.amazonaws.services.s3.transfer.TransferManager
       newFullyQualifiedTypeName: software.amazon.awssdk.transfer.s3.S3TransferManager
@@ -164,7 +176,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
