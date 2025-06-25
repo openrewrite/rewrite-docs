@@ -159,7 +159,7 @@ Find Java Persistence Query Language definitions in the codebase.
   * **io.moderne.hibernate.search.JPQLQueries**: *Shows matching JPQL queries.*
 
 
-### [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4.md)
+### [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
  
 _io.moderne.java.spring.boot3.UpgradeSpringBoot_3_4_
 
@@ -6624,7 +6624,7 @@ Upgrade to Spring Boot 2.7.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4.md)
+### [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
  
 _org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4_
 
