@@ -320,7 +320,7 @@ Because of that, we recommend fixing the underlying causes of those differences.
 
 One of our community members graciously [outlined how they did this](https://github.com/openrewrite/rewrite-docs/issues/247#issuecomment-2943431802). Please see that issue for more information on this.
 
-## Why doesn't OpenRewrite recipe X fully migrate my code?
+## Why doesn't OpenRewrite fully migrate my code?
 OpenRewrite recipes are designed with a focus on correctness over completeness.
 This means that what a recipe changes, it changes correctly, deterministically, and reproducibly.
 OpenRewrite endorses the [do no harm](../authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm) principle, thus it will never apply a transformation unless it can do so with full confidence that the change is both syntactically and semantically correct for your codebase.
