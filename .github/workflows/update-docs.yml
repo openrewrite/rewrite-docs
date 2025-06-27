@@ -19,7 +19,7 @@ jobs:
   build:
     name: Update docs
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       # Shared setup
       - uses: actions/setup-java@v4
@@ -37,7 +37,7 @@ jobs:
         run: ./gradlew ${{ env.GRADLE_SWITCHES }} run -PlatestVersionsOnly=${{ github.event.inputs.latest-versions-only == 'true' }}
         working-directory: rewrite-recipe-markdown-generator
 
-      # Move generated markdown to docs/
+      # Checkout docs repository
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -58,6 +58,7 @@ jobs:
           cp rewrite-recipe-markdown-generator/build/docs/*.js rewrite-docs/src/plugins/
           git add docs/reference/latest-versions-of-every-openrewrite-module.md src/plugins/latest-versions.js
 
+      # Otherwie replace recipes only
       - name: Replace recipes
         if: ${{ !inputs.latest-versions-only }}
         run: |
