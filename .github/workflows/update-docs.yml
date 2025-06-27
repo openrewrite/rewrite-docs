@@ -3,6 +3,11 @@ name: Update docs
 
 on:
   workflow_dispatch:
+    inputs:
+      latest-versions-only:
+        type: boolean
+        description: Only update the latest versions of every OpenRewrite module
+        default: true
   schedule:
     - cron: 0 0 * * *
 
@@ -29,7 +34,7 @@ jobs:
           repository: 'openrewrite/rewrite-recipe-markdown-generator'
           path: 'rewrite-recipe-markdown-generator'
       - name: Generate Markdown
-        run: ./gradlew ${{ env.GRADLE_SWITCHES }} run -PlatestVersionsOnly=true
+        run: ./gradlew ${{ env.GRADLE_SWITCHES }} run -PlatestVersionsOnly=${{ github.event.inputs.latest-versions-only == 'true' }}
         working-directory: rewrite-recipe-markdown-generator
 
       # Move generated markdown to docs/
@@ -37,10 +42,19 @@ jobs:
         with:
           fetch-depth: 0
           path: 'rewrite-docs'
-      - name: Move generated markdown to docs/
+
+      # Conditionally replace latest versions, as recipe runs lack certain language modules
+      - name: Replace latest versions
+        if: ${{ inputs.latest-versions-only }}
         run: |
-          mv rewrite-recipe-markdown-generator/build/docs/*.md rewrite-docs/docs/reference/
-          mv rewrite-recipe-markdown-generator/build/docs/*.js rewrite-docs/src/plugins/
+          cp rewrite-recipe-markdown-generator/build/docs/*.md rewrite-docs/docs/reference/
+          cp rewrite-recipe-markdown-generator/build/docs/*.js rewrite-docs/src/plugins/
+
+      - name: Replace recipes
+        if: ${{ !inputs.latest-versions-only }}
+        run: |
+          rm -rf rewrite-docs/docs/recipes/
+          cp -r rewrite-recipe-markdown-generator/build/docs/recipes rewrite-docs/docs/recipes
 
       # Commit and push changes
       - name: configure-git-user
