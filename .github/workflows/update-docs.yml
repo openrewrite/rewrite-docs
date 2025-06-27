@@ -43,27 +43,30 @@ jobs:
           fetch-depth: 0
           path: 'rewrite-docs'
 
+      # Configure git user
+      - name: configure-git-user
+        working-directory: rewrite-docs
+        run: |
+          git config user.email "team@moderne.io"
+          git config user.name "team-moderne[bot]"
+
       # Conditionally replace latest versions, as recipe runs lack certain language modules
       - name: Replace latest versions
         if: ${{ inputs.latest-versions-only }}
         run: |
           cp rewrite-recipe-markdown-generator/build/docs/*.md rewrite-docs/docs/reference/
           cp rewrite-recipe-markdown-generator/build/docs/*.js rewrite-docs/src/plugins/
+          git add docs/reference/latest-versions-of-every-openrewrite-module.md src/plugins/latest-versions.js
 
       - name: Replace recipes
         if: ${{ !inputs.latest-versions-only }}
         run: |
           rm -rf rewrite-docs/docs/recipes/
           cp -r rewrite-recipe-markdown-generator/build/docs/recipes rewrite-docs/docs/recipes
+          git add rewrite-docs/docs/recipes
 
       # Commit and push changes
-      - name: configure-git-user
-        working-directory: rewrite-docs
-        run: |
-          git config user.email "team@moderne.io"
-          git config user.name "team-moderne[bot]"
       - name: Commit and push
         working-directory: rewrite-docs
         run: |
-          git add docs/reference/latest-versions-of-every-openrewrite-module.md src/plugins/latest-versions.js;
           git diff --quiet HEAD || (git commit -m "[Auto] Latest versions as of $(date +'%Y-%m-%dT%H%M')" && git push origin master)
