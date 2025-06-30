@@ -59,7 +59,7 @@ jobs:
           cp ../rewrite-recipe-markdown-generator/build/docs/*.js src/plugins/
           git add docs/reference/latest-versions-of-every-openrewrite-module.md src/plugins/latest-versions.js
 
-      # Otherwie replace recipes only
+      # Otherwise replace recipes only
       - name: Replace recipes
         if: ${{ !inputs.latest-versions-only }}
         working-directory: rewrite-docs
