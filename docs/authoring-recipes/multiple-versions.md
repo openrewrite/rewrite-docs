@@ -117,5 +117,5 @@ public void defaults(RecipeSpec spec) {
 If you wanted to use a different version of these libraries in another test or in another file, all you would need to do is add the corresponding JAR to the `src/main/resources/META-INF/rewrite/classpath` directory and specify the new version in the `classpathFromResources` function.
 
 :::info
-`classpathFromResources` _does not_ add transitive dependencies by default. For example, if the class you use from `spring-boot-test` needs a class from `spring-core` or `spring-web`, then those also need to be added to the [type table](#type-tables) and `classpathFromResources`.
+`classpathFromResources` _does not_ add transitive dependencies by default. For example, if the class you use from `spring-boot-test` needs a class from `spring-core` or `spring-web`, then those also need to be added to the [type table](#typetables) and `classpathFromResources`.
 :::

@@ -56,7 +56,7 @@ mvn rewrite:run -Drewrite.exclusions="folderA,folderB"
 ## Why do artifact scanners detect vulnerabilities in recipe artifacts/JARs?
 
 :::tip
-If you're getting this warning from running the `downloadRecipeDependencies` Gradle task, you should consider using [TypeTables](../authoring-recipes/multiple-versions.md#type-tables) instead. Not only will it greatly reduce the size of your dependencies, but it won't be flagged by a vulnerability scanner.
+If you're getting this warning from running the `downloadRecipeDependencies` Gradle task, you should consider using [TypeTables](../authoring-recipes/multiple-versions.md#typetables) instead. Not only will it greatly reduce the size of your dependencies, but it won't be flagged by a vulnerability scanner.
 :::
 
 In order to modernize and upgrade old or vulnerable code, some OpenRewrite recipe modules bundle copies of old libraries. Libraries bundled into recipe modules are never executed. That being said, these libraries are **never executed**.
