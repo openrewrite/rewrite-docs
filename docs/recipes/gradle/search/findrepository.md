@@ -33,7 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Parameter | Value |
 | -- | -- |
 |type|`null`|
-|url|`https://oss.sonatype.org/content/repositories/snapshots`|
+|url|`https://central.sonatype.com/repository/maven-snapshots`|
 |purpose|`null`|
 
 
@@ -45,18 +45,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```groovy title="build.gradle"
 buildscript {
   repositories {
-    maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-    maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-    maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-    maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+    maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+    maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+    maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+    maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
   }
 }
 
 repositories {
-  maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-  maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-  maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-  maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+  maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+  maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+  maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
 }
 ```
 
@@ -64,18 +64,18 @@ repositories {
 ```groovy title="build.gradle"
 buildscript {
   repositories {
-    /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-    /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-    /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-    /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+    /*~~>*/maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+    /*~~>*/maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+    /*~~>*/maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+    /*~~>*/maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
   }
 }
 
 repositories {
-  /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-  /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-  /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-  /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  /*~~>*/maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+  /*~~>*/maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+  /*~~>*/maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+  /*~~>*/maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
 }
 ```
 
@@ -88,26 +88,26 @@ repositories {
 @@ -3,4 +3,4 @@
 buildscript {
   repositories {
--   maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
--   maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
--   maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
--   maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
-+   /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-+   /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-+   /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-+   /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+-   maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+-   maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+-   maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+-   maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
++   /*~~>*/maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
++   /*~~>*/maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
++   /*~~>*/maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
++   /*~~>*/maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
   }
 @@ -11,4 +11,4 @@
 
 repositories {
-- maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-- maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-- maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-- maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
-+ /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-+ /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-+ /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-+ /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+- maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+- maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+- maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+- maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
++ /*~~>*/maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
++ /*~~>*/maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
++ /*~~>*/maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
++ /*~~>*/maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
 }
 ```
 </TabItem>
@@ -121,10 +121,10 @@ repositories {
 ```settingsGradle
 pluginManagement {
   repositories {
-    maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-    maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-    maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-    maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+    maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+    maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+    maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+    maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
   }
 }
 ```
@@ -133,10 +133,10 @@ pluginManagement {
 ```settingsGradle
 pluginManagement {
   repositories {
-    /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-    /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-    /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-    /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+    /*~~>*/maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+    /*~~>*/maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+    /*~~>*/maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+    /*~~>*/maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
   }
 }
 ```
@@ -148,14 +148,14 @@ pluginManagement {
 @@ -3,4 +3,4 @@
 pluginManagement {
   repositories {
--   maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
--   maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
--   maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
--   maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
-+   /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-+   /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-+   /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-+   /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+-   maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+-   maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
+-   maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
+-   maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
++   /*~~>*/maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
++   /*~~>*/maven { url = uri("https://central.sonatype.com/repository/maven-snapshots") }
++   /*~~>*/maven { setUrl("https://central.sonatype.com/repository/maven-snapshots") }
++   /*~~>*/maven { setUrl(uri("https://central.sonatype.com/repository/maven-snapshots")) }
   }
 ```
 </TabItem>

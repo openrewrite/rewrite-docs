@@ -20,7 +20,7 @@ repositories {
     // ...
 
     maven {
-        url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+        url = uri("https://central.sonatype.com/repository/maven-snapshots/")
     }
 }
 ```
@@ -45,13 +45,13 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
     <!-- ... -->
     <repository>
         <id>rewrite-snapshots</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
         <id>rewrite-snapshots</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </pluginRepository>
 </pluginRepositories>
 ```
