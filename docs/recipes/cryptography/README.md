@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find hardcoded numbers passed into `RSAKeyGenParameterSpec`](./findhardcodedrsakeygenparameterspec.md)
 * [Find hardcoded protocols on SSL socket creation](./findhardcodedprotocolsonsslsocketcreation.md)
 * [Find hardcoded protocols on SSL sockets](./findhardcodedprotocolsonsslsocketsetprotocols.md)
+* [Find insecure `Security.setProperty` calls](./findinsecuresecuritysetproperties.md)
 * [Find where `SSLContext` is set as system default](./findsslcontextdefault.md)
 * [Hardcoded algorithm specific parameters](./findhardcodedalgorithmspecificparameters.md)
 * [Hardcoded ciphersuite choice](./findhardcodedciphersuitechoice.md)

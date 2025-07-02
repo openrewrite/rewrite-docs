@@ -58,6 +58,20 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="io.moderne.cryptography.table.InsecureSetProperties" label="InsecureSetProperties">
+
+### Insecure `Security.setProperty(..)` uses.
+**io.moderne.cryptography.table.InsecureSetProperties**
+
+_An itemization of the properties used in such calls_
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source code | The source code where the insecure property is defined, which may not contain a `Security.setProperty(..)` call directly if the property was defined somewhere and through data flow analysis we've concluded that it is later used in a `Security.setProperty(..)` call. |
+| Property | The property that is set insecurely, e.g. `crypto.policy`. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

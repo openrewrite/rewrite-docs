@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Find SSL configuration"
+sidebar_label: "Find insecure Security.setProperty calls"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find SSL configuration
+# Find insecure `Security.setProperty` calls
 
-**io.moderne.cryptography.FindSslConfiguration**
+**io.moderne.cryptography.FindInsecureSecuritySetProperties**
 
-_The configuration of Secure Socket Layer (SSL) and Transport Layer Security (TLS) is a key aspect of making a secure  application. This recipe detects and enumerates these configurations._
+_Locate calls to `Security.setProperty` that set insecure properties._
 
 ## Recipe source
 
@@ -30,7 +30,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindSslConfiguration
+mod run . --recipe FindInsecureSecuritySetProperties
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -44,7 +44,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-cryptography:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.cryptography.FindSslConfiguration" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.cryptography.FindInsecureSecuritySetProperties" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -52,20 +52,17 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="io.moderne.cryptography.table.SslConfiguration" label="SslConfiguration">
+<TabItem value="io.moderne.cryptography.table.InsecureSetProperties" label="InsecureSetProperties">
 
-### Ssl configuration
-**io.moderne.cryptography.table.SslConfiguration**
+### Insecure `Security.setProperty(..)` uses.
+**io.moderne.cryptography.table.InsecureSetProperties**
 
-_Records configuration of Secure Socket Layer (SSL) and Transport Layer Security (TLS)._
+_An itemization of the properties used in such calls_
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path | Path to the source file where the SSL configuration is defined. |
-| Protocol | Protocol used by SSL to encrypt communications. e.g.: TLS |
-| Enabled protocols | List of protocols enabled for SSL/TLS communication. e.g.: TLSv1.2|TLSv1.3 |
-| Ciphers | List of ciphers used for SSL/TLS encryption. e.g.: TLS_AES_128_GCM_SHA256|TLS_AES_256_GCM_SHA384 |
-| SSL bundle | Spring SSL configuration bundle name |
+| Source code | The source code where the insecure property is defined, which may not contain a `Security.setProperty(..)` call directly if the property was defined somewhere and through data flow analysis we've concluded that it is later used in a `Security.setProperty(..)` call. |
+| Property | The property that is set insecurely, e.g. `crypto.policy`. |
 
 </TabItem>
 
@@ -126,4 +123,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -127,6 +127,20 @@ _The text of matching method invocations._
 
 </TabItem>
 
+<TabItem value="io.moderne.cryptography.table.InsecureSetProperties" label="InsecureSetProperties">
+
+### Insecure `Security.setProperty(..)` uses.
+**io.moderne.cryptography.table.InsecureSetProperties**
+
+_An itemization of the properties used in such calls_
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source code | The source code where the insecure property is defined, which may not contain a `Security.setProperty(..)` call directly if the property was defined somewhere and through data flow analysis we've concluded that it is later used in a `Security.setProperty(..)` call. |
+| Property | The property that is set insecurely, e.g. `crypto.policy`. |
+
+</TabItem>
+
 <TabItem value="io.moderne.cryptography.table.SslConfiguration" label="SslConfiguration">
 
 ### Ssl configuration
@@ -136,11 +150,11 @@ _Records configuration of Secure Socket Layer (SSL) and Transport Layer Security
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source Path | Path to the source file where the SSL configuration is defined. |
+| Source path | Path to the source file where the SSL configuration is defined. |
 | Protocol | Protocol used by SSL to encrypt communications. e.g.: TLS |
-| Enabled Protocols | List of protocols enabled for SSL/TLS communication. e.g.: TLSv1.2|TLSv1.3 |
+| Enabled protocols | List of protocols enabled for SSL/TLS communication. e.g.: TLSv1.2|TLSv1.3 |
 | Ciphers | List of ciphers used for SSL/TLS encryption. e.g.: TLS_AES_128_GCM_SHA256|TLS_AES_256_GCM_SHA384 |
-| SSL Bundle | Spring SSL configuration bundle name |
+| SSL bundle | Spring SSL configuration bundle name |
 
 </TabItem>
 
