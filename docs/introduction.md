@@ -17,7 +17,7 @@ It consists of an auto-refactoring engine that runs prepackaged, open-source ref
 
  ## How does OpenRewrite work?
 
-<ReactPlayer url='https://www.youtube.com/watch?v=nz29-DWeV44' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=LgvqAzTxkEU' controls="true" />
 
 <br/>
 
