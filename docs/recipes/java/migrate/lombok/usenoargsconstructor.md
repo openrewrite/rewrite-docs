@@ -252,4 +252,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-timo-a
+timo-a, [Tim te Beek](mailto:timtebeek@gmail.com)

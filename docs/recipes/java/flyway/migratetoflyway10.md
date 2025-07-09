@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add missing Flyway module for PostgreSQL](../../java/flyway/addflywaymodulepostgresql)
 * [Add missing Flyway module for MySQL](../../java/flyway/addflywaymodulemysql)
 * [Add missing Flyway module for Oracle](../../java/flyway/addflywaymoduleoracle)
+* [Add missing Flyway module for SQL Server](../../java/flyway/addflywaymodulesqlserver)
 
 </TabItem>
 
@@ -53,6 +54,7 @@ recipeList:
   - org.openrewrite.java.flyway.AddFlywayModulePostgreSQL
   - org.openrewrite.java.flyway.AddFlywayModuleMySQL
   - org.openrewrite.java.flyway.AddFlywayModuleOracle
+  - org.openrewrite.java.flyway.AddFlywayModuleSqlServer
 
 ```
 </TabItem>

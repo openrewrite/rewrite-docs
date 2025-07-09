@@ -271,4 +271,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-timo-a, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+timo-a, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com)

@@ -254,4 +254,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Sam Snyder](mailto:sam@moderne.io)
+[Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

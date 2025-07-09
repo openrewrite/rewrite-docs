@@ -21,7 +21,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Change Maven Java version property values to 17](./javaversion17.md)
-* [Migrate to 4.12.0](./camelmigrationrecipe.md)
+* [Migrate to 4.12.1](./camelmigrationrecipe.md)
 * [Migrate to Java 17](./upgradetojava17.md)
 * [Update properties and yaml configurations file](./updatepropertiesandyamlkeys.md)
 * [Upgrade Java version](./upgradejavaversion.md)

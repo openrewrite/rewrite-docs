@@ -275,4 +275,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jente Sondervorst](mailto:jentesondervorst@gmail.com)
+[Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

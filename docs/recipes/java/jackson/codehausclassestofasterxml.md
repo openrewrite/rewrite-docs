@@ -13,18 +13,243 @@ _In Jackson 2, the package and dependency coordinates moved from Codehaus to Fas
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/codehaus-to-fasterxml.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Definition
 
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Jackson `@JsonInclude`](../../java/jackson/codehaus/jsonincludeannotation)
+* [Migrate serialization annotation processor](../../java/jackson/codehaus/replaceserializationconfigannotationintrospector)
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.JsonSerializer`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.JsonSerializer`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.annotate.JsonSerialize$Inclusion`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.annotation.JsonInclude$Include`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.annotate.JsonSerialize`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.annotation.JsonSerialize`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.AnnotationIntrospector`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.AnnotationIntrospector`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.xc.JaxbAnnotationIntrospector`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.introspect.JacksonAnnotationIntrospector`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.AnnotationIntrospector.Pair`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.introspect.NopAnnotationIntrospector`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.introspect.NopAnnotationIntrospector`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.ObjectMapper`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.ObjectMapper`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.SerializationConfig$Feature`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.SerializationFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.DeserializationConfig$Feature`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.DeserializationFeature`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.codehaus.jackson.annotate`
+  * newPackageName: `com.fasterxml.jackson.annotation`
+  * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.codehaus.jackson.map.ext`
+  * newPackageName: `com.fasterxml.jackson.databind.ext`
+  * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.codehaus.jackson.map.ser`
+  * newPackageName: `com.fasterxml.jackson.databind.ser`
+  * recursive: `true`
+* [Add imports for fully qualified references to types](../../java/shortenfullyqualifiedtypereferences)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.jackson.CodehausClassesToFasterXML
+displayName: Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML
+description: |
+  In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
+recipeList:
+  - org.openrewrite.java.jackson.codehaus.JsonIncludeAnnotation
+  - org.openrewrite.java.jackson.codehaus.ReplaceSerializationConfigAnnotationIntrospector
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.JsonSerializer
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.JsonSerializer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.annotate.JsonSerialize$Inclusion
+      newFullyQualifiedTypeName: com.fasterxml.jackson.annotation.JsonInclude$Include
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.annotate.JsonSerialize
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.annotation.JsonSerialize
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.AnnotationIntrospector
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.AnnotationIntrospector
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.xc.JaxbAnnotationIntrospector
+      newFullyQualifiedTypeName: com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.introspect.JacksonAnnotationIntrospector
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.AnnotationIntrospector.Pair
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.introspect.NopAnnotationIntrospector
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.introspect.NopAnnotationIntrospector
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.ObjectMapper
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.ObjectMapper
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.SerializationConfig$Feature
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.SerializationFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.DeserializationConfig$Feature
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.DeserializationFeature
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.codehaus.jackson.annotate
+      newPackageName: com.fasterxml.jackson.annotation
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.codehaus.jackson.map.ext
+      newPackageName: com.fasterxml.jackson.databind.ext
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.codehaus.jackson.map.ser
+      newPackageName: com.fasterxml.jackson.databind.ser
+      recursive: true
+  - org.openrewrite.java.ShortenFullyQualifiedTypeReferences
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.jackson.CodehausClassesToFasterXML")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.jackson.CodehausClassesToFasterXML")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.jackson.CodehausClassesToFasterXML</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-jackson</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.CodehausClassesToFasterXML -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -109,4 +334,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io)

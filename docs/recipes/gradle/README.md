@@ -12,6 +12,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Apply Gradle best practices](./gradlebestpractices.md)
 * [Migrate to Gradle 6 from Gradle 5](./migratetogradle6.md)
 * [Migrate to Gradle 7 from Gradle 6](./migratetogradle7.md)
 * [Migrate to Gradle 8 from Gradle 7](./migratetogradle8.md)

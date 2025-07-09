@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Recipe classes should not have mutable `static` fields](../../java/recipes/nomutablestaticfieldsinrecipes)
 * [Use of `@EqualsAndHashCode` on `Recipe`](../../java/recipes/recipeequalsandhashcodecallsuper)
 * [Use `Tree.randomId()` in LST constructors](../../java/recipes/usetreerandomid)
+* [Replace static `Traits` methods with constructor calls](../../java/recipes/migrate/removetraitsusagerecipes)
 * [Fix missing braces](../../staticanalysis/needbraces)
 * [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
 * [Remove annotation](../../java/removeannotation)
@@ -63,6 +64,7 @@ recipeList:
   - org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes
   - org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper
   - org.openrewrite.java.recipes.UseTreeRandomId
+  - org.openrewrite.java.recipes.migrate.RemoveTraitsUsageRecipes
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
   - org.openrewrite.java.RemoveAnnotation:

@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change Quarkus configuration property value](./changequarkuspropertyvalue.md)
 * [Configure `quarkus-maven-plugin` with reasonable defaults](./configurequarkusmavenpluginwithreasonabledefaults.md)
 * [Delete Quarkus configuration property](./deletequarkusproperty.md)
+* [Migrate SLF4J Logger injection and usage to Quarkus static `Log`](./slf4jtoquarkuslogger.md)
 * [Use `@ConfigMapping`](./configpropertiestoconfigmapping.md)
 * [Use Mutiny `multi.toHotStream()`](./multitransformhotstreamtomultihotstream.md)
 * [Use `native` profile in `quarkus-maven-plugin`](./migratequarkusmavenpluginnativeimagegoal.md)

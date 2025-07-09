@@ -28,7 +28,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Data 2.3](../../../java/spring/data/upgradespringdata_2_3)
 * [Use `JpaRepository#getById(ID id)`](../../../java/spring/data/usejparepositorygetbyid)
 * [Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`](../../../java/spring/data/usejparepositorydeleteallinbatch)
 
@@ -44,7 +43,6 @@ displayName: Migrate to Spring Data 2.5
 description: |
   Migrate applications to the latest Spring Data 2.5 release.
 recipeList:
-  - org.openrewrite.java.spring.data.UpgradeSpringData_2_3
   - org.openrewrite.java.spring.data.UseJpaRepositoryGetById
   - org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch
 
@@ -242,6 +240,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com)

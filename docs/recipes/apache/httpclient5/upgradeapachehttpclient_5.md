@@ -66,6 +66,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Adds `TimeUnit` to timeouts and duration methods](../../apache/httpclient5/upgradeapachehttpclient_5_timeunit)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/statusline)
 * [Replaces `AuthScope.ANY`](../../apache/httpclient5/migrateauthscope)
+* [Delete method argument](../../java/deletemethodargument)
+  * methodPattern: `org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)`
+  * argumentIndex: `0`
+* [Delete method argument](../../java/deletemethodargument)
+  * methodPattern: `org.apache.hc.client5.http.impl.auth.DigestSchemeFactory <constructor>(java.nio.charset.Charset)`
+  * argumentIndex: `0`
 
 </TabItem>
 
@@ -115,6 +121,12 @@ recipeList:
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit
   - org.openrewrite.apache.httpclient5.StatusLine
   - org.openrewrite.apache.httpclient5.MigrateAuthScope
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)
+      argumentIndex: 0
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.apache.hc.client5.http.impl.auth.DigestSchemeFactory <constructor>(java.nio.charset.Charset)
+      argumentIndex: 0
 
 ```
 </TabItem>
@@ -1021,4 +1033,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), [steve-aom-elliott](mailto:steve@moderne.io), SiBorea, Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+[Joan Viladrosa](mailto:joan@moderne.io), [steve-aom-elliott](mailto:steve@moderne.io), SiBorea, Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

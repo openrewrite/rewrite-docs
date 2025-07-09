@@ -51,6 +51,107 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+     <parent>
+          <groupId>net.wasdev.maven.parent</groupId>
+           <artifactId>java8-parent</artifactId>
+           <version>1.4</version>
+     </parent>
+     <artifactId>my-artifact</artifactId>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+     <parent>
+          <groupId>net.wasdev.maven.parent</groupId>
+           <artifactId>parent</artifactId>
+           <version>1.4</version>
+     </parent>
+     <artifactId>my-artifact</artifactId>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,1 @@
+     <parent>
+          <groupId>net.wasdev.maven.parent</groupId>
+-          <artifactId>java8-parent</artifactId>
++          <artifactId>parent</artifactId>
+           <version>1.4</version>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+     <parent>
+          <groupId>net.wasdev.maven.parent</groupId>
+           <artifactId>java8-parent</artifactId>
+           <version>1.4</version>
+     </parent>
+     <artifactId>my-artifact</artifactId>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+     <parent>
+          <groupId>net.wasdev.maven.parent</groupId>
+           <artifactId>parent</artifactId>
+           <version>1.4</version>
+     </parent>
+     <artifactId>my-artifact</artifactId>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,1 @@
+     <parent>
+          <groupId>net.wasdev.maven.parent</groupId>
+-          <artifactId>java8-parent</artifactId>
++          <artifactId>parent</artifactId>
+           <version>1.4</version>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

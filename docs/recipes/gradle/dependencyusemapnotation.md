@@ -224,4 +224,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+[Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com)

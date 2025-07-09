@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.DependencyUseStringNotation**
 
-_In Gradle, dependencies can be expressed as a `String` like `"groupId:artifactId:version"`, or equivalently as a `Map` like `group: 'groupId', name: 'artifactId', version: 'version'`. This recipe replaces dependencies represented as `Maps` with an equivalent dependency represented as a `String`._
+_In Gradle, dependencies can be expressed as a `String` like `"groupId:artifactId:version"`, or equivalently as a `Map` like `group: 'groupId', name: 'artifactId', version: 'version'`. This recipe replaces dependencies represented as `Maps` with an equivalent dependency represented as a `String`, as recommended per the [Gradle best practices for dependencies to use a single GAV](https://docs.gradle.org/8.14.2/userguide/best_practices_dependencies.html#single-gav-string)._
 
 ## Recipe source
 
@@ -286,4 +286,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Tim te Beek](mailto:tim@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Sam Snyder](mailto:sam@moderne.io)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Sam Snyder](mailto:sam@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)

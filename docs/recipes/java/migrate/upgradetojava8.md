@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Java 7](../../java/migrate/upgradetojava7)
 * [MBean and MXBean interfaces must be public](../../java/migrate/mxbeanrule)
-* [Migrate BouncyCastle to jdk18on](../../java/migrate/bouncecastlefromjdk15ontojdk18on)
+* [Migrate Bouncy Castle to `jdk18on`](../../java/migrate/bouncecastlefromjdk15ontojdk18on)
 * [Remove method invocations](../../java/removemethodinvocations)
   * methodPattern: `java.lang.Thread destroy()`
 
@@ -484,4 +484,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, Daryl Robbins, [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+Chuka Obinabo, Anu Ramamoorthy, Daryl Robbins, [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

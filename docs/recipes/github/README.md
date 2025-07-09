@@ -6,6 +6,12 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 
 * [Gradle](/recipes/github/gradle)
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Replace OSSRH secrets with Sonatype secrets](./replaceossrhsecretswithsonatype.md)
+
 ## Recipes
 
 * [Add cron workflow trigger](./addcrontrigger.md)
@@ -19,7 +25,9 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 * [Find GitHub action secret references](./findgithubactionsecretreferences.md)
 * [Find jobs missing timeout](./findmissingtimeout.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)
+* [Replace GitHub Action secret names](./replacesecrets.md)
 * [Replace runners for a job](./replacerunners.md)
+* [Replace secret key names in GitHub Actions](./replacesecretkeys.md)
 * [Setup Java dependency caching](./setupjavacaching.md)
 * [Upgrade `actions/setup-java` `java-version`](./setupjavaupgradejavaversion.md)
 * [Upgrade `slackapi/slack-github-action`](./upgradeslacknotificationversion2.md)

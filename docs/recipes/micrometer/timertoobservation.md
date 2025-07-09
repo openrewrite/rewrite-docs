@@ -19,8 +19,7 @@ _Convert Micrometer Timer to Observations._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -81,79 +80,6 @@ class Test {
 -               .register(registry)
 -               .record(arg);
 +       Observation.createNotStarted("my.timer", registry)
-+               .observe(arg);
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.instrument.Timer;
-
-import java.util.function.Supplier;
-
-class Test {
-    private MeterRegistry registry;
-
-    void test(Supplier<String> arg) {
-        String result = Timer.builder("my.timer")
-                .register(registry)
-                .record(arg);
-    }
-}
-```
-
-###### After
-```java
-import io.micrometer.observation.Observation;
-import io.micrometer.observation.ObservationRegistry;
-
-import java.util.function.Supplier;
-
-class Test {
-    private ObservationRegistry registry;
-
-    void test(Supplier<String> arg) {
-        String result = Observation.createNotStarted("my.timer", registry)
-                .observe(arg);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,2 @@
--import io.micrometer.core.instrument.MeterRegistry;
--import io.micrometer.core.instrument.Timer;
-+import io.micrometer.observation.Observation;
-+import io.micrometer.observation.ObservationRegistry;
-
-@@ -7,1 +7,1 @@
-
-class Test {
--   private MeterRegistry registry;
-+   private ObservationRegistry registry;
-
-@@ -10,3 +10,2 @@
-
-    void test(Supplier<String> arg) {
--       String result = Timer.builder("my.timer")
--               .register(registry)
--               .record(arg);
-+       String result = Observation.createNotStarted("my.timer", registry)
 +               .observe(arg);
     }
 ```

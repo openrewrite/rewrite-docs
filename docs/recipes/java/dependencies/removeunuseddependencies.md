@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.dependencies.RemoveUnusedDependencies**
 
-_Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is a complex recipe which has not yet been well tested and exercised. For now it should be treated as making recommendations to further investigate._
+_Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName("java.util.List")` that is counted correctly.When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed._
 
 ## Recipe source
 

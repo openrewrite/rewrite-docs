@@ -19,9 +19,7 @@ _String concatenation within calls to `StringBuilder.append()` causes unnecessar
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-## Examples
-##### Example 1
-Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -63,52 +61,6 @@ class A {
 -       sb.append(1 + op + 2);
 +       sb.append("A").append(op).append("B");
 +       sb.append(1).append(op).append(2);
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-Grouping concatenation.
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-        sb.append("A" + "B" + "C" + op + "D" + "E");
-    }
-}
-```
-
-###### After
-```java
-class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-        sb.append("A" + "B" + "C").append(op).append("D" + "E");
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,1 +5,1 @@
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
--       sb.append("A" + "B" + "C" + op + "D" + "E");
-+       sb.append("A" + "B" + "C").append(op).append("D" + "E");
     }
 ```
 </TabItem>

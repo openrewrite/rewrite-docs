@@ -5,6 +5,7 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 ## Categories
 
 * [Amqp](/recipes/java/spring/amqp)
+* [Boot](/recipes/java/spring/boot)
 * [Cloud2020](/recipes/java/spring/cloud2020)
 * [Cloud2021](/recipes/java/spring/cloud2021)
 * [Cloud2024](/recipes/java/spring/cloud2024)

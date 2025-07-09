@@ -29,9 +29,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | configuration | *Optional*. The dependency configuration to remove from. | `api` |
 | `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
-## Examples
-##### Example 1
-Remove a Gradle dependency
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -93,89 +91,6 @@ dependencies {
 -       exclude group: "junit"
 -   }
     testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-Remove a Maven dependency
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`junit`|
-|artifactId|`junit`|
-|unlessUsing|`null`|
-|configuration|`null`|
-|scope|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -14,6 +14,0 @@
-      <version>29.0-jre</version>
-    </dependency>
--   <dependency>
--     <groupId>junit</groupId>
--     <artifactId>junit</artifactId>
--     <version>4.13.1</version>
--     <scope>test</scope>
--   </dependency>
-  </dependencies>
 ```
 </TabItem>
 </Tabs>

@@ -32,9 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
 
-## Examples
-##### Example 1
-Change Gradle dependency
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -95,80 +93,6 @@ dependencies {
 -   implementation "commons-lang:commons-lang:2.6"
 +   implementation "org.apache.commons:commons-lang3:3.11"
 }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-Change Maven dependency
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldGroupId|`commons-lang`|
-|oldArtifactId|`commons-lang`|
-|newGroupId|`org.apache.commons`|
-|newArtifactId|`commons-lang3`|
-|newVersion|`3.11.x`|
-|versionPattern|`null`|
-|overrideManagedVersion|`null`|
-|changeManagedDependency|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <groupId>com.example.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencies>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <groupId>com.example.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -7,3 +7,3 @@
-    <dependencies>
-        <dependency>
--           <groupId>commons-lang</groupId>
--           <artifactId>commons-lang</artifactId>
--           <version>2.6</version>
-+           <groupId>org.apache.commons</groupId>
-+           <artifactId>commons-lang3</artifactId>
-+           <version>3.11</version>
-        </dependency>
 ```
 </TabItem>
 </Tabs>

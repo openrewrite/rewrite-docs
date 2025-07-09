@@ -102,7 +102,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.mockito.runners.MockitoJUnitRunner`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
-* [Remove initialization when using `@InjectMocks`](../../../java/testing/mockito/noinitializationforinjectmock)
+* [Remove `@InjectMocks` annotation or initializer](../../../java/testing/mockito/noinitializationforinjectmock)
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
@@ -609,4 +609,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:tim@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), SiBorea, [Tim te Beek](mailto:timtebeek@gmail.com), Anshuman Mishra, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, Aaron Gershman
+[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), SiBorea, Anshuman Mishra, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman

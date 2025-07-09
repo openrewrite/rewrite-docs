@@ -12,6 +12,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartainjectapidependencyscope.md)
+* [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartawebservicersapidependencyscope.md)
 * [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejaxbbindapidependencyscope.md)
 * [Check and Comment Out Deprecations removed on WebLogic version 14.1.2](./checkandcommentoutdeprecations1412.md)
 * [Migrate WebLogic Schemas to 14.1.2](./migrateweblogicschemasto1412.md)

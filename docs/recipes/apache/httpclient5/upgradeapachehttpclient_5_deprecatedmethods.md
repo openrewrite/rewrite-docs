@@ -43,6 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method name](../../java/changemethodname)
   * methodPattern: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase releaseConnection()`
   * newMethodName: `reset`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `org.apache.hc.client5.http.auth.AuthScheme getSchemeName()`
+  * newMethodName: `getName`
 
 </TabItem>
 
@@ -71,6 +74,9 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase releaseConnection()
       newMethodName: reset
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.hc.client5.http.auth.AuthScheme getSchemeName()
+      newMethodName: getName
 
 ```
 </TabItem>

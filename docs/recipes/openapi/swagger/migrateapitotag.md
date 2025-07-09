@@ -19,8 +19,7 @@ _Converts `@Api` to `@Tag` annotation and converts the directly mappable attribu
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -56,53 +55,6 @@ import io.swagger.annotations.Api;
 
 -@Api(value = "Bar")
 +@Tag(name = "Bar")
-class Example {}
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import io.swagger.annotations.Api;
-
-@Api(value = "Bar", hidden = true)
-class Example {}
-```
-
-###### After
-```java
-import io.swagger.v3.oas.annotations.Hidden;
-import io.swagger.v3.oas.annotations.tags.Tag;
-
-@Tag(name = "Bar")
-@Hidden
-class Example {}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,2 @@
--import io.swagger.annotations.Api;
-+import io.swagger.v3.oas.annotations.Hidden;
-+import io.swagger.v3.oas.annotations.tags.Tag;
-
-@@ -3,1 +4,2 @@
-import io.swagger.annotations.Api;
-
--@Api(value = "Bar", hidden = true)
-+@Tag(name = "Bar")
-+@Hidden
 class Example {}
 ```
 </TabItem>
@@ -301,4 +253,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-SiBorea, [Tim te Beek](mailto:tim@moderne.io)
+SiBorea, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -262,4 +262,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Leanne Kerford](mailto:lea.kerford@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Leanne Kerford](mailto:lea.kerford@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

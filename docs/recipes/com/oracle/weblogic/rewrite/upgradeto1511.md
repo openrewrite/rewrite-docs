@@ -39,6 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate WebLogic Schemas to 15.1.1](../../../../com/oracle/weblogic/rewrite/migrateweblogicschemasto1511)
 * [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](../../../../com/oracle/weblogic/rewrite/changejakartainjectapidependencyscope)
 * [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](../../../../com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope)
+* [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](../../../../com/oracle/weblogic/rewrite/changejakartawebservicersapidependencyscope)
 
 </TabItem>
 
@@ -61,6 +62,7 @@ recipeList:
   - com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511
   - com.oracle.weblogic.rewrite.ChangeJakartaInjectAPIDependencyScope
   - com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope
+  - com.oracle.weblogic.rewrite.ChangeJakartaWebServiceRSAPIDependencyScope
 
 ```
 </TabItem>

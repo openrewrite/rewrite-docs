@@ -19,6 +19,107 @@ _Ensures that there is only one `@DocumentExample` annotation per test class, as
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Test;
+import org.openrewrite.DocumentExample;
+import org.openrewrite.test.RewriteTest;
+
+import static org.openrewrite.java.Assertions.java;
+
+class UnnecessaryParenthesesTest implements RewriteTest {
+    @DocumentExample
+    @Test
+    void test1() {
+        rewriteRun(
+          java(
+            """
+              BEFORE
+              """,
+            """
+              AFTER
+              """
+          )
+        );
+    }
+
+    @DocumentExample
+    @Test
+    void test2() {
+        rewriteRun(
+          java(
+            """
+              BEFORE
+              """,
+            """
+              AFTER
+              """
+          )
+        );
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import org.openrewrite.DocumentExample;
+import org.openrewrite.test.RewriteTest;
+
+import static org.openrewrite.java.Assertions.java;
+
+class UnnecessaryParenthesesTest implements RewriteTest {
+    @DocumentExample
+    @Test
+    void test1() {
+        rewriteRun(
+          java(
+            """
+              BEFORE
+              """,
+            """
+              AFTER
+              """
+          )
+        );
+    }
+
+    @Test
+    void test2() {
+        rewriteRun(
+          java(
+            """
+              BEFORE
+              """,
+            """
+              AFTER
+              """
+          )
+        );
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -23,1 +23,0 @@
+    }
+
+-   @DocumentExample
+    @Test
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

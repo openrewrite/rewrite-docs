@@ -38,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove `public` visibility of JUnit 5 tests](../../java/testing/cleanup/testsshouldnotbepublic)
 * [Fix missing braces](../../staticanalysis/needbraces)
 * [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
+* [Reorder annotations alphabetically](../../staticanalysis/reorderannotations)
 * [Use static import](../../java/usestaticimport)
   * methodPattern: `org.openrewrite..Assertions *(..)`
 
@@ -63,6 +64,7 @@ recipeList:
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
+  - org.openrewrite.staticanalysis.ReorderAnnotations
   - org.openrewrite.java.UseStaticImport:
       methodPattern: org.openrewrite..Assertions *(..)
 

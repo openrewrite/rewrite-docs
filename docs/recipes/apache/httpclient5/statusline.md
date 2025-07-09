@@ -260,4 +260,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[steve-aom-elliott](mailto:steve@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), Adriano Machado, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[steve-aom-elliott](mailto:steve@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
