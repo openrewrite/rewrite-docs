@@ -310,4 +310,4 @@ Behind the scenes, the annotation processor transforms these `Semantics.expressi
 Prerequisite: To use this feature, make sure your project is set up for Refaster-style recipes with annotation processing enabled. See the [How to create a Refaster recipe](../authoring-recipes/refaster-recipes#how-to-create-a-refaster-recipe) section for more details.
 :::
 
-This pattern is especially useful when you're prototyping or when your templates are derived from simple expressions or statements that can be represented as lambdas. It's functionally equivalent to defining a JavaTemplate manually but with less boilerplate.
+Since the Semantics class is functionally equivalent to defining a JavaTemplate manually, while offering compile-time safety and slightly less boilerplate, it is well-suited for cases where your template is just beyond what Refaster can express easily. It provides a convenient middle ground between Refaster and fully custom JavaTemplate logic.
