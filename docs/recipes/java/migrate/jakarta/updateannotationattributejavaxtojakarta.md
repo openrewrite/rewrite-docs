@@ -218,4 +218,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Melloware](mailto:mellowaredev@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+[Melloware](mailto:mellowaredev@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com)

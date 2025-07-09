@@ -72,10 +72,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use primitive wrapper `valueOf` method](../staticanalysis/primitivewrapperclassconstructortovalueof)
 * [Redundant file creation](../staticanalysis/redundantfilecreation)
 * [Remove extra semicolons](../staticanalysis/removeextrasemicolons)
+* [Remove redundant null checks before instanceof](../staticanalysis/removeredundantnullcheckbeforeinstanceof)
 * [Rename methods named `hashcode`, `equal`, or `tostring`](../staticanalysis/renamemethodsnamedhashcodeequalortostring)
 * [Replace `A.class.isInstance(a)` with `a instanceof A`](../staticanalysis/replaceclassisinstancewithinstanceof)
 * [Use method references in lambda](../staticanalysis/replacelambdawithmethodreference)
 * [Replace `StringBuilder#append` with `String`](../staticanalysis/replacestringbuilderwithstring)
+* [Simplify `Arrays.asList(..)` with varargs](../staticanalysis/simplifyarraysaslist)
 * [Simplify boolean expression](../staticanalysis/simplifybooleanexpression)
 * [Simplify boolean return](../staticanalysis/simplifybooleanreturn)
 * [Static methods need not be final](../staticanalysis/staticmethodnotfinal)
@@ -151,10 +153,12 @@ recipeList:
   - org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.staticanalysis.RedundantFileCreation
   - org.openrewrite.staticanalysis.RemoveExtraSemicolons
+  - org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof
   - org.openrewrite.staticanalysis.RenameMethodsNamedHashcodeEqualOrToString
   - org.openrewrite.staticanalysis.ReplaceClassIsInstanceWithInstanceof
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
+  - org.openrewrite.staticanalysis.SimplifyArraysAsList
   - org.openrewrite.staticanalysis.SimplifyBooleanExpression
   - org.openrewrite.staticanalysis.SimplifyBooleanReturn
   - org.openrewrite.staticanalysis.StaticMethodNotFinal
@@ -370,4 +374,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kun Li](mailto:kun@moderne.io), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), punkratz312, [Tim te Beek](mailto:timtebeek@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), Aaron Gershman, [Jammy Louie](mailto:jammy@moderne.io), [JohannisK](mailto:johan.kragt@moderne.io), Greg Oledzki, [Yurii](mailto:yusheng.email@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Karsten Thoms](mailto:karsten.thoms@gmail.com), [Serhii Manko](mailto:mankoffserg@gmail.com), Kun Li, [Peter Streef](mailto:p.streef@gmail.com), Tyler Van Gorder, [Greg Oledzki](mailto:greg.oledzki@moderne.io), Josh Soref, [Jorge Otero](mailto:jorgeor@ext.inditex.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Joan Viladrosa](mailto:joan@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), timo-abele, [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Lakshya Kwatra](mailto:lakshya.kwatra.official@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:greg@moderne.io), Michel Gonzalez, [Knut Wannheden](mailto:knut.wannheden@gmail.com), Mike Sol, [steve-aom-elliott](mailto:steve@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Derek Sharpe, [Mike Solomon](mailto:mike@moderne.io), [xshen053](mailto:shenxiaxi26@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Martin Panzer](mailto:postremus1996@googlemail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), punkratz312, [Tim te Beek](mailto:timtebeek@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), Aaron Gershman, [Jammy Louie](mailto:jammy@moderne.io), [JohannisK](mailto:johan.kragt@moderne.io), Greg Oledzki, [Yurii](mailto:yusheng.email@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Karsten Thoms](mailto:karsten.thoms@gmail.com), [Serhii Manko](mailto:mankoffserg@gmail.com), Kun Li, [Peter Streef](mailto:p.streef@gmail.com), Tyler Van Gorder, [Greg Oledzki](mailto:greg.oledzki@moderne.io), Josh Soref, [Jorge Otero](mailto:jorgeor@ext.inditex.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Joan Viladrosa](mailto:joan@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), timo-abele, [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Lakshya Kwatra](mailto:lakshya.kwatra.official@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:greg@moderne.io), Michel Gonzalez, [Knut Wannheden](mailto:knut.wannheden@gmail.com), cxdima, Mike Sol, [steve-aom-elliott](mailto:steve@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Derek Sharpe, [Mike Solomon](mailto:mike@moderne.io), [xshen053](mailto:shenxiaxi26@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Martin Panzer](mailto:postremus1996@googlemail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com)

@@ -230,4 +230,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [lingenj](mailto:jacob.van.lingen@moderne.io), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [lingenj](mailto:jacob.van.lingen@moderne.io), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

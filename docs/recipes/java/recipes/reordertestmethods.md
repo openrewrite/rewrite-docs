@@ -30,7 +30,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```java
 package org.openrewrite.java.cleanup;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,6 +41,10 @@ import org.openrewrite.test.RewriteTest;
 import static org.openrewrite.java.Assertions.java;
 
 class UnnecessaryParenthesesTest implements RewriteTest {
+
+    private static void leadingHelperMethod() {
+        // This method should not affect the ordering of test methods.
+    }
 
     @Test
     void test2() {
@@ -81,7 +84,9 @@ class UnnecessaryParenthesesTest implements RewriteTest {
         );
     }
 
-    @AfterAll static void bar(){}
+    private static void trailingHelperMethod() {
+        // This method should not affect the ordering of test methods.
+    }
 }
 ```
 
@@ -89,7 +94,6 @@ class UnnecessaryParenthesesTest implements RewriteTest {
 ```java
 package org.openrewrite.java.cleanup;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -102,7 +106,9 @@ import static org.openrewrite.java.Assertions.java;
 
 class UnnecessaryParenthesesTest implements RewriteTest {
 
-    @AfterAll static void bar(){}
+    private static void leadingHelperMethod() {
+        // This method should not affect the ordering of test methods.
+    }
 
     @BeforeEach void foo(){}
 
@@ -140,6 +146,10 @@ class UnnecessaryParenthesesTest implements RewriteTest {
               """
           )
         );
+    }
+
+    private static void trailingHelperMethod() {
+        // This method should not affect the ordering of test methods.
     }
 }
 ```
@@ -148,11 +158,9 @@ class UnnecessaryParenthesesTest implements RewriteTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -16,0 +16,12 @@
-class UnnecessaryParenthesesTest implements RewriteTest {
+@@ -19,0 +19,10 @@
+    }
 
-+   @AfterAll static void bar(){}
-+
 +   @BeforeEach void foo(){}
 +
 +   @AfterEach void bar(){}
@@ -164,13 +172,13 @@ class UnnecessaryParenthesesTest implements RewriteTest {
 +
 +   @DocumentExample
     @Test
-@@ -17,1 +29,1 @@
+@@ -20,1 +30,1 @@
 
     @Test
 -   void test2() {
 +   void test1() {
         rewriteRun(
-@@ -30,10 +42,0 @@
+@@ -33,10 +43,0 @@
     }
 
 -   @Override
@@ -184,18 +192,12 @@ class UnnecessaryParenthesesTest implements RewriteTest {
 -
 -   @DocumentExample
     @Test
-@@ -41,1 +43,1 @@
+@@ -44,1 +44,1 @@
     @DocumentExample
     @Test
 -   void test1() {
 +   void test2() {
         rewriteRun(
-@@ -53,2 +55,0 @@
-        );
-    }
--
--   @AfterAll static void bar(){}
-}
 ```
 </TabItem>
 </Tabs>

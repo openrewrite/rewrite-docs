@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate BouncyCastle to jdk18on"
+sidebar_label: "Migrate Bouncy Castle to jdk18on"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate BouncyCastle to jdk18on
+# Migrate Bouncy Castle to `jdk18on`
 
 **org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On**
 
-_This recipe will upgrade BouncyCastle dependencies from -jdk15on to -jdk18on._
+_This recipe will upgrade Bouncy Castle dependencies from `-jdk15on` or `-jdk15to18` to `-jdk18on`._
 
 ### Tags
 
@@ -67,6 +67,41 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `bctls-jdk15on`
   * newArtifactId: `bctls-jdk18on`
   * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-jdk15to18`
+  * newArtifactId: `bcprov-jdk18on`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcutil-jdk15to18`
+  * newArtifactId: `bcutil-jdk18on`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpkix-jdk15to18`
+  * newArtifactId: `bcpkix-jdk18on`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcmail-jdk15to18`
+  * newArtifactId: `bcmail-jdk18on`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcjmail-jdk15to18`
+  * newArtifactId: `bcjmail-jdk18on`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpg-jdk15to18`
+  * newArtifactId: `bcpg-jdk18on`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bctls-jdk15to18`
+  * newArtifactId: `bctls-jdk18on`
+  * newVersion: `latest.release`
 
 </TabItem>
 
@@ -76,9 +111,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On
-displayName: Migrate BouncyCastle to jdk18on
+displayName: Migrate Bouncy Castle to `jdk18on`
 description: |
-  This recipe will upgrade BouncyCastle dependencies from -jdk15on to -jdk18on.
+  This recipe will upgrade Bouncy Castle dependencies from `-jdk15on` or `-jdk15to18` to `-jdk18on`.
 tags:
   - bouncycastle
 recipeList:
@@ -117,6 +152,41 @@ recipeList:
       oldArtifactId: bctls-jdk15on
       newArtifactId: bctls-jdk18on
       newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-jdk15to18
+      newArtifactId: bcprov-jdk18on
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcutil-jdk15to18
+      newArtifactId: bcutil-jdk18on
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpkix-jdk15to18
+      newArtifactId: bcpkix-jdk18on
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcmail-jdk15to18
+      newArtifactId: bcmail-jdk18on
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcjmail-jdk15to18
+      newArtifactId: bcjmail-jdk18on
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpg-jdk15to18
+      newArtifactId: bcpg-jdk18on
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bctls-jdk15to18
+      newArtifactId: bctls-jdk18on
+      newVersion: latest.release
 
 ```
 </TabItem>
@@ -134,11 +204,9 @@ project
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
-
   <dependencies>
     <dependency>
       <groupId>org.bouncycastle</groupId>
@@ -168,11 +236,9 @@ project
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
-
   <dependencies>
     <dependency>
       <groupId>org.bouncycastle</groupId>

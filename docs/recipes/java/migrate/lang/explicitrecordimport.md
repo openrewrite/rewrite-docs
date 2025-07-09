@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```java
 package com.acme.music;
 
-public class Test {
+class Test {
     Record record;
 }
 ```
@@ -41,7 +41,7 @@ package com.acme.music;
 
 import com.acme.music.Record;
 
-public class Test {
+class Test {
     Record record;
 }
 ```
@@ -55,7 +55,7 @@ package com.acme.music;
 
 +import com.acme.music.Record;
 +
-public class Test {
+class Test {
 ```
 </TabItem>
 </Tabs>

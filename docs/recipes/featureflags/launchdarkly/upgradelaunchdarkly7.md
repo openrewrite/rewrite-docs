@@ -82,27 +82,6 @@ Maven
 ---
 
 ##### Example 2
-Gradle
-
-
-###### Unchanged
-```groovy title="build.gradle"
-plugins {
-  id "java"
-}
-
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  implementation "com.launchdarkly:launchdarkly-java-server-sdk:6.3.0"
-}
-```
-
----
-
-##### Example 3
 Maven
 
 
@@ -123,27 +102,6 @@ Maven
     </dependency>
   </dependencies>
 </project>
-```
-
----
-
-##### Example 4
-Gradle
-
-
-###### Unchanged
-```groovy title="build.gradle"
-plugins {
-  id "java"
-}
-
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  implementation "com.launchdarkly:launchdarkly-java-server-sdk:6.3.0"
-}
 ```
 
 

@@ -112,6 +112,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.impl.client.ProxyAuthenticationStrategy`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.auth.AuthSchemeProvider`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.AuthSchemeFactory`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.config.AuthSchemes`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.StandardAuthScheme`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.auth`
   * newPackageName: `org.apache.hc.client5.http.auth`
@@ -509,6 +515,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.impl.client.ProxyAuthenticationStrategy
       newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.auth.AuthSchemeProvider
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.AuthSchemeFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.config.AuthSchemes
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.StandardAuthScheme
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.auth
       newPackageName: org.apache.hc.client5.http.auth

@@ -69,38 +69,8 @@ spring.threads.virtual.enabled=true
 
 
 ###### New file
-```yaml
-spring:
-  threads:
-    virtual:
-      enabled: true
-```
-
-
----
-
-##### Example 3
-
-
-
-###### New file
 ```properties
 spring.threads.virtual.enabled=true
-```
-
-
----
-
-##### Example 4
-
-
-
-###### New file
-```yaml
-spring:
-  threads:
-    virtual:
-      enabled: true
 ```
 
 

@@ -19,8 +19,7 @@ _Find all HTTP API endpoints exposed by Spring applications. More specifically, 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -64,55 +63,6 @@ class PersonController {
 class PersonController {
 -   @GetMapping("/count")
 +   /*~~(GET /count)~~>*/@GetMapping("/count")
-    int count() {
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.springframework.web.bind.annotation.*;
-
-@RequestMapping("/person")
-class PersonController {
-    @GetMapping("/count")
-    int count() {
-      return 42;
-    }
-}
-```
-
-###### After
-```java
-import org.springframework.web.bind.annotation.*;
-
-@RequestMapping("/person")
-class PersonController {
-    /*~~(GET /person/count)~~>*/@GetMapping("/count")
-    int count() {
-      return 42;
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,1 +5,1 @@
-@RequestMapping("/person")
-class PersonController {
--   @GetMapping("/count")
-+   /*~~(GET /person/count)~~>*/@GetMapping("/count")
     int count() {
 ```
 </TabItem>
@@ -329,4 +279,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Adrien Loison, [Knut Wannheden](mailto:knut@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Adrien Loison, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)

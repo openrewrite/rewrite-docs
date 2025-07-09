@@ -34,6 +34,53 @@ public class IsLiteralNull {
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.java.tree.Expression;
+import org.openrewrite.java.tree.J;
+class Test {
+    void test(Expression e) {
+        if (e instanceof J.Literal && ((J.Literal) e).getValue() == null) {
+            System.out.println("null");
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.java.tree.Expression;
+import org.openrewrite.java.tree.J;
+class Test {
+    void test(Expression e) {
+        if (J.Literal.isLiteralValue(e, null)) {
+            System.out.println("null");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class Test {
+    void test(Expression e) {
+-       if (e instanceof J.Literal && ((J.Literal) e).getValue() == null) {
++       if (J.Literal.isLiteralValue(e, null)) {
+            System.out.println("null");
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

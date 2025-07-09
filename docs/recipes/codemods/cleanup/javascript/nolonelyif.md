@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Disallow if statements as the only statement in else blocks"
+sidebar_label: "Disallow if statements as the only statement in if blocks without else."
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow if statements as the only statement in else blocks
+# Disallow `if` statements as the only statement in `if` blocks without `else`.
 
 **org.openrewrite.codemods.cleanup.javascript.NoLonelyIf**
 
-_Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)_
+_Disallow `if` statements as the only statement in `if` blocks without `else`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-lonely-if.md)_
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/base-eslint.yml), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/unicorn.yml), 
 [Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "rules": {     "no-lonely-if": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["unicorn"],   "rules": {     "unicorn/no-lonely-if": 2   },   "globals": {     "browser": true,     "node": true   } } `
 
 </TabItem>
 
@@ -36,10 +36,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoLonelyIf
-displayName: Disallow if statements as the only statement in else blocks
+displayName: Disallow `if` statements as the only statement in `if` blocks without `else`.
 description: |
-  Disallow if statements as the only statement in else blocks 
-  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)
+  Disallow `if` statements as the only statement in `if` blocks without `else`.
+  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-lonely-if.md)
   
 recipeList:
   - org.openrewrite.codemods.ESLint:
@@ -48,8 +48,9 @@ recipeList:
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": ["./tsconfig.json"] },
+  "plugins": ["unicorn"],
   "rules": {
-    "no-lonely-if": 2
+    "unicorn/no-lonely-if": 2
   },
   "globals": {
     "browser": true,

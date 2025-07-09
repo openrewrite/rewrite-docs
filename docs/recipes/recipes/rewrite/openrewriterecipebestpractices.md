@@ -42,11 +42,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add missing `@Override` to overriding and implementing methods](../../staticanalysis/missingoverrideannotation)
 * [Operator wrapping](../../staticanalysis/operatorwrap)
   * wrapOption: `EOL`
+* [Remove redundant null checks before instanceof](../../staticanalysis/removeredundantnullcheckbeforeinstanceof)
 * [Remove unused local variables](../../staticanalysis/removeunusedlocalvariables)
 * [Remove unused private fields](../../staticanalysis/removeunusedprivatefields)
 * [Remove unused private methods](../../staticanalysis/removeunusedprivatemethods)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
-* [Replace static `Traits` methods with constructor calls](../../java/recipes/migrate/removetraitsusagerecipes)
 
 </TabItem>
 
@@ -74,11 +74,11 @@ recipeList:
   - org.openrewrite.staticanalysis.MissingOverrideAnnotation
   - org.openrewrite.staticanalysis.OperatorWrap:
       wrapOption: EOL
+  - org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof
   - org.openrewrite.staticanalysis.RemoveUnusedLocalVariables
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateFields
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods
   - org.openrewrite.staticanalysis.UseDiamondOperator
-  - org.openrewrite.java.recipes.migrate.RemoveTraitsUsageRecipes
 
 ```
 </TabItem>

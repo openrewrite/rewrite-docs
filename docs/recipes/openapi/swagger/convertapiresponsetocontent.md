@@ -212,4 +212,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[adammak](mailto:maka9@mcmaster.ca), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com)
+[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [adammak](mailto:maka9@mcmaster.ca), [Tim te Beek](mailto:tim@moderne.io)

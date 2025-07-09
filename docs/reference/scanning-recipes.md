@@ -21,10 +21,35 @@ _io.moderne.hibernate.update66.RemoveTableFromInheritedEntity_
 
 For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error.
 
+### [Is likely not a Spring Boot project](../recipes/java/spring/boot/islikelynotspringboot.md)
+_io.moderne.java.spring.boot.IsLikelyNotSpringBoot_
+
+Marks the project if it's likely not a Spring Boot project.
+
+### [Is likely a Spring Boot project](../recipes/java/spring/boot/islikelyspringboot.md)
+_io.moderne.java.spring.boot.IsLikelySpringBoot_
+
+Marks the project if it's likely a Spring Boot project.
+
+### [Migrate Spring Framework Dependencies to Spring Boot](../recipes/java/spring/boot/migratespringframeworkdependenciestospringboot.md)
+_io.moderne.java.spring.boot.MigrateSpringFrameworkDependenciesToSpringBoot_
+
+Migrate Spring Framework Dependencies to Spring Boot.
+
 ### [Migrate management endpoint access value](../recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md)
 _io.moderne.java.spring.boot3.MigrateEndpointAccessValueSpring34_
 
 Migrate manage endpoint access value from `false` to `none` and `true` to `read-only`.
+
+### [Is likely a Spring Framework project](../recipes/java/spring/framework/islikelyspringframework.md)
+_io.moderne.java.spring.framework.IsLikelySpringFramework_
+
+Marks the project if it's likely a Spring Framework project.
+
+### [Migrate ´web.xml` to `WebApplicationInitializer`](../recipes/java/spring/framework/webxml/webxmltowebapplicationinitializer.md)
+_io.moderne.java.spring.framework.webxml.WebXmlToWebApplicationInitializer_
+
+Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests.
 
 ### [Use [VulnCheck Exploit Intelligence](https://docs.vulncheck.com/products/exploit-and-vulnerability-intelligence/exploit-intelligence) to fix vulnerabilities](../recipes/vulncheck/fixvulncheckvulnerabilities.md)
 _io.moderne.vulncheck.FixVulnCheckVulnerabilities_
@@ -404,12 +429,12 @@ Locates and reports on all licenses in use.
 ### [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck.md)
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-06-23T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-07-07T1102.
 
 ### [Remove unused dependencies](../recipes/java/dependencies/removeunuseddependencies.md)
 _org.openrewrite.java.dependencies.RemoveUnusedDependencies_
 
-Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is a complex recipe which has not yet been well tested and exercised. For now it should be treated as making recommendations to further investigate.
+Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName("java.util.List")` that is counted correctly.When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
 
 ### [Software bill of materials](../recipes/java/dependencies/softwarebillofmaterials.md)
 _org.openrewrite.java.dependencies.SoftwareBillOfMaterials_
@@ -475,6 +500,11 @@ In Micronaut 2.x a reflection-based strategy was used to retrieve that informati
 _org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean_
 
 Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`.
+
+### [Project has no Jakarta annotations](../recipes/java/migrate/jakarta/hasnojakartaannotations.md)
+_org.openrewrite.java.migrate.jakarta.HasNoJakartaAnnotations_
+
+Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present
 
 ### [Use latest JAXB API and runtime for Jakarta EE 8](../recipes/java/migrate/javax/addjaxbruntime.md)
 _org.openrewrite.java.migrate.javax.AddJaxbRuntime_

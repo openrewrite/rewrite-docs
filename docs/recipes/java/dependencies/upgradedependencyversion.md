@@ -30,9 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | overrideManagedVersion | *Optional*. For Maven project only, This flag can be set to explicitly override a managed dependency's version. The default for this flag is `false`. |  |
 | `List` | retainVersions | *Optional*. For Maven project only, accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management after the changes from this recipe, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management. | `com.jcraft:jsch` |
 
-## Examples
-##### Example 1
-Upgrade gradle dependency
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -95,80 +93,6 @@ dependencies {
 + compileOnly 'com.google.guava:guava:30.1.1-jre'
 + runtimeOnly ('com.google.guava:guava:30.1.1-jre')
 }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-Upgrade maven dependency version
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.junit.jupiter`|
-|artifactId|`junit-jupiter-api`|
-|newVersion|`5.7.2`|
-|versionPattern|`null`|
-|overrideManagedVersion|`null`|
-|retainVersions|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>5.6.2</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>5.7.2</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -10,1 +10,1 @@
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
--               <version>5.6.2</version>
-+               <version>5.7.2</version>
-                <scope>test</scope>
 ```
 </TabItem>
 </Tabs>

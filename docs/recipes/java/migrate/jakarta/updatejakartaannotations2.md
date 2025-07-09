@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `jakarta.annotations`
+  * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
   * newVersion: `2.1.x`
 * [Change type](../../../java/changetype)
@@ -52,7 +52,7 @@ description: |
   Update Jakarta EE annotation Dependencies to 2.1.x.
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: jakarta.annotations
+      groupId: jakarta.annotation
       artifactId: jakarta.annotation-api
       newVersion: 2.1.x
   - org.openrewrite.java.ChangeType:

@@ -19,8 +19,7 @@ _Try to apply local variable type inference `var` to variables containing Object
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -58,47 +57,6 @@ class A {
   void m() {
 -     Object o = new Object();
 +     var o = new Object();
-  }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class A {
-  void m() {
-      final Object o = new Object();
-  }
-}
-```
-
-###### After
-```java
-class A {
-  void m() {
-      final var o = new Object();
-  }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-class A {
-  void m() {
--     final Object o = new Object();
-+     final var o = new Object();
   }
 ```
 </TabItem>

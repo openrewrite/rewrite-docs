@@ -24,8 +24,7 @@ _Removes not needed semicolons. Semicolons are considered not needed:  * Optiona
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -58,69 +57,6 @@ class Test {
     void test() {
 -       ;
     }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class Test {
-    void test() {
-        int a = 1;;
-        int b = 2;
-        int c = 3;;;
-        int d = 4;
-        int e = 5; ;
-        int f = 6;
-    }
-}
-```
-
-###### After
-```java
-class Test {
-    void test() {
-        int a = 1;
-        int b = 2;
-        int c = 3;
-        int d = 4;
-        int e = 5;
-        int f = 6;
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-class Test {
-    void test() {
--       int a = 1;;
-+       int a = 1;
-        int b = 2;
-@@ -5,1 +5,1 @@
-        int a = 1;;
-        int b = 2;
--       int c = 3;;;
-+       int c = 3;
-        int d = 4;
-@@ -7,1 +7,1 @@
-        int c = 3;;;
-        int d = 4;
--       int e = 5; ;
-+       int e = 5;
-        int f = 6;
 ```
 </TabItem>
 </Tabs>

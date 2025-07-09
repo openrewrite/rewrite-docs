@@ -85,6 +85,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Faces XHTML migration for Jakarta EE 9](./jakartafacesxhtmlee9.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
+* [Project has no Jakarta annotations](./hasnojakartaannotations.md)
 * [Remove `Bean.isNullable()`](./removebeanisnullable.md)
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](./applicationpathwildcardnolongeraccepted.md)
 * [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)

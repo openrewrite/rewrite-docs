@@ -11,62 +11,67 @@ import TabItem from '@theme/TabItem';
 
 _Converts the `@ApiModel` annotation to `@Schema` and converts the "value" attribute to "name"._
 
-### Tags
-
-* openapi
-* swagger
-
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiModelToSchema.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
 
-## Definition
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `io.swagger.annotations.ApiModel`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.media.Schema`
-* [Change annotation attribute name](../../java/changeannotationattributename)
-  * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
-  * oldAttributeName: `value`
-  * newAttributeName: `name`
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+  @ApiModelProperty(value = "ApiModelPropertyExampleValue", position = 1)
+  private String example;
+}
+```
+
+###### After
+```java
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(name="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+  @ApiModelProperty(value = "ApiModelPropertyExampleValue", position = 1)
+  private String example;
+}
+```
 
 </TabItem>
+<TabItem value="diff" label="Diff" >
 
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+```diff
+@@ -1,1 +1,0 @@
+-import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+@@ -3,0 +2,1 @@
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
++import io.swagger.v3.oas.annotations.media.Schema;
 
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.openapi.swagger.MigrateApiModelToSchema
-displayName: Migrate from `@ApiModel` to `@Schema`
-description: |
-  Converts the `@ApiModel` annotation to `@Schema` and converts the "value" attribute to "name".
-tags:
-  - openapi
-  - swagger
-recipeList:
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: io.swagger.annotations.ApiModel
-      newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.media.Schema
-  - org.openrewrite.java.ChangeAnnotationAttributeName:
-      annotationType: io.swagger.v3.oas.annotations.media.Schema
-      oldAttributeName: value
-      newAttributeName: name
+@@ -4,1 +4,1 @@
+import io.swagger.annotations.ApiModelProperty;
 
+-@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
++@Schema(name="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
 ```
 </TabItem>
 </Tabs>
+
 
 ## Usage
 
@@ -258,3 +263,6 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+[Jente Sondervorst](mailto:jentesondervorst@gmail.com)

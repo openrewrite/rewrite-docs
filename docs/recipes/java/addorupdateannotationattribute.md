@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `String` | annotationType | The fully qualified name of the annotation. | `org.junit.Test` |
 | `String` | attributeName | *Optional*. The name of attribute to change. If omitted defaults to 'value'. | `timeout` |
-| `String` | attributeValue | *Optional*. The value to set the attribute to. Set to `null` to remove the attribute. | `500` |
+| `String` | attributeValue | *Optional*. The value to set the attribute to. If the attribute is an array, provide values separated by comma to add multiple attributes at once. Set to `null` to remove the attribute. | `500` |
 | `String` | oldAttributeValue | *Optional*. The current value of the attribute, this can be used to filter where the change is applied. Set to `null` for wildcard behavior. | `400` |
 | `Boolean` | addOnly | *Optional*. When set to `true` will not change existing annotation attribute values. |  |
 | `Boolean` | appendArray | *Optional*. If the attribute is an array, setting this option to `true` will append the value(s). In conjunction with `addOnly`, it is possible to control duplicates: `addOnly=true`, always append. `addOnly=false`, only append if the value is not already present. |  |
@@ -178,4 +178,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Marcel Reiter, [Filipe Roque](mailto:froque@premium-minds.com), [Tim te Beek](mailto:tim@moderne.io), SiBorea, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [JohannisK](mailto:johan.kragt@moderne.io), Daniel Shamis
+[Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Filipe Roque](mailto:froque@premium-minds.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li, SiBorea, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Marcel Reiter, [JohannisK](mailto:johan.kragt@moderne.io), Daniel Shamis

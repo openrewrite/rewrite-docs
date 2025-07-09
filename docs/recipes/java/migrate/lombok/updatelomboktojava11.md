@@ -53,6 +53,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `lombok.experimental.val`
   * newFullyQualifiedTypeName: `lombok.val`
 * [Prefer `final var` over `lombok.val`](../../../java/migrate/lombok/lombokvaltofinalvar)
+* [Migrate Lombok's `@__` syntax to `onX_` for Java 8+](../../../java/migrate/lombok/lombokonxtoonx_)
 
 </TabItem>
 
@@ -89,6 +90,7 @@ recipeList:
       oldFullyQualifiedTypeName: lombok.experimental.val
       newFullyQualifiedTypeName: lombok.val
   - org.openrewrite.java.migrate.lombok.LombokValToFinalVar
+  - org.openrewrite.java.migrate.lombok.LombokOnXToOnX_
 
 ```
 </TabItem>
@@ -286,4 +288,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim.te.beek@jdriven.com), [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

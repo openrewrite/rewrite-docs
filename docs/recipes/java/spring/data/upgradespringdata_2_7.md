@@ -17,10 +17,6 @@ _Migrate applications to the latest Spring Data 2.7 release._
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -28,7 +24,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Data 2.5](../../../java/spring/data/upgradespringdata_2_5)
 * [Use `JpaRepository#getReferenceById(ID id)`](../../../java/spring/data/usejparepositorygetreferencebyid)
 
 </TabItem>
@@ -43,7 +38,6 @@ displayName: Migrate to Spring Data 2.7
 description: |
   Migrate applications to the latest Spring Data 2.7 release.
 recipeList:
-  - org.openrewrite.java.spring.data.UpgradeSpringData_2_5
   - org.openrewrite.java.spring.data.UseJpaRepositoryGetReferenceById
 
 ```
@@ -240,6 +234,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com)

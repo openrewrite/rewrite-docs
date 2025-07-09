@@ -1,5 +1,9 @@
 # Spring Framework
 
+## Categories
+
+* [Webxml](/recipes/java/spring/framework/webxml)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
@@ -18,6 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [`@Bean` methods may not return `void`](./beanmethodreturnnull.md)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](./migrateinstantiationawarebeanpostprocessoradapter.md)
+* [Is likely a Spring Framework project](./islikelyspringframework.md)
 * [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](./migratehandlerinterceptor.md)
 * [Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`](./migratehandlerresulthasexceptionhandlermethod.md)
 * [Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`](./migratemethodargumentnotvalidexceptionerrormethod.md)

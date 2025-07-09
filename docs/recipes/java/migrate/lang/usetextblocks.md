@@ -25,8 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `boolean` | convertStringsWithoutNewlines | *Optional*. Whether or not strings without newlines should be converted to text block when processing code. The default value is true. | `true` |
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -68,83 +67,6 @@ class Test {
 +           WHERE something = 1;\
 +           """;
 }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class A {
-    void welcome() {
-        log("\n========================================================="
-            + "\n                                                         "
-            + "\n          Welcome to Spring Integration!                 "
-            + "\n                                                         "
-            + "\n    For more information please visit:                   "
-            + "\n    https://www.springsource.org/spring-integration      "
-            + "\n                                                         "
-            + "\n=========================================================");
-    }
-    void log(String s) {}
-}
-```
-
-###### After
-```java
-class A {
-    void welcome() {
-        log("""
-            
-            =========================================================
-                                                                    \s
-                      Welcome to Spring Integration!                \s
-                                                                    \s
-                For more information please visit:                  \s
-                https://www.springsource.org/spring-integration     \s
-                                                                    \s
-            =========================================================\
-            """);
-    }
-    void log(String s) {}
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,8 +3,11 @@
-class A {
-    void welcome() {
--       log("\n========================================================="
--           + "\n                                                         "
--           + "\n          Welcome to Spring Integration!                 "
--           + "\n                                                         "
--           + "\n    For more information please visit:                   "
--           + "\n    https://www.springsource.org/spring-integration      "
--           + "\n                                                         "
--           + "\n=========================================================");
-+       log("""
-+           
-+           =========================================================
-+                                                                   \s
-+                     Welcome to Spring Integration!                \s
-+                                                                   \s
-+               For more information please visit:                  \s
-+               https://www.springsource.org/spring-integration     \s
-+                                                                   \s
-+           =========================================================\
-+           """);
-    }
 ```
 </TabItem>
 </Tabs>

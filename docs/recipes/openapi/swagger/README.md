@@ -7,7 +7,6 @@ _Recipes to perform [Swagger](https://swagger.io/) migration tasks._
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrate from `@ApiImplicitParams`  to `@Parameters`](./migrateapiimplicitparamstoparameters.md)
-* [Migrate from `@ApiModel` to `@Schema`](./migrateapimodeltoschema.md)
 * [Migrate from `@ApiModelProperty` to `@Schema`](./migrateapimodelpropertytoschema.md)
 * [Migrate from `@ApiOperation` to `@Operation`](./migrateapioperationtooperation.md)
 * [Migrate from `@ApiParam` to `@Parameter`](./migrateapiparamtoparameter.md)
@@ -22,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `@ApiImplicitParam` to `@Parameter`](./migrateapiimplicitparam.md)
 * [Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`](./migrateapiparamdefaultvalue.md)
 * [Migrate from `@Api` to `@Tag`](./migrateapitotag.md)
+* [Migrate from `@ApiModel` to `@Schema`](./migrateapimodeltoschema.md)
 * [Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`](./migrateswaggerdefinitiontoopenapidefinition.md)
 
 

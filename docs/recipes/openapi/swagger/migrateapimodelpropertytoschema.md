@@ -52,8 +52,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newAttributeName: `type`
 * [Change annotation attribute name](../../java/changeannotationattributename)
   * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
-  * oldAttributeName: `nullable`
-  * newAttributeName: `allowEmptyValue`
+  * oldAttributeName: `allowEmptyValue`
+  * newAttributeName: `nullable`
 
 </TabItem>
 
@@ -89,8 +89,8 @@ recipeList:
       newAttributeName: type
   - org.openrewrite.java.ChangeAnnotationAttributeName:
       annotationType: io.swagger.v3.oas.annotations.media.Schema
-      oldAttributeName: nullable
-      newAttributeName: allowEmptyValue
+      oldAttributeName: allowEmptyValue
+      newAttributeName: nullable
 
 ```
 </TabItem>

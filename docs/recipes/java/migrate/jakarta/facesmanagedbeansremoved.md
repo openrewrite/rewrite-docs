@@ -485,4 +485,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Evie Lau, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+Evie Lau, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com)

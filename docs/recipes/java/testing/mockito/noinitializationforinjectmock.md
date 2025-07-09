@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Remove initialization when using @InjectMocks"
+sidebar_label: "Remove @InjectMocks annotation or initializer"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove initialization when using `@InjectMocks`
+# Remove `@InjectMocks` annotation or initializer
 
 **org.openrewrite.java.testing.mockito.NoInitializationForInjectMock**
 
-_Removes unnecessary initialization for fields annotated with `@InjectMocks` in Mockito tests. If the field was final, the final modifier is removed._
+_Remove either the `@InjectMocks` annotation from fields, or the initializer, based on the initializer.  * In the case of a no-args constructor, remove the initializer and retain the annotation.  * In the case of any other initializer, remove the annotation and retain the initializer._
 
 ## Recipe source
 
@@ -21,17 +21,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ## Example
 
-
-###### Unchanged
-```java
-class MyObject {
-    private String someField;
-
-    public MyObject(String someField) {
-        this.someField = someField;
-    }
-}
-```
 
 <Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">
@@ -49,11 +38,8 @@ class MyTest {
 
 ###### After
 ```java
-import org.mockito.InjectMocks;
-
 class MyTest {
-    @InjectMocks
-    MyObject myObject;
+    MyObject myObject = new MyObject("someField");
 }
 ```
 
@@ -61,12 +47,15 @@ class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,1 +5,1 @@
+@@ -1,2 +1,0 @@
+-import org.mockito.InjectMocks;
+-
 class MyTest {
-    @InjectMocks
--   MyObject myObject = new MyObject("someField");
-+   MyObject myObject;
-}
+@@ -4,1 +2,0 @@
+
+class MyTest {
+-   @InjectMocks
+    MyObject myObject = new MyObject("someField");
 ```
 </TabItem>
 </Tabs>
@@ -264,4 +253,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

@@ -6,13 +6,15 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate to Spring Data 2.3](./upgradespringdata_2_3.md)
 * [Migrate to Spring Data 2.5](./upgradespringdata_2_5.md)
-* [Migrate to Spring Data 2.7](./upgradespringdata_2_7.md)
 * [Use `JpaRepository#getReferenceById(ID id)`](./usejparepositorygetreferencebyid.md)
 
 ## Recipes
 
 * [Convert `JdbcTemplate.queryForLong(..)` to `queryForObject(..)`](./jdbctemplatequeryforlongmigration.md)
 * [Make AuditorAware.getCurrentAuditor return `Optional`](./migrateauditorawaretooptional.md)
+* [Migrate to Spring Data 2.7](./upgradespringdata_2_7.md)
+* [Migrate to Spring Data 3.4](./upgradespringdata_3_4.md)
+* [Replace `@Query` annotation by `@NativeQuery` when possible](./migratequerytonativequery.md)
 * [Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`](./usejparepositorydeleteallinbatch.md)
 * [Use `JpaRepository#getById(ID id)`](./usejparepositorygetbyid.md)
 * [Use `JpaSort.of(..)`](./migratejpasort.md)
