@@ -22,7 +22,8 @@ public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
                 JavaParser.fromJavaVersion()                                   // Parser
                     .classpath("example-utils"))                               // Classpath lookup
             .staticImports("org.example.StringUtils.withString")               // Additional import
-            .doBeforeParseTemplate((String template) -> {})                    // Optional side-effect
+            .doAfterVariableSubstitution(System.out::println)                  // Optional side-effect
+            .doBeforeParseTemplate(System.out::println)                        // Optional side-effect
             .build();
 }
 ```
