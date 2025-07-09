@@ -136,7 +136,7 @@ JavaTemplate.builder("System.out.println(\"Hello, World!\");")
 
 The main advantage of context-free templates is that they only need to be parsed once before their parameters can be substituted. This has a much smaller performance impact on recipe runs.
 
-A **context-sensitive** JavaTemplate, on the other hand, can refer to declarations within the surrounding LST it will end up getting embedded into. It can refer to declarations in the scope of the existing code, such as variables, fields, locally declared or imported types, or method parameters. In other words, the entire input source file is available as context during templating, allowing the template to reference any visible declaration in that file just as regular code would.
+A **context-sensitive** JavaTemplate, on the other hand, can refer to declarations within the surrounding LST it will end up getting embedded into. It can refer to declarations in the scope of the existing code, such as variables, fields, locally declared or imported types, or method parameters.
 
 An example can help this make more sense. Let's take a look at [a JavaTemplate in rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/MigrateURLDecoderDecode.java#L57-L63):
 
