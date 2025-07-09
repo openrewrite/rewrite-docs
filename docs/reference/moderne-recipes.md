@@ -302,7 +302,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Migrate `web.xml` using Jakarta EE](../recipes/spring/webxml/migratetojakartaeeservletconfiguration.md)
 * [Migrate `web.xml` using Java EE](../recipes/spring/webxml/migratetojavaxservletconfiguration.md)
 * [Migrate management endpoint access value](../recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md)
-* [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4.md)
+* [Migrate to Spring Boot 3.4](../recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
 * [Migrate to Spring Boot 3.5](../recipes/java/spring/boot3/upgradespringboot_3_5.md)
 * [Migrate to Spring Cloud 2025](../recipes/java/spring/cloud2025/upgradespringcloud_2025.md)
 * [Migrate to Spring Kafka 3.3](../recipes/java/spring/boot3/upgradespringkafka_3_3.md)
