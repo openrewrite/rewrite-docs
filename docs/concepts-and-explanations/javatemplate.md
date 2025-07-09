@@ -17,11 +17,13 @@ More advanced refactoring recipes often require the construction of complex [Los
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate template =
-        JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")   // Code Snippet
+        JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")  // Code Snippet
             .javaParser(
-                JavaParser.fromJavaVersion()                                    // Parser
-                    .classpath("example-utils"))                                // Classpath lookup
-            .staticImports("org.example.StringUtils.withString")                // Additional import
+                JavaParser.fromJavaVersion()                                   // Parser
+                    .classpath("example-utils"))                               // Classpath lookup
+            .staticImports("org.example.StringUtils.withString")               // Additional import
+            .doAfterVariableSubstitution(System.out::println)                  // Optional side-effect
+            .doBeforeParseTemplate(System.out::println)                        // Optional side-effect
             .build();
 }
 ```
@@ -275,3 +277,38 @@ When a JavaTemplate is used for matching, then the `Matcher` can be used to "ext
 This can then be passed into another JavaTemplate to generate some new code (such as what was done with the `after` template above).
 
 Another useful example that doesn't involve Refaster recipes is our [JavaTemplateMatchTest class](https://github.com/openrewrite/rewrite/blob/main/rewrite-java-test/src/test/java/org/openrewrite/java/JavaTemplateMatchTest.java#L32). In there, you can see how we create a JavaTemplate for the use case of matching/finding code rather than replacing it.
+
+## Semantics class shortcut
+
+If you're looking for a more concise way to define JavaTemplates, the [Semantics class](https://github.com/openrewrite/rewrite-templating/blob/main/src/main/java/org/openrewrite/java/template/Semantics.java) offers a powerful alternative. Instead of writing the raw template string yourself, you can define the desired expression or statement directly in Java, and a annotation processor will automatically generate the corresponding template code for you.
+
+This approach helps you avoid dealing with the syntax of raw templates and lets the compiler validate your logic directly.
+
+For example, instead of writing:
+
+```java
+JavaTemplate isEmptyReplacement =
+        JavaTemplate.builder("(#{any(java.lang.String)} == null || #{any(java.lang.String)}.isEmpty())").build();
+```
+
+You can write:
+
+```java
+JavaTemplate isEmptyReplacement =
+        Semantics.expression(this, "IsEmpty", (String s) -> (s == null || s.isEmpty())).build();
+```
+
+Similarly, for statements:
+
+```java
+JavaTemplate newInstanceTemplate =
+        Semantics.statement(this, "Example", () -> { String example = "some statement"; }).build();
+```
+
+Behind the scenes, the annotation processor transforms these `Semantics.expression(...)` and `Semantics.statement(...)` calls into actual JavaTemplate definitions with proper substitution indicators and imports.
+
+:::info
+Prerequisite: To use this feature, make sure your project is set up for Refaster-style recipes with annotation processing enabled. See the [How to create a Refaster recipe](../authoring-recipes/refaster-recipes#how-to-create-a-refaster-recipe) section for more details.
+:::
+
+Since the Semantics class is functionally equivalent to defining a JavaTemplate manually, while offering compile-time safety and slightly less boilerplate, it is well-suited for cases where your template is just beyond what Refaster can express easily. It provides a convenient middle ground between Refaster and fully custom JavaTemplate logic.
