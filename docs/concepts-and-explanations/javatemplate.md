@@ -304,7 +304,7 @@ JavaTemplate newInstanceTemplate =
         Semantics.statement(this, "Example", () -> { String example = "some statement"; }).build();
 ```
 
-Behind the scenes, the annotation processor transforms these `Semantics.expression(...)` and `Semantics.statement(...)` calls into actual JavaTemplate definitions with proper placeholders and imports.
+Behind the scenes, the annotation processor transforms these `Semantics.expression(...)` and `Semantics.statement(...)` calls into actual JavaTemplate definitions with proper substitution indicators and imports.
 
 :::info
 Prerequisite: To use this feature, make sure your project is set up for Refaster-style recipes with annotation processing enabled. See the [How to create a Refaster recipe](../authoring-recipes/refaster-recipes#how-to-create-a-refaster-recipe) section for more details.
