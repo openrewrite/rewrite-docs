@@ -209,9 +209,9 @@ This is a challenging problem for a couple of reasons:
 * Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.6/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L140-L160).
 * The [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin) requires you to either change your build file, or add an `init.gradle` script to run recipes.
 
-In general, we recommend folks write a `rewrite.yml` file to configure recipes, as that clears out any ambiguity as to which recipe instances to configure, and this approach is portable across the various tools that run OpenRewrite recipes.
+We generally recommend using a `rewrite.yml` file to configure recipes. This avoids ambiguity about which recipe instances are being configured and ensures the setup is portable across the different tools that run OpenRewrite recipes.
 
-For folks using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) we [recently added](https://github.com/openrewrite/rewrite-maven-plugin/pull/816) an option to pass in arguments to recipes, for single recipes only.
+If you're using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin), we [added](https://github.com/openrewrite/rewrite-maven-plugin/pull/816) basic support for passing arguments to recipes, though it's currently limited to single-recipe runs.
 Using the below command you remove an argument plugin without modifying a `rewrite.yml` or `pom.xml` file:
 
 ```shell
