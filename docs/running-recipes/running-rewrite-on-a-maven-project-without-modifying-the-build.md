@@ -61,7 +61,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 While the preferred way to configure recipes is through a `rewrite.yml` file, it is possible to pass configuration parameters directly from the command line. However, this only works when running a _single_ recipe.
 
-For example, to run the [AddCommentToMethod](../recipes/java/addcommenttomethod.md) recipe without modifying your pom.xml, you can use the following command:
+For example, to run the [AddCommentToMethod](../recipes/java/addcommenttomethod.md) recipe without modifying your `pom.xml`, you can use the following command:
 
 ```shell
 mvn org.openrewrite.maven:rewrite-maven-plugin:run \

@@ -211,7 +211,7 @@ This is a challenging problem for a couple of reasons:
 
 We generally recommend using a `rewrite.yml` file to configure recipes. This avoids ambiguity about which recipe instances are being configured and ensures the setup is portable across the different tools that run OpenRewrite recipes.
 
-If you're using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin), we [added](https://github.com/openrewrite/rewrite-maven-plugin/pull/816) basic support for passing arguments to recipes, though it's currently limited to single-recipe runs.
+If you're using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin), we [added basic support for passing arguments to recipes](https://github.com/openrewrite/rewrite-maven-plugin/pull/816), though it's currently limited to single-recipe runs.
 Using the below command you remove an argument plugin without modifying a `rewrite.yml` or `pom.xml` file:
 
 ```shell
