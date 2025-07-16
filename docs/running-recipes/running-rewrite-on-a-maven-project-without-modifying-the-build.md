@@ -68,8 +68,9 @@ mvn org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=org.openrewrite.java.AddCommentToMethod \
   -Drewrite.options=comment='Some comment with "quotes"',methodPattern="example.SomeClass someMethod(..)"
 ```
+
 :::warning
-This approach does not scale well for larger projects. Each time you run a recipe from the command line, the LST is built from scratch before the recipe is applied. While this is fine for quick, one-off runs, it becomes inefficient if you run multiple recipes one after another.
-In contrast, when using a `rewrite.yml` file, all configured recipes are applied in a single pass, and the LST is only built once.
+This approach does not scale well for larger projects. Each time you run a recipe from the command line, the LST is built from scratch before the recipe is applied. While this is fine for quick, one-off runs, it becomes inefficient if you run multiple recipes one after another. In contrast, when using a `rewrite.yml` file, all configured recipes are applied in a single pass, and the LST is only built once.
+
 For more information, see the [frequently asked questions](../reference/faq.md#is-it-possible-to-pass-arguments-to-a-recipe-from-the-command-line).
 :::
