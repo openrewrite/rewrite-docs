@@ -61,12 +61,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 While the preferred way to configure recipes is through a `rewrite.yml` file, it is possible to pass configuration parameters directly from the command line. However, this only works when running a _single_ recipe.
 
-For example, to remove a specific Maven plugin without modifying your rewrite.yml or pom.xml, you can use the following command:
+For example, to run the [AddCommentToMethod](../recipes/java/addcommenttomethod.md) recipe without modifying your rewrite.yml or pom.xml, you can use the following command:
 
 ```shell
 mvn org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.activeRecipes=org.openrewrite.maven.RemovePlugin \
-  -Drewrite.options=groupId=org.springframework.boot,artifactId=spring-boot-maven-plugin
+  -Drewrite.activeRecipes=org.openrewrite.java.AddCommentToMethod \
+  -Drewrite.options=comment='Some comment with "quotes"',methodPattern="example.SomeClass someMethod(..)"
 ```
 :::warning
 This approach does not scale well for larger projects. Each time you run a recipe from the command line, the LST is built from scratch before the recipe is applied. While this is fine for quick, one-off runs, it becomes inefficient if you run multiple recipes one after another.
