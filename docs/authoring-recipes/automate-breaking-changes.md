@@ -101,7 +101,7 @@ Fork this repository and clone your fork down to your local machine. Test that i
 Remember the best practice tip of [if it can be declarative, it should be declarative](./recipe-conventions-and-best-practices.md#if-it-can-be-declarative-it-should-be-declarative). For complex or custom recipes, this may not be possible, but for our example we can create a declarative recipe.
 
 :::tip
-If you need help with recipe creation, consider working through our [recipe authoring workshop](https://docs.moderne.io/user-documentation/recipes/recipe-authoring) or jumping back to the [writing a Java refactoring recipe guide](./writing-a-java-refactoring-recipe.md).
+If you need help with recipe creation, consider working through our [recipe authoring workshop](https://docs.moderne.io/hands-on-learning/fundamentals/workshop-overview) or jumping back to the [writing a Java refactoring recipe guide](./writing-a-java-refactoring-recipe.md).
 :::
 
 Here is what our declarative recipe looks like:

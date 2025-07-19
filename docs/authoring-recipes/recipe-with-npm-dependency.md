@@ -13,7 +13,7 @@ This guide will walk you through everything you need to know in order to do that
 
 This guide assumes that:
 
-* You are somewhat familiar with recipe development. If not, consider working through our [recipe authoring workshop](https://docs.moderne.io/user-documentation/recipes/recipe-authoring).
+* You are somewhat familiar with recipe development. If not, consider working through our [recipe authoring workshop](https://docs.moderne.io/hands-on-learning/fundamentals/workshop-overview).
 * Your ESLint plugin or CLI tool that you want to use inside of your recipe is available on NPM.
 
 ## Step 1: Create a recipe repository
