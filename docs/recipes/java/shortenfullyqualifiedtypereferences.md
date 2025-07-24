@@ -20,6 +20,16 @@ _Any fully qualified references to Java types will be replaced with correspondin
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Clean up various issues with the code.](/recipes/java/dropwizard/codecleanup.md)
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
+* [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
+* [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

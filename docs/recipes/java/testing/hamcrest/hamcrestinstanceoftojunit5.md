@@ -19,6 +19,13 @@ _Migrate from Hamcrest `instanceOf` and `isA` matcher to JUnit5 `assertInstanceO
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+
 ## Example
 
 

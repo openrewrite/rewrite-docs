@@ -24,6 +24,13 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | -- | -- | -- | -- |
 | `String` | algorithm | *Optional*. The hardcoded algorithm to search for in the construction of `KeyPairGenerator`. When omitted finds all hardcoded algorithms. | `RSA` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Hardcoded algorithm choice](/recipes/cryptography/findhardcodedalgorithmchoice.md)
+
 ## Example
 
 ###### Parameters

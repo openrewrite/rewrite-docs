@@ -27,6 +27,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | newSecretName | The new secret name to use | `SONATYPE_USERNAME` |
 | `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace OSSRH secrets with Sonatype secrets](/recipes/github/replaceossrhsecretswithsonatype.md)
+
 ## Example
 
 ###### Parameters

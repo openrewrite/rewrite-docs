@@ -29,6 +29,66 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `foo.bar.attribute.value.string` |
 | `Boolean` | regex | *Optional*. Default false. If true, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue`. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [Migrate XJC Bindings to Jakata XML](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
+* [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Migrate to Struts 6.0 constants](/recipes/java/struts/migrate6/migratestruts6constants.md)
+* [Migrate xmlns entries and javax. packages in `ejb-jar.xml` files](/recipes/java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml.md)
+* [Migrate xmlns entries and javax. packages in `validation.xml` files](/recipes/java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml.md)
+* [Migrate xmlns entries in `**/batch-jobs/*.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbatchjobsxmlstojakarta9batchjobsxmls.md)
+* [Migrate xmlns entries in `**/validation/*.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxvalidationmappingxmlstojakarta9validationmappingxmls.md)
+* [Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md)
+* [Migrate xmlns entries in `*-jms.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1412.md)
+* [Migrate xmlns entries in `*.tld` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
+* [Migrate xmlns entries in `*.xjb` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
+* [Migrate xmlns entries in `*taglib*.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
+* [Migrate xmlns entries in `application-client.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1412.md)
+* [Migrate xmlns entries in `application-client.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationclientxmltojakarta9applicationclientxml.md)
+* [Migrate xmlns entries in `application.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationxmltojakarta9applicationxml.md)
+* [Migrate xmlns entries in `batch.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbatchxmltojakarta9batchxml.md)
+* [Migrate xmlns entries in `beans.xml` files for Beans 3.0.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbeansxmltojakarta9beansxml.md)
+* [Migrate xmlns entries in `beans.xml` files](/recipes/java/migrate/jakarta/javaxbeansxmltojakartabeansxml.md)
+* [Migrate xmlns entries in `ejb-jar.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxejbjarxmltojakarta9ejbjarxml.md)
+* [Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
+* [Migrate xmlns entries in `faces-config.xml` files](/recipes/java/migrate/jakarta/jakartafacesconfigxml4.md)
+* [Migrate xmlns entries in `faces-config.xml` files](/recipes/java/migrate/jakarta/javaxfacesconfigxmltojakartafacesconfigxml.md)
+* [Migrate xmlns entries in `handler.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebhandlerxmltojakarta9handlerxml.md)
+* [Migrate xmlns entries in `orm.xml` files](/recipes/java/migrate/jakarta/javaxormxmltojakartaormxml.md)
+* [Migrate xmlns entries in `permissions.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxpermissionsxmltojakarta9permissionsxml.md)
+* [Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
+* [Migrate xmlns entries in `persistence.xml` files](/recipes/io/quarkus/updates/core/quarkus30/javaxpersistencexmltojakartapersistencexml.md)
+* [Migrate xmlns entries in `persistence.xml` files](/recipes/java/migrate/jakarta/javaxpersistencexmltojakartapersistencexml.md)
+* [Migrate xmlns entries in `plan.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1412.md)
+* [Migrate xmlns entries in `ra.xml` files (Connectors).](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
+* [Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1412.md)
+* [Migrate xmlns entries in `taglib.xml` files](/recipes/java/migrate/jakarta/jakartafacestaglibraryxml4.md)
+* [Migrate xmlns entries in `taglib.xml` files](/recipes/java/migrate/jakarta/javaxfacestaglibraryxmltojakartafacestaglibraryxml.md)
+* [Migrate xmlns entries in `test-web.xml` files for Jakarta Server Faces 3 using test interfaces](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
+* [Migrate xmlns entries in `web-fragment.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
+* [Migrate xmlns entries in `web-fragment.xml` files](/recipes/java/migrate/jakarta/jakartawebfragmentxml6.md)
+* [Migrate xmlns entries in `web-fragment.xml` files](/recipes/java/migrate/jakarta/javaxwebfragmentxmltojakartawebfragmentxml.md)
+* [Migrate xmlns entries in `web.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
+* [Migrate xmlns entries in `web.xml` files](/recipes/java/migrate/jakarta/jakartawebxml6.md)
+* [Migrate xmlns entries in `web.xml` files](/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml.md)
+* [Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1412.md)
+* [Migrate xmlns entries in `weblogic.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md)
+* [Migrate xmlns entries in `webservices.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
+* [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](/recipes/java/spring/security6/removeuseauthorizationmanager.md)
+* [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
+
 ## Example
 
 ###### Parameters

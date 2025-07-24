@@ -23,6 +23,13 @@ _Use `Class#getDeclaredConstructor().newInstance()` instead of the deprecated `C
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.lang` APIs](/recipes/java/migrate/lang/javalangapis.md)
+
 ## Example
 
 

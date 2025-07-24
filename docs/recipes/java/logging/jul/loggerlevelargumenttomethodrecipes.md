@@ -73,6 +73,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
+
 ## Example
 
 

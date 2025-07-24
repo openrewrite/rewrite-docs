@@ -19,6 +19,13 @@ _Remove Hamcrest `is(Matcher)` ahead of migration._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
+
 ## Example
 
 

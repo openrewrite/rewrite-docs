@@ -51,6 +51,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+
 ## Example
 
 

@@ -19,6 +19,13 @@ _Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+
 ## Example
 
 

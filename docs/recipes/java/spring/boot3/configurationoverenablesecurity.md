@@ -25,6 +25,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `boolean` | forceAddConfiguration | Force add `@Configuration` regardless current Boot version. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+
 ## Examples
 ##### Example 1
 

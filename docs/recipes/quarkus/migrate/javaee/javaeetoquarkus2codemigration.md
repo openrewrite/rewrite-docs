@@ -145,6 +145,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JavaEE to Quarkus 2](/recipes/quarkus/migrate/javaee/javaeetoquarkus2migration.md)
+
 ## Examples
 ##### Example 1
 

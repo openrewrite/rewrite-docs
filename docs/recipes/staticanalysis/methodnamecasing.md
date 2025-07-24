@@ -31,6 +31,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `Boolean` | renamePublicMethods | *Optional*. Changes are not applied to public methods unless specified. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis` in your build file or by running a shell command (in which case no build changes are needed):

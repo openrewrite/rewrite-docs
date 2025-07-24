@@ -23,6 +23,15 @@ _Remove unnecessary `throws` declarations. This recipe will only remove unused, 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
+* [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
+* [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)
+
 ## Example
 
 

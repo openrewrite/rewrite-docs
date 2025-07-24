@@ -27,6 +27,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fileName | Just the file name without the folder path that precedes it. | `application.yml` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
+* [Rename CDI Extension to Jakarta](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtojakartacdiextensions.md)
+* [Rename CDI Extension to Jakarta](/recipes/java/migrate/jakarta/javaxtojakartacdiextensions.md)
+* [Rename a file example](/recipes/io/quarkus/updates/core/quarkus30/renamejavaxservicefiles.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RenameFileExample`.

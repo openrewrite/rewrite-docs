@@ -23,6 +23,16 @@ _Adds missing braces around code such as single-line `if`, `for`, `while`, and `
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
+
 ## Example
 
 

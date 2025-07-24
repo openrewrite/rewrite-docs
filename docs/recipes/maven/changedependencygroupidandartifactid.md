@@ -32,6 +32,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](/recipes/ai/timefold/solver/migration/fork/timefoldchangedependencies.md)
+* [Renamed dependencies](/recipes/org/apache/camel/upgrade/camel46/renameddependencies.md)
+* [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
+* [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
+
 ## Example
 
 ###### Parameters

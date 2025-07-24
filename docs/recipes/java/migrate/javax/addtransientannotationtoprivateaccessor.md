@@ -19,6 +19,13 @@ _According to the JPA 2.1 specification, when property access is used, the prope
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from OpenJPA to EclipseLink JPA](/recipes/java/migrate/javax/openjpatoeclipselink.md)
+
 ## Example
 
 

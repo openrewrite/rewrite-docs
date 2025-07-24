@@ -26,6 +26,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldLiteralValue | The `String` value to replace. | `apple` |
 | `String` | newLiteralValue | The `String` value to replace with. | `orange` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace `String` literal](/recipes/java/migrate/replacestringliteralvalue.md)
+* [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](/recipes/io/quarkus/updates/core/quarkus37/removedlegacysunjsseprovidername.md)
+* [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](/recipes/java/migrate/removedlegacysunjsseprovidername.md)
+* [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](/recipes/java/migrate/jredonotusesunnetsslinternalwwwprotocol.md)
+
 ## Example
 
 ###### Parameters

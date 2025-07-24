@@ -158,6 +158,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JSF 2.x to Jakarta Server Faces 3.x](/recipes/com/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):

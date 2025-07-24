@@ -27,6 +27,25 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fullyQualifiedConstantName |  | `org.springframework.http.MediaType.APPLICATION_JSON_VALUE` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
+* [Migrate the use of TaskExecutors with blocking IO](/recipes/java/micronaut/updateblockingtaskexecutors.md)
+* [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
+* [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
+* [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
+* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/io/usestandardcharsets.md)
+* [Renamed classes for API](/recipes/org/apache/camel/upgrade/camel49/renamedapis.md)
+* [Renamed constants in camel-smb](/recipes/org/apache/camel/upgrade/camel410/camelsmb.md)
+* [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](/recipes/java/migrate/jakarta/removeduicomponentconstant.md)
+* [Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant](/recipes/java/migrate/removedrmiconnectorservercredentialtypesconstant.md)
+* [The header name for the List metadata has changed](/recipes/org/apache/camel/upgrade/camel43/kafkametadata.md)
+* [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7](/recipes/io/quarkus/updates/core/quarkus324/migratefromhibernateormvariousremovedin7.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceConstantWithAnotherConstantExample`.

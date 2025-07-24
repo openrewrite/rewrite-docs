@@ -75,6 +75,15 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
+* [Mockito 5.x upgrade](/recipes/java/testing/mockito/mockito1to5migration.md)
+* [Use Mockito JUnit Jupiter extension](/recipes/java/testing/junit5/usemockitoextension.md)
+
 ## Examples
 ##### Example 1
 

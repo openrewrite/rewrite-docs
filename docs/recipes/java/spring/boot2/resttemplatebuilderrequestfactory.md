@@ -19,6 +19,13 @@ _Migrate `RestTemplateBuilder#requestFactory` calls to use a `Supplier`. See the
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Spring Boot 2.x best practices](/recipes/java/spring/boot2/springboot2bestpractices.md)
+
 ## Example
 
 

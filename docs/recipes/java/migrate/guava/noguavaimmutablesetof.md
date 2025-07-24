@@ -19,6 +19,13 @@ _Replaces `.common.collect.ImmutableSet.of(..)` if the returned type is immediat
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java 11 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava11.md)
+
 ## Example
 
 

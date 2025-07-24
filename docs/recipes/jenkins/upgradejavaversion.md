@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `Integer` | version | The Java version to upgrade to. | `17` |
 | `String` | distribution | The distribution of Java to use. When omitted the current distribution is maintained. | `openjdk` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade Java version](/recipes/java/migrate/upgradejavaversion.md)
+
 ## Example
 
 ###### Parameters

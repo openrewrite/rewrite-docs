@@ -24,6 +24,13 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | -- | -- | -- | -- |
 | `List` | properties | *Optional*. A list of the properties we want to prevent being set with `Security.setProperty(..)`. | `crypto.policy` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find insecure `Security.setProperty` calls](/recipes/cryptography/findinsecuresecuritysetproperties.md)
+
 ## Example
 
 ###### Parameters

@@ -26,6 +26,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldKey | The old name of the property key to be replaced. | `junit.version` |
 | `String` | newKey | The new property name to use. | `version.org.junit` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Drop prefixless expressions in POM](/recipes/maven/cleanup/prefixlessexpressions.md)
+* [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+
 ## Example
 
 ###### Parameters

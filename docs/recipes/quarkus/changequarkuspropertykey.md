@@ -30,6 +30,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", "**/application.properties" and "**/META-INF/microprofile-config.properties". | `["**/application.yaml"]` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageSimpleProperties](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagesimpleproperties.md)
+* [io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange](/recipes/io/quarkus/updates/core/quarkus319/configurationpropertieschange.md)
+* [io.quarkus.updates.core.quarkus319.HibernateORMValidationMode](/recipes/io/quarkus/updates/core/quarkus319/hibernateormvalidationmode.md)
+* [io.quarkus.updates.core.quarkus323.HibernateORMSchemaManagementProperties](/recipes/io/quarkus/updates/core/quarkus323/hibernateormschemamanagementproperties.md)
+* [io.quarkus.updates.core.quarkus324.LogConsoleAsyncEnable](/recipes/io/quarkus/updates/core/quarkus324/logconsoleasyncenable.md)
+* [io.quarkus.updates.core.quarkus39.UpdateConfigRoots](/recipes/io/quarkus/updates/core/quarkus39/updateconfigroots.md)
+* [io.quarkus.updates.minio.minio38.UpdateProperties](/recipes/io/quarkus/updates/minio/minio38/updateproperties.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeQuarkusPropertyKeyExample`.

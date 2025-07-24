@@ -26,6 +26,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldKeyPath | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression to locate a YAML entry. | `$.subjects.kind` |
 | `String` | newKey | The new name for the key selected by the `oldKeyPath`. | `kind` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+* [Yaml DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/org/apache/camel/upgrade/camel412/yamldslbearer.md)
+
 ## Example
 
 ###### Parameters

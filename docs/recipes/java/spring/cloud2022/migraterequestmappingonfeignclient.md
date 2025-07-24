@@ -19,6 +19,13 @@ _Support for `@RequestMapping` over a `FeignClient` interface was removed in Spr
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Cloud 2022](/recipes/java/spring/cloud2022/upgradespringcloud_2022.md)
+
 ## Example
 
 

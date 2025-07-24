@@ -26,6 +26,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | fixRecipe | *Optional*. The recipe to use to fix these issues. | `org.openrewrite.java.security.OwaspTopTen` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [OWASP top ten](/recipes/devcenter/securitystarter.md)
+* [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `io.moderne.recipe:rewrite-devcenter` in your build file or by running a shell command (in which case no build changes are needed):

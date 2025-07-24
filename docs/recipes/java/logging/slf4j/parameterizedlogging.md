@@ -76,6 +76,15 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Log4j 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
+* [Migrate Log4j 2.x to SLF4J 1.x](/recipes/java/logging/slf4j/log4j2toslf4j1.md)
+* [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):

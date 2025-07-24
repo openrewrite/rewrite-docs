@@ -19,6 +19,15 @@ _Remove `test` from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest` 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
+* [Testing best practices](/recipes/java/testing/cleanup/bestpractices.md)
+
 ## Example
 
 

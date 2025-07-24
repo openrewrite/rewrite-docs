@@ -19,6 +19,13 @@ _Do not rely on HttpSession `invalidate` method for programmatic security logout
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to JavaEE6](/recipes/java/migrate/javaee6.md)
+
 ## Example
 
 

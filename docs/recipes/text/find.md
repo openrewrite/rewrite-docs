@@ -33,6 +33,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Integer` | contextSize | *Optional*. The number of characters to include in the datatable before and after the match. Default `0`, `-1` indicates that the whole text should be used. | `50` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find GitHub action secret references](/recipes/github/findgithubactionsecretreferences.md)
+* [Find hardcoded IP addresses](/recipes/kubernetes/search/findharcodedipaddresses.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindExample`.

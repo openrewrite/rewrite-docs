@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | fieldName | *Optional*. Name of the log field to replace. If not specified, the field name is not checked and any field that satisfies the other checks is converted. | `LOGGER` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use Lombok logger annotations instead of explicit fields](/recipes/java/migrate/lombok/log/uselomboklogannotations.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):

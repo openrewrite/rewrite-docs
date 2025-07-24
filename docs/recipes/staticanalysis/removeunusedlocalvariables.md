@@ -31,6 +31,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | withType | *Optional*. A fully qualified class name. Only unused local variables whose type matches this will be removed. If empty or not set, all unused local variables are considered for removal. | `java.lang.String` |
 | `Boolean` | withSideEffects | *Optional*. Whether to remove unused local variables despite side effects in the initializer. Default false. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
+
 ## Example
 
 ###### Parameters

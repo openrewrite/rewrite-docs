@@ -23,6 +23,13 @@ _Convert trivial setter methods to `@Setter` annotations on their respective fie
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+
 ## Example
 
 

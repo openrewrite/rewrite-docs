@@ -478,6 +478,14 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2experimental.md)
+* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):

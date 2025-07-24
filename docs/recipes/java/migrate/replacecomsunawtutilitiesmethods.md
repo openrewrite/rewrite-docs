@@ -31,6 +31,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | getWindowShapePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilitiesTest getWindowShape(java.awt.Window)` |
 | `String` | setComponentMixingCutoutShapePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities setComponentMixingCutoutShape(java.awt.Component,java.awt.Shape)` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+
 ## Example
 
 ###### Parameters

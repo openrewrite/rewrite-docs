@@ -30,6 +30,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newVersion | *Optional*. The new version to use. | `2.0.0` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
+* [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
+* [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](/recipes/ai/timefold/solver/migration/fork/timefoldchangedependencies.md)
+
 ## Example
 
 ###### Parameters

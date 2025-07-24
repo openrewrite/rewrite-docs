@@ -75,6 +75,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Batch 5.0 from 4.3](/recipes/java/spring/batch/springbatch4to5migration.md)
+
 ## Examples
 ##### Example 1
 

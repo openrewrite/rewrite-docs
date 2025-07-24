@@ -18,6 +18,14 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [OWASP top ten](/recipes/devcenter/securitystarter.md)
+* [Remediate OWASP A03:2021 Injection](/recipes/java/security/owaspa03.md)
+
 ## Example
 
 

@@ -19,6 +19,13 @@ _Migrate a `Docket` bean to a `GroupedOpenAPI` bean preserving group name, packa
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
+
 ## Example
 
 

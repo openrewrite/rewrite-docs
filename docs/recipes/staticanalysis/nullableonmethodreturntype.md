@@ -19,6 +19,14 @@ _This is the way the cool kids do it._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
+* [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
+
 ## Example
 
 

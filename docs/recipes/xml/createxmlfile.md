@@ -27,6 +27,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fileContents | *Optional*. Multiline text content for the file. | <pre>\<?xml version="1.0" encoding="UTF-8"?><br />\<root><br />    \<child>1\</child>\</root></pre> |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add implicit TLD with taglib 2.1](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md)
+* [Add implicit TLD with taglib 3.0](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
+
 ## Example
 
 ###### Parameters

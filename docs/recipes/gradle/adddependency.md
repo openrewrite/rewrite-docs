@@ -35,6 +35,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add JUnit Platform Launcher](/recipes/gradle/addjunitplatformlauncher.md)
+* [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
+* [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddDependencyExample`.

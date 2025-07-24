@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | convertToInterface | *Optional*. If the new supertype is an interface, setting this to true converts 'extends' to 'implements'. |  |
 | `Boolean` | removeUnnecessaryOverrides | *Optional*. Remove method Override annotations that override methods from the *old* superclass but are no longer necessary with the new superclass. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Convert Health Check Implementations](/recipes/java/dropwizard/modifydropwizardhealthcheckstospringvariants.md)
+
 ## Example
 
 ###### Parameters

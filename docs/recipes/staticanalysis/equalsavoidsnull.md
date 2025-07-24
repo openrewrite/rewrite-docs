@@ -23,6 +23,14 @@ _Checks that any combination of String literals is on the left side of an `equal
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+
 ## Example
 
 

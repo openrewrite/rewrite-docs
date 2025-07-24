@@ -28,6 +28,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newClassifier | *Optional*. Classifier to apply to specified Maven dependency. May be omitted, which indicates that no classifier should be added and any existing scope be removed from the dependency. | `jar` |
 | `Boolean` | changeManagedDependency | *Optional*. This flag can be set to explicitly change the classifier in Maven management dependency section. Default `false`. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Ehcache from javax to jakarta namespace](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
+* [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+* [Upgrade Faces open source libraries](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+* [Upgrade Faces open source libraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
+* [Upgrade Faces open source libraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
+
 ## Example
 
 ###### Parameters

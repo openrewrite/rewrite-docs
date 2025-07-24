@@ -27,6 +27,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `List` | excludedBounds | *Optional*. A list of bounds that should not receive explicit variance. Globs supported. | `java.lang.*` |
 | `Boolean` | excludeFinalClasses | *Optional*. If true, do not add `? extends` variance to final classes. `? super` variance will be added regardless of finality. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Properly use declaration-site type variance for well-known types](/recipes/staticanalysis/commondeclarationsitetypevariances.md)
+
 ## Example
 
 ###### Parameters

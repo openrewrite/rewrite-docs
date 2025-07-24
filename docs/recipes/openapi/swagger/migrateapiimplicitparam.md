@@ -20,6 +20,13 @@ _Migrate `@ApiImplicitParam` to `@Parameter`._
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from `@ApiImplicitParams`  to `@Parameters`](/recipes/openapi/swagger/migrateapiimplicitparamstoparameters.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi` in your build file or by running a shell command (in which case no build changes are needed):

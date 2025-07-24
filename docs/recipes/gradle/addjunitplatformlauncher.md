@@ -55,6 +55,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
+
 ## Examples
 ##### Example 1
 

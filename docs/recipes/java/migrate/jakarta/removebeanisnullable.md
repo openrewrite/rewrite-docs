@@ -19,6 +19,13 @@ _`Bean.isNullable()` has been removed in CDI 4.0.0, and now always returns `fals
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remove deprecated API&#39;s not supported in CDI4.0](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
+
 ## Example
 
 

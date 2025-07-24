@@ -19,6 +19,13 @@ _Add explicit import for `Record` classes when upgrading past Java 14+, to avoid
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+
 ## Example
 
 

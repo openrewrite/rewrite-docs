@@ -19,6 +19,13 @@ _Replace `@Query` annotation by `@NativeQuery` when `nativeQuery = true`. `@Nati
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Data 3.4](/recipes/java/spring/data/upgradespringdata_3_4.md)
+
 ## Example
 
 

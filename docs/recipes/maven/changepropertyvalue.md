@@ -28,6 +28,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | addIfMissing | *Optional*. Add the property if it is missing from the pom file. |  |
 | `Boolean` | trustParent | *Optional*. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change the Timefold version](/recipes/ai/timefold/solver/migration/changeversion.md)
+* [Migrate to WebLogic 14.1.1](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
+* [Update the WebLogic version to 14.1.2](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
+* [Update the WebLogic version to 15.1.1](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
+
 ## Example
 
 ###### Parameters

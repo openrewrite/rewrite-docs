@@ -19,6 +19,13 @@ _Produces a data table showing how methods are used in unit tests._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code comprehension with unit test examples](/recipes/knowledge/comprehendcodewithunittestexamples.md)
+
 ## Example
 
 

@@ -19,6 +19,13 @@ _Explicitly sets `<relativePath/>` to disable file resolution, as recommended in
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
+
 ## Example
 
 

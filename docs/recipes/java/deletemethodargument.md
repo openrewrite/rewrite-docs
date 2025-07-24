@@ -27,6 +27,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `int` | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. | `0` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
+* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
+* [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`.

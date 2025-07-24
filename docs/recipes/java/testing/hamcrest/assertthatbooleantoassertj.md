@@ -19,6 +19,13 @@ _Replace Hamcrest `assertThat(String, boolean)` with AssertJ `assertThat(boolean
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
+
 ## Example
 
 

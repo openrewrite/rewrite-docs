@@ -23,6 +23,13 @@ _`it` is a special identifier that allows you to refer to the current parameter 
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+
 ## Example
 
 

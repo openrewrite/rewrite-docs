@@ -28,6 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | dedicatedAssertion | The zero argument assertion to adopt instead. | `isEmpty` |
 | `String` | requiredType | The type of the actual assertion argument. | `java.lang.String` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Shorten AssertJ assertions](/recipes/java/testing/assertj/simplifyassertjassertions.md)
+
 ## Example
 
 ###### Parameters

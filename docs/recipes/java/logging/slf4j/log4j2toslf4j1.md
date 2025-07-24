@@ -83,6 +83,14 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JUL to SLF4J](/recipes/java/logging/slf4j/jultoslf4j.md)
+* [Migrate Log4j 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
+
 ## Examples
 ##### Example 1
 

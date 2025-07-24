@@ -19,6 +19,13 @@ _Migrate Quarkus configuration classes annotated with `@ConfigProperties` to the
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Quarkus 1.13 migration from Quarkus 1.11](/recipes/quarkus/quarkus1to1_13migration.md)
+
 ## Example
 
 

@@ -25,6 +25,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | annotationType | *Optional*. The type of annotation to move. | `org.openrewrite..*` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Jakarta annotation API to JSpecify](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
+* [Migrate from JetBrains annotations to JSpecify](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
+* [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
+* [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
+* [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
+
 ## Example
 
 ###### Parameters

@@ -23,6 +23,14 @@ _The constructor of all primitive types has been deprecated in favor of using th
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+
 ## Example
 
 

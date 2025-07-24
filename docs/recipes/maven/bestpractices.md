@@ -62,6 +62,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

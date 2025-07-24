@@ -26,6 +26,13 @@ _Faces ManagedBean was deprecated in JSF 2.3 (EE8) and removed in Jakarta Faces 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Substitute removed Faces Managed Beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):

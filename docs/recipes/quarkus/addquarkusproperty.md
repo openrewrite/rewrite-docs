@@ -29,6 +29,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | profile | *Optional*. The profile to add the property to. If not specified, the property will be added to the default profile. | `dev` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", "**/application.properties" and "**/META-INF/microprofile-config.properties". | `["**/application.yaml"]` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypefastjar.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypejar.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypemutablejar.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNativeSources](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypenativesources.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNative](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypenative.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeUberJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypeuberjar.md)
+
 ## Example
 
 ###### Parameters

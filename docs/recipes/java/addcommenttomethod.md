@@ -27,6 +27,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | methodPattern | A pattern to match methods to add the comment to. A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method declarations. For example, to find all method declarations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add*(..)` |
 | `Boolean` | isMultiline | *Optional*. Comments use by default single line // but they can use multiline /* */. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Comment deprecated methods in Spring 3.4](/recipes/java/spring/boot3/commentdeprecations.md)
+
 ## Example
 
 ###### Parameters

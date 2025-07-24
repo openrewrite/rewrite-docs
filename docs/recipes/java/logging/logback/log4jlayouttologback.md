@@ -19,6 +19,13 @@ _Migrates custom Log4j 2.x Layout components to `logback-classic`. This recipe o
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Log4j 2.x to Logback](/recipes/java/logging/logback/log4jtologback.md)
+
 ## Example
 
 

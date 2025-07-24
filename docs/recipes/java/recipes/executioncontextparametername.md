@@ -19,6 +19,13 @@ _Visitors that are parameterized with `ExecutionContext` should use the paramete
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
+
 ## Example
 
 

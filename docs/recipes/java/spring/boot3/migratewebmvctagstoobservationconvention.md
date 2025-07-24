@@ -19,6 +19,13 @@ _Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention` as 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+
 ## Example
 
 

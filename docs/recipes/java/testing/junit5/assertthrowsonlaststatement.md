@@ -19,6 +19,13 @@ _Applies JUnit 5 `assertThrows` on last statement in lambda block only. In rare 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
+
 ## Example
 
 

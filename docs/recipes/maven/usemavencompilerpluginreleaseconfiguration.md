@@ -25,6 +25,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `Integer` | releaseVersion | The new value for the release configuration. This recipe prefers `${java.version}` if defined. | `11` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change Maven Java version property values to 17](/recipes/org/apache/camel/upgrade/javaversion17.md)
+* [Change Maven and Gradle Java version property values to 17](/recipes/io/quarkus/updates/core/quarkus37/javaversion17.md)
+* [Upgrade Java version](/recipes/io/quarkus/updates/core/quarkus37/upgradejavaversion.md)
+* [Upgrade Java version](/recipes/java/migrate/upgradejavaversion.md)
+* [Upgrade Java version](/recipes/org/apache/camel/upgrade/upgradejavaversion.md)
+* [Use Maven compiler plugin release configuration](/recipes/java/migrate/maven/usemavencompilerpluginreleaseconfiguration.md)
+
 ## Example
 
 ###### Parameters

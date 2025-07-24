@@ -31,6 +31,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newVersion | The new version of the resource | `2.0` |
 | `String` | newSchemaLocation | *Optional*. The new value to be used for the namespace schema location. | `newfoo.bar.attribute.value.string` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use correct application namespace values](/recipes/xml/liberty/appddnamespacerule.md)
+* [Use correct connector namespace values](/recipes/xml/liberty/connectorddnamespacerule.md)
+* [Use correct ejb-jar namespace values](/recipes/xml/liberty/ejbddnamespacerule.md)
+* [Use correct web-app namespace values](/recipes/xml/liberty/webddnamespacerule.md)
+
 ## Example
 
 ###### Parameters

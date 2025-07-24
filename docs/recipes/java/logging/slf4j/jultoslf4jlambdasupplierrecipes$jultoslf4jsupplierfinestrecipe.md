@@ -20,6 +20,13 @@ _Replace calls to `java.util.logging.Logger.finest(Supplier<String>)` with `org.
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace JUL active Level check with corresponding SLF4J method calls](/recipes/java/logging/slf4j/jultoslf4jlambdasupplierrecipes.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):

@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `org.apache.http.impl.nio.reactor.IOReactorConfig.Builder setSelectInterval(long)` |
 | `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to use to turn the original value into a TimeValue. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
+
 ## Example
 
 ###### Parameters

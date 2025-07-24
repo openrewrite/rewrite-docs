@@ -52,6 +52,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
+
 ## Example
 
 ###### Parameters

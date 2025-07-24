@@ -63,6 +63,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from WebSphere traditional to Liberty](/recipes/java/liberty/migratefromwebspheretoliberty.md)
+
 ## Examples
 ##### Example 1
 

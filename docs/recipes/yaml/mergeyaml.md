@@ -32,6 +32,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | insertProperty | *Optional*. Define the key for the insertion mode. Takes the `key` JsonPath into account. Only useful when `insert mode` is either `Before` or `After`. | `some-key` |
 | `Boolean` | createNewKeys | *Optional*. When the key path does _not_ match any keys, create new keys on the spot. Default is `true`. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add GitLab component](/recipes/gitlab/addcomponent.md)
+* [Add GitLab stages](/recipes/gitlab/addstages.md)
+* [Add GitLab template](/recipes/gitlab/addtemplate.md)
+* [Add manual workflow trigger](/recipes/github/addmanualtrigger.md)
+* [Update relocated Micronaut Security config yaml keys](/recipes/java/micronaut/updatesecurityyamlifneeded.md)
+
 ## Example
 
 ###### Parameters

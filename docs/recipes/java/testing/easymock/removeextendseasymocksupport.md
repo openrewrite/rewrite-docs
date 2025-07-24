@@ -19,6 +19,13 @@ _Modify test classes by removing extends EasyMockSupport and replacing EasyMock 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+
 ## Example
 
 

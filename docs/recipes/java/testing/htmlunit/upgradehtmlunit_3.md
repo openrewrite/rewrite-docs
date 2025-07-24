@@ -101,6 +101,14 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
+* [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+
 ## Examples
 ##### Example 1
 

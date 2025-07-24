@@ -25,6 +25,14 @@ _Ensure `LoggerFactory#getLogger(Class)` is called with the enclosing class as a
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
+* [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
+
 ## Example
 
 

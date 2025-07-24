@@ -19,6 +19,13 @@ _Prefer the Java standard library over third-party usage of Joda Time._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java standard library instead of Joda-Time](/recipes/java/migrate/joda/nojodatime.md)
+
 ## Example
 
 

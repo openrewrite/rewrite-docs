@@ -25,6 +25,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `Integer` | version | The Java version to upgrade to. | `11` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update Maven Java project properties](/recipes/java/migrate/maven/updatemavenprojectpropertyjavaversion.md)
+* [Upgrade Java version](/recipes/io/quarkus/updates/core/quarkus37/upgradejavaversion.md)
+* [Upgrade Java version](/recipes/java/migrate/upgradejavaversion.md)
+* [Upgrade Java version](/recipes/org/apache/camel/upgrade/upgradejavaversion.md)
+
 ## Example
 
 ###### Parameters

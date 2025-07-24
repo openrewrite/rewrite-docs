@@ -19,6 +19,13 @@ _JobParameter.toString() logic is quite different in spring batch 5, need take J
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Batch 5.0 from 4.3](/recipes/java/spring/batch/springbatch4to5migration.md)
+
 ## Example
 
 

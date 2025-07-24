@@ -19,6 +19,13 @@ _Ensures that there is only one `@DocumentExample` annotation per test class, as
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
+
 ## Example
 
 

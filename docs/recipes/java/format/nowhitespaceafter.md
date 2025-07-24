@@ -20,6 +20,13 @@ _Removes unnecessary whitespace appearing after a token. A linebreak after a tok
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

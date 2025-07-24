@@ -26,6 +26,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldPackageName | The package name to replace. | `com.yourorg.foo` |
 | `String` | newPackageName | New package name to replace the old package name with. | `com.yourorg.bar` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate deprecated `javax.faces` packages to `jakarta.faces`](/recipes/java/migrate/jakarta/updatejakartafacesapi3.md)
+
 ## Example
 
 ###### Parameters

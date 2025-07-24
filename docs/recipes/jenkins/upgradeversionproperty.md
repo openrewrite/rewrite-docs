@@ -29,6 +29,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | key | The name of the property key to change. | `jenkins.version` |
 | `String` | minimumVersion | Value to apply to the matching property if < this. | `2.375.1` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+* [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
+
 ## Example
 
 ###### Parameters

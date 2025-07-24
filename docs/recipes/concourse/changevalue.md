@@ -27,6 +27,13 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | newValue | New value to replace the old value with. | `git@github.com:openrewrite/rewrite1.git` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pipeline*.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update git resource `source.uri` references](/recipes/concourse/updategitresourceuri.md)
+
 ## Example
 
 ###### Parameters

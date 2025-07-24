@@ -88,6 +88,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Swagger to OpenAPI](/recipes/openapi/swagger/swaggertoopenapi.md)
+
 ## Examples
 ##### Example 1
 

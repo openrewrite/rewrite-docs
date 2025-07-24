@@ -27,6 +27,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `String` | replacementValue | The value to replace the feature flag check with. | `topic-456` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remove LaunchDarkly&#39;s `boolVariation` for feature key](/recipes/featureflags/launchdarkly/removestringvariation.md)
+
 ## Example
 
 ###### Parameters

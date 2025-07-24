@@ -32,6 +32,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | dedicatedAssertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
 | `String` | requiredType | *Optional*. The type of the actual assertion argument. | `java.lang.String` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Simplify AssertJ chained assertions](/recipes/java/testing/assertj/simplifychainedassertjassertions.md)
+
 ## Example
 
 ###### Parameters

@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | regex | *Optional*. Default `false`. If enabled, `oldValue` will be interpreted as a Regular Expression, to replace only all parts that match the regex. Capturing group can be used in `newValue`. |  |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Camel API changes in application.properties](/recipes/org/apache/camel/upgrade/camel40/properties/rejectedpolicy.md)
+* [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [io.quarkus.updates.core.quarkus313.UpdateTestOIDCAuthServerUrl](/recipes/io/quarkus/updates/core/quarkus313/updatetestoidcauthserverurl.md)
+
 ## Example
 
 ###### Parameters

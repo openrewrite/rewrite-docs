@@ -19,6 +19,13 @@ _Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` w
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](/recipes/staticanalysis/replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
+
 ## Example
 
 

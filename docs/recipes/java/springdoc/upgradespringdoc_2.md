@@ -191,6 +191,14 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Upgrade to SpringDoc 2.2](/recipes/java/springdoc/upgradespringdoc_2_2.md)
+
 ## Examples
 ##### Example 1
 

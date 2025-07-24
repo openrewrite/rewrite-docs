@@ -273,6 +273,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Cloud 2022](/recipes/java/spring/cloud2022/upgradespringcloud_2022.md)
+
 ## Examples
 ##### Example 1
 

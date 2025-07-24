@@ -23,6 +23,13 @@ _Fixes Sonar issue `java:S6068`: Call to Mockito method "verify", "when" or "giv
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Mockito best practices](/recipes/java/testing/mockito/mockitobestpractices.md)
+
 ## Example
 
 

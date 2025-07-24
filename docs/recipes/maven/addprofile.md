@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | properties | *Optional*. properties of a maven profile, provided as raw XML. | `<properties><foo>foo</foo><bar>bar</bar></properties>` |
 | `String` | build | *Optional*. build details of a maven profile, provided as raw XML. | `<build><foo>foo</foo></build>` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
+
 ## Example
 
 ###### Parameters

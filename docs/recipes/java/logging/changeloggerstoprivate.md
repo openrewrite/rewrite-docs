@@ -19,6 +19,13 @@ _Ensures that logger fields are declared as `private` to encapsulate logging mec
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
+
 ## Example
 
 

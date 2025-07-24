@@ -19,6 +19,13 @@ _Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+
 ## Example
 
 

@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | localizedInputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
 | `String` | localizedOutputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+
 ## Example
 
 ###### Parameters

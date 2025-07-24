@@ -27,6 +27,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | image | The image to use for the container. | `nginx:1.9.4` |
 | `Boolean` | parseImage | *Optional*. Whether to call `DockerImageName.parse(image)`. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Explicit container images and versions](/recipes/java/testing/testcontainers/explicitcontainerimages.md)
+
 ## Example
 
 ###### Parameters

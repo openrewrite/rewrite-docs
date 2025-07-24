@@ -31,6 +31,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | methodPattern | A method used to find matching statements to parameterize. | `org.slf4j.Logger info(..)` |
 | `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Parameterize Log4j 2.x logging statements](/recipes/java/logging/log4j/parameterizedlogging.md)
+* [Parameterize SLF4J&#39;s logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md)
+
 ## Example
 
 ###### Parameters

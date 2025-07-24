@@ -24,6 +24,13 @@ _Use HTTPS for repository URLs._
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
+
 ## Example
 
 

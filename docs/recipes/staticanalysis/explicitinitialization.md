@@ -23,6 +23,14 @@ _Checks if any class or object member is explicitly initialized to default for i
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+
 ## Examples
 ##### Example 1
 

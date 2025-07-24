@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `Boolean` | onlyIfSecurityConfig | *Optional*. Only patch existing implementations of `WebSecurityConfigurerAdapter`. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remediate OWASP A08:2021 Software and data integrity failures](/recipes/java/security/owaspa08.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:

@@ -26,6 +26,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | propertyKey | The key(s) to be deleted. This is a glob expression. | `management.metrics.binders.files.enabled or management.metrics.*` |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Removed deprecated property camel.main.lightweight](/recipes/org/apache/camel/upgrade/camel411/removedlightweight.md)
+
 ## Example
 
 ###### Parameters

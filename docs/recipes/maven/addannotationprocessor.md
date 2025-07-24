@@ -27,6 +27,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The second part of a coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. | `lombok-mapstruct-binding` |
 | `String` | version | The third part of a coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. Note that an exact version is expected | `0.2.0` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
+
 ## Example
 
 ###### Parameters

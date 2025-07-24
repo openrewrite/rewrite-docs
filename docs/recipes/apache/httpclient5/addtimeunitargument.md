@@ -27,6 +27,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to add to the method invocation. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Adds `TimeUnit` to timeouts and duration methods](/recipes/apache/httpclient5/upgradeapachehttpclient_5_timeunit.md)
+* [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddTimeUnitArgumentExample`.

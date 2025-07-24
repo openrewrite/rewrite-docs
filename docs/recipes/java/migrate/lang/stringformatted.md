@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `Boolean` | addParentheses | *Optional*. Add parentheses around the first argument if it is not a simple expression. Default true; if false no change will be made.  |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):

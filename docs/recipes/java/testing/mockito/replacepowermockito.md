@@ -107,6 +107,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+
 ## Examples
 ##### Example 1
 

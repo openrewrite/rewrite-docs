@@ -23,6 +23,13 @@ _Remove unnecessary `String#toString` invocations on objects which are already a
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+
 ## Example
 
 

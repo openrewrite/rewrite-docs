@@ -82,6 +82,15 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Jakarta Faces 4.0 to 4.1](/recipes/java/migrate/jakarta/faces4xmigrationtofaces41x.md)
+* [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+* [Upgrade to Jakarta Faces 4.x](/recipes/java/migrate/jakarta/faces3xmigrationtofaces4x.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):

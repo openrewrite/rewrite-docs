@@ -19,6 +19,13 @@ _Remove `Mockito.times(0)` and `Mockito.times(1)` from `Mockito.verify()` calls.
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Mockito best practices](/recipes/java/testing/mockito/mockitobestpractices.md)
+
 ## Example
 
 

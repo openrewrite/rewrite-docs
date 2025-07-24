@@ -25,6 +25,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `String` | previewFeatureName | The name of the feature preview to remove. | `ONE_LOCKFILE_PER_PROJECT` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Gradle 6 from Gradle 5](/recipes/gradle/migratetogradle6.md)
+* [Migrate to Gradle 7 from Gradle 6](/recipes/gradle/migratetogradle7.md)
+* [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
+
 ## Example
 
 ###### Parameters

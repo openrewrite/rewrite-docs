@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | upgradeRecipe | *Optional*. The recipe to use to upgrade. | `org.openrewrite.java.testing.junit5.JUnit4to5Migration` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [DevCenter](/recipes/devcenter/devcenterstarter.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `io.moderne.recipe:rewrite-devcenter` in your build file or by running a shell command (in which case no build changes are needed):

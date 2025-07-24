@@ -63,6 +63,14 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
+
 ## Examples
 ##### Example 1
 

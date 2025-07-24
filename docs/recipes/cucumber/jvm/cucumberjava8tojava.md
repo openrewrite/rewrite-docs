@@ -73,6 +73,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
+
 ## Examples
 ##### Example 1
 

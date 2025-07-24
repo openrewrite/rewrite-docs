@@ -27,6 +27,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `Boolean` | replacementValue | The value to replace the feature flag check with. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remove FF4j&#39;s `check` for feature key](/recipes/featureflags/ff4j/removecheck.md)
+* [Remove LaunchDarkly&#39;s `boolVariation` for feature key](/recipes/featureflags/launchdarkly/removeboolvariation.md)
+* [Remove OpenFeature&#39;s `getBooleanValue` for feature key](/recipes/featureflags/openfeature/removegetbooleanvalue.md)
+* [Remove Unleash&#39;s `isEnabled` for feature key](/recipes/featureflags/unleash/removeisenabled.md)
+
 ## Example
 
 ###### Parameters

@@ -23,6 +23,13 @@ _Prefer the Java standard library's `final var` and `var` over third-party usage
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Lombok to a Java 11 compatible version](/recipes/java/migrate/lombok/updatelomboktojava11.md)
+
 ## Example
 
 

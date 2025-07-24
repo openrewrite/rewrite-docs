@@ -23,6 +23,13 @@ _Migrates Lombok's `onX` annotations from the Java 7 style using `@__` to the Ja
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Lombok to a Java 11 compatible version](/recipes/java/migrate/lombok/updatelomboktojava11.md)
+
 ## Example
 
 

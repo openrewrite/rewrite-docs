@@ -88,6 +88,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehaustofasterxml.md)
+
 ## Example
 
 ###### Parameters

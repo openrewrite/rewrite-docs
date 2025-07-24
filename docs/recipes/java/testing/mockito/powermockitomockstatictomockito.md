@@ -19,6 +19,13 @@ _Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`. Removes the `@P
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+
 ## Example
 
 

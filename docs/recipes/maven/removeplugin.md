@@ -26,6 +26,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `org.openrewrite.maven` |
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
+* [Remove Cobertura Maven plugin](/recipes/java/migrate/cobertura/removecoberturamavenplugin.md)
+
 ## Example
 
 ###### Parameters

@@ -27,6 +27,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find Gradle `dependencies` blocks](/recipes/gradle/search/finddependencyhandler.md)
+* [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md)
+* [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
+* [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
+* [Find programmatic edits of `Security` provider list](/recipes/cryptography/findsecurityproviderediting.md)
+* [Find where `SSLContext` is set as system default](/recipes/cryptography/findsslcontextdefault.md)
+* [Finds uses of `Encryptors.queryableText()`](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindMethodsExample`.

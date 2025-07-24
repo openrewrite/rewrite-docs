@@ -19,6 +19,13 @@ _Replace `SummaryPrinter` with `Plugin`, if not already present._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
+
 ## Example
 
 

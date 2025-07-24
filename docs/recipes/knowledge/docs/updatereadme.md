@@ -25,6 +25,13 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | prompt | *Optional*. Prompt that guides the LLM on how you want the README structured. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update the README for an OpenRewrite recipe repository](/recipes/knowledge/docs/updateopenrewritereadme.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:

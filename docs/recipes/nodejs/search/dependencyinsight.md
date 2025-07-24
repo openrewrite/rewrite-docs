@@ -26,6 +26,23 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
 | `Boolean` | onlyDirect | *Optional*. If enabled, transitive dependencies will not be considered. All dependencies are searched by default. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Javascript UI library insights](/recipes/nodejs/search/uiinsights.md)
+* [Javascript database interaction library insights](/recipes/nodejs/search/databaseinteractioninsights.md)
+* [Javascript form handling library insights](/recipes/nodejs/search/formhandlinginsights.md)
+* [Javascript linting &amp; formatting library insights](/recipes/nodejs/search/lintingformattinginsights.md)
+* [Javascript real-time communication library insights](/recipes/nodejs/search/realtimecommunicationinsights.md)
+* [Javascript security library insights](/recipes/nodejs/search/securityinsights.md)
+* [Javascript server-side frameworks insights](/recipes/nodejs/search/serversideframeworksinsights.md)
+* [Javascript state management library insights](/recipes/nodejs/search/statemanagementinsights.md)
+* [Javascript task runners &amp; build tools insights](/recipes/nodejs/search/taskrunnersbuildtoolsinsights.md)
+* [Javascript testing library insights](/recipes/nodejs/search/testinginsights.md)
+* [Javascript utility library insights](/recipes/nodejs/search/utilityinsights.md)
+
 ## Example
 
 ###### Parameters

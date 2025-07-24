@@ -27,6 +27,20 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
 | `String` | newScope | *Optional*. Scope to apply to specified Maven dependency. May be omitted, which indicates that no scope should be added and any existing scope be removed from the dependency. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add explicit Common Annotations dependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
+* [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](/recipes/com/oracle/weblogic/rewrite/changejakartainjectapidependencyscope.md)
+* [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](/recipes/com/oracle/weblogic/rewrite/changejakartawebservicersapidependencyscope.md)
+* [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](/recipes/com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
+* [Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications](/recipes/java/migrate/removedjaxbmoduleprovided.md)
+* [Do not package `java.xml.ws` module in WebSphere Liberty applications](/recipes/java/migrate/removedjavaxmlwsmoduleprovided.md)
+* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
+
 ## Example
 
 ###### Parameters

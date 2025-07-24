@@ -29,6 +29,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newArtifactId | *Optional*. The new artifact ID to use. | `my-new-maven-plugin` |
 | `String` | newVersion | *Optional*. An exact version number. | `29.X` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Micronaut build plugins to 4.x](/recipes/java/micronaut/updatebuildplugins.md)
+* [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/io/quarkus/updates/core/quarkus30/additionalchanges.md)
+
 ## Examples
 ##### Example 1
 

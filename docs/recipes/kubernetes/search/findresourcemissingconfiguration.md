@@ -26,6 +26,18 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | configurationPath | A JsonPath expression to locate Kubernetes configuration. | `$.spec.containers.livenessProbe` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Ensure CPU limits are set](/recipes/kubernetes/missingcpulimits.md)
+* [Ensure CPU request is set](/recipes/kubernetes/missingcpurequest.md)
+* [Ensure liveness probe is configured](/recipes/kubernetes/missingpodlivenessprobe.md)
+* [Ensure memory limits are set](/recipes/kubernetes/missingmemorylimits.md)
+* [Ensure memory request is set](/recipes/kubernetes/missingmemoryrequest.md)
+* [Ensure readiness probe is configured](/recipes/kubernetes/missingpodreadinessprobe.md)
+
 ## Example
 
 ###### Parameters

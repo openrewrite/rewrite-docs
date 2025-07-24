@@ -30,6 +30,41 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | trustParent | *Optional*. Even if the parent suggests a version that is older than what we are trying to upgrade to, trust it anyway. Useful when you want to wait for the parent to catch up before upgrading. The parent is not trusted by default. |  |
 | `Boolean` | addVersionIfMissing | *Optional*. If the plugin is missing a version, add the latest release. Defaults to false. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate to 4.12.1](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to Java 17](/recipes/io/quarkus/updates/core/quarkus37/upgradetojava17.md)
+* [Migrate to Java 17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
+* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
+* [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
+* [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
+* [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
+* [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+* [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
+* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md)
+* [Migrate to WebLogic 14.1.1](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
+* [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Update the WebLogic version to 14.1.2](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
+* [Update the WebLogic version to 15.1.1](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
+* [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
+* [Upgrade plugins to Java 11 compatible versions](/recipes/java/migrate/upgradepluginsforjava11.md)
+* [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
+* [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
+* [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
+* [io.quarkus.updates.core.quarkus37.MavenPlugins](/recipes/io/quarkus/updates/core/quarkus37/mavenplugins.md)
+
 ## Example
 
 ###### Parameters

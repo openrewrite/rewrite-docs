@@ -49,6 +49,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to OkHttp 5.x](/recipes/okhttp/upgradeokhttp5.md)
+
 ## Examples
 ##### Example 1
 

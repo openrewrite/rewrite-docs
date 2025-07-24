@@ -19,6 +19,13 @@ _As of Spring-Framework 5.3 `InstantiationAwareBeanPostProcessorAdapter` is depr
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
+
 ## Example
 
 

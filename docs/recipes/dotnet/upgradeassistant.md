@@ -25,6 +25,16 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | targetFramework | Target framework to which source project should be upgraded. | `net9.0` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to .NET 6.0 using upgrade-assistant](/recipes/dotnet/migratetonet6.md)
+* [Upgrade to .NET 7.0 using upgrade-assistant](/recipes/dotnet/migratetonet7.md)
+* [Upgrade to .NET 8.0 using upgrade-assistant](/recipes/dotnet/migratetonet8.md)
+* [Upgrade to .NET 9.0 using upgrade-assistant](/recipes/dotnet/migratetonet9.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters and can only be run by users of Moderne.

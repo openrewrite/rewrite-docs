@@ -35,6 +35,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | runtime | Which implementation of the JAXB run-time that will be added to maven projects that have transitive dependencies on the JAXB API Valid options: `glassfish`, `sun` | `glassfish` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add explicit JAXB API dependencies and runtime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddJaxbRuntimeExample`.

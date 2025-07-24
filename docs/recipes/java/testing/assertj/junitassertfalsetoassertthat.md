@@ -19,6 +19,13 @@ _Convert JUnit-style `assertFalse()` to AssertJ's `assertThat().isFalse()`._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JUnit asserts to AssertJ](/recipes/java/testing/assertj/junittoassertj.md)
+
 ## Example
 
 

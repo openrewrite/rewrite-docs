@@ -24,6 +24,13 @@ _Removes not needed semicolons. Semicolons are considered not needed:  * Optiona
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+
 ## Example
 
 

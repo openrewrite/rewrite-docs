@@ -28,6 +28,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newValue | The new value for the tag. Supports capture groups when regex is enabled. If literal $,\ characters are needed in newValue, with regex true, then it should be escaped. | `user` |
 | `Boolean` | regex | *Optional*. Default false. If true, `oldValue` will be interpreted as a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression), and capture group contents will be available in `newValue`. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
+* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](/recipes/com/oracle/weblogic/rewrite/jakarta/facesjndinameschanged3.md)
+* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
+* [Removed OpenJPA providers in the persistence.xml file](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
+
 ## Example
 
 ###### Parameters

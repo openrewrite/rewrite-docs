@@ -18,6 +18,13 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Reactor 3.5](/recipes/reactive/reactor/upgradereactor_3_5.md)
+
 ## Example
 
 

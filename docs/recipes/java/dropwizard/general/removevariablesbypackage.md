@@ -26,6 +26,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | packageFilter | The package name to filter methods by. Methods with return types or parameter types in this package (or subpackages) will be removed. | `com.example.unwanted` |
 | `Boolean` | removeOnlyClassScope | Ignores variables that are method scope | `com.example.unwanted` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Clean up various issues with the code.](/recipes/java/dropwizard/codecleanup.md)
+
 ## Example
 
 ###### Parameters

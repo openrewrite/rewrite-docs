@@ -19,6 +19,13 @@ _Try to apply local variable type inference `var` to primitive variables where p
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use local variable type inference](/recipes/java/migrate/lang/usevar.md)
+
 ## Example
 
 

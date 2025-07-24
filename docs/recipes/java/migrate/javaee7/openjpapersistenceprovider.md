@@ -49,6 +49,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to JavaEE7](/recipes/java/migrate/javaee7-recipe.md)
+
 ## Examples
 ##### Example 1
 

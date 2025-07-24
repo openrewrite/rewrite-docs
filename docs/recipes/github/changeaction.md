@@ -27,6 +27,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | newAction | Name of the action to use instead. | `gradle/actions/wrapper-validation` |
 | `String` | newVersion | New version to use. | `v3` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`](/recipes/github/gradle/renamegradlebuildactiontosetupgradle.md)
+* [Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`](/recipes/github/gradle/renamewrappervalidationaction.md)
+
 ## Example
 
 ###### Parameters

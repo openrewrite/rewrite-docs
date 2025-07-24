@@ -19,6 +19,13 @@ _Checks for if expressions that are always `true` or `false` and simplifies them
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace `System.getSecurityManager()` with `null`](/recipes/java/migrate/systemgetsecuritymanagertonull.md)
+
 ## Example
 
 

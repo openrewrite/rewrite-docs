@@ -27,6 +27,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | assertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
 | `String` | argumentType | *Optional*. The type of the argument to the Hamcrest `Matcher`. | `java.math.BigDecimal` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
+
 ## Example
 
 ###### Parameters

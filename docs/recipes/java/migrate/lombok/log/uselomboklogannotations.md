@@ -55,6 +55,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+
 ## Examples
 ##### Example 1
 

@@ -26,6 +26,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath expression. | `/settings/servers/server/username` |
 | `String` | newName | The new name for the tag. | `user` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
+* [XML DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/org/apache/camel/upgrade/camel412/xmldslbearer.md)
+
 ## Example
 
 ###### Parameters

@@ -59,6 +59,17 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Create Spring Boot Application Entry Point](/recipes/java/dropwizard/coresetup.md)
+* [Migrate Health Checks to Spring Boot](/recipes/java/dropwizard/migratesecurity.md)
+* [Migrate Health Checks to Spring Boot](/recipes/java/dropwizard/migratetests.md)
+* [Migrate Hibernate](/recipes/java/dropwizard/migratehibernate.md)
+* [Migrate Resource Classes](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveAndExcludeDependencyExample`.

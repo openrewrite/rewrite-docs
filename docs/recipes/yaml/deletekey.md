@@ -26,6 +26,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | keyPath | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression to locate a YAML entry. | `$.source.kind` |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update relocated Micronaut Security config yaml keys](/recipes/java/micronaut/updatesecurityyamlifneeded.md)
+
 ## Example
 
 ###### Parameters

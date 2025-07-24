@@ -29,6 +29,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `List` | except | *Optional*. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. | `List.of("group")` |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Kubernetes API v1.29](/recipes/kubernetes/migrate/migratetoapiv1_29.md)
+* [Renamed streamCaching to streamCache on the route](/recipes/org/apache/camel/upgrade/camel46/yamstreamcaching.md)
+* [Update Apache Camel configurations keys](/recipes/org/apache/camel/upgrade/customrecipes/propertiesandyamlkeyupdate.md)
+* [io.quarkus.updates.core.quarkus30.ApplicationYml](/recipes/io/quarkus/updates/core/quarkus30/applicationyml.md)
+* [io.quarkus.updates.core.quarkus32.ApplicationYml](/recipes/io/quarkus/updates/core/quarkus32/applicationyml.md)
+* [io.quarkus.updates.core.quarkus33.ApplicationYml](/recipes/io/quarkus/updates/core/quarkus33/applicationyml.md)
+
 ## Examples
 ##### Example 1
 

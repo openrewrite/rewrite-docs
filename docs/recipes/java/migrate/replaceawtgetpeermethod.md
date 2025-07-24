@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | getPeerMethodPattern | *Optional*. The method pattern to match and replace. | `java.awt.* getPeer()` |
 | `String` | lightweightPeerFQCN | *Optional*. The fully qualified class name of the LightweightPeer interface to replace in `instanceof`. | `java.awt.peer.LightweightPeer` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+
 ## Example
 
 ###### Parameters

@@ -26,6 +26,20 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | annotationPattern | An annotation pattern, expressed as a method pattern. | `@java.lang.SuppressWarnings("deprecation")` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
+* [Migrate JavaEE Code to Quarkus 2](/recipes/quarkus/migrate/javaee/javaeetoquarkus2codemigration.md)
+* [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
+* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
+* [Mockito best practices](/recipes/java/testing/mockito/mockitobestpractices.md)
+* [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+* [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
+* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveAnnotationExample`.

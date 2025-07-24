@@ -19,6 +19,13 @@ _Alters beans with missing version attribute to include this attribute as well a
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
+
 ## Example
 
 

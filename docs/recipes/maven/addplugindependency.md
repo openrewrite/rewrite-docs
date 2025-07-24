@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The artifact ID of the dependency to add. | `org.openrewrite.recipe` |
 | `String` | version | The version of the dependency to add. | `org.openrewrite.recipe` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade Surefire Plugin](/recipes/java/testing/junit5/upgradesurefireplugin.md)
+
 ## Example
 
 ###### Parameters

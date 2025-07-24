@@ -31,6 +31,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupId | The first part of a plugin dependency coordinate. Supports glob. | `com.google.guava` |
 | `String` | artifactId | The second part of a plugin dependency coordinate. Supports glob. | `guava` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+
 ## Example
 
 ###### Parameters

@@ -19,6 +19,13 @@ _Replace `@Cucumber` with `@Suite` and `@SelectClasspathResource("cucumber/annot
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Cucumber to JUnit test `@Suite`](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+
 ## Example
 
 

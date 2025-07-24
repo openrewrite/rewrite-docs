@@ -195,6 +195,15 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
+* [Migrate Health Checks to Spring Boot](/recipes/java/dropwizard/migratetests.md)
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
+
 ## Examples
 ##### Example 1
 

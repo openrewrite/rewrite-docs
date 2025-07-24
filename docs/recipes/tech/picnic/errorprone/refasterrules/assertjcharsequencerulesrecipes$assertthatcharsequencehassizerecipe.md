@@ -36,6 +36,13 @@ static final class AssertThatCharSequenceHasSize {
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [`AssertJCharSequenceRules` Refaster recipes](/recipes/tech/picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):

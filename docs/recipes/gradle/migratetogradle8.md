@@ -70,6 +70,14 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
+* [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle8spring34.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

@@ -20,6 +20,13 @@ _Replace calls to `java.util.logging.Logger.log(Level.FINE, e, Supplier<String>)
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace JUL `log(Level, Throwable, Supplier&lt;String&gt;)` with corresponding SLF4J method calls](/recipes/java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):

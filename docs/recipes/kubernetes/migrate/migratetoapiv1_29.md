@@ -23,6 +23,13 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Kubernetes API v1.32](/recipes/kubernetes/migrate/migratetoapiv1_32.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:

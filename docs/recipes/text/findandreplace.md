@@ -33,6 +33,65 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | plaintextOnly | *Optional*. Only alter files that are parsed as plaintext to prevent language-specific LST information loss. Defaults to false. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Faces XHTML migration for Jakarta EE 10](/recipes/java/migrate/jakarta/jakartafacesxhtmlee10.md)
+* [Faces XHTML migration for Jakarta EE 9](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
+* [Faces XHTML migration for Jakarta EE 9](/recipes/java/migrate/jakarta/jakartafacesxhtmlee9.md)
+* [Migrate JSF values inside EcmaScript files](/recipes/java/migrate/jakarta/jakartafacesecmascript.md)
+* [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
+* [Migrate javax.jms to jakarta.jms on MDB](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxjmstojakartajmsonmdb.md)
+* [Migrate xmlns entries and javax. packages in `ejb-jar.xml` files](/recipes/java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml.md)
+* [Migrate xmlns entries and javax. packages in `validation.xml` files](/recipes/java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml.md)
+* [Migrate xmlns entries in `**/validation/*.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxvalidationmappingxmlstojakarta9validationmappingxmls.md)
+* [Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1511.md)
+* [Migrate xmlns entries in `*-jms.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1511.md)
+* [Migrate xmlns entries in `*.tld` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
+* [Migrate xmlns entries in `*.xjb` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
+* [Migrate xmlns entries in `*taglib*.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
+* [Migrate xmlns entries in `application-client.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1511.md)
+* [Migrate xmlns entries in `application-client.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationclientxmltojakarta9applicationclientxml.md)
+* [Migrate xmlns entries in `application.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationxmltojakarta9applicationxml.md)
+* [Migrate xmlns entries in `batch.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbatchxmltojakarta9batchxml.md)
+* [Migrate xmlns entries in `ejb-jar.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxejbjarxmltojakarta9ejbjarxml.md)
+* [Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
+* [Migrate xmlns entries in `faces-config.xml` files](/recipes/java/migrate/jakarta/javaxfacesconfigxmltojakartafacesconfigxml.md)
+* [Migrate xmlns entries in `handler.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebhandlerxmltojakarta9handlerxml.md)
+* [Migrate xmlns entries in `permissions.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxpermissionsxmltojakarta9permissionsxml.md)
+* [Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1511.md)
+* [Migrate xmlns entries in `plan.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1511.md)
+* [Migrate xmlns entries in `ra.xml` files (Connectors).](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
+* [Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1511.md)
+* [Migrate xmlns entries in `taglib.xml` files](/recipes/java/migrate/jakarta/javaxfacestaglibraryxmltojakartafacestaglibraryxml.md)
+* [Migrate xmlns entries in `test-*.xml` files for Jakarta EE 9.1 using test interfaces](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestxmlstojakartatestsxmls.md)
+* [Migrate xmlns entries in `web-fragment.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
+* [Migrate xmlns entries in `web-fragment.xml` files](/recipes/java/migrate/jakarta/javaxwebfragmentxmltojakartawebfragmentxml.md)
+* [Migrate xmlns entries in `web.xml` files for Jakarta Server Faces 3](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
+* [Migrate xmlns entries in `web.xml` files](/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml.md)
+* [Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1511.md)
+* [Migrate xmlns entries in `weblogic.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md)
+* [Migrate xmlns entries in `webservices.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
+* [OmniFaces Namespace Migration](/recipes/java/migrate/jakarta/omnifacesnamespacemigration.md)
+* [Relocate Launcher Classes](/recipes/java/spring/boot3/relocatelauncherclasses.md)
+* [io.quarkus.updates.core.quarkus30.JavaxToJakartaCodestartsTests](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartacodestartstests.md)
+* [io.quarkus.updates.core.quarkus30.JavaxToJakartaCodestarts](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartacodestarts.md)
+* [io.quarkus.updates.core.quarkus30.JavaxToJakartaDocumentationAdoc](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartadocumentationadoc.md)
+* [io.quarkus.updates.core.quarkus30.JavaxToJakartaDocumentationMd](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartadocumentationmd.md)
+* [io.quarkus.updates.core.quarkus30.JavaxToJakartaKotlinCodestartsTests](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartakotlincodestartstests.md)
+* [io.quarkus.updates.core.quarkus30.JavaxToJakartaKotlinCodestarts](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartakotlincodestarts.md)
+* [io.quarkus.updates.core.quarkus30.JavaxToJakartaKotlin](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartakotlin.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindAndReplaceExample`.

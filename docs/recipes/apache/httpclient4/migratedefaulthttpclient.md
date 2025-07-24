@@ -23,6 +23,13 @@ _Since `DefaultHttpClient` is deprecated, we need to change it to the `Closeable
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
+
 ## Example
 
 

@@ -19,6 +19,13 @@ _Replace `EasyMock.verify(dependency)` with individual `Mockito.verify(dependenc
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+
 ## Example
 
 

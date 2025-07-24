@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `Boolean` | convertToList | *Optional*. Also replace `Stream.collect(Collectors.toList())` with `Stream.toList()`. *BEWARE*: Attempts to modify the returned list, result in an `UnsupportedOperationException`! |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
+
 ## Example
 
 ###### Parameters

@@ -20,6 +20,13 @@ _Replace calls to `java.util.logging.Logger.log(Level.SEVERE, String)` with `Log
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace JUL Level arguments with the corresponding method calls](/recipes/java/logging/jul/loggerlevelargumenttomethodrecipes.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):

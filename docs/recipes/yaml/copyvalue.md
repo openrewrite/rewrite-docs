@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newKey | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression defining where the value should be written. | `$.dest.kind` |
 | `String` | newFilePath | *Optional*. The file path to the YAML file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.yaml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update relocated Micronaut Security config yaml keys](/recipes/java/micronaut/updatesecurityyamlifneeded.md)
+
 ## Example
 
 ###### Parameters

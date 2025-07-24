@@ -20,6 +20,13 @@ _Remove any extra trailing whitespace from the end of each line._
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

@@ -71,6 +71,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Spring Boot Actuator](/recipes/java/dropwizard/migratehealthchecksandmetrics.md)
+
 ## Examples
 ##### Example 1
 

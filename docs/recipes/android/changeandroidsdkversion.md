@@ -24,6 +24,15 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | -- | -- | -- | -- |
 | `Integer` | version | The version of the Android SDK to use. | `35` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Android SDK 33](/recipes/android/upgradetoandroidsdk33.md)
+* [Upgrade to Android SDK 34](/recipes/android/upgradetoandroidsdk34.md)
+* [Upgrade to Android SDK 35](/recipes/android/upgradetoandroidsdk35.md)
+
 ## Example
 
 ###### Parameters

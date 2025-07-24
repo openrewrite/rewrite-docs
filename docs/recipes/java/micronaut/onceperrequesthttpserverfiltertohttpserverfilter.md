@@ -19,6 +19,13 @@ _Starting in Micronaut 3.0 all filters are executed once per request. Directly i
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
+
 ## Example
 
 

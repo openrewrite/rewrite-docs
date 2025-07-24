@@ -27,6 +27,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | targetAnnotationClassName | The annotation that should looked for. | `javax.ws.rs.Path` |
 | `Boolean` | annotateInnerClasses | *Optional*. Boolean whether to annotate inner classes of the matched annotation |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Configuration Class](/recipes/java/dropwizard/migrateconfigurationclass.md)
+* [Migrate Resource Classes](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
+
 ## Example
 
 ###### Parameters

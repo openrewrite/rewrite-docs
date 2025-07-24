@@ -19,6 +19,13 @@ _As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/mi
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
+
 ## Example
 
 

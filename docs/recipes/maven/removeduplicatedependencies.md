@@ -19,6 +19,15 @@ _Removes duplicated dependencies in the `<dependencies>` and `<dependencyManagem
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apache Maven best practices](/recipes/maven/bestpractices.md)
+* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
+* [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
+
 ## Example
 
 

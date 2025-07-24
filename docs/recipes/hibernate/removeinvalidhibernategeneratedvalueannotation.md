@@ -19,6 +19,13 @@ _Removes `@GeneratedValue` annotation from fields that are not also annotated wi
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Hibernate 6.4.x](/recipes/hibernate/migratetohibernate64.md)
+
 ## Example
 
 

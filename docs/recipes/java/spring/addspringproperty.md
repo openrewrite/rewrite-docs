@@ -28,6 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yml", and "**/application.properties". | `["**/application.yml"]` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Enable Virtual Threads on Java 21](/recipes/java/spring/boot3/enablevirtualthreads.md)
+
 ## Example
 
 ###### Parameters

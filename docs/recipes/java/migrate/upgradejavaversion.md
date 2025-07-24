@@ -66,6 +66,16 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
+* [Upgrade build to Java 11](/recipes/java/migrate/upgradebuildtojava11.md)
+* [Upgrade build to Java 17](/recipes/java/migrate/upgradebuildtojava17.md)
+* [Upgrade build to Java 21](/recipes/java/migrate/upgradebuildtojava21.md)
+
 ## Example
 
 ###### Parameters

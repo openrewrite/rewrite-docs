@@ -27,6 +27,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | comment | A comment to add to this method. | `This method is not supported in AWS SDK for Java v2.` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change SDK Exception types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
+* [Change config related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeconfigtypes.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddCommentToMethodExample`.

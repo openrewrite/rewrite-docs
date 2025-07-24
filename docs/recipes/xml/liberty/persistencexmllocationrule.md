@@ -19,6 +19,13 @@ _This recipes moves persistence.xml files into the root META-INF directory in so
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from WebSphere traditional to Liberty](/recipes/java/liberty/migratefromwebspheretoliberty.md)
+
 ## Example
 
 

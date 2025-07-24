@@ -20,6 +20,13 @@ _Replace `isCloseTo` with `isEqualTo` when `offset` or `percentage` is zero._
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Adopt AssertJ BigInteger Assertions](/recipes/java/testing/assertj/assertjbigintegerrulesrecipes.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks` in your build file or by running a shell command (in which case no build changes are needed):

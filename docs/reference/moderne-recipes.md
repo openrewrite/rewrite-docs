@@ -8,449 +8,449 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-ai-search
 
-* [Find comments&#39; language distribution](/recipes/ai/findcommentslanguage.md)
-* [Find method invocations that resemble a pattern](/recipes/ai/research/findcodethatresembles.md)
-* [Fix mis-encoded French comments, javadocs and pom.xml comments](/recipes/ai/fixmisencodedcommentsinfrench.md)
-* [Fix mis-encoded comments in French](/recipes/ai/spellcheckcommentsinfrench.md)
-* [Get embeddings for code snippets in code](/recipes/ai/research/getcodeembedding.md)
-* [Get recommendations](/recipes/ai/research/getrecommendations.md)
-* [List all methods used](/recipes/ai/listallmethodsused.md)
+* [Find comments&#39; language distribution](/recipes/ai/findcommentslanguage.md) - _Finds all comments and uses AI to predict which language the comment is in._
+* [Find method invocations that resemble a pattern](/recipes/ai/research/findcodethatresembles.md) - _This recipe uses two phase AI approach to find a method invocation that resembles a search string._
+* [Fix mis-encoded French comments, javadocs and pom.xml comments](/recipes/ai/fixmisencodedcommentsinfrench.md) - _Fixes mis-encoded French comments in your code, javadocs and in your pom.xml files. Mis-encoded comments contain a ? or � character._
+* [Fix mis-encoded comments in French](/recipes/ai/spellcheckcommentsinfrench.md) - _Use spellchecker to fix mis-encoded French comments in comments, JavaDocs, properties or XML files. Mis-encoded comments will contain either &#39;?&#39; or &#39;�&#39;._
+* [Get embeddings for code snippets in code](/recipes/ai/research/getcodeembedding.md) - _This recipe calls an AI model to get an embedding for either classes or methods which can then be used for downstream tasks._
+* [Get recommendations](/recipes/ai/research/getrecommendations.md) - _This recipe calls an AI model to get recommendations for modernizing the code base by looking at a sample of method declarations._
+* [List all methods used](/recipes/ai/listallmethodsused.md) - _List all methods used in any Java source file._
 
 ## rewrite-android
 
-* [Change Android SDK version](/recipes/android/changeandroidsdkversion.md)
-* [Migrate to Android Gradle Plugin 7.2](/recipes/android/migratetoandroidgradleplugin_7_2.md)
-* [Migrate to Android Gradle Plugin 7.3](/recipes/android/migratetoandroidgradleplugin_7_3.md)
-* [Migrate to Android Gradle Plugin 7.4](/recipes/android/migratetoandroidgradleplugin_7_4.md)
-* [Migrate to Android Gradle Plugin 8.0](/recipes/android/migratetoandroidgradleplugin_8_0.md)
-* [Migrate to Android Gradle Plugin 8.1](/recipes/android/migratetoandroidgradleplugin_8_1.md)
-* [Migrate to Android Gradle Plugin 8.2](/recipes/android/migratetoandroidgradleplugin_8_2.md)
-* [Migrate to Android Gradle Plugin 8.3](/recipes/android/migratetoandroidgradleplugin_8_3.md)
-* [Migrate to Android Gradle Plugin 8.4](/recipes/android/migratetoandroidgradleplugin_8_4.md)
-* [Migrate to Android Gradle Plugin 8.5](/recipes/android/migratetoandroidgradleplugin_8_5.md)
-* [Migrate to Android Gradle Plugin 8.6](/recipes/android/migratetoandroidgradleplugin_8_6.md)
-* [Migrate to Android Gradle Plugin 8.7](/recipes/android/migratetoandroidgradleplugin_8_7.md)
-* [Upgrade Android Gradle Plugin (AGP) version](/recipes/android/upgradeandroidgradlepluginversion.md)
-* [Upgrade to Android SDK 33](/recipes/android/upgradetoandroidsdk33.md)
-* [Upgrade to Android SDK 34](/recipes/android/upgradetoandroidsdk34.md)
-* [Upgrade to Android SDK 35](/recipes/android/upgradetoandroidsdk35.md)
+* [Change Android SDK version](/recipes/android/changeandroidsdkversion.md) - _Change `compileSdk`, `compileSdkVersion`, `targetSdk` and `targetSdkVersion` in an Android Gradle build file to the argument version._
+* [Migrate to Android Gradle Plugin 7.2](/recipes/android/migratetoandroidgradleplugin_7_2.md) - _Recipes to migrate to Android Gradle Plugin version 7.2._
+* [Migrate to Android Gradle Plugin 7.3](/recipes/android/migratetoandroidgradleplugin_7_3.md) - _Recipes to migrate to Android Gradle Plugin version 7.3._
+* [Migrate to Android Gradle Plugin 7.4](/recipes/android/migratetoandroidgradleplugin_7_4.md) - _Recipes to migrate to Android Gradle Plugin version 7.4._
+* [Migrate to Android Gradle Plugin 8.0](/recipes/android/migratetoandroidgradleplugin_8_0.md) - _Recipes to migrate to Android Gradle Plugin version 8.0._
+* [Migrate to Android Gradle Plugin 8.1](/recipes/android/migratetoandroidgradleplugin_8_1.md) - _Recipes to migrate to Android Gradle Plugin version 8.1._
+* [Migrate to Android Gradle Plugin 8.2](/recipes/android/migratetoandroidgradleplugin_8_2.md) - _Recipes to migrate to Android Gradle Plugin version 8.2._
+* [Migrate to Android Gradle Plugin 8.3](/recipes/android/migratetoandroidgradleplugin_8_3.md) - _Recipes to migrate to Android Gradle Plugin version 8.3._
+* [Migrate to Android Gradle Plugin 8.4](/recipes/android/migratetoandroidgradleplugin_8_4.md) - _Recipes to migrate to Android Gradle Plugin version 8.4._
+* [Migrate to Android Gradle Plugin 8.5](/recipes/android/migratetoandroidgradleplugin_8_5.md) - _Recipes to migrate to Android Gradle Plugin version 8.5._
+* [Migrate to Android Gradle Plugin 8.6](/recipes/android/migratetoandroidgradleplugin_8_6.md) - _Recipes to migrate to Android Gradle Plugin version 8.6._
+* [Migrate to Android Gradle Plugin 8.7](/recipes/android/migratetoandroidgradleplugin_8_7.md) - _Recipes to migrate to Android Gradle Plugin version 8.7._
+* [Upgrade Android Gradle Plugin (AGP) version](/recipes/android/upgradeandroidgradlepluginversion.md) - _Upgrade Android Gradle Plugin (AGP) version and update the Gradle Wrapper version. Compatible versions are published in the [AGP release notes](https://developer.android.com/build/releases/gradle-plugin)._
+* [Upgrade to Android SDK 33](/recipes/android/upgradetoandroidsdk33.md) - _Recipes to upgrade to Android SDK version 33._
+* [Upgrade to Android SDK 34](/recipes/android/upgradetoandroidsdk34.md) - _Recipes to upgrade to Android SDK version 34._
+* [Upgrade to Android SDK 35](/recipes/android/upgradetoandroidsdk35.md) - _Recipes to upgrade to Android SDK version 35._
 
 ## rewrite-azul
 
-* [Eliminate unused classes](/recipes/azul/eliminateunusedclasses.md)
-* [Find reachable methods](/recipes/azul/search/findreachablemethods.md)
+* [Eliminate unused classes](/recipes/azul/eliminateunusedclasses.md) - _Deprecate and later delete classes that are unused, as detected by Azul Intelligence Cloud._
+* [Find reachable methods](/recipes/azul/search/findreachablemethods.md) - _Find all methods defined in the repository&#39;s source code that are reachable._
 
 ## rewrite-circleci
 
-* [Install an orb](/recipes/circleci/installorb.md)
-* [Update CircleCI image](/recipes/circleci/updateimage.md)
+* [Install an orb](/recipes/circleci/installorb.md) - _Install a CircleCI [orb](https://circleci.com/docs/2.0/orb-intro/) if it is not already installed._
+* [Update CircleCI image](/recipes/circleci/updateimage.md) - _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circleci-images/)._
 
 ## rewrite-codemods-ng
 
-* [Update to Angular v15](/recipes/codemods/migrate/angular/v15.md)
-* [Update to Angular v16](/recipes/codemods/migrate/angular/v16.md)
-* [Update to Angular v17](/recipes/codemods/migrate/angular/v17.md)
-* [Update to Angular v18](/recipes/codemods/migrate/angular/v18.md)
-* [Update to Angular v19](/recipes/codemods/migrate/angular/v19.md)
-* [Upgrade Angular versions](/recipes/codemods/migrate/angular/applyangularcli.md)
+* [Update to Angular v15](/recipes/codemods/migrate/angular/v15.md) - _Upgrade to Angular v15_
+* [Update to Angular v16](/recipes/codemods/migrate/angular/v16.md) - _Upgrade to Angular v16_
+* [Update to Angular v17](/recipes/codemods/migrate/angular/v17.md) - _Upgrade to Angular v17_
+* [Update to Angular v18](/recipes/codemods/migrate/angular/v18.md) - _Upgrade to Angular v18_
+* [Update to Angular v19](/recipes/codemods/migrate/angular/v19.md) - _Upgrade to Angular v19_
+* [Upgrade Angular versions](/recipes/codemods/migrate/angular/applyangularcli.md) - _Run `ng update` to upgrade Angular CLI and Angular Core to the specified version._
 
 ## rewrite-compiled-analysis
 
-* [Change `List#add` to `List#plus` and verify.](/recipes/compiled/verification/changelistmethodandverify.md)
-* [Verify compilation](/recipes/compiled/verification/verifycompilation.md)
+* [Change `List#add` to `List#plus` and verify.](/recipes/compiled/verification/changelistmethodandverify.md) - _We know this won&#39;t compile._
+* [Verify compilation](/recipes/compiled/verification/verifycompilation.md) - _This is a task that runs after another recipe to verify that the changes made by that recipe would result in a successful compilation._
 
 ## rewrite-comprehension
 
-* [Code comprehension with unit test examples](/recipes/knowledge/comprehendcodewithunittestexamples.md)
-* [Comprehend code](/recipes/knowledge/comprehendcode.md)
-* [Improve recipe descriptors](/recipes/moddy/improverecipedescriptors.md)
-* [Search for a class that uses the given design technique](/recipes/knowledge/search/searchdesigntechnique.md)
-* [Update README](/recipes/knowledge/docs/updatereadme.md)
-* [Update the README for an OpenRewrite recipe repository](/recipes/knowledge/docs/updateopenrewritereadme.md)
+* [Code comprehension with unit test examples](/recipes/knowledge/comprehendcodewithunittestexamples.md) - _First runs a scanning recipe to grab all unit tests, then supplements the unit tests examples for the AI-generate descriptions._
+* [Comprehend code](/recipes/knowledge/comprehendcode.md) - _Use LLMs to add inferred knowledge to the code._
+* [Improve recipe descriptors](/recipes/moddy/improverecipedescriptors.md) - _Improving recipe display names and descriptions in turn improves Moddy._
+* [Search for a class that uses the given design technique](/recipes/knowledge/search/searchdesigntechnique.md) - _Search for a class that uses the given design technique._
+* [Update README](/recipes/knowledge/docs/updatereadme.md) - _Generate a README file for the project, containing information about the project inferred from its knowledge graph._
+* [Update the README for an OpenRewrite recipe repository](/recipes/knowledge/docs/updateopenrewritereadme.md) - _Updates the README periodically to reflect the latest contents of recipe projects._
 
 ## rewrite-concourse
 
-* [Change Concourse value](/recipes/concourse/changevalue.md)
-* [Change resource version](/recipes/concourse/changeresourceversion.md)
-* [Find pinned resources by type](/recipes/concourse/search/findpinnedresource.md)
-* [Find privileged `resource_type` definitions.](/recipes/concourse/search/findprivilegedresourcetype.md)
-* [Find resource](/recipes/concourse/findresource.md)
-* [Update git resource `source.uri` references](/recipes/concourse/updategitresourceuri.md)
+* [Change Concourse value](/recipes/concourse/changevalue.md) - _Change every value matching the key pattern._
+* [Change resource version](/recipes/concourse/changeresourceversion.md) - _Pin or unpin a resource to a particular version._
+* [Find pinned resources by type](/recipes/concourse/search/findpinnedresource.md) - _Find resources of a particular type that have pinned versions._
+* [Find privileged `resource_type` definitions.](/recipes/concourse/search/findprivilegedresourcetype.md) - _By default, `resource_type` definitions are unprivileged._
+* [Find resource](/recipes/concourse/findresource.md) - _Find a Concourse resource by name._
+* [Update git resource `source.uri` references](/recipes/concourse/updategitresourceuri.md) - _Update git resource `source.uri` URI values to point to a new URI value._
 
 ## rewrite-cryptography
 
-* [Find SSL configuration](/recipes/cryptography/findsslconfiguration.md)
-* [Find `Security.setProperty(..)` calls for certain properties](/recipes/cryptography/findsecuritysetproperties.md)
-* [Find hardcoded PEM certificates](/recipes/cryptography/findhardcodedcertificate.md)
-* [Find hardcoded PEM private keys](/recipes/cryptography/findhardcodedprivatekey.md)
-* [Find hardcoded algorithms in `KeyPairGenerator`](/recipes/cryptography/findhardcodedkeypairgenerator.md)
-* [Find hardcoded algorithms in `SecretKeySpec`](/recipes/cryptography/findhardcodedsecretkeyspec.md)
-* [Find hardcoded cipher suites on SSL sockets](/recipes/cryptography/findhardcodedciphersuitesonsslsocket.md)
-* [Find hardcoded numbers passed into `RSAKeyGenParameterSpec`](/recipes/cryptography/findhardcodedrsakeygenparameterspec.md)
-* [Find hardcoded protocol choice](/recipes/cryptography/findhardcodedprotocolchoice.md)
-* [Find hardcoded protocols on SSL socket creation](/recipes/cryptography/findhardcodedprotocolsonsslsocketcreation.md)
-* [Find hardcoded protocols on SSL sockets](/recipes/cryptography/findhardcodedprotocolsonsslsocketsetprotocols.md)
-* [Find insecure `Security.setProperty` calls](/recipes/cryptography/findinsecuresecuritysetproperties.md)
-* [Find programmatic edits of `Security` provider list](/recipes/cryptography/findsecurityproviderediting.md)
-* [Find where `SSLContext` is set as system default](/recipes/cryptography/findsslcontextdefault.md)
-* [Hardcoded algorithm choice](/recipes/cryptography/findhardcodedalgorithmchoice.md)
-* [Hardcoded algorithm specific parameters](/recipes/cryptography/findhardcodedalgorithmspecificparameters.md)
-* [Hardcoded ciphersuite choice](/recipes/cryptography/findhardcodedciphersuitechoice.md)
-* [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md)
+* [Find SSL configuration](/recipes/cryptography/findsslconfiguration.md) - _The configuration of Secure Socket Layer (SSL) and Transport Layer Security (TLS) is a key aspect of making a secure  application. This recipe detects and enumerates these configurations._
+* [Find `Security.setProperty(..)` calls for certain properties](/recipes/cryptography/findsecuritysetproperties.md) - _There is a defined set of properties that should not be set using `Security.setProperty(..)` as they can lead to security vulnerabilities._
+* [Find hardcoded PEM certificates](/recipes/cryptography/findhardcodedcertificate.md) - _Detects hardcoded PEM certificates passed into `CertificateFactory.generateCertificate()`._
+* [Find hardcoded PEM private keys](/recipes/cryptography/findhardcodedprivatekey.md) - _Detects hardcoded PEM private keys passed into `KeyFactory.generatePrivate()`._
+* [Find hardcoded algorithms in `KeyPairGenerator`](/recipes/cryptography/findhardcodedkeypairgenerator.md) - _Detects hardcoded cryptographic algorithms._
+* [Find hardcoded algorithms in `SecretKeySpec`](/recipes/cryptography/findhardcodedsecretkeyspec.md) - _Detects hardcoded cryptographic algorithms._
+* [Find hardcoded cipher suites on SSL sockets](/recipes/cryptography/findhardcodedciphersuitesonsslsocket.md) - _Detects hardcoded cipher suites in SSL socket configurations, which can lead to security vulnerabilities._
+* [Find hardcoded numbers passed into `RSAKeyGenParameterSpec`](/recipes/cryptography/findhardcodedrsakeygenparameterspec.md) - _It is usually insecure to pass hardcoded numbers passed into `RSAKeyGenParameterSpec`._
+* [Find hardcoded protocol choice](/recipes/cryptography/findhardcodedprotocolchoice.md) - _Locate hardcoded protocol choices in cryptographic code._
+* [Find hardcoded protocols on SSL socket creation](/recipes/cryptography/findhardcodedprotocolsonsslsocketcreation.md) - _Finds hardcoded protocols in SSL socket creation methods, such as `SSLContext.getInstance(String)`._
+* [Find hardcoded protocols on SSL sockets](/recipes/cryptography/findhardcodedprotocolsonsslsocketsetprotocols.md) - _Detects hardcoded protocol versions in SSL socket configurations, which can hinder adaptability and security._
+* [Find insecure `Security.setProperty` calls](/recipes/cryptography/findinsecuresecuritysetproperties.md) - _Locate calls to `Security.setProperty` that set insecure properties._
+* [Find programmatic edits of `Security` provider list](/recipes/cryptography/findsecurityproviderediting.md) - _Locate programmatic edits of the `Security` provider list._
+* [Find where `SSLContext` is set as system default](/recipes/cryptography/findsslcontextdefault.md) - _This includes anywhere where `SSLContext.setDefault` is called._
+* [Hardcoded algorithm choice](/recipes/cryptography/findhardcodedalgorithmchoice.md) - _Locate hardcoded algorithm choices in cryptographic code._
+* [Hardcoded algorithm specific parameters](/recipes/cryptography/findhardcodedalgorithmspecificparameters.md) - _Locate hardcoded algorithm specific parameters in cryptographic code._
+* [Hardcoded ciphersuite choice](/recipes/cryptography/findhardcodedciphersuitechoice.md) - _Locate hardcoded ciphersuite choices in cryptographic code._
+* [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md) - _Locate cryptographic configuration which may need to be updated for a brave new post-quantum-supremacy world._
 
 ## rewrite-dotnet
 
-* [Analyze a .NET project using upgrade-assistant](/recipes/dotnet/upgradeassistantanalyze.md)
-* [Upgrade a .NET project using upgrade-assistant](/recipes/dotnet/upgradeassistant.md)
-* [Upgrade to .NET 6.0 using upgrade-assistant](/recipes/dotnet/migratetonet6.md)
-* [Upgrade to .NET 7.0 using upgrade-assistant](/recipes/dotnet/migratetonet7.md)
-* [Upgrade to .NET 8.0 using upgrade-assistant](/recipes/dotnet/migratetonet8.md)
-* [Upgrade to .NET 9.0 using upgrade-assistant](/recipes/dotnet/migratetonet9.md)
+* [Analyze a .NET project using upgrade-assistant](/recipes/dotnet/upgradeassistantanalyze.md) - _Run [upgrade-assistant analyze](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to analyze changes required to upgrade projects to a newer version of .NET. This recipe will generate an `org.openrewrite.dotnet.UpgradeAssistantAnalysis` data table containing the report details._
+* [Upgrade a .NET project using upgrade-assistant](/recipes/dotnet/upgradeassistant.md) - _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to a newer version of .NET._
+* [Upgrade to .NET 6.0 using upgrade-assistant](/recipes/dotnet/migratetonet6.md) - _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to .NET 6.0._
+* [Upgrade to .NET 7.0 using upgrade-assistant](/recipes/dotnet/migratetonet7.md) - _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to .NET 7.0._
+* [Upgrade to .NET 8.0 using upgrade-assistant](/recipes/dotnet/migratetonet8.md) - _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to .NET 8.0._
+* [Upgrade to .NET 9.0 using upgrade-assistant](/recipes/dotnet/migratetonet9.md) - _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to .NET 9.0._
 
 ## rewrite-hibernate
 
-* [Find JPQL definitions](/recipes/hibernate/search/findjpqldefinitions.md)
-* [Fix conflicting class type annotation Hibernate 6.6](/recipes/hibernate/update66/fixconflictingclasstypeannotations.md)
-* [Migrate Session interface method calls](/recipes/hibernate/update70/migratesessioninterface.md)
-* [Migrate Session save/update/delete method calls](/recipes/hibernate/update70/migratesessionsaveupdatedelete.md)
-* [Migrate to Hibernate 6.6.x](/recipes/hibernate/migratetohibernate66.md)
-* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
-* [Remove table from single table inherited entity](/recipes/hibernate/update66/removetablefrominheritedentity.md)
+* [Find JPQL definitions](/recipes/hibernate/search/findjpqldefinitions.md) - _Find Java Persistence Query Language definitions in the codebase._
+* [Fix conflicting class type annotation Hibernate 6.6](/recipes/hibernate/update66/fixconflictingclasstypeannotations.md) - _Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`. For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table) but still accepted and therefore stays._
+* [Migrate Session interface method calls](/recipes/hibernate/update70/migratesessioninterface.md) - _Migrates code using deprecated Session interface methods to their Hibernate 7.0 replacements._
+* [Migrate Session save/update/delete method calls](/recipes/hibernate/update70/migratesessionsaveupdatedelete.md) - _Migrates code using deprecated Session save/update/delete methods to their Hibernate 7.0 replacements. Session#save -&gt; Session#persist, Session#update -&gt; Session#merge, Session#saveOrUpdate -&gt; Session#persist or Session#merge, Session#delete -&gt; Session#remove._
+* [Migrate to Hibernate 6.6.x](/recipes/hibernate/migratetohibernate66.md) - _This recipe will apply changes commonly needed when migrating to Hibernate 6.6.x._
+* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md) - _This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x._
+* [Remove table from single table inherited entity](/recipes/hibernate/update66/removetablefrominheritedentity.md) - _For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error._
 
 ## rewrite-java-security
 
-* [Dependency insight for C#](/recipes/csharp/dependencies/dependencyinsight.md)
-* [Enable CSRF attack prevention](/recipes/java/security/spring/csrfprotection.md)
-* [Find AWS secrets](/recipes/java/security/secrets/findawssecrets.md)
-* [Find Artifactory secrets](/recipes/java/security/secrets/findartifactorysecrets.md)
-* [Find Azure secrets](/recipes/java/security/secrets/findazuresecrets.md)
-* [Find Discord secrets](/recipes/java/security/secrets/finddiscordsecrets.md)
-* [Find Facebook secrets](/recipes/java/security/secrets/findfacebooksecrets.md)
-* [Find GitHub secrets](/recipes/java/security/secrets/findgithubsecrets.md)
-* [Find Google secrets](/recipes/java/security/secrets/findgooglesecrets.md)
-* [Find Heroku secrets](/recipes/java/security/secrets/findherokusecrets.md)
-* [Find JWT secrets](/recipes/java/security/secrets/findjwtsecrets.md)
-* [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md)
-* [Find MailChimp secrets](/recipes/java/security/secrets/findmailchimpsecrets.md)
-* [Find Mailgun secrets](/recipes/java/security/secrets/findmailgunsecrets.md)
-* [Find NPM secrets](/recipes/java/security/secrets/findnpmsecrets.md)
-* [Find PGP secrets](/recipes/java/security/secrets/findpgpsecrets.md)
-* [Find PayPal secrets](/recipes/java/security/secrets/findpaypalsecrets.md)
-* [Find Picatic secrets](/recipes/java/security/secrets/findpicaticsecrets.md)
-* [Find RSA private keys](/recipes/java/security/secrets/findrsasecrets.md)
-* [Find SSH secrets](/recipes/java/security/secrets/findsshsecrets.md)
-* [Find SendGrid secrets](/recipes/java/security/secrets/findsendgridsecrets.md)
-* [Find Slack secrets](/recipes/java/security/secrets/findslacksecrets.md)
-* [Find Square secrets](/recipes/java/security/secrets/findsquaresecrets.md)
-* [Find Stripe secrets](/recipes/java/security/secrets/findstripesecrets.md)
-* [Find Telegram secrets](/recipes/java/security/secrets/findtelegramsecrets.md)
-* [Find Twilio secrets](/recipes/java/security/secrets/findtwiliosecrets.md)
-* [Find Twitter secrets](/recipes/java/security/secrets/findtwittersecrets.md)
-* [Find and fix vulnerable Nuget dependencies](/recipes/csharp/dependencies/dependencyvulnerabilitycheck.md)
-* [Find and fix vulnerable dependencies](/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
-* [Find generic secrets](/recipes/java/security/secrets/findgenericsecrets.md)
-* [Find hard-coded loopback IPv4 addresses](/recipes/text/findhardcodedloopbackaddresses.md)
-* [Find hard-coded private IPv4 addresses](/recipes/text/findhardcodedprivateipaddresses.md)
-* [Find licenses in use in third-party dependencies](/recipes/java/dependencies/dependencylicensecheck.md)
-* [Find passwords used in URLs](/recipes/java/security/secrets/findpasswordinurlsecrets.md)
-* [Find secrets](/recipes/java/security/secrets/findsecrets.md)
-* [Find secrets with regular expressions](/recipes/java/security/secrets/findsecretsbypattern.md)
-* [Find sensitive API endpoints](/recipes/java/security/search/findsensitiveapiendpoints.md)
-* [Find text-direction changes](/recipes/java/security/findtextdirectionchanges.md)
-* [Find vulnerable uses of Jackson `@JsonTypeInfo`](/recipes/java/security/search/findvulnerablejacksonjsontypeinfo.md)
-* [Fix CWE-338 with `SecureRandom`](/recipes/java/security/fixcwe338.md)
-* [Improper privilege management](/recipes/java/security/improperprivilegemanagement.md)
-* [Insecure JMS deserialization](/recipes/java/security/marshalling/insecurejmsdeserialization.md)
-* [Insecure cookies](/recipes/java/security/servlet/cookiesetsecure.md)
-* [Java security best practices](/recipes/java/security/javasecuritybestpractices.md)
-* [Partial path traversal vulnerability](/recipes/java/security/partialpathtraversalvulnerability.md)
-* [Prevent clickjacking](/recipes/java/security/spring/preventclickjacking.md)
-* [Regular Expression Denial of Service (ReDOS)](/recipes/java/security/regularexpressiondenialofservice.md)
-* [Remediate OWASP A01:2021 Broken access control](/recipes/java/security/owaspa01.md)
-* [Remediate OWASP A02:2021 Cryptographic failures](/recipes/java/security/owaspa02.md)
-* [Remediate OWASP A03:2021 Injection](/recipes/java/security/owaspa03.md)
-* [Remediate OWASP A05:2021 Security misconfiguration](/recipes/java/security/owaspa05.md)
-* [Remediate OWASP A06:2021 Vulnerable and outdated components](/recipes/java/security/owaspa06.md)
-* [Remediate OWASP A08:2021 Software and data integrity failures](/recipes/java/security/owaspa08.md)
-* [Remediate vulnerabilities from the OWASP Top Ten](/recipes/java/security/owasptopten.md)
-* [Remove unused dependencies](/recipes/java/dependencies/removeunuseddependencies.md)
-* [Secure Spring service exporters](/recipes/java/security/spring/insecurespringserviceexporter.md)
-* [Secure random](/recipes/java/security/securerandom.md)
-* [Secure the use of Jackson default typing](/recipes/java/security/marshalling/securejacksondefaulttyping.md)
-* [Secure the use of SnakeYAML&#39;s constructor](/recipes/java/security/marshalling/securesnakeyamlconstructor.md)
-* [SecureRandom seeds are not constant or predictable](/recipes/java/security/securerandomprefersdefaultseed.md)
-* [Software bill of materials](/recipes/java/dependencies/softwarebillofmaterials.md)
-* [Upgrade C# dependency versions](/recipes/csharp/dependencies/upgradedependencyversion.md)
-* [Use `Files#createTempDirectory`](/recipes/java/security/usefilescreatetempdirectory.md)
-* [Use secure temporary file creation](/recipes/java/security/securetempfilecreation.md)
-* [XML parser XXE vulnerability](/recipes/java/security/xmlparserxxevulnerability.md)
-* [Zip slip](/recipes/java/security/zipslip.md)
+* [Dependency insight for C#](/recipes/csharp/dependencies/dependencyinsight.md) - _Finds dependencies in `*.csproj` and `packages.config`._
+* [Enable CSRF attack prevention](/recipes/java/security/spring/csrfprotection.md) - _Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant message, or program causes a user&#39;s web browser to perform an unwanted action on a trusted site when the user is authenticated. See the full [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)._
+* [Find AWS secrets](/recipes/java/security/secrets/findawssecrets.md) - _Locates AWS secrets stored in plain text in code._
+* [Find Artifactory secrets](/recipes/java/security/secrets/findartifactorysecrets.md) - _Locates Artifactory secrets stored in plain text in code._
+* [Find Azure secrets](/recipes/java/security/secrets/findazuresecrets.md) - _Locates Azure secrets stored in plain text in code._
+* [Find Discord secrets](/recipes/java/security/secrets/finddiscordsecrets.md) - _Locates Discord secrets stored in plain text in code._
+* [Find Facebook secrets](/recipes/java/security/secrets/findfacebooksecrets.md) - _Locates Facebook secrets stored in plain text in code._
+* [Find GitHub secrets](/recipes/java/security/secrets/findgithubsecrets.md) - _Locates GitHub secrets stored in plain text in code._
+* [Find Google secrets](/recipes/java/security/secrets/findgooglesecrets.md) - _Locates Google secrets stored in plain text in code._
+* [Find Heroku secrets](/recipes/java/security/secrets/findherokusecrets.md) - _Locates Heroku secrets stored in plain text in code._
+* [Find JWT secrets](/recipes/java/security/secrets/findjwtsecrets.md) - _Locates JWTs stored in plain text in code._
+* [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md) - _`ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization._
+* [Find MailChimp secrets](/recipes/java/security/secrets/findmailchimpsecrets.md) - _Locates MailChimp secrets stored in plain text in code._
+* [Find Mailgun secrets](/recipes/java/security/secrets/findmailgunsecrets.md) - _Locates Mailgun secrets stored in plain text in code._
+* [Find NPM secrets](/recipes/java/security/secrets/findnpmsecrets.md) - _Locates NPM secrets stored in plain text in code._
+* [Find PGP secrets](/recipes/java/security/secrets/findpgpsecrets.md) - _Locates PGP secrets stored in plain text in code._
+* [Find PayPal secrets](/recipes/java/security/secrets/findpaypalsecrets.md) - _Locates PayPal secrets stored in plain text in code._
+* [Find Picatic secrets](/recipes/java/security/secrets/findpicaticsecrets.md) - _Locates Picatic secrets stored in plain text in code._
+* [Find RSA private keys](/recipes/java/security/secrets/findrsasecrets.md) - _Locates RSA private keys stored in plain text in code._
+* [Find SSH secrets](/recipes/java/security/secrets/findsshsecrets.md) - _Locates SSH secrets stored in plain text in code._
+* [Find SendGrid secrets](/recipes/java/security/secrets/findsendgridsecrets.md) - _Locates SendGrid secrets stored in plain text in code._
+* [Find Slack secrets](/recipes/java/security/secrets/findslacksecrets.md) - _Locates Slack secrets stored in plain text in code._
+* [Find Square secrets](/recipes/java/security/secrets/findsquaresecrets.md) - _Locates Square secrets stored in plain text in code._
+* [Find Stripe secrets](/recipes/java/security/secrets/findstripesecrets.md) - _Locates Stripe secrets stored in plain text in code._
+* [Find Telegram secrets](/recipes/java/security/secrets/findtelegramsecrets.md) - _Locates Telegram secrets stored in plain text in code._
+* [Find Twilio secrets](/recipes/java/security/secrets/findtwiliosecrets.md) - _Locates Twilio secrets stored in plain text in code._
+* [Find Twitter secrets](/recipes/java/security/secrets/findtwittersecrets.md) - _Locates Twitter secrets stored in plain text in code._
+* [Find and fix vulnerable Nuget dependencies](/recipes/csharp/dependencies/dependencyvulnerabilitycheck.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable._
+* [Find and fix vulnerable dependencies](/recipes/java/dependencies/dependencyvulnerabilitycheck.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-07-21T1102._
+* [Find generic secrets](/recipes/java/security/secrets/findgenericsecrets.md) - _Locates generic secrets stored in plain text in code._
+* [Find hard-coded loopback IPv4 addresses](/recipes/text/findhardcodedloopbackaddresses.md) - _Locates mentions of hard-coded IPv4 addresses from the loopback IP range. The loopback IP range includes `127.0.0.0` to `127.255.255.255`. This detects the entire localhost/loopback subnet range, not just the commonly used `127.0.0.1`._
+* [Find hard-coded private IPv4 addresses](/recipes/text/findhardcodedprivateipaddresses.md) - _Locates mentions of hard-coded IPv4 addresses from private IP ranges. Private IP ranges include:   * `192.168.0.0` to `192.168.255.255`  * `10.0.0.0` to `10.255.255.255`  * `172.16.0.0` to `172.31.255.255`  It is not detecting the localhost subnet `127.0.0.0` to `127.255.255.255`._
+* [Find licenses in use in third-party dependencies](/recipes/java/dependencies/dependencylicensecheck.md) - _Locates and reports on all licenses in use._
+* [Find passwords used in URLs](/recipes/java/security/secrets/findpasswordinurlsecrets.md) - _Locates URLs that contain passwords in plain text._
+* [Find secrets](/recipes/java/security/secrets/findsecrets.md) - _Locates secrets stored in plain text in code._
+* [Find secrets with regular expressions](/recipes/java/security/secrets/findsecretsbypattern.md) - _A secret is a literal that matches any one of the provided patterns._
+* [Find sensitive API endpoints](/recipes/java/security/search/findsensitiveapiendpoints.md) - _Find data models exposed by REST APIs that contain sensitive information like PII and secrets._
+* [Find text-direction changes](/recipes/java/security/findtextdirectionchanges.md) - _Finds unicode control characters which can change the direction text is displayed in. These control characters can alter how source code is presented to a human reader without affecting its interpretation by tools like compilers. So a malicious patch could pass code review while introducing vulnerabilities. Note that text direction-changing unicode control characters aren&#39;t inherently malicious. These characters can appear for legitimate reasons in code written in or dealing with right-to-left languages. See: https://trojansource.codes/ for more information._
+* [Find vulnerable uses of Jackson `@JsonTypeInfo`](/recipes/java/security/search/findvulnerablejacksonjsontypeinfo.md) - _Identify where attackers can deserialize gadgets into a target field._
+* [Fix CWE-338 with `SecureRandom`](/recipes/java/security/fixcwe338.md) - _Use a cryptographically strong pseudo-random number generator (PRNG)._
+* [Improper privilege management](/recipes/java/security/improperprivilegemanagement.md) - _Marking code as privileged enables a piece of trusted code to temporarily enable access to more resources than are available directly to the code that called it._
+* [Insecure JMS deserialization](/recipes/java/security/marshalling/insecurejmsdeserialization.md) - _JMS `Object` messages depend on Java Serialization for marshalling/unmarshalling of the message payload when `ObjectMessage#getObject` is called. Deserialization of untrusted data can lead to security flaws._
+* [Insecure cookies](/recipes/java/security/servlet/cookiesetsecure.md) - _Check for use of insecure cookies. Cookies should be marked as secure. This ensures that the cookie is sent only over HTTPS to prevent cross-site scripting attacks._
+* [Java security best practices](/recipes/java/security/javasecuritybestpractices.md) - _Applies security best practices to Java code._
+* [Partial path traversal vulnerability](/recipes/java/security/partialpathtraversalvulnerability.md) - _Replaces `dir.getCanonicalPath().startsWith(parent.getCanonicalPath()`, which is vulnerable to partial path traversal attacks, with the more secure `dir.getCanonicalFile().toPath().startsWith(parent.getCanonicalFile().toPath())`.  To demonstrate this vulnerability, consider `&quot;/usr/outnot&quot;.startsWith(&quot;/usr/out&quot;)`. The check is bypassed although `/outnot` is not under the `/out` directory. It&#39;s important to understand that the terminating slash may be removed when using various `String` representations of the `File` object. For example, on Linux, `println(new File(&quot;/var&quot;))` will print `/var`, but `println(new File(&quot;/var&quot;, &quot;/&quot;)` will print `/var/`; however, `println(new File(&quot;/var&quot;, &quot;/&quot;).getCanonicalPath())` will print `/var`._
+* [Prevent clickjacking](/recipes/java/security/spring/preventclickjacking.md) - _The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP response header to indicate whether or not a browser should be allowed to render a page in a `&lt;frame&gt;` or `&lt;iframe&gt;`. Sites can use this to avoid Clickjacking attacks by ensuring that their content is not embedded into other sites._
+* [Regular Expression Denial of Service (ReDOS)](/recipes/java/security/regularexpressiondenialofservice.md) - _ReDoS is a Denial of Service attack that exploits the fact that most Regular Expression implementations may reach extreme situations that cause them to work very slowly (exponentially related to input size). See the OWASP description of this attack [here](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS) for more details._
+* [Remediate OWASP A01:2021 Broken access control](/recipes/java/security/owaspa01.md) - _OWASP [A01:2021](https://owasp.org/Top10/A01_2021-Broken_Access_Control/) describes failures related to broken access control._
+* [Remediate OWASP A02:2021 Cryptographic failures](/recipes/java/security/owaspa02.md) - _OWASP [A02:2021](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/) describes failures related to cryptography (or lack thereof), which often lead to exposure of sensitive data. This recipe seeks to remediate these vulnerabilities._
+* [Remediate OWASP A03:2021 Injection](/recipes/java/security/owaspa03.md) - _OWASP [A03:2021](https://owasp.org/Top10/A03_2021-Injection/) describes failures related to user-supplied data being used to influence program state to operate outside of its intended bounds. This recipe seeks to remediate these vulnerabilities._
+* [Remediate OWASP A05:2021 Security misconfiguration](/recipes/java/security/owaspa05.md) - _OWASP [A05:2021](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/) describes failures related to security misconfiguration._
+* [Remediate OWASP A06:2021 Vulnerable and outdated components](/recipes/java/security/owaspa06.md) - _OWASP [A06:2021](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/) describes failures related to vulnerable and outdated components._
+* [Remediate OWASP A08:2021 Software and data integrity failures](/recipes/java/security/owaspa08.md) - _OWASP [A08:2021](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/) software and data integrity failures._
+* [Remediate vulnerabilities from the OWASP Top Ten](/recipes/java/security/owasptopten.md) - _[OWASP](https://owasp.org) publishes a list of the most impactful common security vulnerabilities. These recipes identify and remediate vulnerabilities from the OWASP Top Ten._
+* [Remove unused dependencies](/recipes/java/dependencies/removeunuseddependencies.md) - _Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed._
+* [Secure Spring service exporters](/recipes/java/security/spring/insecurespringserviceexporter.md) - _The default Java deserialization mechanism is available via `ObjectInputStream` class. This mechanism is known to be vulnerable. If an attacker can make an application deserialize malicious data, it may result in arbitrary code execution.  Spring’s `RemoteInvocationSerializingExporter` uses the default Java deserialization mechanism to parse data. As a result, all classes that extend it are vulnerable to deserialization attacks. The Spring Framework contains at least `HttpInvokerServiceExporter` and `SimpleHttpInvokerServiceExporter` that extend `RemoteInvocationSerializingExporter`. These exporters parse data from the HTTP body using the unsafe Java deserialization mechanism.  See the full [blog post](https://blog.gypsyengineer.com/en/security/detecting-dangerous-spring-exporters-with-codeql.html) by Artem Smotrakov on CVE-2016-1000027 from which the above description is excerpted._
+* [Secure random](/recipes/java/security/securerandom.md) - _Use cryptographically secure Pseudo Random Number Generation in the &quot;main&quot; source set. Replaces instantiation of `java.util.Random` with `java.security.SecureRandom`._
+* [Secure the use of Jackson default typing](/recipes/java/security/marshalling/securejacksondefaulttyping.md) - _See the [blog post](https://cowtowncoder.medium.com/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062) on this subject._
+* [Secure the use of SnakeYAML&#39;s constructor](/recipes/java/security/marshalling/securesnakeyamlconstructor.md) - _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
+* [SecureRandom seeds are not constant or predictable](/recipes/java/security/securerandomprefersdefaultseed.md) - _Remove `SecureRandom#setSeed(*)` method invocations having constant or predictable arguments._
+* [Software bill of materials](/recipes/java/dependencies/softwarebillofmaterials.md) - _Produces a software bill of materials (SBOM) for a project. An SBOM is a complete list of all dependencies used in a project, including transitive dependencies. The produced SBOM is in the [CycloneDX](https://cyclonedx.org/) XML format. Supports Gradle and Maven. Places a file named sbom.xml adjacent to the Gradle or Maven build file._
+* [Upgrade C# dependency versions](/recipes/csharp/dependencies/upgradedependencyversion.md) - _Upgrades dependencies in `*.csproj` and `packages.config`._
+* [Use `Files#createTempDirectory`](/recipes/java/security/usefilescreatetempdirectory.md) - _Use `Files#createTempDirectory` when the sequence `File#createTempFile(..)`-&gt;`File#delete()`-&gt;`File#mkdir()` is used for creating a temp directory._
+* [Use secure temporary file creation](/recipes/java/security/securetempfilecreation.md) - _`java.io.File.createTempFile()` has exploitable default file permissions. This recipe migrates to the more secure `java.nio.file.Files.createTempFile()`._
+* [XML parser XXE vulnerability](/recipes/java/security/xmlparserxxevulnerability.md) - _Avoid exposing dangerous features of the XML parser by updating certain factory settings._
+* [Zip slip](/recipes/java/security/zipslip.md) - _Zip slip is an arbitrary file overwrite critical vulnerability, which typically results in remote command execution. A fuller description of this vulnerability is available in the [Snyk documentation](https://snyk.io/research/zip-slip-vulnerability) on it._
 
 ## rewrite-kubernetes
 
-* [Add Kubernetes configuration](/recipes/kubernetes/addconfiguration.md)
-* [Add RBAC rules](/recipes/kubernetes/rbac/addruletorole.md)
-* [Cap exceeds resource value](/recipes/kubernetes/resource/capresourcevaluetomaximum.md)
-* [Change Kubernetes API version](/recipes/kubernetes/changeapiversion.md)
-* [Ensure CPU limits are set](/recipes/kubernetes/missingcpulimits.md)
-* [Ensure CPU request is set](/recipes/kubernetes/missingcpurequest.md)
-* [Ensure image pull policy is `Always`](/recipes/kubernetes/imagepullpolicyalways.md)
-* [Ensure lifecycle rule on `StorageBucket`](/recipes/kubernetes/lifecycleruleonstoragebucket.md)
-* [Ensure liveness probe is configured](/recipes/kubernetes/missingpodlivenessprobe.md)
-* [Ensure memory limits are set](/recipes/kubernetes/missingmemorylimits.md)
-* [Ensure memory request is set](/recipes/kubernetes/missingmemoryrequest.md)
-* [Ensure readiness probe is configured](/recipes/kubernetes/missingpodreadinessprobe.md)
-* [Find annotation](/recipes/kubernetes/search/findannotation.md)
-* [Find annotation](/recipes/kubernetes/search/findmissingorinvalidannotation.md)
-* [Find disallowed image tags](/recipes/kubernetes/search/finddisallowedimagetags.md)
-* [Find exceeds resource limit](/recipes/kubernetes/resource/findexceedsresourcevalue.md)
-* [Find exceeds resource ratio](/recipes/kubernetes/resource/findexceedsresourceratio.md)
-* [Find hardcoded IP addresses](/recipes/kubernetes/search/findharcodedipaddresses.md)
-* [Find image by name](/recipes/kubernetes/search/findimage.md)
-* [Find label](/recipes/kubernetes/search/findmissingorinvalidlabel.md)
-* [Find missing configuration](/recipes/kubernetes/search/findresourcemissingconfiguration.md)
-* [Find missing image digest](/recipes/kubernetes/search/findmissingdigest.md)
-* [Find non-TLS Ingresses](/recipes/kubernetes/search/findnontlsingress.md)
-* [Find uses of `externalIP`](/recipes/kubernetes/services/findserviceexternalips.md)
-* [Kubernetes best practices](/recipes/kubernetes/kubernetesbestpractices.md)
-* [Limit root capabilities in a container](/recipes/kubernetes/limitcontainercapabilities.md)
-* [Migrate to Kubernetes API v1.16](/recipes/kubernetes/migrate/migratetoapiv1_16.md)
-* [Migrate to Kubernetes API v1.22](/recipes/kubernetes/migrate/migratetoapiv1_22.md)
-* [Migrate to Kubernetes API v1.25](/recipes/kubernetes/migrate/migratetoapiv1_25.md)
-* [Migrate to Kubernetes API v1.26](/recipes/kubernetes/migrate/migratetoapiv1_26.md)
-* [Migrate to Kubernetes API v1.27](/recipes/kubernetes/migrate/migratetoapiv1_27.md)
-* [Migrate to Kubernetes API v1.29](/recipes/kubernetes/migrate/migratetoapiv1_29.md)
-* [Migrate to Kubernetes API v1.32](/recipes/kubernetes/migrate/migratetoapiv1_32.md)
-* [No host IPC sharing](/recipes/kubernetes/nohostipcsharing.md)
-* [No host network sharing](/recipes/kubernetes/nohostnetworksharing.md)
-* [No host process ID sharing](/recipes/kubernetes/nohostprocessidsharing.md)
-* [No privilege escalation](/recipes/kubernetes/noprivilegeescalation.md)
-* [No privileged containers](/recipes/kubernetes/noprivilegedcontainers.md)
-* [No root containers](/recipes/kubernetes/norootcontainers.md)
-* [Read-only root filesystem](/recipes/kubernetes/readonlyrootfilesystem.md)
-* [Service type](/recipes/kubernetes/services/findservicesbytype.md)
-* [Update `Service` `externalIP`](/recipes/kubernetes/services/updateserviceexternalip.md)
-* [Update image name](/recipes/kubernetes/updatecontainerimagename.md)
+* [Add Kubernetes configuration](/recipes/kubernetes/addconfiguration.md) - _Add default required configuration when it is missing._
+* [Add RBAC rules](/recipes/kubernetes/rbac/addruletorole.md) - _Add RBAC rules to ClusterRoles or namespaced Roles._
+* [Cap exceeds resource value](/recipes/kubernetes/resource/capresourcevaluetomaximum.md) - _Cap resource values that exceed a specific maximum._
+* [Change Kubernetes API version](/recipes/kubernetes/changeapiversion.md) - _Change the Kubernetes API version in a resource._
+* [Ensure CPU limits are set](/recipes/kubernetes/missingcpulimits.md) - _A system without managed quotas could eventually collapse due to inadequate resources for the tasks it bares._
+* [Ensure CPU request is set](/recipes/kubernetes/missingcpurequest.md) - _If a container is created in a namespace that has a default CPU limit, and the container does not specify its own CPU limit, then the container is assigned the default CPU limit._
+* [Ensure image pull policy is `Always`](/recipes/kubernetes/imagepullpolicyalways.md) - _Ensures the latest version of a tag is deployed each time._
+* [Ensure lifecycle rule on `StorageBucket`](/recipes/kubernetes/lifecycleruleonstoragebucket.md) - _When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
+* [Ensure liveness probe is configured](/recipes/kubernetes/missingpodlivenessprobe.md) - _The kubelet uses liveness probes to know when to schedule restarts for containers. Restarting a container in a deadlock state can help to make the application more available, despite bugs._
+* [Ensure memory limits are set](/recipes/kubernetes/missingmemorylimits.md) - _With no limit set, kubectl allocates more and more memory to the container until it runs out._
+* [Ensure memory request is set](/recipes/kubernetes/missingmemoryrequest.md) - _A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
+* [Ensure readiness probe is configured](/recipes/kubernetes/missingpodreadinessprobe.md) - _Using the Readiness Probe ensures teams define what actions need to be taken to prevent failure and ensure recovery in case of unexpected errors._
+* [Find annotation](/recipes/kubernetes/search/findannotation.md) - _Find annotations that optionally match a given regex._
+* [Find annotation](/recipes/kubernetes/search/findmissingorinvalidannotation.md) - _Find annotations that optionally match a given value._
+* [Find disallowed image tags](/recipes/kubernetes/search/finddisallowedimagetags.md) - _The set of image tags to find which are considered disallowed._
+* [Find exceeds resource limit](/recipes/kubernetes/resource/findexceedsresourcevalue.md) - _Find resource manifests that have limits set beyond a specific maximum._
+* [Find exceeds resource ratio](/recipes/kubernetes/resource/findexceedsresourceratio.md) - _Find resource manifests that have requests to limits ratios beyond a specific maximum._
+* [Find hardcoded IP addresses](/recipes/kubernetes/search/findharcodedipaddresses.md) - _Find hardcoded IP address anywhere in text-based files._
+* [Find image by name](/recipes/kubernetes/search/findimage.md) - _The image name to search for in containers and initContainers._
+* [Find label](/recipes/kubernetes/search/findmissingorinvalidlabel.md) - _Find labels that optionally match a given regex._
+* [Find missing configuration](/recipes/kubernetes/search/findresourcemissingconfiguration.md) - _Find Kubernetes resources with missing configuration._
+* [Find missing image digest](/recipes/kubernetes/search/findmissingdigest.md) - _Find instances of a container name that fails to specify a digest._
+* [Find non-TLS Ingresses](/recipes/kubernetes/search/findnontlsingress.md) - _Find Ingress resources that don&#39;t disallow HTTP or don&#39;t have TLS configured._
+* [Find uses of `externalIP`](/recipes/kubernetes/services/findserviceexternalips.md) - _Find any `Service` whose `externalIP` list contains, or does not contain, one of a list of IPs._
+* [Kubernetes best practices](/recipes/kubernetes/kubernetesbestpractices.md) - _Applies best practices to Kubernetes manifests._
+* [Limit root capabilities in a container](/recipes/kubernetes/limitcontainercapabilities.md) - _Limiting the admission of containers with capabilities ensures that only a small number of containers have extended capabilities outside the default range._
+* [Migrate to Kubernetes API v1.16](/recipes/kubernetes/migrate/migratetoapiv1_16.md) - _This recipe will apply changes commonly needed when migrating to Kubernetes API v1.16._
+* [Migrate to Kubernetes API v1.22](/recipes/kubernetes/migrate/migratetoapiv1_22.md) - _This recipe will apply changes commonly needed when migrating to Kubernetes API v1.22._
+* [Migrate to Kubernetes API v1.25](/recipes/kubernetes/migrate/migratetoapiv1_25.md) - _This recipe will apply changes commonly needed when migrating to Kubernetes API v1.25._
+* [Migrate to Kubernetes API v1.26](/recipes/kubernetes/migrate/migratetoapiv1_26.md) - _This recipe will apply changes commonly needed when migrating to Kubernetes API v1.26._
+* [Migrate to Kubernetes API v1.27](/recipes/kubernetes/migrate/migratetoapiv1_27.md) - _This recipe will apply changes commonly needed when migrating to Kubernetes API v1.27._
+* [Migrate to Kubernetes API v1.29](/recipes/kubernetes/migrate/migratetoapiv1_29.md) - _This recipe will apply changes commonly needed when migrating to Kubernetes API v1.29._
+* [Migrate to Kubernetes API v1.32](/recipes/kubernetes/migrate/migratetoapiv1_32.md) - _This recipe will apply changes commonly needed when migrating to Kubernetes API v1.32._
+* [No host IPC sharing](/recipes/kubernetes/nohostipcsharing.md) - _Preventing sharing of host PID/IPC namespace, networking, and ports ensures proper isolation between Docker containers and the underlying host._
+* [No host network sharing](/recipes/kubernetes/nohostnetworksharing.md) - _When using the host network mode for a container, that container’s network stack is not isolated from the Docker host, so the container shares the host’s networking namespace and does not get its own IP-address allocation._
+* [No host process ID sharing](/recipes/kubernetes/nohostprocessidsharing.md) - _Sharing the host process ID namespace breaks the isolation between container images and can make processes visible to other containers in the pod. This includes all information in the /proc directory, which can sometimes include passwords or keys, passed as environment variables._
+* [No privilege escalation](/recipes/kubernetes/noprivilegeescalation.md) - _Does not allow a process to gain more privileges than its parent process._
+* [No privileged containers](/recipes/kubernetes/noprivilegedcontainers.md) - _Privileged containers are containers that have all of the root capabilities of a host machine, allowing access to resources that are not accessible in ordinary containers._
+* [No root containers](/recipes/kubernetes/norootcontainers.md) - _Containers that run as root frequently have more permissions than their workload requires which, in case of compromise, could help an attacker further their exploits._
+* [Read-only root filesystem](/recipes/kubernetes/readonlyrootfilesystem.md) - _Using an immutable root filesystem and a verified boot mechanism prevents against attackers from &quot;owning&quot; the machine through permanent local changes._
+* [Service type](/recipes/kubernetes/services/findservicesbytype.md) - _Type of Kubernetes `Service` to find._
+* [Update `Service` `externalIP`](/recipes/kubernetes/services/updateserviceexternalip.md) - _Swap out an IP address with another one in `Service` `externalIP` settings._
+* [Update image name](/recipes/kubernetes/updatecontainerimagename.md) - _Search for image names that match patterns and replace the components of the name with new values._
 
 ## rewrite-nodejs
 
-* [Find Node.js projects](/recipes/nodejs/search/findnodeprojects.md)
-* [Find and fix vulnerable npm dependencies](/recipes/nodejs/dependencyvulnerabilitycheck.md)
-* [Javascript UI library insights](/recipes/nodejs/search/uiinsights.md)
-* [Javascript database interaction library insights](/recipes/nodejs/search/databaseinteractioninsights.md)
-* [Javascript form handling library insights](/recipes/nodejs/search/formhandlinginsights.md)
-* [Javascript linting &amp; formatting library insights](/recipes/nodejs/search/lintingformattinginsights.md)
-* [Javascript real-time communication library insights](/recipes/nodejs/search/realtimecommunicationinsights.md)
-* [Javascript security library insights](/recipes/nodejs/search/securityinsights.md)
-* [Javascript server-side frameworks insights](/recipes/nodejs/search/serversideframeworksinsights.md)
-* [Javascript state management library insights](/recipes/nodejs/search/statemanagementinsights.md)
-* [Javascript task runners &amp; build tools insights](/recipes/nodejs/search/taskrunnersbuildtoolsinsights.md)
-* [Javascript testing library insights](/recipes/nodejs/search/testinginsights.md)
-* [Javascript utility library insights](/recipes/nodejs/search/utilityinsights.md)
-* [Node.js dependency insight](/recipes/nodejs/search/dependencyinsight.md)
-* [Upgrade Node.js dependencies](/recipes/nodejs/upgradedependencyversion.md)
+* [Find Node.js projects](/recipes/nodejs/search/findnodeprojects.md) - _Find Node.js projects and summarize data about them._
+* [Find and fix vulnerable npm dependencies](/recipes/nodejs/dependencyvulnerabilitycheck.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable._
+* [Javascript UI library insights](/recipes/nodejs/search/uiinsights.md) - _Discover which popular javascript UI libraries (React, Vue.js, Angular, etc.) are being used in your projects._
+* [Javascript database interaction library insights](/recipes/nodejs/search/databaseinteractioninsights.md) - _Discover which popular javascript database interaction libraries (Sequelize, TypeORM, Mongoose, etc.) are being used in your projects._
+* [Javascript form handling library insights](/recipes/nodejs/search/formhandlinginsights.md) - _Discover which popular javascript form handling libraries (Formik, React Hook Form, Yup, etc.) are being used in your projects._
+* [Javascript linting &amp; formatting library insights](/recipes/nodejs/search/lintingformattinginsights.md) - _Discover which popular javascript linting and formatting libraries (ESLint, Prettier, Stylelint, etc.) are being used in your projects._
+* [Javascript real-time communication library insights](/recipes/nodejs/search/realtimecommunicationinsights.md) - _Discover which popular javascript real-time communication libraries (Socket.io, Ws, SockJS, etc.) are being used in your projects._
+* [Javascript security library insights](/recipes/nodejs/search/securityinsights.md) - _Discover which popular javascript security libraries (Helmet, Cors, Bcrypt, etc.) are being used in your projects._
+* [Javascript server-side frameworks insights](/recipes/nodejs/search/serversideframeworksinsights.md) - _Discover which popular javascript server-side frameworks (Express, Koa, Hapi, etc.) are being used in your projects._
+* [Javascript state management library insights](/recipes/nodejs/search/statemanagementinsights.md) - _Discover which popular javascript state management libraries (Redux, MobX, Vuex, etc.) are being used in your projects._
+* [Javascript task runners &amp; build tools insights](/recipes/nodejs/search/taskrunnersbuildtoolsinsights.md) - _Discover which popular javascript task runners and build tools (Webpack, Parcel, Gulp, etc.) are being used in your projects._
+* [Javascript testing library insights](/recipes/nodejs/search/testinginsights.md) - _Discover which popular javascript testing libraries (Jest, Mocha, Chai, etc.) are being used in your projects._
+* [Javascript utility library insights](/recipes/nodejs/search/utilityinsights.md) - _Discover which popular javascript utility libraries (Lodash, Moment.js, Date-fns, etc.) are being used in your projects._
+* [Node.js dependency insight](/recipes/nodejs/search/dependencyinsight.md) - _Identify the direct and transitive Node.js dependencies used in a project._
+* [Upgrade Node.js dependencies](/recipes/nodejs/upgradedependencyversion.md) - _Upgrade matching Node.js direct dependencies._
 
 ## rewrite-reactive-streams
 
-* [Migrate to Reactor 3.5](/recipes/reactive/reactor/upgradereactor_3_5.md)
-* [Reactor Best Practices](/recipes/reactive/reactor/reactorbestpractices.md)
-* [Replace `DirectProcessor.create()` with `Sinks.many().multicast().directBestEffort()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$directprocessorcreatetosinkrecipe.md)
-* [Replace `EmitterProcessor.create()` with `Sinks.many().multicast().onBackpressureBuffer()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreatetosinkrecipe.md)
-* [Replace `EmitterProcessor.create(Boolean)` with `Sinks.many().multicast().onBackpressureBuffer(Queues.SMALL_BUFFER_SIZE, Boolean)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreatebooleantosinkrecipe.md)
-* [Replace `EmitterProcessor.create(int)` with `Sinks.many().multicast().onBackpressureBuffer(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreateinttosinkrecipe.md)
-* [Replace `EmitterProcessor.create(int, Boolean)` with `Sinks.many().multicast().onBackpressureBuffer(int, Boolean)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreateintbooleantosinkrecipe.md)
-* [Replace `MonoProcessor.create()` with `Sinks.one()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$monoprocessorcreatetosinkrecipe.md)
-* [Replace `ReplayProcessor.cacheLast()` with `Sinks.many().replay().latest()`](/recipes/reactive/reactor/reactorprocessorcachetosinkrecipes$replayprocessorcachedefaulttosinkrecipe.md)
-* [Replace `ReplayProcessor.cacheLast()` with `Sinks.many().replay().latest()`](/recipes/reactive/reactor/reactorprocessorcachetosinkrecipes$replayprocessorcachetosinkrecipe.md)
-* [Replace `ReplayProcessor.create()` with `Sinks.many().replay().all()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatetosinkrecipe.md)
-* [Replace `ReplayProcessor.create(int)` with `Sinks.many().replay().limit(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreateinttosinkrecipe.md)
-* [Replace `ReplayProcessor.create(int, false)` with `Sinks.many().replay().limit(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreateintliteralfalsetosinkrecipe.md)
-* [Replace `ReplayProcessor.create(int, true)` with `Sinks.many().replay().all(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreateintliteraltruetosinkrecipe.md)
-* [Replace `ReplayProcessor.createSizeAndTimeout(int, Duration)` with `Sinks.many().replay().limit(int, duration)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatesizeandtimeouttosinkrecipe.md)
-* [Replace `ReplayProcessor.createSizeAndTimeout(int, Duration, Scheduler)` with `Sinks.many().replay().limit(int, Duration, Scheduler)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatesizeandtimeoutschedulertosinkrecipe.md)
-* [Replace `ReplayProcessor.createTimeout(Duration)` with `Sinks.many().replay().limit(duration)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatetimeouttosinkrecipe.md)
-* [Replace `ReplayProcessor.createTimeout(Duration, Scheduler)` with `Sinks.many().replay().limit(Duration, Scheduler)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatetimeoutschedulertosinkrecipe.md)
-* [Replace `UnicastProcessor.create()` with `Sinks.many().unicast().onBackpressureBuffer()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatetosinkrecipe.md)
-* [Replace `UnicastProcessor.create(Queue)` with `Sinks.many().unicast().onBackpressureBuffer(Queue)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeuetosinkrecipe.md)
-* [Replace `UnicastProcessor.create(Queue, Consumer, Disposable)` with `Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeueconsumerdisposabletosinkrecipe.md)
-* [Replace `UnicastProcessor.create(Queue, Disposable)` with `Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeuedisposabletosinkrecipe.md)
-* [Replace `doAfterSuccessOrError` calls with `tap` operator](/recipes/reactive/reactor/reactordoaftersuccessorerrortotap.md)
-* [Replace various `Processor.cache` calls with their `Sinks` equivalent](/recipes/reactive/reactor/reactorprocessorcachetosinkrecipes.md)
-* [Replace various `Processor.create` calls with their `Sinks` equivalent](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes.md)
+* [Migrate to Reactor 3.5](/recipes/reactive/reactor/upgradereactor_3_5.md) - _Adopt to [breaking changes in Reactor 3.5](https://projectreactor.io/docs/core/3.4.26/api/deprecated-list.html)._
+* [Reactor Best Practices](/recipes/reactive/reactor/reactorbestpractices.md) - _This recipe applies best practices for using Reactor._
+* [Replace `DirectProcessor.create()` with `Sinks.many().multicast().directBestEffort()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$directprocessorcreatetosinkrecipe.md) - _As of 3.5 DirectProcessor is deprecated and Sinks are preferred_
+* [Replace `EmitterProcessor.create()` with `Sinks.many().multicast().onBackpressureBuffer()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreatetosinkrecipe.md) - _As of 3.5 EmitterProcessor is deprecated and Sinks are preferred_
+* [Replace `EmitterProcessor.create(Boolean)` with `Sinks.many().multicast().onBackpressureBuffer(Queues.SMALL_BUFFER_SIZE, Boolean)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreatebooleantosinkrecipe.md) - _As of 3.5 EmitterProcessor is deprecated and Sinks are preferred_
+* [Replace `EmitterProcessor.create(int)` with `Sinks.many().multicast().onBackpressureBuffer(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreateinttosinkrecipe.md) - _As of 3.5 EmitterProcessor is deprecated and Sinks are preferred_
+* [Replace `EmitterProcessor.create(int, Boolean)` with `Sinks.many().multicast().onBackpressureBuffer(int, Boolean)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$emitterprocessorcreateintbooleantosinkrecipe.md) - _As of 3.5 EmitterProcessor is deprecated and Sinks are preferred_
+* [Replace `MonoProcessor.create()` with `Sinks.one()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$monoprocessorcreatetosinkrecipe.md) - _As of 3.5 MonoProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.cacheLast()` with `Sinks.many().replay().latest()`](/recipes/reactive/reactor/reactorprocessorcachetosinkrecipes$replayprocessorcachedefaulttosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.cacheLast()` with `Sinks.many().replay().latest()`](/recipes/reactive/reactor/reactorprocessorcachetosinkrecipes$replayprocessorcachetosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.create()` with `Sinks.many().replay().all()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatetosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.create(int)` with `Sinks.many().replay().limit(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreateinttosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.create(int, false)` with `Sinks.many().replay().limit(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreateintliteralfalsetosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.create(int, true)` with `Sinks.many().replay().all(int)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreateintliteraltruetosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.createSizeAndTimeout(int, Duration)` with `Sinks.many().replay().limit(int, duration)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatesizeandtimeouttosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.createSizeAndTimeout(int, Duration, Scheduler)` with `Sinks.many().replay().limit(int, Duration, Scheduler)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatesizeandtimeoutschedulertosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.createTimeout(Duration)` with `Sinks.many().replay().limit(duration)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatetimeouttosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `ReplayProcessor.createTimeout(Duration, Scheduler)` with `Sinks.many().replay().limit(Duration, Scheduler)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$replayprocessorcreatetimeoutschedulertosinkrecipe.md) - _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
+* [Replace `UnicastProcessor.create()` with `Sinks.many().unicast().onBackpressureBuffer()`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatetosinkrecipe.md) - _As of 3.5 UnicastProcessor is deprecated and Sinks are preferred_
+* [Replace `UnicastProcessor.create(Queue)` with `Sinks.many().unicast().onBackpressureBuffer(Queue)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeuetosinkrecipe.md) - _As of 3.5 UnicastProcessor is deprecated and Sinks are preferred_
+* [Replace `UnicastProcessor.create(Queue, Consumer, Disposable)` with `Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeueconsumerdisposabletosinkrecipe.md) - _As of 3.5 UnicastProcessor is deprecated and Sinks are preferred_
+* [Replace `UnicastProcessor.create(Queue, Disposable)` with `Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)`](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeuedisposabletosinkrecipe.md) - _As of 3.5 UnicastProcessor is deprecated and Sinks are preferred_
+* [Replace `doAfterSuccessOrError` calls with `tap` operator](/recipes/reactive/reactor/reactordoaftersuccessorerrortotap.md) - _As of reactor-core 3.5 the `doAfterSuccessOrError` method is removed, this recipe replaces it with the `tap` operator._
+* [Replace various `Processor.cache` calls with their `Sinks` equivalent](/recipes/reactive/reactor/reactorprocessorcachetosinkrecipes.md) - _As of 3.5 Processors are deprecated and Sinks are preferred._
+* [Replace various `Processor.create` calls with their `Sinks` equivalent](/recipes/reactive/reactor/reactorprocessorcreatetosinkrecipes.md) - _As of 3.5 Processors are deprecated and Sinks are preferred._
 
 ## rewrite-spring
 
-* [Add `@Valid` annotation to fields](/recipes/java/spring/boot3/addvalidtoconfigurationpropertiesfields.md)
-* [Change Deprecated Spring Cloud Gateway Artifacts](/recipes/java/spring/cloud2025/changedeprecatedartifacts.md)
-* [Comment deprecated methods in Spring 3.4](/recipes/java/spring/boot3/commentdeprecations.md)
-* [Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`](/recipes/java/spring/boot3/commentonmockandspybeansinconfigspring34.md)
-* [Delete empty `web.xml` files](/recipes/java/spring/framework/webxml/deleteemptywebxml.md)
-* [Is likely a Spring Boot project](/recipes/java/spring/boot/islikelyspringboot.md)
-* [Is likely a Spring Framework project](/recipes/java/spring/framework/islikelyspringframework.md)
-* [Is likely not a Spring Boot project](/recipes/java/spring/boot/islikelynotspringboot.md)
-* [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
-* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
-* [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
-* [Migrate Spring Cloud properties to 2020](/recipes/java/spring/cloud2020/springcloudproperties_2020.md)
-* [Migrate Spring Cloud properties to 2021](/recipes/java/spring/cloud2021/springcloudproperties_2021.md)
-* [Migrate Spring Cloud properties to 2022](/recipes/java/spring/cloud2022/springcloudproperties_2022.md)
-* [Migrate Spring Cloud properties to 2023](/recipes/java/spring/cloud2023/springcloudproperties_2023.md)
-* [Migrate Spring Cloud properties to 2024](/recipes/java/spring/cloud2024/springcloudproperties_2024.md)
-* [Migrate Spring Cloud properties to 2025](/recipes/java/spring/cloud2025/springcloudproperties_2025.md)
-* [Migrate Spring Framework Dependencies to Spring Boot](/recipes/java/spring/boot/migratespringframeworkdependenciestospringboot.md)
-* [Migrate Spring to Spring Boot](/recipes/java/spring/boot/springtospringboot.md)
-* [Migrate `@Endpoint`s `defaultAccess` value](/recipes/java/spring/boot3/migrateendpointannotationaccessvaluespring34.md)
-* [Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4](/recipes/java/spring/boot3/conditionalonavailableendpointmigrationspring34.md)
-* [Migrate `web.xml` to Java Configuration](/recipes/spring/webxml/removewebxml.md)
-* [Migrate `web.xml` using Jakarta EE](/recipes/spring/webxml/migratetojakartaeeservletconfiguration.md)
-* [Migrate `web.xml` using Java EE](/recipes/spring/webxml/migratetojavaxservletconfiguration.md)
-* [Migrate management endpoint access value](/recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md)
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md)
-* [Migrate to Spring Cloud 2025](/recipes/java/spring/cloud2025/upgradespringcloud_2025.md)
-* [Migrate to Spring Kafka 3.3](/recipes/java/spring/boot3/upgradespringkafka_3_3.md)
-* [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
-* [Migrate ´web.xml` to `WebApplicationInitializer`](/recipes/java/spring/framework/webxml/webxmltowebapplicationinitializer.md)
-* [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](/recipes/java/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md)
-* [Remove `TestRestTemplate.HttpClientOption.ENABLE_REDIRECTS` option](/recipes/java/spring/boot3/removetestresttemplateenableredirectsoptionrecipe.md)
-* [Replace `taskExecutor` with `applicationTaskExecutor`](/recipes/java/spring/boot3/resolvetaskexecutorfromcontext.md)
-* [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
-* [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle8spring34.md)
-* [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle7spring34.md)
-* [Upgrade MyBatis to Spring Boot 3.4](/recipes/java/spring/boot3/upgrademybatistospringboot_3_4.md)
-* [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](/recipes/java/spring/boot3/upgradespringcloudawstospringboot_3_4.md)
-* [Upgrade dependencies to Spring Cloud 2025](/recipes/java/spring/cloud2025/dependencyupgrades.md)
-* [Use `kafkaAwareTransactionManager` setter](/recipes/java/spring/boot3/replacekafkatransactionmanagersetter.md)
-* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md)
+* [Add `@Valid` annotation to fields](/recipes/java/spring/boot3/addvalidtoconfigurationpropertiesfields.md) - _In Spring Boot 3.4, validation of `@ConfigurationProperties` classes annotated with `@Validated` now follows the Bean Validation specification, only cascading to nested properties if the corresponding field is annotated with `@Valid`. The recipe will add a `@Valid` annotation to each field which has a type that has a field which is annotated with a `jakarta.validation.constraints.*` annotation._
+* [Change Deprecated Spring Cloud Gateway Artifacts](/recipes/java/spring/cloud2025/changedeprecatedartifacts.md) - __
+* [Comment deprecated methods in Spring 3.4](/recipes/java/spring/boot3/commentdeprecations.md) - _Spring Boot 3.4 deprecates methods that are not commonly used or need manual interaction._
+* [Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`](/recipes/java/spring/boot3/commentonmockandspybeansinconfigspring34.md) - _As stated in [Spring Docs](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-mockitobean.html) `@MockitoSpyBean` and `@MockitoBean` will only work in tests, explicitly not in `@Configuration` annotated classes._
+* [Delete empty `web.xml` files](/recipes/java/spring/framework/webxml/deleteemptywebxml.md) - _Deletes `web.xml` files that contain only an empty `&lt;web-app&gt;` root element with no child elements._
+* [Is likely a Spring Boot project](/recipes/java/spring/boot/islikelyspringboot.md) - _Marks the project if it&#39;s likely a Spring Boot project._
+* [Is likely a Spring Framework project](/recipes/java/spring/framework/islikelyspringframework.md) - _Marks the project if it&#39;s likely a Spring Framework project._
+* [Is likely not a Spring Boot project](/recipes/java/spring/boot/islikelynotspringboot.md) - _Marks the project if it&#39;s likely not a Spring Boot project._
+* [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md) - _Migrate the settings for Management Endpoint Security from `true`|`false` to `read-only`|`none`._
+* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Cloud properties to 2020](/recipes/java/spring/cloud2020/springcloudproperties_2020.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Cloud properties to 2021](/recipes/java/spring/cloud2021/springcloudproperties_2021.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Cloud properties to 2022](/recipes/java/spring/cloud2022/springcloudproperties_2022.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Cloud properties to 2023](/recipes/java/spring/cloud2023/springcloudproperties_2023.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Cloud properties to 2024](/recipes/java/spring/cloud2024/springcloudproperties_2024.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Cloud properties to 2025](/recipes/java/spring/cloud2025/springcloudproperties_2025.md) - _Migrate properties found in `application.properties` and `application.yml`._
+* [Migrate Spring Framework Dependencies to Spring Boot](/recipes/java/spring/boot/migratespringframeworkdependenciestospringboot.md) - _Migrate Spring Framework Dependencies to Spring Boot._
+* [Migrate Spring to Spring Boot](/recipes/java/spring/boot/springtospringboot.md) - _Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application&#39;s build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin._
+* [Migrate `@Endpoint`s `defaultAccess` value](/recipes/java/spring/boot3/migrateendpointannotationaccessvaluespring34.md) - _Since Spring Boot 3.4 the `@Endpoint` access configuration values are no longer `true|false` but `none|read-only|unrestricted`_
+* [Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4](/recipes/java/spring/boot3/conditionalonavailableendpointmigrationspring34.md) - _Migrate `@ConditionalOnAvailableEndpoint(EndpointExposure.CLOUD_FOUNDRY)` to `@ConditionalOnAvailableEndpoint(EndpointExposure.WEB)` for Spring Boot 3.4._
+* [Migrate `web.xml` to Java Configuration](/recipes/spring/webxml/removewebxml.md) - _Migrates `web.xml` content to Spring Boot Configuration classes with respect to Java EE or Jakarta EE usage._
+* [Migrate `web.xml` using Jakarta EE](/recipes/spring/webxml/migratetojakartaeeservletconfiguration.md) - _Migrates `web.xml` content to Spring Boot Configuration classes using Jakarta EE namespace._
+* [Migrate `web.xml` using Java EE](/recipes/spring/webxml/migratetojavaxservletconfiguration.md) - _Migrates `web.xml` content to Spring Boot Configuration classes using Java EE javax namespace._
+* [Migrate management endpoint access value](/recipes/java/spring/boot3/migrateendpointaccessvaluespring34.md) - _Migrate manage endpoint access value from `false` to `none` and `true` to `read-only`._
+* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4._
+* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md) - _Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5._
+* [Migrate to Spring Cloud 2025](/recipes/java/spring/cloud2025/upgradespringcloud_2025.md) - _Migrate applications to the latest Spring Cloud 2025 (Northfields) release._
+* [Migrate to Spring Kafka 3.3](/recipes/java/spring/boot3/upgradespringkafka_3_3.md) - _Migrate applications to the latest Spring Kafka 3.3 release._
+* [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate ´web.xml` to `WebApplicationInitializer`](/recipes/java/spring/framework/webxml/webxmltowebapplicationinitializer.md) - _Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests._
+* [Remove `Replace.NONE` from `@AutoConfigureTestDatabase`](/recipes/java/spring/boot3/removereplacenonefromautoconfiguretestdatabase.md) - _`Replace.NONE` is the default value for `@AutoConfigureTestDatabase` since Spring Boot 3.4._
+* [Remove `TestRestTemplate.HttpClientOption.ENABLE_REDIRECTS` option](/recipes/java/spring/boot3/removetestresttemplateenableredirectsoptionrecipe.md) - _The `TestRestTemplate` now uses the same follow redirects settings as the regular RestTemplate. The `HttpOption.ENABLE_REDIRECTS` option has also been deprecated. This recipe removes the option from the `TestRestTemplate` constructor arguments._
+* [Replace `taskExecutor` with `applicationTaskExecutor`](/recipes/java/spring/boot3/resolvetaskexecutorfromcontext.md) - _Use bean name `applicationTaskExecutor` instead of `taskExecutor` when resolving `TaskExecutor` Bean from application context_
+* [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md) - _Applies best practices to Spring Boot 3.5+ applications._
+* [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle8spring34.md) - _Spring Boot 3.4 requires Gradle 8.4+._
+* [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle7spring34.md) - _Spring Boot 3.4 requires Gradle 7.6.4._
+* [Upgrade MyBatis to Spring Boot 3.4](/recipes/java/spring/boot3/upgrademybatistospringboot_3_4.md) - _Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.4._
+* [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](/recipes/java/spring/boot3/upgradespringcloudawstospringboot_3_4.md) - _Upgrade the Spring Cloud AWS dependency to a version compatible with Spring Boot 3.4._
+* [Upgrade dependencies to Spring Cloud 2025](/recipes/java/spring/cloud2025/dependencyupgrades.md) - _Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version._
+* [Use `kafkaAwareTransactionManager` setter](/recipes/java/spring/boot3/replacekafkatransactionmanagersetter.md) - _Replace deprecated `ContainerProperties#setTransactionManager(org.springframework.transaction.PlatformTransactionManager)` method with `ContainerProperties#setKafkaAwareTransactionManager(org.springframework.kafka.transaction.KafkaAwareTransactionManager)`. The method will be replaced only if its argument has the type `KafkaAwareTransactionManager`._
+* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md) - _Spring Boot 3.5 removed the bean name `taskExecutor`. Where this bean name is used, the recipe replaces the bean name to `applicationTaskExecutor`. This also includes instances where the developer provided their own bean named `taskExecutor`. This also includes scenarios where JSR-250&#39;s `@Resource` annotation is used._
 
 ## rewrite-sql
 
-* [Change a SQL function name](/recipes/sql/changefunctionname.md)
-* [Find SQL function](/recipes/sql/search/findfunction.md)
-* [Find SQL in code and resource files](/recipes/sql/findsql.md)
-* [Format SQL in string text blocks](/recipes/sql/formatsql.md)
+* [Change a SQL function name](/recipes/sql/changefunctionname.md) - _When migrating between dialects, often one name can be substituted for another. For example, Oracle&#39;s NVL function can be replaced with Postgres COALESCE._
+* [Find SQL function](/recipes/sql/search/findfunction.md) - _Find SQL functions by name._
+* [Find SQL in code and resource files](/recipes/sql/findsql.md) - _Find SQL in code (e.g. in string literals) and in resources like those ending with `.sql`._
+* [Format SQL in string text blocks](/recipes/sql/formatsql.md) - _Checks whether a text block may contain SQL, and if so, formats the text accordingly._
 
 ## rewrite-terraform
 
-* [Add Terraform configuration](/recipes/terraform/addconfiguration.md)
-* [Best practices for AWS](/recipes/terraform/aws/awsbestpractices.md)
-* [Best practices for Azure](/recipes/terraform/azure/azurebestpractices.md)
-* [Best practices for GCP](/recipes/terraform/gcp/gcpbestpractices.md)
-* [Disable Instance Metadata Service version 1](/recipes/terraform/aws/disableinstancemetadataservicev1.md)
-* [Disable Kubernetes dashboard](/recipes/terraform/azure/disablekubernetesdashboard.md)
-* [Enable API gateway caching](/recipes/terraform/aws/enableapigatewaycaching.md)
-* [Enable Azure Storage Account Trusted Microsoft Services access](/recipes/terraform/azure/enableazurestorageaccounttrustedmicrosoftservicesaccess.md)
-* [Enable Azure Storage secure transfer required](/recipes/terraform/azure/enableazurestoragesecuretransferrequired.md)
-* [Enable VPC Flow Logs for subnetworks](/recipes/terraform/gcp/enablevpcflowlogsforsubnetworks.md)
-* [Enable VPC flow logs and intranode visibility](/recipes/terraform/gcp/enablevpcflowlogsandintranodevisibility.md)
-* [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters](/recipes/terraform/gcp/enablepodsecuritypolicycontrollerongkeclusters.md)
-* [Enable geo-redundant backups on PostgreSQL server](/recipes/terraform/azure/enablegeoredundantbackupsonpostgresqlserver.md)
-* [Enable point-in-time recovery for DynamoDB](/recipes/terraform/aws/enabledynamodbpitr.md)
-* [Encrypt Aurora clusters](/recipes/terraform/aws/encryptauroraclusters.md)
-* [Encrypt Azure VM data disk with ADE/CMK](/recipes/terraform/azure/encryptazurevmdatadiskwithadecmk.md)
-* [Encrypt CodeBuild projects](/recipes/terraform/aws/encryptcodebuild.md)
-* [Encrypt DAX storage at rest](/recipes/terraform/aws/encryptdaxstorage.md)
-* [Encrypt DocumentDB storage](/recipes/terraform/aws/encryptdocumentdb.md)
-* [Encrypt EBS snapshots](/recipes/terraform/aws/encryptebssnapshots.md)
-* [Encrypt EBS volume launch configurations](/recipes/terraform/aws/encryptebsvolumelaunchconfiguration.md)
-* [Encrypt EBS volumes](/recipes/terraform/aws/encryptebsvolumes.md)
-* [Encrypt EFS Volumes in ECS Task Definitions in transit](/recipes/terraform/aws/encryptefsvolumesinecstaskdefinitionsintransit.md)
-* [Encrypt ElastiCache Redis at rest](/recipes/terraform/aws/encryptelasticacheredisatrest.md)
-* [Encrypt ElastiCache Redis in transit](/recipes/terraform/aws/encryptelasticacheredisintransit.md)
-* [Encrypt Neptune storage](/recipes/terraform/aws/encryptneptunestorage.md)
-* [Encrypt RDS clusters](/recipes/terraform/aws/encryptrdsclusters.md)
-* [Encrypt Redshift storage at rest](/recipes/terraform/aws/encryptredshift.md)
-* [Ensure AKS policies add-on](/recipes/terraform/azure/ensureakspoliciesaddon.md)
-* [Ensure AKV secrets have an expiration date set](/recipes/terraform/azure/ensureakvsecretshaveanexpirationdateset.md)
-* [Ensure AWS CMK rotation is enabled](/recipes/terraform/aws/ensureawscmkrotationisenabled.md)
-* [Ensure AWS EFS with encryption for data at rest is enabled](/recipes/terraform/aws/ensureawsefswithencryptionfordataatrestisenabled.md)
-* [Ensure AWS EKS cluster endpoint access is publicly disabled](/recipes/terraform/aws/ensureawseksclusterendpointaccessispubliclydisabled.md)
-* [Ensure AWS Elasticsearch domain encryption for data at rest is enabled](/recipes/terraform/aws/ensureawselasticsearchdomainencryptionfordataatrestisenabled.md)
-* [Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled](/recipes/terraform/aws/ensureawselasticsearchdomainshaveenforcehttpsenabled.md)
-* [Ensure AWS Elasticsearch has node-to-node encryption enabled](/recipes/terraform/aws/ensureawselasticsearchhasnodetonodeencryptionenabled.md)
-* [Ensure AWS IAM password policy has a minimum of 14 characters](/recipes/terraform/aws/ensureawsiampasswordpolicyhasaminimumof14characters.md)
-* [Ensure AWS Lambda function is configured for function-level concurrent execution limit](/recipes/terraform/aws/ensureawslambdafunctionisconfiguredforfunctionlevelconcurrentexecutionlimit.md)
-* [Ensure AWS Lambda functions have tracing enabled](/recipes/terraform/aws/ensureawslambdafunctionshavetracingenabled.md)
-* [Ensure AWS RDS database instance is not publicly accessible](/recipes/terraform/aws/ensureawsrdsdatabaseinstanceisnotpubliclyaccessible.md)
-* [Ensure AWS S3 object versioning is enabled](/recipes/terraform/aws/ensureawss3objectversioningisenabled.md)
-* [Ensure Amazon EKS control plane logging enabled for all log types](/recipes/terraform/aws/ensureamazonekscontrolplaneloggingenabledforalllogtypes.md)
-* [Ensure Azure App Service Web app redirects HTTP to HTTPS](/recipes/terraform/azure/ensureazureappservicewebappredirectshttptohttps.md)
-* [Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days](/recipes/terraform/azure/ensureazurenetworkwatchernsgflowlogsretentionisgreaterthan90days.md)
-* [Ensure Azure PostgreSQL database server with SSL connection is enabled](/recipes/terraform/azure/ensureazurepostgresqldatabaseserverwithsslconnectionisenabled.md)
-* [Ensure Azure SQL Server threat detection alerts are enabled for all threat types](/recipes/terraform/azure/ensureazuresqlserverthreatdetectionalertsareenabledforallthreattypes.md)
-* [Ensure Azure SQL server audit log retention is greater than 90 days](/recipes/terraform/azure/ensureazuresqlserverauditlogretentionisgreaterthan90days.md)
-* [Ensure Azure SQL server send alerts to field value is set](/recipes/terraform/azure/ensureazuresqlserversendalertstofieldvalueisset.md)
-* [Ensure Azure application gateway has WAF enabled](/recipes/terraform/azure/ensureazureapplicationgatewayhaswafenabled.md)
-* [Ensure Azure key vault is recoverable](/recipes/terraform/azure/ensureazurekeyvaultisrecoverable.md)
-* [Ensure CloudTrail log file validation is enabled](/recipes/terraform/aws/ensurecloudtraillogfilevalidationisenabled.md)
-* [Ensure EC2 is EBS optimized](/recipes/terraform/aws/ensureec2isebsoptimized.md)
-* [Ensure ECR repositories are encrypted](/recipes/terraform/aws/ensureecrrepositoriesareencrypted.md)
-* [Ensure FTP Deployments are disabled](/recipes/terraform/azure/ensureftpdeploymentsaredisabled.md)
-* [Ensure GCP Kubernetes cluster node auto-repair configuration is enabled](/recipes/terraform/gcp/ensuregcpkubernetesclusternodeautorepairconfigurationisenabled.md)
-* [Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled](/recipes/terraform/gcp/ensuregcpkubernetesengineclustershavelegacycomputeenginemetadataendpointsdisabled.md)
-* [Ensure GCP VM instances have block project-wide SSH keys feature enabled](/recipes/terraform/gcp/ensuregcpvminstanceshaveblockprojectwidesshkeysfeatureenabled.md)
-* [Ensure GCP cloud storage bucket with uniform bucket-level access are enabled](/recipes/terraform/gcp/ensuregcpcloudstoragebucketwithuniformbucketlevelaccessareenabled.md)
-* [Ensure IAM password policy expires passwords within 90 days or less](/recipes/terraform/aws/ensureiampasswordpolicyexpirespasswordswithin90daysorless.md)
-* [Ensure IAM password policy prevents password reuse](/recipes/terraform/aws/ensureiampasswordpolicypreventspasswordreuse.md)
-* [Ensure IAM password policy requires at least one lowercase letter](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastonelowercaseletter.md)
-* [Ensure IAM password policy requires at least one number](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastonenumber.md)
-* [Ensure IAM password policy requires at least one symbol](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastonesymbol.md)
-* [Ensure IAM password policy requires at least one uppercase letter](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastoneuppercaseletter.md)
-* [Ensure IP forwarding on instances is disabled](/recipes/terraform/gcp/ensureipforwardingoninstancesisdisabled.md)
-* [Ensure Kinesis Stream is securely encrypted](/recipes/terraform/aws/ensurekinesisstreamissecurelyencrypted.md)
-* [Ensure MSSQL servers have email service and co-administrators enabled](/recipes/terraform/azure/ensuremssqlservershaveemailserviceandcoadministratorsenabled.md)
-* [Ensure MySQL is using the latest version of TLS encryption](/recipes/terraform/azure/ensuremysqlisusingthelatestversionoftlsencryption.md)
-* [Ensure MySQL server databases have Enforce SSL connection enabled](/recipes/terraform/azure/ensuremysqlserverdatabaseshaveenforcesslconnectionenabled.md)
-* [Ensure MySQL server disables public network access](/recipes/terraform/azure/ensuremysqlserverdisablespublicnetworkaccess.md)
-* [Ensure MySQL server enables Threat Detection policy](/recipes/terraform/azure/ensuremysqlserverenablesthreatdetectionpolicy.md)
-* [Ensure MySQL server enables geo-redundant backups](/recipes/terraform/azure/ensuremysqlserverenablesgeoredundantbackups.md)
-* [Ensure PostgreSQL server disables public network access](/recipes/terraform/azure/ensurepostgresqlserverdisablespublicnetworkaccess.md)
-* [Ensure PostgreSQL server enables Threat Detection policy](/recipes/terraform/azure/ensurepostgresqlserverenablesthreatdetectionpolicy.md)
-* [Ensure PostgreSQL server enables infrastructure encryption](/recipes/terraform/azure/ensurepostgresqlserverenablesinfrastructureencryption.md)
-* [Ensure RDS database has IAM authentication enabled](/recipes/terraform/aws/ensurerdsdatabasehasiamauthenticationenabled.md)
-* [Ensure RDS instances have Multi-AZ enabled](/recipes/terraform/aws/ensurerdsinstanceshavemultiazenabled.md)
-* [Ensure Send email notification for high severity alerts is enabled](/recipes/terraform/azure/ensuresendemailnotificationforhighseverityalertsisenabled.md)
-* [Ensure Send email notification for high severity alerts to admins is enabled](/recipes/terraform/azure/ensuresendemailnotificationforhighseverityalertstoadminsisenabled.md)
-* [Ensure VPC subnets do not assign public IP by default](/recipes/terraform/aws/ensurevpcsubnetsdonotassignpublicipbydefault.md)
-* [Ensure Web App has incoming client certificates enabled](/recipes/terraform/azure/ensurewebapphasincomingclientcertificatesenabled.md)
-* [Ensure Web App uses the latest version of HTTP](/recipes/terraform/azure/ensurewebappusesthelatestversionofhttp.md)
-* [Ensure Web App uses the latest version of TLS encryption](/recipes/terraform/azure/ensurewebappusesthelatestversionoftlsencryption.md)
-* [Ensure a security contact phone number is present](/recipes/terraform/azure/ensureasecuritycontactphonenumberispresent.md)
-* [Ensure activity log retention is set to 365 days or greater](/recipes/terraform/azure/ensureactivitylogretentionissetto365daysorgreater.md)
-* [Ensure all keys have an expiration date](/recipes/terraform/azure/ensureallkeyshaveanexpirationdate.md)
-* [Ensure app service enables HTTP logging](/recipes/terraform/azure/ensureappserviceenableshttplogging.md)
-* [Ensure app service enables detailed error messages](/recipes/terraform/azure/ensureappserviceenablesdetailederrormessages.md)
-* [Ensure app service enables failed request tracing](/recipes/terraform/azure/ensureappserviceenablesfailedrequesttracing.md)
-* [Ensure app services use Azure files](/recipes/terraform/azure/ensureappservicesuseazurefiles.md)
-* [Ensure binary authorization is used](/recipes/terraform/gcp/ensurebinaryauthorizationisused.md)
-* [Ensure compute instances launch with shielded VM enabled](/recipes/terraform/gcp/ensurecomputeinstanceslaunchwithshieldedvmenabled.md)
-* [Ensure data stored in an S3 bucket is securely encrypted at rest](/recipes/terraform/aws/ensuredatastoredinans3bucketissecurelyencryptedatrest.md)
-* [Ensure detailed monitoring for EC2 instances is enabled](/recipes/terraform/aws/ensuredetailedmonitoringforec2instancesisenabled.md)
-* [Ensure enhanced monitoring for Amazon RDS instances is enabled](/recipes/terraform/aws/ensureenhancedmonitoringforamazonrdsinstancesisenabled.md)
-* [Ensure key vault allows firewall rules settings](/recipes/terraform/azure/ensurekeyvaultallowsfirewallrulessettings.md)
-* [Ensure key vault enables purge protection](/recipes/terraform/azure/ensurekeyvaultenablespurgeprotection.md)
-* [Ensure key vault key is backed by HSM](/recipes/terraform/azure/ensurekeyvaultkeyisbackedbyhsm.md)
-* [Ensure key vault secrets have `content_type` set](/recipes/terraform/azure/ensurekeyvaultsecretshavecontenttypeset.md)
-* [Ensure log profile is configured to capture all activities](/recipes/terraform/azure/ensurelogprofileisconfiguredtocaptureallactivities.md)
-* [Ensure managed identity provider is enabled for app services](/recipes/terraform/azure/ensuremanagedidentityproviderisenabledforappservices.md)
-* [Ensure private cluster is enabled when creating Kubernetes clusters](/recipes/terraform/gcp/ensureprivateclusterisenabledwhencreatingkubernetesclusters.md)
-* [Ensure public network access enabled is set to False for mySQL servers](/recipes/terraform/azure/ensurepublicnetworkaccessenabledissettofalseformysqlservers.md)
-* [Ensure respective logs of Amazon RDS are enabled](/recipes/terraform/aws/ensurerespectivelogsofamazonrdsareenabled.md)
-* [Ensure secure boot for shielded GKE nodes is enabled](/recipes/terraform/gcp/ensuresecurebootforshieldedgkenodesisenabled.md)
-* [Ensure shielded GKE nodes are enabled](/recipes/terraform/gcp/ensureshieldedgkenodesareenabled.md)
-* [Ensure standard pricing tier is selected](/recipes/terraform/azure/ensurestandardpricingtierisselected.md)
-* [Ensure storage account uses latest TLS version](/recipes/terraform/azure/ensurestorageaccountuseslatesttlsversion.md)
-* [Ensure the GKE metadata server is enabled](/recipes/terraform/gcp/ensurethegkemetadataserverisenabled.md)
-* [Ensure the S3 bucket has access logging enabled](/recipes/terraform/aws/ensurethes3buckethasaccessloggingenabled.md)
-* [Ensure the storage container storing activity logs is not publicly accessible](/recipes/terraform/azure/ensurethestoragecontainerstoringactivitylogsisnotpubliclyaccessible.md)
-* [Find Terraform resource](/recipes/terraform/search/findresource.md)
-* [Make ECR tags immutable](/recipes/terraform/aws/immutableecrtags.md)
-* [Scan images pushed to ECR](/recipes/terraform/aws/enableecrscanonpush.md)
-* [Set Azure Storage Account default network access to deny](/recipes/terraform/azure/setazurestorageaccountdefaultnetworkaccesstodeny.md)
-* [Use HTTPS for Cloudfront distribution](/recipes/terraform/aws/usehttpsforcloudfrontdistribution.md)
-* [Use a long enough byte length for `random` resources](/recipes/terraform/securerandom.md)
+* [Add Terraform configuration](/recipes/terraform/addconfiguration.md) - _If the configuration has a different value, leave it alone. If it is missing, add it._
+* [Best practices for AWS](/recipes/terraform/aws/awsbestpractices.md) - _Securely operate on Amazon Web Services._
+* [Best practices for Azure](/recipes/terraform/azure/azurebestpractices.md) - _Securely operate on Microsoft Azure._
+* [Best practices for GCP](/recipes/terraform/gcp/gcpbestpractices.md) - _Securely operate on Google Cloud Platform._
+* [Disable Instance Metadata Service version 1](/recipes/terraform/aws/disableinstancemetadataservicev1.md) - _As a request/response method IMDSv1 is prone to local misconfigurations._
+* [Disable Kubernetes dashboard](/recipes/terraform/azure/disablekubernetesdashboard.md) - _Disabling the dashboard eliminates it as an attack vector. The dashboard add-on is disabled by default for all new clusters created on Kubernetes 1.18 or greater._
+* [Enable API gateway caching](/recipes/terraform/aws/enableapigatewaycaching.md) - _Enable caching for all methods of API Gateway._
+* [Enable Azure Storage Account Trusted Microsoft Services access](/recipes/terraform/azure/enableazurestorageaccounttrustedmicrosoftservicesaccess.md) - _Certain Microsoft services that interact with storage accounts operate from networks that cannot be granted access through network rules. Using this configuration, you can allow the set of trusted Microsoft services to bypass those network rules._
+* [Enable Azure Storage secure transfer required](/recipes/terraform/azure/enableazurestoragesecuretransferrequired.md) - _Microsoft recommends requiring secure transfer for all storage accounts._
+* [Enable VPC Flow Logs for subnetworks](/recipes/terraform/gcp/enablevpcflowlogsforsubnetworks.md) - _Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information on IP traffic moving through network interfaces. This information can be used to monitor anomalous traffic and provide security insights._
+* [Enable VPC flow logs and intranode visibility](/recipes/terraform/gcp/enablevpcflowlogsandintranodevisibility.md) - _Enable VPC flow logs and intranode visibility._
+* [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters](/recipes/terraform/gcp/enablepodsecuritypolicycontrollerongkeclusters.md) - _Ensure `PodSecurityPolicy` controller is enabled on Google Kubernetes Engine (GKE) clusters._
+* [Enable geo-redundant backups on PostgreSQL server](/recipes/terraform/azure/enablegeoredundantbackupsonpostgresqlserver.md) - _Ensure PostgreSQL server enables geo-redundant backups._
+* [Enable point-in-time recovery for DynamoDB](/recipes/terraform/aws/enabledynamodbpitr.md) - _DynamoDB Point-In-Time Recovery (PITR) is an automatic backup service for DynamoDB table data that helps protect your DynamoDB tables from accidental write or delete operations._
+* [Encrypt Aurora clusters](/recipes/terraform/aws/encryptauroraclusters.md) - _Native Aurora encryption helps protect your cloud applications and fulfils compliance requirements for data-at-rest encryption._
+* [Encrypt Azure VM data disk with ADE/CMK](/recipes/terraform/azure/encryptazurevmdatadiskwithadecmk.md) - _Ensure Azure VM data disk is encrypted with ADE/CMK._
+* [Encrypt CodeBuild projects](/recipes/terraform/aws/encryptcodebuild.md) - _Build artifacts, such as a cache, logs, exported raw test report data files, and build results, are encrypted by default using CMKs for Amazon S3 that are managed by the AWS Key Management Service._
+* [Encrypt DAX storage at rest](/recipes/terraform/aws/encryptdaxstorage.md) - _DAX encryption at rest automatically integrates with AWS KMS for managing the single service default key used to encrypt clusters._
+* [Encrypt DocumentDB storage](/recipes/terraform/aws/encryptdocumentdb.md) - _The encryption feature available for Amazon DocumentDB clusters provides an additional layer of data protection by helping secure your data against unauthorized access to the underlying storage._
+* [Encrypt EBS snapshots](/recipes/terraform/aws/encryptebssnapshots.md) - _EBS snapshots should be encrypted, as they often include sensitive information, customer PII or CPNI._
+* [Encrypt EBS volume launch configurations](/recipes/terraform/aws/encryptebsvolumelaunchconfiguration.md) - _EBS volumes allow you to create encrypted launch configurations when creating EC2 instances and auto scaling. When the entire EBS volume is encrypted, data stored at rest on the volume, disk I/O, snapshots created from the volume, and data in-transit between EBS and EC2 are all encrypted._
+* [Encrypt EBS volumes](/recipes/terraform/aws/encryptebsvolumes.md) - _Encrypting EBS volumes ensures that replicated copies of your images are secure even if they are accidentally exposed. AWS EBS encryption uses AWS KMS customer master keys (CMK) when creating encrypted volumes and snapshots. Storing EBS volumes in their encrypted state reduces the risk of data exposure or data loss._
+* [Encrypt EFS Volumes in ECS Task Definitions in transit](/recipes/terraform/aws/encryptefsvolumesinecstaskdefinitionsintransit.md) - _Enable attached EFS definitions in ECS tasks to use encryption in transit._
+* [Encrypt ElastiCache Redis at rest](/recipes/terraform/aws/encryptelasticacheredisatrest.md) - _ElastiCache for Redis offers default encryption at rest as a service._
+* [Encrypt ElastiCache Redis in transit](/recipes/terraform/aws/encryptelasticacheredisintransit.md) - _ElastiCache for Redis offers optional encryption in transit. In-transit encryption provides an additional layer of data protection when transferring data over standard HTTPS protocol._
+* [Encrypt Neptune storage](/recipes/terraform/aws/encryptneptunestorage.md) - _Encryption of Neptune storage protects data and metadata against unauthorized access._
+* [Encrypt RDS clusters](/recipes/terraform/aws/encryptrdsclusters.md) - _Native RDS encryption helps protect your cloud applications and fulfils compliance requirements for data-at-rest encryption._
+* [Encrypt Redshift storage at rest](/recipes/terraform/aws/encryptredshift.md) - _Redshift clusters should be securely encrypted at rest._
+* [Ensure AKS policies add-on](/recipes/terraform/azure/ensureakspoliciesaddon.md) - _Azure Policy Add-on for Kubernetes service (AKS) extends Gatekeeper v3, an admission controller webhook for Open Policy Agent (OPA), to apply at-scale enforcements and safeguards on your clusters in a centralized, consistent manner._
+* [Ensure AKV secrets have an expiration date set](/recipes/terraform/azure/ensureakvsecretshaveanexpirationdateset.md) - _Ensure AKV secrets have an expiration date set._
+* [Ensure AWS CMK rotation is enabled](/recipes/terraform/aws/ensureawscmkrotationisenabled.md) - _Ensure AWS CMK rotation is enabled._
+* [Ensure AWS EFS with encryption for data at rest is enabled](/recipes/terraform/aws/ensureawsefswithencryptionfordataatrestisenabled.md) - _Ensure AWS EFS with encryption for data at rest is enabled._
+* [Ensure AWS EKS cluster endpoint access is publicly disabled](/recipes/terraform/aws/ensureawseksclusterendpointaccessispubliclydisabled.md) - _Ensure AWS EKS cluster endpoint access is publicly disabled._
+* [Ensure AWS Elasticsearch domain encryption for data at rest is enabled](/recipes/terraform/aws/ensureawselasticsearchdomainencryptionfordataatrestisenabled.md) - _Ensure AWS Elasticsearch domain encryption for data at rest is enabled._
+* [Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled](/recipes/terraform/aws/ensureawselasticsearchdomainshaveenforcehttpsenabled.md) - _Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled._
+* [Ensure AWS Elasticsearch has node-to-node encryption enabled](/recipes/terraform/aws/ensureawselasticsearchhasnodetonodeencryptionenabled.md) - _Ensure AWS Elasticsearch has node-to-node encryption enabled._
+* [Ensure AWS IAM password policy has a minimum of 14 characters](/recipes/terraform/aws/ensureawsiampasswordpolicyhasaminimumof14characters.md) - _Ensure AWS IAM password policy has a minimum of 14 characters._
+* [Ensure AWS Lambda function is configured for function-level concurrent execution limit](/recipes/terraform/aws/ensureawslambdafunctionisconfiguredforfunctionlevelconcurrentexecutionlimit.md) - _Ensure AWS Lambda function is configured for function-level concurrent execution limit._
+* [Ensure AWS Lambda functions have tracing enabled](/recipes/terraform/aws/ensureawslambdafunctionshavetracingenabled.md) - _Ensure AWS Lambda functions have tracing enabled._
+* [Ensure AWS RDS database instance is not publicly accessible](/recipes/terraform/aws/ensureawsrdsdatabaseinstanceisnotpubliclyaccessible.md) - _Ensure AWS RDS database instance is not publicly accessible._
+* [Ensure AWS S3 object versioning is enabled](/recipes/terraform/aws/ensureawss3objectversioningisenabled.md) - _Ensure AWS S3 object versioning is enabled._
+* [Ensure Amazon EKS control plane logging enabled for all log types](/recipes/terraform/aws/ensureamazonekscontrolplaneloggingenabledforalllogtypes.md) - _Ensure Amazon EKS control plane logging enabled for all log types._
+* [Ensure Azure App Service Web app redirects HTTP to HTTPS](/recipes/terraform/azure/ensureazureappservicewebappredirectshttptohttps.md) - _Ensure Azure App Service Web app redirects HTTP to HTTPS._
+* [Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days](/recipes/terraform/azure/ensureazurenetworkwatchernsgflowlogsretentionisgreaterthan90days.md) - _Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days._
+* [Ensure Azure PostgreSQL database server with SSL connection is enabled](/recipes/terraform/azure/ensureazurepostgresqldatabaseserverwithsslconnectionisenabled.md) - _Ensure Azure PostgreSQL database server with SSL connection is enabled._
+* [Ensure Azure SQL Server threat detection alerts are enabled for all threat types](/recipes/terraform/azure/ensureazuresqlserverthreatdetectionalertsareenabledforallthreattypes.md) - _Ensure Azure SQL Server threat detection alerts are enabled for all threat types._
+* [Ensure Azure SQL server audit log retention is greater than 90 days](/recipes/terraform/azure/ensureazuresqlserverauditlogretentionisgreaterthan90days.md) - _Ensure Azure SQL server audit log retention is greater than 90 days._
+* [Ensure Azure SQL server send alerts to field value is set](/recipes/terraform/azure/ensureazuresqlserversendalertstofieldvalueisset.md) - _Ensure Azure SQL server send alerts to field value is set._
+* [Ensure Azure application gateway has WAF enabled](/recipes/terraform/azure/ensureazureapplicationgatewayhaswafenabled.md) - _Ensure Azure application gateway has WAF enabled._
+* [Ensure Azure key vault is recoverable](/recipes/terraform/azure/ensureazurekeyvaultisrecoverable.md) - _Ensure Azure key vault is recoverable._
+* [Ensure CloudTrail log file validation is enabled](/recipes/terraform/aws/ensurecloudtraillogfilevalidationisenabled.md) - _Ensure CloudTrail log file validation is enabled._
+* [Ensure EC2 is EBS optimized](/recipes/terraform/aws/ensureec2isebsoptimized.md) - _Ensure EC2 is EBS optimized._
+* [Ensure ECR repositories are encrypted](/recipes/terraform/aws/ensureecrrepositoriesareencrypted.md) - _Ensure ECR repositories are encrypted._
+* [Ensure FTP Deployments are disabled](/recipes/terraform/azure/ensureftpdeploymentsaredisabled.md) - _Ensure FTP Deployments are disabled._
+* [Ensure GCP Kubernetes cluster node auto-repair configuration is enabled](/recipes/terraform/gcp/ensuregcpkubernetesclusternodeautorepairconfigurationisenabled.md) - _Ensure GCP Kubernetes cluster node auto-repair configuration is enabled._
+* [Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled](/recipes/terraform/gcp/ensuregcpkubernetesengineclustershavelegacycomputeenginemetadataendpointsdisabled.md) - _Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled._
+* [Ensure GCP VM instances have block project-wide SSH keys feature enabled](/recipes/terraform/gcp/ensuregcpvminstanceshaveblockprojectwidesshkeysfeatureenabled.md) - _Ensure GCP VM instances have block project-wide SSH keys feature enabled._
+* [Ensure GCP cloud storage bucket with uniform bucket-level access are enabled](/recipes/terraform/gcp/ensuregcpcloudstoragebucketwithuniformbucketlevelaccessareenabled.md) - _Ensure GCP cloud storage bucket with uniform bucket-level access are enabled._
+* [Ensure IAM password policy expires passwords within 90 days or less](/recipes/terraform/aws/ensureiampasswordpolicyexpirespasswordswithin90daysorless.md) - _Ensure IAM password policy expires passwords within 90 days or less._
+* [Ensure IAM password policy prevents password reuse](/recipes/terraform/aws/ensureiampasswordpolicypreventspasswordreuse.md) - _Ensure IAM password policy prevents password reuse._
+* [Ensure IAM password policy requires at least one lowercase letter](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastonelowercaseletter.md) - _Ensure IAM password policy requires at least one lowercase letter._
+* [Ensure IAM password policy requires at least one number](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastonenumber.md) - _Ensure IAM password policy requires at least one number._
+* [Ensure IAM password policy requires at least one symbol](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastonesymbol.md) - _Ensure IAM password policy requires at least one symbol._
+* [Ensure IAM password policy requires at least one uppercase letter](/recipes/terraform/aws/ensureiampasswordpolicyrequiresatleastoneuppercaseletter.md) - _Ensure IAM password policy requires at least one uppercase letter._
+* [Ensure IP forwarding on instances is disabled](/recipes/terraform/gcp/ensureipforwardingoninstancesisdisabled.md) - _Ensure IP forwarding on instances is disabled._
+* [Ensure Kinesis Stream is securely encrypted](/recipes/terraform/aws/ensurekinesisstreamissecurelyencrypted.md) - _Ensure Kinesis Stream is securely encrypted._
+* [Ensure MSSQL servers have email service and co-administrators enabled](/recipes/terraform/azure/ensuremssqlservershaveemailserviceandcoadministratorsenabled.md) - _Ensure MSSQL servers have email service and co-administrators enabled._
+* [Ensure MySQL is using the latest version of TLS encryption](/recipes/terraform/azure/ensuremysqlisusingthelatestversionoftlsencryption.md) - _Ensure MySQL is using the latest version of TLS encryption._
+* [Ensure MySQL server databases have Enforce SSL connection enabled](/recipes/terraform/azure/ensuremysqlserverdatabaseshaveenforcesslconnectionenabled.md) - _Ensure MySQL server databases have Enforce SSL connection enabled._
+* [Ensure MySQL server disables public network access](/recipes/terraform/azure/ensuremysqlserverdisablespublicnetworkaccess.md) - _Ensure MySQL server disables public network access._
+* [Ensure MySQL server enables Threat Detection policy](/recipes/terraform/azure/ensuremysqlserverenablesthreatdetectionpolicy.md) - _Ensure MySQL server enables Threat Detection policy._
+* [Ensure MySQL server enables geo-redundant backups](/recipes/terraform/azure/ensuremysqlserverenablesgeoredundantbackups.md) - _Ensure MySQL server enables geo-redundant backups._
+* [Ensure PostgreSQL server disables public network access](/recipes/terraform/azure/ensurepostgresqlserverdisablespublicnetworkaccess.md) - _Ensure PostgreSQL server disables public network access._
+* [Ensure PostgreSQL server enables Threat Detection policy](/recipes/terraform/azure/ensurepostgresqlserverenablesthreatdetectionpolicy.md) - _Ensure PostgreSQL server enables Threat Detection policy._
+* [Ensure PostgreSQL server enables infrastructure encryption](/recipes/terraform/azure/ensurepostgresqlserverenablesinfrastructureencryption.md) - _Ensure PostgreSQL server enables infrastructure encryption._
+* [Ensure RDS database has IAM authentication enabled](/recipes/terraform/aws/ensurerdsdatabasehasiamauthenticationenabled.md) - _Ensure RDS database has IAM authentication enabled._
+* [Ensure RDS instances have Multi-AZ enabled](/recipes/terraform/aws/ensurerdsinstanceshavemultiazenabled.md) - _Ensure RDS instances have Multi-AZ enabled._
+* [Ensure Send email notification for high severity alerts is enabled](/recipes/terraform/azure/ensuresendemailnotificationforhighseverityalertsisenabled.md) - _Ensure Send email notification for high severity alerts is enabled._
+* [Ensure Send email notification for high severity alerts to admins is enabled](/recipes/terraform/azure/ensuresendemailnotificationforhighseverityalertstoadminsisenabled.md) - _Ensure Send email notification for high severity alerts to admins is enabled._
+* [Ensure VPC subnets do not assign public IP by default](/recipes/terraform/aws/ensurevpcsubnetsdonotassignpublicipbydefault.md) - _Ensure VPC subnets do not assign public IP by default._
+* [Ensure Web App has incoming client certificates enabled](/recipes/terraform/azure/ensurewebapphasincomingclientcertificatesenabled.md) - _Ensure Web App has incoming client certificates enabled._
+* [Ensure Web App uses the latest version of HTTP](/recipes/terraform/azure/ensurewebappusesthelatestversionofhttp.md) - _Ensure Web App uses the latest version of HTTP._
+* [Ensure Web App uses the latest version of TLS encryption](/recipes/terraform/azure/ensurewebappusesthelatestversionoftlsencryption.md) - _Ensure Web App uses the latest version of TLS encryption._
+* [Ensure a security contact phone number is present](/recipes/terraform/azure/ensureasecuritycontactphonenumberispresent.md) - _Ensure a security contact phone number is present._
+* [Ensure activity log retention is set to 365 days or greater](/recipes/terraform/azure/ensureactivitylogretentionissetto365daysorgreater.md) - _Ensure activity log retention is set to 365 days or greater._
+* [Ensure all keys have an expiration date](/recipes/terraform/azure/ensureallkeyshaveanexpirationdate.md) - _Ensure all keys have an expiration date._
+* [Ensure app service enables HTTP logging](/recipes/terraform/azure/ensureappserviceenableshttplogging.md) - _Ensure app service enables HTTP logging._
+* [Ensure app service enables detailed error messages](/recipes/terraform/azure/ensureappserviceenablesdetailederrormessages.md) - _Ensure app service enables detailed error messages._
+* [Ensure app service enables failed request tracing](/recipes/terraform/azure/ensureappserviceenablesfailedrequesttracing.md) - _Ensure app service enables failed request tracing._
+* [Ensure app services use Azure files](/recipes/terraform/azure/ensureappservicesuseazurefiles.md) - _Ensure app services use Azure files._
+* [Ensure binary authorization is used](/recipes/terraform/gcp/ensurebinaryauthorizationisused.md) - _Ensure binary authorization is used._
+* [Ensure compute instances launch with shielded VM enabled](/recipes/terraform/gcp/ensurecomputeinstanceslaunchwithshieldedvmenabled.md) - _Ensure compute instances launch with shielded VM enabled._
+* [Ensure data stored in an S3 bucket is securely encrypted at rest](/recipes/terraform/aws/ensuredatastoredinans3bucketissecurelyencryptedatrest.md) - _Ensure data stored in an S3 bucket is securely encrypted at rest._
+* [Ensure detailed monitoring for EC2 instances is enabled](/recipes/terraform/aws/ensuredetailedmonitoringforec2instancesisenabled.md) - _Ensure detailed monitoring for EC2 instances is enabled._
+* [Ensure enhanced monitoring for Amazon RDS instances is enabled](/recipes/terraform/aws/ensureenhancedmonitoringforamazonrdsinstancesisenabled.md) - _Ensure enhanced monitoring for Amazon RDS instances is enabled._
+* [Ensure key vault allows firewall rules settings](/recipes/terraform/azure/ensurekeyvaultallowsfirewallrulessettings.md) - _Ensure key vault allows firewall rules settings._
+* [Ensure key vault enables purge protection](/recipes/terraform/azure/ensurekeyvaultenablespurgeprotection.md) - _Ensure key vault enables purge protection._
+* [Ensure key vault key is backed by HSM](/recipes/terraform/azure/ensurekeyvaultkeyisbackedbyhsm.md) - _Ensure key vault key is backed by HSM._
+* [Ensure key vault secrets have `content_type` set](/recipes/terraform/azure/ensurekeyvaultsecretshavecontenttypeset.md) - _Ensure key vault secrets have `content_type` set._
+* [Ensure log profile is configured to capture all activities](/recipes/terraform/azure/ensurelogprofileisconfiguredtocaptureallactivities.md) - _Ensure log profile is configured to capture all activities._
+* [Ensure managed identity provider is enabled for app services](/recipes/terraform/azure/ensuremanagedidentityproviderisenabledforappservices.md) - _Ensure managed identity provider is enabled for app services._
+* [Ensure private cluster is enabled when creating Kubernetes clusters](/recipes/terraform/gcp/ensureprivateclusterisenabledwhencreatingkubernetesclusters.md) - _Ensure private cluster is enabled when creating Kubernetes clusters._
+* [Ensure public network access enabled is set to False for mySQL servers](/recipes/terraform/azure/ensurepublicnetworkaccessenabledissettofalseformysqlservers.md) - _Ensure public network access enabled is set to False for mySQL servers._
+* [Ensure respective logs of Amazon RDS are enabled](/recipes/terraform/aws/ensurerespectivelogsofamazonrdsareenabled.md) - _Ensure respective logs of Amazon RDS are enabled._
+* [Ensure secure boot for shielded GKE nodes is enabled](/recipes/terraform/gcp/ensuresecurebootforshieldedgkenodesisenabled.md) - _Ensure secure boot for shielded GKE nodes is enabled._
+* [Ensure shielded GKE nodes are enabled](/recipes/terraform/gcp/ensureshieldedgkenodesareenabled.md) - _Ensure shielded GKE nodes are enabled._
+* [Ensure standard pricing tier is selected](/recipes/terraform/azure/ensurestandardpricingtierisselected.md) - _Ensure standard pricing tier is selected._
+* [Ensure storage account uses latest TLS version](/recipes/terraform/azure/ensurestorageaccountuseslatesttlsversion.md) - _Communication between an Azure Storage account and a client application is encrypted using Transport Layer Security (TLS). Microsoft recommends using the latest version of TLS for all your Microsoft Azure App Service web applications._
+* [Ensure the GKE metadata server is enabled](/recipes/terraform/gcp/ensurethegkemetadataserverisenabled.md) - _Ensure the GKE metadata server is enabled._
+* [Ensure the S3 bucket has access logging enabled](/recipes/terraform/aws/ensurethes3buckethasaccessloggingenabled.md) - _Ensure the S3 bucket has access logging enabled._
+* [Ensure the storage container storing activity logs is not publicly accessible](/recipes/terraform/azure/ensurethestoragecontainerstoringactivitylogsisnotpubliclyaccessible.md) - _Ensure the storage container storing activity logs is not publicly accessible._
+* [Find Terraform resource](/recipes/terraform/search/findresource.md) - _Find a Terraform resource by resource type._
+* [Make ECR tags immutable](/recipes/terraform/aws/immutableecrtags.md) - _Amazon ECR supports immutable tags, preventing image tags from being overwritten. In the past, ECR tags could have been overwritten, this could be overcome by requiring users to uniquely identify an image using a naming convention._
+* [Scan images pushed to ECR](/recipes/terraform/aws/enableecrscanonpush.md) - _ECR Image Scanning assesses and identifies operating system vulnerabilities. Using automated image scans you can ensure container image vulnerabilities are found before getting pushed to production._
+* [Set Azure Storage Account default network access to deny](/recipes/terraform/azure/setazurestorageaccountdefaultnetworkaccesstodeny.md) - _Ensure Azure Storage Account default network access is set to Deny._
+* [Use HTTPS for Cloudfront distribution](/recipes/terraform/aws/usehttpsforcloudfrontdistribution.md) - _Secure communication by default._
+* [Use a long enough byte length for `random` resources](/recipes/terraform/securerandom.md) - _Use a long enough byte length for `random` resources._
 
 ## rewrite-vulncheck
 
-* [Use VulnCheck Exploit Intelligence to fix vulnerabilities](/recipes/vulncheck/fixvulncheckvulnerabilities.md)
+* [Use VulnCheck Exploit Intelligence to fix vulnerabilities](/recipes/vulncheck/fixvulncheckvulnerabilities.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from VulnCheck Vulnerability Intelligence. The recipe has an option to limit fixes to only those vulnerabilities that have evidence of exploitation at various levels of severity._
 

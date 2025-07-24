@@ -61,6 +61,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
+
 ## Examples
 ##### Example 1
 

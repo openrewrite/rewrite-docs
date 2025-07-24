@@ -25,6 +25,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `List` | obsoleteRunners | The fully qualified class names of the JUnit 4 runners to be removed. | `org.junit.runners.JUnit4` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+* [Remove obsolete Spring JUnit runners](/recipes/java/spring/boot2/removeobsoletespringrunners.md)
+
 ## Example
 
 ###### Parameters

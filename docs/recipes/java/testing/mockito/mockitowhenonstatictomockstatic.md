@@ -19,6 +19,13 @@ _Replace `Mockito.when` on static (non mock) with try-with-resource with MockedS
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Mockito 4.x upgrade](/recipes/java/testing/mockito/mockito1to4migration.md)
+
 ## Example
 
 

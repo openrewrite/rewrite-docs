@@ -20,6 +20,13 @@ _Rewrites JMockit `Expectations, NonStrictExpectations, Verifications, Verificat
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks` in your build file or by running a shell command (in which case no build changes are needed):

@@ -34,6 +34,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | removeVersionIfManaged | *Optional*. If the new annotation processor has a managed version, this flag can be used to remove the version on the annotation processor. The default for this flag is `false`. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [io.quarkus.updates.core.quarkus324.ReplaceNewJpaModelgenAnnotationProcessor](/recipes/io/quarkus/updates/core/quarkus324/replacenewjpamodelgenannotationprocessor.md)
+* [io.quarkus.updates.core.quarkus324.ReplaceOldJpaModelgenAnnotationProcessor](/recipes/io/quarkus/updates/core/quarkus324/replaceoldjpamodelgenannotationprocessor.md)
+* [io.quarkus.updates.core.quarkus37.ReplaceJpaModelgenAnnotationProcessor](/recipes/io/quarkus/updates/core/quarkus37/replacejpamodelgenannotationprocessor.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactIdExample`.

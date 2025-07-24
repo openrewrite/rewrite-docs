@@ -19,6 +19,13 @@ _Converts `OAuth2ClientConfigurer` chained call from Spring Security pre 5.2.x i
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Security 6.1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md)
+
 ## Example
 
 

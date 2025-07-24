@@ -20,6 +20,13 @@ _Batch and stream attributes were renamed in Resequence EIP XML DSL._
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates `camel 4.0` application to `camel 4.4`](/recipes/org/apache/camel/upgrade/camel44/camelmigrationrecipe.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):

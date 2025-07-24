@@ -19,6 +19,13 @@ _Use guarded switch case labels and guards if all the statements in the switch b
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Adopt switch pattern matching (JEP 441)](/recipes/java/migrate/switchpatternmatching.md)
+
 ## Example
 
 

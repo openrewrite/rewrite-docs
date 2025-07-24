@@ -30,6 +30,48 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | matchUnknownTypes | *Optional*. When enabled, include method invocations which appear to match if full type information is missing. Using matchUnknownTypes can improve recipe resiliency for an AST with missing type information, but also increases the risk of false-positive matches on unrelated method invocations. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
+* [Change `javax.tools.ToolProvider` methods calls to static](/recipes/java/migrate/removedtoolproviderconstructor.md)
+* [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+* [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
+* [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+* [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
+* [Prefer `Integer#compare`](/recipes/java/migrate/guava/preferintegercompare.md)
+* [Prefer `Integer#divideUnsigned`](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
+* [Prefer `Integer#parseUnsignedInt`](/recipes/java/migrate/guava/preferintegerparseunsignedint.md)
+* [Prefer `Integer#remainderUnsigned`](/recipes/java/migrate/guava/preferintegerremainderunsigned.md)
+* [Prefer `Long#compareUnsigned`](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
+* [Prefer `Long#compare`](/recipes/java/migrate/guava/preferlongcompare.md)
+* [Prefer `Long#divideUnsigned`](/recipes/java/migrate/guava/preferlongdivideunsigned.md)
+* [Prefer `Long#parseUnsignedInt`](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
+* [Prefer `Long#remainderUnsigned`](/recipes/java/migrate/guava/preferlongremainderunsigned.md)
+* [Prefer `Math#addExact`](/recipes/java/migrate/guava/prefermathaddexact.md)
+* [Prefer `Math#clamp`](/recipes/java/migrate/guava/prefermathclamp.md)
+* [Prefer `Math#multiplyExact`](/recipes/java/migrate/guava/prefermathmultiplyexact.md)
+* [Prefer `Math#subtractExact`](/recipes/java/migrate/guava/prefermathsubtractexact.md)
+* [Prefer `Short#compare`](/recipes/java/migrate/guava/prefershortcompare.md)
+* [Prefer `java.lang.Char#compare`](/recipes/java/migrate/guava/prefercharcompare.md)
+* [Prefer `java.util.Collections#synchronizedNavigableMap`](/recipes/java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap.md)
+* [Prefer `java.util.Collections#unmodifiableNavigableMap`](/recipes/java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap.md)
+* [Prefer `java.util.Objects#equals`](/recipes/java/migrate/guava/preferjavautilobjectsequals.md)
+* [Prefer `java.util.Objects#hash`](/recipes/java/migrate/guava/preferjavautilobjectshashcode.md)
+* [Prefer `java.util.Objects#requireNonNullElse`](/recipes/java/migrate/guava/preferjavautilobjectsrequirenonnullelse.md)
+* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Replace `Paths.get` with `Path.of`](/recipes/java/migrate/nio/file/pathsgettopathof.md)
+* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](/recipes/staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
+* [Statically import AssertJ&#39;s `assertThat`](/recipes/java/testing/assertj/staticimports.md)
+* [Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
+* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md)
+* [Use `ObjectUtils#isEmpty(Object)`](/recipes/java/spring/framework/useobjectutilsisempty.md)
+* [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodTargetToStaticExample`.

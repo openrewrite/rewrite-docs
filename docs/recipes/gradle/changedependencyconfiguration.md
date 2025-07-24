@@ -28,6 +28,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newConfiguration | A dependency configuration container. | `api` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. | `api` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications](/recipes/java/migrate/removedjaxbmoduleprovided.md)
+* [Do not package `java.xml.ws` module in WebSphere Liberty applications](/recipes/java/migrate/removedjavaxmlwsmoduleprovided.md)
+* [Migrate to Gradle 6 from Gradle 5](/recipes/gradle/migratetogradle6.md)
+
 ## Example
 
 ###### Parameters

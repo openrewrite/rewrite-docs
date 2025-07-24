@@ -19,6 +19,13 @@ _Spring-Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `Embed
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
+
 ## Example
 
 

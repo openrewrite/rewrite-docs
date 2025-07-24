@@ -23,6 +23,13 @@ _Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)` instead of the
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.net` APIs](/recipes/java/migrate/net/javanetapis.md)
+
 ## Example
 
 

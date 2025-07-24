@@ -28,6 +28,21 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newAttributeName | The new attribute name to use. | `waitFor` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from `@ApiImplicitParams`  to `@Parameters`](/recipes/openapi/swagger/migrateapiimplicitparamstoparameters.md)
+* [Migrate from `@ApiModelProperty` to `@Schema`](/recipes/openapi/swagger/migrateapimodelpropertytoschema.md)
+* [Migrate from `@ApiOperation` to `@Operation`](/recipes/openapi/swagger/migrateapioperationtooperation.md)
+* [Migrate from `@ApiParam` to `@Parameter`](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
+* [Migrate from `@ApiResponses` to `@ApiResponses`](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
+* [PlanningVariable&#39;s `nullable` is newly called `unassignedValues`](/recipes/ai/timefold/solver/migration/v8/nullablerecipe.md)
+* [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
+* [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
+* [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeAnnotationAttributeNameExample`.

@@ -19,6 +19,13 @@ _Prefer the Lombok `@NoArgsConstructor` annotation over explicitly written out c
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+
 ## Example
 
 

@@ -77,6 +77,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JUnit asserts to AssertJ](/recipes/java/testing/assertj/junittoassertj.md)
+
 ## Examples
 ##### Example 1
 

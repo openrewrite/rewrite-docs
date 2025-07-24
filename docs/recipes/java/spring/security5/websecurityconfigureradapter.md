@@ -19,6 +19,13 @@ _The Spring Security `WebSecurityConfigurerAdapter` was deprecated 5.7, this rec
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
+
 ## Example
 
 

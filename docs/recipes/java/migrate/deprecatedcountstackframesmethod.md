@@ -51,6 +51,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+
 ## Examples
 ##### Example 1
 

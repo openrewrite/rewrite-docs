@@ -27,6 +27,22 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | configurationPath | A JsonPath expression to locate Kubernetes configuration. Must be an absolute path. | `$.spec` |
 | `String` | value | The configuration that is added when necessary, including the key. | `privileged: false` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Ensure image pull policy is `Always`](/recipes/kubernetes/imagepullpolicyalways.md)
+* [Ensure lifecycle rule on `StorageBucket`](/recipes/kubernetes/lifecycleruleonstoragebucket.md)
+* [Limit root capabilities in a container](/recipes/kubernetes/limitcontainercapabilities.md)
+* [No host IPC sharing](/recipes/kubernetes/nohostipcsharing.md)
+* [No host network sharing](/recipes/kubernetes/nohostnetworksharing.md)
+* [No host process ID sharing](/recipes/kubernetes/nohostprocessidsharing.md)
+* [No privilege escalation](/recipes/kubernetes/noprivilegeescalation.md)
+* [No privileged containers](/recipes/kubernetes/noprivilegedcontainers.md)
+* [No root containers](/recipes/kubernetes/norootcontainers.md)
+* [Read-only root filesystem](/recipes/kubernetes/readonlyrootfilesystem.md)
+
 ## Example
 
 ###### Parameters

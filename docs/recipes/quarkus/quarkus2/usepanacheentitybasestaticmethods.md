@@ -19,6 +19,13 @@ _The `getEntityManager()` and the `flush()` methods of `PanacheEntityBase` are n
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+
 ## Example
 
 

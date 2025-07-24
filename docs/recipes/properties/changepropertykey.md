@@ -28,6 +28,24 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |  |
 | `Boolean` | regex | *Optional*. Default false. If enabled, `oldPropertyKey` will be interpreted as a Regular Expression, and capture group contents will be available in `newPropertyKey` |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Quarkus 1.13 migration from Quarkus 1.11](/recipes/quarkus/quarkus1to1_13migration.md)
+* [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Replace &#39;camel.main.backlogTracing&#39; with `camel.trace.enabled&#39;](/recipes/org/apache/camel/upgrade/camel45/traceproperties.md)
+* [Replace &#39;camel.main.routeController&#39; with `camel.routecontroller&#39;](/recipes/org/apache/camel/upgrade/camel44/routecontrollerproperties.md)
+* [The option camel.main.debugger has been renamed](/recipes/org/apache/camel/upgrade/camel42/camelmaindebugger.md)
+* [Update Apache Camel configurations keys](/recipes/org/apache/camel/upgrade/customrecipes/propertiesandyamlkeyupdate.md)
+* [Update relocated Micronaut Security config properties](/recipes/java/micronaut/updatesecuritypropertiesifneeded.md)
+* [Upgrade to the latest Timefold Solver](/recipes/ai/timefold/solver/migration/tolatest.md)
+* [io.quarkus.updates.core.quarkus30.ApplicationProperties](/recipes/io/quarkus/updates/core/quarkus30/applicationproperties.md)
+* [io.quarkus.updates.core.quarkus32.ApplicationProperties](/recipes/io/quarkus/updates/core/quarkus32/applicationproperties.md)
+* [io.quarkus.updates.core.quarkus33.ApplicationProperties](/recipes/io/quarkus/updates/core/quarkus33/applicationproperties.md)
+
 ## Example
 
 ###### Parameters

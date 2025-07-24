@@ -19,6 +19,13 @@ _OpenJPA persists the fields of attributes of type `java.sql.Date`, `java.sql.Ti
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from OpenJPA to EclipseLink JPA](/recipes/java/migrate/javax/openjpatoeclipselink.md)
+
 ## Example
 
 

@@ -26,6 +26,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Integer` | minimumJavaMajorVersion | The Java version to upgrade to. | `17` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SetupJavaUpgradeJavaVersionExample`.

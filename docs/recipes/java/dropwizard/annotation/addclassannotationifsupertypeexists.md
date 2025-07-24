@@ -27,6 +27,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | targetSupertypeName | The supertype that should looked for. | `javax.ws.rs.Path` |
 | `Boolean` | annotateInnerClasses | *Optional*. Boolean whether to annotate inner classes of the matched annotation |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Convert Health Check Implementations](/recipes/java/dropwizard/modifydropwizardhealthcheckstospringvariants.md)
+* [Create Spring Boot Application Entry Point](/recipes/java/dropwizard/coresetup.md)
+* [Migrate Configuration Class](/recipes/java/dropwizard/migrateconfigurationclass.md)
+* [Migrate Hibernate](/recipes/java/dropwizard/migratehibernate.md)
+
 ## Example
 
 ###### Parameters

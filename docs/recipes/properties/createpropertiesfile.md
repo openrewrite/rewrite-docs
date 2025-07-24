@@ -27,6 +27,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fileContents | *Optional*. Multiline text content for the file. | `a.property=value` |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add application.properties if missing](/recipes/java/dropwizard/addmissingapplicationproperties.md)
+
 ## Examples
 ##### Example 1
 

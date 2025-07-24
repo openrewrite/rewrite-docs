@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | primitiveType | *Optional*. The type of the parameter that we add the argument for. Defaults to `String`. Valid options: `String`, `int`, `short`, `long`, `float`, `double`, `boolean`, `char` | `String` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate removed Spring `Assert` methods](/recipes/java/spring/framework/migratespringassert.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddLiteralMethodArgumentExample`.

@@ -28,6 +28,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newGroupId | The new groupId to use. | `corp.internal.jackson` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. | `api` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](/recipes/ai/timefold/solver/migration/fork/timefoldchangedependencies.md)
+* [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
+
 ## Example
 
 ###### Parameters

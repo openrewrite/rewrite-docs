@@ -27,6 +27,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | parameterType | The new type of the parameter that gets updated. | `java.lang.String` |
 | `Integer` | parameterIndex | A zero-based index that indicates the position at which the parameter will be added. | `0` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`](/recipes/java/spring/batch/upgradeskippolicyparametertype.md)
+
 ## Example
 
 ###### Parameters

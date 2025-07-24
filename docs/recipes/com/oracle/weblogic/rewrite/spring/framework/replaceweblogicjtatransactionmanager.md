@@ -74,6 +74,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Framework 6.2 for WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):

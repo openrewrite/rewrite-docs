@@ -26,6 +26,28 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | methodPattern | A pattern to match method invocations for removal. A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.lang.StringBuilder append(java.lang.String)` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Avoid using the deprecated empty `finalize()` method in `java.desktop`](/recipes/java/migrate/deletedeprecatedfinalize.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+* [Migrate to Java 17](/recipes/io/quarkus/updates/core/quarkus37/upgradetojava17.md)
+* [Migrate to Java 17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
+* [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
+* [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
+* [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
+* [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
+* [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)
+* [Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods](/recipes/java/migrate/removedruntimetracemethods.md)
+* [Remove `Thread.countStackFrames()` method](/recipes/java/migrate/deprecatedcountstackframesmethod.md)
+* [Remove `Thread.destroy()` and `Thread.stop(Throwable)`](/recipes/java/migrate/threadstopdestroy.md)
+* [Remove `getComment` and `getVersion` methods](/recipes/java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
+* [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveMethodInvocationsExample`.

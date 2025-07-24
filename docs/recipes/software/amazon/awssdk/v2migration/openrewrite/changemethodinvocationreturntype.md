@@ -27,6 +27,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newReturnType | The fully qualified new return type of method invocation. | `long` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change S3 types to v2.](/recipes/software/amazon/awssdk/v2migration/s3typestov2.md)
+* [Change S3EventNotification methods to v2.](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
+* [Change SDK TransferManager types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodInvocationReturnTypeExample`.

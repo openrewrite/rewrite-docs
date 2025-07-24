@@ -19,6 +19,13 @@ _Spring Web `MediaType#APPLICATION_JSON_UTF8` and `MediaType#APPLICATION_PROBLEM
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Framework 5.2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
+
 ## Example
 
 

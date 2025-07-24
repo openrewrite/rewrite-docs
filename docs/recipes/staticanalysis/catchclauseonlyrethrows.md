@@ -23,6 +23,13 @@ _A `catch` clause that only rethrows the caught exception is unnecessary. Lettin
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+
 ## Examples
 ##### Example 1
 

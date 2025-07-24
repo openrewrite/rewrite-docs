@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
 | `Boolean` | onlyDirect | *Optional*. If enabled, transitive dependencies will not be considered. All dependencies are searched by default. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find Spring Web dependency](/recipes/java/spring/http/springwebdependency.md)
+
 ## Example
 
 ###### Parameters

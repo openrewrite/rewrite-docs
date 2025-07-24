@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `3.0.0` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find projects affected by changes to the default error view message attribute](/recipes/java/spring/boot2/search/messagesinthedefaulterrorview.md)
+
 ## Example
 
 ###### Parameters

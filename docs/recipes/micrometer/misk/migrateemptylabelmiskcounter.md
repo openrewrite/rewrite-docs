@@ -19,6 +19,13 @@ _Convert a Misk (Prometheus) counter to a Micrometer counter._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Misk metrics to Micrometer](/recipes/micrometer/misk/migratemisktomicrometer.md)
+
 ## Example
 
 

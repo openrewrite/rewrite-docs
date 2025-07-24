@@ -19,6 +19,13 @@ _Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so t
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
+
 ## Example
 
 

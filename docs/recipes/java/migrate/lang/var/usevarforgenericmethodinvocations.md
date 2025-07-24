@@ -19,6 +19,13 @@ _Apply `var` to variables initialized by invocations of generic methods. This re
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use local variable type inference](/recipes/java/migrate/lang/usevar.md)
+
 ## Example
 
 

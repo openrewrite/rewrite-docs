@@ -19,6 +19,13 @@ _Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Hibernate 6.0.x](/recipes/hibernate/migratetohibernate60.md)
+
 ## Example
 
 

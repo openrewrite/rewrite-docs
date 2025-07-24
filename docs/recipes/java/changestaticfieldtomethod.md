@@ -30,6 +30,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments. | `of` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
+* [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md)
+* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeStaticFieldToMethodExample`.

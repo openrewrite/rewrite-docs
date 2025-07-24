@@ -26,6 +26,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | xPath | An XPath expression used to find matching tags. | `/project/dependencies/dependency` |
 | `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. | `'**/application-*.xml'` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
+* [Remove withJansi Logback configuration](/recipes/java/micronaut/removewithjansilogbackconfiguration.md)
+* [Update Default Servlet Handler for Spring Framework if empty](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
+* [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
+
 ## Example
 
 ###### Parameters

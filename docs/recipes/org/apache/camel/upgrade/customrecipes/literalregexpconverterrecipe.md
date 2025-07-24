@@ -30,6 +30,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | replacement | Replacement to use. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [The syntax for retrieving a single field of a secret has been changed](/recipes/org/apache/camel/upgrade/camel49/awssecretrecipe.md)
+* [The syntax for retrieving a single field of a secret has been changed](/recipes/org/apache/camel/upgrade/camel49/azuresecretrecipe.md)
+* [The syntax for retrieving a single field of a secret has been changed](/recipes/org/apache/camel/upgrade/camel49/gcpsecretrecipe.md)
+* [The syntax for retrieving a single field of a secret has been changed](/recipes/org/apache/camel/upgrade/camel49/hashicorpsecretrecipe.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.LiteralRegexpConverterRecipeExample`.

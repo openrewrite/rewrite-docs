@@ -25,6 +25,17 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | version | Which version of Angular to upgrade | `17` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update to Angular v15](/recipes/codemods/migrate/angular/v15.md)
+* [Update to Angular v16](/recipes/codemods/migrate/angular/v16.md)
+* [Update to Angular v17](/recipes/codemods/migrate/angular/v17.md)
+* [Update to Angular v18](/recipes/codemods/migrate/angular/v18.md)
+* [Update to Angular v19](/recipes/codemods/migrate/angular/v19.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters and can only be run by users of Moderne.

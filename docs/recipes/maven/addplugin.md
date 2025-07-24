@@ -31,6 +31,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | executions | *Optional*. Optional executions provided as raw XML. | `<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>` |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*-parent/grpc-*/pom.xml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Liberty Maven plugin](/recipes/maven/liberty/addopenlibertyplugin.md)
+* [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
+* [Upgrade Surefire Plugin](/recipes/java/testing/junit5/upgradesurefireplugin.md)
+
 ## Example
 
 ###### Parameters

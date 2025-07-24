@@ -72,6 +72,14 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to 4.12.1](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrates `camel 4.0` application to `camel 4.4`](/recipes/io/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):

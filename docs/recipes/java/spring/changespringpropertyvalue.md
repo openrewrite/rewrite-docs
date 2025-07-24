@@ -29,6 +29,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `Boolean` | regex | *Optional*. Default false. If enabled, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue` |  |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false` to use exact matching. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+
 ## Example
 
 ###### Parameters

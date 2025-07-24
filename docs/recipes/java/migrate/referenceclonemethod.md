@@ -19,6 +19,13 @@ _The recipe replaces any clone calls that may resolve to a `java.lang.ref.Refere
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+
 ## Example
 
 

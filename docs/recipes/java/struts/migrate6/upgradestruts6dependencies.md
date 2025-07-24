@@ -63,6 +63,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Struts 6.0](/recipes/java/struts/migrate6/migratestruts6.md)
+
 ## Examples
 ##### Example 1
 

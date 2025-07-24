@@ -51,6 +51,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
+
 ## Examples
 ##### Example 1
 

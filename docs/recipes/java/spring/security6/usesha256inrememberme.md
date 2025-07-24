@@ -19,6 +19,13 @@ _As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Security 6.0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md)
+
 ## Example
 
 

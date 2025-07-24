@@ -28,6 +28,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. | `false` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
+* [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
+* [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](/recipes/apache/httpclient5/statusline.md)
+* [Use `Map#containsKey`](/recipes/staticanalysis/usemapcontainskey.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SimplifyMethodChainExample`.

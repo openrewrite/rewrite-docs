@@ -26,6 +26,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `org.mockito.Matchers anyVararg()` |
 | `String` | newReturnType | The fully qualified new return type of method invocation. | `long` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/io/quarkus/updates/core/quarkus37/deprecatedlogrecordthreadid.md)
+* [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/java/migrate/deprecatedlogrecordthreadid.md)
+* [Change method invocation return type](/recipes/java/migrate/changemethodinvocationreturntype.md)
+* [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
+
 ## Example
 
 ###### Parameters

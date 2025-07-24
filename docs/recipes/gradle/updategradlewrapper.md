@@ -34,6 +34,26 @@ This is particularly helpful in environments where access to Gradle's central se
 If the URI is inaccessible, the recipe will leave the existing wrapper files in the repository unchanged, as they are generally compatible with various Gradle versions. | `https://services.gradle.org/distributions/gradle-8.5-bin.zip` |
 | `String` | distributionChecksum | *Optional*. The SHA-256 checksum of the Gradle distribution. If specified, the recipe will add the checksum along with the custom distribution URL. | `29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate to Gradle 5 from Gradle 4](/recipes/gradle/migratetogradle5.md)
+* [Migrate to Gradle 6 from Gradle 5](/recipes/gradle/migratetogradle6.md)
+* [Migrate to Gradle 7 from Gradle 6](/recipes/gradle/migratetogradle7.md)
+* [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
+* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
+* [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Upgrade Android Gradle Plugin (AGP) version](/recipes/android/upgradeandroidgradlepluginversion.md)
+* [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
+* [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
+* [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
+
 ## Example
 
 ###### Parameters

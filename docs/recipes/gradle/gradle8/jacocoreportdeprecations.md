@@ -19,6 +19,13 @@ _Set the `enabled` to `required` and the `destination` to `outputLocation` for R
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
+
 ## Example
 
 

@@ -36,6 +36,23 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. | `com.fasterxml.jackson*` |
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Spring Boot Actuator](/recipes/java/dropwizard/migratehealthchecksandmetrics.md)
+* [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
+* [Create Spring Boot Application Entry Point](/recipes/java/dropwizard/coresetup.md)
+* [Migrate Health Checks to Spring Boot](/recipes/java/dropwizard/migratesecurity.md)
+* [Migrate Health Checks to Spring Boot](/recipes/java/dropwizard/migratetests.md)
+* [Migrate Hibernate](/recipes/java/dropwizard/migratehibernate.md)
+* [Migrate Resource Classes](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
+* [The package scan classes has moved from camel-base-engine to camel-support - maven](/recipes/org/apache/camel/upgrade/camel412/scanclassesmovedmaven.md)
+* [io.quarkus.updates.core.quarkus310.FlywayDb2](/recipes/io/quarkus/updates/core/quarkus310/flywaydb2.md)
+* [io.quarkus.updates.core.quarkus310.FlywayDerby](/recipes/io/quarkus/updates/core/quarkus310/flywayderby.md)
+* [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](/recipes/io/quarkus/updates/core/quarkus310/flywaypostgresql.md)
+
 ## Examples
 ##### Example 1
 

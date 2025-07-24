@@ -41,6 +41,13 @@ static class WithMessage {
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`](/recipes/java/testing/cleanup/assertliteralbooleantofailrecipes.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks` in your build file or by running a shell command (in which case no build changes are needed):

@@ -19,6 +19,13 @@ _Migrate from `LDUser` and `LDUser.Builder` to `LDContext` and `ContextBuilder`.
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to LaunchDarkly 6.x](/recipes/featureflags/launchdarkly/upgradelaunchdarkly6.md)
+
 ## Example
 
 

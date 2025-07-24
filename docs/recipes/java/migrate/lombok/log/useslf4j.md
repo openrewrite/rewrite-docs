@@ -25,6 +25,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | fieldName | *Optional*. Name of the log field to replace. If not specified, the field name is not checked and any field that satisfies the other checks is converted. | `LOGGER` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use Lombok logger annotations instead of explicit fields](/recipes/java/migrate/lombok/log/uselomboklogannotations.md)
+
 ## Example
 
 ###### Parameters

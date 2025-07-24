@@ -19,6 +19,13 @@ _Migrate from Guava `com.google.common.primitives.* asList(..)` to `Arrays.asLis
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+
 ## Example
 
 

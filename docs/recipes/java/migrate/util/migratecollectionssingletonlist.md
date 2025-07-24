@@ -19,6 +19,13 @@ _Prefer `List.of(..)` instead of using `Collections.singletonList()` in Java 9 o
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
+
 ## Example
 
 

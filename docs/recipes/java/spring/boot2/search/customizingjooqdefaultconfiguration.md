@@ -19,6 +19,13 @@ _To streamline the customization of jOOQ’s `DefaultConfiguration`, a bean that
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find patterns that require updating for Spring Boot 2.5](/recipes/java/spring/boot2/search/findupgraderequirementsspringboot_2_5.md)
+
 ## Example
 
 

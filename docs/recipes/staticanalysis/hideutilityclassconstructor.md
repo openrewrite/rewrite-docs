@@ -23,6 +23,13 @@ _Ensures utility classes (classes containing only static methods or fields in th
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
+
 ## Example
 
 

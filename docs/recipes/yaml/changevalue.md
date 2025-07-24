@@ -27,6 +27,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | value | The new value to set for the key identified by the `oldKeyPath`. | `Deployment` |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change GitLab Component](/recipes/gitlab/changecomponent.md)
+* [Change GitLab template](/recipes/gitlab/changetemplate.md)
+
 ## Example
 
 ###### Parameters

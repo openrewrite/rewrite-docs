@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | additionalAsserts | *Optional*. A comma delimited list of packages and/or classes that will be identified as assertions. I.E. a common assertion utility `org.foo.TestUtil`. | `org.foo.TestUtil, org.bar` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Testing best practices](/recipes/java/testing/cleanup/bestpractices.md)
+
 ## Example
 
 ###### Parameters

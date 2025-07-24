@@ -33,6 +33,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | allowVersionDowngrades | *Optional*. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change `net.wasdev.maven.parent:java8-parent` to `:parent`](/recipes/java/migrate/wasdevmvnchangeparentartifactid.md)
+* [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+* [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
+* [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Update to Micronaut 4.x platform BOM](/recipes/java/micronaut/updatemicronautplatformbom.md)
+
 ## Examples
 ##### Example 1
 

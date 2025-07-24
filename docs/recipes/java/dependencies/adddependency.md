@@ -39,6 +39,68 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add AWS SDK for Java v2 S3 Event Notification dependency if needed](/recipes/software/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
+* [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
+* [Add Hibernate ORM Core if has dependencies](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+* [Add Jakarta EE 9 Servlet Dependency](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
+* [Add Quarkus 2 dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
+* [Add `javax.validation-api` dependency](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)
+* [Add `org.hamcrest:hamcrest` if it is used.](/recipes/java/testing/hamcrest/addhamcrestifused.md)
+* [Add explicit Common Annotations dependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
+* [Add explicit Inject dependencies](/recipes/java/migrate/javax/addinjectdependencies.md)
+* [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [Add missing Flyway module for MySQL](/recipes/java/flyway/addflywaymodulemysql.md)
+* [Add missing Flyway module for Oracle](/recipes/java/flyway/addflywaymoduleoracle.md)
+* [Add missing Flyway module for PostgreSQL](/recipes/java/flyway/addflywaymodulepostgresql.md)
+* [Add missing Flyway module for SQL Server](/recipes/java/flyway/addflywaymodulesqlserver.md)
+* [Change v1 Maven/Gradle dependencies to v2](/recipes/software/amazon/awssdk/v2migration/upgradesdkdependencies.md)
+* [Cucumber to JUnit test `@Suite`](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+* [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
+* [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
+* [Migrate JUnit asserts to AssertJ](/recipes/java/testing/assertj/junittoassertj.md)
+* [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
+* [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+* [Migrate Log4j 2.x to Logback](/recipes/java/logging/logback/log4jtologback.md)
+* [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
+* [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+* [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
+* [Migrate dependencies from Jackson Codehaus (legacy) to FasterXML](/recipes/java/jackson/codehaus/codehausdependencytofasterxml.md)
+* [Migrate deprecated `javax.mail` packages to `jakarta.mail`](/recipes/java/migrate/jakarta/javaxmailtojakartamail.md)
+* [Migrate deprecated `javax.ws` packages to `jakarta.ws`](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
+* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
+* [Migrate from Jakarta annotation API to JSpecify](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
+* [Migrate from JetBrains annotations to JSpecify](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
+* [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
+* [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
+* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
+* [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
+* [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+* [Migrate to Spring Data 2.3](/recipes/java/spring/data/upgradespringdata_2_3.md)
+* [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
+* [Prefer the Java standard library instead of Joda-Time](/recipes/java/migrate/joda/nojodatime.md)
+* [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
+* [Replace SpringFox Dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
+* [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
+* [Update the Micronaut Retry support](/recipes/java/micronaut/addmicronautretrydependencyifneeded.md)
+* [Update the Micronaut Websocket support](/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded.md)
+* [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
+* [Use Mockito JUnit Jupiter extension](/recipes/java/testing/junit5/usemockitoextension.md)
+* [Use Vert.x JUnit 5 Extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
+* [Use `org.springframework.boot.web.server.LocalServerPort`](/recipes/java/spring/boot2/migratelocalserverportannotation.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddDependencyExample`.

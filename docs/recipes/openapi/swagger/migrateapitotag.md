@@ -19,6 +19,13 @@ _Converts `@Api` to `@Tag` annotation and converts the directly mappable attribu
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Swagger to OpenAPI](/recipes/openapi/swagger/swaggertoopenapi.md)
+
 ## Example
 
 

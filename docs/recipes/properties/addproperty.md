@@ -28,6 +28,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
 | `String` | delimiter | *Optional*. Property entries support different delimiters (`=`, `:`, or whitespace). The default value is `=` unless provided the delimiter of the new property entry. | `:` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Core Example Properties](/recipes/java/dropwizard/addcoreexampleproperties.md)
+* [Add Hibernate Configuration](/recipes/java/dropwizard/addhibernateconfiguration.md)
+* [Add Jersey Configuration](/recipes/java/dropwizard/addjerseyconfiguration.md)
+* [Add Spring Boot Actuator Configuration](/recipes/java/dropwizard/addactuatorconfiguration.md)
+
 ## Example
 
 ###### Parameters

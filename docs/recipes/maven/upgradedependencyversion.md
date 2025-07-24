@@ -30,6 +30,46 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | overrideManagedVersion | *Optional*. This flag can be set to explicitly override a managed dependency's version. The default for this flag is `false`. |  |
 | `List` | retainVersions | *Optional*. Accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management after the changes from this recipe, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management | `com.jcraft:jsch` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](/recipes/io/quarkus/updates/core/quarkus30/restassuredjavaxtojakarta.md)
+* [Migrate deprecated `javax.activation` packages to `jakarta.activation`](/recipes/io/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
+* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
+* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](/recipes/io/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
+* [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](/recipes/io/quarkus/updates/core/quarkus30/javaxdecoratortojakartadecorator.md)
+* [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](/recipes/io/quarkus/updates/core/quarkus30/javaxejbtojakartaejb.md)
+* [Migrate deprecated `javax.el` packages to `jakarta.el`](/recipes/io/quarkus/updates/core/quarkus30/javaxeltojakartael.md)
+* [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](/recipes/io/quarkus/updates/core/quarkus30/javaxenterprisetojakartaenterprise.md)
+* [Migrate deprecated `javax.faces` packages to `jakarta.faces`](/recipes/io/quarkus/updates/core/quarkus30/javaxfacestojakartafaces.md)
+* [Migrate deprecated `javax.inject` packages to `jakarta.inject`](/recipes/io/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
+* [Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`](/recipes/io/quarkus/updates/core/quarkus30/javaxinterceptortojakartainterceptor.md)
+* [Migrate deprecated `javax.jms` packages to `jakarta.jms`](/recipes/io/quarkus/updates/core/quarkus30/javaxjmstojakartajms.md)
+* [Migrate deprecated `javax.json` packages to `jakarta.json`](/recipes/io/quarkus/updates/core/quarkus30/javaxjsontojakartajson.md)
+* [Migrate deprecated `javax.jws` packages to `jakarta.jws`](/recipes/io/quarkus/updates/core/quarkus30/javaxjwstojakartajws.md)
+* [Migrate deprecated `javax.mail` packages to `jakarta.mail`](/recipes/io/quarkus/updates/core/quarkus30/javaxmailtojakartamail.md)
+* [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](/recipes/io/quarkus/updates/core/quarkus30/javaxpersistencetojakartapersistence.md)
+* [Migrate deprecated `javax.resource` packages to `jakarta.resource`](/recipes/io/quarkus/updates/core/quarkus30/javaxresourcetojakartaresource.md)
+* [Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`](/recipes/io/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
+* [Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`](/recipes/io/quarkus/updates/core/quarkus30/javaxsecuritytojakartasecurity.md)
+* [Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`](/recipes/io/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
+* [Migrate deprecated `javax.servlet` packages to `jakarta.servlet`](/recipes/io/quarkus/updates/core/quarkus30/javaxservlettojakartaservlet.md)
+* [Migrate deprecated `javax.soap` packages to `jakarta.soap`](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlsoaptojakartaxmlsoap.md)
+* [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](/recipes/io/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
+* [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/io/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
+* [Migrate deprecated `javax.websocket` packages to `jakarta.websocket`](/recipes/io/quarkus/updates/core/quarkus30/javaxwebsockettojakartawebsocket.md)
+* [Migrate deprecated `javax.ws` packages to `jakarta.ws`](/recipes/io/quarkus/updates/core/quarkus30/javaxwstojakartaws.md)
+* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
+* [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
+* [Migrate to 4.12.1](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
+* [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
+* [Upgrade to Axonframework 4.x Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
+* [io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse](/recipes/io/quarkus/updates/core/quarkus30/upgradequarkiverse.md)
+
 ## Examples
 ##### Example 1
 

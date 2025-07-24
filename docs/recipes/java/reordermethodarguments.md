@@ -30,6 +30,21 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
+* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Reorder the arguments of `RequestBody.create()`](/recipes/okhttp/reorderrequestbodycreatearguments.md)
+* [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
+* [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+* [Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
+* [Use non-deprecated SingleConstraintAssertion methods](/recipes/ai/timefold/solver/migration/v8/singleconstraintassertionmethodsrecipe.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`.

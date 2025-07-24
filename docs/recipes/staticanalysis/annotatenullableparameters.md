@@ -25,6 +25,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | nullableAnnotationClass | *Optional*. The fully qualified name of the @Nullable annotation. The annotation should be meta annotated with `@Target(TYPE_USE)`. Defaults to `org.jspecify.annotations.Nullable` | `org.jspecify.annotations.Nullable` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
+
 ## Example
 
 ###### Parameters

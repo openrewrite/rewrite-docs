@@ -55,6 +55,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to LaunchDarkly 7.x](/recipes/featureflags/launchdarkly/upgradelaunchdarkly7.md)
+
 ## Examples
 ##### Example 1
 Maven

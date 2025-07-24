@@ -27,6 +27,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | commentText | The comment text to be added before the specified key. | `The `foo` property is deprecated, please migrate` |
 | `Boolean` | commentOutProperty | *Optional*. If false, property wouldn't be commented out, only comment will be added. By default, set to true | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Check and Comment Out Deprecations removed on WebLogic version 14.1.2](/recipes/com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1412.md)
+
 ## Examples
 ##### Example 1
 comment out a map entry

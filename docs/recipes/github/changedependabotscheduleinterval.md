@@ -32,6 +32,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | packageEcosystem | The package-ecosystem to make updates on. | `maven` |
 | `String` | interval | The schedule interval value the package-ecosystem should use. Valid options: `daily`, `weekly`, `monthly` | `weekly` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Check for github-actions updates daily](/recipes/github/dependabotcheckforgithubactionsupdatesdaily.md)
+* [Check for github-actions updates weekly](/recipes/github/dependabotcheckforgithubactionsupdatesweekly.md)
+
 ## Example
 
 ###### Parameters

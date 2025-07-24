@@ -27,6 +27,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | attributeName | The name of attribute to remove. | `timeout` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JavaEE Code to Quarkus 2](/recipes/quarkus/migrate/javaee/javaeetoquarkus2codemigration.md)
+* [Migrate from `@ApiImplicitParams`  to `@Parameters`](/recipes/openapi/swagger/migrateapiimplicitparamstoparameters.md)
+* [Migrate from `@ApiModelProperty` to `@Schema`](/recipes/openapi/swagger/migrateapimodelpropertytoschema.md)
+* [Migrate from `@ApiOperation` to `@Operation`](/recipes/openapi/swagger/migrateapioperationtooperation.md)
+* [Migrate from `@ApiParam` to `@Parameter`](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
+* [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
+* [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveAnnotationAttributeExample`.

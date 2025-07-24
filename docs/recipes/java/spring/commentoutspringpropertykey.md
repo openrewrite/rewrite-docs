@@ -26,6 +26,32 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | propertyKey | The name of the property key to comment out. | `management.metrics.binders.files.enabled` |
 | `String` | comment | Comment to replace the property key. | `This property is deprecated and no longer applicable starting from Spring Boot 3.0.x` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Spring Boot properties to 2.0](/recipes/java/spring/boot2/springbootproperties_2_0.md)
+* [Migrate Spring Boot properties to 2.1](/recipes/java/spring/boot2/springbootproperties_2_1.md)
+* [Migrate Spring Boot properties to 2.2](/recipes/java/spring/boot2/springbootproperties_2_2.md)
+* [Migrate Spring Boot properties to 2.3](/recipes/java/spring/boot2/springbootproperties_2_3.md)
+* [Migrate Spring Boot properties to 2.4](/recipes/java/spring/boot2/springbootproperties_2_4.md)
+* [Migrate Spring Boot properties to 2.5](/recipes/java/spring/boot2/springbootproperties_2_5.md)
+* [Migrate Spring Boot properties to 2.6](/recipes/java/spring/boot2/springbootproperties_2_6.md)
+* [Migrate Spring Boot properties to 2.7](/recipes/java/spring/boot2/springbootproperties_2_7.md)
+* [Migrate Spring Boot properties to 3.0](/recipes/java/spring/boot3/springbootproperties_3_0.md)
+* [Migrate Spring Boot properties to 3.1](/recipes/java/spring/boot3/springbootproperties_3_1.md)
+* [Migrate Spring Boot properties to 3.2](/recipes/java/spring/boot3/springbootproperties_3_2.md)
+* [Migrate Spring Boot properties to 3.3](/recipes/java/spring/boot3/springbootproperties_3_3.md)
+* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
+* [Migrate Spring Cloud properties to 2020](/recipes/java/spring/cloud2020/springcloudproperties_2020.md)
+* [Migrate Spring Cloud properties to 2021](/recipes/java/spring/cloud2021/springcloudproperties_2021.md)
+* [Migrate Spring Cloud properties to 2022](/recipes/java/spring/cloud2022/springcloudproperties_2022.md)
+* [Migrate Spring Cloud properties to 2023](/recipes/java/spring/cloud2023/springcloudproperties_2023.md)
+* [Migrate Spring Cloud properties to 2024](/recipes/java/spring/cloud2024/springcloudproperties_2024.md)
+* [Migrate Spring Cloud properties to 2025](/recipes/java/spring/cloud2025/springcloudproperties_2025.md)
+
 ## Example
 
 ###### Parameters

@@ -27,6 +27,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | methodPattern | A method pattern for matching required method definition. | `*..* hello(..)` |
 | `String` | methodTemplateString | Template of method to add | `public String hello() { return \"Hello from #{}!\"; }` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add missing `isWrapperFor` and `unwrap` methods.](/recipes/java/migrate/jrewrapperinterface.md)
+* [Adds missing JDBC interface methods.](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
+
 ## Example
 
 ###### Parameters

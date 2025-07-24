@@ -28,6 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.yml` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace OSSRH secrets with Sonatype secrets](/recipes/github/replaceossrhsecretswithsonatype.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceSecretKeysExample`.

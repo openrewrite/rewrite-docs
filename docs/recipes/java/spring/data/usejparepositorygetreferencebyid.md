@@ -61,6 +61,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Data 2.7](/recipes/java/spring/data/upgradespringdata_2_7.md)
+
 ## Examples
 ##### Example 1
 

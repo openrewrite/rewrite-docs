@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | preserveExistingValue | *Optional*. Preserve previous value if the property already exists in the pom file. |  |
 | `Boolean` | trustParent | *Optional*. If the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
+
 ## Example
 
 ###### Parameters

@@ -26,6 +26,24 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | gradleWrapperVersion | The version of the Gradle Wrapper to use. | `(8.7, 9]` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Android Gradle Plugin 7.2](/recipes/android/migratetoandroidgradleplugin_7_2.md)
+* [Migrate to Android Gradle Plugin 7.3](/recipes/android/migratetoandroidgradleplugin_7_3.md)
+* [Migrate to Android Gradle Plugin 7.4](/recipes/android/migratetoandroidgradleplugin_7_4.md)
+* [Migrate to Android Gradle Plugin 8.0](/recipes/android/migratetoandroidgradleplugin_8_0.md)
+* [Migrate to Android Gradle Plugin 8.1](/recipes/android/migratetoandroidgradleplugin_8_1.md)
+* [Migrate to Android Gradle Plugin 8.2](/recipes/android/migratetoandroidgradleplugin_8_2.md)
+* [Migrate to Android Gradle Plugin 8.3](/recipes/android/migratetoandroidgradleplugin_8_3.md)
+* [Migrate to Android Gradle Plugin 8.4](/recipes/android/migratetoandroidgradleplugin_8_4.md)
+* [Migrate to Android Gradle Plugin 8.5](/recipes/android/migratetoandroidgradleplugin_8_5.md)
+* [Migrate to Android Gradle Plugin 8.6](/recipes/android/migratetoandroidgradleplugin_8_6.md)
+* [Migrate to Android Gradle Plugin 8.7](/recipes/android/migratetoandroidgradleplugin_8_7.md)
+* [Upgrade to Android SDK 34](/recipes/android/upgradetoandroidsdk34.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters and can only be run by users of Moderne.

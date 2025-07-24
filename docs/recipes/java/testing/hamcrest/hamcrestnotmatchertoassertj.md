@@ -26,6 +26,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | notMatcher | *Optional*. The Hamcrest `not(Matcher)` to migrate to JUnit5. | `equalTo` |
 | `String` | assertion | *Optional*. The AssertJ method to migrate to. | `isNotEqualTo` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
+
 ## Example
 
 ###### Parameters

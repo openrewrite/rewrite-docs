@@ -28,6 +28,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | replaceExisting | *Optional*. Set to `false` to not replace the child tag if it already exists. Defaults to true. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [Update Default Servlet Handler for Spring Framework if empty](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddOrUpdateChildTagExample`.

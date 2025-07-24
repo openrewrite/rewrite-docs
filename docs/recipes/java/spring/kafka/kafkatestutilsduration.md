@@ -19,6 +19,13 @@ _Replace `KafkaTestUtils` methods that take a `long` argument with methods that 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
+
 ## Example
 
 

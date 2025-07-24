@@ -30,6 +30,20 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
 | `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Combined dependency management to remove and exclude](/recipes/java/dropwizard/config/removeandexcludedependency.md)
+* [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
+* [Moved the camel-cloudevents api into camel-api and removed the camel-cloudevents](/recipes/org/apache/camel/upgrade/camel47/removeddependencies.md)
+* [Remove non existing camel-quarkus extensions](/recipes/java/camel/migrate/removedextensions.md)
+* [Removed deprecated components](/recipes/org/apache/camel/upgrade/camel411/removeddependencies.md)
+* [Removed deprecated components](/recipes/org/apache/camel/upgrade/camel49/removeddependencies.md)
+* [io.quarkus.updates.core.quarkus324.RemoveJpaModelgenDependencies](/recipes/io/quarkus/updates/core/quarkus324/removejpamodelgendependencies.md)
+* [io.quarkus.updates.core.quarkus37.RemoveJpaModelgenDependencies](/recipes/io/quarkus/updates/core/quarkus37/removejpamodelgendependencies.md)
+
 ## Example
 
 ###### Parameters

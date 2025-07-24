@@ -22,6 +22,15 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Java security best practices](/recipes/java/security/javasecuritybestpractices.md)
+* [OWASP top ten](/recipes/devcenter/securitystarter.md)
+* [Remediate OWASP A01:2021 Broken access control](/recipes/java/security/owaspa01.md)
+
 ## Example
 
 

@@ -19,6 +19,13 @@ _Ensures that the fields annotated with `@Produces` which is inside the session 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to JavaEE7](/recipes/java/migrate/javaee7-recipe.md)
+
 ## Example
 
 

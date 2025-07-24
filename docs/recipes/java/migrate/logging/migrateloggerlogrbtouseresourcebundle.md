@@ -23,6 +23,13 @@ _Use `Logger#logrb(.., ResourceBundle bundleName, ..)` instead of the deprecated
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.util.logging` APIs](/recipes/java/migrate/logging/javaloggingapis.md)
+
 ## Example
 
 

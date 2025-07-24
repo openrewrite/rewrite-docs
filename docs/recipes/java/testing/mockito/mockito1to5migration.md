@@ -57,6 +57,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Mockito best practices](/recipes/java/testing/mockito/mockitobestpractices.md)
+
 ## Examples
 ##### Example 1
 

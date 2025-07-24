@@ -27,6 +27,36 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | valuePattern | A regular expression to search for. | `[a-zA-Z0-9+\/=]{88}` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find AWS secrets](/recipes/java/security/secrets/findawssecrets.md)
+* [Find Artifactory secrets](/recipes/java/security/secrets/findartifactorysecrets.md)
+* [Find Azure secrets](/recipes/java/security/secrets/findazuresecrets.md)
+* [Find Discord secrets](/recipes/java/security/secrets/finddiscordsecrets.md)
+* [Find Facebook secrets](/recipes/java/security/secrets/findfacebooksecrets.md)
+* [Find GitHub secrets](/recipes/java/security/secrets/findgithubsecrets.md)
+* [Find Google secrets](/recipes/java/security/secrets/findgooglesecrets.md)
+* [Find Heroku secrets](/recipes/java/security/secrets/findherokusecrets.md)
+* [Find MailChimp secrets](/recipes/java/security/secrets/findmailchimpsecrets.md)
+* [Find Mailgun secrets](/recipes/java/security/secrets/findmailgunsecrets.md)
+* [Find NPM secrets](/recipes/java/security/secrets/findnpmsecrets.md)
+* [Find PGP secrets](/recipes/java/security/secrets/findpgpsecrets.md)
+* [Find PayPal secrets](/recipes/java/security/secrets/findpaypalsecrets.md)
+* [Find Picatic secrets](/recipes/java/security/secrets/findpicaticsecrets.md)
+* [Find RSA private keys](/recipes/java/security/secrets/findrsasecrets.md)
+* [Find SSH secrets](/recipes/java/security/secrets/findsshsecrets.md)
+* [Find SendGrid secrets](/recipes/java/security/secrets/findsendgridsecrets.md)
+* [Find Square secrets](/recipes/java/security/secrets/findsquaresecrets.md)
+* [Find Stripe secrets](/recipes/java/security/secrets/findstripesecrets.md)
+* [Find Telegram secrets](/recipes/java/security/secrets/findtelegramsecrets.md)
+* [Find Twilio secrets](/recipes/java/security/secrets/findtwiliosecrets.md)
+* [Find Twitter secrets](/recipes/java/security/secrets/findtwittersecrets.md)
+* [Find generic secrets](/recipes/java/security/secrets/findgenericsecrets.md)
+* [Find passwords used in URLs](/recipes/java/security/secrets/findpasswordinurlsecrets.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters and can only be run by users of Moderne.

@@ -28,6 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | loggingFramework | *Optional*. The logging framework to use. Valid options: `SLF4J`, `Log4J1`, `Log4J2`, `JUL`, `COMMONS` |  |
 | `String` | level | *Optional*. The logging level to turn `System.out` print statements into. Valid options: `trace`, `debug`, `info` |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use logger instead of system print statements](/recipes/java/logging/systemprinttologging.md)
+
 ## Example
 
 ###### Parameters

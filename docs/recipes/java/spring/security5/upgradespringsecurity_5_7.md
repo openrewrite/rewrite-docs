@@ -75,6 +75,14 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+* [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md)
+
 ## Examples
 ##### Example 1
 

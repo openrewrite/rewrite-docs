@@ -29,6 +29,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Comparator` | onlyIfManagedVersionIs | *Optional*. Only remove the explicit version if the managed version has the specified comparative relationship to the explicit version. For example, `gte` will only remove the explicit version if the managed version is the same or newer. Default `eq`. Valid options: `ANY`, `EQ`, `LT`, `LTE`, `GT`, `GTE` |  |
 | `List` | except | *Optional*. Accepts a list of GAVs. Dependencies matching a GAV will be ignored by this recipe. GAV versions are ignored if provided. | `com.jcraft:jsch` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+* [Add explicit JAXB API dependencies and runtime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
+* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [Apache Maven best practices](/recipes/maven/bestpractices.md)
+* [Clean up various issues with the code.](/recipes/java/dropwizard/codecleanup.md)
+* [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+* [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
+
 ## Example
 
 ###### Parameters

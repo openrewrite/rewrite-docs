@@ -71,6 +71,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/springfoxtospringdoc.md)
+
 ## Examples
 ##### Example 1
 

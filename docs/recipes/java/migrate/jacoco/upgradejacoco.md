@@ -67,6 +67,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add missing `isWrapperFor` and `unwrap` methods.](/recipes/java/migrate/jrewrapperinterface.md)
+
 ## Examples
 ##### Example 1
 

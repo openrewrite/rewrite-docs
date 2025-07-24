@@ -19,6 +19,13 @@ _As of 5.0 `WebMvcConfigurer` has default methods (made possible by a Java 8 bas
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Framework 5.0](/recipes/java/spring/framework/upgradespringframework_5_0.md)
+
 ## Example
 
 

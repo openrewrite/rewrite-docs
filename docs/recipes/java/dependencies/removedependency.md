@@ -29,6 +29,37 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | configuration | *Optional*. The dependency configuration to remove from. | `api` |
 | `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+* [Add explicit JAXB API dependencies and remove runtimes](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md)
+* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+* [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
+* [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+* [Migrate Log4j 2.x to Logback](/recipes/java/logging/logback/log4jtologback.md)
+* [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
+* [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
+* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
+* [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
+* [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+* [Remove JavaEE dependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
+* [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](/recipes/java/migrate/jakarta/removejakartaannotationdependency.md)
+* [Remove unnecessary dependencies](/recipes/java/micronaut/removeunnecessarydependencies.md)
+* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Replace SpringFox Dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
+* [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
+* [Update jakarta annotations dependency](/recipes/java/micronaut/updatejakartaannotations.md)
+* [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
+* [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
+* [io.quarkus.updates.core.quarkus31.RemoveMockitoInline](/recipes/io/quarkus/updates/core/quarkus31/removemockitoinline.md)
+
 ## Example
 
 ###### Parameters

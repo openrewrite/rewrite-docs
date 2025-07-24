@@ -27,6 +27,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The artifactId of the annotation processor. | `hibernate-jpamodelgen` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [io.quarkus.updates.core.quarkus310.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus310/synchibernatejpamodelgenversionwithbom.md)
+* [io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus311/synchibernatejpamodelgenversionwithbom.md)
+* [io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus312/synchibernatejpamodelgenversionwithbom.md)
+* [io.quarkus.updates.core.quarkus313.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus313/synchibernatejpamodelgenversionwithbom.md)
+* [io.quarkus.updates.core.quarkus37.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus37/synchibernatejpamodelgenversionwithbom.md)
+* [io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus38/synchibernatejpamodelgenversionwithbom.md)
+* [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus39/synchibernatejpamodelgenversionwithbom.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SyncMavenCompilerAnnotationProcessorVersionExample`.

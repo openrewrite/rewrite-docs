@@ -26,6 +26,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | methodPattern | A method pattern to match against. The first argument must be the feature key as `String`. | `dev.openfeature.sdk.Client getBooleanValue(String, Boolean)` |
 | `String` | featureKey | *Optional*. The unique key for the feature flag. | `flag-key-123abc` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find a FF4j feature flag](/recipes/featureflags/ff4j/search/findfeatureflag.md)
+* [Find an OpenFeature feature flag](/recipes/featureflags/openfeature/search/findfeatureflag.md)
+* [Find an Unleash feature flag](/recipes/featureflags/unleash/search/findfeatureflag.md)
+
 ## Example
 
 ###### Parameters

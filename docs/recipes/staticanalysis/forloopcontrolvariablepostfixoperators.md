@@ -19,6 +19,13 @@ _Replace `for` loop control variables using pre-increment (`++i`) or pre-decreme
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
+
 ## Example
 
 

@@ -25,6 +25,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `boolean` | convertStringsWithoutNewlines | *Optional*. Whether or not strings without newlines should be converted to text block when processing code. The default value is true. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+
 ## Example
 
 

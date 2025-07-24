@@ -25,6 +25,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `String` | pluginId | The plugin id to remove. | `com.jfrog.bintray` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remove Develocity](/recipes/gradle/plugins/removedevelocity.md)
+
 ## Example
 
 ###### Parameters

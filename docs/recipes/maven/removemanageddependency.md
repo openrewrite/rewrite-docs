@@ -30,6 +30,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The second part of a managed dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
 | `String` | scope | *Optional*. Only remove managed dependencies if they are in this scope. If `runtime`, this will also remove managed dependencies in the 'compile' scope because `compile` dependencies are part of the runtime dependency set. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+* [Add explicit JAXB API dependencies and remove runtimes](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md)
+* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [Create Spring Boot Application Entry Point](/recipes/java/dropwizard/coresetup.md)
+* [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+
 ## Example
 
 ###### Parameters

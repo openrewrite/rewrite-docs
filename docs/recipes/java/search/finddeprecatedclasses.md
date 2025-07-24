@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | ignoreDeprecatedScopes | *Optional*. When a deprecated type is used in a deprecated method or class, ignore it. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find uses of deprecated classes, methods, and fields](/recipes/java/search/finddeprecateduses.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

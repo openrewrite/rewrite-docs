@@ -26,6 +26,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.Collections emptyList()` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
+* [Statically import AssertJ&#39;s `assertThat`](/recipes/java/testing/assertj/staticimports.md)
+* [Statically import JUnit Jupiter assertions](/recipes/java/testing/junit5/staticimports.md)
+* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UseStaticImportExample`.

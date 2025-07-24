@@ -26,6 +26,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newVersion | An exact version number, or node-style semver selector used to select the version number. | `14.1.2-0-0` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update the WebLogic version to 14.1.2](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
+* [Update the WebLogic version to 15.1.1](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeWeblogicMavenPropertyVersionExample`.

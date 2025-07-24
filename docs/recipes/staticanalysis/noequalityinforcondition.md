@@ -23,6 +23,15 @@ _Testing for loop termination using an equality operator (`==` and `!=`) is dang
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Java security best practices](/recipes/java/security/javasecuritybestpractices.md)
+* [Remediate OWASP A03:2021 Injection](/recipes/java/security/owaspa03.md)
+
 ## Example
 
 

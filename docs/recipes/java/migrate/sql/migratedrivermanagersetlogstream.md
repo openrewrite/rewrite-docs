@@ -23,6 +23,13 @@ _Use `DriverManager#setLogWriter(java.io.PrintWriter)` instead of the deprecated
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.sql` APIs](/recipes/java/migrate/sql/javasqlapis.md)
+
 ## Example
 
 

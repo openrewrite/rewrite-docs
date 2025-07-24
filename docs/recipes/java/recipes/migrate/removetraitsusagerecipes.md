@@ -63,6 +63,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
+
 ## Example
 
 

@@ -87,6 +87,14 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from JavaX to Jakarta EE 9.1 Namespaces](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
+* [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
+
 ## Examples
 ##### Example 1
 

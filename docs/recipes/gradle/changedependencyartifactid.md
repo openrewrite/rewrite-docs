@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newArtifactId | The new artifactId to use. | `jackson-custom` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. | `api` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](/recipes/ai/timefold/solver/migration/fork/timefoldchangedependencies.md)
+
 ## Example
 
 ###### Parameters

@@ -26,6 +26,19 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | newApiVersion | The new Kubernetes API version to change to. | `flowcontrol.apiserver.k8s.io/v1` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Kubernetes API v1.16](/recipes/kubernetes/migrate/migratetoapiv1_16.md)
+* [Migrate to Kubernetes API v1.22](/recipes/kubernetes/migrate/migratetoapiv1_22.md)
+* [Migrate to Kubernetes API v1.25](/recipes/kubernetes/migrate/migratetoapiv1_25.md)
+* [Migrate to Kubernetes API v1.26](/recipes/kubernetes/migrate/migratetoapiv1_26.md)
+* [Migrate to Kubernetes API v1.27](/recipes/kubernetes/migrate/migratetoapiv1_27.md)
+* [Migrate to Kubernetes API v1.29](/recipes/kubernetes/migrate/migratetoapiv1_29.md)
+* [Migrate to Kubernetes API v1.32](/recipes/kubernetes/migrate/migratetoapiv1_32.md)
+
 ## Example
 
 ###### Parameters

@@ -31,6 +31,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | appendArray | *Optional*. If the attribute is an array, setting this option to `true` will append the value(s). In conjunction with `addOnly`, it is possible to control duplicates: `addOnly=true`, always append. `addOnly=false`, only append if the value is not already present. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddOrUpdateAnnotationAttributeExample`.

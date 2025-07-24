@@ -19,6 +19,13 @@ _Methods to set `DataSize` with primitive arguments were deprecated in 2.1 and r
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
+
 ## Example
 
 

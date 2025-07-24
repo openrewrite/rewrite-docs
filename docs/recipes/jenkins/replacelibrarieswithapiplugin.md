@@ -28,6 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | pluginVersion | An exact version number. | `1981.v17df70e84a_a_1` |
 | `Set` | replaces | The set of library coordinates replaced by this API Plugin. | <pre>groupId: org.apache.commons<br />artifactId: commons-text</pre> |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use commons-lang3 API Plugin](/recipes/jenkins/commonslang3toapiplugin.md)
+
 ## Example
 
 ###### Parameters

@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `Boolean` | ignoreAnonymousClassMethods | *Optional*. When enabled, ignore missing annotations on methods which override methods when the class definition is within an anonymous class. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
+
 ## Example
 
 ###### Parameters

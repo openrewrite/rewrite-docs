@@ -25,6 +25,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `Integer` | minimumJavaMajorVersion | *Optional*.  | `21` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
+* [Upgrade plugins to Java 11 compatible versions](/recipes/java/migrate/upgradepluginsforjava11.md)
+* [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
+
 ## Example
 
 ###### Parameters

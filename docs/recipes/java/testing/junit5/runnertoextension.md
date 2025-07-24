@@ -26,6 +26,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `List` | runners | The fully qualified class names of the JUnit 4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. | `[ org.springframework.test.context.junit4.SpringRunner ]` |
 | `String` | extension | The fully qualified class names of the JUnit Jupiter extension. | `org.springframework.test.context.junit.jupiter.SpringExtension` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remove unnecessary Spring `@RunWith`](/recipes/java/spring/boot2/unnecessaryspringrunwith.md)
+* [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
+* [Use Vert.x JUnit 5 Extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
+
 ## Example
 
 ###### Parameters

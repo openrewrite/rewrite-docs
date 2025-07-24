@@ -199,6 +199,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Jakarta Faces 4.x](/recipes/java/migrate/jakarta/faces3xmigrationtofaces4x.md)
+
 ## Examples
 ##### Example 1
 

@@ -19,6 +19,13 @@ _Annotate any `serialVersionUID` fields with `@Serial` to indicate it's part of 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+
 ## Example
 
 
