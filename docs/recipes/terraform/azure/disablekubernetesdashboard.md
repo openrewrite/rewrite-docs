@@ -13,9 +13,9 @@ _Disabling the dashboard eliminates it as an attack vector. The dashboard add-on
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_8](../recipes-by-tag#ckv_azure_8)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_8](/reference/recipes-by-tag#ckv_azure_8)
 
 ## Recipe source
 

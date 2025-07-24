@@ -13,9 +13,9 @@ _Ensure CloudTrail log file validation is enabled._
 
 ### Tags
 
-* [CKV_AWS_36](../recipes-by-tag#ckv_aws_36)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_36](/reference/recipes-by-tag#ckv_aws_36)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

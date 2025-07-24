@@ -13,8 +13,8 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 
 ### Tags
 
-* [apache](../recipes-by-tag#apache)
-* [httpclient](../recipes-by-tag#httpclient)
+* [apache](/reference/recipes-by-tag#apache)
+* [httpclient](/reference/recipes-by-tag#httpclient)
 
 ## Recipe source
 

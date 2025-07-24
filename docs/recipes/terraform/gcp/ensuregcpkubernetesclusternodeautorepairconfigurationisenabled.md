@@ -13,9 +13,9 @@ _Ensure GCP Kubernetes cluster node auto-repair configuration is enabled._
 
 ### Tags
 
-* [CKV_GCP_9](../recipes-by-tag#ckv_gcp_9)
-* [GCP](../recipes-by-tag#gcp)
-* [terraform](../recipes-by-tag#terraform)
+* [CKV_GCP_9](/reference/recipes-by-tag#ckv_gcp_9)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

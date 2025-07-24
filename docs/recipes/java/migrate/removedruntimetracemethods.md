@@ -13,7 +13,7 @@ _The `traceInstructions` and `traceMethodCalls` methods in `java.lang.Runtime` w
 
 ### Tags
 
-* [java17](../recipes-by-tag#java17)
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 

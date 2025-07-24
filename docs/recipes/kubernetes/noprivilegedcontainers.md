@@ -13,7 +13,7 @@ _Privileged containers are containers that have all of the root capabilities of 
 
 ### Tags
 
-* [kubernetes](../recipes-by-tag#kubernetes)
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

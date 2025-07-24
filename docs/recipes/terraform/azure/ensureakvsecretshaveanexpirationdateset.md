@@ -13,9 +13,9 @@ _Ensure AKV secrets have an expiration date set._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_41](../recipes-by-tag#ckv_azure_41)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_41](/reference/recipes-by-tag#ckv_azure_41)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

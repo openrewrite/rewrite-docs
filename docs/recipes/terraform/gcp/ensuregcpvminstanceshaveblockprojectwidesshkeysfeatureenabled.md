@@ -13,9 +13,9 @@ _Ensure GCP VM instances have block project-wide SSH keys feature enabled._
 
 ### Tags
 
-* [CKV_GCP_32](../recipes-by-tag#ckv_gcp_32)
-* [GCP](../recipes-by-tag#gcp)
-* [terraform](../recipes-by-tag#terraform)
+* [CKV_GCP_32](/reference/recipes-by-tag#ckv_gcp_32)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

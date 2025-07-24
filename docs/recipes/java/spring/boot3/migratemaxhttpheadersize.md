@@ -13,8 +13,8 @@ _Previously, the server.max-http-header-size was treated inconsistently across t
 
 ### Tags
 
-* [spring](../recipes-by-tag#spring)
-* [boot](../recipes-by-tag#boot)
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 

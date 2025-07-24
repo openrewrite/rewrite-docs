@@ -13,9 +13,9 @@ _Ensure respective logs of Amazon RDS are enabled._
 
 ### Tags
 
-* [CKV_AWS_129](../recipes-by-tag#ckv_aws_129)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_129](/reference/recipes-by-tag#ckv_aws_129)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

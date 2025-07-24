@@ -13,8 +13,8 @@ _PowerMockito with raw Mockito; best executed as part of a Mockito upgrade._
 
 ### Tags
 
-* [testing](../recipes-by-tag#testing)
-* [mockito](../recipes-by-tag#mockito)
+* [testing](/reference/recipes-by-tag#testing)
+* [mockito](/reference/recipes-by-tag#mockito)
 
 ## Recipe source
 

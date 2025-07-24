@@ -13,9 +13,9 @@ _Ensure private cluster is enabled when creating Kubernetes clusters._
 
 ### Tags
 
-* [GCP](../recipes-by-tag#gcp)
-* [CKV_GCP_25](../recipes-by-tag#ckv_gcp_25)
-* [terraform](../recipes-by-tag#terraform)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [CKV_GCP_25](/reference/recipes-by-tag#ckv_gcp_25)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

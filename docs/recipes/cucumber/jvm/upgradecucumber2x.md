@@ -13,8 +13,8 @@ _Upgrade to Cucumber-JVM 2.x from any previous version._
 
 ### Tags
 
-* [cucumber](../recipes-by-tag#cucumber)
-* [testing](../recipes-by-tag#testing)
+* [cucumber](/reference/recipes-by-tag#cucumber)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Ensure MSSQL servers have email service and co-administrators enabled._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_27](../recipes-by-tag#ckv_azure_27)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_27](/reference/recipes-by-tag#ckv_azure_27)
 
 ## Recipe source
 

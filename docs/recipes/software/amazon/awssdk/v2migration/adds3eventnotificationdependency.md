@@ -13,8 +13,8 @@ _This recipe will add the Java v2 S3 Event Notification dependency if v1 S3Event
 
 ### Tags
 
-* [sdk](../recipes-by-tag#sdk)
-* [aws](../recipes-by-tag#aws)
+* [sdk](/reference/recipes-by-tag#sdk)
+* [aws](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

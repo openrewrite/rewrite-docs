@@ -13,7 +13,7 @@ _Locates GitHub secrets stored in plain text in code._
 
 ### Tags
 
-* [security](../recipes-by-tag#security)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 

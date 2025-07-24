@@ -13,8 +13,8 @@ _This codemod migrates certain viewport metadata to `viewport` export._
 
 ### Tags
 
-* [nextjs](../recipes-by-tag#nextjs)
-* [codemods](../recipes-by-tag#codemods)
+* [nextjs](/reference/recipes-by-tag#nextjs)
+* [codemods](/reference/recipes-by-tag#codemods)
 
 ## Recipe source
 

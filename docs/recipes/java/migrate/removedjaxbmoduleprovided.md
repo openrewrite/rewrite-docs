@@ -13,7 +13,7 @@ _The `java.xml.bind` and `java.activation` modules were removed in Java11. Websp
 
 ### Tags
 
-* [java11](../recipes-by-tag#java11)
+* [java11](/reference/recipes-by-tag#java11)
 
 ## Recipe source
 

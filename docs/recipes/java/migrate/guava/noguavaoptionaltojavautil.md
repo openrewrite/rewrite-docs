@@ -14,7 +14,7 @@ _Remove calls to `com.google.common.base.Optional#toJavaUtil()`._
 ### Tags
 
 * [RSPEC-S4738](https://sonarsource.github.io/rspec/#/rspec/S4738)
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

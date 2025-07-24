@@ -13,7 +13,7 @@ _Locates URLs that contain passwords in plain text._
 
 ### Tags
 
-* [security](../recipes-by-tag#security)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 

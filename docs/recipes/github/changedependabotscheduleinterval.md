@@ -13,9 +13,9 @@ _Change the schedule interval for a given package-ecosystem in a `dependabot.yml
 
 ### Tags
 
-* [github](../recipes-by-tag#github)
-* [dependabot](../recipes-by-tag#dependabot)
-* [dependencies](../recipes-by-tag#dependencies)
+* [github](/reference/recipes-by-tag#github)
+* [dependabot](/reference/recipes-by-tag#dependabot)
+* [dependencies](/reference/recipes-by-tag#dependencies)
 
 ## Recipe source
 

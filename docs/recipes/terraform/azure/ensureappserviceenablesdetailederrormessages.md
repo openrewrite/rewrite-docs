@@ -13,9 +13,9 @@ _Ensure app service enables detailed error messages._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_65](../recipes-by-tag#ckv_azure_65)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_65](/reference/recipes-by-tag#ckv_azure_65)
 
 ## Recipe source
 

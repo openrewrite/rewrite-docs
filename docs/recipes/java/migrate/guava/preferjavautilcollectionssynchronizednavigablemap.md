@@ -13,7 +13,7 @@ _Prefer `java.util.Collections#synchronizedNavigableMap` instead of using `com.g
 
 ### Tags
 
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

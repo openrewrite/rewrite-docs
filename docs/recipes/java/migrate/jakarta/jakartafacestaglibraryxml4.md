@@ -13,9 +13,9 @@ _Faces 4 uses facelet-taglib 4.0._
 
 ### Tags
 
-* [faces](../recipes-by-tag#faces)
-* [jsf](../recipes-by-tag#jsf)
-* [jakarta](../recipes-by-tag#jakarta)
+* [faces](/reference/recipes-by-tag#faces)
+* [jsf](/reference/recipes-by-tag#jsf)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

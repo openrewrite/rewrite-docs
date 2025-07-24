@@ -13,9 +13,9 @@ _Disallow unnecessary parentheses in `<template>` See rule details for [vue/no-e
 
 ### Tags
 
-* [ESLint](../recipes-by-tag#eslint)
-* [vue](../recipes-by-tag#vue)
-* [eslint-plugin-vue](../recipes-by-tag#eslint-plugin-vue)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [vue](/reference/recipes-by-tag#vue)
+* [eslint-plugin-vue](/reference/recipes-by-tag#eslint-plugin-vue)
 
 ## Recipe source
 

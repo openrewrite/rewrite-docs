@@ -14,7 +14,7 @@ _Prefer `java.util.function.Predicate` instead of using `com.google.common.base.
 ### Tags
 
 * [RSPEC-S4738](https://sonarsource.github.io/rspec/#/rspec/S4738)
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Ensure Azure PostgreSQL database server with SSL connection is enabled._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_29](../recipes-by-tag#ckv_azure_29)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_29](/reference/recipes-by-tag#ckv_azure_29)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

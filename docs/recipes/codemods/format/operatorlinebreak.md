@@ -13,8 +13,8 @@ _Enforce consistent linebreak style for operators  See [rule details](https://es
 
 ### Tags
 
-* [eslint](../recipes-by-tag#eslint)
-* [stylistic](../recipes-by-tag#stylistic)
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _This recipe will migrate the necessary dependencies and annotations from DbRide
 
 ### Tags
 
-* [spring](../recipes-by-tag#spring)
-* [testing](../recipes-by-tag#testing)
-* [dbrider](../recipes-by-tag#dbrider)
+* [spring](/reference/recipes-by-tag#spring)
+* [testing](/reference/recipes-by-tag#testing)
+* [dbrider](/reference/recipes-by-tag#dbrider)
 
 ## Recipe source
 

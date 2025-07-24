@@ -13,8 +13,8 @@ _Use Log4j 2.x parameterized logging, which can significantly boost performance 
 
 ### Tags
 
-* [logging](../recipes-by-tag#logging)
-* [log4j](../recipes-by-tag#log4j)
+* [logging](/reference/recipes-by-tag#logging)
+* [log4j](/reference/recipes-by-tag#log4j)
 
 ## Recipe source
 

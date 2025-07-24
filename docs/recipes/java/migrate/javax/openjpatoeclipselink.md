@@ -13,8 +13,8 @@ _These recipes help migrate Java Persistence applications using OpenJPA to Eclip
 
 ### Tags
 
-* [javaee7](../recipes-by-tag#javaee7)
-* [deprecated](../recipes-by-tag#deprecated)
+* [javaee7](/reference/recipes-by-tag#javaee7)
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

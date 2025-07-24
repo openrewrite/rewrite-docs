@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `weblogic-webservices-policy.xml
 
 ### Tags
 
-* [webservices-policy](../recipes-by-tag#webservices-policy)
-* [schemas](../recipes-by-tag#schemas)
-* [weblogic](../recipes-by-tag#weblogic)
+* [webservices-policy](/reference/recipes-by-tag#webservices-policy)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 

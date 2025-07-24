@@ -13,9 +13,9 @@ _Ensure app service enables failed request tracing._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_66](../recipes-by-tag#ckv_azure_66)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_66](/reference/recipes-by-tag#ckv_azure_66)
 
 ## Recipe source
 

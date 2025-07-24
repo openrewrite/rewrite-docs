@@ -13,8 +13,8 @@ _Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 r
 
 ### Tags
 
-* [spring](../recipes-by-tag#spring)
-* [batch](../recipes-by-tag#batch)
+* [spring](/reference/recipes-by-tag#spring)
+* [batch](/reference/recipes-by-tag#batch)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Prefer `java.util.Objects#equals` instead of using `com.google.common.base.Obje
 
 ### Tags
 
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

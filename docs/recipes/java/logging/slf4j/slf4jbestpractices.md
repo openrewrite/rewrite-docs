@@ -13,8 +13,8 @@ _Applies best practices to logging with SLF4J._
 
 ### Tags
 
-* [slf4j](../recipes-by-tag#slf4j)
-* [logging](../recipes-by-tag#logging)
+* [slf4j](/reference/recipes-by-tag#slf4j)
+* [logging](/reference/recipes-by-tag#logging)
 
 ## Recipe source
 

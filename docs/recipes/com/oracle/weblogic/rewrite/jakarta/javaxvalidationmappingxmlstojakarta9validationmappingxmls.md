@@ -13,8 +13,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [validation-mapping](../recipes-by-tag#validation-mapping)
-* [jakarta](../recipes-by-tag#jakarta)
+* [validation-mapping](/reference/recipes-by-tag#validation-mapping)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

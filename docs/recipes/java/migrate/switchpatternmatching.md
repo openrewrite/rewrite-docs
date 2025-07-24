@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ### Tags
 
-* [java21](../recipes-by-tag#java21)
+* [java21](/reference/recipes-by-tag#java21)
 
 ## Recipe source
 

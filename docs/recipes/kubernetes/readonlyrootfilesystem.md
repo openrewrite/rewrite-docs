@@ -13,7 +13,7 @@ _Using an immutable root filesystem and a verified boot mechanism prevents again
 
 ### Tags
 
-* [kubernetes](../recipes-by-tag#kubernetes)
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

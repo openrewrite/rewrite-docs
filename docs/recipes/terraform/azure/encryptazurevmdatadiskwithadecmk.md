@@ -13,9 +13,9 @@ _Ensure Azure VM data disk is encrypted with ADE/CMK._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_2](../recipes-by-tag#ckv_azure_2)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_2](/reference/recipes-by-tag#ckv_azure_2)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Enable VPC flow logs and intranode visibility._
 
 ### Tags
 
-* [GCP](../recipes-by-tag#gcp)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_GCP_61](../recipes-by-tag#ckv_gcp_61)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_GCP_61](/reference/recipes-by-tag#ckv_gcp_61)
 
 ## Recipe source
 

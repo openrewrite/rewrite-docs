@@ -13,7 +13,7 @@ _Adds the Apache Software License Version 2.0 to Java source files which are mis
 
 ### Tags
 
-* [oss](../recipes-by-tag#oss)
+* [oss](/reference/recipes-by-tag#oss)
 
 ## Recipe source
 

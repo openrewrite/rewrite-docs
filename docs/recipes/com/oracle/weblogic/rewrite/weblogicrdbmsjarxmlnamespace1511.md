@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `weblogic-rdbms-jar.xml` files t
 
 ### Tags
 
-* [schemas](../recipes-by-tag#schemas)
-* [weblogic](../recipes-by-tag#weblogic)
-* [rdbms-jar](../recipes-by-tag#rdbms-jar)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [rdbms-jar](/reference/recipes-by-tag#rdbms-jar)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Migrates Log4j 1.x to Log4j 2.x._
 
 ### Tags
 
-* [logging](../recipes-by-tag#logging)
-* [log4j](../recipes-by-tag#log4j)
+* [logging](/reference/recipes-by-tag#logging)
+* [log4j](/reference/recipes-by-tag#log4j)
 
 ## Recipe source
 

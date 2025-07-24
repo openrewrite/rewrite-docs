@@ -13,8 +13,8 @@ _Migrate non Spring Boot applications to the latest compatible Spring Boot relea
 
 ### Tags
 
-* [spring](../recipes-by-tag#spring)
-* [boot](../recipes-by-tag#boot)
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 

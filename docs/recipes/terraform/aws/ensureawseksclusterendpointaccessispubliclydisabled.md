@@ -13,9 +13,9 @@ _Ensure AWS EKS cluster endpoint access is publicly disabled._
 
 ### Tags
 
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
-* [CKV_AWS_39](../recipes-by-tag#ckv_aws_39)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
+* [CKV_AWS_39](/reference/recipes-by-tag#ckv_aws_39)
 
 ## Recipe source
 

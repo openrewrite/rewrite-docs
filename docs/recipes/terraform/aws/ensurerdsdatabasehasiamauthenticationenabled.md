@@ -13,9 +13,9 @@ _Ensure RDS database has IAM authentication enabled._
 
 ### Tags
 
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
-* [CKV_AWS_161](../recipes-by-tag#ckv_aws_161)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
+* [CKV_AWS_161](/reference/recipes-by-tag#ckv_aws_161)
 
 ## Recipe source
 

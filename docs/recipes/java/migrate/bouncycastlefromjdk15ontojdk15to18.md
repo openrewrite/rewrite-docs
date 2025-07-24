@@ -16,7 +16,7 @@ This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. 
 
 ### Tags
 
-* [bouncycastle](../recipes-by-tag#bouncycastle)
+* [bouncycastle](/reference/recipes-by-tag#bouncycastle)
 
 ## Recipe source
 

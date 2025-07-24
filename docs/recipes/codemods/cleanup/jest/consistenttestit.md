@@ -13,9 +13,9 @@ _Enforce test and it usage conventions See rule details for [jest/consistent-tes
 
 ### Tags
 
-* [ESLint](../recipes-by-tag#eslint)
-* [eslint-plugin-jest](../recipes-by-tag#eslint-plugin-jest)
-* [Jest](../recipes-by-tag#jest)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [eslint-plugin-jest](/reference/recipes-by-tag#eslint-plugin-jest)
+* [Jest](/reference/recipes-by-tag#jest)
 
 ## Recipe source
 

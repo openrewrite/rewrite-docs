@@ -13,9 +13,9 @@ _Native RDS encryption helps protect your cloud applications and fulfils complia
 
 ### Tags
 
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
-* [CKV_AWS_16](../recipes-by-tag#ckv_aws_16)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
+* [CKV_AWS_16](/reference/recipes-by-tag#ckv_aws_16)
 
 ## Recipe source
 

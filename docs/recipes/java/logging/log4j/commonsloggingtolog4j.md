@@ -13,9 +13,9 @@ _Transforms code written using Apache Commons Logging to use Log4j 2.x API._
 
 ### Tags
 
-* [logging](../recipes-by-tag#logging)
-* [commons-logging](../recipes-by-tag#commons-logging)
-* [log4j](../recipes-by-tag#log4j)
+* [logging](/reference/recipes-by-tag#logging)
+* [commons-logging](/reference/recipes-by-tag#commons-logging)
+* [log4j](/reference/recipes-by-tag#log4j)
 
 ## Recipe source
 

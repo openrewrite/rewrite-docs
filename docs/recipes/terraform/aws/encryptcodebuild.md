@@ -13,9 +13,9 @@ _Build artifacts, such as a cache, logs, exported raw test report data files, an
 
 ### Tags
 
-* [CKV_AWS_147](../recipes-by-tag#ckv_aws_147)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_147](/reference/recipes-by-tag#ckv_aws_147)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

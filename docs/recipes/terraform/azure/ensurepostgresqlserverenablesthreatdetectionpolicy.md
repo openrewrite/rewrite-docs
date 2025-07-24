@@ -13,9 +13,9 @@ _Ensure PostgreSQL server enables Threat Detection policy._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_128](../recipes-by-tag#ckv_azure_128)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_128](/reference/recipes-by-tag#ckv_azure_128)
 
 ## Recipe source
 

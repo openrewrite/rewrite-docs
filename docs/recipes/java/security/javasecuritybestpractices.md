@@ -13,7 +13,7 @@ _Applies security best practices to Java code._
 
 ### Tags
 
-* [security](../recipes-by-tag#security)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 

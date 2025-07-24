@@ -13,9 +13,9 @@ _Replace removed WebLogicJtaTransactionManager with JtaTransactionManager from S
 
 ### Tags
 
-* [JtaTransactionManager](../recipes-by-tag#jtatransactionmanager)
-* [weblogic](../recipes-by-tag#weblogic)
-* [springframework](../recipes-by-tag#springframework)
+* [JtaTransactionManager](/reference/recipes-by-tag#jtatransactionmanager)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [springframework](/reference/recipes-by-tag#springframework)
 
 ## Recipe source
 

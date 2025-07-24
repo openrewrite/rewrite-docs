@@ -13,8 +13,8 @@ _Simplifies JUnit Jupiter assertions to their most-direct equivalents._
 
 ### Tags
 
-* [junit](../recipes-by-tag#junit)
-* [testing](../recipes-by-tag#testing)
+* [junit](/reference/recipes-by-tag#junit)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 

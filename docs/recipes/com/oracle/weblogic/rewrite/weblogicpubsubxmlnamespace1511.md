@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `weblogic-pubsub.xml` files to W
 
 ### Tags
 
-* [schemas](../recipes-by-tag#schemas)
-* [weblogic](../recipes-by-tag#weblogic)
-* [pubsub](../recipes-by-tag#pubsub)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [pubsub](/reference/recipes-by-tag#pubsub)
 
 ## Recipe source
 

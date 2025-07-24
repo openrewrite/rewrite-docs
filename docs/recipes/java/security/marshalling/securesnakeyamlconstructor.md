@@ -13,8 +13,8 @@ _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
 
 ### Tags
 
-* [CWE-502](../recipes-by-tag#cwe-502)
-* [CWE-94](../recipes-by-tag#cwe-94)
+* [CWE-502](/reference/recipes-by-tag#cwe-502)
+* [CWE-94](/reference/recipes-by-tag#cwe-94)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when upgrading to Java 7. This r
 
 ### Tags
 
-* [java7](../recipes-by-tag#java7)
+* [java7](/reference/recipes-by-tag#java7)
 
 ## Recipe source
 

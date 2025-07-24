@@ -13,9 +13,9 @@ _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) 
 
 ### Tags
 
-* [junit](../recipes-by-tag#junit)
-* [testing](../recipes-by-tag#testing)
-* [mockito](../recipes-by-tag#mockito)
+* [junit](/reference/recipes-by-tag#junit)
+* [testing](/reference/recipes-by-tag#testing)
+* [mockito](/reference/recipes-by-tag#mockito)
 
 ## Recipe source
 

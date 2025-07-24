@@ -13,9 +13,9 @@ _Enforce consistent spacing between keys and values in object literal properties
 
 ### Tags
 
-* [ESLint](../recipes-by-tag#eslint)
-* [vue](../recipes-by-tag#vue)
-* [eslint-plugin-vue](../recipes-by-tag#eslint-plugin-vue)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [vue](/reference/recipes-by-tag#vue)
+* [eslint-plugin-vue](/reference/recipes-by-tag#eslint-plugin-vue)
 
 ## Recipe source
 

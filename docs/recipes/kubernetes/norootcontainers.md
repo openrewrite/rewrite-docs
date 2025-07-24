@@ -13,7 +13,7 @@ _Containers that run as root frequently have more permissions than their workloa
 
 ### Tags
 
-* [kubernetes](../recipes-by-tag#kubernetes)
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

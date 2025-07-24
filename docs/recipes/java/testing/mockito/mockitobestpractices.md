@@ -13,8 +13,8 @@ _Applies best practices for Mockito tests._
 
 ### Tags
 
-* [testing](../recipes-by-tag#testing)
-* [mockito](../recipes-by-tag#mockito)
+* [testing](/reference/recipes-by-tag#testing)
+* [mockito](/reference/recipes-by-tag#mockito)
 
 ## Recipe source
 

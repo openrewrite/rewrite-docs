@@ -13,9 +13,9 @@ _Ensure PostgreSQL server disables public network access._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_68](../recipes-by-tag#ckv_azure_68)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_68](/reference/recipes-by-tag#ckv_azure_68)
 
 ## Recipe source
 

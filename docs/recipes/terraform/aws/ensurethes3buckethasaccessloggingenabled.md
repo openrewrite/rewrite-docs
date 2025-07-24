@@ -13,9 +13,9 @@ _Ensure the S3 bucket has access logging enabled._
 
 ### Tags
 
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AWS_18](../recipes-by-tag#ckv_aws_18)
-* [AWS](../recipes-by-tag#aws)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AWS_18](/reference/recipes-by-tag#ckv_aws_18)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

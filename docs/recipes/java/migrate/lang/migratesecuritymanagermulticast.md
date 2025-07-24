@@ -13,7 +13,7 @@ _Use `SecurityManager#checkMulticast(InetAddress)` instead of the deprecated `Se
 
 ### Tags
 
-* [deprecated](../recipes-by-tag#deprecated)
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

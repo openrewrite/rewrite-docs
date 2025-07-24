@@ -13,7 +13,7 @@ _`Executor` is a SAM-compatible interface, so `Runnable::run` is just as succinc
 
 ### Tags
 
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

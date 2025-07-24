@@ -13,7 +13,7 @@ _The default Java deserialization mechanism is available via `ObjectInputStream`
 
 ### Tags
 
-* [CVE-2016-1000027](../recipes-by-tag#cve-2016-1000027)
+* [CVE-2016-1000027](/reference/recipes-by-tag#cve-2016-1000027)
 
 ## Recipe source
 

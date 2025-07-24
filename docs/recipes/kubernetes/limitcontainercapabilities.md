@@ -13,7 +13,7 @@ _Limiting the admission of containers with capabilities ensures that only a smal
 
 ### Tags
 
-* [kubernetes](../recipes-by-tag#kubernetes)
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

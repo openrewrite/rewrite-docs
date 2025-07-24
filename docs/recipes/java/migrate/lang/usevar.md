@@ -13,9 +13,9 @@ _Apply local variable type inference (`var`) for primitives and objects. These r
 
 ### Tags
 
-* [refactoring](../recipes-by-tag#refactoring)
-* [var](../recipes-by-tag#var)
-* [java10](../recipes-by-tag#java10)
+* [refactoring](/reference/recipes-by-tag#refactoring)
+* [var](/reference/recipes-by-tag#var)
+* [java10](/reference/recipes-by-tag#java10)
 
 ## Recipe source
 

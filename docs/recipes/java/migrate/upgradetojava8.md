@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when upgrading to Java 8. This r
 
 ### Tags
 
-* [java8](../recipes-by-tag#java8)
+* [java8](/reference/recipes-by-tag#java8)
 
 ## Recipe source
 

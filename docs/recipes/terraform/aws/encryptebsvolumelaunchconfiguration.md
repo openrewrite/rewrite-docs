@@ -13,9 +13,9 @@ _EBS volumes allow you to create encrypted launch configurations when creating E
 
 ### Tags
 
-* [CKV_AWS_8](../recipes-by-tag#ckv_aws_8)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_8](/reference/recipes-by-tag#ckv_aws_8)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _This recipe will apply changes commonly needed when migrating from EasyMock to 
 
 ### Tags
 
-* [easymock](../recipes-by-tag#easymock)
-* [testing](../recipes-by-tag#testing)
+* [easymock](/reference/recipes-by-tag#easymock)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 

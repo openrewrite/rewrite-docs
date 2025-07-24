@@ -13,9 +13,9 @@ _Ensure key vault allows firewall rules settings._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_109](../recipes-by-tag#ckv_azure_109)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_109](/reference/recipes-by-tag#ckv_azure_109)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

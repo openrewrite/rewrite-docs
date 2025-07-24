@@ -13,9 +13,9 @@ _Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information
 
 ### Tags
 
-* [GCP](../recipes-by-tag#gcp)
-* [CKV_GCP_26](../recipes-by-tag#ckv_gcp_26)
-* [terraform](../recipes-by-tag#terraform)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [CKV_GCP_26](/reference/recipes-by-tag#ckv_gcp_26)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

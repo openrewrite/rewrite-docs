@@ -13,9 +13,9 @@ _Secure communication by default._
 
 ### Tags
 
-* [CKV_AWS_34](../recipes-by-tag#ckv_aws_34)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_34](/reference/recipes-by-tag#ckv_aws_34)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

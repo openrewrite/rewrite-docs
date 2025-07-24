@@ -13,9 +13,9 @@ _Story files should have a default export See rule details for [storybook/defaul
 
 ### Tags
 
-* [eslint-plugin-storybook](../recipes-by-tag#eslint-plugin-storybook)
-* [ESLint](../recipes-by-tag#eslint)
-* [storybook](../recipes-by-tag#storybook)
+* [eslint-plugin-storybook](/reference/recipes-by-tag#eslint-plugin-storybook)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [storybook](/reference/recipes-by-tag#storybook)
 
 ## Recipe source
 

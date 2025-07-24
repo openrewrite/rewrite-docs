@@ -13,9 +13,9 @@ _Certain Microsoft services that interact with storage accounts operate from net
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_36](../recipes-by-tag#ckv_azure_36)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_36](/reference/recipes-by-tag#ckv_azure_36)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

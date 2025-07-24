@@ -13,7 +13,7 @@ _The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP r
 
 ### Tags
 
-* [CWE-1021](../recipes-by-tag#cwe-1021)
+* [CWE-1021](/reference/recipes-by-tag#cwe-1021)
 
 ## Recipe source
 

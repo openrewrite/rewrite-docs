@@ -13,7 +13,7 @@ _Prefer the Java standard library's `final var` and `var` over third-party usage
 
 ### Tags
 
-* [lombok](../recipes-by-tag#lombok)
+* [lombok](/reference/recipes-by-tag#lombok)
 
 ## Recipe source
 

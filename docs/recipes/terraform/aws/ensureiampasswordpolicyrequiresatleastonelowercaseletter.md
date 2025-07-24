@@ -13,9 +13,9 @@ _Ensure IAM password policy requires at least one lowercase letter._
 
 ### Tags
 
-* [CKV_AWS_11](../recipes-by-tag#ckv_aws_11)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_11](/reference/recipes-by-tag#ckv_aws_11)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

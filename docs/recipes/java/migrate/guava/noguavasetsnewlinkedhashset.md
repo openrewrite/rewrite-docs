@@ -13,7 +13,7 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ### Tags
 
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

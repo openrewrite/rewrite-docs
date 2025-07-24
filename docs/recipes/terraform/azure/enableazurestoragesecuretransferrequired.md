@@ -13,9 +13,9 @@ _Microsoft recommends requiring secure transfer for all storage accounts._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_3](../recipes-by-tag#ckv_azure_3)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_3](/reference/recipes-by-tag#ckv_azure_3)
 
 ## Recipe source
 

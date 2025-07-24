@@ -13,8 +13,8 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ### Tags
 
-* [testing](../recipes-by-tag#testing)
-* [assertj](../recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
+* [assertj](/reference/recipes-by-tag#assertj)
 
 ## Recipe source
 

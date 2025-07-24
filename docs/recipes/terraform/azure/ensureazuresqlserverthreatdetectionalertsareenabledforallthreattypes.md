@@ -13,9 +13,9 @@ _Ensure Azure SQL Server threat detection alerts are enabled for all threat type
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_25](../recipes-by-tag#ckv_azure_25)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_25](/reference/recipes-by-tag#ckv_azure_25)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Ensure AWS CMK rotation is enabled._
 
 ### Tags
 
-* [CKV_AWS_7](../recipes-by-tag#ckv_aws_7)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_7](/reference/recipes-by-tag#ckv_aws_7)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

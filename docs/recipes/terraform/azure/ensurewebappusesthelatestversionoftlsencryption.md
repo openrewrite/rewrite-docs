@@ -13,9 +13,9 @@ _Ensure Web App uses the latest version of TLS encryption._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_15](../recipes-by-tag#ckv_azure_15)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_15](/reference/recipes-by-tag#ckv_azure_15)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _If a container is created in a namespace that has a default CPU limit, and the 
 
 ### Tags
 
-* [kubernetes](../recipes-by-tag#kubernetes)
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

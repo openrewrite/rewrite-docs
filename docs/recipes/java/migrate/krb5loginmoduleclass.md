@@ -13,7 +13,7 @@ _Do not use the `com.ibm.security.auth.module.Krb5LoginModule` class._
 
 ### Tags
 
-* [java11](../recipes-by-tag#java11)
+* [java11](/reference/recipes-by-tag#java11)
 
 ## Recipe source
 

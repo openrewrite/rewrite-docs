@@ -13,8 +13,8 @@ _Expect space before the type declaration in the named tuple  See [rule details]
 
 ### Tags
 
-* [eslint](../recipes-by-tag#eslint)
-* [stylistic](../recipes-by-tag#stylistic)
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

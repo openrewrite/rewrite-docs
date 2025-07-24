@@ -13,9 +13,9 @@ _enforce the maximum number of attributes per line See rule details for [svelte/
 
 ### Tags
 
-* [svelte](../recipes-by-tag#svelte)
-* [ESLint](../recipes-by-tag#eslint)
-* [eslint-plugin-svelte](../recipes-by-tag#eslint-plugin-svelte)
+* [svelte](/reference/recipes-by-tag#svelte)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint-plugin-svelte)
 
 ## Recipe source
 

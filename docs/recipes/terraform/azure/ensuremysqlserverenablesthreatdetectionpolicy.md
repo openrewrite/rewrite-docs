@@ -13,9 +13,9 @@ _Ensure MySQL server enables Threat Detection policy._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_127](../recipes-by-tag#ckv_azure_127)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_127](/reference/recipes-by-tag#ckv_azure_127)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `weblogic-wsee-clientHandlerChai
 
 ### Tags
 
-* [wsee-clientHandlerChain](../recipes-by-tag#wsee-clienthandlerchain)
-* [schemas](../recipes-by-tag#schemas)
-* [weblogic](../recipes-by-tag#weblogic)
+* [wsee-clientHandlerChain](/reference/recipes-by-tag#wsee-clienthandlerchain)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 

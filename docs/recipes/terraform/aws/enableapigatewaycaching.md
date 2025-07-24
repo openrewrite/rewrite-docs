@@ -13,9 +13,9 @@ _Enable caching for all methods of API Gateway._
 
 ### Tags
 
-* [CKV_AWS_120](../recipes-by-tag#ckv_aws_120)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_120](/reference/recipes-by-tag#ckv_aws_120)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

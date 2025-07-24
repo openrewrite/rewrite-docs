@@ -13,9 +13,9 @@ _Ensure AWS S3 object versioning is enabled._
 
 ### Tags
 
-* [CKV_AWS_21](../recipes-by-tag#ckv_aws_21)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_21](/reference/recipes-by-tag#ckv_aws_21)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

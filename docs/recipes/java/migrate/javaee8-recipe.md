@@ -13,8 +13,8 @@ _These recipes help with the Migration to Java EE 8, flagging and updating depre
 
 ### Tags
 
-* [javaee8](../recipes-by-tag#javaee8)
-* [deprecated](../recipes-by-tag#deprecated)
+* [javaee8](/reference/recipes-by-tag#javaee8)
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

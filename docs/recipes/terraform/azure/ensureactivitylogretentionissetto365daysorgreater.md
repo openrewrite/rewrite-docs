@@ -13,9 +13,9 @@ _Ensure activity log retention is set to 365 days or greater._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_37](../recipes-by-tag#ckv_azure_37)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_37](/reference/recipes-by-tag#ckv_azure_37)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

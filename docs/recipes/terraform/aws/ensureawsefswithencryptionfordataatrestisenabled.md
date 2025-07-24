@@ -13,9 +13,9 @@ _Ensure AWS EFS with encryption for data at rest is enabled._
 
 ### Tags
 
-* [CKV_AWS_42](../recipes-by-tag#ckv_aws_42)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_42](/reference/recipes-by-tag#ckv_aws_42)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

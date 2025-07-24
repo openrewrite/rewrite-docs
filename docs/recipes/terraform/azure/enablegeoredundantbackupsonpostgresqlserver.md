@@ -13,9 +13,9 @@ _Ensure PostgreSQL server enables geo-redundant backups._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_102](../recipes-by-tag#ckv_azure_102)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_102](/reference/recipes-by-tag#ckv_azure_102)
 
 ## Recipe source
 

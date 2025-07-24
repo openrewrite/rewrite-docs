@@ -14,7 +14,7 @@ _Replaces `com.google.common.base.Optional#orNull()` with `java.util.Optional#or
 ### Tags
 
 * [RSPEC-S4738](https://sonarsource.github.io/rspec/#/rspec/S4738)
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

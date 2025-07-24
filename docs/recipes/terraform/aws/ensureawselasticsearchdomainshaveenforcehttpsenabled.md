@@ -13,9 +13,9 @@ _Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled._
 
 ### Tags
 
-* [CKV_AWS_83](../recipes-by-tag#ckv_aws_83)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_83](/reference/recipes-by-tag#ckv_aws_83)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

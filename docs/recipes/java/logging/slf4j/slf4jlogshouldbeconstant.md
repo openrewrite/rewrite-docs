@@ -13,8 +13,8 @@ _Logging statements shouldn't begin with `String#format`, calls to `toString()`,
 
 ### Tags
 
-* [slf4j](../recipes-by-tag#slf4j)
-* [logging](../recipes-by-tag#logging)
+* [slf4j](/reference/recipes-by-tag#slf4j)
+* [logging](/reference/recipes-by-tag#logging)
 
 ## Recipe source
 

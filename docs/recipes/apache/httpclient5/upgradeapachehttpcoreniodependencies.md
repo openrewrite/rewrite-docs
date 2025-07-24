@@ -13,8 +13,8 @@ _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponen
 
 ### Tags
 
-* [apache](../recipes-by-tag#apache)
-* [httpclient](../recipes-by-tag#httpclient)
+* [apache](/reference/recipes-by-tag#apache)
+* [httpclient](/reference/recipes-by-tag#httpclient)
 
 ## Recipe source
 

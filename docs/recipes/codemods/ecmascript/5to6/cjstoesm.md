@@ -13,8 +13,8 @@ _Transform CommonJS style `require()` calls to ES6 `import` statements_
 
 ### Tags
 
-* [codemods](../recipes-by-tag#codemods)
-* [5to6](../recipes-by-tag#5to6)
+* [codemods](/reference/recipes-by-tag#codemods)
+* [5to6](/reference/recipes-by-tag#5to6)
 
 ## Recipe source
 

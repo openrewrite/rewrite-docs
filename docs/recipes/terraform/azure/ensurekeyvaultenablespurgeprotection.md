@@ -13,9 +13,9 @@ _Ensure key vault enables purge protection._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_110](../recipes-by-tag#ckv_azure_110)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_110](/reference/recipes-by-tag#ckv_azure_110)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

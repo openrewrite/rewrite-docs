@@ -13,9 +13,9 @@ _Ensure app service enables HTTP logging._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_63](../recipes-by-tag#ckv_azure_63)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_63](/reference/recipes-by-tag#ckv_azure_63)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [beans](../recipes-by-tag#beans)
-* [cdi](../recipes-by-tag#cdi)
-* [jakarta](../recipes-by-tag#jakarta)
+* [beans](/reference/recipes-by-tag#beans)
+* [cdi](/reference/recipes-by-tag#cdi)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Ensure Web App has incoming client certificates enabled._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_17](../recipes-by-tag#ckv_azure_17)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_17](/reference/recipes-by-tag#ckv_azure_17)
 
 ## Recipe source
 

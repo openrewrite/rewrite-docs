@@ -13,7 +13,7 @@ _Do not use APIs from `com.sun.net.ssl` packages._
 
 ### Tags
 
-* [java11](../recipes-by-tag#java11)
+* [java11](/reference/recipes-by-tag#java11)
 
 ## Recipe source
 

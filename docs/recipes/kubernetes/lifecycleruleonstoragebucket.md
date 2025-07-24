@@ -13,7 +13,7 @@ _When defining a rule, you can specify any set of conditions for any action. The
 
 ### Tags
 
-* [kubernetes](../recipes-by-tag#kubernetes)
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

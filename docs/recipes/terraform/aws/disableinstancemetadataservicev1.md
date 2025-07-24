@@ -13,9 +13,9 @@ _As a request/response method IMDSv1 is prone to local misconfigurations._
 
 ### Tags
 
-* [CKV_AWS_79](../recipes-by-tag#ckv_aws_79)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_79](/reference/recipes-by-tag#ckv_aws_79)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

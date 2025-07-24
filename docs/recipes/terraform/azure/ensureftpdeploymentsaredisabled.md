@@ -13,9 +13,9 @@ _Ensure FTP Deployments are disabled._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_78](../recipes-by-tag#ckv_azure_78)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_78](/reference/recipes-by-tag#ckv_azure_78)
 
 ## Recipe source
 

@@ -13,11 +13,11 @@ _This recipe will apply changes commonly needed when upgrading to Java 11. Speci
 
 ### Tags
 
-* [jaxb](../recipes-by-tag#jaxb)
-* [deprecated](../recipes-by-tag#deprecated)
-* [java11](../recipes-by-tag#java11)
-* [jaxws](../recipes-by-tag#jaxws)
-* [jakarta](../recipes-by-tag#jakarta)
+* [jaxb](/reference/recipes-by-tag#jaxb)
+* [deprecated](/reference/recipes-by-tag#deprecated)
+* [java11](/reference/recipes-by-tag#java11)
+* [jaxws](/reference/recipes-by-tag#jaxws)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Ensure app services use Azure files._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_88](../recipes-by-tag#ckv_azure_88)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_88](/reference/recipes-by-tag#ckv_azure_88)
 
 ## Recipe source
 

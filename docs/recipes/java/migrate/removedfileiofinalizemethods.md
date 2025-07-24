@@ -13,7 +13,7 @@ _The `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStrea
 
 ### Tags
 
-* [java17](../recipes-by-tag#java17)
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 

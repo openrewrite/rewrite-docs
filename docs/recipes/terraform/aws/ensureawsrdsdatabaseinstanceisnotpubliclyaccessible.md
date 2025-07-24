@@ -13,9 +13,9 @@ _Ensure AWS RDS database instance is not publicly accessible._
 
 ### Tags
 
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
-* [CKV_AWS_17](../recipes-by-tag#ckv_aws_17)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
+* [CKV_AWS_17](/reference/recipes-by-tag#ckv_aws_17)
 
 ## Recipe source
 

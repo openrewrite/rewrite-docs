@@ -13,9 +13,9 @@ _Ensure a security contact phone number is present._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_20](../recipes-by-tag#ckv_azure_20)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_20](/reference/recipes-by-tag#ckv_azure_20)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

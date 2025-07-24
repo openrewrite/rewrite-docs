@@ -13,9 +13,9 @@ _Use SLF4J's parameterized logging, which can significantly boost performance fo
 
 ### Tags
 
-* [slf4j](../recipes-by-tag#slf4j)
+* [slf4j](/reference/recipes-by-tag#slf4j)
 * [RSPEC-S2629](https://sonarsource.github.io/rspec/#/rspec/S2629)
-* [logging](../recipes-by-tag#logging)
+* [logging](/reference/recipes-by-tag#logging)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comm
 
 ### Tags
 
-* [eslint](../recipes-by-tag#eslint)
-* [stylistic](../recipes-by-tag#stylistic)
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Ensure AWS Lambda functions have tracing enabled._
 
 ### Tags
 
-* [CKV_AWS_50](../recipes-by-tag#ckv_aws_50)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_50](/reference/recipes-by-tag#ckv_aws_50)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

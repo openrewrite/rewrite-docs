@@ -13,7 +13,7 @@ _Migrate applications to the latest Jackson 3.x release._
 
 ### Tags
 
-* [jackson](../recipes-by-tag#jackson)
+* [jackson](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Change type of classes in the `javax.annotation.security` package to jakarta._
 
 ### Tags
 
-* [javax](../recipes-by-tag#javax)
-* [batch](../recipes-by-tag#batch)
-* [jakarta](../recipes-by-tag#jakarta)
+* [javax](/reference/recipes-by-tag#javax)
+* [batch](/reference/recipes-by-tag#batch)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

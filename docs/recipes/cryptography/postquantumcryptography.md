@@ -13,7 +13,7 @@ _Locate cryptographic configuration which may need to be updated for a brave new
 
 ### Tags
 
-* [DevCenter:security](../recipes-by-tag#devcenter:security)
+* [DevCenter:security](/reference/recipes-by-tag#devcenter:security)
 
 ## Recipe source
 

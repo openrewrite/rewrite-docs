@@ -14,8 +14,8 @@ _Ensure `LoggerFactory#getLogger(Class)` is called with the enclosing class as a
 ### Tags
 
 * [RSPEC-S3416](https://sonarsource.github.io/rspec/#/rspec/S3416)
-* [slf4j](../recipes-by-tag#slf4j)
-* [logging](../recipes-by-tag#logging)
+* [slf4j](/reference/recipes-by-tag#slf4j)
+* [logging](/reference/recipes-by-tag#logging)
 
 ## Recipe source
 

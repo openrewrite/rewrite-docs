@@ -13,9 +13,9 @@ _Ensure key vault key is backed by HSM._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_112](../recipes-by-tag#ckv_azure_112)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_112](/reference/recipes-by-tag#ckv_azure_112)
 
 ## Recipe source
 

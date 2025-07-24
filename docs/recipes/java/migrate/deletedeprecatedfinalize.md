@@ -13,7 +13,7 @@ _The java.desktop module had a few implementations of finalize() that did nothin
 
 ### Tags
 
-* [java21](../recipes-by-tag#java21)
+* [java21](/reference/recipes-by-tag#java21)
 
 ## Recipe source
 

@@ -13,10 +13,10 @@ _Migrate xmlns entries in WebLogic Resource Adapter schema files to WebLogic 14.
 
 ### Tags
 
-* [connector](../recipes-by-tag#connector)
-* [schemas](../recipes-by-tag#schemas)
-* [weblogic](../recipes-by-tag#weblogic)
-* [ra](../recipes-by-tag#ra)
+* [connector](/reference/recipes-by-tag#connector)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [ra](/reference/recipes-by-tag#ra)
 
 ## Recipe source
 

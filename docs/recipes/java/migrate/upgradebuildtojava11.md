@@ -13,7 +13,7 @@ _Updates build files to use Java 11 as the target/source._
 
 ### Tags
 
-* [java11](../recipes-by-tag#java11)
+* [java11](/reference/recipes-by-tag#java11)
 
 ## Recipe source
 

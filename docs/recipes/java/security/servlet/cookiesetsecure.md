@@ -13,7 +13,7 @@ _Check for use of insecure cookies. Cookies should be marked as secure. This ens
 
 ### Tags
 
-* [CWE-614](../recipes-by-tag#cwe-614)
+* [CWE-614](/reference/recipes-by-tag#cwe-614)
 
 ## Recipe source
 

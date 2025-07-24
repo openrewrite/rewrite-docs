@@ -13,8 +13,8 @@ _Update Java EE Web API dependency to Jakarta EE Web Profile API 9.1_
 
 ### Tags
 
-* [web-api](../recipes-by-tag#web-api)
-* [jakarta](../recipes-by-tag#jakarta)
+* [web-api](/reference/recipes-by-tag#web-api)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

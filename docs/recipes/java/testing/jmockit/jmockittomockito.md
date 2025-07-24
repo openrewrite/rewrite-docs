@@ -13,8 +13,8 @@ _This recipe will apply changes commonly needed when migrating from JMockit to M
 
 ### Tags
 
-* [jmockit](../recipes-by-tag#jmockit)
-* [testing](../recipes-by-tag#testing)
+* [jmockit](/reference/recipes-by-tag#jmockit)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 

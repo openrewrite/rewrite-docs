@@ -13,9 +13,9 @@ _Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_12](../recipes-by-tag#ckv_azure_12)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_12](/reference/recipes-by-tag#ckv_azure_12)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Ensure MySQL server enables geo-redundant backups._
 
 ### Tags
 
-* [CKV_AZURE_94](../recipes-by-tag#ckv_azure_94)
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
+* [CKV_AZURE_94](/reference/recipes-by-tag#ckv_azure_94)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

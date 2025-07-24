@@ -13,8 +13,8 @@ _Converts `@ApiImplicitParams` to `@Parameters` and the `@ApiImplicitParam` anno
 
 ### Tags
 
-* [openapi](../recipes-by-tag#openapi)
-* [swagger](../recipes-by-tag#swagger)
+* [openapi](/reference/recipes-by-tag#openapi)
+* [swagger](/reference/recipes-by-tag#swagger)
 
 ## Recipe source
 

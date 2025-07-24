@@ -13,9 +13,9 @@ _Ensure the GKE metadata server is enabled._
 
 ### Tags
 
-* [GCP](../recipes-by-tag#gcp)
-* [CKV_GCP_69](../recipes-by-tag#ckv_gcp_69)
-* [terraform](../recipes-by-tag#terraform)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [CKV_GCP_69](/reference/recipes-by-tag#ckv_gcp_69)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

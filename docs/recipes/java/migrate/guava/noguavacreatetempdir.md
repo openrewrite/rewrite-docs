@@ -14,7 +14,7 @@ _Replaces Guava `Files#createTempDir()` with Java `Files#createTempDirectory(..)
 ### Tags
 
 * [RSPEC-S4738](https://sonarsource.github.io/rspec/#/rspec/S4738)
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

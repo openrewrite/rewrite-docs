@@ -13,9 +13,9 @@ _Ensure public network access enabled is set to False for mySQL servers._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_53](../recipes-by-tag#ckv_azure_53)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_53](/reference/recipes-by-tag#ckv_azure_53)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

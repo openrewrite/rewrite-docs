@@ -13,9 +13,9 @@ _Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpo
 
 ### Tags
 
-* [GCP](../recipes-by-tag#gcp)
-* [CKV_GCP_67](../recipes-by-tag#ckv_gcp_67)
-* [terraform](../recipes-by-tag#terraform)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [CKV_GCP_67](/reference/recipes-by-tag#ckv_gcp_67)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

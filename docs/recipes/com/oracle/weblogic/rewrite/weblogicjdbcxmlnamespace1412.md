@@ -13,9 +13,9 @@ _Migrate xmlns entries in WebLogic JDBC schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [schemas](../recipes-by-tag#schemas)
-* [weblogic](../recipes-by-tag#weblogic)
-* [jdbc](../recipes-by-tag#jdbc)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [jdbc](/reference/recipes-by-tag#jdbc)
 
 ## Recipe source
 

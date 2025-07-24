@@ -13,7 +13,7 @@ _JMS `Object` messages depend on Java Serialization for marshalling/unmarshallin
 
 ### Tags
 
-* [CWE-502](../recipes-by-tag#cwe-502)
+* [CWE-502](/reference/recipes-by-tag#cwe-502)
 
 ## Recipe source
 

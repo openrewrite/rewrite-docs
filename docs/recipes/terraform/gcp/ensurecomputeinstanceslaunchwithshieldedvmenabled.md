@@ -13,9 +13,9 @@ _Ensure compute instances launch with shielded VM enabled._
 
 ### Tags
 
-* [GCP](../recipes-by-tag#gcp)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_GCP_39](../recipes-by-tag#ckv_gcp_39)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_GCP_39](/reference/recipes-by-tag#ckv_gcp_39)
 
 ## Recipe source
 

@@ -13,11 +13,11 @@ _Spring Cloud Sleuth has been discontinued and only compatible with Spring Boot 
 
 ### Tags
 
-* [spring](../recipes-by-tag#spring)
-* [cloud](../recipes-by-tag#cloud)
-* [tracing](../recipes-by-tag#tracing)
-* [sleuth](../recipes-by-tag#sleuth)
-* [micrometer](../recipes-by-tag#micrometer)
+* [spring](/reference/recipes-by-tag#spring)
+* [cloud](/reference/recipes-by-tag#cloud)
+* [tracing](/reference/recipes-by-tag#tracing)
+* [sleuth](/reference/recipes-by-tag#sleuth)
+* [micrometer](/reference/recipes-by-tag#micrometer)
 
 ## Recipe source
 

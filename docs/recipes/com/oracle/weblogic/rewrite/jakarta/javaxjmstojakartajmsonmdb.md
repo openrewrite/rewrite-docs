@@ -13,8 +13,8 @@ _Migrate javax.jms to jakarta.jms on MDB_
 
 ### Tags
 
-* [jms](../recipes-by-tag#jms)
-* [jakarta](../recipes-by-tag#jakarta)
+* [jms](/reference/recipes-by-tag#jms)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

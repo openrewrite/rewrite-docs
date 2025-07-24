@@ -13,9 +13,9 @@ _Ensure Azure application gateway has WAF enabled._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_120](../recipes-by-tag#ckv_azure_120)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_120](/reference/recipes-by-tag#ckv_azure_120)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

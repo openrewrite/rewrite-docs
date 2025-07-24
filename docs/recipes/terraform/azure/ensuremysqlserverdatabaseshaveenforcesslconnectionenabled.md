@@ -13,9 +13,9 @@ _Ensure MySQL server databases have Enforce SSL connection enabled._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_28](../recipes-by-tag#ckv_azure_28)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_28](/reference/recipes-by-tag#ckv_azure_28)
 
 ## Recipe source
 

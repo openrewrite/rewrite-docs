@@ -13,9 +13,9 @@ _Communication between an Azure Storage account and a client application is encr
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_44](../recipes-by-tag#ckv_azure_44)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_44](/reference/recipes-by-tag#ckv_azure_44)
 
 ## Recipe source
 

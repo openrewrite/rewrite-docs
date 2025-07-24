@@ -13,9 +13,9 @@ _Ensure Amazon EKS control plane logging enabled for all log types._
 
 ### Tags
 
-* [CKV_AWS_37](../recipes-by-tag#ckv_aws_37)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_37](/reference/recipes-by-tag#ckv_aws_37)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

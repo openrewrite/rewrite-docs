@@ -13,7 +13,7 @@ _Prefer `java.lang.Long#compare` instead of using `com.google.common.primitives.
 
 ### Tags
 
-* [guava](../recipes-by-tag#guava)
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

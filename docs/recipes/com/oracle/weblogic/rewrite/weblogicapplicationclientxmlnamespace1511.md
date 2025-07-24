@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `application-client.xml` files t
 
 ### Tags
 
-* [schemas](../recipes-by-tag#schemas)
-* [weblogic](../recipes-by-tag#weblogic)
-* [application-client](../recipes-by-tag#application-client)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [application-client](/reference/recipes-by-tag#application-client)
 
 ## Recipe source
 

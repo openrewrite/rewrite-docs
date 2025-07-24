@@ -13,9 +13,9 @@ _Ensure IAM password policy requires at least one number._
 
 ### Tags
 
-* [CKV_AWS_12](../recipes-by-tag#ckv_aws_12)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_12](/reference/recipes-by-tag#ckv_aws_12)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

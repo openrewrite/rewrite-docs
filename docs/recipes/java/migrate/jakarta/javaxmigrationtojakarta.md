@@ -13,9 +13,9 @@ _Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` nam
 
 ### Tags
 
-* [jaxb](../recipes-by-tag#jaxb)
-* [jaxws](../recipes-by-tag#jaxws)
-* [jakarta](../recipes-by-tag#jakarta)
+* [jaxb](/reference/recipes-by-tag#jaxb)
+* [jaxws](/reference/recipes-by-tag#jaxws)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

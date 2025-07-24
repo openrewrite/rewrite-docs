@@ -13,9 +13,9 @@ _Amazon ECR supports immutable tags, preventing image tags from being overwritte
 
 ### Tags
 
-* [CKV_AWS_51](../recipes-by-tag#ckv_aws_51)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_51](/reference/recipes-by-tag#ckv_aws_51)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

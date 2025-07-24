@@ -13,9 +13,9 @@ _Change cacheManager to use the SimpleCacheManager._
 
 ### Tags
 
-* [examples](../recipes-by-tag#examples)
-* [springframework](../recipes-by-tag#springframework)
-* [cacheManager](../recipes-by-tag#cachemanager)
+* [examples](/reference/recipes-by-tag#examples)
+* [springframework](/reference/recipes-by-tag#springframework)
+* [cacheManager](/reference/recipes-by-tag#cachemanager)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Since `DefaultHttpClient` is deprecated, we need to change it to the `Closeable
 
 ### Tags
 
-* [CWE-326](../recipes-by-tag#cwe-326)
+* [CWE-326](/reference/recipes-by-tag#cwe-326)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _`@EnableGlobalMethodSecurity` and `<global-method-security>` are deprecated in 
 
 ### Tags
 
-* [spring](../recipes-by-tag#spring)
-* [security](../recipes-by-tag#security)
+* [spring](/reference/recipes-by-tag#spring)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 

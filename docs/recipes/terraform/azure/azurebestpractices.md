@@ -13,8 +13,8 @@ _Securely operate on Microsoft Azure._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

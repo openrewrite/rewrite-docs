@@ -13,9 +13,9 @@ _Ensure Kinesis Stream is securely encrypted._
 
 ### Tags
 
-* [CKV_AWS_43](../recipes-by-tag#ckv_aws_43)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_43](/reference/recipes-by-tag#ckv_aws_43)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

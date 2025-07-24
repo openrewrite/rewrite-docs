@@ -13,9 +13,9 @@ _Ensure enhanced monitoring for Amazon RDS instances is enabled._
 
 ### Tags
 
-* [CKV_AWS_118](../recipes-by-tag#ckv_aws_118)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_118](/reference/recipes-by-tag#ckv_aws_118)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

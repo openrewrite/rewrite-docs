@@ -13,9 +13,9 @@ _Enforce lowercase test names See rule details for [jest/prefer-lowercase-title]
 
 ### Tags
 
-* [ESLint](../recipes-by-tag#eslint)
-* [eslint-plugin-jest](../recipes-by-tag#eslint-plugin-jest)
-* [Jest](../recipes-by-tag#jest)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [eslint-plugin-jest](/reference/recipes-by-tag#eslint-plugin-jest)
+* [Jest](/reference/recipes-by-tag#jest)
 
 ## Recipe source
 

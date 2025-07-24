@@ -13,9 +13,9 @@ _Ensure log profile is configured to capture all activities._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_AZURE_38](../recipes-by-tag#ckv_azure_38)
+* [Azure](/reference/recipes-by-tag#azure)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_AZURE_38](/reference/recipes-by-tag#ckv_azure_38)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Convert trivial setter methods to `@Setter` annotations on their respective fie
 
 ### Tags
 
-* [lombok](../recipes-by-tag#lombok)
+* [lombok](/reference/recipes-by-tag#lombok)
 
 ## Recipe source
 

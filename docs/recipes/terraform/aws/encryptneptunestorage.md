@@ -13,9 +13,9 @@ _Encryption of Neptune storage protects data and metadata against unauthorized a
 
 ### Tags
 
-* [CKV_AWS_44](../recipes-by-tag#ckv_aws_44)
-* [terraform](../recipes-by-tag#terraform)
-* [AWS](../recipes-by-tag#aws)
+* [CKV_AWS_44](/reference/recipes-by-tag#ckv_aws_44)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

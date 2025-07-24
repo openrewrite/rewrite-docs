@@ -13,9 +13,9 @@ _Ensure shielded GKE nodes are enabled._
 
 ### Tags
 
-* [GCP](../recipes-by-tag#gcp)
-* [terraform](../recipes-by-tag#terraform)
-* [CKV_GCP_71](../recipes-by-tag#ckv_gcp_71)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [CKV_GCP_71](/reference/recipes-by-tag#ckv_gcp_71)
 
 ## Recipe source
 

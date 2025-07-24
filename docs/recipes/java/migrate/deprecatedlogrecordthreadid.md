@@ -13,7 +13,7 @@ _Avoid using the deprecated methods in `java.util.logging.LogRecord`._
 
 ### Tags
 
-* [java17](../recipes-by-tag#java17)
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 

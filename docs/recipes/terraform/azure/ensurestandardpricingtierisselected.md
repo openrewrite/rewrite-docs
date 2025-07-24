@@ -13,9 +13,9 @@ _Ensure standard pricing tier is selected._
 
 ### Tags
 
-* [Azure](../recipes-by-tag#azure)
-* [CKV_AZURE_19](../recipes-by-tag#ckv_azure_19)
-* [terraform](../recipes-by-tag#terraform)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_19](/reference/recipes-by-tag#ckv_azure_19)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 

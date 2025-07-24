@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when migrating to Java 21. This 
 
 ### Tags
 
-* [java21](../recipes-by-tag#java21)
+* [java21](/reference/recipes-by-tag#java21)
 
 ## Recipe source
 

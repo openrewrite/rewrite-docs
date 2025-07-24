@@ -13,8 +13,8 @@ _Use HTTPS for repository URLs._
 
 ### Tags
 
-* [security](../recipes-by-tag#security)
-* [CWE-829](../recipes-by-tag#cwe-829)
+* [security](/reference/recipes-by-tag#security)
+* [CWE-829](/reference/recipes-by-tag#cwe-829)
 
 ## Recipe source
 
