@@ -86,10 +86,7 @@
 ^gitbook-converter.py
 ^strip-links.py
 ^docusaurus.config.ts
-^docs/reference/recipes-with-data-tables.md
-^docs/reference/community-recipes.md
-^docs/reference/moderne-recipes.md
-^docs/reference/scanning-recipes.md
+^docs/reference/
 ^robots.txt
 ^CNAME
 ^src/
