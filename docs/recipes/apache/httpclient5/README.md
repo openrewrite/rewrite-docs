@@ -6,6 +6,8 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Adds `TimeUnit` to timeouts and duration methods](./upgradeapachehttpclient_5_timeunit.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](./credentialsstoreclear.md)
+* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](./upgradeapachehttpcoreniodependencies.md)
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](./upgradeapachehttpclientdependencies.md)
 * [Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`](./credentialsstoresetcredentials.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](./upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to ApacheHttpClient 5.x](./upgradeapachehttpclient_5.md)

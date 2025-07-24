@@ -13,8 +13,8 @@ _This recipe will add the Java v2 S3 Event Notification dependency if v1 S3Event
 
 ### Tags
 
-* sdk
-* aws
+* [sdk](/reference/recipes-by-tag#sdk)
+* [aws](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 
@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
   * groupId: `software.amazon.awssdk`
   * artifactId: `s3-event-notifications`
-  * version: `2.31.75`
+  * version: `2.32.5`
   * onlyIfUsing: `com.amazonaws.services.s3.event.S3EventNotification`
 
 </TabItem>
@@ -53,7 +53,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: software.amazon.awssdk
       artifactId: s3-event-notifications
-      version: 2.31.75
+      version: 2.32.5
       onlyIfUsing: com.amazonaws.services.s3.event.S3EventNotification
 
 ```

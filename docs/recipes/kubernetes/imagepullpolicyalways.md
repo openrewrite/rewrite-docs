@@ -13,7 +13,7 @@ _Ensures the latest version of a tag is deployed each time._
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

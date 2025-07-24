@@ -13,7 +13,7 @@ _Preventing sharing of host PID/IPC namespace, networking, and ports ensures pro
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

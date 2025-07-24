@@ -18,6 +18,16 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+###### Unchanged
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+</web-app>
+```
+
 
 ## Usage
 

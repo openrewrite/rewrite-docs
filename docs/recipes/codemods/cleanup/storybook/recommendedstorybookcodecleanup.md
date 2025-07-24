@@ -13,9 +13,9 @@ _Collection of cleanup ESLint rules from [eslint-plugin-storybook](https://githu
 
 ### Tags
 
-* eslint-plugin-storybook
-* ESLint
-* storybook
+* [eslint-plugin-storybook](/reference/recipes-by-tag#eslint-plugin-storybook)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [storybook](/reference/recipes-by-tag#storybook)
 
 ## Recipe source
 

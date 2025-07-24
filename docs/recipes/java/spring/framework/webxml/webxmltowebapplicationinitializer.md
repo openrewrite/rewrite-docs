@@ -35,8 +35,6 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### New file
 ```java
-package org.openrewrite;
-
 import org.springframework.web.WebApplicationInitializer;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -52,13 +50,6 @@ public class WebXmlWebAppInitializer implements WebApplicationInitializer {
 }
 ```
 
-
-###### Unchanged
-```java
-package org.openrewrite;
-
-class SomeClass { }
-```
 
 ###### Unchanged
 ```mavenProject

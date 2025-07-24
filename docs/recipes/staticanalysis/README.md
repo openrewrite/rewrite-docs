@@ -20,6 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* ['Collection.toArray()' should be passed an array of the proper type](./collectiontoarrayshouldhavepropertype.md)
 * [Add `@Serial` annotation to `serialVersionUID`](./addserialannotationtoserialversionuid.md)
 * [Add missing `@Override` to overriding and implementing methods](./missingoverrideannotation.md)
 * [Add `serialVersionUID` to a `Serializable` class when missing](./addserialversionuidtoserializable.md)
@@ -108,6 +109,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `booleanExpression ? false : true` with `!booleanExpression`](./simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
 * [Replace `booleanExpression ? true : false` with `booleanExpression`](./simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
 * [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
+* [Replace `catch(Exception)` with specific declared exceptions thrown in the try block](./onlycatchdeclaredexceptions.md)
 * [Replace deprecated `Runtime#exec()` methods](./replacedeprecatedruntimeexecmethods.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
 * [Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`](./uselistsort.md)
@@ -141,6 +143,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Unnecessary `return` as last statement in void method](./unnecessaryreturnaslaststatement.md)
 * [Unnecessary throws](./unnecessarythrows.md)
 * [Unwrap `@Repeatable` annotations](./unwraprepeatableannotations.md)
+* [Unwrap else block after return or throw statement](./unwrapelseafterreturn.md)
 * [Upper case literal suffixes](./uppercaseliteralsuffixes.md)
 * [Use `Collection` interfaces](./usecollectioninterfaces.md)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](./isemptycalloncollections.md)

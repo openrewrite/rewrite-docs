@@ -13,7 +13,7 @@ _When using the host network mode for a container, that container’s network st
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

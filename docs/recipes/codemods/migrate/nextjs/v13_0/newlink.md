@@ -13,8 +13,8 @@ _Remove `&lt;a&gt;` tags inside Link Components or add a `legacyBehavior` prop t
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](/reference/recipes-by-tag#nextjs)
+* [codemods](/reference/recipes-by-tag#codemods)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Disallow trailing whitespace at the end of lines  See [rule details](https://es
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

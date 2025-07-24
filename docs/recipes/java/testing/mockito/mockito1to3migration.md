@@ -13,8 +13,8 @@ _Upgrade Mockito from 1.x to 3.x._
 
 ### Tags
 
-* testing
-* mockito
+* [testing](/reference/recipes-by-tag#testing)
+* [mockito](/reference/recipes-by-tag#mockito)
 
 ## Recipe source
 
@@ -102,20 +102,20 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.mockito.runners.MockitoJUnitRunner`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
-* [Remove `@InjectMocks` annotation or initializer](../../../java/testing/mockito/noinitializationforinjectmock)
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
 * [Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners](../../../java/testing/mockito/removeinitmocksifrunnersspecified)
 * [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `org.mockito`
-  * artifactId: `*`
-  * newVersion: `3.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.mockito`
   * oldArtifactId: `mockito-all`
   * newArtifactId: `mockito-core`
+  * newVersion: `3.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.mockito`
+  * artifactId: `*`
+  * newVersion: `3.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `net.bytebuddy`
   * artifactId: `byte-buddy*`
@@ -205,20 +205,20 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.mockito.runners.MockitoJUnitRunner
       newFullyQualifiedTypeName: org.mockito.junit.MockitoJUnitRunner
-  - org.openrewrite.java.testing.mockito.NoInitializationForInjectMock
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
   - org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified
   - org.openrewrite.java.testing.mockito.ReplacePowerMockito
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.mockito
-      artifactId: "*"
-      newVersion: 3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.mockito
       oldArtifactId: mockito-all
       newArtifactId: mockito-core
+      newVersion: 3.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.mockito
+      artifactId: "*"
+      newVersion: 3.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: net.bytebuddy
       artifactId: byte-buddy*
@@ -327,6 +327,235 @@ import static org.mockito.Mockito.mock;
 
 
 <Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-all:1.10.19")
+    testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -9,2 +9,2 @@
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+-   testImplementation("org.mockito:mockito-all:1.10.19")
+-   testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
++   testImplementation("org.mockito:mockito-core:3.12.4")
++   testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+import static org.mockito.Matchers.anyListOf;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.when;
+
+class MyTest {
+    @Mock
+    Object objectMock;
+
+    private A subject;
+
+    @BeforeEach
+    void setup() {
+        subject = new A();
+    }
+
+    @Test
+    void someTest() {
+        when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
+
+class MyTest {
+    @Mock
+    Object objectMock;
+
+    private A subject;
+
+    @BeforeEach
+    void setup() {
+        subject = new A();
+    }
+
+    @Test
+    void someTest() {
+        when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,3 +5,3 @@
+import org.mockito.Mock;
+
+-import static org.mockito.Matchers.anyListOf;
+-import static org.mockito.Matchers.anyObject;
+-import static org.mockito.Matchers.anyString;
++import static org.mockito.ArgumentMatchers.anyList;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
+@@ -23,1 +23,1 @@
+    @Test
+    void someTest() {
+-       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
++       when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
+    }
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>org.example</groupId>
+  <artifactId>some-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.11.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-all</artifactId>
+          <version>1.10.19</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>2.28.2</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>org.example</groupId>
+  <artifactId>some-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.11.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-core</artifactId>
+          <version>3.12.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>3.12.4</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -13,2 +13,2 @@
+      <dependency>
+          <groupId>org.mockito</groupId>
+-         <artifactId>mockito-all</artifactId>
+-         <version>1.10.19</version>
++         <artifactId>mockito-core</artifactId>
++         <version>3.12.4</version>
+      </dependency>
+@@ -19,1 +19,1 @@
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+-         <version>2.28.2</version>
++         <version>3.12.4</version>
+      </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">
 
 
@@ -412,6 +641,235 @@ import static org.mockito.Mockito.mock;
 +       when(mockFoo.addSet(anySet())).thenReturn(true);
 +       when(mockFoo.addMap(anyMap())).thenReturn(true);
     }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-all:1.10.19")
+    testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -9,2 +9,2 @@
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+-   testImplementation("org.mockito:mockito-all:1.10.19")
+-   testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
++   testImplementation("org.mockito:mockito-core:3.12.4")
++   testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+import static org.mockito.Matchers.anyListOf;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.when;
+
+class MyTest {
+    @Mock
+    Object objectMock;
+
+    private A subject;
+
+    @BeforeEach
+    void setup() {
+        subject = new A();
+    }
+
+    @Test
+    void someTest() {
+        when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
+
+class MyTest {
+    @Mock
+    Object objectMock;
+
+    private A subject;
+
+    @BeforeEach
+    void setup() {
+        subject = new A();
+    }
+
+    @Test
+    void someTest() {
+        when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,3 +5,3 @@
+import org.mockito.Mock;
+
+-import static org.mockito.Matchers.anyListOf;
+-import static org.mockito.Matchers.anyObject;
+-import static org.mockito.Matchers.anyString;
++import static org.mockito.ArgumentMatchers.anyList;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
+@@ -23,1 +23,1 @@
+    @Test
+    void someTest() {
+-       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
++       when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
+    }
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>org.example</groupId>
+  <artifactId>some-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.11.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-all</artifactId>
+          <version>1.10.19</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>2.28.2</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>org.example</groupId>
+  <artifactId>some-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.11.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-core</artifactId>
+          <version>3.12.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>3.12.4</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -13,2 +13,2 @@
+      <dependency>
+          <groupId>org.mockito</groupId>
+-         <artifactId>mockito-all</artifactId>
+-         <version>1.10.19</version>
++         <artifactId>mockito-core</artifactId>
++         <version>3.12.4</version>
+      </dependency>
+@@ -19,1 +19,1 @@
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+-         <version>2.28.2</version>
++         <version>3.12.4</version>
+      </dependency>
 ```
 </TabItem>
 </Tabs>
@@ -609,4 +1067,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), SiBorea, Anshuman Mishra, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman
+[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [JohannisK](mailto:johan.kragt@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), SiBorea, Anshuman Mishra, [Tim te Beek](mailto:timtebeek@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman

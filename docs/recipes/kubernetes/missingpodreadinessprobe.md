@@ -13,7 +13,7 @@ _Using the Readiness Probe ensures teams define what actions need to be taken to
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

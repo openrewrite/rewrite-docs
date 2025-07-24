@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Cloud 2022 (Kilburn) release._
 
 ### Tags
 
-* spring
-* cloud
+* [spring](/reference/recipes-by-tag#spring)
+* [cloud](/reference/recipes-by-tag#cloud)
 
 ## Recipe source
 

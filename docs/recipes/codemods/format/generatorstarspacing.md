@@ -13,8 +13,8 @@ _Enforce consistent spacing around &#x60;*&#x60; operators in generator function
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

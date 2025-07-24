@@ -28,9 +28,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Refaster template `AssertJObjectRules.AssertThatIsInstanceOf2`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisinstanceof2recipe)
 * [Refaster template `AssertJObjectRules.AssertThatIsIsEqualTo`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisisequaltorecipe)
 * [Refaster template `AssertJObjectRules.AssertThatIsIsNotEqualTo`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisisnotequaltorecipe)
 * [Refaster template `AssertJObjectRules.AssertThatHasToString`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthathastostringrecipe)
+* [Refaster template `AssertJObjectRules.AssertThatIsSameAs`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatissameasrecipe)
+* [Refaster template `AssertJObjectRules.AssertThatIsNotSameAs`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotsameasrecipe)
+* [Refaster template `AssertJObjectRules.AssertThatIsNull`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnullrecipe)
+* [Refaster template `AssertJObjectRules.AssertThatIsNotNull`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotnullrecipe)
+* [Refaster template `AssertJObjectRules.AssertThatHasSameHashCodeAs`](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthathassamehashcodeasrecipe)
 
 </TabItem>
 
@@ -45,9 +51,15 @@ description: |
   Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJObjectRules`.
   [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
 recipeList:
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsInstanceOf2Recipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsIsNotEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasToStringRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsSameAsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotSameAsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNullRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotNullRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasSameHashCodeAsRecipe
 
 ```
 </TabItem>

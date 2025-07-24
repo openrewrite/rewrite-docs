@@ -13,8 +13,8 @@ _Database modules for Flyway 10 have been split out in to separate modules for m
 
 ### Tags
 
-* postgresql
-* flyway
+* [postgresql](/reference/recipes-by-tag#postgresql)
+* [flyway](/reference/recipes-by-tag#flyway)
 
 ## Recipe source
 

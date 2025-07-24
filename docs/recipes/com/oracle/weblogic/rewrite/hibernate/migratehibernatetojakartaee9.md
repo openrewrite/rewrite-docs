@@ -13,8 +13,8 @@ _Upgrade hibernate libraries to Jakarta EE9 versions._
 
 ### Tags
 
-* hibernate
-* jakarta
+* [hibernate](/reference/recipes-by-tag#hibernate)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Use `Class#getDeclaredConstructor().newInstance()` instead of the deprecated `C
 
 ### Tags
 
-* deprecated
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

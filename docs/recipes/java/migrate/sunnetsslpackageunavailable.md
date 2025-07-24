@@ -13,7 +13,7 @@ _The internal API `com.sun.net.ssl` is removed. The package was intended for int
 
 ### Tags
 
-* java17
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 

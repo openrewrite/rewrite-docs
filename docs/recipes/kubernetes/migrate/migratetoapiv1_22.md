@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when migrating to Kubernetes API
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

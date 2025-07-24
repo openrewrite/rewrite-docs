@@ -25,6 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | className | The fully qualified class name to configure the log level for | `com.example.MyClass` |
 | `LogLevel` | logLevel | The log level to set for the class Valid options: `trace`, `debug`, `info`, `warn`, `error`, `off` | `off` |
+| `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, '**/logback.xml' is used. | `**/logback-spring.xml` |
 
 ## Example
 
@@ -33,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- |
 |className|`org.springframework`|
 |logLevel|`ConfigureLoggerLevel.LogLevel.off`|
+|filePattern|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -101,6 +103,7 @@ recipeList:
   - org.openrewrite.java.logging.logback.ConfigureLoggerLevel:
       className: com.example.MyClass
       logLevel: off
+      filePattern: '**/logback-spring.xml'
 ```
 
 Now that `com.yourorg.ConfigureLoggerLevelExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}` in your build file:
@@ -166,7 +169,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ConfigureLoggerLevel --recipe-option "className=com.example.MyClass" --recipe-option "logLevel=off"
+mod run . --recipe ConfigureLoggerLevel --recipe-option "className=com.example.MyClass" --recipe-option "logLevel=off" --recipe-option "filePattern='**/logback-spring.xml'"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -245,4 +248,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), Simon Zilliken, [Tim te Beek](mailto:timtebeek@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io)

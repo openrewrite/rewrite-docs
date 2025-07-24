@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Kafka 3.0 release._
 
 ### Tags
 
-* spring
-* kafka
+* [spring](/reference/recipes-by-tag#spring)
+* [kafka](/reference/recipes-by-tag#kafka)
 
 ## Recipe source
 

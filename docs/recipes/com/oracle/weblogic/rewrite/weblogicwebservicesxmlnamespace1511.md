@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `weblogic-webservices.xml` files
 
 ### Tags
 
-* webservices
-* schemas
-* weblogic
+* [webservices](/reference/recipes-by-tag#webservices)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 

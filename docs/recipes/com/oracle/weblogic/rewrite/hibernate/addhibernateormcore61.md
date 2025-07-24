@@ -13,10 +13,10 @@ _This recipe will add Hibernate ORM Core if has dependencies._
 
 ### Tags
 
-* core
-* orm
-* hibernate
-* jakarta
+* [core](/reference/recipes-by-tag#core)
+* [orm](/reference/recipes-by-tag#orm)
+* [hibernate](/reference/recipes-by-tag#hibernate)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

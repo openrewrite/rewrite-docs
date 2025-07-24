@@ -17,6 +17,10 @@ _Refaster rules related to expressions dealing with classes. [Source](https://er
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
@@ -25,6 +29,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ClassRules.ClassIsInstance`](../../../../tech/picnic/errorprone/refasterrules/classrulesrecipes$classisinstancerecipe)
+* [Refaster template `ClassRules.ClassReferenceIsInstancePredicate`](../../../../tech/picnic/errorprone/refasterrules/classrulesrecipes$classreferenceisinstancepredicaterecipe)
+* [Refaster template `ClassRules.ClassReferenceCast`](../../../../tech/picnic/errorprone/refasterrules/classrulesrecipes$classreferencecastrecipe)
 
 </TabItem>
 
@@ -40,6 +46,8 @@ description: |
   [Source](https://error-prone.picnic.tech/refasterrules/ClassRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassIsInstanceRecipe
+  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceIsInstancePredicateRecipe
+  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceCastRecipe
 
 ```
 </TabItem>

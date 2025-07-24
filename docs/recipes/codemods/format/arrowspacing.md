@@ -13,8 +13,8 @@ _Enforce consistent spacing before and after the arrow in arrow functions  See [
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

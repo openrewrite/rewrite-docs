@@ -13,11 +13,11 @@ _Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet
 
 ### Tags
 
-* spring
-* sap
-* cloudfoundry
-* logging
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [sap](/reference/recipes-by-tag#sap)
+* [cloudfoundry](/reference/recipes-by-tag#cloudfoundry)
+* [logging](/reference/recipes-by-tag#logging)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 

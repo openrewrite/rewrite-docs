@@ -13,8 +13,8 @@ _Consistently use a static import rather than inlining the `Assertions` class na
 
 ### Tags
 
-* testing
-* assertj
+* [testing](/reference/recipes-by-tag#testing)
+* [assertj](/reference/recipes-by-tag#assertj)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 
 ### Tags
 
-* apache
-* httpclient
+* [apache](/reference/recipes-by-tag#apache)
+* [httpclient](/reference/recipes-by-tag#httpclient)
 
 ## Recipe source
 
@@ -34,29 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrates to ApacheHttpClient 4.5.x](../../apache/httpclient4/upgradeapachehttpclient_4_5)
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `org.apache.httpcomponents`
-  * oldArtifactId: `httpmime`
-  * newGroupId: `org.apache.httpcomponents.client5`
-  * newArtifactId: `httpclient5`
-  * newVersion: `5.4.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `org.apache.httpcomponents`
-  * oldArtifactId: `httpclient`
-  * newGroupId: `org.apache.httpcomponents.client5`
-  * newArtifactId: `httpclient5`
-  * newVersion: `5.4.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `org.apache.httpcomponents`
-  * oldArtifactId: `httpcore`
-  * newGroupId: `org.apache.httpcomponents.core5`
-  * newArtifactId: `httpcore5`
-  * newVersion: `5.3.x`
-* [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
-  * groupId: `org.apache.httpcomponents.client5`
-  * artifactId: `httpclient5`
-  * version: `5.4.x`
-  * onlyIfUsing: `org.apache.http.impl.client.*`
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](../../apache/httpclient5/upgradeapachehttpclientdependencies)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](../../apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping)
 * [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 * [Migrate `RequestConfig` to httpclient5](../../apache/httpclient5/migraterequestconfig)
@@ -89,29 +67,7 @@ tags:
   - httpclient
 recipeList:
   - org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.apache.httpcomponents
-      oldArtifactId: httpmime
-      newGroupId: org.apache.httpcomponents.client5
-      newArtifactId: httpclient5
-      newVersion: 5.4.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.apache.httpcomponents
-      oldArtifactId: httpclient
-      newGroupId: org.apache.httpcomponents.client5
-      newArtifactId: httpclient5
-      newVersion: 5.4.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.apache.httpcomponents
-      oldArtifactId: httpcore
-      newGroupId: org.apache.httpcomponents.core5
-      newArtifactId: httpcore5
-      newVersion: 5.3.x
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.apache.httpcomponents.client5
-      artifactId: httpclient5
-      version: 5.4.x
-      onlyIfUsing: org.apache.http.impl.client.*
+  - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioClassMapping
   - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.apache.httpclient5.MigrateRequestConfig

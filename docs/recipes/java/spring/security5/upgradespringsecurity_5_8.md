@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Security 5.8 release. This recipe wil
 
 ### Tags
 
-* spring
-* security
+* [spring](/reference/recipes-by-tag#spring)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 
@@ -290,4 +290,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Alex Boyko](mailto:aboyko@vmware.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Kun Li](mailto:kun@moderne.io), Kun Li, Michel Gonzalez, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Shannon Pamperl](mailto:shanman190@gmail.com), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Alex Boyko](mailto:aboyko@vmware.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Kun Li](mailto:kun@moderne.io), Michel Gonzalez, [Johannes Jank](mailto:johannes.wengert@googlemail.com), Kun Li, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Shannon Pamperl](mailto:shanman190@gmail.com), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

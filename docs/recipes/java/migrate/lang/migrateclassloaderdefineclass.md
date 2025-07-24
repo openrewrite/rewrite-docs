@@ -13,7 +13,7 @@ _Use `ClassLoader#defineClass(String, byte[], int, int)` instead of the deprecat
 
 ### Tags
 
-* deprecated
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Do not use APIs from `com.sun.xml.internal.bind.*` packages._
 
 ### Tags
 
-* java11
+* [java11](/reference/recipes-by-tag#java11)
 
 ## Recipe source
 

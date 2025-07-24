@@ -13,8 +13,8 @@ _Enforce closing tag location for multiline JSX  See [rule details](https://esli
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

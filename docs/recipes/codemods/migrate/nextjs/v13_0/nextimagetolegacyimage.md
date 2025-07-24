@@ -13,8 +13,8 @@ _Safely renames `next/image` imports in existing Next.js `10` `11` or `12` appli
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](/reference/recipes-by-tag#nextjs)
+* [codemods](/reference/recipes-by-tag#codemods)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _A story should not have a redundant name property See rule details for [storybo
 
 ### Tags
 
-* eslint-plugin-storybook
-* ESLint
-* storybook
+* [eslint-plugin-storybook](/reference/recipes-by-tag#eslint-plugin-storybook)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [storybook](/reference/recipes-by-tag#storybook)
 
 ## Recipe source
 

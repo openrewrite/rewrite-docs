@@ -13,9 +13,9 @@ _Ensure the storage container storing activity logs is not publicly accessible._
 
 ### Tags
 
-* Azure
-* CKV2_AZURE_8
-* terraform
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV2_AZURE_8](/reference/recipes-by-tag#ckv2_azure_8)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 
@@ -115,4 +115,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)

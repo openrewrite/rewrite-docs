@@ -44,6 +44,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ComparatorRules.CollectionsMax`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxrecipe)
 * [Refaster template `ComparatorRules.MaxOfArray`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$maxofarrayrecipe)
 * [Refaster template `ComparatorRules.CollectionsMaxWithComparator`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxwithcomparatorrecipe)
+* [Refaster template `ComparatorRules.ComparatorsMin`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsminrecipe)
+* [Refaster template `ComparatorRules.ComparatorsMax`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsmaxrecipe)
 * [Refaster template `ComparatorRules.MinByNaturalOrder`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$minbynaturalorderrecipe)
 * [Refaster template `ComparatorRules.MaxByNaturalOrder`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$maxbynaturalorderrecipe)
 * [Refaster template `ComparatorRules.IsLessThan`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$islessthanrecipe)
@@ -78,6 +80,8 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxOfArrayRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMinRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMaxRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MinByNaturalOrderRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxByNaturalOrderRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$IsLessThanRecipe

@@ -13,8 +13,8 @@ _The default config includes the `@typescript-eslint` plugin and the correspondi
 
 ### Tags
 
-* codemods
-* eslint
+* [codemods](/reference/recipes-by-tag#codemods)
+* [eslint](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

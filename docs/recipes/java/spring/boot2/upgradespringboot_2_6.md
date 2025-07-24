@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Boot 2.6 release. This recipe will mo
 
 ### Tags
 
-* spring
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 
@@ -323,4 +323,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Fabian Krüger, [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), nbruno, [adammak](mailto:maka9@mcmaster.ca), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Tyler Van Gorder, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kun Li](mailto:kun@moderne.io), Aaron Gershman, [Joan Viladrosa](mailto:joan@moderne.io), Josh Soref, [Greg Oledzki](mailto:greg.oledzki@moderne.io), rob-valor, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), eocantu
+[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Fabian Krüger, [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), nbruno, [adammak](mailto:maka9@mcmaster.ca), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Tyler Van Gorder, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kun Li](mailto:kun@moderne.io), Aaron Gershman, [Joan Viladrosa](mailto:joan@moderne.io), Josh Soref, [Greg Oledzki](mailto:greg.oledzki@moderne.io), rob-valor, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), eocantu

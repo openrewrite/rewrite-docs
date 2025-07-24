@@ -13,9 +13,9 @@ _Ensure activity log retention is set to 365 days or greater._
 
 ### Tags
 
-* Azure
-* CKV_AZURE_37
-* terraform
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_37](/reference/recipes-by-tag#ckv_azure_37)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 
@@ -115,4 +115,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)

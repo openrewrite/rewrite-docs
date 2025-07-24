@@ -13,9 +13,9 @@ _Migrates Arquillian JUnit 4 to JUnit 5._
 
 ### Tags
 
-* junit
-* testing
-* arquillian
+* [junit](/reference/recipes-by-tag#junit)
+* [testing](/reference/recipes-by-tag#testing)
+* [arquillian](/reference/recipes-by-tag#arquillian)
 
 ## Recipe source
 

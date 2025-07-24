@@ -13,9 +13,9 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* connectors
-* jakarta
-* ra
+* [connectors](/reference/recipes-by-tag#connectors)
+* [jakarta](/reference/recipes-by-tag#jakarta)
+* [ra](/reference/recipes-by-tag#ra)
 
 ## Recipe source
 

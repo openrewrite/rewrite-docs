@@ -39,9 +39,6 @@ class MyTest {
         assertThat(listA).hasSize(3);
         assertThat(listA).containsExactly("a", "b", "c");
     }
-    private int[] notification() {
-        return new int[]{1, 2, 3};
-    }
 }
 ```
 
@@ -58,9 +55,6 @@ class MyTest {
                 .isNotNull()
                 .hasSize(3)
                 .containsExactly("a", "b", "c");
-    }
-    private int[] notification() {
-        return new int[]{1, 2, 3};
     }
 }
 ```
@@ -277,4 +271,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[SMIT MALKAN](mailto:smitmalkan99@gmail.com), timo-abele, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[SMIT MALKAN](mailto:smitmalkan99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), timo-abele, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

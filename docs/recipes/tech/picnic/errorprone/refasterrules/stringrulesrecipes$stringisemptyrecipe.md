@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Prefer `String#isEmpty()` over alternatives that consult the string's length._
 
+### Tags
+
+* [RSPEC-S7158](https://sonarsource.github.io/rspec/#/rspec/S7158)
+
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe), 

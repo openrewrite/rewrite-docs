@@ -13,7 +13,7 @@ _Use `Logger#logrb(.., ResourceBundle bundleName, ..)` instead of the deprecated
 
 ### Tags
 
-* deprecated
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

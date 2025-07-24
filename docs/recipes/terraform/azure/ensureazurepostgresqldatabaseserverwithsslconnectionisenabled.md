@@ -13,9 +13,9 @@ _Ensure Azure PostgreSQL database server with SSL connection is enabled._
 
 ### Tags
 
-* Azure
-* CKV_AZURE_29
-* terraform
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_29](/reference/recipes-by-tag#ckv_azure_29)
+* [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source
 
@@ -115,4 +115,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)

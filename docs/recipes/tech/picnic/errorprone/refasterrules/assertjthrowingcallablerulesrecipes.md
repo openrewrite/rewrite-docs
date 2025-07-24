@@ -58,6 +58,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageStartingWith`](../../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes$assertthatthrownbyhasmessagestartingwithrecipe)
 * [Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageContaining`](../../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes$assertthatthrownbyhasmessagecontainingrecipe)
 * [Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageNotContaining`](../../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes$assertthatthrownbyhasmessagenotcontainingrecipe)
+* [Refaster template `AssertJThrowingCallableRules.AbstractThrowableAssertCauseIsSameAs`](../../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes$abstractthrowableassertcauseissameasrecipe)
 
 </TabItem>
 
@@ -104,6 +105,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageStartingWithRecipe
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageContainingRecipe
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageNotContainingRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AbstractThrowableAssertCauseIsSameAsRecipe
 
 ```
 </TabItem>

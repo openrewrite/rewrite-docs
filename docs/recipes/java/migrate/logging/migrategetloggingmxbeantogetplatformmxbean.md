@@ -13,7 +13,7 @@ _Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)` instead 
 
 ### Tags
 
-* deprecated
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

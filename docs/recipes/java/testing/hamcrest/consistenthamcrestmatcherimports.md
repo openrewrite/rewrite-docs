@@ -13,9 +13,9 @@ _Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)`
 
 ### Tags
 
-* testing
-* assertj
-* hamcrest
+* [testing](/reference/recipes-by-tag#testing)
+* [assertj](/reference/recipes-by-tag#assertj)
+* [hamcrest](/reference/recipes-by-tag#hamcrest)
 
 ## Recipe source
 

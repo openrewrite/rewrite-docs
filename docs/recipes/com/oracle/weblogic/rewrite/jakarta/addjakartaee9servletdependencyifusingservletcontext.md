@@ -13,8 +13,8 @@ _Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext_
 
 ### Tags
 
-* servlet
-* jakarta
+* [servlet](/reference/recipes-by-tag#servlet)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _The `javax.net.ssl.SSLSession.getPeerCertificateChain()` method implementation 
 
 ### Tags
 
-* java17
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 

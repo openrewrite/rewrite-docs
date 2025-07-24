@@ -13,9 +13,9 @@ _This recipe will migrate the necessary dependencies and annotations from DbRide
 
 ### Tags
 
-* spring
-* testing
-* dbrider
+* [spring](/reference/recipes-by-tag#spring)
+* [testing](/reference/recipes-by-tag#testing)
+* [dbrider](/reference/recipes-by-tag#dbrider)
 
 ## Recipe source
 
@@ -260,4 +260,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

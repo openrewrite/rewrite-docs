@@ -13,10 +13,10 @@ _Add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compati
 
 ### Tags
 
-* javax
-* java11
-* inject
-* jakarta
+* [javax](/reference/recipes-by-tag#javax)
+* [java11](/reference/recipes-by-tag#java11)
+* [inject](/reference/recipes-by-tag#inject)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

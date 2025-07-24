@@ -13,8 +13,8 @@ _These recipes help with the Migration to Java EE 7, flagging and updating depre
 
 ### Tags
 
-* javaee7
-* deprecated
+* [javaee7](/reference/recipes-by-tag#javaee7)
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 
@@ -256,4 +256,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Evie Lau, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+Chuka Obinabo, Evie Lau, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

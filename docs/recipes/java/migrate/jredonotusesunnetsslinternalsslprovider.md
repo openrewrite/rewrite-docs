@@ -13,7 +13,7 @@ _Do not use the `com.sun.net.ssl.internal.ssl.Provider` class._
 
 ### Tags
 
-* java11
+* [java11](/reference/recipes-by-tag#java11)
 
 ## Recipe source
 

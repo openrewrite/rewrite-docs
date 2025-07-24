@@ -13,8 +13,8 @@ _This codemod moves transforms imports from `next/server` to `next/og` for usage
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](/reference/recipes-by-tag#nextjs)
+* [codemods](/reference/recipes-by-tag#codemods)
 
 ## Recipe source
 

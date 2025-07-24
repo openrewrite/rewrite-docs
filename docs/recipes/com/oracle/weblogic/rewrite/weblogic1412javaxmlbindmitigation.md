@@ -13,9 +13,9 @@ _This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic
 
 ### Tags
 
-* java
-* javax
-* weblogic
+* [java](/reference/recipes-by-tag#java)
+* [javax](/reference/recipes-by-tag#javax)
+* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 

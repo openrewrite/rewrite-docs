@@ -23,9 +23,9 @@ import TabItem from '@theme/TabItem';
 
 ### Tags
 
-* codemods
-* lodash
-* underscore
+* [codemods](/reference/recipes-by-tag#codemods)
+* [lodash](/reference/recipes-by-tag#lodash)
+* [underscore](/reference/recipes-by-tag#underscore)
 
 ## Recipe source
 

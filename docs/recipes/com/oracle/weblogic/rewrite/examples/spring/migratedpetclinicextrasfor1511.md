@@ -13,10 +13,10 @@ _Run migration extras for migrated Spring Framework PetClinic example run on Web
 
 ### Tags
 
-* examples
-* weblogic
-* petclinic
-* springframework
+* [examples](/reference/recipes-by-tag#examples)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [petclinic](/reference/recipes-by-tag#petclinic)
+* [springframework](/reference/recipes-by-tag#springframework)
 
 ## Recipe source
 

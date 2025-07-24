@@ -13,8 +13,8 @@ _Guava filled in important gaps in the Java standard library and still does. But
 
 ### Tags
 
-* guava
-* java11
+* [guava](/reference/recipes-by-tag#guava)
+* [java11](/reference/recipes-by-tag#java11)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Require or prevent a new line after jsx elements and expressions.  See [rule de
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

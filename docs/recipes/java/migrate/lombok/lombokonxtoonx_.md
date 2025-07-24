@@ -13,7 +13,7 @@ _Migrates Lombok's `onX` annotations from the Java 7 style using `@__` to the Ja
 
 ### Tags
 
-* lombok
+* [lombok](/reference/recipes-by-tag#lombok)
 
 ## Recipe source
 
@@ -22,6 +22,45 @@ _Migrates Lombok's `onX` annotations from the Java 7 style using `@__` to the Ja
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import lombok.Getter;
+class Example {
+    @Getter(onMethod=@__({@Deprecated}))
+    private String field;
+}
+```
+
+###### After
+```java
+import lombok.Getter;
+class Example {
+    @Getter(onMethod_={@Deprecated})
+    private String field;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import lombok.Getter;
+class Example {
+-   @Getter(onMethod=@__({@Deprecated}))
++   @Getter(onMethod_={@Deprecated})
+    private String field;
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

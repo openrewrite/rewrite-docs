@@ -13,9 +13,9 @@ _Migrate applications to the latest Apache Commons Collections 4.x release. This
 
 ### Tags
 
-* apache
-* collections
-* commons
+* [apache](/reference/recipes-by-tag#apache)
+* [collections](/reference/recipes-by-tag#collections)
+* [commons](/reference/recipes-by-tag#commons)
 
 ## Recipe source
 

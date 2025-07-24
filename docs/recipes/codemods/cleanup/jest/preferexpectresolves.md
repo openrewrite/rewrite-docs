@@ -13,9 +13,9 @@ _Prefer await expect(...).resolves over expect(await ...) syntax See rule detail
 
 ### Tags
 
-* ESLint
-* eslint-plugin-jest
-* Jest
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [eslint-plugin-jest](/reference/recipes-by-tag#eslint-plugin-jest)
+* [Jest](/reference/recipes-by-tag#jest)
 
 ## Recipe source
 

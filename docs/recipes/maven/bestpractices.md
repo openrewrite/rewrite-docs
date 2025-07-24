@@ -35,6 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Remove duplicate Maven dependencies](../maven/removeduplicatedependencies)
 * [Remove redundant explicit dependency and plugin versions](../maven/removeredundantdependencyversions)
 * [Migrate to `maven-dependency-plugin` goal `resolve-sources`](../maven/plugin/dependencyplugingoalresolvesources)
+* [Update SCM section to match Git origin](../maven/updatescmfromgitorigin)
 
 </TabItem>
 
@@ -55,6 +56,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.maven.RemoveRedundantDependencyVersions
   - org.openrewrite.maven.plugin.DependencyPluginGoalResolveSources
+  - org.openrewrite.maven.UpdateScmFromGitOrigin
 
 ```
 </TabItem>
@@ -185,4 +187,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Patrick Way, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adriano Machado, [DidierLoiseau](mailto:didierloiseau+git@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Ryan Hudson, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)
+[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), e5LA, [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Patrick Way, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adriano Machado, [DidierLoiseau](mailto:didierloiseau+git@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Ryan Hudson, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)

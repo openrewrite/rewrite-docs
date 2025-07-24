@@ -13,8 +13,8 @@ _Database modules for Flyway 10 have been split out into separate modules for ma
 
 ### Tags
 
-* sqlserver
-* flyway
+* [sqlserver](/reference/recipes-by-tag#sqlserver)
+* [flyway](/reference/recipes-by-tag#flyway)
 
 ## Recipe source
 

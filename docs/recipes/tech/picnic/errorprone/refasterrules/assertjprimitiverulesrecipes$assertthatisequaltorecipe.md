@@ -15,13 +15,42 @@ static final class AssertThatIsEqualTo {
     
     @BeforeTemplate
     AbstractBooleanAssert<?> before(boolean actual, boolean expected) {
-        return Refaster.anyOf(assertThat(actual == expected).isTrue(), assertThat(actual != expected).isFalse());
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
     }
     
     @BeforeTemplate
-    @SuppressWarnings(value = "java:S1244")
-    AbstractBooleanAssert<?> before(double actual, double expected) {
-        return Refaster.anyOf(assertThat(actual == expected).isTrue(), assertThat(actual != expected).isFalse());
+    AbstractByteAssert<?> before(byte actual, byte expected) {
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
+    }
+    
+    @BeforeTemplate
+    AbstractCharacterAssert<?> before(char actual, char expected) {
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
+    }
+    
+    @BeforeTemplate
+    AbstractShortAssert<?> before(short actual, short expected) {
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
+    }
+    
+    @BeforeTemplate
+    AbstractIntegerAssert<?> before(int actual, int expected) {
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
+    }
+    
+    @BeforeTemplate
+    AbstractLongAssert<?> before(long actual, long expected) {
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
+    }
+    
+    @BeforeTemplate
+    AbstractFloatAssert<?> before(float actual, float expected) {
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
+    }
+    
+    @BeforeTemplate
+    AbstractDoubleAssert<?> before(double actual, double expected) {
+        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
     }
     
     @AfterTemplate
@@ -32,10 +61,6 @@ static final class AssertThatIsEqualTo {
 }
 ```
 .
-
-### Tags
-
-* [RSPEC-S1244](https://sonarsource.github.io/rspec/#/rspec/S1244)
 
 ## Recipe source
 

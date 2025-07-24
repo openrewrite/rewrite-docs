@@ -24,6 +24,56 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | -- | -- | -- | -- |
 | `List` | properties | *Optional*. A list of the properties we want to prevent being set with `Security.setProperty(..)`. | `crypto.policy` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|properties|`List.of("crypto.policy")`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.security.Security;
+
+class C {
+    void update() {
+        String key = "crypto.policy";
+        Security.setProperty(key, "unlimited");
+    }
+}
+```
+
+###### After
+```java
+import java.security.Security;
+
+class C {
+    void update() {
+        String key = /*~~>*/"crypto.policy";
+        Security.setProperty(key, "unlimited");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class C {
+    void update() {
+-       String key = "crypto.policy";
++       String key = /*~~>*/"crypto.policy";
+        Security.setProperty(key, "unlimited");
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

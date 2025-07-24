@@ -13,8 +13,8 @@ _Enforce PascalCase for user-defined JSX components  See [rule details](https://
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

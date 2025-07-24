@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Boot 3.5 release. This recipe will mo
 
 ### Tags
 
-* spring
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 
@@ -22,57 +22,6 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
-
-## Examples
-##### Example 1
-
-
-###### Unchanged
-```mavenProject
-project
-```
-
-###### Unchanged
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>fooservice</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
-    </parent>
-</project>
-```
-
----
-
-##### Example 2
-
-
-###### Unchanged
-```mavenProject
-project
-```
-
-###### Unchanged
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>fooservice</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
-    </parent>
-</project>
-```
 
 
 ## Usage
@@ -184,4 +133,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Sam Snyder](mailto:sam@moderne.io), Chuka Obinabo, [Laurens Westerlaken](mailto:laurens.w@live.nl), Simon Zilliken, Kun Li, [Jonathan Schneider](mailto:jkschneider@gmail.com), Anu Ramamoorthy, Patrick Way, Cathy, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [steve-aom-elliott](mailto:steve@moderne.io), [qwtfps](mailto:qwtfps@163.com), pdesprez, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Guillaume Husta](mailto:guillaume.husta@gmail.com), SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Shannon Pamperl](mailto:shanman190@gmail.com), Kushank24, [Tim te Beek](mailto:timtebeek@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Melloware](mailto:mellowaredev@gmail.com), 123Haynes, [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), Evie Lau, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, ranuradh, Adam Slaski, nbruno, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [adammak](mailto:maka9@mcmaster.ca), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Greg Adams](mailto:gadams@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), Anshuman Mishra, Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Josh Soref, [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), John Burns, Aakarshit Uppal, BramliAK, Adriano Machado, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Benjamin Muschko](mailto:benjamin.muschko@gmail.com), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), rob-valor, [JohannisK](mailto:johan.kragt@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com)
+[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Sam Snyder](mailto:sam@moderne.io), Chuka Obinabo, [Laurens Westerlaken](mailto:laurens.w@live.nl), Simon Zilliken, [Jonathan Schneider](mailto:jkschneider@gmail.com), Kun Li, Anu Ramamoorthy, Patrick Way, [steve-aom-elliott](mailto:steve@moderne.io), Cathy, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [qwtfps](mailto:qwtfps@163.com), pdesprez, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Guillaume Husta](mailto:guillaume.husta@gmail.com), SiBorea, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), Kushank24, [Tim te Beek](mailto:timtebeek@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Melloware](mailto:mellowaredev@gmail.com), 123Haynes, [Kun Li](mailto:kun@moderne.io), BhavanaPidapa, [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Evie Lau, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, ranuradh, Adam Slaski, nbruno, [adammak](mailto:maka9@mcmaster.ca), [JohannisK](mailto:johan.kragt@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Greg Adams](mailto:gadams@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), Anshuman Mishra, Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), Josh Soref, [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), John Burns, Aakarshit Uppal, BramliAK, Adriano Machado, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Benjamin Muschko](mailto:benjamin.muschko@gmail.com), eocantu, [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)

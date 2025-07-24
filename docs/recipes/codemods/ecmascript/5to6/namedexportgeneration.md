@@ -13,8 +13,8 @@ _Generate named exports from CommonJS modules_
 
 ### Tags
 
-* codemods
-* 5to6
+* [codemods](/reference/recipes-by-tag#codemods)
+* [5to6](/reference/recipes-by-tag#5to6)
 
 ## Recipe source
 

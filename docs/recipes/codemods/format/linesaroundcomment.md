@@ -13,8 +13,8 @@ _Require empty lines around comments  See [rule details](https://eslint.style/ru
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

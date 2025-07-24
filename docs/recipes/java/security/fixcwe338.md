@@ -13,7 +13,7 @@ _Use a cryptographically strong pseudo-random number generator (PRNG)._
 
 ### Tags
 
-* CWE-338
+* [CWE-338](/reference/recipes-by-tag#cwe-338)
 
 ## Recipe source
 

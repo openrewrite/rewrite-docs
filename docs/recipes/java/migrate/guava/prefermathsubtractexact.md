@@ -13,7 +13,7 @@ _Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.primi
 
 ### Tags
 
-* guava
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

@@ -30,6 +30,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssertJStringRules.AbstractStringAssertStringIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$abstractstringassertstringisemptyrecipe)
 * [Refaster template `AssertJStringRules.AbstractStringAssertStringIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$abstractstringassertstringisnotemptyrecipe)
+* [Refaster template `AssertJStringRules.AssertThatStringStartsWith`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringstartswithrecipe)
+* [Refaster template `AssertJStringRules.AssertThatStringDoesNotStartWith`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringdoesnotstartwithrecipe)
+* [Refaster template `AssertJStringRules.AssertThatStringEndsWith`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringendswithrecipe)
+* [Refaster template `AssertJStringRules.AssertThatStringDoesNotEndWith`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringdoesnotendwithrecipe)
 * [Refaster template `AssertJStringRules.AssertThatStringContains`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringcontainsrecipe)
 * [Refaster template `AssertJStringRules.AssertThatStringDoesNotContain`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringdoesnotcontainrecipe)
 * [Refaster template `AssertJStringRules.AssertThatMatches`](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatmatchesrecipe)
@@ -52,6 +56,10 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotStartWithRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringEndsWithRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotEndWithRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringContainsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotContainRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatMatchesRecipe

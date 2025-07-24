@@ -13,8 +13,8 @@ _Enforce consistent line breaks inside function parentheses  See [rule details](
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

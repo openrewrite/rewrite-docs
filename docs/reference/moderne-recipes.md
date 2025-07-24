@@ -111,6 +111,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 * [Find JPQL definitions](../recipes/hibernate/search/findjpqldefinitions.md)
 * [Fix conflicting class type annotation Hibernate 6.6](../recipes/hibernate/update66/fixconflictingclasstypeannotations.md)
+* [Migrate Session interface method calls](../recipes/hibernate/update70/migratesessioninterface.md)
+* [Migrate Session save/update/delete method calls](../recipes/hibernate/update70/migratesessionsaveupdatedelete.md)
 * [Migrate to Hibernate 6.6.x](../recipes/hibernate/migratetohibernate66.md)
 * [Migrate to Hibernate 7.0.x](../recipes/hibernate/migratetohibernate70.md)
 * [Remove table from single table inherited entity](../recipes/hibernate/update66/removetablefrominheritedentity.md)
@@ -147,6 +149,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [Find and fix vulnerable Nuget dependencies](../recipes/csharp/dependencies/dependencyvulnerabilitycheck.md)
 * [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck.md)
 * [Find generic secrets](../recipes/java/security/secrets/findgenericsecrets.md)
+* [Find hard-coded loopback IPv4 addresses](../recipes/text/findhardcodedloopbackaddresses.md)
 * [Find hard-coded private IPv4 addresses](../recipes/text/findhardcodedprivateipaddresses.md)
 * [Find licenses in use in third-party dependencies](../recipes/java/dependencies/dependencylicensecheck.md)
 * [Find passwords used in URLs](../recipes/java/security/secrets/findpasswordinurlsecrets.md)

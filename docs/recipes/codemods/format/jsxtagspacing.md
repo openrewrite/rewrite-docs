@@ -13,8 +13,8 @@ _Enforce whitespace in and around the JSX opening and closing brackets  See [rul
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

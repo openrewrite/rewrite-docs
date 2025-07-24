@@ -13,7 +13,7 @@ _Certain Java networking APIs have become deprecated and their usages changed, n
 
 ### Tags
 
-* networking
+* [networking](/reference/recipes-by-tag#networking)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Spring Boot 3.4 deprecates methods that are not commonly used or need manual in
 
 ### Tags
 
-* spring
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 

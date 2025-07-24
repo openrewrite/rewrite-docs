@@ -13,8 +13,8 @@ _Formats all TypeScript source code using the ESLint Prettier plugin._
 
 ### Tags
 
-* codemods
-* eslint
+* [codemods](/reference/recipes-by-tag#codemods)
+* [eslint](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

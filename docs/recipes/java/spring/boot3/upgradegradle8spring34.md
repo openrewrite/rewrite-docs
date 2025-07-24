@@ -13,9 +13,9 @@ _Spring Boot 3.4 requires Gradle 8.4+._
 
 ### Tags
 
-* spring
-* gradle
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [gradle](/reference/recipes-by-tag#gradle)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 

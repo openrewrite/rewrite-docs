@@ -13,7 +13,7 @@ _These recipes help with the Migration to Jakarta EE 10, flagging and updating d
 
 ### Tags
 
-* jakarta
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

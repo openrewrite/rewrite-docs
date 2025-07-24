@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `persistence-configuration.xml` 
 
 ### Tags
 
-* schemas
-* weblogic
-* persistence-configuration
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [persistence-configuration](/reference/recipes-by-tag#persistence-configuration)
 
 ## Recipe source
 

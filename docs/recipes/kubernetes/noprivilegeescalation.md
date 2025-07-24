@@ -13,7 +13,7 @@ _Does not allow a process to gain more privileges than its parent process._
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

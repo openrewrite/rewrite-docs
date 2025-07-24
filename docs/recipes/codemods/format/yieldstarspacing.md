@@ -13,8 +13,8 @@ _Require or disallow spacing around the &#x60;*&#x60; in &#x60;yield*&#x60; expr
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

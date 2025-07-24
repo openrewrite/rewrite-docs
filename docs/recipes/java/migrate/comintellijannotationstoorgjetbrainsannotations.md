@@ -13,9 +13,9 @@ _This recipe will upgrade old dependency of com.intellij:annotations to the newe
 
 ### Tags
 
-* jetbrains
-* annotations
-* intellij
+* [jetbrains](/reference/recipes-by-tag#jetbrains)
+* [annotations](/reference/recipes-by-tag#annotations)
+* [intellij](/reference/recipes-by-tag#intellij)
 
 ## Recipe source
 

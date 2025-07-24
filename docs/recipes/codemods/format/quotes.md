@@ -13,8 +13,8 @@ _Enforce the consistent use of either backticks, double, or single quotes  See [
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

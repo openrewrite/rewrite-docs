@@ -13,9 +13,9 @@ _enforce order of attributes See rule details for [svelte/sort-attributes](https
 
 ### Tags
 
-* svelte
-* ESLint
-* eslint-plugin-svelte
+* [svelte](/reference/recipes-by-tag#svelte)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint-plugin-svelte)
 
 ## Recipe source
 

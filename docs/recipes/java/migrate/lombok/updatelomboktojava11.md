@@ -13,8 +13,8 @@ _Update Lombok dependency to a version that is compatible with Java 11 and migra
 
 ### Tags
 
-* java11
-* lombok
+* [java11](/reference/recipes-by-tag#java11)
+* [lombok](/reference/recipes-by-tag#lombok)
 
 ## Recipe source
 

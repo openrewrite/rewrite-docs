@@ -13,7 +13,7 @@ _Locates Discord secrets stored in plain text in code._
 
 ### Tags
 
-* security
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Transforms the `withAmp` HOC into Next.js 9 page configuration._
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](/reference/recipes-by-tag#nextjs)
+* [codemods](/reference/recipes-by-tag#codemods)
 
 ## Recipe source
 

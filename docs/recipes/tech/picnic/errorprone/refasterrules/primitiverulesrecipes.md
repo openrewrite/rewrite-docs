@@ -67,6 +67,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `PrimitiveRules.LongToUnsignedString`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringrecipe)
 * [Refaster template `PrimitiveRules.IntegerToUnsignedStringWithRadix`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringwithradixrecipe)
 * [Refaster template `PrimitiveRules.LongToUnsignedStringWithRadix`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringwithradixrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedbytesrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedInts`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedintsrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedLongs`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedlongsrecipe)
 
 </TabItem>
 
@@ -120,6 +123,9 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringWithRadixRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringWithRadixRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedBytesRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedIntsRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedLongsRecipe
 
 ```
 </TabItem>

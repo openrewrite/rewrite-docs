@@ -13,7 +13,7 @@ _Updates build files to use Java 17 as the target/source._
 
 ### Tags
 
-* java17
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 

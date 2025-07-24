@@ -13,8 +13,8 @@ _Prefer the Java standard library's `java.nio.file.Files` over third-party usage
 
 ### Tags
 
-* apache
-* commons
+* [apache](/reference/recipes-by-tag#apache)
+* [commons](/reference/recipes-by-tag#commons)
 
 ## Recipe source
 
@@ -310,4 +310,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

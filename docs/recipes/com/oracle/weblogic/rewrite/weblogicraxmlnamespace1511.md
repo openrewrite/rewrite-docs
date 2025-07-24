@@ -13,10 +13,10 @@ _This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLo
 
 ### Tags
 
-* connector
-* schemas
-* weblogic
-* ra
+* [connector](/reference/recipes-by-tag#connector)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [ra](/reference/recipes-by-tag#ra)
 
 ## Recipe source
 

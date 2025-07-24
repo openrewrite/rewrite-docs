@@ -13,7 +13,7 @@ _This recipe applies best practices for using Reactor._
 
 ### Tags
 
-* reactor
+* [reactor](/reference/recipes-by-tag#reactor)
 
 ## Recipe source
 

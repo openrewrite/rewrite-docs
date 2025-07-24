@@ -13,9 +13,9 @@ _Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` nam
 
 ### Tags
 
-* jaxb
-* jaxws
-* jakarta
+* [jaxb](/reference/recipes-by-tag#jaxb)
+* [jaxws](/reference/recipes-by-tag#jaxws)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 
@@ -412,4 +412,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

@@ -141,4 +141,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[juju](mailto:justine.gehring@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[juju](mailto:justine.gehring@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

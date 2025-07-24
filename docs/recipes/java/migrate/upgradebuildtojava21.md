@@ -13,7 +13,7 @@ _Updates build files to use Java 21 as the target/source._
 
 ### Tags
 
-* java21
+* [java21](/reference/recipes-by-tag#java21)
 
 ## Recipe source
 

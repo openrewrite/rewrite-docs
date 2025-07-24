@@ -200,4 +200,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Bryce Tompkins](mailto:bryce@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:peter@moderne.io), [Bryce Tompkins](mailto:bryce@moderne.io)

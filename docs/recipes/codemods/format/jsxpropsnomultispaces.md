@@ -13,8 +13,8 @@ _Disallow multiple spaces between inline JSX props  See [rule details](https://e
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

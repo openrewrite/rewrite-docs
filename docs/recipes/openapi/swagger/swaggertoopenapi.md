@@ -13,8 +13,8 @@ _Migrate from Swagger to OpenAPI._
 
 ### Tags
 
-* openapi
-* swagger
+* [openapi](/reference/recipes-by-tag#openapi)
+* [swagger](/reference/recipes-by-tag#swagger)
 
 ## Recipe source
 
@@ -471,4 +471,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-SiBorea, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [adammak](mailto:maka9@mcmaster.ca)
+SiBorea, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [adammak](mailto:maka9@mcmaster.ca), [Tim te Beek](mailto:timtebeek@gmail.com)

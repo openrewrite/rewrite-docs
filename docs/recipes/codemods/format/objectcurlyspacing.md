@@ -13,8 +13,8 @@ _Enforce consistent spacing inside braces  See [rule details](https://eslint.sty
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

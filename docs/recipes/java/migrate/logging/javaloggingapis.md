@@ -13,7 +13,7 @@ _Certain Java logging APIs have become deprecated and their usages changed, nece
 
 ### Tags
 
-* logging
+* [logging](/reference/recipes-by-tag#logging)
 
 ## Recipe source
 

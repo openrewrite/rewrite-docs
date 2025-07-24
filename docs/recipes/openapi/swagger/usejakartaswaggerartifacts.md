@@ -13,9 +13,9 @@ _Migrate from javax Swagger artifacts to Jakarta versions._
 
 ### Tags
 
-* openapi
-* swagger
-* jakarta
+* [openapi](/reference/recipes-by-tag#openapi)
+* [swagger](/reference/recipes-by-tag#swagger)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

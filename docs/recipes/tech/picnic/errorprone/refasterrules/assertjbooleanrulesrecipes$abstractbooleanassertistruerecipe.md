@@ -15,7 +15,7 @@ static final class AbstractBooleanAssertIsTrue {
     
     @BeforeTemplate
     AbstractBooleanAssert<?> before(AbstractBooleanAssert<?> boolAssert) {
-        return Refaster.anyOf(boolAssert.isEqualTo(true), boolAssert.isEqualTo(Boolean.TRUE), boolAssert.isNotEqualTo(false), boolAssert.isNotEqualTo(Boolean.FALSE));
+        return Refaster.anyOf(boolAssert.isEqualTo(true), boolAssert.isNotEqualTo(false));
     }
     
     @AfterTemplate

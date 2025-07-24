@@ -13,7 +13,7 @@ _Applies best practices to Kubernetes manifests._
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

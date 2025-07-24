@@ -13,8 +13,8 @@ _Require or disallow padding within blocks  See [rule details](https://eslint.st
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

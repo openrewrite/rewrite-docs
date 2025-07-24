@@ -13,8 +13,8 @@ _AssertJ provides a rich set of assertions, truly helpful error messages, improv
 
 ### Tags
 
-* testing
-* assertj
+* [testing](/reference/recipes-by-tag#testing)
+* [assertj](/reference/recipes-by-tag#assertj)
 
 ## Recipe source
 
@@ -284,4 +284,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Yeikel, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Aleksandar A Simpson](mailto:alek@asu.me), [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Adriano Machado, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Lewis Birks, [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Ties van de Ven, [Tim te Beek](mailto:timtebeek@gmail.com), [Philippe GRANET](mailto:philippe.granet@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Aaron Gershman, [Jeroen Meijer](mailto:jjgmeijer@gmail.com)
+Yeikel, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Adams](mailto:greg@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), Patrick Way, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Adriano Machado, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Lewis Birks, [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Ties van de Ven, [Tim te Beek](mailto:timtebeek@gmail.com), [Philippe GRANET](mailto:philippe.granet@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Aaron Gershman, [Jeroen Meijer](mailto:jjgmeijer@gmail.com)

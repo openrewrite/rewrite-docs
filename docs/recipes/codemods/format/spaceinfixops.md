@@ -13,8 +13,8 @@ _Require spacing around infix operators  See [rule details](https://eslint.style
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

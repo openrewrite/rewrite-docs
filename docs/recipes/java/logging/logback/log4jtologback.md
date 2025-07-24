@@ -13,9 +13,9 @@ _Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementatio
 
 ### Tags
 
-* logging
-* log4j
-* logback
+* [logging](/reference/recipes-by-tag#logging)
+* [log4j](/reference/recipes-by-tag#log4j)
+* [logback](/reference/recipes-by-tag#logback)
 
 ## Recipe source
 
@@ -290,4 +290,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Aaron Gershman, [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Md Riyazul Islam, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Pierre Delagrave](mailto:pierre@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Patrick Way, [Kun Li](mailto:kun@moderne.io), [Peter Streef](mailto:p.streef@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com)
+Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Md Riyazul Islam, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Tim te Beek](mailto:timtebeek@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Pierre Delagrave](mailto:pierre@moderne.io), Patrick Way, [Kun Li](mailto:kun@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:p.streef@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com)

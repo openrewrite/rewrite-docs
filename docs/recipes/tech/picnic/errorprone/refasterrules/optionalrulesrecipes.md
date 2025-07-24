@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `OptionalRules.OptionalIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalisemptyrecipe)
 * [Refaster template `OptionalRules.OptionalIsPresent`](../../../../tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalispresentrecipe)
 * [Refaster template `OptionalRules.OptionalOrElseThrow`](../../../../tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowrecipe)
+* [Refaster template `OptionalRules.OptionalOrElseThrowMethodReference`](../../../../tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowmethodreferencerecipe)
 * [Refaster template `OptionalRules.OptionalEqualsOptional`](../../../../tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalequalsoptionalrecipe)
 * [Refaster template `OptionalRules.OptionalFirstIteratorElement`](../../../../tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalfirstiteratorelementrecipe)
 * [Refaster template `OptionalRules.MapOptionalToBoolean`](../../../../tech/picnic/errorprone/refasterrules/optionalrulesrecipes$mapoptionaltobooleanrecipe)
@@ -61,6 +62,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalIsPresentRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowMethodReferenceRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalEqualsOptionalRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFirstIteratorElementRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$MapOptionalToBooleanRecipe

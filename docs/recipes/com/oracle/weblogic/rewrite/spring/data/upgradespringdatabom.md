@@ -13,8 +13,8 @@ _Upgrade Spring Data BOM to 2024.1.x version._
 
 ### Tags
 
-* springdata
-* springframework
+* [springdata](/reference/recipes-by-tag#springdata)
+* [springframework](/reference/recipes-by-tag#springframework)
 
 ## Recipe source
 

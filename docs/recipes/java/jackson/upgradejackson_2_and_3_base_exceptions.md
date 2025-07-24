@@ -13,7 +13,7 @@ _Jackson 3 contains new base exceptions which were also backported to 2.x. This 
 
 ### Tags
 
-* jackson
+* [jackson](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 

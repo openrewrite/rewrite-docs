@@ -13,7 +13,7 @@ _Convert trivial setter methods to `@Setter` annotations on their respective fie
 
 ### Tags
 
-* lombok
+* [lombok](/reference/recipes-by-tag#lombok)
 
 ## Recipe source
 
@@ -271,4 +271,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-timo-a, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com)
+timo-a, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:tim@moderne.io)

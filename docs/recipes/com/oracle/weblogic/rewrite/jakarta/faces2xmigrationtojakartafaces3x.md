@@ -13,10 +13,10 @@ _Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespa
 
 ### Tags
 
-* jakartaee
-* faces
-* jsf
-* jakarta
+* [jakartaee](/reference/recipes-by-tag#jakartaee)
+* [faces](/reference/recipes-by-tag#faces)
+* [jsf](/reference/recipes-by-tag#jsf)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

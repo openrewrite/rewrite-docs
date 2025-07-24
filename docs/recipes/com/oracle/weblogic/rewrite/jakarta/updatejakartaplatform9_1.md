@@ -13,8 +13,8 @@ _Update Jakarta EE Platform Dependencies to 9.1.0_
 
 ### Tags
 
-* jakarta
-* dependencies
+* [jakarta](/reference/recipes-by-tag#jakarta)
+* [dependencies](/reference/recipes-by-tag#dependencies)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Migrate to Flyway 10. See details at [Flyway V10 has landed](https://documentat
 
 ### Tags
 
-* flyway
+* [flyway](/reference/recipes-by-tag#flyway)
 
 ## Recipe source
 

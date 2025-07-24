@@ -13,10 +13,10 @@ _Set dependabot to check for github-actions updates daily._
 
 ### Tags
 
-* github
-* demo
-* dependabot
-* dependencies
+* [github](/reference/recipes-by-tag#github)
+* [demo](/reference/recipes-by-tag#demo)
+* [dependabot](/reference/recipes-by-tag#dependabot)
+* [dependencies](/reference/recipes-by-tag#dependencies)
 
 ## Recipe source
 

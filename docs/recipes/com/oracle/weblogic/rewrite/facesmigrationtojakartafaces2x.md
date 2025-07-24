@@ -13,11 +13,11 @@ _Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespa
 
 ### Tags
 
-* javax
-* jakartaee
-* faces
-* jsf
-* jakarta
+* [javax](/reference/recipes-by-tag#javax)
+* [jakartaee](/reference/recipes-by-tag#jakartaee)
+* [faces](/reference/recipes-by-tag#faces)
+* [jsf](/reference/recipes-by-tag#jsf)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 

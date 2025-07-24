@@ -13,8 +13,8 @@ _Applies best practices to tests._
 
 ### Tags
 
-* junit
-* testing
+* [junit](/reference/recipes-by-tag#junit)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -36,7 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration)
 * [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports)
 * [Clean Up Assertions](../../../java/testing/junit5/cleanupassertions)
-* [Replace JUnit `assertTrue(false, "reason")` and `assertFalse(true, "reason")` with `fail("reason")`](../../../java/testing/cleanup/assertliteralbooleantofailrecipe)
+* [Replace JUnit `assertTrue(false, "reason")` and `assertFalse(true, "reason")` with `fail("reason")`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes)
+* [Remove JUnit `assertTrue(true)` and `assertFalse(false)`](../../../java/testing/cleanup/assertliteralbooleanremovedrecipe)
 * [Remove `test` prefix from JUnit 5 tests](../../../java/testing/cleanup/removetestprefix)
 * [Remove `public` visibility of JUnit 5 tests](../../../java/testing/cleanup/testsshouldnotbepublic)
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](../../../java/testing/junit5/addparameterizedtestannotation)
@@ -63,7 +64,8 @@ recipeList:
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
   - org.openrewrite.java.testing.junit5.StaticImports
   - org.openrewrite.java.testing.junit5.CleanupAssertions
-  - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipe
+  - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes
+  - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanRemovedRecipe
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
   - org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation

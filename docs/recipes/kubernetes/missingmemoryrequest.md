@@ -13,7 +13,7 @@ _A container is guaranteed to have as much memory as it requests, but is not all
 
 ### Tags
 
-* kubernetes
+* [kubernetes](/reference/recipes-by-tag#kubernetes)
 
 ## Recipe source
 

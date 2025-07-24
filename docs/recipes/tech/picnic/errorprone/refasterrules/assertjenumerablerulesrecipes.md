@@ -28,7 +28,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJEnumerableRules.EnumerableAssertIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes$enumerableassertisemptyrecipe)
 * [Refaster template `AssertJEnumerableRules.EnumerableAssertIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes$enumerableassertisnotemptyrecipe)
 * [Refaster template `AssertJEnumerableRules.EnumerableAssertHasSize`](../../../../tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes$enumerableasserthassizerecipe)
 * [Refaster template `AssertJEnumerableRules.EnumerableAssertHasSizeLessThan`](../../../../tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes$enumerableasserthassizelessthanrecipe)
@@ -51,7 +50,6 @@ description: |
   Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJEnumerableRules`.
   [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsNotEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSizeRecipe
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSizeLessThanRecipe

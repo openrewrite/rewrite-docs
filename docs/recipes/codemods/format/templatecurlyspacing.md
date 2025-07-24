@@ -13,8 +13,8 @@ _Require or disallow spacing around embedded expressions of template strings  Se
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

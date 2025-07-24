@@ -13,7 +13,7 @@ _Prefer `java.lang.Char#compare` instead of using `com.google.common.primitives.
 
 ### Tags
 
-* guava
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 

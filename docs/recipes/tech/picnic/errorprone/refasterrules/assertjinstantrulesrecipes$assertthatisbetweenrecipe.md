@@ -1,31 +1,26 @@
 ---
-sidebar_label: "Refaster template AssertJEnumerableRules.EnumerableAssertIsEmpty"
+sidebar_label: "Refaster template AssertJInstantRules.AssertThatIsBetween"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster template `AssertJEnumerableRules.EnumerableAssertIsEmpty`
+# Refaster template `AssertJInstantRules.AssertThatIsBetween`
 
-**tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe**
+**tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe**
 
 Recipe created for the following Refaster template:
 ```java
-static final class EnumerableAssertIsEmpty<E> {
+static final class AssertThatIsBetween {
     
     @BeforeTemplate
-    void before(EnumerableAssert<?, E> enumAssert) {
-        Refaster.anyOf(enumAssert.hasSize(0), enumAssert.hasSizeLessThanOrEqualTo(0), enumAssert.hasSizeLessThan(1));
-    }
-    
-    @BeforeTemplate
-    void before(AbstractIterableAssert<?, ?, E, ?> enumAssert) {
-        enumAssert.size().isNotPositive();
+    AbstractInstantAssert<?> before(Instant actual, Instant start, Instant end) {
+        return Refaster.anyOf(assertThat(actual).isAfterOrEqualTo(start).isBeforeOrEqualTo(end), assertThat(actual).isBeforeOrEqualTo(end).isAfterOrEqualTo(start));
     }
     
     @AfterTemplate
-    void after(EnumerableAssert<?, E> enumAssert) {
-        enumAssert.isEmpty();
+    AbstractInstantAssert<?> after(Instant actual, Instant start, Instant end) {
+        return assertThat(actual).isBetween(start, end);
     }
 }
 ```
@@ -33,7 +28,7 @@ static final class EnumerableAssertIsEmpty<E> {
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -54,7 +49,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe")
+    activeRecipe("tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe")
     setExportDatatables(true)
 }
 
@@ -87,7 +82,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe")
+        activeRecipe("tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -122,7 +117,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -145,7 +140,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -153,7 +148,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe
+mod run . --recipe AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -167,7 +162,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsEmptyRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

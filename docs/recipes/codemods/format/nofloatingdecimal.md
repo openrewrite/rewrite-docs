@@ -13,8 +13,8 @@ _Disallow leading or trailing decimal points in numeric literals  See [rule deta
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

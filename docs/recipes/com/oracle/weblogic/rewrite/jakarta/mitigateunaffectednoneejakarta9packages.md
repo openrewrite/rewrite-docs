@@ -13,9 +13,9 @@ _Mitigate Unaffected Non-EE Jakarta 9 Packages. Reference: [https://github.com/j
 
 ### Tags
 
-* non-eejakarta
-* jakarta
-* unaffected
+* [non-eejakarta](/reference/recipes-by-tag#non-eejakarta)
+* [jakarta](/reference/recipes-by-tag#jakarta)
+* [unaffected](/reference/recipes-by-tag#unaffected)
 
 ## Recipe source
 

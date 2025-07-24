@@ -13,8 +13,8 @@ _Enforce consistent indentation  See [rule details](https://eslint.style/rules/d
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

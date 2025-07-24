@@ -13,9 +13,9 @@ _Enforce valid titles See rule details for [jest/valid-title](https://github.com
 
 ### Tags
 
-* ESLint
-* eslint-plugin-jest
-* Jest
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [eslint-plugin-jest](/reference/recipes-by-tag#eslint-plugin-jest)
+* [Jest](/reference/recipes-by-tag#jest)
 
 ## Recipe source
 

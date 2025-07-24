@@ -13,9 +13,9 @@ _Suggest using the built-in comparison matchers See rule details for [jest/prefe
 
 ### Tags
 
-* ESLint
-* eslint-plugin-jest
-* Jest
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [eslint-plugin-jest](/reference/recipes-by-tag#eslint-plugin-jest)
+* [Jest](/reference/recipes-by-tag#jest)
 
 ## Recipe source
 

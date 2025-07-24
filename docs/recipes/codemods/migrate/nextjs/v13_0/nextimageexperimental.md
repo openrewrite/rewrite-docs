@@ -13,8 +13,8 @@ _Dangerously migrates from `next/legacy/image` to the new `next/image` by adding
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](/reference/recipes-by-tag#nextjs)
+* [codemods](/reference/recipes-by-tag#codemods)
 
 ## Recipe source
 

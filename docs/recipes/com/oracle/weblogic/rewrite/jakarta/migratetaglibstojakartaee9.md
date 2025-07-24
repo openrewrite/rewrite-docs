@@ -13,8 +13,8 @@ _Upgrade Jakarta Standard Tag libraries to 2.0 (Jakarta EE9) versions._
 
 ### Tags
 
-* jakarta
-* taglibs
+* [jakarta](/reference/recipes-by-tag#jakarta)
+* [taglibs](/reference/recipes-by-tag#taglibs)
 
 ## Recipe source
 

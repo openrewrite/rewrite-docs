@@ -13,7 +13,7 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ### Tags
 
-* guava
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 
@@ -261,4 +261,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Phil, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+Phil, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -13,9 +13,9 @@ _Interactions should be awaited See rule details for [storybook/await-interactio
 
 ### Tags
 
-* eslint-plugin-storybook
-* ESLint
-* storybook
+* [eslint-plugin-storybook](/reference/recipes-by-tag#eslint-plugin-storybook)
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [storybook](/reference/recipes-by-tag#storybook)
 
 ## Recipe source
 

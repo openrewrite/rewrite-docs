@@ -13,9 +13,9 @@ _Migrate from Swagger to SpringDoc and OpenAPI._
 
 ### Tags
 
-* openapi
-* springdoc
-* swagger
+* [openapi](/reference/recipes-by-tag#openapi)
+* [springdoc](/reference/recipes-by-tag#springdoc)
+* [swagger](/reference/recipes-by-tag#swagger)
 
 ## Recipe source
 

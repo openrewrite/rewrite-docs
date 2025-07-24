@@ -13,8 +13,8 @@ _Disallow whitespace before properties  See [rule details](https://eslint.style/
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](/reference/recipes-by-tag#eslint)
+* [stylistic](/reference/recipes-by-tag#stylistic)
 
 ## Recipe source
 

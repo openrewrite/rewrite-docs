@@ -13,7 +13,7 @@ _Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR` instead of the deprecated 
 
 ### Tags
 
-* deprecated
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _The `com.sun.net.ssl.internal.ssl.Provider` provider name was removed._
 
 ### Tags
 
-* java17
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions
 
 ### Tags
 
-* testing
-* assertj
-* testng
+* [testing](/reference/recipes-by-tag#testing)
+* [assertj](/reference/recipes-by-tag#assertj)
+* [testng](/reference/recipes-by-tag#testng)
 
 ## Recipe source
 

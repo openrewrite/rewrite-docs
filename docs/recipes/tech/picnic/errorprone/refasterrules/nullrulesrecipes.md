@@ -32,6 +32,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `NullRules.IsNotNull`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$isnotnullrecipe)
 * [Refaster template `NullRules.RequireNonNullElse`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$requirenonnullelserecipe)
 * [Refaster template `NullRules.RequireNonNullElseGet`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$requirenonnullelsegetrecipe)
+* [Refaster template `NullRules.IsNullFunction`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$isnullfunctionrecipe)
+* [Refaster template `NullRules.NonNullFunction`](../../../../tech/picnic/errorprone/refasterrules/nullrulesrecipes$nonnullfunctionrecipe)
 
 </TabItem>
 
@@ -50,6 +52,8 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$RequireNonNullElseRecipe
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$RequireNonNullElseGetRecipe
+  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullFunctionRecipe
+  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$NonNullFunctionRecipe
 
 ```
 </TabItem>

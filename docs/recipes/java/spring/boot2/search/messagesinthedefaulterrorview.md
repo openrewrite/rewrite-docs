@@ -13,8 +13,8 @@ _As of Spring Boot 2.5 the `message` attribute in the default error view was rem
 
 ### Tags
 
-* spring
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 

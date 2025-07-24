@@ -13,8 +13,8 @@ _Converts the `@ApiParam` annotation to `@Parameter` and converts the directly m
 
 ### Tags
 
-* openapi
-* swagger
+* [openapi](/reference/recipes-by-tag#openapi)
+* [swagger](/reference/recipes-by-tag#swagger)
 
 ## Recipe source
 

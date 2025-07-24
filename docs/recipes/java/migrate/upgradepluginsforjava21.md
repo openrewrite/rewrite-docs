@@ -13,7 +13,7 @@ _Updates plugins and dependencies to version compatible with Java 21._
 
 ### Tags
 
-* java21
+* [java21](/reference/recipes-by-tag#java21)
 
 ## Recipe source
 

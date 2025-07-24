@@ -1,11 +1,11 @@
 ---
-sidebar_label: "OpenRewrite Recipe best practices"
+sidebar_label: "OpenRewrite recipe best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# OpenRewrite Recipe best practices
+# OpenRewrite recipe best practices
 
 **org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices**
 
@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Extract documentation examples from tests](../../java/recipes/examplesextractor)
 * [Order imports](../../java/orderimports)
 * [Remove unused imports](../../java/removeunusedimports)
+* [Simplify single-element annotation](../../java/simplifysingleelementannotation)
 * [End files with a single newline](../../java/format/emptynewlineatendoffile)
 * [Remove trailing whitespace](../../java/format/removetrailingwhitespace)
 * [Enum values should be compared with "=="](../../staticanalysis/compareenumswithequalityoperator)
@@ -46,6 +47,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove unused local variables](../../staticanalysis/removeunusedlocalvariables)
 * [Remove unused private fields](../../staticanalysis/removeunusedprivatefields)
 * [Remove unused private methods](../../staticanalysis/removeunusedprivatemethods)
+* [Unwrap else block after return or throw statement](../../staticanalysis/unwrapelseafterreturn)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
 
 </TabItem>
@@ -56,7 +58,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices
-displayName: OpenRewrite Recipe best practices
+displayName: OpenRewrite recipe best practices
 description: |
   Best practices for OpenRewrite recipe development.
 recipeList:
@@ -66,6 +68,7 @@ recipeList:
   - org.openrewrite.java.recipes.ExamplesExtractor
   - org.openrewrite.java.OrderImports
   - org.openrewrite.java.RemoveUnusedImports
+  - org.openrewrite.java.SimplifySingleElementAnnotation
   - org.openrewrite.java.format.EmptyNewlineAtEndOfFile
   - org.openrewrite.java.format.RemoveTrailingWhitespace
   - org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator
@@ -78,6 +81,7 @@ recipeList:
   - org.openrewrite.staticanalysis.RemoveUnusedLocalVariables
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateFields
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods
+  - org.openrewrite.staticanalysis.UnwrapElseAfterReturn
   - org.openrewrite.staticanalysis.UseDiamondOperator
 
 ```

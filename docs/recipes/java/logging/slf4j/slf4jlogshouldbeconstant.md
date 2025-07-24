@@ -13,8 +13,8 @@ _Logging statements shouldn't begin with `String#format`, calls to `toString()`,
 
 ### Tags
 
-* slf4j
-* logging
+* [slf4j](/reference/recipes-by-tag#slf4j)
+* [logging](/reference/recipes-by-tag#logging)
 
 ## Recipe source
 
@@ -27,11 +27,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Example
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
+###### Unchanged
 ```java
 import org.slf4j.Logger;
 class A {
@@ -41,31 +37,6 @@ class A {
     }
 }
 ```
-
-###### After
-```java
-import org.slf4j.Logger;
-class A {
-    Logger log;
-    void method() {
-        log.info("The first argument is '{}', and the second argument is '{}'.", 1, 2.3333);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,1 +5,1 @@
-    Logger log;
-    void method() {
--       log.info(String.format("The first argument is '%d', and the second argument is '%.2f'.", 1, 2.3333));
-+       log.info("The first argument is '{}', and the second argument is '{}'.", 1, 2.3333);
-    }
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage
@@ -260,4 +231,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:p.streef@gmail.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:p.streef@gmail.com), [Kun Li](mailto:kun@moderne.io), Craig P. Motlin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io)

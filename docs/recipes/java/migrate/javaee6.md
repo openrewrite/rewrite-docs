@@ -13,8 +13,8 @@ _These recipes help with the Migration to Java EE 6, flagging and updating depre
 
 ### Tags
 
-* javaee6
-* deprecated
+* [javaee6](/reference/recipes-by-tag#javaee6)
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `plan.xml` files to WebLogic 15.
 
 ### Tags
 
-* deployment-plan
-* schemas
-* weblogic
+* [deployment-plan](/reference/recipes-by-tag#deployment-plan)
+* [schemas](/reference/recipes-by-tag#schemas)
+* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 

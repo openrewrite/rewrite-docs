@@ -13,8 +13,8 @@ _Migrate from springdoc-openapi-common to springdoc-openapi-starter-common._
 
 ### Tags
 
-* openapi
-* springdoc
+* [openapi](/reference/recipes-by-tag#openapi)
+* [springdoc](/reference/recipes-by-tag#springdoc)
 
 ## Recipe source
 

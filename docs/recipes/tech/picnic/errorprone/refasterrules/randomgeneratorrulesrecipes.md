@@ -1,53 +1,57 @@
 ---
-sidebar_label: "Refaster template CollectionRules.CollectionRemoveAllFromCollectionBlock"
+sidebar_label: "RandomGeneratorRules Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster template `CollectionRules.CollectionRemoveAllFromCollectionBlock`
+# `RandomGeneratorRules` Refaster recipes
 
-**tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe**
+**tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes**
 
-Recipe created for the following Refaster template:
-```java
-static final class CollectionRemoveAllFromCollectionBlock<T, S extends T> {
-    
-    @BeforeTemplate
-    void before(Collection<T> removeFrom, Collection<S> elementsToRemove) {
-        elementsToRemove.forEach(removeFrom::remove);
-    }
-    
-    @BeforeTemplate
-    void before2(Collection<T> removeFrom, Collection<S> elementsToRemove) {
-        for (T element : elementsToRemove) {
-            removeFrom.remove(element);
-        }
-    }
-    
-    @BeforeTemplate
-    void before3(Collection<T> removeFrom, Collection<S> elementsToRemove) {
-        for (S element : elementsToRemove) {
-            removeFrom.remove(element);
-        }
-    }
-    
-    @AfterTemplate
-    void after(Collection<T> removeFrom, Collection<S> elementsToRemove) {
-        removeFrom.removeAll(elementsToRemove);
-    }
-}
-```
-.
+_Refaster rules related to expressions dealing with `RandomGenerator` instances. [Source](https://error-prone.picnic.tech/refasterrules/RandomGeneratorRules)._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Refaster template `RandomGeneratorRules.RandomGeneratorNextDouble`](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublerecipe)
+* [Refaster template `RandomGeneratorRules.RandomGeneratorNextInt`](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintrecipe)
+* [Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes
+displayName: `RandomGeneratorRules` Refaster recipes
+description: |
+  Refaster rules related to expressions dealing with `RandomGenerator` instances.
+  [Source](https://error-prone.picnic.tech/refasterrules/RandomGeneratorRules).
+recipeList:
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
@@ -63,7 +67,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe")
+    activeRecipe("tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes")
     setExportDatatables(true)
 }
 
@@ -96,7 +100,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe")
+        activeRecipe("tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -131,7 +135,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -154,7 +158,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -162,7 +166,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe
+mod run . --recipe RandomGeneratorRulesRecipes
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -176,7 +180,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
