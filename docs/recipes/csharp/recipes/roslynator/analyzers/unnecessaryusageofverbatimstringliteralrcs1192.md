@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UnnecessaryUsageOfVerbatimStringLiteralRCS1192**
 
+__
 
 ## Recipe source
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJIterableRules.AssertThatIterableIsEmpty"
+sidebar_label: "Refaster template `AssertJIterableRules.AssertThatIterableIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

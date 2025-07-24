@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.NoTestPrefixes
 displayName: Require using .only and .skip over f and x
 description: |
-  Require using .only and .skip over f and x
-  See rule details for [jest/no-test-prefixes](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-prefixes.md)
-  
+  Require using .only and .skip over f and x See rule details for [jest/no-test-prefixes](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-prefixes.md)
 tags:
   - ESLint
   - eslint-plugin-jest

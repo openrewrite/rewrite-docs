@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date) by by isCloseTo(Date, long)"
+sidebar_label: "Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.ZeroPeriod"
+sidebar_label: "Refaster template `TimeRules.ZeroPeriod`"
 ---
 
 import Tabs from '@theme/Tabs';

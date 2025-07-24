@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates minRows and maxRows props for TextareaAutosize component"
+sidebar_label: "Updates `minRows` and `maxRows` props for TextareaAutosize component"
 ---
 
 import Tabs from '@theme/Tabs';

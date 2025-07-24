@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.OptionalOrElseThrowMethodReference"
+sidebar_label: "Refaster template `OptionalRules.OptionalOrElseThrowMethodReference`"
 ---
 
 import Tabs from '@theme/Tabs';

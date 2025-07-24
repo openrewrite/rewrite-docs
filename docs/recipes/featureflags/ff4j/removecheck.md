@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Remove FF4j's check for feature key"
+sidebar_label: "Remove FF4j's `check` for feature key"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove FF4j's `check` for feature key
+# Remove FF4j&#39;s `check` for feature key
 
 **org.openrewrite.featureflags.ff4j.RemoveCheck**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.featureflags.ff4j.RemoveCheck
-displayName: Remove FF4j's `check` for feature key
+displayName: Remove FF4j&#39;s `check` for feature key
 description: |
   Replace `check()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
 
@@ -120,7 +120,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveCheckExample
-displayName: Remove FF4j's `check` for feature key example
+displayName: Remove FF4j&#39;s `check` for feature key example
 recipeList:
   - org.openrewrite.featureflags.ff4j.RemoveCheck:
       featureKey: flag-key-123abc

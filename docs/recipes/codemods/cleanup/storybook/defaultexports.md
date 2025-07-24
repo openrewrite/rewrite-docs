@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.DefaultExports
 displayName: Story files should have a default export
 description: |
-  Story files should have a default export
-  See rule details for [storybook/default-exports](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md)
-  
+  Story files should have a default export See rule details for [storybook/default-exports](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md)
 tags:
   - eslint-plugin-storybook
   - ESLint

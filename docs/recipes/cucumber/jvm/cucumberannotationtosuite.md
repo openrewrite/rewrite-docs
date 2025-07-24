@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace @Cucumber with @Suite"
+sidebar_label: "Replace `@Cucumber` with `@Suite`"
 ---
 
 import Tabs from '@theme/Tabs';

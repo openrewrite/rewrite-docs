@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove SolrAutoConfiguration"
+sidebar_label: "Remove `SolrAutoConfiguration`"
 ---
 
 import Tabs from '@theme/Tabs';

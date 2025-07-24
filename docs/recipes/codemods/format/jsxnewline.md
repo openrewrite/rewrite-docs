@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxNewline
 displayName: Require or prevent a new line after jsx elements and expressions.
 description: |
-  Require or prevent a new line after jsx elements and expressions.
-  
-  See [rule details](https://eslint.style/rules/default/jsx-newline)
-  
+  Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline)
 tags:
   - eslint
   - stylistic

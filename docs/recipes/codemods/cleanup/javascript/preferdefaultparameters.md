@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferDefaultParameters
 displayName: Prefer default parameters over reassignment.
 description: |
-  Prefer default parameters over reassignment.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md)
-  
+  Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

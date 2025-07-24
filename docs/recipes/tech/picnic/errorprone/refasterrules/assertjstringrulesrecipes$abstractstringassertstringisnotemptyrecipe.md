@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJStringRules.AbstractStringAssertStringIsNotEmpty"
+sidebar_label: "Refaster template `AssertJStringRules.AbstractStringAssertStringIsNotEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

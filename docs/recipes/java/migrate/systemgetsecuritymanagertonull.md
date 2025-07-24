@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace System.getSecurityManager() with null"
+sidebar_label: "Replace `System.getSecurityManager()` with `null`"
 ---
 
 import Tabs from '@theme/Tabs';

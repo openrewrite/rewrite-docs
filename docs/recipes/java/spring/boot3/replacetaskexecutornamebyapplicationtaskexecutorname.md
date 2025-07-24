@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use bean name applicationTaskExecutor instead of taskExecutor"
+sidebar_label: "Use bean name `applicationTaskExecutor` instead of `taskExecutor`"
 ---
 
 import Tabs from '@theme/Tabs';

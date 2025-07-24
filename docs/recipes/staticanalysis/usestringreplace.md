@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use String::replace() when first parameter is not a real regular expression"
+sidebar_label: "Use `String::replace()` when first parameter is not a real regular expression"
 ---
 
 import Tabs from '@theme/Tabs';

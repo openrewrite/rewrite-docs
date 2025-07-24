@@ -1,5 +1,5 @@
 ---
-sidebar_label: "EqualityRules Refaster recipes"
+sidebar_label: "`EqualityRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.EqualityRulesRecipes
 displayName: `EqualityRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with (in)equalities.
-  [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules).
+  Refaster rules related to expressions dealing with (in)equalities. [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityRecipe
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityLambdaRecipe

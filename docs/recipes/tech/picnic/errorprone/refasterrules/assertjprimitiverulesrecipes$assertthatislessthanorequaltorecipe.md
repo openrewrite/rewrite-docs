@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJPrimitiveRules.AssertThatIsLessThanOrEqualTo"
+sidebar_label: "Refaster template `AssertJPrimitiveRules.AssertThatIsLessThanOrEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJIntegerRules.AbstractIntegerAssertIsEqualTo"
+sidebar_label: "Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

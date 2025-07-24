@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NoUselessVBind
 displayName: Disallow unnecessary v-bind directives
 description: |
-  Disallow unnecessary v-bind directives
-  See rule details for [vue/no-useless-v-bind](https://eslint.vuejs.org/rules/no-useless-v-bind.html)
-  
+  Disallow unnecessary v-bind directives See rule details for [vue/no-useless-v-bind](https://eslint.vuejs.org/rules/no-useless-v-bind.html)
 tags:
   - ESLint
   - vue

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ApacheCommonsFileUtils Refaster recipes"
+sidebar_label: "`ApacheCommonsFileUtils` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';

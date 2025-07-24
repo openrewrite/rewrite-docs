@@ -5,7 +5,7 @@ sidebar_label: "Don't use an explicit empty label list"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't use an explicit empty label list
+# Don&#39;t use an explicit empty label list
 
 **org.openrewrite.micrometer.misk.NoExplicitEmptyLabelList**
 

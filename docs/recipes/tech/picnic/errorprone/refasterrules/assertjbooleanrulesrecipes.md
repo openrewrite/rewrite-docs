@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJBooleanRules Refaster recipes"
+sidebar_label: "`AssertJBooleanRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes
 displayName: `AssertJBooleanRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBooleanRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBooleanRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsNotEqualToRecipe

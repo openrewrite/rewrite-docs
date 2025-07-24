@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use a standard name for ExecutionContext"
+sidebar_label: "Use a standard name for `ExecutionContext`"
 ---
 
 import Tabs from '@theme/Tabs';

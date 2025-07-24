@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Optional.isEmpty()"
+sidebar_label: "Prefer `Optional.isEmpty()`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.PreferToHaveLength
 displayName: Suggest using toHaveLength()
 description: |
-  Suggest using toHaveLength()
-  See rule details for [jest/prefer-to-have-length](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-have-length.md)
-  
+  Suggest using toHaveLength() See rule details for [jest/prefer-to-have-length](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-have-length.md)
 tags:
   - ESLint
   - eslint-plugin-jest

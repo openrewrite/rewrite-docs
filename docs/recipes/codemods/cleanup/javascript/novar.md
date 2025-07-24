@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Require let or const instead of var"
+sidebar_label: "Require `let` or `const` instead of `var`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoVar
 displayName: Require `let` or `const` instead of `var`
 description: |
-  Require `let` or `const` instead of `var` 
-  See [rule details](https://eslint.org/docs/latest/rules/no-var)
-  
+  Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

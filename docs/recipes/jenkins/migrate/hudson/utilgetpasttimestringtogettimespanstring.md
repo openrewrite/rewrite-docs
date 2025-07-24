@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace hudson.Util.getPastTimeString with getTimeSpanString"
+sidebar_label: "Replace `hudson.Util.getPastTimeString` with `getTimeSpanString`"
 ---
 
 import Tabs from '@theme/Tabs';

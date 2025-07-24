@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreventAbbreviations
 displayName: Prevent abbreviations.
 description: |
-  Prevent abbreviations.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md)
-  
+  Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

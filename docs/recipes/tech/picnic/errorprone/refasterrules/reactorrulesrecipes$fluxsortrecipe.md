@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxSort"
+sidebar_label: "Refaster template `ReactorRules.FluxSort`"
 ---
 
 import Tabs from '@theme/Tabs';

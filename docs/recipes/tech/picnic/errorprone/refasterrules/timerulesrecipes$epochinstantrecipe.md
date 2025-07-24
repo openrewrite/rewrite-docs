@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.EpochInstant"
+sidebar_label: "Refaster template `TimeRules.EpochInstant`"
 ---
 
 import Tabs from '@theme/Tabs';

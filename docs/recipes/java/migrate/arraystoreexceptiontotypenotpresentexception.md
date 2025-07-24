@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Catch TypeNotPresentException thrown by Class.getAnnotation()"
+sidebar_label: "Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJRules Refaster recipes"
+sidebar_label: "`AssertJRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -70,8 +70,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
 displayName: `AssertJRules` Refaster recipes
 description: |
-  Refaster rules related to AssertJ expressions and statements.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules).
+  Refaster rules related to AssertJ expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalDoubleRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalIntRecipe

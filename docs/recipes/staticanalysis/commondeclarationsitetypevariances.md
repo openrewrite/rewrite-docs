@@ -41,7 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.CommonDeclarationSiteTypeVariances
 displayName: Properly use declaration-site type variance for well-known types
 description: |
-  When using a method parameter like `Function<IN, OUT>`, it should rather be `Function<? super IN, ? extends OUT>`. This recipe checks for method parameters of well-known types.
+  When using a method parameter like `Function&lt;IN, OUT&gt;`, it should rather be `Function&lt;? super IN, ? extends OUT&gt;`. This recipe checks for method parameters of well-known types.
 tags:
   - RSPEC-S1217
 recipeList:

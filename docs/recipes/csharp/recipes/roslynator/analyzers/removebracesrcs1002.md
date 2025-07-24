@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveBracesRCS1002**
 
+__
 
 ## Recipe source
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Replace.NONE from @AutoConfigureTestDatabase"
+sidebar_label: "Remove `Replace.NONE` from `@AutoConfigureTestDatabase`"
 ---
 
 import Tabs from '@theme/Tabs';

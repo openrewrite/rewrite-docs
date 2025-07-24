@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.apache.camel.upgrade.camel40.UsePluginHelperForContextGetters**
 
+__
 
 ## Recipe source
 

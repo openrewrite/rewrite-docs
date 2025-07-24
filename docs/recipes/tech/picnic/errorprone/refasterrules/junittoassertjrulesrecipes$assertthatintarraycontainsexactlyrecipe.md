@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template JUnitToAssertJRules.AssertThatIntArrayContainsExactly"
+sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatIntArrayContainsExactly`"
 ---
 
 import Tabs from '@theme/Tabs';

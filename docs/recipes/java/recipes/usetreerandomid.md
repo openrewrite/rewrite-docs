@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Tree.randomId() in LST constructors"
+sidebar_label: "Use `Tree.randomId()` in LST constructors"
 ---
 
 import Tabs from '@theme/Tabs';

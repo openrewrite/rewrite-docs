@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template InputStreamRules.InputStreamReadNBytes"
+sidebar_label: "Refaster template `InputStreamRules.InputStreamReadNBytes`"
 ---
 
 import Tabs from '@theme/Tabs';

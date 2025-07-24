@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUL Logger.log(Level.FINEST, Supplier<String>) with Logger.finest(Supplier<String>)"
+sidebar_label: "Replace JUL `Logger.log(Level.FINEST, Supplier&lt;String&gt;)` with `Logger.finest(Supplier&lt;String&gt;)`"
 ---
 
 import Tabs from '@theme/Tabs';

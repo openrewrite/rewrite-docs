@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template EqualityRules.IndirectDoubleNegation"
+sidebar_label: "Refaster template `EqualityRules.IndirectDoubleNegation`"
 ---
 
 import Tabs from '@theme/Tabs';

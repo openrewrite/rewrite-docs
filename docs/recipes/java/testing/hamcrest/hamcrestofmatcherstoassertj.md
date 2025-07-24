@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate anyOf Hamcrest Matcher to AssertJ"
+sidebar_label: "Migrate `anyOf` Hamcrest Matcher to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';

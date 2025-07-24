@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.DurationIsZero"
+sidebar_label: "Refaster template `TimeRules.DurationIsZero`"
 ---
 
 import Tabs from '@theme/Tabs';

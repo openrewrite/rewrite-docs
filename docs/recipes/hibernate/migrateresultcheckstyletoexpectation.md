@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migration of ResultCheckStyle to Expectation"
+sidebar_label: "Migration of `ResultCheckStyle` to `Expectation`"
 ---
 
 import Tabs from '@theme/Tabs';

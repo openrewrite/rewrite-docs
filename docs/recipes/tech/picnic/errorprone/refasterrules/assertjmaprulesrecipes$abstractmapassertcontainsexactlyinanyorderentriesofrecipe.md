@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJMapRules.AbstractMapAssertContainsExactlyInAnyOrderEntriesOf"
+sidebar_label: "Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyInAnyOrderEntriesOf`"
 ---
 
 import Tabs from '@theme/Tabs';

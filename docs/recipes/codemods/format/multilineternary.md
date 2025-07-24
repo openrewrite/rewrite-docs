@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.MultilineTernary
 displayName: Enforce newlines between operands of ternary expressions
 description: |
-  Enforce newlines between operands of ternary expressions
-  
-  See [rule details](https://eslint.style/rules/default/multiline-ternary)
-  
+  Enforce newlines between operands of ternary expressions  See [rule details](https://eslint.style/rules/default/multiline-ternary)
 tags:
   - eslint
   - stylistic

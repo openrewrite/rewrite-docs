@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoElseReturn
 displayName: Disallow else blocks after return statements in if statements
 description: |
-  Disallow else blocks after return statements in if statements 
-  See [rule details](https://eslint.org/docs/latest/rules/no-else-return)
-  
+  Disallow else blocks after return statements in if statements  See [rule details](https://eslint.org/docs/latest/rules/no-else-return)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate xmlns entries in beans.xml files"
+sidebar_label: "Migrate xmlns entries in `beans.xml` files"
 ---
 
 import Tabs from '@theme/Tabs';

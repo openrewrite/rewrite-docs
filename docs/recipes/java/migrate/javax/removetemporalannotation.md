@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove the @Temporal annotation for some java.sql attributes"
+sidebar_label: "Remove the `@Temporal` annotation for some `java.sql` attributes"
 ---
 
 import Tabs from '@theme/Tabs';

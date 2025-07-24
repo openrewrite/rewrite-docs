@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Mutiny multi.toHotStream()"
+sidebar_label: "Use Mutiny `multi.toHotStream()`"
 ---
 
 import Tabs from '@theme/Tabs';

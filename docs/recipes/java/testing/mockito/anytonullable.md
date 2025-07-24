@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace Mockito 1.x anyString()/any() with nullable(Class)"
+sidebar_label: "Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`"
 ---
 
 import Tabs from '@theme/Tabs';

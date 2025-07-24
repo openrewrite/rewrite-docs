@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJStringRules.AssertThatPathContent"
+sidebar_label: "Refaster template `AssertJStringRules.AssertThatPathContent`"
 ---
 
 import Tabs from '@theme/Tabs';

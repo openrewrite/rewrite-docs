@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template JacksonRules.JsonNodeOptionalString"
+sidebar_label: "Refaster template `JacksonRules.JsonNodeOptionalString`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxWrapMultilines
 displayName: Disallow missing parentheses around multiline JSX
 description: |
-  Disallow missing parentheses around multiline JSX
-  See rule details for [react/jsx-wrap-multilines](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-wrap-multilines.md)
-  
+  Disallow missing parentheses around multiline JSX See rule details for [react/jsx-wrap-multilines](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-wrap-multilines.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

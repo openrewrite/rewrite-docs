@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove explicit SecurityContextConfigurer.requireExplicitSave(true) opt-in"
+sidebar_label: "Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in"
 ---
 
 import Tabs from '@theme/Tabs';

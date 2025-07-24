@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate Struts 2.0 interceptors to action "aware" interfaces](../../../java/struts/migrate6/migrateawareinterfaces)
+* [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](../../../java/struts/migrate6/migrateawareinterfaces)
 * [Migrate OpenSymphony classes to Struts 6.0](../../../java/struts/migrate6/migrateopensymphonyclasses)
 * [Upgrade Struts 6.0 dependencies](../../../java/struts/migrate6/upgradestruts6dependencies)
 * [Migrate to Struts 6.0 constants](../../../java/struts/migrate6/migratestruts6constants)

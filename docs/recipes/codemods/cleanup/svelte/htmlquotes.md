@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.HtmlQuotes
 displayName: enforce quotes style of HTML attributes
 description: |
-  enforce quotes style of HTML attributes
-  See rule details for [svelte/html-quotes](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-quotes/)
-  
+  enforce quotes style of HTML attributes See rule details for [svelte/html-quotes](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-quotes/)
 tags:
   - svelte
   - ESLint

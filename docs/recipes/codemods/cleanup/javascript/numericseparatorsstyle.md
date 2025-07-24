@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NumericSeparatorsStyle
 displayName: Enforce the style of numeric separators by correctly grouping digits.
 description: |
-  Enforce the style of numeric separators by correctly grouping digits.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md)
-  
+  Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

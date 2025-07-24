@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJInstantRules.AssertThatIsBeforeOrEqualTo"
+sidebar_label: "Refaster template `AssertJInstantRules.AssertThatIsBeforeOrEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

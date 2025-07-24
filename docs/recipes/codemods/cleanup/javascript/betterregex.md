@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.BetterRegex
 displayName: Improve regexes by making them shorter, consistent, and safer.
 description: |
-  Improve regexes by making them shorter, consistent, and safer.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md)
-  
+  Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

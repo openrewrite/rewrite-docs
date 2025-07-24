@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUL Logger.log(Level.SEVERE, Supplier<String>) with Logger.severe(Supplier<String>)"
+sidebar_label: "Replace JUL `Logger.log(Level.SEVERE, Supplier&lt;String&gt;)` with `Logger.severe(Supplier&lt;String&gt;)`"
 ---
 
 import Tabs from '@theme/Tabs';

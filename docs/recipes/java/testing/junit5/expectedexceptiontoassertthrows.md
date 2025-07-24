@@ -1,11 +1,11 @@
 ---
-sidebar_label: "JUnit 4 ExpectedException To JUnit Jupiter's assertThrows()"
+sidebar_label: "JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`
+# JUnit 4 `ExpectedException` To JUnit Jupiter&#39;s `assertThrows()`
 
 **org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows**
 

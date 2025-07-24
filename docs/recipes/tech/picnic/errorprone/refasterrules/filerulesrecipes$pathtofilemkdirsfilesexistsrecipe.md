@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template FileRules.PathToFileMkDirsFilesExists"
+sidebar_label: "Refaster template `FileRules.PathToFileMkDirsFilesExists`"
 ---
 
 import Tabs from '@theme/Tabs';

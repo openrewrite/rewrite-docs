@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus30.JavaxToJakartaAdditionalMigration**
 
+__
 
 ## Recipe source
 

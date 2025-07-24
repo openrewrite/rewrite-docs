@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.StringValueOfMethodReference"
+sidebar_label: "Refaster template `StringRules.StringValueOfMethodReference`"
 ---
 
 import Tabs from '@theme/Tabs';

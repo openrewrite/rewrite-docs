@@ -48,8 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: io.moderne.devcenter.SecurityStarter
 displayName: OWASP top ten
 description: |
-  This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs.
-  For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
+  This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
 recipeList:
   - org.openrewrite.java.security.OwaspA01
   - org.openrewrite.java.security.OwaspA02

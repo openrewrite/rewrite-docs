@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace String.indexOf(String, 0) with String.indexOf(String)"
+sidebar_label: "Replace `String.indexOf(String, 0)` with `String.indexOf(String)`"
 ---
 
 import Tabs from '@theme/Tabs';

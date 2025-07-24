@@ -114,7 +114,6 @@ name: com.oracle.weblogic.rewrite.jakarta.RemovalsServletJakarta9
 displayName: Replace deprecated Jakarta Servlet methods and classes
 description: |
   This recipe replaces the classes and methods deprecated in Jakarta Servlet 5.0
-  
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.servlet.http.HttpServletRequest

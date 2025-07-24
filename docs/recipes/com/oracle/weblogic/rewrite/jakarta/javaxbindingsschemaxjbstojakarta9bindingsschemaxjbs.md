@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate xmlns entries in *.xjb files."
+sidebar_label: "Migrate xmlns entries in `*.xjb` files."
 ---
 
 import Tabs from '@theme/Tabs';

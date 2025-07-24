@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add missing @BeforeEach, @AfterEach, @Test to overriding methods"
+sidebar_label: "Add missing `@BeforeEach`, `@AfterEach`, `@Test` to overriding methods"
 ---
 
 import Tabs from '@theme/Tabs';

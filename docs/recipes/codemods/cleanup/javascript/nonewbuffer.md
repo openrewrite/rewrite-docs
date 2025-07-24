@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Enforce the use of Buffer.from() and Buffer.alloc() instead of the deprecated new Buffer()."
+sidebar_label: "Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoNewBuffer
 displayName: Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`.
 description: |
-  Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-buffer.md)
-  
+  Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-buffer.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

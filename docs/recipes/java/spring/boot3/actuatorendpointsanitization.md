@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove the deprecated properties additional-keys-to-sanitize from the configprops and env end points"
+sidebar_label: "Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points"
 ---
 
 import Tabs from '@theme/Tabs';

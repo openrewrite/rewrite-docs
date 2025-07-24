@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.decorator packages to jakarta.decorator"
+sidebar_label: "Migrate deprecated `javax.decorator` packages to `jakarta.decorator`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.PreferTodo
 displayName: Suggest using test.todo
 description: |
-  Suggest using test.todo
-  See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md)
-  
+  Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md)
 tags:
   - ESLint
   - eslint-plugin-jest

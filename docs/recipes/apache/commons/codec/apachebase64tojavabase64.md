@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.util.Base64"
+sidebar_label: "Prefer `java.util.Base64`"
 ---
 
 import Tabs from '@theme/Tabs';

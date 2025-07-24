@@ -46,7 +46,6 @@ name: org.openrewrite.codemods.cleanup.svelte.RecommendedsvelteCodeCleanup
 displayName: Recommended svelte code cleanup
 description: |
   Collection of cleanup ESLint rules from [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte).
-  
 tags:
   - svelte
   - ESLint

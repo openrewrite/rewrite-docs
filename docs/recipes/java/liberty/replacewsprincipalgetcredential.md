@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace WSPrincipal.getCredential() with WSSubject lookup"
+sidebar_label: "Replace `WSPrincipal.getCredential()` with `WSSubject` lookup"
 ---
 
 import Tabs from '@theme/Tabs';

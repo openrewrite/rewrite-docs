@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.DestructuringAssignment
 displayName: Enforce consistent usage of destructuring assignment of props, state, and context
 description: |
-  Enforce consistent usage of destructuring assignment of props, state, and context
-  See rule details for [react/destructuring-assignment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/destructuring-assignment.md)
-  
+  Enforce consistent usage of destructuring assignment of props, state, and context See rule details for [react/destructuring-assignment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/destructuring-assignment.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

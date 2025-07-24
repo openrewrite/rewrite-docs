@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template RxJava2AdapterRules.MaybeToMono"
+sidebar_label: "Refaster template `RxJava2AdapterRules.MaybeToMono`"
 ---
 
 import Tabs from '@theme/Tabs';

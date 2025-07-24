@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.CaseSwitchLabelRCS1069**
 
+__
 
 ## Recipe source
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use modernized javax.lang.model.util APIs"
+sidebar_label: "Use modernized `javax.lang.model.util` APIs"
 ---
 
 import Tabs from '@theme/Tabs';

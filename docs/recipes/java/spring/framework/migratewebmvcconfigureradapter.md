@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace WebMvcConfigurerAdapter with WebMvcConfigurer"
+sidebar_label: "Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`"
 ---
 
 import Tabs from '@theme/Tabs';

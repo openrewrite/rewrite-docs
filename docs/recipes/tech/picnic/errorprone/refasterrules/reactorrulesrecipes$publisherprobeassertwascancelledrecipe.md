@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.PublisherProbeAssertWasCancelled"
+sidebar_label: "Refaster template `ReactorRules.PublisherProbeAssertWasCancelled`"
 ---
 
 import Tabs from '@theme/Tabs';

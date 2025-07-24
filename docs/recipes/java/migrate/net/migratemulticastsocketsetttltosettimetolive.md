@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use java.net.MulticastSocket#setTimeToLive(int)"
+sidebar_label: "Use `java.net.MulticastSocket#setTimeToLive(int)`"
 ---
 
 import Tabs from '@theme/Tabs';

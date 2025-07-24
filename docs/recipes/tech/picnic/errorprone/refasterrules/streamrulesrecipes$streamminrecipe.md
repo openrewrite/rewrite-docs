@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamMin"
+sidebar_label: "Refaster template `StreamRules.StreamMin`"
 ---
 
 import Tabs from '@theme/Tabs';

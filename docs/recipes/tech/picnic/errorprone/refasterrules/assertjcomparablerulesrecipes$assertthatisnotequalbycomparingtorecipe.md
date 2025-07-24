@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJComparableRules.AssertThatIsNotEqualByComparingTo"
+sidebar_label: "Refaster template `AssertJComparableRules.AssertThatIsNotEqualByComparingTo`"
 ---
 
 import Tabs from '@theme/Tabs';

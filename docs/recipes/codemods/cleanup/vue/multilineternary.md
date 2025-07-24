@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce newlines between operands of ternary expressions in <template>"
+sidebar_label: "Enforce newlines between operands of ternary expressions in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce newlines between operands of ternary expressions in `<template>`
+# Enforce newlines between operands of ternary expressions in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.MultilineTernary**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.MultilineTernary
-displayName: Enforce newlines between operands of ternary expressions in `<template>`
+displayName: Enforce newlines between operands of ternary expressions in `&lt;template&gt;`
 description: |
-  Enforce newlines between operands of ternary expressions in `<template>`
-  See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html)
-  
+  Enforce newlines between operands of ternary expressions in `&lt;template&gt;` See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html)
 tags:
   - ESLint
   - vue

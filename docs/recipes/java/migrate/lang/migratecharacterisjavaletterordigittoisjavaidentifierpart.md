@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Character#isJavaIdentifierPart(char)"
+sidebar_label: "Use `Character#isJavaIdentifierPart(char)`"
 ---
 
 import Tabs from '@theme/Tabs';

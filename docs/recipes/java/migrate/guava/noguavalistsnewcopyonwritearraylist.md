@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new CopyOnWriteArrayList<>()"
+sidebar_label: "Prefer `new CopyOnWriteArrayList&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template BigDecimalRules.BigDecimalSignumIsNegative"
+sidebar_label: "Refaster template `BigDecimalRules.BigDecimalSignumIsNegative`"
 ---
 
 import Tabs from '@theme/Tabs';

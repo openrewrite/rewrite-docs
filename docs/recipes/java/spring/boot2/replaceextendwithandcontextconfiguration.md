@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace @ExtendWith and @ContextConfiguration with @SpringJunitConfig"
+sidebar_label: "Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`"
 ---
 
 import Tabs from '@theme/Tabs';

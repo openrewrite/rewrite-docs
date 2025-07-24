@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from @ApiImplicitParams  to @Parameters"
+sidebar_label: "Migrate from `@ApiImplicitParams`  to `@Parameters`"
 ---
 
 import Tabs from '@theme/Tabs';

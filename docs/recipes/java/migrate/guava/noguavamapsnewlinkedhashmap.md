@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new LinkedHashMap<>()"
+sidebar_label: "Prefer `new LinkedHashMap&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

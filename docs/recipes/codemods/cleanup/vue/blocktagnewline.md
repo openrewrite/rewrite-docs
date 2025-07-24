@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.BlockTagNewline
 displayName: Enforce line breaks after opening and before closing block-level tags
 description: |
-  Enforce line breaks after opening and before closing block-level tags
-  See rule details for [vue/block-tag-newline](https://eslint.vuejs.org/rules/block-tag-newline.html)
-  
+  Enforce line breaks after opening and before closing block-level tags See rule details for [vue/block-tag-newline](https://eslint.vuejs.org/rules/block-tag-newline.html)
 tags:
   - ESLint
   - vue

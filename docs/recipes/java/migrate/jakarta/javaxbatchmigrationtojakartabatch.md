@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.batch packages to jakarta.batch"
+sidebar_label: "Migrate deprecated `javax.batch` packages to `jakarta.batch`"
 ---
 
 import Tabs from '@theme/Tabs';

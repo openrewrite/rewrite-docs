@@ -1,5 +1,5 @@
 ---
-sidebar_label: "WebClientRules Refaster recipes"
+sidebar_label: "`WebClientRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -46,8 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.WebClientRulesRecipes
 displayName: `WebClientRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `org.springframework.web.reactive.function.client.WebClient` and related types.
-  [Source](https://error-prone.picnic.tech/refasterrules/WebClientRules).
+  Refaster rules related to expressions dealing with `org.springframework.web.reactive.function.client.WebClient` and related types. [Source](https://error-prone.picnic.tech/refasterrules/WebClientRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$BodyValueRecipe
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientGetRecipe

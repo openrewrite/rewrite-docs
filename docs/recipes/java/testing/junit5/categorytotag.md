@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JUnit 4 @Category to JUnit Jupiter @Tag"
+sidebar_label: "JUnit 4 `@Category` to JUnit Jupiter `@Tag`"
 ---
 
 import Tabs from '@theme/Tabs';

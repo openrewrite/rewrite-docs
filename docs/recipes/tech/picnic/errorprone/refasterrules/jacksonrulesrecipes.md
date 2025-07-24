@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JacksonRules Refaster recipes"
+sidebar_label: "`JacksonRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -41,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.JacksonRulesRecipes
 displayName: `JacksonRules` Refaster recipes
 description: |
-  Refaster rules related to Jackson expressions and statements.
-  [Source](https://error-prone.picnic.tech/refasterrules/JacksonRules).
+  Refaster rules related to Jackson expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/JacksonRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.JacksonRulesRecipes$JsonNodeOptionalIntRecipe
   - tech.picnic.errorprone.refasterrules.JacksonRulesRecipes$JsonNodeOptionalStringRecipe

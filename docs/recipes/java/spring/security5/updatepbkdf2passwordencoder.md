@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use new Pbkdf2PasswordEncoder factory methods"
+sidebar_label: "Use new `Pbkdf2PasswordEncoder` factory methods"
 ---
 
 import Tabs from '@theme/Tabs';

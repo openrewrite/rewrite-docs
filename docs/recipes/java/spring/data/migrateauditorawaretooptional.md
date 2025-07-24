@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Make AuditorAware.getCurrentAuditor return Optional"
+sidebar_label: "Make AuditorAware.getCurrentAuditor return `Optional`"
 ---
 
 import Tabs from '@theme/Tabs';

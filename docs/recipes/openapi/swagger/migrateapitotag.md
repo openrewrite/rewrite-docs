@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from @Api to @Tag"
+sidebar_label: "Migrate from `@Api` to `@Tag`"
 ---
 
 import Tabs from '@theme/Tabs';

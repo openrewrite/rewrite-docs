@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.NotPatternShouldBeParenthesizedCodeMA0164**
 
+__
 
 ## Recipe source
 

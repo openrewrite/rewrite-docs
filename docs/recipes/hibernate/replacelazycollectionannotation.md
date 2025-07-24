@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace @LazyCollection with jakarta.persistence.FetchType"
+sidebar_label: "Replace `@LazyCollection` with `jakarta.persistence.FetchType`"
 ---
 
 import Tabs from '@theme/Tabs';

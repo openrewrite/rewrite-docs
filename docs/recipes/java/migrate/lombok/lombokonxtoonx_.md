@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate Lombok's @__ syntax to onX_ for Java 8+"
+sidebar_label: "Migrate Lombok's `@__` syntax to `onX_` for Java 8+"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Lombok's `@__` syntax to `onX_` for Java 8+
+# Migrate Lombok&#39;s `@__` syntax to `onX_` for Java 8+
 
 **org.openrewrite.java.migrate.lombok.LombokOnXToOnX\_**
 

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace JUL Logger.getLogger(Some.class.getCanonicalName()) with SLF4J's LoggerFactory.getLogger(Some.class)"
+sidebar_label: "Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`
+# Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J&#39;s `LoggerFactory.getLogger(Some.class)`
 
 **org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe**
 

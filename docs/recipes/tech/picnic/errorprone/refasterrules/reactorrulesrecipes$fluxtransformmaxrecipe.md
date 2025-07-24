@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxTransformMax"
+sidebar_label: "Refaster template `ReactorRules.FluxTransformMax`"
 ---
 
 import Tabs from '@theme/Tabs';

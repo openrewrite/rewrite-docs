@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use String notation for Gradle dependency declarations"
+sidebar_label: "Use `String` notation for Gradle dependency declarations"
 ---
 
 import Tabs from '@theme/Tabs';

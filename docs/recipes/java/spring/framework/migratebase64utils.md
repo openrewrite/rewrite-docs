@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate org.springframework.util.Base64Utils to java.io.Base64"
+sidebar_label: "Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`"
 ---
 
 import Tabs from '@theme/Tabs';

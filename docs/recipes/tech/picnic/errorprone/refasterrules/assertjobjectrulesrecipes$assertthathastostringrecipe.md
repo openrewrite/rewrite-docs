@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJObjectRules.AssertThatHasToString"
+sidebar_label: "Refaster template `AssertJObjectRules.AssertThatHasToString`"
 ---
 
 import Tabs from '@theme/Tabs';

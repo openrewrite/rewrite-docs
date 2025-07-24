@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DefineAccessorsForAttributeArgumentsCA1019**
 
+__
 
 ## Recipe source
 

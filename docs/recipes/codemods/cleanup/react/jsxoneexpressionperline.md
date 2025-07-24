@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxOneExpressionPerLine
 displayName: Require one JSX element per line
 description: |
-  Require one JSX element per line
-  See rule details for [react/jsx-one-expression-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-one-expression-per-line.md)
-  
+  Require one JSX element per line See rule details for [react/jsx-one-expression-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-one-expression-per-line.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

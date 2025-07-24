@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.ThenComparingDouble"
+sidebar_label: "Refaster template `ComparatorRules.ThenComparingDouble`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates justify prop to justifyContent for Grid component"
+sidebar_label: "Updates `justify` prop to `justifyContent` for Grid component"
 ---
 
 import Tabs from '@theme/Tabs';

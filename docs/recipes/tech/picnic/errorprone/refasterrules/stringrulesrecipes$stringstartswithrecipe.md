@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.StringStartsWith"
+sidebar_label: "Refaster template `StringRules.StringStartsWith`"
 ---
 
 import Tabs from '@theme/Tabs';

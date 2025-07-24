@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.StringIsEmptyPredicate"
+sidebar_label: "Refaster template `StringRules.StringIsEmptyPredicate`"
 ---
 
 import Tabs from '@theme/Tabs';

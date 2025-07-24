@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates size prop for IconButton component"
+sidebar_label: "Updates `size` prop for IconButton component"
 ---
 
 import Tabs from '@theme/Tabs';

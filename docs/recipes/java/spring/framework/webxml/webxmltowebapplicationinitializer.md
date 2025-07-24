@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate ´web.xml to WebApplicationInitializer"
+sidebar_label: "Migrate ´web.xml` to `WebApplicationInitializer`"
 ---
 
 import Tabs from '@theme/Tabs';

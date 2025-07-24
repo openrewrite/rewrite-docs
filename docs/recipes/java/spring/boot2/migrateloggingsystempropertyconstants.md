@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate to recommended constants in LogbackLoggingSystemProperties from deprecated values in LoggingSystemProperties"
+sidebar_label: "Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`"
 ---
 
 import Tabs from '@theme/Tabs';

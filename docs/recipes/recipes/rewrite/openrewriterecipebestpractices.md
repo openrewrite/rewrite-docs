@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Simplify single-element annotation](../../java/simplifysingleelementannotation)
 * [End files with a single newline](../../java/format/emptynewlineatendoffile)
 * [Remove trailing whitespace](../../java/format/removetrailingwhitespace)
-* [Enum values should be compared with "=="](../../staticanalysis/compareenumswithequalityoperator)
+* [Enum values should be compared with &quot;==&quot;](../../staticanalysis/compareenumswithequalityoperator)
 * [Inline variable](../../staticanalysis/inlinevariable)
 * [Simplify lambda blocks to expressions](../../staticanalysis/lambdablocktoexpression)
 * [Add missing `@Override` to overriding and implementing methods](../../staticanalysis/missingoverrideannotation)

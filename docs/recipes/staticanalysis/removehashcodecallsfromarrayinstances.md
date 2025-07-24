@@ -1,5 +1,5 @@
 ---
-sidebar_label: "hashCode() should not be called on array instances"
+sidebar_label: "`hashCode()` should not be called on array instances"
 ---
 
 import Tabs from '@theme/Tabs';

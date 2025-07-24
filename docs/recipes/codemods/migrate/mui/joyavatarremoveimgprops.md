@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Removes imgProps prop from Avatar component"
+sidebar_label: "Removes `imgProps` prop from Avatar component"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssortedRules.DisjointSets"
+sidebar_label: "Refaster template `AssortedRules.DisjointSets`"
 ---
 
 import Tabs from '@theme/Tabs';

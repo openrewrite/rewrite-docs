@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxFromStreamSupplier"
+sidebar_label: "Refaster template `ReactorRules.FluxFromStreamSupplier`"
 ---
 
 import Tabs from '@theme/Tabs';

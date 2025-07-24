@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PatternRules.PatternCompileAsPredicate"
+sidebar_label: "Refaster template `PatternRules.PatternCompileAsPredicate`"
 ---
 
 import Tabs from '@theme/Tabs';

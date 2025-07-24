@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.SubstringRemainder"
+sidebar_label: "Refaster template `StringRules.SubstringRemainder`"
 ---
 
 import Tabs from '@theme/Tabs';

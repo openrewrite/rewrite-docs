@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove redundant @JsonProperty argument"
+sidebar_label: "Remove redundant `@JsonProperty` argument"
 ---
 
 import Tabs from '@theme/Tabs';

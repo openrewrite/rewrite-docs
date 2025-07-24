@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Remove Unleash's isEnabled for feature key"
+sidebar_label: "Remove Unleash's `isEnabled` for feature key"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove Unleash's `isEnabled` for feature key
+# Remove Unleash&#39;s `isEnabled` for feature key
 
 **org.openrewrite.featureflags.unleash.RemoveIsEnabled**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.featureflags.unleash.RemoveIsEnabled
-displayName: Remove Unleash's `isEnabled` for feature key
+displayName: Remove Unleash&#39;s `isEnabled` for feature key
 description: |
   Replace `isEnabled()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
 
@@ -120,7 +120,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveIsEnabledExample
-displayName: Remove Unleash's `isEnabled` for feature key example
+displayName: Remove Unleash&#39;s `isEnabled` for feature key example
 recipeList:
   - org.openrewrite.featureflags.unleash.RemoveIsEnabled:
       featureKey: flag-key-123abc

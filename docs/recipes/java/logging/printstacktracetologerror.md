@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use logger instead of printStackTrace()"
+sidebar_label: "Use logger instead of `printStackTrace()`"
 ---
 
 import Tabs from '@theme/Tabs';

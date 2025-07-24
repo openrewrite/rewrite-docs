@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.CommaSpacing
 displayName: Enforce consistent spacing before and after commas
 description: |
-  Enforce consistent spacing before and after commas
-  
-  See [rule details](https://eslint.style/rules/default/comma-spacing)
-  
+  Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing)
 tags:
   - eslint
   - stylistic

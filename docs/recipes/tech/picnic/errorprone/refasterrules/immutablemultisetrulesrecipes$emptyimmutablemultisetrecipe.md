@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableMultisetRules.EmptyImmutableMultiset"
+sidebar_label: "Refaster template `ImmutableMultisetRules.EmptyImmutableMultiset`"
 ---
 
 import Tabs from '@theme/Tabs';

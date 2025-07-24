@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace A.class.isInstance(a) with a instanceof A"
+sidebar_label: "Replace `A.class.isInstance(a)` with `a instanceof A`"
 ---
 
 import Tabs from '@theme/Tabs';

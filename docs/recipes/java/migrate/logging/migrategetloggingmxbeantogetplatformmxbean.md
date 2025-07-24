@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)"
+sidebar_label: "Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`"
 ---
 
 import Tabs from '@theme/Tabs';

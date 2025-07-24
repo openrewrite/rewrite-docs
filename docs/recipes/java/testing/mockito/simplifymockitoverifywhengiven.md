@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Call to Mockito method \"verify\", \"when\" or \"given\" should be simplified"
+sidebar_label: "Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Call to Mockito method "verify", "when" or "given" should be simplified
+# Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified
 
 **org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven**
 

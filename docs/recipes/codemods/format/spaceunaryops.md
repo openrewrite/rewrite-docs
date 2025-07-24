@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SpaceUnaryOps
 displayName: Enforce consistent spacing before or after unary operators
 description: |
-  Enforce consistent spacing before or after unary operators
-  
-  See [rule details](https://eslint.style/rules/default/space-unary-ops)
-  
+  Enforce consistent spacing before or after unary operators  See [rule details](https://eslint.style/rules/default/space-unary-ops)
 tags:
   - eslint
   - stylistic

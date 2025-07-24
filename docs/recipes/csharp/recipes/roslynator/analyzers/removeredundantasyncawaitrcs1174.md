@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveRedundantAsyncAwaitRCS1174**
 
+__
 
 ## Recipe source
 

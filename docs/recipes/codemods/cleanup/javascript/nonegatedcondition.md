@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoNegatedCondition
 displayName: Disallow negated conditions.
 description: |
-  Disallow negated conditions.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md)
-  
+  Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster rules related to AssertJ assertions over Instants"
+sidebar_label: "Refaster rules related to AssertJ assertions over `Instant`s"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes
 displayName: Refaster rules related to AssertJ assertions over `Instant`s
 description: |
-  These rules simplify and improve the readability of tests by using `Instant`-specific
-   AssertJ assertion methods instead of generic assertions.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJInstantRules).
+  These rules simplify and improve the readability of tests by using `Instant`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJInstantRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsAfterRecipe
   - tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBeforeOrEqualToRecipe

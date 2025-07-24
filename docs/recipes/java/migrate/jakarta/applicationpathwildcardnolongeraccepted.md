@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove trailing slash from jakarta.ws.rs.ApplicationPath values"
+sidebar_label: "Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values"
 ---
 
 import Tabs from '@theme/Tabs';

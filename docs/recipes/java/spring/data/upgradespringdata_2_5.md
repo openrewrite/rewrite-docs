@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Use `JpaRepository#getById(ID id)`](../../../java/spring/data/usejparepositorygetbyid)
-* [Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`](../../../java/spring/data/usejparepositorydeleteallinbatch)
+* [Use `JpaRepository#deleteAllInBatch(Iterable&lt;T&gt; entities)`](../../../java/spring/data/usejparepositorydeleteallinbatch)
 
 </TabItem>
 

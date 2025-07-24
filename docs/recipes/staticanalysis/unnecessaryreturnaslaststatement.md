@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Unnecessary return as last statement in void method"
+sidebar_label: "Unnecessary `return` as last statement in void method"
 ---
 
 import Tabs from '@theme/Tabs';

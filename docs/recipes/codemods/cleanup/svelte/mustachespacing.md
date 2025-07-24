@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.MustacheSpacing
 displayName: enforce unified spacing in mustache
 description: |
-  enforce unified spacing in mustache
-  See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/)
-  
+  enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/)
 tags:
   - svelte
   - ESLint

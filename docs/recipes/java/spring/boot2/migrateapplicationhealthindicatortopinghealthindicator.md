@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use PingHealthIndicator"
+sidebar_label: "Use `PingHealthIndicator`"
 ---
 
 import Tabs from '@theme/Tabs';

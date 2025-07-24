@@ -48,9 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion
 displayName: Upgrade Log4j 2.x dependency version
 description: |
-  Upgrades the Log4j 2.x dependencies to the latest 2.x version.
-  Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a).
-  
+  Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a).
 tags:
   - security
   - log4shell

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template RandomGeneratorRules.RandomGeneratorNextInt"
+sidebar_label: "Refaster template `RandomGeneratorRules.RandomGeneratorNextInt`"
 ---
 
 import Tabs from '@theme/Tabs';

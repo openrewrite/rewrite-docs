@@ -35,7 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass)
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
-* [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
+* [Parameterize SLF4J&#39;s logging statements](../../../java/logging/slf4j/parameterizedlogging)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](../../../java/logging/slf4j/completeexceptionlogging)
 * [Catch block log level](../../../java/logging/catchblockloglevel)
 * [Change logger fields to `private`](../../../java/logging/changeloggerstoprivate)

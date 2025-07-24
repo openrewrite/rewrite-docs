@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableMultisetRules Refaster recipes"
+sidebar_label: "`ImmutableMultisetRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -43,8 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes
 displayName: `ImmutableMultisetRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `ImmutableMultiset`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableMultisetRules).
+  Refaster rules related to expressions dealing with `ImmutableMultiset`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableMultisetRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$ImmutableMultisetBuilderRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$EmptyImmutableMultisetRecipe

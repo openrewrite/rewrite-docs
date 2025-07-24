@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Make @TempDir fields non final"
+sidebar_label: "Make `@TempDir` fields non final"
 ---
 
 import Tabs from '@theme/Tabs';

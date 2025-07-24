@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJRules.AssertThatSetContainsExactlyOneElement"
+sidebar_label: "Refaster template `AssertJRules.AssertThatSetContainsExactlyOneElement`"
 ---
 
 import Tabs from '@theme/Tabs';

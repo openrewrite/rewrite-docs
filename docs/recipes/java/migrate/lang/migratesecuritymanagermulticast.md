@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use SecurityManager#checkMulticast(InetAddress)"
+sidebar_label: "Use `SecurityManager#checkMulticast(InetAddress)`"
 ---
 
 import Tabs from '@theme/Tabs';

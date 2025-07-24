@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent spacing before &#x60;function&#x60; definition opening parenthesis"
+sidebar_label: "Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent spacing before &#x60;function&#x60; definition opening parenthesis
+# Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis
 
 **org.openrewrite.codemods.format.SpaceBeforeFunctionParen**
 
@@ -41,12 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SpaceBeforeFunctionParen
-displayName: Enforce consistent spacing before &#x60;function&#x60; definition opening parenthesis
+displayName: Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis
 description: |
-  Enforce consistent spacing before &#x60;function&#x60; definition opening parenthesis
-  
-  See [rule details](https://eslint.style/rules/default/space-before-function-paren)
-  
+  Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren)
 tags:
   - eslint
   - stylistic

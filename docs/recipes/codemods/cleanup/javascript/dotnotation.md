@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.DotNotation
 displayName: Enforce dot notation whenever possible
 description: |
-  Enforce dot notation whenever possible 
-  See [rule details](https://eslint.org/docs/latest/rules/dot-notation)
-  
+  Enforce dot notation whenever possible  See [rule details](https://eslint.org/docs/latest/rules/dot-notation)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

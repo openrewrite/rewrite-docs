@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace various Processor.create calls with their Sinks equivalent"
+sidebar_label: "Replace various `Processor.create` calls with their `Sinks` equivalent"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -5,7 +5,7 @@ sidebar_label: "Use VulnCheck Exploit Intelligence to fix vulnerabilities"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use [VulnCheck Exploit Intelligence](https://docs.vulncheck.com/products/exploit-and-vulnerability-intelligence/exploit-intelligence) to fix vulnerabilities
+# Use VulnCheck Exploit Intelligence to fix vulnerabilities
 
 **io.moderne.vulncheck.FixVulnCheckVulnerabilities**
 
@@ -39,7 +39,7 @@ Or, if you'd like to create a declarative recipe, please see the below example o
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FixVulnCheckVulnerabilitiesExample
-displayName: Use [VulnCheck Exploit Intelligence](https://docs.vulncheck.com/products/exploit-and-vulnerability-intelligence/exploit-intelligence) to fix vulnerabilities example
+displayName: Use VulnCheck Exploit Intelligence to fix vulnerabilities example
 recipeList:
   - io.moderne.vulncheck.FixVulnCheckVulnerabilities: 
       apiToken: A_TOKEN_GENERATED_FROM_VULNCHECK

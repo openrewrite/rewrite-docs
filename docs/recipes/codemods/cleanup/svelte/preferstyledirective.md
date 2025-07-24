@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.PreferStyleDirective
 displayName: require style directives instead of style attribute
 description: |
-  require style directives instead of style attribute
-  See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/)
-  
+  require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/)
 tags:
   - svelte
   - ESLint

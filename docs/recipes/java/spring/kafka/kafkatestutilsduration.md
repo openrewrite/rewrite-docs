@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Duration in KafkaTestUtils"
+sidebar_label: "Use `Duration` in `KafkaTestUtils`"
 ---
 
 import Tabs from '@theme/Tabs';

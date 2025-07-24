@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replaces deprecated HttpRequestBase::getRequestLine()"
+sidebar_label: "Replaces deprecated `HttpRequestBase::getRequestLine()`"
 ---
 
 import Tabs from '@theme/Tabs';

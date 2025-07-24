@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template IsLiteralNull"
+sidebar_label: "Refaster template `IsLiteralNull`"
 ---
 
 import Tabs from '@theme/Tabs';

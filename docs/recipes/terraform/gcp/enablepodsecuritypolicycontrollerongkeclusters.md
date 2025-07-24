@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Enable PodSecurityPolicy controller on Google Kubernetes Engine (GKE) clusters"
+sidebar_label: "Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters"
 ---
 
 import Tabs from '@theme/Tabs';

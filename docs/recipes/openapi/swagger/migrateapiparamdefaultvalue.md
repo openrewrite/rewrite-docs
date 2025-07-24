@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate @ApiParam(defaultValue) to @Parameter(schema)"
+sidebar_label: "Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`"
 ---
 
 import Tabs from '@theme/Tabs';

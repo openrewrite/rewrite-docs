@@ -1,5 +1,5 @@
 ---
-sidebar_label: "BigDecimalRules Refaster recipes"
+sidebar_label: "`BigDecimalRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -46,8 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes
 displayName: `BigDecimalRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `BigDecimal`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/BigDecimalRules).
+  Refaster rules related to expressions dealing with `BigDecimal`s. [Source](https://error-prone.picnic.tech/refasterrules/BigDecimalRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalZeroRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalOneRecipe

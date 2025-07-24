@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJFloatRules.AbstractFloatAssertIsCloseToWithOffset"
+sidebar_label: "Refaster template `AssertJFloatRules.AbstractFloatAssertIsCloseToWithOffset`"
 ---
 
 import Tabs from '@theme/Tabs';

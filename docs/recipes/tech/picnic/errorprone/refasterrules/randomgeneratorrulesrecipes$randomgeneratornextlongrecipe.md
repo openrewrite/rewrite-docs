@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer RandomGenerator#nextLong(long) over more contrived alternatives"
+sidebar_label: "Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template RxJava2AdapterRules.FluxToFlowable"
+sidebar_label: "Refaster template `RxJava2AdapterRules.FluxToFlowable`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Change com.datastax.oss to org.apache.cassandra"
+sidebar_label: "Change `com.datastax.oss` to `org.apache.cassandra`"
 ---
 
 import Tabs from '@theme/Tabs';

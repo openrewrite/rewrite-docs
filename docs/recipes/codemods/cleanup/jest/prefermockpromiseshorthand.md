@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.PreferMockPromiseShorthand
 displayName: Prefer mock resolved/rejected shorthands for promises
 description: |
-  Prefer mock resolved/rejected shorthands for promises
-  See rule details for [jest/prefer-mock-promise-shorthand](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-mock-promise-shorthand.md)
-  
+  Prefer mock resolved/rejected shorthands for promises See rule details for [jest/prefer-mock-promise-shorthand](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-mock-promise-shorthand.md)
 tags:
   - ESLint
   - eslint-plugin-jest

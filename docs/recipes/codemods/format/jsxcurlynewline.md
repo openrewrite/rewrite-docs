@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxCurlyNewline
 displayName: Enforce consistent linebreaks in curly braces in JSX attributes and expressions
 description: |
-  Enforce consistent linebreaks in curly braces in JSX attributes and expressions
-  
-  See [rule details](https://eslint.style/rules/default/jsx-curly-newline)
-  
+  Enforce consistent linebreaks in curly braces in JSX attributes and expressions  See [rule details](https://eslint.style/rules/default/jsx-curly-newline)
 tags:
   - eslint
   - stylistic

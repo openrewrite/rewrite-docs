@@ -1,5 +1,5 @@
 ---
-sidebar_label: "DoubleStreamRules Refaster recipes"
+sidebar_label: "`DoubleStreamRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -49,8 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes
 displayName: `DoubleStreamRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `DoubleStream`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
+  Refaster rules related to expressions dealing with `DoubleStream`s. [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatOneDoubleStreamRecipe
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatTwoDoubleStreamsRecipe

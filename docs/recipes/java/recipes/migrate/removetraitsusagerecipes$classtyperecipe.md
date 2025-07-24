@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove org.openrewrite.java.trait.Traits.annotated(Class<?>) usage"
+sidebar_label: "Remove `org.openrewrite.java.trait.Traits.annotated(Class&lt;?&gt;)` usage"
 ---
 
 import Tabs from '@theme/Tabs';

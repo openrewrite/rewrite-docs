@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.NoUnknownProperty
 displayName: Disallow usage of unknown DOM property
 description: |
-  Disallow usage of unknown DOM property
-  See rule details for [react/no-unknown-property](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-unknown-property.md)
-  
+  Disallow usage of unknown DOM property See rule details for [react/no-unknown-property](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-unknown-property.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

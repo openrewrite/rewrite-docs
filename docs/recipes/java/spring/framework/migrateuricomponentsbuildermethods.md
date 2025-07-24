@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate UriComponentsBuilder.fromHttpRequest and parseForwardedFor"
+sidebar_label: "Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`"
 ---
 
 import Tabs from '@theme/Tabs';

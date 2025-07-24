@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template LongStreamRules.ConcatOneLongStream"
+sidebar_label: "Refaster template `LongStreamRules.ConcatOneLongStream`"
 ---
 
 import Tabs from '@theme/Tabs';

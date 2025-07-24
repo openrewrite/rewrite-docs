@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Use @Identifier(\"default-kafka-broker\")"
+sidebar_label: "Use `@Identifier(&quot;default-kafka-broker&quot;)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `@Identifier("default-kafka-broker")`
+# Use `@Identifier(&quot;default-kafka-broker&quot;)`
 
 **org.openrewrite.quarkus.quarkus2.UseIdentifierOnDefaultKafkaBroker**
 

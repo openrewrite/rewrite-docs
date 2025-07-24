@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from Plexus AbstractLogEnabled to SLF4J"
+sidebar_label: "Migrate from Plexus `AbstractLogEnabled` to SLF4J"
 ---
 
 import Tabs from '@theme/Tabs';

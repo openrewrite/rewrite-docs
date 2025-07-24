@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ComparatorRules Refaster recipes"
+sidebar_label: "`ComparatorRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -61,8 +61,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes
 displayName: `ComparatorRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `Comparator`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ComparatorRules).
+  Refaster rules related to expressions dealing with `Comparator`s. [Source](https://error-prone.picnic.tech/refasterrules/ComparatorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ReverseOrderRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingRecipe

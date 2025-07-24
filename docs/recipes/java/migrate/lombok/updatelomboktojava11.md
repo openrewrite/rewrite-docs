@@ -53,7 +53,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `lombok.experimental.val`
   * newFullyQualifiedTypeName: `lombok.val`
 * [Prefer `final var` over `lombok.val`](../../../java/migrate/lombok/lombokvaltofinalvar)
-* [Migrate Lombok's `@__` syntax to `onX_` for Java 8+](../../../java/migrate/lombok/lombokonxtoonx_)
+* [Migrate Lombok&#39;s `@__` syntax to `onX_` for Java 8+](../../../java/migrate/lombok/lombokonxtoonx_)
 
 </TabItem>
 

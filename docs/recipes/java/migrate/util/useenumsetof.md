@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer EnumSet of(..)"
+sidebar_label: "Prefer `EnumSet of(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "switch statements should have at least 3 case clauses"
+sidebar_label: "`switch` statements should have at least 3 `case` clauses"
 ---
 
 import Tabs from '@theme/Tabs';

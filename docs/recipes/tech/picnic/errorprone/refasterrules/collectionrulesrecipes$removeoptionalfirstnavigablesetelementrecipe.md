@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.RemoveOptionalFirstNavigableSetElement"
+sidebar_label: "Refaster template `CollectionRules.RemoveOptionalFirstNavigableSetElement`"
 ---
 
 import Tabs from '@theme/Tabs';

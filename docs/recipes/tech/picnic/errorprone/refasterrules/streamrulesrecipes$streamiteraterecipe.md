@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamIterate"
+sidebar_label: "Refaster template `StreamRules.StreamIterate`"
 ---
 
 import Tabs from '@theme/Tabs';

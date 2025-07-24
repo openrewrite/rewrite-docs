@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Use Uni<T extends PanacheEntityBase>"
+sidebar_label: "Use `Uni&lt;T extends PanacheEntityBase&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `Uni&lt;T extends PanacheEntityBase>`
+# Use `Uni&lt;T extends PanacheEntityBase&gt;`
 
 **org.openrewrite.quarkus.quarkus2.UsePanacheEntityBaseUniT**
 

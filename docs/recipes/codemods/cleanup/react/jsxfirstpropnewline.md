@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxFirstPropNewLine
 displayName: Enforce proper position of the first property in JSX
 description: |
-  Enforce proper position of the first property in JSX
-  See rule details for [react/jsx-first-prop-new-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-first-prop-new-line.md)
-  
+  Enforce proper position of the first property in JSX See rule details for [react/jsx-first-prop-new-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-first-prop-new-line.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

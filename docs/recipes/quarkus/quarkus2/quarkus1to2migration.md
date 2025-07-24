@@ -31,10 +31,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Quarkus 1.13 migration from Quarkus 1.11](../../quarkus/quarkus1to1_13migration)
 * [Use `@GrpcClient`](../../quarkus/quarkus2/grpcserviceannotationtogrpcclient)
 * [Remove `avro-maven-plugin`](../../quarkus/quarkus2/removeavromavenplugin)
-* [Use `@Identifier("default-kafka-broker")`](../../quarkus/quarkus2/useidentifierondefaultkafkabroker)
+* [Use `@Identifier(&quot;default-kafka-broker&quot;)`](../../quarkus/quarkus2/useidentifierondefaultkafkabroker)
 * [Use `PanacheEntityBase` static methods](../../quarkus/quarkus2/usepanacheentitybasestaticmethods)
-* [Use `Uni<T extends PanacheEntityBase>`](../../quarkus/quarkus2/usepanacheentitybaseunit)
-* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](../../quarkus/quarkus2/usereactivepanachemongoentitybaseunit)
+* [Use `Uni&lt;T extends PanacheEntityBase&gt;`](../../quarkus/quarkus2/usepanacheentitybaseunit)
+* [Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;`](../../quarkus/quarkus2/usereactivepanachemongoentitybaseunit)
 * [Change property key](../../properties/changepropertykey)
   * oldPropertyKey: `smallrye.jwt.sign.key-location`
   * newPropertyKey: `smallrye.jwt.sign.key.location`

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace Mockito.when on static (non mock) with try-with-resource with MockedStatic"
+sidebar_label: "Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic"
 ---
 
 import Tabs from '@theme/Tabs';

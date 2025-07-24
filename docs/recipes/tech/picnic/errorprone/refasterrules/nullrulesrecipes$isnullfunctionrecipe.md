@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template NullRules.IsNullFunction"
+sidebar_label: "Refaster template `NullRules.IsNullFunction`"
 ---
 
 import Tabs from '@theme/Tabs';

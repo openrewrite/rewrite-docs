@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.EmptyBraceSpaces
 displayName: Enforce no spaces between braces.
 description: |
-  Enforce no spaces between braces.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md)
-  
+  Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

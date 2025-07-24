@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.Utf8EncodedLength"
+sidebar_label: "Refaster template `StringRules.Utf8EncodedLength`"
 ---
 
 import Tabs from '@theme/Tabs';

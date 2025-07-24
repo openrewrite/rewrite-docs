@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace org.apache.commons.lang3.Validate#notNull with Objects#requireNonNull"
+sidebar_label: "Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
 ---
 
 import Tabs from '@theme/Tabs';

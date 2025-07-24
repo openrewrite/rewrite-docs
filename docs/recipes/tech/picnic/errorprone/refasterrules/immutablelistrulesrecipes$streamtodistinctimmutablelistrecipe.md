@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableListRules.StreamToDistinctImmutableList"
+sidebar_label: "Refaster template `ImmutableListRules.StreamToDistinctImmutableList`"
 ---
 
 import Tabs from '@theme/Tabs';

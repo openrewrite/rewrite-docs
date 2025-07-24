@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJBigIntegerRules.AbstractBigIntegerAssertIsOne"
+sidebar_label: "Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsOne`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove JavaDoc @param, @return, and @throws with no description"
+sidebar_label: "Remove JavaDoc `@param`, `@return`, and `@throws` with no description"
 ---
 
 import Tabs from '@theme/Tabs';

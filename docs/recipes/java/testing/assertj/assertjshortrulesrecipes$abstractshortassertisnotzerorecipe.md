@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace isNotEqualTo(0) with isNotZero()"
+sidebar_label: "Replace `isNotEqualTo(0)` with `isNotZero()`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSetMultimapRules.TransformMultimapValuesToImmutableSetMultimap2"
+sidebar_label: "Refaster template `ImmutableSetMultimapRules.TransformMultimapValuesToImmutableSetMultimap2`"
 ---
 
 import Tabs from '@theme/Tabs';

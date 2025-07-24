@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Finds uses of Encryptors.queryableText()"
+sidebar_label: "Finds uses of `Encryptors.queryableText()`"
 ---
 
 import Tabs from '@theme/Tabs';

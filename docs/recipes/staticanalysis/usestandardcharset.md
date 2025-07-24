@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use StandardCharset constants"
+sidebar_label: "Use `StandardCharset` constants"
 ---
 
 import Tabs from '@theme/Tabs';

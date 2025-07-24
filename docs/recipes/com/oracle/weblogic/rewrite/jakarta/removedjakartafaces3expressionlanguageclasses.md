@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use jakarta.el instead of jakarta.faces.el and javax.faces.el"
+sidebar_label: "Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -104,7 +104,6 @@ name: com.oracle.weblogic.rewrite.jakarta.RemovedJakartaFaces3ExpressionLanguage
 displayName: Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`
 description: |
   Several classes were removed and replaced in Jakarta Server Faces 3.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface.
-  
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: jakarta.faces.el.MethodBinding

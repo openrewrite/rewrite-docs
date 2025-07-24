@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.ReverseOrder"
+sidebar_label: "Refaster template `ComparatorRules.ReverseOrder`"
 ---
 
 import Tabs from '@theme/Tabs';

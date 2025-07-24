@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert JMockit @Mocked and @Injectable annotated arguments"
+sidebar_label: "Convert JMockit `@Mocked` and `@Injectable` annotated arguments"
 ---
 
 import Tabs from '@theme/Tabs';

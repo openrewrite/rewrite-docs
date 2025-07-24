@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssortedRules.IterableIsEmpty"
+sidebar_label: "Refaster template `AssortedRules.IterableIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

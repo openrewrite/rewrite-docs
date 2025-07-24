@@ -1,5 +1,5 @@
 ---
-sidebar_label: "OptionalRules Refaster recipes"
+sidebar_label: "`OptionalRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -54,8 +54,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.OptionalRulesRecipes
 displayName: `OptionalRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `Optional`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/OptionalRules).
+  Refaster rules related to expressions dealing with `Optional`s. [Source](https://error-prone.picnic.tech/refasterrules/OptionalRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalEmptyRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOfNullableRecipe

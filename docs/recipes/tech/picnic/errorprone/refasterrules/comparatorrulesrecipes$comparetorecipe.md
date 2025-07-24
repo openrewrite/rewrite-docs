@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.CompareTo"
+sidebar_label: "Refaster template `ComparatorRules.CompareTo`"
 ---
 
 import Tabs from '@theme/Tabs';

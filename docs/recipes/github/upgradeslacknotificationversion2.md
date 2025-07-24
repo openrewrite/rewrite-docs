@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Upgrade slackapi/slack-github-action"
+sidebar_label: "Upgrade `slackapi/slack-github-action`"
 ---
 
 import Tabs from '@theme/Tabs';

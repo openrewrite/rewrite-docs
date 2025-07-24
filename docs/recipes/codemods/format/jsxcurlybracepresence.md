@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxCurlyBracePresence
 displayName: Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes
 description: |
-  Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes
-  
-  See [rule details](https://eslint.style/rules/default/jsx-curly-brace-presence)
-  
+  Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes  See [rule details](https://eslint.style/rules/default/jsx-curly-brace-presence)
 tags:
   - eslint
   - stylistic

@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NextTickStyle
 displayName: Enforce Promise or callback style in nextTick
 description: |
-  Enforce Promise or callback style in nextTick
-  See rule details for [vue/next-tick-style](https://eslint.vuejs.org/rules/next-tick-style.html)
-  
+  Enforce Promise or callback style in nextTick See rule details for [vue/next-tick-style](https://eslint.vuejs.org/rules/next-tick-style.html)
 tags:
   - ESLint
   - vue

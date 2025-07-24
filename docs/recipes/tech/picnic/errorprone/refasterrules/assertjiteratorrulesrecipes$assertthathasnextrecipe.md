@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJIteratorRules.AssertThatHasNext"
+sidebar_label: "Refaster template `AssertJIteratorRules.AssertThatHasNext`"
 ---
 
 import Tabs from '@theme/Tabs';

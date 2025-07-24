@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template WebClientRules.WebClientPost"
+sidebar_label: "Refaster template `WebClientRules.WebClientPost`"
 ---
 
 import Tabs from '@theme/Tabs';

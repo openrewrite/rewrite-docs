@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.OperatorLinebreak
 displayName: Enforce consistent linebreak style for operators
 description: |
-  Enforce consistent linebreak style for operators
-  
-  See [rule details](https://eslint.style/rules/default/operator-linebreak)
-  
+  Enforce consistent linebreak style for operators  See [rule details](https://eslint.style/rules/default/operator-linebreak)
 tags:
   - eslint
   - stylistic

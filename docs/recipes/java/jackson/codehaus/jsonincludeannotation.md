@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate to Jackson @JsonInclude"
+sidebar_label: "Migrate to Jackson `@JsonInclude`"
 ---
 
 import Tabs from '@theme/Tabs';

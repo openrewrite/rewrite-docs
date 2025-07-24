@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NumberLiteralCase
 displayName: Enforce proper case for numeric literals.
 description: |
-  Enforce proper case for numeric literals.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md)
-  
+  Enforce proper case for numeric literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

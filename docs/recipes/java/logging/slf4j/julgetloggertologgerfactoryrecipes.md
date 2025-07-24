@@ -28,8 +28,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace JUL `Logger.getLogger(Some.class.getName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`](../../../java/logging/slf4j/julgetloggertologgerfactoryrecipes$getloggerclassnametologgerfactoryrecipe)
-* [Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`](../../../java/logging/slf4j/julgetloggertologgerfactoryrecipes$getloggerclasscanonicalnametologgerfactoryrecipe)
+* [Replace JUL `Logger.getLogger(Some.class.getName())` with SLF4J&#39;s `LoggerFactory.getLogger(Some.class)`](../../../java/logging/slf4j/julgetloggertologgerfactoryrecipes$getloggerclassnametologgerfactoryrecipe)
+* [Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J&#39;s `LoggerFactory.getLogger(Some.class)`](../../../java/logging/slf4j/julgetloggertologgerfactoryrecipes$getloggerclasscanonicalnametologgerfactoryrecipe)
 
 </TabItem>
 

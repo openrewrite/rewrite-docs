@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove org.openrewrite.gradle.trait.Traits.jvmTestSuite() usage"
+sidebar_label: "Remove `org.openrewrite.gradle.trait.Traits.jvmTestSuite()` usage"
 ---
 
 import Tabs from '@theme/Tabs';

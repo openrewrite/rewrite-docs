@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.StringValueOf"
+sidebar_label: "Refaster template `StringRules.StringValueOf`"
 ---
 
 import Tabs from '@theme/Tabs';

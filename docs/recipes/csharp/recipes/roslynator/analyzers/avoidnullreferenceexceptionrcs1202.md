@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.AvoidNullReferenceExceptionRCS1202**
 
+__
 
 ## Recipe source
 

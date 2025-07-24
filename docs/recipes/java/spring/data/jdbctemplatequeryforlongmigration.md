@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert JdbcTemplate.queryForLong(..) to queryForObject(..)"
+sidebar_label: "Convert `JdbcTemplate.queryForLong(..)` to `queryForObject(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

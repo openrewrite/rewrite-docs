@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessSpread
 displayName: Disallow unnecessary spread.
 description: |
-  Disallow unnecessary spread.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md)
-  
+  Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

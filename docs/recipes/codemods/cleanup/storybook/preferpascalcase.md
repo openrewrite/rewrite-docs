@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.PreferPascalCase
 displayName: Stories should use PascalCase
 description: |
-  Stories should use PascalCase
-  See rule details for [storybook/prefer-pascal-case](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md)
-  
+  Stories should use PascalCase See rule details for [storybook/prefer-pascal-case](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md)
 tags:
   - eslint-plugin-storybook
   - ESLint

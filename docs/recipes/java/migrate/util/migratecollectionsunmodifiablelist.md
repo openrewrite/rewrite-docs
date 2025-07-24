@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer List.of(..)"
+sidebar_label: "Prefer `List.of(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

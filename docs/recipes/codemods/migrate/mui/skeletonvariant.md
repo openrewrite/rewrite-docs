@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates variant prop for Skeleton component"
+sidebar_label: "Updates `variant` prop for Skeleton component"
 ---
 
 import Tabs from '@theme/Tabs';

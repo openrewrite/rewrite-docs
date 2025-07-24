@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove public visibility of JUnit 5 tests"
+sidebar_label: "Remove `public` visibility of JUnit 5 tests"
 ---
 
 import Tabs from '@theme/Tabs';

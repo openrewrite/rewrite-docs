@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find privileged resource_type definitions."
+sidebar_label: "Find privileged `resource_type` definitions."
 ---
 
 import Tabs from '@theme/Tabs';

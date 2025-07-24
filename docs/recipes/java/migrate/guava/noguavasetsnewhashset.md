@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new HashSet<>()"
+sidebar_label: "Prefer `new HashSet&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

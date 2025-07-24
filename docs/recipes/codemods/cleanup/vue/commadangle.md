@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require or disallow trailing commas in <template>"
+sidebar_label: "Require or disallow trailing commas in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require or disallow trailing commas in `<template>`
+# Require or disallow trailing commas in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.CommaDangle**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.CommaDangle
-displayName: Require or disallow trailing commas in `<template>`
+displayName: Require or disallow trailing commas in `&lt;template&gt;`
 description: |
-  Require or disallow trailing commas in `<template>`
-  See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html)
-  
+  Require or disallow trailing commas in `&lt;template&gt;` See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html)
 tags:
   - ESLint
   - vue

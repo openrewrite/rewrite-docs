@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSortedSetRules.EmptyImmutableSortedSet"
+sidebar_label: "Refaster template `ImmutableSortedSetRules.EmptyImmutableSortedSet`"
 ---
 
 import Tabs from '@theme/Tabs';

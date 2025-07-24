@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use @GrpcClient"
+sidebar_label: "Use `@GrpcClient`"
 ---
 
 import Tabs from '@theme/Tabs';

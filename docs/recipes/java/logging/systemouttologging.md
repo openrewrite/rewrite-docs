@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use logger instead of System.out print statements"
+sidebar_label: "Use logger instead of `System.out` print statements"
 ---
 
 import Tabs from '@theme/Tabs';

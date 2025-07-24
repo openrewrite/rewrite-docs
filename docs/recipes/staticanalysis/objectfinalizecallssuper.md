@@ -1,5 +1,5 @@
 ---
-sidebar_label: "finalize() calls super"
+sidebar_label: "`finalize()` calls super"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSetRules.StreamToImmutableSet"
+sidebar_label: "Refaster template `ImmutableSetRules.StreamToImmutableSet`"
 ---
 
 import Tabs from '@theme/Tabs';

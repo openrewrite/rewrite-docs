@@ -42,18 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion
 displayName: Update Maven Java project properties
 description: |
-  The Java version is determined by several project properties, including:
-  
-   * `java.version`
-   * `jdk.version`
-   * `javaVersion`
-   * `jdkVersion`
-   * `maven.compiler.source`
-   * `maven.compiler.target`
-   * `maven.compiler.release`
-   * `release.version`
-  
-  If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
+  The Java version is determined by several project properties, including:   * `java.version`  * `jdk.version`  * `javaVersion`  * `jdkVersion`  * `maven.compiler.source`  * `maven.compiler.target`  * `maven.compiler.release`  * `release.version`  If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
 
 recipeList:
   - org.openrewrite.maven.UpdateMavenProjectPropertyJavaVersion

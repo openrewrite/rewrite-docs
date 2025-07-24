@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove org.openrewrite.gradle.trait.Traits.gradleDependency() usage"
+sidebar_label: "Remove `org.openrewrite.gradle.trait.Traits.gradleDependency()` usage"
 ---
 
 import Tabs from '@theme/Tabs';

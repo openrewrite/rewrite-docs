@@ -5,10 +5,11 @@ sidebar_label: "Use coalesce expression instead of 'if'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use coalesce expression instead of 'if'
+# Use coalesce expression instead of &#39;if&#39;
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1173**
 
+__
 
 ## Recipe source
 

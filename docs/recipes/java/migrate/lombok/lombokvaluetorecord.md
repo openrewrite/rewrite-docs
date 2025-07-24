@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert @lombok.Value class to Record"
+sidebar_label: "Convert `@lombok.Value` class to Record"
 ---
 
 import Tabs from '@theme/Tabs';

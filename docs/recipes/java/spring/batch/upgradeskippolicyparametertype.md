@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Change the type of skipCount parameter in SkipPolicy from int to long"
+sidebar_label: "Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`"
 ---
 
 import Tabs from '@theme/Tabs';

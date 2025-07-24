@@ -1,5 +1,5 @@
 ---
-sidebar_label: "for loop counters should use postfix operators"
+sidebar_label: "`for` loop counters should use postfix operators"
 ---
 
 import Tabs from '@theme/Tabs';

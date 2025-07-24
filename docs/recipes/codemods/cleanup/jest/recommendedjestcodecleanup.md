@@ -45,7 +45,6 @@ name: org.openrewrite.codemods.cleanup.jest.RecommendedJestCodeCleanup
 displayName: Recommended Jest code cleanup
 description: |
   Collection of cleanup ESLint rules that are recommended by [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest).
-  
 tags:
   - ESLint
   - eslint-plugin-jest

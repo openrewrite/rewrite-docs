@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace DirectProcessor.create() with Sinks.many().multicast().directBestEffort()"
+sidebar_label: "Replace `DirectProcessor.create()` with `Sinks.many().multicast().directBestEffort()`"
 ---
 
 import Tabs from '@theme/Tabs';

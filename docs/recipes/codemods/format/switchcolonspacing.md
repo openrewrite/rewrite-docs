@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SwitchColonSpacing
 displayName: Enforce spacing around colons of switch statements
 description: |
-  Enforce spacing around colons of switch statements
-  
-  See [rule details](https://eslint.style/rules/default/switch-colon-spacing)
-  
+  Enforce spacing around colons of switch statements  See [rule details](https://eslint.style/rules/default/switch-colon-spacing)
 tags:
   - eslint
   - stylistic

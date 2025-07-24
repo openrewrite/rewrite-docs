@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NewLineBetweenMultiLineProperty
 displayName: Enforce new lines between multi-line properties in Vue components
 description: |
-  Enforce new lines between multi-line properties in Vue components
-  See rule details for [vue/new-line-between-multi-line-property](https://eslint.vuejs.org/rules/new-line-between-multi-line-property.html)
-  
+  Enforce new lines between multi-line properties in Vue components See rule details for [vue/new-line-between-multi-line-property](https://eslint.vuejs.org/rules/new-line-between-multi-line-property.html)
 tags:
   - ESLint
   - vue

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use actions/setup-java temurin distribution as they are cached in hosted runners"
+sidebar_label: "Use `actions/setup-java` `temurin` distribution as they are cached in hosted runners"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template BigDecimalRules.BigDecimalValueOf"
+sidebar_label: "Refaster template `BigDecimalRules.BigDecimalValueOf`"
 ---
 
 import Tabs from '@theme/Tabs';

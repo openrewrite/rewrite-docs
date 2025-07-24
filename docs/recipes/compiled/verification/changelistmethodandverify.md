@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Change List#add to List#plus and verify."
+sidebar_label: "Change `List#add` to `List#plus` and verify."
 ---
 
 import Tabs from '@theme/Tabs';

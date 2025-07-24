@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ClassRules.ClassReferenceIsInstancePredicate"
+sidebar_label: "Refaster template `ClassRules.ClassReferenceIsInstancePredicate`"
 ---
 
 import Tabs from '@theme/Tabs';

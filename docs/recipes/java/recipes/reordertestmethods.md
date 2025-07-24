@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Show @DocumentExamples first"
+sidebar_label: "Show `@DocumentExample`s first"
 ---
 
 import Tabs from '@theme/Tabs';

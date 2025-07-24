@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert new URL(String, ..) to new URI(String, ..).toURL()"
+sidebar_label: "Convert `new URL(String, ..)` to `new URI(String, ..).toURL()`"
 ---
 
 import Tabs from '@theme/Tabs';

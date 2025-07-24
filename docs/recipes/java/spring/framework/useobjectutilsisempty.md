@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use ObjectUtils#isEmpty(Object)"
+sidebar_label: "Use `ObjectUtils#isEmpty(Object)`"
 ---
 
 import Tabs from '@theme/Tabs';

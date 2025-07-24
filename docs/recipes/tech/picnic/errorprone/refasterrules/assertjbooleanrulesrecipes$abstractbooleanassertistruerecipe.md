@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJBooleanRules.AbstractBooleanAssertIsTrue"
+sidebar_label: "Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsTrue`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replaces @mui imports with @mui/material"
+sidebar_label: "Replaces `@mui` imports with `@mui/material`"
 ---
 
 import Tabs from '@theme/Tabs';

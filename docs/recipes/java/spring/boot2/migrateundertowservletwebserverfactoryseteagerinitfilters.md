@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use setEagerFilterInit(boolean)"
+sidebar_label: "Use `setEagerFilterInit(boolean)`"
 ---
 
 import Tabs from '@theme/Tabs';

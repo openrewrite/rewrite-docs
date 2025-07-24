@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace 0 < s.length() with !s.isEmpty()"
+sidebar_label: "Replace `0 &lt; s.length()` with `!s.isEmpty()`"
 ---
 
 import Tabs from '@theme/Tabs';

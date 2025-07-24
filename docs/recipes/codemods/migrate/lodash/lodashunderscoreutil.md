@@ -52,14 +52,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.lodash.LodashUnderscoreUtil
 displayName: Replace lodash and underscore utility functions with native JavaScript
 description: |
-  - `_.isArray(x)` -> `Array.isArray(x)`
-  - `_.isBoolean(x)` -> `typeof(x) === 'boolean'`
-  - `_.isFinite(x)` -> `Number.isFinite(x)`
-  - `_.isFunction(x)` -> `typeof(x) === 'function'`
-  - `_.isNull(x)` -> `x === null`
-  - `_.isString(x)` -> `typeof(x) === 'string'`
-  - `_.isUndefined(x)` -> `typeof(x) === 'undefined'`
-  
+  - `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === &#39;boolean&#39;` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === &#39;function&#39;` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === &#39;string&#39;` - `_.isUndefined(x)` -&gt; `typeof(x) === &#39;undefined&#39;`
 tags:
   - codemods
   - lodash

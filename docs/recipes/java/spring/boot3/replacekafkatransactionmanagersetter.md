@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use kafkaAwareTransactionManager setter"
+sidebar_label: "Use `kafkaAwareTransactionManager` setter"
 ---
 
 import Tabs from '@theme/Tabs';

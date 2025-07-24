@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Class#getDeclaredConstructor().newInstance()"
+sidebar_label: "Use `Class#getDeclaredConstructor().newInstance()`"
 ---
 
 import Tabs from '@theme/Tabs';

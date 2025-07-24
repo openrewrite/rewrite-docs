@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Preconditions.checkNotNull with Object message to Objects.requireNonNull with String.valueOf"
+sidebar_label: "`Preconditions.checkNotNull` with `Object` message to `Objects.requireNonNull` with `String.valueOf`"
 ---
 
 import Tabs from '@theme/Tabs';

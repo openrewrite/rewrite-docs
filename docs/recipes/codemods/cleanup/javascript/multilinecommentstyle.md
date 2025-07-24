@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.MultilineCommentStyle
 displayName: Enforce a particular style for multiline comments
 description: |
-  Enforce a particular style for multiline comments 
-  See [rule details](https://eslint.org/docs/latest/rules/multiline-comment-style)
-  
+  Enforce a particular style for multiline comments  See [rule details](https://eslint.org/docs/latest/rules/multiline-comment-style)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.FunctionCallSpacing
 displayName: Require or disallow spacing between function identifiers and their invocations
 description: |
-  Require or disallow spacing between function identifiers and their invocations
-  
-  See [rule details](https://eslint.style/rules/default/function-call-spacing)
-  
+  Require or disallow spacing between function identifiers and their invocations  See [rule details](https://eslint.style/rules/default/function-call-spacing)
 tags:
   - eslint
   - stylistic

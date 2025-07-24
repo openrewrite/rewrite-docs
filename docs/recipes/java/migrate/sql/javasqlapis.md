@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use modernized java.sql APIs"
+sidebar_label: "Use modernized `java.sql` APIs"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Simplify `Nullable<T>` to T?"
+sidebar_label: "Simplify Nullable&lt;T&gt; to T?"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.SimplifyNullableOfTRCS1020**
 
+__
 
 ## Recipe source
 

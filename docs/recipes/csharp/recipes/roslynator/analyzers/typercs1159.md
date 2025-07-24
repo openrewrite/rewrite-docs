@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use `EventHandler<T>`"
+sidebar_label: "Use EventHandler&lt;T&gt;"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.TypeRCS1159**
 
+__
 
 ## Recipe source
 

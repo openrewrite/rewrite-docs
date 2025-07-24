@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer String#join() over Guava Joiner#join()"
+sidebar_label: "Prefer `String#join()` over Guava `Joiner#join()`"
 ---
 
 import Tabs from '@theme/Tabs';

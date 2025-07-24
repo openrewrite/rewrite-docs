@@ -1,5 +1,5 @@
 ---
-sidebar_label: "A class that provides Equals(T) should implement `IEquatable<T>`"
+sidebar_label: "A class that provides Equals(T) should implement IEquatable&lt;T&gt;"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.EqualityShouldBeCorrectlyImplementedMA0077**
 
+__
 
 ## Recipe source
 

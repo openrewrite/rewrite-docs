@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use RestTemplateBuilder#basicAuthentication"
+sidebar_label: "Use `RestTemplateBuilder#basicAuthentication`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "TimeRules Refaster recipes"
+sidebar_label: "`TimeRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -148,8 +148,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.TimeRulesRecipes
 displayName: `TimeRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with time.
-  [Source](https://error-prone.picnic.tech/refasterrules/TimeRules).
+  Refaster rules related to expressions dealing with time. [Source](https://error-prone.picnic.tech/refasterrules/TimeRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ClockInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcConstantRecipe

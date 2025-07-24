@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.SortVars
 displayName: Require variables within the same declaration block to be sorted
 description: |
-  Require variables within the same declaration block to be sorted 
-  See [rule details](https://eslint.org/docs/latest/rules/sort-vars)
-  
+  Require variables within the same declaration block to be sorted  See [rule details](https://eslint.org/docs/latest/rules/sort-vars)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

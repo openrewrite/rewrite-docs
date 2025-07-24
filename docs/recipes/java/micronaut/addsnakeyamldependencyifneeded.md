@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add snakeyaml dependency if needed"
+sidebar_label: "Add `snakeyaml` dependency if needed"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find where SSLContext is set as system default"
+sidebar_label: "Find where `SSLContext` is set as system default"
 ---
 
 import Tabs from '@theme/Tabs';

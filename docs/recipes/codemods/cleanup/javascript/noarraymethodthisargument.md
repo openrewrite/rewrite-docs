@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Disallow using the this argument in array methods."
+sidebar_label: "Disallow using the `this` argument in array methods."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoArrayMethodThisArgument
 displayName: Disallow using the `this` argument in array methods.
 description: |
-  Disallow using the `this` argument in array methods.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-method-this-argument.md)
-  
+  Disallow using the `this` argument in array methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-method-this-argument.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

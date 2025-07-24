@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate xmlns entries in application-client.xml files."
+sidebar_label: "Migrate xmlns entries in `application-client.xml` files."
 ---
 
 import Tabs from '@theme/Tabs';

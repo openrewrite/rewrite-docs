@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use new SCryptPasswordEncoder factory methods"
+sidebar_label: "Use new `SCryptPasswordEncoder` factory methods"
 ---
 
 import Tabs from '@theme/Tabs';

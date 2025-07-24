@@ -8,6 +8,6 @@ _Recipes to perform [Unleash](https://getunleash.io/) migration tasks._
 
 ## Recipes
 
-* [Remove Unleash's `isEnabled` for feature key](./removeisenabled.md)
+* [Remove Unleash&#39;s `isEnabled` for feature key](./removeisenabled.md)
 
 

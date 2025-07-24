@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MultimapRules.MultimapKeysStream"
+sidebar_label: "Refaster template `MultimapRules.MultimapKeysStream`"
 ---
 
 import Tabs from '@theme/Tabs';

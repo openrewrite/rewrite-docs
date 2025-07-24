@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.annotation.sql packages to jakarta.annotation.sql"
+sidebar_label: "Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`"
 ---
 
 import Tabs from '@theme/Tabs';

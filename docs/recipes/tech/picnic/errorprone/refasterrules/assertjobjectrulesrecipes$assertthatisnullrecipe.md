@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJObjectRules.AssertThatIsNull"
+sidebar_label: "Refaster template `AssertJObjectRules.AssertThatIsNull`"
 ---
 
 import Tabs from '@theme/Tabs';

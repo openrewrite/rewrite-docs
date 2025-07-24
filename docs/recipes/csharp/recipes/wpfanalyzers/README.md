@@ -30,7 +30,7 @@
 * [Containing type should be used as registered owner](./usecontainingtypefixwpf0011.md)
 * [Containing type should be used as registered owner](./usecontainingtypefixwpf0101.md)
 * [DependencyPropertyKey member must be declared before DependencyProperty member](./movefixwpf0031.md)
-* [Don't set DataContext and Style using SetCurrentValue](./usesetvaluefixwpf0043.md)
+* [Don&#39;t set DataContext and Style using SetCurrentValue](./usesetvaluefixwpf0043.md)
 * [MarkupExtensionReturnType must use correct return type](./changetypeoffixwpf0081.md)
 * [Name of CoerceValueCallback should match registered name](./renamememberfixwpf0006.md)
 * [Name of PropertyChangedCallback should match registered name](./renamememberfixwpf0005.md)

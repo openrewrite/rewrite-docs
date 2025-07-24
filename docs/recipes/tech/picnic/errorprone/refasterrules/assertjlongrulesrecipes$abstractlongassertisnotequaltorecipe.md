@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJLongRules.AbstractLongAssertIsNotEqualTo"
+sidebar_label: "Refaster template `AssertJLongRules.AbstractLongAssertIsNotEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

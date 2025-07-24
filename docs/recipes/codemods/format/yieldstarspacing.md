@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require or disallow spacing around the &#x60;*&#x60; in &#x60;yield*&#x60; expressions"
+sidebar_label: "Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require or disallow spacing around the &#x60;*&#x60; in &#x60;yield*&#x60; expressions
+# Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions
 
 **org.openrewrite.codemods.format.YieldStarSpacing**
 
@@ -41,12 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.YieldStarSpacing
-displayName: Require or disallow spacing around the &#x60;*&#x60; in &#x60;yield*&#x60; expressions
+displayName: Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions
 description: |
-  Require or disallow spacing around the &#x60;*&#x60; in &#x60;yield*&#x60; expressions
-  
-  See [rule details](https://eslint.style/rules/default/yield-star-spacing)
-  
+  Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing)
 tags:
   - eslint
   - stylistic

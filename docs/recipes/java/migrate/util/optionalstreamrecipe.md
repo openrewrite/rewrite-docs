@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Stream<Optional> idiom recipe"
+sidebar_label: "`Stream&lt;Optional&gt;` idiom recipe"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# `Stream&lt;Optional>` idiom recipe
+# `Stream&lt;Optional&gt;` idiom recipe
 
 **org.openrewrite.java.migrate.util.OptionalStreamRecipe**
 

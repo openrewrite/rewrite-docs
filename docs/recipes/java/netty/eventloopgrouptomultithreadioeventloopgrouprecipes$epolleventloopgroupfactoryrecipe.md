@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace EpollEventLoopGroup with MultiThreadIoEventLoopGroup"
+sidebar_label: "Replace `EpollEventLoopGroup` with `MultiThreadIoEventLoopGroup`"
 ---
 
 import Tabs from '@theme/Tabs';

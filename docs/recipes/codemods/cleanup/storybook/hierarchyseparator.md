@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.HierarchySeparator
 displayName: Deprecated hierarchy separator in title property
 description: |
-  Deprecated hierarchy separator in title property
-  See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md)
-  
+  Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md)
 tags:
   - eslint-plugin-storybook
   - ESLint

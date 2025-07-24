@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template LongStreamRules.LongStreamAnyMatch"
+sidebar_label: "Refaster template `LongStreamRules.LongStreamAnyMatch`"
 ---
 
 import Tabs from '@theme/Tabs';

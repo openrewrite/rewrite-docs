@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageContainsExactly"
+sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageContainsExactly`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "@Entity objects with constructors must also have a default constructor"
+sidebar_label: "`@Entity` objects with constructors must also have a default constructor"
 ---
 
 import Tabs from '@theme/Tabs';

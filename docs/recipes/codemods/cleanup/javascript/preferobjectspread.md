@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead"
+sidebar_label: "Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread
 displayName: Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead
 description: |
-  Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead 
-  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread)
-  
+  Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

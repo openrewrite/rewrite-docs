@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxCollectToImmutableList"
+sidebar_label: "Refaster template `ReactorRules.FluxCollectToImmutableList`"
 ---
 
 import Tabs from '@theme/Tabs';

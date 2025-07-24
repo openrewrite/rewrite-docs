@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxIndent
 displayName: Enforce JSX indentation
 description: |
-  Enforce JSX indentation
-  See rule details for [react/jsx-indent](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent.md)
-  
+  Enforce JSX indentation See rule details for [react/jsx-indent](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

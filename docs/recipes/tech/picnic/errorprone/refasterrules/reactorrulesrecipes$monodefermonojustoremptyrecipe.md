@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.MonoDeferMonoJustOrEmpty"
+sidebar_label: "Refaster template `ReactorRules.MonoDeferMonoJustOrEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

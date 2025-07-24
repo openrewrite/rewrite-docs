@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use javax.management.monitor.CounterMonitor#setInitThreshold"
+sidebar_label: "Use `javax.management.monitor.CounterMonitor#setInitThreshold`"
 ---
 
 import Tabs from '@theme/Tabs';

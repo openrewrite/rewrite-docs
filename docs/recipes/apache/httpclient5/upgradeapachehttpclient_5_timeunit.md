@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Adds TimeUnit to timeouts and duration methods"
+sidebar_label: "Adds `TimeUnit` to timeouts and duration methods"
 ---
 
 import Tabs from '@theme/Tabs';

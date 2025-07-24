@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate web.xml using Java EE"
+sidebar_label: "Migrate `web.xml` using Java EE"
 ---
 
 import Tabs from '@theme/Tabs';

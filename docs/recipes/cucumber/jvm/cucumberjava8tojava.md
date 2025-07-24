@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate cucumber-java8 to cucumber-java"
+sidebar_label: "Migrate `cucumber-java8` to `cucumber-java`"
 ---
 
 import Tabs from '@theme/Tabs';

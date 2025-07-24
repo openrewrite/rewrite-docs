@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.PreferClassDirective
 displayName: require class directives instead of ternary expressions
 description: |
-  require class directives instead of ternary expressions
-  See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/)
-  
+  require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/)
 tags:
   - svelte
   - ESLint

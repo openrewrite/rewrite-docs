@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace java.util.Stack with java.util.Deque"
+sidebar_label: "Replace `java.util.Stack` with `java.util.Deque`"
 ---
 
 import Tabs from '@theme/Tabs';

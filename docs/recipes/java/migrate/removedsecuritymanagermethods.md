@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace deprecated methods inSecurityManager"
+sidebar_label: "Replace deprecated methods in`SecurityManager`"
 ---
 
 import Tabs from '@theme/Tabs';

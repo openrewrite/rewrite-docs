@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find vulnerable uses of Jackson @JsonTypeInfo"
+sidebar_label: "Find vulnerable uses of Jackson `@JsonTypeInfo`"
 ---
 
 import Tabs from '@theme/Tabs';

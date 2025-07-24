@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJPathRules.AssertThatIsAbsolute"
+sidebar_label: "Refaster template `AssertJPathRules.AssertThatIsAbsolute`"
 ---
 
 import Tabs from '@theme/Tabs';

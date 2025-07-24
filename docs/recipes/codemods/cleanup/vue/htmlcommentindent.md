@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.HtmlCommentIndent
 displayName: Enforce consistent indentation in HTML comments
 description: |
-  Enforce consistent indentation in HTML comments
-  See rule details for [vue/html-comment-indent](https://eslint.vuejs.org/rules/html-comment-indent.html)
-  
+  Enforce consistent indentation in HTML comments See rule details for [vue/html-comment-indent](https://eslint.vuejs.org/rules/html-comment-indent.html)
 tags:
   - ESLint
   - vue

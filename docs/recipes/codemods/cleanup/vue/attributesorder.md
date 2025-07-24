@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.AttributesOrder
 displayName: Enforce order of attributes
 description: |
-  Enforce order of attributes
-  See rule details for [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order.html)
-  
+  Enforce order of attributes See rule details for [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order.html)
 tags:
   - ESLint
   - vue

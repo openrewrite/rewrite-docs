@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace redundant String method calls with self"
+sidebar_label: "Replace redundant `String` method calls with self"
 ---
 
 import Tabs from '@theme/Tabs';

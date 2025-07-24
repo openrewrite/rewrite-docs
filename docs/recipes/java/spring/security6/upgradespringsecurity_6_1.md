@@ -58,7 +58,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1
 displayName: Migrate to Spring Security 6.1
 description: |
-  Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+  Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 tags:
   - spring
   - security

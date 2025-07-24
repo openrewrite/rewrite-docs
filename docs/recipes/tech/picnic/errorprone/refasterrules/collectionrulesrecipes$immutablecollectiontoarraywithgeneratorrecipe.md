@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.ImmutableCollectionToArrayWithGenerator"
+sidebar_label: "Refaster template `CollectionRules.ImmutableCollectionToArrayWithGenerator`"
 ---
 
 import Tabs from '@theme/Tabs';

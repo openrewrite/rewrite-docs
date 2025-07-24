@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJFloatRules.AbstractFloatAssertIsEqualTo"
+sidebar_label: "Refaster template `AssertJFloatRules.AbstractFloatAssertIsEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

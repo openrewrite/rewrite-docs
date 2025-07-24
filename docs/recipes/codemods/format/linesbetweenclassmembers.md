@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.LinesBetweenClassMembers
 displayName: Require or disallow an empty line between class members
 description: |
-  Require or disallow an empty line between class members
-  
-  See [rule details](https://eslint.style/rules/default/lines-between-class-members)
-  
+  Require or disallow an empty line between class members  See [rule details](https://eslint.style/rules/default/lines-between-class-members)
 tags:
   - eslint
   - stylistic

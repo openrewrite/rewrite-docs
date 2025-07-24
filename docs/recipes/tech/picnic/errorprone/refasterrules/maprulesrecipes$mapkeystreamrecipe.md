@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MapRules.MapKeyStream"
+sidebar_label: "Refaster template `MapRules.MapKeyStream`"
 ---
 
 import Tabs from '@theme/Tabs';

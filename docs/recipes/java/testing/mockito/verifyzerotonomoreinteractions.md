@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace verifyZeroInteractions() to verifyNoMoreInteractions()"
+sidebar_label: "Replace `verifyZeroInteractions()` to `verifyNoMoreInteractions()"
 ---
 
 import Tabs from '@theme/Tabs';

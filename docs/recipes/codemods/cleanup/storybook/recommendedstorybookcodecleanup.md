@@ -45,7 +45,6 @@ name: org.openrewrite.codemods.cleanup.storybook.RecommendedStorybookCodeCleanup
 displayName: Recommended Storybook code cleanup
 description: |
   Collection of cleanup ESLint rules from [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme).
-  
 tags:
   - eslint-plugin-storybook
   - ESLint

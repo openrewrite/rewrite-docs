@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace ReplayProcessor.createSizeAndTimeout(int, Duration) with Sinks.many().replay().limit(int, duration)"
+sidebar_label: "Replace `ReplayProcessor.createSizeAndTimeout(int, Duration)` with `Sinks.many().replay().limit(int, duration)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableListRules.ImmutableListOf2"
+sidebar_label: "Refaster template `ImmutableListRules.ImmutableListOf2`"
 ---
 
 import Tabs from '@theme/Tabs';

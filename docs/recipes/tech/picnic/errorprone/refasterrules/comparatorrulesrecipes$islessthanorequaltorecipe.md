@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.IsLessThanOrEqualTo"
+sidebar_label: "Refaster template `ComparatorRules.IsLessThanOrEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

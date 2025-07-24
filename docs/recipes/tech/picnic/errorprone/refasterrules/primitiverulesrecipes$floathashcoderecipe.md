@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.FloatHashCode"
+sidebar_label: "Refaster template `PrimitiveRules.FloatHashCode`"
 ---
 
 import Tabs from '@theme/Tabs';

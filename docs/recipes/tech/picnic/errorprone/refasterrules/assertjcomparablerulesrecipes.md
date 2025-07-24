@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJComparableRules Refaster recipes"
+sidebar_label: "`AssertJComparableRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes
 displayName: `AssertJComparableRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJComparableRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJComparableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes$AssertThatIsEqualByComparingToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes$AssertThatIsNotEqualByComparingToRecipe

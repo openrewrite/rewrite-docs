@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate UserType to Hibernate 6"
+sidebar_label: "Migrate `UserType` to Hibernate 6"
 ---
 
 import Tabs from '@theme/Tabs';

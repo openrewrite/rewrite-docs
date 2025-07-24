@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.LinebreakStyle
 displayName: Enforce consistent linebreak style
 description: |
-  Enforce consistent linebreak style
-  
-  See [rule details](https://eslint.style/rules/default/linebreak-style)
-  
+  Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style)
 tags:
   - eslint
   - stylistic

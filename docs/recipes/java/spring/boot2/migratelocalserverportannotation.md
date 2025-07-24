@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use org.springframework.boot.web.server.LocalServerPort"
+sidebar_label: "Use `org.springframework.boot.web.server.LocalServerPort`"
 ---
 
 import Tabs from '@theme/Tabs';

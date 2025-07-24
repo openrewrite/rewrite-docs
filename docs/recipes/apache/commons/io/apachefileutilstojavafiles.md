@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.nio.file.Files"
+sidebar_label: "Prefer `java.nio.file.Files`"
 ---
 
 import Tabs from '@theme/Tabs';

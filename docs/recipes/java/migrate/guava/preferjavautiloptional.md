@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.util.Optional"
+sidebar_label: "Prefer `java.util.Optional`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `java.util.Optional#or(Supplier<T extends java.util.Optional<T>>)`](../../../java/migrate/guava/preferjavautiloptionalorsupplier)
+* [Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`](../../../java/migrate/guava/preferjavautiloptionalorsupplier)
 * [Prefer `java.util.Optional#orElse(null)` over `com.google.common.base.Optional#orNull()`](../../../java/migrate/guava/preferjavautiloptionalorelsenull)
 * [Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument](../../../java/migrate/guava/noguavaoptionalfromjavautil)
 * [Remove `com.google.common.base.Optional#toJavaUtil()`](../../../java/migrate/guava/noguavaoptionaltojavautil)

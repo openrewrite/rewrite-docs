@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmSessionMethodsRemovedIn7**
 
+__
 
 ## Recipe source
 

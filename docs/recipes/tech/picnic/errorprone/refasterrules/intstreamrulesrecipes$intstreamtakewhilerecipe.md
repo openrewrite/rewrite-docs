@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template IntStreamRules.IntStreamTakeWhile"
+sidebar_label: "Refaster template `IntStreamRules.IntStreamTakeWhile`"
 ---
 
 import Tabs from '@theme/Tabs';

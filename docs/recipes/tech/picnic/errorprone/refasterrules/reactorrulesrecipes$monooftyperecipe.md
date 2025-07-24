@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.MonoOfType"
+sidebar_label: "Refaster template `ReactorRules.MonoOfType`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "In Spring Boot 2.5 a DefaultConfigurationCustomizer can now be used in favour of defining one or more *Provider beans"
+sidebar_label: "In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans"
 ---
 
 import Tabs from '@theme/Tabs';

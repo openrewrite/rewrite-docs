@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Collection#isEmpty() instead of comparing size()"
+sidebar_label: "Use `Collection#isEmpty()` instead of comparing `size()`"
 ---
 
 import Tabs from '@theme/Tabs';

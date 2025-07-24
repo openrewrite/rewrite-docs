@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Recipe classes should not have mutable static fields"
+sidebar_label: "Recipe classes should not have mutable `static` fields"
 ---
 
 import Tabs from '@theme/Tabs';

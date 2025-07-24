@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace String literals with HttpHeaders constants"
+sidebar_label: "Replace String literals with `HttpHeaders` constants"
 ---
 
 import Tabs from '@theme/Tabs';

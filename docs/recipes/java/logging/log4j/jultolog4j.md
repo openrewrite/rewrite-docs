@@ -56,8 +56,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `java.util.logging.Logger warning(..)`
   * newMethodName: `warn`
-* [Rewrites JUL's Logger#entering method to Log4j API](../../../java/logging/log4j/convertjulentering)
-* [Rewrites JUL's Logger#exiting method to Log4j API](../../../java/logging/log4j/convertjulexiting)
+* [Rewrites JUL&#39;s Logger#entering method to Log4j API](../../../java/logging/log4j/convertjulentering)
+* [Rewrites JUL&#39;s Logger#exiting method to Log4j API](../../../java/logging/log4j/convertjulexiting)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `java.util.logging.Logger`
   * newFullyQualifiedTypeName: `org.apache.logging.log4j.Logger`

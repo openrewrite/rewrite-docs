@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.VIfElseKey
 displayName: Require key attribute for conditionally rendered repeated components
 description: |
-  Require key attribute for conditionally rendered repeated components
-  See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html)
-  
+  Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html)
 tags:
   - ESLint
   - vue

@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Don't use an explicit empty label list](../../micrometer/misk/noexplicitemptylabellist)
+* [Don&#39;t use an explicit empty label list](../../micrometer/misk/noexplicitemptylabellist)
 * [Migrate Misk counter to Micrometer](../../micrometer/misk/migrateemptylabelmiskcounter)
 
 </TabItem>

@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.ValidTitle
 displayName: Enforce valid titles
 description: |
-  Enforce valid titles
-  See rule details for [jest/valid-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/valid-title.md)
-  
+  Enforce valid titles See rule details for [jest/valid-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/valid-title.md)
 tags:
   - ESLint
   - eslint-plugin-jest

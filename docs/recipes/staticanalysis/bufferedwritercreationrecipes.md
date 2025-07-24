@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Modernize BufferedWriter creation & prevent file descriptor leaks"
+sidebar_label: "Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Modernize `BufferedWriter` creation & prevent file descriptor leaks
+# Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks
 
 **org.openrewrite.staticanalysis.BufferedWriterCreationRecipes**
 
@@ -41,7 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.BufferedWriterCreationRecipes
-displayName: Modernize `BufferedWriter` creation & prevent file descriptor leaks
+displayName: Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks
 description: |
   The code `new BufferedWriter(new FileWriter(f))` creates a `BufferedWriter` that does not close the underlying `FileWriter` when it is closed. This can lead to file descriptor leaks as per [CWE-755](https://cwe.mitre.org/data/definitions/755.html). Use `Files.newBufferedWriter` to create a `BufferedWriter` that closes the underlying file descriptor when it is closed.
 recipeList:

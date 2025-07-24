@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJNumberRules.NumberAssertIsNegative"
+sidebar_label: "Refaster template `AssertJNumberRules.NumberAssertIsNegative`"
 ---
 
 import Tabs from '@theme/Tabs';

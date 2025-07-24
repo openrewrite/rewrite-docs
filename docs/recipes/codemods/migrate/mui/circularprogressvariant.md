@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates variant prop for CircularProgress component"
+sidebar_label: "Updates `variant` prop for CircularProgress component"
 ---
 
 import Tabs from '@theme/Tabs';

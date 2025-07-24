@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer childNode.remove() over parentNode.removeChild(childNode)."
+sidebar_label: "Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferDomNodeRemove
 displayName: Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.
 description: |
-  Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-remove.md)
-  
+  Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-remove.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

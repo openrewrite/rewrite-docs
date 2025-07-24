@@ -12,7 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Code cleanup](./codecleanup.md)
 * [Common static analysis issues](./commonstaticanalysis.md)
-* [Modernize `BufferedWriter` creation & prevent file descriptor leaks](./bufferedwritercreationrecipes.md)
+* [Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks](./bufferedwritercreationrecipes.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
 * [Simplify ternary expressions](./simplifyternaryrecipes.md)
@@ -20,7 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* ['Collection.toArray()' should be passed an array of the proper type](./collectiontoarrayshouldhavepropertype.md)
+* [&#39;Collection.toArray()&#39; should be passed an array of the proper type](./collectiontoarrayshouldhavepropertype.md)
 * [Add `@Serial` annotation to `serialVersionUID`](./addserialannotationtoserialversionuid.md)
 * [Add missing `@Override` to overriding and implementing methods](./missingoverrideannotation.md)
 * [Add `serialVersionUID` to a `Serializable` class when missing](./addserialversionuidtoserializable.md)
@@ -35,7 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Chain `StringBuilder.append()` calls](./chainstringbuilderappendcalls.md)
 * [Chain calls to builder methods](./useasbuilder.md)
 * [Change `StringBuilder` and `StringBuffer` character constructor argument to `String`](./newstringbuilderbufferwithcharargument.md)
-* [Changes code to use Java 17's `instanceof` pattern matching](./instanceofpatternmatch.md)
+* [Changes code to use Java 17&#39;s `instanceof` pattern matching](./instanceofpatternmatch.md)
 * [Combine semantically equal catch blocks](./combinesemanticallyequalcatchblocks.md)
 * [Constructors of an `abstract` class should not be declared `public`](./abstractclasspublicconstructor.md)
 * [Control flow statement indentation](./controlflowindentation.md)
@@ -46,8 +46,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Covariant equals](./covariantequals.md)
 * [Custom import order](./customimportorder.md)
 * [Default comes last](./defaultcomeslast.md)
-* [Don't use final on local variables](./nofinalizedlocalvariables.md)
-* [Enum values should be compared with "=="](./compareenumswithequalityoperator.md)
+* [Don&#39;t use final on local variables](./nofinalizedlocalvariables.md)
+* [Enum values should be compared with &quot;==&quot;](./compareenumswithequalityoperator.md)
 * [Equals avoids null](./equalsavoidsnull.md)
 * [Explicit initialization](./explicitinitialization.md)
 * [`Externalizable` classes have no-arguments constructor](./externalizablehasnoargsconstructor.md)
@@ -97,7 +97,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove unused local variables](./removeunusedlocalvariables.md)
 * [Remove unused private fields](./removeunusedprivatefields.md)
 * [Remove unused private methods](./removeunusedprivatemethods.md)
-* [Removes from code Java 14's `instanceof` pattern matching](./removeinstanceofpatternmatch.md)
+* [Removes from code Java 14&#39;s `instanceof` pattern matching](./removeinstanceofpatternmatch.md)
 * [Rename caught exceptions in empty catch blocks to `ignored`](./renameexceptioninemptycatch.md)
 * [Rename methods named `hashcode`, `equal`, or `tostring`](./renamemethodsnamedhashcodeequalortostring.md)
 * [Rename packages to lowercase](./lowercasepackage.md)

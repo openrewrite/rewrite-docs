@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.util.function.Supplier"
+sidebar_label: "Prefer `java.util.function.Supplier`"
 ---
 
 import Tabs from '@theme/Tabs';

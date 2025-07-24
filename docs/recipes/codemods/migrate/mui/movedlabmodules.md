@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Moves lab modules to @mui/material"
+sidebar_label: "Moves lab modules to `@mui/material`"
 ---
 
 import Tabs from '@theme/Tabs';

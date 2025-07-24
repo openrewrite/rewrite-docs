@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.NoJasmineGlobals
 displayName: Disallow Jasmine globals
 description: |
-  Disallow Jasmine globals
-  See rule details for [jest/no-jasmine-globals](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-jasmine-globals.md)
-  
+  Disallow Jasmine globals See rule details for [jest/no-jasmine-globals](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-jasmine-globals.md)
 tags:
   - ESLint
   - eslint-plugin-jest

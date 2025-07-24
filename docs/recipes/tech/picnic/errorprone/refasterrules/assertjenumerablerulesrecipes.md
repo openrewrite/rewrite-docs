@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJEnumerableRules Refaster recipes"
+sidebar_label: "`AssertJEnumerableRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes
 displayName: `AssertJEnumerableRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJEnumerableRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJEnumerableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsNotEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSizeRecipe

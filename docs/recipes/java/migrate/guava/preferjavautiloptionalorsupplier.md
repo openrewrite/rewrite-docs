@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.util.Optional#or(Supplier<T extends java.util.Optional<T>>)"
+sidebar_label: "Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`"
 ---
 
 import Tabs from '@theme/Tabs';

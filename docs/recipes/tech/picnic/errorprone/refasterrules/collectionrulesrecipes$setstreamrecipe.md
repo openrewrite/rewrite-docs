@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.SetStream"
+sidebar_label: "Refaster template `CollectionRules.SetStream`"
 ---
 
 import Tabs from '@theme/Tabs';

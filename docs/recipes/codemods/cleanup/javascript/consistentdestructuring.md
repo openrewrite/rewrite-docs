@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ConsistentDestructuring
 displayName: Use destructured variables over properties.
 description: |
-  Use destructured variables over properties.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md)
-  
+  Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

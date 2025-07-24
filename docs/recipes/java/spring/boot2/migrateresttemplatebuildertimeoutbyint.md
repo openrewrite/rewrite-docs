@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use RestTemplateBuilder#setConnectTimeout(Duration) and RestTemplateBuilder#setReadTimeout(Duration)"
+sidebar_label: "Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJOptionalRules.AssertThatOptionalIsEmpty"
+sidebar_label: "Refaster template `AssertJOptionalRules.AssertThatOptionalIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

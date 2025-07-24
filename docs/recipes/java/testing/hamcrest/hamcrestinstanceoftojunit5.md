@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from Hamcrest instanceOf matcher to JUnit 5"
+sidebar_label: "Migrate from Hamcrest `instanceOf` matcher to JUnit 5"
 ---
 
 import Tabs from '@theme/Tabs';

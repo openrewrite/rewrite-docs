@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Junit assertTrue(a == b) to assertEquals(a,b)"
+sidebar_label: "Junit `assertTrue(a == b)` to `assertEquals(a,b)`"
 ---
 
 import Tabs from '@theme/Tabs';

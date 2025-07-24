@@ -1,5 +1,5 @@
 ---
-sidebar_label: "enforce consistent spacing after the <!-- and before the --> in a HTML comment"
+sidebar_label: "enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,11 +47,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment
-displayName: enforce consistent spacing after the <!-- and before the --> in a HTML comment
+displayName: enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment
 description: |
-  enforce consistent spacing after the <!-- and before the --> in a HTML comment
-  See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)
-  
+  enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)
 tags:
   - svelte
   - ESLint

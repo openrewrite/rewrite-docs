@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add @Serial annotation to serialVersionUID"
+sidebar_label: "Add `@Serial` annotation to `serialVersionUID`"
 ---
 
 import Tabs from '@theme/Tabs';

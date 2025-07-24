@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.OneVarDeclarationPerLine
 displayName: Require or disallow newlines around variable declarations
 description: |
-  Require or disallow newlines around variable declarations
-  
-  See [rule details](https://eslint.style/rules/default/one-var-declaration-per-line)
-  
+  Require or disallow newlines around variable declarations  See [rule details](https://eslint.style/rules/default/one-var-declaration-per-line)
 tags:
   - eslint
   - stylistic

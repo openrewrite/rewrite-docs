@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use a long enough byte length for random resources"
+sidebar_label: "Use a long enough byte length for `random` resources"
 ---
 
 import Tabs from '@theme/Tabs';

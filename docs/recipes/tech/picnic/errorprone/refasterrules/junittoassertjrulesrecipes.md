@@ -106,9 +106,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes
 displayName: Refaster rules to replace JUnit assertions with AssertJ equivalents
 description: |
-  Note that, while both libraries throw an `AssertionError` in case of an assertion
-   failure, the exact subtype used generally differs.
-  [Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules).
+  Note that, while both libraries throw an `AssertionError` in case of an assertion  failure, the exact subtype used generally differs. [Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayContainsExactlyRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageContainsExactlyRecipe

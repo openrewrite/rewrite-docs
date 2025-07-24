@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Hamcrest is(Matcher)"
+sidebar_label: "Remove Hamcrest `is(Matcher)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove annotation](../../../java/removeannotation)
   * annotationPattern: `@org.mockito.junit.jupiter.MockitoSettings(strictness=org.mockito.quality.Strictness.WARN)`
 * [Remove `Mockito.times(0)` and `Mockito.times(1)`](../../../java/testing/mockito/removetimeszeroandone)
-* [Call to Mockito method "verify", "when" or "given" should be simplified](../../../java/testing/mockito/simplifymockitoverifywhengiven)
+* [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](../../../java/testing/mockito/simplifymockitoverifywhengiven)
 
 </TabItem>
 

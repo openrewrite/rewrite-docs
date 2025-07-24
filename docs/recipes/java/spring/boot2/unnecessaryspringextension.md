@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove @SpringExtension"
+sidebar_label: "Remove `@SpringExtension`"
 ---
 
 import Tabs from '@theme/Tabs';

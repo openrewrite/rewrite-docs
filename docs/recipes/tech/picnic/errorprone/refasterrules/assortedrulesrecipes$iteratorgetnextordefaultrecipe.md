@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssortedRules.IteratorGetNextOrDefault"
+sidebar_label: "Refaster template `AssortedRules.IteratorGetNextOrDefault`"
 ---
 
 import Tabs from '@theme/Tabs';

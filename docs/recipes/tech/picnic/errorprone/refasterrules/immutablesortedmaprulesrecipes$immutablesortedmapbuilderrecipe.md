@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSortedMapRules.ImmutableSortedMapBuilder"
+sidebar_label: "Refaster template `ImmutableSortedMapRules.ImmutableSortedMapBuilder`"
 ---
 
 import Tabs from '@theme/Tabs';

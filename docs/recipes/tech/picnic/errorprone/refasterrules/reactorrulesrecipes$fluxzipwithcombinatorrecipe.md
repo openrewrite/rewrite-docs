@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxZipWithCombinator"
+sidebar_label: "Refaster template `ReactorRules.FluxZipWithCombinator`"
 ---
 
 import Tabs from '@theme/Tabs';

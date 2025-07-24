@@ -47,9 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.lodash.LodashUnderscoreFunction
 displayName: Replace lodash and underscore function functions with native JavaScript
 description: |
-  - `_.bind(fn, obj, ...x)` -> `fn.bind(obj, ...x)`
-  - `_.partial(fn, a, b);` -> `(...args) => fn(a, b, ...args)`
-  
+  - `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`
 tags:
   - codemods
   - lodash

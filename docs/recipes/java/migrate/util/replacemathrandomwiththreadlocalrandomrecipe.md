@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace java.lang.Math random() with ThreadLocalRandom nextDouble()"
+sidebar_label: "Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`"
 ---
 
 import Tabs from '@theme/Tabs';

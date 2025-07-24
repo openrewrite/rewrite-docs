@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJPathRules.AssertThatHasFileName"
+sidebar_label: "Refaster template `AssertJPathRules.AssertThatHasFileName`"
 ---
 
 import Tabs from '@theme/Tabs';

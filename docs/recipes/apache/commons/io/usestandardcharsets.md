@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.nio.charset.StandardCharsets"
+sidebar_label: "Prefer `java.nio.charset.StandardCharsets`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -62,7 +62,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.commons.io.UseStandardCharsets
 displayName: Prefer `java.nio.charset.StandardCharsets`
 description: |
-  Prefer the Java standard library's `java.nio.charset.StandardCharsets` over third-party usage of apache's `org.apache.commons.io.Charsets`.
+  Prefer the Java standard library&#39;s `java.nio.charset.StandardCharsets` over third-party usage of apache&#39;s `org.apache.commons.io.Charsets`.
 tags:
   - apache
   - commons

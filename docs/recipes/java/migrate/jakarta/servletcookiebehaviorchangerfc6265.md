@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove getComment and getVersion methods"
+sidebar_label: "Remove `getComment` and `getVersion` methods"
 ---
 
 import Tabs from '@theme/Tabs';

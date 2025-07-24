@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJIteratorRules.AssertThatIsExhausted"
+sidebar_label: "Refaster template `AssertJIteratorRules.AssertThatIsExhausted`"
 ---
 
 import Tabs from '@theme/Tabs';

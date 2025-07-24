@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Updates overlap prop to variant=\"dot\""
+sidebar_label: "Updates `overlap` prop to `variant=&quot;dot&quot;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Updates `overlap` prop to `variant="dot"`
+# Updates `overlap` prop to `variant=&quot;dot&quot;`
 
 **org.openrewrite.codemods.migrate.mui.BadgeOverlapValue**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.mui.BadgeOverlapValue
-displayName: Updates `overlap` prop to `variant="dot"`
+displayName: Updates `overlap` prop to `variant=&quot;dot&quot;`
 description: |
   See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#badge-overlap-value).
 tags:

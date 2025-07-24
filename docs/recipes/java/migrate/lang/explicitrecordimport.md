@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add explicit import for Record classes"
+sidebar_label: "Add explicit import for `Record` classes"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -5,10 +5,11 @@ sidebar_label: "[deprecated] Use explicit type instead of 'var' (foreach variabl
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# [deprecated] Use explicit type instead of 'var' (foreach variable)
+# [deprecated] Use explicit type instead of &#39;var&#39; (foreach variable)
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UseExplicitTypeInsteadOfVarInForEachRCS1009**
 
+__
 
 ## Recipe source
 

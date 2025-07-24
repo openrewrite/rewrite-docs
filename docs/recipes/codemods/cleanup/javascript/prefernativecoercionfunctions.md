@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer using String, Number, BigInt, Boolean, and Symbol directly."
+sidebar_label: "Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferNativeCoercionFunctions
 displayName: Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly.
 description: |
-  Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-native-coercion-functions.md)
-  
+  Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-native-coercion-functions.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

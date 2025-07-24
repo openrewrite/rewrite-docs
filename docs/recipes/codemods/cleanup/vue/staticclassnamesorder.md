@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.StaticClassNamesOrder
 displayName: Enforce static class names order
 description: |
-  Enforce static class names order
-  See rule details for [vue/static-class-names-order](https://eslint.vuejs.org/rules/static-class-names-order.html)
-  
+  Enforce static class names order See rule details for [vue/static-class-names-order](https://eslint.vuejs.org/rules/static-class-names-order.html)
 tags:
   - ESLint
   - vue

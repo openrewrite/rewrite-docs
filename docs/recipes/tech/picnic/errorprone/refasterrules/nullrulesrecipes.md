@@ -1,5 +1,5 @@
 ---
-sidebar_label: "NullRules Refaster recipes"
+sidebar_label: "`NullRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.NullRulesRecipes
 displayName: `NullRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with (possibly) null values.
-  [Source](https://error-prone.picnic.tech/refasterrules/NullRules).
+  Refaster rules related to expressions dealing with (possibly) null values. [Source](https://error-prone.picnic.tech/refasterrules/NullRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullRecipe
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Remove LaunchDarkly's boolVariation for feature key"
+sidebar_label: "Remove LaunchDarkly's `boolVariation` for feature key"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove LaunchDarkly's `boolVariation` for feature key
+# Remove LaunchDarkly&#39;s `boolVariation` for feature key
 
 **org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation
-displayName: Remove LaunchDarkly's `boolVariation` for feature key
+displayName: Remove LaunchDarkly&#39;s `boolVariation` for feature key
 description: |
   Replace `boolVariation` invocations for feature key with value, and simplify constant if branch execution.
 
@@ -138,7 +138,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveBoolVariationExample
-displayName: Remove LaunchDarkly's `boolVariation` for feature key example
+displayName: Remove LaunchDarkly&#39;s `boolVariation` for feature key example
 recipeList:
   - org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation:
       featureKey: flag-key-123abc

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "CollectionRules Refaster recipes"
+sidebar_label: "`CollectionRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -58,8 +58,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.CollectionRulesRecipes
 displayName: `CollectionRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with (arbitrary) collections.
-  [Source](https://error-prone.picnic.tech/refasterrules/CollectionRules).
+  Refaster rules related to expressions dealing with (arbitrary) collections. [Source](https://error-prone.picnic.tech/refasterrules/CollectionRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionSizeRecipe

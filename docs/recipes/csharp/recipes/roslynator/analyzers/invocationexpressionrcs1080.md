@@ -5,10 +5,11 @@ sidebar_label: "Use 'Count/Length' property instead of 'Any' method"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use 'Count/Length' property instead of 'Any' method
+# Use &#39;Count/Length&#39; property instead of &#39;Any&#39; method
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1080**
 
+__
 
 ## Recipe source
 

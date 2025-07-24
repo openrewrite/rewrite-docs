@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUnit assertFalse(!<boolean>) to assertTrue(<boolean>)"
+sidebar_label: "Replace JUnit `assertFalse(!&lt;boolean&gt;)` to `assertTrue(&lt;boolean&gt;)`"
 ---
 
 import Tabs from '@theme/Tabs';

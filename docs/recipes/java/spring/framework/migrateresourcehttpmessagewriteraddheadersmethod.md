@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate ResourceHttpMessageWriter.addHeaders"
+sidebar_label: "Migrate `ResourceHttpMessageWriter.addHeaders`"
 ---
 
 import Tabs from '@theme/Tabs';

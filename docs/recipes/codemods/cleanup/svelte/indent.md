@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.Indent
 displayName: enforce consistent indentation
 description: |
-  enforce consistent indentation
-  See rule details for [svelte/indent](https://sveltejs.github.io/eslint-plugin-svelte/rules/indent/)
-  
+  enforce consistent indentation See rule details for [svelte/indent](https://sveltejs.github.io/eslint-plugin-svelte/rules/indent/)
 tags:
   - svelte
   - ESLint

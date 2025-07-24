@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ExplicitLengthCheck
 displayName: Enforce explicitly comparing the length or size property of a value.
 description: |
-  Enforce explicitly comparing the length or size property of a value.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/explicit-length-check.md)
-  
+  Enforce explicitly comparing the length or size property of a value. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/explicit-length-check.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

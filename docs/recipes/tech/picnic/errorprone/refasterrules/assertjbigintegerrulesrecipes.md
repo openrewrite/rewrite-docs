@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJBigIntegerRules Refaster recipes"
+sidebar_label: "`AssertJBigIntegerRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes
 displayName: `AssertJBigIntegerRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigIntegerRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToRecipe

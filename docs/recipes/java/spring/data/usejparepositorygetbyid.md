@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use JpaRepository#getById(ID id)"
+sidebar_label: "Use `JpaRepository#getById(ID id)`"
 ---
 
 import Tabs from '@theme/Tabs';

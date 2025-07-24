@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJInstantRules.AssertThatIsBetween"
+sidebar_label: "Refaster template `AssertJInstantRules.AssertThatIsBetween`"
 ---
 
 import Tabs from '@theme/Tabs';

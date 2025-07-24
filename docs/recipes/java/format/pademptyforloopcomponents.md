@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Pad empty for loop components"
+sidebar_label: "Pad empty `for` loop components"
 ---
 
 import Tabs from '@theme/Tabs';

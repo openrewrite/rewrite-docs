@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJFloatRules Refaster recipes"
+sidebar_label: "`AssertJFloatRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes
 displayName: `AssertJFloatRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJFloatRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJFloatRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJFloatRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFloatRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToWithOffsetRecipe
   - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsEqualToRecipe

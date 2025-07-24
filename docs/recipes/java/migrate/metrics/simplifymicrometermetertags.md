@@ -5,7 +5,7 @@ sidebar_label: "Simplify Micrometer meter tags"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Simplify [Micrometer](https://micrometer.io) meter tags
+# Simplify Micrometer meter tags
 
 **org.openrewrite.java.migrate.metrics.SimplifyMicrometerMeterTags**
 

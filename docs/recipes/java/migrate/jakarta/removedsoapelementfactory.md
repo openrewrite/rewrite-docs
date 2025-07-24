@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use jakarta.xml.soap.SOAPFactory to create SOAPElements"
+sidebar_label: "Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`"
 ---
 
 import Tabs from '@theme/Tabs';

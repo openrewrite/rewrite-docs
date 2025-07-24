@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace EmitterProcessor.create(int) with Sinks.many().multicast().onBackpressureBuffer(int)"
+sidebar_label: "Replace `EmitterProcessor.create(int)` with `Sinks.many().multicast().onBackpressureBuffer(int)`"
 ---
 
 import Tabs from '@theme/Tabs';

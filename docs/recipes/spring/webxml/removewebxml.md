@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate web.xml to Java Configuration"
+sidebar_label: "Migrate `web.xml` to Java Configuration"
 ---
 
 import Tabs from '@theme/Tabs';

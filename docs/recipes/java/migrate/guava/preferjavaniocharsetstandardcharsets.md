@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.nio.charset.StandardCharsets"
+sidebar_label: "Prefer `java.nio.charset.StandardCharsets`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferConst
 displayName: Require const declarations for variables that are never reassigned after declared
 description: |
-  Require const declarations for variables that are never reassigned after declared 
-  See [rule details](https://eslint.org/docs/latest/rules/prefer-const)
-  
+  Require const declarations for variables that are never reassigned after declared  See [rule details](https://eslint.org/docs/latest/rules/prefer-const)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

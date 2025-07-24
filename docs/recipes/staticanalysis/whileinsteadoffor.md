@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer while over for loops"
+sidebar_label: "Prefer `while` over `for` loops"
 ---
 
 import Tabs from '@theme/Tabs';

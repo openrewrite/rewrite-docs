@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Upgrade actions/setup-java java-version"
+sidebar_label: "Upgrade `actions/setup-java` `java-version`"
 ---
 
 import Tabs from '@theme/Tabs';

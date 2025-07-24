@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster rules related to AssertJ assertions over Paths"
+sidebar_label: "Refaster rules related to AssertJ assertions over `Path`s"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -54,9 +54,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes
 displayName: Refaster rules related to AssertJ assertions over `Path`s
 description: |
-  These rules simplify and improve the readability of tests by using `Path`-specific
-   AssertJ assertion methods instead of generic assertions.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJPathRules).
+  These rules simplify and improve the readability of tests by using `Path`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPathRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatExistsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatDoesNotExistRecipe

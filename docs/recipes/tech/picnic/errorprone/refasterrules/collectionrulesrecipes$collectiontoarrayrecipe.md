@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.CollectionToArray"
+sidebar_label: "Refaster template `CollectionRules.CollectionToArray`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove com.google.common.base.Optional#toJavaUtil()"
+sidebar_label: "Remove `com.google.common.base.Optional#toJavaUtil()`"
 ---
 
 import Tabs from '@theme/Tabs';

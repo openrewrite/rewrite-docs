@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJBigDecimalRules.AbstractBigDecimalAssertIsEqualByComparingTo"
+sidebar_label: "Refaster template `AssertJBigDecimalRules.AbstractBigDecimalAssertIsEqualByComparingTo`"
 ---
 
 import Tabs from '@theme/Tabs';

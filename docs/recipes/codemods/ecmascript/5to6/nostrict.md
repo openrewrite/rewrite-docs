@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Remove \"use strict\" directives"
+sidebar_label: "Remove &quot;use strict&quot; directives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove "use strict" directives
+# Remove &quot;use strict&quot; directives
 
 **org.openrewrite.codemods.ecmascript.5to6.noStrict**
 
@@ -40,10 +40,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.ecmascript.5to6.noStrict
-displayName: Remove "use strict" directives
+displayName: Remove &quot;use strict&quot; directives
 description: |
-  Remove "use strict" directives
-  
+  Remove &quot;use strict&quot; directives
 tags:
   - codemods
   - 5to6

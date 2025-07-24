@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJDurationRules.AssertThatIsPositive"
+sidebar_label: "Refaster template `AssertJDurationRules.AssertThatIsPositive`"
 ---
 
 import Tabs from '@theme/Tabs';

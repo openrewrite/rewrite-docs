@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJShortRules.AbstractShortAssertIsZero"
+sidebar_label: "Refaster template `AssertJShortRules.AbstractShortAssertIsZero`"
 ---
 
 import Tabs from '@theme/Tabs';

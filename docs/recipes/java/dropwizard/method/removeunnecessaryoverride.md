@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove unnecessary @Override annotations"
+sidebar_label: "Remove unnecessary `@Override` annotations"
 ---
 
 import Tabs from '@theme/Tabs';

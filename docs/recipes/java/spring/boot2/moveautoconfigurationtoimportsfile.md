@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use AutoConfiguration#imports"
+sidebar_label: "Use `AutoConfiguration#imports`"
 ---
 
 import Tabs from '@theme/Tabs';

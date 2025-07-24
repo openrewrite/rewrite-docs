@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJOptionalRules.AssertThatOptionalHasValueMatching"
+sidebar_label: "Refaster template `AssertJOptionalRules.AssertThatOptionalHasValueMatching`"
 ---
 
 import Tabs from '@theme/Tabs';

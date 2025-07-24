@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJStringRules Refaster recipes"
+sidebar_label: "`AssertJStringRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -51,8 +51,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes
 displayName: `AssertJStringRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStringRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStringRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsNotEmptyRecipe

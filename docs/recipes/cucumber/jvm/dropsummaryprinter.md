@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Drop SummaryPrinter"
+sidebar_label: "Drop `SummaryPrinter`"
 ---
 
 import Tabs from '@theme/Tabs';

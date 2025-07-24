@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.ComparatorsMax"
+sidebar_label: "Refaster template `ComparatorRules.ComparatorsMax`"
 ---
 
 import Tabs from '@theme/Tabs';

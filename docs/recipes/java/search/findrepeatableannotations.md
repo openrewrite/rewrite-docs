@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find uses of @Repeatable annotations"
+sidebar_label: "Find uses of `@Repeatable` annotations"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Math#subtractExact"
+sidebar_label: "Prefer `Math#subtractExact`"
 ---
 
 import Tabs from '@theme/Tabs';

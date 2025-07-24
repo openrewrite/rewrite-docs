@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.EquatableCA1066**
 
 ```
-When a type T overrides Object.Equals(object), the implementation must cast the object argument to the correct type T before performing the comparison. If the type implements `IEquatable<T>`, and therefore offers the method T.Equals(T), and if the argument is known at compile time to be of type T, then the compiler can call `IEquatable<T>`.Equals(T) instead of Object.Equals(object), and no cast is necessary, improving performance.
+When a type T overrides Object.Equals(object), the implementation must cast the object argument to the correct type T before performing the comparison. If the type implements IEquatable<T>, and therefore offers the method T.Equals(T), and if the argument is known at compile time to be of type T, then the compiler can call IEquatable<T>.Equals(T) instead of Object.Equals(object), and no cast is necessary, improving performance.
 ```
 
 

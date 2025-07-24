@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template WebClientRules.BodyValue"
+sidebar_label: "Refaster template `WebClientRules.BodyValue`"
 ---
 
 import Tabs from '@theme/Tabs';

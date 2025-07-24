@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require or disallow spacing between function identifiers and their invocations in <template>"
+sidebar_label: "Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require or disallow spacing between function identifiers and their invocations in `<template>`
+# Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.FuncCallSpacing**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.FuncCallSpacing
-displayName: Require or disallow spacing between function identifiers and their invocations in `<template>`
+displayName: Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`
 description: |
-  Require or disallow spacing between function identifiers and their invocations in `<template>`
-  See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html)
-  
+  Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;` See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html)
 tags:
   - ESLint
   - vue

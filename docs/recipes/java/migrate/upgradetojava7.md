@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Adds missing JDBC interface methods.](../../java/migrate/jrejdbcinterfacenewmethods)
 * [Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`](../../java/migrate/jrethrowablefinalmethods)
 * [Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`](../../java/migrate/util/replacemathrandomwiththreadlocalrandomrecipe)
-* [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java < 8](../../java/migrate/bouncycastlefromjdk15ontojdk15to18)
+* [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](../../java/migrate/bouncycastlefromjdk15ontojdk15to18)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Logger#logrb(.., ResourceBundle bundleName, ..)"
+sidebar_label: "Use `Logger#logrb(.., ResourceBundle bundleName, ..)`"
 ---
 
 import Tabs from '@theme/Tabs';

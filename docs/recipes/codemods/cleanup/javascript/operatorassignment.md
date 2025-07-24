@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.OperatorAssignment
 displayName: Require or disallow assignment operator shorthand where possible
 description: |
-  Require or disallow assignment operator shorthand where possible 
-  See [rule details](https://eslint.org/docs/latest/rules/operator-assignment)
-  
+  Require or disallow assignment operator shorthand where possible  See [rule details](https://eslint.org/docs/latest/rules/operator-assignment)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

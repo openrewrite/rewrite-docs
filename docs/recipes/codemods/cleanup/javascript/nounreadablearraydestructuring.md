@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUnreadableArrayDestructuring
 displayName: Disallow unreadable array destructuring.
 description: |
-  Disallow unreadable array destructuring.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md)
-  
+  Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

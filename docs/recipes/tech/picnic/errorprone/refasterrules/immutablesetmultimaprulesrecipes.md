@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableSetMultimapRules Refaster recipes"
+sidebar_label: "`ImmutableSetMultimapRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes
 displayName: `ImmutableSetMultimapRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `ImmutableSetMultimap`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSetMultimapRules).
+  Refaster rules related to expressions dealing with `ImmutableSetMultimap`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSetMultimapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapBuilderRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$EmptyImmutableSetMultimapRecipe

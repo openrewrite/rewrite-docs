@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferTemplate
 displayName: Require template literals instead of string concatenation
 description: |
-  Require template literals instead of string concatenation 
-  See [rule details](https://eslint.org/docs/latest/rules/prefer-template)
-  
+  Require template literals instead of string concatenation  See [rule details](https://eslint.org/docs/latest/rules/prefer-template)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

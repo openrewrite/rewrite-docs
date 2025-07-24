@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSetRules.SetsDifferenceMultimap"
+sidebar_label: "Refaster template `ImmutableSetRules.SetsDifferenceMultimap`"
 ---
 
 import Tabs from '@theme/Tabs';

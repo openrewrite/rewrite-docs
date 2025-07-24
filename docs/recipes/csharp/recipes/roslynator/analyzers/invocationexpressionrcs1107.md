@@ -5,10 +5,11 @@ sidebar_label: "Remove redundant 'ToCharArray' call"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove redundant 'ToCharArray' call
+# Remove redundant &#39;ToCharArray&#39; call
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1107**
 
+__
 
 ## Recipe source
 

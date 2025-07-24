@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxSelfClosingComp
 displayName: Disallow extra closing tags for components without children
 description: |
-  Disallow extra closing tags for components without children
-  
-  See [rule details](https://eslint.style/rules/default/jsx-self-closing-comp)
-  
+  Disallow extra closing tags for components without children  See [rule details](https://eslint.style/rules/default/jsx-self-closing-comp)
 tags:
   - eslint
   - stylistic

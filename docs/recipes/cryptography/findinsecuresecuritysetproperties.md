@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find insecure Security.setProperty calls"
+sidebar_label: "Find insecure `Security.setProperty` calls"
 ---
 
 import Tabs from '@theme/Tabs';

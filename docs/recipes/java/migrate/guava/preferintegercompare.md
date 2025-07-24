@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Integer#compare"
+sidebar_label: "Prefer `Integer#compare`"
 ---
 
 import Tabs from '@theme/Tabs';

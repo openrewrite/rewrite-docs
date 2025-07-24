@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ObjectShorthand
 displayName: Require or disallow method and property shorthand syntax for object literals
 description: |
-  Require or disallow method and property shorthand syntax for object literals 
-  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand)
-  
+  Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

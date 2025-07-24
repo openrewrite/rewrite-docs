@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use WebTestClientBuilderCustomizer"
+sidebar_label: "Use `WebTestClientBuilderCustomizer`"
 ---
 
 import Tabs from '@theme/Tabs';

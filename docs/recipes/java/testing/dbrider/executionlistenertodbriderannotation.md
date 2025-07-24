@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate the DBRiderTestExecutionListener to the @DBRider annotation"
+sidebar_label: "Migrate the `DBRiderTestExecutionListener` to the `@DBRider` annotation"
 ---
 
 import Tabs from '@theme/Tabs';

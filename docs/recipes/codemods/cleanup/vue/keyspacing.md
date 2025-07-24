@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent spacing between keys and values in object literal properties in <template>"
+sidebar_label: "Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent spacing between keys and values in object literal properties in `<template>`
+# Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.KeySpacing**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.KeySpacing
-displayName: Enforce consistent spacing between keys and values in object literal properties in `<template>`
+displayName: Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;`
 description: |
-  Enforce consistent spacing between keys and values in object literal properties in `<template>`
-  See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html)
-  
+  Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;` See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html)
 tags:
   - ESLint
   - vue

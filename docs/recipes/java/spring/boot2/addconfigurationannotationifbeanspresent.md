@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add missing @Configuration annotation"
+sidebar_label: "Add missing `@Configuration` annotation"
 ---
 
 import Tabs from '@theme/Tabs';

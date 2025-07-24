@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Math#clamp"
+sidebar_label: "Prefer `Math#clamp`"
 ---
 
 import Tabs from '@theme/Tabs';

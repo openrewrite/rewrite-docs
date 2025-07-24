@@ -5,10 +5,11 @@ sidebar_label: "Use 'for' statement instead of 'while' statement"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use 'for' statement instead of 'while' statement
+# Use &#39;for&#39; statement instead of &#39;while&#39; statement
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.WhileStatementRCS1239**
 
+__
 
 ## Recipe source
 

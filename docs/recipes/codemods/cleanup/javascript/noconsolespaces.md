@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Do not use leading/trailing space between console.log parameters."
+sidebar_label: "Do not use leading/trailing space between `console.log` parameters."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoConsoleSpaces
 displayName: Do not use leading/trailing space between `console.log` parameters.
 description: |
-  Do not use leading/trailing space between `console.log` parameters.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-console-spaces.md)
-  
+  Do not use leading/trailing space between `console.log` parameters. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-console-spaces.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

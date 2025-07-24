@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Logger#getGlobal()"
+sidebar_label: "Use `Logger#getGlobal()`"
 ---
 
 import Tabs from '@theme/Tabs';

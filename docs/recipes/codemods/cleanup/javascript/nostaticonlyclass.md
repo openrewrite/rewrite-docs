@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoStaticOnlyClass
 displayName: Disallow classes that only have static members.
 description: |
-  Disallow classes that only have static members.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-static-only-class.md)
-  
+  Disallow classes that only have static members. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-static-only-class.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

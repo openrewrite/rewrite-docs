@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Character#isWhitespace(char)"
+sidebar_label: "Use `Character#isWhitespace(char)`"
 ---
 
 import Tabs from '@theme/Tabs';

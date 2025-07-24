@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJThrowingCallableRules.AssertThatThrownByIsInstanceOf"
+sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIsInstanceOf`"
 ---
 
 import Tabs from '@theme/Tabs';

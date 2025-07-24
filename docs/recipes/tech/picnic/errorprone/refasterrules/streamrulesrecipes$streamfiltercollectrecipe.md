@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamFilterCollect"
+sidebar_label: "Refaster template `StreamRules.StreamFilterCollect`"
 ---
 
 import Tabs from '@theme/Tabs';

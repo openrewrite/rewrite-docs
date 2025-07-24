@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Renames TextField to Input"
+sidebar_label: "Renames `TextField` to `Input`"
 ---
 
 import Tabs from '@theme/Tabs';

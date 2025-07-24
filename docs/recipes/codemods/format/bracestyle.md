@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.BraceStyle
 displayName: Enforce consistent brace style for blocks
 description: |
-  Enforce consistent brace style for blocks
-  
-  See [rule details](https://eslint.style/rules/default/brace-style)
-  
+  Enforce consistent brace style for blocks  See [rule details](https://eslint.style/rules/default/brace-style)
 tags:
   - eslint
   - stylistic

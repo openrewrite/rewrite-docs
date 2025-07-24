@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Do not package java.xml.bind and java.activation modules in WebSphere Liberty applications"
+sidebar_label: "Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications"
 ---
 
 import Tabs from '@theme/Tabs';

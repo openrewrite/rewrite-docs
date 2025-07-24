@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use static form of Mockito MockUtil"
+sidebar_label: "Use static form of Mockito `MockUtil`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "PatternRules Refaster recipes"
+sidebar_label: "`PatternRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -41,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.PatternRulesRecipes
 displayName: `PatternRules` Refaster recipes
 description: |
-  Refaster rules related to code dealing with regular expressions.
-  [Source](https://error-prone.picnic.tech/refasterrules/PatternRules).
+  Refaster rules related to code dealing with regular expressions. [Source](https://error-prone.picnic.tech/refasterrules/PatternRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.PatternRulesRecipes$PatternAsPredicateRecipe
   - tech.picnic.errorprone.refasterrules.PatternRulesRecipes$PatternCompileAsPredicateRecipe

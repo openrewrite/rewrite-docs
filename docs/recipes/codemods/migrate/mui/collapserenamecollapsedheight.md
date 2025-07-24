@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Renames collapsedHeight prop to transitionCollapsedHeight"
+sidebar_label: "Renames `collapsedHeight` prop to `transitionCollapsedHeight`"
 ---
 
 import Tabs from '@theme/Tabs';

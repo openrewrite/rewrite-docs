@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.PaddingLinesInComponentDefinition
 displayName: Require or disallow padding lines in component definition
 description: |
-  Require or disallow padding lines in component definition
-  See rule details for [vue/padding-lines-in-component-definition](https://eslint.vuejs.org/rules/padding-lines-in-component-definition.html)
-  
+  Require or disallow padding lines in component definition See rule details for [vue/padding-lines-in-component-definition](https://eslint.vuejs.org/rules/padding-lines-in-component-definition.html)
 tags:
   - ESLint
   - vue

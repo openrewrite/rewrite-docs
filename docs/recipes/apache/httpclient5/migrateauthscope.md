@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replaces AuthScope.ANY"
+sidebar_label: "Replaces `AuthScope.ANY`"
 ---
 
 import Tabs from '@theme/Tabs';

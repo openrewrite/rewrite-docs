@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates variant prop for Chip component"
+sidebar_label: "Updates `variant` prop for Chip component"
 ---
 
 import Tabs from '@theme/Tabs';

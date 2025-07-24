@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Change javax.tools.ToolProvider methods calls to static"
+sidebar_label: "Change `javax.tools.ToolProvider` methods calls to static"
 ---
 
 import Tabs from '@theme/Tabs';

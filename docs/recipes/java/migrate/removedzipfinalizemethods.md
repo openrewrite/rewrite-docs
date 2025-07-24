@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace finalize method in java.util.zip.ZipFile, java.util.zip.Inflater and java.util.zip.Deflater"
+sidebar_label: "Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -55,8 +55,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemovedZipFinalizeMethods
 displayName: Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`
 description: |
-  The `finalize` method in `java.util.zip.ZipFile` is replaced with the `close` method and is replaced by the `end` method in
-   `java.util.zip.Inflater` and `java.util.zip.Deflater` as it is no longer available in Java SE 12 and later.
+  The `finalize` method in `java.util.zip.ZipFile` is replaced with the `close` method and is replaced by the `end` method in  `java.util.zip.Inflater` and `java.util.zip.Deflater` as it is no longer available in Java SE 12 and later.
 tags:
   - java17
 recipeList:

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.Order
 displayName: Enforce a convention in module import order
 description: |
-  Enforce a convention in module import order
-  See rule details for [import/order](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/order.md)
-  
+  Enforce a convention in module import order See rule details for [import/order](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/order.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

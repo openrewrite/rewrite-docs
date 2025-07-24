@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ComponentNameInTemplateCasing
 displayName: Enforce specific casing for the component naming style in template
 description: |
-  Enforce specific casing for the component naming style in template
-  See rule details for [vue/component-name-in-template-casing](https://eslint.vuejs.org/rules/component-name-in-template-casing.html)
-  
+  Enforce specific casing for the component naming style in template See rule details for [vue/component-name-in-template-casing](https://eslint.vuejs.org/rules/component-name-in-template-casing.html)
 tags:
   - ESLint
   - vue

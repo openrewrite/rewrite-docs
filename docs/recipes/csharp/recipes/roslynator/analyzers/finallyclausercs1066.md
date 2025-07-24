@@ -5,10 +5,11 @@ sidebar_label: "[deprecated] Remove empty 'finally' clause"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# [deprecated] Remove empty 'finally' clause
+# [deprecated] Remove empty &#39;finally&#39; clause
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.FinallyClauseRCS1066**
 
+__
 
 ## Recipe source
 

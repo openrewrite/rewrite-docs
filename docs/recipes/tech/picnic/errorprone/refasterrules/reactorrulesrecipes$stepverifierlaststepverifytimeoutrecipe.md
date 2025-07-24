@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.StepVerifierLastStepVerifyTimeout"
+sidebar_label: "Refaster template `ReactorRules.StepVerifierLastStepVerifyTimeout`"
 ---
 
 import Tabs from '@theme/Tabs';

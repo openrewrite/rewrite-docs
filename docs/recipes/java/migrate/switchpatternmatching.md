@@ -49,7 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.SwitchPatternMatching
 displayName: Adopt switch pattern matching (JEP 441)
 description: |
-  ->- [JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable.
+  -&gt;- [JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable.
 tags:
   - java21
 recipeList:

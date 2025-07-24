@@ -45,7 +45,6 @@ name: org.openrewrite.codemods.ecmascript.ESLintTypeScriptDefaults
 displayName: Lint TypeScript code using ESLint
 description: |
   The default config includes the `@typescript-eslint` plugin and the corresponding `plugin:@typescript-eslint/recommended` extend.
-  
 tags:
   - codemods
   - eslint

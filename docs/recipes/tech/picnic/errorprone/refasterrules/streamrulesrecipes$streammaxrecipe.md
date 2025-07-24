@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamMax"
+sidebar_label: "Refaster template `StreamRules.StreamMax`"
 ---
 
 import Tabs from '@theme/Tabs';

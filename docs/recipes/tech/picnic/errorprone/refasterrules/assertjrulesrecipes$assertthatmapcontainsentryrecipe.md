@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJRules.AssertThatMapContainsEntry"
+sidebar_label: "Refaster template `AssertJRules.AssertThatMapContainsEntry`"
 ---
 
 import Tabs from '@theme/Tabs';

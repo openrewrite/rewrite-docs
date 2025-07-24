@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use JUnit Jupiter Executable"
+sidebar_label: "Use JUnit Jupiter `Executable`"
 ---
 
 import Tabs from '@theme/Tabs';

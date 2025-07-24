@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.DurationBetweenInstants"
+sidebar_label: "Refaster template `TimeRules.DurationBetweenInstants`"
 ---
 
 import Tabs from '@theme/Tabs';

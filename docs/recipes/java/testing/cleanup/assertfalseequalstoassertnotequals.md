@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUnit assertFalse(a.equals(b)) to assertNotEquals(a,b)"
+sidebar_label: "Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`"
 ---
 
 import Tabs from '@theme/Tabs';

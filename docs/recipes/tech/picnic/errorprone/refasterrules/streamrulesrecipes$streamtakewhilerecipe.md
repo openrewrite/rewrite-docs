@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamTakeWhile"
+sidebar_label: "Refaster template `StreamRules.StreamTakeWhile`"
 ---
 
 import Tabs from '@theme/Tabs';

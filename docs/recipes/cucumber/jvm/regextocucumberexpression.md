@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace cucumber-java step definition regexes with Cucumber expressions"
+sidebar_label: "Replace `cucumber-java` step definition regexes with Cucumber expressions"
 ---
 
 import Tabs from '@theme/Tabs';

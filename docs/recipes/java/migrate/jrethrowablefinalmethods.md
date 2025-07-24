@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Rename final method declarations getSuppressed() and addSuppressed(Throwable exception) in classes that extend Throwable"
+sidebar_label: "Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`"
 ---
 
 import Tabs from '@theme/Tabs';

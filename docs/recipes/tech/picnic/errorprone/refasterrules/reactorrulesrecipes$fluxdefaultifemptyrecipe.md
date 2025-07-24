@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxDefaultIfEmpty"
+sidebar_label: "Refaster template `ReactorRules.FluxDefaultIfEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

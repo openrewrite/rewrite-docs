@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template EqualityRules.EnumReferenceEqualityLambda"
+sidebar_label: "Refaster template `EqualityRules.EnumReferenceEqualityLambda`"
 ---
 
 import Tabs from '@theme/Tabs';

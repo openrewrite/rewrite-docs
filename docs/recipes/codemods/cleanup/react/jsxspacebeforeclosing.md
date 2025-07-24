@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxSpaceBeforeClosing
 displayName: Enforce spacing before closing bracket in JSX
 description: |
-  Enforce spacing before closing bracket in JSX
-  See rule details for [react/jsx-space-before-closing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-space-before-closing.md)
-  
+  Enforce spacing before closing bracket in JSX See rule details for [react/jsx-space-before-closing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-space-before-closing.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Math#addExact"
+sidebar_label: "Prefer `Math#addExact`"
 ---
 
 import Tabs from '@theme/Tabs';

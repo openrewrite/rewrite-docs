@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Change java.lang.reflect.Modifier and  java.lang.invoke.ConstantBootstraps method calls to static"
+sidebar_label: "Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static"
 ---
 
 import Tabs from '@theme/Tabs';

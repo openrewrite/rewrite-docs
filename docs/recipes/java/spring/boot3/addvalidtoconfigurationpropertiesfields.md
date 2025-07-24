@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add @Valid annotation to fields"
+sidebar_label: "Add `@Valid` annotation to fields"
 ---
 
 import Tabs from '@theme/Tabs';

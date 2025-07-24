@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use javax.validation.constraints"
+sidebar_label: "Use `javax.validation.constraints`"
 ---
 
 import Tabs from '@theme/Tabs';

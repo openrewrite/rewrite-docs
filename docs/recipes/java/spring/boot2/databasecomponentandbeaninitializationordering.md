@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource"
+sidebar_label: "Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`"
 ---
 
 import Tabs from '@theme/Tabs';

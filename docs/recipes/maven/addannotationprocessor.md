@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add an annotation processor to maven-compiler-plugin"
+sidebar_label: "Add an annotation processor to `maven-compiler-plugin`"
 ---
 
 import Tabs from '@theme/Tabs';

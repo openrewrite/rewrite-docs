@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUL log(Level, Throwable, Supplier<String>) with corresponding SLF4J method calls"
+sidebar_label: "Replace JUL `log(Level, Throwable, Supplier&lt;String&gt;)` with corresponding SLF4J method calls"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -28,14 +28,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace JUL `logger.log(Level.FINEST, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinestrecipe)
-* [Replace JUL `logger.log(Level.FINER, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerrecipe)
-* [Replace JUL `logger.log(Level.FINE, e, Supplier<String>)` with SLF4J's `Logger.atDebug().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerecipe)
-* [Replace JUL `logger.log(Level.CONFIG, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierconfigrecipe)
-* [Replace JUL `logger.log(Level.INFO, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierinforecipe)
-* [Replace JUL `logger.log(Level.WARNING, e, Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe)
-* [Replace JUL `logger.log(Level.SEVERE, e, Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsuppliersevererecipe)
-* [Replace JUL `logger.log(Level.ALL, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierallrecipe)
+* [Replace JUL `logger.log(Level.FINEST, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atTrace().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinestrecipe)
+* [Replace JUL `logger.log(Level.FINER, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atTrace().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerrecipe)
+* [Replace JUL `logger.log(Level.FINE, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atDebug().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerecipe)
+* [Replace JUL `logger.log(Level.CONFIG, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierconfigrecipe)
+* [Replace JUL `logger.log(Level.INFO, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierinforecipe)
+* [Replace JUL `logger.log(Level.WARNING, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atWarn().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe)
+* [Replace JUL `logger.log(Level.SEVERE, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atError().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsuppliersevererecipe)
+* [Replace JUL `logger.log(Level.ALL, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atTrace().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierallrecipe)
 
 </TabItem>
 
@@ -45,9 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes
-displayName: Replace JUL `log(Level, Throwable, Supplier<String>)` with corresponding SLF4J method calls
+displayName: Replace JUL `log(Level, Throwable, Supplier&lt;String&gt;)` with corresponding SLF4J method calls
 description: |
-  Replace calls to `Logger.log(Level, Throwable, Supplier<String>)` with the corresponding SLF4J method calls.
+  Replace calls to `Logger.log(Level, Throwable, Supplier&lt;String&gt;)` with the corresponding SLF4J method calls.
 recipeList:
   - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFinestRecipe
   - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFinerRecipe

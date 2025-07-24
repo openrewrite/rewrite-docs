@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate ResponseEntityExceptionHandler from HttpStatus to HttpStatusCode"
+sidebar_label: "Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode"
 ---
 
 import Tabs from '@theme/Tabs';

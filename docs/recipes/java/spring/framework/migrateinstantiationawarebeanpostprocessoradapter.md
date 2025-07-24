@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert InstantiationAwareBeanPostProcessorAdapter to SmartInstantiationAwareBeanPostProcessor"
+sidebar_label: "Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`"
 ---
 
 import Tabs from '@theme/Tabs';

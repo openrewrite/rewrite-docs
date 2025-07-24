@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)"
+sidebar_label: "Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`"
 ---
 
 import Tabs from '@theme/Tabs';

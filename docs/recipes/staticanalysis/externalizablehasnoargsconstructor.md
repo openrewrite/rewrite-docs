@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Externalizable classes have no-arguments constructor"
+sidebar_label: "`Externalizable` classes have no-arguments constructor"
 ---
 
 import Tabs from '@theme/Tabs';

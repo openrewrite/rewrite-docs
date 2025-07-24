@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace ResourceResolver with ResourceHandler"
+sidebar_label: "Replace `ResourceResolver` with `ResourceHandler`"
 ---
 
 import Tabs from '@theme/Tabs';

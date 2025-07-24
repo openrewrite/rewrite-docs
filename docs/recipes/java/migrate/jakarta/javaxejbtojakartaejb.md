@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.ejb packages to jakarta.ejb"
+sidebar_label: "Migrate deprecated `javax.ejb` packages to `jakarta.ejb`"
 ---
 
 import Tabs from '@theme/Tabs';

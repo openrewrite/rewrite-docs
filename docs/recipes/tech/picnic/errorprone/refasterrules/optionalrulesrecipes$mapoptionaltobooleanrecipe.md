@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.MapOptionalToBoolean"
+sidebar_label: "Refaster template `OptionalRules.MapOptionalToBoolean`"
 ---
 
 import Tabs from '@theme/Tabs';

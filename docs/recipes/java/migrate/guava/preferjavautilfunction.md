@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.util.function.Function"
+sidebar_label: "Prefer `java.util.function.Function`"
 ---
 
 import Tabs from '@theme/Tabs';

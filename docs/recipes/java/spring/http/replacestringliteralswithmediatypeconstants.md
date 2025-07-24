@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace String literals with MediaType constants"
+sidebar_label: "Replace String literals with `MediaType` constants"
 ---
 
 import Tabs from '@theme/Tabs';

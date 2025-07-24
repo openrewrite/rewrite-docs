@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.Strict
 displayName: Require or disallow strict mode directives
 description: |
-  Require or disallow strict mode directives 
-  See [rule details](https://eslint.org/docs/latest/rules/strict)
-  
+  Require or disallow strict mode directives  See [rule details](https://eslint.org/docs/latest/rules/strict)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

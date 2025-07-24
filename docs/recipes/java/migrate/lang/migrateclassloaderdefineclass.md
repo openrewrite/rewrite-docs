@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use ClassLoader#defineClass(String, byte[], int, int)"
+sidebar_label: "Use `ClassLoader#defineClass(String, byte[], int, int)`"
 ---
 
 import Tabs from '@theme/Tabs';

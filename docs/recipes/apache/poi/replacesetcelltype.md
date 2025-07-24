@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Apache POI use Cell.setCellType(CellType)"
+sidebar_label: "Apache POI use `Cell.setCellType(CellType)`"
 ---
 
 import Tabs from '@theme/Tabs';

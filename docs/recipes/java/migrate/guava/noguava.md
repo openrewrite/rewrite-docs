@@ -36,15 +36,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
-* [Prefer `new ArrayList<>()`](../../../java/migrate/guava/noguavalistsnewarraylist)
-* [Prefer `new CopyOnWriteArrayList<>()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
-* [Prefer `new LinkedList<>()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
-* [Prefer `new TreeMap<>()`](../../../java/migrate/guava/noguavamapsnewtreemap)
+* [Prefer `new ArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewarraylist)
+* [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
+* [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
+* [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewtreemap)
 * [Prefer `Arrays.asList(..)` over Guava primitives](../../../java/migrate/guava/noguavaprimitiveaslist)
 * [Refaster style Guava to Java migration recipes](../../../java/migrate/guava/noguavarefasterrecipes)
-* [Prefer `new HashSet<>()`](../../../java/migrate/guava/noguavasetsnewhashset)
-* [Prefer `new ConcurrentHashMap<>()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset)
-* [Prefer `new LinkedHashSet<>()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset)
+* [Prefer `new HashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewhashset)
+* [Prefer `new ConcurrentHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset)
+* [Prefer `new LinkedHashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset)
 * [Prefer `java.nio.charset.StandardCharsets`](../../../java/migrate/guava/preferjavaniocharsetstandardcharsets)
 * [Prefer `java.util.Optional`](../../../java/migrate/guava/preferjavautiloptional)
 * [Prefer `java.util.function.Function`](../../../java/migrate/guava/preferjavautilfunction)
@@ -69,7 +69,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Math#addExact`](../../../java/migrate/guava/prefermathaddexact)
 * [Prefer `Math#subtractExact`](../../../java/migrate/guava/prefermathsubtractexact)
 * [Prefer `Math#multiplyExact`](../../../java/migrate/guava/prefermathmultiplyexact)
-* [Prefer `new AtomicReference<>()`](../../../java/migrate/guava/noguavaatomicsnewreference)
+* [Prefer `new AtomicReference&lt;&gt;()`](../../../java/migrate/guava/noguavaatomicsnewreference)
 * [`InputStreamRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/inputstreamrulesrecipes)
 
 </TabItem>
@@ -82,7 +82,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.NoGuava
 displayName: Prefer the Java standard library instead of Guava
 description: |
-  Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+  Guava filled in important gaps in the Java standard library and still does. But at least some of Guava&#39;s API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
 tags:
   - guava
 recipeList:

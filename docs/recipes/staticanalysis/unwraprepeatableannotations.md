@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Unwrap @Repeatable annotations"
+sidebar_label: "Unwrap `@Repeatable` annotations"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamOfNullable"
+sidebar_label: "Refaster template `StreamRules.StreamOfNullable`"
 ---
 
 import Tabs from '@theme/Tabs';

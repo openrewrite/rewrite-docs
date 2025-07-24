@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJDoubleRules Refaster recipes"
+sidebar_label: "`AssertJDoubleRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes
 displayName: `AssertJDoubleRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoubleRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoubleRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToRecipe

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template EqualityRules.ObjectsEquals"
+sidebar_label: "Refaster template `EqualityRules.ObjectsEquals`"
 ---
 
 import Tabs from '@theme/Tabs';

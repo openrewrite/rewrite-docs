@@ -5,7 +5,7 @@ sidebar_label: "Transform 'new' expressions to builders"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Transform 'new' expressions to builders
+# Transform &#39;new&#39; expressions to builders
 
 **software.amazon.awssdk.v2migration.NewClassToBuilder**
 

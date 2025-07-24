@@ -45,7 +45,6 @@ name: org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup
 displayName: Recommended vue code cleanup
 description: |
   Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuejs.org/).
-  
 tags:
   - ESLint
   - vue

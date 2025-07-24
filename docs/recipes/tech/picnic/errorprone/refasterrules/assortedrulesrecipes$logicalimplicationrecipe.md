@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssortedRules.LogicalImplication"
+sidebar_label: "Refaster template `AssortedRules.LogicalImplication`"
 ---
 
 import Tabs from '@theme/Tabs';

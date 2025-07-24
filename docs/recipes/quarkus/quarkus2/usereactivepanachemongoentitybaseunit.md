@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Use Uni<T extends ReactivePanacheMongoEntityBase>"
+sidebar_label: "Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `Uni&lt;T extends ReactivePanacheMongoEntityBase>`
+# Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;`
 
 **org.openrewrite.quarkus.quarkus2.UseReactivePanacheMongoEntityBaseUniT**
 

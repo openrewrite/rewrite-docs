@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Long#parseUnsignedInt"
+sidebar_label: "Prefer `Long#parseUnsignedInt`"
 ---
 
 import Tabs from '@theme/Tabs';

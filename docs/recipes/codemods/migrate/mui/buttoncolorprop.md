@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Renames color prop to colorOverride"
+sidebar_label: "Renames `color` prop to `colorOverride`"
 ---
 
 import Tabs from '@theme/Tabs';

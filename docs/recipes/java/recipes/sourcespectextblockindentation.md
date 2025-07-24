@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Minimal indentation for SourceSpecs text blocks"
+sidebar_label: "Minimal indentation for `SourceSpecs` text blocks"
 ---
 
 import Tabs from '@theme/Tabs';

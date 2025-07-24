@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.resource packages to jakarta.resource"
+sidebar_label: "Migrate deprecated `javax.resource` packages to `jakarta.resource`"
 ---
 
 import Tabs from '@theme/Tabs';

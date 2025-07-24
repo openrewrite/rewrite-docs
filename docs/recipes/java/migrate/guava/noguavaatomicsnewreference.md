@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new AtomicReference<>()"
+sidebar_label: "Prefer `new AtomicReference&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

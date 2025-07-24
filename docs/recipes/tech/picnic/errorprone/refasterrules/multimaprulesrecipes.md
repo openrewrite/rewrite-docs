@@ -1,5 +1,5 @@
 ---
-sidebar_label: "MultimapRules Refaster recipes"
+sidebar_label: "`MultimapRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.MultimapRulesRecipes
 displayName: `MultimapRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `Multimap`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/MultimapRules).
+  Refaster rules related to expressions dealing with `Multimap`s. [Source](https://error-prone.picnic.tech/refasterrules/MultimapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MultimapRulesRecipes$MultimapKeySetRecipe
   - tech.picnic.errorprone.refasterrules.MultimapRulesRecipes$MultimapIsEmptyRecipe

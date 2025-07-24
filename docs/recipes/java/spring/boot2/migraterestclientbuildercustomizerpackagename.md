@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use RestClientBuilderCustomizer"
+sidebar_label: "Use `RestClientBuilderCustomizer`"
 ---
 
 import Tabs from '@theme/Tabs';

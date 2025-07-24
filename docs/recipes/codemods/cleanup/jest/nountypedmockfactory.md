@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.NoUntypedMockFactory
 displayName: Disallow using jest.mock() factories without an explicit type parameter
 description: |
-  Disallow using jest.mock() factories without an explicit type parameter
-  See rule details for [jest/no-untyped-mock-factory](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-untyped-mock-factory.md)
-  
+  Disallow using jest.mock() factories without an explicit type parameter See rule details for [jest/no-untyped-mock-factory](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-untyped-mock-factory.md)
 tags:
   - ESLint
   - eslint-plugin-jest

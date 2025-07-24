@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJShortRules Refaster recipes"
+sidebar_label: "`AssertJShortRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes
 displayName: `AssertJShortRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJShortRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJShortRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJShortRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJShortRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsNotEqualToRecipe

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Runnable::run"
+sidebar_label: "Prefer `Runnable::run`"
 ---
 
 import Tabs from '@theme/Tabs';

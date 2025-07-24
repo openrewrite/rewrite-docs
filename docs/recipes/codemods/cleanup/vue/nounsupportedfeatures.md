@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NoUnsupportedFeatures
 displayName: Disallow unsupported Vue.js syntax on the specified version
 description: |
-  Disallow unsupported Vue.js syntax on the specified version
-  See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html)
-  
+  Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html)
 tags:
   - ESLint
   - vue

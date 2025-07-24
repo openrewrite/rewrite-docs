@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferModule
 displayName: Prefer JavaScript modules (ESM) over CommonJS.
 description: |
-  Prefer JavaScript modules (ESM) over CommonJS.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md)
-  
+  Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add class argument to JobParameters"
+sidebar_label: "Add class argument to `JobParameters`"
 ---
 
 import Tabs from '@theme/Tabs';

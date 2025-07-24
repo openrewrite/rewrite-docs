@@ -28,7 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Transform 'new' expressions to builders](../../../../software/amazon/awssdk/v2migration/newclasstobuilder)
+* [Transform &#39;new&#39; expressions to builders](../../../../software/amazon/awssdk/v2migration/newclasstobuilder)
 * [V1 Setter to V2](../../../../software/amazon/awssdk/v2migration/v1settertov2)
 
 </TabItem>
@@ -41,7 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: software.amazon.awssdk.v2migration.NewClassToBuilderPattern
 displayName: Change new objects creation to Builder pattern
 description: |
-  Transform the creation of a class using 'new' to builder pattern.
+  Transform the creation of a class using &#39;new&#39; to builder pattern.
 recipeList:
   - software.amazon.awssdk.v2migration.NewClassToBuilder
   - software.amazon.awssdk.v2migration.V1SetterToV2

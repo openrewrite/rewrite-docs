@@ -1,5 +1,5 @@
 ---
-sidebar_label: "A collection of String rules"
+sidebar_label: "A collection of `String` rules"
 ---
 
 import Tabs from '@theme/Tabs';

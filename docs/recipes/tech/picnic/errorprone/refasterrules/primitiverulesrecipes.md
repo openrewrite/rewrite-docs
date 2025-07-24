@@ -1,5 +1,5 @@
 ---
-sidebar_label: "PrimitiveRules Refaster recipes"
+sidebar_label: "`PrimitiveRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -81,8 +81,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes
 displayName: `PrimitiveRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with primitives.
-  [Source](https://error-prone.picnic.tech/refasterrules/PrimitiveRules).
+  Refaster rules related to expressions dealing with primitives. [Source](https://error-prone.picnic.tech/refasterrules/PrimitiveRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanOrEqualToRecipe

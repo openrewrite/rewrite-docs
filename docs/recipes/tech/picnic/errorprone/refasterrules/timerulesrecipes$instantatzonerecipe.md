@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.InstantAtZone"
+sidebar_label: "Refaster template `TimeRules.InstantAtZone`"
 ---
 
 import Tabs from '@theme/Tabs';

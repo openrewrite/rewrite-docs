@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UnnecessaryExplicitUseOfEnumeratorRCS1230**
 
+__
 
 ## Recipe source
 

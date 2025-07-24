@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use getSSOCookieFromSSOToken and logout"
+sidebar_label: "Use `getSSOCookieFromSSOToken` and `logout`"
 ---
 
 import Tabs from '@theme/Tabs';

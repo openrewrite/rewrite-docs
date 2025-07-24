@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJMapRules.AbstractMapAssertHasSameSizeAs"
+sidebar_label: "Refaster template `AssertJMapRules.AbstractMapAssertHasSameSizeAs`"
 ---
 
 import Tabs from '@theme/Tabs';

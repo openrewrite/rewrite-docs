@@ -5,7 +5,7 @@ sidebar_label: "Use 'StartsWith' instead of 'IndexOf'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use 'StartsWith' instead of 'IndexOf'
+# Use &#39;StartsWith&#39; instead of &#39;IndexOf&#39;
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseStartsWithInsteadOfIndexOfComparisonWithZeroCodeFixCA1858**
 

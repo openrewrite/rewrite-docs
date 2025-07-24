@@ -60,7 +60,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate xmlns entries in `web.xml` files](./javaxwebxmltojakartawebxml.md)
 * [Migrate xmlns entries in `web.xml` files](./jakartawebxml6.md)
 * [OmniFaces Namespace Migration](./omnifacesnamespacemigration.md)
-* [Remove deprecated API's not supported in CDI4.0](./deprecatedcdiapisremoved40.md)
+* [Remove deprecated API&#39;s not supported in CDI4.0](./deprecatedcdiapisremoved40.md)
 * [Remove `getComment` and `getVersion` methods](./servletcookiebehaviorchangerfc6265.md)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](./removejakartaannotationdependency.md)
 * [Replace  deprecated Jakarta Servlet methods and classes](./removalsservletjakarta10.md)

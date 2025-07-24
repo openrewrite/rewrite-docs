@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new TreeMap<>()"
+sidebar_label: "Prefer `new TreeMap&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

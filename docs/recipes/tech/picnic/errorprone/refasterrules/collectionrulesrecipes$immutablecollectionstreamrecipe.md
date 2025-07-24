@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.ImmutableCollectionStream"
+sidebar_label: "Refaster template `CollectionRules.ImmutableCollectionStream`"
 ---
 
 import Tabs from '@theme/Tabs';

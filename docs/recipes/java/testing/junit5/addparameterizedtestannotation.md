@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add missing @ParameterizedTest annotation when @ValueSource is used or replace @Test with @ParameterizedTest"
+sidebar_label: "Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`"
 ---
 
 import Tabs from '@theme/Tabs';

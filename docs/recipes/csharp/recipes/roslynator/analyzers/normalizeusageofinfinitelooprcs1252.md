@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.NormalizeUsageOfInfiniteLoopRCS1252**
 
+__
 
 ## Recipe source
 

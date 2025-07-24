@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Thread.countStackFrames() method"
+sidebar_label: "Remove `Thread.countStackFrames()` method"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -41,9 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.DeprecatedCountStackFramesMethod
 displayName: Remove `Thread.countStackFrames()` method
 description: |
-  `Thread.countStackFrames()` has been removed in Java SE 14 and has been changed in this release to unconditionally throw `UnsupportedOperationException`
-   This recipe removes the usage of this method in your application as long as the method is not assigned to a variable.
-   For more information on the Java SE 14 deprecation of this method, see https://bugs.java.com/bugdatabase/view_bug?bug_id=8205132.
+  `Thread.countStackFrames()` has been removed in Java SE 14 and has been changed in this release to unconditionally throw `UnsupportedOperationException`  This recipe removes the usage of this method in your application as long as the method is not assigned to a variable.  For more information on the Java SE 14 deprecation of this method, see https://bugs.java.com/bugdatabase/view_bug?bug_id=8205132.
 tags:
   - java17
 recipeList:

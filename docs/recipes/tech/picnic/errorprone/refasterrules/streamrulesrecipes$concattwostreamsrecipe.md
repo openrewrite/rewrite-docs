@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.ConcatTwoStreams"
+sidebar_label: "Refaster template `StreamRules.ConcatTwoStreams`"
 ---
 
 import Tabs from '@theme/Tabs';

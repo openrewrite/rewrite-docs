@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxSwitchIfEmptyOfEmptyPublisher"
+sidebar_label: "Refaster template `ReactorRules.FluxSwitchIfEmptyOfEmptyPublisher`"
 ---
 
 import Tabs from '@theme/Tabs';

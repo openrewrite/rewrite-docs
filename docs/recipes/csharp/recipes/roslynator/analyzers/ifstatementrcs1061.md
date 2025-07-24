@@ -5,10 +5,11 @@ sidebar_label: "Merge 'if' with nested 'if'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Merge 'if' with nested 'if'
+# Merge &#39;if&#39; with nested &#39;if&#39;
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1061**
 
+__
 
 ## Recipe source
 

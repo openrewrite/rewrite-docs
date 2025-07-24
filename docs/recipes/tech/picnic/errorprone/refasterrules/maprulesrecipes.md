@@ -1,5 +1,5 @@
 ---
-sidebar_label: "MapRules Refaster recipes"
+sidebar_label: "`MapRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.MapRulesRecipes
 displayName: `MapRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `Map` instances.
-  [Source](https://error-prone.picnic.tech/refasterrules/MapRules).
+  Refaster rules related to expressions dealing with `Map` instances. [Source](https://error-prone.picnic.tech/refasterrules/MapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapGetOrNullRecipe
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapGetOrDefaultRecipe

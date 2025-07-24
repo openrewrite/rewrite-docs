@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate xmlns entries in *taglib*.xml files for Jakarta Server Faces 3"
+sidebar_label: "Migrate xmlns entries in `*taglib*.xml` files for Jakarta Server Faces 3"
 ---
 
 import Tabs from '@theme/Tabs';

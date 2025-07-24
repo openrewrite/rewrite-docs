@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.Joining"
+sidebar_label: "Refaster template `StreamRules.Joining`"
 ---
 
 import Tabs from '@theme/Tabs';

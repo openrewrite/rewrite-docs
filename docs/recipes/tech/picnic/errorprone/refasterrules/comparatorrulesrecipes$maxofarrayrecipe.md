@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.MaxOfArray"
+sidebar_label: "Refaster template `ComparatorRules.MaxOfArray`"
 ---
 
 import Tabs from '@theme/Tabs';

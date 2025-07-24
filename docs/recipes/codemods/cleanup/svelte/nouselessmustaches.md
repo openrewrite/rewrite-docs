@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches
 displayName: disallow unnecessary mustache interpolations
 description: |
-  disallow unnecessary mustache interpolations
-  See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/)
-  
+  disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/)
 tags:
   - svelte
   - ESLint

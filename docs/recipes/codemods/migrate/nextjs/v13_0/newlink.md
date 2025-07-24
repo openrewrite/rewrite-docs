@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Remove <a> Tags From Link Components"
+sidebar_label: "Remove `&lt;a&gt;` Tags From Link Components"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove `<a>` Tags From Link Components
+# Remove `&lt;a&gt;` Tags From Link Components
 
 **org.openrewrite.codemods.migrate.nextjs.v13\_0.NewLink**
 
@@ -41,9 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.nextjs.v13_0.NewLink
-displayName: Remove `<a>` Tags From Link Components
+displayName: Remove `&lt;a&gt;` Tags From Link Components
 description: |
-  Remove `&lt;a&gt;` tags inside Link Components or add a `legacyBehavior` prop to Links that cannot be auto-fixed.
+  Remove `&amp;lt;a&amp;gt;` tags inside Link Components or add a `legacyBehavior` prop to Links that cannot be auto-fixed.
 tags:
   - nextjs
   - codemods

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use spring-boot.run.agents configuration key in spring-boot-maven-plugin"
+sidebar_label: "Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`"
 ---
 
 import Tabs from '@theme/Tabs';

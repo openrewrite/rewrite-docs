@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use indexOf(String, int)"
+sidebar_label: "Use `indexOf(String, int)`"
 ---
 
 import Tabs from '@theme/Tabs';

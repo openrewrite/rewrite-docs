@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace UnicastProcessor.create(Queue, Disposable) with Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)"
+sidebar_label: "Replace `UnicastProcessor.create(Queue, Disposable)` with `Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)`"
 ---
 
 import Tabs from '@theme/Tabs';

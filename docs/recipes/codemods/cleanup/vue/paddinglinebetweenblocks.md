@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenBlocks
 displayName: Require or disallow padding lines between blocks
 description: |
-  Require or disallow padding lines between blocks
-  See rule details for [vue/padding-line-between-blocks](https://eslint.vuejs.org/rules/padding-line-between-blocks.html)
-  
+  Require or disallow padding lines between blocks See rule details for [vue/padding-line-between-blocks](https://eslint.vuejs.org/rules/padding-line-between-blocks.html)
 tags:
   - ESLint
   - vue

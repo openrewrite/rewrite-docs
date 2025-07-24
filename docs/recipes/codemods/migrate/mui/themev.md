@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Update the theme creation from @mui/system@v5 to be compatible with @pigment-css/react"
+sidebar_label: "Update the theme creation from `@mui/system@v5` to be compatible with `@pigment-css/react`"
 ---
 
 import Tabs from '@theme/Tabs';

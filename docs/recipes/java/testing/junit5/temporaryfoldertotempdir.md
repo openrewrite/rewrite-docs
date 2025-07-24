@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use JUnit Jupiter @TempDir"
+sidebar_label: "Use JUnit Jupiter `@TempDir`"
 ---
 
 import Tabs from '@theme/Tabs';

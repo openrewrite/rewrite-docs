@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.PublisherProbeEmpty"
+sidebar_label: "Refaster template `ReactorRules.PublisherProbeEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

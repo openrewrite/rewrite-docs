@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CharSequenceRules.CharSequenceIsEmpty"
+sidebar_label: "Refaster template `CharSequenceRules.CharSequenceIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

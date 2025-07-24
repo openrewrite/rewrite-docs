@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSortedMultisetRules.ImmutableSortedMultisetNaturalOrderBuilder"
+sidebar_label: "Refaster template `ImmutableSortedMultisetRules.ImmutableSortedMultisetNaturalOrderBuilder`"
 ---
 
 import Tabs from '@theme/Tabs';

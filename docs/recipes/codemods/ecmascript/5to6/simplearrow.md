@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace all function expressions with only return statement with simple arrow"
+sidebar_label: "Replace all function expressions with only `return` statement with simple arrow"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -43,7 +43,6 @@ name: org.openrewrite.codemods.ecmascript.5to6.simpleArrow
 displayName: Replace all function expressions with only `return` statement with simple arrow
 description: |
   Replace all function expressions with only `return` statement with simple arrow function.
-  
 tags:
   - codemods
   - 5to6

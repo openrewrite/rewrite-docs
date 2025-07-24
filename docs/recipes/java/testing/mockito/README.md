@@ -13,7 +13,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Call to Mockito method "verify", "when" or "given" should be simplified](./simplifymockitoverifywhengiven.md)
+* [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](./simplifymockitoverifywhengiven.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
 * [Cleanup PowerMock imports](./cleanuppowermockimports.md)
 * [Close unclosed static mocks](./closeunclosedstaticmocks.md)

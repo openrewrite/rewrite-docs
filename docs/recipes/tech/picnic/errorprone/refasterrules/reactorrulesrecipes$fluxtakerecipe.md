@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Flux#take(long) over Flux#take(long, boolean) where relevant"
+sidebar_label: "Prefer `Flux#take(long)` over `Flux#take(long, boolean)` where relevant"
 ---
 
 import Tabs from '@theme/Tabs';

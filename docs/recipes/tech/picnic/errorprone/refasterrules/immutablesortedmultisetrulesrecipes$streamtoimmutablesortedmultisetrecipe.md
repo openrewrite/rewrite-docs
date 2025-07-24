@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSortedMultisetRules.StreamToImmutableSortedMultiset"
+sidebar_label: "Refaster template `ImmutableSortedMultisetRules.StreamToImmutableSortedMultiset`"
 ---
 
 import Tabs from '@theme/Tabs';

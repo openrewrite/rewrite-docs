@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.PreferDefineOptions
 displayName: Enforce use of defineOptions instead of default export.
 description: |
-  Enforce use of defineOptions instead of default export.
-  See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html)
-  
+  Enforce use of defineOptions instead of default export. See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html)
 tags:
   - ESLint
   - vue

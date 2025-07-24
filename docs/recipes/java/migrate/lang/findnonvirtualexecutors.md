@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find non-virtual ExecutorService creation"
+sidebar_label: "Find non-virtual `ExecutorService` creation"
 ---
 
 import Tabs from '@theme/Tabs';

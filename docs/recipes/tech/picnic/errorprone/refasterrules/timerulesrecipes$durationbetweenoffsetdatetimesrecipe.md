@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.DurationBetweenOffsetDateTimes"
+sidebar_label: "Refaster template `TimeRules.DurationBetweenOffsetDateTimes`"
 ---
 
 import Tabs from '@theme/Tabs';

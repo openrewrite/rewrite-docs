@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DoNotCallToImmutableCollectionOnAnImmutableCollectionValueCA2009**
 
+__
 
 ## Recipe source
 

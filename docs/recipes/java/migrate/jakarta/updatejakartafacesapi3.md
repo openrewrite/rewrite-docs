@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.faces packages to jakarta.faces"
+sidebar_label: "Migrate deprecated `javax.faces` packages to `jakarta.faces`"
 ---
 
 import Tabs from '@theme/Tabs';

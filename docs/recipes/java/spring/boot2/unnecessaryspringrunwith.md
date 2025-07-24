@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove unnecessary Spring @RunWith"
+sidebar_label: "Remove unnecessary Spring `@RunWith`"
 ---
 
 import Tabs from '@theme/Tabs';

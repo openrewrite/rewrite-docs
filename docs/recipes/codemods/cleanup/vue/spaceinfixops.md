@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require spacing around infix operators in <template>"
+sidebar_label: "Require spacing around infix operators in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require spacing around infix operators in `<template>`
+# Require spacing around infix operators in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.SpaceInfixOps**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.SpaceInfixOps
-displayName: Require spacing around infix operators in `<template>`
+displayName: Require spacing around infix operators in `&lt;template&gt;`
 description: |
-  Require spacing around infix operators in `<template>`
-  See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html)
-  
+  Require spacing around infix operators in `&lt;template&gt;` See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html)
 tags:
   - ESLint
   - vue

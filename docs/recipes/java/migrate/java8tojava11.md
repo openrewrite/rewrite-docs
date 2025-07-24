@@ -64,7 +64,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade build to Java 11](../../java/migrate/upgradebuildtojava11)
 * [Prefer `Optional.isEmpty()`](../../java/migrate/util/optionalnotpresenttoisempty)
 * [Prefer `Optional.isPresent()`](../../java/migrate/util/optionalnotemptytoispresent)
-* [`Stream<Optional>` idiom recipe](../../java/migrate/util/optionalstreamrecipe)
+* [`Stream&lt;Optional&gt;` idiom recipe](../../java/migrate/util/optionalstreamrecipe)
 * [Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`](../../java/migrate/internalbindpackages)
 * [Replace deprecated methods in`SecurityManager`](../../java/migrate/removedsecuritymanagermethods)
 * [Upgrade plugins to Java 11 compatible versions](../../java/migrate/upgradepluginsforjava11)

@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.OptimizeLinqMethodCallRCS1246**
 
+__
 
 ## Recipe source
 

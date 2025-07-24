@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SpaceBeforeBlocks
 displayName: Enforce consistent spacing before blocks
 description: |
-  Enforce consistent spacing before blocks
-  
-  See [rule details](https://eslint.style/rules/default/space-before-blocks)
-  
+  Enforce consistent spacing before blocks  See [rule details](https://eslint.style/rules/default/space-before-blocks)
 tags:
   - eslint
   - stylistic

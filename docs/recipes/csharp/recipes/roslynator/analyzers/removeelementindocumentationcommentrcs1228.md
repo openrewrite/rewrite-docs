@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveElementInDocumentationCommentRCS1228**
 
+__
 
 ## Recipe source
 

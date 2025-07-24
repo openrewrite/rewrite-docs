@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.UtcConstant"
+sidebar_label: "Refaster template `TimeRules.UtcConstant`"
 ---
 
 import Tabs from '@theme/Tabs';

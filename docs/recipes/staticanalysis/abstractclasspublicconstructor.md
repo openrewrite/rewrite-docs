@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Constructors of an abstract class should not be declared public"
+sidebar_label: "Constructors of an `abstract` class should not be declared `public`"
 ---
 
 import Tabs from '@theme/Tabs';

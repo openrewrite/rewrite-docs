@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template IntStreamRules.IntStreamAnyMatch"
+sidebar_label: "Refaster template `IntStreamRules.IntStreamAnyMatch`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableEnumSetRules Refaster recipes"
+sidebar_label: "`ImmutableEnumSetRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -48,8 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes
 displayName: `ImmutableEnumSetRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `com.google.common.collect.ImmutableEnumSet`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableEnumSetRules).
+  Refaster rules related to expressions dealing with `com.google.common.collect.ImmutableEnumSet`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableEnumSetRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetIterableRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetArraysAsListRecipe

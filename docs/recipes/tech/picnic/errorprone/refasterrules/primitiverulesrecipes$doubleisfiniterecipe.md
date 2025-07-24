@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.DoubleIsFinite"
+sidebar_label: "Refaster template `PrimitiveRules.DoubleIsFinite`"
 ---
 
 import Tabs from '@theme/Tabs';

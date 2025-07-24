@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Simplify AssertJ assertions with hasSize argument"
+sidebar_label: "Simplify AssertJ assertions with `hasSize` argument"
 ---
 
 import Tabs from '@theme/Tabs';

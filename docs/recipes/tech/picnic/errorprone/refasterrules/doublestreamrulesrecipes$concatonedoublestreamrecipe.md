@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template DoubleStreamRules.ConcatOneDoubleStream"
+sidebar_label: "Refaster template `DoubleStreamRules.ConcatOneDoubleStream`"
 ---
 
 import Tabs from '@theme/Tabs';

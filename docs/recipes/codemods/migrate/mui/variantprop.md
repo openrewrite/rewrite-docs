@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates variant prop usage"
+sidebar_label: "Updates `variant` prop usage"
 ---
 
 import Tabs from '@theme/Tabs';

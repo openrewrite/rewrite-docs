@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JNDI name jsf/ClientSideSecretKey has been renamed to faces/ClientSideSecretKey, and the jsf/FlashSecretKey JNDI name has been renamed to faces/FlashSecretKey."
+sidebar_label: "JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -48,7 +48,6 @@ name: com.oracle.weblogic.rewrite.jakarta.FacesJNDINamesChanged3
 displayName: JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.
 description: |
   The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`,  and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.  The JNDI keys that have been renamed are updated to allow use of the keys.
-  
 recipeList:
   - org.openrewrite.xml.ChangeTagValue:
       elementName: //env-entry-name

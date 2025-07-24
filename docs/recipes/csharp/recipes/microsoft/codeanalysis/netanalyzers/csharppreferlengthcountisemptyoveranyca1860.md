@@ -5,7 +5,7 @@ sidebar_label: "Avoid using 'Enumerable.Any()' extension method"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid using 'Enumerable.Any()' extension method
+# Avoid using &#39;Enumerable.Any()&#39; extension method
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferLengthCountIsEmptyOverAnyCA1860**
 

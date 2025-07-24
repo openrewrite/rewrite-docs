@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamReduceWithIdentity"
+sidebar_label: "Refaster template `StreamRules.StreamReduceWithIdentity`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssortedRules Refaster recipes"
+sidebar_label: "`AssortedRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssortedRulesRecipes
 displayName: `AssortedRules` Refaster recipes
 description: |
-  Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules).
+  Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules. [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IteratorGetNextOrDefaultRecipe

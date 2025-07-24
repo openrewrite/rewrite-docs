@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJStringRules.AssertThatPathContentUtf8"
+sidebar_label: "Refaster template `AssertJStringRules.AssertThatPathContentUtf8`"
 ---
 
 import Tabs from '@theme/Tabs';

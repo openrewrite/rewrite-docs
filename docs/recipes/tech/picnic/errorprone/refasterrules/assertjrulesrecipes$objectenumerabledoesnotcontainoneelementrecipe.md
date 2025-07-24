@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJRules.ObjectEnumerableDoesNotContainOneElement"
+sidebar_label: "Refaster template `AssertJRules.ObjectEnumerableDoesNotContainOneElement`"
 ---
 
 import Tabs from '@theme/Tabs';

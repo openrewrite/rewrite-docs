@@ -46,7 +46,6 @@ name: org.openrewrite.codemods.ecmascript.ESLintTypeScriptPrettier
 displayName: Format TypeScript using ESLint Prettier plugin
 description: |
   Formats all TypeScript source code using the ESLint Prettier plugin.
-  
 tags:
   - codemods
   - eslint

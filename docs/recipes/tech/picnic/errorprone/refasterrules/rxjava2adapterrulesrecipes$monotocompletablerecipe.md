@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template RxJava2AdapterRules.MonoToCompletable"
+sidebar_label: "Refaster template `RxJava2AdapterRules.MonoToCompletable`"
 ---
 
 import Tabs from '@theme/Tabs';

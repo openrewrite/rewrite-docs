@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.MonoZip"
+sidebar_label: "Refaster template `ReactorRules.MonoZip`"
 ---
 
 import Tabs from '@theme/Tabs';

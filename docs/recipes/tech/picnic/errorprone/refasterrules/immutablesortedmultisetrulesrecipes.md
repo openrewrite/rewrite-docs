@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableSortedMultisetRules Refaster recipes"
+sidebar_label: "`ImmutableSortedMultisetRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableSortedMultisetRulesRecipes
 displayName: `ImmutableSortedMultisetRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `ImmutableSortedMultiset`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedMultisetRules).
+  Refaster rules related to expressions dealing with `ImmutableSortedMultiset`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedMultisetRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSortedMultisetRulesRecipes$ImmutableSortedMultisetBuilderRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableSortedMultisetRulesRecipes$ImmutableSortedMultisetNaturalOrderBuilderRecipe

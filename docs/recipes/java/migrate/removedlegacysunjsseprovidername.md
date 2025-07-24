@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use SunJSSE instead of com.sun.net.ssl.internal.ssl.Provider"
+sidebar_label: "Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`"
 ---
 
 import Tabs from '@theme/Tabs';

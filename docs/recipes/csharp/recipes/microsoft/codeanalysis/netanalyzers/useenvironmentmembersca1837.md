@@ -5,7 +5,7 @@ sidebar_label: "Use 'Environment.ProcessId'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use 'Environment.ProcessId'
+# Use &#39;Environment.ProcessId&#39;
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseEnvironmentMembersCA1837**
 

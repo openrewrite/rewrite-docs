@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use secrets: inherit if possible"
+sidebar_label: "Use `secrets: inherit` if possible"
 ---
 
 import Tabs from '@theme/Tabs';

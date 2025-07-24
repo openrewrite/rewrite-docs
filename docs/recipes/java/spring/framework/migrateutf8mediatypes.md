@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated Spring Web UTF8 MediaType enums"
+sidebar_label: "Migrate deprecated Spring Web UTF8 `MediaType` enums"
 ---
 
 import Tabs from '@theme/Tabs';

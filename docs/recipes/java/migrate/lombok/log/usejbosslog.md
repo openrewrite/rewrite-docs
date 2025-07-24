@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use @JBossLog instead of explicit fields"
+sidebar_label: "Use `@JBossLog` instead of explicit fields"
 ---
 
 import Tabs from '@theme/Tabs';

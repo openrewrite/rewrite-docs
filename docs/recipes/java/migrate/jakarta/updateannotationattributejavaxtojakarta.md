@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Update annotation attributes using javax to jakarta"
+sidebar_label: "Update annotation attributes using `javax` to `jakarta`"
 ---
 
 import Tabs from '@theme/Tabs';

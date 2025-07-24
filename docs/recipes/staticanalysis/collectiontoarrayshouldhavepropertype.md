@@ -5,7 +5,7 @@ sidebar_label: "'Collection.toArray()' should be passed an array of the proper t
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 'Collection.toArray()' should be passed an array of the proper type
+# &#39;Collection.toArray()&#39; should be passed an array of the proper type
 
 **org.openrewrite.staticanalysis.CollectionToArrayShouldHaveProperType**
 

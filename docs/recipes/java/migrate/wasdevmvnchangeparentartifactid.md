@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Change net.wasdev.maven.parent:java8-parent to :parent"
+sidebar_label: "Change `net.wasdev.maven.parent:java8-parent` to `:parent`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -40,7 +40,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.WasDevMvnChangeParentArtifactId
 displayName: Change `net.wasdev.maven.parent:java8-parent` to `:parent`
 description: |
-  This recipe changes the artifactId of the `<parent>` tag in the `pom.xml` from `java8-parent` to `parent`.
+  This recipe changes the artifactId of the `&lt;parent&gt;` tag in the `pom.xml` from `java8-parent` to `parent`.
 recipeList:
   - org.openrewrite.maven.ChangeParentPom:
       oldGroupId: net.wasdev.maven.parent

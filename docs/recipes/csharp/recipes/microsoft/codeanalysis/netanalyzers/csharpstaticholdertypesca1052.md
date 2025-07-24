@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpStaticHolderTypesCA1052**
 
+__
 
 ## Recipe source
 

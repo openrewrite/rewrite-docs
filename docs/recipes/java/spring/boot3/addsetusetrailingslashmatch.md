@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add SetUseTrailingSlashMatch() in configuration"
+sidebar_label: "Add `SetUseTrailingSlashMatch()` in configuration"
 ---
 
 import Tabs from '@theme/Tabs';

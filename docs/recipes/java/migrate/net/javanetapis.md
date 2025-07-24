@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use modernized java.net APIs"
+sidebar_label: "Use modernized `java.net` APIs"
 ---
 
 import Tabs from '@theme/Tabs';

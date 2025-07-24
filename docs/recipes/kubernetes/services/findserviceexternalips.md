@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find uses of externalIP"
+sidebar_label: "Find uses of `externalIP`"
 ---
 
 import Tabs from '@theme/Tabs';

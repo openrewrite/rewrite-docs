@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster rules related to AssertJ assertions over Durations"
+sidebar_label: "Refaster rules related to AssertJ assertions over `Duration`s"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -48,9 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes
 displayName: Refaster rules related to AssertJ assertions over `Duration`s
 description: |
-  These rules simplify and improve the readability of tests by using `Duration`-specific
-   AssertJ assertion methods instead of generic assertions.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJDurationRules).
+  These rules simplify and improve the readability of tests by using `Duration`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDurationRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasNanosRecipe
   - tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasMillisRecipe

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use MultipartConfigFactory with DataSize arguments"
+sidebar_label: "Use `MultipartConfigFactory` with `DataSize` arguments"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Adds DefaultTheme module augmentation to typescript projects."
+sidebar_label: "Adds `DefaultTheme` module augmentation to typescript projects."
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Merge Spring bootstrap.yml with application.yml"
+sidebar_label: "Merge Spring `bootstrap.yml` with `application.yml`"
 ---
 
 import Tabs from '@theme/Tabs';

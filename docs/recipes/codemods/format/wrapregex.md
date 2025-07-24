@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.WrapRegex
 displayName: Require parenthesis around regex literals
 description: |
-  Require parenthesis around regex literals
-  
-  See [rule details](https://eslint.style/rules/default/wrap-regex)
-  
+  Require parenthesis around regex literals  See [rule details](https://eslint.style/rules/default/wrap-regex)
 tags:
   - eslint
   - stylistic

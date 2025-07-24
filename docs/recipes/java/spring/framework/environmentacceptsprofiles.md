@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Environment#acceptsProfiles(Profiles)"
+sidebar_label: "Use `Environment#acceptsProfiles(Profiles)`"
 ---
 
 import Tabs from '@theme/Tabs';

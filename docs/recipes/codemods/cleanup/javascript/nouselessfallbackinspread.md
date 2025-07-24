@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessFallbackInSpread
 displayName: Disallow useless fallback when spreading in object literals.
 description: |
-  Disallow useless fallback when spreading in object literals.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md)
-  
+  Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove org.openrewrite.maven.trait.Traits.mavenPlugin() usage"
+sidebar_label: "Remove `org.openrewrite.maven.trait.Traits.mavenPlugin()` usage"
 ---
 
 import Tabs from '@theme/Tabs';

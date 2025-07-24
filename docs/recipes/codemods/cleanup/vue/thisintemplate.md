@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ThisInTemplate
 displayName: Disallow usage of this in template
 description: |
-  Disallow usage of this in template
-  See rule details for [vue/this-in-template](https://eslint.vuejs.org/rules/this-in-template.html)
-  
+  Disallow usage of this in template See rule details for [vue/this-in-template](https://eslint.vuejs.org/rules/this-in-template.html)
 tags:
   - ESLint
   - vue

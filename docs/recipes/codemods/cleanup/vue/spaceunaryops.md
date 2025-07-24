@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent spacing before or after unary operators in <template>"
+sidebar_label: "Enforce consistent spacing before or after unary operators in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent spacing before or after unary operators in `<template>`
+# Enforce consistent spacing before or after unary operators in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps
-displayName: Enforce consistent spacing before or after unary operators in `<template>`
+displayName: Enforce consistent spacing before or after unary operators in `&lt;template&gt;`
 description: |
-  Enforce consistent spacing before or after unary operators in `<template>`
-  See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html)
-  
+  Enforce consistent spacing before or after unary operators in `&lt;template&gt;` See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html)
 tags:
   - ESLint
   - vue

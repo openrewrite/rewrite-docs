@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.jws packages to jakarta.jws"
+sidebar_label: "Migrate deprecated `javax.jws` packages to `jakarta.jws`"
 ---
 
 import Tabs from '@theme/Tabs';

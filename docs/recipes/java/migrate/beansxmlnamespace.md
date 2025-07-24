@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Change beans.xml schemaLocation to match XML namespace"
+sidebar_label: "Change `beans.xml` `schemaLocation` to match XML namespace"
 ---
 
 import Tabs from '@theme/Tabs';

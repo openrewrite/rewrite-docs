@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find HTTP API calls via RestTemplate"
+sidebar_label: "Find HTTP API calls via `RestTemplate`"
 ---
 
 import Tabs from '@theme/Tabs';

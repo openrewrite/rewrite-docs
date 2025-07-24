@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxBooleanValue
 displayName: Enforce boolean attributes notation in JSX
 description: |
-  Enforce boolean attributes notation in JSX
-  See rule details for [react/jsx-boolean-value](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-boolean-value.md)
-  
+  Enforce boolean attributes notation in JSX See rule details for [react/jsx-boolean-value](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-boolean-value.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use AtomicLongArray#weakCompareAndSetPlain(int, long, long)"
+sidebar_label: "Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`"
 ---
 
 import Tabs from '@theme/Tabs';

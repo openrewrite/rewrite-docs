@@ -1,14 +1,15 @@
 ---
-sidebar_label: "Replace 'camel.main.routeController' with camel.routecontroller'"
+sidebar_label: "Replace 'camel.main.routeController' with `camel.routecontroller'"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace 'camel.main.routeController' with `camel.routecontroller'
+# Replace &#39;camel.main.routeController&#39; with `camel.routecontroller&#39;
 
 **org.apache.camel.upgrade.camel44.RouteControllerProperties**
 
+__
 
 ## Recipe source
 
@@ -50,7 +51,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.camel44.RouteControllerProperties
-displayName: Replace 'camel.main.routeController' with `camel.routecontroller'
+displayName: Replace &#39;camel.main.routeController&#39; with `camel.routecontroller&#39;
 description: |
   
 recipeList:

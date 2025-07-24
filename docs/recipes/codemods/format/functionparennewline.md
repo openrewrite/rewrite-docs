@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.FunctionParenNewline
 displayName: Enforce consistent line breaks inside function parentheses
 description: |
-  Enforce consistent line breaks inside function parentheses
-  
-  See [rule details](https://eslint.style/rules/default/function-paren-newline)
-  
+  Enforce consistent line breaks inside function parentheses  See [rule details](https://eslint.style/rules/default/function-paren-newline)
 tags:
   - eslint
   - stylistic

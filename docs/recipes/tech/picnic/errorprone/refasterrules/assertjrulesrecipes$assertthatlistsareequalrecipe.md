@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJRules.AssertThatListsAreEqual"
+sidebar_label: "Refaster template `AssertJRules.AssertThatListsAreEqual`"
 ---
 
 import Tabs from '@theme/Tabs';

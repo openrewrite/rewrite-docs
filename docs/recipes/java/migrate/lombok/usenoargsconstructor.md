@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use @NoArgsConstructor where applicable"
+sidebar_label: "Use `@NoArgsConstructor` where applicable"
 ---
 
 import Tabs from '@theme/Tabs';

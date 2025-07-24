@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Object.finalize() invocations"
+sidebar_label: "Remove `Object.finalize()` invocations"
 ---
 
 import Tabs from '@theme/Tabs';

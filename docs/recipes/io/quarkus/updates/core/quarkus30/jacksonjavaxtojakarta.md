@@ -137,7 +137,6 @@ name: io.quarkus.updates.core.quarkus30.JacksonJavaxToJakarta
 displayName: Migrate Jackson from javax to jakarta namespace
 description: |
   Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE.
-  
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.module

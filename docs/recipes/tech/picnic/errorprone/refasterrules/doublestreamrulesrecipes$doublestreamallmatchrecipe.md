@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template DoubleStreamRules.DoubleStreamAllMatch"
+sidebar_label: "Refaster template `DoubleStreamRules.DoubleStreamAllMatch`"
 ---
 
 import Tabs from '@theme/Tabs';

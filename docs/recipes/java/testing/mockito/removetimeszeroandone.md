@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Mockito.times(0) and Mockito.times(1)"
+sidebar_label: "Remove `Mockito.times(0)` and `Mockito.times(1)`"
 ---
 
 import Tabs from '@theme/Tabs';

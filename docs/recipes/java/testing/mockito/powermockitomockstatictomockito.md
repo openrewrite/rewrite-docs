@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace PowerMock.mockStatic() with Mockito.mockStatic()"
+sidebar_label: "Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent spacing inside array brackets in <template>"
+sidebar_label: "Enforce consistent spacing inside array brackets in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent spacing inside array brackets in `<template>`
+# Enforce consistent spacing inside array brackets in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing
-displayName: Enforce consistent spacing inside array brackets in `<template>`
+displayName: Enforce consistent spacing inside array brackets in `&lt;template&gt;`
 description: |
-  Enforce consistent spacing inside array brackets in `<template>`
-  See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html)
-  
+  Enforce consistent spacing inside array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html)
 tags:
   - ESLint
   - vue

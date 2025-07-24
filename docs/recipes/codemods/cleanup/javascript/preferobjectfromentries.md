@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer using Object.fromEntries() to transform a list of key-value pairs into an object."
+sidebar_label: "Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferObjectFromEntries
 displayName: Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object.
 description: |
-  Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md)
-  
+  Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

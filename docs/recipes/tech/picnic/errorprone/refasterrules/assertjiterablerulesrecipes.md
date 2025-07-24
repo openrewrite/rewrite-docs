@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJIterableRules Refaster recipes"
+sidebar_label: "`AssertJIterableRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -43,8 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes
 displayName: `AssertJIterableRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIterableRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIterableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsNotEmptyRecipe

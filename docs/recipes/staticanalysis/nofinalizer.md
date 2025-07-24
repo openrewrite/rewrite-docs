@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove finalize() method"
+sidebar_label: "Remove `finalize()` method"
 ---
 
 import Tabs from '@theme/Tabs';

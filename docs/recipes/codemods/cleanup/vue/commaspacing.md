@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent spacing before and after commas in <template>"
+sidebar_label: "Enforce consistent spacing before and after commas in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent spacing before and after commas in `<template>`
+# Enforce consistent spacing before and after commas in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.CommaSpacing**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.CommaSpacing
-displayName: Enforce consistent spacing before and after commas in `<template>`
+displayName: Enforce consistent spacing before and after commas in `&lt;template&gt;`
 description: |
-  Enforce consistent spacing before and after commas in `<template>`
-  See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html)
-  
+  Enforce consistent spacing before and after commas in `&lt;template&gt;` See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html)
 tags:
   - ESLint
   - vue

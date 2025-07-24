@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove org.openrewrite.java.trait.Traits.literal() usage"
+sidebar_label: "Remove `org.openrewrite.java.trait.Traits.literal()` usage"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.LongToIntExact"
+sidebar_label: "Refaster template `PrimitiveRules.LongToIntExact`"
 ---
 
 import Tabs from '@theme/Tabs';

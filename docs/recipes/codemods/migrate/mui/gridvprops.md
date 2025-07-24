@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates the usage of the @mui/material/Grid2, @mui/system/Grid, and @mui/joy/Grid components to their updated APIs."
+sidebar_label: "Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs."
 ---
 
 import Tabs from '@theme/Tabs';

@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoExtraSemi
 displayName: Disallow unnecessary semicolons
 description: |
-  Disallow unnecessary semicolons
-  
-  See [rule details](https://eslint.style/rules/default/no-extra-semi)
-  
+  Disallow unnecessary semicolons  See [rule details](https://eslint.style/rules/default/no-extra-semi)
 tags:
   - eslint
   - stylistic

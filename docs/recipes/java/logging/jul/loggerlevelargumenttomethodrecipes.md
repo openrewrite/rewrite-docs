@@ -29,19 +29,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Replace JUL `Logger.log(Level.FINEST, String)` with `Logger.finest(String)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinesttomethodrecipe)
-* [Replace JUL `Logger.log(Level.FINEST, Supplier<String>)` with `Logger.finest(Supplier<String>)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinestsuppliertomethodrecipe)
+* [Replace JUL `Logger.log(Level.FINEST, Supplier&lt;String&gt;)` with `Logger.finest(Supplier&lt;String&gt;)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinestsuppliertomethodrecipe)
 * [Replace JUL `Logger.log(Level.FINER, String)` with `Logger.finer(String)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinertomethodrecipe)
-* [Replace JUL `Logger.log(Level.FINER, Supplier<String>)` with `Logger.finer(Supplier<String>)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinersuppliertomethodrecipe)
+* [Replace JUL `Logger.log(Level.FINER, Supplier&lt;String&gt;)` with `Logger.finer(Supplier&lt;String&gt;)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinersuppliertomethodrecipe)
 * [Replace JUL `Logger.log(Level.FINE, String)` with `Logger.fine(String)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinetomethodrecipe)
-* [Replace JUL `Logger.log(Level.FINE, Supplier<String>)` with `Logger.fine(Supplier<String>)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinesuppliertomethodrecipe)
+* [Replace JUL `Logger.log(Level.FINE, Supplier&lt;String&gt;)` with `Logger.fine(Supplier&lt;String&gt;)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelfinesuppliertomethodrecipe)
 * [Replace JUL `Logger.log(Level.INFO, String)` with `Logger.info(String)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelinfotomethodrecipe)
-* [Replace JUL `Logger.log(Level.INFO, Supplier<String>)` with `Logger.info(Supplier<String>)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelinfosuppliertomethodrecipe)
+* [Replace JUL `Logger.log(Level.INFO, Supplier&lt;String&gt;)` with `Logger.info(Supplier&lt;String&gt;)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelinfosuppliertomethodrecipe)
 * [Replace JUL `Logger.log(Level.WARNING, String)` with `Logger.warning(String)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelwarningtomethodrecipe)
-* [Replace JUL `Logger.log(Level.WARNING, Supplier<String>)` with `Logger.warning(Supplier<String>)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelwarningsuppliertomethodrecipe)
+* [Replace JUL `Logger.log(Level.WARNING, Supplier&lt;String&gt;)` with `Logger.warning(Supplier&lt;String&gt;)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelwarningsuppliertomethodrecipe)
 * [Replace JUL `Logger.log(Level.SEVERE, String)` with `Logger.severe(String)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelseveretomethodrecipe)
-* [Replace JUL `Logger.log(Level.SEVERE, Supplier<String>)` with `Logger.severe(Supplier<String>)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelseveresuppliertomethodrecipe)
+* [Replace JUL `Logger.log(Level.SEVERE, Supplier&lt;String&gt;)` with `Logger.severe(Supplier&lt;String&gt;)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelseveresuppliertomethodrecipe)
 * [Replace JUL `Logger.log(Level.CONFIG, String)` with `Logger.config(String)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelconfigtomethodrecipe)
-* [Replace JUL `Logger.log(Level.CONFIG, Supplier<String>)` with `Logger.config(Supplier<String>)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelconfigsuppliertomethodrecipe)
+* [Replace JUL `Logger.log(Level.CONFIG, Supplier&lt;String&gt;)` with `Logger.config(Supplier&lt;String&gt;)`](../../../java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelconfigsuppliertomethodrecipe)
 
 </TabItem>
 

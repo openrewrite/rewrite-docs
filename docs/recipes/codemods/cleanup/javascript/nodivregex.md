@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoDivRegex
 displayName: Disallow equal signs explicitly at the beginning of regular expressions
 description: |
-  Disallow equal signs explicitly at the beginning of regular expressions 
-  See [rule details](https://eslint.org/docs/latest/rules/no-div-regex)
-  
+  Disallow equal signs explicitly at the beginning of regular expressions  See [rule details](https://eslint.org/docs/latest/rules/no-div-regex)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

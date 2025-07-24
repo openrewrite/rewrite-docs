@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new HashMap<>()"
+sidebar_label: "Prefer `new HashMap&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

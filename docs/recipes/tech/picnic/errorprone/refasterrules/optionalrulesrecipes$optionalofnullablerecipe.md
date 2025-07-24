@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.OptionalOfNullable"
+sidebar_label: "Refaster template `OptionalRules.OptionalOfNullable`"
 ---
 
 import Tabs from '@theme/Tabs';

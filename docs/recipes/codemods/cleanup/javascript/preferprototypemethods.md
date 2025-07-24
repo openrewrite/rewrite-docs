@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferPrototypeMethods
 displayName: Prefer borrowing methods from the prototype instead of the instance.
 description: |
-  Prefer borrowing methods from the prototype instead of the instance.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md)
-  
+  Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

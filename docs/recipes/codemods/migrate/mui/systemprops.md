@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove system props and add them to the sx prop"
+sidebar_label: "Remove system props and add them to the `sx` prop"
 ---
 
 import Tabs from '@theme/Tabs';

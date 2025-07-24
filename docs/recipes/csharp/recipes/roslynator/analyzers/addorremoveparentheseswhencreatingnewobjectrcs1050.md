@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.AddOrRemoveParenthesesWhenCreatingNewObjectRCS1050**
 
+__
 
 ## Recipe source
 

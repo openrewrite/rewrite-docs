@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)"
+sidebar_label: "Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`"
 ---
 
 import Tabs from '@theme/Tabs';

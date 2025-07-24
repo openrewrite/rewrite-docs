@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add JDeprScan Maven Plug-in"
+sidebar_label: "Add `JDeprScan` Maven Plug-in"
 ---
 
 import Tabs from '@theme/Tabs';

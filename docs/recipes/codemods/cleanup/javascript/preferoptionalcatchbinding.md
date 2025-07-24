@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferOptionalCatchBinding
 displayName: Prefer omitting the catch binding parameter.
 description: |
-  Prefer omitting the catch binding parameter.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md)
-  
+  Prefer omitting the catch binding parameter. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

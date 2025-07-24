@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template InputStreamRules.InputStreamTransferTo"
+sidebar_label: "Refaster template `InputStreamRules.InputStreamTransferTo`"
 ---
 
 import Tabs from '@theme/Tabs';

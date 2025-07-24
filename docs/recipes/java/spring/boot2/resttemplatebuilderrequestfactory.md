@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate RestTemplateBuilder"
+sidebar_label: "Migrate `RestTemplateBuilder`"
 ---
 
 import Tabs from '@theme/Tabs';

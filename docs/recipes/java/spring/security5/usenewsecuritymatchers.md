@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use the new securityMatcher() method"
+sidebar_label: "Use the new `securityMatcher()` method"
 ---
 
 import Tabs from '@theme/Tabs';

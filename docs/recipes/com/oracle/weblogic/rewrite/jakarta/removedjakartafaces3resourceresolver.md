@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace ResourceResolver with ResourceHandler"
+sidebar_label: "Replace `ResourceResolver` with `ResourceHandler`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -48,7 +48,6 @@ name: com.oracle.weblogic.rewrite.jakarta.RemovedJakartaFaces3ResourceResolver
 displayName: Replace `ResourceResolver` with `ResourceHandler`
 description: |
   The `ResourceResolver` class was removed in Jakarta Faces 3.0.  The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
-  
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.view.facelets.ResourceResolver

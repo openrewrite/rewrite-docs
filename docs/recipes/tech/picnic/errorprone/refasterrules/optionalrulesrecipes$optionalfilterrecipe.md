@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.OptionalFilter"
+sidebar_label: "Refaster template `OptionalRules.OptionalFilter`"
 ---
 
 import Tabs from '@theme/Tabs';

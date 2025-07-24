@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.LongToUnsignedString"
+sidebar_label: "Refaster template `PrimitiveRules.LongToUnsignedString`"
 ---
 
 import Tabs from '@theme/Tabs';

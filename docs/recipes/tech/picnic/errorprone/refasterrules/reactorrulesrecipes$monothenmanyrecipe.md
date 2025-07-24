@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.MonoThenMany"
+sidebar_label: "Refaster template `ReactorRules.MonoThenMany`"
 ---
 
 import Tabs from '@theme/Tabs';

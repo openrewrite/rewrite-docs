@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus37.SyncHibernateJpaModelgenVersionWithBOM**
 
+__
 
 ## Recipe source
 

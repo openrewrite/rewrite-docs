@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce line breaks after each array element in <template>"
+sidebar_label: "Enforce line breaks after each array element in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce line breaks after each array element in `<template>`
+# Enforce line breaks after each array element in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.ArrayElementNewline**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ArrayElementNewline
-displayName: Enforce line breaks after each array element in `<template>`
+displayName: Enforce line breaks after each array element in `&lt;template&gt;`
 description: |
-  Enforce line breaks after each array element in `<template>`
-  See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html)
-  
+  Enforce line breaks after each array element in `&lt;template&gt;` See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html)
 tags:
   - ESLint
   - vue

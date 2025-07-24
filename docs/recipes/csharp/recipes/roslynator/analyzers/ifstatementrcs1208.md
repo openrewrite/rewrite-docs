@@ -5,10 +5,11 @@ sidebar_label: "Reduce 'if' nesting"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Reduce 'if' nesting
+# Reduce &#39;if&#39; nesting
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1208**
 
+__
 
 ## Recipe source
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.MonoFromFutureSupplierBoolean"
+sidebar_label: "Refaster template `ReactorRules.MonoFromFutureSupplierBoolean`"
 ---
 
 import Tabs from '@theme/Tabs';

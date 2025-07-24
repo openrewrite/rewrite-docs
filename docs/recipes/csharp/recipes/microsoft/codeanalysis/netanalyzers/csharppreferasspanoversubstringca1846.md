@@ -5,7 +5,7 @@ sidebar_label: "Prefer 'AsSpan' over 'Substring'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer 'AsSpan' over 'Substring'
+# Prefer &#39;AsSpan&#39; over &#39;Substring&#39;
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferAsSpanOverSubstringCA1846**
 

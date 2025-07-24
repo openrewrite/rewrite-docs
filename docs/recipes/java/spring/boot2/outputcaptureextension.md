@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate @OutputCaptureRule to @ExtendWith(OutputCaptureExtension.class)"
+sidebar_label: "Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`"
 ---
 
 import Tabs from '@theme/Tabs';

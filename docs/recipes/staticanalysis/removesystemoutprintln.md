@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove System.out#println statements"
+sidebar_label: "Remove `System.out#println` statements"
 ---
 
 import Tabs from '@theme/Tabs';

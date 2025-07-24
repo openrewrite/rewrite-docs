@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.First
 displayName: Ensure all imports appear before other statements
 description: |
-  Ensure all imports appear before other statements
-  See rule details for [import/first](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/first.md)
-  
+  Ensure all imports appear before other statements See rule details for [import/first](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/first.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

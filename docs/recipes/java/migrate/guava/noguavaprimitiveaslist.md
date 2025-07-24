@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Arrays.asList(..) over Guava primitives"
+sidebar_label: "Prefer `Arrays.asList(..)` over Guava primitives"
 ---
 
 import Tabs from '@theme/Tabs';

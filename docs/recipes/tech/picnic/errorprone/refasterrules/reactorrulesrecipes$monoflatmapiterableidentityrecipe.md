@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.MonoFlatMapIterableIdentity"
+sidebar_label: "Refaster template `ReactorRules.MonoFlatMapIterableIdentity`"
 ---
 
 import Tabs from '@theme/Tabs';

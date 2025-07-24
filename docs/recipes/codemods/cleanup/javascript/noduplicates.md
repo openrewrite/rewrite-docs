@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoDuplicates
 displayName: Forbid repeated import of the same module in multiple places
 description: |
-  Forbid repeated import of the same module in multiple places
-  See rule details for [import/no-duplicates](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-duplicates.md)
-  
+  Forbid repeated import of the same module in multiple places See rule details for [import/no-duplicates](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-duplicates.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

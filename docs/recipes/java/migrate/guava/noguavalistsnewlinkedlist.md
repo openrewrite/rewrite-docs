@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new LinkedList<>()"
+sidebar_label: "Prefer `new LinkedList&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

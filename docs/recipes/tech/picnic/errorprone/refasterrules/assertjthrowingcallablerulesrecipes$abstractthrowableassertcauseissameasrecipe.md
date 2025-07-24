@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJThrowingCallableRules.AbstractThrowableAssertCauseIsSameAs"
+sidebar_label: "Refaster template `AssertJThrowingCallableRules.AbstractThrowableAssertCauseIsSameAs`"
 ---
 
 import Tabs from '@theme/Tabs';

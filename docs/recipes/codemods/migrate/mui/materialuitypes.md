@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates usage of @mui/types"
+sidebar_label: "Updates usage of `@mui/types`"
 ---
 
 import Tabs from '@theme/Tabs';

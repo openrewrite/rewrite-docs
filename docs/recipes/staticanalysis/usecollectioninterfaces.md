@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Collection interfaces"
+sidebar_label: "Use `Collection` interfaces"
 ---
 
 import Tabs from '@theme/Tabs';

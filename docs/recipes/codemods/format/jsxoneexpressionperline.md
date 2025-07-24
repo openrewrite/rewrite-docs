@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxOneExpressionPerLine
 displayName: Require one JSX element per line
 description: |
-  Require one JSX element per line
-  
-  See [rule details](https://eslint.style/rules/default/jsx-one-expression-per-line)
-  
+  Require one JSX element per line  See [rule details](https://eslint.style/rules/default/jsx-one-expression-per-line)
 tags:
   - eslint
   - stylistic

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.annotation.security packages to jakarta.annotation.security"
+sidebar_label: "Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`"
 ---
 
 import Tabs from '@theme/Tabs';

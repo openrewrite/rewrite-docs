@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJMapRules Refaster recipes"
+sidebar_label: "`AssertJMapRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -49,8 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes
 displayName: `AssertJMapRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJMapRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJMapRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertContainsExactlyInAnyOrderEntriesOfRecipe

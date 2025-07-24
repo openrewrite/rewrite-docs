@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove the useAuthorizationManager=true attribute from @EnableReactiveMethodSecurity"
+sidebar_label: "Remove the `useAuthorizationManager=true` attribute from `@EnableReactiveMethodSecurity`"
 ---
 
 import Tabs from '@theme/Tabs';

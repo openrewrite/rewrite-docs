@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJRules.AssertThatOptionalInt"
+sidebar_label: "Refaster template `AssertJRules.AssertThatOptionalInt`"
 ---
 
 import Tabs from '@theme/Tabs';

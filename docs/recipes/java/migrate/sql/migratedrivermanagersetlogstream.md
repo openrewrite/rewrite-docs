@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use DriverManager#setLogWriter(java.io.PrintWriter)"
+sidebar_label: "Use `DriverManager#setLogWriter(java.io.PrintWriter)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.OrderInComponents
 displayName: Enforce order of properties in components
 description: |
-  Enforce order of properties in components
-  See rule details for [vue/order-in-components](https://eslint.vuejs.org/rules/order-in-components.html)
-  
+  Enforce order of properties in components See rule details for [vue/order-in-components](https://eslint.vuejs.org/rules/order-in-components.html)
 tags:
   - ESLint
   - vue

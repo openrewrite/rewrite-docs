@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace FileUtils.deleteDirectory(File) with JDK provided API"
+sidebar_label: "Replace `FileUtils.deleteDirectory(File)` with JDK provided API"
 ---
 
 import Tabs from '@theme/Tabs';

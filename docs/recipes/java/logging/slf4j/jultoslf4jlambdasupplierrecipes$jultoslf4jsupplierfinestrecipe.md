@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace JUL Logger.finest(Supplier<String>) with SLF4J's Logger.atTrace().log(Supplier<String>)"
+sidebar_label: "Replace JUL `Logger.finest(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.finest(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`
+# Replace JUL `Logger.finest(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atTrace().log(Supplier&lt;String&gt;)`
 
 **org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierFinestRecipe**
 

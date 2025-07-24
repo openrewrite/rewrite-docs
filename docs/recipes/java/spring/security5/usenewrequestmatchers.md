@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use the new requestMatchers methods"
+sidebar_label: "Use the new `requestMatchers` methods"
 ---
 
 import Tabs from '@theme/Tabs';

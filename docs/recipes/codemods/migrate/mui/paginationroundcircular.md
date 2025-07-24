@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Updates circular prop to variant=\"circular\""
+sidebar_label: "Updates `circular` prop to `variant=&quot;circular&quot;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Updates `circular` prop to `variant="circular"`
+# Updates `circular` prop to `variant=&quot;circular&quot;`
 
 **org.openrewrite.codemods.migrate.mui.PaginationRoundCircular**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.mui.PaginationRoundCircular
-displayName: Updates `circular` prop to `variant="circular"`
+displayName: Updates `circular` prop to `variant=&quot;circular&quot;`
 description: |
   See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#pagination-round-circular).
 tags:

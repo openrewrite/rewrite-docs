@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from @ApiResponses to @ApiResponses"
+sidebar_label: "Migrate from `@ApiResponses` to `@ApiResponses`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -63,7 +63,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses
 displayName: Migrate from `@ApiResponses` to `@ApiResponses`
 description: |
-  Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -> responseCode, message -> description, response -> content).
+  Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -&gt; responseCode, message -&gt; description, response -&gt; content).
 tags:
   - openapi
   - swagger

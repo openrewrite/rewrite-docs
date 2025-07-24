@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.VOnHandlerStyle
 displayName: Enforce writing style for handlers in v-on directives
 description: |
-  Enforce writing style for handlers in v-on directives
-  See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html)
-  
+  Enforce writing style for handlers in v-on directives See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html)
 tags:
   - ESLint
   - vue

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove MockitoAnnotations.initMocks(this) if specified JUnit runners"
+sidebar_label: "Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners"
 ---
 
 import Tabs from '@theme/Tabs';

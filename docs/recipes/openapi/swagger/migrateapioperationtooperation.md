@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from @ApiOperation to @Operation"
+sidebar_label: "Migrate from `@ApiOperation` to `@Operation`"
 ---
 
 import Tabs from '@theme/Tabs';

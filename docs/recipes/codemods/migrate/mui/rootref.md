@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Converts rootRef to ref"
+sidebar_label: "Converts `rootRef` to `ref`"
 ---
 
 import Tabs from '@theme/Tabs';

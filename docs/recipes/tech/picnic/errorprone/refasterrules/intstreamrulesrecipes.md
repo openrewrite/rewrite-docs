@@ -1,5 +1,5 @@
 ---
-sidebar_label: "IntStreamRules Refaster recipes"
+sidebar_label: "`IntStreamRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -50,8 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes
 displayName: `IntStreamRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `IntStream`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/IntStreamRules).
+  Refaster rules related to expressions dealing with `IntStream`s. [Source](https://error-prone.picnic.tech/refasterrules/IntStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamClosedOpenRangeRecipe
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatOneIntStreamRecipe

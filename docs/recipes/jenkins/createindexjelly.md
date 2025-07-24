@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Create index.jelly if it doesn't exist"
+sidebar_label: "Create `index.jelly` if it doesn't exist"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create `index.jelly` if it doesn't exist
+# Create `index.jelly` if it doesn&#39;t exist
 
 **org.openrewrite.jenkins.CreateIndexJelly**
 

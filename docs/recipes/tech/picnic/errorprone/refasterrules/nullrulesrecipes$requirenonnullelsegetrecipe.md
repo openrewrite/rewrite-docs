@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template NullRules.RequireNonNullElseGet"
+sidebar_label: "Refaster template `NullRules.RequireNonNullElseGet`"
 ---
 
 import Tabs from '@theme/Tabs';

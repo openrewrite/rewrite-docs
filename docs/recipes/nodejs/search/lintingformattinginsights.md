@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Javascript linting & formatting library insights"
+sidebar_label: "Javascript linting &amp; formatting library insights"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Javascript linting & formatting library insights
+# Javascript linting &amp; formatting library insights
 
 **org.openrewrite.nodejs.search.LintingFormattingInsights**
 

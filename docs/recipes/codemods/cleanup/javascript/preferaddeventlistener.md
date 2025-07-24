@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer .addEventListener() and .removeEventListener() over on-functions."
+sidebar_label: "Prefer `.addEventListener()` and `.removeEventListener()` over on-functions."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferAddEventListener
 displayName: Prefer `.addEventListener()` and `.removeEventListener()` over on-functions.
 description: |
-  Prefer `.addEventListener()` and `.removeEventListener()` over on-functions.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-add-event-listener.md)
-  
+  Prefer `.addEventListener()` and `.removeEventListener()` over on-functions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-add-event-listener.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

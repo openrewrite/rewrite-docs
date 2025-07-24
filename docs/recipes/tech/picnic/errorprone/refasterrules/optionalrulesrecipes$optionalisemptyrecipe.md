@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.OptionalIsEmpty"
+sidebar_label: "Refaster template `OptionalRules.OptionalIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

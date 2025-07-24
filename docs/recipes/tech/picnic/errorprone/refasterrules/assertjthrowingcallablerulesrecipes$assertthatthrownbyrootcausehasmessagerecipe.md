@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJThrowingCallableRules.AssertThatThrownByRootCauseHasMessage"
+sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByRootCauseHasMessage`"
 ---
 
 import Tabs from '@theme/Tabs';

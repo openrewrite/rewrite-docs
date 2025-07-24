@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace getLocalizedInputStream and getLocalizedOutputStream with direct assignment"
+sidebar_label: "Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment"
 ---
 
 import Tabs from '@theme/Tabs';

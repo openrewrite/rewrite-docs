@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ClassRules Refaster recipes"
+sidebar_label: "`ClassRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ClassRulesRecipes
 displayName: `ClassRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with classes.
-  [Source](https://error-prone.picnic.tech/refasterrules/ClassRules).
+  Refaster rules related to expressions dealing with classes. [Source](https://error-prone.picnic.tech/refasterrules/ClassRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassIsInstanceRecipe
   - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceIsInstancePredicateRecipe

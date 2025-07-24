@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenTags
 displayName: Require or disallow newlines between sibling tags in template
 description: |
-  Require or disallow newlines between sibling tags in template
-  See rule details for [vue/padding-line-between-tags](https://eslint.vuejs.org/rules/padding-line-between-tags.html)
-  
+  Require or disallow newlines between sibling tags in template See rule details for [vue/padding-line-between-tags](https://eslint.vuejs.org/rules/padding-line-between-tags.html)
 tags:
   - ESLint
   - vue

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Behavior change to bean discovery in modules with beans.xml file with no version specified"
+sidebar_label: "Behavior change to bean discovery in modules with `beans.xml` file with no version specified"
 ---
 
 import Tabs from '@theme/Tabs';

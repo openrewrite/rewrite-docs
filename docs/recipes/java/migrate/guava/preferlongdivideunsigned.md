@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Long#divideUnsigned"
+sidebar_label: "Prefer `Long#divideUnsigned`"
 ---
 
 import Tabs from '@theme/Tabs';

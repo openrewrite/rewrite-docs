@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJThrowingCallableRules.AssertThatThrownByIOException"
+sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIOException`"
 ---
 
 import Tabs from '@theme/Tabs';

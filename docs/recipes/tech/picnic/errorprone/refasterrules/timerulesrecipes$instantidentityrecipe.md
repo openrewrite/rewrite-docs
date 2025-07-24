@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.InstantIdentity"
+sidebar_label: "Refaster template `TimeRules.InstantIdentity`"
 ---
 
 import Tabs from '@theme/Tabs';

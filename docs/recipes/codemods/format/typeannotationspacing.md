@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.TypeAnnotationSpacing
 displayName: Require consistent spacing around type annotations
 description: |
-  Require consistent spacing around type annotations
-  
-  See [rule details](https://eslint.style/rules/default/type-annotation-spacing)
-  
+  Require consistent spacing around type annotations  See [rule details](https://eslint.style/rules/default/type-annotation-spacing)
 tags:
   - eslint
   - stylistic

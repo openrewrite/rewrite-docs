@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Apply var to Generic Constructors"
+sidebar_label: "Apply `var` to Generic Constructors"
 ---
 
 import Tabs from '@theme/Tabs';

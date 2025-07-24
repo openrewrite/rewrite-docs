@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add lombok-mapstruct-binding when both MapStruct and Lombok are used"
+sidebar_label: "Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used"
 ---
 
 import Tabs from '@theme/Tabs';

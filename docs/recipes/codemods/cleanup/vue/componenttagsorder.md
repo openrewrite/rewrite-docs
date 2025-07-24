@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ComponentTagsOrder
 displayName: Enforce order of component top-level elements
 description: |
-  Enforce order of component top-level elements
-  See rule details for [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html)
-  
+  Enforce order of component top-level elements See rule details for [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html)
 tags:
   - ESLint
   - vue

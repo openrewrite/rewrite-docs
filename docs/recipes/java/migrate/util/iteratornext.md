@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace iterator().next() with getFirst()"
+sidebar_label: "Replace `iterator().next()` with `getFirst()`"
 ---
 
 import Tabs from '@theme/Tabs';

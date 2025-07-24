@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.FirstAttributeLinebreak
 displayName: enforce the location of first attribute
 description: |
-  enforce the location of first attribute
-  See rule details for [svelte/first-attribute-linebreak](https://sveltejs.github.io/eslint-plugin-svelte/rules/first-attribute-linebreak/)
-  
+  enforce the location of first attribute See rule details for [svelte/first-attribute-linebreak](https://sveltejs.github.io/eslint-plugin-svelte/rules/first-attribute-linebreak/)
 tags:
   - svelte
   - ESLint

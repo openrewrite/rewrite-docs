@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxOnErrorComplete"
+sidebar_label: "Refaster template `ReactorRules.FluxOnErrorComplete`"
 ---
 
 import Tabs from '@theme/Tabs';

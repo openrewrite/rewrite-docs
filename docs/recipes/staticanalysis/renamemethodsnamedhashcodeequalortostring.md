@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Rename methods named hashcode, equal, or tostring"
+sidebar_label: "Rename methods named `hashcode`, `equal`, or `tostring`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from @ApiModelProperty to @Schema"
+sidebar_label: "Migrate from `@ApiModelProperty` to `@Schema`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -65,7 +65,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema
 displayName: Migrate from `@ApiModelProperty` to `@Schema`
 description: |
-  Converts the `@ApiModelProperty` annotation to `@Schema` and converts the "value" attribute to "description".
+  Converts the `@ApiModelProperty` annotation to `@Schema` and converts the &quot;value&quot; attribute to &quot;description&quot;.
 tags:
   - openapi
   - swagger

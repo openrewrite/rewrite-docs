@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)"
+sidebar_label: "Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`"
 ---
 
 import Tabs from '@theme/Tabs';

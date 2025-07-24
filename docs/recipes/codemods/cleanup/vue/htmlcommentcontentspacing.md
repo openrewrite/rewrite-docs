@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.HtmlCommentContentSpacing
 displayName: Enforce unified spacing in HTML comments
 description: |
-  Enforce unified spacing in HTML comments
-  See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html)
-  
+  Enforce unified spacing in HTML comments See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html)
 tags:
   - ESLint
   - vue

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Annotate methods which may return null with @Nullable"
+sidebar_label: "Annotate methods which may return `null` with `@Nullable`"
 ---
 
 import Tabs from '@theme/Tabs';

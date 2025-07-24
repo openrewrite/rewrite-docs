@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Changes an argument to a TimeValue for matched method invocations"
+sidebar_label: "Changes an argument to a `TimeValue` for matched method invocations"
 ---
 
 import Tabs from '@theme/Tabs';

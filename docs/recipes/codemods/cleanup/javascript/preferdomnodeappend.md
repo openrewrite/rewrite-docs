@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Node#append() over Node#appendChild()."
+sidebar_label: "Prefer `Node#append()` over `Node#appendChild()`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferDomNodeAppend
 displayName: Prefer `Node#append()` over `Node#appendChild()`.
 description: |
-  Prefer `Node#append()` over `Node#appendChild()`.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-append.md)
-  
+  Prefer `Node#append()` over `Node#appendChild()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-append.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

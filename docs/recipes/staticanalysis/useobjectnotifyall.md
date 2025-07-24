@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replaces Object.notify() with Object.notifyAll()"
+sidebar_label: "Replaces `Object.notify()` with `Object.notifyAll()`"
 ---
 
 import Tabs from '@theme/Tabs';

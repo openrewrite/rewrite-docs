@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.SortImports
 displayName: Enforce sorted import declarations within modules
 description: |
-  Enforce sorted import declarations within modules 
-  See [rule details](https://eslint.org/docs/latest/rules/sort-imports)
-  
+  Enforce sorted import declarations within modules  See [rule details](https://eslint.org/docs/latest/rules/sort-imports)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

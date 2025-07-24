@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.MinOfArray"
+sidebar_label: "Refaster template `ComparatorRules.MinOfArray`"
 ---
 
 import Tabs from '@theme/Tabs';

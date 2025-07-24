@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use StateManagementStrategy"
+sidebar_label: "Use `StateManagementStrategy`"
 ---
 
 import Tabs from '@theme/Tabs';

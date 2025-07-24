@@ -53,7 +53,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change SDK core types from v1 to v2](../../../../software/amazon/awssdk/v2migration/changesdkcoretypes)
 * [V1 client builder variations to builder()](../../../../software/amazon/awssdk/v2migration/v1buildervariationstov2builder)
 * [Change new objects creation to Builder pattern](../../../../software/amazon/awssdk/v2migration/newclasstobuilderpattern)
-* [Transform 'new' expressions to static factory methods](../../../../software/amazon/awssdk/v2migration/newclasstostaticfactory)
+* [Transform &#39;new&#39; expressions to static factory methods](../../../../software/amazon/awssdk/v2migration/newclasstostaticfactory)
 * [V1 Getter to V2](../../../../software/amazon/awssdk/v2migration/v1gettertov2)
 * [Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for sync and NettyNioAsyncHttpClient for async](../../../../software/amazon/awssdk/v2migration/httpsettingstohttpclient)
 * [Wrap the region string provided on the SDK client builder with Region.of](../../../../software/amazon/awssdk/v2migration/wrapsdkclientbuilderregionstr)

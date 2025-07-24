@@ -1,5 +1,5 @@
 ---
-sidebar_label: "LongStreamRules Refaster recipes"
+sidebar_label: "`LongStreamRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -50,8 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes
 displayName: `LongStreamRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `LongStream`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/LongStreamRules).
+  Refaster rules related to expressions dealing with `LongStream`s. [Source](https://error-prone.picnic.tech/refasterrules/LongStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamClosedOpenRangeRecipe
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$ConcatOneLongStreamRecipe

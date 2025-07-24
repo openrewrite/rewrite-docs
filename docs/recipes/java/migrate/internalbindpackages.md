@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use com.sun.xml.bind.* instead of com.sun.xml.internal.bind.*"
+sidebar_label: "Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`"
 ---
 
 import Tabs from '@theme/Tabs';

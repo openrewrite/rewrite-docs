@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template IntStreamRules.IntStreamClosedOpenRange"
+sidebar_label: "Refaster template `IntStreamRules.IntStreamClosedOpenRange`"
 ---
 
 import Tabs from '@theme/Tabs';

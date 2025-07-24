@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoNestedTernary
 displayName: Disallow nested ternary expressions.
 description: |
-  Disallow nested ternary expressions.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md)
-  
+  Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

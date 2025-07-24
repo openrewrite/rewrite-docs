@@ -50,8 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: io.moderne.devcenter.DevCenterStarter
 displayName: DevCenter
 description: |
-  This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs.
-  For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
+  This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
 recipeList:
   - io.moderne.devcenter.LibraryUpgrade:
       cardName: Move to Spring Boot 3.5.0

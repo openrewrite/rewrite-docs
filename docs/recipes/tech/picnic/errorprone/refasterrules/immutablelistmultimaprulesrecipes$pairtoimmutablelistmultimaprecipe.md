@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableListMultimapRules.PairToImmutableListMultimap"
+sidebar_label: "Refaster template `ImmutableListMultimapRules.PairToImmutableListMultimap`"
 ---
 
 import Tabs from '@theme/Tabs';

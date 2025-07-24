@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find programmatic edits of Security provider list"
+sidebar_label: "Find programmatic edits of `Security` provider list"
 ---
 
 import Tabs from '@theme/Tabs';

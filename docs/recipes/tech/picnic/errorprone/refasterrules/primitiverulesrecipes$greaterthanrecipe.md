@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.GreaterThan"
+sidebar_label: "Refaster template `PrimitiveRules.GreaterThan`"
 ---
 
 import Tabs from '@theme/Tabs';

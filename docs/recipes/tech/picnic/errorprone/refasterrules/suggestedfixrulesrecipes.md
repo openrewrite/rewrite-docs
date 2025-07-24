@@ -1,5 +1,5 @@
 ---
-sidebar_label: "SuggestedFixRules Refaster recipes"
+sidebar_label: "`SuggestedFixRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes
 displayName: `SuggestedFixRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `SuggestedFix`es.
-  [Source](https://error-prone.picnic.tech/refasterrules/SuggestedFixRules).
+  Refaster rules related to expressions dealing with `SuggestedFix`es. [Source](https://error-prone.picnic.tech/refasterrules/SuggestedFixRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixToBuilderRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixDeleteRecipe

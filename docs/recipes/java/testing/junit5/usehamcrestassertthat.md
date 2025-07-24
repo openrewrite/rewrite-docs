@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use MatcherAssert#assertThat(..)"
+sidebar_label: "Use `MatcherAssert#assertThat(..)`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -50,7 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.UseHamcrestAssertThat
 displayName: Use `MatcherAssert#assertThat(..)`
 description: |
-  JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter.
+  JUnit 4&#39;s `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter.
 tags:
   - junit
   - testing

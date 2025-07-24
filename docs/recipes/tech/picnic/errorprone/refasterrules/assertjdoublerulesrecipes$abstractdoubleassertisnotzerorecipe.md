@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJDoubleRules.AbstractDoubleAssertIsNotZero"
+sidebar_label: "Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsNotZero`"
 ---
 
 import Tabs from '@theme/Tabs';

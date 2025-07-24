@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoHexEscape
 displayName: Enforce the use of Unicode escapes instead of hexadecimal escapes.
 description: |
-  Enforce the use of Unicode escapes instead of hexadecimal escapes.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-hex-escape.md)
-  
+  Enforce the use of Unicode escapes instead of hexadecimal escapes. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-hex-escape.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

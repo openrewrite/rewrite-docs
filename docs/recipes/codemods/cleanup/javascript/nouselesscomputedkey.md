@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessComputedKey
 displayName: Disallow unnecessary computed property keys in objects and classes
 description: |
-  Disallow unnecessary computed property keys in objects and classes 
-  See [rule details](https://eslint.org/docs/latest/rules/no-useless-computed-key)
-  
+  Disallow unnecessary computed property keys in objects and classes  See [rule details](https://eslint.org/docs/latest/rules/no-useless-computed-key)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

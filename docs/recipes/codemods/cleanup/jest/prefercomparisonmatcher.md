@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.PreferComparisonMatcher
 displayName: Suggest using the built-in comparison matchers
 description: |
-  Suggest using the built-in comparison matchers
-  See rule details for [jest/prefer-comparison-matcher](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-comparison-matcher.md)
-  
+  Suggest using the built-in comparison matchers See rule details for [jest/prefer-comparison-matcher](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-comparison-matcher.md)
 tags:
   - ESLint
   - eslint-plugin-jest

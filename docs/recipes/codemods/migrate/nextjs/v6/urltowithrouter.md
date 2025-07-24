@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use withRouter"
+sidebar_label: "Use `withRouter`"
 ---
 
 import Tabs from '@theme/Tabs';

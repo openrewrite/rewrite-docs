@@ -1,5 +1,5 @@
 ---
-sidebar_label: "MicrometerRules Refaster recipes"
+sidebar_label: "`MicrometerRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes
 displayName: `MicrometerRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with Micrometer.
-  [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules).
+  Refaster rules related to expressions dealing with Micrometer. [Source](https://error-prone.picnic.tech/refasterrules/MicrometerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe
   - tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf2Recipe

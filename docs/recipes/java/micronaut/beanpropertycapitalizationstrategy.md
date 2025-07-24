@@ -1,5 +1,5 @@
 ---
-sidebar_label: "De-capitalize BeanIntrospection getProperty(..) and getRequiredProperty(..) name arguments"
+sidebar_label: "De-capitalize `BeanIntrospection` `getProperty(..)` and `getRequiredProperty(..)` name arguments"
 ---
 
 import Tabs from '@theme/Tabs';

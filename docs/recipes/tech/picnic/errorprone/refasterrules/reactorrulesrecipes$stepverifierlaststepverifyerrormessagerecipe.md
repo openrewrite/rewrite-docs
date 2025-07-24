@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.StepVerifierLastStepVerifyErrorMessage"
+sidebar_label: "Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMessage`"
 ---
 
 import Tabs from '@theme/Tabs';

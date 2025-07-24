@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Integer#divideUnsigned"
+sidebar_label: "Prefer `Integer#divideUnsigned`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace com.sun.awt.AWTUtilities static method invocations"
+sidebar_label: "Replace `com.sun.awt.AWTUtilities` static method invocations"
 ---
 
 import Tabs from '@theme/Tabs';

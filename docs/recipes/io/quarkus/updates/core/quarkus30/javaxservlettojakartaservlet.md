@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.servlet packages to jakarta.servlet"
+sidebar_label: "Migrate deprecated `javax.servlet` packages to `jakarta.servlet`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamOf1"
+sidebar_label: "Refaster template `StreamRules.StreamOf1`"
 ---
 
 import Tabs from '@theme/Tabs';

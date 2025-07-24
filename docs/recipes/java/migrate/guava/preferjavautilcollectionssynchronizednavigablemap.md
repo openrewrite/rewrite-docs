@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.util.Collections#synchronizedNavigableMap"
+sidebar_label: "Prefer `java.util.Collections#synchronizedNavigableMap`"
 ---
 
 import Tabs from '@theme/Tabs';

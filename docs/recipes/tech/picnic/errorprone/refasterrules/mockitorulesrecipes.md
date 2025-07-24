@@ -1,5 +1,5 @@
 ---
-sidebar_label: "MockitoRules Refaster recipes"
+sidebar_label: "`MockitoRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.MockitoRulesRecipes
 displayName: `MockitoRules` Refaster recipes
 description: |
-  Refaster rules related to Mockito expressions and statements.
-  [Source](https://error-prone.picnic.tech/refasterrules/MockitoRules).
+  Refaster rules related to Mockito expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/MockitoRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$NeverRecipe
   - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$VerifyOnceRecipe

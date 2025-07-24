@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enum values should be compared with \"==\""
+sidebar_label: "Enum values should be compared with &quot;==&quot;"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enum values should be compared with "=="
+# Enum values should be compared with &quot;==&quot;
 
 **org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator**
 

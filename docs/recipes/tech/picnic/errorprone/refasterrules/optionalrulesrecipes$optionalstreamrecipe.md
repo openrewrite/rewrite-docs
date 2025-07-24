@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.OptionalStream"
+sidebar_label: "Refaster template `OptionalRules.OptionalStream`"
 ---
 
 import Tabs from '@theme/Tabs';

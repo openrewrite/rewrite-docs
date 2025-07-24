@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate JUnit 4 @Test annotations to JUnit 5"
+sidebar_label: "Migrate JUnit 4 `@Test` annotations to JUnit 5"
 ---
 
 import Tabs from '@theme/Tabs';

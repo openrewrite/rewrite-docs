@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Parse Jenkinsfile as Groovy"
+sidebar_label: "Parse `Jenkinsfile` as Groovy"
 ---
 
 import Tabs from '@theme/Tabs';

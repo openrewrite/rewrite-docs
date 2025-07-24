@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template JUnitToAssertJRules.AssertThatThrownByIsExactlyInstanceOf"
+sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatThrownByIsExactlyInstanceOf`"
 ---
 
 import Tabs from '@theme/Tabs';

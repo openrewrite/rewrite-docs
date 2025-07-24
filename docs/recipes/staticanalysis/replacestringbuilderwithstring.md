@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace StringBuilder#append with String"
+sidebar_label: "Replace `StringBuilder#append` with `String`"
 ---
 
 import Tabs from '@theme/Tabs';

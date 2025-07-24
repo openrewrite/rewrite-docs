@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JUnit assertFalse to AssertJ"
+sidebar_label: "JUnit `assertFalse` to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';

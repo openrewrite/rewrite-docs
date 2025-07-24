@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxZipWithIterable"
+sidebar_label: "Refaster template `ReactorRules.FluxZipWithIterable`"
 ---
 
 import Tabs from '@theme/Tabs';

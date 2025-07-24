@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent line breaks after opening and before closing braces in <template>"
+sidebar_label: "Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent line breaks after opening and before closing braces in `<template>`
+# Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline
-displayName: Enforce consistent line breaks after opening and before closing braces in `<template>`
+displayName: Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`
 description: |
-  Enforce consistent line breaks after opening and before closing braces in `<template>`
-  See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html)
-  
+  Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;` See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html)
 tags:
   - ESLint
   - vue

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.interceptor packages to jakarta.interceptor"
+sidebar_label: "Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`"
 ---
 
 import Tabs from '@theme/Tabs';

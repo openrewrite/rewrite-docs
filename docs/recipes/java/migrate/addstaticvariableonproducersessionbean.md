@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Adds static modifier to @Produces fields that are in session beans"
+sidebar_label: "Adds `static` modifier to `@Produces` fields that are in session beans"
 ---
 
 import Tabs from '@theme/Tabs';

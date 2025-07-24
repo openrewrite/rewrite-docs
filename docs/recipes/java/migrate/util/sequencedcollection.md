@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Adopt SequencedCollection"
+sidebar_label: "Adopt `SequencedCollection`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate Docket to GroupedOpenAPI"
+sidebar_label: "Migrate `Docket` to `GroupedOpenAPI`"
 ---
 
 import Tabs from '@theme/Tabs';

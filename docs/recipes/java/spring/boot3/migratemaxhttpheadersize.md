@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Rename server.max-http-header-size to server.max-http-request-header-size"
+sidebar_label: "Rename `server.max-http-header-size` to `server.max-http-request-header-size`"
 ---
 
 import Tabs from '@theme/Tabs';

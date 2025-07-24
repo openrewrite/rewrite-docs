@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Bean.isNullable()"
+sidebar_label: "Remove `Bean.isNullable()`"
 ---
 
 import Tabs from '@theme/Tabs';

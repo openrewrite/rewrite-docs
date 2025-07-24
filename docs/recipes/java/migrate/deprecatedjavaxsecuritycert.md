@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use java.security.cert instead of javax.security.cert"
+sidebar_label: "Use `java.security.cert` instead of `javax.security.cert`"
 ---
 
 import Tabs from '@theme/Tabs';

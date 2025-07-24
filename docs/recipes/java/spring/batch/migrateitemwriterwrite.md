@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate ItemWriter"
+sidebar_label: "Migrate `ItemWriter`"
 ---
 
 import Tabs from '@theme/Tabs';

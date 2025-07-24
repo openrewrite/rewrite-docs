@@ -16,7 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
 * [Shorten AssertJ assertions](./simplifyassertjassertions.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertions.md)
-* [Statically import AssertJ's `assertThat`](./staticimports.md)
+* [Statically import AssertJ&#39;s `assertThat`](./staticimports.md)
 
 ## Recipes
 

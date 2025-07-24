@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate @Endpoints defaultAccess value"
+sidebar_label: "Migrate `@Endpoint`s `defaultAccess` value"
 ---
 
 import Tabs from '@theme/Tabs';

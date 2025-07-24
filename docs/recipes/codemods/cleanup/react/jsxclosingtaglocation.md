@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxClosingTagLocation
 displayName: Enforce closing tag location for multiline JSX
 description: |
-  Enforce closing tag location for multiline JSX
-  See rule details for [react/jsx-closing-tag-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-tag-location.md)
-  
+  Enforce closing tag location for multiline JSX See rule details for [react/jsx-closing-tag-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-tag-location.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

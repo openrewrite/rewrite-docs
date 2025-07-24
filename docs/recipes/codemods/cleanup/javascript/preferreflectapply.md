@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Reflect.apply() over Function#apply()."
+sidebar_label: "Prefer `Reflect.apply()` over `Function#apply()`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferReflectApply
 displayName: Prefer `Reflect.apply()` over `Function#apply()`.
 description: |
-  Prefer `Reflect.apply()` over `Function#apply()`.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-reflect-apply.md)
-  
+  Prefer `Reflect.apply()` over `Function#apply()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-reflect-apply.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

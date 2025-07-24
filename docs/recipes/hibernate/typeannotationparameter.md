@@ -1,5 +1,5 @@
 ---
-sidebar_label: "@Type annotation type parameter migration"
+sidebar_label: "`@Type` annotation type parameter migration"
 ---
 
 import Tabs from '@theme/Tabs';

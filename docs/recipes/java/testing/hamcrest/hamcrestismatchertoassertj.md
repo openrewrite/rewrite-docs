@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate Hamcrest is(Object) to AssertJ"
+sidebar_label: "Migrate Hamcrest `is(Object)` to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';

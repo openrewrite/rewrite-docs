@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUL Logger.log(Level.WARNING, Supplier<String>) with Logger.warning(Supplier<String>)"
+sidebar_label: "Replace JUL `Logger.log(Level.WARNING, Supplier&lt;String&gt;)` with `Logger.warning(Supplier&lt;String&gt;)`"
 ---
 
 import Tabs from '@theme/Tabs';

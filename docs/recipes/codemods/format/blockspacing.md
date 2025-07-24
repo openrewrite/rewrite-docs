@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.BlockSpacing
 displayName: Disallow or enforce spaces inside of blocks after opening block and before closing block
 description: |
-  Disallow or enforce spaces inside of blocks after opening block and before closing block
-  
-  See [rule details](https://eslint.style/rules/default/block-spacing)
-  
+  Disallow or enforce spaces inside of blocks after opening block and before closing block  See [rule details](https://eslint.style/rules/default/block-spacing)
 tags:
   - eslint
   - stylistic

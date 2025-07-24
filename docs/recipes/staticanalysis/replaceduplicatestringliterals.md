@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace duplicate String literals"
+sidebar_label: "Replace duplicate `String` literals"
 ---
 
 import Tabs from '@theme/Tabs';

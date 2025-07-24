@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate web.xml using Jakarta EE"
+sidebar_label: "Migrate `web.xml` using Jakarta EE"
 ---
 
 import Tabs from '@theme/Tabs';

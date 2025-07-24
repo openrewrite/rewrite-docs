@@ -1,11 +1,11 @@
 ---
-sidebar_label: "JUnit 4 @Rule Timeout to JUnit Jupiter's Timeout"
+sidebar_label: "JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`
+# JUnit 4 `@Rule Timeout` to JUnit Jupiter&#39;s `Timeout`
 
 **org.openrewrite.java.testing.junit5.TimeoutRuleToClassAnnotation**
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Locale.of(..) over new Locale(..)"
+sidebar_label: "Prefer `Locale.of(..)` over `new Locale(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

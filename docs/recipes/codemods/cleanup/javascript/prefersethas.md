@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Set#has() over Array#includes() when checking for existence or non-existence."
+sidebar_label: "Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferSetHas
 displayName: Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence.
 description: |
-  Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md)
-  
+  Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

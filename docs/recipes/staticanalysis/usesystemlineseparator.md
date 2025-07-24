@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use System.lineSeparator()"
+sidebar_label: "Use `System.lineSeparator()`"
 ---
 
 import Tabs from '@theme/Tabs';

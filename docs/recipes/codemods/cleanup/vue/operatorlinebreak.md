@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent linebreak style for operators in <template>"
+sidebar_label: "Enforce consistent linebreak style for operators in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent linebreak style for operators in `<template>`
+# Enforce consistent linebreak style for operators in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.OperatorLinebreak**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.OperatorLinebreak
-displayName: Enforce consistent linebreak style for operators in `<template>`
+displayName: Enforce consistent linebreak style for operators in `&lt;template&gt;`
 description: |
-  Enforce consistent linebreak style for operators in `<template>`
-  See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)
-  
+  Enforce consistent linebreak style for operators in `&lt;template&gt;` See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)
 tags:
   - ESLint
   - vue

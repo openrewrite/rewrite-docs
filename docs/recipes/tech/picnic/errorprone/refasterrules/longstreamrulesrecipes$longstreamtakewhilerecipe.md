@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template LongStreamRules.LongStreamTakeWhile"
+sidebar_label: "Refaster template `LongStreamRules.LongStreamTakeWhile`"
 ---
 
 import Tabs from '@theme/Tabs';

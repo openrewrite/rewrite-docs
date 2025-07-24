@@ -1,5 +1,5 @@
 ---
-sidebar_label: "indexOf() replaceable by contains()"
+sidebar_label: "`indexOf()` replaceable by `contains()`"
 ---
 
 import Tabs from '@theme/Tabs';

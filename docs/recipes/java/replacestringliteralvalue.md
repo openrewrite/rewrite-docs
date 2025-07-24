@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace String literal"
+sidebar_label: "Replace `String` literal"
 ---
 
 import Tabs from '@theme/Tabs';

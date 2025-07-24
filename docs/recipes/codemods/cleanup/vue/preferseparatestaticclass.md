@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.PreferSeparateStaticClass
 displayName: Require static class names in template to be in a separate class attribute
 description: |
-  Require static class names in template to be in a separate class attribute
-  See rule details for [vue/prefer-separate-static-class](https://eslint.vuejs.org/rules/prefer-separate-static-class.html)
-  
+  Require static class names in template to be in a separate class attribute See rule details for [vue/prefer-separate-static-class](https://eslint.vuejs.org/rules/prefer-separate-static-class.html)
 tags:
   - ESLint
   - vue

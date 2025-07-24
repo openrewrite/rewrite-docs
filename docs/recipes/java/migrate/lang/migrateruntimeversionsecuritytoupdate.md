@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Runtime.Version#update()"
+sidebar_label: "Use `Runtime.Version#update()`"
 ---
 
 import Tabs from '@theme/Tabs';

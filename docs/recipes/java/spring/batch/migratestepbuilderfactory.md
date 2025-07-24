@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate StepBuilderFactory to StepBuilder"
+sidebar_label: "Migrate `StepBuilderFactory` to `StepBuilder`"
 ---
 
 import Tabs from '@theme/Tabs';

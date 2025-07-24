@@ -20,13 +20,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add XML declaration to Jelly files](./addjellyxmldeclaration.md)
 * [Add or correct Jenkins plugins BOM](./addpluginsbom.md)
-* [Create `index.jelly` if it doesn't exist](./createindexjelly.md)
+* [Create `index.jelly` if it doesn&#39;t exist](./createindexjelly.md)
 * [Disables local file resolution for parent POM](./disablelocalresolutionforparentpom.md)
 * [Is the project a Jenkins plugin?](./isjenkinsplugin.md)
 * [Modernize Jenkinsfile](./modernizejenkinsfile.md)
 * [Parse `Jenkinsfile` as Groovy](./jenkinsfileasgroovy.md)
 * [Upgrade jenkins java version](./upgradejavaversion.md)
-* [Upgrade property's value to version](./upgradeversionproperty.md)
+* [Upgrade property&#39;s value to version](./upgradeversionproperty.md)
 * [Use Jenkins API plugin instead of libraries](./replacelibrarieswithapiplugin.md)
 * [Use commons-lang3 API Plugin](./commonslang3toapiplugin.md)
 

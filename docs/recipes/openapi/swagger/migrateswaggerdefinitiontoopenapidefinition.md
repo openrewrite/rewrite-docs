@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from @SwaggerDefinition to @OpenAPIDefinition"
+sidebar_label: "Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`"
 ---
 
 import Tabs from '@theme/Tabs';

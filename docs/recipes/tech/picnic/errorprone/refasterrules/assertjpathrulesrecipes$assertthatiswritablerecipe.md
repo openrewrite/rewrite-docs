@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJPathRules.AssertThatIsWritable"
+sidebar_label: "Refaster template `AssertJPathRules.AssertThatIsWritable`"
 ---
 
 import Tabs from '@theme/Tabs';

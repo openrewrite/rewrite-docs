@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use org.springframework.boot.autoconfigure.http.HttpMessageConverters"
+sidebar_label: "Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`"
 ---
 
 import Tabs from '@theme/Tabs';

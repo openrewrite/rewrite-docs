@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template BugCheckerRules.BugCheckerRefactoringTestHelperIdentity"
+sidebar_label: "Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperIdentity`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates down prop for Hidden component"
+sidebar_label: "Updates `down` prop for Hidden component"
 ---
 
 import Tabs from '@theme/Tabs';

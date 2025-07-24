@@ -1,5 +1,5 @@
 ---
-sidebar_label: "@Bean methods may not return void"
+sidebar_label: "`@Bean` methods may not return `void`"
 ---
 
 import Tabs from '@theme/Tabs';

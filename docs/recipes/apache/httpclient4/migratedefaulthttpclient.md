@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrates deprecated DefaultHttpClient"
+sidebar_label: "Migrates deprecated `DefaultHttpClient`"
 ---
 
 import Tabs from '@theme/Tabs';

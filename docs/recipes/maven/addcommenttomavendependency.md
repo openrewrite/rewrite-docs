@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add a comment to a Maven dependency"
+sidebar_label: "Add a comment to a `Maven` dependency"
 ---
 
 import Tabs from '@theme/Tabs';

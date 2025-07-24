@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require or disallow spacing around embedded expressions of template strings in <template>"
+sidebar_label: "Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require or disallow spacing around embedded expressions of template strings in `<template>`
+# Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing
-displayName: Require or disallow spacing around embedded expressions of template strings in `<template>`
+displayName: Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;`
 description: |
-  Require or disallow spacing around embedded expressions of template strings in `<template>`
-  See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html)
-  
+  Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;` See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html)
 tags:
   - ESLint
   - vue

@@ -43,7 +43,6 @@ name: org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration
 displayName: Generate named exports from CommonJS modules
 description: |
   Generate named exports from CommonJS modules
-  
 tags:
   - codemods
   - 5to6

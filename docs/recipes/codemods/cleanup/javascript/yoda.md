@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require or disallow \"Yoda\" conditions"
+sidebar_label: "Require or disallow &quot;Yoda&quot; conditions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require or disallow "Yoda" conditions
+# Require or disallow &quot;Yoda&quot; conditions
 
 **org.openrewrite.codemods.cleanup.javascript.Yoda**
 
@@ -36,11 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.Yoda
-displayName: Require or disallow "Yoda" conditions
+displayName: Require or disallow &quot;Yoda&quot; conditions
 description: |
-  Require or disallow "Yoda" conditions
-  See [rule details](https://eslint.org/docs/latest/rules/yoda)
-  
+  Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

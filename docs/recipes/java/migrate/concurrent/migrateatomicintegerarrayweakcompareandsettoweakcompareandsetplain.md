@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)"
+sidebar_label: "Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)`"
 ---
 
 import Tabs from '@theme/Tabs';

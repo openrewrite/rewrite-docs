@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find source files with ParseExceptionResult markers"
+sidebar_label: "Find source files with `ParseExceptionResult` markers"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use modernized javax.management.monitor APIs"
+sidebar_label: "Use modernized `javax.management.monitor` APIs"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoEmptyNamedBlocks
 displayName: Forbid empty named import
 description: |
-  Forbid empty named import
-  See rule details for [import/no-empty-named-blocks](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-empty-named-blocks.md)
-  
+  Forbid empty named import See rule details for [import/no-empty-named-blocks](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-empty-named-blocks.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

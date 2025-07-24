@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJObjectRules Refaster recipes"
+sidebar_label: "`AssertJObjectRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -48,8 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes
 displayName: `AssertJObjectRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJObjectRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJObjectRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsInstanceOf2Recipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsIsEqualToRecipe

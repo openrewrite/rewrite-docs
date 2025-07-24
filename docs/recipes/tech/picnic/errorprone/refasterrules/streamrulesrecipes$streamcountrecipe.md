@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamCount"
+sidebar_label: "Refaster template `StreamRules.StreamCount`"
 ---
 
 import Tabs from '@theme/Tabs';

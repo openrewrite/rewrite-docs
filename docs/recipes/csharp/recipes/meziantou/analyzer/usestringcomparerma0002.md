@@ -1,5 +1,5 @@
 ---
-sidebar_label: "`IEqualityComparer<string>` or `IComparer<string>` is missing"
+sidebar_label: "IEqualityComparer&lt;string&gt; or IComparer&lt;string&gt; is missing"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.UseStringComparerMA0002**
 
+__
 
 ## Recipe source
 

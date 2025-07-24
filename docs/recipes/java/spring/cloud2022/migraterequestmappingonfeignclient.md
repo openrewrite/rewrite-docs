@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate @RequestMapping on FeignClient to @FeignClient path attribute"
+sidebar_label: "Migrate `@RequestMapping` on `FeignClient` to `@FeignClient` path attribute"
 ---
 
 import Tabs from '@theme/Tabs';

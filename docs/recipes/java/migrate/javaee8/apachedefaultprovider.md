@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Flags any org.apache.bval.jsr* (bval 1.1) and org.apache.bval.jsr303* (bval 1.0) package references"
+sidebar_label: "Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references"
 ---
 
 import Tabs from '@theme/Tabs';

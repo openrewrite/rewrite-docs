@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates round values for theme typography"
+sidebar_label: "Updates `round` values for theme typography"
 ---
 
 import Tabs from '@theme/Tabs';

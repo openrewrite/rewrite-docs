@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.soap packages to jakarta.soap"
+sidebar_label: "Migrate deprecated `javax.soap` packages to `jakarta.soap`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertLiteralBooleanToFail.WithMessage"
+sidebar_label: "Refaster template `AssertLiteralBooleanToFail.WithMessage`"
 ---
 
 import Tabs from '@theme/Tabs';

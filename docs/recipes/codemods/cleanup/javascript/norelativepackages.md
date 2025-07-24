@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoRelativePackages
 displayName: Forbid importing packages through relative paths
 description: |
-  Forbid importing packages through relative paths
-  See rule details for [import/no-relative-packages](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-relative-packages.md)
-  
+  Forbid importing packages through relative paths See rule details for [import/no-relative-packages](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-relative-packages.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

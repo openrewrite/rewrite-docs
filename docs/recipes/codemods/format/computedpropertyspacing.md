@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ComputedPropertySpacing
 displayName: Enforce consistent spacing inside computed property brackets
 description: |
-  Enforce consistent spacing inside computed property brackets
-  
-  See [rule details](https://eslint.style/rules/default/computed-property-spacing)
-  
+  Enforce consistent spacing inside computed property brackets  See [rule details](https://eslint.style/rules/default/computed-property-spacing)
 tags:
   - eslint
   - stylistic

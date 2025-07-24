@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.OptionalMapMonoJust"
+sidebar_label: "Refaster template `ReactorRules.OptionalMapMonoJust`"
 ---
 
 import Tabs from '@theme/Tabs';

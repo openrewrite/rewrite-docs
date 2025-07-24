@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute
 displayName: disallow spaces around equal signs in attribute
 description: |
-  disallow spaces around equal signs in attribute
-  See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/)
-  
+  disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/)
 tags:
   - svelte
   - ESLint

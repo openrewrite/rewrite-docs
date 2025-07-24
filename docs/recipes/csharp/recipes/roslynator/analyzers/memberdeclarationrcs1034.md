@@ -5,10 +5,11 @@ sidebar_label: "Remove redundant 'sealed' modifier"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove redundant 'sealed' modifier
+# Remove redundant &#39;sealed&#39; modifier
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1034**
 
+__
 
 ## Recipe source
 

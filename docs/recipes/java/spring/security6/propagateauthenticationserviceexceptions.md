@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove calls matching AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)"
+sidebar_label: "Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`"
 ---
 
 import Tabs from '@theme/Tabs';

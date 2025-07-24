@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Converts sx prop to sx style prop"
+sidebar_label: "Converts `sx` prop to `sx` style prop"
 ---
 
 import Tabs from '@theme/Tabs';

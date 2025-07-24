@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use @ConfigMapping"
+sidebar_label: "Use `@ConfigMapping`"
 ---
 
 import Tabs from '@theme/Tabs';

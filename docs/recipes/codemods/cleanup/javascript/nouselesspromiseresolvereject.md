@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Disallow returning/yielding Promise.resolve()/reject() in async functions or promise callbacks."
+sidebar_label: "Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessPromiseResolveReject
 displayName: Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks.
 description: |
-  Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-promise-resolve-reject.md)
-  
+  Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-promise-resolve-reject.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

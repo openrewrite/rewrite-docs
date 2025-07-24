@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Disallow the use of Math.pow in favor of the ** operator"
+sidebar_label: "Disallow the use of `Math.pow` in favor of the ** operator"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferExponentiationOperator
 displayName: Disallow the use of `Math.pow` in favor of the ** operator
 description: |
-  Disallow the use of `Math.pow` in favor of the ** operator 
-  See [rule details](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator)
-  
+  Disallow the use of `Math.pow` in favor of the ** operator  See [rule details](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

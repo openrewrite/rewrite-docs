@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate WebMvcTagsProvider to DefaultServerRequestObservationConvention"
+sidebar_label: "Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`"
 ---
 
 import Tabs from '@theme/Tabs';

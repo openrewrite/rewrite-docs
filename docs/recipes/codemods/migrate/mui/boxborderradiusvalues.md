@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates borderRadius prop values"
+sidebar_label: "Updates `borderRadius` prop values"
 ---
 
 import Tabs from '@theme/Tabs';

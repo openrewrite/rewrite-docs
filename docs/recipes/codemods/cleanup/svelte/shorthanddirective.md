@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.ShorthandDirective
 displayName: enforce use of shorthand syntax in directives
 description: |
-  enforce use of shorthand syntax in directives
-  See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)
-  
+  enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)
 tags:
   - svelte
   - ESLint

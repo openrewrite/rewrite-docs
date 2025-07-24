@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.HtmlSelfClosing
 displayName: enforce self-closing style
 description: |
-  enforce self-closing style
-  See rule details for [svelte/html-self-closing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-self-closing/)
-  
+  enforce self-closing style See rule details for [svelte/html-self-closing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-self-closing/)
 tags:
   - svelte
   - ESLint

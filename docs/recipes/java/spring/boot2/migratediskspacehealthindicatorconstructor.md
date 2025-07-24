@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use DiskSpaceHealthIndicator(File, DataSize)"
+sidebar_label: "Use `DiskSpaceHealthIndicator(File, DataSize)`"
 ---
 
 import Tabs from '@theme/Tabs';

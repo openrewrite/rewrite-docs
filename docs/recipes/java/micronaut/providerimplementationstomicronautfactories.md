@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Provider implementation beans to Micronaut @Factory"
+sidebar_label: "`Provider` implementation beans to Micronaut `@Factory`"
 ---
 
 import Tabs from '@theme/Tabs';

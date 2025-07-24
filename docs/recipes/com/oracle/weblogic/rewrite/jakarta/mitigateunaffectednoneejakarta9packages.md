@@ -52,7 +52,6 @@ name: com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Package
 displayName: Mitigate Unaffected Non-EE Jakarta 9 Packages
 description: |
   Mitigate Unaffected Non-EE Jakarta 9 Packages. Reference: [https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc](https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc)
-  
 tags:
   - non-eejakarta
   - jakarta

@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.minio.minio38.UpdateProperties**
 
+__
 
 ## Recipe source
 

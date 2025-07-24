@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add org.hamcrest:hamcrest if it is used."
+sidebar_label: "Add `org.hamcrest:hamcrest` if it is used."
 ---
 
 import Tabs from '@theme/Tabs';

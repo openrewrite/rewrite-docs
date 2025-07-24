@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.annotation to jakarta.annotation"
+sidebar_label: "Migrate deprecated `javax.annotation` to `jakarta.annotation`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -78,7 +78,6 @@ name: com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Anno
 displayName: Migrate deprecated `javax.annotation` to `jakarta.annotation`
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-  
 tags:
   - annotation
   - javax

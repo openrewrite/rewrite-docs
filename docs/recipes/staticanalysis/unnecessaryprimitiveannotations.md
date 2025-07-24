@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove @Nullable and @CheckForNull annotations from primitives"
+sidebar_label: "Remove `@Nullable` and `@CheckForNull` annotations from primitives"
 ---
 
 import Tabs from '@theme/Tabs';

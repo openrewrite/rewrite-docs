@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template LongStreamRules.LongStreamIsNotEmpty"
+sidebar_label: "Refaster template `LongStreamRules.LongStreamIsNotEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

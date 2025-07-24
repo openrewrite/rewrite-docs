@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.security.jacc packages to jakarta.security.jacc"
+sidebar_label: "Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`"
 ---
 
 import Tabs from '@theme/Tabs';

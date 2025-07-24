@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use viewport export"
+sidebar_label: "Use `viewport` export"
 ---
 
 import Tabs from '@theme/Tabs';

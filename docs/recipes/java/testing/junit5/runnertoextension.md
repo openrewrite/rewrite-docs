@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JUnit 4 @RunWith to JUnit Jupiter @ExtendWith"
+sidebar_label: "JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`"
 ---
 
 import Tabs from '@theme/Tabs';

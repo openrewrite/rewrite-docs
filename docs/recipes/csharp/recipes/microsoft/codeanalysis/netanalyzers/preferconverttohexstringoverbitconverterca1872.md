@@ -5,7 +5,7 @@ sidebar_label: "Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over call chains based on 'BitConverter.ToString'
+# Prefer &#39;Convert.ToHexString&#39; and &#39;Convert.ToHexStringLower&#39; over call chains based on &#39;BitConverter.ToString&#39;
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.PreferConvertToHexStringOverBitConverterCA1872**
 

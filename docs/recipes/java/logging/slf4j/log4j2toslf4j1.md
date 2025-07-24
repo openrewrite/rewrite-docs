@@ -46,7 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.logging.log4j.Logger`
   * newFullyQualifiedTypeName: `org.slf4j.Logger`
-* [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
+* [Parameterize SLF4J&#39;s logging statements](../../../java/logging/slf4j/parameterizedlogging)
 * [Replace any Lombok log annotations with target logging framework annotation](../../../java/logging/changelomboklogannotation)
 
 </TabItem>

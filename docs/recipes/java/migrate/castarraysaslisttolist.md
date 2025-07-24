@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove explicit casts on Arrays.asList(..).toArray()"
+sidebar_label: "Remove explicit casts on `Arrays.asList(..).toArray()`"
 ---
 
 import Tabs from '@theme/Tabs';

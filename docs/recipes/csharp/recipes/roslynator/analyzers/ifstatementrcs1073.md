@@ -5,10 +5,11 @@ sidebar_label: "Convert 'if' to 'return' statement"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Convert 'if' to 'return' statement
+# Convert &#39;if&#39; to &#39;return&#39; statement
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1073**
 
+__
 
 ## Recipe source
 

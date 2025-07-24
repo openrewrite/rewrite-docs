@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact**
 
+__
 
 ## Recipe source
 

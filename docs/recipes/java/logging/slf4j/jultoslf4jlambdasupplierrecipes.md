@@ -28,21 +28,21 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace JUL `Logger.finest(Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinestrecipe)
-* [Replace JUL `Logger.finer(Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerrecipe)
-* [Replace JUL `Logger.fine(Supplier<String>)` with SLF4J's `Logger.atDebug().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerecipe)
-* [Replace JUL `Logger.config(Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierconfigrecipe)
-* [Replace JUL `Logger.info(Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierinforecipe)
-* [Replace JUL `Logger.warning(Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierwarningrecipe)
-* [Replace JUL `Logger.severe(Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsuppliersevererecipe)
-* [Replace JUL `Logger.log(Level.FINEST, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogfinestrecipe)
-* [Replace JUL `Logger.log(Level.FINER, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogfinerrecipe)
-* [Replace JUL `Logger.log(Level.FINE, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogfinerecipe)
-* [Replace JUL `Logger.log(Level.CONFIG, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogconfigrecipe)
-* [Replace JUL `Logger.log(Level.INFO, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierloginforecipe)
-* [Replace JUL `Logger.log(Level.WARNING, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogwarningrecipe)
-* [Replace JUL `Logger.log(Level.SEVERE, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogsevererecipe)
-* [Replace JUL `Logger.log(Level.ALL, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogallrecipe)
+* [Replace JUL `Logger.finest(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atTrace().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinestrecipe)
+* [Replace JUL `Logger.finer(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atTrace().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerrecipe)
+* [Replace JUL `Logger.fine(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atDebug().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerecipe)
+* [Replace JUL `Logger.config(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierconfigrecipe)
+* [Replace JUL `Logger.info(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierinforecipe)
+* [Replace JUL `Logger.warning(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atWarn().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierwarningrecipe)
+* [Replace JUL `Logger.severe(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atError().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsuppliersevererecipe)
+* [Replace JUL `Logger.log(Level.FINEST, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogfinestrecipe)
+* [Replace JUL `Logger.log(Level.FINER, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogfinerrecipe)
+* [Replace JUL `Logger.log(Level.FINE, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogfinerecipe)
+* [Replace JUL `Logger.log(Level.CONFIG, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogconfigrecipe)
+* [Replace JUL `Logger.log(Level.INFO, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierloginforecipe)
+* [Replace JUL `Logger.log(Level.WARNING, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogwarningrecipe)
+* [Replace JUL `Logger.log(Level.SEVERE, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogsevererecipe)
+* [Replace JUL `Logger.log(Level.ALL, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogallrecipe)
 
 </TabItem>
 

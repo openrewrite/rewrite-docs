@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add @Valid to nested properties in @ConfigurationProperties"
+sidebar_label: "Add `@Valid` to nested properties in `@ConfigurationProperties`"
 ---
 
 import Tabs from '@theme/Tabs';

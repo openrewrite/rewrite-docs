@@ -8,6 +8,6 @@
 * [Remove unnecessary trailing semicolon](./removetrailingsemicolon.md)
 * [Replace `Char#toInt()` with `Char#code`](./replacechartointwithcode.md)
 * [Structural equality tests should use `==` or `!=`](./equalsmethodusage.md)
-* [`it` shouldn't be used as a lambda parameter name](./implicitparameterinlambda.md)
+* [`it` shouldn&#39;t be used as a lambda parameter name](./implicitparameterinlambda.md)
 
 

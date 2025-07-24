@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Transform calls to Objects.isNull(..) and Objects.nonNull(..)"
+sidebar_label: "Transform calls to `Objects.isNull(..)` and `Objects.nonNull(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

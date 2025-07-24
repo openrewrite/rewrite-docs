@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Renames gap prop to spacing"
+sidebar_label: "Renames `gap` prop to `spacing`"
 ---
 
 import Tabs from '@theme/Tabs';

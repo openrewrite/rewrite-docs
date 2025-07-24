@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use LogRecord#setInstant(Instant)"
+sidebar_label: "Use `LogRecord#setInstant(Instant)`"
 ---
 
 import Tabs from '@theme/Tabs';

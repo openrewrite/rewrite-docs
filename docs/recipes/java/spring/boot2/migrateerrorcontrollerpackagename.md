@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use org.springframework.boot.web.servlet.error.ErrorController"
+sidebar_label: "Use `org.springframework.boot.web.servlet.error.ErrorController`"
 ---
 
 import Tabs from '@theme/Tabs';

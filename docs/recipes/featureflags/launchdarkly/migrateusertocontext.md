@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate LDUser to LDContext"
+sidebar_label: "Migrate `LDUser` to `LDContext`"
 ---
 
 import Tabs from '@theme/Tabs';

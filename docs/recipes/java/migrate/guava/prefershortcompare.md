@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Short#compare"
+sidebar_label: "Prefer `Short#compare`"
 ---
 
 import Tabs from '@theme/Tabs';

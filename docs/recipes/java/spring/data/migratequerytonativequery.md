@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace @Query annotation by @NativeQuery when possible"
+sidebar_label: "Replace `@Query` annotation by `@NativeQuery` when possible"
 ---
 
 import Tabs from '@theme/Tabs';

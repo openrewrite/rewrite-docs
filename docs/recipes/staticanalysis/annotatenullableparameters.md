@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Annotate null-checked method parameters with @Nullable"
+sidebar_label: "Annotate null-checked method parameters with `@Nullable`"
 ---
 
 import Tabs from '@theme/Tabs';

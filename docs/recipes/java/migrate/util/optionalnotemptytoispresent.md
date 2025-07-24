@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Optional.isPresent()"
+sidebar_label: "Prefer `Optional.isPresent()`"
 ---
 
 import Tabs from '@theme/Tabs';

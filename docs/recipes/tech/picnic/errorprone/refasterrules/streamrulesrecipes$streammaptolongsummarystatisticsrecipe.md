@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamMapToLongSummaryStatistics"
+sidebar_label: "Refaster template `StreamRules.StreamMapToLongSummaryStatistics`"
 ---
 
 import Tabs from '@theme/Tabs';

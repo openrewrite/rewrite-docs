@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJPathRules.AssertThatHasNoParent"
+sidebar_label: "Refaster template `AssertJPathRules.AssertThatHasNoParent`"
 ---
 
 import Tabs from '@theme/Tabs';

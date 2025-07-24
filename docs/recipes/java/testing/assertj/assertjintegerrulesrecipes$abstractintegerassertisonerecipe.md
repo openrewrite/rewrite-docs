@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace isEqualTo(1) with isOne()"
+sidebar_label: "Replace `isEqualTo(1)` with `isOne()`"
 ---
 
 import Tabs from '@theme/Tabs';

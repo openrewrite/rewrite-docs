@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Preconditions.checkNotNull to Objects.requireNonNull"
+sidebar_label: "`Preconditions.checkNotNull` to `Objects.requireNonNull`"
 ---
 
 import Tabs from '@theme/Tabs';

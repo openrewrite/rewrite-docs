@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus39.UpdateConfigRoots**
 
+__
 
 ## Recipe source
 

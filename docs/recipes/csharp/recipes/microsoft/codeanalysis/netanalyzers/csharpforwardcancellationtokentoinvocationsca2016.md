@@ -5,7 +5,7 @@ sidebar_label: "Forward the 'CancellationToken' parameter to methods"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Forward the 'CancellationToken' parameter to methods
+# Forward the &#39;CancellationToken&#39; parameter to methods
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpForwardCancellationTokenToInvocationsCA2016**
 

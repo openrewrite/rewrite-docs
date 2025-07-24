@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrates camel 4.9 application to camel 4.10"
+sidebar_label: "Migrates `camel 4.9` application to `camel 4.10`"
 ---
 
 import Tabs from '@theme/Tabs';

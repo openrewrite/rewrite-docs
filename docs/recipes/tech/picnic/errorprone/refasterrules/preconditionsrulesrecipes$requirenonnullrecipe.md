@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PreconditionsRules.RequireNonNull"
+sidebar_label: "Refaster template `PreconditionsRules.RequireNonNull`"
 ---
 
 import Tabs from '@theme/Tabs';

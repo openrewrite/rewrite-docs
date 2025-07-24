@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace com.sun.net.ssl package"
+sidebar_label: "Replace `com.sun.net.ssl` package"
 ---
 
 import Tabs from '@theme/Tabs';

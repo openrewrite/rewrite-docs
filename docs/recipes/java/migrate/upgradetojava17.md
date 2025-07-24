@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Java 11](../../java/migrate/java8tojava11)
 * [Upgrade build to Java 17](../../java/migrate/upgradebuildtojava17)
-* [Changes code to use Java 17's `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch)
+* [Changes code to use Java 17&#39;s `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch)
 * [Add `@Serial` annotation to `serialVersionUID`](../../staticanalysis/addserialannotationtoserialversionuid)
 * [Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods](../../java/migrate/removedruntimetracemethods)
 * [Change `javax.tools.ToolProvider` methods calls to static](../../java/migrate/removedtoolproviderconstructor)

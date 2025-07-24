@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta
 displayName: Do not define a title in meta
 description: |
-  Do not define a title in meta
-  See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md)
-  
+  Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md)
 tags:
   - eslint-plugin-storybook
   - ESLint

@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.UseEventArgsEmptyMA0093**
 
+__
 
 ## Recipe source
 

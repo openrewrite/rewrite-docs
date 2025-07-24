@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJDoubleRules.AbstractDoubleAssertIsCloseToWithOffset"
+sidebar_label: "Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsCloseToWithOffset`"
 ---
 
 import Tabs from '@theme/Tabs';

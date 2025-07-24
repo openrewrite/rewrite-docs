@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableSortedMapRules Refaster recipes"
+sidebar_label: "`ImmutableSortedMapRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -46,8 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes
 displayName: `ImmutableSortedMapRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `ImmutableSortedMap`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedMapRules).
+  Refaster rules related to expressions dealing with `ImmutableSortedMap`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedMapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapBuilderRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapNaturalOrderBuilderRecipe

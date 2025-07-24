@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Files#createTempDirectory"
+sidebar_label: "Use `Files#createTempDirectory`"
 ---
 
 import Tabs from '@theme/Tabs';

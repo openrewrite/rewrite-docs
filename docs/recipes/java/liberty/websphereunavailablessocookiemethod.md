@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace revokeSSOCookies with logout"
+sidebar_label: "Replace `revokeSSOCookies` with `logout`"
 ---
 
 import Tabs from '@theme/Tabs';

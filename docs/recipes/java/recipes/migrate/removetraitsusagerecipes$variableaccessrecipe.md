@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove org.openrewrite.java.trait.Traits.variableAccess() usage"
+sidebar_label: "Remove `org.openrewrite.java.trait.Traits.variableAccess()` usage"
 ---
 
 import Tabs from '@theme/Tabs';

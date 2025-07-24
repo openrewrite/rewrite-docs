@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.HtmlCommentContentNewline
 displayName: Enforce unified line brake in HTML comments
 description: |
-  Enforce unified line brake in HTML comments
-  See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html)
-  
+  Enforce unified line brake in HTML comments See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html)
 tags:
   - ESLint
   - vue

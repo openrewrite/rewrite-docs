@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace booleanExpression ? false : true with !booleanExpression"
+sidebar_label: "Replace `booleanExpression ? false : true` with `!booleanExpression`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJStringRules.AssertThatStringStartsWith"
+sidebar_label: "Refaster template `AssertJStringRules.AssertThatStringStartsWith`"
 ---
 
 import Tabs from '@theme/Tabs';

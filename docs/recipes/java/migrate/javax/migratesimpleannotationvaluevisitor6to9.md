@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use javax.lang.model.util.SimpleAnnotationValueVisitor9"
+sidebar_label: "Use `javax.lang.model.util.SimpleAnnotationValueVisitor9`"
 ---
 
 import Tabs from '@theme/Tabs';

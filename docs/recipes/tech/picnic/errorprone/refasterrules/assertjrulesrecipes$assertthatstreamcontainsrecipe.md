@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJRules.AssertThatStreamContains"
+sidebar_label: "Refaster template `AssertJRules.AssertThatStreamContains`"
 ---
 
 import Tabs from '@theme/Tabs';

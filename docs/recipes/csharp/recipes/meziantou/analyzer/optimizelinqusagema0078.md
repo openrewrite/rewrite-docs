@@ -5,10 +5,11 @@ sidebar_label: "Use 'Cast' instead of 'Select' to cast"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use 'Cast' instead of 'Select' to cast
+# Use &#39;Cast&#39; instead of &#39;Select&#39; to cast
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0078**
 
+__
 
 ## Recipe source
 

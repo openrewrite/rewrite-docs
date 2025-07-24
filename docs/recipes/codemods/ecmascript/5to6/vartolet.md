@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert var to let"
+sidebar_label: "Convert `var` to `let`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -43,7 +43,6 @@ name: org.openrewrite.codemods.ecmascript.5to6.varToLet
 displayName: Convert `var` to `let`
 description: |
   Convert `var` to `let`
-  
 tags:
   - codemods
   - 5to6

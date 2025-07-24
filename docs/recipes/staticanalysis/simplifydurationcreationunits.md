@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Simplify java.time.Duration units"
+sidebar_label: "Simplify `java.time.Duration` units"
 ---
 
 import Tabs from '@theme/Tabs';

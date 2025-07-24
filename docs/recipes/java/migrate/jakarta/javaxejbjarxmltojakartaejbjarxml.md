@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate xmlns entries and javax. packages in ejb-jar.xml files"
+sidebar_label: "Migrate xmlns entries and javax. packages in `ejb-jar.xml` files"
 ---
 
 import Tabs from '@theme/Tabs';

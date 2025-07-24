@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove DefaultBatchConfigurer"
+sidebar_label: "Remove `DefaultBatchConfigurer`"
 ---
 
 import Tabs from '@theme/Tabs';

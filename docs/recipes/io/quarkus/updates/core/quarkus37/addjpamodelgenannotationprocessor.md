@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus37.AddJpaModelgenAnnotationProcessor**
 
+__
 
 ## Recipe source
 

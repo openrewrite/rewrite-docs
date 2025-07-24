@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert OncePerRequestServerFilter extensions to HttpServerFilter"
+sidebar_label: "Convert `OncePerRequestServerFilter` extensions to `HttpServerFilter`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.NewStringFromCharArray"
+sidebar_label: "Refaster template `StringRules.NewStringFromCharArray`"
 ---
 
 import Tabs from '@theme/Tabs';

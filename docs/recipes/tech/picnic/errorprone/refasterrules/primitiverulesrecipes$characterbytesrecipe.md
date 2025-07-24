@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.CharacterBytes"
+sidebar_label: "Refaster template `PrimitiveRules.CharacterBytes`"
 ---
 
 import Tabs from '@theme/Tabs';

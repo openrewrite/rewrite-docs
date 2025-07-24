@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Upgrade micronaut.version Maven property"
+sidebar_label: "Upgrade `micronaut.version` Maven property"
 ---
 
 import Tabs from '@theme/Tabs';

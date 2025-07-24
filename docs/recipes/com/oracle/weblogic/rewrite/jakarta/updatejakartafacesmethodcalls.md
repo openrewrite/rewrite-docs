@@ -37,7 +37,6 @@ name: com.oracle.weblogic.rewrite.jakarta.UpdateJakartaFacesMethodCalls
 displayName: Update deprecated Faces method calls
 description: |
   Custom recipe to handle method call changes for deprecated Faces/EL methods where the method argument lists have changed. This recipe should be run _after_ all the Jakarta Faces related type changes are completed.
-  
 recipeList:
   - com.oracle.weblogic.rewrite.jakarta.ChangeJakartaFacesMethodCalls
 

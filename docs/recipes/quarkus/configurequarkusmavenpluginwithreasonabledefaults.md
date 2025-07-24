@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Configure quarkus-maven-plugin with reasonable defaults"
+sidebar_label: "Configure `quarkus-maven-plugin` with reasonable defaults"
 ---
 
 import Tabs from '@theme/Tabs';

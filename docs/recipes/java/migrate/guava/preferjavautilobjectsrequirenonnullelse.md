@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.util.Objects#requireNonNullElse"
+sidebar_label: "Prefer `java.util.Objects#requireNonNullElse`"
 ---
 
 import Tabs from '@theme/Tabs';

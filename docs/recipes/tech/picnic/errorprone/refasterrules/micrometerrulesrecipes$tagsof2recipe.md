@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MicrometerRules.TagsOf2"
+sidebar_label: "Refaster template `MicrometerRules.TagsOf2`"
 ---
 
 import Tabs from '@theme/Tabs';

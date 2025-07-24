@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSetRules.SetsIntersectionMap"
+sidebar_label: "Refaster template `ImmutableSetRules.SetsIntersectionMap`"
 ---
 
 import Tabs from '@theme/Tabs';

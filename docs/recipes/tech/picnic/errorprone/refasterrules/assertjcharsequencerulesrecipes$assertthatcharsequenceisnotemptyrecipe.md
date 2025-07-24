@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJCharSequenceRules.AssertThatCharSequenceIsNotEmpty"
+sidebar_label: "Refaster template `AssertJCharSequenceRules.AssertThatCharSequenceIsNotEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

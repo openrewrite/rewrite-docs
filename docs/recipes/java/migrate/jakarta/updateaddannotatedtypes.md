@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace BeforeBeanDiscovery.addAnnotatedType(AnnotatedType) with addAnnotatedType(AnnotatedType, String)"
+sidebar_label: "Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comment"
+sidebar_label: "Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comment
+# Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment
 
 **org.openrewrite.codemods.format.SpacedComment**
 
@@ -41,12 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SpacedComment
-displayName: Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comment
+displayName: Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment
 description: |
-  Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comment
-  
-  See [rule details](https://eslint.style/rules/default/spaced-comment)
-  
+  Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment)
 tags:
   - eslint
   - stylistic

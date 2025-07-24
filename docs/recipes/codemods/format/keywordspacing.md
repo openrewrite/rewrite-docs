@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.KeywordSpacing
 displayName: Enforce consistent spacing before and after keywords
 description: |
-  Enforce consistent spacing before and after keywords
-  
-  See [rule details](https://eslint.style/rules/default/keyword-spacing)
-  
+  Enforce consistent spacing before and after keywords  See [rule details](https://eslint.style/rules/default/keyword-spacing)
 tags:
   - eslint
   - stylistic

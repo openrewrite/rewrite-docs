@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJByteRules.AbstractByteAssertIsOne"
+sidebar_label: "Refaster template `AssertJByteRules.AbstractByteAssertIsOne`"
 ---
 
 import Tabs from '@theme/Tabs';

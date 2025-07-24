@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use JpaSort.of(..)"
+sidebar_label: "Use `JpaSort.of(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

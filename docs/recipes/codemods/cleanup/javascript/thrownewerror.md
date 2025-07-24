@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Require new when throwing an error."
+sidebar_label: "Require `new` when throwing an error."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ThrowNewError
 displayName: Require `new` when throwing an error.
 description: |
-  Require `new` when throwing an error.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md)
-  
+  Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

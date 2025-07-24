@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use JpaRepository#deleteAllInBatch(Iterable<T> entities)"
+sidebar_label: "Use `JpaRepository#deleteAllInBatch(Iterable&lt;T&gt; entities)`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch
-displayName: Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`
+displayName: Use `JpaRepository#deleteAllInBatch(Iterable&lt;T&gt; entities)`
 description: |
   `JpaRepository#deleteInBatch(Iterable)` was deprecated in 2.5.
 recipeList:

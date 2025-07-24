@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove JUnit 4 @RunWith annotations that do not require an @ExtendsWith replacement"
+sidebar_label: "Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement"
 ---
 
 import Tabs from '@theme/Tabs';

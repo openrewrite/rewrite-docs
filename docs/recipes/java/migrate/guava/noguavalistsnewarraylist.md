@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new ArrayList<>()"
+sidebar_label: "Prefer `new ArrayList&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

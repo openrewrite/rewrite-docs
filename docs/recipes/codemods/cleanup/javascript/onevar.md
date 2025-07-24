@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.OneVar
 displayName: Enforce variables to be declared either together or separately in functions
 description: |
-  Enforce variables to be declared either together or separately in functions 
-  See [rule details](https://eslint.org/docs/latest/rules/one-var)
-  
+  Enforce variables to be declared either together or separately in functions  See [rule details](https://eslint.org/docs/latest/rules/one-var)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

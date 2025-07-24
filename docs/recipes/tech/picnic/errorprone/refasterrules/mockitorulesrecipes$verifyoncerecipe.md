@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MockitoRules.VerifyOnce"
+sidebar_label: "Refaster template `MockitoRules.VerifyOnce`"
 ---
 
 import Tabs from '@theme/Tabs';

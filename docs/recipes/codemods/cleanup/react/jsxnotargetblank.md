@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Disallow target=\"_blank\" attribute without rel=\"noreferrer\""
+sidebar_label: "Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow target="_blank" attribute without rel="noreferrer"
+# Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;
 
 **org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank**
 
@@ -36,11 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank
-displayName: Disallow target="_blank" attribute without rel="noreferrer"
+displayName: Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;
 description: |
-  Disallow target="_blank" attribute without rel="noreferrer"
-  See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md)
-  
+  Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot; See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

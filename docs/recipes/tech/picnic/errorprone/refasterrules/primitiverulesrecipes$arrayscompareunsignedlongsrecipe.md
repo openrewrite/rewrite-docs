@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.ArraysCompareUnsignedLongs"
+sidebar_label: "Refaster template `PrimitiveRules.ArraysCompareUnsignedLongs`"
 ---
 
 import Tabs from '@theme/Tabs';

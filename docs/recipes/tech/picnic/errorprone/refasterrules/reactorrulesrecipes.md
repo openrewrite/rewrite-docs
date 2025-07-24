@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ReactorRules Refaster recipes"
+sidebar_label: "`ReactorRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -138,8 +138,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ReactorRulesRecipes
 displayName: `ReactorRules` Refaster recipes
 description: |
-  Refaster rules related to Reactor expressions and statements.
-  [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules).
+  Refaster rules related to Reactor expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustRecipe

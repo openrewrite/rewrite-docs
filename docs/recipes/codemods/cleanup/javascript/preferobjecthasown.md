@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Disallow use of Object.prototype.hasOwnProperty.call() and prefer use of Object.hasOwn()"
+sidebar_label: "Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn
 displayName: Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)
 description: |
-  Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`) 
-  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own)
-  
+  Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.LocalDateAtStartOfDay"
+sidebar_label: "Refaster template `TimeRules.LocalDateAtStartOfDay`"
 ---
 
 import Tabs from '@theme/Tabs';

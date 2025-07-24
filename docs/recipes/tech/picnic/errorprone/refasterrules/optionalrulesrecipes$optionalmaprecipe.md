@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.OptionalMap"
+sidebar_label: "Refaster template `OptionalRules.OptionalMap`"
 ---
 
 import Tabs from '@theme/Tabs';

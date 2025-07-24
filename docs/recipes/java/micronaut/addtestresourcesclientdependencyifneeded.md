@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add micronaut-test-resources-client if needed"
+sidebar_label: "Add `micronaut-test-resources-client` if needed"
 ---
 
 import Tabs from '@theme/Tabs';

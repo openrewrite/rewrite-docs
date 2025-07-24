@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoMultiSpaces
 displayName: Disallow multiple spaces
 description: |
-  Disallow multiple spaces
-  
-  See [rule details](https://eslint.style/rules/default/no-multi-spaces)
-  
+  Disallow multiple spaces  See [rule details](https://eslint.style/rules/default/no-multi-spaces)
 tags:
   - eslint
   - stylistic

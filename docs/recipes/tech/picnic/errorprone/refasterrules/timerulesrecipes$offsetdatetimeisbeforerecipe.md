@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.OffsetDateTimeIsBefore"
+sidebar_label: "Refaster template `TimeRules.OffsetDateTimeIsBefore`"
 ---
 
 import Tabs from '@theme/Tabs';

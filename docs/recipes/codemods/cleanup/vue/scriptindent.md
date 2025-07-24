@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent indentation in <script >"
+sidebar_label: "Enforce consistent indentation in `&lt;script&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent indentation in `<script>`
+# Enforce consistent indentation in `&lt;script&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.ScriptIndent**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ScriptIndent
-displayName: Enforce consistent indentation in `<script>`
+displayName: Enforce consistent indentation in `&lt;script&gt;`
 description: |
-  Enforce consistent indentation in `<script>`
-  See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html)
-  
+  Enforce consistent indentation in `&lt;script&gt;` See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html)
 tags:
   - ESLint
   - vue

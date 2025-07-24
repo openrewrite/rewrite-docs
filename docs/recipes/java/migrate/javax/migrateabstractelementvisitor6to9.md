@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use javax.lang.model.util.AbstractElementVisitor9"
+sidebar_label: "Use `javax.lang.model.util.AbstractElementVisitor9`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Number static properties over global ones."
+sidebar_label: "Prefer `Number` static properties over global ones."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferNumberProperties
 displayName: Prefer `Number` static properties over global ones.
 description: |
-  Prefer `Number` static properties over global ones.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md)
-  
+  Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

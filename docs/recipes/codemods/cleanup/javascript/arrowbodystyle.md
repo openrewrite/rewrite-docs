@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle
 displayName: Require braces around arrow function bodies
 description: |
-  Require braces around arrow function bodies
-  See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style)
-  
+  Require braces around arrow function bodies See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

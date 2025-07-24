@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use modernized javax.xml.stream APIs"
+sidebar_label: "Use modernized `javax.xml.stream` APIs"
 ---
 
 import Tabs from '@theme/Tabs';

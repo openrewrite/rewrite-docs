@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Integer#remainderUnsigned"
+sidebar_label: "Prefer `Integer#remainderUnsigned`"
 ---
 
 import Tabs from '@theme/Tabs';

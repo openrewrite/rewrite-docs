@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use java.net.HttpURLConnection.HTTP_INTERNAL_ERROR"
+sidebar_label: "Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`"
 ---
 
 import Tabs from '@theme/Tabs';

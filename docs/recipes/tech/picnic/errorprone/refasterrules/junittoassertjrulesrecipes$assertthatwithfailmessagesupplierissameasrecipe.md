@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsSameAs"
+sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsSameAs`"
 ---
 
 import Tabs from '@theme/Tabs';

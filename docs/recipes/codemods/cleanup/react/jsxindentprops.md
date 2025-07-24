@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxIndentProps
 displayName: Enforce props indentation in JSX
 description: |
-  Enforce props indentation in JSX
-  See rule details for [react/jsx-indent-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent-props.md)
-  
+  Enforce props indentation in JSX See rule details for [react/jsx-indent-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent-props.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

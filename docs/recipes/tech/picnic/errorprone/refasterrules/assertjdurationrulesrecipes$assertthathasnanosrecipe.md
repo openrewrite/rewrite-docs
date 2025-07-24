@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJDurationRules.AssertThatHasNanos"
+sidebar_label: "Refaster template `AssertJDurationRules.AssertThatHasNanos`"
 ---
 
 import Tabs from '@theme/Tabs';

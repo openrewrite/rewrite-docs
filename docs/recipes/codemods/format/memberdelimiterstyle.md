@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.MemberDelimiterStyle
 displayName: Require a specific member delimiter style for interfaces and type literals
 description: |
-  Require a specific member delimiter style for interfaces and type literals
-  
-  See [rule details](https://eslint.style/rules/default/member-delimiter-style)
-  
+  Require a specific member delimiter style for interfaces and type literals  See [rule details](https://eslint.style/rules/default/member-delimiter-style)
 tags:
   - eslint
   - stylistic

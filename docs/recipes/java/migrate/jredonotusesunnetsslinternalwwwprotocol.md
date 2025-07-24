@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use com.ibm.net.ssl.www2.protocol instead of com.sun.net.ssl.internal.www.protocol"
+sidebar_label: "Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`"
 ---
 
 import Tabs from '@theme/Tabs';

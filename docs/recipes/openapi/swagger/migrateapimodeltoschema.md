@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate from @ApiModel to @Schema"
+sidebar_label: "Migrate from `@ApiModel` to `@Schema`"
 ---
 
 import Tabs from '@theme/Tabs';

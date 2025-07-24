@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace JUnit assertTrue(false, \"reason\") and assertFalse(true, \"reason\") with fail(\"reason\")"
+sidebar_label: "Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUnit `assertTrue(false, "reason")` and `assertFalse(true, "reason")` with `fail("reason")`
+# Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`
 
 **org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes**
 
@@ -39,7 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes
-displayName: Replace JUnit `assertTrue(false, "reason")` and `assertFalse(true, "reason")` with `fail("reason")`
+displayName: Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`
 description: |
   Using fail is more direct and clear.
 recipeList:

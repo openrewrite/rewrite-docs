@@ -1,5 +1,5 @@
 ---
-sidebar_label: "for loop counters incremented in update"
+sidebar_label: "`for` loop counters incremented in update"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replaces deprecated HttpResponse::getStatusLine()"
+sidebar_label: "Replaces deprecated `HttpResponse::getStatusLine()`"
 ---
 
 import Tabs from '@theme/Tabs';

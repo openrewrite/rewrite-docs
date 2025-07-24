@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJObjectRules.AssertThatIsSameAs"
+sidebar_label: "Refaster template `AssertJObjectRules.AssertThatIsSameAs`"
 ---
 
 import Tabs from '@theme/Tabs';

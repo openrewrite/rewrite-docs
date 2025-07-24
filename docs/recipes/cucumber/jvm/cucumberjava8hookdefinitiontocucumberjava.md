@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace cucumber-java8 hook definition with cucumber-java"
+sidebar_label: "Replace `cucumber-java8` hook definition with `cucumber-java`"
 ---
 
 import Tabs from '@theme/Tabs';

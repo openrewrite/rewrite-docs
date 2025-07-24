@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer new ConcurrentHashMap<>()"
+sidebar_label: "Prefer `new ConcurrentHashMap&lt;&gt;()`"
 ---
 
 import Tabs from '@theme/Tabs';

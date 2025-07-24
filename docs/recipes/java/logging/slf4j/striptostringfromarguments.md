@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Strip toString() from arguments"
+sidebar_label: "Strip `toString()` from arguments"
 ---
 
 import Tabs from '@theme/Tabs';

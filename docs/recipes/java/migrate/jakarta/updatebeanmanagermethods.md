@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Update fireEvent() and createInjectionTarget() calls"
+sidebar_label: "Update `fireEvent()` and `createInjectionTarget()` calls"
 ---
 
 import Tabs from '@theme/Tabs';

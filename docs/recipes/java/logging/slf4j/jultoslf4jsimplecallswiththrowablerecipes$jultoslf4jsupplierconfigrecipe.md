@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace JUL logger.log(Level.CONFIG, String message, Throwable e) with SLF4J's Logger.info(message, e)"
+sidebar_label: "Replace JUL `logger.log(Level.CONFIG, String message, Throwable e)` with SLF4J's `Logger.info(message, e)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `logger.log(Level.CONFIG, String message, Throwable e)` with SLF4J's `Logger.info(message, e)`
+# Replace JUL `logger.log(Level.CONFIG, String message, Throwable e)` with SLF4J&#39;s `Logger.info(message, e)`
 
 **org.openrewrite.java.logging.slf4j.JulToSlf4jSimpleCallsWithThrowableRecipes$JulToSlf4jSupplierConfigRecipe**
 

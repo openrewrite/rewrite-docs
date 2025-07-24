@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJIntegerRules Refaster recipes"
+sidebar_label: "`AssertJIntegerRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes
 displayName: `AssertJIntegerRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIntegerRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsNotEqualToRecipe

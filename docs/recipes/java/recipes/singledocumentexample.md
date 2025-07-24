@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Single @DocumentExample per test class"
+sidebar_label: "Single `@DocumentExample` per test class"
 ---
 
 import Tabs from '@theme/Tabs';

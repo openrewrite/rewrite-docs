@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace RMIConnectorServer.CREDENTIAL_TYPES constant"
+sidebar_label: "Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant"
 ---
 
 import Tabs from '@theme/Tabs';

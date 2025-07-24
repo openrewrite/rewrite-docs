@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Rename JavaTypeDescriptor and SqlTypeDescriptor to JavaType and SqlType"
+sidebar_label: "Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`"
 ---
 
 import Tabs from '@theme/Tabs';

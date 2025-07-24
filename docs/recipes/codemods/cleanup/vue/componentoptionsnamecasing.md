@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ComponentOptionsNameCasing
 displayName: Enforce the casing of component name in components options
 description: |
-  Enforce the casing of component name in components options
-  See rule details for [vue/component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html)
-  
+  Enforce the casing of component name in components options See rule details for [vue/component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html)
 tags:
   - ESLint
   - vue

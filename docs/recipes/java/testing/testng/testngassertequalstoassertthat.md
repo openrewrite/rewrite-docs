@@ -1,5 +1,5 @@
 ---
-sidebar_label: "TestNG assertEquals to AssertJ"
+sidebar_label: "TestNG `assertEquals` to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';

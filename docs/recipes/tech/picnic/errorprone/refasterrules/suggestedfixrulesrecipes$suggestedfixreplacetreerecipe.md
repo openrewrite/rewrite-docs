@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template SuggestedFixRules.SuggestedFixReplaceTree"
+sidebar_label: "Refaster template `SuggestedFixRules.SuggestedFixReplaceTree`"
 ---
 
 import Tabs from '@theme/Tabs';

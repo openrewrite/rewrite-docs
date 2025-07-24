@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MapRules.MapSize"
+sidebar_label: "Refaster template `MapRules.MapSize`"
 ---
 
 import Tabs from '@theme/Tabs';

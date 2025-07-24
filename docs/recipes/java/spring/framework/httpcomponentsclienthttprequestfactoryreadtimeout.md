@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate setReadTimeout(java.lang.int) to SocketConfig setSoTimeout(..)"
+sidebar_label: "Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

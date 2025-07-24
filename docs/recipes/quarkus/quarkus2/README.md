@@ -10,9 +10,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Remove `avro-maven-plugin`](./removeavromavenplugin.md)
 * [Use `@GrpcClient`](./grpcserviceannotationtogrpcclient.md)
-* [Use `@Identifier("default-kafka-broker")`](./useidentifierondefaultkafkabroker.md)
+* [Use `@Identifier(&quot;default-kafka-broker&quot;)`](./useidentifierondefaultkafkabroker.md)
 * [Use `PanacheEntityBase` static methods](./usepanacheentitybasestaticmethods.md)
-* [Use `Uni<T extends PanacheEntityBase>`](./usepanacheentitybaseunit.md)
-* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](./usereactivepanachemongoentitybaseunit.md)
+* [Use `Uni&lt;T extends PanacheEntityBase&gt;`](./usepanacheentitybaseunit.md)
+* [Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;`](./usereactivepanachemongoentitybaseunit.md)
 
 

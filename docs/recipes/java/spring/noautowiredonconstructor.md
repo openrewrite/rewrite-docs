@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove the @Autowired annotation on inferred constructor"
+sidebar_label: "Remove the `@Autowired` annotation on inferred constructor"
 ---
 
 import Tabs from '@theme/Tabs';

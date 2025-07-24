@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TestNGToAssertJRules.AssertEqualFloatArraysWithDeltaWithMessage"
+sidebar_label: "Refaster template `TestNGToAssertJRules.AssertEqualFloatArraysWithDeltaWithMessage`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJPathRules.AssertThatStartsWithRaw"
+sidebar_label: "Refaster template `AssertJPathRules.AssertThatStartsWithRaw`"
 ---
 
 import Tabs from '@theme/Tabs';

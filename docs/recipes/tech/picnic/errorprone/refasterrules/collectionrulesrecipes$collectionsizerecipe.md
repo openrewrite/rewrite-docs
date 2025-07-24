@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.CollectionSize"
+sidebar_label: "Refaster template `CollectionRules.CollectionSize`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template IntStreamRules.IntStreamIsNotEmpty"
+sidebar_label: "Refaster template `IntStreamRules.IntStreamIsNotEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

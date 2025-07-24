@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Fix deprecated no-arg ExceptionHandler constructors"
+sidebar_label: "Fix deprecated no-arg `ExceptionHandler` constructors"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ArrayElementNewline
 displayName: Enforce line breaks after each array element
 description: |
-  Enforce line breaks after each array element
-  
-  See [rule details](https://eslint.style/rules/default/array-element-newline)
-  
+  Enforce line breaks after each array element  See [rule details](https://eslint.style/rules/default/array-element-newline)
 tags:
   - eslint
   - stylistic

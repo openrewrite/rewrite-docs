@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use actions/setup-java temurin distribution"
+sidebar_label: "Use `actions/setup-java` `temurin` distribution"
 ---
 
 import Tabs from '@theme/Tabs';

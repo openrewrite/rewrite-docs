@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.OffsetDateTimePlusYears"
+sidebar_label: "Refaster template `TimeRules.OffsetDateTimePlusYears`"
 ---
 
 import Tabs from '@theme/Tabs';

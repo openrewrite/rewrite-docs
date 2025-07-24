@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Set visibility of premain and agentmain methods to public"
+sidebar_label: "Set visibility of `premain` and `agentmain` methods to `public`"
 ---
 
 import Tabs from '@theme/Tabs';

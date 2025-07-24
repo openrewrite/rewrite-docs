@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace all function expressions with only `return` statement with simple arrow](../../../codemods/ecmascript/5to6/simplearrow)
 * [Convert `var` to `let`](../../../codemods/ecmascript/5to6/vartolet)
 * [Generate named exports from CommonJS modules](../../../codemods/ecmascript/5to6/namedexportgeneration)
-* [Remove "use strict" directives](../../../codemods/ecmascript/5to6/nostrict)
+* [Remove &quot;use strict&quot; directives](../../../codemods/ecmascript/5to6/nostrict)
 * [Transform AMD style `define()` calls to ES6 `import` statements](../../../codemods/ecmascript/5to6/amdtoesm)
 * [Transform CommonJS style `require()` calls to ES6 `import` statements](../../../codemods/ecmascript/5to6/cjstoesm)
 
@@ -51,7 +51,6 @@ name: org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices
 displayName: Upgrade ECMAScript 5 to ECMAScript 6
 description: |
   A collection of common ECMAScript 5 to ECMAScript 6 updates.
-  
 tags:
   - codemods
   - 5to6

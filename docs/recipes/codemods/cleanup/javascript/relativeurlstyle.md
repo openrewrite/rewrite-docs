@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.RelativeUrlStyle
 displayName: Enforce consistent relative URL style.
 description: |
-  Enforce consistent relative URL style.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md)
-  
+  Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

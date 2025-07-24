@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace calls to Thread.run() with Thread.start()"
+sidebar_label: "Replace calls to `Thread.run()` with `Thread.start()`"
 ---
 
 import Tabs from '@theme/Tabs';

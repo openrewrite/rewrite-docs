@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use JUnit Jupiter @Disabled"
+sidebar_label: "Use JUnit Jupiter `@Disabled`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxTransformMinWithComparator"
+sidebar_label: "Refaster template `ReactorRules.FluxTransformMinWithComparator`"
 ---
 
 import Tabs from '@theme/Tabs';

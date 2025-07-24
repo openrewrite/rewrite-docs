@@ -5,10 +5,11 @@ sidebar_label: "Use string interpolation instead of 'string.Concat'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use string interpolation instead of 'string.Concat'
+# Use string interpolation instead of &#39;string.Concat&#39;
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1267**
 
+__
 
 ## Recipe source
 

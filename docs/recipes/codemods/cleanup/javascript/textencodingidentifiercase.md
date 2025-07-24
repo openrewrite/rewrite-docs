@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.TextEncodingIdentifierCase
 displayName: Enforce consistent case for text encoding identifiers.
 description: |
-  Enforce consistent case for text encoding identifiers.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md)
-  
+  Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.CatchErrorName
 displayName: Enforce a specific parameter name in catch clauses.
 description: |
-  Enforce a specific parameter name in catch clauses.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md)
-  
+  Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

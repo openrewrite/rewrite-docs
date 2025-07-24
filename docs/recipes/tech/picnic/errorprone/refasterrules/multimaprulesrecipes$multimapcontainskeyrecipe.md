@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MultimapRules.MultimapContainsKey"
+sidebar_label: "Refaster template `MultimapRules.MultimapContainsKey`"
 ---
 
 import Tabs from '@theme/Tabs';

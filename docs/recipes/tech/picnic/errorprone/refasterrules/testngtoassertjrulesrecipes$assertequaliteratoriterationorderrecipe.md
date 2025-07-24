@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TestNGToAssertJRules.AssertEqualIteratorIterationOrder"
+sidebar_label: "Refaster template `TestNGToAssertJRules.AssertEqualIteratorIterationOrder`"
 ---
 
 import Tabs from '@theme/Tabs';

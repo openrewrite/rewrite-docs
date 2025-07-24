@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use com.ibm.net.ssl.www2.protocol.https.Handler instead of com.sun.net.ssl.internal.www.protocol.https.Handler"
+sidebar_label: "Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`"
 ---
 
 import Tabs from '@theme/Tabs';

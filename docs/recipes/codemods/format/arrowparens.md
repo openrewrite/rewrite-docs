@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ArrowParens
 displayName: Require parentheses around arrow function arguments
 description: |
-  Require parentheses around arrow function arguments
-  
-  See [rule details](https://eslint.style/rules/default/arrow-parens)
-  
+  Require parentheses around arrow function arguments  See [rule details](https://eslint.style/rules/default/arrow-parens)
 tags:
   - eslint
   - stylistic

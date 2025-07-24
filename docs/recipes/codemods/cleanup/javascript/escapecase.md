@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.EscapeCase
 displayName: Require escape sequences to use uppercase values.
 description: |
-  Require escape sequences to use uppercase values.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md)
-  
+  Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

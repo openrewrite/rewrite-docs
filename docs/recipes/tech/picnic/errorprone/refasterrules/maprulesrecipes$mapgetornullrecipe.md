@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MapRules.MapGetOrNull"
+sidebar_label: "Refaster template `MapRules.MapGetOrNull`"
 ---
 
 import Tabs from '@theme/Tabs';

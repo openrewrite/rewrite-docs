@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate multi-condition @ConditionalOnBean annotations"
+sidebar_label: "Migrate multi-condition `@ConditionalOnBean` annotations"
 ---
 
 import Tabs from '@theme/Tabs';

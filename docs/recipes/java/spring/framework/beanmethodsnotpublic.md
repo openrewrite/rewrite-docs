@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove public from @Bean methods"
+sidebar_label: "Remove `public` from `@Bean` methods"
 ---
 
 import Tabs from '@theme/Tabs';

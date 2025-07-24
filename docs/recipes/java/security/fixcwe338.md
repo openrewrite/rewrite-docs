@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Fix CWE-338 with SecureRandom"
+sidebar_label: "Fix CWE-338 with `SecureRandom`"
 ---
 
 import Tabs from '@theme/Tabs';

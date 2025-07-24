@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.UsePatternMatchingForEqualityComparisonsMA0142**
 
+__
 
 ## Recipe source
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.FloatIsFinite"
+sidebar_label: "Refaster template `PrimitiveRules.FloatIsFinite`"
 ---
 
 import Tabs from '@theme/Tabs';

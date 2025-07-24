@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.UtcClock"
+sidebar_label: "Refaster template `TimeRules.UtcClock`"
 ---
 
 import Tabs from '@theme/Tabs';

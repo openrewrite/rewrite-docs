@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce dot notation whenever possible in <template>"
+sidebar_label: "Enforce dot notation whenever possible in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce dot notation whenever possible in `<template>`
+# Enforce dot notation whenever possible in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.DotNotation**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.DotNotation
-displayName: Enforce dot notation whenever possible in `<template>`
+displayName: Enforce dot notation whenever possible in `&lt;template&gt;`
 description: |
-  Enforce dot notation whenever possible in `<template>`
-  See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html)
-  
+  Enforce dot notation whenever possible in `&lt;template&gt;` See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html)
 tags:
   - ESLint
   - vue

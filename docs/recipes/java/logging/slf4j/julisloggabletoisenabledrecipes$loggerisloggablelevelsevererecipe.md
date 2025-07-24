@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace JUL Logger.isLoggable(Level.SEVERE) with SLF4J's Logger.isErrorEnabled()"
+sidebar_label: "Replace JUL `Logger.isLoggable(Level.SEVERE)` with SLF4J's `Logger.isErrorEnabled()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.isLoggable(Level.SEVERE)` with SLF4J's `Logger.isErrorEnabled()`
+# Replace JUL `Logger.isLoggable(Level.SEVERE)` with SLF4J&#39;s `Logger.isErrorEnabled()`
 
 **org.openrewrite.java.logging.slf4j.JulIsLoggableToIsEnabledRecipes$LoggerIsLoggableLevelSevereRecipe**
 

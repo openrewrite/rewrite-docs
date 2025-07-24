@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJEnumerableRules.EnumerableAssertHasSize"
+sidebar_label: "Refaster template `AssertJEnumerableRules.EnumerableAssertHasSize`"
 ---
 
 import Tabs from '@theme/Tabs';

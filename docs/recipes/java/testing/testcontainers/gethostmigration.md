@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace ContainerState.getContainerIpAddress() with getHost()"
+sidebar_label: "Replace `ContainerState.getContainerIpAddress()` with `getHost()`"
 ---
 
 import Tabs from '@theme/Tabs';

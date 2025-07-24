@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove KafkaOperations.usingCompletableFuture()"
+sidebar_label: "Remove `KafkaOperations.usingCompletableFuture()`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.KeySpacing
 displayName: Enforce consistent spacing between keys and values in object literal properties
 description: |
-  Enforce consistent spacing between keys and values in object literal properties
-  
-  See [rule details](https://eslint.style/rules/default/key-spacing)
-  
+  Enforce consistent spacing between keys and values in object literal properties  See [rule details](https://eslint.style/rules/default/key-spacing)
 tags:
   - eslint
   - stylistic

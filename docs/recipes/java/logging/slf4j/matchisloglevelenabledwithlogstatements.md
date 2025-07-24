@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Match if (is*Enabled()) with logging statements"
+sidebar_label: "Match `if (is*Enabled())` with logging statements"
 ---
 
 import Tabs from '@theme/Tabs';

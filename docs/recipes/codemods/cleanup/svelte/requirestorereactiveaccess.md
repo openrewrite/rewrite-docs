@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.RequireStoreReactiveAccess
 displayName: disallow to use of the store itself as an operand. Need to use $ prefix or get function.
 description: |
-  disallow to use of the store itself as an operand. Need to use $ prefix or get function.
-  See rule details for [svelte/require-store-reactive-access](https://sveltejs.github.io/eslint-plugin-svelte/rules/require-store-reactive-access/)
-  
+  disallow to use of the store itself as an operand. Need to use $ prefix or get function. See rule details for [svelte/require-store-reactive-access](https://sveltejs.github.io/eslint-plugin-svelte/rules/require-store-reactive-access/)
 tags:
   - svelte
   - ESLint

@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [CaseInsensitive comparisons do not alter case](../staticanalysis/caseinsensitivecomparisonsdonotchangecase)
 * [Catch clause should do more than just rethrow](../staticanalysis/catchclauseonlyrethrows)
 * [Chain `StringBuilder.append()` calls](../staticanalysis/chainstringbuilderappendcalls)
-* ['Collection.toArray()' should be passed an array of the proper type](../staticanalysis/collectiontoarrayshouldhavepropertype)
+* [&#39;Collection.toArray()&#39; should be passed an array of the proper type](../staticanalysis/collectiontoarrayshouldhavepropertype)
 * [Covariant equals](../staticanalysis/covariantequals)
 * [Default comes last](../staticanalysis/defaultcomeslast)
 * [Remove empty blocks](../staticanalysis/emptyblock)
@@ -94,7 +94,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `while` over `for` loops](../staticanalysis/whileinsteadoffor)
 * [Write octal values as decimal](../staticanalysis/writeoctalvaluesasdecimal)
 * [Structural equality tests should use `==` or `!=`](../kotlin/cleanup/equalsmethodusage)
-* [`it` shouldn't be used as a lambda parameter name](../kotlin/cleanup/implicitparameterinlambda)
+* [`it` shouldn&#39;t be used as a lambda parameter name](../kotlin/cleanup/implicitparameterinlambda)
 * [Replace `Char#toInt()` with `Char#code`](../kotlin/cleanup/replacechartointwithcode)
 * [Custom import order](../staticanalysis/customimportorder)
 

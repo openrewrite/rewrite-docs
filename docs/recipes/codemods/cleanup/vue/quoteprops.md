@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require quotes around object literal property names in <template>"
+sidebar_label: "Require quotes around object literal property names in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require quotes around object literal property names in `<template>`
+# Require quotes around object literal property names in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.QuoteProps**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.QuoteProps
-displayName: Require quotes around object literal property names in `<template>`
+displayName: Require quotes around object literal property names in `&lt;template&gt;`
 description: |
-  Require quotes around object literal property names in `<template>`
-  See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html)
-  
+  Require quotes around object literal property names in `&lt;template&gt;` See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html)
 tags:
   - ESLint
   - vue

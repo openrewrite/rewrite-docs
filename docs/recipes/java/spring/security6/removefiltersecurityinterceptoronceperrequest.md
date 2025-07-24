@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove unnecessary filterSecurityInterceptorOncePerRequest(false) when upgrading to Spring Security 6"
+sidebar_label: "Remove unnecessary `filterSecurityInterceptorOncePerRequest(false)` when upgrading to Spring Security 6"
 ---
 
 import Tabs from '@theme/Tabs';

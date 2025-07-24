@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate xmlns entries in test-web.xml files for Jakarta Server Faces 3 using test interfaces"
+sidebar_label: "Migrate xmlns entries in `test-web.xml` files for Jakarta Server Faces 3 using test interfaces"
 ---
 
 import Tabs from '@theme/Tabs';

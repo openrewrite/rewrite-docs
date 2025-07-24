@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Ensure AWS Elasticsearch domains have EnforceHTTPS enabled"
+sidebar_label: "Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled"
 ---
 
 import Tabs from '@theme/Tabs';

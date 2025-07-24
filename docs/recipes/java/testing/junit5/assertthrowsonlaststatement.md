@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Applies JUnit 5 assertThrows on last statement in lambda block only"
+sidebar_label: "Applies JUnit 5 `assertThrows` on last statement in lambda block only"
 ---
 
 import Tabs from '@theme/Tabs';

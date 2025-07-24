@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJNumberRules Refaster recipes"
+sidebar_label: "`AssertJNumberRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -43,8 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes
 displayName: `AssertJNumberRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJNumberRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJNumberRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsPositiveRecipe
   - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsNotPositiveRecipe

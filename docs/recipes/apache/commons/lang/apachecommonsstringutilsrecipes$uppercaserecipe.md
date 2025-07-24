@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace StringUtils.upperCase(String) with JDK internals"
+sidebar_label: "Replace `StringUtils.upperCase(String)` with JDK internals"
 ---
 
 import Tabs from '@theme/Tabs';

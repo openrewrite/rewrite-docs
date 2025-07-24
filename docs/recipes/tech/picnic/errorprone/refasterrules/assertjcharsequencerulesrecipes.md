@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJCharSequenceRules Refaster recipes"
+sidebar_label: "`AssertJCharSequenceRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes
 displayName: `AssertJCharSequenceRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJCharSequenceRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJCharSequenceRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsNotEmptyRecipe

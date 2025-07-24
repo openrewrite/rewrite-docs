@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find hardcoded numbers passed into RSAKeyGenParameterSpec"
+sidebar_label: "Find hardcoded numbers passed into `RSAKeyGenParameterSpec`"
 ---
 
 import Tabs from '@theme/Tabs';

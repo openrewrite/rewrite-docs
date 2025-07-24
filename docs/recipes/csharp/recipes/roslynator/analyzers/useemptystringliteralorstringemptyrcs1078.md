@@ -1,14 +1,15 @@
 ---
-sidebar_label: "Use \"\" or 'string.Empty'"
+sidebar_label: "Use &quot;&quot; or 'string.Empty'"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use "" or 'string.Empty'
+# Use &quot;&quot; or &#39;string.Empty&#39;
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UseEmptyStringLiteralOrStringEmptyRCS1078**
 
+__
 
 ## Recipe source
 

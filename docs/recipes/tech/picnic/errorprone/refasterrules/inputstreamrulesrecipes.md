@@ -1,5 +1,5 @@
 ---
-sidebar_label: "InputStreamRules Refaster recipes"
+sidebar_label: "`InputStreamRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -43,8 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes
 displayName: `InputStreamRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `InputStream`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/InputStreamRules).
+  Refaster rules related to expressions dealing with `InputStream`s. [Source](https://error-prone.picnic.tech/refasterrules/InputStreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamTransferToRecipe
   - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamReadAllBytesRecipe

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxNoUselessFragment
 displayName: Disallow unnecessary fragments
 description: |
-  Disallow unnecessary fragments
-  See rule details for [react/jsx-no-useless-fragment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-useless-fragment.md)
-  
+  Disallow unnecessary fragments See rule details for [react/jsx-no-useless-fragment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-useless-fragment.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

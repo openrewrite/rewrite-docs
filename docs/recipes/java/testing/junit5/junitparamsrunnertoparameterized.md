@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter @Parameterized tests"
+sidebar_label: "Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests"
 ---
 
 import Tabs from '@theme/Tabs';

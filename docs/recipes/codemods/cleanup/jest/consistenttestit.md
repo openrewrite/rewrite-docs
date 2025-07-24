@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.ConsistentTestIt
 displayName: Enforce test and it usage conventions
 description: |
-  Enforce test and it usage conventions
-  See rule details for [jest/consistent-test-it](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/consistent-test-it.md)
-  
+  Enforce test and it usage conventions See rule details for [jest/consistent-test-it](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/consistent-test-it.md)
 tags:
   - ESLint
   - eslint-plugin-jest

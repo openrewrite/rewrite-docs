@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate ImageResponse imports"
+sidebar_label: "Migrate `ImageResponse` imports"
 ---
 
 import Tabs from '@theme/Tabs';

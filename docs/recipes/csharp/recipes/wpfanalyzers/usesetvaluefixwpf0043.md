@@ -5,7 +5,7 @@ sidebar_label: "Don't set DataContext and Style using SetCurrentValue"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don't set DataContext and Style using SetCurrentValue
+# Don&#39;t set DataContext and Style using SetCurrentValue
 
 **org.openrewrite.csharp.recipes.wpfanalyzers.UseSetValueFixWPF0043**
 

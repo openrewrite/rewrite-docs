@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxFirstPropNewLine
 displayName: Enforce proper position of the first property in JSX
 description: |
-  Enforce proper position of the first property in JSX
-  
-  See [rule details](https://eslint.style/rules/default/jsx-first-prop-new-line)
-  
+  Enforce proper position of the first property in JSX  See [rule details](https://eslint.style/rules/default/jsx-first-prop-new-line)
 tags:
   - eslint
   - stylistic

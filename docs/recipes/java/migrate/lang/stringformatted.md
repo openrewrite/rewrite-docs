@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer String.formatted(Object...)"
+sidebar_label: "Prefer `String.formatted(Object...)`"
 ---
 
 import Tabs from '@theme/Tabs';

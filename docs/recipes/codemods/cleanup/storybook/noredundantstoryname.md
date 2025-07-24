@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName
 displayName: A story should not have a redundant name property
 description: |
-  A story should not have a redundant name property
-  See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md)
-  
+  A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md)
 tags:
   - eslint-plugin-storybook
   - ESLint

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUL log(Level, String, Throwable) with corresponding SLF4J method calls"
+sidebar_label: "Replace JUL `log(Level, String, Throwable)` with corresponding SLF4J method calls"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -28,14 +28,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace JUL `logger.log(Level.FINEST, String message, Throwable e)` with SLF4J's `Logger.trace(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinestrecipe)
-* [Replace JUL `logger.log(Level.FINER, String message, Throwable e)` with SLF4J's `Logger.trace(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinerrecipe)
-* [Replace JUL `logger.log(Level.FINE, String message, Throwable e)` with SLF4J's `Logger.debug(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinerecipe)
-* [Replace JUL `logger.log(Level.CONFIG, String message, Throwable e)` with SLF4J's `Logger.info(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierconfigrecipe)
-* [Replace JUL `logger.log(Level.INFO, String message, Throwable e)` with SLF4J's `Logger.info(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierinforecipe)
-* [Replace JUL `logger.log(Level.WARNING, String message, Throwable e)` with SLF4J's `Logger.warn(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierwarningrecipe)
-* [Replace JUL `logger.log(Level.SEVERE, String message, Throwable e)` with SLF4J's `Logger.error(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsuppliersevererecipe)
-* [Replace JUL `logger.log(Level.ALL, String message, Throwable e)` with SLF4J's `Logger.trace(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierallrecipe)
+* [Replace JUL `logger.log(Level.FINEST, String message, Throwable e)` with SLF4J&#39;s `Logger.trace(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinestrecipe)
+* [Replace JUL `logger.log(Level.FINER, String message, Throwable e)` with SLF4J&#39;s `Logger.trace(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinerrecipe)
+* [Replace JUL `logger.log(Level.FINE, String message, Throwable e)` with SLF4J&#39;s `Logger.debug(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinerecipe)
+* [Replace JUL `logger.log(Level.CONFIG, String message, Throwable e)` with SLF4J&#39;s `Logger.info(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierconfigrecipe)
+* [Replace JUL `logger.log(Level.INFO, String message, Throwable e)` with SLF4J&#39;s `Logger.info(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierinforecipe)
+* [Replace JUL `logger.log(Level.WARNING, String message, Throwable e)` with SLF4J&#39;s `Logger.warn(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierwarningrecipe)
+* [Replace JUL `logger.log(Level.SEVERE, String message, Throwable e)` with SLF4J&#39;s `Logger.error(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsuppliersevererecipe)
+* [Replace JUL `logger.log(Level.ALL, String message, Throwable e)` with SLF4J&#39;s `Logger.trace(message, e)`](../../../java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierallrecipe)
 
 </TabItem>
 

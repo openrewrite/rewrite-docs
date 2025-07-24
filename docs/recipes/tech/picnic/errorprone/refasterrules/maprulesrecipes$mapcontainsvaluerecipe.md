@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MapRules.MapContainsValue"
+sidebar_label: "Refaster template `MapRules.MapContainsValue`"
 ---
 
 import Tabs from '@theme/Tabs';

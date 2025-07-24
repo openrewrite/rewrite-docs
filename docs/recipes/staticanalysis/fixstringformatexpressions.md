@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Fix String#format and String#formatted expressions"
+sidebar_label: "Fix `String#format` and `String#formatted` expressions"
 ---
 
 import Tabs from '@theme/Tabs';

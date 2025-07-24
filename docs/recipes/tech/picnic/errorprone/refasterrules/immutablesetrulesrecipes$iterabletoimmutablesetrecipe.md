@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSetRules.IterableToImmutableSet"
+sidebar_label: "Refaster template `ImmutableSetRules.IterableToImmutableSet`"
 ---
 
 import Tabs from '@theme/Tabs';

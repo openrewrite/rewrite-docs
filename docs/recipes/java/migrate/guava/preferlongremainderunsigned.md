@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Long#remainderUnsigned"
+sidebar_label: "Prefer `Long#remainderUnsigned`"
 ---
 
 import Tabs from '@theme/Tabs';

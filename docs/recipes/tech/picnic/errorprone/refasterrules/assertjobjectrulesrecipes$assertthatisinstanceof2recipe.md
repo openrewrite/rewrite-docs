@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJObjectRules.AssertThatIsInstanceOf2"
+sidebar_label: "Refaster template `AssertJObjectRules.AssertThatIsInstanceOf2`"
 ---
 
 import Tabs from '@theme/Tabs';

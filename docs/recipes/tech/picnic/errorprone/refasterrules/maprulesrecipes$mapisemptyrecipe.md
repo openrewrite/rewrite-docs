@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MapRules.MapIsEmpty"
+sidebar_label: "Refaster template `MapRules.MapIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

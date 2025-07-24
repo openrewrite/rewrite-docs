@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Runtime.traceInstructions(boolean) and Runtime.traceMethodCalls methods"
+sidebar_label: "Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods"
 ---
 
 import Tabs from '@theme/Tabs';

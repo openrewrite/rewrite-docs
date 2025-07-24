@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Javascript task runners & build tools insights"
+sidebar_label: "Javascript task runners &amp; build tools insights"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Javascript task runners & build tools insights
+# Javascript task runners &amp; build tools insights
 
 **org.openrewrite.nodejs.search.TaskRunnersBuildToolsInsights**
 

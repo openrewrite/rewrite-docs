@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferDestructuring
 displayName: Require destructuring from arrays and/or objects
 description: |
-  Require destructuring from arrays and/or objects 
-  See [rule details](https://eslint.org/docs/latest/rules/prefer-destructuring)
-  
+  Require destructuring from arrays and/or objects  See [rule details](https://eslint.org/docs/latest/rules/prefer-destructuring)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

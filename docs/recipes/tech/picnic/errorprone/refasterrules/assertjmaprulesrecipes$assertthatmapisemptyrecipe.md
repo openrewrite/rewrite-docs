@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJMapRules.AssertThatMapIsEmpty"
+sidebar_label: "Refaster template `AssertJMapRules.AssertThatMapIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

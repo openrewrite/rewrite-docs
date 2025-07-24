@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxIndent
 displayName: Enforce JSX indentation
 description: |
-  Enforce JSX indentation
-  
-  See [rule details](https://eslint.style/rules/default/jsx-indent)
-  
+  Enforce JSX indentation  See [rule details](https://eslint.style/rules/default/jsx-indent)
 tags:
   - eslint
   - stylistic

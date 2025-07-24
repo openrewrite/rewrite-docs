@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use modernized java.util APIs"
+sidebar_label: "Use modernized `java.util` APIs"
 ---
 
 import Tabs from '@theme/Tabs';

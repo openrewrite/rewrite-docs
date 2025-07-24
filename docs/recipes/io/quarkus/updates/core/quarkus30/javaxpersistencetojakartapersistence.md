@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.persistence packages to jakarta.persistence"
+sidebar_label: "Migrate deprecated `javax.persistence` packages to `jakarta.persistence`"
 ---
 
 import Tabs from '@theme/Tabs';

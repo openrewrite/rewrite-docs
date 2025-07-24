@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace AWT getPeer() method"
+sidebar_label: "Replace AWT `getPeer()` method"
 ---
 
 import Tabs from '@theme/Tabs';

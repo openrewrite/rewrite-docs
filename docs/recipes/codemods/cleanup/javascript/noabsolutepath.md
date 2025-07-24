@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoAbsolutePath
 displayName: Forbid import of modules using absolute paths
 description: |
-  Forbid import of modules using absolute paths
-  See rule details for [import/no-absolute-path](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-absolute-path.md)
-  
+  Forbid import of modules using absolute paths See rule details for [import/no-absolute-path](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-absolute-path.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

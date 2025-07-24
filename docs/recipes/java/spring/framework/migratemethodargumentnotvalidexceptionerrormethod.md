@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate MethodArgumentNotValidException.errorsToStringList and resolveErrorMessages"
+sidebar_label: "Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`"
 ---
 
 import Tabs from '@theme/Tabs';

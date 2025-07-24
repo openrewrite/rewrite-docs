@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster rules related to AssertJ assertions over expressions that may throw a Throwable subtype"
+sidebar_label: "Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -70,10 +70,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes
 displayName: Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype
 description: |
-  For reasons of consistency we prefer `org.assertj.core.api.Assertions#assertThatThrownBy` over static methods for specific exception
-   types. Note that only the most common assertion expressions are rewritten here; covering all
-   cases would require the implementation of an Error Prone check instead.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJThrowingCallableRules).
+  For reasons of consistency we prefer `org.assertj.core.api.Assertions#assertThatThrownBy` over static methods for specific exception  types. Note that only the most common assertion expressions are rewritten here; covering all  cases would require the implementation of an Error Prone check instead. [Source](https://error-prone.picnic.tech/refasterrules/AssertJThrowingCallableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIsInstanceOfRecipe
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalArgumentExceptionRecipe

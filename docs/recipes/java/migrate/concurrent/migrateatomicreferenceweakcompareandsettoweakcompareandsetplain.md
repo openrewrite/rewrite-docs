@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use AtomicReference#weakCompareAndSetPlain(T, T)"
+sidebar_label: "Use `AtomicReference#weakCompareAndSetPlain(T, T)`"
 ---
 
 import Tabs from '@theme/Tabs';

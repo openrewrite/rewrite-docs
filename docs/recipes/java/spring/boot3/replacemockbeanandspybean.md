@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace @MockBean and @SpyBean"
+sidebar_label: "Replace `@MockBean` and `@SpyBean`"
 ---
 
 import Tabs from '@theme/Tabs';

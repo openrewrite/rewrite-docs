@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.InstantIsAfter"
+sidebar_label: "Refaster template `TimeRules.InstantIsAfter`"
 ---
 
 import Tabs from '@theme/Tabs';

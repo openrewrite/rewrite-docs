@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use org.springframework.boot.web.servlet.support.SpringBootServletInitializer"
+sidebar_label: "Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use jakarta.el instead of jakarta.faces.el and javax.faces.el"
+sidebar_label: "Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`"
 ---
 
 import Tabs from '@theme/Tabs';

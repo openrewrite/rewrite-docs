@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce linebreaks after opening and before closing array brackets in <template>"
+sidebar_label: "Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce linebreaks after opening and before closing array brackets in `<template>`
+# Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline
-displayName: Enforce linebreaks after opening and before closing array brackets in `<template>`
+displayName: Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`
 description: |
-  Enforce linebreaks after opening and before closing array brackets in `<template>`
-  See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html)
-  
+  Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html)
 tags:
   - ESLint
   - vue

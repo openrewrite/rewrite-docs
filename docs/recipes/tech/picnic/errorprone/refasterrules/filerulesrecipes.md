@@ -1,5 +1,5 @@
 ---
-sidebar_label: "FileRules Refaster recipes"
+sidebar_label: "`FileRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.FileRulesRecipes
 displayName: `FileRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with files.
-  [Source](https://error-prone.picnic.tech/refasterrules/FileRules).
+  Refaster rules related to expressions dealing with files. [Source](https://error-prone.picnic.tech/refasterrules/FileRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfUriRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathInstanceRecipe

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove unneeded oauth2Login config when upgrading to Spring Security 6"
+sidebar_label: "Remove unneeded `oauth2Login` config when upgrading to Spring Security 6"
 ---
 
 import Tabs from '@theme/Tabs';

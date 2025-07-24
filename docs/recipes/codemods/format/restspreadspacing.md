@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.RestSpreadSpacing
 displayName: Enforce spacing between rest and spread operators and their expressions
 description: |
-  Enforce spacing between rest and spread operators and their expressions
-  
-  See [rule details](https://eslint.style/rules/default/rest-spread-spacing)
-  
+  Enforce spacing between rest and spread operators and their expressions  See [rule details](https://eslint.style/rules/default/rest-spread-spacing)
 tags:
   - eslint
   - stylistic

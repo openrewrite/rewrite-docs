@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoZeroFractions
 displayName: Disallow number literals with zero fractions or dangling dots.
 description: |
-  Disallow number literals with zero fractions or dangling dots.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md)
-  
+  Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

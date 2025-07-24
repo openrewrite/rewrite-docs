@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate RequestConfig to httpclient5"
+sidebar_label: "Migrate `RequestConfig` to httpclient5"
 ---
 
 import Tabs from '@theme/Tabs';

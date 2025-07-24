@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JUnit 4 @RunWith(Parameterized.class) to JUnit Jupiter parameterized tests"
+sidebar_label: "JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests"
 ---
 
 import Tabs from '@theme/Tabs';

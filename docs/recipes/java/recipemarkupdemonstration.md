@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Demonstrate rendering of Markup markers"
+sidebar_label: "Demonstrate rendering of `Markup` markers"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Use QuerydslPredicateExecutor<T>"
+sidebar_label: "Use `QuerydslPredicateExecutor&lt;T&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `QuerydslPredicateExecutor&lt;T>`
+# Use `QuerydslPredicateExecutor&lt;T&gt;`
 
 **org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository**
 

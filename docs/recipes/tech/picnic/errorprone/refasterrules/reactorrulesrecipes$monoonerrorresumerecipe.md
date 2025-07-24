@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.MonoOnErrorResume"
+sidebar_label: "Refaster template `ReactorRules.MonoOnErrorResume`"
 ---
 
 import Tabs from '@theme/Tabs';

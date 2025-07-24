@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJRules.AssertThatPredicateAccepts"
+sidebar_label: "Refaster template `AssertJRules.AssertThatPredicateAccepts`"
 ---
 
 import Tabs from '@theme/Tabs';

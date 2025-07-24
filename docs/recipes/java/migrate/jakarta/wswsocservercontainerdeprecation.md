@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace doUpgrade(..) with ServerContainer.upgradeHttpToWebSocket(..)"
+sidebar_label: "Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

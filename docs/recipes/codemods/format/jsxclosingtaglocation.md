@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxClosingTagLocation
 displayName: Enforce closing tag location for multiline JSX
 description: |
-  Enforce closing tag location for multiline JSX
-  
-  See [rule details](https://eslint.style/rules/default/jsx-closing-tag-location)
-  
+  Enforce closing tag location for multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-tag-location)
 tags:
   - eslint
   - stylistic

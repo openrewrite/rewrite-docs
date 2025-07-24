@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferModernMathApis
 displayName: Prefer modern Math APIs over legacy patterns.
 description: |
-  Prefer modern Math APIs over legacy patterns.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md)
-  
+  Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

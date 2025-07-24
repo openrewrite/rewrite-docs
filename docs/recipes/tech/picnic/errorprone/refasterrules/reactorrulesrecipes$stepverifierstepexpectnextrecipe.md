@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.StepVerifierStepExpectNext"
+sidebar_label: "Refaster template `ReactorRules.StepVerifierStepExpectNext`"
 ---
 
 import Tabs from '@theme/Tabs';

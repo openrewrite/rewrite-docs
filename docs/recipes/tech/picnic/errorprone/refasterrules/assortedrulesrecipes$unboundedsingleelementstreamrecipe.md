@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssortedRules.UnboundedSingleElementStream"
+sidebar_label: "Refaster template `AssortedRules.UnboundedSingleElementStream`"
 ---
 
 import Tabs from '@theme/Tabs';

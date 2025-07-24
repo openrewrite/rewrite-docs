@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove org.openrewrite.java.trait.Traits.methodAccess(MethodMatcher) usage"
+sidebar_label: "Remove `org.openrewrite.java.trait.Traits.methodAccess(MethodMatcher)` usage"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.SwitchCaseBraces
 displayName: Enforce consistent brace style for case clauses.
 description: |
-  Enforce consistent brace style for case clauses.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md)
-  
+  Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

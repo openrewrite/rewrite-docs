@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus39.GraalSDK**
 
+__
 
 ## Recipe source
 

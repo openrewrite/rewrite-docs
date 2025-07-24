@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add HttpRequest type parameter for implemented interfaces"
+sidebar_label: "Add `HttpRequest` type parameter for implemented interfaces"
 ---
 
 import Tabs from '@theme/Tabs';

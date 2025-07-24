@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.StringIdentity"
+sidebar_label: "Refaster template `StringRules.StringIdentity`"
 ---
 
 import Tabs from '@theme/Tabs';

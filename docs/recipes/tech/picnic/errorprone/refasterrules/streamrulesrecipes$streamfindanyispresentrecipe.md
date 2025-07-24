@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamFindAnyIsPresent"
+sidebar_label: "Refaster template `StreamRules.StreamFindAnyIsPresent`"
 ---
 
 import Tabs from '@theme/Tabs';

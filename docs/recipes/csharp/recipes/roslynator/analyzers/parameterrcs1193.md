@@ -5,10 +5,11 @@ sidebar_label: "Overriding member should not change 'params' modifier"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Overriding member should not change 'params' modifier
+# Overriding member should not change &#39;params&#39; modifier
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.ParameterRCS1193**
 
+__
 
 ## Recipe source
 

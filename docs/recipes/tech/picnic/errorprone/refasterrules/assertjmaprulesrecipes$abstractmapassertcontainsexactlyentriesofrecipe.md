@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template AssertJMapRules.AbstractMapAssertContainsExactlyEntriesOf"
+sidebar_label: "Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyEntriesOf`"
 ---
 
 import Tabs from '@theme/Tabs';

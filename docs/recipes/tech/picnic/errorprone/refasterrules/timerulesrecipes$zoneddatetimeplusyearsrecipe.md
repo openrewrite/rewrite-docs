@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.ZonedDateTimePlusYears"
+sidebar_label: "Refaster template `TimeRules.ZonedDateTimePlusYears`"
 ---
 
 import Tabs from '@theme/Tabs';

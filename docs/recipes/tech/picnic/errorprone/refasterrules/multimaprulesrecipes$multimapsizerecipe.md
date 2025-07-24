@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MultimapRules.MultimapSize"
+sidebar_label: "Refaster template `MultimapRules.MultimapSize`"
 ---
 
 import Tabs from '@theme/Tabs';

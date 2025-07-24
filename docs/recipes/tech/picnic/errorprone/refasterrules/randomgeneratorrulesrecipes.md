@@ -1,5 +1,5 @@
 ---
-sidebar_label: "RandomGeneratorRules Refaster recipes"
+sidebar_label: "`RandomGeneratorRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes
 displayName: `RandomGeneratorRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `RandomGenerator` instances.
-  [Source](https://error-prone.picnic.tech/refasterrules/RandomGeneratorRules).
+  Refaster rules related to expressions dealing with `RandomGenerator` instances. [Source](https://error-prone.picnic.tech/refasterrules/RandomGeneratorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntRecipe

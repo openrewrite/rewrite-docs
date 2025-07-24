@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert OAuth2LoginConfigurer chained calls into Lambda DSL"
+sidebar_label: "Convert `OAuth2LoginConfigurer` chained calls into Lambda DSL"
 ---
 
 import Tabs from '@theme/Tabs';

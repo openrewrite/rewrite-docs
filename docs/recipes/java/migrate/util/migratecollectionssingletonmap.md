@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Map.of(..)"
+sidebar_label: "Prefer `Map.of(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

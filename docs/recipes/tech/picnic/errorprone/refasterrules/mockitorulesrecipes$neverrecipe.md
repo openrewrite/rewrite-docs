@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MockitoRules.Never"
+sidebar_label: "Refaster template `MockitoRules.Never`"
 ---
 
 import Tabs from '@theme/Tabs';

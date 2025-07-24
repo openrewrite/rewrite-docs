@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.ShorthandAttribute
 displayName: enforce use of shorthand syntax in attribute
 description: |
-  enforce use of shorthand syntax in attribute
-  See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/)
-  
+  enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/)
 tags:
   - svelte
   - ESLint

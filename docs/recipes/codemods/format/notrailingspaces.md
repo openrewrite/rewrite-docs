@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoTrailingSpaces
 displayName: Disallow trailing whitespace at the end of lines
 description: |
-  Disallow trailing whitespace at the end of lines
-  
-  See [rule details](https://eslint.style/rules/default/no-trailing-spaces)
-  
+  Disallow trailing whitespace at the end of lines  See [rule details](https://eslint.style/rules/default/no-trailing-spaces)
 tags:
   - eslint
   - stylistic

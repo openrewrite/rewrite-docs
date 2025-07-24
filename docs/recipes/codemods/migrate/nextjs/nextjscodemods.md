@@ -40,7 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename Next Image Imports](../../../codemods/migrate/nextjs/v11/cratonext)
 * [Rename Next Image Imports](../../../codemods/migrate/nextjs/v13_0/nextimagetolegacyimage)
 * [Migrate to the New Image Component](../../../codemods/migrate/nextjs/v13_0/nextimageexperimental)
-* [Remove `<a>` Tags From Link Components](../../../codemods/migrate/nextjs/v13_0/newlink)
+* [Remove `&lt;a&gt;` Tags From Link Components](../../../codemods/migrate/nextjs/v13_0/newlink)
 * [Use Built-in Font](../../../codemods/migrate/nextjs/v13_2/builtinnextfont)
 * [Migrate `ImageResponse` imports](../../../codemods/migrate/nextjs/v14_0/nextogimport)
 * [Use `viewport` export](../../../codemods/migrate/nextjs/v14_0/metadatatoviewportexport)
@@ -56,7 +56,6 @@ name: org.openrewrite.codemods.migrate.nextjs.NextJsCodemods
 displayName: Next.js Codemods for API Updates
 description: |
   Next.js provides Codemod transformations to help upgrade your [Next.js](https://nextjs.org/) codebase when an API is updated or deprecated.
-  
 tags:
   - nextjs
   - codemods

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Map#containsKey"
+sidebar_label: "Use `Map#containsKey`"
 ---
 
 import Tabs from '@theme/Tabs';

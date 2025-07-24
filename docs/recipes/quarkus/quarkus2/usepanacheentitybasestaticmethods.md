@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use PanacheEntityBase static methods"
+sidebar_label: "Use `PanacheEntityBase` static methods"
 ---
 
 import Tabs from '@theme/Tabs';

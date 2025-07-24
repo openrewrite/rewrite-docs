@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use `Array.Empty<T>`()"
+sidebar_label: "Use Array.Empty&lt;T&gt;()"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.UseArrayEmptyMA0005**
 
+__
 
 ## Recipe source
 

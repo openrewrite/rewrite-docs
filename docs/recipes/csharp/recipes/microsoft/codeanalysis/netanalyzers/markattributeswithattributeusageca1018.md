@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.MarkAttributesWithAttributeUsageCA1018**
 
+__
 
 ## Recipe source
 

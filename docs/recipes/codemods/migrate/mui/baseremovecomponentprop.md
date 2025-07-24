@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Removes component prop from base components"
+sidebar_label: "Removes `component` prop from base components"
 ---
 
 import Tabs from '@theme/Tabs';

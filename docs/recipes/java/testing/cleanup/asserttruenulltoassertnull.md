@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUnit assertTrue(a == null) to assertNull(a)"
+sidebar_label: "Replace JUnit `assertTrue(a == null)` to `assertNull(a)`"
 ---
 
 import Tabs from '@theme/Tabs';

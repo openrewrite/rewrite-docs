@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StreamRules.StreamMaxNaturalOrder"
+sidebar_label: "Refaster template `StreamRules.StreamMaxNaturalOrder`"
 ---
 
 import Tabs from '@theme/Tabs';

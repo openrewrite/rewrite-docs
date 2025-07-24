@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove @RequestMapping annotations"
+sidebar_label: "Remove `@RequestMapping` annotations"
 ---
 
 import Tabs from '@theme/Tabs';

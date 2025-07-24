@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.CollectionIsEmpty"
+sidebar_label: "Refaster template `CollectionRules.CollectionIsEmpty`"
 ---
 
 import Tabs from '@theme/Tabs';

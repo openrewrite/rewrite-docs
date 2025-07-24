@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove Unnecessary @ConstructorBinding"
+sidebar_label: "Remove Unnecessary `@ConstructorBinding`"
 ---
 
 import Tabs from '@theme/Tabs';

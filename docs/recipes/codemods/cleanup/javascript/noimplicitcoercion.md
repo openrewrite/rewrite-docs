@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoImplicitCoercion
 displayName: Disallow shorthand type conversions
 description: |
-  Disallow shorthand type conversions 
-  See [rule details](https://eslint.org/docs/latest/rules/no-implicit-coercion)
-  
+  Disallow shorthand type conversions  See [rule details](https://eslint.org/docs/latest/rules/no-implicit-coercion)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

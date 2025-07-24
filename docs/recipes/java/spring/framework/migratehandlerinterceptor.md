@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate HandlerInterceptorAdapter to HandlerInterceptor"
+sidebar_label: "Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`"
 ---
 
 import Tabs from '@theme/Tabs';

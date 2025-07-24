@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template MapEntryRules.MapEntryComparingByValue"
+sidebar_label: "Refaster template `MapEntryRules.MapEntryComparingByValue`"
 ---
 
 import Tabs from '@theme/Tabs';

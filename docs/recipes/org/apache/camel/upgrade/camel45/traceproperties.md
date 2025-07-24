@@ -1,14 +1,15 @@
 ---
-sidebar_label: "Replace 'camel.main.backlogTracing' with camel.trace.enabled'"
+sidebar_label: "Replace 'camel.main.backlogTracing' with `camel.trace.enabled'"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace 'camel.main.backlogTracing' with `camel.trace.enabled'
+# Replace &#39;camel.main.backlogTracing&#39; with `camel.trace.enabled&#39;
 
 **org.apache.camel.upgrade.camel45.TraceProperties**
 
+__
 
 ## Recipe source
 
@@ -35,7 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.camel45.TraceProperties
-displayName: Replace 'camel.main.backlogTracing' with `camel.trace.enabled'
+displayName: Replace &#39;camel.main.backlogTracing&#39; with `camel.trace.enabled&#39;
 description: |
   
 recipeList:

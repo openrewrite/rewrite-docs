@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.inject packages to jakarta.inject"
+sidebar_label: "Migrate deprecated `javax.inject` packages to `jakarta.inject`"
 ---
 
 import Tabs from '@theme/Tabs';

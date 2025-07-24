@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add io.spring.dependency-management plugin, if in use"
+sidebar_label: "Add `io.spring.dependency-management` plugin, if in use"
 ---
 
 import Tabs from '@theme/Tabs';

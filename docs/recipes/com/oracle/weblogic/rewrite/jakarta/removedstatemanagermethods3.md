@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use StateManagementStrategy"
+sidebar_label: "Use `StateManagementStrategy`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -68,7 +68,6 @@ name: com.oracle.weblogic.rewrite.jakarta.RemovedStateManagerMethods3
 displayName: Use `StateManagementStrategy`
 description: |
   Methods that were removed from the `jakarta.faces.application.StateManager` and `javax.faces.application.StateManager` classes in Jakarta Faces 3.0 are replaced by `jakarta.faces.view.StateManagementStrategy` or `javax.faces.view.StateManagementStrategy` based on JakartaEE9 migration in Faces 3.0
-  
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: *.faces.application.StateManager getComponentStateToSave(*.faces.context.FacesContext)

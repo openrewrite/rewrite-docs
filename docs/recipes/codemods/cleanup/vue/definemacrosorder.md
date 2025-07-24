@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.DefineMacrosOrder
 displayName: Enforce order of defineEmits and defineProps compiler macros
 description: |
-  Enforce order of defineEmits and defineProps compiler macros
-  See rule details for [vue/define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html)
-  
+  Enforce order of defineEmits and defineProps compiler macros See rule details for [vue/define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html)
 tags:
   - ESLint
   - vue

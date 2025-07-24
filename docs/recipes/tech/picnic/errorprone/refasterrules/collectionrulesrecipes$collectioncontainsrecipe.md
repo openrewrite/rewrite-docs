@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.CollectionContains"
+sidebar_label: "Refaster template `CollectionRules.CollectionContains`"
 ---
 
 import Tabs from '@theme/Tabs';

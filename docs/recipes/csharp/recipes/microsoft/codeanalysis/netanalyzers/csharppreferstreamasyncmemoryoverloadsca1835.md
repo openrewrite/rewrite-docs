@@ -5,7 +5,7 @@ sidebar_label: "Prefer the 'Memory'-based overloads for 'ReadAsync' and 'WriteAs
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the 'Memory'-based overloads for 'ReadAsync' and 'WriteAsync'
+# Prefer the &#39;Memory&#39;-based overloads for &#39;ReadAsync&#39; and &#39;WriteAsync&#39;
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferStreamAsyncMemoryOverloadsCA1835**
 

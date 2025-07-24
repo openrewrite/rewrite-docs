@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.IntegerToUnsignedStringWithRadix"
+sidebar_label: "Refaster template `PrimitiveRules.IntegerToUnsignedStringWithRadix`"
 ---
 
 import Tabs from '@theme/Tabs';

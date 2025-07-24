@@ -39,7 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.slf4j.MDC`
 * [Migrate Log4j 1.x to Log4j 2.x](../../../java/logging/log4j/log4j1tolog4j2)
 * [Migrate Log4j 2.x to SLF4J 1.x](../../../java/logging/slf4j/log4j2toslf4j1)
-* [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
+* [Parameterize SLF4J&#39;s logging statements](../../../java/logging/slf4j/parameterizedlogging)
 
 </TabItem>
 

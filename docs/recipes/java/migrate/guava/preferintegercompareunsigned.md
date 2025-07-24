@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Integer#compareUnsigned"
+sidebar_label: "Prefer `Integer#compareUnsigned`"
 ---
 
 import Tabs from '@theme/Tabs';

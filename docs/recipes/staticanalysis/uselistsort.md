@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace invocations of Collections#sort(List, Comparator) with List#sort(Comparator)"
+sidebar_label: "Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate WebExchangeBindException.resolveErrorMessages"
+sidebar_label: "Migrate `WebExchangeBindException.resolveErrorMessages`"
 ---
 
 import Tabs from '@theme/Tabs';

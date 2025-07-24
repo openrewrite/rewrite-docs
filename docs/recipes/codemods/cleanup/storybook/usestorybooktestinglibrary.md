@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary
 displayName: Do not use testing-library directly on stories
 description: |
-  Do not use testing-library directly on stories
-  See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md)
-  
+  Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md)
 tags:
   - eslint-plugin-storybook
   - ESLint

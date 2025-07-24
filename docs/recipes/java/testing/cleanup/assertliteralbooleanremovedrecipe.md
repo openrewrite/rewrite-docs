@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove JUnit assertTrue(true) and assertFalse(false)"
+sidebar_label: "Remove JUnit `assertTrue(true)` and `assertFalse(false)`"
 ---
 
 import Tabs from '@theme/Tabs';

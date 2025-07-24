@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJOptionalRules Refaster recipes"
+sidebar_label: "`AssertJOptionalRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,8 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes
 displayName: `AssertJOptionalRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJOptionalRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJOptionalRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatOptionalRecipe
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertIsPresentRecipe

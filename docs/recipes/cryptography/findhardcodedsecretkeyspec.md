@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find hardcoded algorithms in SecretKeySpec"
+sidebar_label: "Find hardcoded algorithms in `SecretKeySpec`"
 ---
 
 import Tabs from '@theme/Tabs';

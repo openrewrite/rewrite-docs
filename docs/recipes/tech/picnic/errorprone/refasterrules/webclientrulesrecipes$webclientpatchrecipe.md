@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template WebClientRules.WebClientPatch"
+sidebar_label: "Refaster template `WebClientRules.WebClientPatch`"
 ---
 
 import Tabs from '@theme/Tabs';

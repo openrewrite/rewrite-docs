@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace catch(Exception) with specific declared exceptions thrown in the try block"
+sidebar_label: "Replace `catch(Exception)` with specific declared exceptions thrown in the try block"
 ---
 
 import Tabs from '@theme/Tabs';

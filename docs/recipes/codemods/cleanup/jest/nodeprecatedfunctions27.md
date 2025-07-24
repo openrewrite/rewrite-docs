@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.NoDeprecatedFunctions27
 displayName: Disallow use of deprecated functions from before version 27
 description: |
-  Disallow use of deprecated functions from before version 27
-  See rule details for [jest/no-deprecated-functions](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-deprecated-functions.md)
-  
+  Disallow use of deprecated functions from before version 27 See rule details for [jest/no-deprecated-functions](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-deprecated-functions.md)
 tags:
   - ESLint
   - eslint-plugin-jest

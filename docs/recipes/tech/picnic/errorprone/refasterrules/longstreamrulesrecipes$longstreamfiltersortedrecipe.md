@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template LongStreamRules.LongStreamFilterSorted"
+sidebar_label: "Refaster template `LongStreamRules.LongStreamFilterSorted`"
 ---
 
 import Tabs from '@theme/Tabs';

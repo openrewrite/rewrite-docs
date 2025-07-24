@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.PaddedBlocks
 displayName: Require or disallow padding within blocks
 description: |
-  Require or disallow padding within blocks
-  
-  See [rule details](https://eslint.style/rules/default/padded-blocks)
-  
+  Require or disallow padding within blocks  See [rule details](https://eslint.style/rules/default/padded-blocks)
 tags:
   - eslint
   - stylistic

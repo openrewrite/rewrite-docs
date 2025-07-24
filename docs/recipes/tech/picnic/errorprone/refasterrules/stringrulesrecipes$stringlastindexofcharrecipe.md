@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template StringRules.StringLastIndexOfChar"
+sidebar_label: "Refaster template `StringRules.StringLastIndexOfChar`"
 ---
 
 import Tabs from '@theme/Tabs';

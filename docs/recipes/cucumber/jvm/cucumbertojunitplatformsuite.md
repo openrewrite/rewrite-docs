@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Cucumber to JUnit test @Suite"
+sidebar_label: "Cucumber to JUnit test `@Suite`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Apply var to generic method invocations"
+sidebar_label: "Apply `var` to generic method invocations"
 ---
 
 import Tabs from '@theme/Tabs';

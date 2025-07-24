@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Ensure lifecycle rule on StorageBucket"
+sidebar_label: "Ensure lifecycle rule on `StorageBucket`"
 ---
 
 import Tabs from '@theme/Tabs';

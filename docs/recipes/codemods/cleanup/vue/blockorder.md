@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.BlockOrder
 displayName: Enforce order of component top-level elements
 description: |
-  Enforce order of component top-level elements
-  See rule details for [vue/block-order](https://eslint.vuejs.org/rules/block-order.html)
-  
+  Enforce order of component top-level elements See rule details for [vue/block-order](https://eslint.vuejs.org/rules/block-order.html)
 tags:
   - ESLint
   - vue

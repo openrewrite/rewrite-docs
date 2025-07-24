@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate xmlns entries in application-client.xml files to WebLogic 14.1.2"
+sidebar_label: "Migrate xmlns entries in `application-client.xml` files to WebLogic 14.1.2"
 ---
 
 import Tabs from '@theme/Tabs';

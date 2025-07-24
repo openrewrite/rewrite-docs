@@ -44,7 +44,6 @@ name: org.openrewrite.codemods.format.RecommendedESLintStyling
 displayName: Recommended ESLint Styling
 description: |
   Collection of stylistic ESLint rules that are recommended by the [ESLint Style.](https://eslint.style/)
-  
 tags:
   - eslint
   - stylistic

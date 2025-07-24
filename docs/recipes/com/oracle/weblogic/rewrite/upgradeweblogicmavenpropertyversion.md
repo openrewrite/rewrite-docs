@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Upgrade weblogic.version Maven property"
+sidebar_label: "Upgrade `weblogic.version` Maven property"
 ---
 
 import Tabs from '@theme/Tabs';

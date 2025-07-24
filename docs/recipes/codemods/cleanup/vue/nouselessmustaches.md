@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NoUselessMustaches
 displayName: Disallow unnecessary mustache interpolations
 description: |
-  Disallow unnecessary mustache interpolations
-  See rule details for [vue/no-useless-mustaches](https://eslint.vuejs.org/rules/no-useless-mustaches.html)
-  
+  Disallow unnecessary mustache interpolations See rule details for [vue/no-useless-mustaches](https://eslint.vuejs.org/rules/no-useless-mustaches.html)
 tags:
   - ESLint
   - vue

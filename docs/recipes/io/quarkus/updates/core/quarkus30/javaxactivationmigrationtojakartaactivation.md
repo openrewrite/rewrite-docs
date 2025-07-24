@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.activation packages to jakarta.activation"
+sidebar_label: "Migrate deprecated `javax.activation` packages to `jakarta.activation`"
 ---
 
 import Tabs from '@theme/Tabs';

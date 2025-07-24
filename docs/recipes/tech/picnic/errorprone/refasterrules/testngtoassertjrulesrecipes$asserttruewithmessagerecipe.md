@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TestNGToAssertJRules.AssertTrueWithMessage"
+sidebar_label: "Refaster template `TestNGToAssertJRules.AssertTrueWithMessage`"
 ---
 
 import Tabs from '@theme/Tabs';

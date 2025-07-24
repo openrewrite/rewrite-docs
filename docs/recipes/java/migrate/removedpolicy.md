@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace javax.security.auth.Policy with java.security.Policy"
+sidebar_label: "Replace `javax.security.auth.Policy` with `java.security.Policy`"
 ---
 
 import Tabs from '@theme/Tabs';

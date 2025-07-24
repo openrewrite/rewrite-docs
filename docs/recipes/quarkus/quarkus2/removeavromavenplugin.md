@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove avro-maven-plugin"
+sidebar_label: "Remove `avro-maven-plugin`"
 ---
 
 import Tabs from '@theme/Tabs';

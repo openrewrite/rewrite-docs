@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxWrapMultilines
 displayName: Disallow missing parentheses around multiline JSX
 description: |
-  Disallow missing parentheses around multiline JSX
-  
-  See [rule details](https://eslint.style/rules/default/jsx-wrap-multilines)
-  
+  Disallow missing parentheses around multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-wrap-multilines)
 tags:
   - eslint
   - stylistic

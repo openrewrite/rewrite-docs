@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Simplify throws statements of tests"
+sidebar_label: "Simplify `throws` statements of tests"
 ---
 
 import Tabs from '@theme/Tabs';

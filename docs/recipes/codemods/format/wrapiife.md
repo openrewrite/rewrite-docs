@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require parentheses around immediate &#x60;function&#x60; invocations"
+sidebar_label: "Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require parentheses around immediate &#x60;function&#x60; invocations
+# Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations
 
 **org.openrewrite.codemods.format.WrapIife**
 
@@ -41,12 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.WrapIife
-displayName: Require parentheses around immediate &#x60;function&#x60; invocations
+displayName: Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations
 description: |
-  Require parentheses around immediate &#x60;function&#x60; invocations
-  
-  See [rule details](https://eslint.style/rules/default/wrap-iife)
-  
+  Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife)
 tags:
   - eslint
   - stylistic

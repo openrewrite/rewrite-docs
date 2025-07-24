@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.IndentBinaryOps
 displayName: Indentation for binary operators
 description: |
-  Indentation for binary operators
-  
-  See [rule details](https://eslint.style/rules/default/indent-binary-ops)
-  
+  Indentation for binary operators  See [rule details](https://eslint.style/rules/default/indent-binary-ops)
 tags:
   - eslint
   - stylistic

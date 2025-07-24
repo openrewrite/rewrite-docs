@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.StringContent
 displayName: Enforce better string content.
 description: |
-  Enforce better string content.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md)
-  
+  Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

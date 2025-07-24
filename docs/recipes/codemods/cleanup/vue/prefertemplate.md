@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require template literals instead of string concatenation in <template>"
+sidebar_label: "Require template literals instead of string concatenation in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require template literals instead of string concatenation in `<template>`
+# Require template literals instead of string concatenation in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.PreferTemplate**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.PreferTemplate
-displayName: Require template literals instead of string concatenation in `<template>`
+displayName: Require template literals instead of string concatenation in `&lt;template&gt;`
 description: |
-  Require template literals instead of string concatenation in `<template>`
-  See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html)
-  
+  Require template literals instead of string concatenation in `&lt;template&gt;` See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html)
 tags:
   - ESLint
   - vue

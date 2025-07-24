@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.IntegerSignumIsNegative"
+sidebar_label: "Refaster template `PrimitiveRules.IntegerSignumIsNegative`"
 ---
 
 import Tabs from '@theme/Tabs';

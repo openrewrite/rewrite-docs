@@ -5,10 +5,11 @@ sidebar_label: "Use 'is' operator instead of 'as' operator"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use 'is' operator instead of 'as' operator
+# Use &#39;is&#39; operator instead of &#39;as&#39; operator
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UseIsOperatorInsteadOfAsOperatorRCS1172**
 
+__
 
 ## Recipe source
 

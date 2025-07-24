@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template IntStreamRules.IntStreamFilterSorted"
+sidebar_label: "Refaster template `IntStreamRules.IntStreamFilterSorted`"
 ---
 
 import Tabs from '@theme/Tabs';

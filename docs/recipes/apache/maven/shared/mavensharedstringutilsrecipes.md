@@ -1,5 +1,5 @@
 ---
-sidebar_label: "MavenSharedStringUtils Refaster recipes"
+sidebar_label: "`MavenSharedStringUtils` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';

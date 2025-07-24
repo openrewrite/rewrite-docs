@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Disallow or enforce spaces inside of blocks after opening block and before closing block in <template>"
+sidebar_label: "Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow or enforce spaces inside of blocks after opening block and before closing block in `<template>`
+# Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.BlockSpacing**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.BlockSpacing
-displayName: Disallow or enforce spaces inside of blocks after opening block and before closing block in `<template>`
+displayName: Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`
 description: |
-  Disallow or enforce spaces inside of blocks after opening block and before closing block in `<template>`
-  See rule details for [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html)
-  
+  Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;` See rule details for [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html)
 tags:
   - ESLint
   - vue

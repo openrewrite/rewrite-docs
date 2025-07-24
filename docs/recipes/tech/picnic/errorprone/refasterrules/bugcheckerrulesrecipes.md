@@ -1,5 +1,5 @@
 ---
-sidebar_label: "BugCheckerRules Refaster recipes"
+sidebar_label: "`BugCheckerRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,8 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes
 displayName: `BugCheckerRules` Refaster recipes
 description: |
-  Refaster rules related to `com.google.errorprone.bugpatterns.BugChecker` classes.
-  [Source](https://error-prone.picnic.tech/refasterrules/BugCheckerRules).
+  Refaster rules related to `com.google.errorprone.bugpatterns.BugChecker` classes. [Source](https://error-prone.picnic.tech/refasterrules/BugCheckerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperAddInputLinesExpectUnchangedRecipe

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use String.contentEquals(CharSequence) instead of String.equals(CharSequence.toString())"
+sidebar_label: "Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`"
 ---
 
 import Tabs from '@theme/Tabs';

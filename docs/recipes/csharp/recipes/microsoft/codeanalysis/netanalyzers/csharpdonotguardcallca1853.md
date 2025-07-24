@@ -5,7 +5,7 @@ sidebar_label: "Unnecessary call to 'Dictionary.ContainsKey(key)'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Unnecessary call to 'Dictionary.ContainsKey(key)'
+# Unnecessary call to &#39;Dictionary.ContainsKey(key)&#39;
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotGuardCallCA1853**
 

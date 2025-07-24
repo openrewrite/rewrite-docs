@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableSortedSetRules Refaster recipes"
+sidebar_label: "`ImmutableSortedSetRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes
 displayName: `ImmutableSortedSetRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `ImmutableSortedSet`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedSetRules).
+  Refaster rules related to expressions dealing with `ImmutableSortedSet`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedSetRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetBuilderRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetNaturalOrderBuilderRecipe

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NewlineAfterImport
 displayName: Enforce a newline after import statements
 description: |
-  Enforce a newline after import statements
-  See rule details for [import/newline-after-import](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/newline-after-import.md)
-  
+  Enforce a newline after import statements See rule details for [import/newline-after-import](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/newline-after-import.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

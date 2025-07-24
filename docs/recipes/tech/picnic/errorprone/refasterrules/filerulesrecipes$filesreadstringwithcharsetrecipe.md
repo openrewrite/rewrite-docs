@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template FileRules.FilesReadStringWithCharset"
+sidebar_label: "Refaster template `FileRules.FilesReadStringWithCharset`"
 ---
 
 import Tabs from '@theme/Tabs';

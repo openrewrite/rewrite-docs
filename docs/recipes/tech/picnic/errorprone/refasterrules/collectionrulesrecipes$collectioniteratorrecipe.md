@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template CollectionRules.CollectionIterator"
+sidebar_label: "Refaster template `CollectionRules.CollectionIterator`"
 ---
 
 import Tabs from '@theme/Tabs';

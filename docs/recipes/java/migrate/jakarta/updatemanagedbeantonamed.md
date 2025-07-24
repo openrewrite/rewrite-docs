@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Update Faces @ManagedBean to use CDI @Named"
+sidebar_label: "Update Faces `@ManagedBean` to use CDI `@Named`"
 ---
 
 import Tabs from '@theme/Tabs';

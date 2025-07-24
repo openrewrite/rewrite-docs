@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxSortProps
 displayName: Enforce props alphabetical sorting
 description: |
-  Enforce props alphabetical sorting
-  
-  See [rule details](https://eslint.style/rules/default/jsx-sort-props)
-  
+  Enforce props alphabetical sorting  See [rule details](https://eslint.style/rules/default/jsx-sort-props)
 tags:
   - eslint
   - stylistic

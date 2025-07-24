@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxCurlySpacing
 displayName: Enforce or disallow spaces inside of curly braces in JSX attributes and expressions
 description: |
-  Enforce or disallow spaces inside of curly braces in JSX attributes and expressions
-  See rule details for [react/jsx-curly-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-spacing.md)
-  
+  Enforce or disallow spaces inside of curly braces in JSX attributes and expressions See rule details for [react/jsx-curly-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-spacing.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

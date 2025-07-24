@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Update Service externalIP"
+sidebar_label: "Update `Service` `externalIP`"
 ---
 
 import Tabs from '@theme/Tabs';

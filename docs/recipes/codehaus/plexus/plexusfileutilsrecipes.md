@@ -1,5 +1,5 @@
 ---
-sidebar_label: "PlexusFileUtils Refaster recipes"
+sidebar_label: "`PlexusFileUtils` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';

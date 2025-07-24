@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.LinesAroundComment
 displayName: Require empty lines around comments
 description: |
-  Require empty lines around comments
-  
-  See [rule details](https://eslint.style/rules/default/lines-around-comment)
-  
+  Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment)
 tags:
   - eslint
   - stylistic

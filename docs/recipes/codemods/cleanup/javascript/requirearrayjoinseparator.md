@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Enforce using the separator argument with Array#join()."
+sidebar_label: "Enforce using the separator argument with `Array#join()`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.RequireArrayJoinSeparator
 displayName: Enforce using the separator argument with `Array#join()`.
 description: |
-  Enforce using the separator argument with `Array#join()`.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md)
-  
+  Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

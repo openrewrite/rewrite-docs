@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableSetRules.SetsUnion"
+sidebar_label: "Refaster template `ImmutableSetRules.SetsUnion`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.ChronoLocalDateIsAfter"
+sidebar_label: "Refaster template `TimeRules.ChronoLocalDateIsAfter`"
 ---
 
 import Tabs from '@theme/Tabs';

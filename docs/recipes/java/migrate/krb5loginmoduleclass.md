@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use com.sun.security.auth.module.Krb5LoginModule instead of com.ibm.security.auth.module.Krb5LoginModule"
+sidebar_label: "Use `com.sun.security.auth.module.Krb5LoginModule` instead of `com.ibm.security.auth.module.Krb5LoginModule`"
 ---
 
 import Tabs from '@theme/Tabs';

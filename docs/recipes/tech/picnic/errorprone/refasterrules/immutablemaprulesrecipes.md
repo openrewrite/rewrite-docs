@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableMapRules Refaster recipes"
+sidebar_label: "`ImmutableMapRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -49,8 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes
 displayName: `ImmutableMapRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `ImmutableMap`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableMapRules).
+  Refaster rules related to expressions dealing with `ImmutableMap`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableMapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderBuildOrThrowRecipe

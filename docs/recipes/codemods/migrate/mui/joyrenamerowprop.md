@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Renames row prop to flexDirection=\"row\""
+sidebar_label: "Renames `row` prop to `flexDirection=&quot;row&quot;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Renames `row` prop to `flexDirection="row"`
+# Renames `row` prop to `flexDirection=&quot;row&quot;`
 
 **org.openrewrite.codemods.migrate.mui.JoyRenameRowProp**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.mui.JoyRenameRowProp
-displayName: Renames `row` prop to `flexDirection="row"`
+displayName: Renames `row` prop to `flexDirection=&quot;row&quot;`
 description: |
   See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-row-prop).
 tags:

@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.quarkus.updates.core.quarkus32.InjectMock**
 
+__
 
 ## Recipe source
 

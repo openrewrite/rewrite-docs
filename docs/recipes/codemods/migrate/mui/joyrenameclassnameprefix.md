@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Renames Mui classname prefix"
+sidebar_label: "Renames `Mui` classname prefix"
 ---
 
 import Tabs from '@theme/Tabs';

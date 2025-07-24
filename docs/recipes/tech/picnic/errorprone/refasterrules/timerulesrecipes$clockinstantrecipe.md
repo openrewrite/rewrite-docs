@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.ClockInstant"
+sidebar_label: "Refaster template `TimeRules.ClockInstant`"
 ---
 
 import Tabs from '@theme/Tabs';

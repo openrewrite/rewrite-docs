@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.ConcatMapIterableIdentity"
+sidebar_label: "Refaster template `ReactorRules.ConcatMapIterableIdentity`"
 ---
 
 import Tabs from '@theme/Tabs';

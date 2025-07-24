@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ReactorRules.FluxThenMono"
+sidebar_label: "Refaster template `ReactorRules.FluxThenMono`"
 ---
 
 import Tabs from '@theme/Tabs';

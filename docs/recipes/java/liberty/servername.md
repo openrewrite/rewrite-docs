@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Use getProperty(\"wlp.server.name\")"
+sidebar_label: "Use `getProperty(&quot;wlp.server.name&quot;)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `getProperty("wlp.server.name")`
+# Use `getProperty(&quot;wlp.server.name&quot;)`
 
 **org.openrewrite.java.liberty.ServerName**
 

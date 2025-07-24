@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template JUnitToAssertJRules.AssertThatIsNull"
+sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatIsNull`"
 ---
 
 import Tabs from '@theme/Tabs';

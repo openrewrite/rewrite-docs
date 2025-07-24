@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.PreferSpyOn
 displayName: Suggest using jest.spyOn()
 description: |
-  Suggest using jest.spyOn()
-  See rule details for [jest/prefer-spy-on](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md)
-  
+  Suggest using jest.spyOn() See rule details for [jest/prefer-spy-on](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md)
 tags:
   - ESLint
   - eslint-plugin-jest

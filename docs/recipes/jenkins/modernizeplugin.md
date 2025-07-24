@@ -43,7 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `mockito-core`
   * newVersion: `5.13.0`
   * overrideManagedVersion: `false`
-* [Upgrade property's value to version](../jenkins/upgradeversionproperty)
+* [Upgrade property&#39;s value to version](../jenkins/upgradeversionproperty)
   * key: `jenkins.version`
   * minimumVersion: `2.452.4`
 * [Remove a Gradle or Maven dependency](../java/dependencies/removedependency)

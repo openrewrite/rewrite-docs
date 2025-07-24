@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Long#compareUnsigned"
+sidebar_label: "Prefer `Long#compareUnsigned`"
 ---
 
 import Tabs from '@theme/Tabs';

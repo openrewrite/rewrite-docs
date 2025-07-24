@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace isCloseTo with isEqualTo"
+sidebar_label: "Replace `isCloseTo` with `isEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

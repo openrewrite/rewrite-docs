@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoLonelyIf
 displayName: Disallow if statements as the only statement in else blocks
 description: |
-  Disallow if statements as the only statement in else blocks 
-  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)
-  
+  Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

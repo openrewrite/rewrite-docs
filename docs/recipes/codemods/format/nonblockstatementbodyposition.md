@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NonblockStatementBodyPosition
 displayName: Enforce the location of single-line statements
 description: |
-  Enforce the location of single-line statements
-  
-  See [rule details](https://eslint.style/rules/default/nonblock-statement-body-position)
-  
+  Enforce the location of single-line statements  See [rule details](https://eslint.style/rules/default/nonblock-statement-body-position)
 tags:
   - eslint
   - stylistic

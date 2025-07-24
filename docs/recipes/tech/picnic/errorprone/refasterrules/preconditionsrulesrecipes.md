@@ -1,5 +1,5 @@
 ---
-sidebar_label: "PreconditionsRules Refaster recipes"
+sidebar_label: "`PreconditionsRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -41,8 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes
 displayName: `PreconditionsRules` Refaster recipes
 description: |
-  Refaster templates related to statements dealing with `Preconditions`.
-  [Source](https://error-prone.picnic.tech/refasterrules/PreconditionsRules).
+  Refaster templates related to statements dealing with `Preconditions`. [Source](https://error-prone.picnic.tech/refasterrules/PreconditionsRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes$RequireNonNullRecipe
   - tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes$RequireNonNullWithMessageRecipe

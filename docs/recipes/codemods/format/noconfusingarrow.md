@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoConfusingArrow
 displayName: Disallow arrow functions where they could be confused with comparisons
 description: |
-  Disallow arrow functions where they could be confused with comparisons
-  
-  See [rule details](https://eslint.style/rules/default/no-confusing-arrow)
-  
+  Disallow arrow functions where they could be confused with comparisons  See [rule details](https://eslint.style/rules/default/no-confusing-arrow)
 tags:
   - eslint
   - stylistic

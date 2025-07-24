@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NoRequiredPropWithDefault
 displayName: Enforce props with default values to be optional
 description: |
-  Enforce props with default values to be optional
-  See rule details for [vue/no-required-prop-with-default](https://eslint.vuejs.org/rules/no-required-prop-with-default.html)
-  
+  Enforce props with default values to be optional See rule details for [vue/no-required-prop-with-default](https://eslint.vuejs.org/rules/no-required-prop-with-default.html)
 tags:
   - ESLint
   - vue

@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxTagSpacing
 displayName: Enforce whitespace in and around the JSX opening and closing brackets
 description: |
-  Enforce whitespace in and around the JSX opening and closing brackets
-  See rule details for [react/jsx-tag-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-tag-spacing.md)
-  
+  Enforce whitespace in and around the JSX opening and closing brackets See rule details for [react/jsx-tag-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-tag-spacing.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

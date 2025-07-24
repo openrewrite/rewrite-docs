@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template OptionalRules.OptionalFirstIteratorElement"
+sidebar_label: "Refaster template `OptionalRules.OptionalFirstIteratorElement`"
 ---
 
 import Tabs from '@theme/Tabs';

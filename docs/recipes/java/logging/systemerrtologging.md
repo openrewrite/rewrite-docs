@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use logger instead of System.err print statements"
+sidebar_label: "Use logger instead of `System.err` print statements"
 ---
 
 import Tabs from '@theme/Tabs';

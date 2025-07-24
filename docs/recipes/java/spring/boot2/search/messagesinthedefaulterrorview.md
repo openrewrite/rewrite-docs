@@ -50,11 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView
 displayName: Find projects affected by changes to the default error view message attribute
 description: |
-  As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown.
-  `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item
-  ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)).
-  You can still use the `server.error.include-message` property if you want messages to be included.
-  
+  As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included.
 tags:
   - spring
   - boot

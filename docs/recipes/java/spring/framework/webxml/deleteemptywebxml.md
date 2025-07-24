@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Delete empty web.xml files"
+sidebar_label: "Delete empty `web.xml` files"
 ---
 
 import Tabs from '@theme/Tabs';

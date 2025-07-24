@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate deprecated javax.mail packages to jakarta.mail"
+sidebar_label: "Migrate deprecated `javax.mail` packages to `jakarta.mail`"
 ---
 
 import Tabs from '@theme/Tabs';

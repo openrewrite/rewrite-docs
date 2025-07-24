@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Unnecessary String#valueOf(..)"
+sidebar_label: "Unnecessary `String#valueOf(..)`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate Struts 2.0 interceptors to action \"aware\" interfaces"
+sidebar_label: "Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Struts 2.0 interceptors to action "aware" interfaces
+# Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces
 
 **org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces**
 
@@ -67,7 +67,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces
-displayName: Migrate Struts 2.0 interceptors to action "aware" interfaces
+displayName: Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces
 description: |
   These types have moved to a new package in Struts 6.0.
 recipeList:

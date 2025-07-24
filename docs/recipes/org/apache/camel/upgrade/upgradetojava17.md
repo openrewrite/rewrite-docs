@@ -54,7 +54,6 @@ name: org.apache.camel.upgrade.UpgradeToJava17
 displayName: Migrate to Java 17
 description: |
   This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
-  
 tags:
   - java17
 recipeList:

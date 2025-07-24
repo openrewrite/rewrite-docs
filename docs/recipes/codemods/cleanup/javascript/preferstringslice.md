@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer String#slice() over String#substr() and String#substring()."
+sidebar_label: "Prefer `String#slice()` over `String#substr()` and `String#substring()`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferStringSlice
 displayName: Prefer `String#slice()` over `String#substr()` and `String#substring()`.
 description: |
-  Prefer `String#slice()` over `String#substr()` and `String#substring()`.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-slice.md)
-  
+  Prefer `String#slice()` over `String#substr()` and `String#substring()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-slice.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

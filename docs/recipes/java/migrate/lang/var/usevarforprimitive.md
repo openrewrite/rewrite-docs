@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use var for primitive-typed variables"
+sidebar_label: "Use `var` for primitive-typed variables"
 ---
 
 import Tabs from '@theme/Tabs';

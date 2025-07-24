@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Remove TestRestTemplate.HttpClientOption.ENABLE_REDIRECTS option"
+sidebar_label: "Remove `TestRestTemplate.HttpClientOption.ENABLE_REDIRECTS` option"
 ---
 
 import Tabs from '@theme/Tabs';

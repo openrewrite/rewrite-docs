@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer negative index over .length - index when possible."
+sidebar_label: "Prefer negative index over `.length - index` when possible."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferNegativeIndex
 displayName: Prefer negative index over `.length - index` when possible.
 description: |
-  Prefer negative index over `.length - index` when possible.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-negative-index.md)
-  
+  Prefer negative index over `.length - index` when possible. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-negative-index.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "StringRules Refaster recipes"
+sidebar_label: "`StringRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -62,8 +62,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.StringRulesRecipes
 displayName: `StringRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `String`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/StringRules).
+  Refaster rules related to expressions dealing with `String`s. [Source](https://error-prone.picnic.tech/refasterrules/StringRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe

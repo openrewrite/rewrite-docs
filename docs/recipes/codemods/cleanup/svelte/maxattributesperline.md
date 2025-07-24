@@ -45,9 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine
 displayName: enforce the maximum number of attributes per line
 description: |
-  enforce the maximum number of attributes per line
-  See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/)
-  
+  enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/)
 tags:
   - svelte
   - ESLint

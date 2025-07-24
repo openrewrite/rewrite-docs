@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Find hardcoded algorithms in KeyPairGenerator"
+sidebar_label: "Find hardcoded algorithms in `KeyPairGenerator`"
 ---
 
 import Tabs from '@theme/Tabs';

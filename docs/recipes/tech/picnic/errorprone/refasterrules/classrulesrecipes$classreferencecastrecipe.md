@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ClassRules.ClassReferenceCast"
+sidebar_label: "Refaster template `ClassRules.ClassReferenceCast`"
 ---
 
 import Tabs from '@theme/Tabs';

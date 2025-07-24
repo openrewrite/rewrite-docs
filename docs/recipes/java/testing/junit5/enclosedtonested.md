@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JUnit 4 @RunWith(Enclosed.class) to JUnit Jupiter @Nested"
+sidebar_label: "JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`"
 ---
 
 import Tabs from '@theme/Tabs';

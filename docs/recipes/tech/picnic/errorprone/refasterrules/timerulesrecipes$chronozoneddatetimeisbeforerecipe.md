@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.ChronoZonedDateTimeIsBefore"
+sidebar_label: "Refaster template `TimeRules.ChronoZonedDateTimeIsBefore`"
 ---
 
 import Tabs from '@theme/Tabs';

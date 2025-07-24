@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJByteRules Refaster recipes"
+sidebar_label: "`AssertJByteRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes
 displayName: `AssertJByteRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJByteRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJByteRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToRecipe

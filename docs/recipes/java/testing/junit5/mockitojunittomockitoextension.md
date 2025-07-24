@@ -1,5 +1,5 @@
 ---
-sidebar_label: "JUnit 4 MockitoJUnit to JUnit Jupiter MockitoExtension"
+sidebar_label: "JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`"
 ---
 
 import Tabs from '@theme/Tabs';

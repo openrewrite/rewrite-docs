@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer ternary expressions over simple if-else statements."
+sidebar_label: "Prefer ternary expressions over simple `if-else` statements."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferTernary
 displayName: Prefer ternary expressions over simple `if-else` statements.
 description: |
-  Prefer ternary expressions over simple `if-else` statements.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md)
-  
+  Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

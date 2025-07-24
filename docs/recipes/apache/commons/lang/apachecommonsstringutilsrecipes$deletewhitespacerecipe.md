@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace StringUtils.deleteWhitespace(String) with JDK provided API"
+sidebar_label: "Replace `StringUtils.deleteWhitespace(String)` with JDK provided API"
 ---
 
 import Tabs from '@theme/Tabs';

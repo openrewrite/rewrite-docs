@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer java.lang.Char#compare"
+sidebar_label: "Prefer `java.lang.Char#compare`"
 ---
 
 import Tabs from '@theme/Tabs';

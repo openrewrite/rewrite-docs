@@ -65,7 +65,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJStringRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes)
 * [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes)
 * [Collapse consecutive `assertThat` statements](../../../java/testing/assertj/collapseconsecutiveassertthatstatements)
-* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports)
+* [Statically import AssertJ&#39;s `assertThat`](../../../java/testing/assertj/staticimports)
 
 </TabItem>
 

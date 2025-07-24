@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJLongRules Refaster recipes"
+sidebar_label: "`AssertJLongRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,8 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes
 displayName: `AssertJLongRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJLongRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJLongRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsNotEqualToRecipe

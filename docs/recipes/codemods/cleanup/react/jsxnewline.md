@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxNewline
 displayName: Require or prevent a new line after jsx elements and expressions
 description: |
-  Require or prevent a new line after jsx elements and expressions
-  See rule details for [react/jsx-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-newline.md)
-  
+  Require or prevent a new line after jsx elements and expressions See rule details for [react/jsx-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-newline.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

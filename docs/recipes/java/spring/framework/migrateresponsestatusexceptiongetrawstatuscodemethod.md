@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate ResponseStatusException#getRawStatusCode() to getStatusCode().value()"
+sidebar_label: "Migrate `ResponseStatusException#getRawStatusCode()` to `getStatusCode().value()`"
 ---
 
 import Tabs from '@theme/Tabs';

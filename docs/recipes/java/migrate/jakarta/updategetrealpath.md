@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Updates getRealPath() to call getContext() followed by getRealPath()"
+sidebar_label: "Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`"
 ---
 
 import Tabs from '@theme/Tabs';

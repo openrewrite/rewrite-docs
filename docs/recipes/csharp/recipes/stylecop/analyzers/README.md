@@ -43,7 +43,7 @@
 * [Do not combine fields](./sa1132sa1132.md)
 * [Do not place regions within elements](./removeregionsa1123.md)
 * [Do not prefix calls with base unless local implementation exists](./sa1100sa1100.md)
-* [Do not prefix local calls with 'this.'](./sx1101sx1101.md)
+* [Do not prefix local calls with &#39;this.&#39;](./sx1101sx1101.md)
 * [Do not use default value type constructor](./sa1129sa1129.md)
 * [Do not use placeholder elements](./sa1651sa1651.md)
 * [Do not use regions](./removeregionsa1124.md)

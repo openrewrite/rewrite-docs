@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ComparatorRules.CollectionsMin"
+sidebar_label: "Refaster template `ComparatorRules.CollectionsMin`"
 ---
 
 import Tabs from '@theme/Tabs';

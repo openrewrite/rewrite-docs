@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Migrate removed Spring Assert methods"
+sidebar_label: "Migrate removed Spring `Assert` methods"
 ---
 
 import Tabs from '@theme/Tabs';

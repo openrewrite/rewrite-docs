@@ -44,9 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.PreferExpectResolves
 displayName: Prefer await expect(...).resolves over expect(await ...) syntax
 description: |
-  Prefer await expect(...).resolves over expect(await ...) syntax
-  See rule details for [jest/prefer-expect-resolves](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-expect-resolves.md)
-  
+  Prefer await expect(...).resolves over expect(await ...) syntax See rule details for [jest/prefer-expect-resolves](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-expect-resolves.md)
 tags:
   - ESLint
   - eslint-plugin-jest

@@ -5,10 +5,11 @@ sidebar_label: "Remove redundant 'ToString' call"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove redundant 'ToString' call
+# Remove redundant &#39;ToString&#39; call
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1097**
 
+__
 
 ## Recipe source
 

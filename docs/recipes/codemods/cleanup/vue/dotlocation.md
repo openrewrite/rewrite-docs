@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Enforce consistent newlines before and after dots in <template>"
+sidebar_label: "Enforce consistent newlines before and after dots in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent newlines before and after dots in `<template>`
+# Enforce consistent newlines before and after dots in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.DotLocation**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.DotLocation
-displayName: Enforce consistent newlines before and after dots in `<template>`
+displayName: Enforce consistent newlines before and after dots in `&lt;template&gt;`
 description: |
-  Enforce consistent newlines before and after dots in `<template>`
-  See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html)
-  
+  Enforce consistent newlines before and after dots in `&lt;template&gt;` See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html)
 tags:
   - ESLint
   - vue

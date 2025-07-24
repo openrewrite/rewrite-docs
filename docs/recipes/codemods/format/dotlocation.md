@@ -43,10 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.DotLocation
 displayName: Enforce consistent newlines before and after dots
 description: |
-  Enforce consistent newlines before and after dots
-  
-  See [rule details](https://eslint.style/rules/default/dot-location)
-  
+  Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location)
 tags:
   - eslint
   - stylistic

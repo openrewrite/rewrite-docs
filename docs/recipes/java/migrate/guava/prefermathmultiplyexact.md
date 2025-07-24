@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Prefer Math#multiplyExact"
+sidebar_label: "Prefer `Math#multiplyExact`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -5,10 +5,11 @@ sidebar_label: "Use 'var' or explicit type"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use 'var' or explicit type
+# Use &#39;var&#39; or explicit type
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UseVarOrExplicitTypeRCS1264**
 
+__
 
 ## Recipe source
 

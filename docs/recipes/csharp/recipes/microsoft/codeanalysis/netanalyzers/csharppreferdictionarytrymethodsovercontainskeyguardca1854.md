@@ -5,7 +5,7 @@ sidebar_label: "Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
+# Prefer the &#39;IDictionary.TryGetValue(TKey, out TValue)&#39; method
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1854**
 

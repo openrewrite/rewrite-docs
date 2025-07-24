@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template TimeRules.InstantTruncatedToSeconds"
+sidebar_label: "Refaster template `TimeRules.InstantTruncatedToSeconds`"
 ---
 
 import Tabs from '@theme/Tabs';

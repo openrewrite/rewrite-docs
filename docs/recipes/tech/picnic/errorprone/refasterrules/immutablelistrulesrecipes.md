@@ -1,5 +1,5 @@
 ---
-sidebar_label: "ImmutableListRules Refaster recipes"
+sidebar_label: "`ImmutableListRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -51,8 +51,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes
 displayName: `ImmutableListRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `ImmutableList`s.
-  [Source](https://error-prone.picnic.tech/refasterrules/ImmutableListRules).
+  Refaster rules related to expressions dealing with `ImmutableList`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableListRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListBuilderRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$IterableToImmutableListRecipe

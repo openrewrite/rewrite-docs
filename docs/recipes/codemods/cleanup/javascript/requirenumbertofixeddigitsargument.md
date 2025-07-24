@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Enforce using the digits argument with Number#toFixed()."
+sidebar_label: "Enforce using the digits argument with `Number#toFixed()`."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,9 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.RequireNumberToFixedDigitsArgument
 displayName: Enforce using the digits argument with `Number#toFixed()`.
 description: |
-  Enforce using the digits argument with `Number#toFixed()`.
-  See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md)
-  
+  Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

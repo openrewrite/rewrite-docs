@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Transform CommonJS style require() calls to ES6 import statements"
+sidebar_label: "Transform CommonJS style `require()` calls to ES6 `import` statements"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,7 +44,6 @@ name: org.openrewrite.codemods.ecmascript.5to6.cjsToEsm
 displayName: Transform CommonJS style `require()` calls to ES6 `import` statements
 description: |
   Transform CommonJS style `require()` calls to ES6 `import` statements
-  
 tags:
   - codemods
   - 5to6

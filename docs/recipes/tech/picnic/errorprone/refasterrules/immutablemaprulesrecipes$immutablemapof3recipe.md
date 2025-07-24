@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template ImmutableMapRules.ImmutableMapOf3"
+sidebar_label: "Refaster template `ImmutableMapRules.ImmutableMapOf3`"
 ---
 
 import Tabs from '@theme/Tabs';

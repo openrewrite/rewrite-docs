@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace static Traits methods with constructor calls"
+sidebar_label: "Replace static `Traits` methods with constructor calls"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove `org.openrewrite.java.trait.Traits.methodAccess(MethodMatcher)` usage](../../../java/recipes/migrate/removetraitsusagerecipes$methodmatcherrecipe)
 * [Remove `org.openrewrite.java.trait.Traits.annotated(String)` usage](../../../java/recipes/migrate/removetraitsusagerecipes$stringsignaturerecipe)
 * [Remove `org.openrewrite.java.trait.Traits.annotated(AnnotationMatcher)` usage](../../../java/recipes/migrate/removetraitsusagerecipes$annotationmatcherrecipe)
-* [Remove `org.openrewrite.java.trait.Traits.annotated(Class<?>)` usage](../../../java/recipes/migrate/removetraitsusagerecipes$classtyperecipe)
+* [Remove `org.openrewrite.java.trait.Traits.annotated(Class&lt;?&gt;)` usage](../../../java/recipes/migrate/removetraitsusagerecipes$classtyperecipe)
 * [Remove `org.openrewrite.gradle.trait.Traits.gradleDependency()` usage](../../../java/recipes/migrate/removetraitsusagerecipes$dependencyrecipe)
 * [Remove `org.openrewrite.maven.trait.Traits.mavenPlugin()` usage](../../../java/recipes/migrate/removetraitsusagerecipes$pluginrecipe)
 * [Remove `org.openrewrite.gradle.trait.Traits.jvmTestSuite()` usage](../../../java/recipes/migrate/removetraitsusagerecipes$jvmtestsuiterecipe)

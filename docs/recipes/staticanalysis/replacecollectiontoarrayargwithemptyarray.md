@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Empty Array for Collection.toArray()"
+sidebar_label: "Use Empty Array for `Collection.toArray()`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Require the use of === and !== in <template>"
+sidebar_label: "Require the use of === and !== in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require the use of === and !== in `<template>`
+# Require the use of === and !== in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.Eqeqeq**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.Eqeqeq
-displayName: Require the use of === and !== in `<template>`
+displayName: Require the use of === and !== in `&lt;template&gt;`
 description: |
-  Require the use of === and !== in `<template>`
-  See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html)
-  
+  Require the use of === and !== in `&lt;template&gt;` See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html)
 tags:
   - ESLint
   - vue

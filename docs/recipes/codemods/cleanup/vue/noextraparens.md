@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Disallow unnecessary parentheses in <template>"
+sidebar_label: "Disallow unnecessary parentheses in `&lt;template&gt;`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow unnecessary parentheses in `<template>`
+# Disallow unnecessary parentheses in `&lt;template&gt;`
 
 **org.openrewrite.codemods.cleanup.vue.NoExtraParens**
 
@@ -42,11 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NoExtraParens
-displayName: Disallow unnecessary parentheses in `<template>`
+displayName: Disallow unnecessary parentheses in `&lt;template&gt;`
 description: |
-  Disallow unnecessary parentheses in `<template>`
-  See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html)
-  
+  Disallow unnecessary parentheses in `&lt;template&gt;` See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html)
 tags:
   - ESLint
   - vue

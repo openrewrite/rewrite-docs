@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template PrimitiveRules.LessThanOrEqualTo"
+sidebar_label: "Refaster template `PrimitiveRules.LessThanOrEqualTo`"
 ---
 
 import Tabs from '@theme/Tabs';

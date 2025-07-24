@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use HttpServletRequest logout method for programmatic security logout in Servlet 3.0"
+sidebar_label: "Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0"
 ---
 
 import Tabs from '@theme/Tabs';

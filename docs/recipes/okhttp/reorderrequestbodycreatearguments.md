@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Reorder the arguments of RequestBody.create()"
+sidebar_label: "Reorder the arguments of `RequestBody.create()`"
 ---
 
 import Tabs from '@theme/Tabs';

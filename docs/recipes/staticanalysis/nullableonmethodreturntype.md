@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Move @Nullable method annotations to the return type"
+sidebar_label: "Move `@Nullable` method annotations to the return type"
 ---
 
 import Tabs from '@theme/Tabs';

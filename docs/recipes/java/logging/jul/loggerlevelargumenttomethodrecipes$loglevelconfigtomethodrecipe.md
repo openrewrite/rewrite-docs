@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Replace JUL Logger.log(Level.CONFIG, String) with Logger.config(String)"
+sidebar_label: "Replace JUL `Logger.log(Level.CONFIG, String)` with `Logger.config(String)`"
 ---
 
 import Tabs from '@theme/Tabs';

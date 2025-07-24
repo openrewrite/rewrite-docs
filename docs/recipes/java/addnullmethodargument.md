@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add a null method argument"
+sidebar_label: "Add a `null` method argument"
 ---
 
 import Tabs from '@theme/Tabs';

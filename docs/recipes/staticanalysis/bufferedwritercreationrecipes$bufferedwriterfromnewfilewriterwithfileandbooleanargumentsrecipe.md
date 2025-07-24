@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Convert new BufferedWriter(new FileWriter(File, boolean)) to Files.newBufferedWriter(Path, StandardOpenOption)"
+sidebar_label: "Convert `new BufferedWriter(new FileWriter(File, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`"
 ---
 
 import Tabs from '@theme/Tabs';

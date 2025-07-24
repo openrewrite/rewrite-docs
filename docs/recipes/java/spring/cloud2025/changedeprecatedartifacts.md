@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.java.spring.cloud2025.ChangeDeprecatedArtifacts**
 
+__
 
 ## Recipe source
 

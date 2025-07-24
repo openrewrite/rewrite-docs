@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Runtime.Version#interim()"
+sidebar_label: "Use `Runtime.Version#interim()`"
 ---
 
 import Tabs from '@theme/Tabs';

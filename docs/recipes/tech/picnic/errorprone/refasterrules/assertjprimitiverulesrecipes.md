@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AssertJPrimitiveRules Refaster recipes"
+sidebar_label: "`AssertJPrimitiveRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,8 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes
 displayName: `AssertJPrimitiveRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJPrimitiveRules`.
-  [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules).
+  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJPrimitiveRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsNotEqualToRecipe

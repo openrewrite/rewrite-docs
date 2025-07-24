@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Refaster template FileRules.PathInstance"
+sidebar_label: "Refaster template `FileRules.PathInstance`"
 ---
 
 import Tabs from '@theme/Tabs';
