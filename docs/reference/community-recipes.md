@@ -47,6 +47,9 @@ If you want to see your project on this list - please feel free to click on the 
 * Jenkins [Plugin Modernizer Tool](https://github.com/jenkinsci/plugin-modernizer-tool/)
   * Plugin Modernizer is a generic CLI tool designed to automate the modernization of Jenkins plugins.
 
+* JHipster Lite's [Upgrade recipes](https://github.com/jhipster/jhipster-lite/pull/12959)
+  * JHipster Lite is a development platform to generate, develop & deploy modern web applications & microservices architecture, step by step - using Hexagonal Architecture.
+
 * [OpenAPI 3 recipes](https://github.com/desprez/rewrite-oas3)
   * OpenRewrite recipes for migrating Java swagger2 (OAS2) annotations to Open API 3 (OAS3).
 * [Morphia](https://github.com/MorphiaOrg/morphia/blob/master/upgrading/UpgradeFrom22to23.yml)
