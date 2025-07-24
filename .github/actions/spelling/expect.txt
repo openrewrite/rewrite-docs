@@ -80,7 +80,7 @@ jetbrains
 JGit
 JLeft
 JNI
-jre
+JRE
 JRight
 jsonpathmatcher
 jsontype
