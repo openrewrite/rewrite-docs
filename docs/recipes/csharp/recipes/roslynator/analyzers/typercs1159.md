@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use EventHandler<T>"
+sidebar_label: "Use `EventHandler<T>`"
 ---
 
 import Tabs from '@theme/Tabs';

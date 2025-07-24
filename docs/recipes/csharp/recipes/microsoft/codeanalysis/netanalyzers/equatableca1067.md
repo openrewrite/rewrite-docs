@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Override Object.Equals(object) when implementing IEquatable<T>"
+sidebar_label: "Override Object.Equals(object) when implementing `IEquatable<T>`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.EquatableCA1067**
 
 ```
-When a type T implements the interface IEquatable<T>, it suggests to a user who sees a call to the Equals method in source code that an instance of the type can be equated with an instance of any other type. The user might be confused if their attempt to equate the type with an instance of another type fails to compile. This violates the "principle of least surprise".
+When a type T implements the interface `IEquatable<T>`, it suggests to a user who sees a call to the Equals method in source code that an instance of the type can be equated with an instance of any other type. The user might be confused if their attempt to equate the type with an instance of another type fails to compile. This violates the "principle of least surprise".
 ```
 
 

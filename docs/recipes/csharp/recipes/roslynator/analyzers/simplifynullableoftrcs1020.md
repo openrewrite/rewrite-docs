@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Simplify Nullable<T> to T?"
+sidebar_label: "Simplify `Nullable<T>` to T?"
 ---
 
 import Tabs from '@theme/Tabs';

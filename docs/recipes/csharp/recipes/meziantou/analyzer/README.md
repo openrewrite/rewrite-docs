@@ -2,7 +2,7 @@
 
 ## Recipes
 
-* [A class that provides Equals(T) should implement IEquatable<T>](./equalityshouldbecorrectlyimplementedma0077.md)
+* [A class that provides Equals(T) should implement `IEquatable<T>`](./equalityshouldbecorrectlyimplementedma0077.md)
 * [Abstract types should not have public or internal constructors](./abstracttypesshouldnothaveconstructorsma0017.md)
 * [Add StructLayoutAttribute](./usestructlayoutattributema0008.md)
 * [Add a comma after the last value](./commama0007.md)
@@ -17,7 +17,7 @@
 * [Forward the CancellationToken parameter to methods that take one](./useanoverloadthathascancellationtokenfixer_argumentma0040.md)
 * [Forward the CancellationToken using .WithCancellation()](./useanoverloadthathascancellationtokenfixer_awaitforeachma0079.md)
 * [Forward the TimeProvider to methods that take one](./useanoverloadthathastimeproviderma0166.md)
-* [IEqualityComparer<string> or IComparer<string> is missing](./usestringcomparerma0002.md)
+* [`IEqualityComparer<string>` or `IComparer<string>` is missing](./usestringcomparerma0002.md)
 * [Make class sealed](./classmustbesealedma0053.md)
 * [Make class static](./makeclassstaticma0036.md)
 * [Make interpolated string](./makeinterpolatedstringma0165.md)
@@ -45,7 +45,7 @@
 * [Use 'Cast' instead of 'Select' to cast](./optimizelinqusagema0078.md)
 * [Use 'Order' instead of 'OrderBy'](./optimizelinqusagema0159.md)
 * [Use 'is' operator instead of SequenceEqual](./useispatterninsteadofsequenceequalma0128.md)
-* [Use Array.Empty<T>()](./usearrayemptyma0005.md)
+* [Use `Array.Empty<T>`()](./usearrayemptyma0005.md)
 * [Use DateTime.UnixEpoch](./usedatetimeunixepochma0113.md)
 * [Use DateTimeOffset.UnixEpoch](./usedatetimeunixepochma0114.md)
 * [Use EventArgs.Empty](./useeventargsemptyma0019.md)

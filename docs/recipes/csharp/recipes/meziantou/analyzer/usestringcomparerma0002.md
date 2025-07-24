@@ -1,5 +1,5 @@
 ---
-sidebar_label: "IEqualityComparer<string> or IComparer<string> is missing"
+sidebar_label: "`IEqualityComparer<string>` or `IComparer<string>` is missing"
 ---
 
 import Tabs from '@theme/Tabs';

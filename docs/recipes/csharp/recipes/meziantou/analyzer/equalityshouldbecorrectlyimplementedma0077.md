@@ -1,5 +1,5 @@
 ---
-sidebar_label: "A class that provides Equals(T) should implement IEquatable<T>"
+sidebar_label: "A class that provides Equals(T) should implement `IEquatable<T>`"
 ---
 
 import Tabs from '@theme/Tabs';

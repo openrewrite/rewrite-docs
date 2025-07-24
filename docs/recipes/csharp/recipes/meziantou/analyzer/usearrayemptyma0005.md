@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Array.Empty<T>()"
+sidebar_label: "Use `Array.Empty<T>`()"
 ---
 
 import Tabs from '@theme/Tabs';

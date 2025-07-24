@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Do not compare Span<T> to 'null' or 'default'"
+sidebar_label: "Do not compare `Span<T>` to 'null' or 'default'"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotCompareSpanToNullCA2265**
 
 ```
-Comparing a span to 'null' or 'default' might not do what you intended. 'default' and the 'null' literal are implicitly converted to 'Span<T>.Empty'. Remove the redundant comparison or make the code more explicit by using 'IsEmpty'.
+Comparing a span to 'null' or 'default' might not do what you intended. 'default' and the 'null' literal are implicitly converted to '`Span<T>`.Empty'. Remove the redundant comparison or make the code more explicit by using 'IsEmpty'.
 ```
 
 
