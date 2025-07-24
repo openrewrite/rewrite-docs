@@ -4,7 +4,7 @@ description: What's changed in OpenRewrite version 8.59.1.
 
 # 8.59.1 release (2025-07-24)
 
-_Total recipe count: 4006_
+_Total recipe count: 4576_
 
 :::info
 This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
