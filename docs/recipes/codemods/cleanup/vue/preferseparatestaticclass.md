@@ -13,9 +13,9 @@ _Require static class names in template to be in a separate class attribute See 
 
 ### Tags
 
-* ESLint
-* vue
-* eslint-plugin-vue
+* [ESLint](../recipes-by-tag#eslint)
+* [vue](../recipes-by-tag#vue)
+* [eslint-plugin-vue](../recipes-by-tag#eslint-plugin-vue)
 
 ## Recipe source
 

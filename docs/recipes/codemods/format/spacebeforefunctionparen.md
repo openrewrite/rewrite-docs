@@ -13,8 +13,8 @@ _Enforce consistent spacing before &#x60;function&#x60; definition opening paren
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Enforce closing bracket location in JSX  See [rule details](https://eslint.styl
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

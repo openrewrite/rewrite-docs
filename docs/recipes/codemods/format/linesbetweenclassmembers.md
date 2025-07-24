@@ -13,8 +13,8 @@ _Require or disallow an empty line between class members  See [rule details](htt
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

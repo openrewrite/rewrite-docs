@@ -6,7 +6,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [DevCenter](./devcenterstarter.md)
 * [OWASP top ten](./securitystarter.md)
-* [Original DevCenter security card](./securityoriginalstarter.md)
 
 ## Recipes
 

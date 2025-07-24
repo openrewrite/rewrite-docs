@@ -13,7 +13,7 @@ _Prefer `java.lang.Long#parseUnsignedInt` instead of using `com.google.common.pr
 
 ### Tags
 
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

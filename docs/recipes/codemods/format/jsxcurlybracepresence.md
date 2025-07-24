@@ -13,8 +13,8 @@ _Disallow unnecessary JSX expressions when literals alone are sufficient or enfo
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

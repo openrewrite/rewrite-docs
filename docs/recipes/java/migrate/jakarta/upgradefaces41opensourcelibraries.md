@@ -13,11 +13,11 @@ _Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions._
 
 ### Tags
 
-* myfaces
-* faces
-* jsf
-* omnifaces
-* jakarta
+* [myfaces](../recipes-by-tag#myfaces)
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [omnifaces](../recipes-by-tag#omnifaces)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

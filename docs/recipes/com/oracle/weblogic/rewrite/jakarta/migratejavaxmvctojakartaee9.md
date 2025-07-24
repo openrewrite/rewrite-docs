@@ -13,8 +13,8 @@ _Upgrade Jakarta Model-View-Controller libraries to 2.0 (Jakarta EE9) versions._
 
 ### Tags
 
-* mvc
-* jakarta
+* [mvc](../recipes-by-tag#mvc)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

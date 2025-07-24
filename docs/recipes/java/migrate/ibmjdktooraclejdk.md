@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when upgrading Java versions. Th
 
 ### Tags
 
-* java11
+* [java11](../recipes-by-tag#java11)
 
 ## Recipe source
 

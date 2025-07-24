@@ -13,8 +13,8 @@ _Enforce linebreaks after opening and before closing array brackets  See [rule d
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

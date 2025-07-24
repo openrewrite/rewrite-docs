@@ -13,8 +13,8 @@ _Enforce the location of single-line statements  See [rule details](https://esli
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

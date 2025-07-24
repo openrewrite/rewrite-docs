@@ -13,8 +13,8 @@ _Enforce line breaks after each array element  See [rule details](https://eslint
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

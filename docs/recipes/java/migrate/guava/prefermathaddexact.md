@@ -13,7 +13,7 @@ _Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMa
 
 ### Tags
 
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

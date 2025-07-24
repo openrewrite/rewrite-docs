@@ -13,9 +13,9 @@ _Require spacing around infix operators in `<template>` See rule details for [vu
 
 ### Tags
 
-* ESLint
-* vue
-* eslint-plugin-vue
+* [ESLint](../recipes-by-tag#eslint)
+* [vue](../recipes-by-tag#vue)
+* [eslint-plugin-vue](../recipes-by-tag#eslint-plugin-vue)
 
 ## Recipe source
 

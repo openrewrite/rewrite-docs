@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `*-jms.xml` files to WebLogic 15
 
 ### Tags
 
-* jms
-* schemas
-* weblogic
+* [jms](../recipes-by-tag#jms)
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

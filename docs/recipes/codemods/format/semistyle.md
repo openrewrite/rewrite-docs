@@ -13,8 +13,8 @@ _Enforce location of semicolons  See [rule details](https://eslint.style/rules/d
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

@@ -5,6 +5,7 @@
 * [Migratetohypersistenceutilshibernate6](/recipes/hibernate/migratetohypersistenceutilshibernate6)
 * [Search](/recipes/hibernate/search)
 * [Update66](/recipes/hibernate/update66)
+* [Update70](/recipes/hibernate/update70)
 * [Validator](/recipes/hibernate/validator)
 
 ## Composite Recipes

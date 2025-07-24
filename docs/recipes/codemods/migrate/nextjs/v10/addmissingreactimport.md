@@ -13,8 +13,8 @@ _Transforms files that do not import `React` to include the import in order for 
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](../recipes-by-tag#nextjs)
+* [codemods](../recipes-by-tag#codemods)
 
 ## Recipe source
 

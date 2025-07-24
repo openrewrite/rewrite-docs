@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJMapRules.AbstractMapAssertHasSameSizeAs`](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$abstractmapasserthassamesizeasrecipe)
 * [Refaster template `AssertJMapRules.AssertThatMapContainsKey`](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainskeyrecipe)
 * [Refaster template `AssertJMapRules.AssertThatMapDoesNotContainKey`](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapdoesnotcontainkeyrecipe)
+* [Refaster template `AssertJMapRules.AssertThatMapContainsOnlyKey`](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainsonlykeyrecipe)
 * [Refaster template `AssertJMapRules.AssertThatMapContainsOnlyKeys`](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainsonlykeysrecipe)
 * [Refaster template `AssertJMapRules.AssertThatMapContainsValue`](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainsvaluerecipe)
 * [Refaster template `AssertJMapRules.AssertThatMapDoesNotContainValue`](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapdoesnotcontainvaluerecipe)
@@ -57,6 +58,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertHasSameSizeAsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsKeyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapDoesNotContainKeyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsOnlyKeyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsOnlyKeysRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsValueRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapDoesNotContainValueRecipe

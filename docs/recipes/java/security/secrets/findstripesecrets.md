@@ -13,7 +13,7 @@ _Locates Stripe secrets stored in plain text in code._
 
 ### Tags
 
-* security
+* [security](../recipes-by-tag#security)
 
 ## Recipe source
 

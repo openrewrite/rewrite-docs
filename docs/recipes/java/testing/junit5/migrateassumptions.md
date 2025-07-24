@@ -13,9 +13,9 @@ _Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUn
 
 ### Tags
 
-* junit
-* testing
-* hamcrest
+* [junit](../recipes-by-tag#junit)
+* [testing](../recipes-by-tag#testing)
+* [hamcrest](../recipes-by-tag#hamcrest)
 
 ## Recipe source
 

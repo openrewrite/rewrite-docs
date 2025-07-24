@@ -13,9 +13,9 @@ _Disallow alias methods See rule details for [jest/no-alias-methods](https://git
 
 ### Tags
 
-* ESLint
-* eslint-plugin-jest
-* Jest
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-jest](../recipes-by-tag#eslint-plugin-jest)
+* [Jest](../recipes-by-tag#jest)
 
 ## Recipe source
 

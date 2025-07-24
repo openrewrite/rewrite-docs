@@ -13,8 +13,8 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ### Tags
 
-* spring
-* boot
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 
@@ -654,4 +654,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-ashakirin, [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com)
+ashakirin, [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com)

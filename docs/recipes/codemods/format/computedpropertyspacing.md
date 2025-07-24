@@ -13,8 +13,8 @@ _Enforce consistent spacing inside computed property brackets  See [rule details
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

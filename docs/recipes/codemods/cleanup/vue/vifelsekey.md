@@ -13,9 +13,9 @@ _Require key attribute for conditionally rendered repeated components See rule d
 
 ### Tags
 
-* ESLint
-* vue
-* eslint-plugin-vue
+* [ESLint](../recipes-by-tag#eslint)
+* [vue](../recipes-by-tag#vue)
+* [eslint-plugin-vue](../recipes-by-tag#eslint-plugin-vue)
 
 ## Recipe source
 

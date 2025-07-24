@@ -13,10 +13,10 @@ _Find and replace legacy JSF namespaces and javax references with Jakarta Faces 
 
 ### Tags
 
-* faces
-* jsf
-* jakarta
-* xhtml
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [jakarta](../recipes-by-tag#jakarta)
+* [xhtml](../recipes-by-tag#xhtml)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
 
 ### Tags
 
-* junit
-* testing
+* [junit](../recipes-by-tag#junit)
+* [testing](../recipes-by-tag#testing)
 
 ## Recipe source
 

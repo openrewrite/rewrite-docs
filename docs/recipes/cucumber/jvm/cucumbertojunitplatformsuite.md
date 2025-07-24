@@ -13,8 +13,8 @@ _Migrates Cucumber tests to JUnit test `@Suite`._
 
 ### Tags
 
-* cucumber
-* testing
+* [cucumber](../recipes-by-tag#cucumber)
+* [testing](../recipes-by-tag#testing)
 
 ## Recipe source
 

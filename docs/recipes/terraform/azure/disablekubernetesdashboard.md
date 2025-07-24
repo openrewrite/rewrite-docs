@@ -13,9 +13,9 @@ _Disabling the dashboard eliminates it as an attack vector. The dashboard add-on
 
 ### Tags
 
-* Azure
-* terraform
-* CKV_AZURE_8
+* [Azure](../recipes-by-tag#azure)
+* [terraform](../recipes-by-tag#terraform)
+* [CKV_AZURE_8](../recipes-by-tag#ckv_azure_8)
 
 ## Recipe source
 
@@ -115,4 +115,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [pocan101](mailto:jcortesd@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io)

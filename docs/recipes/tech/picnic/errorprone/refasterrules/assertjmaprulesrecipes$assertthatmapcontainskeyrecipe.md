@@ -14,8 +14,8 @@ Recipe created for the following Refaster template:
 static final class AssertThatMapContainsKey<K, V> {
     
     @BeforeTemplate
-    AbstractBooleanAssert<?> before(Map<K, V> map, K key) {
-        return assertThat(map.containsKey(key)).isTrue();
+    AbstractAssert<?, ?> before(Map<K, V> map, K key) {
+        return Refaster.anyOf(assertThat(map.containsKey(key)).isTrue(), assertThat(map.keySet()).contains(key));
     }
     
     @AfterTemplate

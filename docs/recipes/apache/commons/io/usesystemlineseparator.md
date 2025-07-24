@@ -13,8 +13,8 @@ _Prefer the Java standard library's `System.lineSeparator()` over third-party us
 
 ### Tags
 
-* apache
-* commons
+* [apache](../recipes-by-tag#apache)
+* [commons](../recipes-by-tag#commons)
 
 ## Recipe source
 

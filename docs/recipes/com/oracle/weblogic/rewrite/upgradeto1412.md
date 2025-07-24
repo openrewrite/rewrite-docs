@@ -13,8 +13,8 @@ _This recipe will apply changes required for migrating to WebLogic 14.1.2_
 
 ### Tags
 
-* java
-* weblogic
+* [java](../recipes-by-tag#java)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

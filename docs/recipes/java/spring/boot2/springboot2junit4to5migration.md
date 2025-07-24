@@ -13,11 +13,11 @@ _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUni
 
 ### Tags
 
-* spring
-* junit
-* test
-* jupiter
-* boot
+* [spring](../recipes-by-tag#spring)
+* [junit](../recipes-by-tag#junit)
+* [test](../recipes-by-tag#test)
+* [jupiter](../recipes-by-tag#jupiter)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 
@@ -276,4 +276,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Knut Wannheden](mailto:knut@moderne.io), nbruno, [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Tyler Van Gorder, Kun Li, [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Knut Wannheden](mailto:knut@moderne.io), nbruno, [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Tyler Van Gorder, Kun Li, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), Aaron Gershman, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)

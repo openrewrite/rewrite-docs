@@ -13,7 +13,7 @@ _Use the simplest method to add new tags._
 
 ### Tags
 
-* micrometer
+* [micrometer](../recipes-by-tag#micrometer)
 
 ## Recipe source
 

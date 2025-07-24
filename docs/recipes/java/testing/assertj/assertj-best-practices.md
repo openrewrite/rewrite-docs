@@ -13,8 +13,8 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ### Tags
 
-* testing
-* assertj
+* [testing](../recipes-by-tag#testing)
+* [assertj](../recipes-by-tag#assertj)
 
 ## Recipe source
 
@@ -491,4 +491,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Marvin, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Yeikel, [Sasha Sheikin](mailto:myminitrue@gmail.com), [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, Anshuman Mishra, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), Lewis Birks, [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Tymes](mailto:jeremy@jtymes.net), [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com), Ties van de Ven, [Philippe GRANET](mailto:philippe.granet@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Aaron Gershman, [Jeroen Meijer](mailto:jjgmeijer@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Marvin, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Yeikel, [Sasha Sheikin](mailto:myminitrue@gmail.com), [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, Anshuman Mishra, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), Lewis Birks, [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Tymes](mailto:jeremy@jtymes.net), [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com), Ties van de Ven, [Philippe GRANET](mailto:philippe.granet@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Aaron Gershman, [Jeroen Meijer](mailto:jjgmeijer@gmail.com)

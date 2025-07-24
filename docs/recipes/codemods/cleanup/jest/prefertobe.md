@@ -13,9 +13,9 @@ _Suggest using toBe() for primitive literals See rule details for [jest/prefer-t
 
 ### Tags
 
-* ESLint
-* eslint-plugin-jest
-* Jest
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-jest](../recipes-by-tag#eslint-plugin-jest)
+* [Jest](../recipes-by-tag#jest)
 
 ## Recipe source
 

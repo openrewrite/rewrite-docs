@@ -13,8 +13,8 @@ _Enforce consistent spacing before and after commas  See [rule details](https://
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Replace `new NioEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(NioIoHa
 
 ### Tags
 
-* nio
-* netty
+* [nio](../recipes-by-tag#nio)
+* [netty](../recipes-by-tag#netty)
 
 ## Recipe source
 

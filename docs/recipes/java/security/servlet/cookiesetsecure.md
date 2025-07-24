@@ -13,7 +13,7 @@ _Check for use of insecure cookies. Cookies should be marked as secure. This ens
 
 ### Tags
 
-* CWE-614
+* [CWE-614](../recipes-by-tag#cwe-614)
 
 ## Recipe source
 
@@ -160,4 +160,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)

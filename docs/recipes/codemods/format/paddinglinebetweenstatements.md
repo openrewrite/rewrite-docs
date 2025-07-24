@@ -13,8 +13,8 @@ _Require or disallow padding lines between statements  See [rule details](https:
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

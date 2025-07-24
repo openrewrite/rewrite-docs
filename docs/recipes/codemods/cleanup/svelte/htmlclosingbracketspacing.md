@@ -13,9 +13,9 @@ _require or disallow a space before tag's closing brackets See rule details for 
 
 ### Tags
 
-* svelte
-* ESLint
-* eslint-plugin-svelte
+* [svelte](../recipes-by-tag#svelte)
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-svelte](../recipes-by-tag#eslint-plugin-svelte)
 
 ## Recipe source
 

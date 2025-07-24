@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ### Tags
 
-* java21
+* [java21](../recipes-by-tag#java21)
 
 ## Recipe source
 
@@ -36,7 +36,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [If-else-if-else to switch](../../java/migrate/lang/ifelseifconstructtoswitch)
-* [Add null check to existing switch cases](../../java/migrate/lang/nullcheckasswitchcase)
 * [Use switch cases refinement when possible](../../java/migrate/lang/refineswitchcases)
 * [Use switch cases labels for enums](../../java/migrate/lang/switchcaseenumguardtolabel)
 
@@ -55,7 +54,6 @@ tags:
   - java21
 recipeList:
   - org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch
-  - org.openrewrite.java.migrate.lang.NullCheckAsSwitchCase
   - org.openrewrite.java.migrate.lang.RefineSwitchCases
   - org.openrewrite.java.migrate.lang.SwitchCaseEnumGuardToLabel
 

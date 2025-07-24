@@ -13,8 +13,8 @@ _Enforce line breaks between arguments of a function call  See [rule details](ht
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

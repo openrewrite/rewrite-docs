@@ -13,7 +13,7 @@ _Use `DriverManager#setLogWriter(java.io.PrintWriter)` instead of the deprecated
 
 ### Tags
 
-* deprecated
+* [deprecated](../recipes-by-tag#deprecated)
 
 ## Recipe source
 

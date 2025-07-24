@@ -13,9 +13,9 @@ _Require using .only and .skip over f and x See rule details for [jest/no-test-p
 
 ### Tags
 
-* ESLint
-* eslint-plugin-jest
-* Jest
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-jest](../recipes-by-tag#eslint-plugin-jest)
+* [Jest](../recipes-by-tag#jest)
 
 ## Recipe source
 

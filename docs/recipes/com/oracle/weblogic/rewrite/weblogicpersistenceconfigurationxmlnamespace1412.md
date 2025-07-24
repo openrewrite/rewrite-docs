@@ -13,10 +13,10 @@ _Migrate xmlns entries in WebLogic EJB 3.2 Persistence Configuration schema file
 
 ### Tags
 
-* ejb-3.2
-* schemas
-* weblogic
-* persistence-configuration
+* [ejb-3.2](../recipes-by-tag#ejb-3.2)
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
+* [persistence-configuration](../recipes-by-tag#persistence-configuration)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Apply local variable type inference (`var`) for primitives and objects. These r
 
 ### Tags
 
-* refactoring
-* var
-* java10
+* [refactoring](../recipes-by-tag#refactoring)
+* [var](../recipes-by-tag#var)
+* [java10](../recipes-by-tag#java10)
 
 ## Recipe source
 
@@ -455,4 +455,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Mike Solomon](mailto:mike@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)

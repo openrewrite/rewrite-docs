@@ -13,9 +13,9 @@ _Transforms code written using SLF4J to use Log4j 2.x API._
 
 ### Tags
 
-* slf4j
-* logging
-* log4j
+* [slf4j](../recipes-by-tag#slf4j)
+* [logging](../recipes-by-tag#logging)
+* [log4j](../recipes-by-tag#log4j)
 
 ## Recipe source
 

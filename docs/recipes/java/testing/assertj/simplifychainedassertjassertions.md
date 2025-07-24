@@ -13,8 +13,8 @@ _Replace AssertJ assertions where a method is called on the actual value with a 
 
 ### Tags
 
-* testing
-* assertj
+* [testing](../recipes-by-tag#testing)
+* [assertj](../recipes-by-tag#assertj)
 
 ## Recipe source
 

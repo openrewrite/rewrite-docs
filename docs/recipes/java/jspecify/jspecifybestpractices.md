@@ -13,7 +13,7 @@ _Apply JSpecify best practices, such as migrating off of alternatives, and addin
 
 ### Tags
 
-* java
+* [java](../recipes-by-tag#java)
 
 ## Recipe source
 

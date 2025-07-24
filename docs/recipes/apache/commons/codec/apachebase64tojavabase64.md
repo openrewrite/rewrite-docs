@@ -13,8 +13,8 @@ _Prefer the Java standard library's `java.util.Base64` over third-party usage of
 
 ### Tags
 
-* apache
-* commons
+* [apache](../recipes-by-tag#apache)
+* [commons](../recipes-by-tag#commons)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Locate cryptographic configuration which may need to be updated for a brave new
 
 ### Tags
 
-* DevCenter:security
+* [DevCenter:security](../recipes-by-tag#devcenter:security)
 
 ## Recipe source
 
@@ -56,6 +56,30 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.CryptoFlowStepsTable" label="CryptoFlowStepsTable">
+
+### Cryptographic flow steps
+**org.openrewrite.table.CryptoFlowStepsTable**
+
+_Tracks the flow of cryptographic operations from hardcoded values through various transformations._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file containing the cryptographic flow |
+| Anti-pattern | Description of the cryptographic anti-pattern detected |
+| Step 1 | First step in the cryptographic flow |
+| Step 2 | Second step in the cryptographic flow |
+| Step 3 | Third step in the cryptographic flow |
+| Step 4 | Fourth step in the cryptographic flow |
+| Step 5 | Fifth step in the cryptographic flow |
+| Step 6 | Sixth step in the cryptographic flow |
+| Step 7 | Seventh step in the cryptographic flow |
+| Step 8 | Eighth step in the cryptographic flow |
+| Step 9 | Ninth step in the cryptographic flow |
+| Step 10 | Tenth step in the cryptographic flow |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -175,4 +199,4 @@ _Security issues in the repository._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

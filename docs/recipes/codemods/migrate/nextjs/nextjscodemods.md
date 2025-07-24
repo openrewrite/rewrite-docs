@@ -13,8 +13,8 @@ _Next.js provides Codemod transformations to help upgrade your [Next.js](https:/
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](../recipes-by-tag#nextjs)
+* [codemods](../recipes-by-tag#codemods)
 
 ## Recipe source
 

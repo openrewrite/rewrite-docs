@@ -13,9 +13,9 @@ _Enforce order of component top-level elements See rule details for [vue/block-o
 
 ### Tags
 
-* ESLint
-* vue
-* eslint-plugin-vue
+* [ESLint](../recipes-by-tag#eslint)
+* [vue](../recipes-by-tag#vue)
+* [eslint-plugin-vue](../recipes-by-tag#eslint-plugin-vue)
 
 ## Recipe source
 

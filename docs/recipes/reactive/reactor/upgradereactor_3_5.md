@@ -13,7 +13,7 @@ _Adopt to [breaking changes in Reactor 3.5](https://projectreactor.io/docs/core/
 
 ### Tags
 
-* reactor
+* [reactor](../recipes-by-tag#reactor)
 
 ## Recipe source
 

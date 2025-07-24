@@ -317,4 +317,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-123Haynes, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+123Haynes, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com)

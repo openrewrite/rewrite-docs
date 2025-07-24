@@ -10,6 +10,7 @@
 * [Find Maven plugin](./findplugin.md)
 * [Find Maven project properties](./findproperties.md)
 * [Find Maven projects](./findmavenproject.md)
+* [Find SCM tag](./findscm.md)
 * [Find effective maven settings](./findmavensettings.md)
 * [List effective Maven repositories](./effectivemavenrepositories.md)
 * [Maven dependency insight](./dependencyinsight.md)

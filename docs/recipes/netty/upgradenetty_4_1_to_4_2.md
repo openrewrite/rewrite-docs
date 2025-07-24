@@ -13,7 +13,7 @@ _Migrate applications to the latest Netty 4.2.x release._
 
 ### Tags
 
-* netty
+* [netty](../recipes-by-tag#netty)
 
 ## Recipe source
 

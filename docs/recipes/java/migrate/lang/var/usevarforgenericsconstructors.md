@@ -28,28 +28,24 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Before
 ```java
-package com.example.app;
-
 import java.util.List;
 import java.util.ArrayList;
 
 class A {
-  void m() {
-      List<String> strs = new ArrayList<>();
-  }
+    void m() {
+        List<String> strs = new ArrayList<>();
+    }
 }
 ```
 
 ###### After
 ```java
-package com.example.app;
-
 import java.util.ArrayList;
 
 class A {
-  void m() {
-      var strs = new ArrayList<String>();
-  }
+    void m() {
+        var strs = new ArrayList<String>();
+    }
 }
 ```
 
@@ -57,17 +53,15 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,1 +3,0 @@
-package com.example.app;
-
+@@ -1,1 +1,0 @@
 -import java.util.List;
 import java.util.ArrayList;
-@@ -8,1 +7,1 @@
+@@ -6,1 +5,1 @@
 class A {
-  void m() {
--     List<String> strs = new ArrayList<>();
-+     var strs = new ArrayList<String>();
-  }
+    void m() {
+-       List<String> strs = new ArrayList<>();
++       var strs = new ArrayList<String>();
+    }
 ```
 </TabItem>
 </Tabs>

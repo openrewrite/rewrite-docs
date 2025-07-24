@@ -13,8 +13,8 @@ _Enforce consistent spacing inside parentheses  See [rule details](https://eslin
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

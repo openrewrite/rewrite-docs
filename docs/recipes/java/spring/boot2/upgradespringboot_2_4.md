@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Boot 2.4 release. This recipe will mo
 
 ### Tags
 
-* spring
-* boot
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 
@@ -349,4 +349,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, nbruno, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kun Li](mailto:kun@moderne.io), Aaron Gershman, [Joan Viladrosa](mailto:joan@moderne.io), Josh Soref, rob-valor, eocantu
+[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, nbruno, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kun Li](mailto:kun@moderne.io), Aaron Gershman, [Joan Viladrosa](mailto:joan@moderne.io), Josh Soref, rob-valor, eocantu

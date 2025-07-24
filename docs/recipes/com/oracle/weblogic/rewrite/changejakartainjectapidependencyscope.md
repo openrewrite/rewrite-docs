@@ -13,7 +13,7 @@ _This recipe will change the jakarta.inject-api dependency scope to provided whe
 
 ### Tags
 
-* weblogic
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Require or disallow newline at the end of files  See [rule details](https://esl
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

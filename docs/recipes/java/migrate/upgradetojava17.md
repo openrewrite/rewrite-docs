@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ### Tags
 
-* java17
+* [java17](../recipes-by-tag#java17)
 
 ## Recipe source
 
@@ -542,4 +542,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, Adam Slaski, [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Aakarshit Uppal, BramliAK, eocantu, [Shannon Pamperl](mailto:shanman190@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Cathy, Kun Li, Josh Soref
+Chuka Obinabo, Anu Ramamoorthy, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, Adam Slaski, [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Aakarshit Uppal, BramliAK, [Shannon Pamperl](mailto:shanman190@gmail.com), eocantu, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Cathy, Kun Li, Josh Soref

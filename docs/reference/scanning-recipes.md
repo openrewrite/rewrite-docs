@@ -11,10 +11,40 @@ _io.moderne.cryptography.FindHardcodedCertificate_
 
 Detects hardcoded PEM certificates passed into `CertificateFactory.generateCertificate()`.
 
+### [Find hardcoded cipher suites on SSL sockets](../recipes/cryptography/findhardcodedciphersuitesonsslsocket.md)
+_io.moderne.cryptography.FindHardcodedCipherSuitesOnSslSocket_
+
+Detects hardcoded cipher suites in SSL socket configurations, which can lead to security vulnerabilities.
+
+### [Find hardcoded algorithms in `KeyPairGenerator`](../recipes/cryptography/findhardcodedkeypairgenerator.md)
+_io.moderne.cryptography.FindHardcodedKeyPairGenerator_
+
+Detects hardcoded cryptographic algorithms.
+
 ### [Find hardcoded PEM private keys](../recipes/cryptography/findhardcodedprivatekey.md)
 _io.moderne.cryptography.FindHardcodedPrivateKey_
 
 Detects hardcoded PEM private keys passed into `KeyFactory.generatePrivate()`.
+
+### [Find hardcoded protocols on SSL socket creation](../recipes/cryptography/findhardcodedprotocolsonsslsocketcreation.md)
+_io.moderne.cryptography.FindHardcodedProtocolsOnSSLSocketCreation_
+
+Finds hardcoded protocols in SSL socket creation methods, such as `SSLContext.getInstance(String)`.
+
+### [Find hardcoded protocols on SSL sockets](../recipes/cryptography/findhardcodedprotocolsonsslsocketsetprotocols.md)
+_io.moderne.cryptography.FindHardcodedProtocolsOnSSLSocketSetProtocols_
+
+Detects hardcoded protocol versions in SSL socket configurations, which can hinder adaptability and security.
+
+### [Find hardcoded numbers passed into `RSAKeyGenParameterSpec`](../recipes/cryptography/findhardcodedrsakeygenparameterspec.md)
+_io.moderne.cryptography.FindHardcodedRSAKeyGenParameterSpec_
+
+It is usually insecure to pass hardcoded numbers passed into `RSAKeyGenParameterSpec`.
+
+### [Find hardcoded algorithms in `SecretKeySpec`](../recipes/cryptography/findhardcodedsecretkeyspec.md)
+_io.moderne.cryptography.FindHardcodedSecretKeySpec_
+
+Detects hardcoded cryptographic algorithms.
 
 ### [Remove table from single table inherited entity](../recipes/hibernate/update66/removetablefrominheritedentity.md)
 _io.moderne.hibernate.update66.RemoveTableFromInheritedEntity_
@@ -137,7 +167,7 @@ Upgrades the version of a transitive dependency in a Gradle build file. There ar
 ### [Update a Gradle plugin by id](../recipes/gradle/plugins/upgradepluginversion.md)
 _org.openrewrite.gradle.plugins.UpgradePluginVersion_
 
-Update a Gradle plugin by id to a later version.
+Update a Gradle plugin by id to a later version defined by the plugins DSL.To upgrade a plugin dependency defined by `buildscript.dependencies`, use the `UpgradeDependencyVersion` recipe instead.
 
 ### [Module has dependency](../recipes/gradle/search/modulehasdependency.md)
 _org.openrewrite.gradle.search.ModuleHasDependency_
@@ -429,12 +459,12 @@ Locates and reports on all licenses in use.
 ### [Find and fix vulnerable dependencies](../recipes/java/dependencies/dependencyvulnerabilitycheck.md)
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-07-07T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-07-21T1102.
 
 ### [Remove unused dependencies](../recipes/java/dependencies/removeunuseddependencies.md)
 _org.openrewrite.java.dependencies.RemoveUnusedDependencies_
 
-Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName("java.util.List")` that is counted correctly.When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
+Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName("java.util.List")` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
 
 ### [Software bill of materials](../recipes/java/dependencies/softwarebillofmaterials.md)
 _org.openrewrite.java.dependencies.SoftwareBillOfMaterials_

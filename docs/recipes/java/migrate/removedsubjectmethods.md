@@ -13,7 +13,7 @@ _Replaces the `javax.security.auth.Subject.getSubject()` and `javax.security.aut
 
 ### Tags
 
-* java21
+* [java21](../recipes-by-tag#java21)
 
 ## Recipe source
 

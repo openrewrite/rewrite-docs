@@ -13,9 +13,9 @@ _Enforce linebreaks after opening and before closing array brackets in `<templat
 
 ### Tags
 
-* ESLint
-* vue
-* eslint-plugin-vue
+* [ESLint](../recipes-by-tag#eslint)
+* [vue](../recipes-by-tag#vue)
+* [eslint-plugin-vue](../recipes-by-tag#eslint-plugin-vue)
 
 ## Recipe source
 

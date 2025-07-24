@@ -13,9 +13,9 @@ _Jakarta EE 11 uses Faces 4.1 a minor upgrade._
 
 ### Tags
 
-* faces
-* jsf
-* jakarta
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

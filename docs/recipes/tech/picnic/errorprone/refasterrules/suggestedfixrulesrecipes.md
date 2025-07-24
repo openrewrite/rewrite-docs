@@ -28,6 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Refaster template `SuggestedFixRules.SuggestedFixToBuilder`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixtobuilderrecipe)
 * [Refaster template `SuggestedFixRules.SuggestedFixDelete`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixdeleterecipe)
 * [Refaster template `SuggestedFixRules.SuggestedFixReplaceTree`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacetreerecipe)
 * [Refaster template `SuggestedFixRules.SuggestedFixReplaceStartEnd`](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacestartendrecipe)
@@ -49,6 +50,7 @@ description: |
   Refaster rules related to expressions dealing with `SuggestedFix`es.
   [Source](https://error-prone.picnic.tech/refasterrules/SuggestedFixRules).
 recipeList:
+  - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixToBuilderRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixDeleteRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceTreeRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceStartEndRecipe

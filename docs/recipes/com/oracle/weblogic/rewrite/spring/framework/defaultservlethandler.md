@@ -13,9 +13,9 @@ _This recipe will update Spring Framework default servlet handler if empty, as n
 
 ### Tags
 
-* default-servlet-handler
-* weblogic
-* springframework
+* [default-servlet-handler](../recipes-by-tag#default-servlet-handler)
+* [weblogic](../recipes-by-tag#weblogic)
+* [springframework](../recipes-by-tag#springframework)
 
 ## Recipe source
 

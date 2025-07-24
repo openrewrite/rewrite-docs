@@ -13,7 +13,7 @@ _Migrate applications to the latest Jackson 3.x release._
 
 ### Tags
 
-* jackson
+* [jackson](../recipes-by-tag#jackson)
 
 ## Recipe source
 
@@ -36,37 +36,37 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.fasterxml.jackson.core`
   * artifactId: `jackson-annotations`
-  * newVersion: `3.0-rc5`
+  * newVersion: `2.19.2`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.core`
   * oldArtifactId: `jackson-core`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-core`
-  * newVersion: `3.0.0-rc5`
+  * newVersion: `3.0.0-rc6`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.core`
   * oldArtifactId: `jackson-databind`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc5`
+  * newVersion: `3.0.0-rc6`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.module`
   * oldArtifactId: `jackson-module-parameter-names`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc5`
+  * newVersion: `3.0.0-rc6`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-jdk8`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc5`
+  * newVersion: `3.0.0-rc6`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-jsr310`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc5`
+  * newVersion: `3.0.0-rc6`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonParseException`
   * newFullyQualifiedTypeName: `tools.jackson.core.StreamReadException`
@@ -100,37 +100,37 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson.core
       artifactId: jackson-annotations
-      newVersion: 3.0-rc5
+      newVersion: 2.19.2
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.core
       oldArtifactId: jackson-core
       newGroupId: tools.jackson.core
       newArtifactId: jackson-core
-      newVersion: 3.0.0-rc5
+      newVersion: 3.0.0-rc6
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.core
       oldArtifactId: jackson-databind
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc5
+      newVersion: 3.0.0-rc6
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.module
       oldArtifactId: jackson-module-parameter-names
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc5
+      newVersion: 3.0.0-rc6
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype
       oldArtifactId: jackson-datatype-jdk8
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc5
+      newVersion: 3.0.0-rc6
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype
       oldArtifactId: jackson-datatype-jsr310
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc5
+      newVersion: 3.0.0-rc6
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonParseException
       newFullyQualifiedTypeName: tools.jackson.core.StreamReadException

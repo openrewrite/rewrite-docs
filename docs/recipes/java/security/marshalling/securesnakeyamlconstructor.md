@@ -13,8 +13,8 @@ _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
 
 ### Tags
 
-* CWE-502
-* CWE-94
+* [CWE-502](../recipes-by-tag#cwe-502)
+* [CWE-94](../recipes-by-tag#cwe-94)
 
 ## Recipe source
 
@@ -162,4 +162,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Bryce Tompkins, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Kun Li](mailto:kun@moderne.io)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Bryce Tompkins, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kun Li](mailto:kun@moderne.io)

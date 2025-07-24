@@ -13,7 +13,7 @@ _The `java.nio.file.Paths.get` method was introduced in Java SE 7. The `java.nio
 
 ### Tags
 
-* java11
+* [java11](../recipes-by-tag#java11)
 
 ## Recipe source
 

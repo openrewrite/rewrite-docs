@@ -13,7 +13,7 @@ _The `javax.security.cert` package has been deprecated for removal._
 
 ### Tags
 
-* java17
+* [java17](../recipes-by-tag#java17)
 
 ## Recipe source
 

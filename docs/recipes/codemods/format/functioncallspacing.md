@@ -13,8 +13,8 @@ _Require or disallow spacing between function identifiers and their invocations 
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

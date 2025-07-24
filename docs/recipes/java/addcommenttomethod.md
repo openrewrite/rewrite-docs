@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Add comment"
+sidebar_label: "Add comment to method declarations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add comment
+# Add comment to method declarations
 
 **org.openrewrite.java.AddCommentToMethod**
 
-_Add a comment to a Java source file._
+_Add a comment to method declarations in a Java source file._
 
 ## Recipe source
 
@@ -24,7 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | comment | The comment to add. | `This is a comment.` |
-| `String` | methodPattern | A pattern to match methods to add the comment to. A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add*(..)` |
+| `String` | methodPattern | A pattern to match methods to add the comment to. A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method declarations. For example, to find all method declarations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add*(..)` |
 | `Boolean` | isMultiline | *Optional*. Comments use by default single line // but they can use multiline /* */. |  |
 
 ## Example
@@ -80,7 +80,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddCommentToMethodExample
-displayName: Add comment example
+displayName: Add comment to method declarations example
 recipeList:
   - org.openrewrite.java.AddCommentToMethod:
       comment: This is a comment.
@@ -217,4 +217,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Antonio Goncalves](mailto:antonio.goncalves@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Antonio Goncalves](mailto:antonio.goncalves@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Steve Elliott](mailto:steve@moderne.io)

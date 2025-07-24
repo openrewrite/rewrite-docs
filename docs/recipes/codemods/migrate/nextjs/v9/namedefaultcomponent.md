@@ -13,8 +13,8 @@ _Transforms anonymous components into named components to make sure they work wi
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](../recipes-by-tag#nextjs)
+* [codemods](../recipes-by-tag#codemods)
 
 ## Recipe source
 

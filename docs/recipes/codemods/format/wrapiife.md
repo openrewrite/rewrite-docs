@@ -13,8 +13,8 @@ _Require parentheses around immediate &#x60;function&#x60; invocations  See [rul
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

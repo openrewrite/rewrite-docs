@@ -13,8 +13,8 @@ _This recipe will apply changes required for migrating to WebLogic 15.1.1 and Ja
 
 ### Tags
 
-* java
-* weblogic
+* [java](../recipes-by-tag#java)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

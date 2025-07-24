@@ -13,10 +13,10 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* testwebxml
-* faces
-* jsf
-* jakarta
+* [testwebxml](../recipes-by-tag#testwebxml)
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

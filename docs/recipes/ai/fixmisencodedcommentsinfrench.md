@@ -13,7 +13,7 @@ _Fixes mis-encoded French comments in your code, javadocs and in your pom.xml fi
 
 ### Tags
 
-* ai
+* [ai](../recipes-by-tag#ai)
 
 ## Recipe source
 

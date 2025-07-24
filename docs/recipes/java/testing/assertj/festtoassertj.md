@@ -13,8 +13,8 @@ _AssertJ provides a rich set of assertions, truly helpful error messages, improv
 
 ### Tags
 
-* testing
-* assertj
+* [testing](../recipes-by-tag#testing)
+* [assertj](../recipes-by-tag#assertj)
 
 ## Recipe source
 

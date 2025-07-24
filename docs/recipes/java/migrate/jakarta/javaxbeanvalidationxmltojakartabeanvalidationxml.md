@@ -13,9 +13,9 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* ejb
-* jakarta
-* bean validation
+* [ejb](../recipes-by-tag#ejb)
+* [jakarta](../recipes-by-tag#jakarta)
+* [bean validation](../recipes-by-tag#bean-validation)
 
 ## Recipe source
 

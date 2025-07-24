@@ -29,6 +29,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `EqualityRules.EnumReferenceEquality`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$enumreferenceequalityrecipe)
+* [Refaster template `EqualityRules.EnumReferenceEqualityLambda`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$enumreferenceequalitylambdarecipe)
+* [Refaster template `EqualityRules.EqualsPredicate`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$equalspredicaterecipe)
 * [Refaster template `EqualityRules.DoubleNegation`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe)
 * [Refaster template `EqualityRules.Negation`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe)
 * [Refaster template `EqualityRules.IndirectDoubleNegation`](../../../../tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe)
@@ -49,6 +51,8 @@ description: |
   [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityLambdaRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualsPredicateRecipe
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$IndirectDoubleNegationRecipe

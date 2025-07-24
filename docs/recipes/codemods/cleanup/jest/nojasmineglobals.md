@@ -13,9 +13,9 @@ _Disallow Jasmine globals See rule details for [jest/no-jasmine-globals](https:/
 
 ### Tags
 
-* ESLint
-* eslint-plugin-jest
-* Jest
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-jest](../recipes-by-tag#eslint-plugin-jest)
+* [Jest](../recipes-by-tag#jest)
 
 ## Recipe source
 

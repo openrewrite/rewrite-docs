@@ -18,6 +18,61 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.ByteArrayInputStream;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+
+class C {
+    void loadCertificate() throws Exception {
+        String cert = "-----BEGIN CERTIFICATE-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ...";
+        byte[] certBytes = cert.getBytes();
+        ByteArrayInputStream certStream = new ByteArrayInputStream(certBytes);
+        CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
+        X509Certificate x509Cert = (X509Certificate) certFactory.generateCertificate(certStream);
+    }
+}
+```
+
+###### After
+```java
+import java.io.ByteArrayInputStream;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+
+class C {
+    void loadCertificate() throws Exception {
+        String cert = /*~~>*/"-----BEGIN CERTIFICATE-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ...";
+        byte[] certBytes = cert.getBytes();
+        ByteArrayInputStream certStream = new ByteArrayInputStream(certBytes);
+        CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
+        X509Certificate x509Cert = (X509Certificate) certFactory.generateCertificate(certStream);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+class C {
+    void loadCertificate() throws Exception {
+-       String cert = "-----BEGIN CERTIFICATE-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ...";
++       String cert = /*~~>*/"-----BEGIN CERTIFICATE-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ...";
+        byte[] certBytes = cert.getBytes();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -52,6 +107,30 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.CryptoFlowStepsTable" label="CryptoFlowStepsTable">
+
+### Cryptographic flow steps
+**org.openrewrite.table.CryptoFlowStepsTable**
+
+_Tracks the flow of cryptographic operations from hardcoded values through various transformations._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file containing the cryptographic flow |
+| Anti-pattern | Description of the cryptographic anti-pattern detected |
+| Step 1 | First step in the cryptographic flow |
+| Step 2 | Second step in the cryptographic flow |
+| Step 3 | Third step in the cryptographic flow |
+| Step 4 | Fourth step in the cryptographic flow |
+| Step 5 | Fifth step in the cryptographic flow |
+| Step 6 | Sixth step in the cryptographic flow |
+| Step 7 | Seventh step in the cryptographic flow |
+| Step 8 | Eighth step in the cryptographic flow |
+| Step 9 | Ninth step in the cryptographic flow |
+| Step 10 | Tenth step in the cryptographic flow |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

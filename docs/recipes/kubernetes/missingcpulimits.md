@@ -13,7 +13,7 @@ _A system without managed quotas could eventually collapse due to inadequate res
 
 ### Tags
 
-* kubernetes
+* [kubernetes](../recipes-by-tag#kubernetes)
 
 ## Recipe source
 

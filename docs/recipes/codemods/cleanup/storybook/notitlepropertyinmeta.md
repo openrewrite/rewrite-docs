@@ -13,9 +13,9 @@ _Do not define a title in meta See rule details for [storybook/no-title-property
 
 ### Tags
 
-* eslint-plugin-storybook
-* ESLint
-* storybook
+* [eslint-plugin-storybook](../recipes-by-tag#eslint-plugin-storybook)
+* [ESLint](../recipes-by-tag#eslint)
+* [storybook](../recipes-by-tag#storybook)
 
 ## Recipe source
 

@@ -1,40 +1,27 @@
 ---
-sidebar_label: "Refaster template CollectionRules.CollectionAddAllToCollectionBlock"
+sidebar_label: "Refaster template AssertJStringRules.AssertThatStringStartsWith"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster template `CollectionRules.CollectionAddAllToCollectionBlock`
+# Refaster template `AssertJStringRules.AssertThatStringStartsWith`
 
-**tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe**
+**tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe**
 
 Recipe created for the following Refaster template:
 ```java
-static final class CollectionAddAllToCollectionBlock<T, S extends T> {
+static final class AssertThatStringStartsWith {
     
     @BeforeTemplate
-    void before(Collection<T> addTo, Collection<S> elementsToAdd) {
-        elementsToAdd.forEach(addTo::add);
-    }
-    
-    @BeforeTemplate
-    void before2(Collection<T> addTo, Collection<S> elementsToAdd) {
-        for (T element : elementsToAdd) {
-            addTo.add(element);
-        }
-    }
-    
-    @BeforeTemplate
-    void before3(Collection<T> addTo, Collection<S> elementsToAdd) {
-        for (S element : elementsToAdd) {
-            addTo.add(element);
-        }
+    AbstractBooleanAssert<?> before(String string, String prefix) {
+        return assertThat(string.startsWith(prefix)).isTrue();
     }
     
     @AfterTemplate
-    void after(Collection<T> addTo, Collection<S> elementsToAdd) {
-        addTo.addAll(elementsToAdd);
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractStringAssert<?> after(String string, String prefix) {
+        return assertThat(string).startsWith(prefix);
     }
 }
 ```
@@ -42,7 +29,7 @@ static final class CollectionAddAllToCollectionBlock<T, S extends T> {
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -63,7 +50,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe")
+    activeRecipe("tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe")
     setExportDatatables(true)
 }
 
@@ -96,7 +83,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe")
+        activeRecipe("tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -131,7 +118,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -154,7 +141,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -162,7 +149,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe
+mod run . --recipe AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -176,7 +163,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

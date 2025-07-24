@@ -13,7 +13,7 @@ _The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its 
 
 ### Tags
 
-* java11
+* [java11](../recipes-by-tag#java11)
 
 ## Recipe source
 

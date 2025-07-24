@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Security 6.0 release. This recipe wil
 
 ### Tags
 
-* spring
-* security
+* [spring](../recipes-by-tag#spring)
+* [security](../recipes-by-tag#security)
 
 ## Recipe source
 

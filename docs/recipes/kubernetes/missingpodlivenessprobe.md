@@ -13,7 +13,7 @@ _The kubelet uses liveness probes to know when to schedule restarts for containe
 
 ### Tags
 
-* kubernetes
+* [kubernetes](../recipes-by-tag#kubernetes)
 
 ## Recipe source
 

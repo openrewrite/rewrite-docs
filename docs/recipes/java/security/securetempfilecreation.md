@@ -13,7 +13,7 @@ _`java.io.File.createTempFile()` has exploitable default file permissions. This 
 
 ### Tags
 
-* CWE-377
+* [CWE-377](../recipes-by-tag#cwe-377)
 
 ## Recipe source
 

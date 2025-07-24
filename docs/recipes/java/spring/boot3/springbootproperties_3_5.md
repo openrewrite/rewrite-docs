@@ -13,8 +13,8 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ### Tags
 
-* spring
-* boot
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 

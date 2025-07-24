@@ -13,8 +13,8 @@ _Replace all function expressions with only `return` statement with simple arrow
 
 ### Tags
 
-* codemods
-* 5to6
+* [codemods](../recipes-by-tag#codemods)
+* [5to6](../recipes-by-tag#5to6)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Require or disallow spacing between template tags and their literals  See [rule
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

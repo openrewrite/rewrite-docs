@@ -13,9 +13,9 @@ _Jakarta EE 10 uses Faces version 4._
 
 ### Tags
 
-* faces
-* jsf
-* jakarta
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

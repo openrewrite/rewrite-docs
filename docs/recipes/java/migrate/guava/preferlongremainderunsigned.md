@@ -13,7 +13,7 @@ _Prefer `java.lang.Long#remainderUnsigned` instead of using `com.google.common.p
 
 ### Tags
 
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

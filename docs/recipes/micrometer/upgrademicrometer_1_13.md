@@ -13,7 +13,7 @@ _Migrate applications to the latest Micrometer 1.13 release. This recipe will mo
 
 ### Tags
 
-* micrometer
+* [micrometer](../recipes-by-tag#micrometer)
 
 ## Recipe source
 

@@ -16,8 +16,8 @@ Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and 
 
 ### Tags
 
-* openapi
-* swagger
+* [openapi](../recipes-by-tag#openapi)
+* [swagger](../recipes-by-tag#swagger)
 
 ## Recipe source
 

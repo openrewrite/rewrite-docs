@@ -13,9 +13,9 @@ _JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, 
 
 ### Tags
 
-* junit
-* testing
-* hamcrest
+* [junit](../recipes-by-tag#junit)
+* [testing](../recipes-by-tag#testing)
+* [hamcrest](../recipes-by-tag#hamcrest)
 
 ## Recipe source
 

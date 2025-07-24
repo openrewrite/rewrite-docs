@@ -13,7 +13,7 @@ _This recipe will migrate to JSpecify annotations from various other nullability
 
 ### Tags
 
-* java
+* [java](../recipes-by-tag#java)
 
 ## Recipe source
 

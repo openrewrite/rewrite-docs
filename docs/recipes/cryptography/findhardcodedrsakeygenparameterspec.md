@@ -18,6 +18,51 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.math.BigInteger;
+import java.security.spec.RSAKeyGenParameterSpec;
+
+class C {
+    void params() {
+        RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(2048, new BigInteger("65537"));
+    }
+}
+```
+
+###### After
+```java
+import java.math.BigInteger;
+import java.security.spec.RSAKeyGenParameterSpec;
+
+class C {
+    void params() {
+        RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(2048, /*~~>*/new BigInteger("65537"));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class C {
+    void params() {
+-       RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(2048, new BigInteger("65537"));
++       RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(2048, /*~~>*/new BigInteger("65537"));
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -52,6 +97,30 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.CryptoFlowStepsTable" label="CryptoFlowStepsTable">
+
+### Cryptographic flow steps
+**org.openrewrite.table.CryptoFlowStepsTable**
+
+_Tracks the flow of cryptographic operations from hardcoded values through various transformations._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file containing the cryptographic flow |
+| Anti-pattern | Description of the cryptographic anti-pattern detected |
+| Step 1 | First step in the cryptographic flow |
+| Step 2 | Second step in the cryptographic flow |
+| Step 3 | Third step in the cryptographic flow |
+| Step 4 | Fourth step in the cryptographic flow |
+| Step 5 | Fifth step in the cryptographic flow |
+| Step 6 | Sixth step in the cryptographic flow |
+| Step 7 | Seventh step in the cryptographic flow |
+| Step 8 | Eighth step in the cryptographic flow |
+| Step 9 | Ninth step in the cryptographic flow |
+| Step 10 | Tenth step in the cryptographic flow |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -107,6 +176,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

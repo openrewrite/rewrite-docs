@@ -13,12 +13,12 @@ _Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain
 
 ### Tags
 
-* jaxb
-* glassfish
-* javax
-* javaee
-* java11
-* jakarta
+* [jaxb](../recipes-by-tag#jaxb)
+* [glassfish](../recipes-by-tag#glassfish)
+* [javax](../recipes-by-tag#javax)
+* [javaee](../recipes-by-tag#javaee)
+* [java11](../recipes-by-tag#java11)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

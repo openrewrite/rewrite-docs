@@ -13,7 +13,7 @@ _Sharing the host process ID namespace breaks the isolation between container im
 
 ### Tags
 
-* kubernetes
+* [kubernetes](../recipes-by-tag#kubernetes)
 
 ## Recipe source
 

@@ -28,14 +28,20 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Refaster template `StringRules.EmptyString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$emptystringrecipe)
+* [Refaster template `StringRules.StringIdentity`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe)
 * [Refaster template `StringRules.StringIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe)
+* [Refaster template `StringRules.StringIsEmptyPredicate`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptypredicaterecipe)
+* [Refaster template `StringRules.StringIsNotEmptyPredicate`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisnotemptypredicaterecipe)
 * [Refaster template `StringRules.StringIsNullOrEmpty`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisnulloremptyrecipe)
+* [Refaster template `StringRules.StringIsBlank`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisblankrecipe)
 * [Refaster template `StringRules.OptionalNonEmptyString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$optionalnonemptystringrecipe)
 * [Refaster template `StringRules.FilterEmptyString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$filteremptystringrecipe)
 * [Refaster template `StringRules.JoinStrings`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$joinstringsrecipe)
 * [Refaster template `StringRules.StringValueOf`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofrecipe)
 * [Refaster template `StringRules.NewStringFromCharArraySubSequence`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararraysubsequencerecipe)
 * [Refaster template `StringRules.NewStringFromCharArray`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararrayrecipe)
+* [Refaster template `StringRules.StringValueOfMethodReference`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofmethodreferencerecipe)
 * [Refaster template `StringRules.SubstringRemainder`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$substringremainderrecipe)
 * [Refaster template `StringRules.Utf8EncodedLength`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$utf8encodedlengthrecipe)
 * [Refaster template `StringRules.StringIndexOfChar`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharrecipe)
@@ -59,14 +65,20 @@ description: |
   Refaster rules related to expressions dealing with `String`s.
   [Source](https://error-prone.picnic.tech/refasterrules/StringRules).
 recipeList:
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyPredicateRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNotEmptyPredicateRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNullOrEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsBlankRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$FilterEmptyStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$JoinStringsRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArraySubSequenceRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArrayRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfMethodReferenceRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$SubstringRemainderRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$Utf8EncodedLengthRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharRecipe

@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Cloud 2025 (Northfields) release._
 
 ### Tags
 
-* spring
-* cloud
+* [spring](../recipes-by-tag#spring)
+* [cloud](../recipes-by-tag#cloud)
 
 ## Recipe source
 

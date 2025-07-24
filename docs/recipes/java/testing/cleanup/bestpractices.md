@@ -13,7 +13,7 @@ _Applies best practices to tests._
 
 ### Tags
 
-* testing
+* [testing](../recipes-by-tag#testing)
 
 ## Recipe source
 

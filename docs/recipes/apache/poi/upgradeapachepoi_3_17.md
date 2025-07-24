@@ -13,8 +13,8 @@ _Migrates to the last Apache POI 3.x release. This recipe modifies build files a
 
 ### Tags
 
-* apache
-* poi
+* [apache](../recipes-by-tag#apache)
+* [poi](../recipes-by-tag#poi)
 
 ## Recipe source
 

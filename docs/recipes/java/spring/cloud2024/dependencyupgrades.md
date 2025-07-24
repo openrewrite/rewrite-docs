@@ -13,8 +13,8 @@ _Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version._
 
 ### Tags
 
-* spring
-* cloud
+* [spring](../recipes-by-tag#spring)
+* [cloud](../recipes-by-tag#cloud)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _This recipe replaces the `RMIConnectorServer.CREDENTIAL_TYPES` constant with th
 
 ### Tags
 
-* java17
+* [java17](../recipes-by-tag#java17)
 
 ## Recipe source
 

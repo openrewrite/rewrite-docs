@@ -13,7 +13,7 @@ _Do not use the `com.sun.net.ssl.internal.www.protocol` package._
 
 ### Tags
 
-* java11
+* [java11](../recipes-by-tag#java11)
 
 ## Recipe source
 

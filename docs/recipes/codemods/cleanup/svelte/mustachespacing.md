@@ -13,9 +13,9 @@ _enforce unified spacing in mustache See rule details for [svelte/mustache-spaci
 
 ### Tags
 
-* svelte
-* ESLint
-* eslint-plugin-svelte
+* [svelte](../recipes-by-tag#svelte)
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-svelte](../recipes-by-tag#eslint-plugin-svelte)
 
 ## Recipe source
 

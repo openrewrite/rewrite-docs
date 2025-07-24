@@ -13,10 +13,10 @@ _These recipes help with Migration to Jakarta EE 9.1, flagging and updating depr
 
 ### Tags
 
-* jakartaee
-* weblogic
-* migration
-* jakarta
+* [jakartaee](../recipes-by-tag#jakartaee)
+* [weblogic](../recipes-by-tag#weblogic)
+* [migration](../recipes-by-tag#migration)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 
@@ -299,4 +299,4 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

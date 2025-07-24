@@ -13,7 +13,7 @@ _This recipe will change the jakarta.ws.rs-api dependency scope to provided when
 
 ### Tags
 
-* weblogic
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

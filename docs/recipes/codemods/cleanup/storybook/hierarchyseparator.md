@@ -13,9 +13,9 @@ _Deprecated hierarchy separator in title property See rule details for [storyboo
 
 ### Tags
 
-* eslint-plugin-storybook
-* ESLint
-* storybook
+* [eslint-plugin-storybook](../recipes-by-tag#eslint-plugin-storybook)
+* [ESLint](../recipes-by-tag#eslint)
+* [storybook](../recipes-by-tag#storybook)
 
 ## Recipe source
 

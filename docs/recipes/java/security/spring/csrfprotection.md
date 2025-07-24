@@ -13,7 +13,7 @@ _Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malici
 
 ### Tags
 
-* CWE-352
+* [CWE-352](../recipes-by-tag#cwe-352)
 
 ## Recipe source
 

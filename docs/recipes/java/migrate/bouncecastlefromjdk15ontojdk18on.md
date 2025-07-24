@@ -13,7 +13,7 @@ _This recipe will upgrade Bouncy Castle dependencies from `-jdk15on` or `-jdk15t
 
 ### Tags
 
-* bouncycastle
+* [bouncycastle](../recipes-by-tag#bouncycastle)
 
 ## Recipe source
 

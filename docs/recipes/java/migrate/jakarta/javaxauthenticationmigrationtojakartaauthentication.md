@@ -13,10 +13,10 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
-* security
-* javax
-* jakarta
-* authentication
+* [security](../recipes-by-tag#security)
+* [javax](../recipes-by-tag#javax)
+* [jakarta](../recipes-by-tag#jakarta)
+* [authentication](../recipes-by-tag#authentication)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Jakarta EE 10 updates some apis compared to Jakarta EE 9._
 
 ### Tags
 
-* jakarta
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

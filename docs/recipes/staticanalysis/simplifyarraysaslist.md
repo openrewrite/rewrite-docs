@@ -23,6 +23,51 @@ _Simplifies `Arrays.asList()` method calls that use explicit array creation to u
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Arrays;
+import java.util.List;
+
+class Test {
+    void method() {
+        List<String> list = Arrays.asList(new String[]{"w", "k", "s"});
+    }
+}
+```
+
+###### After
+```java
+import java.util.Arrays;
+import java.util.List;
+
+class Test {
+    void method() {
+        List<String> list = Arrays.asList("w", "k", "s");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class Test {
+    void method() {
+-       List<String> list = Arrays.asList(new String[]{"w", "k", "s"});
++       List<String> list = Arrays.asList("w", "k", "s");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

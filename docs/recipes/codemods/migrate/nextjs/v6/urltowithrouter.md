@@ -13,8 +13,8 @@ _Transforms the deprecated automatically injected url property on top-level page
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](../recipes-by-tag#nextjs)
+* [codemods](../recipes-by-tag#codemods)
 
 ## Recipe source
 

@@ -43,8 +43,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```java
 import java.io.IOException;
 
-public class AnExample {
-    public void method() {
+class AnExample {
+    void method() {
         try {
             java.util.Base64.getDecoder().decode("abc".getBytes());
         } catch (IOException e) {
@@ -56,8 +56,8 @@ public class AnExample {
 
 ###### After
 ```java
-public class AnExample {
-    public void method() {
+class AnExample {
+    void method() {
         java.util.Base64.getDecoder().decode("abc".getBytes());
     }
 }
@@ -70,10 +70,10 @@ public class AnExample {
 @@ -1,2 +1,0 @@
 -import java.io.IOException;
 -
-public class AnExample {
+class AnExample {
 @@ -5,5 +3,1 @@
-public class AnExample {
-    public void method() {
+class AnExample {
+    void method() {
 -       try {
 -           java.util.Base64.getDecoder().decode("abc".getBytes());
 -       } catch (IOException e) {
@@ -278,4 +278,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Tyler Van Gorder, [Auke Schrijnen](mailto:auke@schrijnen.nl), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com), Tyler Van Gorder, [Auke Schrijnen](mailto:auke@schrijnen.nl), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)

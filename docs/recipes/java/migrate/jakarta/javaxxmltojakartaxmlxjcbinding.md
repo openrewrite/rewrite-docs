@@ -13,9 +13,9 @@ _Java EE has been rebranded to Jakarta EE, migrates the namespace and version in
 
 ### Tags
 
-* jaxb
-* javax
-* jakarta
+* [jaxb](../recipes-by-tag#jaxb)
+* [javax](../recipes-by-tag#javax)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Replace SpringFox Dependencies._
 
 ### Tags
 
-* springfox
-* springdoc
+* [springfox](../recipes-by-tag#springfox)
+* [springdoc](../recipes-by-tag#springdoc)
 
 ## Recipe source
 

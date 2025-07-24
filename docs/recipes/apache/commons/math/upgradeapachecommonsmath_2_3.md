@@ -13,9 +13,9 @@ _Migrate applications to the latest Apache Commons Math 3.x release. This recipe
 
 ### Tags
 
-* apache
-* math
-* commons
+* [apache](../recipes-by-tag#apache)
+* [math](../recipes-by-tag#math)
+* [commons](../recipes-by-tag#commons)
 
 ## Recipe source
 

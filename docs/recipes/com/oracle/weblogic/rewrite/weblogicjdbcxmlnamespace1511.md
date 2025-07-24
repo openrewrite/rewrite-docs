@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `*-jdbc.xml` files to WebLogic 1
 
 ### Tags
 
-* schemas
-* weblogic
-* jdbc
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
+* [jdbc](../recipes-by-tag#jdbc)
 
 ## Recipe source
 

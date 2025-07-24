@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ### Tags
 
-* java17
+* [java17](../recipes-by-tag#java17)
 
 ## Recipe source
 

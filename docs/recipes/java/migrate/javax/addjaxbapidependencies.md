@@ -13,10 +13,10 @@ _This recipe will add explicit API dependencies for Jakarta EE 8 when a Java 8 a
 
 ### Tags
 
-* jaxb
-* javax
-* java11
-* jakarta
+* [jaxb](../recipes-by-tag#jaxb)
+* [javax](../recipes-by-tag#javax)
+* [java11](../recipes-by-tag#java11)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

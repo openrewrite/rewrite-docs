@@ -13,8 +13,8 @@ _Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.js
 
 ### Tags
 
-* spring
-* security
+* [spring](../recipes-by-tag#spring)
+* [security](../recipes-by-tag#security)
 
 ## Recipe source
 

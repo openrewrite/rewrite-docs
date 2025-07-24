@@ -13,8 +13,8 @@ _Upgrade Common open source libraries libraries to Jakarta EE9 versions._
 
 ### Tags
 
-* hibernate
-* jakarta
+* [hibernate](../recipes-by-tag#hibernate)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

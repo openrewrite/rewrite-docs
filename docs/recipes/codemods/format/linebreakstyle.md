@@ -13,8 +13,8 @@ _Enforce consistent linebreak style  See [rule details](https://eslint.style/rul
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

@@ -18,6 +18,99 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.net.ssl.SSLContext;
+
+class C {
+    void configure() throws Exception {
+        SSLContext context = SSLContext.getInstance("TLS");
+        SSLContext.setDefault(context);
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLContext;
+
+class C {
+    void configure() throws Exception {
+        SSLContext context = SSLContext.getInstance("TLS");
+        /*~~>*/SSLContext.setDefault(context);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    void configure() throws Exception {
+        SSLContext context = SSLContext.getInstance("TLS");
+-       SSLContext.setDefault(context);
++       /*~~>*/SSLContext.setDefault(context);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.net.ssl.SSLContext;
+
+class C {
+    void configure() throws Exception {
+        SSLContext context = SSLContext.getInstance("TLS");
+        SSLContext.setDefault(context);
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLContext;
+
+class C {
+    void configure() throws Exception {
+        SSLContext context = SSLContext.getInstance("TLS");
+        /*~~>*/SSLContext.setDefault(context);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    void configure() throws Exception {
+        SSLContext context = SSLContext.getInstance("TLS");
+-       SSLContext.setDefault(context);
++       /*~~>*/SSLContext.setDefault(context);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

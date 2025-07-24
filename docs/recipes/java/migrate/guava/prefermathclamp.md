@@ -13,8 +13,8 @@ _Prefer `java.lang.Math#clamp` instead of using `com.google.common.primitives.*#
 
 ### Tags
 
-* guava
-* java21
+* [guava](../recipes-by-tag#guava)
+* [java21](../recipes-by-tag#java21)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Always use a static import for assertion methods._
 
 ### Tags
 
-* junit
-* testing
+* [junit](../recipes-by-tag#junit)
+* [testing](../recipes-by-tag#testing)
 
 ## Recipe source
 

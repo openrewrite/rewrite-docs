@@ -13,7 +13,7 @@ _Prefer `java.util.Collections#unmodifiableNavigableMap` instead of using `com.g
 
 ### Tags
 
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

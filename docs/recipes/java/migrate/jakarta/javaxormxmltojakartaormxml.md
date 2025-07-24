@@ -13,9 +13,9 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* persistence
-* orm
-* jakarta
+* [persistence](../recipes-by-tag#persistence)
+* [orm](../recipes-by-tag#orm)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

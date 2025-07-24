@@ -13,8 +13,8 @@ _Enforce or disallow parentheses when invoking a constructor with no arguments  
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

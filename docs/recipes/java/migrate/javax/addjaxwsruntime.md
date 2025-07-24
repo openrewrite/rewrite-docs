@@ -13,11 +13,11 @@ _Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to mainta
 
 ### Tags
 
-* javax
-* javaee
-* java11
-* jakarta
-* jaxws
+* [javax](../recipes-by-tag#javax)
+* [javaee](../recipes-by-tag#javaee)
+* [java11](../recipes-by-tag#java11)
+* [jakarta](../recipes-by-tag#jakarta)
+* [jaxws](../recipes-by-tag#jaxws)
 
 ## Recipe source
 

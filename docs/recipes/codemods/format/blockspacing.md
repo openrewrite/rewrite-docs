@@ -13,8 +13,8 @@ _Disallow or enforce spaces inside of blocks after opening block and before clos
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

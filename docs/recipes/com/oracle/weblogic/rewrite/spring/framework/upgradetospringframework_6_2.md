@@ -13,8 +13,8 @@ _Migrate applications to the Spring Framework 6.2 release and compatibility with
 
 ### Tags
 
-* weblogic
-* springframework
+* [weblogic](../recipes-by-tag#weblogic)
+* [springframework](../recipes-by-tag#springframework)
 
 ## Recipe source
 

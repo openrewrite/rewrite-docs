@@ -114,9 +114,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'reference/faq',
         'reference/latest-versions-of-every-openrewrite-module',
-        'reference/moderne-recipes',
-        'reference/recipes-with-data-tables',
-        'reference/scanning-recipes',
         'reference/rewrite-maven-plugin',
         'reference/gradle-plugin-configuration',
         'reference/supported-languages',
@@ -127,6 +124,25 @@ const sidebars: SidebarsConfig = {
         'reference/dependency-version-selectors',
         'reference/framework-provided-markers',
         'reference/building-openrewrite-from-source',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Lists',
+      link: {
+        type: 'generated-index',
+        title: 'Lists',
+        description: 'Lists of recipes.',
+        slug: '/lists',
+        keywords: ['lists'],
+      },
+      items: [
+        'reference/recipe-authors',
+        'reference/recipes-by-tag',
+        'reference/recipes-with-data-tables',
+        'reference/scanning-recipes',
+        'reference/standalone-recipes',
+        'reference/moderne-recipes',
         'reference/community-recipes',
       ],
     },
@@ -167,6 +183,7 @@ const sidebars: SidebarsConfig = {
         keywords: ['changelog'],
       },
       items: [
+        'changelog/8-59-1-Release',
         'changelog/8-57-0-Release',
         'changelog/8-56-0-Release',
         'changelog/8-54-0-Release',

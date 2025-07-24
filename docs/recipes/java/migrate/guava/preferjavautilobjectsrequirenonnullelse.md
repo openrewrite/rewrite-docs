@@ -13,8 +13,8 @@ _Prefer `java.util.Objects#requireNonNullElse` instead of using `com.google.comm
 
 ### Tags
 
-* guava
-* java11
+* [guava](../recipes-by-tag#guava)
+* [java11](../recipes-by-tag#java11)
 
 ## Recipe source
 

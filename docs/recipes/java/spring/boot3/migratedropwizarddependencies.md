@@ -13,9 +13,9 @@ _Migrate dropWizard dependencies to the new artifactId, since these are changed 
 
 ### Tags
 
-* spring
-* boot
-* dropwizard
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
+* [dropwizard](../recipes-by-tag#dropwizard)
 
 ## Recipe source
 

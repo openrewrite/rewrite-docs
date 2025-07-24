@@ -13,8 +13,8 @@ _Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith`
 
 ### Tags
 
-* junit
-* testing
+* [junit](../recipes-by-tag#junit)
+* [testing](../recipes-by-tag#testing)
 
 ## Recipe source
 

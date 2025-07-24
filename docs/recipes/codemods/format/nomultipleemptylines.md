@@ -13,8 +13,8 @@ _Disallow multiple empty lines  See [rule details](https://eslint.style/rules/de
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

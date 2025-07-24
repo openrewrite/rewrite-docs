@@ -13,8 +13,8 @@ _Enforce consistent newlines before and after dots  See [rule details](https://e
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

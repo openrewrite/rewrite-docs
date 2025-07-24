@@ -13,9 +13,9 @@ _`Encryptors.queryableText()` is insecure and is removed in Spring Security 6._
 
 ### Tags
 
-* spring
-* security
-* search
+* [spring](../recipes-by-tag#spring)
+* [security](../recipes-by-tag#security)
+* [search](../recipes-by-tag#search)
 
 ## Recipe source
 

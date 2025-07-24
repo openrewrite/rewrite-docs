@@ -13,7 +13,7 @@ _The `java.lang.Thread.destroy()` method was never implemented, and the `java.la
 
 ### Tags
 
-* java11
+* [java11](../recipes-by-tag#java11)
 
 ## Recipe source
 

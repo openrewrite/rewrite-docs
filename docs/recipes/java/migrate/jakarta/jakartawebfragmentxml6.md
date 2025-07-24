@@ -13,9 +13,9 @@ _Faces 4 uses web-fragment 6.0._
 
 ### Tags
 
-* faces
-* jsf
-* jakarta
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

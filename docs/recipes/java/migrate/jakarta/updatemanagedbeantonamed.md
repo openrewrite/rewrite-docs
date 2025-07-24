@@ -13,9 +13,9 @@ _Faces ManagedBean was deprecated in JSF 2.3 (EE8) and removed in Jakarta Faces 
 
 ### Tags
 
-* faces
-* jsf
-* jakarta
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

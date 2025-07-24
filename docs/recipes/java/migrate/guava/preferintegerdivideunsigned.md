@@ -13,7 +13,7 @@ _Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.p
 
 ### Tags
 
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Enforce consistent spacing inside array brackets  See [rule details](https://es
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

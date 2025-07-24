@@ -13,9 +13,9 @@ _Migrate xmlns entries in WebLogic Resource Deployment Plan schema files to WebL
 
 ### Tags
 
-* resource-deployment-plan
-* schemas
-* weblogic
+* [resource-deployment-plan](../recipes-by-tag#resource-deployment-plan)
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

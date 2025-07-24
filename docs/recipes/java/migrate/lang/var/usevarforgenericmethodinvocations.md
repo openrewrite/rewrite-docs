@@ -259,4 +259,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)

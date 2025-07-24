@@ -13,9 +13,9 @@ _Migrate xmlns entries in WebLogic Application schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* application
-* schemas
-* weblogic
+* [application](../recipes-by-tag#application)
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

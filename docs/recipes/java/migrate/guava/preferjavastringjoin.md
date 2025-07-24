@@ -13,7 +13,7 @@ _Replaces supported calls to `com.google.common.base.Joiner#join()` with `java.l
 
 ### Tags
 
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

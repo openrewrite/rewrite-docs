@@ -13,7 +13,7 @@ _The `javax.security.auth.Policy` class is not available from Java SE 11 onwards
 
 ### Tags
 
-* java11
+* [java11](../recipes-by-tag#java11)
 
 ## Recipe source
 

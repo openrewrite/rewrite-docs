@@ -17,7 +17,7 @@ Prefer `java.util.Optional#or(Supplier<T extends java.util.Optional<T>>)` over `
 ### Tags
 
 * [RSPEC-S4738](https://sonarsource.github.io/rspec/#/rspec/S4738)
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

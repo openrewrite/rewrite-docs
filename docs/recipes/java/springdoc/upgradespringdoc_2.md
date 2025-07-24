@@ -13,7 +13,7 @@ _Upgrade to SpringDoc v2.1, as described in the [upgrade guide](https://springdo
 
 ### Tags
 
-* springdoc
+* [springdoc](../recipes-by-tag#springdoc)
 
 ## Recipe source
 

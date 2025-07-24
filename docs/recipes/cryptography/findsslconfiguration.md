@@ -18,6 +18,43 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+server.ssl.protocol=TLS
+server.ssl.enabled-protocols=TLSv1.2,TLSv1.3
+server.ssl.ciphers=TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384
+```
+
+###### After
+```properties
+~~>server.ssl.protocol=TLS
+~~>server.ssl.enabled-protocols=TLSv1.2,TLSv1.3
+~~>server.ssl.ciphers=TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,3 @@
+-server.ssl.protocol=TLS
+-server.ssl.enabled-protocols=TLSv1.2,TLSv1.3
+-server.ssl.ciphers=TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384
++~~>server.ssl.protocol=TLS
++~~>server.ssl.enabled-protocols=TLSv1.2,TLSv1.3
++~~>server.ssl.ciphers=TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

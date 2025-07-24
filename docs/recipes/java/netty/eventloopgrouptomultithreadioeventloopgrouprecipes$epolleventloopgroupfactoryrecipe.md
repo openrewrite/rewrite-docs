@@ -13,8 +13,8 @@ _Replace `new EpollEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(Epoll
 
 ### Tags
 
-* epoll
-* netty
+* [epoll](../recipes-by-tag#epoll)
+* [netty](../recipes-by-tag#netty)
 
 ## Recipe source
 

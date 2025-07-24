@@ -13,8 +13,8 @@ _Enforce consistent spacing between keys and values in object literal properties
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

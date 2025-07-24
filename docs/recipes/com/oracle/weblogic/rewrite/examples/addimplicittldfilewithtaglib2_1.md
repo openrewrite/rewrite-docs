@@ -13,9 +13,9 @@ _Add `implicit.tld` file with taglib 2.1 to `src/main/webapp/WEB-INF/tags`._
 
 ### Tags
 
-* taglib
-* examples
-* weblogic
+* [taglib](../recipes-by-tag#taglib)
+* [examples](../recipes-by-tag#examples)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

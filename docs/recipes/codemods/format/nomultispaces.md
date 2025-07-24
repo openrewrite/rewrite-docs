@@ -13,8 +13,8 @@ _Disallow multiple spaces  See [rule details](https://eslint.style/rules/default
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

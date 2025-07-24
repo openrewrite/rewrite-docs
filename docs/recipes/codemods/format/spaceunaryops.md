@@ -13,8 +13,8 @@ _Enforce consistent spacing before or after unary operators  See [rule details](
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Spring Boot 3.5 removed the bean name `taskExecutor`. Where this bean name is u
 
 ### Tags
 
-* spring
-* boot
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Cloud 2023 (Leyton) release._
 
 ### Tags
 
-* spring
-* cloud
+* [spring](../recipes-by-tag#spring)
+* [cloud](../recipes-by-tag#cloud)
 
 ## Recipe source
 

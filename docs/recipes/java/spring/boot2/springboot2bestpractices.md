@@ -13,8 +13,8 @@ _Applies best practices to Spring Boot 2 applications._
 
 ### Tags
 
-* spring
-* boot
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 

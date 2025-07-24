@@ -13,8 +13,8 @@ _Enforce or disallow spaces inside of curly braces in JSX attributes and express
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

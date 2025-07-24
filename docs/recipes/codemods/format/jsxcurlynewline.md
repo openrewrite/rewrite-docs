@@ -13,8 +13,8 @@ _Enforce consistent linebreaks in curly braces in JSX attributes and expressions
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

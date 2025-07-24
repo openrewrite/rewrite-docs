@@ -13,8 +13,8 @@ _Looks for a series of patterns that have not yet had auto-remediation recipes d
 
 ### Tags
 
-* spring
-* boot
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 

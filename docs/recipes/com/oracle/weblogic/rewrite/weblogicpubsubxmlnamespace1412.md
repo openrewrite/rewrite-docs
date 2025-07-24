@@ -13,9 +13,9 @@ _Migrate xmlns entries in WebLogic PubSub schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* schemas
-* weblogic
-* pubsub
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
+* [pubsub](../recipes-by-tag#pubsub)
 
 ## Recipe source
 

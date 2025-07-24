@@ -13,9 +13,9 @@ _enforce self-closing style See rule details for [svelte/html-self-closing](http
 
 ### Tags
 
-* svelte
-* ESLint
-* eslint-plugin-svelte
+* [svelte](../recipes-by-tag#svelte)
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-svelte](../recipes-by-tag#eslint-plugin-svelte)
 
 ## Recipe source
 

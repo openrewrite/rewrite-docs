@@ -13,9 +13,9 @@ _See Material UI codemod projects for more [details](https://github.com/mui/mate
 
 ### Tags
 
-* mui
-* codemods
-* material-ui
+* [mui](../recipes-by-tag#mui)
+* [codemods](../recipes-by-tag#codemods)
+* [material-ui](../recipes-by-tag#material-ui)
 
 ## Recipe source
 

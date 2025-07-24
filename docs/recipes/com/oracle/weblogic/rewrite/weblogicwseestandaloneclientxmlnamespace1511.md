@@ -13,9 +13,9 @@ _This recipe will update the `xmlns` entries in `weblogic-wsee-standaloneclient.
 
 ### Tags
 
-* wsee-standaloneclient
-* schemas
-* weblogic
+* [wsee-standaloneclient](../recipes-by-tag#wsee-standaloneclient)
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

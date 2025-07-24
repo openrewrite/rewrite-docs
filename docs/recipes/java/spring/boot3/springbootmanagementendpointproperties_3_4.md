@@ -13,8 +13,8 @@ _Migrate the settings for Management Endpoint Security from `true`|`false` to `r
 
 ### Tags
 
-* spring
-* boot
+* [spring](../recipes-by-tag#spring)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 

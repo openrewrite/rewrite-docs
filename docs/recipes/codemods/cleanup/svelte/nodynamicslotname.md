@@ -13,9 +13,9 @@ _disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](h
 
 ### Tags
 
-* svelte
-* ESLint
-* eslint-plugin-svelte
+* [svelte](../recipes-by-tag#svelte)
+* [ESLint](../recipes-by-tag#eslint)
+* [eslint-plugin-svelte](../recipes-by-tag#eslint-plugin-svelte)
 
 ## Recipe source
 

@@ -13,10 +13,10 @@ _This recipe will migrate WebLogic schemas to 14.1.2_
 
 ### Tags
 
-* descriptors
-* java
-* schemas
-* weblogic
+* [descriptors](../recipes-by-tag#descriptors)
+* [java](../recipes-by-tag#java)
+* [schemas](../recipes-by-tag#schemas)
+* [weblogic](../recipes-by-tag#weblogic)
 
 ## Recipe source
 

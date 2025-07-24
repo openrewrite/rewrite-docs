@@ -13,8 +13,8 @@ _Applies best practices to logging with SLF4J._
 
 ### Tags
 
-* slf4j
-* logging
+* [slf4j](../recipes-by-tag#slf4j)
+* [logging](../recipes-by-tag#logging)
 
 ## Recipe source
 
@@ -34,8 +34,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass)
-* [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
+* [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](../../../java/logging/slf4j/completeexceptionlogging)
 * [Catch block log level](../../../java/logging/catchblockloglevel)
 * [Change logger fields to `private`](../../../java/logging/changeloggerstoprivate)
@@ -59,8 +59,8 @@ tags:
   - logging
 recipeList:
   - org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass
-  - org.openrewrite.java.logging.slf4j.ParameterizedLogging
   - org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant
+  - org.openrewrite.java.logging.slf4j.ParameterizedLogging
   - org.openrewrite.java.logging.slf4j.CompleteExceptionLogging
   - org.openrewrite.java.logging.CatchBlockLogLevel
   - org.openrewrite.java.logging.ChangeLoggersToPrivate
@@ -413,4 +413,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Pierre Delagrave](mailto:pierre@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), jhl221123, Md Riyazul Islam, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [JohannisK](mailto:johan.kragt@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), Aaron Gershman, [Sam Snyder](mailto:sam@moderne.io), [Pierre Delagrave](mailto:pierre@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), jhl221123, Md Riyazul Islam, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), Craig P. Motlin, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [JohannisK](mailto:johan.kragt@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)

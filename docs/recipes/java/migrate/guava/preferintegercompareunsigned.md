@@ -13,7 +13,7 @@ _Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.
 
 ### Tags
 
-* guava
+* [guava](../recipes-by-tag#guava)
 
 ## Recipe source
 

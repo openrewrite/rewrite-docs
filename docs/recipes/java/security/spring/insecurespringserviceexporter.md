@@ -13,7 +13,7 @@ _The default Java deserialization mechanism is available via `ObjectInputStream`
 
 ### Tags
 
-* CVE-2016-1000027
+* [CVE-2016-1000027](../recipes-by-tag#cve-2016-1000027)
 
 ## Recipe source
 
@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

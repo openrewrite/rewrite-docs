@@ -13,8 +13,8 @@ _Enforce props indentation in JSX  See [rule details](https://eslint.style/rules
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

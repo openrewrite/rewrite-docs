@@ -32,9 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `CollectionRules.CollectionSize`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionsizerecipe)
 * [Refaster template `CollectionRules.CollectionContains`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectioncontainsrecipe)
 * [Refaster template `CollectionRules.CollectionAddAllToCollectionExpression`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionaddalltocollectionexpressionrecipe)
-* [Refaster template `CollectionRules.CollectionAddAllToCollectionBlock`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionaddalltocollectionblockrecipe)
 * [Refaster template `CollectionRules.CollectionRemoveAllFromCollectionExpression`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionremoveallfromcollectionexpressionrecipe)
-* [Refaster template `CollectionRules.CollectionRemoveAllFromCollectionBlock`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionremoveallfromcollectionblockrecipe)
 * [Refaster template `CollectionRules.SetStream`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$setstreamrecipe)
 * [Refaster template `CollectionRules.NewArrayListFromCollection`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$newarraylistfromcollectionrecipe)
 * [Refaster template `CollectionRules.ImmutableCollectionAsList`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectionaslistrecipe)
@@ -67,9 +65,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionSizeRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionContainsRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionExpressionRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionBlockRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionExpressionRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionBlockRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SetStreamRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$NewArrayListFromCollectionRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionAsListRecipe

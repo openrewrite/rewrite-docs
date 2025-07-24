@@ -13,9 +13,9 @@ _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of
 
 ### Tags
 
-* spring
-* jetty
-* boot
+* [spring](../recipes-by-tag#spring)
+* [jetty](../recipes-by-tag#jetty)
+* [boot](../recipes-by-tag#boot)
 
 ## Recipe source
 

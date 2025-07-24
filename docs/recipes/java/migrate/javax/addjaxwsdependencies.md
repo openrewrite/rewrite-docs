@@ -13,11 +13,11 @@ _This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 appli
 
 ### Tags
 
-* jaxb
-* glassfish
-* javax
-* java11
-* jakarta
+* [jaxb](../recipes-by-tag#jaxb)
+* [glassfish](../recipes-by-tag#glassfish)
+* [javax](../recipes-by-tag#javax)
+* [java11](../recipes-by-tag#java11)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

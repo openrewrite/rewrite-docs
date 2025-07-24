@@ -13,12 +13,12 @@ _Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE10 versions._
 
 ### Tags
 
-* myfaces
-* primefaces
-* faces
-* jsf
-* omnifaces
-* jakarta
+* [myfaces](../recipes-by-tag#myfaces)
+* [primefaces](../recipes-by-tag#primefaces)
+* [faces](../recipes-by-tag#faces)
+* [jsf](../recipes-by-tag#jsf)
+* [omnifaces](../recipes-by-tag#omnifaces)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

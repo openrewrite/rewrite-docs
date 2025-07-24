@@ -13,8 +13,8 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ### Tags
 
-* spring
-* cloud
+* [spring](../recipes-by-tag#spring)
+* [cloud](../recipes-by-tag#cloud)
 
 ## Recipe source
 

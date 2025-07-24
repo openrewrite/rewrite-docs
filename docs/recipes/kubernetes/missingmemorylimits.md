@@ -13,7 +13,7 @@ _With no limit set, kubectl allocates more and more memory to the container unti
 
 ### Tags
 
-* kubernetes
+* [kubernetes](../recipes-by-tag#kubernetes)
 
 ## Recipe source
 

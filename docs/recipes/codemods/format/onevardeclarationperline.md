@@ -13,8 +13,8 @@ _Require or disallow newlines around variable declarations  See [rule details](h
 
 ### Tags
 
-* eslint
-* stylistic
+* [eslint](../recipes-by-tag#eslint)
+* [stylistic](../recipes-by-tag#stylistic)
 
 ## Recipe source
 

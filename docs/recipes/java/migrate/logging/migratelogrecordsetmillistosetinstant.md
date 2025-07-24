@@ -13,7 +13,7 @@ _Use `LogRecord#setInstant(Instant)` instead of the deprecated `LogRecord#setMil
 
 ### Tags
 
-* deprecated
+* [deprecated](../recipes-by-tag#deprecated)
 
 ## Recipe source
 

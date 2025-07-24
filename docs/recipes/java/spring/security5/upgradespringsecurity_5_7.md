@@ -13,8 +13,8 @@ _Migrate applications to the latest Spring Security 5.7 release. This recipe wil
 
 ### Tags
 
-* spring
-* security
+* [spring](../recipes-by-tag#spring)
+* [security](../recipes-by-tag#security)
 
 ## Recipe source
 
@@ -417,4 +417,4 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Alex Boyko](mailto:aboyko@vmware.com), Kun Li, [Knut Wannheden](mailto:knut@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+[Alex Boyko](mailto:aboyko@vmware.com), Kun Li, [Knut Wannheden](mailto:knut@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Patrick Way, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), Josh Soref, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)

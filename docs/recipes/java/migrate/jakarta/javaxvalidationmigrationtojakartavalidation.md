@@ -13,9 +13,9 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
-* javax
-* validation
-* jakarta
+* [javax](../recipes-by-tag#javax)
+* [validation](../recipes-by-tag#validation)
+* [jakarta](../recipes-by-tag#jakarta)
 
 ## Recipe source
 

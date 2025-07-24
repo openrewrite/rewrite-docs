@@ -13,8 +13,8 @@ _It is a common mistake to call `Exception.getMessage()` when passing an excepti
 
 ### Tags
 
-* slf4j
-* logging
+* [slf4j](../recipes-by-tag#slf4j)
+* [logging](../recipes-by-tag#logging)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _This codemod uninstalls the `@next/font` package and transforms `@next/font` im
 
 ### Tags
 
-* nextjs
-* codemods
+* [nextjs](../recipes-by-tag#nextjs)
+* [codemods](../recipes-by-tag#codemods)
 
 ## Recipe source
 
