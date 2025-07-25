@@ -5,7 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrates `camel 4.0` application to `camel 4.4`](./camelmigrationrecipe.md)
-* [Replace &#39;camel.main.routeController&#39; with `camel.routecontroller&#39;](./routecontrollerproperties.md)
+* [Replace 'camel.main.routeController' with `camel.routecontroller'](./routecontrollerproperties.md)
 
 ## Recipes
 

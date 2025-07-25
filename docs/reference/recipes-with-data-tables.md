@@ -303,7 +303,7 @@ Find Java Persistence Query Language definitions in the codebase.
  
 _io.moderne.java.spring.boot3.UpgradeSpringBoot_3_4_
 
-Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4.
+Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4.
 
 #### Data tables:
 
@@ -314,7 +314,7 @@ Migrate applications to the latest Spring Boot 3.4 release. This recipe will mod
  
 _io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5_
 
-Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5.
+Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5.
 
 #### Data tables:
 
@@ -438,7 +438,7 @@ List the committers on a repository.
  
 _org.openrewrite.search.FindParseToPrintInequality_
 
-OpenRewrite `Parser` implementations should produce `SourceFile` objects whose `printAll()` method should be byte-for-byte equivalent with the original source file. When this isn&#39;t true, recipes can still run on the `SourceFile` and even produce diffs, but the diffs would fail to apply as a patch to the original source file. Most `Parser` use `Parser#requirePrintEqualsInput` to produce a `ParseError` when they fail to produce a `SourceFile` that is print idempotent.
+OpenRewrite `Parser` implementations should produce `SourceFile` objects whose `printAll()` method should be byte-for-byte equivalent with the original source file. When this isn't true, recipes can still run on the `SourceFile` and even produce diffs, but the diffs would fail to apply as a patch to the original source file. Most `Parser` use `Parser#requirePrintEqualsInput` to produce a `ParseError` when they fail to produce a `SourceFile` that is print idempotent.
 
 #### Data tables:
 
@@ -570,7 +570,7 @@ Add a gradle platform dependency to a `build.gradle` file in the correct configu
  
 _org.openrewrite.gradle.UpgradeDependencyVersion_
 
-Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: &#39;group&#39;, name: &#39;artifact&#39;, version: &#39;version&#39;` Can update version numbers which are defined earlier in the same file in variable declarations.
+Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations.
 
 #### Data tables:
 
@@ -984,7 +984,7 @@ Find method usages by pattern.
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Find comments&#39; language distribution](/recipes/ai/findcommentslanguage.md)
+### [Find comments' language distribution](/recipes/ai/findcommentslanguage.md)
  
 _io.moderne.ai.FindCommentsLanguage_
 
@@ -1093,7 +1093,7 @@ Deprecate and later delete classes that are unused, as detected by Azul Intellig
  
 _io.moderne.azul.search.FindReachableMethods_
 
-Find all methods defined in the repository&#39;s source code that are reachable.
+Find all methods defined in the repository's source code that are reachable.
 
 #### Data tables:
 
@@ -1563,11 +1563,11 @@ enforce the location of first attribute See rule details for [svelte/first-attri
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [require or disallow a space before tag&#39;s closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
+### [require or disallow a space before tag's closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
  
 _org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing_
 
-require or disallow a space before tag&#39;s closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)
+require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)
 
 #### Data tables:
 
@@ -2421,11 +2421,11 @@ Prefer using `Set#size` instead of `Array#length`. See [rule details](https://gi
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split(&#39;&#39;)`.](/recipes/codemods/cleanup/javascript/preferspread.md)
+### [Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`.](/recipes/codemods/cleanup/javascript/preferspread.md)
  
 _org.openrewrite.codemods.cleanup.javascript.PreferSpread_
 
-Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split(&#39;&#39;)`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md)
+Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md)
 
 #### Data tables:
 
@@ -2894,11 +2894,11 @@ Enforce static class names order See rule details for [vue/static-class-names-or
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [Enforce v-for directive&#39;s delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md)
+### [Enforce v-for directive's delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md)
  
 _org.openrewrite.codemods.cleanup.vue.VForDelimiterStyle_
 
-Enforce v-for directive&#39;s delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)
+Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)
 
 #### Data tables:
 
@@ -5908,7 +5908,7 @@ This recipe finds all OpenRewrite recipes, primarily to produce a data table tha
  
 _org.openrewrite.java.spring.search.FindApiCalls_
 
-Find outbound HTTP API calls made via Spring&#39;s `RestTemplate` class.
+Find outbound HTTP API calls made via Spring's `RestTemplate` class.
 
 #### Data tables:
 
@@ -5953,7 +5953,7 @@ Find compile scoped Spring Web dependency for Maven and Gradle, both direct and 
  
 _org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2_
 
-Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
+Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
 
 #### Data tables:
 
@@ -5964,7 +5964,7 @@ Migrate applications to the latest Spring Boot 2.2 release. This recipe will mod
  
 _org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4_
 
-Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4.
+Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4.
 
 #### Data tables:
 
@@ -5975,7 +5975,7 @@ Migrate applications to the latest Spring Boot 2.4 release. This recipe will mod
  
 _org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1_
 
-Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
+Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
 
 #### Data tables:
 
@@ -5986,7 +5986,7 @@ Migrate applications to the latest Spring Boot 3.1 release. This recipe will mod
  
 _org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4_
 
-Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs.
+Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
 
 #### Data tables:
 
@@ -5997,7 +5997,7 @@ Migrate applications to the latest Spring Boot 3.4 release. This recipe will mod
  
 _org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2_
 
-Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
+Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
 
 #### Data tables:
 
@@ -6008,7 +6008,7 @@ Migrate applications to the latest Spring Boot 3.2 release. This recipe will mod
  
 _org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_6_
 
-Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6.
+Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6.
 
 #### Data tables:
 
@@ -6019,7 +6019,7 @@ Migrate applications to the latest Spring Boot 2.6 release. This recipe will mod
  
 _org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_3_
 
-Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3.
+Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3.
 
 #### Data tables:
 
@@ -6041,7 +6041,7 @@ Upgrade to Spring Boot 2.7.
  
 _org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0_
 
-Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
 
 #### Data tables:
 
@@ -6052,7 +6052,7 @@ Migrate applications to the latest Spring Boot 3.0 release. This recipe will mod
  
 _org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3_
 
-Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
+Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
 
 #### Data tables:
 
@@ -6074,7 +6074,7 @@ Upgrade to Spring Boot 2.5 from any prior 2.x version.
  
 _org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0_
 
-Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
+Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 
 #### Data tables:
 
@@ -6096,7 +6096,7 @@ _org.openrewrite.java.spring.security5.search.FindEncryptorsQueryableTextUses_
  
 _org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1_
 
-Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
+Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
 
 #### Data tables:
 
@@ -6118,7 +6118,7 @@ Applies best practices to Spring Boot 3 applications.
  
 _org.openrewrite.sql.ChangeFunctionName_
 
-When migrating between dialects, often one name can be substituted for another. For example, Oracle&#39;s NVL function can be replaced with Postgres COALESCE.
+When migrating between dialects, often one name can be substituted for another. For example, Oracle's NVL function can be replaced with Postgres COALESCE.
 
 #### Data tables:
 

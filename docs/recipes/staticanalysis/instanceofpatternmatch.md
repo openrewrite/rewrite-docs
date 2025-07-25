@@ -5,7 +5,7 @@ sidebar_label: "Changes code to use Java 17's `instanceof` pattern matching"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Changes code to use Java 17&#39;s `instanceof` pattern matching
+# Changes code to use Java 17's `instanceof` pattern matching
 
 **org.openrewrite.staticanalysis.InstanceOfPatternMatch**
 

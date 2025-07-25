@@ -5,7 +5,7 @@ sidebar_label: "Do not use 'WhenAll' with a single task"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Do not use &#39;WhenAll&#39; with a single task
+# Do not use 'WhenAll' with a single task
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DoNotUseWhenAllOrWaitAllWithSingleArgumentCA1842**
 

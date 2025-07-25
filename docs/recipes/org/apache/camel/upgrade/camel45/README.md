@@ -9,6 +9,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Replace &#39;camel.main.backlogTracing&#39; with `camel.trace.enabled&#39;](./traceproperties.md)
+* [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](./traceproperties.md)
 
 

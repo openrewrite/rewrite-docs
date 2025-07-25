@@ -5,7 +5,7 @@ sidebar_label: "Do not compare Span&lt;T&gt; to 'null' or 'default'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Do not compare Span&lt;T&gt; to &#39;null&#39; or &#39;default&#39;
+# Do not compare Span&lt;T&gt; to 'null' or 'default'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotCompareSpanToNullCA2265**
 

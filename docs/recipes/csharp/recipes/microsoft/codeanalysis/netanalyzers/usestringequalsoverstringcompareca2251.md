@@ -5,7 +5,7 @@ sidebar_label: "Use 'string.Equals'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;string.Equals&#39;
+# Use 'string.Equals'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseStringEqualsOverStringCompareCA2251**
 

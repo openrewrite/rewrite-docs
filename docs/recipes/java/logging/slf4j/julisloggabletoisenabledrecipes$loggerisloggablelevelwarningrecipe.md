@@ -5,7 +5,7 @@ sidebar_label: "Replace JUL `Logger.isLoggable(Level.WARNING)` with SLF4J's `Log
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.isLoggable(Level.WARNING)` with SLF4J&#39;s `Logger.isWarnEnabled()`
+# Replace JUL `Logger.isLoggable(Level.WARNING)` with SLF4J's `Logger.isWarnEnabled()`
 
 **org.openrewrite.java.logging.slf4j.JulIsLoggableToIsEnabledRecipes$LoggerIsLoggableLevelWarningRecipe**
 

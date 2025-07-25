@@ -15,8 +15,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert Log4j `Logger.setLevel` to Log4j2 `Configurator.setLevel`](./loggersetleveltoconfiguratorrecipe.md)
 * [Log exceptions as parameters rather than as string concatenations](./loggingexceptionconcatenationrecipe.md)
 * [Prepend a random name to each Log4J statement](./prependrandomname.md)
-* [Rewrites JUL&#39;s Logger#entering method to Log4j API](./convertjulentering.md)
-* [Rewrites JUL&#39;s Logger#exiting method to Log4j API](./convertjulexiting.md)
+* [Rewrites JUL's Logger#entering method to Log4j API](./convertjulentering.md)
+* [Rewrites JUL's Logger#exiting method to Log4j API](./convertjulexiting.md)
 * [Upgrade Log4j 2.x dependency version](./upgradelog4j2dependencyversion.md)
 
 

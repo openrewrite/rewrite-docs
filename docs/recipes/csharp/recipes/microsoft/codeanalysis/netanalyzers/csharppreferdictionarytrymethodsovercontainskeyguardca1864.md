@@ -5,7 +5,7 @@ sidebar_label: "Prefer the 'IDictionary.TryAdd(TKey, TValue)' method"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the &#39;IDictionary.TryAdd(TKey, TValue)&#39; method
+# Prefer the 'IDictionary.TryAdd(TKey, TValue)' method
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1864**
 

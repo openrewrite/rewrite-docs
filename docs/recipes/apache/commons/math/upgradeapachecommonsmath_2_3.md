@@ -60,7 +60,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3
 displayName: Migrates to Apache Commons Math 3.x
 description: |
-  Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+  Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
 tags:
   - apache
   - math

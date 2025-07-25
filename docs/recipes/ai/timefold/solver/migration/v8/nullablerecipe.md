@@ -5,7 +5,7 @@ sidebar_label: "PlanningVariable's `nullable` is newly called `unassignedValues`
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# PlanningVariable&#39;s `nullable` is newly called `unassignedValues`
+# PlanningVariable's `nullable` is newly called `unassignedValues`
 
 **ai.timefold.solver.migration.v8.NullableRecipe**
 
@@ -74,7 +74,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: ai.timefold.solver.migration.v8.NullableRecipe
-displayName: PlanningVariable&#39;s `nullable` is newly called `unassignedValues`
+displayName: PlanningVariable's `nullable` is newly called `unassignedValues`
 description: |
   Removes references to null vars and replace them with unassigned values.
 recipeList:

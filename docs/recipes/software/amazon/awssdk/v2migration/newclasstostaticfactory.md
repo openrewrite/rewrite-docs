@@ -5,7 +5,7 @@ sidebar_label: "Transform 'new' expressions to static factory methods"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Transform &#39;new&#39; expressions to static factory methods
+# Transform 'new' expressions to static factory methods
 
 **software.amazon.awssdk.v2migration.NewClassToStaticFactory**
 

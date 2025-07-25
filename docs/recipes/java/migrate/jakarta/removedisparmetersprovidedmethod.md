@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod
 displayName: Use `isParametersProvided()`
 description: |
-  Expression Language prior to 5.0 provides the deprecated MethodExpression.isParmetersProvided() method, with the word &#39;parameter&#39; misspelled in the method name. This method is unavailable in Jakarta Expression Language 5.0. Use the correctly spelled MethodExpression.isParametersProvided() method instead.
+  Expression Language prior to 5.0 provides the deprecated MethodExpression.isParmetersProvided() method, with the word 'parameter' misspelled in the method name. This method is unavailable in Jakarta Expression Language 5.0. Use the correctly spelled MethodExpression.isParametersProvided() method instead.
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: jakarta.el.MethodExpression isParmetersProvided()

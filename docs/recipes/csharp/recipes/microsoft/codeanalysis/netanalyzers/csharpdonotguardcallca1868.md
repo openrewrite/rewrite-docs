@@ -5,7 +5,7 @@ sidebar_label: "Unnecessary call to 'Contains(item)'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Unnecessary call to &#39;Contains(item)&#39;
+# Unnecessary call to 'Contains(item)'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotGuardCallCA1868**
 

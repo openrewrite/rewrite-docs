@@ -5,7 +5,7 @@ sidebar_label: "Do not pass a nullable struct to 'ArgumentNullException.ThrowIfN
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Do not pass a nullable struct to &#39;ArgumentNullException.ThrowIfNull&#39;
+# Do not pass a nullable struct to 'ArgumentNullException.ThrowIfNull'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotPassNonNullableValueToArgumentNullExceptionThrowIfNullCA1871**
 

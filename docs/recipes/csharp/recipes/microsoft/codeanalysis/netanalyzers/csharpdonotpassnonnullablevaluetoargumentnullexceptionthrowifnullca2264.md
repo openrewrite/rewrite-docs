@@ -5,7 +5,7 @@ sidebar_label: "Do not pass a non-nullable value to 'ArgumentNullException.Throw
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Do not pass a non-nullable value to &#39;ArgumentNullException.ThrowIfNull&#39;
+# Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotPassNonNullableValueToArgumentNullExceptionThrowIfNullCA2264**
 

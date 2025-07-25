@@ -5,7 +5,7 @@ sidebar_label: "Use span-based 'string.Concat'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use span-based &#39;string.Concat&#39;
+# Use span-based 'string.Concat'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseSpanBasedStringConcatCA1845**
 

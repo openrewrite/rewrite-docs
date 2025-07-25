@@ -236,7 +236,7 @@ This recipe is used as part of the following composite recipes:
 * [Enforce use of defineOptions instead of default export.](/recipes/codemods/cleanup/vue/preferdefineoptions.md)
 * [Enforce using the digits argument with `Number#toFixed()`.](/recipes/codemods/cleanup/javascript/requirenumbertofixeddigitsargument.md)
 * [Enforce using the separator argument with `Array#join()`.](/recipes/codemods/cleanup/javascript/requirearrayjoinseparator.md)
-* [Enforce v-for directive&#39;s delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md)
+* [Enforce v-for directive's delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md)
 * [Enforce valid titles](/recipes/codemods/cleanup/jest/validtitle.md)
 * [Enforce variables to be declared either together or separately in functions](/recipes/codemods/cleanup/javascript/onevar.md)
 * [Enforce whitespace in and around the JSX opening and closing brackets](/recipes/codemods/cleanup/react/jsxtagspacing.md)
@@ -294,7 +294,7 @@ This recipe is used as part of the following composite recipes:
 * [Prefer omitting the catch binding parameter.](/recipes/codemods/cleanup/javascript/preferoptionalcatchbinding.md)
 * [Prefer reading a JSON file as a buffer.](/recipes/codemods/cleanup/javascript/preferjsonparsebuffer.md)
 * [Prefer ternary expressions over simple `if-else` statements.](/recipes/codemods/cleanup/javascript/preferternary.md)
-* [Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split(&#39;&#39;)`.](/recipes/codemods/cleanup/javascript/preferspread.md)
+* [Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`.](/recipes/codemods/cleanup/javascript/preferspread.md)
 * [Prefer using `.dataset` on DOM elements over calling attribute methods.](/recipes/codemods/cleanup/javascript/preferdomnodedataset.md)
 * [Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object.](/recipes/codemods/cleanup/javascript/preferobjectfromentries.md)
 * [Prefer using `Set#size` instead of `Array#length`.](/recipes/codemods/cleanup/javascript/prefersetsize.md)
@@ -387,7 +387,7 @@ This recipe is used as part of the following composite recipes:
 * [enforce use of shorthand syntax in attribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md)
 * [enforce use of shorthand syntax in directives](/recipes/codemods/cleanup/svelte/shorthanddirective.md)
 * [require class directives instead of ternary expressions](/recipes/codemods/cleanup/svelte/preferclassdirective.md)
-* [require or disallow a space before tag&#39;s closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
+* [require or disallow a space before tag's closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
 * [require style directives instead of style attribute](/recipes/codemods/cleanup/svelte/preferstyledirective.md)
 
 

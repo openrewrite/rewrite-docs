@@ -5,7 +5,7 @@ sidebar_label: "Consider using 'StringBuilder.Append(char)' when applicable"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Consider using &#39;StringBuilder.Append(char)&#39; when applicable
+# Consider using 'StringBuilder.Append(char)' when applicable
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.PreferConstCharOverConstUnitStringCA1834**
 

@@ -5,7 +5,7 @@ sidebar_label: "Merge 'else' with nested 'if'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Merge &#39;else&#39; with nested &#39;if&#39;
+# Merge 'else' with nested 'if'
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.ElseClauseRCS1006**
 

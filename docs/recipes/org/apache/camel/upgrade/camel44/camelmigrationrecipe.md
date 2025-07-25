@@ -39,7 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Camel Core changes](../../../../../org/apache/camel/upgrade/camel43/camelthrottleeiprecipe)
 * [The header name for the List metadata has changed](../../../../../org/apache/camel/upgrade/camel43/kafkametadata)
 * [Camel Core changes](../../../../../org/apache/camel/upgrade/camel44/camelcorerecipe)
-* [Replace &#39;camel.main.routeController&#39; with `camel.routecontroller&#39;](../../../../../org/apache/camel/upgrade/camel44/routecontrollerproperties)
+* [Replace 'camel.main.routeController' with `camel.routecontroller'](../../../../../org/apache/camel/upgrade/camel44/routecontrollerproperties)
 * [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](../../../../../org/apache/camel/upgrade/camel44/defaultjsonschemaloader)
 
 </TabItem>

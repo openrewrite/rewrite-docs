@@ -18,7 +18,7 @@
 * [enforce use of shorthand syntax in attribute](./shorthandattribute.md)
 * [enforce use of shorthand syntax in directives](./shorthanddirective.md)
 * [require class directives instead of ternary expressions](./preferclassdirective.md)
-* [require or disallow a space before tag&#39;s closing brackets](./htmlclosingbracketspacing.md)
+* [require or disallow a space before tag's closing brackets](./htmlclosingbracketspacing.md)
 * [require style directives instead of style attribute](./preferstyledirective.md)
 
 

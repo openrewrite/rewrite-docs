@@ -5,7 +5,7 @@ sidebar_label: "Replace JUL `Logger.warning(Supplier&lt;String&gt;)` with SLF4J'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.warning(Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atWarn().log(Supplier&lt;String&gt;)`
+# Replace JUL `Logger.warning(Supplier&lt;String&gt;)` with SLF4J's `Logger.atWarn().log(Supplier&lt;String&gt;)`
 
 **org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe**
 

@@ -69,7 +69,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations
 displayName: Migrate from OpenRewrite annotations to JSpecify
 description: |
-  Migrate from OpenRewrite&#39;s JSR-305 meta-annotations to JSpecify.
+  Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify.
 recipeList:
   - org.openrewrite.staticanalysis.java.MoveFieldAnnotationToType:
       annotationType: org.openrewrite.internal.lang.*

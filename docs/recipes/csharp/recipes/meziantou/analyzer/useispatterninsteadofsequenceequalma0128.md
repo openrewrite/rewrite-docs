@@ -5,7 +5,7 @@ sidebar_label: "Use 'is' operator instead of SequenceEqual"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;is&#39; operator instead of SequenceEqual
+# Use 'is' operator instead of SequenceEqual
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.UseIsPatternInsteadOfSequenceEqualMA0128**
 

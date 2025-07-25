@@ -8,7 +8,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Don&#39;t use an explicit empty label list](./noexplicitemptylabellist.md)
+* [Don't use an explicit empty label list](./noexplicitemptylabellist.md)
 * [Migrate Misk counter to Micrometer](./migrateemptylabelmiskcounter.md)
 
 

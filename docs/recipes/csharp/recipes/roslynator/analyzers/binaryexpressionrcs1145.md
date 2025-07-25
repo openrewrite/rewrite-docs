@@ -5,7 +5,7 @@ sidebar_label: "Remove redundant 'as' operator"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove redundant &#39;as&#39; operator
+# Remove redundant 'as' operator
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1145**
 

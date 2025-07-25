@@ -5,7 +5,7 @@ sidebar_label: "`it` shouldn't be used as a lambda parameter name"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# `it` shouldn&#39;t be used as a lambda parameter name
+# `it` shouldn't be used as a lambda parameter name
 
 **org.openrewrite.kotlin.cleanup.ImplicitParameterInLambda**
 

@@ -82,7 +82,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.NoGuava
 displayName: Prefer the Java standard library instead of Guava
 description: |
-  Guava filled in important gaps in the Java standard library and still does. But at least some of Guava&#39;s API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+  Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
 tags:
   - guava
 recipeList:

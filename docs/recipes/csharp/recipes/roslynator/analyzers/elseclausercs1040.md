@@ -5,7 +5,7 @@ sidebar_label: "[deprecated] Remove empty 'else' clause"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# [deprecated] Remove empty &#39;else&#39; clause
+# [deprecated] Remove empty 'else' clause
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.ElseClauseRCS1040**
 

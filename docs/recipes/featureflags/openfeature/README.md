@@ -8,6 +8,6 @@ _Recipes to perform [OpenFeature](https://openfeature.dev/) migration tasks._
 
 ## Recipes
 
-* [Remove OpenFeature&#39;s `getBooleanValue` for feature key](./removegetbooleanvalue.md)
+* [Remove OpenFeature's `getBooleanValue` for feature key](./removegetbooleanvalue.md)
 
 

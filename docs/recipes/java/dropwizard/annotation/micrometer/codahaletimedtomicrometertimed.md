@@ -52,7 +52,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.dropwizard.annotation.micrometer.CodahaleTimedToMicrometerTimed
 displayName: Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)
 description: |
-  Replaces Dropwizard&#39;s `@Timed` annotation with Micrometer&#39;s `@Timed` annotation, preserving name (mapped to value), absolute, and description attributes.
+  Replaces Dropwizard's `@Timed` annotation with Micrometer's `@Timed` annotation, preserving name (mapped to value), absolute, and description attributes.
 recipeList:
   - org.openrewrite.java.ChangeAnnotationAttributeName:
       annotationType: com.codahale.metrics.annotation.Timed

@@ -5,7 +5,7 @@ sidebar_label: "Remove unnecessary 'else'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove unnecessary &#39;else&#39;
+# Remove unnecessary 'else'
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveUnnecessaryElseRCS1211**
 

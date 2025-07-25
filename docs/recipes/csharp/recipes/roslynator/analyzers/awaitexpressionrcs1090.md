@@ -5,7 +5,7 @@ sidebar_label: "Add/remove 'ConfigureAwait(false)' call"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add/remove &#39;ConfigureAwait(false)&#39; call
+# Add/remove 'ConfigureAwait(false)' call
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.AwaitExpressionRCS1090**
 

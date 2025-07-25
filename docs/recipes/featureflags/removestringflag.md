@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Remove LaunchDarkly&#39;s `boolVariation` for feature key](/recipes/featureflags/launchdarkly/removestringvariation.md)
+* [Remove LaunchDarkly's `boolVariation` for feature key](/recipes/featureflags/launchdarkly/removestringvariation.md)
 
 ## Example
 

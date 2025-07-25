@@ -5,7 +5,7 @@ sidebar_label: "Consider using 'string.Contains' instead of 'string.IndexOf'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Consider using &#39;string.Contains&#39; instead of &#39;string.IndexOf&#39;
+# Consider using 'string.Contains' instead of 'string.IndexOf'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.PreferStringContainsOverIndexOfCA2249**
 

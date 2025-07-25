@@ -5,7 +5,7 @@ sidebar_label: "Enforce v-for directive's delimiter style"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce v-for directive&#39;s delimiter style
+# Enforce v-for directive's delimiter style
 
 **org.openrewrite.codemods.cleanup.vue.VForDelimiterStyle**
 
@@ -42,9 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.VForDelimiterStyle
-displayName: Enforce v-for directive&#39;s delimiter style
+displayName: Enforce v-for directive's delimiter style
 description: |
-  Enforce v-for directive&#39;s delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)
+  Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)
 tags:
   - ESLint
   - vue

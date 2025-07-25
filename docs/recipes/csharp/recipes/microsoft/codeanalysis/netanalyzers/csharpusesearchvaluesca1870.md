@@ -5,7 +5,7 @@ sidebar_label: "Use a cached 'SearchValues' instance"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use a cached &#39;SearchValues&#39; instance
+# Use a cached 'SearchValues' instance
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseSearchValuesCA1870**
 

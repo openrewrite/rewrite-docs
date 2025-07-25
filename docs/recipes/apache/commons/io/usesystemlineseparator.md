@@ -45,7 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.commons.io.UseSystemLineSeparator
 displayName: Prefer `System.lineSeparator()`
 description: |
-  Prefer the Java standard library&#39;s `System.lineSeparator()` over third-party usage of apache&#39;s `IOUtils.LINE_SEPARATOR`.
+  Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`.
 tags:
   - apache
   - commons

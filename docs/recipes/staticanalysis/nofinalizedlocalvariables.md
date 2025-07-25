@@ -5,7 +5,7 @@ sidebar_label: "Don't use final on local variables"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Don&#39;t use final on local variables
+# Don't use final on local variables
 
 **org.openrewrite.staticanalysis.NoFinalizedLocalVariables**
 

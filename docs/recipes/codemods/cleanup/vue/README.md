@@ -43,7 +43,7 @@
 * [Enforce unified line brake in HTML comments](./htmlcommentcontentnewline.md)
 * [Enforce unified spacing in HTML comments](./htmlcommentcontentspacing.md)
 * [Enforce use of defineOptions instead of default export.](./preferdefineoptions.md)
-* [Enforce v-for directive&#39;s delimiter style](./vfordelimiterstyle.md)
+* [Enforce v-for directive's delimiter style](./vfordelimiterstyle.md)
 * [Enforce writing style for handlers in v-on directives](./vonhandlerstyle.md)
 * [Recommended vue code cleanup](./recommendedvuecodecleanup.md)
 * [Require key attribute for conditionally rendered repeated components](./vifelsekey.md)

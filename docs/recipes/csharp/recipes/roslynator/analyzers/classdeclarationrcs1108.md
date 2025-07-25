@@ -5,7 +5,7 @@ sidebar_label: "Add 'static' modifier to all partial class declarations"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add &#39;static&#39; modifier to all partial class declarations
+# Add 'static' modifier to all partial class declarations
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.ClassDeclarationRCS1108**
 

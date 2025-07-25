@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `plugin`
   * newVersion: `4.51`
   * allowVersionDowngrades: `false`
-* [Upgrade property&#39;s value to version](../jenkins/upgradeversionproperty)
+* [Upgrade property's value to version](../jenkins/upgradeversionproperty)
   * key: `jenkins.version`
   * minimumVersion: `2.346.3`
 * [Remove redundant explicit dependency and plugin versions](../maven/removeredundantdependencyversions)

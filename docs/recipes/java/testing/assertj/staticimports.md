@@ -5,7 +5,7 @@ sidebar_label: "Statically import AssertJ's `assertThat`"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Statically import AssertJ&#39;s `assertThat`
+# Statically import AssertJ's `assertThat`
 
 **org.openrewrite.java.testing.assertj.StaticImports**
 
@@ -47,7 +47,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.StaticImports
-displayName: Statically import AssertJ&#39;s `assertThat`
+displayName: Statically import AssertJ's `assertThat`
 description: |
   Consistently use a static import rather than inlining the `Assertions` class name in tests.
 tags:

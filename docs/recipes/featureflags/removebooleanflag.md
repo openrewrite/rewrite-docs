@@ -32,10 +32,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Remove FF4j&#39;s `check` for feature key](/recipes/featureflags/ff4j/removecheck.md)
-* [Remove LaunchDarkly&#39;s `boolVariation` for feature key](/recipes/featureflags/launchdarkly/removeboolvariation.md)
-* [Remove OpenFeature&#39;s `getBooleanValue` for feature key](/recipes/featureflags/openfeature/removegetbooleanvalue.md)
-* [Remove Unleash&#39;s `isEnabled` for feature key](/recipes/featureflags/unleash/removeisenabled.md)
+* [Remove FF4j's `check` for feature key](/recipes/featureflags/ff4j/removecheck.md)
+* [Remove LaunchDarkly's `boolVariation` for feature key](/recipes/featureflags/launchdarkly/removeboolvariation.md)
+* [Remove OpenFeature's `getBooleanValue` for feature key](/recipes/featureflags/openfeature/removegetbooleanvalue.md)
+* [Remove Unleash's `isEnabled` for feature key](/recipes/featureflags/unleash/removeisenabled.md)
 
 ## Example
 

@@ -5,7 +5,7 @@ sidebar_label: "Remove 'partial' modifier from type with a single part"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove &#39;partial&#39; modifier from type with a single part
+# Remove 'partial' modifier from type with a single part
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.RemovePartialModifierFromTypeWithSinglePartRCS1043**
 

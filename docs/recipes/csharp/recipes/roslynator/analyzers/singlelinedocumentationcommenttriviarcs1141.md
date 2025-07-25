@@ -5,7 +5,7 @@ sidebar_label: "Add 'param' element to documentation comment"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add &#39;param&#39; element to documentation comment
+# Add 'param' element to documentation comment
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.SingleLineDocumentationCommentTriviaRCS1141**
 

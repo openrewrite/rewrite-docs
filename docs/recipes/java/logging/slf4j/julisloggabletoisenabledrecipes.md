@@ -28,14 +28,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace JUL `Logger.isLoggable(Level.ALL)` with SLF4J&#39;s `Logger.isTraceEnabled`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelallrecipe)
-* [Replace JUL `Logger.isLoggable(Level.FINEST)` with SLF4J&#39;s `Logger.isTraceEnabled`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelfinestrecipe)
-* [Replace JUL `Logger.isLoggable(Level.FINER)` with SLF4J&#39;s `Logger.isTraceEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelfinerrecipe)
-* [Replace JUL `Logger.isLoggable(Level.FINE)` with SLF4J&#39;s `Logger.isDebugEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelfinerecipe)
-* [Replace JUL `Logger.isLoggable(Level.CONFIG)` with SLF4J&#39;s `Logger.isInfoEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelconfigrecipe)
-* [Replace JUL `Logger.isLoggable(Level.INFO)` with SLF4J&#39;s `Logger.isInfoEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelinforecipe)
-* [Replace JUL `Logger.isLoggable(Level.WARNING)` with SLF4J&#39;s `Logger.isWarnEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelwarningrecipe)
-* [Replace JUL `Logger.isLoggable(Level.SEVERE)` with SLF4J&#39;s `Logger.isErrorEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelsevererecipe)
+* [Replace JUL `Logger.isLoggable(Level.ALL)` with SLF4J's `Logger.isTraceEnabled`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelallrecipe)
+* [Replace JUL `Logger.isLoggable(Level.FINEST)` with SLF4J's `Logger.isTraceEnabled`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelfinestrecipe)
+* [Replace JUL `Logger.isLoggable(Level.FINER)` with SLF4J's `Logger.isTraceEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelfinerrecipe)
+* [Replace JUL `Logger.isLoggable(Level.FINE)` with SLF4J's `Logger.isDebugEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelfinerecipe)
+* [Replace JUL `Logger.isLoggable(Level.CONFIG)` with SLF4J's `Logger.isInfoEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelconfigrecipe)
+* [Replace JUL `Logger.isLoggable(Level.INFO)` with SLF4J's `Logger.isInfoEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelinforecipe)
+* [Replace JUL `Logger.isLoggable(Level.WARNING)` with SLF4J's `Logger.isWarnEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelwarningrecipe)
+* [Replace JUL `Logger.isLoggable(Level.SEVERE)` with SLF4J's `Logger.isErrorEnabled()`](../../../java/logging/slf4j/julisloggabletoisenabledrecipes$loggerisloggablelevelsevererecipe)
 
 </TabItem>
 

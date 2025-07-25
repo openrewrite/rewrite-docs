@@ -5,7 +5,7 @@ sidebar_label: "Prefer 'Clear' over 'Fill'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer &#39;Clear&#39; over &#39;Fill&#39;
+# Prefer 'Clear' over 'Fill'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseSpanClearInsteadOfFillCA1855**
 

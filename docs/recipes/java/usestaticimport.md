@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
-* [Statically import AssertJ&#39;s `assertThat`](/recipes/java/testing/assertj/staticimports.md)
+* [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md)
 * [Statically import JUnit Jupiter assertions](/recipes/java/testing/junit5/staticimports.md)
 * [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md)
 

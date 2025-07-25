@@ -28,7 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace &#39;camel.main.backlogTracing&#39; with `camel.trace.enabled&#39;](../../../../../org/apache/camel/upgrade/camel45/traceproperties)
+* [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](../../../../../org/apache/camel/upgrade/camel45/traceproperties)
 * [Renamed classes for elasticsearch,opensearch and spring regis](../../../../../org/apache/camel/upgrade/camel45/renamedclasses)
 
 </TabItem>

@@ -53,7 +53,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.micrometer.UpgradeMicrometer_1_13
 displayName: Migrate to Micrometer 1.13
 description: |
-  Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide).
+  Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide).
 tags:
   - micrometer
 recipeList:

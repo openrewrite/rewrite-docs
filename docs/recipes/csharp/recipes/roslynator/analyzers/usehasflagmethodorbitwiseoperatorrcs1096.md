@@ -5,7 +5,7 @@ sidebar_label: "Use 'HasFlag' method or bitwise operator"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;HasFlag&#39; method or bitwise operator
+# Use 'HasFlag' method or bitwise operator
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UseHasFlagMethodOrBitwiseOperatorRCS1096**
 

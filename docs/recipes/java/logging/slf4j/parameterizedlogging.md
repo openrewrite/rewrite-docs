@@ -5,7 +5,7 @@ sidebar_label: "Parameterize SLF4J's logging statements"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Parameterize SLF4J&#39;s logging statements
+# Parameterize SLF4J's logging statements
 
 **org.openrewrite.java.logging.slf4j.ParameterizedLogging**
 
@@ -53,9 +53,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.logging.slf4j.ParameterizedLogging
-displayName: Parameterize SLF4J&#39;s logging statements
+displayName: Parameterize SLF4J's logging statements
 description: |
-  Use SLF4J&#39;s parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
+  Use SLF4J's parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
 tags:
   - slf4j
   - RSPEC-S2629

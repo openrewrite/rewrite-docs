@@ -5,7 +5,7 @@ sidebar_label: "Constraint Streams: don't use package name in the asConstraint()
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Constraint Streams: don&#39;t use package name in the asConstraint() method
+# Constraint Streams: don't use package name in the asConstraint() method
 
 **ai.timefold.solver.migration.v8.RemoveConstraintPackageRecipe**
 

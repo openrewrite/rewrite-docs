@@ -46,7 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.netty.EventLoopGroupToMultiThreadIoEventLoopGroupRecipes
 displayName: Replace all `EventLoopGroup`s with `MultiThreadIoEventLoopGroup`
 description: |
-  Replaces Netty&#39;s `new *EventLoopGroup` with `new MultiThreadIoEventLoopGroup(*IoHandler.newFactory())`.
+  Replaces Netty's `new *EventLoopGroup` with `new MultiThreadIoEventLoopGroup(*IoHandler.newFactory())`.
 tags:
   - netty
 recipeList:

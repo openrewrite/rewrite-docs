@@ -81,7 +81,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18
 displayName: Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8
 description: |
-  This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn&#39;t maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8.
+  This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8.
 tags:
   - bouncycastle
 recipeList:

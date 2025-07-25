@@ -81,7 +81,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4
 displayName: Migrate to Spring Boot 3.4
 description: |
-  Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs.
+  Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
 tags:
   - spring
   - boot

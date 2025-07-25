@@ -5,7 +5,7 @@ sidebar_label: "Use 'ThrowIfCancellationRequested'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;ThrowIfCancellationRequested&#39;
+# Use 'ThrowIfCancellationRequested'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseCancellationTokenThrowIfCancellationRequestedCA2250**
 

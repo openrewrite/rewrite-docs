@@ -5,7 +5,7 @@ sidebar_label: "Rewrites JUL's Logger#entering method to Log4j API"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Rewrites JUL&#39;s Logger#entering method to Log4j API
+# Rewrites JUL's Logger#entering method to Log4j API
 
 **org.openrewrite.java.logging.log4j.ConvertJulEntering**
 

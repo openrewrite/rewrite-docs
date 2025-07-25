@@ -49,7 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5
 displayName: Migrates to ApacheHttpClient 4.5.x
 description: |
-  Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+  Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
 tags:
   - apache
   - httpclient

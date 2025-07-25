@@ -5,7 +5,7 @@ sidebar_label: "Replace JUL `Logger.log(Level.INFO, Supplier&lt;String&gt;)` wit
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.log(Level.INFO, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atInfo().log(Supplier&lt;String&gt;)`
+# Replace JUL `Logger.log(Level.INFO, Supplier&lt;String&gt;)` with SLF4J's `Logger.atInfo().log(Supplier&lt;String&gt;)`
 
 **org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierLogInfoRecipe**
 

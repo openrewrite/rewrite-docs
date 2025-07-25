@@ -5,7 +5,7 @@ sidebar_label: "Secure the use of SnakeYAML's constructor"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Secure the use of SnakeYAML&#39;s constructor
+# Secure the use of SnakeYAML's constructor
 
 **org.openrewrite.java.security.marshalling.SecureSnakeYamlConstructor**
 

@@ -105,7 +105,7 @@
 * [Prefer reading a JSON file as a buffer.](./preferjsonparsebuffer.md)
 * [Prefer `switch` over multiple `else-if`.](./preferswitch.md)
 * [Prefer ternary expressions over simple `if-else` statements.](./preferternary.md)
-* [Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split(&#39;&#39;)`.](./preferspread.md)
+* [Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`.](./preferspread.md)
 * [Prefer using `.dataset` on DOM elements over calling attribute methods.](./preferdomnodedataset.md)
 * [Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object.](./preferobjectfromentries.md)
 * [Prefer using `Set#size` instead of `Array#length`.](./prefersetsize.md)

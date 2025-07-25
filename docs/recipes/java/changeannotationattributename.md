@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from `@ApiOperation` to `@Operation`](/recipes/openapi/swagger/migrateapioperationtooperation.md)
 * [Migrate from `@ApiParam` to `@Parameter`](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
 * [Migrate from `@ApiResponses` to `@ApiResponses`](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
-* [PlanningVariable&#39;s `nullable` is newly called `unassignedValues`](/recipes/ai/timefold/solver/migration/v8/nullablerecipe.md)
+* [PlanningVariable's `nullable` is newly called `unassignedValues`](/recipes/ai/timefold/solver/migration/v8/nullablerecipe.md)
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)

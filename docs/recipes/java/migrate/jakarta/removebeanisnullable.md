@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Remove deprecated API&#39;s not supported in CDI4.0](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
+* [Remove deprecated API's not supported in CDI4.0](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
 
 ## Example
 

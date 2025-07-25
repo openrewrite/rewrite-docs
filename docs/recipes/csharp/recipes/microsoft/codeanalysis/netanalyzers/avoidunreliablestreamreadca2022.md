@@ -5,7 +5,7 @@ sidebar_label: "Avoid inexact read with 'Stream.Read'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Avoid inexact read with &#39;Stream.Read&#39;
+# Avoid inexact read with 'Stream.Read'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AvoidUnreliableStreamReadCA2022**
 

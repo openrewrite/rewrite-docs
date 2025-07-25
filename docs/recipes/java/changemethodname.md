@@ -69,7 +69,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
-* [PlanningVariable&#39;s `nullable` is newly called `unassignedValues`](/recipes/ai/timefold/solver/migration/v8/nullablerecipe.md)
+* [PlanningVariable's `nullable` is newly called `unassignedValues`](/recipes/ai/timefold/solver/migration/v8/nullablerecipe.md)
 * [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
 * [Prefer `Integer#divideUnsigned`](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
 * [Prefer `Long#compareUnsigned`](/recipes/java/migrate/guava/preferlongcompareunsigned.md)

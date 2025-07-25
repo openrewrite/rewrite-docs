@@ -61,7 +61,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3
 displayName: Migrates to Apache Commons Lang 3.x
 description: |
-  Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application&#39;s build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
+  Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
 tags:
   - apache
   - lang

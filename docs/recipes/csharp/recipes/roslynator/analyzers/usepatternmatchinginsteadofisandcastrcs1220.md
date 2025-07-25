@@ -5,7 +5,7 @@ sidebar_label: "Use pattern matching instead of combination of 'is' operator and
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use pattern matching instead of combination of &#39;is&#39; operator and cast operator
+# Use pattern matching instead of combination of 'is' operator and cast operator
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UsePatternMatchingInsteadOfIsAndCastRCS1220**
 

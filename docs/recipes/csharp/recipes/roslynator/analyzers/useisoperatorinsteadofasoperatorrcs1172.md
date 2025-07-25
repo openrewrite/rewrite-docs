@@ -5,7 +5,7 @@ sidebar_label: "Use 'is' operator instead of 'as' operator"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;is&#39; operator instead of &#39;as&#39; operator
+# Use 'is' operator instead of 'as' operator
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UseIsOperatorInsteadOfAsOperatorRCS1172**
 

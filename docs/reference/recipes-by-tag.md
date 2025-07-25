@@ -53,17 +53,17 @@ _16 recipes_
 
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md) - _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`_
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md) - _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`_
-* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md) - _Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md) - _Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
-* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application&#39;s build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
-* [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md) - _Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md) - _Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md) - _Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
+* [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md) - _Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md) - _Migrates to the last Apache POI 3.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions._
-* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
-* [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md) - _Prefer the Java standard library&#39;s `System.lineSeparator()` over third-party usage of apache&#39;s `IOUtils.LINE_SEPARATOR`._
-* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/io/usestandardcharsets.md) - _Prefer the Java standard library&#39;s `java.nio.charset.StandardCharsets` over third-party usage of apache&#39;s `org.apache.commons.io.Charsets`._
-* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md) - _Prefer the Java standard library&#39;s `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`._
-* [Prefer `java.nio.file.Files`](/recipes/apache/commons/io/apachefileutilstojavafiles.md) - _Prefer the Java standard library&#39;s `java.nio.file.Files` over third-party usage of apache&#39;s `apache.commons.io.FileUtils`._
-* [Prefer `java.util.Base64`](/recipes/apache/commons/codec/apachebase64tojavabase64.md) - _Prefer the Java standard library&#39;s `java.util.Base64` over third-party usage of apache&#39;s `apache.commons.codec.binary.Base64`._
+* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md) - _Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`._
+* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/io/usestandardcharsets.md) - _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over third-party usage of apache's `org.apache.commons.io.Charsets`._
+* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md) - _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`._
+* [Prefer `java.nio.file.Files`](/recipes/apache/commons/io/apachefileutilstojavafiles.md) - _Prefer the Java standard library's `java.nio.file.Files` over third-party usage of apache's `apache.commons.io.FileUtils`._
+* [Prefer `java.util.Base64`](/recipes/apache/commons/codec/apachebase64tojavabase64.md) - _Prefer the Java standard library's `java.util.Base64` over third-party usage of apache's `apache.commons.codec.binary.Base64`._
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](/recipes/apache/commons/io/relocateapachecommonsio.md) - _The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 * [Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)](/recipes/apache/commons/lang/isnotemptytojdk.md) - _Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == null || s.isEmpty()` and `s != null &amp;&amp; !s.isEmpty()`._
 * [Use IOUtils method that include  their charset encoding](/recipes/apache/commons/io/apacheioutilsuseexplicitcharset.md) - _Use `IOUtils` method invocations that include the charset encoding instead of using the deprecated versions that do not include a charset encoding. (e.g. converts `IOUtils.readLines(inputStream)` to `IOUtils.readLines(inputStream, StandardCharsets.UTF_8)`._
@@ -102,7 +102,7 @@ _10 recipes_
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md) - _Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions`._
 * [Shorten AssertJ assertions](/recipes/java/testing/assertj/simplifyassertjassertions.md) - _Replace AssertJ assertions where a dedicated assertion is available for the same actual value._
 * [Simplify AssertJ chained assertions](/recipes/java/testing/assertj/simplifychainedassertjassertions.md) - _Replace AssertJ assertions where a method is called on the actual value with a dedicated assertion._
-* [Statically import AssertJ&#39;s `assertThat`](/recipes/java/testing/assertj/staticimports.md) - _Consistently use a static import rather than inlining the `Assertions` class name in tests._
+* [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md) - _Consistently use a static import rather than inlining the `Assertions` class name in tests._
 * [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md) - _Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)` calls ahead of further changes._
 
 ## authentication
@@ -280,11 +280,11 @@ _1 recipe_
 _46 recipes_
 
 * [Comment deprecated methods in Spring 3.4](/recipes/java/spring/boot3/commentdeprecations.md) - _Spring Boot 3.4 deprecates methods that are not commonly used or need manual interaction._
-* [Downgrade Jakarta Servlet API to 5.0 when using Jetty](/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md) - _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it&#39;s value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom&#39;s parent extends from the spring-boot-parent._
+* [Downgrade Jakarta Servlet API to 5.0 when using Jetty](/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md) - _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it's value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom's parent extends from the spring-boot-parent._
 * [Find patterns that require updating for Spring Boot 2.5](/recipes/java/spring/boot2/search/findupgraderequirementsspringboot_2_5.md) - _Looks for a series of patterns that have not yet had auto-remediation recipes developed for._
 * [Find projects affected by changes to the default error view message attribute](/recipes/java/spring/boot2/search/messagesinthedefaulterrorview.md) - _As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included._
 * [Migrate SAP cloud foundry logging support to Spring Boot 3.x](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md) - _Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3._
-* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application&#39;s tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
 * [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md) - _Migrate the settings for Management Endpoint Security from `true`|`false` to `read-only`|`none`._
 * [Migrate Spring Boot properties to 2.0](/recipes/java/spring/boot2/springbootproperties_2_0.md) - _Migrate properties found in `application.properties` and `application.yml`._
 * [Migrate Spring Boot properties to 2.1](/recipes/java/spring/boot2/springbootproperties_2_1.md) - _Migrate properties found in `application.properties` and `application.yml`._
@@ -300,22 +300,22 @@ _46 recipes_
 * [Migrate Spring Boot properties to 3.3](/recipes/java/spring/boot3/springbootproperties_3_3.md) - _Migrate properties found in `application.properties` and `application.yml`._
 * [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md) - _Migrate properties found in `application.properties` and `application.yml`._
 * [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md) - _Migrate properties found in `application.properties` and `application.yml`._
-* [Migrate Spring to Spring Boot](/recipes/java/spring/boot/springtospringboot.md) - _Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application&#39;s build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin._
+* [Migrate Spring to Spring Boot](/recipes/java/spring/boot/springtospringboot.md) - _Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application's build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin._
 * [Migrate dropWizard dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratedropwizarddependencies.md) - _Migrate dropWizard dependencies to the new artifactId, since these are changed with Spring Boot 3._
-* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md) - _Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0._
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md) - _Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0._
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md) - _Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3._
-* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md) - _Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1._
-* [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md) - _Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2._
-* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md) - _Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3._
-* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md) - _Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4._
-* [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md) - _Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6._
-* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md) - _Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7._
-* [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md) - _Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0._
-* [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md) - _Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1._
-* [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md) - _Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2._
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4._
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs._
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md) - _Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5._
+* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md) - _Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1._
+* [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md) - _Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2._
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md) - _Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3._
+* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md) - _Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4._
+* [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md) - _Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6._
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md) - _Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7._
+* [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md) - _Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0._
+* [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md) - _Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1._
+* [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md) - _Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2._
+* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4._
+* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs._
+* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md) - _Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5._
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](/recipes/java/spring/boot3/actuatorendpointsanitization.md) - _Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228_
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](/recipes/java/spring/boot3/migratemaxhttpheadersize.md) - _Previously, the server.max-http-header-size was treated inconsistently across the four supported embedded web servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size. When using Tomcat it would configure the max HTTP request and response header sizes. The renamed property is used to configure the http request header size in Spring Boot 3.0. **To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such a setting), use a `WebServerFactoryCustomizer`**._
 * [Spring Boot 2.x best practices](/recipes/java/spring/boot2/springboot2bestpractices.md) - _Applies best practices to Spring Boot 2 applications._
@@ -324,13 +324,13 @@ _46 recipes_
 * [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md) - _Applies best practices to Spring Boot 3.5+ applications._
 * [Upgrade Gradle 8 to 8.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle8spring34.md) - _Spring Boot 3.4 requires Gradle 8.4+._
 * [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle7spring34.md) - _Spring Boot 3.4 requires Gradle 7.6.4._
-* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md) - _Spring Boot 3.5 removed the bean name `taskExecutor`. Where this bean name is used, the recipe replaces the bean name to `applicationTaskExecutor`. This also includes instances where the developer provided their own bean named `taskExecutor`. This also includes scenarios where JSR-250&#39;s `@Resource` annotation is used._
+* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md) - _Spring Boot 3.5 removed the bean name `taskExecutor`. Where this bean name is used, the recipe replaces the bean name to `applicationTaskExecutor`. This also includes instances where the developer provided their own bean named `taskExecutor`. This also includes scenarios where JSR-250's `@Resource` annotation is used._
 
 ## bouncycastle
 
 _2 recipes_
 
-* [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md) - _This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn&#39;t maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8._
+* [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md) - _This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8._
 * [Migrate Bouncy Castle to `jdk18on`](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md) - _This recipe will upgrade Bouncy Castle dependencies from `-jdk15on` or `-jdk15to18` to `-jdk18on`._
 
 ## cacheManager
@@ -1099,7 +1099,7 @@ _103 recipes_
 * [Replace lodash and underscore array functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscorearray.md) - _- `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`_
 * [Replace lodash and underscore function functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscorefunction.md) - _- `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`_
 * [Replace lodash and underscore object functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreobjects.md) - _- `_.clone(x)` -&gt; `{ ...x }` - `_.extend({}, x, y)` -&gt; `{ ...x, ...y }` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`_
-* [Replace lodash and underscore utility functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md) - _- `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === &#39;boolean&#39;` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === &#39;function&#39;` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === &#39;string&#39;` - `_.isUndefined(x)` -&gt; `typeof(x) === &#39;undefined&#39;`_
+* [Replace lodash and underscore utility functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md) - _- `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`_
 * [Replaces `@mui` imports with `@mui/material`](/recipes/codemods/migrate/mui/muireplace.md) - _See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#mui-replace)._
 * [Transform AMD style `define()` calls to ES6 `import` statements](/recipes/codemods/ecmascript/5to6/amdtoesm.md) - _Transform AMD style `define()` calls to ES6 `import` statements_
 * [Transform AMP HOC into page config](/recipes/codemods/migrate/nextjs/v8/withamptoconfig.md) - _Transforms the `withAmp` HOC into Next.js 9 page configuration._
@@ -1157,20 +1157,20 @@ _103 recipes_
 _2 recipes_
 
 * [Adopt `SequencedCollection`](/recipes/java/migrate/util/sequencedcollection.md) - _Replace older code patterns with `SequencedCollection` methods, as per https://openjdk.org/jeps/431._
-* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md) - _Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md) - _Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 
 ## commons
 
 _11 recipes_
 
-* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md) - _Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
-* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application&#39;s build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
-* [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md) - _Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
-* [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md) - _Prefer the Java standard library&#39;s `System.lineSeparator()` over third-party usage of apache&#39;s `IOUtils.LINE_SEPARATOR`._
-* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/io/usestandardcharsets.md) - _Prefer the Java standard library&#39;s `java.nio.charset.StandardCharsets` over third-party usage of apache&#39;s `org.apache.commons.io.Charsets`._
-* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md) - _Prefer the Java standard library&#39;s `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`._
-* [Prefer `java.nio.file.Files`](/recipes/apache/commons/io/apachefileutilstojavafiles.md) - _Prefer the Java standard library&#39;s `java.nio.file.Files` over third-party usage of apache&#39;s `apache.commons.io.FileUtils`._
-* [Prefer `java.util.Base64`](/recipes/apache/commons/codec/apachebase64tojavabase64.md) - _Prefer the Java standard library&#39;s `java.util.Base64` over third-party usage of apache&#39;s `apache.commons.codec.binary.Base64`._
+* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md) - _Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
+* [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md) - _Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md) - _Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`._
+* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/io/usestandardcharsets.md) - _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over third-party usage of apache's `org.apache.commons.io.Charsets`._
+* [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md) - _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`._
+* [Prefer `java.nio.file.Files`](/recipes/apache/commons/io/apachefileutilstojavafiles.md) - _Prefer the Java standard library's `java.nio.file.Files` over third-party usage of apache's `apache.commons.io.FileUtils`._
+* [Prefer `java.util.Base64`](/recipes/apache/commons/codec/apachebase64tojavabase64.md) - _Prefer the Java standard library's `java.util.Base64` over third-party usage of apache's `apache.commons.codec.binary.Base64`._
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](/recipes/apache/commons/io/relocateapachecommonsio.md) - _The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 * [Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)](/recipes/apache/commons/lang/isnotemptytojdk.md) - _Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == null || s.isEmpty()` and `s != null &amp;&amp; !s.isEmpty()`._
 * [Use IOUtils method that include  their charset encoding](/recipes/apache/commons/io/apacheioutilsuseexplicitcharset.md) - _Use `IOUtils` method invocations that include the charset encoding instead of using the deprecated versions that do not include a charset encoding. (e.g. converts `IOUtils.readLines(inputStream)` to `IOUtils.readLines(inputStream, StandardCharsets.UTF_8)`._
@@ -1228,7 +1228,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Find text-direction changes](/recipes/java/security/findtextdirectionchanges.md) - _Finds unicode control characters which can change the direction text is displayed in. These control characters can alter how source code is presented to a human reader without affecting its interpretation by tools like compilers. So a malicious patch could pass code review while introducing vulnerabilities. Note that text direction-changing unicode control characters aren&#39;t inherently malicious. These characters can appear for legitimate reasons in code written in or dealing with right-to-left languages. See: https://trojansource.codes/ for more information._
+* [Find text-direction changes](/recipes/java/security/findtextdirectionchanges.md) - _Finds unicode control characters which can change the direction text is displayed in. These control characters can alter how source code is presented to a human reader without affecting its interpretation by tools like compilers. So a malicious patch could pass code review while introducing vulnerabilities. Note that text direction-changing unicode control characters aren't inherently malicious. These characters can appear for legitimate reasons in code written in or dealing with right-to-left languages. See: https://trojansource.codes/ for more information._
 
 ## CVE-2021-44228
 
@@ -1246,7 +1246,7 @@ _1 recipe_
 
 _2 recipes_
 
-* [Partial path traversal vulnerability](/recipes/java/security/partialpathtraversalvulnerability.md) - _Replaces `dir.getCanonicalPath().startsWith(parent.getCanonicalPath()`, which is vulnerable to partial path traversal attacks, with the more secure `dir.getCanonicalFile().toPath().startsWith(parent.getCanonicalFile().toPath())`.  To demonstrate this vulnerability, consider `&quot;/usr/outnot&quot;.startsWith(&quot;/usr/out&quot;)`. The check is bypassed although `/outnot` is not under the `/out` directory. It&#39;s important to understand that the terminating slash may be removed when using various `String` representations of the `File` object. For example, on Linux, `println(new File(&quot;/var&quot;))` will print `/var`, but `println(new File(&quot;/var&quot;, &quot;/&quot;)` will print `/var/`; however, `println(new File(&quot;/var&quot;, &quot;/&quot;).getCanonicalPath())` will print `/var`._
+* [Partial path traversal vulnerability](/recipes/java/security/partialpathtraversalvulnerability.md) - _Replaces `dir.getCanonicalPath().startsWith(parent.getCanonicalPath()`, which is vulnerable to partial path traversal attacks, with the more secure `dir.getCanonicalFile().toPath().startsWith(parent.getCanonicalFile().toPath())`.  To demonstrate this vulnerability, consider `&quot;/usr/outnot&quot;.startsWith(&quot;/usr/out&quot;)`. The check is bypassed although `/outnot` is not under the `/out` directory. It's important to understand that the terminating slash may be removed when using various `String` representations of the `File` object. For example, on Linux, `println(new File(&quot;/var&quot;))` will print `/var`, but `println(new File(&quot;/var&quot;, &quot;/&quot;)` will print `/var/`; however, `println(new File(&quot;/var&quot;, &quot;/&quot;).getCanonicalPath())` will print `/var`._
 * [Zip slip](/recipes/java/security/zipslip.md) - _Zip slip is an arbitrary file overwrite critical vulnerability, which typically results in remote command execution. A fuller description of this vulnerability is available in the [Snyk documentation](https://snyk.io/research/zip-slip-vulnerability) on it._
 
 ## CWE-269
@@ -1271,7 +1271,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Enable CSRF attack prevention](/recipes/java/security/spring/csrfprotection.md) - _Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant message, or program causes a user&#39;s web browser to perform an unwanted action on a trusted site when the user is authenticated. See the full [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)._
+* [Enable CSRF attack prevention](/recipes/java/security/spring/csrfprotection.md) - _Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant message, or program causes a user's web browser to perform an unwanted action on a trusted site when the user is authenticated. See the full [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)._
 
 ## CWE-377
 
@@ -1298,7 +1298,7 @@ _3 recipes_
 
 * [Insecure JMS deserialization](/recipes/java/security/marshalling/insecurejmsdeserialization.md) - _JMS `Object` messages depend on Java Serialization for marshalling/unmarshalling of the message payload when `ObjectMessage#getObject` is called. Deserialization of untrusted data can lead to security flaws._
 * [Secure the use of Jackson default typing](/recipes/java/security/marshalling/securejacksondefaulttyping.md) - _See the [blog post](https://cowtowncoder.medium.com/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062) on this subject._
-* [Secure the use of SnakeYAML&#39;s constructor](/recipes/java/security/marshalling/securesnakeyamlconstructor.md) - _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
+* [Secure the use of SnakeYAML's constructor](/recipes/java/security/marshalling/securesnakeyamlconstructor.md) - _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
 
 ## CWE-611
 
@@ -1323,7 +1323,7 @@ _1 recipe_
 _2 recipes_
 
 * [Secure the use of Jackson default typing](/recipes/java/security/marshalling/securejacksondefaulttyping.md) - _See the [blog post](https://cowtowncoder.medium.com/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062) on this subject._
-* [Secure the use of SnakeYAML&#39;s constructor](/recipes/java/security/marshalling/securesnakeyamlconstructor.md) - _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
+* [Secure the use of SnakeYAML's constructor](/recipes/java/security/marshalling/securesnakeyamlconstructor.md) - _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
 
 ## CycloneDX
 
@@ -1572,7 +1572,7 @@ _190 recipes_
 * [Enforce unified line brake in HTML comments](/recipes/codemods/cleanup/vue/htmlcommentcontentnewline.md) - _Enforce unified line brake in HTML comments See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html)_
 * [Enforce unified spacing in HTML comments](/recipes/codemods/cleanup/vue/htmlcommentcontentspacing.md) - _Enforce unified spacing in HTML comments See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html)_
 * [Enforce use of defineOptions instead of default export.](/recipes/codemods/cleanup/vue/preferdefineoptions.md) - _Enforce use of defineOptions instead of default export. See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html)_
-* [Enforce v-for directive&#39;s delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md) - _Enforce v-for directive&#39;s delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)_
+* [Enforce v-for directive's delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md) - _Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)_
 * [Enforce valid titles](/recipes/codemods/cleanup/jest/validtitle.md) - _Enforce valid titles See rule details for [jest/valid-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/valid-title.md)_
 * [Enforce whitespace in and around the JSX opening and closing brackets](/recipes/codemods/format/jsxtagspacing.md) - _Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing)_
 * [Enforce writing style for handlers in v-on directives](/recipes/codemods/cleanup/vue/vonhandlerstyle.md) - _Enforce writing style for handlers in v-on directives See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html)_
@@ -1650,7 +1650,7 @@ _190 recipes_
 * [enforce use of shorthand syntax in attribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md) - _enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/)_
 * [enforce use of shorthand syntax in directives](/recipes/codemods/cleanup/svelte/shorthanddirective.md) - _enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)_
 * [require class directives instead of ternary expressions](/recipes/codemods/cleanup/svelte/preferclassdirective.md) - _require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/)_
-* [require or disallow a space before tag&#39;s closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md) - _require or disallow a space before tag&#39;s closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)_
+* [require or disallow a space before tag's closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md) - _require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)_
 * [require style directives instead of style attribute](/recipes/codemods/cleanup/svelte/preferstyledirective.md) - _require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/)_
 
 ## eslint-plugin-jest
@@ -1709,7 +1709,7 @@ _18 recipes_
 * [enforce use of shorthand syntax in attribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md) - _enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/)_
 * [enforce use of shorthand syntax in directives](/recipes/codemods/cleanup/svelte/shorthanddirective.md) - _enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)_
 * [require class directives instead of ternary expressions](/recipes/codemods/cleanup/svelte/preferclassdirective.md) - _require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/)_
-* [require or disallow a space before tag&#39;s closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md) - _require or disallow a space before tag&#39;s closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)_
+* [require or disallow a space before tag's closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md) - _require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)_
 * [require style directives instead of style attribute](/recipes/codemods/cleanup/svelte/preferstyledirective.md) - _require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/)_
 
 ## eslint-plugin-vue
@@ -1757,7 +1757,7 @@ _57 recipes_
 * [Enforce unified line brake in HTML comments](/recipes/codemods/cleanup/vue/htmlcommentcontentnewline.md) - _Enforce unified line brake in HTML comments See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html)_
 * [Enforce unified spacing in HTML comments](/recipes/codemods/cleanup/vue/htmlcommentcontentspacing.md) - _Enforce unified spacing in HTML comments See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html)_
 * [Enforce use of defineOptions instead of default export.](/recipes/codemods/cleanup/vue/preferdefineoptions.md) - _Enforce use of defineOptions instead of default export. See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html)_
-* [Enforce v-for directive&#39;s delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md) - _Enforce v-for directive&#39;s delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)_
+* [Enforce v-for directive's delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md) - _Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)_
 * [Enforce writing style for handlers in v-on directives](/recipes/codemods/cleanup/vue/vonhandlerstyle.md) - _Enforce writing style for handlers in v-on directives See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html)_
 * [Recommended vue code cleanup](/recipes/codemods/cleanup/vue/recommendedvuecodecleanup.md) - _Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuejs.org/)._
 * [Require key attribute for conditionally rendered repeated components](/recipes/codemods/cleanup/vue/vifelsekey.md) - _Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html)_
@@ -1864,7 +1864,7 @@ _7 recipes_
 * [Check for github-actions updates weekly](/recipes/github/dependabotcheckforgithubactionsupdatesweekly.md) - _Set dependabot to check for github-actions updates weekly._
 * [Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`](/recipes/github/gradle/renamegradlebuildactiontosetupgradle.md) - _Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v3`._
 * [Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`](/recipes/github/gradle/renamewrappervalidationaction.md) - _Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v3`._
-* [Replace OSSRH secrets with Sonatype secrets](/recipes/github/replaceossrhsecretswithsonatype.md) - _Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite&#39;s GitHub organization._
+* [Replace OSSRH secrets with Sonatype secrets](/recipes/github/replaceossrhsecretswithsonatype.md) - _Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite's GitHub organization._
 
 ## glassfish
 
@@ -1928,9 +1928,9 @@ _46 recipes_
 * [Prefer `new LinkedHashSet&lt;&gt;()`](/recipes/java/migrate/guava/noguavasetsnewlinkedhashset.md) - _Prefer the Java standard library over third-party usage of Guava in simple cases like this._
 * [Prefer `new LinkedList&lt;&gt;()`](/recipes/java/migrate/guava/noguavalistsnewlinkedlist.md) - _Prefer the Java standard library over third-party usage of Guava in simple cases like this._
 * [Prefer `new TreeMap&lt;&gt;()`](/recipes/java/migrate/guava/noguavamapsnewtreemap.md) - _Prefer the Java standard library over third-party usage of Guava in simple cases like this._
-* [Prefer the Java 11 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava11.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava&#39;s API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
-* [Prefer the Java 21 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava21.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava&#39;s API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
-* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava&#39;s API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+* [Prefer the Java 11 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava11.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+* [Prefer the Java 21 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava21.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
 * [Remove `com.google.common.base.Optional#toJavaUtil()`](/recipes/java/migrate/guava/noguavaoptionaltojavautil.md) - _Remove calls to `com.google.common.base.Optional#toJavaUtil()`._
 * [Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument](/recipes/java/migrate/guava/noguavaoptionalfromjavautil.md) - _Replaces `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument._
 
@@ -1941,8 +1941,8 @@ _6 recipes_
 * [Add `org.hamcrest:hamcrest` if it is used.](/recipes/java/testing/hamcrest/addhamcrestifused.md) - _JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency._
 * [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md) - _Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`._
 * [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md) - _Migrate Hamcrest `assertThat(..)` to JUnit Jupiter `Assertions`._
-* [Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md) - _Many of JUnit 4&#39;s `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit&#39;s `MatcherAssume`._
-* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md) - _JUnit 4&#39;s `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md) - _Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`._
+* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md) - _JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
 * [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md) - _Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)` calls ahead of further changes._
 
 ## handler
@@ -1965,8 +1965,8 @@ _4 recipes_
 
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md) - _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`_
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md) - _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`_
-* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md) - _Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md) - _Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 
 ## inject
 
@@ -2152,7 +2152,7 @@ _28 recipes_
 * [Migrate to IBM Semeru Runtimes](/recipes/java/migrate/ibmsemeru.md) - _This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions only available in IBM Semeru Runtimes._
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md) - _This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11._
 * [Prefer `java.util.Objects#requireNonNullElse`](/recipes/java/migrate/guava/preferjavautilobjectsrequirenonnullelse.md) - _Prefer `java.util.Objects#requireNonNullElse` instead of using `com.google.common.base.MoreObjects#firstNonNull`._
-* [Prefer the Java 11 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava11.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava&#39;s API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+* [Prefer the Java 11 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava11.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
 * [Remove Cobertura Maven plugin](/recipes/java/migrate/cobertura/removecoberturamavenplugin.md) - _This recipe will remove Cobertura, as it is not compatible with Java 11._
 * [Remove `Thread.destroy()` and `Thread.stop(Throwable)`](/recipes/java/migrate/threadstopdestroy.md) - _The `java.lang.Thread.destroy()` method was never implemented, and the `java.lang.Thread.stop(java.lang.Throwable)` method has been unusable since Java SE 8. This recipe removes any usage of these methods from your application._
 * [Replace `Paths.get` with `Path.of`](/recipes/java/migrate/nio/file/pathsgettopathof.md) - _The `java.nio.file.Paths.get` method was introduced in Java SE 7. The `java.nio.file.Path.of` method was introduced in Java SE 11. This recipe replaces all usages of `Paths.get` with `Path.of` for consistency._
@@ -2208,7 +2208,7 @@ _11 recipes_
 * [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md) - _Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor._
 * [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md) - _This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21._
 * [Prefer `Math#clamp`](/recipes/java/migrate/guava/prefermathclamp.md) - _Prefer `java.lang.Math#clamp` instead of using `com.google.common.primitives.*#constrainToRange`._
-* [Prefer the Java 21 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava21.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava&#39;s API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+* [Prefer the Java 21 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava21.md) - _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
 * [Upgrade build to Java 21](/recipes/java/migrate/upgradebuildtojava21.md) - _Updates build files to use Java 21 as the target/source._
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md) - _Updates plugins and dependencies to version compatible with Java 21._
 
@@ -2378,7 +2378,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Downgrade Jakarta Servlet API to 5.0 when using Jetty](/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md) - _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it&#39;s value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom&#39;s parent extends from the spring-boot-parent._
+* [Downgrade Jakarta Servlet API to 5.0 when using Jetty](/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md) - _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it's value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom's parent extends from the spring-boot-parent._
 
 ## jmockit
 
@@ -2404,7 +2404,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Prefer the Java standard library instead of Joda-Time](/recipes/java/migrate/joda/nojodatime.md) - _Before Java 8, Java lacked a robust date and time library, leading to the widespread use of Joda-Time to fill this gap. With the release of Java 8, the `java.time` package was introduced, incorporating most of Joda-Time&#39;s concepts. Features deemed too specialized or bulky for `java.time` were included in the ThreeTen-Extra library.  This recipe migrates Joda-Time types to `java.time` and `threeten-extra` types._
+* [Prefer the Java standard library instead of Joda-Time](/recipes/java/migrate/joda/nojodatime.md) - _Before Java 8, Java lacked a robust date and time library, leading to the widespread use of Joda-Time to fill this gap. With the release of Java 8, the `java.time` package was introduced, incorporating most of Joda-Time's concepts. Features deemed too specialized or bulky for `java.time` were included in the ThreeTen-Extra library.  This recipe migrates Joda-Time types to `java.time` and `threeten-extra` types._
 
 ## jsf
 
@@ -2472,7 +2472,7 @@ _15 recipes_
 * [Clean Up Assertions](/recipes/java/testing/junit5/cleanupassertions.md) - _Simplifies JUnit Jupiter assertions to their most-direct equivalents._
 * [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md) - _Applies best practices to tests._
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md) - _Migrates JUnit 4.x tests to JUnit Jupiter._
-* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application&#39;s tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
 * [Statically import JUnit Jupiter assertions](/recipes/java/testing/junit5/staticimports.md) - _Always use a static import for assertion methods._
 * [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md) - _Migrates Arquillian JUnit 4 to JUnit 5._
 * [Use JUnit Jupiter `@Disabled`](/recipes/java/testing/junit5/ignoretodisabled.md) - _Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
@@ -2481,14 +2481,14 @@ _15 recipes_
 * [Use OkHttp 3 MockWebServer for JUnit 5](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md) - _Migrates OkHttp 3 `MockWebServer` to enable JUnit Jupiter Extension support._
 * [Use Vert.x JUnit 5 Extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md) - _Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`._
 * [Use XMLUnit Legacy for JUnit 5](/recipes/java/testing/junit5/usexmlunitlegacy.md) - _Migrates XMLUnit 1.x to XMLUnit legacy 2.x._
-* [Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md) - _Many of JUnit 4&#39;s `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit&#39;s `MatcherAssume`._
-* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md) - _JUnit 4&#39;s `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md) - _Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`._
+* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md) - _JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
 
 ## jupiter
 
 _1 recipe_
 
-* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application&#39;s tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
 
 ## kafka
 
@@ -2530,7 +2530,7 @@ _24 recipes_
 
 _1 recipe_
 
-* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application&#39;s build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
+* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
 
 ## LoadTimeWeaver
 
@@ -2551,7 +2551,7 @@ _4 recipes_
 * [Replace lodash and underscore array functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscorearray.md) - _- `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`_
 * [Replace lodash and underscore function functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscorefunction.md) - _- `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`_
 * [Replace lodash and underscore object functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreobjects.md) - _- `_.clone(x)` -&gt; `{ ...x }` - `_.extend({}, x, y)` -&gt; `{ ...x, ...y }` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`_
-* [Replace lodash and underscore utility functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md) - _- `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === &#39;boolean&#39;` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === &#39;function&#39;` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === &#39;string&#39;` - `_.isUndefined(x)` -&gt; `typeof(x) === &#39;undefined&#39;`_
+* [Replace lodash and underscore utility functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md) - _- `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`_
 
 ## log4j
 
@@ -2598,9 +2598,9 @@ _19 recipes_
 * [Migrate SAP cloud foundry logging support to Spring Boot 3.x](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md) - _Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3._
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md) - _Transforms code written using SLF4J to use Log4j 2.x API._
 * [Parameterize Log4j 2.x logging statements](/recipes/java/logging/log4j/parameterizedlogging.md) - _Use Log4j 2.x parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
-* [Parameterize SLF4J&#39;s logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md) - _Use SLF4J&#39;s parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
+* [Parameterize SLF4J's logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md) - _Use SLF4J's parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
 * [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md) - _Applies best practices to logging with SLF4J._
-* [SLF4J logging statements should begin with constants](/recipes/java/logging/slf4j/slf4jlogshouldbeconstant.md) - _Logging statements shouldn&#39;t begin with `String#format`, calls to `toString()`, etc._
+* [SLF4J logging statements should begin with constants](/recipes/java/logging/slf4j/slf4jlogshouldbeconstant.md) - _Logging statements shouldn't begin with `String#format`, calls to `toString()`, etc._
 * [Upgrade Log4j 2.x dependency version](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md) - _Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a)._
 * [Use modernized `java.util.logging` APIs](/recipes/java/migrate/logging/javaloggingapis.md) - _Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes._
 
@@ -2612,8 +2612,8 @@ _6 recipes_
 * [Convert getter methods to annotations](/recipes/java/migrate/lombok/uselombokgetter.md) - _Convert trivial getter methods to `@Getter` annotations on their respective fields._
 * [Convert setter methods to annotations](/recipes/java/migrate/lombok/uselomboksetter.md) - _Convert trivial setter methods to `@Setter` annotations on their respective fields._
 * [Migrate Lombok to a Java 11 compatible version](/recipes/java/migrate/lombok/updatelomboktojava11.md) - _Update Lombok dependency to a version that is compatible with Java 11 and migrate experimental Lombok types that have been promoted._
-* [Migrate Lombok&#39;s `@__` syntax to `onX_` for Java 8+](/recipes/java/migrate/lombok/lombokonxtoonx_.md) - _Migrates Lombok&#39;s `onX` annotations from the Java 7 style using `@__` to the Java 8+ style using `onX_`. For example, `@Getter(onMethod=@__({@Id}))` becomes `@Getter(onMethod_={@Id})`._
-* [Prefer `final var` over `lombok.val`](/recipes/java/migrate/lombok/lombokvaltofinalvar.md) - _Prefer the Java standard library&#39;s `final var` and `var` over third-party usage of Lombok&#39;s `lombok.val` and `lombok.var` in Java 10 or higher._
+* [Migrate Lombok's `@__` syntax to `onX_` for Java 8+](/recipes/java/migrate/lombok/lombokonxtoonx_.md) - _Migrates Lombok's `onX` annotations from the Java 7 style using `@__` to the Java 8+ style using `onX_`. For example, `@Getter(onMethod=@__({@Id}))` becomes `@Getter(onMethod_={@Id})`._
+* [Prefer `final var` over `lombok.val`](/recipes/java/migrate/lombok/lombokvaltofinalvar.md) - _Prefer the Java standard library's `final var` and `var` over third-party usage of Lombok's `lombok.val` and `lombok.var` in Java 10 or higher._
 
 ## material-ui
 
@@ -2702,14 +2702,14 @@ _78 recipes_
 
 _1 recipe_
 
-* [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md) - _Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application&#39;s build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md) - _Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 
 ## micrometer
 
 _3 recipes_
 
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md) - _Spring Cloud Sleuth has been discontinued and only compatible with Spring Boot 2.x._
-* [Migrate to Micrometer 1.13](/recipes/micrometer/upgrademicrometer_1_13.md) - _Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide)._
+* [Migrate to Micrometer 1.13](/recipes/micrometer/upgrademicrometer_1_13.md) - _Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide)._
 * [Simplify Micrometer meter tags](/recipes/java/migrate/metrics/simplifymicrometermetertags.md) - _Use the simplest method to add new tags._
 
 ## migration
@@ -2850,7 +2850,7 @@ _5 recipes_
 * [Replace `EpollEventLoopGroup` with `MultiThreadIoEventLoopGroup`](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes$epolleventloopgroupfactoryrecipe.md) - _Replace `new EpollEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(EpollIoHandler.newFactory())`._
 * [Replace `LocalEventLoopGroup` with `MultiThreadIoEventLoopGroup`](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes$localeventloopgroupfactoryrecipe.md) - _Replace `new LocalEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(LocalIoHandler.newFactory())`._
 * [Replace `NioEventLoopGroup` with `MultiThreadIoEventLoopGroup`](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes$nioeventloopgroupfactoryrecipe.md) - _Replace `new NioEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory())`._
-* [Replace all `EventLoopGroup`s with `MultiThreadIoEventLoopGroup`](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes.md) - _Replaces Netty&#39;s `new *EventLoopGroup` with `new MultiThreadIoEventLoopGroup(*IoHandler.newFactory())`._
+* [Replace all `EventLoopGroup`s with `MultiThreadIoEventLoopGroup`](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes.md) - _Replaces Netty's `new *EventLoopGroup` with `new MultiThreadIoEventLoopGroup(*IoHandler.newFactory())`._
 
 ## networking
 
@@ -3081,8 +3081,8 @@ _1 recipe_
 
 _2 recipes_
 
-* [Refaster template `ImmutableMapRules.ImmutableMapOf4`](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof4recipe.md) - _Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don&#39;t communicate the immutability of the resulting map at the type level._
-* [Refaster template `ImmutableMapRules.ImmutableMapOf5`](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof5recipe.md) - _Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don&#39;t communicate the immutability of the resulting map at the type level._
+* [Refaster template `ImmutableMapRules.ImmutableMapOf4`](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof4recipe.md) - _Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level._
+* [Refaster template `ImmutableMapRules.ImmutableMapOf5`](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof5recipe.md) - _Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level._
 
 ## RSPEC-S108
 
@@ -3179,7 +3179,7 @@ _1 recipe_
 
 _2 recipes_
 
-* [Refaster template `CollectionRules.CollectionIsEmpty`](/recipes/tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionisemptyrecipe.md) - _Prefer `Collection#isEmpty()` over alternatives that consult the collection&#39;s size or are otherwise more contrived._
+* [Refaster template `CollectionRules.CollectionIsEmpty`](/recipes/tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionisemptyrecipe.md) - _Prefer `Collection#isEmpty()` over alternatives that consult the collection's size or are otherwise more contrived._
 * [Use `Collection#isEmpty()` instead of comparing `size()`](/recipes/staticanalysis/isemptycalloncollections.md) - _Also check for _not_ `isEmpty()` when testing for not equal to zero size._
 
 ## RSPEC-S1157
@@ -3204,7 +3204,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Add missing `@Override` to overriding and implementing methods](/recipes/staticanalysis/missingoverrideannotation.md) - _Adds `@Override` to methods overriding superclass methods or implementing interface methods. Annotating methods improves readability by showing the author&#39;s intent to override. Additionally, when annotated, the compiler will emit an error when a signature of the overridden method does not match the superclass method._
+* [Add missing `@Override` to overriding and implementing methods](/recipes/staticanalysis/missingoverrideannotation.md) - _Adds `@Override` to methods overriding superclass methods or implementing interface methods. Annotating methods improves readability by showing the author's intent to override. Additionally, when annotated, the compiler will emit an error when a signature of the overridden method does not match the superclass method._
 
 ## RSPEC-S117
 
@@ -3267,8 +3267,8 @@ _1 recipe_
 
 _2 recipes_
 
-* [Refaster template `EqualityRules.IndirectDoubleNegation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md) - _Don&#39;t negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead._
-* [Refaster template `EqualityRules.Negation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md) - _Don&#39;t negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead._
+* [Refaster template `EqualityRules.IndirectDoubleNegation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md) - _Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead._
+* [Refaster template `EqualityRules.Negation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md) - _Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead._
 
 ## RSPEC-S1264
 
@@ -3365,7 +3365,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Replace referential equality operators with Object equals method invocations when the operands both override `Object.equals(Object obj)`](/recipes/staticanalysis/referentialequalitytoobjectequals.md) - _Using `==` or `!=` compares object references, not the equality of two objects. This modifies code where both sides of a binary operation (`==` or `!=`) override `Object.equals(Object obj)` except when the comparison is within an overridden `Object.equals(Object obj)` method declaration itself. The resulting transformation must be carefully reviewed since any modifications change the program&#39;s semantics._
+* [Replace referential equality operators with Object equals method invocations when the operands both override `Object.equals(Object obj)`](/recipes/staticanalysis/referentialequalitytoobjectequals.md) - _Using `==` or `!=` compares object references, not the equality of two objects. This modifies code where both sides of a binary operation (`==` or `!=`) override `Object.equals(Object obj)` except when the comparison is within an overridden `Object.equals(Object obj)` method declaration itself. The resulting transformation must be carefully reviewed since any modifications change the program's semantics._
 
 ## RSPEC-S1858
 
@@ -3384,8 +3384,8 @@ _1 recipe_
 _7 recipes_
 
 * [Boolean checks should not be inverted](/recipes/staticanalysis/booleanchecksnotinverted.md) - _Ensures that boolean checks are not unnecessarily inverted. Also fixes double negative boolean expressions._
-* [Refaster template `EqualityRules.IndirectDoubleNegation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md) - _Don&#39;t negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead._
-* [Refaster template `EqualityRules.Negation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md) - _Don&#39;t negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead._
+* [Refaster template `EqualityRules.IndirectDoubleNegation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md) - _Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead._
+* [Refaster template `EqualityRules.Negation`](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md) - _Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead._
 * [Refaster template `PrimitiveRules.GreaterThanOrEqualTo`](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe.md) - _Avoid contrived ways of expressing the &quot;greater than or equal to&quot; relationship._
 * [Refaster template `PrimitiveRules.GreaterThan`](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe.md) - _Avoid contrived ways of expressing the &quot;greater than&quot; relationship._
 * [Refaster template `PrimitiveRules.LessThanOrEqualTo`](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe.md) - _Avoid contrived ways of expressing the &quot;less than or equal to&quot; relationship._
@@ -3395,7 +3395,7 @@ _7 recipes_
 
 _1 recipe_
 
-* [`for` loop counters incremented in update](/recipes/staticanalysis/forloopincrementinupdate.md) - _The increment should be moved to the loop&#39;s increment clause if possible._
+* [`for` loop counters incremented in update](/recipes/staticanalysis/forloopincrementinupdate.md) - _The increment should be moved to the loop's increment clause if possible._
 
 ## RSPEC-S2057
 
@@ -3478,7 +3478,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Use the diamond operator](/recipes/staticanalysis/usediamondoperator.md) - _The diamond operator (`&lt;&gt;`) should be used. Java 7 introduced the diamond operator (&lt;&gt;) to reduce the verbosity of generics code. For instance, instead of having to declare a `List`&#39;s type in both its declaration and its constructor, you can now simplify the constructor declaration with `&lt;&gt;`, and the compiler will infer the type._
+* [Use the diamond operator](/recipes/staticanalysis/usediamondoperator.md) - _The diamond operator (`&lt;&gt;`) should be used. Java 7 introduced the diamond operator (&lt;&gt;) to reduce the verbosity of generics code. For instance, instead of having to declare a `List`'s type in both its declaration and its constructor, you can now simplify the constructor declaration with `&lt;&gt;`, and the compiler will infer the type._
 
 ## RSPEC-S2333
 
@@ -3496,13 +3496,13 @@ _1 recipe_
 
 _1 recipe_
 
-* [Refaster template `AssortedRules.LogicalImplication`](/recipes/tech/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe.md) - _Don&#39;t unnecessarily repeat boolean expressions._
+* [Refaster template `AssortedRules.LogicalImplication`](/recipes/tech/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe.md) - _Don't unnecessarily repeat boolean expressions._
 
 ## RSPEC-S2629
 
 _2 recipes_
 
-* [Parameterize SLF4J&#39;s logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md) - _Use SLF4J&#39;s parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
+* [Parameterize SLF4J's logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md) - _Use SLF4J's parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
 * [Parameterize logging statements](/recipes/java/logging/parameterizedlogging.md) - _Transform logging statements using concatenation for messages and variables into a parameterized format. For example, `logger.info(&quot;hi &quot; + userName)` becomes `logger.info(&quot;hi {}&quot;, userName)`. This can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
 
 ## RSPEC-S2637
@@ -3510,7 +3510,7 @@ _2 recipes_
 _2 recipes_
 
 * [Refaster template `ReactorRules.FluxThen`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenrecipe.md) - _Avoid vacuous invocations of `Flux#ignoreElements()`._
-* [Refaster template `ReactorRules.MonoIdentity`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe.md) - _Don&#39;t unnecessarily transform a `Mono` to an equivalent instance._
+* [Refaster template `ReactorRules.MonoIdentity`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe.md) - _Don't unnecessarily transform a `Mono` to an equivalent instance._
 
 ## RSPEC-S2681
 
@@ -3530,7 +3530,7 @@ _2 recipes_
 
 _1 recipe_
 
-* [Include an assertion in tests](/recipes/java/testing/cleanup/testsshouldincludeassertions.md) - _For tests not having any assertions, wrap the statements with JUnit Jupiter&#39;s `Assertions#assertDoesNotThrow(..)`._
+* [Include an assertion in tests](/recipes/java/testing/cleanup/testsshouldincludeassertions.md) - _For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertDoesNotThrow(..)`._
 
 ## RSPEC-S2737
 
@@ -3578,13 +3578,13 @@ _1 recipe_
 
 _1 recipe_
 
-* [&#39;Collection.toArray()&#39; should be passed an array of the proper type](/recipes/staticanalysis/collectiontoarrayshouldhavepropertype.md) - _Using `Collection.toArray()` without parameters returns an `Object[]`, which requires casting. It is more efficient and clearer to use `Collection.toArray(new T[0])` instead._
+* ['Collection.toArray()' should be passed an array of the proper type](/recipes/staticanalysis/collectiontoarrayshouldhavepropertype.md) - _Using `Collection.toArray()` without parameters returns an `Object[]`, which requires casting. It is more efficient and clearer to use `Collection.toArray(new T[0])` instead._
 
 ## RSPEC-S3052
 
 _1 recipe_
 
-* [Explicit initialization](/recipes/staticanalysis/explicitinitialization.md) - _Checks if any class or object member is explicitly initialized to default for its type value:  - `null` for object references  - zero for numeric types and `char`  - and `false` for `boolean` Removes explicit initializations where they aren&#39;t necessary._
+* [Explicit initialization](/recipes/staticanalysis/explicitinitialization.md) - _Checks if any class or object member is explicitly initialized to default for its type value:  - `null` for object references  - zero for numeric types and `char`  - and `false` for `boolean` Removes explicit initializations where they aren't necessary._
 
 ## RSPEC-S3358
 
@@ -3596,7 +3596,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Assertion arguments should be passed in the correct order](/recipes/java/testing/cleanup/assertionsargumentorder.md) - _Assertions such as `org.junit.Assert.assertEquals` expect the first argument to be the expected value and the second argument to be the actual value; for `org.testng.Assert`, it’s the other way around.  This recipe detects `J.Literal`, `J.NewArray`, and `java.util.Iterable` arguments swapping them if necessary so that the error messages won&#39;t be confusing._
+* [Assertion arguments should be passed in the correct order](/recipes/java/testing/cleanup/assertionsargumentorder.md) - _Assertions such as `org.junit.Assert.assertEquals` expect the first argument to be the expected value and the second argument to be the actual value; for `org.testng.Assert`, it’s the other way around.  This recipe detects `J.Literal`, `J.NewArray`, and `java.util.Iterable` arguments swapping them if necessary so that the error messages won't be confusing._
 
 ## RSPEC-S3416
 
@@ -3734,7 +3734,7 @@ _5 recipes_
 
 _1 recipe_
 
-* [Remove `@Nullable` and `@CheckForNull` annotations from primitives](/recipes/staticanalysis/unnecessaryprimitiveannotations.md) - _Primitives can&#39;t be null anyway, so these annotations are not useful in this context._
+* [Remove `@Nullable` and `@CheckForNull` annotations from primitives](/recipes/staticanalysis/unnecessaryprimitiveannotations.md) - _Primitives can't be null anyway, so these annotations are not useful in this context._
 
 ## RSPEC-S4738
 
@@ -3757,7 +3757,7 @@ _8 recipes_
 * [Refaster template `ReactorRules.FluxThenEmpty`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenemptyrecipe.md) - _Avoid vacuous invocations of `Flux#ignoreElements()`._
 * [Refaster template `ReactorRules.FluxThenMono`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenmonorecipe.md) - _Avoid vacuous invocations of `Flux#ignoreElements()`._
 * [Refaster template `ReactorRules.FluxThen`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenrecipe.md) - _Avoid vacuous invocations of `Flux#ignoreElements()`._
-* [Refaster template `ReactorRules.MonoIdentity`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe.md) - _Don&#39;t unnecessarily transform a `Mono` to an equivalent instance._
+* [Refaster template `ReactorRules.MonoIdentity`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe.md) - _Don't unnecessarily transform a `Mono` to an equivalent instance._
 * [Refaster template `ReactorRules.MonoThenEmpty`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monothenemptyrecipe.md) - _Avoid vacuous invocations of `Mono#ignoreElement()`._
 * [Refaster template `ReactorRules.MonoThenMono`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monothenmonorecipe.md) - _Avoid vacuous operations prior to invocation of `Mono#then(Mono)`._
 * [Refaster template `ReactorRules.MonoThen`](/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monothenrecipe.md) - _Prefer direct invocation of `Mono#then()`} over more contrived alternatives._
@@ -3767,7 +3767,7 @@ _8 recipes_
 
 _1 recipe_
 
-* [Use `String.equals()` on `String` literals](/recipes/staticanalysis/stringliteralequality.md) - _`String.equals()` should be used when checking value equality on String literals. Using `==` or `!=` compares object references, not the actual value of the Strings. This only modifies code where at least one side of the binary operation (`==` or `!=`) is a String literal, such as `&quot;someString&quot; == someVariable;`. This is to prevent inadvertently changing code where referential equality is the user&#39;s intent._
+* [Use `String.equals()` on `String` literals](/recipes/staticanalysis/stringliteralequality.md) - _`String.equals()` should be used when checking value equality on String literals. Using `==` or `!=` compares object references, not the actual value of the Strings. This only modifies code where at least one side of the binary operation (`==` or `!=`) is a String literal, such as `&quot;someString&quot; == someVariable;`. This is to prevent inadvertently changing code where referential equality is the user's intent._
 
 ## RSPEC-S5361
 
@@ -3839,14 +3839,14 @@ _1 recipe_
 
 _1 recipe_
 
-* [`it` shouldn&#39;t be used as a lambda parameter name](/recipes/kotlin/cleanup/implicitparameterinlambda.md) - _`it` is a special identifier that allows you to refer to the current parameter being passed to a lambda expression without explicitly naming the parameter. Lambda expressions are a concise way of writing anonymous functions. Many lambda expressions have only one parameter, when this is true the compiler can determine the parameter type by context. Thus when using it with single parameter lambda expressions, you do not need to declare the type._
+* [`it` shouldn't be used as a lambda parameter name](/recipes/kotlin/cleanup/implicitparameterinlambda.md) - _`it` is a special identifier that allows you to refer to the current parameter being passed to a lambda expression without explicitly naming the parameter. Lambda expressions are a concise way of writing anonymous functions. Many lambda expressions have only one parameter, when this is true the compiler can determine the parameter type by context. Thus when using it with single parameter lambda expressions, you do not need to declare the type._
 
 ## RSPEC-S7158
 
 _2 recipes_
 
-* [Refaster template `CharSequenceRules.CharSequenceIsEmpty`](/recipes/tech/picnic/errorprone/refasterrules/charsequencerulesrecipes$charsequenceisemptyrecipe.md) - _Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequence&#39;s length._
-* [Refaster template `StringRules.StringIsEmpty`](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe.md) - _Prefer `String#isEmpty()` over alternatives that consult the string&#39;s length._
+* [Refaster template `CharSequenceRules.CharSequenceIsEmpty`](/recipes/tech/picnic/errorprone/refasterrules/charsequencerulesrecipes$charsequenceisemptyrecipe.md) - _Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequence's length._
+* [Refaster template `StringRules.StringIsEmpty`](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe.md) - _Prefer `String#isEmpty()` over alternatives that consult the string's length._
 
 ## RSPEC-S818
 
@@ -3930,7 +3930,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Replace OSSRH secrets with Sonatype secrets](/recipes/github/replaceossrhsecretswithsonatype.md) - _Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite&#39;s GitHub organization._
+* [Replace OSSRH secrets with Sonatype secrets](/recipes/github/replaceossrhsecretswithsonatype.md) - _Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite's GitHub organization._
 
 ## security
 
@@ -3968,13 +3968,13 @@ _52 recipes_
 * [Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`](/recipes/java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication.md) - _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 * [Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`](/recipes/io/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md) - _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 * [Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`](/recipes/java/migrate/jakarta/javaxauthorizationmigrationtojakartaauthorization.md) - _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
-* [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md) - _Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md) - _Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md) - _Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md) - _Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md) - _Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md) - _Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md) - _Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md) - _Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md) - _Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md) - _Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md) - _Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md) - _Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](/recipes/apache/commons/io/relocateapachecommonsio.md) - _The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 * [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md) - _The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.AccessController`._
 * [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md) - _The Security Manager API is unsupported in Java 24. This recipe will remove the use of `java.security.Policy`._
@@ -3986,8 +3986,8 @@ _52 recipes_
 * [Upgrade Log4j 2.x dependency version](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md) - _Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a)._
 * [Use HTTPS for repositories](/recipes/gradle/security/usehttpsforrepositories.md) - _Use HTTPS for repository URLs._
 * [Use HTTPS for repositories](/recipes/maven/security/usehttpsforrepositories.md) - _Use HTTPS for repository URLs._
-* [Use `actions/setup-java` IBM `semeru` distribution](/recipes/github/setupjavaadoptopenj9tosemeru.md) - _Adopt OpenJDK got moved to Eclipse Temurin and won&#39;t be updated anymore. It is highly recommended to migrate workflows from adopt-openj9 to IBM semeru to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/)._
-* [Use `actions/setup-java` `temurin` distribution](/recipes/github/setupjavaadoptopenjdktotemurin.md) - _Adopt OpenJDK got moved to Eclipse Temurin and won&#39;t be updated anymore. It is highly recommended to migrate workflows from adopt to temurin to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/)._
+* [Use `actions/setup-java` IBM `semeru` distribution](/recipes/github/setupjavaadoptopenj9tosemeru.md) - _Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is highly recommended to migrate workflows from adopt-openj9 to IBM semeru to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/)._
+* [Use `actions/setup-java` `temurin` distribution](/recipes/github/setupjavaadoptopenjdktotemurin.md) - _Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is highly recommended to migrate workflows from adopt to temurin to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/)._
 
 ## servlet
 
@@ -4013,21 +4013,21 @@ _11 recipes_
 * [Migrate Log4j 2.x to SLF4J 1.x](/recipes/java/logging/slf4j/log4j2toslf4j1.md) - _Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
 * [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md) - _Migrates usage of Apache Log4j to using SLF4J directly. Use of the traditional Log4j to SLF4J bridge can result in loss of performance, as the Log4j messages must be formatted before they can be passed to SLF4J. Note, this currently does not modify `log4j.properties` files._
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md) - _Transforms code written using SLF4J to use Log4j 2.x API._
-* [Parameterize SLF4J&#39;s logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md) - _Use SLF4J&#39;s parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
+* [Parameterize SLF4J's logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md) - _Use SLF4J's parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
 * [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md) - _Applies best practices to logging with SLF4J._
-* [SLF4J logging statements should begin with constants](/recipes/java/logging/slf4j/slf4jlogshouldbeconstant.md) - _Logging statements shouldn&#39;t begin with `String#format`, calls to `toString()`, etc._
+* [SLF4J logging statements should begin with constants](/recipes/java/logging/slf4j/slf4jlogshouldbeconstant.md) - _Logging statements shouldn't begin with `String#format`, calls to `toString()`, etc._
 
 ## spring
 
 _76 recipes_
 
 * [Comment deprecated methods in Spring 3.4](/recipes/java/spring/boot3/commentdeprecations.md) - _Spring Boot 3.4 deprecates methods that are not commonly used or need manual interaction._
-* [Downgrade Jakarta Servlet API to 5.0 when using Jetty](/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md) - _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it&#39;s value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom&#39;s parent extends from the spring-boot-parent._
+* [Downgrade Jakarta Servlet API to 5.0 when using Jetty](/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md) - _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it's value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom's parent extends from the spring-boot-parent._
 * [Find patterns that require updating for Spring Boot 2.5](/recipes/java/spring/boot2/search/findupgraderequirementsspringboot_2_5.md) - _Looks for a series of patterns that have not yet had auto-remediation recipes developed for._
 * [Find projects affected by changes to the default error view message attribute](/recipes/java/spring/boot2/search/messagesinthedefaulterrorview.md) - _As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included._
 * [Finds uses of `Encryptors.queryableText()`](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md) - _`Encryptors.queryableText()` is insecure and is removed in Spring Security 6._
 * [Migrate SAP cloud foundry logging support to Spring Boot 3.x](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md) - _Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3._
-* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application&#39;s tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
 * [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md) - _Migrate the settings for Management Endpoint Security from `true`|`false` to `read-only`|`none`._
 * [Migrate Spring Boot properties to 2.0](/recipes/java/spring/boot2/springbootproperties_2_0.md) - _Migrate properties found in `application.properties` and `application.yml`._
 * [Migrate Spring Boot properties to 2.1](/recipes/java/spring/boot2/springbootproperties_2_1.md) - _Migrate properties found in `application.properties` and `application.yml`._
@@ -4050,37 +4050,37 @@ _76 recipes_
 * [Migrate Spring Cloud properties to 2023](/recipes/java/spring/cloud2023/springcloudproperties_2023.md) - _Migrate properties found in `application.properties` and `application.yml`._
 * [Migrate Spring Cloud properties to 2024](/recipes/java/spring/cloud2024/springcloudproperties_2024.md) - _Migrate properties found in `application.properties` and `application.yml`._
 * [Migrate Spring Cloud properties to 2025](/recipes/java/spring/cloud2025/springcloudproperties_2025.md) - _Migrate properties found in `application.properties` and `application.yml`._
-* [Migrate Spring to Spring Boot](/recipes/java/spring/boot/springtospringboot.md) - _Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application&#39;s build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin._
+* [Migrate Spring to Spring Boot](/recipes/java/spring/boot/springtospringboot.md) - _Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application's build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin._
 * [Migrate dropWizard dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratedropwizarddependencies.md) - _Migrate dropWizard dependencies to the new artifactId, since these are changed with Spring Boot 3._
-* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md) - _Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0._
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md) - _Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0._
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md) - _This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application._
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md) - _Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3._
 * [Migrate to Spring Batch 5.0 from 4.3](/recipes/java/spring/batch/springbatch4to5migration.md) - _Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release._
-* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md) - _Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1._
-* [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md) - _Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2._
-* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md) - _Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3._
-* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md) - _Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4._
-* [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md) - _Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6._
-* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md) - _Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7._
-* [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md) - _Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0._
-* [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md) - _Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1._
-* [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md) - _Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2._
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4._
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs._
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md) - _Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5._
+* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md) - _Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1._
+* [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md) - _Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2._
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md) - _Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3._
+* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md) - _Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4._
+* [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md) - _Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6._
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md) - _Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7._
+* [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md) - _Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0._
+* [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md) - _Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1._
+* [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md) - _Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2._
+* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4._
+* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md) - _Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs._
+* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md) - _Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5._
 * [Migrate to Spring Cloud 2022](/recipes/java/spring/cloud2022/upgradespringcloud_2022.md) - _Migrate applications to the latest Spring Cloud 2022 (Kilburn) release._
 * [Migrate to Spring Cloud 2023](/recipes/java/spring/cloud2023/upgradespringcloud_2023.md) - _Migrate applications to the latest Spring Cloud 2023 (Leyton) release._
 * [Migrate to Spring Cloud 2024](/recipes/java/spring/cloud2024/upgradespringcloud_2024.md) - _Migrate applications to the latest Spring Cloud 2024 (Moorgate) release._
 * [Migrate to Spring Cloud 2025](/recipes/java/spring/cloud2025/upgradespringcloud_2025.md) - _Migrate applications to the latest Spring Cloud 2025 (Northfields) release._
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md) - _Migrate applications to the latest Spring Kafka 3.0 release._
 * [Migrate to Spring Kafka 3.3](/recipes/java/spring/boot3/upgradespringkafka_3_3.md) - _Migrate applications to the latest Spring Kafka 3.3 release._
-* [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md) - _Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md) - _Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md) - _Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md) - _Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md) - _Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md) - _Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application&#39;s build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md) - _Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md) - _Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md) - _Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md) - _Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md) - _Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md) - _Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](/recipes/java/spring/boot3/actuatorendpointsanitization.md) - _Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228_
 * [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](/recipes/java/spring/security6/removeuseauthorizationmanager.md) - _In Spring Security 6, `&lt;websocket-message-broker&gt;` defaults `use-authorization-manager` to `true`. So, the `use-authorization-manager` attribute for message security is no longer needed and can be removed._
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](/recipes/java/spring/boot3/migratemaxhttpheadersize.md) - _Previously, the server.max-http-header-size was treated inconsistently across the four supported embedded web servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size. When using Tomcat it would configure the max HTTP request and response header sizes. The renamed property is used to configure the http request header size in Spring Boot 3.0. **To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such a setting), use a `WebServerFactoryCustomizer`**._
@@ -4096,7 +4096,7 @@ _76 recipes_
 * [Upgrade dependencies to Spring Cloud 2023](/recipes/java/spring/cloud2023/dependencyupgrades.md) - _Upgrade dependencies to Spring Cloud 2023 from prior 2022.x version._
 * [Upgrade dependencies to Spring Cloud 2024](/recipes/java/spring/cloud2024/dependencyupgrades.md) - _Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version._
 * [Upgrade dependencies to Spring Cloud 2025](/recipes/java/spring/cloud2025/dependencyupgrades.md) - _Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version._
-* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md) - _Spring Boot 3.5 removed the bean name `taskExecutor`. Where this bean name is used, the recipe replaces the bean name to `applicationTaskExecutor`. This also includes instances where the developer provided their own bean named `taskExecutor`. This also includes scenarios where JSR-250&#39;s `@Resource` annotation is used._
+* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md) - _Spring Boot 3.5 removed the bean name `taskExecutor`. Where this bean name is used, the recipe replaces the bean name to `applicationTaskExecutor`. This also includes instances where the developer provided their own bean named `taskExecutor`. This also includes scenarios where JSR-250's `@Resource` annotation is used._
 
 ## springdata
 
@@ -4270,7 +4270,7 @@ _18 recipes_
 * [enforce use of shorthand syntax in attribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md) - _enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/)_
 * [enforce use of shorthand syntax in directives](/recipes/codemods/cleanup/svelte/shorthanddirective.md) - _enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)_
 * [require class directives instead of ternary expressions](/recipes/codemods/cleanup/svelte/preferclassdirective.md) - _require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/)_
-* [require or disallow a space before tag&#39;s closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md) - _require or disallow a space before tag&#39;s closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)_
+* [require or disallow a space before tag's closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md) - _require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)_
 * [require style directives instead of style attribute](/recipes/codemods/cleanup/svelte/preferstyledirective.md) - _require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/)_
 
 ## swagger
@@ -4424,7 +4424,7 @@ _114 recipes_
 
 _2 recipes_
 
-* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application&#39;s tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md) - _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations._
 * [Migrate xmlns entries in `test-*.xml` files for Jakarta EE 9.1 using test interfaces](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestxmlstojakartatestsxmls.md) - _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation for test interfaces like arquillian._
 
 ## testing
@@ -4454,7 +4454,7 @@ _39 recipes_
 * [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md) - _PowerMockito with raw Mockito; best executed as part of a Mockito upgrade._
 * [Shorten AssertJ assertions](/recipes/java/testing/assertj/simplifyassertjassertions.md) - _Replace AssertJ assertions where a dedicated assertion is available for the same actual value._
 * [Simplify AssertJ chained assertions](/recipes/java/testing/assertj/simplifychainedassertjassertions.md) - _Replace AssertJ assertions where a method is called on the actual value with a dedicated assertion._
-* [Statically import AssertJ&#39;s `assertThat`](/recipes/java/testing/assertj/staticimports.md) - _Consistently use a static import rather than inlining the `Assertions` class name in tests._
+* [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md) - _Consistently use a static import rather than inlining the `Assertions` class name in tests._
 * [Statically import JUnit Jupiter assertions](/recipes/java/testing/junit5/staticimports.md) - _Always use a static import for assertion methods._
 * [Testing best practices](/recipes/java/testing/cleanup/bestpractices.md) - _Applies best practices to tests._
 * [Upgrade to Cucumber-JVM 2.x](/recipes/cucumber/jvm/upgradecucumber2x.md) - _Upgrade to Cucumber-JVM 2.x from any previous version._
@@ -4467,8 +4467,8 @@ _39 recipes_
 * [Use OkHttp 3 MockWebServer for JUnit 5](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md) - _Migrates OkHttp 3 `MockWebServer` to enable JUnit Jupiter Extension support._
 * [Use Vert.x JUnit 5 Extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md) - _Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`._
 * [Use XMLUnit Legacy for JUnit 5](/recipes/java/testing/junit5/usexmlunitlegacy.md) - _Migrates XMLUnit 1.x to XMLUnit legacy 2.x._
-* [Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md) - _Many of JUnit 4&#39;s `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit&#39;s `MatcherAssume`._
-* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md) - _JUnit 4&#39;s `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md) - _Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`._
+* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md) - _JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
 * [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md) - _Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)` calls ahead of further changes._
 
 ## testng
@@ -4521,7 +4521,7 @@ _4 recipes_
 * [Replace lodash and underscore array functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscorearray.md) - _- `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`_
 * [Replace lodash and underscore function functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscorefunction.md) - _- `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`_
 * [Replace lodash and underscore object functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreobjects.md) - _- `_.clone(x)` -&gt; `{ ...x }` - `_.extend({}, x, y)` -&gt; `{ ...x, ...y }` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`_
-* [Replace lodash and underscore utility functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md) - _- `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === &#39;boolean&#39;` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === &#39;function&#39;` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === &#39;string&#39;` - `_.isUndefined(x)` -&gt; `typeof(x) === &#39;undefined&#39;`_
+* [Replace lodash and underscore utility functions with native JavaScript](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md) - _- `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`_
 
 ## validation
 
@@ -4594,7 +4594,7 @@ _57 recipes_
 * [Enforce unified line brake in HTML comments](/recipes/codemods/cleanup/vue/htmlcommentcontentnewline.md) - _Enforce unified line brake in HTML comments See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html)_
 * [Enforce unified spacing in HTML comments](/recipes/codemods/cleanup/vue/htmlcommentcontentspacing.md) - _Enforce unified spacing in HTML comments See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html)_
 * [Enforce use of defineOptions instead of default export.](/recipes/codemods/cleanup/vue/preferdefineoptions.md) - _Enforce use of defineOptions instead of default export. See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html)_
-* [Enforce v-for directive&#39;s delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md) - _Enforce v-for directive&#39;s delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)_
+* [Enforce v-for directive's delimiter style](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md) - _Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html)_
 * [Enforce writing style for handlers in v-on directives](/recipes/codemods/cleanup/vue/vonhandlerstyle.md) - _Enforce writing style for handlers in v-on directives See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html)_
 * [Recommended vue code cleanup](/recipes/codemods/cleanup/vue/recommendedvuecodecleanup.md) - _Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuejs.org/)._
 * [Require key attribute for conditionally rendered repeated components](/recipes/codemods/cleanup/vue/vifelsekey.md) - _Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html)_

@@ -5,7 +5,7 @@ sidebar_label: "Use &quot;&quot; or 'string.Empty'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &quot;&quot; or &#39;string.Empty&#39;
+# Use &quot;&quot; or 'string.Empty'
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UseEmptyStringLiteralOrStringEmptyRCS1078**
 

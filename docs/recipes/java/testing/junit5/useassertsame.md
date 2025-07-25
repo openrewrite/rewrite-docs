@@ -5,7 +5,7 @@ sidebar_label: "Use JUnit5's `assertSame` or `assertNotSame` instead of `assertT
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use JUnit5&#39;s `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`
+# Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`
 
 **org.openrewrite.java.testing.junit5.UseAssertSame**
 

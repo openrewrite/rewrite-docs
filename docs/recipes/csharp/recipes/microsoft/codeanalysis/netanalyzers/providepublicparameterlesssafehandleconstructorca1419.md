@@ -5,7 +5,7 @@ sidebar_label: "Provide a parameterless constructor that is as visible as the co
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Provide a parameterless constructor that is as visible as the containing type for concrete types derived from &#39;System.Runtime.InteropServices.SafeHandle&#39;
+# Provide a parameterless constructor that is as visible as the containing type for concrete types derived from 'System.Runtime.InteropServices.SafeHandle'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.ProvidePublicParameterlessSafeHandleConstructorCA1419**
 

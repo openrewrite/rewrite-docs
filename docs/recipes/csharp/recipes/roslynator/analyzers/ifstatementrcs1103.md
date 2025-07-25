@@ -5,7 +5,7 @@ sidebar_label: "Convert 'if' to assignment"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Convert &#39;if&#39; to assignment
+# Convert 'if' to assignment
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1103**
 

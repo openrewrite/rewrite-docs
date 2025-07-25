@@ -5,7 +5,7 @@ sidebar_label: "Combine 'Enumerable.Where' method chain"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Combine &#39;Enumerable.Where&#39; method chain
+# Combine 'Enumerable.Where' method chain
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1112**
 

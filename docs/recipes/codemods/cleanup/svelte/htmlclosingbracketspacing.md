@@ -5,7 +5,7 @@ sidebar_label: "require or disallow a space before tag's closing brackets"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# require or disallow a space before tag&#39;s closing brackets
+# require or disallow a space before tag's closing brackets
 
 **org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing**
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing
-displayName: require or disallow a space before tag&#39;s closing brackets
+displayName: require or disallow a space before tag's closing brackets
 description: |
-  require or disallow a space before tag&#39;s closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)
+  require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)
 tags:
   - svelte
   - ESLint

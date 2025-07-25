@@ -5,7 +5,7 @@ sidebar_label: "This method uses runtime marshalling even when the 'DisableRunti
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# This method uses runtime marshalling even when the &#39;DisableRuntimeMarshallingAttribute&#39; is applied
+# This method uses runtime marshalling even when the 'DisableRuntimeMarshallingAttribute' is applied
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDisableRuntimeMarshallingCA1421**
 

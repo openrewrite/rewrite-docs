@@ -5,7 +5,7 @@ sidebar_label: "Use pattern matching instead of combination of 'as' operator and
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use pattern matching instead of combination of &#39;as&#39; operator and null check
+# Use pattern matching instead of combination of 'as' operator and null check
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.UsePatternMatchingInsteadOfAsAndNullCheckRCS1221**
 

@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Parameterize Log4j 2.x logging statements](/recipes/java/logging/log4j/parameterizedlogging.md)
-* [Parameterize SLF4J&#39;s logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md)
+* [Parameterize SLF4J's logging statements](/recipes/java/logging/slf4j/parameterizedlogging.md)
 
 ## Example
 

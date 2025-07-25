@@ -5,7 +5,7 @@ sidebar_label: "Remove deprecated API's not supported in CDI4.0"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove deprecated API&#39;s not supported in CDI4.0
+# Remove deprecated API's not supported in CDI4.0
 
 **org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40**
 
@@ -40,7 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40
-displayName: Remove deprecated API&#39;s not supported in CDI4.0
+displayName: Remove deprecated API's not supported in CDI4.0
 description: |
   Deprecated APIs have been removed in CDI 4.0. This recipe removes and updates the corresponding deprecated methods.
 recipeList:

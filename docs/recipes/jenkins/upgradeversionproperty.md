@@ -5,7 +5,7 @@ sidebar_label: "Upgrade property's value to version"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Upgrade property&#39;s value to version
+# Upgrade property's value to version
 
 **org.openrewrite.jenkins.UpgradeVersionProperty**
 
@@ -121,7 +121,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeVersionPropertyExample
-displayName: Upgrade property&#39;s value to version example
+displayName: Upgrade property's value to version example
 recipeList:
   - org.openrewrite.jenkins.UpgradeVersionProperty:
       key: jenkins.version

@@ -5,7 +5,7 @@ sidebar_label: "Replace JUL `logger.log(Level.SEVERE, e, Supplier&lt;String&gt;)
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `logger.log(Level.SEVERE, e, Supplier&lt;String&gt;)` with SLF4J&#39;s `Logger.atError().log(Supplier&lt;String&gt;)`
+# Replace JUL `logger.log(Level.SEVERE, e, Supplier&lt;String&gt;)` with SLF4J's `Logger.atError().log(Supplier&lt;String&gt;)`
 
 **org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierSevereRecipe**
 

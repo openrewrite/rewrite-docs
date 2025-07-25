@@ -5,7 +5,7 @@ sidebar_label: "Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assum
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`
+# Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`
 
 **org.openrewrite.java.testing.junit5.MigrateAssumptions**
 
@@ -53,9 +53,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.MigrateAssumptions
-displayName: Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`
+displayName: Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`
 description: |
-  Many of JUnit 4&#39;s `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit&#39;s `MatcherAssume`.
+  Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`.
 tags:
   - junit
   - testing

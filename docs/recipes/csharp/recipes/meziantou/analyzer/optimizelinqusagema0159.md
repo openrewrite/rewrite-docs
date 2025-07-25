@@ -5,7 +5,7 @@ sidebar_label: "Use 'Order' instead of 'OrderBy'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;Order&#39; instead of &#39;OrderBy&#39;
+# Use 'Order' instead of 'OrderBy'
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0159**
 

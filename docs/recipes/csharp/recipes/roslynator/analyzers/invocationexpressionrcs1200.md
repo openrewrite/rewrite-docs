@@ -5,7 +5,7 @@ sidebar_label: "Call 'Enumerable.ThenBy' instead of 'Enumerable.OrderBy'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Call &#39;Enumerable.ThenBy&#39; instead of &#39;Enumerable.OrderBy&#39;
+# Call 'Enumerable.ThenBy' instead of 'Enumerable.OrderBy'
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1200**
 

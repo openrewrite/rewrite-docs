@@ -5,7 +5,7 @@ sidebar_label: "Use 'Environment.CurrentManagedThreadId'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;Environment.CurrentManagedThreadId&#39;
+# Use 'Environment.CurrentManagedThreadId'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseEnvironmentMembersCA1840**
 

@@ -5,7 +5,7 @@ sidebar_label: "Use 'string.IsNullOrEmpty' method"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;string.IsNullOrEmpty&#39; method
+# Use 'string.IsNullOrEmpty' method
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1113**
 

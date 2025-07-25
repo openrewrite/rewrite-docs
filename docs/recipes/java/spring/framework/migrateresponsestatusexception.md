@@ -41,7 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.framework.MigrateResponseStatusException
 displayName: Migrate breaking changes in `ResponseStatusException`
 description: |
-  Migrate Spring Framework 5.3&#39;s `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6&#39;s `getStatusCode().value()` and `ResponseStatusException` method `getStatus()` to Spring Framework 6&#39;s `getStatusCode()` .
+  Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()` and `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()` .
 recipeList:
   - org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetRawStatusCodeMethod
   - org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetStatusCodeMethod

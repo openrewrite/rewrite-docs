@@ -5,7 +5,7 @@ sidebar_label: "Simplify 'default' expression"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Simplify &#39;default&#39; expression
+# Simplify 'default' expression
 
 **org.openrewrite.csharp.recipes.roslynator.analyzers.DefaultExpressionRCS1244**
 

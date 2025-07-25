@@ -5,7 +5,7 @@ sidebar_label: "Remove OpenFeature's `getBooleanValue` for feature key"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove OpenFeature&#39;s `getBooleanValue` for feature key
+# Remove OpenFeature's `getBooleanValue` for feature key
 
 **org.openrewrite.featureflags.openfeature.RemoveGetBooleanValue**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.featureflags.openfeature.RemoveGetBooleanValue
-displayName: Remove OpenFeature&#39;s `getBooleanValue` for feature key
+displayName: Remove OpenFeature's `getBooleanValue` for feature key
 description: |
   Replace `getBooleanValue()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
 
@@ -120,7 +120,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveGetBooleanValueExample
-displayName: Remove OpenFeature&#39;s `getBooleanValue` for feature key example
+displayName: Remove OpenFeature's `getBooleanValue` for feature key example
 recipeList:
   - org.openrewrite.featureflags.openfeature.RemoveGetBooleanValue:
       featureKey: flag-key-123abc

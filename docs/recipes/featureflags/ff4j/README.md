@@ -8,6 +8,6 @@ _Recipes to perform [FF4j](https://ff4j.org/) migration tasks._
 
 ## Recipes
 
-* [Remove FF4j&#39;s `check` for feature key](./removecheck.md)
+* [Remove FF4j's `check` for feature key](./removecheck.md)
 
 

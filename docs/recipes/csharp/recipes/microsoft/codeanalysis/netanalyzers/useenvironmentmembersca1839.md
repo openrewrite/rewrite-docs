@@ -5,7 +5,7 @@ sidebar_label: "Use 'Environment.ProcessPath'"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use &#39;Environment.ProcessPath&#39;
+# Use 'Environment.ProcessPath'
 
 **org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseEnvironmentMembersCA1839**
 

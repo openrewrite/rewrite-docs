@@ -5,7 +5,7 @@ sidebar_label: "Find comments' language distribution"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find comments&#39; language distribution
+# Find comments' language distribution
 
 **io.moderne.ai.FindCommentsLanguage**
 

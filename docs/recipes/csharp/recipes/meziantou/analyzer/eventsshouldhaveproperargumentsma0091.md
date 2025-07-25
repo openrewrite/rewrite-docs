@@ -5,7 +5,7 @@ sidebar_label: "Sender should be 'this' for instance events"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Sender should be &#39;this&#39; for instance events
+# Sender should be 'this' for instance events
 
 **org.openrewrite.csharp.recipes.meziantou.analyzer.EventsShouldHaveProperArgumentsMA0091**
 

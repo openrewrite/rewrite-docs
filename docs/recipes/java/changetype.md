@@ -145,7 +145,7 @@ This recipe is used as part of the following composite recipes:
 * [Use JUnit Jupiter `@Disabled`](/recipes/java/testing/junit5/ignoretodisabled.md)
 * [Use JUnit Jupiter `Executable`](/recipes/java/testing/junit5/throwingrunnabletoexecutable.md)
 * [Use PlatformHttpHeaderFilterStrategy instead of HttpHeaderFilterStrategy](/recipes/org/apache/camel/upgrade/camel411/platformhttpfilterstrategy.md)
-* [Use `Assertions#assume*(..)` and Hamcrest&#39;s `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
 * [Use `PingHealthIndicator`](/recipes/java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator.md)
 * [Use `RestClientBuilderCustomizer`](/recipes/java/spring/boot2/migraterestclientbuildercustomizerpackagename.md)
 * [Use `StateManagementStrategy`](/recipes/com/oracle/weblogic/rewrite/jakarta/removedstatemanagermethods3.md)

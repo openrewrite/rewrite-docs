@@ -5,7 +5,7 @@ sidebar_label: "Removes from code Java 14's `instanceof` pattern matching"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Removes from code Java 14&#39;s `instanceof` pattern matching
+# Removes from code Java 14's `instanceof` pattern matching
 
 **org.openrewrite.staticanalysis.RemoveInstanceOfPatternMatch**
 
