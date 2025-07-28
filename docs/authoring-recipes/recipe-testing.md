@@ -321,6 +321,8 @@ In a majority of cases, though, a `SourceSpec` will also define an "after" state
 
 A developer can assert additional conditions on a source file by using the `afterRecipe` callback that is defined on the `SourceSpec`. This can be convenient when asserting conditions on the resulting semantic model that are not represented in the rendering of the source code after the recipe has transformed the source file. For instance, you may want to confirm that the path to a file has changed such as in the [sample tests](#example-tests) above. This file path is not visible in the "after" code and can only be tested via this callback.
 
+By default, the `RewriteTest` interface's `rewriteRun` method will evaluate and parse all sourceSet's "before" and "after" contents trimming the last line of the multi-line `String` blocks. To avoid this behaviour and to persist the newlines at the end of a "content" to correctly assert EOF cases, you can call the `noTrim` method on the `SourceSpec` to bypass this trimming. 
+
 ## Declarative recipe testing
 
 Declarative recipes are largely tested in a similar way to imperative ones. The one key difference in tests is that you need to point the `spec` to your resources directory using the `recipeFromResources()` method.
