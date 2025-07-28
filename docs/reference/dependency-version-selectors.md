@@ -45,13 +45,13 @@ This is very similar to the above hyphenated range except that you can specify e
 
 ### XRange
 
-Any of `X`, `x`, or `*` are interpreted as a wildcard and may be used instead of numeric values in the [major, minor, patch] tuple.
+Any of `X`, `x`, or `*` are interpreted as a wildcard and may be used instead of numeric values in the [major, minor, patch] tuple. The wildcard must be at the end of the version selector.
 
 | Version Selector | Available Versions         | Selected Version |
 | ---------------- | -------------------------- | ---------------- |
-| `1.x.0`          | 1.0.0, 1.1.0, 1.1.1, 2.0.0 | 1.1.0            |
-| `1.x.x`          | 1.0.0, 1.1.0, 1.1.1, 2.0.0 | 1.1.1            |
-| `x.x.x`          | 1.0.0, 1.1.0, 1.1.1, 2.0.0 | 2.0.0            |
+| `1.0.x`          | 1.0.0, 1.0.1, 1.1.0, 2.0.0 | 1.0.1            |
+| `1.x`            | 1.0.0, 1.0.1, 1.1.0, 2.0.0 | 1.1.0            |
+| `x`              | 1.0.0, 1.1.0, 1.1.0, 2.0.0 | 2.0.0            |
 
 ### Tilde range
 
