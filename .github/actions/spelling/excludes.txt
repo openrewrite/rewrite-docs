@@ -87,6 +87,7 @@
 ^strip-links.py
 ^docusaurus.config.ts
 ^docs/reference/
+^.claude/
 ^robots.txt
 ^CNAME
 ^src/
