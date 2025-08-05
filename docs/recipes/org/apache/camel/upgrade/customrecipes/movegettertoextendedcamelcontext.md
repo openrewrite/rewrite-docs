@@ -1,68 +1,53 @@
 ---
-sidebar_label: "Migrates `camel 4.4` application to `camel 4.5`"
+sidebar_label: "Move getter from context to ExtendedCamelContext."
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrates `camel 4.4` application to `camel 4.5`
+# Move getter from context to ExtendedCamelContext.
 
-**org.apache.camel.upgrade.camel45.CamelMigrationRecipe**
+**org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext**
 
-_Migrates `camel 4.4` application to `camel 4.5`._
+_Move getter from context to ExtendedCamelContext_
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel45.CamelMigrationRecipe), 
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Options
 
-## Definition
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldMethodName | Name of the method on external camel context. |  |
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)](../../../../../org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters)
-* [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](../../../../../org/apache/camel/upgrade/camel45/traceproperties)
-* [Renamed classes for elasticsearch,opensearch and spring regis](../../../../../org/apache/camel/upgrade/camel45/renamedclasses)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.apache.camel.upgrade.camel45.CamelMigrationRecipe
-displayName: Migrates `camel 4.4` application to `camel 4.5`
-description: |
-  Migrates `camel 4.4` application to `camel 4.5`.
-recipeList:
-  - org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters
-  - org.apache.camel.upgrade.camel45.TraceProperties
-  - org.apache.camel.upgrade.camel45.renamedClasses
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.12.1](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
-* [Migrates `camel 4.4` application to `camel 4.8`](/recipes/io/quarkus/updates/camel/camel47/camelquarkusmigrationrecipe.md)
+* [Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)](/recipes/org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.MoveGetterToExtendedCamelContextExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.MoveGetterToExtendedCamelContextExample
+displayName: Move getter from context to ExtendedCamelContext. example
+recipeList:
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: null
+```
+
+Now that `com.yourorg.MoveGetterToExtendedCamelContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -74,7 +59,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.apache.camel.upgrade.camel45.CamelMigrationRecipe")
+    activeRecipe("com.yourorg.MoveGetterToExtendedCamelContextExample")
     setExportDatatables(true)
 }
 
@@ -86,48 +71,9 @@ dependencies {
     rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
-    }
-    rewrite {
-        activeRecipe("org.apache.camel.upgrade.camel45.CamelMigrationRecipe")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
+<TabItem value="maven" label="Maven">
 
 1. Add the following to your `pom.xml` file:
 
@@ -142,7 +88,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.apache.camel.upgrade.camel45.CamelMigrationRecipe</recipe>
+            <recipe>com.yourorg.MoveGetterToExtendedCamelContextExample</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -157,23 +103,14 @@ gradle --init-script init.gradle rewriteRun
   </build>
 </project>
 ```
-
 2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.apache.camel.upgrade.camel45.CamelMigrationRecipe -Drewrite.exportDatatables=true
-```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CamelMigrationRecipe
+mod run . --recipe MoveGetterToExtendedCamelContext --recipe-option "oldMethodName=null"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -187,7 +124,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.apache.camel.upgrade.camel45.CamelMigrationRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

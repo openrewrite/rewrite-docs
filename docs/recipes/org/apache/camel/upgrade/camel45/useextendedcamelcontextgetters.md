@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Migrates `camel 4.4` application to `camel 4.5`"
+sidebar_label: "Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrates `camel 4.4` application to `camel 4.5`
+# Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)
 
-**org.apache.camel.upgrade.camel45.CamelMigrationRecipe**
+**org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters**
 
-_Migrates `camel 4.4` application to `camel 4.5`._
+__
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel45.CamelMigrationRecipe), 
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -28,9 +28,42 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)](../../../../../org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters)
-* [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](../../../../../org/apache/camel/upgrade/camel45/traceproperties)
-* [Renamed classes for elasticsearch,opensearch and spring regis](../../../../../org/apache/camel/upgrade/camel45/renamedclasses)
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setTypeConverter`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `getOrCreateTypeConverter`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setManagementMBeanAssembler`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `getRestRegistryFactory`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setRestRegistryFactory`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setTransformerRegistry`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setValidatorRegistry`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setName`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setDescription`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `getBootstrapFactoryFinder`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `getFactoryFinder`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `getFactoryFinder`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `addInterceptStrategy`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `getStartupStepRecorder`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setStartupStepRecorder`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `resolvePropertyPlaceholders`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `getBasePackageScan`
+* [Move getter from context to ExtendedCamelContext.](../../../../../org/apache/camel/upgrade/customrecipes/movegettertoextendedcamelcontext)
+  * oldMethodName: `setBasePackageScan`
 
 </TabItem>
 
@@ -39,14 +72,47 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.apache.camel.upgrade.camel45.CamelMigrationRecipe
-displayName: Migrates `camel 4.4` application to `camel 4.5`
+name: org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters
+displayName: Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)
 description: |
-  Migrates `camel 4.4` application to `camel 4.5`.
+  
 recipeList:
-  - org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters
-  - org.apache.camel.upgrade.camel45.TraceProperties
-  - org.apache.camel.upgrade.camel45.renamedClasses
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setTypeConverter
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: getOrCreateTypeConverter
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setManagementMBeanAssembler
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: getRestRegistryFactory
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setRestRegistryFactory
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setTransformerRegistry
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setValidatorRegistry
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setName
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setDescription
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: getBootstrapFactoryFinder
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: getFactoryFinder
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: getFactoryFinder
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: addInterceptStrategy
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: getStartupStepRecorder
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setStartupStepRecorder
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: resolvePropertyPlaceholders
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: getBasePackageScan
+  - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
+      oldMethodName: setBasePackageScan
 
 ```
 </TabItem>
@@ -56,8 +122,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.12.1](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
-* [Migrates `camel 4.4` application to `camel 4.8`](/recipes/io/quarkus/updates/camel/camel47/camelquarkusmigrationrecipe.md)
+* [Migrates `camel 4.4` application to `camel 4.5`](/recipes/org/apache/camel/upgrade/camel45/camelmigrationrecipe.md)
 
 
 ## Usage
@@ -74,7 +139,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.apache.camel.upgrade.camel45.CamelMigrationRecipe")
+    activeRecipe("org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters")
     setExportDatatables(true)
 }
 
@@ -107,7 +172,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("org.apache.camel.upgrade.camel45.CamelMigrationRecipe")
+        activeRecipe("org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -142,7 +207,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.apache.camel.upgrade.camel45.CamelMigrationRecipe</recipe>
+            <recipe>org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -165,7 +230,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.apache.camel.upgrade.camel45.CamelMigrationRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -173,7 +238,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CamelMigrationRecipe
+mod run . --recipe UseExtendedCamelContextGetters
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -187,7 +252,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.apache.camel.upgrade.camel45.CamelMigrationRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
