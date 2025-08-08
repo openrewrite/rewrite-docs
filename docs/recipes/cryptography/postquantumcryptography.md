@@ -9,11 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.cryptography.PostQuantumCryptography**
 
-_Locate cryptographic configuration which may need to be updated for a brave new post-quantum-supremacy world._
-
-### Tags
-
-* [DevCenter:security](/reference/recipes-by-tag#devcenter:security)
+_This recipe searches for instances in code that may be impacted by post quantum cryptography. Applications may need to support larger key sizes, different algorithms, or use crypto agility to handle the migration. The recipe includes detection of hardcoded values that affect behavior in a post-quantum world, programmatic configuration that may prevent algorithm changes, and general cryptographic usage patterns that should be reviewed._
 
 ## Recipe source
 
@@ -56,30 +52,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.table.CryptoFlowStepsTable" label="CryptoFlowStepsTable">
-
-### Cryptographic flow steps
-**org.openrewrite.table.CryptoFlowStepsTable**
-
-_Tracks the flow of cryptographic operations from hardcoded values through various transformations._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The source file containing the cryptographic flow |
-| Anti-pattern | Description of the cryptographic anti-pattern detected |
-| Step 1 | First step in the cryptographic flow |
-| Step 2 | Second step in the cryptographic flow |
-| Step 3 | Third step in the cryptographic flow |
-| Step 4 | Fourth step in the cryptographic flow |
-| Step 5 | Fifth step in the cryptographic flow |
-| Step 6 | Sixth step in the cryptographic flow |
-| Step 7 | Seventh step in the cryptographic flow |
-| Step 8 | Eighth step in the cryptographic flow |
-| Step 9 | Ninth step in the cryptographic flow |
-| Step 10 | Tenth step in the cryptographic flow |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -134,23 +106,6 @@ _Statistics used in analyzing the performance of recipes._
 
 </TabItem>
 
-<TabItem value="org.openrewrite.java.table.MethodCalls" label="MethodCalls">
-
-### Method calls
-**org.openrewrite.java.table.MethodCalls**
-
-_The text of matching method invocations._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The source file that the method call occurred in. |
-| Method call | The text of the method call. |
-| Class name | The class name of the method call. |
-| Method name | The method name of the method call. |
-| Argument types | The argument types of the method call. |
-
-</TabItem>
-
 <TabItem value="io.moderne.cryptography.table.InsecureSetProperties" label="InsecureSetProperties">
 
 ### Insecure `Security.setProperty(..)` uses.
@@ -162,23 +117,6 @@ _An itemization of the properties used in such calls_
 | ----------- | ----------- |
 | Source code | The source code where the insecure property is defined, which may not contain a `Security.setProperty(..)` call directly if the property was defined somewhere and through data flow analysis we've concluded that it is later used in a `Security.setProperty(..)` call. |
 | Property | The property that is set insecurely, e.g. `crypto.policy`. |
-
-</TabItem>
-
-<TabItem value="io.moderne.cryptography.table.SslConfiguration" label="SslConfiguration">
-
-### Ssl configuration
-**io.moderne.cryptography.table.SslConfiguration**
-
-_Records configuration of Secure Socket Layer (SSL) and Transport Layer Security (TLS)._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source path | Path to the source file where the SSL configuration is defined. |
-| Protocol | Protocol used by SSL to encrypt communications. e.g.: TLS |
-| Enabled protocols | List of protocols enabled for SSL/TLS communication. e.g.: TLSv1.2|TLSv1.3 |
-| Ciphers | List of ciphers used for SSL/TLS encryption. e.g.: TLS_AES_128_GCM_SHA256|TLS_AES_256_GCM_SHA384 |
-| SSL bundle | Spring SSL configuration bundle name |
 
 </TabItem>
 
@@ -199,4 +137,4 @@ _Security issues in the repository._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)

@@ -6,4 +6,8 @@ _Recipes that analyze code control flow to detect issues like unreachable code, 
 
 * [Search](/recipes/analysis/java/controlflow/search)
 
+## Recipes
+
+* [Find unused variable definitions](./findunuseddefinitions.md)
+
 

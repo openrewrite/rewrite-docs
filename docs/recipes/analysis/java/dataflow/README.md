@@ -5,6 +5,5 @@ _Recipes that track data flow through programs to identify dead stores, unused v
 ## Recipes
 
 * [Find dead stores](./finddeadstores.md)
-* [Find unused variable definitions](./findunuseddefinitions.md)
 
 

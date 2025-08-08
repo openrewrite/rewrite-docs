@@ -11,12 +11,10 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Find LDAP injection vulnerabilities](./findldapinjection.md)
-* [Find PII in URLs](./findpiiinurls.md)
 * [Find SQL injection vulnerabilities](./findsqlinjection.md)
 * [Find XSS vulnerabilities](./findxssvulnerability.md)
 * [Find XXE vulnerabilities](./findxxevulnerability.md)
 * [Find command injection vulnerabilities](./findcommandinjection.md)
-* [Find field-sensitive taint flows](./findfieldsensitivetaintflows.md)
 * [Find path traversal vulnerabilities](./findpathtraversal.md)
 * [Find unencrypted PII storage](./findunencryptedpiistorage.md)
 

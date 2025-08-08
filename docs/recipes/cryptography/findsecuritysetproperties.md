@@ -29,57 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Find insecure `Security.setProperty` calls](/recipes/cryptography/findinsecuresecuritysetproperties.md)
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|properties|`List.of("crypto.policy")`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import java.security.Security;
-
-class C {
-    void update() {
-        String key = "crypto.policy";
-        Security.setProperty(key, "unlimited");
-    }
-}
-```
-
-###### After
-```java
-import java.security.Security;
-
-class C {
-    void update() {
-        String key = /*~~>*/"crypto.policy";
-        Security.setProperty(key, "unlimited");
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,1 +5,1 @@
-class C {
-    void update() {
--       String key = "crypto.policy";
-+       String key = /*~~>*/"crypto.policy";
-        Security.setProperty(key, "unlimited");
-```
-</TabItem>
-</Tabs>
+* [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md)
 
 
 ## Usage

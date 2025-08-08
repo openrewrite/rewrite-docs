@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Hardcoded algorithm choice"
+sidebar_label: "Find unused variable definitions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Hardcoded algorithm choice
+# Find unused variable definitions
 
-**io.moderne.cryptography.FindHardcodedAlgorithmChoice**
+**org.openrewrite.analysis.java.controlflow.FindUnusedDefinitions**
 
-_Locate hardcoded algorithm choices in cryptographic code._
+_Identifies variable assignments whose values are never used before being overwritten._
 
 ## Recipe source
 
@@ -17,13 +17,6 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
-
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md)
 
 
 ## Usage
@@ -37,12 +30,12 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindHardcodedAlgorithmChoice
+mod run . --recipe FindUnusedDefinitions
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-cryptography:{{VERSION_IO_MODERNE_RECIPE_REWRITE_CRYPTOGRAPHY}}
+mod config recipes jar install io.moderne.recipe:rewrite-program-analysis:{{VERSION_IO_MODERNE_RECIPE_REWRITE_PROGRAM_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>
@@ -51,7 +44,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-cryptography:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.cryptography.FindHardcodedAlgorithmChoice" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.analysis.java.controlflow.FindUnusedDefinitions" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -59,30 +52,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.table.CryptoFlowStepsTable" label="CryptoFlowStepsTable">
-
-### Cryptographic flow steps
-**org.openrewrite.table.CryptoFlowStepsTable**
-
-_Tracks the flow of cryptographic operations from hardcoded values through various transformations._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The source file containing the cryptographic flow |
-| Anti-pattern | Description of the cryptographic anti-pattern detected |
-| Step 1 | First step in the cryptographic flow |
-| Step 2 | Second step in the cryptographic flow |
-| Step 3 | Third step in the cryptographic flow |
-| Step 4 | Fourth step in the cryptographic flow |
-| Step 5 | Fifth step in the cryptographic flow |
-| Step 6 | Sixth step in the cryptographic flow |
-| Step 7 | Seventh step in the cryptographic flow |
-| Step 8 | Eighth step in the cryptographic flow |
-| Step 9 | Ninth step in the cryptographic flow |
-| Step 10 | Tenth step in the cryptographic flow |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -138,3 +107,6 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+[Jonathan Schneider](mailto:jkschneider@gmail.com)

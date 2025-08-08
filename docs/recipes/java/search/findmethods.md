@@ -35,8 +35,6 @@ This recipe is used as part of the following composite recipes:
 * [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md)
 * [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
 * [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
-* [Find programmatic edits of `Security` provider list](/recipes/cryptography/findsecurityproviderediting.md)
-* [Find where `SSLContext` is set as system default](/recipes/cryptography/findsslcontextdefault.md)
 * [Finds uses of `Encryptors.queryableText()`](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
 
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.analysis.java.security.FindLdapInjection**
 
-_Finds places where user input is used in LDAP queries without proper sanitization, potentially allowing LDAP injection attacks._
+_Finds LDAP injection vulnerabilities by tracking tainted data flow from user input to LDAP queries._
 
 ## Recipe source
 
@@ -17,6 +17,13 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find security vulnerabilities using taint analysis](/recipes/analysis/java/security/findsecurityvulnerabilities.md)
 
 
 ## Usage
@@ -107,6 +114,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)
