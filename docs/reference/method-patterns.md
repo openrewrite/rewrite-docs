@@ -181,12 +181,12 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
 
     @Override
     public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration method, ExecutionContext ctx) {
-        J.MethodDeclaration m = super.visitMethodDeclaration(method, ctx);
+        J.MethodDeclaration md = super.visitMethodDeclaration(method, ctx);
         J.ClassDeclaration classDecl = getCursor().firstEnclosingOrThrow(J.ClassDeclaration.class);
 
         // The enclosing class of a J.MethodDeclaration must be known for a MethodMatcher to match it
         if (methodMatcher.matches(method, classDecl)) {
-            JavaType.Method type = m.getMethodType();
+            JavaType.Method type = md.getMethodType();
 
             // Note that both the name and the type information on the declaration are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
@@ -194,20 +194,20 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
                 type = type.withName(newMethodName);
             }
 
-            m = m.withName(m.getName().withSimpleName(newMethodName).withType(type))
+            md = md.withName(md.getName().withSimpleName(newMethodName).withType(type))
                                 .withMethodType(type);
         }
 
-        return m;
+        return md;
     }
 
     @Override
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
-        J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
+        J.MethodInvocation mi = super.visitMethodInvocation(method, ctx);
 
         // Type information stored in the J.MethodInvocation indicates the class so no second argument is necessary
         if (methodMatcher.matches(method)) {
-            JavaType.Method type = m.getMethodType();
+            JavaType.Method type = mi.getMethodType();
 
             // Note that both the name and the type information on the invocation are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
@@ -215,11 +215,11 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
                 type = type.withName(newMethodName);
             }
 
-           m = m.withName(m.getName().withSimpleName(newMethodName).withType(type))
+           mi = mi.withName(mi.getName().withSimpleName(newMethodName).withType(type))
                                 .withMethodType(type);
         }
 
-        return m;
+        return mi;
     }
 
     // Other implementation follows
