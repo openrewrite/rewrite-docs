@@ -75,7 +75,7 @@ Check out the [Moderne introduction to type-aware code searches](https://docs.mo
 The below table shows some more examples of method patterns and the methods they match:
 
 | Method Pattern                              | Matches                                                                                                                                                                                                            |
-| ------------------------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `java.lang.String substring(int)`           | Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring(int beginIndex)`.                               |
 | `java.lang.String substring(int, int)`      | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring(int beginIndex, int endIndex)`.                |
 | `java.lang.String substring(..)`            | Any overload of `String.substring()` with any number of arguments.                                                                                                                                                 |
