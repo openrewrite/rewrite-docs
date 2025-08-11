@@ -95,9 +95,9 @@ A [CompilationUnit](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-
 
 ### Expression
 
-An [Expression](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Expression.java) is anything that returns a value. `MethodInvocation`, `Identifier`, and `Binary` are all examples of expressions. Please note that some LSTs such as `MethodInvocation` are both a [Statement](#statement) and an Expression.
+In general, an [Expression](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Expression.java) is anything that has a type and can be passed as an argument to a method or assigned to a local variable.
 
-In the below code, only some of the expressions are highlighted as expressions can often have many expressions inside of them and it would be too difficult to read if all of them were highlighted. For instance, `import java.util.ArrayList` is many expressions (`java`, `util`, `ArrayList`, `java.util`, and `java.util.ArrayList`).
+In the below example, only some of the expressions are highlighted due to some of them being nested in one another. 
 
 ![Expression Example](./assets/Expression.png)
 
