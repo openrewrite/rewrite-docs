@@ -80,16 +80,20 @@ The below table shows some more examples of method patterns and the methods they
 | `java.lang.String substring(int, int)`      | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring(int beginIndex, int endIndex)`.                |
 | `java.lang.String substring(..)`            | Any overload of `String.substring()` with any number of arguments.                                                                                                                                                 |
 | `java.lang.String *(int)`                   | Any method on `String` that accepts a single argument of type `int`.                                                                                                                                               |
+| `java.lang.String valueOf(*)`               | Any overload of `String.valueOf()` with exactly one argument.                                                                                                                                                      |
 | `java.lang.String format(String, ..)`       | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format\(java.lang.String,java.lang.Object...\)) method with varargs. |
 | `java.lang.String format(String, Object[])` | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format\(java.lang.String,java.lang.Object...\)) method with varargs. |
 | `com.yourorg.Foo bar(int, String, ..)`      | Any method on `Foo` named `bar` accepting an `int`, a `String`, and zero or more other arguments of any type.                                                                                                      |
 | `*..String *(..)`                           | Any method accepting any arguments on classes named "String" in any package.                                                                                                                                       |
 | `*..* *(..)`                                | Any method accepting any arguments on any class.                                                                                                                                                                   |
+| `*..* *(*, *, *, ..)`                       | Any method accepting at least three arguments on any class.                                                                                                                                                        |
 | `*..* foo(..)`                              | Any method named `foo` which accepts any number of arguments. This is the equivalent of doing a generic text search for methods named `foo`.                                                                       |
 | `org..* foo(..)`                            | Any method named `foo` in a package that starts with `org`. This could be `org.meow` or it could be `org.springframework` or so on.                                                                                |
 | `org.openrewrite.java.* foo(..)`            | Any method named `foo` in a package that starts with `org.openrewrite.java.`. Note that the `.*` after `java` means that the method _must_ be in this package rather than some subsequent subpackages.             |
 | `org.Foo bar(java.util.List)`               | Exactly the `bar` method in the `org.Foo` class that takes in a single `java.util.List` as an argument.                                                                                                            |
+| `org.Foo bar(java.*.*, *)`                  | Exactly the `bar` method in the `org.Foo` class that takes two arguments of which the first argument type is nested exactly 2 levels deep in the `java` package.                                                   |
 | `org.Foo <constructor>(..)`                 | Matches any constructors in the `org.Foo` class that takes in any number of arguments.                                                                                                                             |
+| `org.Foo <init>(..)`                        | Matches the same thing as the previous line. Demonstrates that `init` can be used as an alias of `constructor`.                                                                                                    |
 | `org.Foo bar()`                             | Matches exactly the `bar` method in the `org.Foo` class that has **no** arguments                                                                                                                                  |
 | `org.Foo#bar()`                             | Matches the same thing as the previous line. Demonstrates that `#` can be used to replace a space – which may be useful for certain types of input such as a CLI.                                                  |
 
@@ -177,12 +181,12 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
 
     @Override
     public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration method, ExecutionContext ctx) {
-        J.MethodDeclaration m = super.visitMethodDeclaration(method, ctx);
+        J.MethodDeclaration md = super.visitMethodDeclaration(method, ctx);
         J.ClassDeclaration classDecl = getCursor().firstEnclosingOrThrow(J.ClassDeclaration.class);
 
         // The enclosing class of a J.MethodDeclaration must be known for a MethodMatcher to match it
         if (methodMatcher.matches(method, classDecl)) {
-            JavaType.Method type = m.getMethodType();
+            JavaType.Method type = md.getMethodType();
 
             // Note that both the name and the type information on the declaration are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
@@ -190,20 +194,20 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
                 type = type.withName(newMethodName);
             }
 
-            m = m.withName(m.getName().withSimpleName(newMethodName).withType(type))
+            md = md.withName(md.getName().withSimpleName(newMethodName).withType(type))
                                 .withMethodType(type);
         }
 
-        return m;
+        return md;
     }
 
     @Override
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
-        J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
+        J.MethodInvocation mi = super.visitMethodInvocation(method, ctx);
 
         // Type information stored in the J.MethodInvocation indicates the class so no second argument is necessary
         if (methodMatcher.matches(method)) {
-            JavaType.Method type = m.getMethodType();
+            JavaType.Method type = mi.getMethodType();
 
             // Note that both the name and the type information on the invocation are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
@@ -211,11 +215,11 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
                 type = type.withName(newMethodName);
             }
 
-           m = m.withName(m.getName().withSimpleName(newMethodName).withType(type))
+           mi = mi.withName(mi.getName().withSimpleName(newMethodName).withType(type))
                                 .withMethodType(type);
         }
 
-        return m;
+        return mi;
     }
 
     // Other implementation follows
