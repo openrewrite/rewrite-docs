@@ -284,4 +284,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Valentin Delaye, [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Steve Hill, Jonathan Schneider, Valentin Delaye, Tim te Beek

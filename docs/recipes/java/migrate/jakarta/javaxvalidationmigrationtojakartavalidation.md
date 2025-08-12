@@ -295,3 +295,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Jonathan Schneider, Melloware, Renette Ros, Tobias Lidskog, Tyler Van Gorder, Mark Brophy, Patrick, Kun Li

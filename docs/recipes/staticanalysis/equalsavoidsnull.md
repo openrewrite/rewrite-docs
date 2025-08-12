@@ -30,6 +30,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Code cleanup](/recipes/staticanalysis/codecleanup.md)
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 
 ## Example
 
@@ -273,4 +274,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-punkratz312, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+punkratz312, Jonathan Schneider, Greg Oledzki, Aaron Gershman, Knut Wannheden, Sam Snyder, Tim te Beek

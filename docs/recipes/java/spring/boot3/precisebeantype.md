@@ -264,4 +264,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Patrick](mailto:patway99@gmail.com), [aboyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com)
+
+Patrick, aboyko, Jonathan Schnéider, Knut Wannheden, Kyle Scully

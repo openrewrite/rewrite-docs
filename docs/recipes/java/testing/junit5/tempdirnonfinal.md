@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim.te.beek@jdriven.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+
+Tim te Beek, Michael Keppler, Jonathan Schnéider, Patrick, Knut Wannheden

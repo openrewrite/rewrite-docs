@@ -41,7 +41,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert the method parameter from numeric type to duration](./numbertoduration.md)
 * [Convert v1 AmazonS3URI to v2 S3Uri](./s3uritov2.md)
 * [Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for sync and NettyNioAsyncHttpClient for async](./httpsettingstohttpclient.md)
-* [Moves constructor arguments to fluent setters](./constructortofluent.md)
 * [S3 Event Notification method to v2](./s3eventnotificationmethodtov2.md)
 * [Transfer Manager Methods to V2](./transfermanagermethodstov2.md)
 * [Transform 'new' expressions to builders](./newclasstobuilder.md)

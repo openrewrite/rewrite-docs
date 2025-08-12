@@ -221,4 +221,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[sullis](mailto:github@seansullivan.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+sullis, Jonathan Schnéider, Mike Solomon, Sam Snyder, Jonathan Leitschuh, Tim te Beek

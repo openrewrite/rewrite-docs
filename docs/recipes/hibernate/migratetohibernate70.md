@@ -18,6 +18,53 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Examples
+##### Example 1
+
+
+###### Unchanged
+```xml title="pom.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>6.5.0.Final</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+
+
+###### Unchanged
+```xml title="pom.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>6.5.0.Final</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
 
 ## Usage
 
@@ -109,4 +156,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Simon Zilliken, [Tim te Beek](mailto:tim@moderne.io), [Guillaume Husta](mailto:guillaume.husta@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Jacob van Lingen, Laurens Westerlaken

@@ -191,4 +191,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Andrii Rodionov, Tim te Beek

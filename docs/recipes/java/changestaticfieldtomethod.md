@@ -187,4 +187,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Christian Semrau, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, Udayani Vaka, [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Thomas Zub](mailto:thomas.zub@outlook.de), [Aaron Gershman](mailto:aegershman@gmail.com)
+
+Christian Semrau, Jonathan Schnéider, Tyler Van Gorder, Udayani Vaka, Sam Snyder, Tim te Beek, Knut Wannheden, Thomas Zub, Aaron Gershman

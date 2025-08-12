@@ -276,4 +276,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Aaron Gershman, Tyler Van Gorder, Jonathan Schnéider, Sam Snyder, traceyyoshima, Tim te Beek

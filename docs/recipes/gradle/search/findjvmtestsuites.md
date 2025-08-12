@@ -159,4 +159,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [BrendanHart](mailto:brendan.hart@gs.com), [Shannon Pamperl](mailto:shanman190@gmail.com)
+
+Merlin Bögershausen, BrendanHart, Tim te Beek, Shannon Pamperl

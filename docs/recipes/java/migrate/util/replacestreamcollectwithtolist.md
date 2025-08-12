@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 * [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
 
 ## Example
@@ -283,4 +284,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Laurens-W](mailto:laurens.w@live.nl), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+
+Laurens-W, Tim te Beek, Jonathan Schnéider, Sam Snyder

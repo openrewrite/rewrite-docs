@@ -6,7 +6,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrates `camel 4.4` application to `camel 4.5`](./camelmigrationrecipe.md)
 * [Renamed classes for elasticsearch,opensearch and spring regis](./renamedclasses.md)
-* [Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)](./useextendedcamelcontextgetters.md)
+* [Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`](./useextendedcamelcontextgetters.md)
 
 ## Recipes
 

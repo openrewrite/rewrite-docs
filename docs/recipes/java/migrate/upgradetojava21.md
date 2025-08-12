@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Java 17](../../java/migrate/upgradetojava17)
 * [Upgrade build to Java 21](../../java/migrate/upgradebuildtojava21)
-* [Remove illegal semicolons](../../java/migrate/removeillegalsemicolons)
+* [Remove extra semicolons](../../staticanalysis/removeextrasemicolons)
 * [Replace `Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` with `throw new UnsupportedOperationException()`](../../java/migrate/lang/threadstopunsupported)
 * [Convert `new URL(String)` to `URI.create(String).toURL()`](../../java/migrate/net/urlconstructortouricreate)
 * [Adopt `SequencedCollection`](../../java/migrate/util/sequencedcollection)
@@ -61,7 +61,7 @@ tags:
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava17
   - org.openrewrite.java.migrate.UpgradeBuildToJava21
-  - org.openrewrite.java.migrate.RemoveIllegalSemicolons
+  - org.openrewrite.staticanalysis.RemoveExtraSemicolons
   - org.openrewrite.java.migrate.lang.ThreadStopUnsupported
   - org.openrewrite.java.migrate.net.URLConstructorToURICreate
   - org.openrewrite.java.migrate.util.SequencedCollection
@@ -294,4 +294,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, [Tim te Beek](mailto:tim@moderne.io), Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), BhavanaPidapa, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, Adam Slaski, [karthikNousher](mailto:emailkarthik369@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, [Shannon Pamperl](mailto:shanman190@gmail.com), eocantu, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Kun Li, Cathy, Josh Soref
+
+Tim te Beek, Chuka Obinabo, Jente Sondervorst, BhavanaPidapa, Sam Snyder, Rajesh Gudikoti

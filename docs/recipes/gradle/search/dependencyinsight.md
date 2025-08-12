@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.search.DependencyInsight**
 
-_Find direct and transitive dependencies matching a group, artifact, and optionally a configuration name. Results include dependencies that either directly match or transitively include a matching dependency._
+_Find direct and transitive dependencies matching a group, artifact, resolved version, and optionally a configuration name. Results include dependencies that either directly match or transitively include a matching dependency._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. | `com.fasterxml.jackson.module` |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `jackson-module-*` |
-| `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
+| `String` | version | *Optional*. Match only dependencies with the specified resolved version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
 | `String` | configuration | *Optional*. Match dependencies with the specified scope. If not specified, all configurations will be searched. | `compileClasspath` |
 
 
@@ -236,4 +236,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:peter@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+
+Sam Snyder, Jente Sondervorst, Jonathan Schnéider, Peter Streef, Tim te Beek, Merlin Bögershausen

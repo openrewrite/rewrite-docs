@@ -49,6 +49,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Chain `StringBuilder.append()` calls](../staticanalysis/chainstringbuilderappendcalls)
 * [Replace `StringBuilder#append` with `String`](../staticanalysis/replacestringbuilderwithstring)
 * [Add imports for fully qualified references to types](../java/shortenfullyqualifiedtypereferences)
+* [Simplify single-element annotation](../java/simplifysingleelementannotation)
 * [Custom import order](../staticanalysis/customimportorder)
 
 </TabItem>
@@ -84,6 +85,7 @@ recipeList:
   - org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
   - org.openrewrite.java.ShortenFullyQualifiedTypeReferences
+  - org.openrewrite.java.SimplifySingleElementAnnotation
   - org.openrewrite.staticanalysis.CustomImportOrder
 
 ```
@@ -282,4 +284,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), punkratz312, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jammy Louie](mailto:jammy@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Serhii Manko](mailto:mankoffserg@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Lakshya Kwatra](mailto:lakshya.kwatra.official@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), Michel Gonzalez, [Greg Adams](mailto:greg@moderne.io), Josh Soref, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), iddeepak, [Scott Jungling](mailto:scott.jungling@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+
+Knut Wannheden, Jonathan Schneider, Tim te Beek, Grzegorz Olędzki, Serhii Manko, Patrick Way

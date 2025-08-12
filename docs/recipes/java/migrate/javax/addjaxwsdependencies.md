@@ -48,12 +48,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `jakarta.xml.ws`
   * newArtifactId: `jakarta.xml.ws-api`
   * newVersion: `2.3.x`
-* [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
-  * oldGroupId: `javax.xml.ws`
-  * oldArtifactId: `jaxws-api`
-  * newGroupId: `jakarta.xml.ws`
-  * newArtifactId: `jakarta.xml.ws-api`
-  * newVersion: `2.3.x`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `jakarta.xml.ws`
   * artifactId: `jakarta.xml.ws-api`
@@ -74,11 +68,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove redundant explicit dependency and plugin versions](../../../maven/removeredundantdependencyversions)
   * groupPattern: `jakarta.xml.ws`
   * artifactPattern: `*`
-  * onlyIfVersionsMatch: `true`
+  * onlyIfManagedVersionIs: `EQ`
 * [Remove redundant explicit dependency and plugin versions](../../../maven/removeredundantdependencyversions)
   * groupPattern: `com.sun.xml.ws`
   * artifactPattern: `*`
-  * onlyIfVersionsMatch: `true`
+  * onlyIfManagedVersionIs: `EQ`
 
 </TabItem>
 
@@ -110,12 +104,6 @@ recipeList:
       newGroupId: jakarta.xml.ws
       newArtifactId: jakarta.xml.ws-api
       newVersion: 2.3.x
-  - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
-      oldGroupId: javax.xml.ws
-      oldArtifactId: jaxws-api
-      newGroupId: jakarta.xml.ws
-      newArtifactId: jakarta.xml.ws-api
-      newVersion: 2.3.x
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: jakarta.xml.ws
       artifactId: jakarta.xml.ws-api
@@ -136,11 +124,11 @@ recipeList:
   - org.openrewrite.maven.RemoveRedundantDependencyVersions:
       groupPattern: jakarta.xml.ws
       artifactPattern: "*"
-      onlyIfVersionsMatch: true
+      onlyIfManagedVersionIs: EQ
   - org.openrewrite.maven.RemoveRedundantDependencyVersions:
       groupPattern: com.sun.xml.ws
       artifactPattern: "*"
-      onlyIfVersionsMatch: true
+      onlyIfManagedVersionIs: EQ
 
 ```
 </TabItem>
@@ -342,23 +330,8 @@ _Statistics used in analyzing the performance of recipes._
 
 </TabItem>
 
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
-
-</TabItem>
-
 </Tabs>
+
+## Contributors
+
+Tyler Van Gorder, Daryl Robbins, Kun Li, steve-aom-elliott, Chuka Obinabo, Nick McKinney, Shannon Pamperl, Jacob van Lingen, Knut Wannheden, Tim te Beek

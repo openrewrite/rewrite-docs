@@ -322,4 +322,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Matthias Klauer](mailto:matthias.klauer@sap.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:tim@moderne.io), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+Matthias Klauer, Jonathan Schnéider, Knut Wannheden, Tim te Beek, Nick McKinney, SiBorea, Laurens Westerlaken, Josh Soref, Niels de Bruin

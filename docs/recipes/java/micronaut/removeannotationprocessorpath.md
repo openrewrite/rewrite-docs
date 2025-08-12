@@ -191,4 +191,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jeremy Grelle](mailto:grellej@unityfoundation.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Jeremy Grelle, Jonathan Schneider, steve-aom-elliott

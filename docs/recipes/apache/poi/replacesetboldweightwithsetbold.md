@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)"
+sidebar_label: "Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)
+# Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`
 
 **org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBold**
 
@@ -281,4 +281,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Ken Little](mailto:krl49700@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Sam Snyder, Ken Little, Tim te Beek, Jonathan Schnéider

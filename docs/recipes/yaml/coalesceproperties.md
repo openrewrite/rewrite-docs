@@ -19,6 +19,13 @@ _Simplify nested map hierarchies into their simplest dot separated property form
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `List` | exclusions | An optional list of [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expressions to specify keys that should not be unfolded. | `$..[org.springframework.security]` |
+| `List` | applyTo | An optional list of [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expressions that specify which keys the recipe should target only. Only the properties matching these expressions will be unfolded. | `$..[org.springframework.security]` |
+
 ## Example
 
 
@@ -70,67 +77,41 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.CoalescePropertiesExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.CoalescePropertiesExample
+displayName: Coalesce YAML properties example
+recipeList:
+  - org.openrewrite.yaml.CoalesceProperties:
+      exclusions: $..[org.springframework.security]
+      applyTo: $..[org.springframework.security]
+```
+
+Now that `com.yourorg.CoalescePropertiesExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
 1. Add the following to your `build.gradle` file:
-
 ```groovy title="build.gradle"
 plugins {
     id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.yaml.CoalesceProperties")
+    activeRecipe("com.yourorg.CoalescePropertiesExample")
     setExportDatatables(true)
 }
 
 repositories {
     mavenCentral()
 }
-
 ```
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:latest.release") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite:rewrite-java")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.yaml.CoalesceProperties")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-</TabItem>
-<TabItem value="maven" label="Maven POM">
+<TabItem value="maven" label="Maven">
 
 1. Add the following to your `pom.xml` file:
 
@@ -145,7 +126,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.yaml.CoalesceProperties</recipe>
+            <recipe>com.yourorg.CoalescePropertiesExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -153,25 +134,14 @@ gradle --init-script init.gradle rewriteRun
   </build>
 </project>
 ```
-
 2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.yaml.CoalesceProperties -Drewrite.exportDatatables=true
-```
-
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CoalesceProperties
+mod run . --recipe CoalesceProperties --recipe-option "exclusions=$..[org.springframework.security]" --recipe-option "applyTo=$..[org.springframework.security]"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -250,4 +220,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+
+Jonathan Leitschuh, Jacob van Lingen, Mike Solomon, Sam Snyder

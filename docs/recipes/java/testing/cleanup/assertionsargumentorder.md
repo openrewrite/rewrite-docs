@@ -278,4 +278,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Patrick Way, [Adam Birem](mailto:adam.birem@praxedo.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), timo-abele
+
+Patrick Way, Adam Birem, Knut Wannheden, Patrick, Tim te Beek, Jonathan Schnéider, timo-abele

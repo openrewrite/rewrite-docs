@@ -35,17 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `io.swagger`
-  * oldArtifactId: `swagger-annotations`
-  * newGroupId: `io.swagger.core.v3`
-  * newVersion: `2.2.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `io.swagger`
-  * oldArtifactId: `swagger-core`
-  * newGroupId: `io.swagger.core.v3`
-  * newVersion: `2.2.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `io.swagger`
-  * oldArtifactId: `swagger-models`
+  * oldArtifactId: `swagger-*`
   * newGroupId: `io.swagger.core.v3`
   * newVersion: `2.2.x`
 * [Change type](../../java/changetype)
@@ -80,17 +70,7 @@ tags:
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: io.swagger
-      oldArtifactId: swagger-annotations
-      newGroupId: io.swagger.core.v3
-      newVersion: 2.2.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: io.swagger
-      oldArtifactId: swagger-core
-      newGroupId: io.swagger.core.v3
-      newVersion: 2.2.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: io.swagger
-      oldArtifactId: swagger-models
+      oldArtifactId: swagger-*
       newGroupId: io.swagger.core.v3
       newVersion: 2.2.x
   - org.openrewrite.java.ChangeType:
@@ -478,4 +458,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-SiBorea, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [adammak](mailto:maka9@mcmaster.ca), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Tim te Beek, SiBorea, Johannes Jank, JohannisK, OlegZavrazhin

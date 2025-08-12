@@ -253,4 +253,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Jeremy Grelle](mailto:grellej@unityfoundation.io), [Knut Wannheden](mailto:knut@moderne.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Jeremy Grelle

@@ -30,6 +30,7 @@ _Basic building blocks for transforming Java code._
 * [Add ASLv2 license header](./addapache2licenseheader.md)
 * [Add a literal method argument](./addliteralmethodargument.md)
 * [Add a `null` method argument](./addnullmethodargument.md)
+* [Add comment to import statement](./addcommenttoimport.md)
 * [Add comment to method declarations](./addcommenttomethod.md)
 * [Add comment to method invocations](./addcommenttomethodinvocations.md)
 * [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)

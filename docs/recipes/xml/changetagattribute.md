@@ -282,4 +282,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Mark Brophy, [Kun Li](mailto:kun@moderne.io), Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+Mark Brophy, Kun Li, Adriano Machado, Jonathan Schnéider, Tim te Beek, Sam Snyder, Niels de Bruin

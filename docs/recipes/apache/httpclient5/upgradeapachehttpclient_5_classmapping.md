@@ -148,6 +148,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.entity`
   * newPackageName: `org.apache.hc.core5.http.io.entity`
+  * recursive: `true`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.hc.core5.http.io.entity.mime`
   * newPackageName: `org.apache.hc.client5.http.entity.mime`
@@ -379,6 +380,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http`
   * newPackageName: `org.apache.hc.core5.http`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.hc.core5.http.params`
+  * newPackageName: `org.apache.http.params`
+* [Add comment to import statement](../../java/addcommenttoimport)
+  * comment: `No generic migration for classes in the `org.apache.http.params` package exists, please migrate manually`
+  * typePattern: `org.apache.http.params..*`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.RequestLine`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.message.RequestLine`
@@ -551,6 +558,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.entity
       newPackageName: org.apache.hc.core5.http.io.entity
+      recursive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.hc.core5.http.io.entity.mime
       newPackageName: org.apache.hc.client5.http.entity.mime
@@ -782,6 +790,12 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http
       newPackageName: org.apache.hc.core5.http
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.hc.core5.http.params
+      newPackageName: org.apache.http.params
+  - org.openrewrite.java.AddCommentToImport:
+      comment: No generic migration for classes in the `org.apache.http.params` package exists, please migrate manually
+      typePattern: org.apache.http.params..*
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.RequestLine
       newFullyQualifiedTypeName: org.apache.hc.core5.http.message.RequestLine
@@ -1025,4 +1039,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[steve-aom-elliott](mailto:steve@moderne.io)
+
+Joan Viladrosa, steve-aom-elliott, Adriano Machado, Patrik Ivarsson, Tim te Beek, SiBorea, Pierre Delagrave, sullis

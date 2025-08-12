@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)"
+sidebar_label: "Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)
+# Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`
 
 **org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters**
 
@@ -73,7 +73,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters
-displayName: Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)
+displayName: Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`
 description: |
   
 recipeList:

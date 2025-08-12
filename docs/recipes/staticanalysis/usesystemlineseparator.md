@@ -212,4 +212,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Yeikel](mailto:email@yeikel.com), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Yeikel, Kun Li, Knut Wannheden, Tim te Beek, Jonathan Schnéider

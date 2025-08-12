@@ -34,17 +34,21 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration)
+* [Migrate Hamcrest assertions to JUnit Jupiter](../../../java/testing/hamcrest/migratehamcresttojunit5)
 * [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports)
 * [Clean Up Assertions](../../../java/testing/junit5/cleanupassertions)
 * [Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes)
 * [Remove JUnit `assertTrue(true)` and `assertFalse(false)`](../../../java/testing/cleanup/assertliteralbooleanremovedrecipe)
 * [Remove `test` prefix from JUnit 5 tests](../../../java/testing/cleanup/removetestprefix)
+* [Simplify `throws` statements of tests](../../../java/testing/cleanup/simplifytestthrows)
 * [Remove `public` visibility of JUnit 5 tests](../../../java/testing/cleanup/testsshouldnotbepublic)
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](../../../java/testing/junit5/addparameterizedtestannotation)
 * [Remove duplicates uses of @TestTemplate implementations for a single method](../../../java/testing/junit5/removeduplicatetesttemplates)
 * [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`](../../../java/testing/junit5/removetrycatchfailblocks)
 * [Make lifecycle methods non private](../../../java/testing/junit5/lifecyclenonprivate)
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](../../../java/testing/junit5/assertthrowsonlaststatement)
+* [assertTrue(x instanceof y) to assertInstanceOf(y.class, x)](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)
+* [Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`](../../../java/testing/junit5/useassertsame)
 
 </TabItem>
 
@@ -62,17 +66,21 @@ tags:
   - testing
 recipeList:
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
+  - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToJUnit5
   - org.openrewrite.java.testing.junit5.StaticImports
   - org.openrewrite.java.testing.junit5.CleanupAssertions
   - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes
   - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanRemovedRecipe
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
+  - org.openrewrite.java.testing.cleanup.SimplifyTestThrows
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
   - org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation
   - org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates
   - org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks
   - org.openrewrite.java.testing.junit5.LifecycleNonPrivate
   - org.openrewrite.java.testing.junit5.AssertThrowsOnLastStatement
+  - org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf
+  - org.openrewrite.java.testing.junit5.UseAssertSame
 
 ```
 </TabItem>
@@ -147,55 +155,6 @@ import org.junit.Before;
 
 ###### Before
 ```java
-import org.junit.jupiter.api.Assertions;
-
-public class Test {
-    void method() {
-        Assertions.assertTrue(true);
-    }
-}
-```
-
-###### After
-```java
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-public class Test {
-    void method() {
-        assertTrue(true);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.junit.jupiter.api.Assertions;
-+import static org.junit.jupiter.api.Assertions.assertTrue;
-
-@@ -5,1 +5,1 @@
-public class Test {
-    void method() {
--       Assertions.assertTrue(true);
-+       assertTrue(true);
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 3
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
 import org.junit.Before;
 
 public class Example {
@@ -233,55 +192,6 @@ import org.junit.Before;
 +class Example {
 +   @BeforeEach
 +   void initialize() {
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 4
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.junit.jupiter.api.Assertions;
-
-public class Test {
-    void method() {
-        Assertions.assertTrue(true);
-    }
-}
-```
-
-###### After
-```java
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-public class Test {
-    void method() {
-        assertTrue(true);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.junit.jupiter.api.Assertions;
-+import static org.junit.jupiter.api.Assertions.assertTrue;
-
-@@ -5,1 +5,1 @@
-public class Test {
-    void method() {
--       Assertions.assertTrue(true);
-+       assertTrue(true);
     }
 ```
 </TabItem>
@@ -480,4 +390,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Yeikel, [Aleksandar A Simpson](mailto:alek@asu.me), [Patrick](mailto:patway99@gmail.com), Adriano Machado, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Ties van de Ven, [Tim te Beek](mailto:timtebeek@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), timo-abele
+
+Jonathan Schneider, Tim te Beek, Aleksandar A Simpson, Nick McKinney, aet2505, Greg Adams, magicwerk, Knut Wannheden

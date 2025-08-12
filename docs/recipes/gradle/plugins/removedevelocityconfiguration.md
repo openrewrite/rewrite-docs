@@ -17,8 +17,42 @@ _Remove Develocity configuration from a Gradle build._
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Remove build extension by name](../../gradle/removeextension)
+  * methodName: `develocity`
+* [Remove build extension by name](../../gradle/removeextension)
+  * methodName: `gradleEnterprise`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.gradle.plugins.RemoveDevelocityConfiguration
+displayName: Remove Develocity configuration
+description: |
+  Remove Develocity configuration from a Gradle build.
+recipeList:
+  - org.openrewrite.gradle.RemoveExtension:
+      methodName: develocity
+  - org.openrewrite.gradle.RemoveExtension:
+      methodName: gradleEnterprise
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -174,4 +208,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+
+Tim te Beek

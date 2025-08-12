@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace `verifyZeroInteractions()` to `verifyNoMoreInteractions()"
+sidebar_label: "Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `verifyZeroInteractions()` to `verifyNoMoreInteractions()
+# Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`
 
 **org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions**
 

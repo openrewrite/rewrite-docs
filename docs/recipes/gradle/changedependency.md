@@ -30,6 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). | `29.X` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | overrideManagedVersion | *Optional*. If the old dependency has a managed version, this flag can be used to explicitly set the version on the new dependency. WARNING: No check is done on the NEW dependency to verify if it is managed, it relies on whether the OLD dependency had a managed version. The default for this flag is `false`. |  |
+| `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
 
 ## Example
 
@@ -43,6 +44,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |newVersion|`3.11.x`|
 |versionPattern|`null`|
 |overrideManagedVersion|`null`|
+|changeManagedDependency||
 
 
 <Tabs groupId="beforeAfter">
@@ -244,4 +246,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+
+Shannon Pamperl, Jente Sondervorst, Sam Snyder, Jonathan Schnéider, Tim te Beek, Joan Viladrosa, Simon Hutchinson, Merlin Bögershausen

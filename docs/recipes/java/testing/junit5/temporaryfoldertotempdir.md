@@ -310,4 +310,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Anshuman Mishra, [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Michael Keppler](mailto:bananeweizen@gmx.de), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com)
+
+Anshuman Mishra, Greg Adams, Patrick Way, Jonathan Schnéider, Tim te Beek, Sam Snyder, Merlin Bögershausen, Michael Keppler, Knut Wannheden, Patrick

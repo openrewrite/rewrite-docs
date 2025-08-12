@@ -38,7 +38,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Add GitLab component](/recipes/gitlab/addcomponent.md)
-* [Add GitLab stages](/recipes/gitlab/addstages.md)
 * [Add GitLab template](/recipes/gitlab/addtemplate.md)
 * [Add manual workflow trigger](/recipes/github/addmanualtrigger.md)
 * [Update relocated Micronaut Security config yaml keys](/recipes/java/micronaut/updatesecurityyamlifneeded.md)
@@ -256,4 +255,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jon Brisbin](mailto:jon@jbrisbin.com), [Sam Snyder](mailto:sam@moderne.io), Dmitry Belyaev, adastraperangusta, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aaron Gershman
+
+Jacob van Lingen, Jonathan Schneider, Jon Brisbin, Sam Snyder, Dmitry Belyaev, adastraperangusta, Greg Oledzki, Tim te Beek, Knut Wannheden, Jonathan Leitschuh, Aaron Gershman

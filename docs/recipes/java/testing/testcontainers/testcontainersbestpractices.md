@@ -34,6 +34,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `1.21.x`
 * [Explicit container images and versions](../../../java/testing/testcontainers/explicitcontainerimages)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](../../../java/testing/testcontainers/gethostmigration)
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.testcontainers.containers.DockerComposeContainer`
+  * newFullyQualifiedTypeName: `org.testcontainers.containers.ComposeContainer`
 
 </TabItem>
 
@@ -53,6 +56,9 @@ recipeList:
       newVersion: 1.21.x
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImages
   - org.openrewrite.java.testing.testcontainers.GetHostMigration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.testcontainers.containers.DockerComposeContainer
+      newFullyQualifiedTypeName: org.testcontainers.containers.ComposeContainer
 
 ```
 </TabItem>
@@ -335,4 +341,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Tim te Beek, sullis

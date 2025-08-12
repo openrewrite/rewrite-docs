@@ -255,4 +255,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Satvika Eda](mailto:satvika164.reddy@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+Satvika Eda, Jonathan Schnéider, Tim te Beek, Niels de Bruin

@@ -274,4 +274,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com)
+
+Chuka Obinabo, Jonathan Schnéider, Tim te Beek, Avneesh Dubey

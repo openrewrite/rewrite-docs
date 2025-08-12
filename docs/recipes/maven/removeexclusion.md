@@ -240,4 +240,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Guillaume Smet](mailto:guillaume.smet@gmail.com)
+
+Jonathan Schneider, Nick McKinney, Knut Wannheden, Jacob van Lingen, Patrick, Tim te Beek, Guillaume Smet

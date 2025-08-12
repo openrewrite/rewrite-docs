@@ -295,3 +295,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Tyler Van Gorder, Renette Ros, sgartner03, Tobias Lidskog, traceyyoshima, Kun Li

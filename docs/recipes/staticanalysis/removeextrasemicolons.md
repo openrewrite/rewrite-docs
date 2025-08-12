@@ -30,6 +30,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
+* [Remove illegal semicolons](/recipes/java/migrate/removeillegalsemicolons.md)
 
 ## Example
 
@@ -261,4 +263,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:p.streef@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [steve-aom-elliott](mailto:steve@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+
+Jonathan Schneider, Peter Streef, Sam Snyder, Tim te Beek, Aaron Gershman, Knut Wannheden, traceyyoshima, Merlin Bögershausen, Greg Oledzki, steve-aom-elliott

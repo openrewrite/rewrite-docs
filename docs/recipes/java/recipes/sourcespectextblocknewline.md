@@ -288,4 +288,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jammy Louie](mailto:jammy@moderne.io)
+
+Jammy Louie, Tim te Beek

@@ -272,4 +272,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Lewis Birks, Patrick Way, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jeroen Meijer](mailto:jjgmeijer@gmail.com)
+
+Lewis Birks, Patrick Way, Jacob van Lingen, Jonathan Schnéider, Knut Wannheden, Jeroen Meijer

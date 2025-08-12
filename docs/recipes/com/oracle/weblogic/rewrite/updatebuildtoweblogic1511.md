@@ -29,6 +29,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Upgrade `weblogic.version` Maven property](../../../../com/oracle/weblogic/rewrite/upgradeweblogicmavenpropertyversion)
+  * newVersion: `15.1.1-0-0`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `weblogic.version`
   * newValue: `15.1.1-0-0`
@@ -58,7 +59,8 @@ displayName: Update the WebLogic version to 15.1.1
 description: |
   This recipe will update the WebLogic version to 15.1.1 for Maven build.
 recipeList:
-  - com.oracle.weblogic.rewrite.UpgradeWeblogicMavenPropertyVersion
+  - com.oracle.weblogic.rewrite.UpgradeWeblogicMavenPropertyVersion:
+      newVersion: 15.1.1-0-0
   - org.openrewrite.maven.ChangePropertyValue:
       key: weblogic.version
       newValue: 15.1.1-0-0

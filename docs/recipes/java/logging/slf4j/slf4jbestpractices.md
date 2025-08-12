@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Unpack Logger method `new Object[] {...}` into varargs](../../../java/logging/argumentarraytovarargs)
 * [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass)
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
 * [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
@@ -58,6 +59,7 @@ tags:
   - slf4j
   - logging
 recipeList:
+  - org.openrewrite.java.logging.ArgumentArrayToVarargs
   - org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass
   - org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
@@ -413,4 +415,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), Aaron Gershman, [Sam Snyder](mailto:sam@moderne.io), [Pierre Delagrave](mailto:pierre@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kun Li](mailto:kun@moderne.io), jhl221123, Md Riyazul Islam, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Adriano Machado, [Peter Streef](mailto:p.streef@gmail.com), Craig P. Motlin, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [JohannisK](mailto:johan.kragt@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io)
+
+sullis, Tim te Beek, Pierre Delagrave, jhl221123, Sam Snyder, Adriano Machado, Kun Li

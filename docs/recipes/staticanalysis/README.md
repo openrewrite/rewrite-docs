@@ -5,6 +5,7 @@ _Remediations for issues identified by SAST tools._
 ## Categories
 
 * [Java](/recipes/staticanalysis/java)
+* [Maven](/recipes/staticanalysis/maven)
 
 ## Composite Recipes
 
@@ -43,6 +44,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert `new BufferedWriter(new FileWriter(File, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithfileandbooleanargumentsrecipe.md)
 * [Convert `new BufferedWriter(new FileWriter(String))` to `Files.newBufferedWriter(Path)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithstringargumentrecipe.md)
 * [Convert `new BufferedWriter(new FileWriter(String, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithstringandbooleanargumentsrecipe.md)
+* [Convert `while (true)` with initial `if` break to loop condition](./moveconditionstowhile.md)
 * [Covariant equals](./covariantequals.md)
 * [Custom import order](./customimportorder.md)
 * [Default comes last](./defaultcomeslast.md)
@@ -72,6 +74,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [No multiple variable declarations](./multiplevariabledeclarations.md)
 * [No primitive wrappers for #toString() or #compareTo(..)](./noprimitivewrappersfortostringorcompareto.md)
 * [Operator wrapping](./operatorwrap.md)
+* [Prefer direct comparison of numbers](./preferequalitycomparisonoverdifferencecheck.md)
+* [Prefer increment/decrement and compound assignment operators](./preferincrementoperator.md)
 * [Prefer `while` over `for` loops](./whileinsteadoffor.md)
 * [Properly use declaration-site type variance](./declarationsitetypevariance.md)
 * [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
@@ -90,6 +94,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove garbage collection invocations](./removecallstosystemgc.md)
 * [Remove redundant casts](./removeredundanttypecast.md)
 * [Remove redundant null checks before instanceof](./removeredundantnullcheckbeforeinstanceof.md)
+* [Remove redundant null checks before literal equals](./removeredundantnullcheckbeforeliteralequals.md)
 * [Remove `toString()` calls on arrays](./removetostringcallsfromarrayinstances.md)
 * [Remove unnecessary parentheses](./unnecessaryparentheses.md)
 * [Remove unneeded assertions](./removeunneededassertion.md)
@@ -104,7 +109,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Reorder annotations alphabetically](./reorderannotations.md)
 * [Replace `A.class.isInstance(a)` with `a instanceof A`](./replaceclassisinstancewithinstanceof.md)
 * [Replace `Optional#isPresent()` with `Optional#ifPresent()`](./replaceoptionalispresentwithifpresent.md)
-* [Replace Stream.toList() with Stream.collect(Collectors.toList())](./replacestreamtolistwithcollect.md)
 * [Replace `StringBuilder#append` with `String`](./replacestringbuilderwithstring.md)
 * [Replace `booleanExpression ? false : true` with `!booleanExpression`](./simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
 * [Replace `booleanExpression ? true : false` with `booleanExpression`](./simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
@@ -123,6 +127,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Set charset encoding explicitly when calling `String#getBytes`](./explicitcharsetonstringgetbytes.md)
 * [Simplify `Arrays.asList(..)` with varargs](./simplifyarraysaslist.md)
 * [Simplify boolean expression](./simplifybooleanexpression.md)
+* [Simplify boolean expressions using De Morgan's laws](./simplifybooleanexpressionwithdemorgan.md)
 * [Simplify boolean return](./simplifybooleanreturn.md)
 * [Simplify compound statement](./simplifycompoundstatement.md)
 * [Simplify consecutive assignments](./simplifyconsecutiveassignments.md)

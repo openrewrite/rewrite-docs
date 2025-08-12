@@ -146,4 +146,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jan-Jelle Kester](mailto:janjelle@jjkester.nl), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Jan-Jelle Kester, Tim te Beek, Jonathan Schneider

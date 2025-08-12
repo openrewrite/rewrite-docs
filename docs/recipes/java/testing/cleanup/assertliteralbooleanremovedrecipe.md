@@ -26,6 +26,57 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class Test {
+    void test() {
+        assertFalse(false, "message");
+        assertTrue(true, "message");
+        assertFalse(false);
+        assertTrue(true);
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,0 @@
+-import static org.junit.jupiter.api.Assertions.assertFalse;
+-import static org.junit.jupiter.api.Assertions.assertTrue;
+-
+class Test {
+@@ -6,4 +3,0 @@
+class Test {
+    void test() {
+-       assertFalse(false, "message");
+-       assertTrue(true, "message");
+-       assertFalse(false);
+-       assertTrue(true);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

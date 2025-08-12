@@ -202,4 +202,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), [Alex Boyko](mailto:aboyko@vmware.com), [Mike Solomon](mailto:mike@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+Jonathan Schneider, BoykoAlex, Alex Boyko, Mike Solomon, Sam Snyder, Niels de Bruin

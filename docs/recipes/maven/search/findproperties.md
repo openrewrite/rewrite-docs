@@ -243,4 +243,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com)
+
+Jonathan Schneider, Tim te Beek, Nick McKinney, Joan Viladrosa, Greg Adams, Sam Snyder, Aaron Gershman

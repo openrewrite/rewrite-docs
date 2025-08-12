@@ -45,6 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Change `List#add` to `List#plus` and verify.](/recipes/compiled/verification/changelistmethodandverify.md)
 * [Change auth related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeauthtypes.md)
 * [Change config related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeconfigtypes.md)
+* [Change dataformat fury to fury in xml/java dsl.](/recipes/org/apache/camel/upgrade/camel413/furydsl.md)
 * [Change of method names brought by Camel JMX API changes](/recipes/org/apache/camel/upgrade/camel40/changemanagedchoicembeanmethodname.md)
 * [Change of method names brought by Camel JMX API changes](/recipes/org/apache/camel/upgrade/camel40/changemanagedfailoverloadbalancermbeanmethodname.md)
 * [Change region related classes](/recipes/software/amazon/awssdk/v2migration/changeregiontypes.md)
@@ -53,6 +54,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
 * [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+* [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
@@ -280,4 +282,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com)
+
+Jonathan Schnéider, JohannisK, Greg Adams, Sam Snyder, Tim te Beek, Knut Wannheden, Tyler Van Gorder, traceyyoshima, Aaron Gershman

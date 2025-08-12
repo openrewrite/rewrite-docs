@@ -321,4 +321,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman, Daryl Robbins, Adam Slaski, [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Cathy, Josh Soref, Kun Li
+
+Chuka Obinabo, Anu Ramamoorthy, BhavanaPidapa, Tim te Beek, Knut Wannheden, Sam Snyder, traceyyoshima, Jonathan Schnéider, Tyler Van Gorder, Yifeng Jin, Jonathan Schneider, Aaron Gershman, Daryl Robbins, Adam Slaski, Patrick, Michael Keppler, Merlin Bögershausen, Shannon Pamperl, Laurens Westerlaken, Niels de Bruin, Cathy, Josh Soref, Kun Li

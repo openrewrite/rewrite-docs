@@ -199,4 +199,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Adriano Machado, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Adriano Machado, Sam Snyder, Jonathan Schnéider

@@ -191,4 +191,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:timtebeek@gmail.com), [Benjamin Muschko](mailto:benjamin.muschko@gmail.com)
+
+Tim te Beek, Benjamin Muschko

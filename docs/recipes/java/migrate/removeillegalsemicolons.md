@@ -20,12 +20,29 @@ _Remove semicolons after package declarations and imports, no longer accepted in
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-## Used by
+## Definition
 
-This recipe is used as part of the following composite recipes:
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Remove extra semicolons](../../staticanalysis/removeextrasemicolons)
 
-* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
+</TabItem>
 
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.RemoveIllegalSemicolons
+displayName: Remove illegal semicolons
+description: |
+  Remove semicolons after package declarations and imports, no longer accepted in Java 21 as of [JDK-8027682](https://bugs.openjdk.org/browse/JDK-8027682).
+recipeList:
+  - org.openrewrite.staticanalysis.RemoveExtraSemicolons
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
@@ -219,4 +236,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Tim te Beek, Jonathan Schnéider

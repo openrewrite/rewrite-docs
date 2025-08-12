@@ -177,4 +177,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Niels de Bruin](mailto:nielsdebruin@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+Niels de Bruin, Tim te Beek

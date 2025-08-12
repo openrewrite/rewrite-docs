@@ -64,6 +64,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `commons-codec`
   * newVersion: `1.17.x`
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbinding)
+* [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
+* [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
+* [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
+* [Update `jakarta.annotation-api` dependency if it exists](../../java/migrate/updatejakartaannotationsifforjavax)
+* [Update `jakarta.annotation-api` dependency if it exists](../../java/migrate/updatejakartaannotationsifexistsforjakarta)
 
 </TabItem>
 
@@ -111,6 +116,11 @@ recipeList:
       artifactId: commons-codec
       newVersion: 1.17.x
   - org.openrewrite.java.migrate.AddLombokMapstructBinding
+  - org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression
+  - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
+  - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
+  - org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax
+  - org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta
 
 ```
 </TabItem>
@@ -551,4 +561,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, Daryl Robbins, Adam Slaski, [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), Aakarshit Uppal, BramliAK, [Shannon Pamperl](mailto:shanman190@gmail.com), eocantu, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Cathy, Kun Li, Josh Soref
+
+Chuka Obinabo, Tyler Van Gorder, Sam Snyder, Tim te Beek, Anu Ramamoorthy, Jacob van Lingen, Jonathan Schnéider, Pierre Delagrave, Laurens Westerlaken, Melloware, Patrick

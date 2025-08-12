@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.recipes.SingleDocumentExample**
 
-_Ensures that there is only one `@DocumentExample` annotation per test class, as that looks best in the documentation._
+_Ensures there's only one `@DocumentExample` annotated `@Test` method per test class, as that looks best in our documentation. `@ParameterizedTest` methods are not supported._
 
 ## Recipe source
 
@@ -320,4 +320,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+
+Tim te Beek

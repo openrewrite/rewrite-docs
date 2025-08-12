@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Sandeep Nagaraj, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+
+Sandeep Nagaraj, Jonathan Schnéider, Knut Wannheden

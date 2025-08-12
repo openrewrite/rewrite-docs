@@ -247,3 +247,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+traceyyoshima, Lucas Han, Aaron Gershman

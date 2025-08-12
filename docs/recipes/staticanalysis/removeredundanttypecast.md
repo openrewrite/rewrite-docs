@@ -271,4 +271,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Niklas Gustavsson](mailto:niklas@protocol7.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com)
+
+Knut Wannheden, traceyyoshima, Tim te Beek, Niklas Gustavsson, Jonathan Schnéider, Patrick

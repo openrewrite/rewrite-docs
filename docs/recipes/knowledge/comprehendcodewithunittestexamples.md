@@ -109,4 +109,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-justine-gehring, [justine](mailto:justine.gehring@gmail.com)
+
+justine-gehring, justine

@@ -113,6 +113,8 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+* [Update `jakarta.annotation-api` dependency if it exists](/recipes/java/migrate/updatejakartaannotationsifexistsforjakarta.md)
+* [Update `jakarta.annotation-api` dependency if it exists](/recipes/java/migrate/updatejakartaannotationsifforjavax.md)
 * [Update jakarta annotations dependency](/recipes/java/micronaut/updatejakartaannotations.md)
 
 
@@ -306,3 +308,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Tim te Beek, traceyyoshima, sgartner03, Evie Lau, Tobias Lidskog, Tyler Van Gorder, Melloware

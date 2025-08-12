@@ -276,4 +276,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Evie Lau, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+Evie Lau, Jonathan Schnéider, Tim te Beek

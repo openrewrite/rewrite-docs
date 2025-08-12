@@ -271,4 +271,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Serhii Manko](mailto:mankoffserg@gmail.com), [Lakshya Kwatra](mailto:lakshya.kwatra.official@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com)
+
+Serhii Manko, Lakshya Kwatra, Laurens Westerlaken

@@ -19,6 +19,13 @@ _Prefers the usage of `assertSame` or `assertNotSame` methods instead of using o
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
+
 ## Example
 
 
@@ -273,4 +280,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Greg Oledzki, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+Greg Oledzki, Knut Wannheden, Jonathan Schnéider, Tim te Beek

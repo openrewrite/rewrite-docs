@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.devcenter.DevCenterStarter**
 
-_This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/)._
+_This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/)._
 
 ## Recipe source
 
@@ -50,7 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: io.moderne.devcenter.DevCenterStarter
 displayName: DevCenter
 description: |
-  This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
+  This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
 recipeList:
   - io.moderne.devcenter.LibraryUpgrade:
       cardName: Move to Spring Boot 3.5.0
@@ -307,4 +307,5 @@ _Security issues in the repository._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Bryce Tompkins, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Peter Streef](mailto:peter@moderne.io), [Bryce Tompkins](mailto:bryce@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Scott Jungling](mailto:scott@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+
+Jonathan Schneider, Bryce Tompkins, Nate Danner

@@ -231,4 +231,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Niels de Bruin](mailto:nielsdebruin@gmail.com), [Sam Snyder](mailto:sam@moderne.io)
+
+Niels de Bruin, Sam Snyder

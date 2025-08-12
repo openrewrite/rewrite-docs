@@ -25,6 +25,47 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.Session;
+public class SomeClass {
+    public void doSomething(Session session) {
+        session.createQuery("SELECT e FROM Entity e");
+    }
+}
+```
+
+###### After
+```java
+import org.hibernate.Session;
+public class SomeClass {
+    public void doSomething(Session session) {
+        session.createSelectionQuery("SELECT e FROM Entity e", Object.class);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+public class SomeClass {
+    public void doSomething(Session session) {
+-       session.createQuery("SELECT e FROM Entity e");
++       session.createSelectionQuery("SELECT e FROM Entity e", Object.class);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -116,4 +157,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com)
+
+Jacob van Lingen

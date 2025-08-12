@@ -389,4 +389,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)
+
+Shannon Pamperl, Tim te Beek, Jente Sondervorst, Jonathan Schneider, Sam Snyder, Greg Oledzki, Joan Viladrosa, steve-aom-elliott

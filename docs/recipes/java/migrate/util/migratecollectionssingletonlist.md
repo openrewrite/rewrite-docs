@@ -262,4 +262,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Yeikel, Michel Gonzalez, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Tyler Van Gorder, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Patrick](mailto:patway99@gmail.com)
+
+Yeikel, Michel Gonzalez, Sam Snyder, Tim te Beek, Jonathan Schnéider, Knut Wannheden, Tyler Van Gorder, Tracey Yoshima, Patrick

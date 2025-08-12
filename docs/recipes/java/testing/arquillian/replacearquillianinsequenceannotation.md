@@ -286,4 +286,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[James R. Perkins](mailto:jperkins@redhat.com), [Tim te Beek](mailto:tim@moderne.io)
+
+James R. Perkins, Tim te Beek

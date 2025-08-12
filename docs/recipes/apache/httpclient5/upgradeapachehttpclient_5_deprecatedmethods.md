@@ -279,3 +279,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Joan Viladrosa, Pierre Delagrave, SiBorea, steve-aom-elliott, Fiete, Tim te Beek

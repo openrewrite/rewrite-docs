@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.devcenter.SecurityStarter**
 
-_This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/)._
+_This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/)._
 
 ## Recipe source
 
@@ -48,7 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: io.moderne.devcenter.SecurityStarter
 displayName: OWASP top ten
 description: |
-  This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
+  This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
 recipeList:
   - org.openrewrite.java.security.OwaspA01
   - org.openrewrite.java.security.OwaspA02
@@ -69,6 +69,105 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [DevCenter](/recipes/devcenter/devcenterstarter.md)
+
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.File;
+
+class Foo {
+  void bar() {
+    File tmp = File.createTempFile("prefix", "suffix");
+  }
+}
+```
+
+###### After
+```java
+import java.io.File;
+import java.nio.file.Files;
+
+class Foo {
+  void bar() {
+    File tmp = Files.createTempFile("prefix", "suffix").toFile();
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import java.io.File;
++import java.nio.file.Files;
+
+@@ -5,1 +6,1 @@
+class Foo {
+  void bar() {
+-   File tmp = File.createTempFile("prefix", "suffix");
++   File tmp = Files.createTempFile("prefix", "suffix").toFile();
+  }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.File;
+
+class Foo {
+  void bar() {
+    File tmp = File.createTempFile("prefix", "suffix");
+  }
+}
+```
+
+###### After
+```java
+import java.io.File;
+import java.nio.file.Files;
+
+class Foo {
+  void bar() {
+    File tmp = Files.createTempFile("prefix", "suffix").toFile();
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import java.io.File;
++import java.nio.file.Files;
+
+@@ -5,1 +6,1 @@
+class Foo {
+  void bar() {
+-   File tmp = File.createTempFile("prefix", "suffix");
++   File tmp = Files.createTempFile("prefix", "suffix").toFile();
+  }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -294,4 +393,5 @@ _Security issues in the repository._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Bryce Tompkins, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Scott Jungling](mailto:scott@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+
+Jonathan Schneider, Nate Danner

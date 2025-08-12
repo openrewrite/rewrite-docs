@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension](../../../java/testing/junit5/environmentvariables)
 * [Use wiremock extension](../../../java/testing/junit5/usewiremockextension)
 * [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled)
 * [Use JUnit Jupiter `Executable`](../../../java/testing/junit5/throwingrunnabletoexecutable)
@@ -69,6 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use Vert.x JUnit 5 Extension](../../../java/testing/junit5/vertxunittovertxjunit5)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](../../../java/testing/junit5/enclosedtonested)
 * [JUnit 5 inner test classes should be annotated with `@Nested`](../../../java/testing/junit5/addmissingnested)
+* [Use OkHttp 3 MockWebServer for JUnit 5](../../../java/testing/junit5/upgradeokhttpmockwebserver)
 * [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension)
 * [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused)
 * [Use XMLUnit Legacy for JUnit 5](../../../java/testing/junit5/usexmlunitlegacy)
@@ -120,6 +122,7 @@ tags:
   - junit
   - testing
 recipeList:
+  - org.openrewrite.java.testing.junit5.EnvironmentVariables
   - org.openrewrite.java.testing.junit5.UseWiremockExtension
   - org.openrewrite.java.testing.junit5.IgnoreToDisabled
   - org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable
@@ -156,6 +159,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5
   - org.openrewrite.java.testing.junit5.EnclosedToNested
   - org.openrewrite.java.testing.junit5.AddMissingNested
+  - org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer
   - org.openrewrite.java.testing.junit5.UseMockitoExtension
   - org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
   - org.openrewrite.java.testing.junit5.UseXMLUnitLegacy
@@ -920,3 +924,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Patrick, Jonathan Schneider, Nick McKinney, Sam Snyder, Tyler Van Gorder, Laurens Westerlaken, steve-aom-elliott, Peter Puškár, Tim te Beek, Kun Li, Andrii Rodionov, DidierLoiseau, Patrick Way, Greg Adams, Jente Sondervorst, James R. Perkins, Knut Wannheden, magicwerk, Fiete, peter-janssen

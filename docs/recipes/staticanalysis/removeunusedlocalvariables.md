@@ -279,4 +279,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Bartosz Gałek](mailto:bartosz@galek.com.pl), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [David Tran](mailto:david.tran@snowflake.com), [steve-aom-elliott](mailto:steve@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+Jonathan Schneider, Tim te Beek, Aaron Gershman, Bartosz Gałek, Sam Snyder, Knut Wannheden, traceyyoshima, Jonathan Leitschuh, Shannon Pamperl, David Tran, steve-aom-elliott, Niels de Bruin

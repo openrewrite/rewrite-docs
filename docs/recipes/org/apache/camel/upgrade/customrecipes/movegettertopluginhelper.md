@@ -23,7 +23,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldMethodName | Name of the method on external camel context. |  |
+| `String` | oldMethodName | Name of the method on external camel context. | `TODO Provide a usage example for the docs` |
 
 
 ## Used by
@@ -44,7 +44,7 @@ name: com.yourorg.MoveGetterToPluginHelperExample
 displayName: Move getter from context to PluginHelper. example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.MoveGetterToPluginHelper:
-      oldMethodName: null
+      oldMethodName: TODO Provide a usage example for the docs
 ```
 
 Now that `com.yourorg.MoveGetterToPluginHelperExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:
@@ -110,7 +110,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MoveGetterToPluginHelper --recipe-option "oldMethodName=null"
+mod run . --recipe MoveGetterToPluginHelper --recipe-option "oldMethodName=TODO Provide a usage example for the docs"
 ```
 
 If the recipe is not available locally, then you can install it using:

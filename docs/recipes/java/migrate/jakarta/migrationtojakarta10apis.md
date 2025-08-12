@@ -32,11 +32,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Update Jakarta EE annotation Dependencies to 2.1.x.](../../../java/migrate/jakarta/updatejakartaannotations2)
 * [Update Jakarta EE XML Web Services Dependencies for EE 10.](../../../java/migrate/jakarta/updatejakartaxmlwsee10)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.activation`
   * artifactId: `jakarta.activation-api`
+  * newVersion: `2.1.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
   * newVersion: `2.1.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.authentication`
@@ -121,11 +124,14 @@ description: |
 tags:
   - jakarta
 recipeList:
-  - org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2
   - org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.activation
       artifactId: jakarta.activation-api
+      newVersion: 2.1.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
       newVersion: 2.1.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.authentication
@@ -397,3 +403,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Tobias Lidskog, Evie Lau, Jacob van Lingen, ranuradh

@@ -181,4 +181,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Scott Jungling](mailto:scott.jungling@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Tyler Van Gorder, Adriano Machado, [Peter Streef](mailto:peter@moderne.io)
+
+Scott Jungling, Jonathan Schnéider, Tim te Beek, Tyler Van Gorder, Adriano Machado, Peter Streef

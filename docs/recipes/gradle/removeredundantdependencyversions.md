@@ -237,4 +237,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+
+Jacob van Lingen, Shannon Pamperl, Sam Snyder, Tim te Beek, Knut Wannheden, Jonathan Schnéider, JohannisK, Merlin Bögershausen

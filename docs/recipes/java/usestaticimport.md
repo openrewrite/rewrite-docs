@@ -30,6 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 * [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md)
 * [Statically import JUnit Jupiter assertions](/recipes/java/testing/junit5/staticimports.md)
@@ -180,4 +181,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Niklas Gustavsson](mailto:niklas@protocol7.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:peter@moderne.io), [Knut Wannheden](mailto:knut@moderne.io)
+
+Jonathan Leitschuh, Tim te Beek, Sam Snyder, Michael Keppler, Jonathan Schnéider, Peter Streef

@@ -45,6 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `StringUtils.trimToNull(String)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$trimtonullrecipe)
 * [Replace `StringUtils.trim(String)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$trimrecipe)
 * [Replace `StringUtils.upperCase(String)` with JDK internals](../../../apache/commons/lang/apachecommonsstringutilsrecipes$uppercaserecipe)
+* [Remove redundant null check when using `StringUtils.isNotBlank(String)`](../../../apache/commons/lang/apachecommonsstringutilsrecipes$removeredundantnullcheckwithisnotblankrecipe)
 
 </TabItem>
 
@@ -75,6 +76,7 @@ recipeList:
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$TrimToNullRecipe
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$TrimRecipe
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$UppercaseRecipe
+  - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$RemoveRedundantNullCheckWithIsNotBlankRecipe
 
 ```
 </TabItem>

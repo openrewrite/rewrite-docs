@@ -263,4 +263,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+
+Jonathan Schneider, Kevin Carpenter™️, Merlin Bögershausen, Tim te Beek

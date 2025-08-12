@@ -36,7 +36,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Boot 2.7](../../../java/spring/boot2/upgradespringboot_2_7)
 * [Enable Spring Batch Annotation](../../../java/spring/boot3/removeenablebatchprocessing)
 * [Migrate to Java 17](../../../java/migrate/upgradetojava17)
-* [Update Jakarta EE annotation Dependencies to 2.1.x.](../../../java/migrate/jakarta/updatejakartaannotations2)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -105,7 +104,6 @@ recipeList:
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
   - org.openrewrite.java.spring.boot3.RemoveEnableBatchProcessing
   - org.openrewrite.java.migrate.UpgradeToJava17
-  - org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: "*"
@@ -1405,4 +1403,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), Anu Ramamoorthy, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [qwtfps](mailto:qwtfps@163.com), pdesprez, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, SiBorea, Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Melloware](mailto:mellowaredev@gmail.com), [steve-aom-elliott](mailto:steve@moderne.io), 123Haynes, BhavanaPidapa, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), Evie Lau, [Tim te Beek](mailto:timtebeek@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), Cathy, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Fabian Krüger, Simon Zilliken, [Guillaume Husta](mailto:guillaume.husta@gmail.com), [Kun Li](mailto:kun@moderne.io), Kushank24, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), Aaron Gershman, Daryl Robbins, ranuradh, Adam Slaski, nbruno, [adammak](mailto:maka9@mcmaster.ca), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Sandeep Nagaraj, Michel Gonzalez, [BoykoAlex](mailto:aboyko@pivotal.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Tyler Van Gorder, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Michael Keppler](mailto:bananeweizen@gmx.de), [Shannon Pamperl](mailto:shanman190@gmail.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aakarshit Uppal, BramliAK, Josh Soref, [Benjamin Muschko](mailto:benjamin.muschko@gmail.com), eocantu, [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), Adriano Machado, rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)
+
+Shannon Pamperl, BoykoAlex, Sam Snyder, Tyler Van Gorder, Tim te Beek, Jonathan Schneider, Joan Viladrosa, Alex Boyko, Nick McKinney, Laurens Westerlaken, xLitil, Thomas Zub, SiBorea, Patrik Ivarsson, Bs Mahi, Harald Aamot, Kun Li

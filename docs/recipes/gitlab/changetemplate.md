@@ -252,4 +252,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Steven Tompkins](mailto:steven.tompkins.jr@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)
+
+Steven Tompkins, Tim te Beek, Jonathan Schneider, steve-aom-elliott

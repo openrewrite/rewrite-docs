@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate to 4.12.1"
+sidebar_label: "Migrate to 4.13.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to 4.12.1
+# Migrate to 4.13.0
 
 **org.apache.camel.upgrade.CamelMigrationRecipe**
 
-_Migrates Apache Camel application to 4.12.1_
+_Migrates Apache Camel application to 4.13.0_
 
 ## Recipe source
 
@@ -42,15 +42,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Upgrade Maven dependency version](../../../../maven/upgradedependencyversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.12.1`
+  * newVersion: `4.13.0`
 * [Upgrade Maven plugin version](../../../../maven/upgradepluginversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.12.1`
+  * newVersion: `4.13.0`
 * [Upgrade Maven parent project version](../../../../maven/upgradeparentversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.12.1`
+  * newVersion: `4.13.0`
 
 </TabItem>
 
@@ -60,9 +60,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.CamelMigrationRecipe
-displayName: Migrate to 4.12.1
+displayName: Migrate to 4.13.0
 description: |
-  Migrates Apache Camel application to 4.12.1
+  Migrates Apache Camel application to 4.13.0
 recipeList:
   - org.apache.camel.upgrade.camel411.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel410.CamelMigrationRecipe
@@ -78,15 +78,15 @@ recipeList:
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.12.1
+      newVersion: 4.13.0
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.12.1
+      newVersion: 4.13.0
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.12.1
+      newVersion: 4.13.0
 
 ```
 </TabItem>

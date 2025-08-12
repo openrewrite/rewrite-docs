@@ -177,4 +177,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Kun Li, Sam Snyder, Kevin Carpenter™️, Jonathan Schnéider

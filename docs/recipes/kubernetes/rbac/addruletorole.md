@@ -218,4 +218,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jon Brisbin](mailto:jon@jbrisbin.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Tyler Van Gorder, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+
+Jon Brisbin, Tracey Yoshima, Tyler Van Gorder, Jonathan Schneider, Tim te Beek, Knut Wannheden

@@ -63,6 +63,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
+* [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
 
 
 ## Usage
@@ -255,3 +256,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+sullis, Kevin Carpenter™️, Tim te Beek

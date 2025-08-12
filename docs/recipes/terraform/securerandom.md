@@ -154,4 +154,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [pocan101](mailto:jcortesd@gmail.com)
+
+Jonathan Schneider, Tyler Van Gorder, Kun Li, Tim te Beek, pocan101

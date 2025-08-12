@@ -11,67 +11,17 @@ import TabItem from '@theme/TabItem';
 
 _Update Jakarta EE annotation Dependencies to 2.1.x._
 
+### Tags
+
+* [deprecated](/reference/recipes-by-tag#deprecated)
+
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
-
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `jakarta.annotation`
-  * artifactId: `jakarta.annotation-api`
-  * newVersion: `2.1.x`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Nullable`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Nonnull`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2
-displayName: Update Jakarta EE annotation Dependencies to 2.1.x.
-description: |
-  Update Jakarta EE annotation Dependencies to 2.1.x.
-recipeList:
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: jakarta.annotation
-      artifactId: jakarta.annotation-api
-      newVersion: 2.1.x
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nullable
-      newFullyQualifiedTypeName: jakarta.annotation.Nullable
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nonnull
-      newFullyQualifiedTypeName: jakarta.annotation.Nonnull
-
-```
-</TabItem>
-</Tabs>
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
-* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
 
 
 ## Usage
@@ -264,3 +214,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Tim te Beek, Laurens Westerlaken

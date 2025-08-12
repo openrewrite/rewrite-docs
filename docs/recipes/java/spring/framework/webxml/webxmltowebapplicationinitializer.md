@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate ´web.xml` to `WebApplicationInitializer`"
+sidebar_label: "Migrate `web.xml` to `WebApplicationInitializer`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate ´web.xml` to `WebApplicationInitializer`
+# Migrate `web.xml` to `WebApplicationInitializer`
 
 **io.moderne.java.spring.framework.webxml.WebXmlToWebApplicationInitializer**
 
@@ -123,7 +123,7 @@ Or, if you'd like to create a declarative recipe, please see the below example o
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.WebXmlToWebApplicationInitializerExample
-displayName: Migrate ´web.xml` to `WebApplicationInitializer` example
+displayName: Migrate `web.xml` to `WebApplicationInitializer` example
 recipeList:
   - io.moderne.java.spring.framework.webxml.WebXmlToWebApplicationInitializer: 
       useJakartaEE: false

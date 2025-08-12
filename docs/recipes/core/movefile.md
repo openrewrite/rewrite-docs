@@ -174,4 +174,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jente Sondervorst](mailto:jentesondervorst@gmail.com)
+
+Jente Sondervorst, Sam Snyder, Greg Oledzki, Tim te Beek

@@ -248,4 +248,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Ioannis Tsiftzis](mailto:ioannis.tsiftzis@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Alejandro Bertolo Fafián, [Knut Wannheden](mailto:knut@moderne.io), [Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+
+Ioannis Tsiftzis, Tim te Beek, Alejandro Bertolo Fafián, Knut Wannheden, Kun Li, Jonathan Schnéider, Jonathan Leitschuh

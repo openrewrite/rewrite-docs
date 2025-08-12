@@ -173,4 +173,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:timtebeek@gmail.com)
+
+Tim te Beek

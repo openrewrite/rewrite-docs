@@ -248,4 +248,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Nick McKinney](mailto:mckinneynicholas@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adriano Machado, [Tim te Beek](mailto:tim@moderne.io), Ryan Hudson, [Niels de Bruin](mailto:nielsdebruin@gmail.com), rob-valor, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)
+
+Nick McKinney, Sam Snyder, DidierLoiseau, Kevin McCarpenter, Jonathan Schneider, Tim te Beek, Adriano Machado, Ryan Hudson, Niels de Bruin, rob-valor, Jonathan Leitschuh, Kyle Scully

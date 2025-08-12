@@ -37,6 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Change Maven dependency example](/recipes/org/apache/camel/upgrade/camel413/furydependency.md)
 * [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](/recipes/ai/timefold/solver/migration/fork/timefoldchangedependencies.md)
 * [Renamed dependencies](/recipes/org/apache/camel/upgrade/camel46/renameddependencies.md)
 * [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
@@ -290,4 +291,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Nick McKinney](mailto:mckinneynicholas@gmail.com), ashakirin, [Shannon Pamperl](mailto:shanman190@gmail.com), [Tobias Lidskog](mailto:tlidskog@paypal.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Valentin Delaye, [Jon Black](mailto:code@jonblack.me)
+
+Jonathan Leitschuh, Jente Sondervorst, Tyler Van Gorder, Tim te Beek, Patrick, ashakirin, Nick McKinney, Shannon Pamperl, Tobias Lidskog, Jonathan Schnéider, Kevin Carpenter™️, Jon Black

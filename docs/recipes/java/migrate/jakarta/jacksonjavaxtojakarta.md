@@ -873,3 +873,7 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Tyler Van Gorder, Shannon Pamperl, Renette Ros, Fiete, Tim te Beek

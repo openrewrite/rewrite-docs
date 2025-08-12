@@ -26,6 +26,63 @@ This recipe is used as part of the following composite recipes:
 
 * [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+import org.springframework.test.web.reactive.server.WebTestClient
+
+class Test {
+    val webClient: WebTestClient = WebTestClient.bindToServer().build()
+    fun someMethod() {
+      webClient
+          .post()
+          .uri("/some/url")
+          .bodyValue("someValue")
+          .exchange()
+          .expectStatus()
+          .isEqualTo(200)
+    }
+}
+```
+
+###### After
+```kotlin
+import org.springframework.test.web.reactive.server.WebTestClient
+
+class Test {
+    val webClient: WebTestClient = WebTestClient.bindToServer().build()
+    fun someMethod() {
+      webClient
+          .post()
+          .uri("/some/url")
+          .bodyValue("someValue")
+          .exchange()
+          .expectStatus()
+          .isOk()
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -12,1 +12,1 @@
+          .exchange()
+          .expectStatus()
+-         .isEqualTo(200)
++         .isOk()
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -219,4 +276,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Fiete, Marius Barbulescu, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Fiete, Marius Barbulescu, Tim te Beek, Jonathan Schnéider

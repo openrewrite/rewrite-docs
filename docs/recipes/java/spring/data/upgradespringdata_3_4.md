@@ -243,4 +243,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Guillaume Husta](mailto:guillaume.husta@gmail.com)
+
+Guillaume Husta

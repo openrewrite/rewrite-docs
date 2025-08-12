@@ -270,4 +270,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[qwtfps](mailto:qwtfps@163.com), [Greg Oledzki](mailto:greg.oledzki@moderne.io)
+
+qwtfps, Greg Oledzki

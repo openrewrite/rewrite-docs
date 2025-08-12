@@ -283,4 +283,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Aleksandar A Simpson](mailto:alek@asu.me), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Marvin, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Tymes](mailto:jeremy@jtymes.net)
+
+Aleksandar A Simpson, Jacob van Lingen, Tim te Beek, Marvin, Jonathan Schnéider, Knut Wannheden

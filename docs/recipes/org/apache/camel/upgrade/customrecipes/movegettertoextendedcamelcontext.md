@@ -23,14 +23,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldMethodName | Name of the method on external camel context. |  |
+| `String` | oldMethodName | Name of the method on external camel context. | `TODO Provide a usage example for the docs` |
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)](/recipes/org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters.md)
+* [Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`](/recipes/org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters.md)
 
 
 ## Usage
@@ -44,7 +44,7 @@ name: com.yourorg.MoveGetterToExtendedCamelContextExample
 displayName: Move getter from context to ExtendedCamelContext. example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
-      oldMethodName: null
+      oldMethodName: TODO Provide a usage example for the docs
 ```
 
 Now that `com.yourorg.MoveGetterToExtendedCamelContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:
@@ -110,7 +110,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MoveGetterToExtendedCamelContext --recipe-option "oldMethodName=null"
+mod run . --recipe MoveGetterToExtendedCamelContext --recipe-option "oldMethodName=TODO Provide a usage example for the docs"
 ```
 
 If the recipe is not available locally, then you can install it using:

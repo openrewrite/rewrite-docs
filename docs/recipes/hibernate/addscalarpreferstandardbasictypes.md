@@ -279,4 +279,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Guillaume Husta](mailto:guillaume.husta@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+Guillaume Husta, Tim te Beek

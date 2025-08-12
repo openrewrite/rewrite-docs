@@ -297,4 +297,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Yeikel](mailto:email@yeikel.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+
+Aaron Gershman, Tim te Beek, Yeikel, traceyyoshima, Knut Wannheden

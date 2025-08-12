@@ -270,4 +270,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Yifeng Jin, Knut Wannheden, Tim te Beek, Jonathan Schnéider

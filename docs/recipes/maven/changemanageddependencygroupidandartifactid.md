@@ -35,7 +35,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
@@ -267,4 +266,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, ashakirin, [Tobias Lidskog](mailto:tlidskog@paypal.com), [Tim te Beek](mailto:tim@moderne.io), [Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io)
+
+Jonathan Leitschuh, Tyler Van Gorder, ashakirin, Tobias Lidskog, Tim te Beek, Steve Hill, Jonathan Schnéider, Nick McKinney, Kevin Carpenter™️, Sam Snyder, Jacob van Lingen

@@ -270,3 +270,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Kyle Scully, Scott Jungling

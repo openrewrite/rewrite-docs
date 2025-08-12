@@ -307,4 +307,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Tim te Beek](mailto:tim@moderne.io), Cathy
+
+Jonathan Schneider, Sam Snyder, Tyler Van Gorder, Knut Wannheden, Yifeng Jin, Tim te Beek, Cathy

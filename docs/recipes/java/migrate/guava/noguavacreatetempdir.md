@@ -293,4 +293,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io)
+
+Patrick Way, Jonathan Schnéider, Sam Snyder, Tyler Van Gorder, Knut Wannheden, Aaron Gershman, Tim te Beek

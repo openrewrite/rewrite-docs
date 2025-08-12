@@ -311,4 +311,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Peter Streef](mailto:peter@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Peter Streef, Tim te Beek, Knut Wannheden, Jonathan Schnéider

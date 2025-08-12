@@ -26,6 +26,54 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 6.5.x](/recipes/hibernate/migratetohibernate65.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.annotations.SQLInsert;
+import org.hibernate.annotations.ResultCheckStyle;
+
+import static org.hibernate.annotations.ResultCheckStyle.NONE;
+
+@SQLInsert(check = NONE, sql = "")
+class A {}
+```
+
+###### After
+```java
+import org.hibernate.annotations.SQLInsert;
+import org.hibernate.jdbc.Expectation;
+
+@SQLInsert(verify = Expectation.None.class, sql = "")
+class A {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import org.hibernate.annotations.SQLInsert;
+-import org.hibernate.annotations.ResultCheckStyle;
++import org.hibernate.jdbc.Expectation;
+
+@@ -4,3 +4,1 @@
+import org.hibernate.annotations.ResultCheckStyle;
+
+-import static org.hibernate.annotations.ResultCheckStyle.NONE;
+-
+-@SQLInsert(check = NONE, sql = "")
++@SQLInsert(verify = Expectation.None.class, sql = "")
+class A {}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -219,4 +267,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Niels de Bruin, Jonathan Schneider, Tim te Beek

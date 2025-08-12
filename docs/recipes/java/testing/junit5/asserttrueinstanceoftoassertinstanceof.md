@@ -19,6 +19,13 @@ _Migration of JUnit4 (or potentially JUnit5) test case in form of assertTrue(x i
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
+
 ## Example
 
 
@@ -273,4 +280,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-matusmatokpt, [Tim te Beek](mailto:timtebeek@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+matusmatokpt, Tim te Beek, JohannisK, Jonathan Schnéider

@@ -286,4 +286,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[JohannisK](mailto:johan.kragt@moderne.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)
+
+JohannisK, Tim te Beek, steve-aom-elliott

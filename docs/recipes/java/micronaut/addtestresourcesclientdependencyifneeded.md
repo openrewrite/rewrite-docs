@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jeremy Grelle](mailto:grellej@unityfoundation.io), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io)
+
+Jeremy Grelle, Tim te Beek, Joan Viladrosa

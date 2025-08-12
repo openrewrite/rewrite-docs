@@ -121,4 +121,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com)
+
+Andrii Rodionov

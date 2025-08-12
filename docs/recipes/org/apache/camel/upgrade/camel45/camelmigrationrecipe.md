@@ -28,7 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace context.${method}(*) with context.getCamelContextExtension().${method}(*)](../../../../../org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters)
+* [Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`](../../../../../org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters)
 * [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](../../../../../org/apache/camel/upgrade/camel45/traceproperties)
 * [Renamed classes for elasticsearch,opensearch and spring regis](../../../../../org/apache/camel/upgrade/camel45/renamedclasses)
 
@@ -56,7 +56,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.12.1](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.13.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrates `camel 4.4` application to `camel 4.8`](/recipes/io/quarkus/updates/camel/camel47/camelquarkusmigrationrecipe.md)
 
 

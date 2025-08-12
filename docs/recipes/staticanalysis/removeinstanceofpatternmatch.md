@@ -212,4 +212,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Denis Nikiforov](mailto:denis.nikif@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Denis Nikiforov, Knut Wannheden, Tim te Beek, Jonathan Schnéider

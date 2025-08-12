@@ -277,4 +277,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Scott Jungling](mailto:scott@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io)
+
+Scott Jungling, Tim te Beek, Greg Oledzki, Jacob van Lingen

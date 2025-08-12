@@ -220,4 +220,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Ryan Walker](mailto:ryanwalker7@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [aet2505](mailto:aet2505@gmail.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+
+Tim te Beek, Jonathan Schneider
