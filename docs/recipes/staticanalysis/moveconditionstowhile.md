@@ -1,23 +1,74 @@
 ---
-sidebar_label: "Replace Stream.toList() with Stream.collect(Collectors.toList())"
+sidebar_label: "Convert `while (true)` with initial `if` break to loop condition"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace Stream.toList() with Stream.collect(Collectors.toList())
+# Convert `while (true)` with initial `if` break to loop condition
 
-**org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect**
+**org.openrewrite.staticanalysis.MoveConditionsToWhile**
 
-_Replace Java 16 `Stream.toList()` with Java 11 `Stream.collect(Collectors.toList())`._
+_Simplifies `while (true)` loops where the first statement is an `if` statement that only contains a `break`. The condition is inverted and moved to the loop condition for better readability._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceStreamToListWithCollect.java), 
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/MoveConditionsToWhile.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void foo(int counter) {
+        while (true) {
+            if (counter >= 5) {
+                break;
+            }
+            System.out.println("Counter: " + counter);
+            counter++;
+        }
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void foo(int counter) {
+        while (counter < 5) {
+            System.out.println("Counter: " + counter);
+            counter++;
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,4 +3,1 @@
+class Test {
+    void foo(int counter) {
+-       while (true) {
+-           if (counter >= 5) {
+-               break;
+-           }
++       while (counter < 5) {
+            System.out.println("Counter: " + counter);
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -34,7 +85,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect")
+    activeRecipe("org.openrewrite.staticanalysis.MoveConditionsToWhile")
     setExportDatatables(true)
 }
 
@@ -67,7 +118,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect")
+        activeRecipe("org.openrewrite.staticanalysis.MoveConditionsToWhile")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -102,7 +153,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect</recipe>
+            <recipe>org.openrewrite.staticanalysis.MoveConditionsToWhile</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -125,7 +176,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.MoveConditionsToWhile -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -133,7 +184,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceStreamToListWithCollect
+mod run . --recipe MoveConditionsToWhile
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -147,7 +198,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.MoveConditionsToWhile" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -212,4 +263,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Denis Nikiforov](mailto:denis.nikif@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+
+Greg Oledzki, Tim te Beek

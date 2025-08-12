@@ -263,4 +263,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Avneesh Dubey](mailto:avneeshdubey1198@gmail.com)
+
+Avneesh Dubey, Tim te Beek

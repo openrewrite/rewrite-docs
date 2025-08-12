@@ -291,4 +291,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Simon Zilliken, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl)
+
+Simon Zilliken, Jonathan Schneider, Laurens Westerlaken

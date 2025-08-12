@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Update SCM section to match Git origin"
+sidebar_label: "Update SCM with Git origin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update SCM section to match Git origin
+# Update SCM with Git origin
 
 **org.openrewrite.maven.UpdateScmFromGitOrigin**
 
-_Updates the Maven `<scm>` section based on the Git remote origin._
+_Updates or adds the Maven `<scm>` tag based on the Git remote origin. By default, only existing Source Control Management (SCM) sections are updated. Set `addIfMissing` to `true` to also add missing SCM sections._
 
 ## Recipe source
 
@@ -18,6 +18,12 @@ _Updates the Maven `<scm>` section based on the Git remote origin._
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Boolean` | addIfMissing | *Optional*. If set to `true`, the recipe will add a `<scm>` section if it is missing. If set to `false` (default), the recipe will only update existing `<scm>` sections. |  |
 
 
 ## Used by
@@ -152,4 +158,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-e5LA
+
+e5LA, Sam Snyder

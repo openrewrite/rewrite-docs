@@ -251,4 +251,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Daniel Wallman](mailto:daniel.wallman@m.co), [Greg Adams](mailto:greg@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Alex Boyko](mailto:aboyko@pivotal.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Tyler Van Gorder, [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado, [Henrik S](mailto:henrik.strath@m.co)
+
+Jonathan Schneider, Sam Snyder, Daniel Wallman, Greg Adams, Laurens Westerlaken, Alex Boyko, traceyyoshima, Tyler Van Gorder, Aaron Gershman, Tim te Beek, Adriano Machado, Henrik S

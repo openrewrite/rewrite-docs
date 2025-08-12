@@ -46,6 +46,7 @@ This recipe is used as part of the following composite recipes:
 * [Add AWS SDK for Java v2 S3 Event Notification dependency if needed](/recipes/software/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
 * [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
 * [Add Hibernate ORM Core if has dependencies](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+* [Add JBoss LogManager's SLF4J provider](/recipes/java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency.md)
 * [Add Jakarta EE 9 Servlet Dependency](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
 * [Add Quarkus 2 dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
 * [Add `javax.validation-api` dependency](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)

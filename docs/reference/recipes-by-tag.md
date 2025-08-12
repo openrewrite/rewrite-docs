@@ -58,7 +58,7 @@ _16 recipes_
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
 * [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md) - _Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md) - _Migrates to the last Apache POI 3.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions._
-* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 * [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md) - _Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`._
 * [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/io/usestandardcharsets.md) - _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over third-party usage of apache's `org.apache.commons.io.Charsets`._
 * [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md) - _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`._
@@ -1360,8 +1360,9 @@ _3 recipes_
 
 ## dependencies
 
-_4 recipes_
+_5 recipes_
 
+* [Change artifacts for a Maven plugin configuration](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md) - _Change artifacts for a Maven plugin configuration artifacts._
 * [Change dependabot schedule interval](/recipes/github/changedependabotscheduleinterval.md) - _Change the schedule interval for a given package-ecosystem in a `dependabot.yml` configuration file. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates)._
 * [Check for github-actions updates daily](/recipes/github/dependabotcheckforgithubactionsupdatesdaily.md) - _Set dependabot to check for github-actions updates daily._
 * [Check for github-actions updates weekly](/recipes/github/dependabotcheckforgithubactionsupdatesweekly.md) - _Set dependabot to check for github-actions updates weekly._
@@ -1376,13 +1377,14 @@ _2 recipes_
 
 ## deprecated
 
-_16 recipes_
+_17 recipes_
 
 * [Migrate from OpenJPA to EclipseLink JPA](/recipes/java/migrate/javax/openjpatoeclipselink.md) - _These recipes help migrate Java Persistence applications using OpenJPA to EclipseLink JPA._
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md) - _This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11._
 * [Migrate to JavaEE6](/recipes/java/migrate/javaee6.md) - _These recipes help with the Migration to Java EE 6, flagging and updating deprecated methods._
 * [Migrate to JavaEE7](/recipes/java/migrate/javaee7-recipe.md) - _These recipes help with the Migration to Java EE 7, flagging and updating deprecated methods._
 * [Migrate to JavaEE8](/recipes/java/migrate/javaee8-recipe.md) - _These recipes help with the Migration to Java EE 8, flagging and updating deprecated methods._
+* [Update Jakarta EE annotation Dependencies to 2.1.x.](/recipes/java/migrate/jakarta/updatejakartaannotations2.md) - _Update Jakarta EE annotation Dependencies to 2.1.x._
 * [Use `Class#getDeclaredConstructor().newInstance()`](/recipes/java/migrate/lang/migrateclassnewinstancetogetdeclaredconstructornewinstance.md) - _Use `Class#getDeclaredConstructor().newInstance()` instead of the deprecated `Class#newInstance()` in Java 9 or higher._
 * [Use `ClassLoader#defineClass(String, byte[], int, int)`](/recipes/java/migrate/lang/migrateclassloaderdefineclass.md) - _Use `ClassLoader#defineClass(String, byte[], int, int)` instead of the deprecated `ClassLoader#defineClass(byte[], int, int)` in Java 1.1 or higher._
 * [Use `DriverManager#setLogWriter(java.io.PrintWriter)`](/recipes/java/migrate/sql/migratedrivermanagersetlogstream.md) - _Use `DriverManager#setLogWriter(java.io.PrintWriter)` instead of the deprecated `DriverManager#setLogStream(java.io.PrintStream)` in Java 1.2 or higher._
@@ -1410,12 +1412,6 @@ _2 recipes_
 
 * [Migrate WebLogic Schemas to 14.1.2](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md) - _This recipe will migrate WebLogic schemas to 14.1.2_
 * [Migrate WebLogic Schemas to 15.1.1](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md) - _This recipe will migrate WebLogic schemas to 15.1.1_
-
-## DevCenter:security
-
-_1 recipe_
-
-* [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md) - _Locate cryptographic configuration which may need to be updated for a brave new post-quantum-supremacy world._
 
 ## dropwizard
 
@@ -1966,7 +1962,7 @@ _4 recipes_
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md) - _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`_
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md) - _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`_
 * [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md) - _Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
-* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
+* [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 
 ## inject
 
@@ -1998,7 +1994,7 @@ _1 recipe_
 
 ## jakarta
 
-_99 recipes_
+_100 recipes_
 
 * [Add Hibernate ORM Core if has dependencies](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md) - _This recipe will add Hibernate ORM Core if has dependencies._
 * [Add Jakarta EE 9 Servlet Dependency](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md) - _Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext_
@@ -2008,6 +2004,7 @@ _99 recipes_
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md) - _This recipe will add explicit API dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well._
 * [Add explicit JAXB API dependencies and remove runtimes](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md) - _This recipe will add explicit API dependencies without runtime dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing API dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. All JAXB runtime implementation dependencies are removed._
 * [Add explicit JAXB API dependencies and runtime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md) - _This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well._
+* [Change artifacts for a Maven plugin configuration](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md) - _Change artifacts for a Maven plugin configuration artifacts._
 * [Faces XHTML migration for Jakarta EE 10](/recipes/java/migrate/jakarta/jakartafacesxhtmlee10.md) - _Find and replace legacy JSF namespace URIs with Jakarta Faces URNs in XHTML files._
 * [Faces XHTML migration for Jakarta EE 9](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md) - _Find and replace legacy JSF namespaces and javax references with Jakarta Faces values in XHTML files._
 * [Faces XHTML migration for Jakarta EE 9](/recipes/java/migrate/jakarta/jakartafacesxhtmlee9.md) - _Find and replace javax references to jakarta in XHTML files._
@@ -2102,12 +2099,14 @@ _99 recipes_
 
 ## jakartaee
 
-_4 recipes_
+_6 recipes_
 
 * [JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md) - _Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older._
 * [JSF 2.x to Jakarta Server Faces 3.x](/recipes/com/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md) - _Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespaces._
 * [Migrate from JavaX to Jakarta EE 9.1 Namespaces](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md) - _These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces._
 * [Migrate to Jakarta EE 9.1](/recipes/com/oracle/weblogic/rewrite/jakartaee9_1.md) - _These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods._
+* [Update Jakarta Persistence to 3.1](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md) - _Update Jakarta Persistence to 3.1._
+* [Update Jakarta Persistence to 3.2](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md) - _Update Jakarta Persistence to 3.2._
 
 ## java
 
@@ -2332,6 +2331,13 @@ _5 recipes_
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md) - _Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace._
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md) - _This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11._
 * [Use the latest JAX-WS API and runtime for Jakarta EE 8](/recipes/java/migrate/javax/addjaxwsruntime.md) - _Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
+
+## jboss
+
+_2 recipes_
+
+* [JBoss Logging Best Practices](/recipes/java/logging/jboss/jbossloggingbestpractices.md) - _This recipe applies best practices for logging in JBoss applications. It includes converting argument arrays to varargs for better readability and performance._
+* [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md) - _Migrates usage of the JBoss Logging facade to using SLF4J._
 
 ## jdbc
 
@@ -2582,11 +2588,13 @@ _1 recipe_
 
 ## logging
 
-_19 recipes_
+_21 recipes_
 
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](/recipes/java/logging/slf4j/completeexceptionlogging.md) - _It is a common mistake to call `Exception.getMessage()` when passing an exception into a log method. Not all exception types have useful messages, and even if the message is useful this omits the stack trace. Including a complete stack trace of the error along with the exception message in the log allows developers to better understand the context of the exception and identify the source of the error more quickly and accurately.  If the method invocation includes any call to `Exception.getMessage()` or `Exception.getLocalizedMessage()` and not an exception is already passed as the last parameter to the log method, then we will append the exception as the last parameter in the log method._
+* [JBoss Logging Best Practices](/recipes/java/logging/jboss/jbossloggingbestpractices.md) - _This recipe applies best practices for logging in JBoss applications. It includes converting argument arrays to varargs for better readability and performance._
 * [Loggers should be named for their enclosing classes](/recipes/java/logging/slf4j/loggersnamedforenclosingclass.md) - _Ensure `LoggerFactory#getLogger(Class)` is called with the enclosing class as argument._
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md) - _Transforms usages of Apache Commons Logging 1.x to leveraging SLF4J 1.x directly._
+* [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md) - _Migrates usage of the JBoss Logging facade to using SLF4J._
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md) - _Transforms code written using Apache Commons Logging to use Log4j 2.x API._
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md) - _Transforms code written using `java.util.logging` to use Log4j 2.x API._
 * [Migrate JUL to SLF4J](/recipes/java/logging/slf4j/jultoslf4j.md) - _Migrates usage of Java Util Logging (JUL) to using SLF4J directly._
@@ -2946,9 +2954,11 @@ _1 recipe_
 
 ## persistence
 
-_1 recipe_
+_3 recipes_
 
 * [Migrate xmlns entries in `orm.xml` files](/recipes/java/migrate/jakarta/javaxormxmltojakartaormxml.md) - _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation._
+* [Update Jakarta Persistence to 3.1](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md) - _Update Jakarta Persistence to 3.1._
+* [Update Jakarta Persistence to 3.2](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md) - _Update Jakarta Persistence to 3.2._
 
 ## persistence-configuration
 
@@ -3035,9 +3045,10 @@ _2 recipes_
 
 ## RSPEC-1125
 
-_1 recipe_
+_2 recipes_
 
 * [Simplify boolean expression](/recipes/staticanalysis/simplifybooleanexpression.md) - _Checks for overly complicated boolean expressions, such as `if (b == true)`, `b || true`, `!false`, etc._
+* [Simplify boolean expressions using De Morgan's laws](/recipes/staticanalysis/simplifybooleanexpressionwithdemorgan.md) - _Applies De Morgan's laws to simplify boolean expressions with negation. Transforms `!(a &amp;&amp; b)` to `!a || !b` and `!(a || b)` to `!a &amp;&amp; !b`._
 
 ## RSPEC-1192
 
@@ -3478,7 +3489,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [Use the diamond operator](/recipes/staticanalysis/usediamondoperator.md) - _The diamond operator (`&lt;&gt;`) should be used. Java 7 introduced the diamond operator (&lt;&gt;) to reduce the verbosity of generics code. For instance, instead of having to declare a `List`'s type in both its declaration and its constructor, you can now simplify the constructor declaration with `&lt;&gt;`, and the compiler will infer the type._
+* [Use the diamond operator](/recipes/staticanalysis/usediamondoperator.md) - _The diamond operator (`&lt;&gt;`) should be used. Java 7 introduced the diamond operator to reduce the verbosity of generics code. For instance, instead of having to declare a `List`'s type in both its declaration and its constructor, you can now simplify the constructor declaration with `&lt;&gt;`, and the compiler will infer the type._
 
 ## RSPEC-S2333
 
@@ -3874,8 +3885,11 @@ _1 recipe_
 
 ## schemas
 
-_34 recipes_
+_37 recipes_
 
+* [Add `prefer-application-packages` for JPA in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md) - _This recipe will add a `prefer-application-packages` entry for Jakarta Persistence in `weblogic.xml` if it does not already exist._
+* [Add `prefer-application-packages` for SLF4J in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md) - _This recipe will add a `prefer-application-packages` entry for SLF4J in `weblogic.xml` if it does not already exist._
+* [Create `weblogic.xml` if it does not exist](/recipes/com/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md) - _This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespace if it does not already exist._
 * [Migrate WebLogic Schemas to 14.1.2](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md) - _This recipe will migrate WebLogic schemas to 14.1.2_
 * [Migrate WebLogic Schemas to 15.1.1](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md) - _This recipe will migrate WebLogic schemas to 15.1.1_
 * [Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md) - _Migrate xmlns entries in WebLogic JDBC schema files to WebLogic 14.1.2_
@@ -4003,11 +4017,12 @@ _1 recipe_
 
 ## slf4j
 
-_11 recipes_
+_12 recipes_
 
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](/recipes/java/logging/slf4j/completeexceptionlogging.md) - _It is a common mistake to call `Exception.getMessage()` when passing an exception into a log method. Not all exception types have useful messages, and even if the message is useful this omits the stack trace. Including a complete stack trace of the error along with the exception message in the log allows developers to better understand the context of the exception and identify the source of the error more quickly and accurately.  If the method invocation includes any call to `Exception.getMessage()` or `Exception.getLocalizedMessage()` and not an exception is already passed as the last parameter to the log method, then we will append the exception as the last parameter in the log method._
 * [Loggers should be named for their enclosing classes](/recipes/java/logging/slf4j/loggersnamedforenclosingclass.md) - _Ensure `LoggerFactory#getLogger(Class)` is called with the enclosing class as argument._
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md) - _Transforms usages of Apache Commons Logging 1.x to leveraging SLF4J 1.x directly._
+* [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md) - _Migrates usage of the JBoss Logging facade to using SLF4J._
 * [Migrate JUL to SLF4J](/recipes/java/logging/slf4j/jultoslf4j.md) - _Migrates usage of Java Util Logging (JUL) to using SLF4J directly._
 * [Migrate Log4j 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/log4j1toslf4j1.md) - _Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
 * [Migrate Log4j 2.x to SLF4J 1.x](/recipes/java/logging/slf4j/log4j2toslf4j1.md) - _Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
@@ -4100,9 +4115,10 @@ _76 recipes_
 
 ## springdata
 
-_1 recipe_
+_2 recipes_
 
 * [Upgrade Spring Data BOM to 2024.1.x](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md) - _Upgrade Spring Data BOM to 2024.1.x version._
+* [Upgrade Spring Data JPA to 3.4.6](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md) - _Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-data-bom v2024.1.x_
 
 ## springdoc
 
@@ -4127,7 +4143,7 @@ _2 recipes_
 
 ## springframework
 
-_8 recipes_
+_9 recipes_
 
 * [Add WebLogic 15.1.1 PetClinic extras](/recipes/com/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md) - _Run migration extras for migrated Spring Framework PetClinic example run on WebLogic 15.1.1._
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md) - _Change cacheManager to use the SimpleCacheManager._
@@ -4137,6 +4153,7 @@ _8 recipes_
 * [Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md) - _Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2._
 * [Update Default Servlet Handler for Spring Framework if empty](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md) - _This recipe will update Spring Framework default servlet handler if empty, as noted in the Spring Framework 6.2 [documentation](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/default-servlet-handler.html)._
 * [Upgrade Spring Data BOM to 2024.1.x](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md) - _Upgrade Spring Data BOM to 2024.1.x version._
+* [Upgrade Spring Data JPA to 3.4.6](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md) - _Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-data-bom v2024.1.x_
 
 ## sqlserver
 
@@ -4619,8 +4636,11 @@ _1 recipe_
 
 ## web-app
 
-_2 recipes_
+_5 recipes_
 
+* [Add `prefer-application-packages` for JPA in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md) - _This recipe will add a `prefer-application-packages` entry for Jakarta Persistence in `weblogic.xml` if it does not already exist._
+* [Add `prefer-application-packages` for SLF4J in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md) - _This recipe will add a `prefer-application-packages` entry for SLF4J in `weblogic.xml` if it does not already exist._
+* [Create `weblogic.xml` if it does not exist](/recipes/com/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md) - _This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespace if it does not already exist._
 * [Migrate xmlns entries in `weblogic.xml` files to WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md) - _Migrate xmlns entries in WebLogic schema files to WebLogic 14.1.2_
 * [Migrate xmlns entries in `weblogic.xml` files to WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md) - _This recipe will update the `xmlns` entries in `weblogic.xml` files to WebLogic 15.1.1_
 
@@ -4632,14 +4652,17 @@ _1 recipe_
 
 ## weblogic
 
-_51 recipes_
+_56 recipes_
 
 * [Add WebLogic 15.1.1 PetClinic extras](/recipes/com/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md) - _Run migration extras for migrated Spring Framework PetClinic example run on WebLogic 15.1.1._
+* [Add `prefer-application-packages` for JPA in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md) - _This recipe will add a `prefer-application-packages` entry for Jakarta Persistence in `weblogic.xml` if it does not already exist._
+* [Add `prefer-application-packages` for SLF4J in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md) - _This recipe will add a `prefer-application-packages` entry for SLF4J in `weblogic.xml` if it does not already exist._
 * [Add implicit TLD with taglib 2.1](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md) - _Add `implicit.tld` file with taglib 2.1 to `src/main/webapp/WEB-INF/tags`._
 * [Add implicit TLD with taglib 3.0](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md) - _Add `implicit.tld` file with taglib 3.0 to `src/main/webapp/WEB-INF/tags`._
 * [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](/recipes/com/oracle/weblogic/rewrite/changejakartainjectapidependencyscope.md) - _This recipe will change the jakarta.inject-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.inject-api jar from being deployed to WebLogic which can cause class conflicts._
 * [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](/recipes/com/oracle/weblogic/rewrite/changejakartawebservicersapidependencyscope.md) - _This recipe will change the jakarta.ws.rs-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.ws.rs-api jar from being deployed to WebLogic which can cause class conflicts._
 * [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](/recipes/com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md) - _This recipe will change the jakarta.xml.bind-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.xml.bind-api jar from being deployed to WebLogic which can cause class conflicts._
+* [Create `weblogic.xml` if it does not exist](/recipes/com/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md) - _This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespace if it does not already exist._
 * [Migrate WebLogic Schemas to 14.1.2](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md) - _This recipe will migrate WebLogic schemas to 14.1.2_
 * [Migrate WebLogic Schemas to 15.1.1](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md) - _This recipe will migrate WebLogic schemas to 15.1.1_
 * [Migrate from JavaX to Jakarta EE 9.1 Namespaces](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md) - _These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces._
@@ -4685,6 +4708,8 @@ _51 recipes_
 * [Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md) - _Replace removed WebLogicLoadTimeWeaver with LoadTimeWeaver from Spring Framework 6.2.x._
 * [Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2](/recipes/com/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md) - _Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2._
 * [Update Default Servlet Handler for Spring Framework if empty](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md) - _This recipe will update Spring Framework default servlet handler if empty, as noted in the Spring Framework 6.2 [documentation](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/default-servlet-handler.html)._
+* [Update Jakarta Persistence to 3.1](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md) - _Update Jakarta Persistence to 3.1._
+* [Update Jakarta Persistence to 3.2](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md) - _Update Jakarta Persistence to 3.2._
 
 ## webservices
 

@@ -28,12 +28,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](../../java/migrate/util/replacestreamcollectwithtolist)
+  * convertToList: `true`
 * [RewriteTest classes should not be public](../../java/recipes/rewritetestclassesshouldnotbepublic)
 * [Automatically select recipe examples from the unit test cases of a recipe](../../java/recipes/selectrecipeexamples)
 * [Single `@DocumentExample` per test class](../../java/recipes/singledocumentexample)
 * [Show `@DocumentExample`s first](../../java/recipes/reordertestmethods)
+* [Replace null with RewriteTest.doesNotExist()](../../java/recipes/replacenullwithdoesnotexist)
 * [New line at the end of `SourceSpecs` text blocks](../../java/recipes/sourcespectextblocknewline)
 * [Minimal indentation for `SourceSpecs` text blocks](../../java/recipes/sourcespectextblockindentation)
+* [Refactor RewriteTest to use defaults method](../../java/recipes/userewritetestdefaults)
 * [Remove `test` prefix from JUnit 5 tests](../../java/testing/cleanup/removetestprefix)
 * [Remove `public` visibility of JUnit 5 tests](../../java/testing/cleanup/testsshouldnotbepublic)
 * [Fix missing braces](../../staticanalysis/needbraces)
@@ -54,12 +58,16 @@ displayName: Recipe testing best practices
 description: |
   Best practices for testing recipes.
 recipeList:
+  - org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList:
+      convertToList: true
   - org.openrewrite.java.recipes.RewriteTestClassesShouldNotBePublic
   - org.openrewrite.java.recipes.SelectRecipeExamples
   - org.openrewrite.java.recipes.SingleDocumentExample
   - org.openrewrite.java.recipes.ReorderTestMethods
+  - org.openrewrite.java.recipes.ReplaceNullWithDoesNotExist
   - org.openrewrite.java.recipes.SourceSpecTextBlockNewLine
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
+  - org.openrewrite.java.recipes.UseRewriteTestDefaults
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
   - org.openrewrite.staticanalysis.NeedBraces
@@ -269,3 +277,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Merlin Bogershausen, Tim te Beek, Jammy Louie

@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-SiBorea, [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+SiBorea, Laurens Westerlaken, Tim te Beek, Merlin Bögershausen, Jonathan Schnéider

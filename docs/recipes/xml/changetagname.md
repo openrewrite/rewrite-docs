@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Change dataformat fury to fury in xml/java dsl.](/recipes/org/apache/camel/upgrade/camel413/furydsl.md)
 * [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
 * [XML DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/org/apache/camel/upgrade/camel412/xmldslbearer.md)
 
@@ -225,4 +226,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+Nick McKinney, Jonathan Schnéider, Tim te Beek

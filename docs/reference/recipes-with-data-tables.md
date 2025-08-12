@@ -17,195 +17,17 @@ There is a defined set of properties that should not be set using `Security.setP
   * **io.moderne.cryptography.table.InsecureSetProperties**: *An itemization of the properties used in such calls*
 
 
-### [Find SSL configuration](/recipes/cryptography/findsslconfiguration.md)
- 
-_io.moderne.cryptography.FindSslConfiguration_
-
-The configuration of Secure Socket Layer (SSL) and Transport Layer Security (TLS) is a key aspect of making a secure  application. This recipe detects and enumerates these configurations.
-
-#### Data tables:
-
-  * **io.moderne.cryptography.table.SslConfiguration**: *Records configuration of Secure Socket Layer (SSL) and Transport Layer Security (TLS).*
-
-
-### [Find hardcoded PEM certificates](/recipes/cryptography/findhardcodedcertificate.md)
- 
-_io.moderne.cryptography.FindHardcodedCertificate_
-
-Detects hardcoded PEM certificates passed into `CertificateFactory.generateCertificate()`.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find hardcoded cipher suites on SSL sockets](/recipes/cryptography/findhardcodedciphersuitesonsslsocket.md)
- 
-_io.moderne.cryptography.FindHardcodedCipherSuitesOnSslSocket_
-
-Detects hardcoded cipher suites in SSL socket configurations, which can lead to security vulnerabilities.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find hardcoded algorithms in `KeyPairGenerator`](/recipes/cryptography/findhardcodedkeypairgenerator.md)
- 
-_io.moderne.cryptography.FindHardcodedKeyPairGenerator_
-
-Detects hardcoded cryptographic algorithms.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find hardcoded PEM private keys](/recipes/cryptography/findhardcodedprivatekey.md)
- 
-_io.moderne.cryptography.FindHardcodedPrivateKey_
-
-Detects hardcoded PEM private keys passed into `KeyFactory.generatePrivate()`.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find hardcoded protocols on SSL socket creation](/recipes/cryptography/findhardcodedprotocolsonsslsocketcreation.md)
- 
-_io.moderne.cryptography.FindHardcodedProtocolsOnSSLSocketCreation_
-
-Finds hardcoded protocols in SSL socket creation methods, such as `SSLContext.getInstance(String)`.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find hardcoded protocols on SSL sockets](/recipes/cryptography/findhardcodedprotocolsonsslsocketsetprotocols.md)
- 
-_io.moderne.cryptography.FindHardcodedProtocolsOnSSLSocketSetProtocols_
-
-Detects hardcoded protocol versions in SSL socket configurations, which can hinder adaptability and security.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find hardcoded numbers passed into `RSAKeyGenParameterSpec`](/recipes/cryptography/findhardcodedrsakeygenparameterspec.md)
- 
-_io.moderne.cryptography.FindHardcodedRSAKeyGenParameterSpec_
-
-It is usually insecure to pass hardcoded numbers passed into `RSAKeyGenParameterSpec`.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find hardcoded algorithms in `SecretKeySpec`](/recipes/cryptography/findhardcodedsecretkeyspec.md)
- 
-_io.moderne.cryptography.FindHardcodedSecretKeySpec_
-
-Detects hardcoded cryptographic algorithms.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
 ### [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md)
  
 _io.moderne.cryptography.PostQuantumCryptography_
 
-Locate cryptographic configuration which may need to be updated for a brave new post-quantum-supremacy world.
+This recipe searches for instances in code that may be impacted by post quantum cryptography. Applications may need to support larger key sizes, different algorithms, or use crypto agility to handle the migration. The recipe includes detection of hardcoded values that affect behavior in a post-quantum world, programmatic configuration that may prevent algorithm changes, and general cryptographic usage patterns that should be reviewed.
 
 #### Data tables:
 
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
   * **io.moderne.cryptography.table.InsecureSetProperties**: *An itemization of the properties used in such calls*
-  * **io.moderne.cryptography.table.SslConfiguration**: *Records configuration of Secure Socket Layer (SSL) and Transport Layer Security (TLS).*
   * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
-
-
-### [Hardcoded algorithm choice](/recipes/cryptography/findhardcodedalgorithmchoice.md)
- 
-_io.moderne.cryptography.FindHardcodedAlgorithmChoice_
-
-Locate hardcoded algorithm choices in cryptographic code.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Hardcoded ciphersuite choice](/recipes/cryptography/findhardcodedciphersuitechoice.md)
- 
-_io.moderne.cryptography.FindHardcodedCiphersuiteChoice_
-
-Locate hardcoded ciphersuite choices in cryptographic code.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Hardcoded algorithm specific parameters](/recipes/cryptography/findhardcodedalgorithmspecificparameters.md)
- 
-_io.moderne.cryptography.FindHardcodedAlgorithmSpecificParameters_
-
-Locate hardcoded algorithm specific parameters in cryptographic code.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find where `SSLContext` is set as system default](/recipes/cryptography/findsslcontextdefault.md)
- 
-_io.moderne.cryptography.FindSslContextDefault_
-
-This includes anywhere where `SSLContext.setDefault` is called.
-
-#### Data tables:
-
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
-
-
-### [Find programmatic edits of `Security` provider list](/recipes/cryptography/findsecurityproviderediting.md)
- 
-_io.moderne.cryptography.FindSecurityProviderEditing_
-
-Locate programmatic edits of the `Security` provider list.
-
-#### Data tables:
-
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
-
-
-### [Find hardcoded protocol choice](/recipes/cryptography/findhardcodedprotocolchoice.md)
- 
-_io.moderne.cryptography.FindHardcodedProtocolChoice_
-
-Locate hardcoded protocol choices in cryptographic code.
-
-#### Data tables:
-
-  * **org.openrewrite.table.CryptoFlowStepsTable**: *Tracks the flow of cryptographic operations from hardcoded values through various transformations.*
-
-
-### [Find insecure `Security.setProperty` calls](/recipes/cryptography/findinsecuresecuritysetproperties.md)
- 
-_io.moderne.cryptography.FindInsecureSecuritySetProperties_
-
-Locate calls to `Security.setProperty` that set insecure properties.
-
-#### Data tables:
-
-  * **io.moderne.cryptography.table.InsecureSetProperties**: *An itemization of the properties used in such calls*
 
 
 ### [Move to JUnit 5](/recipes/devcenter/junitjupiterupgrade.md)
@@ -267,7 +89,7 @@ Look for results produced by recipes in the same recipe list that this recipe is
  
 _io.moderne.devcenter.DevCenterStarter_
 
-This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
+This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
 
 #### Data tables:
 
@@ -280,7 +102,7 @@ This is a default DevCenter configuration that can be used as a starting point f
  
 _io.moderne.devcenter.SecurityStarter_
 
-This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/dev-center/).
+This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
 
 #### Data tables:
 
@@ -299,6 +121,116 @@ Find Java Persistence Query Language definitions in the codebase.
   * **io.moderne.hibernate.search.JPQLQueries**: *Shows matching JPQL queries.*
 
 
+### [Find cyclomatic complexity](/recipes/analysis/java/controlflow/search/findcyclomaticcomplexity.md)
+ 
+_org.openrewrite.analysis.java.controlflow.search.FindCyclomaticComplexity_
+
+Calculates the cyclomatic complexity of methods and produces a data table containing the class name, method name, argument types, complexity value, and complexity threshold.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.controlflow.table.ComplexityTable**: *A table of methods and their cyclomatic complexity values.*
+
+
+### [Track data lineage](/recipes/analysis/java/datalineage/trackdatalineage.md)
+ 
+_org.openrewrite.analysis.java.datalineage.TrackDataLineage_
+
+Tracks the flow of data from database sources (JDBC queries, JPA entities) to API sinks (REST endpoints, GraphQL mutations) to understand data dependencies and support compliance requirements.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Find PII exposure in logs and external APIs](/recipes/analysis/java/privacy/findpiiexposure.md)
+ 
+_org.openrewrite.analysis.java.privacy.FindPiiExposure_
+
+Detects when Personally Identifiable Information (PII) is exposed through logging statements or sent to external APIs without proper sanitization. This helps prevent data leaks and ensures compliance with privacy regulations like GDPR and CCPA.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Find command injection vulnerabilities](/recipes/analysis/java/security/findcommandinjection.md)
+ 
+_org.openrewrite.analysis.java.security.FindCommandInjection_
+
+Detects when user-controlled input flows into system command execution methods like Runtime.exec() or ProcessBuilder, which could allow attackers to execute arbitrary commands.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Find LDAP injection vulnerabilities](/recipes/analysis/java/security/findldapinjection.md)
+ 
+_org.openrewrite.analysis.java.security.FindLdapInjection_
+
+Finds LDAP injection vulnerabilities by tracking tainted data flow from user input to LDAP queries.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Find path traversal vulnerabilities](/recipes/analysis/java/security/findpathtraversal.md)
+ 
+_org.openrewrite.analysis.java.security.FindPathTraversal_
+
+Detects potential path traversal vulnerabilities where user input flows to file system operations without proper validation.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Find SQL injection vulnerabilities](/recipes/analysis/java/security/findsqlinjection.md)
+ 
+_org.openrewrite.analysis.java.security.FindSqlInjection_
+
+Detects potential SQL injection vulnerabilities where user input flows to SQL execution methods without proper sanitization.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Find unencrypted PII storage](/recipes/analysis/java/security/findunencryptedpiistorage.md)
+ 
+_org.openrewrite.analysis.java.security.FindUnencryptedPiiStorage_
+
+Identifies when personally identifiable information (PII) is stored in databases, files, or other persistent storage without encryption.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Find XSS vulnerabilities](/recipes/analysis/java/security/findxssvulnerability.md)
+ 
+_org.openrewrite.analysis.java.security.FindXssVulnerability_
+
+Detects potential cross-site scripting vulnerabilities where user input flows to output methods without proper sanitization.
+
+#### Data tables:
+
+  * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
+
+
+### [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
+ 
+_io.moderne.java.spring.boot3.SpringBoot3BestPractices_
+
+Applies best practices to Spring Boot 3.5+ applications.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 ### [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
  
 _io.moderne.java.spring.boot3.UpgradeSpringBoot_3_4_
@@ -315,17 +247,6 @@ Migrate applications to the latest Spring Boot 3.4 release. This recipe will mod
 _io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5_
 
 Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
- 
-_io.moderne.java.spring.boot3.SpringBoot3BestPractices_
-
-Applies best practices to Spring Boot 3.5+ applications.
 
 #### Data tables:
 
@@ -467,6 +388,17 @@ Change a Gradle dependency coordinates. The `newGroupId` or `newArtifactId` **MU
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+### [Change Gradle managed dependency](/recipes/gradle/changemanageddependency.md)
+ 
+_org.openrewrite.gradle.ChangeManagedDependency_
+
+Change a Gradle managed dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. For now, only Spring Dependency Management Plugin entries are supported and no other forms of managed dependencies (yet).
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 ### [Add the Develocity Gradle plugin](/recipes/gradle/plugins/adddevelocitygradleplugin.md)
  
 _org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin_
@@ -515,7 +447,7 @@ Migrate from the Gradle Enterprise Gradle plugin to the Develocity Gradle plugin
  
 _org.openrewrite.gradle.search.DependencyInsight_
 
-Find direct and transitive dependencies matching a group, artifact, and optionally a configuration name. Results include dependencies that either directly match or transitively include a matching dependency.
+Find direct and transitive dependencies matching a group, artifact, resolved version, and optionally a configuration name. Results include dependencies that either directly match or transitively include a matching dependency.
 
 #### Data tables:
 
@@ -592,7 +524,7 @@ Upgrades the version of a transitive dependency in a Gradle build file. There ar
  
 _org.openrewrite.gradle.plugins.UpgradePluginVersion_
 
-Update a Gradle plugin by id to a later version defined by the plugins DSL.To upgrade a plugin dependency defined by `buildscript.dependencies`, use the `UpgradeDependencyVersion` recipe instead.
+Update a Gradle plugin by id to a later version defined by the plugins DSL. To upgrade a plugin dependency defined by `buildscript.dependencies`, use the `UpgradeDependencyVersion` recipe instead.
 
 #### Data tables:
 
@@ -1123,589 +1055,6 @@ Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis
   * **org.openrewrite.codemods.UI5Messages**: *Errors and warnings as reported by UI5.*
 
 
-### [Require braces around arrow function bodies](/recipes/codemods/cleanup/javascript/arrowbodystyle.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle_
-
-Require braces around arrow function bodies See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce or disallow capitalization of the first letter of a comment](/recipes/codemods/cleanup/javascript/capitalizedcomments.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.CapitalizedComments_
-
-Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce consistent brace style for all control statements](/recipes/codemods/cleanup/javascript/curly.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.Curly_
-
-Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce dot notation whenever possible](/recipes/codemods/cleanup/javascript/dotnotation.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.DotNotation_
-
-Enforce dot notation whenever possible  See [rule details](https://eslint.org/docs/latest/rules/dot-notation)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require the use of `===` and `!==`](/recipes/codemods/cleanup/javascript/eqeqeq.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.Eqeqeq_
-
-Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require or disallow logical assignment operator shorthand](/recipes/codemods/cleanup/javascript/logicalassignmentoperators.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.LogicalAssignmentOperators_
-
-Require or disallow logical assignment operator shorthand  See [rule details](https://eslint.org/docs/latest/rules/logical-assignment-operators)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce a particular style for multiline comments](/recipes/codemods/cleanup/javascript/multilinecommentstyle.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.MultilineCommentStyle_
-
-Enforce a particular style for multiline comments  See [rule details](https://eslint.org/docs/latest/rules/multiline-comment-style)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow equal signs explicitly at the beginning of regular expressions](/recipes/codemods/cleanup/javascript/nodivregex.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoDivRegex_
-
-Disallow equal signs explicitly at the beginning of regular expressions  See [rule details](https://eslint.org/docs/latest/rules/no-div-regex)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow else blocks after return statements in if statements](/recipes/codemods/cleanup/javascript/noelsereturn.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoElseReturn_
-
-Disallow else blocks after return statements in if statements  See [rule details](https://eslint.org/docs/latest/rules/no-else-return)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow unnecessary calls to `.bind()`](/recipes/codemods/cleanup/javascript/noextrabind.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoExtraBind_
-
-Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow unnecessary labels](/recipes/codemods/cleanup/javascript/noextralabel.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoExtraLabel_
-
-Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow shorthand type conversions](/recipes/codemods/cleanup/javascript/noimplicitcoercion.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoImplicitCoercion_
-
-Disallow shorthand type conversions  See [rule details](https://eslint.org/docs/latest/rules/no-implicit-coercion)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow if statements as the only statement in else blocks](/recipes/codemods/cleanup/javascript/nolonelyif.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoLonelyIf_
-
-Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow initializing variables to undefined](/recipes/codemods/cleanup/javascript/noundefinit.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoUndefInit_
-
-Disallow initializing variables to undefined  See [rule details](https://eslint.org/docs/latest/rules/no-undef-init)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow ternary operators when simpler alternatives exist](/recipes/codemods/cleanup/javascript/nounneededternary.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary_
-
-Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow unnecessary computed property keys in objects and classes](/recipes/codemods/cleanup/javascript/nouselesscomputedkey.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoUselessComputedKey_
-
-Disallow unnecessary computed property keys in objects and classes  See [rule details](https://eslint.org/docs/latest/rules/no-useless-computed-key)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow renaming import, export, and destructured assignments to the same name](/recipes/codemods/cleanup/javascript/nouselessrename.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoUselessRename_
-
-Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow redundant return statements](/recipes/codemods/cleanup/javascript/nouselessreturn.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoUselessReturn_
-
-Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require `let` or `const` instead of `var`](/recipes/codemods/cleanup/javascript/novar.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoVar_
-
-Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require or disallow method and property shorthand syntax for object literals](/recipes/codemods/cleanup/javascript/objectshorthand.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.ObjectShorthand_
-
-Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce variables to be declared either together or separately in functions](/recipes/codemods/cleanup/javascript/onevar.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.OneVar_
-
-Enforce variables to be declared either together or separately in functions  See [rule details](https://eslint.org/docs/latest/rules/one-var)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require or disallow assignment operator shorthand where possible](/recipes/codemods/cleanup/javascript/operatorassignment.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.OperatorAssignment_
-
-Require or disallow assignment operator shorthand where possible  See [rule details](https://eslint.org/docs/latest/rules/operator-assignment)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require using arrow functions for callbacks](/recipes/codemods/cleanup/javascript/preferarrowcallback.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback_
-
-Require using arrow functions for callbacks  See [rule details](https://eslint.org/docs/latest/rules/prefer-arrow-callback)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require const declarations for variables that are never reassigned after declared](/recipes/codemods/cleanup/javascript/preferconst.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferConst_
-
-Require const declarations for variables that are never reassigned after declared  See [rule details](https://eslint.org/docs/latest/rules/prefer-const)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require destructuring from arrays and/or objects](/recipes/codemods/cleanup/javascript/preferdestructuring.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferDestructuring_
-
-Require destructuring from arrays and/or objects  See [rule details](https://eslint.org/docs/latest/rules/prefer-destructuring)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow the use of `Math.pow` in favor of the ** operator](/recipes/codemods/cleanup/javascript/preferexponentiationoperator.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferExponentiationOperator_
-
-Disallow the use of `Math.pow` in favor of the ** operator  See [rule details](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals](/recipes/codemods/cleanup/javascript/prefernumericliterals.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals_
-
-Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)](/recipes/codemods/cleanup/javascript/preferobjecthasown.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn_
-
-Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead](/recipes/codemods/cleanup/javascript/preferobjectspread.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread_
-
-Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require template literals instead of string concatenation](/recipes/codemods/cleanup/javascript/prefertemplate.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.PreferTemplate_
-
-Require template literals instead of string concatenation  See [rule details](https://eslint.org/docs/latest/rules/prefer-template)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce sorted import declarations within modules](/recipes/codemods/cleanup/javascript/sortimports.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.SortImports_
-
-Enforce sorted import declarations within modules  See [rule details](https://eslint.org/docs/latest/rules/sort-imports)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require variables within the same declaration block to be sorted](/recipes/codemods/cleanup/javascript/sortvars.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.SortVars_
-
-Require variables within the same declaration block to be sorted  See [rule details](https://eslint.org/docs/latest/rules/sort-vars)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require or disallow strict mode directives](/recipes/codemods/cleanup/javascript/strict.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.Strict_
-
-Require or disallow strict mode directives  See [rule details](https://eslint.org/docs/latest/rules/strict)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require or disallow &quot;Yoda&quot; conditions](/recipes/codemods/cleanup/javascript/yoda.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.Yoda_
-
-Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Require or disallow Unicode byte order mark (BOM)](/recipes/codemods/cleanup/javascript/unicodebom.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.UnicodeBom_
-
-Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Recommended svelte code cleanup](/recipes/codemods/cleanup/svelte/recommendedsveltecodecleanup.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.RecommendedsvelteCodeCleanup_
-
-Collection of cleanup ESLint rules from [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte).
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [disallow dynamic slot name](/recipes/codemods/cleanup/svelte/nodynamicslotname.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName_
-
-disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [disallow to use of the store itself as an operand. Need to use $ prefix or get function.](/recipes/codemods/cleanup/svelte/requirestorereactiveaccess.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.RequireStoreReactiveAccess_
-
-disallow to use of the store itself as an operand. Need to use $ prefix or get function. See rule details for [svelte/require-store-reactive-access](https://sveltejs.github.io/eslint-plugin-svelte/rules/require-store-reactive-access/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [disallow unnecessary mustache interpolations](/recipes/codemods/cleanup/svelte/nouselessmustaches.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches_
-
-disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce the location of first attribute](/recipes/codemods/cleanup/svelte/firstattributelinebreak.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.FirstAttributeLinebreak_
-
-enforce the location of first attribute See rule details for [svelte/first-attribute-linebreak](https://sveltejs.github.io/eslint-plugin-svelte/rules/first-attribute-linebreak/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [require or disallow a space before tag's closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing_
-
-require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce quotes style of HTML attributes](/recipes/codemods/cleanup/svelte/htmlquotes.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.HtmlQuotes_
-
-enforce quotes style of HTML attributes See rule details for [svelte/html-quotes](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-quotes/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce self-closing style](/recipes/codemods/cleanup/svelte/htmlselfclosing.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.HtmlSelfClosing_
-
-enforce self-closing style See rule details for [svelte/html-self-closing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-self-closing/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce consistent indentation](/recipes/codemods/cleanup/svelte/indent.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.Indent_
-
-enforce consistent indentation See rule details for [svelte/indent](https://sveltejs.github.io/eslint-plugin-svelte/rules/indent/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce the maximum number of attributes per line](/recipes/codemods/cleanup/svelte/maxattributesperline.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine_
-
-enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce unified spacing in mustache](/recipes/codemods/cleanup/svelte/mustachespacing.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.MustacheSpacing_
-
-enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [disallow spaces around equal signs in attribute](/recipes/codemods/cleanup/svelte/nospacesaroundequalsignsinattribute.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute_
-
-disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [require class directives instead of ternary expressions](/recipes/codemods/cleanup/svelte/preferclassdirective.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.PreferClassDirective_
-
-require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [require style directives instead of style attribute](/recipes/codemods/cleanup/svelte/preferstyledirective.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.PreferStyleDirective_
-
-require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce use of shorthand syntax in attribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.ShorthandAttribute_
-
-enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce use of shorthand syntax in directives](/recipes/codemods/cleanup/svelte/shorthanddirective.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.ShorthandDirective_
-
-enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce order of attributes](/recipes/codemods/cleanup/svelte/sortattributes.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.SortAttributes_
-
-enforce order of attributes See rule details for [svelte/sort-attributes](https://sveltejs.github.io/eslint-plugin-svelte/rules/sort-attributes/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment](/recipes/codemods/cleanup/svelte/spacedhtmlcomment.md)
- 
-_org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment_
-
-enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
 ### [Improve regexes by making them shorter, consistent, and safer.](/recipes/codemods/cleanup/javascript/betterregex.md)
  
 _org.openrewrite.codemods.cleanup.javascript.BetterRegex_
@@ -1876,6 +1225,17 @@ Enforce the use of Unicode escapes instead of hexadecimal escapes. See [rule det
 _org.openrewrite.codemods.cleanup.javascript.NoInstanceofArray_
 
 Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow `if` statements as the only statement in `if` blocks without `else`.](/recipes/codemods/cleanup/javascript/nolonelyif.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoLonelyIf_
+
+Disallow `if` statements as the only statement in `if` blocks without `else`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-lonely-if.md)
 
 #### Data tables:
 
@@ -3235,6 +2595,798 @@ Require or disallow spacing around embedded expressions of template strings in `
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
+### [Recommended svelte code cleanup](/recipes/codemods/cleanup/svelte/recommendedsveltecodecleanup.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.RecommendedsvelteCodeCleanup_
+
+Collection of cleanup ESLint rules from [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte).
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [disallow dynamic slot name](/recipes/codemods/cleanup/svelte/nodynamicslotname.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName_
+
+disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [disallow to use of the store itself as an operand. Need to use $ prefix or get function.](/recipes/codemods/cleanup/svelte/requirestorereactiveaccess.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.RequireStoreReactiveAccess_
+
+disallow to use of the store itself as an operand. Need to use $ prefix or get function. See rule details for [svelte/require-store-reactive-access](https://sveltejs.github.io/eslint-plugin-svelte/rules/require-store-reactive-access/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [disallow unnecessary mustache interpolations](/recipes/codemods/cleanup/svelte/nouselessmustaches.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches_
+
+disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce the location of first attribute](/recipes/codemods/cleanup/svelte/firstattributelinebreak.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.FirstAttributeLinebreak_
+
+enforce the location of first attribute See rule details for [svelte/first-attribute-linebreak](https://sveltejs.github.io/eslint-plugin-svelte/rules/first-attribute-linebreak/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [require or disallow a space before tag's closing brackets](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing_
+
+require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce quotes style of HTML attributes](/recipes/codemods/cleanup/svelte/htmlquotes.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.HtmlQuotes_
+
+enforce quotes style of HTML attributes See rule details for [svelte/html-quotes](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-quotes/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce self-closing style](/recipes/codemods/cleanup/svelte/htmlselfclosing.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.HtmlSelfClosing_
+
+enforce self-closing style See rule details for [svelte/html-self-closing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-self-closing/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce consistent indentation](/recipes/codemods/cleanup/svelte/indent.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.Indent_
+
+enforce consistent indentation See rule details for [svelte/indent](https://sveltejs.github.io/eslint-plugin-svelte/rules/indent/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce the maximum number of attributes per line](/recipes/codemods/cleanup/svelte/maxattributesperline.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine_
+
+enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce unified spacing in mustache](/recipes/codemods/cleanup/svelte/mustachespacing.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.MustacheSpacing_
+
+enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [disallow spaces around equal signs in attribute](/recipes/codemods/cleanup/svelte/nospacesaroundequalsignsinattribute.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute_
+
+disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [require class directives instead of ternary expressions](/recipes/codemods/cleanup/svelte/preferclassdirective.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.PreferClassDirective_
+
+require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [require style directives instead of style attribute](/recipes/codemods/cleanup/svelte/preferstyledirective.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.PreferStyleDirective_
+
+require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce use of shorthand syntax in attribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.ShorthandAttribute_
+
+enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce use of shorthand syntax in directives](/recipes/codemods/cleanup/svelte/shorthanddirective.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.ShorthandDirective_
+
+enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce order of attributes](/recipes/codemods/cleanup/svelte/sortattributes.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.SortAttributes_
+
+enforce order of attributes See rule details for [svelte/sort-attributes](https://sveltejs.github.io/eslint-plugin-svelte/rules/sort-attributes/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment](/recipes/codemods/cleanup/svelte/spacedhtmlcomment.md)
+ 
+_org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment_
+
+enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Forbid empty named import](/recipes/codemods/cleanup/javascript/noemptynamedblocks.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoEmptyNamedBlocks_
+
+Forbid empty named import See rule details for [import/no-empty-named-blocks](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-empty-named-blocks.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Forbid import statements with CommonJS module.exports](/recipes/codemods/cleanup/javascript/noimportmoduleexports.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoImportModuleExports_
+
+Forbid import statements with CommonJS module.exports See rule details for [import/no-import-module-exports](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-import-module-exports.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Forbid import of modules using absolute paths](/recipes/codemods/cleanup/javascript/noabsolutepath.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoAbsolutePath_
+
+Forbid import of modules using absolute paths See rule details for [import/no-absolute-path](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-absolute-path.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Forbid importing packages through relative paths](/recipes/codemods/cleanup/javascript/norelativepackages.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoRelativePackages_
+
+Forbid importing packages through relative paths See rule details for [import/no-relative-packages](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-relative-packages.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Forbid unnecessary path segments in import and require statements](/recipes/codemods/cleanup/javascript/nouselesspathsegments.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments_
+
+Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce or ban the use of inline type-only markers for named imports](/recipes/codemods/cleanup/javascript/consistenttypespecifierstyle.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle_
+
+Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Ensure all imports appear before other statements](/recipes/codemods/cleanup/javascript/first.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.First_
+
+Ensure all imports appear before other statements See rule details for [import/first](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/first.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce a newline after import statements](/recipes/codemods/cleanup/javascript/newlineafterimport.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NewlineAfterImport_
+
+Enforce a newline after import statements See rule details for [import/newline-after-import](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/newline-after-import.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Forbid repeated import of the same module in multiple places](/recipes/codemods/cleanup/javascript/noduplicates.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoDuplicates_
+
+Forbid repeated import of the same module in multiple places See rule details for [import/no-duplicates](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-duplicates.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports.](/recipes/codemods/cleanup/javascript/nonamespace.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoNamespace_
+
+Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce a convention in module import order](/recipes/codemods/cleanup/javascript/order.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.Order_
+
+Enforce a convention in module import order See rule details for [import/order](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/order.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Recommended Storybook code cleanup](/recipes/codemods/cleanup/storybook/recommendedstorybookcodecleanup.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.RecommendedStorybookCodeCleanup_
+
+Collection of cleanup ESLint rules from [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme).
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Interactions should be awaited](/recipes/codemods/cleanup/storybook/awaitinteractions.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.AwaitInteractions_
+
+Interactions should be awaited See rule details for [storybook/await-interactions](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Story files should have a default export](/recipes/codemods/cleanup/storybook/defaultexports.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.DefaultExports_
+
+Story files should have a default export See rule details for [storybook/default-exports](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Deprecated hierarchy separator in title property](/recipes/codemods/cleanup/storybook/hierarchyseparator.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.HierarchySeparator_
+
+Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [A story should not have a redundant name property](/recipes/codemods/cleanup/storybook/noredundantstoryname.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName_
+
+A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Do not define a title in meta](/recipes/codemods/cleanup/storybook/notitlepropertyinmeta.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta_
+
+Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Stories should use PascalCase](/recipes/codemods/cleanup/storybook/preferpascalcase.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.PreferPascalCase_
+
+Stories should use PascalCase See rule details for [storybook/prefer-pascal-case](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Use expect from @storybook/jest](/recipes/codemods/cleanup/storybook/usestorybookexpect.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.UseStorybookExpect_
+
+Use expect from @storybook/jest See rule details for [storybook/use-storybook-expect](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-expect.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Do not use testing-library directly on stories](/recipes/codemods/cleanup/storybook/usestorybooktestinglibrary.md)
+ 
+_org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary_
+
+Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require braces around arrow function bodies](/recipes/codemods/cleanup/javascript/arrowbodystyle.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle_
+
+Require braces around arrow function bodies See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce or disallow capitalization of the first letter of a comment](/recipes/codemods/cleanup/javascript/capitalizedcomments.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.CapitalizedComments_
+
+Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce consistent brace style for all control statements](/recipes/codemods/cleanup/javascript/curly.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.Curly_
+
+Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce dot notation whenever possible](/recipes/codemods/cleanup/javascript/dotnotation.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.DotNotation_
+
+Enforce dot notation whenever possible  See [rule details](https://eslint.org/docs/latest/rules/dot-notation)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require the use of `===` and `!==`](/recipes/codemods/cleanup/javascript/eqeqeq.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.Eqeqeq_
+
+Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require or disallow logical assignment operator shorthand](/recipes/codemods/cleanup/javascript/logicalassignmentoperators.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.LogicalAssignmentOperators_
+
+Require or disallow logical assignment operator shorthand  See [rule details](https://eslint.org/docs/latest/rules/logical-assignment-operators)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce a particular style for multiline comments](/recipes/codemods/cleanup/javascript/multilinecommentstyle.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.MultilineCommentStyle_
+
+Enforce a particular style for multiline comments  See [rule details](https://eslint.org/docs/latest/rules/multiline-comment-style)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow equal signs explicitly at the beginning of regular expressions](/recipes/codemods/cleanup/javascript/nodivregex.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoDivRegex_
+
+Disallow equal signs explicitly at the beginning of regular expressions  See [rule details](https://eslint.org/docs/latest/rules/no-div-regex)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow else blocks after return statements in if statements](/recipes/codemods/cleanup/javascript/noelsereturn.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoElseReturn_
+
+Disallow else blocks after return statements in if statements  See [rule details](https://eslint.org/docs/latest/rules/no-else-return)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow unnecessary calls to `.bind()`](/recipes/codemods/cleanup/javascript/noextrabind.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoExtraBind_
+
+Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow unnecessary labels](/recipes/codemods/cleanup/javascript/noextralabel.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoExtraLabel_
+
+Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow shorthand type conversions](/recipes/codemods/cleanup/javascript/noimplicitcoercion.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoImplicitCoercion_
+
+Disallow shorthand type conversions  See [rule details](https://eslint.org/docs/latest/rules/no-implicit-coercion)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow initializing variables to undefined](/recipes/codemods/cleanup/javascript/noundefinit.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoUndefInit_
+
+Disallow initializing variables to undefined  See [rule details](https://eslint.org/docs/latest/rules/no-undef-init)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow ternary operators when simpler alternatives exist](/recipes/codemods/cleanup/javascript/nounneededternary.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary_
+
+Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow unnecessary computed property keys in objects and classes](/recipes/codemods/cleanup/javascript/nouselesscomputedkey.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoUselessComputedKey_
+
+Disallow unnecessary computed property keys in objects and classes  See [rule details](https://eslint.org/docs/latest/rules/no-useless-computed-key)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow renaming import, export, and destructured assignments to the same name](/recipes/codemods/cleanup/javascript/nouselessrename.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoUselessRename_
+
+Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow redundant return statements](/recipes/codemods/cleanup/javascript/nouselessreturn.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoUselessReturn_
+
+Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require `let` or `const` instead of `var`](/recipes/codemods/cleanup/javascript/novar.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.NoVar_
+
+Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require or disallow method and property shorthand syntax for object literals](/recipes/codemods/cleanup/javascript/objectshorthand.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.ObjectShorthand_
+
+Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce variables to be declared either together or separately in functions](/recipes/codemods/cleanup/javascript/onevar.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.OneVar_
+
+Enforce variables to be declared either together or separately in functions  See [rule details](https://eslint.org/docs/latest/rules/one-var)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require or disallow assignment operator shorthand where possible](/recipes/codemods/cleanup/javascript/operatorassignment.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.OperatorAssignment_
+
+Require or disallow assignment operator shorthand where possible  See [rule details](https://eslint.org/docs/latest/rules/operator-assignment)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require using arrow functions for callbacks](/recipes/codemods/cleanup/javascript/preferarrowcallback.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback_
+
+Require using arrow functions for callbacks  See [rule details](https://eslint.org/docs/latest/rules/prefer-arrow-callback)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require const declarations for variables that are never reassigned after declared](/recipes/codemods/cleanup/javascript/preferconst.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferConst_
+
+Require const declarations for variables that are never reassigned after declared  See [rule details](https://eslint.org/docs/latest/rules/prefer-const)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require destructuring from arrays and/or objects](/recipes/codemods/cleanup/javascript/preferdestructuring.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferDestructuring_
+
+Require destructuring from arrays and/or objects  See [rule details](https://eslint.org/docs/latest/rules/prefer-destructuring)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow the use of `Math.pow` in favor of the ** operator](/recipes/codemods/cleanup/javascript/preferexponentiationoperator.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferExponentiationOperator_
+
+Disallow the use of `Math.pow` in favor of the ** operator  See [rule details](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals](/recipes/codemods/cleanup/javascript/prefernumericliterals.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals_
+
+Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)](/recipes/codemods/cleanup/javascript/preferobjecthasown.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn_
+
+Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead](/recipes/codemods/cleanup/javascript/preferobjectspread.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread_
+
+Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require template literals instead of string concatenation](/recipes/codemods/cleanup/javascript/prefertemplate.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.PreferTemplate_
+
+Require template literals instead of string concatenation  See [rule details](https://eslint.org/docs/latest/rules/prefer-template)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Enforce sorted import declarations within modules](/recipes/codemods/cleanup/javascript/sortimports.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.SortImports_
+
+Enforce sorted import declarations within modules  See [rule details](https://eslint.org/docs/latest/rules/sort-imports)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require variables within the same declaration block to be sorted](/recipes/codemods/cleanup/javascript/sortvars.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.SortVars_
+
+Require variables within the same declaration block to be sorted  See [rule details](https://eslint.org/docs/latest/rules/sort-vars)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require or disallow strict mode directives](/recipes/codemods/cleanup/javascript/strict.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.Strict_
+
+Require or disallow strict mode directives  See [rule details](https://eslint.org/docs/latest/rules/strict)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require or disallow &quot;Yoda&quot; conditions](/recipes/codemods/cleanup/javascript/yoda.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.Yoda_
+
+Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Require or disallow Unicode byte order mark (BOM)](/recipes/codemods/cleanup/javascript/unicodebom.md)
+ 
+_org.openrewrite.codemods.cleanup.javascript.UnicodeBom_
+
+Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
 ### [Enforce consistent usage of destructuring assignment of props, state, and context](/recipes/codemods/cleanup/react/destructuringassignment.md)
  
 _org.openrewrite.codemods.cleanup.react.DestructuringAssignment_
@@ -3554,149 +3706,6 @@ Enforce propTypes declarations alphabetical sorting See rule details for [react/
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [Lint TypeScript code using ESLint](/recipes/codemods/ecmascript/eslinttypescriptdefaults.md)
- 
-_org.openrewrite.codemods.ecmascript.ESLintTypeScriptDefaults_
-
-The default config includes the `@typescript-eslint` plugin and the corresponding `plugin:@typescript-eslint/recommended` extend.
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Format TypeScript using ESLint Prettier plugin](/recipes/codemods/ecmascript/eslinttypescriptprettier.md)
- 
-_org.openrewrite.codemods.ecmascript.ESLintTypeScriptPrettier_
-
-Formats all TypeScript source code using the ESLint Prettier plugin.
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Forbid empty named import](/recipes/codemods/cleanup/javascript/noemptynamedblocks.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoEmptyNamedBlocks_
-
-Forbid empty named import See rule details for [import/no-empty-named-blocks](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-empty-named-blocks.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Forbid import statements with CommonJS module.exports](/recipes/codemods/cleanup/javascript/noimportmoduleexports.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoImportModuleExports_
-
-Forbid import statements with CommonJS module.exports See rule details for [import/no-import-module-exports](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-import-module-exports.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Forbid import of modules using absolute paths](/recipes/codemods/cleanup/javascript/noabsolutepath.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoAbsolutePath_
-
-Forbid import of modules using absolute paths See rule details for [import/no-absolute-path](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-absolute-path.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Forbid importing packages through relative paths](/recipes/codemods/cleanup/javascript/norelativepackages.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoRelativePackages_
-
-Forbid importing packages through relative paths See rule details for [import/no-relative-packages](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-relative-packages.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Forbid unnecessary path segments in import and require statements](/recipes/codemods/cleanup/javascript/nouselesspathsegments.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments_
-
-Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce or ban the use of inline type-only markers for named imports](/recipes/codemods/cleanup/javascript/consistenttypespecifierstyle.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle_
-
-Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Ensure all imports appear before other statements](/recipes/codemods/cleanup/javascript/first.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.First_
-
-Ensure all imports appear before other statements See rule details for [import/first](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/first.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce a newline after import statements](/recipes/codemods/cleanup/javascript/newlineafterimport.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NewlineAfterImport_
-
-Enforce a newline after import statements See rule details for [import/newline-after-import](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/newline-after-import.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Forbid repeated import of the same module in multiple places](/recipes/codemods/cleanup/javascript/noduplicates.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoDuplicates_
-
-Forbid repeated import of the same module in multiple places See rule details for [import/no-duplicates](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-duplicates.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports.](/recipes/codemods/cleanup/javascript/nonamespace.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.NoNamespace_
-
-Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Enforce a convention in module import order](/recipes/codemods/cleanup/javascript/order.md)
- 
-_org.openrewrite.codemods.cleanup.javascript.Order_
-
-Enforce a convention in module import order See rule details for [import/order](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/order.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
 ### [Recommended Jest code cleanup](/recipes/codemods/cleanup/jest/recommendedjestcodecleanup.md)
  
 _org.openrewrite.codemods.cleanup.jest.RecommendedJestCodeCleanup_
@@ -3878,6 +3887,28 @@ Suggest using test.todo See rule details for [jest/prefer-todo](https://github.c
 _org.openrewrite.codemods.cleanup.jest.ValidTitle_
 
 Enforce valid titles See rule details for [jest/valid-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/valid-title.md)
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Lint TypeScript code using ESLint](/recipes/codemods/ecmascript/eslinttypescriptdefaults.md)
+ 
+_org.openrewrite.codemods.ecmascript.ESLintTypeScriptDefaults_
+
+The default config includes the `@typescript-eslint` plugin and the corresponding `plugin:@typescript-eslint/recommended` extend.
+
+#### Data tables:
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
+### [Format TypeScript using ESLint Prettier plugin](/recipes/codemods/ecmascript/eslinttypescriptprettier.md)
+ 
+_org.openrewrite.codemods.ecmascript.ESLintTypeScriptPrettier_
+
+Formats all TypeScript source code using the ESLint Prettier plugin.
 
 #### Data tables:
 
@@ -4841,105 +4872,6 @@ Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*
   * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
 
 
-### [Recommended Storybook code cleanup](/recipes/codemods/cleanup/storybook/recommendedstorybookcodecleanup.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.RecommendedStorybookCodeCleanup_
-
-Collection of cleanup ESLint rules from [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme).
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Interactions should be awaited](/recipes/codemods/cleanup/storybook/awaitinteractions.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.AwaitInteractions_
-
-Interactions should be awaited See rule details for [storybook/await-interactions](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Story files should have a default export](/recipes/codemods/cleanup/storybook/defaultexports.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.DefaultExports_
-
-Story files should have a default export See rule details for [storybook/default-exports](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Deprecated hierarchy separator in title property](/recipes/codemods/cleanup/storybook/hierarchyseparator.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.HierarchySeparator_
-
-Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [A story should not have a redundant name property](/recipes/codemods/cleanup/storybook/noredundantstoryname.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName_
-
-A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Do not define a title in meta](/recipes/codemods/cleanup/storybook/notitlepropertyinmeta.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta_
-
-Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Stories should use PascalCase](/recipes/codemods/cleanup/storybook/preferpascalcase.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.PreferPascalCase_
-
-Stories should use PascalCase See rule details for [storybook/prefer-pascal-case](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Use expect from @storybook/jest](/recipes/codemods/cleanup/storybook/usestorybookexpect.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.UseStorybookExpect_
-
-Use expect from @storybook/jest See rule details for [storybook/use-storybook-expect](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-expect.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
-### [Do not use testing-library directly on stories](/recipes/codemods/cleanup/storybook/usestorybooktestinglibrary.md)
- 
-_org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary_
-
-Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md)
-
-#### Data tables:
-
-  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
-
-
 ### [Verify compilation](/recipes/compiled/verification/verifycompilation.md)
  
 _io.moderne.compiled.verification.VerifyCompilation_
@@ -5211,12 +5143,23 @@ Locates and reports on all licenses in use.
  
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-07-21T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-08-11T1102.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.dependencies.table.VulnerabilityReport**: *A vulnerability report that includes detailed information about the affected artifact and the corresponding CVEs.*
+
+
+### [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md)
+ 
+_org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping_
+
+`ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization.
+
+#### Data tables:
+
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
 ### [Remediate vulnerabilities from the OWASP Top Ten](/recipes/java/security/owasptopten.md)
@@ -5271,17 +5214,6 @@ OWASP [A06:2021](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Compon
 _org.openrewrite.java.security.OwaspA08_
 
 OWASP [A08:2021](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/) software and data integrity failures.
-
-#### Data tables:
-
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
-
-
-### [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md)
- 
-_org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping_
-
-`ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization.
 
 #### Data tables:
 
@@ -5464,11 +5396,11 @@ Updates plugins to version compatible with Java 11.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+### [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
  
-_org.openrewrite.java.migrate.javax.AddJaxwsDependencies_
+_org.openrewrite.java.migrate.UpgradeToJava25_
 
-This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAX-WS. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
+This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
 
 #### Data tables:
 
@@ -5497,66 +5429,33 @@ Add method implementations stubs to classes that implement `java.sql.Wrapper`.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Add explicit JAXB API dependencies and runtime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
+### [Change `net.wasdev.maven.parent:java8-parent` to `:parent`](/recipes/java/migrate/wasdevmvnchangeparentartifactid.md)
  
-_org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithRuntime_
+_org.openrewrite.java.migrate.WasDevMvnChangeParentArtifactId_
 
-This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
+This recipe changes the artifactId of the `&lt;parent&gt;` tag in the `pom.xml` from `java8-parent` to `parent`.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Add explicit JAXB API dependencies and remove runtimes](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md)
+### [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
  
-_org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithoutRuntime_
+_org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo_
 
-This recipe will add explicit API dependencies without runtime dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing API dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. All JAXB runtime implementation dependencies are removed.
+This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+### [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
  
-_org.openrewrite.java.migrate.javax.AddJaxbAPIDependencies_
+_org.openrewrite.java.migrate.UpgradeToJava8_
 
-This recipe will add explicit API dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
- 
-_org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities_
-
-Find opportunities to convert existing code to use Virtual Threads.
-
-#### Data tables:
-
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
-
-
-### [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
- 
-_org.openrewrite.java.migrate.lang.FindNonVirtualExecutors_
-
-Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
-
-#### Data tables:
-
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
-
-
-### [Migrate to Jakarta EE 11](/recipes/java/migrate/jakarta/jakartaee11.md)
- 
-_org.openrewrite.java.migrate.jakarta.JakartaEE11_
-
-These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
+This recipe will apply changes commonly needed when upgrading to Java 8. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
 
 #### Data tables:
 
@@ -5618,22 +5517,66 @@ Updates plugins and dependencies to version compatible with Java 21.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Java 7](/recipes/java/migrate/upgradetojava7.md)
+### [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
  
-_org.openrewrite.java.migrate.UpgradeToJava7_
+_org.openrewrite.java.migrate.jakarta.JakartaEE10_
 
-This recipe will apply changes commonly needed when upgrading to Java 7. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
+These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
+### [Add explicit JAXB API dependencies and runtime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
  
-_org.openrewrite.java.migrate.jakarta.JakartaEE10_
+_org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithRuntime_
 
-These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
+This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Add explicit JAXB API dependencies and remove runtimes](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md)
+ 
+_org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithoutRuntime_
+
+This recipe will add explicit API dependencies without runtime dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing API dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. All JAXB runtime implementation dependencies are removed.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+ 
+_org.openrewrite.java.migrate.javax.AddJaxbAPIDependencies_
+
+This recipe will add explicit API dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrate to Jakarta EE 11](/recipes/java/migrate/jakarta/jakartaee11.md)
+ 
+_org.openrewrite.java.migrate.jakarta.JakartaEE11_
+
+These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrate to Java 7](/recipes/java/migrate/upgradetojava7.md)
+ 
+_org.openrewrite.java.migrate.UpgradeToJava7_
+
+This recipe will apply changes commonly needed when upgrading to Java 7. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
 
 #### Data tables:
 
@@ -5662,48 +5605,26 @@ Updates plugins to version compatible with Java 17.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Change `net.wasdev.maven.parent:java8-parent` to `:parent`](/recipes/java/migrate/wasdevmvnchangeparentartifactid.md)
+### [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
  
-_org.openrewrite.java.migrate.WasDevMvnChangeParentArtifactId_
+_org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities_
 
-This recipe changes the artifactId of the `&lt;parent&gt;` tag in the `pom.xml` from `java8-parent` to `parent`.
+Find opportunities to convert existing code to use Virtual Threads.
 
 #### Data tables:
 
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
+### [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
  
-_org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo_
+_org.openrewrite.java.migrate.lang.FindNonVirtualExecutors_
 
-This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions.
+Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
 
 #### Data tables:
 
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
- 
-_org.openrewrite.java.migrate.UpgradeToJava25_
-
-This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
- 
-_org.openrewrite.java.migrate.UpgradeToJava8_
-
-This recipe will apply changes commonly needed when upgrading to Java 8. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
 ### [Find and fix vulnerable npm dependencies](/recipes/nodejs/dependencyvulnerabilitycheck.md)
@@ -5938,44 +5859,22 @@ Find Spring components, including controllers, services, repositories, return ty
   * **org.openrewrite.java.spring.table.SpringComponentRelationships**: *A table of relationships between Spring components.*
 
 
-### [Find Spring Web dependency](/recipes/java/spring/http/springwebdependency.md)
+### [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
  
-_org.openrewrite.java.spring.http.SpringWebDependency_
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7_
 
-Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
-
-
-### [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
- 
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2_
-
-Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
+Upgrade to Spring Boot 2.7.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
+### [Spring Boot 3.3 best practices](/recipes/java/spring/boot3/springboot33bestpractices.md)
  
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4_
+_org.openrewrite.java.spring.boot3.SpringBoot33BestPractices_
 
-Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
- 
-_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1_
-
-Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
+Applies best practices to Spring Boot 3 applications.
 
 #### Data tables:
 
@@ -5993,88 +5892,33 @@ Migrate applications to the latest Spring Boot 3.4 release. This recipe will mod
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+### [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
  
-_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2_
+_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1_
 
-Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
+Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
+### [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
  
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_6_
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1_
 
-Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6.
+Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+### [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
  
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_3_
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2_
 
-Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
- 
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7_
-
-Upgrade to Spring Boot 2.7.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
- 
-_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0_
-
-Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
- 
-_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3_
-
-Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
- 
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5_
-
-Upgrade to Spring Boot 2.5 from any prior 2.x version.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
- 
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0_
-
-Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
+Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
 
 #### Data tables:
 
@@ -6092,22 +5936,99 @@ _org.openrewrite.java.spring.security5.search.FindEncryptorsQueryableTextUses_
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
+### [Find Spring Web dependency](/recipes/java/spring/http/springwebdependency.md)
  
-_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1_
+_org.openrewrite.java.spring.http.SpringWebDependency_
 
-Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
+Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
+
+
+### [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+ 
+_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2_
+
+Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Spring Boot 3.3 best practices](/recipes/java/spring/boot3/springboot33bestpractices.md)
+### [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
  
-_org.openrewrite.java.spring.boot3.SpringBoot33BestPractices_
+_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3_
 
-Applies best practices to Spring Boot 3 applications.
+Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+ 
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0_
+
+Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
+ 
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4_
+
+Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
+ 
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_6_
+
+Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
+ 
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5_
+
+Upgrade to Spring Boot 2.5 from any prior 2.x version.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+ 
+_org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_3_
+
+Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+ 
+_org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0_
+
+Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
 
 #### Data tables:
 
@@ -6169,6 +6090,17 @@ Produces a data table showing how methods are used in unit tests.
 #### Data tables:
 
   * **org.openrewrite.java.testing.search.FindUnitTestTable**: *Method declarations used in unit tests*
+
+
+### [Upgrade group, artifact ID and version of an artifactItem, of a maven plugin execution configuration](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginartifactitems.md)
+ 
+_com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems_
+
+Change the groupId and the artifactId of an artifactItem in the configuration section of a plugin's execution. This recipe does not perform any validation and assumes all values passed are valid.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 ### [Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version](/recipes/io/quarkus/updates/core/quarkus37/changemavencompilerannotationprocessorgroupidandartifactid.md)
@@ -6242,6 +6174,17 @@ Migration file to upgrade an Axon Framework Javax-specific project and remain on
 _com.oracle.weblogic.rewrite.JakartaEE9_1_
 
 These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Change artifacts for a Maven plugin configuration](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
+ 
+_com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts_
+
+Change artifacts for a Maven plugin configuration artifacts.
 
 #### Data tables:
 
@@ -6798,6 +6741,17 @@ Migrates `camel 4.11` quarkus application to `camel 4.12`.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+### [Migrates `camel 4.12` application to `camel 4.13`](/recipes/io/quarkus/updates/camel/camel413/camelquarkusmigrationrecipe.md)
+ 
+_io.quarkus.updates.camel.camel413.CamelQuarkusMigrationRecipe_
+
+Migrates `camel 4.12` Quarkus application to `camel 4.13`.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 ### [Migrates `camel 4.11` application to `camel 4.12`](/recipes/org/apache/camel/upgrade/camel412/camelmigrationrecipe.md)
  
 _org.apache.camel.upgrade.camel412.CamelMigrationRecipe_
@@ -6814,6 +6768,28 @@ Migrates `camel 4.11` application to `camel 4.12`.
 _org.apache.camel.upgrade.camel412.scanClassesMovedMaven_
 
 The package scan classes has moved from camel-base-engine to camel-support JAR and moved to a new package - maven.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Migrates `camel 4.12` application to `camel 4.13`](/recipes/org/apache/camel/upgrade/camel413/camelmigrationrecipe.md)
+ 
+_org.apache.camel.upgrade.camel413.CamelMigrationRecipe_
+
+Migrates `camel 4.12` application to `camel 4.13`.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Change Maven dependency example](/recipes/org/apache/camel/upgrade/camel413/furydependency.md)
+ 
+_org.apache.camel.upgrade.camel413.furyDependency_
+
+
 
 #### Data tables:
 
@@ -6842,11 +6818,11 @@ Renamed dependencies.
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to 4.12.1](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+### [Migrate to 4.13.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
  
 _org.apache.camel.upgrade.CamelMigrationRecipe_
 
-Migrates Apache Camel application to 4.12.1
+Migrates Apache Camel application to 4.13.0
 
 #### Data tables:
 

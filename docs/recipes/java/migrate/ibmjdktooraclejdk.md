@@ -329,3 +329,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+BhavanaPidapa, Chuka Obinabo, Tim te Beek

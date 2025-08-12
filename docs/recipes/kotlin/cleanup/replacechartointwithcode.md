@@ -250,4 +250,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), [fmodesto](mailto:fran.bcn@gmail.com)
+
+Knut Wannheden, fmodesto

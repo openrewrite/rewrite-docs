@@ -19,6 +19,62 @@ _Produce an impact analysis of base images used in Dockerfiles, .gitlab-ci files
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+test:
+  image: golang:1.7.3
+
+accp:
+  image: golang:1.7.0
+
+prod:
+  image: golang:1.7.0
+```
+
+###### After
+```yaml
+test:
+  image: ~~(golang:1.7.3)~~>golang:1.7.3
+
+accp:
+  image: ~~(golang:1.7.0)~~>golang:1.7.0
+
+prod:
+  image: ~~(golang:1.7.0)~~>golang:1.7.0
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+test:
+- image: golang:1.7.3
++ image: ~~(golang:1.7.3)~~>golang:1.7.3
+
+@@ -5,1 +5,1 @@
+
+accp:
+- image: golang:1.7.0
++ image: ~~(golang:1.7.0)~~>golang:1.7.0
+
+@@ -8,1 +8,1 @@
+
+prod:
+- image: golang:1.7.0
++ image: ~~(golang:1.7.0)~~>golang:1.7.0
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -227,4 +283,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+Jacob van Lingen, Jonathan Schneider, steve-aom-elliott, Tim te Beek

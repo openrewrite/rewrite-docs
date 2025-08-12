@@ -83,7 +83,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.mockito.MockedStatic verify(org.mockito.verification.VerificationMode, org.mockito.MockedStatic.Verification)`
   * newParameterNames: `[verification, mode]`
   * oldParameterNames: `[mode, verification]`
-* [Replace `verifyZeroInteractions()` to `verifyNoMoreInteractions()](../../../java/testing/mockito/verifyzerotonomoreinteractions)
+* [Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`](../../../java/testing/mockito/verifyzerotonomoreinteractions)
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.mockito.Mockito verifyZeroInteractions(..)`
   * newMethodName: `verifyNoInteractions`
@@ -1074,4 +1074,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [JohannisK](mailto:johan.kragt@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), SiBorea, Anshuman Mishra, [Tim te Beek](mailto:timtebeek@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman
+
+Patrick Way, Patrick, Greg Adams, Tim te Beek, Jonathan Schneider, steve-aom-elliott, Laurens Westerlaken, Tyler Van Gorder, Jacob van Lingen, Andrii Rodionov, Knut Wannheden

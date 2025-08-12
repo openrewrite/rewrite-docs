@@ -566,4 +566,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)
+
+Aaron Gershman, Tim te Beek, Patrick, Kun Li, traceyyoshima

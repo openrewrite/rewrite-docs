@@ -182,4 +182,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Pierre Delagrave](mailto:pierre.delagrave@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Thomas Zub](mailto:thomas.zub@outlook.de), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Tim te Beek](mailto:tim@moderne.io)
+
+Jonathan Schneider, Pierre Delagrave, Tyler Van Gorder, Greg Adams, Joan Viladrosa, Thomas Zub, Sam Snyder, traceyyoshima, Curtis, Tim te Beek

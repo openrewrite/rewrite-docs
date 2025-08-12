@@ -9,6 +9,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Apache POI use `Cell.setCellType(CellType)`](./replacesetcelltype.md)
-* [Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)](./replacesetboldweightwithsetbold.md)
+* [Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`](./replacesetboldweightwithsetbold.md)
 
 

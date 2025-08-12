@@ -50,6 +50,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Update Jakarta EE Platform Dependencies to 9.1.0](../../../../com/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1)
 * [Mitigate Unaffected Non-EE Jakarta 9 Packages](../../../../com/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages)
 * [Upgrade Common open source libraries](../../../../com/oracle/weblogic/rewrite/jakarta/upgradecommonopensourcelibraries)
+* [Change artifacts for a Maven plugin configuration](../../../../com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts)
 
 </TabItem>
 
@@ -83,6 +84,7 @@ recipeList:
   - com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPlatform9_1
   - com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages
   - com.oracle.weblogic.rewrite.jakarta.UpgradeCommonOpenSourceLibraries
+  - com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts
 
 ```
 </TabItem>
@@ -299,4 +301,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Avneesh Dubey](mailto:avneeshdubey1198@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+
+Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, Jonathan Schnéider, Tim te Beek, Avneesh Dubey, Knut Wannheden

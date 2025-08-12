@@ -218,4 +218,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Tim te Beek](mailto:tim@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+
+Shannon Pamperl, Jonathan Schnéider, Tim te Beek, Sam Snyder, Simon Hutchinson, Merlin Bögershausen, Jonathan Leitschuh

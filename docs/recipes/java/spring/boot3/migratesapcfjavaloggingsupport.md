@@ -256,3 +256,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Harald Aamot, Laurens Westerlaken

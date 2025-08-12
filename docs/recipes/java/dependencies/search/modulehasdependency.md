@@ -27,6 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `jackson-module-*` |
 | `String` | scope | *Optional*. Match dependencies with the specified scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
+| `Boolean` | invertMarking | *Optional*. If `true`, will invert the check for whether to mark a file. Defaults to `false`. |  |
 
 
 ## Usage

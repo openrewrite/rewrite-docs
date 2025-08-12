@@ -264,4 +264,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Kushank24, [Greg Oledzki](mailto:greg.oledzki@moderne.io)
+
+Kushank24, Tim te Beek

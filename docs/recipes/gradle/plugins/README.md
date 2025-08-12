@@ -5,6 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Remove Develocity](./removedevelocity.md)
+* [Remove Develocity configuration](./removedevelocityconfiguration.md)
 
 ## Recipes
 
@@ -15,7 +16,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change a Gradle plugin](./changeplugin.md)
 * [Change a Gradle plugin version by id](./changepluginversion.md)
 * [Migrate from Gradle Enterprise to Develocity](./migrategradleenterprisetodevelocity.md)
-* [Remove Develocity configuration](./removedevelocityconfiguration.md)
 * [Remove Gradle plugin](./removebuildplugin.md)
 * [Remove Gradle settings plugin](./removesettingsplugin.md)
 * [Update a Gradle plugin by id](./upgradepluginversion.md)

@@ -266,4 +266,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Kun Li, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nate Danner](mailto:nate@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Shannon Pamperl, Knut Wannheden, Kun Li, Jonathan Schnéider, Nate Danner, Tim te Beek

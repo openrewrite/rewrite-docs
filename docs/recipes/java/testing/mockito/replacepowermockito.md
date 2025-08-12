@@ -137,7 +137,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 @PrepareForTest(value = {Calendar.class, Currency.class})
-public class StaticMethodTest {
+class StaticMethodTest {
 
     private Calendar calendarMock;
 
@@ -172,7 +172,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class StaticMethodTest {
+class StaticMethodTest {
 
     private MockedStatic<Currency> mockedCurrency;
 
@@ -231,9 +231,9 @@ import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
 -@PrepareForTest(value = {Calendar.class, Currency.class})
-public class StaticMethodTest {
+class StaticMethodTest {
 @@ -16,0 +16,4 @@
-public class StaticMethodTest {
+class StaticMethodTest {
 
 +   private MockedStatic<Currency> mockedCurrency;
 +
@@ -298,7 +298,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 @PrepareForTest(value = {Calendar.class, Currency.class})
-public class StaticMethodTest {
+class StaticMethodTest {
 
     private Calendar calendarMock;
 
@@ -333,7 +333,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class StaticMethodTest {
+class StaticMethodTest {
 
     private MockedStatic<Currency> mockedCurrency;
 
@@ -392,9 +392,9 @@ import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
 -@PrepareForTest(value = {Calendar.class, Currency.class})
-public class StaticMethodTest {
+class StaticMethodTest {
 @@ -16,0 +16,4 @@
-public class StaticMethodTest {
+class StaticMethodTest {
 
 +   private MockedStatic<Currency> mockedCurrency;
 +
@@ -628,4 +628,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Greg Oledzki](mailto:greg.oledzki@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [JohannisK](mailto:johan.kragt@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:tim@moderne.io), SiBorea, [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+Tim te Beek, Sam Snyder, JohannisK, Greg Oledzki

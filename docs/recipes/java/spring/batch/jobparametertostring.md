@@ -262,4 +262,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[qwtfps](mailto:qwtfps@163.com)
+
+qwtfps

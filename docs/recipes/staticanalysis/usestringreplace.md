@@ -257,4 +257,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Anel Fernández](mailto:anel.fernandez@mercadolibre.cl), [Niklas Gustavsson](mailto:niklas@protocol7.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), punkratz312, [Martin Ross](mailto:mross_public@pobox.com), [Sam Snyder](mailto:sam@moderne.io)
+
+Anel Fernández, Niklas Gustavsson, Patrick, Tim te Beek, Jonathan Schnéider, Knut Wannheden, punkratz312, Martin Ross, Sam Snyder

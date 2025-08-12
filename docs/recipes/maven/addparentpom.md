@@ -241,4 +241,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Rodrigo Carvalho Silva](mailto:me@rodsilva.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Rodrigo Carvalho Silva, Tim te Beek, Jonathan Schnéider

@@ -288,4 +288,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Kun Li, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+
+Kun Li, Jonathan Schnéider, Tim te Beek, Mckinney, Nicholas, Knut Wannheden

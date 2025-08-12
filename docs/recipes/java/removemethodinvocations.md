@@ -192,4 +192,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Mckinney, Nicholas, Jonathan Schnéider

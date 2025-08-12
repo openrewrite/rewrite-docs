@@ -23,8 +23,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldPropertyKey | The property key to rename. |  |
-| `String` | newPrefix | The prefix to be replaced with. |  |
+| `String` | oldPropertyKey | The property key to rename. | `TODO Provide a usage example for the docs` |
+| `String` | newPrefix | The prefix to be replaced with. | `TODO Provide a usage example for the docs` |
 | `List` | exclusions | Regexp for exclusions | `camel.springboot.main-run-controller` |
 
 
@@ -46,8 +46,8 @@ name: com.yourorg.ChangePropertyKeyWithCaseChangeExample
 displayName: Change prefix of property with Camel case example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange:
-      oldPropertyKey: null
-      newPrefix: null
+      oldPropertyKey: TODO Provide a usage example for the docs
+      newPrefix: TODO Provide a usage example for the docs
       exclusions: camel.springboot.main-run-controller
 ```
 
@@ -114,7 +114,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangePropertyKeyWithCaseChange --recipe-option "oldPropertyKey=null" --recipe-option "newPrefix=null" --recipe-option "exclusions=camel.springboot.main-run-controller"
+mod run . --recipe ChangePropertyKeyWithCaseChange --recipe-option "oldPropertyKey=TODO Provide a usage example for the docs" --recipe-option "newPrefix=TODO Provide a usage example for the docs" --recipe-option "exclusions=camel.springboot.main-run-controller"
 ```
 
 If the recipe is not available locally, then you can install it using:

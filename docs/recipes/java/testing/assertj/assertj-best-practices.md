@@ -33,6 +33,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.assertj.core.annotations.Beta`
+  * newFullyQualifiedTypeName: `org.assertj.core.annotation.Beta`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.assertj.core.util.CanIgnoreReturnValue`
+  * newFullyQualifiedTypeName: `org.assertj.core.annotation.CanIgnoreReturnValue`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.assertj.core.util.CheckReturnValue`
+  * newFullyQualifiedTypeName: `org.assertj.core.annotation.CheckReturnValue`
 * [Migrate Hamcrest assertions to AssertJ](../../../java/testing/hamcrest/migratehamcresttoassertj)
 * [Migrate Fest 2.x to AssertJ](../../../java/testing/assertj/festtoassertj)
 * [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj)
@@ -50,7 +59,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJComparableRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjcomparablerulesrecipes)
 * [Adopt AssertJ Double Assertions](../../../java/testing/assertj/assertjdoublerulesrecipes)
 * [`AssertJEnumerableRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes)
+* [Refaster rules related to AssertJ assertions over `Duration`s](../../../tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes)
 * [Adopt AssertJ Float Assertions](../../../java/testing/assertj/assertjfloatrulesrecipes)
+* [Refaster rules related to AssertJ assertions over `Instant`s](../../../tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes)
 * [Adopt AssertJ Integer Assertions](../../../java/testing/assertj/assertjintegerrulesrecipes)
 * [`AssertJIterableRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes)
 * [`AssertJIteratorRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjiteratorrulesrecipes)
@@ -59,6 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJNumberRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes)
 * [`AssertJObjectRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes)
 * [`AssertJOptionalRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjoptionalrulesrecipes)
+* [Refaster rules related to AssertJ assertions over `Path`s](../../../tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes)
 * [`AssertJPrimitiveRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes)
 * [`AssertJRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes)
 * [Adopt AssertJ Short Assertions](../../../java/testing/assertj/assertjshortrulesrecipes)
@@ -82,6 +94,15 @@ tags:
   - testing
   - assertj
 recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.assertj.core.annotations.Beta
+      newFullyQualifiedTypeName: org.assertj.core.annotation.Beta
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.assertj.core.util.CanIgnoreReturnValue
+      newFullyQualifiedTypeName: org.assertj.core.annotation.CanIgnoreReturnValue
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.assertj.core.util.CheckReturnValue
+      newFullyQualifiedTypeName: org.assertj.core.annotation.CheckReturnValue
   - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ
   - org.openrewrite.java.testing.assertj.FestToAssertj
   - org.openrewrite.java.testing.assertj.JUnitToAssertj
@@ -99,7 +120,9 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJDoubleRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes
@@ -108,6 +131,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes
@@ -491,4 +515,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), Marvin, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Yeikel, [Sasha Sheikin](mailto:myminitrue@gmail.com), [Greg Adams](mailto:greg@moderne.io), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, Anshuman Mishra, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [SMIT MALKAN](mailto:smitmalkan99@gmail.com), [Andrii Rodionov](mailto:andrii@moderne.io), Lewis Birks, [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Tymes](mailto:jeremy@jtymes.net), [Adam Birem](mailto:adam.birem@praxedo.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com), Ties van de Ven, [Philippe GRANET](mailto:philippe.granet@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), Aaron Gershman, [Jeroen Meijer](mailto:jjgmeijer@gmail.com)
+
+Tim te Beek, JohannisK, Jonathan Schneider, SMIT MALKAN, Sasha Sheikin, Andrii Rodionov, Marvin, Aleksandar A Simpson, Karsten Thoms, Aaron Gershman

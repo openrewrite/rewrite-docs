@@ -331,4 +331,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Isabelle
+
+Isabelle, Steve Hill

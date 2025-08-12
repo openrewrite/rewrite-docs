@@ -6,7 +6,9 @@ _Recipes related to [Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add JBoss LogManager's SLF4J provider](./addjbosslogmanagerslf4jproviderdependency.md)
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](./commonslogging1toslf4j1.md)
+* [Migrate JBoss Logging to SLF4J](./jbossloggingtoslf4j.md)
 * [Migrate JUL to SLF4J](./jultoslf4j.md)
 * [Migrate Log4j 1.x to SLF4J 1.x](./log4j1toslf4j1.md)
 * [Migrate Log4j 2.x to SLF4J 1.x](./log4j2toslf4j1.md)

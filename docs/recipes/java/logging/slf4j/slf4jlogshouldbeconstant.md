@@ -238,4 +238,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:p.streef@gmail.com), [Kun Li](mailto:kun@moderne.io), Craig P. Motlin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Patrick](mailto:patway99@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io)
+
+Jonathan Schneider, Peter Streef, Kun Li, Craig P. Motlin, Knut Wannheden, Tim te Beek, Joan Viladrosa, Patrick, Kevin McCarpenter

@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 * [Change SDK Exception types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
 * [Change SDK S3EventNotification types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changes3eventnotificationtypes.md)
 * [Change SDK TransferManager types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
@@ -45,6 +46,7 @@ This recipe is used as part of the following composite recipes:
 * [MemoryStateRepository and FileStateRepository were moved to another package and library](/recipes/org/apache/camel/upgrade/camel43/staterepository.md)
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
+* [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
@@ -113,6 +115,8 @@ This recipe is used as part of the following composite recipes:
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
 * [Recommended Fit API becomes Assignment Recommendation API](/recipes/ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](/recipes/hibernate/typedescriptortotype.md)
+* [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/authenticationhttpclientconfigurer.md)
+* [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/furyjava.md)
 * [Renamed classes for API](/recipes/org/apache/camel/upgrade/camel47/renamedclasses.md)
 * [Renamed classes for elasticsearch,opensearch and spring regis](/recipes/org/apache/camel/upgrade/camel45/renamedclasses.md)
 * [Renamed classes for elasticsearch,opensearch and spring regis](/recipes/org/apache/camel/upgrade/camel46/renamedclasses.md)
@@ -132,9 +136,9 @@ This recipe is used as part of the following composite recipes:
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
 * [Substitute removed Faces Managed Beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
 * [Tag Enum has been deprecated](/recipes/org/apache/camel/upgrade/camel41/tracingtag.md)
+* [Testcontainers best practices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
 * [The package scan classes has moved from camel-base-engine to camel-support - java](/recipes/org/apache/camel/upgrade/camel412/scanclassesmoved.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
-* [Update Jakarta EE annotation Dependencies to 2.1.x.](/recipes/java/migrate/jakarta/updatejakartaannotations2.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update the Micronaut Security library](/recipes/java/micronaut/updatemicronautsecurity.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
@@ -324,4 +328,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nassim Jahnke](mailto:jahnke.nassim@gmail.com), [Kun Li](mailto:kun@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [zac.kim](mailto:zaccoding725@gmail.com), Michał Kosmulski, [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), Ralph Sanders, Josh Soref, Adriano Machado, [Patrick](mailto:patway99@gmail.com)
+
+Tracey Yoshima, Jonathan Schneider, Laurens Westerlaken, Knut Wannheden, Tim te Beek, Sam Snyder, Nassim Jahnke, Kun Li, Greg Adams, Tyler Van Gorder, Joan Viladrosa, zac.kim, Michał Kosmulski, Jacob van Lingen, Ralph Sanders, Josh Soref, Adriano Machado, Patrick

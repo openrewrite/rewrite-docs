@@ -246,4 +246,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Anu Ramamoorthy, [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Anu Ramamoorthy, Tim te Beek

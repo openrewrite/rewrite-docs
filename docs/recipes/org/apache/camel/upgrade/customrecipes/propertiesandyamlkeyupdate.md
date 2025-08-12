@@ -27,8 +27,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldPropertyKey | The configuration key to rename. |  |
-| `String` | newPropertyKey | The configuration to be replaced with. |  |
+| `String` | oldPropertyKey | The configuration key to rename. | `TODO Provide a usage example for the docs` |
+| `String` | newPropertyKey | The configuration to be replaced with. | `TODO Provide a usage example for the docs` |
 
 
 ## Definition
@@ -77,8 +77,8 @@ name: com.yourorg.PropertiesAndYamlKeyUpdateExample
 displayName: Update Apache Camel configurations keys example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.PropertiesAndYamlKeyUpdate:
-      oldPropertyKey: null
-      newPropertyKey: null
+      oldPropertyKey: TODO Provide a usage example for the docs
+      newPropertyKey: TODO Provide a usage example for the docs
 ```
 
 Now that `com.yourorg.PropertiesAndYamlKeyUpdateExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:
@@ -144,7 +144,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe PropertiesAndYamlKeyUpdate --recipe-option "oldPropertyKey=null" --recipe-option "newPropertyKey=null"
+mod run . --recipe PropertiesAndYamlKeyUpdate --recipe-option "oldPropertyKey=TODO Provide a usage example for the docs" --recipe-option "newPropertyKey=TODO Provide a usage example for the docs"
 ```
 
 If the recipe is not available locally, then you can install it using:

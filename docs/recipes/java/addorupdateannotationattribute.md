@@ -27,8 +27,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | attributeName | *Optional*. The name of attribute to change. If omitted defaults to 'value'. | `timeout` |
 | `String` | attributeValue | *Optional*. The value to set the attribute to. If the attribute is an array, provide values separated by comma to add multiple attributes at once. Set to `null` to remove the attribute. | `500` |
 | `String` | oldAttributeValue | *Optional*. The current value of the attribute, this can be used to filter where the change is applied. Set to `null` for wildcard behavior. | `400` |
-| `Boolean` | addOnly | *Optional*. When set to `true` will not change existing annotation attribute values. |  |
-| `Boolean` | appendArray | *Optional*. If the attribute is an array, setting this option to `true` will append the value(s). In conjunction with `addOnly`, it is possible to control duplicates: `addOnly=true`, always append. `addOnly=false`, only append if the value is not already present. |  |
+| `Boolean` | addOnly | *Optional*. If `true`, disables upgrading existing annotation attribute values, thus the recipe will only add the attribute if it does not already exist. If omitted or `false`, the recipe adds the attribute if missing or updates its value if present. |  |
+| `Boolean` | appendArray | *Optional*. If the attribute is an array and attribute is present, setting this option to `true` will append the value(s). Duplicate values will not be added. If omitted or `false`, the recipe will replace the existing value(s) with the new value(s). |  |
 
 
 ## Used by
@@ -185,4 +185,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jacob van Lingen](mailto:jacob.van.lingen@moderne.io), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Filipe Roque](mailto:froque@premium-minds.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Kun Li, SiBorea, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Marcel Reiter, [JohannisK](mailto:johan.kragt@moderne.io), Daniel Shamis
+
+Jacob van Lingen, Sam Snyder, Merlin Bögershausen, Tim te Beek, Niels de Bruin, Knut Wannheden, Jonathan Schneider, Kun Li, Filipe Roque

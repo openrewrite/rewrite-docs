@@ -268,4 +268,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Martin Panzer](mailto:postremus1996@googlemail.com)
+
+Jonathan Schneider, Aaron Gershman, Tim te Beek, Knut Wannheden, Martin Panzer

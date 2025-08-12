@@ -39,14 +39,14 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-public class Test {
+class Test {
     private String notUsed;
 }
 ```
 
 ###### After
 ```java
-public class Test {
+class Test {
 }
 ```
 
@@ -55,7 +55,7 @@ public class Test {
 
 ```diff
 @@ -2,1 +2,0 @@
-public class Test {
+class Test {
 -   private String notUsed;
 }
 ```
@@ -255,4 +255,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Gwydion Martín, [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+traceyyoshima, Joan Viladrosa, Tim te Beek, Gwydion Martín, Knut Wannheden, Jonathan Schnéider, Niels de Bruin

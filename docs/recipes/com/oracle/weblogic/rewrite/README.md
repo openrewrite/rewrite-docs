@@ -11,6 +11,8 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add `prefer-application-packages` for JPA in `weblogic.xml`](./weblogicxmlpreferapplicationpackagesjpa.md)
+* [Add `prefer-application-packages` for SLF4J in `weblogic.xml`](./weblogicxmlpreferapplicationpackagesslf4j.md)
 * [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartainjectapidependencyscope.md)
 * [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartawebservicersapidependencyscope.md)
 * [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejaxbbindapidependencyscope.md)
@@ -60,6 +62,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Check and Comment Out Deprecations removed on WebLogic version 15.1.1](./checkandcommentoutdeprecations1511.md)
+* [Create `weblogic.xml` if it does not exist](./weblogicxmlcreateifnotexists1511.md)
 * [JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older](./facesmigrationtojakartafaces2x.md)
 * [Output Recipe Version](./outputrecipeversion.md)
 * [Upgrade `weblogic.version` Maven property](./upgradeweblogicmavenpropertyversion.md)

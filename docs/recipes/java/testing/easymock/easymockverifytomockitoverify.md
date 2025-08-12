@@ -320,4 +320,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Anshuman Mishra
+
+Jacob van Lingen, Jonathan Schnéider, Anshuman Mishra

@@ -319,3 +319,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Evie Lau, traceyyoshima, Renette Ros, Tobias Lidskog, Mark Brophy, Kun Li, Tyler Van Gorder, Patrick

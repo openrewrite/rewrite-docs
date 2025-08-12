@@ -275,3 +275,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Renette Ros, Melloware, Tobias Lidskog, Mike Solomon, min, Tim te Beek

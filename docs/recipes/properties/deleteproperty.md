@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Delete Property"
+sidebar_label: "Delete property by key"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Delete Property
+# Delete property by key
 
 **org.openrewrite.properties.DeleteProperty**
 
-_Deletes key/value pairs from properties files._
+_Deletes key/value pairs from properties files, as well as any comments that immediately precede the key/value pair. Comments separated by two or more newlines from the deleted key/value pair are preserved._
 
 ## Recipe source
 
@@ -56,7 +56,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeletePropertyExample
-displayName: Delete Property example
+displayName: Delete property by key example
 recipeList:
   - org.openrewrite.properties.DeleteProperty:
       propertyKey: management.metrics.binders.files.enabled or management.metrics.*
@@ -192,4 +192,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+xLitil, Sam Snyder, traceyyoshima, Aaron Gershman, Jonathan Schnéider, Tim te Beek

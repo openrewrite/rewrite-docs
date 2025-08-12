@@ -167,4 +167,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Mahatma_Fatal_Error, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Mahatma_Fatal_Error, Jonathan Schneider, Tim te Beek

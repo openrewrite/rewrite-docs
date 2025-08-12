@@ -303,4 +303,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), Kun Li, [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Aaron Gershman, Tyler Van Gorder, Jonathan Schneider, steve-aom-elliott, Kun Li, Knut Wannheden, Tim te Beek

@@ -275,4 +275,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-SiBorea, [Tim te Beek](mailto:tim@moderne.io)
+
+Tim te Beek, SiBorea, OlegZavrazhin

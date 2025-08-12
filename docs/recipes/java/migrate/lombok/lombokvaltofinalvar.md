@@ -266,4 +266,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim.te.beek@jdriven.com), [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Tim te Beek, Merlin Bögershausen, Knut Wannheden, Patrick, Tyler Van Gorder, Sam Snyder, Jonathan Schnéider

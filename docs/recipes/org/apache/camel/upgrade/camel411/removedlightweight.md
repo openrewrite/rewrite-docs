@@ -30,7 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Delete property](../../../../../yaml/deleteproperty)
   * propertyKey: `camel.main.lightweight`
-* [Delete Property](../../../../../properties/deleteproperty)
+* [Delete property by key](../../../../../properties/deleteproperty)
   * propertyKey: `camel.main.lightweight`
 
 </TabItem>

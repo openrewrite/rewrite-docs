@@ -224,4 +224,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Adriano Machado, [Jonathan Schneider](mailto:jkschneider@gmail.com)
+
+Sam Snyder, Tracey Yoshima, Tim te Beek, Nick McKinney, Adriano Machado, Jonathan Schneider

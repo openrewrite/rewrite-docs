@@ -203,4 +203,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Ryan Walker](mailto:ryanwalker7@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+
+Ryan Walker, Niels de Bruin

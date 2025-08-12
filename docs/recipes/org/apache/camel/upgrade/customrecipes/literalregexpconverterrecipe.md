@@ -26,8 +26,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | regexp | Regexp for matching a literal. |  |
-| `String` | replacement | Replacement to use. |  |
+| `String` | regexp | Regexp for matching a literal. | `TODO Provide a usage example for the docs` |
+| `String` | replacement | Replacement to use. | `TODO Provide a usage example for the docs` |
 
 
 ## Used by
@@ -51,8 +51,8 @@ name: com.yourorg.LiteralRegexpConverterRecipeExample
 displayName: Replaces a literal matching an expression example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.LiteralRegexpConverterRecipe:
-      regexp: null
-      replacement: null
+      regexp: TODO Provide a usage example for the docs
+      replacement: TODO Provide a usage example for the docs
 ```
 
 Now that `com.yourorg.LiteralRegexpConverterRecipeExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:
@@ -118,7 +118,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe LiteralRegexpConverterRecipe --recipe-option "regexp=null" --recipe-option "replacement=null"
+mod run . --recipe LiteralRegexpConverterRecipe --recipe-option "regexp=TODO Provide a usage example for the docs" --recipe-option "replacement=TODO Provide a usage example for the docs"
 ```
 
 If the recipe is not available locally, then you can install it using:

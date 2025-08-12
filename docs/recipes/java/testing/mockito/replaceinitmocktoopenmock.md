@@ -311,4 +311,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Andrii Rodionov](mailto:andrii@moderne.io), Anshuman Mishra, [Tim te Beek](mailto:tim@moderne.io)
+
+Andrii Rodionov, Anshuman Mishra, Tim te Beek

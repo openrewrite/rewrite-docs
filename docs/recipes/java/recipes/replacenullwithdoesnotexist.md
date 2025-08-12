@@ -1,35 +1,80 @@
 ---
-sidebar_label: "Moves constructor arguments to fluent setters"
+sidebar_label: "Replace null with RewriteTest.doesNotExist()"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Moves constructor arguments to fluent setters
+# Replace null with RewriteTest.doesNotExist()
 
-**software.amazon.awssdk.v2migration.ConstructorToFluent**
+**org.openrewrite.java.recipes.ReplaceNullWithDoesNotExist**
 
-_A recipe that takes constructor arguments and moves them to the specified fluent setters on the object._
+_Replace the first or second `null` argument in OpenRewrite Assertions class methods with `RewriteTest.doesNotExist()`._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ConstructorToFluent), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/ReplaceNullWithDoesNotExist.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Change S3 method constructors to fluent builder calls](/recipes/software/amazon/awssdk/v2migration/s3methodsconstructortofluent.md)
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.test.RewriteTest;
+import static org.openrewrite.java.Assertions.java;
+
+class Test implements RewriteTest {
+    void test() {
+        java(null, "after content");
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.test.RewriteTest;
+import static org.openrewrite.java.Assertions.java;
+
+class Test implements RewriteTest {
+    void test() {
+        java(doesNotExist(), "after content");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class Test implements RewriteTest {
+    void test() {
+-       java(null, "after content");
++       java(doesNotExist(), "after content");
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-rewrite` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -41,7 +86,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("software.amazon.awssdk.v2migration.ConstructorToFluent")
+    activeRecipe("org.openrewrite.java.recipes.ReplaceNullWithDoesNotExist")
     setExportDatatables(true)
 }
 
@@ -50,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
 }
 ```
 
@@ -71,10 +116,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}")
     }
     rewrite {
-        activeRecipe("software.amazon.awssdk.v2migration.ConstructorToFluent")
+        activeRecipe("org.openrewrite.java.recipes.ReplaceNullWithDoesNotExist")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -109,14 +154,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>software.amazon.awssdk.v2migration.ConstructorToFluent</recipe>
+            <recipe>org.openrewrite.java.recipes.ReplaceNullWithDoesNotExist</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
+            <artifactId>rewrite-rewrite</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,7 +177,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=software.amazon.awssdk.v2migration.ConstructorToFluent -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-rewrite:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.recipes.ReplaceNullWithDoesNotExist -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -140,12 +185,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ConstructorToFluent
+mod run . --recipe ReplaceNullWithDoesNotExist
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-rewrite:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE}}
 ```
 </TabItem>
 </Tabs>
@@ -154,7 +199,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.ConstructorToFluent" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.recipes.ReplaceNullWithDoesNotExist" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -217,3 +262,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Tim te Beek

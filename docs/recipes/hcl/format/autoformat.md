@@ -29,6 +29,45 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Before
 ```hcl
+resource "aws_ebs_volume"    {    size      = 1
+encrypted = true   }
+```
+
+###### After
+```hcl
+resource "aws_ebs_volume" {
+  size      = 1
+  encrypted = true
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,4 @@
+-resource "aws_ebs_volume"    {    size      = 1
+-encrypted = true   }
++resource "aws_ebs_volume" {
++ size      = 1
++ encrypted = true
++}
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="hcl" label="hcl">
+
+
+###### Before
+```hcl
 locals {
   object = {
          string_attr = "value1"
@@ -59,45 +98,6 @@ locals {
 +   string_attr = "value1"
 +   int_attr    = 2
   }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="hcl" label="hcl">
-
-
-###### Before
-```hcl
-resource "aws_ebs_volume"    {    size      = 1
-encrypted = true   }
-```
-
-###### After
-```hcl
-resource "aws_ebs_volume" {
-  size      = 1
-  encrypted = true
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,4 @@
--resource "aws_ebs_volume"    {    size      = 1
--encrypted = true   }
-+resource "aws_ebs_volume" {
-+ size      = 1
-+ encrypted = true
-+}
-
 ```
 </TabItem>
 </Tabs>
@@ -285,4 +285,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+
+Jonathan Schneider, traceyyoshima

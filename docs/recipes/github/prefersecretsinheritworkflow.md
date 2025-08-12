@@ -255,4 +255,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tobias Lidskog](mailto:tlidskog@paypal.com), [Tim te Beek](mailto:tim@moderne.io), [Greg Oledzki](mailto:greg.oledzki@moderne.io)
+
+Tobias Lidskog, Tim te Beek, Greg Oledzki

@@ -56,6 +56,59 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class Test {
+    void test() {
+        assertFalse(true, "message");
+        assertTrue(false, "message");
+    }
+}
+```
+
+###### After
+```java
+import static org.junit.jupiter.api.Assertions.fail;
+
+public class Test {
+    void test() {
+        fail("message");
+        fail("message");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import static org.junit.jupiter.api.Assertions.assertFalse;
+-import static org.junit.jupiter.api.Assertions.assertTrue;
++import static org.junit.jupiter.api.Assertions.fail;
+
+@@ -6,2 +5,2 @@
+public class Test {
+    void test() {
+-       assertFalse(true, "message");
+-       assertTrue(false, "message");
++       fail("message");
++       fail("message");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

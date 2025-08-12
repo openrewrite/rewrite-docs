@@ -212,4 +212,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Bruno Verachten](mailto:gounthar@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Bruno Verachten, Jonathan Schneider

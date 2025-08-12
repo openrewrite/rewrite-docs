@@ -25,7 +25,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | -- | -- | -- | -- |
 | `String` | comment | The comment to add. | `This is a comment.` |
 | `String` | methodPattern | A pattern to match methods to add the comment to. A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add*(..)` |
-| `Boolean` | isMultiline | *Optional*. Comments use by default single line // but they can use multiline /* */. |  |
 
 
 ## Usage
@@ -173,4 +172,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Steve Elliott](mailto:steve@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+
+steve-aom-elliott, Tim te Beek

@@ -292,4 +292,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Frédéric MENCIER](mailto:fmencier@yahoo.fr)
+
+Frederic MENCIER, Tim te Beek

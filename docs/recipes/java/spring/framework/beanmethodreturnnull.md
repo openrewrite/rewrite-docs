@@ -264,4 +264,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-SiBorea, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+SiBorea, Jonathan Schnéider

@@ -245,4 +245,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Kushagra Nigam, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Valentin Delaye
+
+Kushagra Nigam, Jonathan Schnéider, Valentin Delaye

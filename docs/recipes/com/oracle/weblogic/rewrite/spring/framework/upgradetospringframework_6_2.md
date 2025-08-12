@@ -43,6 +43,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x](../../../../../../com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver)
 * [Migrate to Spring Data 2.7](../../../../../../java/spring/data/upgradespringdata_2_7)
 * [Upgrade Spring Data BOM to 2024.1.x](../../../../../../com/oracle/weblogic/rewrite/spring/data/upgradespringdatabom)
+* [Upgrade Spring Data JPA to 3.4.6](../../../../../../com/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa)
 
 </TabItem>
 
@@ -69,6 +70,7 @@ recipeList:
   - com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicLoadTimeWeaver
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_7
   - com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataBom
+  - com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataJpa
 
 ```
 </TabItem>
@@ -266,4 +268,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), [steve-aom-elliott](mailto:steve@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Patrick Way, Kushank24, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Patrick](mailto:patway99@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), SiBorea, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), Kun Li, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@moderne.io), Adriano Machado, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+
+Joan Viladrosa, steve-aom-elliott, Laurens Westerlaken, Patrick Way, Kushank24, Jonathan Schneider, Marcin Słowiak, Patrick, Niels de Bruin, Jonathan Schnéider, Aaron Gershman, SiBorea, Tim te Beek, Jacob van Lingen, Knut Wannheden, Kun Li, Jonathan Leitschuh, Simon Verhoeven, Adriano Machado, Sam Snyder, traceyyoshima

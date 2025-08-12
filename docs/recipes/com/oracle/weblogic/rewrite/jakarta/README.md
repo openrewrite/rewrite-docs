@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Change artifacts for a Maven plugin configuration](./upgrademavenpluginconfigurationartifacts.md)
 * [Faces XHTML migration for Jakarta EE 9](./jakartafaces3xhtml.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](./facesjndinameschanged3.md)
 * [JSF 2.x to Jakarta Server Faces 3.x](./faces2xmigrationtojakartafaces3x.md)
@@ -49,6 +50,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate javax.jms to jakarta.jms on MDB](./javaxjmstojakartajmsonmdb.md)
 * [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)
 * [Update Jakarta EE Platform Dependencies to 9.1.0](./updatejakartaplatform9_1.md)
+* [Update Jakarta Persistence to 3.1](./updatejakartapersistenceto31.md)
+* [Update Jakarta Persistence to 3.2](./updatejakartapersistenceto32.md)
 * [Update deprecated Faces method calls](./updatejakartafacesmethodcalls.md)
+* [Upgrade group, artifact ID and version of an artifactItem, of a maven plugin execution configuration](./upgrademavenpluginartifactitems.md)
 
 

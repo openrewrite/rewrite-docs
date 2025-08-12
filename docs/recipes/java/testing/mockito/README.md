@@ -27,7 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `MockitoAnnotations.initMocks(this)` to `MockitoAnnotations.openMocks(this)`](./replaceinitmocktoopenmock.md)
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](./powermockitomockstatictomockito.md)
 * [Replace `PowerMockito.whenNew` with Mockito counterpart](./powermockitowhennewtomockito.md)
-* [Replace `verifyZeroInteractions()` to `verifyNoMoreInteractions()](./verifyzerotonomoreinteractions.md)
+* [Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`](./verifyzerotonomoreinteractions.md)
 * [Use static form of Mockito `MockUtil`](./mockutilstostatic.md)
 
 

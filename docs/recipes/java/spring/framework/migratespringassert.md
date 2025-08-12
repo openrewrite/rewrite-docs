@@ -428,3 +428,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Patrik Ivarsson, EricleeCrystal

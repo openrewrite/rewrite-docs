@@ -38,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [End files with a single newline](../../java/format/emptynewlineatendoffile)
 * [Remove trailing whitespace](../../java/format/removetrailingwhitespace)
 * [Enum values should be compared with &quot;==&quot;](../../staticanalysis/compareenumswithequalityoperator)
+* [Equals avoids null](../../staticanalysis/equalsavoidsnull)
 * [Inline variable](../../staticanalysis/inlinevariable)
 * [Simplify lambda blocks to expressions](../../staticanalysis/lambdablocktoexpression)
 * [Add missing `@Override` to overriding and implementing methods](../../staticanalysis/missingoverrideannotation)
@@ -49,6 +50,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove unused private methods](../../staticanalysis/removeunusedprivatemethods)
 * [Unwrap else block after return or throw statement](../../staticanalysis/unwrapelseafterreturn)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
+* [Use static import](../../java/usestaticimport)
+  * methodPattern: `java.util.stream.Collectors *(..)`
+* [Use static import](../../java/usestaticimport)
+  * methodPattern: `java.util.Collections *(..)`
 
 </TabItem>
 
@@ -72,6 +77,7 @@ recipeList:
   - org.openrewrite.java.format.EmptyNewlineAtEndOfFile
   - org.openrewrite.java.format.RemoveTrailingWhitespace
   - org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator
+  - org.openrewrite.staticanalysis.EqualsAvoidsNull
   - org.openrewrite.staticanalysis.InlineVariable
   - org.openrewrite.staticanalysis.LambdaBlockToExpression
   - org.openrewrite.staticanalysis.MissingOverrideAnnotation
@@ -83,6 +89,10 @@ recipeList:
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods
   - org.openrewrite.staticanalysis.UnwrapElseAfterReturn
   - org.openrewrite.staticanalysis.UseDiamondOperator
+  - org.openrewrite.java.UseStaticImport:
+      methodPattern: java.util.stream.Collectors *(..)
+  - org.openrewrite.java.UseStaticImport:
+      methodPattern: java.util.Collections *(..)
 
 ```
 </TabItem>
@@ -278,3 +288,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Merlin Bogershausen, Tim te Beek, Jonathan Schneider

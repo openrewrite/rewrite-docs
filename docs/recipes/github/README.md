@@ -25,6 +25,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find GitHub action secret references](./findgithubactionsecretreferences.md)
 * [Find jobs missing timeout](./findmissingtimeout.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)
+* [Remove unused workflow dispatch inputs](./removeunusedworkflowdispatchinputs.md)
+* [Remove workflow input argument](./removeworkflowinputargument.md)
 * [Replace GitHub Action secret names](./replacesecrets.md)
 * [Replace runners for a job](./replacerunners.md)
 * [Replace secret key names in GitHub Actions](./replacesecretkeys.md)

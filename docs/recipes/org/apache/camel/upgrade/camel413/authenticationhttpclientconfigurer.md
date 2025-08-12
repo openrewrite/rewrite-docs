@@ -1,28 +1,63 @@
 ---
-sidebar_label: "org.openrewrite.config.CompositeRecipe"
+sidebar_label: "Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# org.openrewrite.config.CompositeRecipe
+# Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer
 
-**org.openrewrite.config.CompositeRecipe**
+**org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer**
 
-_A recipe that consists of a list of other recipes._
+_BasicAuthenticationHttpClientConfigurer is renamed to DefaultAuthenticationHttpClientConfigurer._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/config/CompositeRecipe.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change type](../../../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.camel.component.http.BasicAuthenticationHttpClientConfigurer`
+  * newFullyQualifiedTypeName: `org.apache.camel.component.http.DefaultAuthenticationHttpClientConfigurer`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer
+displayName: Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer
+description: |
+  BasicAuthenticationHttpClientConfigurer is renamed to DefaultAuthenticationHttpClientConfigurer.
+recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.camel.component.http.BasicAuthenticationHttpClientConfigurer
+      newFullyQualifiedTypeName: org.apache.camel.component.http.DefaultAuthenticationHttpClientConfigurer
+
+```
+</TabItem>
+</Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates `camel 4.12` application to `camel 4.13`](/recipes/org/apache/camel/upgrade/camel413/camelmigrationrecipe.md)
+
+
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -34,7 +69,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.config.CompositeRecipe")
+    activeRecipe("org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer")
     setExportDatatables(true)
 }
 
@@ -42,7 +77,11 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+}
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
 
@@ -55,15 +94,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:latest.release") }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-java")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.config.CompositeRecipe")
+        activeRecipe("org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -81,6 +120,7 @@ rootProject {
 ```shell title="shell"
 gradle --init-script init.gradle rewriteRun
 ```
+
 </TabItem>
 <TabItem value="maven" label="Maven POM">
 
@@ -97,9 +137,16 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.config.CompositeRecipe</recipe>
+            <recipe>org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer</recipe>
           </activeRecipes>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-third-party</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -110,25 +157,23 @@ gradle --init-script init.gradle rewriteRun
 </TabItem>
 
 <TabItem value="maven-command-line" label="Maven Command Line">
-
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.config.CompositeRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer -Drewrite.exportDatatables=true
 ```
-
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CompositeRecipe
+mod run . --recipe authenticationHttpClientConfigurer
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>
@@ -137,7 +182,7 @@ mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENRE
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.config.CompositeRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -200,6 +245,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com)

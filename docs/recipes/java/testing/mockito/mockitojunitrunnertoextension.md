@@ -26,6 +26,53 @@ This recipe is used as part of the following composite recipes:
 
 * [Use Mockito JUnit Jupiter extension](/recipes/java/testing/junit5/usemockitoextension.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+
+@RunWith(MockitoJUnitRunner.Strict.class)
+public class ExternalAPIServiceTest {
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+@ExtendWith(MockitoExtension.class)
+public class ExternalAPIServiceTest {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.junit.runner.RunWith;
+-import org.mockito.junit.MockitoJUnitRunner;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.junit.jupiter.MockitoExtension;
+
+@@ -4,1 +4,1 @@
+import org.mockito.junit.MockitoJUnitRunner;
+
+-@RunWith(MockitoJUnitRunner.Strict.class)
++@ExtendWith(MockitoExtension.class)
+public class ExternalAPIServiceTest {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -219,4 +266,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Anshuman Mishra, [Merlin Bögershausen](mailto:merlin.boegershausen@rwth-aachen.de)
+
+Anshuman Mishra, Merlin Bögershausen

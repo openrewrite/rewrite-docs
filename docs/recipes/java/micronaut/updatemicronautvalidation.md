@@ -318,4 +318,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Jeremy Grelle](mailto:grellej@unityfoundation.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Jeremy Grelle

@@ -224,4 +224,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Antonio Goncalves](mailto:antonio.goncalves@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Steve Elliott](mailto:steve@moderne.io)
+
+Antonio Goncalves, steve-aom-elliott, Jonathan Schnéider

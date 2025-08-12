@@ -9,6 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Remove redundant null check when using `StringUtils.isNotBlank(String)`](./apachecommonsstringutilsrecipes$removeredundantnullcheckwithisnotblankrecipe.md)
 * [Replace `StringUtils.abbreviate(String, int)` with JDK provided API](./apachecommonsstringutilsrecipes$abbreviaterecipe.md)
 * [Replace `StringUtils.capitalize(String)` with JDK provided API](./apachecommonsstringutilsrecipes$capitalizerecipe.md)
 * [Replace `StringUtils.defaultString(String)` with JDK provided API](./apachecommonsstringutilsrecipes$defaultstringrecipe.md)

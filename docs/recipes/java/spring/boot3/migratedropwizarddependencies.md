@@ -285,3 +285,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Bs Mahi, Harald Aamot, Tim te Beek, Renette Ros

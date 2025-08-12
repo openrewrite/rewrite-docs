@@ -288,4 +288,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, [Knut Wannheden](mailto:knut.wannheden@gmail.com), Kun Li
+
+Aaron Gershman, Tyler Van Gorder, Knut Wannheden, Kun Li

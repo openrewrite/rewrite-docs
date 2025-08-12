@@ -202,4 +202,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), Md Riyazul Islam, [Patrick Viry](mailto:patrickviry@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io)
+
+Tim te Beek, Patrick Viry, Md Riyazul Islam, Patrick, Jonathan Schneider, Kun Li

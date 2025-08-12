@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Greg Adams](mailto:gadams@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Aaron Gershman, [Michael Keppler](mailto:bananeweizen@gmx.de)
+
+Greg Adams, Sofia Britto Schwartz, Patrick Way, Tim te Beek, Sam Snyder, Knut Wannheden, Patrick, Jonathan Schneider, Aaron Gershman, Michael Keppler

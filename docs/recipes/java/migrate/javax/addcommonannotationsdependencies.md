@@ -41,6 +41,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `jakarta.annotation`
   * newArtifactId: `jakarta.annotation-api`
   * newVersion: `1.3.x`
+  * overrideManagedVersion: `true`
+  * changeManagedDependency: `false`
 * [Change Maven dependency scope](../../../maven/changedependencyscope)
   * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
@@ -76,6 +78,8 @@ recipeList:
       newGroupId: jakarta.annotation
       newArtifactId: jakarta.annotation-api
       newVersion: 1.3.x
+      overrideManagedVersion: true
+      changeManagedDependency: false
   - org.openrewrite.maven.ChangeDependencyScope:
       groupId: jakarta.annotation
       artifactId: jakarta.annotation-api
@@ -289,3 +293,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Guillaume Husta, Evie Lau, Jacob van Lingen, Tim te Beek

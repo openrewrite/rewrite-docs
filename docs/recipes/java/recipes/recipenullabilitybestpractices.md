@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * annotationPattern: `@javax.annotation.Nonnull`
 * [Remove annotation](../../java/removeannotation)
   * annotationPattern: `@jakarta.annotation.Nonnull`
+* [Migrate to JSpecify](../../java/jspecify/migratetojspecify)
 * [Annotate methods which may return `null` with `@Nullable`](../../staticanalysis/annotatenullablemethods)
 * [Move `@Nullable` method annotations to the return type](../../staticanalysis/nullableonmethodreturntype)
 
@@ -57,6 +58,7 @@ recipeList:
       annotationPattern: @javax.annotation.Nonnull
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @jakarta.annotation.Nonnull
+  - org.openrewrite.java.jspecify.MigrateToJSpecify
   - org.openrewrite.staticanalysis.AnnotateNullableMethods
   - org.openrewrite.staticanalysis.NullableOnMethodReturnType
 
@@ -261,3 +263,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Merlin Bogershausen, Tim te Beek

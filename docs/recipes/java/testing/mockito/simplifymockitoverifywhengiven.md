@@ -276,4 +276,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Sander Knauff](mailto:sanderknauff@hotmail.com), [Adam Birem](mailto:adam.birem@praxedo.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Sander Knauff, Adam Birem, Tim te Beek, Jonathan Schnéider

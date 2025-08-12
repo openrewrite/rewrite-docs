@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[magicwerk](mailto:magicwerk@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mikesol@hey.com), [Tim te Beek](mailto:tim@moderne.io)
+
+magicwerk, Jonathan Schnéider, Mike Solomon, Tim te Beek

@@ -248,4 +248,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Karl-Erik Hein, [Tim te Beek](mailto:timtebeek@gmail.com), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)
+
+Karl-Erik Hein, Tim te Beek, steve-aom-elliott

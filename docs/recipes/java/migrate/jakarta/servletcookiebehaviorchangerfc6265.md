@@ -420,3 +420,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+ranuradh, Tim te Beek

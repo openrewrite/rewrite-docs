@@ -352,4 +352,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-Karl-Erik Hein, [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)
+
+Karl-Erik Hein

@@ -328,4 +328,5 @@ _Attempts to resolve maven metadata that failed._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, ashakirin, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io), Patrick Way, [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), SiBorea, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Kun Li, Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), Aaron Gershman, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Josh Soref, rob-valor, [Kun Li](mailto:kun@moderne.io), eocantu
+
+Tyler Van Gorder, Shannon Pamperl, Sam Snyder, Joan Viladrosa, Jonathan Schneider, Laurens Westerlaken, Thomas Zub, Tim te Beek, Kun Li

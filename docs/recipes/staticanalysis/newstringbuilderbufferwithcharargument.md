@@ -271,4 +271,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Patrick Way, [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com)
+
+Patrick Way, Grzegorz Olędzki, Jonathan Schneider, Knut Wannheden, Jacob van Lingen, Tim te Beek, Patrick

@@ -246,4 +246,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Tim te Beek, DidierLoiseau, Jonathan Schnéider

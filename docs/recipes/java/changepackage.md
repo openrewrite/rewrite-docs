@@ -277,4 +277,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrik Ivarsson, Patrick Way, [Roberto Cortez](mailto:radcortez@yahoo.com), Dinar Shagaliev
+
+Tracey Yoshima, Laurens Westerlaken, Jonathan Schnéider, Sam Snyder, Tim te Beek, Knut Wannheden, Nick McKinney, Patrick, Patrik Ivarsson, Patrick Way, Roberto Cortez, Dinar Shagaliev

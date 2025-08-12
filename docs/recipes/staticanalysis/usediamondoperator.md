@@ -9,10 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.UseDiamondOperator**
 
-```
-The diamond operator (`<>`) should be used. Java 7 introduced the diamond operator (<>) to reduce the verbosity of generics code. For instance, instead of having to declare a `List`'s type in both its declaration and its constructor, you can now simplify the constructor declaration with `<>`, and the compiler will infer the type.
-```
-
+_The diamond operator (`<>`) should be used. Java 7 introduced the diamond operator to reduce the verbosity of generics code. For instance, instead of having to declare a `List`'s type in both its declaration and its constructor, you can now simplify the constructor declaration with `<>`, and the compiler will infer the type._
 
 ### Tags
 
@@ -278,4 +275,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Patrick Way, [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, Josh Soref, [Sam Snyder](mailto:sam@moderne.io)
+
+Tim te Beek, Patrick Way, Kun Li, Knut Wannheden, Jonathan Schneider, Joan Viladrosa, Patrick, Greg Oledzki, Aaron Gershman, Tyler Van Gorder, Josh Soref, Sam Snyder

@@ -284,4 +284,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[qwtfps](mailto:qwtfps@163.com), [Tim te Beek](mailto:tim@moderne.io), [Benjamin Muschko](mailto:benjamin.muschko@gmail.com)
+
+qwtfps, Tim te Beek, Benjamin Muschko

@@ -42,31 +42,31 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldArtifactId: `jackson-core`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-core`
-  * newVersion: `3.0.0-rc6`
+  * newVersion: `3.0.0-rc7`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.core`
   * oldArtifactId: `jackson-databind`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc6`
+  * newVersion: `3.0.0-rc7`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.module`
   * oldArtifactId: `jackson-module-parameter-names`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc6`
+  * newVersion: `3.0.0-rc7`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-jdk8`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc6`
+  * newVersion: `3.0.0-rc7`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-jsr310`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc6`
+  * newVersion: `3.0.0-rc7`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonParseException`
   * newFullyQualifiedTypeName: `tools.jackson.core.StreamReadException`
@@ -106,31 +106,31 @@ recipeList:
       oldArtifactId: jackson-core
       newGroupId: tools.jackson.core
       newArtifactId: jackson-core
-      newVersion: 3.0.0-rc6
+      newVersion: 3.0.0-rc7
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.core
       oldArtifactId: jackson-databind
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc6
+      newVersion: 3.0.0-rc7
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.module
       oldArtifactId: jackson-module-parameter-names
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc6
+      newVersion: 3.0.0-rc7
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype
       oldArtifactId: jackson-datatype-jdk8
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc6
+      newVersion: 3.0.0-rc7
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype
       oldArtifactId: jackson-datatype-jsr310
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc6
+      newVersion: 3.0.0-rc7
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonParseException
       newFullyQualifiedTypeName: tools.jackson.core.StreamReadException
@@ -551,3 +551,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+sullis, wakingrufus, Tim te Beek

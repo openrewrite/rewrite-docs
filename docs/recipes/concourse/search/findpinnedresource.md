@@ -173,4 +173,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Kun Li, [Tim te Beek](mailto:tim@moderne.io)
+
+Jonathan Schneider, Kun Li, Tim te Beek

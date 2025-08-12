@@ -333,4 +333,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Marvin, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com)
+
+Marvin, Jonathan Schneider, Aleksandar A Simpson

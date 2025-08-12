@@ -287,4 +287,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Stefano Dalla Palma](mailto:stefano.dallapalma0@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+
+Stefano Dalla Palma, Tim te Beek

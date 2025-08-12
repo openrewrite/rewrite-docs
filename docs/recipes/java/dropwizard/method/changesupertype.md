@@ -250,4 +250,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Karl-Erik Hein, [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com)
+
+Karl-Erik Hein, steve-aom-elliott

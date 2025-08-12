@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Knut Wannheden](mailto:knut.wannheden@gmail.com), [aboyko](mailto:aboyko@vmware.com), Daniel Meier, [Christian Ortlepp](mailto:me@cortlepp.net), [Tim te Beek](mailto:tim@moderne.io), [Ko Turk](mailto:ko.turk@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Andrii Rodionov](mailto:andrey.rodionov@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Hoan Nguyen](mailto:nguyenanhhoan@gmail.com), [steve-aom-elliott](mailto:steve@moderne.io), [Kun Li](mailto:kun@moderne.io)
+
+Knut Wannheden, aboyko, Daniel Meier, Tim te Beek, Christian Ortlepp, Ko Turk, Jonathan Schnéider, Andrii Rodionov, Sam Snyder, Hoan Nguyen, steve-aom-elliott, Kun Li

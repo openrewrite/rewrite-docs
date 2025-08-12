@@ -170,4 +170,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder
+
+Jonathan Schneider, Tyler Van Gorder

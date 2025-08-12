@@ -259,4 +259,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kun Li](mailto:kun@moderne.io), [Jammy Louie](mailto:jammy@moderne.io), [Tim te Beek](mailto:tim@moderne.io), Michel Gonzalez, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Mike Solomon](mailto:mike@moderne.io)
+
+Jacob van Lingen, Kun Li, Jammy Louie, Tim te Beek, Michel Gonzalez, Jonathan Schnéider, Knut Wannheden, Mike Solomon

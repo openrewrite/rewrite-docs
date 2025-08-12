@@ -219,4 +219,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Piotr P. Karwasz](mailto:piotr.github@karwasz.org), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+Piotr P. Karwasz, Knut Wannheden, Jonathan Schneider, Tim te Beek

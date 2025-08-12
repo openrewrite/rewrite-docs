@@ -301,4 +301,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-pdesprez, [qwtfps](mailto:qwtfps@163.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Kun Li, [Greg Oledzki](mailto:greg.oledzki@moderne.io), [Benjamin Muschko](mailto:benjamin.muschko@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+
+pdesprez, qwtfps, Tim te Beek, James Stansell, Sam Snyder, Curtis, Kun Li

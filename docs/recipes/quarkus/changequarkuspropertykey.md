@@ -39,6 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [io.quarkus.updates.core.quarkus319.HibernateORMValidationMode](/recipes/io/quarkus/updates/core/quarkus319/hibernateormvalidationmode.md)
 * [io.quarkus.updates.core.quarkus323.HibernateORMSchemaManagementProperties](/recipes/io/quarkus/updates/core/quarkus323/hibernateormschemamanagementproperties.md)
 * [io.quarkus.updates.core.quarkus324.LogConsoleAsyncEnable](/recipes/io/quarkus/updates/core/quarkus324/logconsoleasyncenable.md)
+* [io.quarkus.updates.core.quarkus326.EnableEnabledConfigChanges](/recipes/io/quarkus/updates/core/quarkus326/enableenabledconfigchanges.md)
 * [io.quarkus.updates.core.quarkus39.UpdateConfigRoots](/recipes/io/quarkus/updates/core/quarkus39/updateconfigroots.md)
 * [io.quarkus.updates.minio.minio38.UpdateProperties](/recipes/io/quarkus/updates/minio/minio38/updateproperties.md)
 
@@ -203,4 +204,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Adriano Machado, [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [steve-aom-elliott](mailto:steve.aom.elliott@gmail.com), Siva_M7, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+
+Adriano Machado, Guillaume Smet, Tim te Beek, Jonathan Schneider, steve-aom-elliott, Siva_M7

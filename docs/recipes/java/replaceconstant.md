@@ -174,4 +174,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Tyler Van Gorder
+
+Jonathan Schneider, Tracey Yoshima, Tim te Beek, Knut Wannheden, Tyler Van Gorder

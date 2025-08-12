@@ -60,6 +60,103 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
 
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Assertions;
+
+public class Test {
+    void method() {
+        Assertions.assertTrue(true);
+    }
+}
+```
+
+###### After
+```java
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class Test {
+    void method() {
+        assertTrue(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.jupiter.api.Assertions;
++import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@@ -5,1 +5,1 @@
+public class Test {
+    void method() {
+-       Assertions.assertTrue(true);
++       assertTrue(true);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Assertions;
+
+public class Test {
+    void method() {
+        Assertions.assertTrue(true);
+    }
+}
+```
+
+###### After
+```java
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class Test {
+    void method() {
+        assertTrue(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.jupiter.api.Assertions;
++import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@@ -5,1 +5,1 @@
+public class Test {
+    void method() {
+-       Assertions.assertTrue(true);
++       assertTrue(true);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -251,3 +348,7 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
+
+## Contributors
+
+Jonathan Schneider

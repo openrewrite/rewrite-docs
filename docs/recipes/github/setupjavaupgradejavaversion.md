@@ -303,4 +303,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-[Gary Olsen (LosHuertos)](mailto:gary.loshuertos@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+
+Gary Olsen (LosHuertos), Tim te Beek, Simon Verhoeven, Jonathan Schneider, Knut Wannheden

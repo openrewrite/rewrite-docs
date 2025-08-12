@@ -297,4 +297,5 @@ _Statistics used in analyzing the performance of recipes._
 </Tabs>
 
 ## Contributors
-Guliver, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [pstreef](mailto:p.streef@gmail.com), [steve-aom-elliott](mailto:steve@moderne.io)
+
+Guliver, Knut Wannheden, Jonathan Schneider, Tim te Beek, Joan Viladrosa, Sam Snyder, Jacob van Lingen, pstreef, steve-aom-elliott

@@ -19,6 +19,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Lombok's `@__` syntax to `onX_` for Java 8+](./lombokonxtoonx_.md)
 * [Prefer `final var` over `lombok.val`](./lombokvaltofinalvar.md)
 * [Rename getter methods to fit Lombok](./adoptlombokgettermethodnames.md)
+* [Rename setter methods to fit Lombok](./adoptlomboksettermethodnames.md)
 * [Use `@NoArgsConstructor` where applicable](./usenoargsconstructor.md)
 
 
