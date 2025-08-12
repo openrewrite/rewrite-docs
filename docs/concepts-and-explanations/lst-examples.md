@@ -36,6 +36,8 @@ This diagram demonstrates how a simple Java class is represented as an LST. Note
 
 Below is a simple Java class whose entire purpose is to demonstrate different types of LSTs. Each of the following sections will highlight different parts of this code to demonstrate which chunks correspond to which LST. This listing of LST types is not exhaustive but should give you a good sense of the most common types.
 
+[At the bottom of this doc](#testing-lst-types), we'll teach you how to confirm whether or not some piece of code is a specific LST type.
+
 ```java
 package org.openrewrite;
                 
@@ -163,6 +165,65 @@ In the below code, only some of the statements are highlighted as statements wil
 A [VariableDeclarations](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L5318-L5526) contains the declaration of one or more variables of the same type, with or without initializing expressions for each variable.
 
 ![VariableDeclarations Example](./assets/VariableDeclarations.png)
+
+## Testing LST types
+
+Sometimes it's hard to tell whether a specific piece of code is considered to be a specific LST type as some chunks of code can actually be considered multiple LST types.
+
+To help with this, you can create a test class like the one below. At the top of the test, you should write a simple visit method and use the `TreeVisitingPrinter` to output the code that matched the LST type. In the test itself, you should enter the Java code you want to learn about.
+
+```java
+package com.yourorg;
+
+import org.junit.jupiter.api.Test;
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.java.JavaIsoVisitor;
+import org.openrewrite.java.TreeVisitingPrinter;
+import org.openrewrite.java.tree.Expression;
+import org.openrewrite.test.RewriteTest;
+
+import static org.openrewrite.java.Assertions.java;
+import static org.openrewrite.test.RewriteTest.toRecipe;
+
+public class UnderstandLSTsTest implements RewriteTest {
+    @Test
+    void printExpressions(){
+        rewriteRun(
+          spec -> spec.recipe(toRecipe(() -> new JavaIsoVisitor<>() {
+              @Override
+              public Expression visitExpression(Expression expression, ExecutionContext executionContext) {
+                  System.out.println(TreeVisitingPrinter.printTree(expression));
+                  return super.visitExpression(expression, executionContext);
+              }
+          })),
+          java(
+            """
+             package org.openrewrite;
+             
+             import java.util.ArrayList;
+             import java.util.List;
+             import java.util.stream.Collectors;
+             
+             @AnAnnotation
+             public class A {
+             
+                 List<Integer> a = new ArrayList<>();
+             
+                 int foo() {
+                     int a = 1 + 2, b = 3, c;
+                     this.a = this.a.stream()
+                             .map(it -> it + 1)
+                             .collect(Collectors.toList());
+                     return a;
+                 }
+             }
+             
+             @interface AnAnnotation {}
+             """)
+        );
+    }
+}
+```
 
 ## Using the debugger to detect LSTs
 
