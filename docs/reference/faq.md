@@ -67,7 +67,7 @@ Using a library in compilation in this way **does not trigger class initializati
 
 ## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
 
-This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](../recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 180 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
+This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](../recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 280 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
 
 This nuance is why we don't support intermediate steps to commit results; it would simply be too much to handle feasibly. Furthermore, we'd have to write out to disk repeatedly, which would slow the migration down even more.
 
@@ -127,7 +127,7 @@ Double check and adjust your dependency version, or add additional repository co
 
 ## My recipe appears to hang when running. What's happening? Is there a progress report?
 
-OpenRewrite is likely building up a model of your code and resolving types – this can take a while. Right now, there is not a progress report for recipe runs. However, there is a suggestion to add progress indicators that you can +1 [here](https://github.com/openrewrite/rewrite-maven-plugin/issues/544).
+OpenRewrite is probably still building up a model of your code and resolving types – this can take a while. Right now, there is not a progress report for recipe runs.
 
 ## Can I create a report or summary of the changes made through OpenRewrite?
 
@@ -142,7 +142,7 @@ For more information, check out [getting started with data tables guide](https:/
 When a recipe fails to make changes, that's often because of malformed or missing type information.
 You can use the diagnostic [Find missing types recipe](../recipes/java/search/findmissingtypes.md),
 and [the data table it produces](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/data-tables/), to find missing types in your codebase.
-If there are any missing types you might want to double-check your dependencies are set up correctly, or whether you're using Lombok, as [Lombok leads to missing types](https://github.com/openrewrite/rewrite/issues/1297).
+If there are any missing types you might want to double-check your dependencies are set up correctly.
 
 It could also be that a particular file is not parsed correctly. In such cases you'll see log line output which files failed to parse.
 You can use the [Find source files with ParseExceptionResult markers](../recipes/core/findparsefailures.md) diagnostic recipe to find & report these issues.
@@ -167,7 +167,7 @@ For Maven, that would be using `mvnDebug` instead of `mvn`, and for Gradle, that
 
 ## I want to exclude a single recipe from a collection of recipes.
 
-You can create your own custom recipe based off of an existing recipe most easily through [the Moderne recipe builder](https://app.moderne.io/builder). Check out our doc on [customizing recipes to meet your needs](../running-recipes/customize-recipe.md).
+You can create your own custom recipe based off of an existing recipe most easily through [the Moderne recipe builder](https://app.moderne.io/builder). Check out our doc on [customizing recipes](../running-recipes/customize-recipe.md) to meet your needs.
 
 Excluding a single recipe from an existing unmodified recipe list would be quite complicated. For a detailed explanation as to why, check out [this post](https://github.com/openrewrite/rewrite-maven-plugin/pull/569#issuecomment-1576793092).
 
