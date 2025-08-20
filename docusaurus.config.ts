@@ -124,11 +124,11 @@ const config: Config = {
       apiKey: "14363fc8de10ed3d1785fe6d17a92631",
       indexName: "openrewrite",
     },
-    // announcementBar: {
-    //   id: "code_remix",
-    //   content:
-    //     'Now announcing the inaugural <a href="https://coderemix.ai/"><strong>Code Remix Summit</strong></a> – in Miami May 12th-14th.',
-    // },
+    announcementBar: {
+      id: "openrewrite_training",
+      content:
+        'Want to learn about OpenRewrite directly from the team? Sign up for a <a href="https://www.moderne.ai/moderne-openrewrite-training-hub">free training session</a>.',
+    },
     image: "img/moderne-poster-logo.svg",
     colorMode: {
       respectPrefersColorScheme: true,
