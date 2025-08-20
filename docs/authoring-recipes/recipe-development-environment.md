@@ -16,9 +16,9 @@ If you are looking to build [OpenRewrite](https://github.com/openrewrite/rewrite
 
 ## Prerequisites
 
-* [JDK](https://adoptopenjdk.net) (version 1.8+)
+* [JDK](https://adoptopenjdk.net) (Java 21)
   * A JRE alone is insufficient since OpenRewrite uses compiler internals and tools only found in the JDK
-* [Gradle](https://gradle.org) (version 4.0+ ) or [Maven](https://maven.apache.org) (version 3.2+)
+* [Gradle](https://gradle.org) (version 4.0+) or [Maven](https://maven.apache.org) (version 3.2+)
 * [IntelliJ](https://www.jetbrains.com/idea/download/) (version 2024.1+) with [built-in support](https://blog.jetbrains.com/idea/2024/02/intellij-idea-2024-1-eap-7/) for OpenRewrite
   * Other IDEs might work as well, but lack dedicated support
 
