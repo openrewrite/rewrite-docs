@@ -6,11 +6,11 @@ description: How to automatically migrate deprecated methods that use the @Inlin
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate deprecated methods with @InlineMe annotations
+# Migrate deprecated methods with `@InlineMe`
 
 Google's Error Prone library introduced the [`@InlineMe`](https://errorprone.info/docs/inlineme) annotation to help with API migrations. When a method is deprecated and marked with `@InlineMe`, it provides precise instructions on how to replace calls to that method. OpenRewrite can now automatically apply these inline replacements across your codebase.
 
-## What is @InlineMe?
+## What is the `@InlineMe` annotation?
 
 The `@InlineMe` annotation is a powerful tool for API authors to communicate exactly how deprecated methods should be replaced. It includes:
 
