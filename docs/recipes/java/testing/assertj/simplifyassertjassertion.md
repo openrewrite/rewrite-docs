@@ -242,7 +242,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Marvin, Jacob van Lingen, Jonathan Schnéider, Stefano Dalla Palma, Tim te Beek

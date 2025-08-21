@@ -214,7 +214,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tracey Yoshima, Abhishek Herbert Samuel, Jonathan Schneider, Tim te Beek, Josh Soref, Marklinzi, Knut Wannheden, steve-aom-elliott, Niels de Bruin, Sam Snyder, iddeepak

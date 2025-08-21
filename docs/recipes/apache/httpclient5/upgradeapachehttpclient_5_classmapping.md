@@ -1037,7 +1037,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Joan Viladrosa, steve-aom-elliott, Adriano Machado, Patrik Ivarsson, Tim te Beek, SiBorea, Pierre Delagrave, sullis

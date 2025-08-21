@@ -360,7 +360,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tyler Van Gorder, Sam Snyder, Knut Wannheden, Nick McKinney, Tracey Yoshima, Shannon Pamperl, Laurens Westerlaken, Aaron Gershman, Thomas Zub, Jonathan Schneider, Lucas Han, Kun Li, Tim te Beek

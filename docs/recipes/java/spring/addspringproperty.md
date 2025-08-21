@@ -263,7 +263,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tyler Van Gorder, Jonathan Schnéider, Patrick, Knut Wannheden, Sam Snyder, Mike Solomon, Kyle Scully, Greg Oledzki, Shannon Pamperl, Adriano Machado, Tim te Beek

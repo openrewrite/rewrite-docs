@@ -322,7 +322,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Alex Boyko, Nick McKinney, Sam Snyder, Simon Verhoeven, Shannon Pamperl, Tim te Beek

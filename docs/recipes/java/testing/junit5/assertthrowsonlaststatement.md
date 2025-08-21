@@ -290,7 +290,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Shivani Sharma, JohannisK, Tim te Beek, Jonathan Schnéider

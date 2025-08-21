@@ -274,7 +274,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Fiete, Marius Barbulescu, Tim te Beek, Jonathan Schnéider

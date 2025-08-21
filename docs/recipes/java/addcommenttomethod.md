@@ -222,7 +222,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Antonio Goncalves, steve-aom-elliott, Jonathan Schnéider

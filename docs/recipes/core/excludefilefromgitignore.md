@@ -168,7 +168,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jente Sondervorst, Sam Snyder, Tim te Beek

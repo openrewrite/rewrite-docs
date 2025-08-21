@@ -301,7 +301,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Gary Olsen (LosHuertos), Tim te Beek, Simon Verhoeven, Jonathan Schneider, Knut Wannheden

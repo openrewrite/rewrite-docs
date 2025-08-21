@@ -280,7 +280,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Mark Brophy, Kun Li, Adriano Machado, Jonathan Schnéider, Tim te Beek, Sam Snyder, Niels de Bruin

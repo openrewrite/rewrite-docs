@@ -255,7 +255,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Simon Verhoeven, Tim te Beek, Joseph Walton

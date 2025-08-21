@@ -258,7 +258,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-SiBorea, Jente Sondervorst, Tim te Beek

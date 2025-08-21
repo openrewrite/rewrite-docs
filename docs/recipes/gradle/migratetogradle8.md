@@ -242,7 +242,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tim te Beek, Jente Sondervorst

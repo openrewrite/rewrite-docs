@@ -387,7 +387,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Shannon Pamperl, Tim te Beek, Jente Sondervorst, Jonathan Schneider, Sam Snyder, Greg Oledzki, Joan Viladrosa, steve-aom-elliott

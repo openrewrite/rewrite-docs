@@ -247,7 +247,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Renette Ros, Laurens Westerlaken, Tim te Beek

@@ -157,7 +157,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Schneider, justine, justine-gehring, Tim te Beek

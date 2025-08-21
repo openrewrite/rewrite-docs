@@ -256,7 +256,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Jonathan Schnéider, Tim te Beek, Knut Wannheden

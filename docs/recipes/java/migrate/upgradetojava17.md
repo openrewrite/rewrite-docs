@@ -559,7 +559,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Tyler Van Gorder, Sam Snyder, Tim te Beek, Anu Ramamoorthy, Jacob van Lingen, Jonathan Schnéider, Pierre Delagrave, Laurens Westerlaken, Melloware, Patrick

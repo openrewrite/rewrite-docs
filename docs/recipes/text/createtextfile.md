@@ -179,7 +179,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Scott Jungling, Jonathan Schnéider, Tim te Beek, Tyler Van Gorder, Adriano Machado, Peter Streef

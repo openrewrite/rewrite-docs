@@ -151,7 +151,3 @@ _Security issues in the repository._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Schneider

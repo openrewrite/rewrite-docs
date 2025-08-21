@@ -237,7 +237,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Daryl Robbins, Sam Snyder, Knut Wannheden, Jonathan Schnéider, Tim te Beek

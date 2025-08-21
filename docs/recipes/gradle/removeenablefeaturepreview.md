@@ -201,7 +201,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Ryan Walker, Niels de Bruin

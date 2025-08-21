@@ -299,7 +299,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, Jonathan Schnéider, Tim te Beek, Avneesh Dubey, Knut Wannheden

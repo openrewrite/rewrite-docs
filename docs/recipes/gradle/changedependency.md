@@ -244,7 +244,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Shannon Pamperl, Jente Sondervorst, Sam Snyder, Jonathan Schnéider, Tim te Beek, Joan Viladrosa, Simon Hutchinson, Merlin Bögershausen

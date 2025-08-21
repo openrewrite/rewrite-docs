@@ -255,7 +255,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-srmalkan, Tim te Beek, Knut Wannheden

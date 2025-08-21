@@ -490,7 +490,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tyler Van Gorder, Tim te Beek, BhavanaPidapa, Anu Ramamoorthy, Satvika Eda, Sam Snyder, Chuka Obinabo, Guillaume Husta, Adam Slaski, Ralph Sanders, Jonathan Schneider, Yifeng Jin

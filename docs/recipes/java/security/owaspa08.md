@@ -132,7 +132,3 @@ _The text of matching method invocations._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Sam Snyder, Jonathan Schneider, Jonathan Leitschuh, Tim te Beek

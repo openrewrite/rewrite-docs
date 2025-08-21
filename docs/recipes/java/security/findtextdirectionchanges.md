@@ -163,7 +163,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Sam Snyder, Jonathan Schneider, Tim te Beek, Kyle Scully, Patrick, Kun Li

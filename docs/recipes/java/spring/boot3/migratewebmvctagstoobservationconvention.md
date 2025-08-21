@@ -322,7 +322,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-123Haynes, Laurens Westerlaken, Tim te Beek, Jonathan Schnéider, Nick McKinney

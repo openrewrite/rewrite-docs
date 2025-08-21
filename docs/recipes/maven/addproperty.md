@@ -220,7 +220,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Aurélien Mino, Alex Boyko, Jonathan Schnéider, Sam Snyder, Tim te Beek

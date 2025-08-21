@@ -4311,7 +4311,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Anu Ramamoorthy, Pierre Delagrave, Tim te Beek, sullis

@@ -487,7 +487,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Patrick, Burt Beckwith, Jonathan Schneider, Tyler Van Gorder

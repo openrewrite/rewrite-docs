@@ -259,7 +259,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Kun Li, Michel Gonzalez, Tim te Beek, Jonathan Schnéider, Knut Wannheden

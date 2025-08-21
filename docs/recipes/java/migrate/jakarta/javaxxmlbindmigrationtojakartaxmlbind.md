@@ -338,7 +338,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-traceyyoshima, Renette Ros, Adriano Machado, Tobias Lidskog, Merlin Bögershausen, Kun Li, Tyler Van Gorder, Mark Brophy, Patrick

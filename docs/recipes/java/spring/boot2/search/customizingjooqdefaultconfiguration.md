@@ -270,7 +270,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Fabian Krüger, Jonathan Schneider, Knut Wannheden, Nick McKinney

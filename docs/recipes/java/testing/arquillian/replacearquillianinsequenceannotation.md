@@ -284,7 +284,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-James R. Perkins, Tim te Beek

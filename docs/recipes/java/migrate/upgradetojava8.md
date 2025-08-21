@@ -489,7 +489,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Tim te Beek, Johan Kragt, Satvika Eda

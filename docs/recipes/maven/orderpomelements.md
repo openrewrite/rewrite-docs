@@ -242,7 +242,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-traceyyoshima, Patrick Way, Tim te Beek, Jonathan Schnéider, Scott Jungling

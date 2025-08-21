@@ -200,7 +200,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tim te Beek, Patrick Viry, Md Riyazul Islam, Patrick, Jonathan Schneider, Kun Li

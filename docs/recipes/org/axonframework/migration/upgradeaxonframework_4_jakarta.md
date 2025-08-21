@@ -395,7 +395,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Evie Lau, ranuradh, Anu Ramamoorthy, Jonathan Schnéider, Tim te Beek, Avneesh Dubey, Knut Wannheden

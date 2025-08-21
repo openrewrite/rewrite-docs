@@ -273,7 +273,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Anu Ramamoorthy, Mike Solomon, Sam Snyder, Tim te Beek

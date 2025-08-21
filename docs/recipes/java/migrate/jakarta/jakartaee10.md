@@ -418,7 +418,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Melloware, ranuradh, Tobias Lidskog, Renette Ros, Chuka Obinabo, Evie Lau

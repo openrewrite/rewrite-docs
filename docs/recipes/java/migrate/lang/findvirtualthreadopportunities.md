@@ -354,7 +354,3 @@ _The text of matching method invocations._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Andrii Rodionov

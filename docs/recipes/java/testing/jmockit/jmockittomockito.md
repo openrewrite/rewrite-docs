@@ -306,7 +306,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-tinder-dthomson, Tim te Beek, Simon Verhoeven, Shivani Sharma, SiBorea

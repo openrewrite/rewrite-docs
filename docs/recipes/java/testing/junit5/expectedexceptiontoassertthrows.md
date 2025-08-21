@@ -308,7 +308,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Anshuman Mishra, Greg Adams, Jonathan Schneider, Tim te Beek, Patrick Way, Tracey Yoshima, Sam Snyder, Knut Wannheden, Andrii Rodionov, Shivani Sharma

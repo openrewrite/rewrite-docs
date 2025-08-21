@@ -276,7 +276,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Greg Adams, Amitoj Duggal, Patrick Way, Jonathan Schneider, Knut Wannheden

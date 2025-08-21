@@ -170,7 +170,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-srmalkan, AlexanderSkrock, Tim te Beek, Jonathan Schnéider, Sam Snyder, lingenj

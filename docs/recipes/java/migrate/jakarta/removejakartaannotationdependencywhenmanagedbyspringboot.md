@@ -249,7 +249,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-min, Jacob van Lingen, sgartner03

@@ -301,7 +301,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jeremy Grelle, Tim te Beek

@@ -286,7 +286,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tim te Beek, Simon Zilliken, Guillaume Husta, Laurens Westerlaken, Alex Boyko, Jonathan Schneider

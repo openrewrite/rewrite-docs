@@ -217,7 +217,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-steve-aom-elliott, Tim te Beek

@@ -234,7 +234,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Alex Boyko, Sam Snyder, jdmcmahan, Jonathan Schnéider, Tim te Beek, Patrick Way, Valentin Delaye

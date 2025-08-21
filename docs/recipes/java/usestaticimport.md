@@ -179,7 +179,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Leitschuh, Tim te Beek, Sam Snyder, Michael Keppler, Jonathan Schnéider, Peter Streef

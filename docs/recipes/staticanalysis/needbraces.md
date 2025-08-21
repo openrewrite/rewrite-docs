@@ -393,7 +393,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Aaron Gershman, Jammy Louie, Knut Wannheden, Sam Snyder, Tim te Beek, Jonathan Schnéider, Josh Soref, Kun Li, Scott Jungling

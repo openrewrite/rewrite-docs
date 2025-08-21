@@ -338,7 +338,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Anu Ramamoorthy, Tim te Beek

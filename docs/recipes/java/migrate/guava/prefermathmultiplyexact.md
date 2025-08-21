@@ -261,7 +261,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Schneider, Simon Verhoeven, Tyler Van Gorder, Tim te Beek, Aaron Gershman

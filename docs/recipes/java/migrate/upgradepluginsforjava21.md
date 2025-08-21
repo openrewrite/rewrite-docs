@@ -308,7 +308,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Sam Snyder, Chuka Obinabo, Tim te Beek, Viktor Vishnevskiy

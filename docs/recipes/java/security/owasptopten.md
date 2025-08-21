@@ -167,7 +167,3 @@ _A vulnerability report that includes detailed information about the affected ar
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Sam Snyder, Jonathan Leitschuh, Tim te Beek

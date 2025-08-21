@@ -186,7 +186,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Adriano Machado, Siva_M7, Tim te Beek, Guillaume Smet, Jonathan Schneider, steve-aom-elliott

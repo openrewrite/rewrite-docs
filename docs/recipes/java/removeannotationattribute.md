@@ -183,7 +183,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tobias Lidskog, Guillaume Husta, Tim te Beek

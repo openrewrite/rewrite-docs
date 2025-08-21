@@ -251,7 +251,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Tyler Van Gorder

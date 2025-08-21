@@ -217,7 +217,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-SiBorea, Shivani Sharma, Tim te Beek, Jonathan Schnéider

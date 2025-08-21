@@ -260,7 +260,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Leitschuh, Tim te Beek, Jonathan Schneider, Knut Wannheden, smehta23, Michael Keppler, Tyler Kindy, Patrick

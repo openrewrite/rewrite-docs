@@ -320,7 +320,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Matthias Klauer, Jonathan Schnéider, Knut Wannheden, Tim te Beek, Nick McKinney, SiBorea, Laurens Westerlaken, Josh Soref, Niels de Bruin

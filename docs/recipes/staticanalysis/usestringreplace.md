@@ -255,7 +255,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Anel Fernández, Niklas Gustavsson, Patrick, Tim te Beek, Jonathan Schnéider, Knut Wannheden, punkratz312, Martin Ross, Sam Snyder

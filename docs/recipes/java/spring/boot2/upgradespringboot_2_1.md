@@ -326,7 +326,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tyler Van Gorder, Shannon Pamperl, Sam Snyder, Joan Viladrosa, Jonathan Schneider, Laurens Westerlaken, Thomas Zub, Tim te Beek, Kun Li

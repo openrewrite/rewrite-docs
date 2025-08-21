@@ -308,7 +308,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tim te Beek, traceyyoshima, sgartner03, Evie Lau, Tobias Lidskog, Tyler Van Gorder, Melloware

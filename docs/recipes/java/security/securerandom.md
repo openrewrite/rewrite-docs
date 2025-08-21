@@ -160,7 +160,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Schneider, Knut Wannheden, Sam Snyder, Tim te Beek, Michael Keppler

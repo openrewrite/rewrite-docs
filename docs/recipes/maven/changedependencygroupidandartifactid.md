@@ -289,7 +289,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Leitschuh, Jente Sondervorst, Tyler Van Gorder, Tim te Beek, Patrick, ashakirin, Nick McKinney, Shannon Pamperl, Tobias Lidskog, Jonathan Schnéider, Kevin Carpenter™️, Jon Black

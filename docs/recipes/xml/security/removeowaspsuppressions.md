@@ -252,7 +252,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Kevin McCarpenter™️, Jonathan Schnéider, Leanne Kerford, Tim te Beek, Patrick

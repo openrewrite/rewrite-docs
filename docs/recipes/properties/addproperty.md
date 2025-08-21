@@ -222,7 +222,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Sam Snyder, Tracey Yoshima, Tim te Beek, Nick McKinney, Adriano Machado, Jonathan Schneider

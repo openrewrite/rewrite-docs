@@ -272,7 +272,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jacob van Lingen, Greg Adams, Jonathan Schneider, Tim te Beek, Patrick Way, Knut Wannheden

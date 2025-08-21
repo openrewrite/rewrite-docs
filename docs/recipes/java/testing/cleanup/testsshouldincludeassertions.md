@@ -292,7 +292,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Patrick Way, Tracey Yoshima, Tim te Beek, Jonathan Schneider, Patrick, Knut Wannheden, Sam Snyder, Arlo O'Keeffe

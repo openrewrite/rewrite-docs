@@ -420,7 +420,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tyler Van Gorder, traceyyoshima, ranuradh, Jonathan Schneider, Renette Ros, Jacob van Lingen, Tobias Lidskog, min, Tim te Beek, Evie Lau, Laurens Westerlaken

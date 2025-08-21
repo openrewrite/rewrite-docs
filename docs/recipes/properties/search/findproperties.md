@@ -203,7 +203,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Greg Adams, Jonathan Schneider, Aaron Gershman, Sam Snyder, Tim te Beek

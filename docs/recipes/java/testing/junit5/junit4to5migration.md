@@ -924,7 +924,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Patrick, Jonathan Schneider, Nick McKinney, Sam Snyder, Tyler Van Gorder, Laurens Westerlaken, steve-aom-elliott, Peter Puškár, Tim te Beek, Kun Li, Andrii Rodionov, DidierLoiseau, Patrick Way, Greg Adams, Jente Sondervorst, James R. Perkins, Knut Wannheden, magicwerk, Fiete, peter-janssen

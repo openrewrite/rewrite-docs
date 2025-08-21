@@ -272,7 +272,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Aaron Gershman, Knut Wannheden, Tyler Van Gorder, Sam Snyder, Jonathan Schnéider, Tim te Beek, Patrick

@@ -364,7 +364,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-George Gastaldi, Jonathan Schnéider, JesseEstum, Guillaume Smet, Laurens Westerlaken, Tim te Beek, Kevin Carpenter™️

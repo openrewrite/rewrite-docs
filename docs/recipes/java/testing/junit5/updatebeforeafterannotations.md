@@ -310,7 +310,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Greg Adams, Patrick Way, Knut Wannheden, Tim te Beek, Amitoj Duggal, Jonathan Schnéider

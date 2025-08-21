@@ -256,7 +256,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-sullis, Kevin Carpenter™️, Tim te Beek

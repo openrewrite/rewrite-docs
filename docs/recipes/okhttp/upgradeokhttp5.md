@@ -289,7 +289,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tim te Beek, Simon Verhoeven, Aleksandar A Simpson

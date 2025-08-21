@@ -331,7 +331,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tyler Van Gorder, Daryl Robbins, Kun Li, steve-aom-elliott, Chuka Obinabo, Nick McKinney, Shannon Pamperl, Jacob van Lingen, Knut Wannheden, Tim te Beek

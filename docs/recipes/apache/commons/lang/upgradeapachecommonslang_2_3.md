@@ -390,7 +390,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-sullis, steve-aom-elliott, Tim te Beek

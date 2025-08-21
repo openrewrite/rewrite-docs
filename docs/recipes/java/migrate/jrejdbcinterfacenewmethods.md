@@ -333,7 +333,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Daryl Robbins, Pierre Delagrave

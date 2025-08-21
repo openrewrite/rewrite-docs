@@ -280,7 +280,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Schnéider, JohannisK, Greg Adams, Sam Snyder, Tim te Beek, Knut Wannheden, Tyler Van Gorder, traceyyoshima, Aaron Gershman

@@ -452,7 +452,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Johan Kragt, Pierre Delagrave

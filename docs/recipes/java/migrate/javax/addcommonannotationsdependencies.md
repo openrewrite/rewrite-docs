@@ -293,7 +293,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Guillaume Husta, Evie Lau, Jacob van Lingen, Tim te Beek

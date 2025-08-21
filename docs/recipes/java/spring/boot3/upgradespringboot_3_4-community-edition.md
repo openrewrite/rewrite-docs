@@ -344,7 +344,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Cathy, Jake Toronto, Guillaume Husta, Tim te Beek

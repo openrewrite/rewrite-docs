@@ -964,7 +964,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Aleksandar A Simpson, timo-abele, Marvin, Tahanima Chowdhury, Tim te Beek

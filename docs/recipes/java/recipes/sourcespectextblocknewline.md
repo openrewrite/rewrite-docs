@@ -286,7 +286,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jammy Louie, Tim te Beek

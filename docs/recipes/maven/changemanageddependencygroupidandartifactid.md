@@ -264,7 +264,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Leitschuh, Tyler Van Gorder, ashakirin, Tobias Lidskog, Tim te Beek, Steve Hill, Jonathan Schnéider, Nick McKinney, Kevin Carpenter™️, Sam Snyder, Jacob van Lingen

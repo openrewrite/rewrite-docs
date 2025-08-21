@@ -388,7 +388,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Jonathan Schneider, Tim te Beek, Aleksandar A Simpson, Nick McKinney, aet2505, Greg Adams, magicwerk, Knut Wannheden

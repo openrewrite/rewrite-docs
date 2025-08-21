@@ -1401,7 +1401,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Shannon Pamperl, BoykoAlex, Sam Snyder, Tyler Van Gorder, Tim te Beek, Jonathan Schneider, Joan Viladrosa, Alex Boyko, Nick McKinney, Laurens Westerlaken, xLitil, Thomas Zub, SiBorea, Patrik Ivarsson, Bs Mahi, Harald Aamot, Kun Li

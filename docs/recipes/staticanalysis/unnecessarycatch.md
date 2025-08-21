@@ -285,7 +285,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Stefano Dalla Palma, Tyler Van Gorder, Auke Schrijnen, Sam Snyder, Jonathan Schnéider, Knut Wannheden, Tim te Beek

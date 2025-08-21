@@ -322,7 +322,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Chuka Obinabo, Tim te Beek, Anu Ramamoorthy, Pierre Delagrave, Sam Snyder, BhavanaPidapa, Knut Wannheden, Jonathan Schneider, Jonathan Schnéider, traceyyoshima, Evie Lau, Tyler Van Gorder, Yifeng Jin, Aaron Gershman, Daryl Robbins, Adam Slaski, ranuradh, Patrick, Michael Keppler, Merlin Bögershausen, Kun Li, Aakarshit Uppal, BramliAK, Shannon Pamperl, eocantu, Avneesh Dubey, Niels de Bruin, Laurens Westerlaken, Cathy, Josh Soref

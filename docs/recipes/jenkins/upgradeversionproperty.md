@@ -268,7 +268,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Steve Hill, Valentin Delaye, Tim te Beek, Jonathan Schneider

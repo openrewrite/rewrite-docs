@@ -309,7 +309,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Andrii Rodionov, Anshuman Mishra, Tim te Beek

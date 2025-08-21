@@ -331,7 +331,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Steve Hill, Tim te Beek

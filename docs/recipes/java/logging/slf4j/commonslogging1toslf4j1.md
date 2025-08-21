@@ -405,7 +405,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Adriano Machado, Wojtek, Tim te Beek

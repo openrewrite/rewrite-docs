@@ -138,7 +138,3 @@ _Attempts to resolve maven metadata that failed._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tim te Beek, Merlin Bögershausen, JohannisK, Jente Sondervorst, Andrii Rodionov

@@ -395,7 +395,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-ashakirin, Tim te Beek, github-actions[bot]

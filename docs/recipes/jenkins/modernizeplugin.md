@@ -307,7 +307,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Steve Hill, Basil Crow, Valentin Delaye, Tim te Beek, Isabelle

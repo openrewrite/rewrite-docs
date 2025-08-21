@@ -250,7 +250,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Tim te Beek, Greg Adams, Patrick Way, John Burns, Patrick, Knut Wannheden, Jacob van Lingen, Jonathan Schnéider, gideon-sunbit

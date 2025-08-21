@@ -276,7 +276,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-SMIT MALKAN, Tim te Beek, timo-abele, Jonathan Schnéider

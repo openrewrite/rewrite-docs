@@ -293,7 +293,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Mark Brophy, Benjamin Muschko, Renette Ros, Tobias Lidskog, Tyler Van Gorder, Kun Li

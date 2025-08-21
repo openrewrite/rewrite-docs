@@ -270,7 +270,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Adriano Machado, Jonathan Schneider, Tim te Beek, steve-aom-elliott, Siva_M7

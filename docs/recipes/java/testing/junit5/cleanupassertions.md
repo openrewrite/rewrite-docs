@@ -370,7 +370,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Nick McKinney, Adriano Machado, Niklas Gustavsson, Patrick Way, Peter Puškár, Knut Wannheden, Marvin

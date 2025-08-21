@@ -208,7 +208,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-JohannisK, Shannon Pamperl, Ken Little, Jacob van Lingen, Tim te Beek, Jonathan Schneider, Sam Snyder

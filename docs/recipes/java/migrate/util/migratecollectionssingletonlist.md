@@ -260,7 +260,3 @@ _Statistics used in analyzing the performance of recipes._
 </TabItem>
 
 </Tabs>
-
-## Contributors
-
-Yeikel, Michel Gonzalez, Sam Snyder, Tim te Beek, Jonathan Schnéider, Knut Wannheden, Tyler Van Gorder, Tracey Yoshima, Patrick
