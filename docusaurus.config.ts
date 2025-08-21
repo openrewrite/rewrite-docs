@@ -68,7 +68,7 @@ const config: Config = {
 
   ],
   tagline: description,
-  favicon: "img/favicon.png",
+  favicon: "img/favicon.ico",
 
   url: "https://docs.openrewrite.org",
   baseUrl: "/",
