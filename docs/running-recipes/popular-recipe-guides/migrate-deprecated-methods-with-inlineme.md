@@ -15,7 +15,7 @@ Google's Error Prone library introduced the [`@InlineMe`](https://errorprone.inf
 The `@InlineMe` annotation is a powerful tool for API authors to communicate exactly how deprecated methods should be replaced. It includes:
 
 * A `replacement` string showing the new code pattern
-* An optional `imports` field for any new imports needed
+* Optional `imports` and `staticImports` fields for any new imports needed
 * Support for parameter reordering and transformations
 
 This is particularly useful when:
@@ -26,7 +26,7 @@ This is particularly useful when:
 
 ## Example Configuration
 
-To run the NoGuavaInlineMeMethods recipe that automatically applies these migrations:
+To run the `InlineMethodCalls` recipe that automatically applies these migrations:
 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
@@ -38,7 +38,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaInlineMeMethods")
+    activeRecipe("org.openrewrite.java.migrate.InlineMethodCalls")
 }
 
 repositories {
@@ -65,7 +65,7 @@ dependencies {
       <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
       <configuration>
         <activeRecipes>
-          <recipe>org.openrewrite.java.migrate.guava.NoGuavaInlineMeMethods</recipe>
+          <recipe>org.openrewrite.java.migrate.InlineMethodCalls</recipe>
         </activeRecipes>
       </configuration>
       <dependencies>
@@ -222,7 +222,7 @@ After running, review the changes with `git diff` to see all the automated repla
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.guava.NoGuavaInlineMeMethods" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.InlineMethodCalls" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
