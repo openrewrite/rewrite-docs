@@ -31,6 +31,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/.docusaurus
+          key: |
+            ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+
       - name: Build website
         run: yarn build
         env:
