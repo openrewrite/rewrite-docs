@@ -41,11 +41,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `validation-config`
   * attributeName: `xmlns`
-  * newValue: `https://jakarta.ee/xml/ns/jakartaee`
+  * newValue: `https://jakarta.ee/xml/ns/validation/configuration`
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `validation-config`
   * attributeName: `xsi:schemaLocation`
-  * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd`
+  * newValue: `https://jakarta.ee/xml/ns/validation/configuration https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd`
 * [Find and replace](../../../text/findandreplace)
   * find: `javax.`
   * replace: `jakarta.`
@@ -74,11 +74,11 @@ recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: validation-config
       attributeName: xmlns
-      newValue: https://jakarta.ee/xml/ns/jakartaee
+      newValue: https://jakarta.ee/xml/ns/validation/configuration
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: validation-config
       attributeName: xsi:schemaLocation
-      newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd
+      newValue: https://jakarta.ee/xml/ns/validation/configuration https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd
   - org.openrewrite.text.FindAndReplace:
       find: javax.
       replace: jakarta.
@@ -140,9 +140,9 @@ This recipe is used as part of the following composite recipes:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <validation-config
-     xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     xmlns="https://jakarta.ee/xml/ns/validation/configuration"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
+     xsi:schemaLocation="https://jakarta.ee/xml/ns/validation/configuration https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd"
      version="3.0">
 
     <default-provider>jakarta.acme.ValidationProvider</default-provider>
@@ -176,7 +176,7 @@ This recipe is used as part of the following composite recipes:
 <?xml version="1.0" encoding="UTF-8"?>
 <validation-config
 -    xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
-+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
++    xmlns="https://jakarta.ee/xml/ns/validation/configuration"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 @@ -5,3 +5,2 @@
      xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
@@ -184,7 +184,7 @@ This recipe is used as part of the following composite recipes:
 -    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/validation/configuration
 -    http://xmlns.jcp.org/xml/ns/validation/configuration/validation-configuration2.0.xsd"
 -    version="2.0">
-+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
++    xsi:schemaLocation="https://jakarta.ee/xml/ns/validation/configuration https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd"
 +    version="3.0">
 
 @@ -9,1 +8,1 @@
@@ -269,9 +269,9 @@ This recipe is used as part of the following composite recipes:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <validation-config
-     xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     xmlns="https://jakarta.ee/xml/ns/validation/configuration"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
+     xsi:schemaLocation="https://jakarta.ee/xml/ns/validation/configuration https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd"
      version="3.0">
 
     <default-provider>jakarta.acme.ValidationProvider</default-provider>
@@ -305,7 +305,7 @@ This recipe is used as part of the following composite recipes:
 <?xml version="1.0" encoding="UTF-8"?>
 <validation-config
 -    xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
-+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
++    xmlns="https://jakarta.ee/xml/ns/validation/configuration"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 @@ -5,3 +5,2 @@
      xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
@@ -313,7 +313,7 @@ This recipe is used as part of the following composite recipes:
 -    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/validation/configuration
 -    http://xmlns.jcp.org/xml/ns/validation/configuration/validation-configuration2.0.xsd"
 -    version="2.0">
-+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/validation/configuration/validation-configuration-3.0.xsd"
++    xsi:schemaLocation="https://jakarta.ee/xml/ns/validation/configuration https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd"
 +    version="3.0">
 
 @@ -9,1 +8,1 @@

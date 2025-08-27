@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `com.squareup.okhttp3`
   * oldArtifactId: `mockwebserver`
   * newArtifactId: `mockwebserver3-junit5`
-  * newVersion: `5.0.0-alpha.11`
+  * newVersion: `5.1.0`
 
 </TabItem>
 
@@ -68,7 +68,7 @@ recipeList:
       oldGroupId: com.squareup.okhttp3
       oldArtifactId: mockwebserver
       newArtifactId: mockwebserver3-junit5
-      newVersion: 5.0.0-alpha.11
+      newVersion: 5.1.0
 
 ```
 </TabItem>

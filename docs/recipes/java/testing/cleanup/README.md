@@ -27,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUnit `assertTrue(a == null)` to `assertNull(a)`](./asserttruenulltoassertnull.md)
 * [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](./asserttrueequalstoassertequals.md)
 * [Simplify `throws` statements of tests](./simplifytestthrows.md)
+* [Test methods should have void return type](./testmethodsshouldbevoid.md)
 * [`assertEquals(a, null)` to `assertNull(a)`](./assertequalsnulltoassertnull.md)
 
 

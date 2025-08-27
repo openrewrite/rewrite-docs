@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
+* [Migrate Enabled to Access Spring Boot Properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate Spring Boot properties to 2.0](/recipes/java/spring/boot2/springbootproperties_2_0.md)
 * [Migrate Spring Boot properties to 2.1](/recipes/java/spring/boot2/springbootproperties_2_1.md)
 * [Migrate Spring Boot properties to 2.2](/recipes/java/spring/boot2/springbootproperties_2_2.md)
@@ -47,12 +47,14 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Boot properties to 3.3](/recipes/java/spring/boot3/springbootproperties_3_3.md)
 * [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
 * [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
+* [Migrate Spring Boot properties to 4.0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Spring Cloud properties to 2020](/recipes/java/spring/cloud2020/springcloudproperties_2020.md)
 * [Migrate Spring Cloud properties to 2023](/recipes/java/spring/cloud2023/springcloudproperties_2023.md)
 * [Migrate Spring Cloud properties to 2024](/recipes/java/spring/cloud2024/springcloudproperties_2024.md)
 * [Migrate Spring Cloud properties to 2025](/recipes/java/spring/cloud2025/springcloudproperties_2025.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](/recipes/java/spring/boot3/migratemaxhttpheadersize.md)
+* [Update OpenTelemetry resource attributes](/recipes/java/spring/boot3/updateopentelemetryresourceattributes.md)
 
 ## Example
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow**
 
-_Convert switch expressions with colon cases and yield statements to arrow syntax._
+_Convert switch expressions with colon cases and yield statements to arrow syntax. This recipe is only applicable for Java 21 and later._
 
 ## Recipe source
 
@@ -24,7 +24,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+* [Adopt switch pattern matching (JEP 441)](/recipes/java/migrate/switchpatternmatching.md)
+* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
 
 ## Example
 
@@ -38,9 +39,9 @@ This recipe is used as part of the following composite recipes:
 class Test {
     String format(String str) {
         String formatted = switch (str) {
-            case "foo": yield "Foo";
-            case "bar": yield "Bar";
-            case null, default: yield "unknown";
+            case "foo", "bar": yield "FooBar";
+            case "baz": yield "Baz";
+            default: yield "unknown";
         };
         return formatted;
     }
@@ -52,9 +53,9 @@ class Test {
 class Test {
     String format(String str) {
         String formatted = switch (str) {
-            case "foo" -> "Foo";
-            case "bar" -> "Bar";
-            case null, default -> "unknown";
+            case "foo", "bar" -> "FooBar";
+            case "baz" -> "Baz";
+            default -> "unknown";
         };
         return formatted;
     }
@@ -68,12 +69,12 @@ class Test {
 @@ -4,3 +4,3 @@
     String format(String str) {
         String formatted = switch (str) {
--           case "foo": yield "Foo";
--           case "bar": yield "Bar";
--           case null, default: yield "unknown";
-+           case "foo" -> "Foo";
-+           case "bar" -> "Bar";
-+           case null, default -> "unknown";
+-           case "foo", "bar": yield "FooBar";
+-           case "baz": yield "Baz";
+-           default: yield "unknown";
++           case "foo", "bar" -> "FooBar";
++           case "baz" -> "Baz";
++           default -> "unknown";
         };
 ```
 </TabItem>

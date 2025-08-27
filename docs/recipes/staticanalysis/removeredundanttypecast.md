@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.RemoveRedundantTypeCast**
 
-_Removes unnecessary type casts. Does not currently check casts in lambdas, class constructors, and method invocations._
+_Removes unnecessary type casts. Does not currently check casts in lambdas and class constructors._
 
 ### Tags
 

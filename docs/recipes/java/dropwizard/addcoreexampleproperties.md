@@ -31,15 +31,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add a new property](../../properties/addproperty)
   * property: `spring.application.name`
   * value: `my-application`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `server.port`
   * value: `8080`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `management.server.port`
   * value: `8081`
-  * delimiter: `=`
 
 </TabItem>
 
@@ -56,15 +53,12 @@ recipeList:
   - org.openrewrite.properties.AddProperty:
       property: spring.application.name
       value: my-application
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: server.port
       value: 8080
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: management.server.port
       value: 8081
-      delimiter: =
 
 ```
 </TabItem>

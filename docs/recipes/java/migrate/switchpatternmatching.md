@@ -9,10 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.SwitchPatternMatching**
 
-```
-->- [JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable.
-```
-
+_[JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable._
 
 ### Tags
 
@@ -35,6 +32,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
+* [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
+* [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
 * [If-else-if-else to switch](../../java/migrate/lang/ifelseifconstructtoswitch)
 * [Use switch cases refinement when possible](../../java/migrate/lang/refineswitchcases)
 * [Use switch cases labels for enums](../../java/migrate/lang/switchcaseenumguardtolabel)
@@ -49,10 +49,13 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.SwitchPatternMatching
 displayName: Adopt switch pattern matching (JEP 441)
 description: |
-  -&gt;- [JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable.
+  [JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable.
 tags:
   - java21
 recipeList:
+  - org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression
+  - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
+  - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
   - org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch
   - org.openrewrite.java.migrate.lang.RefineSwitchCases
   - org.openrewrite.java.migrate.lang.SwitchCaseEnumGuardToLabel

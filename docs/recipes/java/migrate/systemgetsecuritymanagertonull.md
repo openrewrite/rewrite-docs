@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Replace method invocation with constant](../../java/replacemethodinvocationwithconstant)
   * methodPattern: `java.lang.System#getSecurityManager()`
+  * replacement: `null`
 * [Simplify constant if branch execution](../../staticanalysis/simplifyconstantifbranchexecution)
 
 </TabItem>
@@ -56,6 +57,7 @@ tags:
 recipeList:
   - org.openrewrite.java.ReplaceMethodInvocationWithConstant:
       methodPattern: java.lang.System#getSecurityManager()
+      replacement: null
   - org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution
 
 ```

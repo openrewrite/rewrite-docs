@@ -41,6 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `jakarta.activation-api`
   * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `com.sun.activation`
+  * artifactId: `jakarta.activation`
+  * newVersion: `2.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.activation`
   * artifactId: `jakarta.activation-api`
   * newVersion: `2.0.x`
@@ -70,6 +74,10 @@ recipeList:
       oldArtifactId: javax.activation-api
       newGroupId: jakarta.activation
       newArtifactId: jakarta.activation-api
+      newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.sun.activation
+      artifactId: jakarta.activation
       newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.activation

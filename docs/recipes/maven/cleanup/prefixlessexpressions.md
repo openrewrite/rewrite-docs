@@ -86,6 +86,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
 
 ## Examples

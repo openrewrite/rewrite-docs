@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.java.spring.boot3.MigrateEndpointAnnotationAccessValueSpring34**
 
-_Since Spring Boot 3.4 the `@Endpoint` access configuration values are no longer `true|false` but `none|read-only|unrestricted`_
+_Since Spring Boot 3.4 the `@Endpoint` access configuration values are no longer `true|false` but `none|read-only|unrestricted`._
 
 ## Recipe source
 
@@ -23,7 +23,50 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
+* [Migrate `@Endpoint` Security properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+
+@Endpoint(id="test",enableByDefault=false)
+class MyEndpoint {
+}
+```
+
+###### After
+```java
+import org.springframework.boot.actuate.endpoint.Access;
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+
+@Endpoint(id="test",defaultAccess=Access.NONE)
+class MyEndpoint {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,1 @@
++import org.springframework.boot.actuate.endpoint.Access;
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+@@ -3,1 +4,1 @@
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+
+-@Endpoint(id="test",enableByDefault=false)
++@Endpoint(id="test",defaultAccess=Access.NONE)
+class MyEndpoint {
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

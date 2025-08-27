@@ -31,19 +31,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add a new property](../../properties/addproperty)
   * property: `spring.datasource.url`
   * value: `jdbc:h2:mem:mydb`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `spring.datasource.driverClassName`
   * value: `org.h2.Driver`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `spring.datasource.username`
   * value: `sa`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `spring.datasource.password`
   * value: ``
-  * delimiter: `=`
 
 </TabItem>
 
@@ -60,19 +56,15 @@ recipeList:
   - org.openrewrite.properties.AddProperty:
       property: spring.datasource.url
       value: jdbc:h2:mem:mydb
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: spring.datasource.driverClassName
       value: org.h2.Driver
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: spring.datasource.username
       value: sa
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: spring.datasource.password
       value: 
-      delimiter: =
 
 ```
 </TabItem>

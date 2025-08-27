@@ -31,6 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Java Recipe best practices](../../java/recipes/javarecipebestpractices)
 * [Recipe testing best practices](../../java/recipes/recipetestingbestpractices)
 * [Recipe nullability best practices](../../java/recipes/recipenullabilitybestpractices)
+* [Migrate tests to Java 21](../../java/recipes/upgradeteststojava21)
 * [Extract documentation examples from tests](../../java/recipes/examplesextractor)
 * [Order imports](../../java/orderimports)
 * [Remove unused imports](../../java/removeunusedimports)
@@ -70,6 +71,7 @@ recipeList:
   - org.openrewrite.java.recipes.JavaRecipeBestPractices
   - org.openrewrite.java.recipes.RecipeTestingBestPractices
   - org.openrewrite.java.recipes.RecipeNullabilityBestPractices
+  - org.openrewrite.java.recipes.UpgradeTestsToJava21
   - org.openrewrite.java.recipes.ExamplesExtractor
   - org.openrewrite.java.OrderImports
   - org.openrewrite.java.RemoveUnusedImports

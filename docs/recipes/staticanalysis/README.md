@@ -74,6 +74,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [No multiple variable declarations](./multiplevariabledeclarations.md)
 * [No primitive wrappers for #toString() or #compareTo(..)](./noprimitivewrappersfortostringorcompareto.md)
 * [Operator wrapping](./operatorwrap.md)
+* [Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`](./prefersystemgetpropertyovergetenv.md)
 * [Prefer direct comparison of numbers](./preferequalitycomparisonoverdifferencecheck.md)
 * [Prefer increment/decrement and compound assignment operators](./preferincrementoperator.md)
 * [Prefer `while` over `for` loops](./whileinsteadoffor.md)

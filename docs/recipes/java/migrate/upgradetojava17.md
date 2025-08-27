@@ -64,9 +64,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `commons-codec`
   * newVersion: `1.17.x`
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbinding)
-* [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
-* [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
-* [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
 * [Update `jakarta.annotation-api` dependency if it exists](../../java/migrate/updatejakartaannotationsifforjavax)
 * [Update `jakarta.annotation-api` dependency if it exists](../../java/migrate/updatejakartaannotationsifexistsforjakarta)
 
@@ -116,9 +113,6 @@ recipeList:
       artifactId: commons-codec
       newVersion: 1.17.x
   - org.openrewrite.java.migrate.AddLombokMapstructBinding
-  - org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression
-  - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
-  - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
   - org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax
   - org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta
 
@@ -144,8 +138,6 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-package com.abc;
-
 class A {
    public String test() {
        return String.format("Hello %s", "world");
@@ -155,8 +147,6 @@ class A {
 
 ###### After
 ```java
-package com.abc;
-
 class A {
    public String test() {
        return "Hello %s".formatted("world");
@@ -168,7 +158,7 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,1 +5,1 @@
+@@ -3,1 +3,1 @@
 class A {
    public String test() {
 -      return String.format("Hello %s", "world");
@@ -191,13 +181,11 @@ project
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
-
   <properties>
     <java.version>1.8</java.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -208,13 +196,11 @@ project
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
-
   <properties>
     <java.version>17</java.version>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
-
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -227,8 +213,8 @@ project
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -5,3 +5,3 @@
-
+@@ -4,3 +4,3 @@
+  <modelVersion>4.0.0</modelVersion>
   <properties>
 -   <java.version>1.8</java.version>
 -   <maven.compiler.source>1.8</maven.compiler.source>
@@ -252,8 +238,6 @@ project
 
 ###### Before
 ```java
-package com.abc;
-
 class A {
    public String test() {
        return String.format("Hello %s", "world");
@@ -263,8 +247,6 @@ class A {
 
 ###### After
 ```java
-package com.abc;
-
 class A {
    public String test() {
        return "Hello %s".formatted("world");
@@ -276,7 +258,7 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,1 +5,1 @@
+@@ -3,1 +3,1 @@
 class A {
    public String test() {
 -      return String.format("Hello %s", "world");
@@ -299,13 +281,11 @@ project
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
-
   <properties>
     <java.version>1.8</java.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -316,13 +296,11 @@ project
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
-
   <properties>
     <java.version>17</java.version>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
-
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -335,8 +313,8 @@ project
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -5,3 +5,3 @@
-
+@@ -4,3 +4,3 @@
+  <modelVersion>4.0.0</modelVersion>
   <properties>
 -   <java.version>1.8</java.version>
 -   <maven.compiler.source>1.8</maven.compiler.source>

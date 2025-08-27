@@ -13,6 +13,7 @@
 * [Htmlunit](/recipes/java/testing/htmlunit)
 * [JUnit Jupiter](/recipes/java/testing/junit5)
 * [Jmockit](/recipes/java/testing/jmockit)
+* [Junit6](/recipes/java/testing/junit6)
 * [Mockito](/recipes/java/testing/mockito)
 * [Search](/recipes/java/testing/search)
 * [Testcontainers](/recipes/java/testing/testcontainers)

@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Normalize Spring properties to kebab-case](../../../java/spring/propertiestokebabcase)
 * [Enable Virtual Threads on Java 21](../../../java/spring/boot3/enablevirtualthreads)
 * [Remove `public` from `@Bean` methods](../../../java/spring/framework/beanmethodsnotpublic)
 * [Replace String literals with `HttpHeaders` constants](../../../java/spring/http/replacestringliteralswithhttpheadersconstants)
@@ -55,6 +56,7 @@ tags:
   - spring
   - boot
 recipeList:
+  - org.openrewrite.java.spring.PropertiesToKebabCase
   - org.openrewrite.java.spring.boot3.EnableVirtualThreads
   - org.openrewrite.java.spring.framework.BeanMethodsNotPublic
   - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants

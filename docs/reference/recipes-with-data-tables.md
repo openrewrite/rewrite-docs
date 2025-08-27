@@ -85,6 +85,42 @@ Look for results produced by recipes in the same recipe list that this recipe is
   * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
 
 
+### [DevCenter for Apache](/recipes/devcenter/apachedevcenter.md)
+ 
+_io.moderne.devcenter.ApacheDevCenter_
+
+A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices.
+
+#### Data tables:
+
+  * **io.moderne.devcenter.table.UpgradesAndMigrations**: *Progress towards organizational objectives on library or language migrations and upgrades.*
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
+  * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
+
+
+### [DevCenter for Apache Maven](/recipes/devcenter/apachemavendevcenter.md)
+ 
+_io.moderne.devcenter.ApacheMavenDevCenter_
+
+A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices. This DevCenter includes recipes to upgrade the parent POMs of Apache Maven, as well as a collection of best practices for Maven POMs.
+
+#### Data tables:
+
+  * **io.moderne.devcenter.table.UpgradesAndMigrations**: *Progress towards organizational objectives on library or language migrations and upgrades.*
+  * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
+
+
+### [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
+ 
+_io.moderne.devcenter.ApacheMavenBestPractices_
+
+A collection of recipes that apply best practices to Maven POMs. Some of these recipes affect build stability, so they are reported as security issues in the DevCenter card.
+
+#### Data tables:
+
+  * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
+
+
 ### [DevCenter](/recipes/devcenter/devcenterstarter.md)
  
 _io.moderne.devcenter.DevCenterStarter_
@@ -220,11 +256,11 @@ Detects potential cross-site scripting vulnerabilities where user input flows to
   * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
 
 
-### [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
+### [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md)
  
-_io.moderne.java.spring.boot3.SpringBoot3BestPractices_
+_io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5_
 
-Applies best practices to Spring Boot 3.5+ applications.
+Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5.
 
 #### Data tables:
 
@@ -242,11 +278,11 @@ Migrate applications to the latest Spring Boot 3.4 release. This recipe will mod
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md)
+### [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
  
-_io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5_
+_io.moderne.java.spring.boot3.SpringBoot3BestPractices_
 
-Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5.
+Applies best practices to Spring Boot 3.5+ applications.
 
 #### Data tables:
 
@@ -5143,7 +5179,7 @@ Locates and reports on all licenses in use.
  
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-08-11T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-08-25T1102.
 
 #### Data tables:
 
@@ -5220,22 +5256,22 @@ OWASP [A08:2021](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Fa
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+### [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
  
-_org.openrewrite.jenkins.ModernizePlugin_
+_org.openrewrite.jenkins.ModernizePluginForJava8_
 
-This recipe is intended to change over time to reflect the recommended tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/).
+This recipe is intended to break down the modernization of very old plugins into distinct steps. It allows modernizing all tooling up to the last versions that supported Java 8. This can then be followed by another recipe that makes the jump to Java 11.
 
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
+### [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
  
-_org.openrewrite.jenkins.ModernizePluginForJava8_
+_org.openrewrite.jenkins.ModernizePlugin_
 
-This recipe is intended to break down the modernization of very old plugins into distinct steps. It allows modernizing all tooling up to the last versions that supported Java 8. This can then be followed by another recipe that makes the jump to Java 11.
+This recipe is intended to change over time to reflect the recommended tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/).
 
 #### Data tables:
 
@@ -6079,6 +6115,17 @@ Find actions and their associated definitions.
 #### Data tables:
 
   * **org.openrewrite.java.struts.table.StrutsActions**: *Definition of struts action.*
+
+
+### [Find required providers](/recipes/terraform/search/findrequiredprovider.md)
+ 
+_org.openrewrite.terraform.search.FindRequiredProvider_
+
+Find `required_providers` blocks in Terraform configuration files. Produces a data table of the provider names and their versions.
+
+#### Data tables:
+
+  * **org.openrewrite.terraform.table.RequiredProviders**: *A list of required providers in the Terraform configuration.*
 
 
 ### [Find unit tests](/recipes/java/testing/search/findunittests.md)

@@ -1,20 +1,15 @@
 ---
-sidebar_label: "Migrate Spring Boot Management Endpoint Security properties to 3.4"
+sidebar_label: "Replace hibernate annotations with Jakarta variants"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Spring Boot Management Endpoint Security properties to 3.4
+# Replace hibernate annotations with Jakarta variants
 
-**io.moderne.java.spring.boot3.SpringBootManagementEndpointProperties\_3\_4**
+**io.moderne.hibernate.update70.ReplaceHibernateWithJakartaAnnotations**
 
-_Migrate the settings for Management Endpoint Security from `true`|`false` to `read-only`|`none`._
-
-### Tags
-
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+_Tries to replaces annotations that have been removed in Hibernate 7.0 with its Jakarta equivalent, such as Table, @Where, @OrderBy, etc. If a annotation is used with arguments that do not have a direct replacement, the annotation is not replaced at all._
 
 ## Recipe source
 
@@ -28,7 +23,78 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.annotations.Index;
+import org.hibernate.annotations.Table;
+
+@Table(
+        appliesTo = "some_entity",
+        comment = "comment",
+        indexes = {
+                @Index(columnNames = {"A", "B"}, name = "idx_1"),
+                @Index(columnNames = {"C"}, name = "idx_2")
+        }
+)
+public class SomeEntity {
+    private Long id;
+    private String name;
+}
+```
+
+###### After
+```java
+import jakarta.persistence.Index;
+import jakarta.persistence.Table;
+
+@Table(name = "some_entity", comment = "comment", indexes = {
+        @Index(columnList = "A,B", name = "idx_1"),
+        @Index(columnList = "C", name = "idx_2")
+})
+public class SomeEntity {
+    private Long id;
+    private String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.hibernate.annotations.Index;
+-import org.hibernate.annotations.Table;
++import jakarta.persistence.Index;
++import jakarta.persistence.Table;
+
+@@ -4,8 +4,4 @@
+import org.hibernate.annotations.Table;
+
+-@Table(
+-       appliesTo = "some_entity",
+-       comment = "comment",
+-       indexes = {
+-               @Index(columnNames = {"A", "B"}, name = "idx_1"),
+-               @Index(columnNames = {"C"}, name = "idx_2")
+-       }
+-)
++@Table(name = "some_entity", comment = "comment", indexes = {
++       @Index(columnList = "A,B", name = "idx_1"),
++       @Index(columnList = "C", name = "idx_2")
++})
+public class SomeEntity {
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -42,12 +108,12 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe SpringBootManagementEndpointProperties_3_4
+mod run . --recipe ReplaceHibernateWithJakartaAnnotations
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_IO_MODERNE_RECIPE_REWRITE_HIBERNATE}}
 ```
 </TabItem>
 </Tabs>
@@ -56,7 +122,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.SpringBootManagementEndpointProperties_3_4" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.hibernate.update70.ReplaceHibernateWithJakartaAnnotations" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

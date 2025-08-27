@@ -4,7 +4,10 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Apache Maven best practices](./apachemavenbestpractices.md)
 * [DevCenter](./devcenterstarter.md)
+* [DevCenter for Apache](./apachedevcenter.md)
+* [DevCenter for Apache Maven](./apachemavendevcenter.md)
 * [OWASP top ten](./securitystarter.md)
 
 ## Recipes
@@ -14,5 +17,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Move to a later Java version](./javaversionupgrade.md)
 * [Parent POM upgrade](./parentpomupgrade.md)
 * [Report as security issues](./reportassecurityissues.md)
+* [Upgrade Apache Maven Parent](./upgrademavenparent.md)
+* [Upgrade Apache Maven Parent](./upgrademavenpluginsparent.md)
+* [Upgrade Apache Maven Parent](./upgrademavensharedparent.md)
+* [Upgrade Apache Parent POM](./upgradeapacheparent.md)
 
 

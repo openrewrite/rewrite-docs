@@ -31,15 +31,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add a new property](../../properties/addproperty)
   * property: `management.endpoints.web.exposure.include`
   * value: `*`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `management.health.livenessstate.enabled`
   * value: `true`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `management.health.readinessstate.enabled`
   * value: `true`
-  * delimiter: `=`
 
 </TabItem>
 
@@ -56,15 +53,12 @@ recipeList:
   - org.openrewrite.properties.AddProperty:
       property: management.endpoints.web.exposure.include
       value: "*"
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: management.health.livenessstate.enabled
       value: true
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: management.health.readinessstate.enabled
       value: true
-      delimiter: =
 
 ```
 </TabItem>

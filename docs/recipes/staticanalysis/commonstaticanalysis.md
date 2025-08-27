@@ -70,6 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Unnecessary `String#toString`](../staticanalysis/notostringonstringtype)
 * [Unnecessary `String#valueOf(..)`](../staticanalysis/novalueofonstringtype)
 * [`finalize()` calls super](../staticanalysis/objectfinalizecallssuper)
+* [Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`](../staticanalysis/prefersystemgetpropertyovergetenv)
 * [Use primitive wrapper `valueOf` method](../staticanalysis/primitivewrapperclassconstructortovalueof)
 * [Redundant file creation](../staticanalysis/redundantfilecreation)
 * [Remove extra semicolons](../staticanalysis/removeextrasemicolons)
@@ -153,6 +154,7 @@ recipeList:
   - org.openrewrite.staticanalysis.NoToStringOnStringType
   - org.openrewrite.staticanalysis.NoValueOfOnStringType
   - org.openrewrite.staticanalysis.ObjectFinalizeCallsSuper
+  - org.openrewrite.staticanalysis.PreferSystemGetPropertyOverGetenv
   - org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.staticanalysis.RedundantFileCreation
   - org.openrewrite.staticanalysis.RemoveExtraSemicolons

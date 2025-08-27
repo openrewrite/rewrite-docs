@@ -1,4 +1,6 @@
-# Joda
+# Joda-Time
+
+_Recipes for Joda-Time._
 
 ## Composite Recipes
 

@@ -38,6 +38,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.servlet`
   * artifactId: `jakarta.servlet-api`
   * newVersion: `5.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.servlet`
+  * artifactId: `jakarta.servlet-api`
+  * version: `5.0.x`
+  * onlyIfUsing: `javax.servlet.*`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.servlet`
   * newPackageName: `jakarta.servlet`
@@ -65,6 +70,11 @@ recipeList:
       groupId: jakarta.servlet
       artifactId: jakarta.servlet-api
       newVersion: 5.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.servlet
+      artifactId: jakarta.servlet-api
+      version: 5.0.x
+      onlyIfUsing: javax.servlet.*
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.servlet
       newPackageName: jakarta.servlet

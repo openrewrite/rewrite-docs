@@ -31,11 +31,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add a new property](../../properties/addproperty)
   * property: `spring.jersey.type`
   * value: `servlet`
-  * delimiter: `=`
 * [Add a new property](../../properties/addproperty)
   * property: `spring.jersey.application-path`
   * value: `/api`
-  * delimiter: `=`
 
 </TabItem>
 
@@ -52,11 +50,9 @@ recipeList:
   - org.openrewrite.properties.AddProperty:
       property: spring.jersey.type
       value: servlet
-      delimiter: =
   - org.openrewrite.properties.AddProperty:
       property: spring.jersey.application-path
       value: /api
-      delimiter: =
 
 ```
 </TabItem>
