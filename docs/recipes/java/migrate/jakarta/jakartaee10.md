@@ -57,6 +57,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update Apache Commons Email to Email2 for Jakarta](../../../java/migrate/jakarta/updateapachecommonsemaildependencies)
 * [Update Apache Shiro Dependencies to 2.0.x](../../../java/migrate/jakarta/updateapacheshirodependencies)
 * [Update EclipseLink Dependencies to 4.x](../../../java/migrate/jakarta/updateeclipselinkdependencies)
+* [Update Apache Commons FileUpload2 package for EE10](../../../java/migrate/jakarta/updatefileupload2dependencies)
 * [Update Eclipse Yasson Dependencies to 3.0.x](../../../java/migrate/jakarta/updateyassondependencies)
 
 </TabItem>
@@ -98,6 +99,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.UpdateApacheCommonsEmailDependencies
   - org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies
   - org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies
+  - org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies
   - org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies
 
 ```

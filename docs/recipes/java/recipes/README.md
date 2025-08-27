@@ -11,6 +11,7 @@ _Apply best practices to OpenRewrite recipes._
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Java Recipe best practices](./javarecipebestpractices.md)
+* [Migrate tests to Java 21](./upgradeteststojava21.md)
 * [Recipe nullability best practices](./recipenullabilitybestpractices.md)
 * [Recipe testing best practices](./recipetestingbestpractices.md)
 

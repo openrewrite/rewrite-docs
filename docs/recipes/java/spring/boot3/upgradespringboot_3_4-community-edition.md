@@ -37,11 +37,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Framework 6.2](../../../java/spring/framework/upgradespringframework_6_2)
 * [Migrate to Spring Cloud 2024](../../../java/spring/cloud2024/upgradespringcloud_2024)
 * [Migrate to Spring Data 3.4](../../../java/spring/data/upgradespringdata_3_4)
+* [Migrate Spring Boot properties to 3.4](../../../java/spring/boot3/springbootproperties_3_4)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `3.4.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-dependencies`
+  * newVersion: `3.4.x`
+  * overrideManagedVersion: `true`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-maven-plugin`
@@ -90,11 +96,17 @@ recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2
   - org.openrewrite.java.spring.cloud2024.UpgradeSpringCloud_2024
   - org.openrewrite.java.spring.data.UpgradeSpringData_3_4
+  - org.openrewrite.java.spring.boot3.SpringBootProperties_3_4
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 3.4.x
       overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-dependencies
+      newVersion: 3.4.x
+      overrideManagedVersion: true
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-maven-plugin

@@ -44,6 +44,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade plugins to Java 21 compatible versions](../../java/migrate/upgradepluginsforjava21)
 * [Avoid using the deprecated empty `finalize()` method in `java.desktop`](../../java/migrate/deletedeprecatedfinalize)
 * [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`](../../java/migrate/removedsubjectmethods)
+* [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
+* [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
+* [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
 
 </TabItem>
 
@@ -71,6 +74,9 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradePluginsForJava21
   - org.openrewrite.java.migrate.DeleteDeprecatedFinalize
   - org.openrewrite.java.migrate.RemovedSubjectMethods
+  - org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression
+  - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
+  - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
 
 ```
 </TabItem>
@@ -80,6 +86,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate tests to Java 21](/recipes/java/recipes/upgradeteststojava21.md)
 * [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
 
 

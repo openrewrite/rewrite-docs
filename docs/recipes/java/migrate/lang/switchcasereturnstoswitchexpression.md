@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression**
 
-_Switch statements where each case returns a value can be converted to a switch expression that returns the value directly._
+_Switch statements where each case returns a value can be converted to a switch expression that returns the value directly. This recipe is only applicable for Java 21 and later._
 
 ## Recipe source
 
@@ -24,7 +24,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+* [Adopt switch pattern matching (JEP 441)](/recipes/java/migrate/switchpatternmatching.md)
+* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
 
 ## Example
 
@@ -38,9 +39,9 @@ This recipe is used as part of the following composite recipes:
 class Test {
     String doFormat(String str) {
         switch (str) {
-            case "foo": return "Foo";
-            case "bar": return "Bar";
-            case null, default: return "Other";
+            case "foo", "bar": return "FooBar";
+            case "baz": return "Baz";
+            default: return "Other";
         }
     }
 }
@@ -51,9 +52,9 @@ class Test {
 class Test {
     String doFormat(String str) {
         return switch (str) {
-            case "foo" -> "Foo";
-            case "bar" -> "Bar";
-            case null, default -> "Other";
+            case "foo", "bar" -> "FooBar";
+            case "baz" -> "Baz";
+            default -> "Other";
         };
     }
 }
@@ -67,14 +68,14 @@ class Test {
 class Test {
     String doFormat(String str) {
 -       switch (str) {
--           case "foo": return "Foo";
--           case "bar": return "Bar";
--           case null, default: return "Other";
+-           case "foo", "bar": return "FooBar";
+-           case "baz": return "Baz";
+-           default: return "Other";
 -       }
 +       return switch (str) {
-+           case "foo" -> "Foo";
-+           case "bar" -> "Bar";
-+           case null, default -> "Other";
++           case "foo", "bar" -> "FooBar";
++           case "baz" -> "Baz";
++           default -> "Other";
 +       };
     }
 ```

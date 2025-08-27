@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression**
 
-_Switch statements for which each case is assigning a value to the same variable can be converted to a switch expression that returns the value of the variable. This is only applicable for Java 17 and later._
+_Switch statements for which each case is assigning a value to the same variable can be converted to a switch expression that returns the value of the variable. This recipe is only applicable for Java 21 and later._
 
 ## Recipe source
 
@@ -24,7 +24,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+* [Adopt switch pattern matching (JEP 441)](/recipes/java/migrate/switchpatternmatching.md)
+* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
 
 ## Example
 

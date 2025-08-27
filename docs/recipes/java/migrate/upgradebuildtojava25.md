@@ -1,81 +1,62 @@
 ---
-sidebar_label: "Migrate Joda-Time to Java time"
+sidebar_label: "Upgrade build to Java 25"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Joda-Time to Java time
+# Upgrade build to Java 25
 
-**org.openrewrite.java.migrate.joda.JodaTimeRecipe**
+**org.openrewrite.java.migrate.UpgradeBuildToJava25**
 
-_Prefer the Java standard library over third-party usage of Joda Time._
+_Updates build files to use Java 25 as the target/source._
+
+### Tags
+
+* [java25](/reference/recipes-by-tag#java25)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/joda/JodaTime.java), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-25.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Upgrade Java version](../../java/migrate/upgradejavaversion)
+  * version: `25`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.UpgradeBuildToJava25
+displayName: Upgrade build to Java 25
+description: |
+  Updates build files to use Java 25 as the target/source.
+tags:
+  - java25
+recipeList:
+  - org.openrewrite.java.migrate.UpgradeJavaVersion:
+      version: 25
+
+```
+</TabItem>
+</Tabs>
+
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Prefer the Java standard library instead of Joda-Time](/recipes/java/migrate/joda/nojodatime.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.joda.time.DateTime;
-
-class A {
-    public void foo() {
-        DateTime dt = new DateTime();
-        System.out.println(dt.toDateTime());
-    }
-}
-```
-
-###### After
-```java
-import java.time.ZonedDateTime;
-
-class A {
-    public void foo() {
-        ZonedDateTime dt = ZonedDateTime.now();
-        System.out.println(dt);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.joda.time.DateTime;
-+import java.time.ZonedDateTime;
-
-@@ -5,2 +5,2 @@
-class A {
-    public void foo() {
--       DateTime dt = new DateTime();
--       System.out.println(dt.toDateTime());
-+       ZonedDateTime dt = ZonedDateTime.now();
-+       System.out.println(dt);
-    }
-```
-</TabItem>
-</Tabs>
+* [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
 
 
 ## Usage
@@ -92,7 +73,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.joda.JodaTimeRecipe")
+    activeRecipe("org.openrewrite.java.migrate.UpgradeBuildToJava25")
     setExportDatatables(true)
 }
 
@@ -125,7 +106,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.joda.JodaTimeRecipe")
+        activeRecipe("org.openrewrite.java.migrate.UpgradeBuildToJava25")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -160,7 +141,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.joda.JodaTimeRecipe</recipe>
+            <recipe>org.openrewrite.java.migrate.UpgradeBuildToJava25</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -183,7 +164,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.joda.JodaTimeRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradeBuildToJava25 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -191,7 +172,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JodaTimeRecipe
+mod run . --recipe UpgradeBuildToJava25
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -205,7 +186,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.joda.JodaTimeRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpgradeBuildToJava25" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

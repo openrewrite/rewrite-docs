@@ -47,6 +47,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests](./junitparamsrunnertoparameterized.md)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](./removeobsoleterunners.md)
 * [Remove duplicates uses of @TestTemplate implementations for a single method](./removeduplicatetesttemplates.md)
+* [Replace `@CsvSource` with `@ValueSource` for single method arguments](./csvsourcetovaluesource.md)
 * [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`](./removetrycatchfailblocks.md)
 * [Statically import JUnit Jupiter assertions](./staticimports.md)
 * [Use JUnit Jupiter `@Disabled`](./ignoretodisabled.md)

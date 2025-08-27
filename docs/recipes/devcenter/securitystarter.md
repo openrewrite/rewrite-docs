@@ -68,6 +68,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [DevCenter for Apache](/recipes/devcenter/apachedevcenter.md)
 * [DevCenter](/recipes/devcenter/devcenterstarter.md)
 
 ## Examples

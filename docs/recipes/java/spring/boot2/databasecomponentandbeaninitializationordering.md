@@ -13,12 +13,40 @@ _Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so t
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/DatabaseComponentAndBeanInitializationOrdering.java), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](../../../java/spring/boot2/databasecomponentandbeaninitializationorderingunconditionally)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering
+displayName: Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`
+description: |
+  Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more.
+recipeList:
+  - org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrderingUnconditionally
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -26,7 +54,8 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 
-## Example
+## Examples
+##### Example 1
 
 
 <Tabs groupId="beforeAfter">
@@ -103,6 +132,96 @@ import org.jooq.DSLContext;
 ```
 </TabItem>
 </Tabs>
+
+###### Unchanged
+```mavenProject
+project-maven
+```
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.jooq.impl.DSL;
+import org.jooq.DSLContext;
+import org.jooq.SQLDialect;
+import javax.sql.DataSource;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
+
+@Configuration
+class PersistenceConfiguration {
+
+    public static class A { private DataSource ds;}
+
+    @Bean
+    DSLContext dslContext(DataSource ds) {
+        return DSL.using(ds, SQLDialect.SQLITE);
+    }
+
+    @Bean
+    A a() {
+        return new A();
+    }
+}
+```
+
+###### After
+```java
+import org.jooq.impl.DSL;
+import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
+import org.jooq.DSLContext;
+import org.jooq.SQLDialect;
+import javax.sql.DataSource;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
+
+@Configuration
+class PersistenceConfiguration {
+
+    public static class A { private DataSource ds;}
+
+    @Bean
+    DSLContext dslContext(DataSource ds) {
+        return DSL.using(ds, SQLDialect.SQLITE);
+    }
+
+    @Bean
+    @DependsOnDatabaseInitialization
+    A a() {
+        return new A();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import org.jooq.impl.DSL;
++import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
+import org.jooq.DSLContext;
+@@ -19,0 +20,1 @@
+
+    @Bean
++   @DependsOnDatabaseInitialization
+    A a() {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project-maven
+```
 
 
 ## Usage

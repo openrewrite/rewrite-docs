@@ -7,12 +7,9 @@ import TabItem from '@theme/TabItem';
 
 # Migrate Session save/update/delete method calls
 
-**io.moderne.hibernate.update70.MigrateSessionSaveUpdateDelete**
+**io.moderne.hibernate.update70.MigrateSessionToDeferToJPA**
 
-```
-Migrates code using deprecated Session save/update/delete methods to their Hibernate 7.0 replacements. Session#save -> Session#persist, Session#update -> Session#merge, Session#saveOrUpdate -> Session#persist or Session#merge, Session#delete -> Session#remove.
-```
-
+_Migrates code using deprecated Session load/get/refresh/save/update/delete methods to their Hibernate 7.0 replacements._
 
 ## Recipe source
 
@@ -81,7 +78,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateSessionSaveUpdateDelete
+mod run . --recipe MigrateSessionToDeferToJPA
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -95,7 +92,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_IO_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.hibernate.update70.MigrateSessionSaveUpdateDelete" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.hibernate.update70.MigrateSessionToDeferToJPA" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

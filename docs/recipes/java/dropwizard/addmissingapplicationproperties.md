@@ -26,8 +26,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Create Properties file](../../properties/createpropertiesfile)
   * relativeFileName: `src/main/resources/application.properties`
-  * fileContents: ``
-  * overwriteExisting: `false`
 
 </TabItem>
 
@@ -43,8 +41,6 @@ description: |
 recipeList:
   - org.openrewrite.properties.CreatePropertiesFile:
       relativeFileName: src/main/resources/application.properties
-      fileContents: 
-      overwriteExisting: false
 
 ```
 </TabItem>

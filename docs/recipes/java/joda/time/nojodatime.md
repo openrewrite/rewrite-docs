@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Prefer the Java standard library instead of Joda-Time
 
-**org.openrewrite.java.migrate.joda.NoJodaTime**
+**org.openrewrite.java.joda.time.NoJodaTime**
 
 _Before Java 8, Java lacked a robust date and time library, leading to the widespread use of Joda-Time to fill this gap. With the release of Java 8, the `java.time` package was introduced, incorporating most of Joda-Time's concepts. Features deemed too specialized or bulky for `java.time` were included in the ThreeTen-Extra library.  This recipe migrates Joda-Time types to `java.time` and `threeten-extra` types._
 
@@ -17,9 +17,9 @@ _Before Java 8, Java lacked a robust date and time library, leading to the wides
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-joda-time.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+[GitHub](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/resources/META-INF/rewrite/no-joda-time.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-joda/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-joda/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `threeten-extra`
   * version: `1.8.0`
   * onlyIfUsing: `org.joda.time.*Interval*`
-* [Migrate Joda-Time to Java time](../../../java/migrate/joda/jodatimerecipe)
+* [Migrate Joda-Time to Java time](../../../java/joda/time/jodatimerecipe)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.joda.NoJodaTime
+name: org.openrewrite.java.joda.time.NoJodaTime
 displayName: Prefer the Java standard library instead of Joda-Time
 description: |
   Before Java 8, Java lacked a robust date and time library, leading to the widespread use of Joda-Time to fill this gap. With the release of Java 8, the `java.time` package was introduced, incorporating most of Joda-Time's concepts. Features deemed too specialized or bulky for `java.time` were included in the ThreeTen-Extra library.  This recipe migrates Joda-Time types to `java.time` and `threeten-extra` types.
@@ -58,286 +58,15 @@ recipeList:
       artifactId: threeten-extra
       version: 1.8.0
       onlyIfUsing: org.joda.time.*Interval*
-  - org.openrewrite.java.migrate.joda.JodaTimeRecipe
+  - org.openrewrite.java.joda.time.JodaTimeRecipe
 
 ```
 </TabItem>
 </Tabs>
-## Examples
-##### Example 1
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.joda.time.DateTime;
-import org.joda.time.Interval;
-
-class A {
-    void foo() {
-        DateTime dt = new DateTime();
-        DateTime dt1 = new DateTime().plusDays(1);
-        Interval i = new Interval(dt, dt1);
-        System.out.println(i.toDuration());
-    }
-}
-```
-
-###### After
-```java
-import org.threeten.extra.Interval;
-
-import java.time.ZonedDateTime;
-
-class A {
-    void foo() {
-        ZonedDateTime dt = ZonedDateTime.now();
-        ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
-        Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
-        System.out.println(i.toDuration());
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,1 @@
--import org.joda.time.DateTime;
--import org.joda.time.Interval;
-+import org.threeten.extra.Interval;
-
-@@ -4,0 +3,2 @@
-import org.joda.time.Interval;
-
-+import java.time.ZonedDateTime;
-+
-class A {
-@@ -6,3 +7,3 @@
-class A {
-    void foo() {
--       DateTime dt = new DateTime();
--       DateTime dt1 = new DateTime().plusDays(1);
--       Interval i = new Interval(dt, dt1);
-+       ZonedDateTime dt = ZonedDateTime.now();
-+       ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
-+       Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
-        System.out.println(i.toDuration());
-```
-</TabItem>
-</Tabs>
-
-###### Unchanged
-```mavenProject
-foo
-```
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.12.3</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.12.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.threeten</groupId>
-            <artifactId>threeten-extra</artifactId>
-            <version>1.8.0</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,0 +12,5 @@
-            <version>2.12.3</version>
-        </dependency>
-+       <dependency>
-+           <groupId>org.threeten</groupId>
-+           <artifactId>threeten-extra</artifactId>
-+           <version>1.8.0</version>
-+       </dependency>
-    </dependencies>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.joda.time.DateTime;
-import org.joda.time.Interval;
-
-class A {
-    void foo() {
-        DateTime dt = new DateTime();
-        DateTime dt1 = new DateTime().plusDays(1);
-        Interval i = new Interval(dt, dt1);
-        System.out.println(i.toDuration());
-    }
-}
-```
-
-###### After
-```java
-import org.threeten.extra.Interval;
-
-import java.time.ZonedDateTime;
-
-class A {
-    void foo() {
-        ZonedDateTime dt = ZonedDateTime.now();
-        ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
-        Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
-        System.out.println(i.toDuration());
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,1 @@
--import org.joda.time.DateTime;
--import org.joda.time.Interval;
-+import org.threeten.extra.Interval;
-
-@@ -4,0 +3,2 @@
-import org.joda.time.Interval;
-
-+import java.time.ZonedDateTime;
-+
-class A {
-@@ -6,3 +7,3 @@
-class A {
-    void foo() {
--       DateTime dt = new DateTime();
--       DateTime dt1 = new DateTime().plusDays(1);
--       Interval i = new Interval(dt, dt1);
-+       ZonedDateTime dt = ZonedDateTime.now();
-+       ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
-+       Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
-        System.out.println(i.toDuration());
-```
-</TabItem>
-</Tabs>
-
-###### Unchanged
-```mavenProject
-foo
-```
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.12.3</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example.foobar</groupId>
-    <artifactId>foobar-core</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.12.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.threeten</groupId>
-            <artifactId>threeten-extra</artifactId>
-            <version>1.8.0</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,0 +12,5 @@
-            <version>2.12.3</version>
-        </dependency>
-+       <dependency>
-+           <groupId>org.threeten</groupId>
-+           <artifactId>threeten-extra</artifactId>
-+           <version>1.8.0</version>
-+       </dependency>
-    </dependencies>
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-joda` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -349,7 +78,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.joda.NoJodaTime")
+    activeRecipe("org.openrewrite.java.joda.time.NoJodaTime")
     setExportDatatables(true)
 }
 
@@ -358,7 +87,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+    rewrite("org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}")
 }
 ```
 
@@ -379,10 +108,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+        rewrite("org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.joda.NoJodaTime")
+        activeRecipe("org.openrewrite.java.joda.time.NoJodaTime")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -417,14 +146,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.joda.NoJodaTime</recipe>
+            <recipe>org.openrewrite.java.joda.time.NoJodaTime</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
+            <artifactId>rewrite-joda</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -440,7 +169,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.joda.NoJodaTime -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-joda:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.joda.time.NoJodaTime -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -453,7 +182,7 @@ mod run . --recipe NoJodaTime
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}
 ```
 </TabItem>
 </Tabs>
@@ -462,7 +191,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.joda.NoJodaTime" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.joda.time.NoJodaTime" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

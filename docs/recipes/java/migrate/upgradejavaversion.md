@@ -75,6 +75,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade build to Java 11](/recipes/java/migrate/upgradebuildtojava11.md)
 * [Upgrade build to Java 17](/recipes/java/migrate/upgradebuildtojava17.md)
 * [Upgrade build to Java 21](/recipes/java/migrate/upgradebuildtojava21.md)
+* [Upgrade build to Java 25](/recipes/java/migrate/upgradebuildtojava25.md)
 
 ## Example
 

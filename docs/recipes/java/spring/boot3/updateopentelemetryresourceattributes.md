@@ -1,15 +1,22 @@
 ---
-sidebar_label: "Migrate management endpoint access value"
+sidebar_label: "Update OpenTelemetry resource attributes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate management endpoint access value
+# Update OpenTelemetry resource attributes
 
-**io.moderne.java.spring.boot3.MigrateEndpointAccessValueSpring34**
+**io.moderne.java.spring.boot3.UpdateOpenTelemetryResourceAttributes**
 
-_Migrate manage endpoint access value from `false` to `none` and `true` to `read-only`._
+_The `service.group` resource attribute has been deprecated for OpenTelemetry in Spring Boot 3.5. Consider using alternative attributes or remove the deprecated attribute._
+
+### Tags
+
+* [spring](/reference/recipes-by-tag#spring)
+* [opentelemetry](/reference/recipes-by-tag#opentelemetry)
+* [boot](/reference/recipes-by-tag#boot)
+* [observability](/reference/recipes-by-tag#observability)
 
 ## Recipe source
 
@@ -17,13 +24,6 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
-
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate Spring Boot Management Endpoint Security properties to 3.4](/recipes/java/spring/boot3/springbootmanagementendpointproperties_3_4.md)
 
 
 ## Usage
@@ -37,7 +37,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateEndpointAccessValueSpring34
+mod run . --recipe UpdateOpenTelemetryResourceAttributes
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -51,7 +51,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.MigrateEndpointAccessValueSpring34" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.UpdateOpenTelemetryResourceAttributes" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

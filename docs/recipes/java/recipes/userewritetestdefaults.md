@@ -26,6 +26,98 @@ This recipe is used as part of the following composite recipes:
 
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Test;
+import org.openrewrite.test.RewriteTest;
+
+class MyTest implements RewriteTest {
+    @Test
+    void test1() {
+        rewriteRun(
+            spec -> spec.recipe(new org.openrewrite.java.recipes.MissingOptionExample()),
+            org.openrewrite.java.Assertions.java("class A {}", "class A {}")
+        );
+    }
+
+    @Test
+    void test2() {
+        rewriteRun(
+            spec -> spec.recipe(new org.openrewrite.java.recipes.MissingOptionExample()),
+            org.openrewrite.java.Assertions.java("class B {}", "class B {}")
+        );
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import org.openrewrite.test.RecipeSpec;
+import org.openrewrite.test.RewriteTest;
+
+class MyTest implements RewriteTest {
+
+    @Override
+    public void defaults(RecipeSpec spec) {
+        spec.recipe(new org.openrewrite.java.recipes.MissingOptionExample());
+    }
+
+    @Test
+    void test1() {
+        rewriteRun(
+            org.openrewrite.java.Assertions.java("class A {}", "class A {}")
+        );
+    }
+
+    @Test
+    void test2() {
+        rewriteRun(
+            org.openrewrite.java.Assertions.java("class B {}", "class B {}")
+        );
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import org.junit.jupiter.api.Test;
++import org.openrewrite.test.RecipeSpec;
+import org.openrewrite.test.RewriteTest;
+@@ -5,0 +6,6 @@
+
+class MyTest implements RewriteTest {
++
++   @Override
++   public void defaults(RecipeSpec spec) {
++       spec.recipe(new org.openrewrite.java.recipes.MissingOptionExample());
++   }
++
+    @Test
+@@ -8,1 +15,0 @@
+    void test1() {
+        rewriteRun(
+-           spec -> spec.recipe(new org.openrewrite.java.recipes.MissingOptionExample()),
+            org.openrewrite.java.Assertions.java("class A {}", "class A {}")
+@@ -16,1 +22,0 @@
+    void test2() {
+        rewriteRun(
+-           spec -> spec.recipe(new org.openrewrite.java.recipes.MissingOptionExample()),
+            org.openrewrite.java.Assertions.java("class B {}", "class B {}")
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | prompt | Query from user to search for. |  |
+| `String` | prompt | Query from user to search for. | `singleton pattern` |
 
 
 ## Usage
@@ -38,7 +38,7 @@ name: com.yourorg.SearchDesignTechniqueExample
 displayName: Search for a class that uses the given design technique example
 recipeList:
   - io.moderne.knowledge.search.SearchDesignTechnique: 
-      prompt: null
+      prompt: singleton pattern
 ```
 
 <Tabs groupId="projectType">
@@ -47,7 +47,7 @@ recipeList:
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe SearchDesignTechnique --recipe-option "prompt=null"
+mod run . --recipe SearchDesignTechnique --recipe-option "prompt=singleton pattern"
 ```
 
 If the recipe is not available locally, then you can install it using:

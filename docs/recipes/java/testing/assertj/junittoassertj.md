@@ -44,6 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [JUnit `assertTrue` to AssertJ](../../../java/testing/assertj/junitasserttruetoassertthat)
 * [JUnit fail to AssertJ](../../../java/testing/assertj/junitfailtoassertjfail)
 * [JUnit AssertThrows to AssertJ exceptionType](../../../java/testing/assertj/junitassertthrowstoassertexceptiontype)
+* [Convert try-catch-fail blocks to AssertJ's assertThatThrownBy](../../../java/testing/assertj/junittryfailtoassertthatthrownby)
 * [JUnit `assertInstanceOf` to AssertJ](../../../java/testing/assertj/junitassertinstanceoftoassertthat)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.assertj`
@@ -79,6 +80,7 @@ recipeList:
   - org.openrewrite.java.testing.assertj.JUnitAssertTrueToAssertThat
   - org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail
   - org.openrewrite.java.testing.assertj.JUnitAssertThrowsToAssertExceptionType
+  - org.openrewrite.java.testing.assertj.JUnitTryFailToAssertThatThrownBy
   - org.openrewrite.java.testing.assertj.JUnitAssertInstanceOfToAssertThat
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.assertj

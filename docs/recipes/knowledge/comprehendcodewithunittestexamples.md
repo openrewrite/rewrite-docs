@@ -18,6 +18,36 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+###### Unchanged
+```java
+import foo.Foo;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class FooTest {
+   @Test
+   public void barChangesEnv() {
+       Foo foo = new Foo();
+       // Retrieve an environment variable for API_KEY before calling bar()
+       String envVarBefore = System.getenv("API_KEY");
+       assertNotNull(envVarBefore, "API_KEY should not be null before calling bar()");
+       assertEquals("NotInitialized", envVarBefore, "API_KEY should initially be 'NotInitialized'");
+
+       // Call the method that changes the environment variable
+       foo.bar();
+
+       // Retrieve the environment variable again after calling bar()
+       String envVarAfter = System.getenv("API_KEY");
+       assertNotNull(envVarAfter, "API_KEY should not be null after calling bar()");
+       assertEquals("bar", envVarAfter, "API_KEY should be changed to 'bar'");
+       foo.baz();
+   }
+}
+```
+
 
 ## Usage
 

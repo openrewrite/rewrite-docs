@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](../../../java/migrate/jakarta/javaxdecoratortojakartadecorator)
 * [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](../../../java/migrate/jakarta/javaxejbtojakartaejb)
 * [Migrate deprecated `javax.el` packages to `jakarta.el`](../../../java/migrate/jakarta/javaxeltojakartael)
+* [Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`](../../../java/migrate/jakarta/fileuploadtofileupload2)
 * [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](../../../java/migrate/jakarta/javaxenterprisetojakartaenterprise)
 * [JSF 2.x to Jakarta Faces 3.x](../../../java/migrate/jakarta/faces2xmigrationtojakartafaces3x)
 * [Migrate deprecated `javax.inject` packages to `jakarta.inject`](../../../java/migrate/jakarta/javaxinjectmigrationtojakartainject)
@@ -50,6 +51,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javax.jms` packages to `jakarta.jms`](../../../java/migrate/jakarta/javaxjmstojakartajms)
 * [Migrate deprecated `javax.json` packages to `jakarta.json`](../../../java/migrate/jakarta/javaxjsontojakartajson)
 * [Migrate deprecated `javax.jws` packages to `jakarta.jws`](../../../java/migrate/jakarta/javaxjwstojakartajws)
+* [Migrate deprecated `javax.jsp` packages to `jakarta.jsp`](../../../java/migrate/jakarta/javaxjsptojakartajsp)
 * [Migrate deprecated `javax.mail` packages to `jakarta.mail`](../../../java/migrate/jakarta/javaxmailtojakartamail)
 * [Migrate xmlns entries in `orm.xml` files](../../../java/migrate/jakarta/javaxormxmltojakartaormxml)
 * [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](../../../java/migrate/jakarta/javaxpersistencetojakartapersistence)
@@ -65,6 +67,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javax.soap` packages to `jakarta.soap`](../../../java/migrate/jakarta/javaxxmlsoaptojakartaxmlsoap)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](../../../java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws)
 * [Migrate Jackson from javax to jakarta namespace](../../../java/migrate/jakarta/jacksonjavaxtojakarta)
+* [Update Jetty9 to Jetty12](../../../java/migrate/jakarta/jettyupgradeee9)
 * [Migrate Ehcache from javax to jakarta namespace](../../../java/migrate/jakarta/ehcachejavaxtojakarta)
 * [Migrate Johnzon from javax to jakarta namespace](../../../java/migrate/jakarta/johnzonjavaxtojakarta)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](../../../java/migrate/jakarta/restassuredjavaxtojakarta)
@@ -72,6 +75,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](../../../java/migrate/jakarta/updateapachewssecuritypackages)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](../../../java/migrate/jakarta/javaxeeapitojakarta)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](../../../java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot)
+* [Update RestLet to 2.6.0](../../../java/migrate/jakarta/updaterestlet2_6)
 
 </TabItem>
 
@@ -98,6 +102,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxDecoratorToJakartaDecorator
   - org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb
   - org.openrewrite.java.migrate.jakarta.JavaxElToJakartaEl
+  - org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2
   - org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise
   - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x
   - org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject
@@ -105,6 +110,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxJmsToJakartaJms
   - org.openrewrite.java.migrate.jakarta.JavaxJsonToJakartaJson
   - org.openrewrite.java.migrate.jakarta.JavaxJwsToJakartaJws
+  - org.openrewrite.java.migrate.jakarta.JavaxJspToJakartaJsp
   - org.openrewrite.java.migrate.jakarta.JavaxMailToJakartaMail
   - org.openrewrite.java.migrate.jakarta.JavaxOrmXmlToJakartaOrmXml
   - org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence
@@ -120,6 +126,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxXmlSoapToJakartaXmlSoap
   - org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs
   - org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta
+  - org.openrewrite.java.migrate.jakarta.JettyUpgradeEE9
   - org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta
@@ -127,6 +134,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages
   - org.openrewrite.java.migrate.jakarta.JavaxEEApiToJakarta
   - org.openrewrite.java.migrate.jakarta.RemoveJakartaAnnotationDependencyWhenManagedBySpringBoot
+  - org.openrewrite.java.migrate.jakarta.UpdateRestLet2_6
 
 ```
 </TabItem>
@@ -136,6 +144,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
 * [Migrate to Jakarta EE 9.1](/recipes/com/oracle/weblogic/rewrite/jakartaee9_1.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)

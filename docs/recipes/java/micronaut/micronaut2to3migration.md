@@ -28,6 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Jakarta EE 9](../../java/migrate/jakarta/javaxmigrationtojakarta)
 * [De-capitalize `BeanIntrospection` `getProperty(..)` and `getRequiredProperty(..)` name arguments](../../java/micronaut/beanpropertycapitalizationstrategy)
 * [Copy non-inherited annotations from super class](../../java/micronaut/copynoninheritedannotations)
 * [Change factory method return types to reflect their resolved return type](../../java/micronaut/subclassesreturnedfromfactoriesnotinjectable)
@@ -157,6 +158,7 @@ displayName: Migrate from Micronaut 2.x to 3.x
 description: |
   This recipe will apply changes required for migrating from Micronaut 2 to Micronaut 3.
 recipeList:
+  - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
   - org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy
   - org.openrewrite.java.micronaut.CopyNonInheritedAnnotations
   - org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable

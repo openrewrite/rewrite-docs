@@ -29,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](../../apache/httpclient5/upgradeapachehttpcoreniodependencies)
+* [Migrate to Apache HttpCore Nio Util Classes to Apache HttpCore 5.x](../../apache/httpclient5/upgradeapachehttpcore_5_nioutilmapping)
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.impl.nio.reactor.IOReactorConfig`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.reactor.IOReactorConfig`
@@ -76,6 +77,7 @@ description: |
   Mapping of all the compatible classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
 recipeList:
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCoreNioDependencies
+  - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioUtilMapping
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.impl.nio.reactor.IOReactorConfig
       newFullyQualifiedTypeName: org.apache.hc.core5.reactor.IOReactorConfig

@@ -30,6 +30,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | upgradeRecipe | *Optional*. The recipe to use to upgrade. | `com.acme.UpgradeInternalParentPom` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [DevCenter for Apache Maven](/recipes/devcenter/apachemavendevcenter.md)
+* [DevCenter for Apache](/recipes/devcenter/apachedevcenter.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ParentPomUpgradeExample`.

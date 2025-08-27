@@ -95,7 +95,6 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
-* [Migrate to Spring Kafka 3.3](/recipes/java/spring/boot3/upgradespringkafka_3_3.md)
 
 ## Examples
 ##### Example 1

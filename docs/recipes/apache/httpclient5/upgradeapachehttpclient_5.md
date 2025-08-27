@@ -44,6 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Adds `TimeUnit` to timeouts and duration methods](../../apache/httpclient5/upgradeapachehttpclient_5_timeunit)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/statusline)
 * [Replaces `AuthScope.ANY`](../../apache/httpclient5/migrateauthscope)
+* [Migrate deprecated `SSLConnectionSocketFactory` to `DefaultClientTlsStrategy`](../../apache/httpclient5/migratesslconnectionsocketfactory)
 * [Delete method argument](../../java/deletemethodargument)
   * methodPattern: `org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)`
   * argumentIndex: `0`
@@ -77,6 +78,7 @@ recipeList:
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit
   - org.openrewrite.apache.httpclient5.StatusLine
   - org.openrewrite.apache.httpclient5.MigrateAuthScope
+  - org.openrewrite.apache.httpclient5.MigrateSSLConnectionSocketFactory
   - org.openrewrite.java.DeleteMethodArgument:
       methodPattern: org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)
       argumentIndex: 0
@@ -189,6 +191,83 @@ class A {
 
 ###### Before
 ```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.io.HttpClientConnectionManager;
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
+import org.apache.hc.core5.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
+        HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
+        HttpClients.custom().setConnectionManager(cm).build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,6 @@
+import javax.net.ssl.SSLContext;
+
+-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+-import org.apache.http.impl.client.HttpClients;
+-import org.apache.http.ssl.SSLContexts;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
++import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
++import org.apache.hc.client5.http.io.HttpClientConnectionManager;
++import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
++import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
++import org.apache.hc.core5.ssl.SSLContexts;
+
+@@ -10,2 +13,3 @@
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+-       SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+-       HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
++       TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
++       HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
++       HttpClients.custom().setConnectionManager(cm).build();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
 import org.apache.http.auth.AuthScope;
 
 class A {
@@ -229,7 +308,7 @@ class A {
 
 ---
 
-##### Example 3
+##### Example 4
 
 
 <Tabs groupId="beforeAfter">
@@ -298,7 +377,7 @@ class A {
 
 ---
 
-##### Example 4
+##### Example 5
 
 
 <Tabs groupId="beforeAfter">
@@ -393,7 +472,7 @@ class A {
 
 ---
 
-##### Example 5
+##### Example 6
 
 
 <Tabs groupId="beforeAfter">
@@ -450,7 +529,7 @@ class A {
 
 ---
 
-##### Example 6
+##### Example 7
 
 
 <Tabs groupId="beforeAfter">
@@ -535,7 +614,84 @@ class A {
 
 ---
 
-##### Example 7
+##### Example 8
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.io.HttpClientConnectionManager;
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
+import org.apache.hc.core5.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
+        HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
+        HttpClients.custom().setConnectionManager(cm).build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,6 @@
+import javax.net.ssl.SSLContext;
+
+-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+-import org.apache.http.impl.client.HttpClients;
+-import org.apache.http.ssl.SSLContexts;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
++import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
++import org.apache.hc.client5.http.io.HttpClientConnectionManager;
++import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
++import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
++import org.apache.hc.core5.ssl.SSLContexts;
+
+@@ -10,2 +13,3 @@
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+-       SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+-       HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
++       TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
++       HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
++       HttpClients.custom().setConnectionManager(cm).build();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 9
 
 
 <Tabs groupId="beforeAfter">
@@ -584,7 +740,7 @@ class A {
 
 ---
 
-##### Example 8
+##### Example 10
 
 
 <Tabs groupId="beforeAfter">
@@ -653,7 +809,7 @@ class A {
 
 ---
 
-##### Example 9
+##### Example 11
 
 
 <Tabs groupId="beforeAfter">
@@ -748,7 +904,7 @@ class A {
 
 ---
 
-##### Example 10
+##### Example 12
 
 
 <Tabs groupId="beforeAfter">
