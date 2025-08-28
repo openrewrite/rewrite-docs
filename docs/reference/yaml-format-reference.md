@@ -166,6 +166,21 @@ Before OpenRewrite 8.52.0 `ScanningRecipe`s were not supported as YAML precondit
 If you encounter errors attempting to use recipes like `ModuleHasPlugin` as preconditions ensure you are using a recent version of OpenRewrite.
 :::
 
+#### Using preconditions to limit what files are touched
+
+You can use preconditions to limit what files are touched by using the `FindSourceFiles` recipe and passing in a negation to it. For instance, in the example below, we tell the recipe to run on every file _except_ for the `PackageSettings.java` file:
+
+```bash
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.PreconditionExample
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: "!(**/PackageSettings.java)"
+recipeList:
+  - org.openrewrite.text.ChangeText:
+     toText: 2
+```
+
 ### Recipe list
 
 A declarative recipe can be made up of one or more recipes. The recipes in the list could be other declarative recipes defined in the same file or they can be imperative recipes created elsewhere. Like imperative recipes, each recipe in this list can potentially have configuration options that need to be specified.

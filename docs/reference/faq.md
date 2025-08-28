@@ -129,6 +129,10 @@ Double check and adjust your dependency version, or add additional repository co
 
 OpenRewrite is probably still building up a model of your code and resolving types – this can take a while. Right now, there is not a progress report for recipe runs.
 
+## Can I tell OpenRewrite to NOT touch a certain file?
+
+Yes – [we describe how in our preconditions doc](./yaml-format-reference.md#using-preconditions-to-limit-what-files-are-touched).
+
 ## Can I create a report or summary of the changes made through OpenRewrite?
 
 When recipes run with the OSS Maven and Gradle plugins, they produce a summary of what files where changes by which recipes.
