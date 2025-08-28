@@ -13,10 +13,10 @@ _Migrate xmlns entries in WebLogic EJB 3.2 schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [ejb-3.2](/reference/recipes-by-tag#ejb-3.2)
+* [ejb-3.2](/reference/recipes-by-tag#ejb)
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
-* [ejb-jar](/reference/recipes-by-tag#ejb-jar)
+* [ejb-jar](/reference/recipes-by-tag#ejb)
 
 ## Recipe source
 

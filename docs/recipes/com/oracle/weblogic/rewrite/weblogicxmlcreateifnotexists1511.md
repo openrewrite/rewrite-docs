@@ -13,7 +13,7 @@ _This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespac
 
 ### Tags
 
-* [web-app](/reference/recipes-by-tag#web-app)
+* [web-app](/reference/recipes-by-tag#web)
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 

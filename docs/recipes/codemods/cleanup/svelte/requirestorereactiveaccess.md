@@ -14,8 +14,8 @@ _disallow to use of the store itself as an operand. Need to use $ prefix or get 
 ### Tags
 
 * [svelte](/reference/recipes-by-tag#svelte)
-* [ESLint](/reference/recipes-by-tag#eslint)
-* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint-plugin-svelte)
+* [ESLint](/reference/recipes-by-tag#ESLint)
+* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

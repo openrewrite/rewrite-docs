@@ -13,9 +13,9 @@ _Enforce dot notation whenever possible in `<template>` See rule details for [vu
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#eslint)
+* [ESLint](/reference/recipes-by-tag#ESLint)
 * [vue](/reference/recipes-by-tag#vue)
-* [eslint-plugin-vue](/reference/recipes-by-tag#eslint-plugin-vue)
+* [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

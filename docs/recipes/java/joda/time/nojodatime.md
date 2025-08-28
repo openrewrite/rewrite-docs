@@ -13,7 +13,7 @@ _Before Java 8, Java lacked a robust date and time library, leading to the wides
 
 ### Tags
 
-* [joda-time](/reference/recipes-by-tag#joda-time)
+* [joda-time](/reference/recipes-by-tag#joda)
 
 ## Recipe source
 

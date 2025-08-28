@@ -13,9 +13,9 @@ _Redshift clusters should be securely encrypted at rest._
 
 ### Tags
 
-* [CKV_AWS_64](/reference/recipes-by-tag#ckv_aws_64)
+* [CKV_AWS_64](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

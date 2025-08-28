@@ -14,8 +14,8 @@ _DynamoDB Point-In-Time Recovery (PITR) is an automatic backup service for Dynam
 ### Tags
 
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
-* [CKV_AWS_28](/reference/recipes-by-tag#ckv_aws_28)
+* [AWS](/reference/recipes-by-tag#AWS)
+* [CKV_AWS_28](/reference/recipes-by-tag#CKV)
 
 ## Recipe source
 

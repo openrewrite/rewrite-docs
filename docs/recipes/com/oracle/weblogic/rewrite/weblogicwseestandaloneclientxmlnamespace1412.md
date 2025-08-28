@@ -13,7 +13,7 @@ _Migrate xmlns entries in WebLogic WSEE Standalone Client schema files to WebLog
 
 ### Tags
 
-* [wsee-standaloneclient](/reference/recipes-by-tag#wsee-standaloneclient)
+* [wsee-standaloneclient](/reference/recipes-by-tag#wsee)
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 

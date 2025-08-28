@@ -14,7 +14,7 @@ _Apply best practices for using Jackson library, including upgrade to Jackson 2.
 ### Tags
 
 * [jackson](/reference/recipes-by-tag#jackson)
-* [best practices](/reference/recipes-by-tag#best-practices)
+* [best practices](/reference/recipes-by-tag#best practices)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Ensure all keys have an expiration date._
 
 ### Tags
 
-* [CKV_AZURE_40](/reference/recipes-by-tag#ckv_azure_40)
-* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_40](/reference/recipes-by-tag#CKV)
+* [Azure](/reference/recipes-by-tag#Azure)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

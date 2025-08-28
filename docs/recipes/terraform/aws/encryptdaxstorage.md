@@ -13,9 +13,9 @@ _DAX encryption at rest automatically integrates with AWS KMS for managing the s
 
 ### Tags
 
-* [CKV_AWS_47](/reference/recipes-by-tag#ckv_aws_47)
+* [CKV_AWS_47](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

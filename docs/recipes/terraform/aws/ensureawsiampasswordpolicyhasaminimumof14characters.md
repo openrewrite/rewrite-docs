@@ -13,9 +13,9 @@ _Ensure AWS IAM password policy has a minimum of 14 characters._
 
 ### Tags
 
-* [CKV_AWS_10](/reference/recipes-by-tag#ckv_aws_10)
+* [CKV_AWS_10](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

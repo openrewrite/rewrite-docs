@@ -13,9 +13,9 @@ _Encrypting EBS volumes ensures that replicated copies of your images are secure
 
 ### Tags
 
-* [CKV_AWS_3](/reference/recipes-by-tag#ckv_aws_3)
+* [CKV_AWS_3](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

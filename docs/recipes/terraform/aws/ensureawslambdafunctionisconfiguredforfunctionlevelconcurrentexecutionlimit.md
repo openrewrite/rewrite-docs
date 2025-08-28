@@ -13,9 +13,9 @@ _Ensure AWS Lambda function is configured for function-level concurrent executio
 
 ### Tags
 
-* [CKV_AWS_115](/reference/recipes-by-tag#ckv_aws_115)
+* [CKV_AWS_115](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

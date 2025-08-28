@@ -13,9 +13,9 @@ _Enforce writing style for handlers in v-on directives See rule details for [vue
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#eslint)
+* [ESLint](/reference/recipes-by-tag#ESLint)
 * [vue](/reference/recipes-by-tag#vue)
-* [eslint-plugin-vue](/reference/recipes-by-tag#eslint-plugin-vue)
+* [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

@@ -13,8 +13,8 @@ _Ensure PostgreSQL server enables infrastructure encryption._
 
 ### Tags
 
-* [CKV_AZURE_130](/reference/recipes-by-tag#ckv_azure_130)
-* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_130](/reference/recipes-by-tag#CKV)
+* [Azure](/reference/recipes-by-tag#Azure)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

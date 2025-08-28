@@ -13,8 +13,8 @@ _Ensure secure boot for shielded GKE nodes is enabled._
 
 ### Tags
 
-* [GCP](/reference/recipes-by-tag#gcp)
-* [CKV_GCP_68](/reference/recipes-by-tag#ckv_gcp_68)
+* [GCP](/reference/recipes-by-tag#GCP)
+* [CKV_GCP_68](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

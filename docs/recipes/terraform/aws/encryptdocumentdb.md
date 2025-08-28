@@ -13,9 +13,9 @@ _The encryption feature available for Amazon DocumentDB clusters provides an add
 
 ### Tags
 
-* [CKV_AWS_74](/reference/recipes-by-tag#ckv_aws_74)
+* [CKV_AWS_74](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

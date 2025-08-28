@@ -13,7 +13,7 @@ _Transforms code written using `java.util.logging` to use Log4j 2.x API._
 
 ### Tags
 
-* [java-util-logging](/reference/recipes-by-tag#java-util-logging)
+* [java-util-logging](/reference/recipes-by-tag#java)
 * [logging](/reference/recipes-by-tag#logging)
 * [log4j](/reference/recipes-by-tag#log4j)
 

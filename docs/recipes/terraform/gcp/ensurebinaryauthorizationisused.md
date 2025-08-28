@@ -13,8 +13,8 @@ _Ensure binary authorization is used._
 
 ### Tags
 
-* [CKV_GCP_66](/reference/recipes-by-tag#ckv_gcp_66)
-* [GCP](/reference/recipes-by-tag#gcp)
+* [CKV_GCP_66](/reference/recipes-by-tag#CKV)
+* [GCP](/reference/recipes-by-tag#GCP)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

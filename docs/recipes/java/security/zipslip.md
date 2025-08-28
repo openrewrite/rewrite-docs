@@ -13,7 +13,7 @@ _Zip slip is an arbitrary file overwrite critical vulnerability, which typically
 
 ### Tags
 
-* [CWE-22](/reference/recipes-by-tag#cwe-22)
+* [CWE-22](/reference/recipes-by-tag#CWE)
 
 ## Recipe source
 

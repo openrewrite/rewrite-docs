@@ -13,9 +13,9 @@ _Ensure AWS Elasticsearch domain encryption for data at rest is enabled._
 
 ### Tags
 
-* [CKV_AWS_5](/reference/recipes-by-tag#ckv_aws_5)
+* [CKV_AWS_5](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

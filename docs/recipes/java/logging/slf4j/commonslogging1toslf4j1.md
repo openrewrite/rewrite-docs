@@ -15,7 +15,7 @@ _Transforms usages of Apache Commons Logging 1.x to leveraging SLF4J 1.x directl
 
 * [slf4j](/reference/recipes-by-tag#slf4j)
 * [logging](/reference/recipes-by-tag#logging)
-* [commons-logging](/reference/recipes-by-tag#commons-logging)
+* [commons-logging](/reference/recipes-by-tag#commons)
 
 ## Recipe source
 

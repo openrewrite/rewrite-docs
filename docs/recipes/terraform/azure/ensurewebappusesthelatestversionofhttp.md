@@ -13,8 +13,8 @@ _Ensure Web App uses the latest version of HTTP._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
-* [CKV_AZURE_18](/reference/recipes-by-tag#ckv_azure_18)
+* [Azure](/reference/recipes-by-tag#Azure)
+* [CKV_AZURE_18](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

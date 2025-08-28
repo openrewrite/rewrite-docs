@@ -13,9 +13,9 @@ _Enforce newlines between operands of ternary expressions in `<template>` See ru
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#eslint)
+* [ESLint](/reference/recipes-by-tag#ESLint)
 * [vue](/reference/recipes-by-tag#vue)
-* [eslint-plugin-vue](/reference/recipes-by-tag#eslint-plugin-vue)
+* [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

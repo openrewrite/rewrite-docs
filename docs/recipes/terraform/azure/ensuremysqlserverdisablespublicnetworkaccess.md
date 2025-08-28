@@ -13,8 +13,8 @@ _Ensure MySQL server disables public network access._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
-* [CKV_AZURE_90](/reference/recipes-by-tag#ckv_azure_90)
+* [Azure](/reference/recipes-by-tag#Azure)
+* [CKV_AZURE_90](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

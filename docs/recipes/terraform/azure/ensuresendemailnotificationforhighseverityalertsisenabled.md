@@ -13,9 +13,9 @@ _Ensure Send email notification for high severity alerts is enabled._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
+* [Azure](/reference/recipes-by-tag#Azure)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [CKV_AZURE_21](/reference/recipes-by-tag#ckv_azure_21)
+* [CKV_AZURE_21](/reference/recipes-by-tag#CKV)
 
 ## Recipe source
 

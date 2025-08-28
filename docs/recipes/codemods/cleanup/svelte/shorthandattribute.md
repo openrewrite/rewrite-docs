@@ -14,8 +14,8 @@ _enforce use of shorthand syntax in attribute See rule details for [svelte/short
 ### Tags
 
 * [svelte](/reference/recipes-by-tag#svelte)
-* [ESLint](/reference/recipes-by-tag#eslint)
-* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint-plugin-svelte)
+* [ESLint](/reference/recipes-by-tag#ESLint)
+* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

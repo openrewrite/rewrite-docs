@@ -13,8 +13,8 @@ _Ensure a security contact phone number is present._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
-* [CKV_AZURE_20](/reference/recipes-by-tag#ckv_azure_20)
+* [Azure](/reference/recipes-by-tag#Azure)
+* [CKV_AZURE_20](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

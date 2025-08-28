@@ -15,7 +15,7 @@ _This recipe will update the `xmlns` entries in `weblogic-ejb-jar.xml` files to 
 
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
-* [ejb-jar](/reference/recipes-by-tag#ejb-jar)
+* [ejb-jar](/reference/recipes-by-tag#ejb)
 
 ## Recipe source
 

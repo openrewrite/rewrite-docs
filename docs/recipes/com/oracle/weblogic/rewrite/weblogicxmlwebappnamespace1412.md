@@ -13,7 +13,7 @@ _Migrate xmlns entries in WebLogic schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [web-app](/reference/recipes-by-tag#web-app)
+* [web-app](/reference/recipes-by-tag#web)
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 

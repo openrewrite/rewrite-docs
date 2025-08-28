@@ -13,7 +13,7 @@ _This recipe will add a `prefer-application-packages` entry for Jakarta Persiste
 
 ### Tags
 
-* [web-app](/reference/recipes-by-tag#web-app)
+* [web-app](/reference/recipes-by-tag#web)
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 

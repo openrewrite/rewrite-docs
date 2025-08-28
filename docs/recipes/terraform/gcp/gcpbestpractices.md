@@ -13,7 +13,7 @@ _Securely operate on Google Cloud Platform._
 
 ### Tags
 
-* [GCP](/reference/recipes-by-tag#gcp)
+* [GCP](/reference/recipes-by-tag#GCP)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

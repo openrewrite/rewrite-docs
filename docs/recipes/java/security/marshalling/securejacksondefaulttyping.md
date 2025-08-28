@@ -13,8 +13,8 @@ _See the [blog post](https://cowtowncoder.medium.com/on-jackson-cves-dont-panic-
 
 ### Tags
 
-* [CWE-502](/reference/recipes-by-tag#cwe-502)
-* [CWE-94](/reference/recipes-by-tag#cwe-94)
+* [CWE-502](/reference/recipes-by-tag#CWE)
+* [CWE-94](/reference/recipes-by-tag#CWE)
 
 ## Recipe source
 

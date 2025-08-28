@@ -13,7 +13,7 @@ _This recipe will update the `xmlns` entries in `resource-deployment-plan.xml` f
 
 ### Tags
 
-* [resource-deployment-plan](/reference/recipes-by-tag#resource-deployment-plan)
+* [resource-deployment-plan](/reference/recipes-by-tag#resource)
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 

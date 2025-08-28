@@ -13,8 +13,8 @@ _Ensure Azure SQL server send alerts to field value is set._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
-* [CKV_AZURE_26](/reference/recipes-by-tag#ckv_azure_26)
+* [Azure](/reference/recipes-by-tag#Azure)
+* [CKV_AZURE_26](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

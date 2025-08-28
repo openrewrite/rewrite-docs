@@ -13,9 +13,9 @@ _Ensure IAM password policy requires at least one symbol._
 
 ### Tags
 
-* [CKV_AWS_14](/reference/recipes-by-tag#ckv_aws_14)
+* [CKV_AWS_14](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

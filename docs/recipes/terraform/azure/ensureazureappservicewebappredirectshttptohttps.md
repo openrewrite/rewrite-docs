@@ -13,8 +13,8 @@ _Ensure Azure App Service Web app redirects HTTP to HTTPS._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
-* [CKV_AZURE_14](/reference/recipes-by-tag#ckv_azure_14)
+* [Azure](/reference/recipes-by-tag#Azure)
+* [CKV_AZURE_14](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

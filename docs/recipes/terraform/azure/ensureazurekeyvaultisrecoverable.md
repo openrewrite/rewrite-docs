@@ -13,8 +13,8 @@ _Ensure Azure key vault is recoverable._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
-* [CKV_AZURE_42](/reference/recipes-by-tag#ckv_azure_42)
+* [Azure](/reference/recipes-by-tag#Azure)
+* [CKV_AZURE_42](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

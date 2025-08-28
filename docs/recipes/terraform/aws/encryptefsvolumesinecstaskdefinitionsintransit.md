@@ -13,9 +13,9 @@ _Enable attached EFS definitions in ECS tasks to use encryption in transit._
 
 ### Tags
 
-* [CKV_AWS_97](/reference/recipes-by-tag#ckv_aws_97)
+* [CKV_AWS_97](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

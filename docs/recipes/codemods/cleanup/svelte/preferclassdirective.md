@@ -14,8 +14,8 @@ _require class directives instead of ternary expressions See rule details for [s
 ### Tags
 
 * [svelte](/reference/recipes-by-tag#svelte)
-* [ESLint](/reference/recipes-by-tag#eslint)
-* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint-plugin-svelte)
+* [ESLint](/reference/recipes-by-tag#ESLint)
+* [eslint-plugin-svelte](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 

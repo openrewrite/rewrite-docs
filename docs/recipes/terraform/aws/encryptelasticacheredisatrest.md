@@ -14,8 +14,8 @@ _ElastiCache for Redis offers default encryption at rest as a service._
 ### Tags
 
 * [terraform](/reference/recipes-by-tag#terraform)
-* [CKV_AWS_29](/reference/recipes-by-tag#ckv_aws_29)
-* [AWS](/reference/recipes-by-tag#aws)
+* [CKV_AWS_29](/reference/recipes-by-tag#CKV)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

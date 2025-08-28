@@ -13,8 +13,8 @@ _Ensure the storage container storing activity logs is not publicly accessible._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#azure)
-* [CKV2_AZURE_8](/reference/recipes-by-tag#ckv2_azure_8)
+* [Azure](/reference/recipes-by-tag#Azure)
+* [CKV2_AZURE_8](/reference/recipes-by-tag#CKV2)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

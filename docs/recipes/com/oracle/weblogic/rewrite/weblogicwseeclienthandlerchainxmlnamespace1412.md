@@ -13,7 +13,7 @@ _Migrate xmlns entries in WebLogic WSEE Client Handler Chains schema files to We
 
 ### Tags
 
-* [wsee-clientHandlerChain](/reference/recipes-by-tag#wsee-clienthandlerchain)
+* [wsee-clientHandlerChain](/reference/recipes-by-tag#wsee)
 * [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 

@@ -13,9 +13,9 @@ _Ensure ECR repositories are encrypted._
 
 ### Tags
 
-* [CKV_AWS_136](/reference/recipes-by-tag#ckv_aws_136)
+* [CKV_AWS_136](/reference/recipes-by-tag#CKV)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#aws)
+* [AWS](/reference/recipes-by-tag#AWS)
 
 ## Recipe source
 

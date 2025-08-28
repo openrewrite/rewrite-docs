@@ -13,9 +13,9 @@ _Ensure GCP cloud storage bucket with uniform bucket-level access are enabled._
 
 ### Tags
 
-* [GCP](/reference/recipes-by-tag#gcp)
+* [GCP](/reference/recipes-by-tag#GCP)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [CKV_GCP_29](/reference/recipes-by-tag#ckv_gcp_29)
+* [CKV_GCP_29](/reference/recipes-by-tag#CKV)
 
 ## Recipe source
 
