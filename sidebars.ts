@@ -32,7 +32,6 @@ const sidebars: SidebarsConfig = {
           items: [
             'running-recipes/popular-recipe-guides/common-static-analysis-issue-remediation',
             'running-recipes/popular-recipe-guides/automatically-fix-checkstyle-violations',
-            'running-recipes/popular-recipe-guides/migrate-deprecated-methods-with-inlineme',
             'running-recipes/popular-recipe-guides/migrate-to-java-17',
             'running-recipes/popular-recipe-guides/migrate-to-java-21',
             'running-recipes/popular-recipe-guides/migrate-from-junit-4-to-junit-5',
