@@ -18,7 +18,7 @@ const structuredData = {
     name: 'Moderne',
   },
   datePublished: new Date(),
-  softwareVersion: latestVersions["{{VERSION_REWRITE_CORE}}"],
+  softwareVersion: latestVersions["{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}"],
   downloadUrl: 'https://github.com/openrewrite/rewrite/releases',
   video: {
     '@type': 'VideoObject',

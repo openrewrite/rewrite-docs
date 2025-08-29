@@ -31,7 +31,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
 }
 ```
 
@@ -52,7 +52,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite.recipe</groupId>
         <artifactId>rewrite-static-analysis</artifactId>
-        <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+        <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
     </dependency>
     </dependencies>
 </plugin>

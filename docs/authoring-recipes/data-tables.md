@@ -300,7 +300,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
 }
 ```
 </TabItem>
@@ -332,7 +332,7 @@ Add `<exportDatatables>true</exportDatatables>` to your `pom.xml` file such as i
         <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>{{VERSION_REWRITE_JAVA_DEPENDENCIES}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}</version>
         </dependency>
     </dependencies>
 </plugin>

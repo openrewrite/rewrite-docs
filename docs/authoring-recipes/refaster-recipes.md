@@ -159,7 +159,7 @@ dependencies {
                     <path>
                         <groupId>org.openrewrite</groupId>
                         <artifactId>rewrite-templating</artifactId>
-                        <version>{{VERSION_REWRITE_TEMPLATING}}</version>
+                        <version>{{VERSION_ORG_OPENREWRITE_REWRITE_TEMPLATING}}</version>
                     </path>
                 </annotationProcessorPaths>
             </configuration>

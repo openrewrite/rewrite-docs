@@ -36,7 +36,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,7 +132,7 @@ dependencies {
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-static-analysis</artifactId>
-          <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -217,7 +217,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -58,7 +58,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-spring</artifactId>
-          <version>{{VERSION_REWRITE_SPRING}}</version>
+          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -121,7 +121,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>{{VERSION_REWRITE_TESTING_FRAMEWORKS}}</version>
+          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
         </dependency>
       </dependencies>
     </plugin>
