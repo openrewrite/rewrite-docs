@@ -16,9 +16,9 @@ Use `Files#createTempDirectory` when the sequence `File#createTempFile(..)`->`Fi
 
 ### Tags
 
-* [CWE-379](/reference/recipes-by-tag#CWE)
+* [CWE-379](/reference/recipes-by-tag#cwe)
 * [RSPEC-S5445](https://sonarsource.github.io/rspec/#/rspec/S5445)
-* [CWE-377](/reference/recipes-by-tag#CWE)
+* [CWE-377](/reference/recipes-by-tag#cwe)
 
 ## Recipe source
 

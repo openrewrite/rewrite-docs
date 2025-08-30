@@ -13,7 +13,7 @@ _Enforce order of attributes See rule details for [vue/attributes-order](https:/
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [vue](/reference/recipes-by-tag#vue)
 * [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 

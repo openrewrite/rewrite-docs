@@ -13,9 +13,9 @@ _Ensure IAM password policy expires passwords within 90 days or less._
 
 ### Tags
 
-* [CKV_AWS_9](/reference/recipes-by-tag#CKV)
+* [CKV_AWS_9](/reference/recipes-by-tag#ckv)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#AWS)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

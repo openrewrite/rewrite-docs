@@ -14,7 +14,7 @@ _Stories should use PascalCase See rule details for [storybook/prefer-pascal-cas
 ### Tags
 
 * [eslint-plugin-storybook](/reference/recipes-by-tag#eslint)
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [storybook](/reference/recipes-by-tag#storybook)
 
 ## Recipe source

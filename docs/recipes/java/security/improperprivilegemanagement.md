@@ -13,7 +13,7 @@ _Marking code as privileged enables a piece of trusted code to temporarily enabl
 
 ### Tags
 
-* [CWE-269](/reference/recipes-by-tag#CWE)
+* [CWE-269](/reference/recipes-by-tag#cwe)
 
 ## Recipe source
 

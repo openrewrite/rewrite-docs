@@ -13,9 +13,9 @@ _Disallow using jest.mock() factories without an explicit type parameter See rul
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [eslint-plugin-jest](/reference/recipes-by-tag#eslint)
-* [Jest](/reference/recipes-by-tag#Jest)
+* [Jest](/reference/recipes-by-tag#jest)
 
 ## Recipe source
 

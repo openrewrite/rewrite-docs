@@ -13,7 +13,7 @@ _Enforce consistent line breaks after opening and before closing braces in `<tem
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [vue](/reference/recipes-by-tag#vue)
 * [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 

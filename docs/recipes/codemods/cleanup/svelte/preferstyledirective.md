@@ -14,7 +14,7 @@ _require style directives instead of style attribute See rule details for [svelt
 ### Tags
 
 * [svelte](/reference/recipes-by-tag#svelte)
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [eslint-plugin-svelte](/reference/recipes-by-tag#eslint)
 
 ## Recipe source

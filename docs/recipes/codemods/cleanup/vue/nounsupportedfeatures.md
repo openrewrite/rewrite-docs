@@ -13,7 +13,7 @@ _Disallow unsupported Vue.js syntax on the specified version See rule details fo
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [vue](/reference/recipes-by-tag#vue)
 * [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 

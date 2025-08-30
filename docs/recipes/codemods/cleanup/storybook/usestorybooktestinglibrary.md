@@ -14,7 +14,7 @@ _Do not use testing-library directly on stories See rule details for [storybook/
 ### Tags
 
 * [eslint-plugin-storybook](/reference/recipes-by-tag#eslint)
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [storybook](/reference/recipes-by-tag#storybook)
 
 ## Recipe source

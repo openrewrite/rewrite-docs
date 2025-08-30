@@ -13,7 +13,7 @@ _Disallow unnecessary mustache interpolations See rule details for [vue/no-usele
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [vue](/reference/recipes-by-tag#vue)
 * [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 

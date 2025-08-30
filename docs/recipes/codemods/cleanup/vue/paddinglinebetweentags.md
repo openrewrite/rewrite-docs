@@ -13,7 +13,7 @@ _Require or disallow newlines between sibling tags in template See rule details 
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [vue](/reference/recipes-by-tag#vue)
 * [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 

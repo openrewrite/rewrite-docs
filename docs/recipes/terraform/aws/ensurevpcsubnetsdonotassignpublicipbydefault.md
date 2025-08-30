@@ -14,8 +14,8 @@ _Ensure VPC subnets do not assign public IP by default._
 ### Tags
 
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#AWS)
-* [CKV_AWS_130](/reference/recipes-by-tag#CKV)
+* [AWS](/reference/recipes-by-tag#aws)
+* [CKV_AWS_130](/reference/recipes-by-tag#ckv)
 
 ## Recipe source
 

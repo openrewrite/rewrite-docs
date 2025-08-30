@@ -14,7 +14,7 @@ _Securely operate on Amazon Web Services._
 ### Tags
 
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#AWS)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

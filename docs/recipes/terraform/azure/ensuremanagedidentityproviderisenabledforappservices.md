@@ -13,8 +13,8 @@ _Ensure managed identity provider is enabled for app services._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#Azure)
-* [CKV_AZURE_71](/reference/recipes-by-tag#CKV)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_71](/reference/recipes-by-tag#ckv)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

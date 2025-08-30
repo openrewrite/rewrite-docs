@@ -13,9 +13,9 @@ _EBS snapshots should be encrypted, as they often include sensitive information,
 
 ### Tags
 
-* [CKV_AWS_4](/reference/recipes-by-tag#CKV)
+* [CKV_AWS_4](/reference/recipes-by-tag#ckv)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#AWS)
+* [AWS](/reference/recipes-by-tag#aws)
 
 ## Recipe source
 

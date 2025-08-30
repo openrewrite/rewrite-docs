@@ -13,7 +13,7 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [jobXML](/reference/recipes-by-tag#jobXML)
+* [jobXML](/reference/recipes-by-tag#jobxml)
 * [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source

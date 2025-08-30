@@ -14,7 +14,7 @@ _Replaces `catch(Exception e)` blocks with a multi-catch block (`catch (Specific
 ### Tags
 
 * [RSPEC-S2221](https://sonarsource.github.io/rspec/#/rspec/S2221)
-* [CWE-396](/reference/recipes-by-tag#CWE)
+* [CWE-396](/reference/recipes-by-tag#cwe)
 
 ## Recipe source
 

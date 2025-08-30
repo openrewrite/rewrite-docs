@@ -13,7 +13,7 @@ _Replace removed WebLogicLoadTimeWeaver with LoadTimeWeaver from Spring Framewor
 
 ### Tags
 
-* [LoadTimeWeaver](/reference/recipes-by-tag#LoadTimeWeaver)
+* [LoadTimeWeaver](/reference/recipes-by-tag#loadtimeweaver)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [springframework](/reference/recipes-by-tag#springframework)
 

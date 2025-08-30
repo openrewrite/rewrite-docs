@@ -13,8 +13,8 @@ _Azure Policy Add-on for Kubernetes service (AKS) extends Gatekeeper v3, an admi
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#Azure)
-* [CKV_AZURE_116](/reference/recipes-by-tag#CKV)
+* [Azure](/reference/recipes-by-tag#azure)
+* [CKV_AZURE_116](/reference/recipes-by-tag#ckv)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

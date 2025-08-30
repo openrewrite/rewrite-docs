@@ -13,9 +13,9 @@ _Ensure key vault secrets have `content_type` set._
 
 ### Tags
 
-* [Azure](/reference/recipes-by-tag#Azure)
+* [Azure](/reference/recipes-by-tag#azure)
 * [terraform](/reference/recipes-by-tag#terraform)
-* [CKV_AZURE_114](/reference/recipes-by-tag#CKV)
+* [CKV_AZURE_114](/reference/recipes-by-tag#ckv)
 
 ## Recipe source
 

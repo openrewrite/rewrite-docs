@@ -13,7 +13,7 @@ _Finds unicode control characters which can change the direction text is display
 
 ### Tags
 
-* [CVE-2021-42574](/reference/recipes-by-tag#CVE)
+* [CVE-2021-42574](/reference/recipes-by-tag#cve)
 
 ## Recipe source
 

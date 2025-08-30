@@ -14,7 +14,7 @@ _enforce quotes style of HTML attributes See rule details for [svelte/html-quote
 ### Tags
 
 * [svelte](/reference/recipes-by-tag#svelte)
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [eslint-plugin-svelte](/reference/recipes-by-tag#eslint)
 
 ## Recipe source

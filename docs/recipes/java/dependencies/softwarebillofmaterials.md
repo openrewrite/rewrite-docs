@@ -13,7 +13,7 @@ _Produces a software bill of materials (SBOM) for a project. An SBOM is a comple
 
 ### Tags
 
-* [CycloneDX](/reference/recipes-by-tag#CycloneDX)
+* [CycloneDX](/reference/recipes-by-tag#cyclonedx)
 
 ## Recipe source
 

@@ -13,9 +13,9 @@ _Suggest using test.todo See rule details for [jest/prefer-todo](https://github.
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [eslint-plugin-jest](/reference/recipes-by-tag#eslint)
-* [Jest](/reference/recipes-by-tag#Jest)
+* [Jest](/reference/recipes-by-tag#jest)
 
 ## Recipe source
 

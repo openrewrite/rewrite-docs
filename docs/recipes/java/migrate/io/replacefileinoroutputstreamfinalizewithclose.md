@@ -13,7 +13,7 @@ _Replace invocations of the deprecated `finalize()` method on `FileInputStream` 
 
 ### Tags
 
-* [JDK-8212050](/reference/recipes-by-tag#JDK)
+* [JDK-8212050](/reference/recipes-by-tag#jdk)
 
 ## Recipe source
 

@@ -14,7 +14,7 @@ _disallow spaces around equal signs in attribute See rule details for [svelte/no
 ### Tags
 
 * [svelte](/reference/recipes-by-tag#svelte)
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [eslint-plugin-svelte](/reference/recipes-by-tag#eslint)
 
 ## Recipe source

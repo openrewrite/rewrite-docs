@@ -13,8 +13,8 @@ _Ensure IP forwarding on instances is disabled._
 
 ### Tags
 
-* [GCP](/reference/recipes-by-tag#GCP)
-* [CKV_GCP_36](/reference/recipes-by-tag#CKV)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [CKV_GCP_36](/reference/recipes-by-tag#ckv)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

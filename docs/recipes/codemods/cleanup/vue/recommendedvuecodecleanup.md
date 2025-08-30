@@ -13,7 +13,7 @@ _Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuej
 
 ### Tags
 
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [vue](/reference/recipes-by-tag#vue)
 * [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 

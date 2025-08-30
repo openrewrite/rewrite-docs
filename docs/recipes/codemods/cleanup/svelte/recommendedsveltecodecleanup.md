@@ -14,7 +14,7 @@ _Collection of cleanup ESLint rules from [eslint-plugin-svelte](https://github.c
 ### Tags
 
 * [svelte](/reference/recipes-by-tag#svelte)
-* [ESLint](/reference/recipes-by-tag#ESLint)
+* [ESLint](/reference/recipes-by-tag#eslint)
 * [eslint-plugin-svelte](/reference/recipes-by-tag#eslint)
 
 ## Recipe source

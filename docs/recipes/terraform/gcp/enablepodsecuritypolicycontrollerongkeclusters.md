@@ -13,8 +13,8 @@ _Ensure `PodSecurityPolicy` controller is enabled on Google Kubernetes Engine (G
 
 ### Tags
 
-* [GCP](/reference/recipes-by-tag#GCP)
-* [CKV_GCP_24](/reference/recipes-by-tag#CKV)
+* [GCP](/reference/recipes-by-tag#gcp)
+* [CKV_GCP_24](/reference/recipes-by-tag#ckv)
 * [terraform](/reference/recipes-by-tag#terraform)
 
 ## Recipe source

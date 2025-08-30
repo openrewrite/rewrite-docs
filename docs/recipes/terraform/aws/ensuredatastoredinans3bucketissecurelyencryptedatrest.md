@@ -14,8 +14,8 @@ _Ensure data stored in an S3 bucket is securely encrypted at rest._
 ### Tags
 
 * [terraform](/reference/recipes-by-tag#terraform)
-* [AWS](/reference/recipes-by-tag#AWS)
-* [CKV_AWS_19](/reference/recipes-by-tag#CKV)
+* [AWS](/reference/recipes-by-tag#aws)
+* [CKV_AWS_19](/reference/recipes-by-tag#ckv)
 
 ## Recipe source
 

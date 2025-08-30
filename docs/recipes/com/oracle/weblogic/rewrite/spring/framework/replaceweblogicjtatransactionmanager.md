@@ -13,7 +13,7 @@ _Replace removed WebLogicJtaTransactionManager with JtaTransactionManager from S
 
 ### Tags
 
-* [JtaTransactionManager](/reference/recipes-by-tag#JtaTransactionManager)
+* [JtaTransactionManager](/reference/recipes-by-tag#jtatransactionmanager)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [springframework](/reference/recipes-by-tag#springframework)
 
