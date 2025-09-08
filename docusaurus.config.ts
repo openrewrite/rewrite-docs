@@ -86,6 +86,12 @@ const config: Config = {
     locales: ["en"],
   },
 
+    scripts: [
+    {
+      src: 'reo.js',
+    }
+  ],
+
   presets: [
     [
       "classic",
