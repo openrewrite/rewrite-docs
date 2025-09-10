@@ -24,6 +24,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Boot 3.4](./upgradespringboot_3_4-moderne-edition.md)
 * [Migrate to Spring Boot 3.4](./upgradespringboot_3_4-community-edition.md)
 * [Migrate to Spring Boot 3.5](./upgradespringboot_3_5.md)
+* [Migrate to Spring Boot 3.5](./upgradespringboot_3_5.md)
 * [Relocate Launcher Classes](./relocatelauncherclasses.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
 * [Replace `@MockBean` and `@SpyBean`](./replacemockbeanandspybean.md)

@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Gradle 6 from Gradle 5](./migratetogradle6.md)
 * [Migrate to Gradle 7 from Gradle 6](./migratetogradle7.md)
 * [Migrate to Gradle 8 from Gradle 7](./migratetogradle8.md)
+* [Migrate to Gradle 9 from Gradle 8](./migratetogradle9.md)
 
 ## Recipes
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient5.NewRequestLine**
 
-_`HttpRequestBase::getStatusLine()` was removed in 5.x when `HttpRequestBase` was migrated to `HttpUriRequestBase`, so we replace it with `new RequestLine(HttpRequest)`. Ideally we will try to simply method chains for `getMethod`, `getUri` and `getProtocolVersion`, but there are some scenarios where `RequestLine` object is assigned or used directly, and we need to instantiate the object._
+_`HttpRequestBase::getStatusLine()` was deprecated in 4.x, so we replace it with `new RequestLine(HttpRequest)`. Ideally we will try to simply method chains for `getMethod`, `getUri` and `getProtocolVersion`, but there are some scenarios where `RequestLine` object is assigned or used directly, and we need to instantiate the object._
 
 ## Recipe source
 

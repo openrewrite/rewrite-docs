@@ -24,6 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrates `camel 4.10.3` application to `camel 4.10.4`](/recipes/org/apache/camel/upgrade/camel410_4/camelmigrationrecipe.md)
 * [Migrates `camel 4.11` application to `camel 4.12`](/recipes/org/apache/camel/upgrade/camel412/camelmigrationrecipe.md)
 
 

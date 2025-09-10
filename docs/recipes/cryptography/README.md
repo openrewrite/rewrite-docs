@@ -8,6 +8,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Find RSA key generation parameters](./findrsakeygenparameters.md)
+* [Find SSL socket configuration parameters](./findsslsocketparameters.md)
+* [Find Security class modifications](./findsecuritymodifications.md)
 * [Find `Security.setProperty(..)` calls for certain properties](./findsecuritysetproperties.md)
 
 

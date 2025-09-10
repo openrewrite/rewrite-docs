@@ -64,6 +64,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade plugins to Java 11 compatible versions](./upgradepluginsforjava11.md)
 * [Upgrade plugins to Java 17 compatible versions](./upgradepluginsforjava17.md)
 * [Upgrade plugins to Java 21 compatible versions](./upgradepluginsforjava21.md)
+* [Use `ZipException` instead of `ZipError`](./migrateziperrortozipexception.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](./jredonotusesunnetsslinternalsslprovider.md)
 
 ## Recipes
@@ -107,7 +108,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade build to Java 11](./upgradebuildtojava11.md)
 * [Upgrade build to Java 17](./upgradebuildtojava17.md)
 * [Upgrade build to Java 21](./upgradebuildtojava21.md)
-* [Upgrade build to Java 25](./upgradebuildtojava25.md)
 * [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](./removedlegacysunjsseprovidername.md)
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](./jredonotusesunnetsslinternalwwwprotocol.md)
 * [Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`](./jredonotusesunnetsslinternalwwwprotocolhttpshandler.md)

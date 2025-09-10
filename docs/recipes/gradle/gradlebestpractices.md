@@ -28,8 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Gradle 8 from Gradle 7](../gradle/migratetogradle8)
-* [Use `String` notation for Gradle dependency declarations](../gradle/dependencyusestringnotation)
+* [Migrate to Gradle 9 from Gradle 8](../gradle/migratetogradle9)
 * [Enable Gradle build cache](../gradle/enablegradlebuildcache)
 * [Enable Gradle parallel execution](../gradle/enablegradleparallelexecution)
 
@@ -45,8 +44,7 @@ displayName: Apply Gradle best practices
 description: |
   Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and ideomatic builds.
 recipeList:
-  - org.openrewrite.gradle.MigrateToGradle8
-  - org.openrewrite.gradle.DependencyUseStringNotation
+  - org.openrewrite.gradle.MigrateToGradle9
   - org.openrewrite.gradle.EnableGradleBuildCache
   - org.openrewrite.gradle.EnableGradleParallelExecution
 

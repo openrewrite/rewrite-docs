@@ -29,13 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Simplify a call chain](../../java/simplifymethodchain)
-  * methodPatternChain: `[org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getStatusCode()]`
+  * methodPatternChain: `[org.apache.http.HttpResponse getStatusLine(), org.apache.http.StatusLine getStatusCode()]`
   * newMethodName: `getCode`
 * [Simplify a call chain](../../java/simplifymethodchain)
-  * methodPatternChain: `[org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getReasonPhrase()]`
+  * methodPatternChain: `[org.apache.http.HttpResponse getStatusLine(), org.apache.http.StatusLine getReasonPhrase()]`
   * newMethodName: `getReasonPhrase`
 * [Simplify a call chain](../../java/simplifymethodchain)
-  * methodPatternChain: `[org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getProtocolVersion()]`
+  * methodPatternChain: `[org.apache.http.HttpResponse getStatusLine(), org.apache.http.StatusLine getProtocolVersion()]`
   * newMethodName: `getVersion`
 * [Replaces deprecated `HttpResponse::getStatusLine()`](../../apache/httpclient5/newstatusline)
 * [Replaces deprecated `HttpRequestBase::getRequestLine()`](../../apache/httpclient5/newrequestline)
@@ -53,13 +53,13 @@ description: |
   Migrates deprecated methods to their equivalent ones in 5.x
 recipeList:
   - org.openrewrite.java.SimplifyMethodChain:
-      methodPatternChain: [org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getStatusCode()]
+      methodPatternChain: [org.apache.http.HttpResponse getStatusLine(), org.apache.http.StatusLine getStatusCode()]
       newMethodName: getCode
   - org.openrewrite.java.SimplifyMethodChain:
-      methodPatternChain: [org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getReasonPhrase()]
+      methodPatternChain: [org.apache.http.HttpResponse getStatusLine(), org.apache.http.StatusLine getReasonPhrase()]
       newMethodName: getReasonPhrase
   - org.openrewrite.java.SimplifyMethodChain:
-      methodPatternChain: [org.apache.hc.core5.http.HttpResponse getStatusLine(), org.apache.hc.core5.http.message.StatusLine getProtocolVersion()]
+      methodPatternChain: [org.apache.http.HttpResponse getStatusLine(), org.apache.http.StatusLine getProtocolVersion()]
       newMethodName: getVersion
   - org.openrewrite.apache.httpclient5.NewStatusLine
   - org.openrewrite.apache.httpclient5.NewRequestLine

@@ -5,6 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Adopt `SequencedCollection`](./sequencedcollection.md)
+* [Replace `Inflater` and `Deflater` `end()` calls with `close()`](./migrateinflaterdeflatertoclose.md)
 * [Use modernized `java.util` APIs](./javautilapis.md)
 
 ## Recipes

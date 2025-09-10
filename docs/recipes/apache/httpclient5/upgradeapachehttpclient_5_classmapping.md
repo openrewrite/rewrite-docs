@@ -377,6 +377,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpConnectionFactory`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpConnectionFactory`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.HttpRequest`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpRequest`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.HttpResponse`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpResponse`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.ResponseHandler`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientResponseHandler`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http`
   * newPackageName: `org.apache.hc.core5.http`
@@ -404,15 +413,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpConnectionFactory`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpConnectionFactory`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.HttpRequest`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpRequest`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.HttpResponse`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpResponse`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.client.ResponseHandler`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientResponseHandler`
 * [Reorder method arguments](../../java/reordermethodarguments)
   * methodPattern: `org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)`
   * newParameterNames: `[scheme, hostname, port]`
@@ -787,6 +787,15 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.HttpConnectionFactory
       newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpConnectionFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.HttpRequest
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpRequest
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.HttpResponse
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpResponse
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.ResponseHandler
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpClientResponseHandler
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http
       newPackageName: org.apache.hc.core5.http
@@ -814,15 +823,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.HttpConnectionFactory
       newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpConnectionFactory
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.HttpRequest
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpRequest
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.HttpResponse
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpResponse
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.client.ResponseHandler
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpClientResponseHandler
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)
       newParameterNames: [scheme, hostname, port]

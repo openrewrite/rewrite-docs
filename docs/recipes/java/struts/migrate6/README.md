@@ -12,4 +12,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Struts 6.0 constants](./migratestruts6constants.md)
 * [Upgrade Struts 6.0 dependencies](./upgradestruts6dependencies.md)
 
+## Recipes
+
+* [Migrate Dynamic Method Invocation to explicit action mappings](./migratedynamicmethodinvocation.md)
+
 

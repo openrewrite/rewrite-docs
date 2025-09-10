@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Migrate Spring Boot properties to 3.5
 
-**io.moderne.java.spring.boot3.SpringBootProperties\_3\_5**
+**org.openrewrite.java.spring.boot3.SpringBootProperties\_3\_5**
 
 _Migrate properties found in `application.properties` and `application.yml`._
 
@@ -18,11 +18,203 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-35-properties.yml), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Definition
 
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.promethus.metrics.export.pushgateway.base-url`
+  * newPropertyKey: `management.prometheus.metrics.export.pushgateway.address`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.codec.log-request-details`
+  * newPropertyKey: `spring.http.codecs.log-request-details`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.codec.max-in-memory-size`
+  * newPropertyKey: `spring.http.codecs.max-in-memory-size`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.graphql.path`
+  * newPropertyKey: `spring.graphql.http.path`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.graphql.sse.timeout`
+  * newPropertyKey: `spring.graphql.http.sse.timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.auto-escape`
+  * newPropertyKey: `spring.groovy.template.auto-escape`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.auto-indent`
+  * newPropertyKey: `spring.groovy.template.auto-indent`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.auto-indent-string`
+  * newPropertyKey: `spring.groovy.template.auto-indent-string`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.auto-new-line`
+  * newPropertyKey: `spring.groovy.template.auto-new-line`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.base-template-class`
+  * newPropertyKey: `spring.groovy.template.base-template-class`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.cache-templates`
+  * newPropertyKey: `spring.groovy.template.cache`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.declaration-encoding`
+  * newPropertyKey: `spring.groovy.template.declaration-encoding`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.expand-empty-elements`
+  * newPropertyKey: `spring.groovy.template.expand-empty-elements`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.locale`
+  * newPropertyKey: `spring.groovy.template.locale`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.new-line-string`
+  * newPropertyKey: `spring.groovy.template.new-line-string`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.resource-loader-path`
+  * newPropertyKey: `spring.groovy.template.resource-loader-path`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.groovy.template.configuration.use-double-quotes`
+  * newPropertyKey: `spring.groovy.template.use-double-quotes`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.mvc.converters.preferred-json-mapper`
+  * newPropertyKey: `spring.http.converters.preferred-json-mapper`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.access-token`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.batch-size`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.connect-timeout`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.enabled`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.published-histogram-type`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.read-timeout`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.source`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.step`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.signalfx.metrics.export.uri`
+  * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot3.SpringBootProperties_3_5
+displayName: Migrate Spring Boot properties to 3.5
+description: |
+  Migrate properties found in `application.properties` and `application.yml`.
+tags:
+  - spring
+  - boot
+recipeList:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.promethus.metrics.export.pushgateway.base-url
+      newPropertyKey: management.prometheus.metrics.export.pushgateway.address
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.codec.log-request-details
+      newPropertyKey: spring.http.codecs.log-request-details
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.codec.max-in-memory-size
+      newPropertyKey: spring.http.codecs.max-in-memory-size
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.graphql.path
+      newPropertyKey: spring.graphql.http.path
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.graphql.sse.timeout
+      newPropertyKey: spring.graphql.http.sse.timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.auto-escape
+      newPropertyKey: spring.groovy.template.auto-escape
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.auto-indent
+      newPropertyKey: spring.groovy.template.auto-indent
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.auto-indent-string
+      newPropertyKey: spring.groovy.template.auto-indent-string
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.auto-new-line
+      newPropertyKey: spring.groovy.template.auto-new-line
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.base-template-class
+      newPropertyKey: spring.groovy.template.base-template-class
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.cache-templates
+      newPropertyKey: spring.groovy.template.cache
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.declaration-encoding
+      newPropertyKey: spring.groovy.template.declaration-encoding
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.expand-empty-elements
+      newPropertyKey: spring.groovy.template.expand-empty-elements
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.locale
+      newPropertyKey: spring.groovy.template.locale
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.new-line-string
+      newPropertyKey: spring.groovy.template.new-line-string
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.resource-loader-path
+      newPropertyKey: spring.groovy.template.resource-loader-path
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.groovy.template.configuration.use-double-quotes
+      newPropertyKey: spring.groovy.template.use-double-quotes
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.mvc.converters.preferred-json-mapper
+      newPropertyKey: spring.http.converters.preferred-json-mapper
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.access-token
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.batch-size
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.connect-timeout
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.enabled
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.published-histogram-type
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.read-timeout
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.source
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.step
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.signalfx.metrics.export.uri
+      comment: This property is deprecated: Deprecated in Micrometer 1.15.0
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -33,10 +225,112 @@ This recipe is used as part of the following composite recipes:
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.spring.boot3.SpringBootProperties_3_5")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.spring.boot3.SpringBootProperties_3_5")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.spring.boot3.SpringBootProperties_3_5</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.SpringBootProperties_3_5 -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -47,7 +341,7 @@ mod run . --recipe SpringBootProperties_3_5
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -56,7 +350,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.SpringBootProperties_3_5" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.SpringBootProperties_3_5" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

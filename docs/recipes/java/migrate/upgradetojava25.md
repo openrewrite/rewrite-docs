@@ -33,11 +33,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Java 21](../../java/migrate/upgradetojava21)
-* [Upgrade build to Java 25](../../java/migrate/upgradebuildtojava25)
+* [Upgrade Java version](../../java/migrate/upgradejavaversion)
+  * version: `25`
+* [Use `Process#waitFor(Duration)`](../../java/migrate/lang/migrateprocesswaitforduration)
+* [Replace unused variables with underscore](../../java/migrate/lang/replaceunusedvariableswithunderscore)
+* [Replace `Inflater` and `Deflater` `end()` calls with `close()`](../../java/migrate/util/migrateinflaterdeflatertoclose)
 * [Remove Security AccessController](../../java/migrate/accesscontroller)
 * [Remove Security Policy](../../java/migrate/removesecuritypolicy)
 * [Remove Security SecurityManager](../../java/migrate/removesecuritymanager)
 * [Replace `System.getSecurityManager()` with `null`](../../java/migrate/systemgetsecuritymanagertonull)
+* [Use `ZipException` instead of `ZipError`](../../java/migrate/migrateziperrortozipexception)
 
 </TabItem>
 
@@ -54,11 +59,16 @@ tags:
   - java25
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava21
-  - org.openrewrite.java.migrate.UpgradeBuildToJava25
+  - org.openrewrite.java.migrate.UpgradeJavaVersion:
+      version: 25
+  - org.openrewrite.java.migrate.lang.MigrateProcessWaitForDuration
+  - org.openrewrite.java.migrate.lang.ReplaceUnusedVariablesWithUnderscore
+  - org.openrewrite.java.migrate.util.MigrateInflaterDeflaterToClose
   - org.openrewrite.java.migrate.AccessController
   - org.openrewrite.java.migrate.RemoveSecurityPolicy
   - org.openrewrite.java.migrate.RemoveSecurityManager
   - org.openrewrite.java.migrate.SystemGetSecurityManagerToNull
+  - org.openrewrite.java.migrate.MigrateZipErrorToZipException
 
 ```
 </TabItem>

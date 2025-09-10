@@ -63,6 +63,277 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
+class A {
+    void foo() {
+        DateTime dt = new DateTime();
+        DateTime dt1 = new DateTime().plusDays(1);
+        Interval i = new Interval(dt, dt1);
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+###### After
+```java
+import org.threeten.extra.Interval;
+
+import java.time.ZonedDateTime;
+
+class A {
+    void foo() {
+        ZonedDateTime dt = ZonedDateTime.now();
+        ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
+        Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.joda.time.DateTime;
+-import org.joda.time.Interval;
++import org.threeten.extra.Interval;
+
+@@ -4,0 +3,2 @@
+import org.joda.time.Interval;
+
++import java.time.ZonedDateTime;
++
+class A {
+@@ -6,3 +7,3 @@
+class A {
+    void foo() {
+-       DateTime dt = new DateTime();
+-       DateTime dt1 = new DateTime().plusDays(1);
+-       Interval i = new Interval(dt, dt1);
++       ZonedDateTime dt = ZonedDateTime.now();
++       ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
++       Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+foo
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threeten-extra</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,0 +12,5 @@
+            <version>2.12.3</version>
+        </dependency>
++       <dependency>
++           <groupId>org.threeten</groupId>
++           <artifactId>threeten-extra</artifactId>
++           <version>1.8.0</version>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
+class A {
+    void foo() {
+        DateTime dt = new DateTime();
+        DateTime dt1 = new DateTime().plusDays(1);
+        Interval i = new Interval(dt, dt1);
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+###### After
+```java
+import org.threeten.extra.Interval;
+
+import java.time.ZonedDateTime;
+
+class A {
+    void foo() {
+        ZonedDateTime dt = ZonedDateTime.now();
+        ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
+        Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.joda.time.DateTime;
+-import org.joda.time.Interval;
++import org.threeten.extra.Interval;
+
+@@ -4,0 +3,2 @@
+import org.joda.time.Interval;
+
++import java.time.ZonedDateTime;
++
+class A {
+@@ -6,3 +7,3 @@
+class A {
+    void foo() {
+-       DateTime dt = new DateTime();
+-       DateTime dt1 = new DateTime().plusDays(1);
+-       Interval i = new Interval(dt, dt1);
++       ZonedDateTime dt = ZonedDateTime.now();
++       ZonedDateTime dt1 = ZonedDateTime.now().plusDays(1);
++       Interval i = Interval.of(dt.toInstant(), dt1.toInstant());
+        System.out.println(i.toDuration());
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+foo
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.foobar</groupId>
+    <artifactId>foobar-core</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threeten-extra</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,0 +12,5 @@
+            <version>2.12.3</version>
+        </dependency>
++       <dependency>
++           <groupId>org.threeten</groupId>
++           <artifactId>threeten-extra</artifactId>
++           <version>1.8.0</version>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

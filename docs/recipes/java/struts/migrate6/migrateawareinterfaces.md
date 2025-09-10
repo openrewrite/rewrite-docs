@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces**
 
-_These types have moved to a new package in Struts 6.0._
+_These types have moved to a new package in Struts 6.0 and their methods have been renamed from set* to with*._
 
 ## Recipe source
 
@@ -28,6 +28,46 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ApplicationAware setApplication(java.util.Map)`
+  * newMethodName: `withApplication`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.SessionAware setSession(java.util.Map)`
+  * newMethodName: `withSession`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ParameterAware setParameters(java.util.Map)`
+  * newMethodName: `withParameters`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.HttpParametersAware setParameters(org.apache.struts2.dispatcher.HttpParameters)`
+  * newMethodName: `withParameters`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.PrincipalAware setPrincipalProxy(org.apache.struts2.interceptor.PrincipalProxy)`
+  * newMethodName: `withPrincipalProxy`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ServletRequestAware setServletRequest(javax.servlet.http.HttpServletRequest)`
+  * newMethodName: `withServletRequest`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ServletResponseAware setServletResponse(javax.servlet.http.HttpServletResponse)`
+  * newMethodName: `withServletResponse`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.util.ServletContextAware setServletContext(javax.servlet.ServletContext)`
+  * newMethodName: `withServletContext`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.CookiesAware setCookiesMap(java.util.Map)`
+  * newMethodName: `withCookiesMap`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.RequestAware setRequest(java.util.Map)`
+  * newMethodName: `withRequest`
+  * matchOverrides: `true`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.struts2.interceptor.ApplicationAware`
   * newFullyQualifiedTypeName: `org.apache.struts2.action.ApplicationAware`
@@ -69,8 +109,48 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces
 displayName: Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces
 description: |
-  These types have moved to a new package in Struts 6.0.
+  These types have moved to a new package in Struts 6.0 and their methods have been renamed from set* to with*.
 recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ApplicationAware setApplication(java.util.Map)
+      newMethodName: withApplication
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.SessionAware setSession(java.util.Map)
+      newMethodName: withSession
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ParameterAware setParameters(java.util.Map)
+      newMethodName: withParameters
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.HttpParametersAware setParameters(org.apache.struts2.dispatcher.HttpParameters)
+      newMethodName: withParameters
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.PrincipalAware setPrincipalProxy(org.apache.struts2.interceptor.PrincipalProxy)
+      newMethodName: withPrincipalProxy
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ServletRequestAware setServletRequest(javax.servlet.http.HttpServletRequest)
+      newMethodName: withServletRequest
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ServletResponseAware setServletResponse(javax.servlet.http.HttpServletResponse)
+      newMethodName: withServletResponse
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.util.ServletContextAware setServletContext(javax.servlet.ServletContext)
+      newMethodName: withServletContext
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.CookiesAware setCookiesMap(java.util.Map)
+      newMethodName: withCookiesMap
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.RequestAware setRequest(java.util.Map)
+      newMethodName: withRequest
+      matchOverrides: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.struts2.interceptor.ApplicationAware
       newFullyQualifiedTypeName: org.apache.struts2.action.ApplicationAware
@@ -111,6 +191,159 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Struts 6.0](/recipes/java/struts/migrate6/migratestruts6.md)
+
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.interceptor.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+###### After
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.action.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void withSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+-import org.apache.struts2.interceptor.SessionAware;
++import org.apache.struts2.action.SessionAware;
+
+@@ -12,1 +12,1 @@
+
+    @Override
+-   public void setSession(Map<String, Object> session) {
++   public void withSession(Map<String, Object> session) {
+        this.session = session;
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.interceptor.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+###### After
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.action.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void withSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+-import org.apache.struts2.interceptor.SessionAware;
++import org.apache.struts2.action.SessionAware;
+
+@@ -12,1 +12,1 @@
+
+    @Override
+-   public void setSession(Map<String, Object> session) {
++   public void withSession(Map<String, Object> session) {
+        this.session = session;
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

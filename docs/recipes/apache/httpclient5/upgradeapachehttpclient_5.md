@@ -39,10 +39,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 * [Migrate `RequestConfig` to httpclient5](../../apache/httpclient5/migraterequestconfig)
 * [Migrate `UsernamePasswordCredentials` to httpclient5](../../apache/httpclient5/usernamepasswordcredentials)
+* [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/statusline)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_classmapping)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods)
 * [Adds `TimeUnit` to timeouts and duration methods](../../apache/httpclient5/upgradeapachehttpclient_5_timeunit)
-* [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/statusline)
 * [Replaces `AuthScope.ANY`](../../apache/httpclient5/migrateauthscope)
 * [Migrate deprecated `SSLConnectionSocketFactory` to `DefaultClientTlsStrategy`](../../apache/httpclient5/migratesslconnectionsocketfactory)
 * [Delete method argument](../../java/deletemethodargument)
@@ -73,10 +73,10 @@ recipeList:
   - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.apache.httpclient5.MigrateRequestConfig
   - org.openrewrite.apache.httpclient5.UsernamePasswordCredentials
+  - org.openrewrite.apache.httpclient5.StatusLine
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit
-  - org.openrewrite.apache.httpclient5.StatusLine
   - org.openrewrite.apache.httpclient5.MigrateAuthScope
   - org.openrewrite.apache.httpclient5.MigrateSSLConnectionSocketFactory
   - org.openrewrite.java.DeleteMethodArgument:
@@ -334,8 +334,8 @@ class A {
 ###### After
 ```java
 import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.core5.http.ProtocolVersion;
 import org.apache.hc.core5.http.message.RequestLine;
+import org.apache.hc.core5.http.ProtocolVersion;
 
 class A {
     void method() {
@@ -356,8 +356,8 @@ class A {
 -import org.apache.http.client.methods.HttpGet;
 -import org.apache.http.ProtocolVersion;
 +import org.apache.hc.client5.http.classic.methods.HttpGet;
-+import org.apache.hc.core5.http.ProtocolVersion;
 +import org.apache.hc.core5.http.message.RequestLine;
++import org.apache.hc.core5.http.ProtocolVersion;
 
 @@ -7,4 +8,4 @@
     void method() {
@@ -387,11 +387,11 @@ class A {
 ###### Before
 ```java
 import org.apache.http.HttpStatus;
+import org.apache.http.ProtocolVersion;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.ProtocolVersion;
 
 import java.io.IOException;
 
@@ -412,12 +412,12 @@ class A {
 ###### After
 ```java
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.core5.http.message.StatusLine;
 import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.core5.http.ProtocolVersion;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
-import org.apache.hc.core5.http.ProtocolVersion;
-import org.apache.hc.core5.http.message.StatusLine;
 
 import java.io.IOException;
 
@@ -441,18 +441,18 @@ class A {
 ```diff
 @@ -1,6 +1,7 @@
 -import org.apache.http.HttpStatus;
+-import org.apache.http.ProtocolVersion;
 -import org.apache.http.client.methods.CloseableHttpResponse;
 -import org.apache.http.client.methods.HttpGet;
 -import org.apache.http.impl.client.CloseableHttpClient;
 -import org.apache.http.impl.client.HttpClientBuilder;
--import org.apache.http.ProtocolVersion;
 +import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
++import org.apache.hc.core5.http.message.StatusLine;
 +import org.apache.hc.core5.http.HttpStatus;
++import org.apache.hc.core5.http.ProtocolVersion;
 +import org.apache.hc.client5.http.classic.methods.HttpGet;
 +import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 +import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
-+import org.apache.hc.core5.http.ProtocolVersion;
-+import org.apache.hc.core5.http.message.StatusLine;
 
 @@ -16,4 +17,4 @@
         CloseableHttpResponse response = instance.execute(httpGet);
@@ -539,6 +539,81 @@ class A {
 ###### Before
 ```java
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        HttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.HttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClients;
++import org.apache.hc.core5.http.ClassicHttpResponse;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+@@ -13,1 +13,1 @@
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+-       HttpResponse response = httpClient.execute(httpGet);
++       ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 8
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.ContentType;
@@ -614,7 +689,7 @@ class A {
 
 ---
 
-##### Example 8
+##### Example 9
 
 
 <Tabs groupId="beforeAfter">
@@ -691,7 +766,7 @@ import javax.net.ssl.SSLContext;
 
 ---
 
-##### Example 9
+##### Example 10
 
 
 <Tabs groupId="beforeAfter">
@@ -740,7 +815,7 @@ class A {
 
 ---
 
-##### Example 10
+##### Example 11
 
 
 <Tabs groupId="beforeAfter">
@@ -766,8 +841,8 @@ class A {
 ###### After
 ```java
 import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.core5.http.ProtocolVersion;
 import org.apache.hc.core5.http.message.RequestLine;
+import org.apache.hc.core5.http.ProtocolVersion;
 
 class A {
     void method() {
@@ -788,8 +863,8 @@ class A {
 -import org.apache.http.client.methods.HttpGet;
 -import org.apache.http.ProtocolVersion;
 +import org.apache.hc.client5.http.classic.methods.HttpGet;
-+import org.apache.hc.core5.http.ProtocolVersion;
 +import org.apache.hc.core5.http.message.RequestLine;
++import org.apache.hc.core5.http.ProtocolVersion;
 
 @@ -7,4 +8,4 @@
     void method() {
@@ -809,7 +884,7 @@ class A {
 
 ---
 
-##### Example 11
+##### Example 12
 
 
 <Tabs groupId="beforeAfter">
@@ -819,11 +894,11 @@ class A {
 ###### Before
 ```java
 import org.apache.http.HttpStatus;
+import org.apache.http.ProtocolVersion;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.ProtocolVersion;
 
 import java.io.IOException;
 
@@ -844,12 +919,12 @@ class A {
 ###### After
 ```java
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.core5.http.message.StatusLine;
 import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.core5.http.ProtocolVersion;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
-import org.apache.hc.core5.http.ProtocolVersion;
-import org.apache.hc.core5.http.message.StatusLine;
 
 import java.io.IOException;
 
@@ -873,18 +948,18 @@ class A {
 ```diff
 @@ -1,6 +1,7 @@
 -import org.apache.http.HttpStatus;
+-import org.apache.http.ProtocolVersion;
 -import org.apache.http.client.methods.CloseableHttpResponse;
 -import org.apache.http.client.methods.HttpGet;
 -import org.apache.http.impl.client.CloseableHttpClient;
 -import org.apache.http.impl.client.HttpClientBuilder;
--import org.apache.http.ProtocolVersion;
 +import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
++import org.apache.hc.core5.http.message.StatusLine;
 +import org.apache.hc.core5.http.HttpStatus;
++import org.apache.hc.core5.http.ProtocolVersion;
 +import org.apache.hc.client5.http.classic.methods.HttpGet;
 +import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 +import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
-+import org.apache.hc.core5.http.ProtocolVersion;
-+import org.apache.hc.core5.http.message.StatusLine;
 
 @@ -16,4 +17,4 @@
         CloseableHttpResponse response = instance.execute(httpGet);
@@ -904,7 +979,7 @@ class A {
 
 ---
 
-##### Example 12
+##### Example 13
 
 
 <Tabs groupId="beforeAfter">
@@ -955,6 +1030,81 @@ class A {
 +       String c2 = StandardCookieSpec.RELAXED;
 +       String c3 = StandardCookieSpec.STRICT;
     }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 14
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        HttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.HttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClients;
++import org.apache.hc.core5.http.ClassicHttpResponse;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+@@ -13,1 +13,1 @@
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+-       HttpResponse response = httpClient.execute(httpGet);
++       ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
 ```
 </TabItem>
 </Tabs>

@@ -29,6 +29,93 @@ This recipe is used as part of the following composite recipes:
 
 * [Find secrets](/recipes/java/security/secrets/findsecrets.md)
 
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class T {
+    String url1 = "https://admin:password123@api.example.com/endpoint";
+    String url2 = "http://user:secret@localhost:8080/path";
+    String url3 = "ftp://testuser:testpass@ftp.example.com/files";
+}
+```
+
+###### After
+```java
+class T {
+    String url1 = /*~~(Password in URL)~~>*/"https://admin:password123@api.example.com/endpoint";
+    String url2 = /*~~(Password in URL)~~>*/"http://user:secret@localhost:8080/path";
+    String url3 = /*~~(Password in URL)~~>*/"ftp://testuser:testpass@ftp.example.com/files";
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,3 +2,3 @@
+class T {
+-   String url1 = "https://admin:password123@api.example.com/endpoint";
+-   String url2 = "http://user:secret@localhost:8080/path";
+-   String url3 = "ftp://testuser:testpass@ftp.example.com/files";
++   String url1 = /*~~(Password in URL)~~>*/"https://admin:password123@api.example.com/endpoint";
++   String url2 = /*~~(Password in URL)~~>*/"http://user:secret@localhost:8080/path";
++   String url3 = /*~~(Password in URL)~~>*/"ftp://testuser:testpass@ftp.example.com/files";
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class T {
+    String url1 = "https://admin:password123@api.example.com/endpoint";
+    String url2 = "http://user:secret@localhost:8080/path";
+    String url3 = "ftp://testuser:testpass@ftp.example.com/files";
+}
+```
+
+###### After
+```java
+class T {
+    String url1 = /*~~(Password in URL)~~>*/"https://admin:password123@api.example.com/endpoint";
+    String url2 = /*~~(Password in URL)~~>*/"http://user:secret@localhost:8080/path";
+    String url3 = /*~~(Password in URL)~~>*/"ftp://testuser:testpass@ftp.example.com/files";
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,3 +2,3 @@
+class T {
+-   String url1 = "https://admin:password123@api.example.com/endpoint";
+-   String url2 = "http://user:secret@localhost:8080/path";
+-   String url3 = "ftp://testuser:testpass@ftp.example.com/files";
++   String url1 = /*~~(Password in URL)~~>*/"https://admin:password123@api.example.com/endpoint";
++   String url2 = /*~~(Password in URL)~~>*/"http://user:secret@localhost:8080/path";
++   String url3 = /*~~(Password in URL)~~>*/"ftp://testuser:testpass@ftp.example.com/files";
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

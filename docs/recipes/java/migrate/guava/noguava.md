@@ -141,22 +141,22 @@ recipeList:
 
 ###### Before
 ```java
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Optional;
 
 class A {
-    Object foo(Object obj) {
-        return MoreObjects.firstNonNull(obj, "default");
+    Optional<String> foo() {
+        return Optional.absent();
     }
 }
 ```
 
 ###### After
 ```java
-import java.util.Objects;
+import java.util.Optional;
 
 class A {
-    Object foo(Object obj) {
-        return Objects.requireNonNullElse(obj, "default");
+    Optional<String> foo() {
+        return Optional.empty();
     }
 }
 ```
@@ -166,14 +166,14 @@ class A {
 
 ```diff
 @@ -1,1 +1,1 @@
--import com.google.common.base.MoreObjects;
-+import java.util.Objects;
+-import com.google.common.base.Optional;
++import java.util.Optional;
 
 @@ -5,1 +5,1 @@
 class A {
-    Object foo(Object obj) {
--       return MoreObjects.firstNonNull(obj, "default");
-+       return Objects.requireNonNullElse(obj, "default");
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
     }
 ```
 </TabItem>
@@ -193,55 +193,6 @@ class A {
 import com.google.common.base.Optional;
 
 class A {
-    Optional<String> foo() {
-        return Optional.absent();
-    }
-}
-```
-
-###### After
-```java
-import java.util.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.empty();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
-
-@@ -5,1 +5,1 @@
-class A {
-    Optional<String> foo() {
--       return Optional.absent();
-+       return Optional.empty();
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 3
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.google.common.base.Optional;
-
-class A {
     String foo(Optional<String> optional) {
         try {
             return optional.get();
@@ -287,7 +238,7 @@ class A {
 
 ---
 
-##### Example 4
+##### Example 3
 
 
 <Tabs groupId="beforeAfter">
@@ -336,7 +287,7 @@ class A {
 
 ---
 
-##### Example 5
+##### Example 4
 
 
 <Tabs groupId="beforeAfter">
@@ -385,7 +336,7 @@ class A {
 
 ---
 
-##### Example 6
+##### Example 5
 
 
 <Tabs groupId="beforeAfter">
@@ -436,6 +387,55 @@ class A {
 -       } catch (IllegalStateException e) {
 +       } catch (NoSuchElementException e) {
             return "";
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.MoreObjects;
+
+class A {
+    Object foo(Object obj) {
+        return MoreObjects.firstNonNull(obj, "default");
+    }
+}
+```
+
+###### After
+```java
+import java.util.Objects;
+
+class A {
+    Object foo(Object obj) {
+        return Objects.requireNonNullElse(obj, "default");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.MoreObjects;
++import java.util.Objects;
+
+@@ -5,1 +5,1 @@
+class A {
+    Object foo(Object obj) {
+-       return MoreObjects.firstNonNull(obj, "default");
++       return Objects.requireNonNullElse(obj, "default");
+    }
 ```
 </TabItem>
 </Tabs>

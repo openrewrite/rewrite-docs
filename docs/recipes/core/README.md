@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Add entries to `.gitignore`](./addtogitignore.md)
 * [Delete files](./deletesourcefiles.md)
 * [Find LST provenance](./findlstprovenance.md)
 * [Find call graph](./findcallgraph.md)

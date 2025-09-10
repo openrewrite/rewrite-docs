@@ -7,7 +7,7 @@
 * [Disallow comparing `undefined` using `typeof`.](./notypeofundefined.md)
 * [Disallow else blocks after return statements in if statements](./noelsereturn.md)
 * [Disallow equal signs explicitly at the beginning of regular expressions](./nodivregex.md)
-* [Disallow `if` statements as the only statement in `if` blocks without `else`.](./nolonelyif.md)
+* [Disallow if statements as the only statement in else blocks](./nolonelyif.md)
 * [Disallow initializing variables to undefined](./noundefinit.md)
 * [Disallow member access from `await` expression.](./noawaitexpressionmember.md)
 * [Disallow negated conditions.](./nonegatedcondition.md)

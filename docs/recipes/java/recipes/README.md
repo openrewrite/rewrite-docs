@@ -2,10 +2,6 @@
 
 _Apply best practices to OpenRewrite recipes._
 
-## Categories
-
-* [Migrate](/recipes/java/recipes/migrate)
-
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
