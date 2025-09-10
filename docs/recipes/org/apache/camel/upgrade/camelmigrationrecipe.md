@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate to 4.13.0"
+sidebar_label: "Migrate to 4.14.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to 4.13.0
+# Migrate to 4.14.0
 
 **org.apache.camel.upgrade.CamelMigrationRecipe**
 
-_Migrates Apache Camel application to 4.13.0_
+_Migrates Apache Camel application to 4.14.0._
 
 ## Recipe source
 
@@ -28,6 +28,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrates `camel 4.13` application to `camel 4.14`](../../../../org/apache/camel/upgrade/camel414/camelmigrationrecipe)
+* [Migrates `camel 4.12` application to `camel 4.13`](../../../../org/apache/camel/upgrade/camel413/camelmigrationrecipe)
+* [Migrates `camel 4.11` application to `camel 4.12`](../../../../org/apache/camel/upgrade/camel412/camelmigrationrecipe)
 * [Migrates `camel 4.10` application to `camel 4.11`](../../../../org/apache/camel/upgrade/camel411/camelmigrationrecipe)
 * [Migrates `camel 4.9` application to `camel 4.10`](../../../../org/apache/camel/upgrade/camel410/camelmigrationrecipe)
 * [Migrates `camel 4.8` application to `camel 4.9`](../../../../org/apache/camel/upgrade/camel49/camelmigrationrecipe)
@@ -42,15 +45,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Upgrade Maven dependency version](../../../../maven/upgradedependencyversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.13.0`
+  * newVersion: `4.14.0`
 * [Upgrade Maven plugin version](../../../../maven/upgradepluginversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.13.0`
+  * newVersion: `4.14.0`
 * [Upgrade Maven parent project version](../../../../maven/upgradeparentversion)
   * groupId: `org.apache.camel`
   * artifactId: `*`
-  * newVersion: `4.13.0`
+  * newVersion: `4.14.0`
 
 </TabItem>
 
@@ -60,10 +63,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.upgrade.CamelMigrationRecipe
-displayName: Migrate to 4.13.0
+displayName: Migrate to 4.14.0
 description: |
-  Migrates Apache Camel application to 4.13.0
+  Migrates Apache Camel application to 4.14.0.
 recipeList:
+  - org.apache.camel.upgrade.camel414.CamelMigrationRecipe
+  - org.apache.camel.upgrade.camel413.CamelMigrationRecipe
+  - org.apache.camel.upgrade.camel412.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel411.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel410.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel49.CamelMigrationRecipe
@@ -78,15 +84,15 @@ recipeList:
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.13.0
+      newVersion: 4.14.0
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.13.0
+      newVersion: 4.14.0
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.apache.camel
       artifactId: "*"
-      newVersion: 4.13.0
+      newVersion: 4.14.0
 
 ```
 </TabItem>

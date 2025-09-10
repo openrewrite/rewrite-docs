@@ -102,6 +102,23 @@ _A vulnerability report that includes detailed information about the affected ar
 
 </TabItem>
 
+<TabItem value="org.openrewrite.java.dependencies.table.DependencyOriginsReport" label="DependencyOriginsReport">
+
+### Dependency origins report
+**org.openrewrite.java.dependencies.table.DependencyOriginsReport**
+
+_A report that maps dependencies to their originating root node represented as dependency graph. The information can be used to understand which direct dependencies are responsible for bringing in specific transitive dependencies._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Depth | Zero for direct dependencies. |
+| Dependency graph | The dependency path showing how this vulnerable dependency is included in the project. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.jenkins.IsJenkinsPlugin**
 
-_Checks if the project is a Jenkins plugin by the presence of a managed version of jenkins-core_
+_Checks if the project is a Jenkins plugin by the presence of a managed version of `jenkins-core`._
 
 ## Recipe source
 

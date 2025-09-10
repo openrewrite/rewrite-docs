@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.mockito.MockitoWhenOnStaticToMockStatic**
 
-_Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic as Mockito4 no longer allows this. When `@Before` or `@BeforeClass` is used, a `close` method is added to either the `@After` or `@AfterClass` method. This change moves away from implicit bytecode manipulation for static method stubbing, making mocking behavior more explicit and scoped to avoid unintended side effects._
+_Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic as Mockito4 no longer allows this. For JUnit 4/5 & TestNG: When `@Before*` is used, a `close` call is added to the corresponding `@After*` method. This change moves away from implicit bytecode manipulation for static method stubbing, making mocking behavior more explicit and scoped to avoid unintended side effects._
 
 ## Recipe source
 

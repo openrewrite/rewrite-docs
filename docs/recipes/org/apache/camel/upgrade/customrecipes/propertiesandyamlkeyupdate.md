@@ -63,6 +63,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Update properties and yaml configurations file because of Http management vs business separation](/recipes/org/apache/camel/upgrade/camel414/httpbusinessvsmanagementservicesseparationproperties.md)
 * [Update properties and yaml configurations file](/recipes/org/apache/camel/upgrade/updatepropertiesandyamlkeys.md)
 
 

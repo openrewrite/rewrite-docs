@@ -40,9 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `ResourceHttpMessageWriter.addHeaders`](../../../java/spring/framework/migrateresourcehttpmessagewriteraddheadersmethod)
 * [Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`](../../../java/spring/framework/migrateuricomponentsbuildermethods)
 * [Migrate `WebExchangeBindException.resolveErrorMessages`](../../../java/spring/framework/migratewebexchangebindexceptionresolveerrormethod)
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.springframework.http.client.ClientHttpResponse getRawStatusCode()`
-  * newMethodName: `getStatusCode`
+* [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](../../../java/spring/framework/migrateclienthttpresponsegetrawstatuscodemethod)
 * [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME`
   * fullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME`
@@ -86,9 +84,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.MigrateResourceHttpMessageWriterAddHeadersMethod
   - org.openrewrite.java.spring.framework.MigrateUriComponentsBuilderMethods
   - org.openrewrite.java.spring.framework.MigrateWebExchangeBindExceptionResolveErrorMethod
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.springframework.http.client.ClientHttpResponse getRawStatusCode()
-      newMethodName: getStatusCode
+  - org.openrewrite.java.spring.framework.MigrateClientHttpResponseGetRawStatusCodeMethod
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.springframework.http.client.observation.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME
       fullyQualifiedConstantName: org.springframework.http.client.observation.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME

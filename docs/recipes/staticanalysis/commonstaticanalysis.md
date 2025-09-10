@@ -93,6 +93,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upper case literal suffixes](../staticanalysis/uppercaseliteralsuffixes)
 * [Use the diamond operator](../staticanalysis/usediamondoperator)
 * [No C-style array declarations](../staticanalysis/usejavastylearraydeclarations)
+* [Use %n instead of \n in format strings](../staticanalysis/useportablenewlines)
 * [Prefer `while` over `for` loops](../staticanalysis/whileinsteadoffor)
 * [Write octal values as decimal](../staticanalysis/writeoctalvaluesasdecimal)
 * [Structural equality tests should use `==` or `!=`](../kotlin/cleanup/equalsmethodusage)
@@ -177,6 +178,7 @@ recipeList:
   - org.openrewrite.staticanalysis.UpperCaseLiteralSuffixes
   - org.openrewrite.staticanalysis.UseDiamondOperator
   - org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations
+  - org.openrewrite.staticanalysis.UsePortableNewlines
   - org.openrewrite.staticanalysis.WhileInsteadOfFor
   - org.openrewrite.staticanalysis.WriteOctalValuesAsDecimal
   - org.openrewrite.kotlin.cleanup.EqualsMethodUsage

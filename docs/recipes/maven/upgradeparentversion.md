@@ -36,7 +36,8 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
-* [Migrate to 4.13.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.10.6](/recipes/org/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
+* [Migrate to 4.14.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
 * [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
 * [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
@@ -56,6 +57,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Apache Maven Parent](/recipes/devcenter/upgrademavenpluginsparent.md)
 * [Upgrade Apache Maven Parent](/recipes/devcenter/upgrademavensharedparent.md)
 * [Upgrade Apache Parent POM](/recipes/devcenter/upgradeapacheparent.md)
+* [Upgrade Quarkus Universe BOM](/recipes/devcenter/upgradequarkusuniversebom.md)
 * [Upgrade dependencies to Spring Cloud 2022](/recipes/java/spring/cloud2022/dependencyupgrades.md)
 * [Upgrade dependencies to Spring Cloud 2023](/recipes/java/spring/cloud2023/dependencyupgrades.md)
 * [Upgrade dependencies to Spring Cloud 2024](/recipes/java/spring/cloud2024/dependencyupgrades.md)

@@ -163,6 +163,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Quarkus 3.26](/recipes/devcenter/upgradequarkus3_x.md)
+
 ## Examples
 ##### Example 1
 

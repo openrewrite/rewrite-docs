@@ -64,10 +64,13 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
-* [Migrate to 4.13.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.10.6](/recipes/org/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
+* [Migrate to 4.14.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
 * [Upgrade to Axonframework 4.x Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
+* [Upgrade to Quarkus 3.26](/recipes/devcenter/upgradequarkus3_x.md)
 * [io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse](/recipes/io/quarkus/updates/core/quarkus30/upgradequarkiverse.md)
 
 ## Examples

@@ -38,6 +38,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Add GitLab component](/recipes/gitlab/addcomponent.md)
+* [Add GitLab stages](/recipes/gitlab/addstages.md)
 * [Add GitLab template](/recipes/gitlab/addtemplate.md)
 * [Add manual workflow trigger](/recipes/github/addmanualtrigger.md)
 * [Update relocated Micronaut Security config yaml keys](/recipes/java/micronaut/updatesecurityyamlifneeded.md)

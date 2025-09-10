@@ -19,13 +19,6 @@ _Replace if-else-if-else with switch statements. In order to be replaced with a 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Adopt switch pattern matching (JEP 441)](/recipes/java/migrate/switchpatternmatching.md)
-
 ## Example
 
 

@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [DevCenter for Quarkus](/recipes/devcenter/quarkusdevcenter.md)
 * [DevCenter](/recipes/devcenter/devcenterstarter.md)
 
 

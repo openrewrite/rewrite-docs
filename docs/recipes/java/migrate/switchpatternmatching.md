@@ -32,10 +32,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
-* [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
-* [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
-* [If-else-if-else to switch](../../java/migrate/lang/ifelseifconstructtoswitch)
 * [Use switch cases refinement when possible](../../java/migrate/lang/refineswitchcases)
 * [Use switch cases labels for enums](../../java/migrate/lang/switchcaseenumguardtolabel)
 
@@ -53,10 +49,6 @@ description: |
 tags:
   - java21
 recipeList:
-  - org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression
-  - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
-  - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
-  - org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch
   - org.openrewrite.java.migrate.lang.RefineSwitchCases
   - org.openrewrite.java.migrate.lang.SwitchCaseEnumGuardToLabel
 

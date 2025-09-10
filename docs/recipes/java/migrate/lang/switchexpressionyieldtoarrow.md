@@ -24,7 +24,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt switch pattern matching (JEP 441)](/recipes/java/migrate/switchpatternmatching.md)
 * [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
 
 ## Example

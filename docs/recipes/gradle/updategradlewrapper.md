@@ -45,6 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Gradle 6 from Gradle 5](/recipes/gradle/migratetogradle6.md)
 * [Migrate to Gradle 7 from Gradle 6](/recipes/gradle/migratetogradle7.md)
 * [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
+* [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
 * [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
 * [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
 * [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)

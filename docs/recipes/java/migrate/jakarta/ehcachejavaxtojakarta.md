@@ -80,11 +80,7 @@ This recipe is used as part of the following composite recipes:
 ##### Example 1
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
     <groupId>com.example.ehcache</groupId>
@@ -109,75 +105,13 @@ This recipe is used as part of the following composite recipes:
     </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <groupId>com.example.ehcache</groupId>
-    <artifactId>ehcache-legacy</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
-            <version>3.10.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -9,1 +9,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-@@ -14,1 +15,1 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-        </dependency>
-@@ -19,1 +20,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-```
-</TabItem>
-</Tabs>
 
 ---
 
 ##### Example 2
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
     <groupId>com.example.ehcache</groupId>
@@ -202,64 +136,6 @@ This recipe is used as part of the following composite recipes:
     </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <groupId>com.example.ehcache</groupId>
-    <artifactId>ehcache-legacy</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
-            <version>3.10.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -9,1 +9,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-@@ -14,1 +15,1 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-        </dependency>
-@@ -19,1 +20,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage

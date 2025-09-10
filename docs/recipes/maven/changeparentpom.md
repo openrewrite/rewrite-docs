@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newRelativePath | *Optional*. New relative path attribute for parent lookup. | `../pom.xml` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | allowVersionDowngrades | *Optional*. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current. |  |
+| `List` | except | *Optional*. Accepts a list of GAVs that should be retained when calling `RemoveRedundantDependencyVersions`. | `com.jcraft:jsch` |
 
 
 ## Used by
@@ -59,6 +60,7 @@ This recipe is used as part of the following composite recipes:
 |newRelativePath|`null`|
 |versionPattern|`null`|
 |allowVersionDowngrades|`false`|
+|except||
 
 
 <Tabs groupId="beforeAfter">
@@ -135,6 +137,7 @@ This recipe is used as part of the following composite recipes:
 |newRelativePath|`null`|
 |versionPattern|`null`|
 |allowVersionDowngrades|`null`|
+|except||
 
 
 <Tabs groupId="beforeAfter">
@@ -227,6 +230,7 @@ recipeList:
       oldRelativePath: ../../pom.xml
       newRelativePath: ../pom.xml
       versionPattern: '-jre'
+      except: com.jcraft:jsch
 ```
 
 Now that `com.yourorg.ChangeParentPomExample` has been defined, activate it in your build file:
@@ -262,7 +266,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined, activate it in y
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeParentPom --recipe-option "oldGroupId=org.springframework.boot" --recipe-option "newGroupId=org.springframework.boot" --recipe-option "oldArtifactId=spring-boot-starter-parent" --recipe-option "newArtifactId=spring-boot-starter-parent" --recipe-option "newVersion=29.X" --recipe-option "oldRelativePath=../../pom.xml" --recipe-option "newRelativePath=../pom.xml" --recipe-option "versionPattern='-jre'"
+mod run . --recipe ChangeParentPom --recipe-option "oldGroupId=org.springframework.boot" --recipe-option "newGroupId=org.springframework.boot" --recipe-option "oldArtifactId=spring-boot-starter-parent" --recipe-option "newArtifactId=spring-boot-starter-parent" --recipe-option "newVersion=29.X" --recipe-option "oldRelativePath=../../pom.xml" --recipe-option "newRelativePath=../pom.xml" --recipe-option "versionPattern='-jre'" --recipe-option "except=com.jcraft:jsch"
 ```
 
 If the recipe is not available locally, then you can install it using:

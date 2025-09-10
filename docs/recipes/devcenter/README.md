@@ -8,7 +8,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [DevCenter](./devcenterstarter.md)
 * [DevCenter for Apache](./apachedevcenter.md)
 * [DevCenter for Apache Maven](./apachemavendevcenter.md)
+* [DevCenter for Quarkus](./quarkusdevcenter.md)
 * [OWASP top ten](./securitystarter.md)
+* [Upgrade to Quarkus 3.26](./upgradequarkus3_x.md)
 
 ## Recipes
 
@@ -21,5 +23,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade Apache Maven Parent](./upgrademavenpluginsparent.md)
 * [Upgrade Apache Maven Parent](./upgrademavensharedparent.md)
 * [Upgrade Apache Parent POM](./upgradeapacheparent.md)
+* [Upgrade Quarkus Universe BOM](./upgradequarkusuniversebom.md)
 
 

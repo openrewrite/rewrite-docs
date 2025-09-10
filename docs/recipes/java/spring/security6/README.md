@@ -13,11 +13,13 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Security 6.2](./upgradespringsecurity_6_2.md)
 * [Migrate to Spring Security 6.3](./upgradespringsecurity_6_3.md)
 * [Migrate to Spring Security 6.4](./upgradespringsecurity_6_4.md)
+* [Migrate to Spring Security 6.5](./upgradespringsecurity_6_5.md)
 
 ## Recipes
 
 * [Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL](./applytowithlambdadsl.md)
 * [Keep the default RequestCache querying behavior in Spring Security 5](./updaterequestcache.md)
+* [Migrate antPathRequestMatcher to pathPatternRequestMatcher](./migrateantpathrequestmatcher.md)
 * [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](./propagateauthenticationserviceexceptions.md)
 * [Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in](./requireexplicitsavingofsecuritycontextrepository.md)
 * [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](./usesha256inrememberme.md)

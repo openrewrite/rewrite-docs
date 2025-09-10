@@ -91,6 +91,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change Quarkus configuration property key](../../../../../quarkus/changequarkuspropertykey)
   * oldPropertyKey: `quarkus\.swagger-ui\.enable`
   * newPropertyKey: `quarkus.swagger-ui.enabled`
+* [Change Quarkus configuration property key](../../../../../quarkus/changequarkuspropertykey)
+  * oldPropertyKey: `quarkus\.keycloak\.policy-enforcer\.enable`
+  * newPropertyKey: `quarkus.keycloak.policy-enforcer.enabled`
 
 </TabItem>
 
@@ -167,6 +170,9 @@ recipeList:
   - org.openrewrite.quarkus.ChangeQuarkusPropertyKey:
       oldPropertyKey: quarkus\.swagger-ui\.enable
       newPropertyKey: quarkus.swagger-ui.enabled
+  - org.openrewrite.quarkus.ChangeQuarkusPropertyKey:
+      oldPropertyKey: quarkus\.keycloak\.policy-enforcer\.enable
+      newPropertyKey: quarkus.keycloak.policy-enforcer.enabled
 
 ```
 </TabItem>

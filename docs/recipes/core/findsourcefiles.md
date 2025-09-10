@@ -162,6 +162,7 @@ _Source files that matched some criteria._
 | ----------- | ----------- |
 | Source path before the run | The source path of the file before the run. |
 | LST type | The LST model type that the file is parsed as. |
+| Character encoding | The detected character encoding of the file |
 
 </TabItem>
 

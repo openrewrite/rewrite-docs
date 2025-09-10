@@ -33,8 +33,11 @@ This recipe is used as part of the following composite recipes:
 
 * [Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
 * [Migrate Hibernate CascadeType constants](/recipes/hibernate/update66/migratecascadetypes.md)
+* [Migrate `exactly_once` and `exactly_once_beta` to `exactly_once_v2`](/recipes/kafka/streams/processingguaranteeexactlyoncetov2.md)
+* [Migrate `exactly_once` to `exactly_once_beta`](/recipes/kafka/streams/processingguaranteeexactlyoncetobeta.md)
 * [Migrate the use of TaskExecutors with blocking IO](/recipes/java/micronaut/updateblockingtaskexecutors.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
+* [Migrate to Kafka 2.7](/recipes/kafka/migratetokafka27.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)

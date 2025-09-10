@@ -26,6 +26,57 @@ This recipe is used as part of the following composite recipes:
 
 * [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.joda.time.DateTime;
+
+class A {
+    public void foo() {
+        DateTime dt = new DateTime();
+        System.out.println(dt.toDateTime());
+    }
+}
+```
+
+###### After
+```java
+import java.time.ZonedDateTime;
+
+class A {
+    public void foo() {
+        ZonedDateTime dt = ZonedDateTime.now();
+        System.out.println(dt);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.joda.time.DateTime;
++import java.time.ZonedDateTime;
+
+@@ -5,2 +5,2 @@
+class A {
+    public void foo() {
+-       DateTime dt = new DateTime();
+-       System.out.println(dt.toDateTime());
++       ZonedDateTime dt = ZonedDateTime.now();
++       System.out.println(dt);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

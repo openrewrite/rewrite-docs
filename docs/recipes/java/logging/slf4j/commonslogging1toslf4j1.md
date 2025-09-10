@@ -52,6 +52,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.commons.logging.Log`
   * newFullyQualifiedTypeName: `org.slf4j.Logger`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `commons-logging`
+  * oldArtifactId: `commons-logging`
+  * newGroupId: `org.slf4j`
+  * newArtifactId: `slf4j-api`
+  * newVersion: `1.x`
 * [Replace any Lombok log annotations with target logging framework annotation](../../../java/logging/changelomboklogannotation)
 
 </TabItem>
@@ -88,6 +94,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.commons.logging.Log
       newFullyQualifiedTypeName: org.slf4j.Logger
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: commons-logging
+      oldArtifactId: commons-logging
+      newGroupId: org.slf4j
+      newArtifactId: slf4j-api
+      newVersion: 1.x
   - org.openrewrite.java.logging.ChangeLombokLogAnnotation
 
 ```

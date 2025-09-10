@@ -24,6 +24,56 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | -- | -- | -- | -- |
 | `String` | source | *Optional*. The source of the required provider, e.g. `hashicorp/aws`. | `hashicorp/aws` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|source|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="hcl" label="hcl">
+
+
+###### Before
+```hcl
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+```
+
+###### After
+```hcl
+terraform {
+  required_providers {
+    /*~~>*/aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+terraform {
+  required_providers {
+-   aws = {
++   /*~~>*/aws = {
+      source  = "hashicorp/aws"
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
