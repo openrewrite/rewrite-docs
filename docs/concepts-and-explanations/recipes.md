@@ -2,6 +2,8 @@
 description: A technical overview of recipes and the lifecycle surrounding them. Includes example code and diagrams.
 ---
 
+import ReactPlayer from 'react-player'
+
 # Recipes
 
 A recipe represents a group of search and refactoring operations that can be applied to a [Lossless Semantic Tree](./lossless-semantic-trees.md). A recipe can represent a single, stand-alone operation or it can be linked together with other recipes to accomplish a larger goal such as a framework migration.
@@ -316,6 +318,8 @@ public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Sc
 </details>
 
 [Link to the code](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java)
+
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=p62K0iRIzvA' controls="true" />
 
 ## Recipe Execution Pipeline
 
