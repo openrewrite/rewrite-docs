@@ -36,7 +36,7 @@ recipeDependencies {
 
 ### TypeTables
 
-After the plugin has been applied, you can run the `createTypeTable` task. This will create a `classpath.tsv.zip` file inside of the `src/main/resources/META-INF/rewrite` directory.
+After the plugin has been applied, you can run the `createTypeTable` task. This will create a `classpath.tsv.gz` file inside of the `src/main/resources/META-INF/rewrite` directory.
 
 That file is a [TypeTable](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/internal/parser/TypeTable.java) – which is a tab separated values file that contains references to public API elements such as methods or fields.
 
