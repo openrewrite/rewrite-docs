@@ -1,20 +1,20 @@
 ---
-sidebar_label: "Migrate to Spring Security 6.5"
+sidebar_label: "Migrate to Spring Boot 3.5"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Security 6.5
+# Migrate to Spring Boot 3.5
 
-**io.moderne.java.spring.security6.UpgradeSpringSecurity\_6\_5**
+**io.moderne.java.spring.boot3.UpgradeSpringBoot\_3\_5**
 
-_Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+_Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.5._
 
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [security](/reference/recipes-by-tag#security)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 
@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
+* [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
 
 
 ## Usage
@@ -42,7 +42,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeSpringSecurity_6_5
+mod run . --recipe UpgradeSpringBoot_3_5
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -56,7 +56,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.security6.UpgradeSpringSecurity_6_5" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -115,6 +115,25 @@ _Statistics used in analyzing the performance of recipes._
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 
