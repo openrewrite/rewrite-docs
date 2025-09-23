@@ -88,7 +88,7 @@ If you need to run recipes incrementally or in parallel, consider these alternat
 
 1. Use the [Moderne CLI](https://docs.moderne.io/), which supports serializing LSTs and running recipes against them
 2. Use exclusions to limit parsing to specific files or directories
-2. Use preconditions to limit the scope of changes to specific files or directories
+3. Use preconditions to limit the scope of changes to specific files or directories
 
 For more details about this limitation, see [issue #212](https://github.com/openrewrite/rewrite-gradle-plugin/issues/212) in the rewrite-gradle-plugin repository.
 
