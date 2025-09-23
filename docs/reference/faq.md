@@ -81,6 +81,17 @@ Using these two approaches together in separate runs means you can likely create
 
 Worth noting, though, is that each recipe run will need to build up the Lossless Semantic Tree (LST) – which can take some time (especially for larger projects). If you'd like to speed that up, you can have a look at [Moderne](https://www.moderne.io/) where we allow you to use precomputed LSTs.
 
+## Are partial or parallel recipe runs supported with the Gradle plugin?
+
+**No**, the Gradle plugin does not currently support partial or parallel recipe runs.
+If you need to run recipes incrementally or in parallel, consider these alternatives:
+
+1. Use the [Moderne CLI](https://docs.moderne.io/), which supports serializing LSTs and running recipes against them
+2. Use exclusions to limit parsing to specific files or directories
+3. Use preconditions to limit the scope of changes to specific files or directories
+
+For more details about this limitation, see [issue #212](https://github.com/openrewrite/rewrite-gradle-plugin/issues/212) in the rewrite-gradle-plugin repository.
+
 ## I'm getting `java.lang.OutOfMemoryError: Java heap space` when running OpenRewrite. 
 
 You can either increase the size of the Java heap or build and run recipes with the [Moderne CLI](https://docs.moderne.io/).
