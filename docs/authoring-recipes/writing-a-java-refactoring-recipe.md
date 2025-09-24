@@ -675,7 +675,7 @@ class FooBar {
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SayHelloToFooBar
 recipeList:
-  - org.openrewrite.samples.SayHelloRecipe:
+  - com.yourorg.SayHelloRecipe:
       fullyQualifiedClassName: com.yourorg.FooBar
 ```
 </TabItem>
