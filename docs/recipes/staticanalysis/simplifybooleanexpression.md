@@ -34,44 +34,6 @@ This recipe is used as part of the following composite recipes:
 ##### Example 1
 
 
-###### Unchanged
-```kotlin
-fun getSymbol() : String? {
-    return null
-}
-```
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-val isPositive = getSymbol().equals("+") == true
-```
-
-###### After
-```kotlin
-val isPositive = getSymbol().equals("+")
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--val isPositive = getSymbol().equals("+") == true
-+val isPositive = getSymbol().equals("+")
-
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
 <Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">
 
@@ -108,6 +70,44 @@ public class A {
 -       if(true == a) {
 +       if(a) {
         }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+###### Unchanged
+```kotlin
+fun getSymbol() : String? {
+    return null
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+val isPositive = getSymbol().equals("+") == true
+```
+
+###### After
+```kotlin
+val isPositive = getSymbol().equals("+")
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-val isPositive = getSymbol().equals("+") == true
++val isPositive = getSymbol().equals("+")
+
 ```
 </TabItem>
 </Tabs>

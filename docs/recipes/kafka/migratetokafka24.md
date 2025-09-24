@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate to Kafka 2.3"
+sidebar_label: "Migrate to Kafka 2.4"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Kafka 2.3
+# Migrate to Kafka 2.4
 
 **io.moderne.kafka.MigrateToKafka24**
 
-_Migrate applications to the latest Kafka 2.3 release._
+_Migrate applications to the latest Kafka 2.4 release._
 
 ### Tags
 

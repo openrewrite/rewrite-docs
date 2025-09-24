@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
   * groupId: `software.amazon.awssdk`
   * artifactId: `s3-event-notifications`
-  * version: `2.33.3`
+  * version: `2.34.0`
   * onlyIfUsing: `com.amazonaws.services.s3.event.S3EventNotification`
 
 </TabItem>
@@ -53,7 +53,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: software.amazon.awssdk
       artifactId: s3-event-notifications
-      version: 2.33.3
+      version: 2.34.0
       onlyIfUsing: com.amazonaws.services.s3.event.S3EventNotification
 
 ```
@@ -64,7 +64,6 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2experimental.md)
 * [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
 
 

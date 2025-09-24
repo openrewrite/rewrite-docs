@@ -69,6 +69,295 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLSocket;
+import java.security.KeyPairGenerator;
+import java.security.Security;
+import java.security.Provider;
+
+public class CryptoExample {
+    private static final String ALGORITHM = "AES";
+    private static final String PROTOCOL = "TLSv1.2";
+    private static final int KEY_SIZE = 2048;
+
+    public void configureCrypto() throws Exception {
+        // Hardcoded algorithm
+        KeyGenerator keyGen = KeyGenerator.getInstance(ALGORITHM);
+        keyGen.init(128);
+
+        // Hardcoded key length
+        KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+        kpg.initialize(KEY_SIZE);
+
+        // Hardcoded protocol
+        SSLContext ctx = SSLContext.getInstance(PROTOCOL);
+
+        // Hardcoded provider
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+
+        // Programmatic provider editing
+        Provider provider = Security.getProvider("SunJCE");
+        Security.removeProvider("SunJCE");
+        Security.insertProviderAt(provider, 1);
+
+        // SSL configuration
+        SSLSocket socket = (SSLSocket) ctx.getSocketFactory().createSocket();
+        socket.setEnabledProtocols(new String[]{PROTOCOL});
+    }
+}
+```
+
+###### After
+```java
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLSocket;
+import java.security.KeyPairGenerator;
+import java.security.Security;
+import java.security.Provider;
+
+public class CryptoExample {
+    private static final String ALGORITHM = "AES";
+    private static final String PROTOCOL = "TLSv1.2";
+    private static final int KEY_SIZE = 2048;
+
+    public void configureCrypto() throws Exception {
+        // Hardcoded algorithm
+        KeyGenerator keyGen = /*~~(ALGORITHM use)~~>*/KeyGenerator.getInstance(ALGORITHM);
+        /*~~(KEY_SIZE use)~~>*/keyGen.init(128);
+
+        // Hardcoded key length
+        KeyPairGenerator kpg = /*~~(ALGORITHM use)~~>*/KeyPairGenerator.getInstance("RSA");
+        /*~~(KEY_SIZE use)~~>*/kpg.initialize(KEY_SIZE);
+
+        // Hardcoded protocol
+        SSLContext ctx = /*~~(PROTOCOL use)~~>*/SSLContext.getInstance(PROTOCOL);
+
+        // Hardcoded provider
+        Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+
+        // Programmatic provider editing
+        Provider provider = Security.getProvider("SunJCE");
+        /*~~(PROVIDER_NAME use)~~>*/Security.removeProvider("SunJCE");
+        Security.insertProviderAt(provider, 1);
+
+        // SSL configuration
+        SSLSocket socket = (SSLSocket) ctx.getSocketFactory().createSocket();
+        /*~~(PROTOCOL use)~~>*/socket.setEnabledProtocols(new String[]{PROTOCOL});
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -18,2 +18,2 @@
+    public void configureCrypto() throws Exception {
+        // Hardcoded algorithm
+-       KeyGenerator keyGen = KeyGenerator.getInstance(ALGORITHM);
+-       keyGen.init(128);
++       KeyGenerator keyGen = /*~~(ALGORITHM use)~~>*/KeyGenerator.getInstance(ALGORITHM);
++       /*~~(KEY_SIZE use)~~>*/keyGen.init(128);
+
+@@ -22,2 +22,2 @@
+
+        // Hardcoded key length
+-       KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+-       kpg.initialize(KEY_SIZE);
++       KeyPairGenerator kpg = /*~~(ALGORITHM use)~~>*/KeyPairGenerator.getInstance("RSA");
++       /*~~(KEY_SIZE use)~~>*/kpg.initialize(KEY_SIZE);
+
+@@ -26,1 +26,1 @@
+
+        // Hardcoded protocol
+-       SSLContext ctx = SSLContext.getInstance(PROTOCOL);
++       SSLContext ctx = /*~~(PROTOCOL use)~~>*/SSLContext.getInstance(PROTOCOL);
+
+@@ -29,1 +29,1 @@
+
+        // Hardcoded provider
+-       Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
++       Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+
+@@ -33,1 +33,1 @@
+        // Programmatic provider editing
+        Provider provider = Security.getProvider("SunJCE");
+-       Security.removeProvider("SunJCE");
++       /*~~(PROVIDER_NAME use)~~>*/Security.removeProvider("SunJCE");
+        Security.insertProviderAt(provider, 1);
+@@ -38,1 +38,1 @@
+        // SSL configuration
+        SSLSocket socket = (SSLSocket) ctx.getSocketFactory().createSocket();
+-       socket.setEnabledProtocols(new String[]{PROTOCOL});
++       /*~~(PROTOCOL use)~~>*/socket.setEnabledProtocols(new String[]{PROTOCOL});
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLSocket;
+import java.security.KeyPairGenerator;
+import java.security.Security;
+import java.security.Provider;
+
+public class CryptoExample {
+    private static final String ALGORITHM = "AES";
+    private static final String PROTOCOL = "TLSv1.2";
+    private static final int KEY_SIZE = 2048;
+
+    public void configureCrypto() throws Exception {
+        // Hardcoded algorithm
+        KeyGenerator keyGen = KeyGenerator.getInstance(ALGORITHM);
+        keyGen.init(128);
+
+        // Hardcoded key length
+        KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+        kpg.initialize(KEY_SIZE);
+
+        // Hardcoded protocol
+        SSLContext ctx = SSLContext.getInstance(PROTOCOL);
+
+        // Hardcoded provider
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+
+        // Programmatic provider editing
+        Provider provider = Security.getProvider("SunJCE");
+        Security.removeProvider("SunJCE");
+        Security.insertProviderAt(provider, 1);
+
+        // SSL configuration
+        SSLSocket socket = (SSLSocket) ctx.getSocketFactory().createSocket();
+        socket.setEnabledProtocols(new String[]{PROTOCOL});
+    }
+}
+```
+
+###### After
+```java
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLSocket;
+import java.security.KeyPairGenerator;
+import java.security.Security;
+import java.security.Provider;
+
+public class CryptoExample {
+    private static final String ALGORITHM = "AES";
+    private static final String PROTOCOL = "TLSv1.2";
+    private static final int KEY_SIZE = 2048;
+
+    public void configureCrypto() throws Exception {
+        // Hardcoded algorithm
+        KeyGenerator keyGen = /*~~(ALGORITHM use)~~>*/KeyGenerator.getInstance(ALGORITHM);
+        /*~~(KEY_SIZE use)~~>*/keyGen.init(128);
+
+        // Hardcoded key length
+        KeyPairGenerator kpg = /*~~(ALGORITHM use)~~>*/KeyPairGenerator.getInstance("RSA");
+        /*~~(KEY_SIZE use)~~>*/kpg.initialize(KEY_SIZE);
+
+        // Hardcoded protocol
+        SSLContext ctx = /*~~(PROTOCOL use)~~>*/SSLContext.getInstance(PROTOCOL);
+
+        // Hardcoded provider
+        Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+
+        // Programmatic provider editing
+        Provider provider = Security.getProvider("SunJCE");
+        /*~~(PROVIDER_NAME use)~~>*/Security.removeProvider("SunJCE");
+        Security.insertProviderAt(provider, 1);
+
+        // SSL configuration
+        SSLSocket socket = (SSLSocket) ctx.getSocketFactory().createSocket();
+        /*~~(PROTOCOL use)~~>*/socket.setEnabledProtocols(new String[]{PROTOCOL});
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -18,2 +18,2 @@
+    public void configureCrypto() throws Exception {
+        // Hardcoded algorithm
+-       KeyGenerator keyGen = KeyGenerator.getInstance(ALGORITHM);
+-       keyGen.init(128);
++       KeyGenerator keyGen = /*~~(ALGORITHM use)~~>*/KeyGenerator.getInstance(ALGORITHM);
++       /*~~(KEY_SIZE use)~~>*/keyGen.init(128);
+
+@@ -22,2 +22,2 @@
+
+        // Hardcoded key length
+-       KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+-       kpg.initialize(KEY_SIZE);
++       KeyPairGenerator kpg = /*~~(ALGORITHM use)~~>*/KeyPairGenerator.getInstance("RSA");
++       /*~~(KEY_SIZE use)~~>*/kpg.initialize(KEY_SIZE);
+
+@@ -26,1 +26,1 @@
+
+        // Hardcoded protocol
+-       SSLContext ctx = SSLContext.getInstance(PROTOCOL);
++       SSLContext ctx = /*~~(PROTOCOL use)~~>*/SSLContext.getInstance(PROTOCOL);
+
+@@ -29,1 +29,1 @@
+
+        // Hardcoded provider
+-       Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
++       Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+
+@@ -33,1 +33,1 @@
+        // Programmatic provider editing
+        Provider provider = Security.getProvider("SunJCE");
+-       Security.removeProvider("SunJCE");
++       /*~~(PROVIDER_NAME use)~~>*/Security.removeProvider("SunJCE");
+        Security.insertProviderAt(provider, 1);
+@@ -38,1 +38,1 @@
+        // SSL configuration
+        SSLSocket socket = (SSLSocket) ctx.getSocketFactory().createSocket();
+-       socket.setEnabledProtocols(new String[]{PROTOCOL});
++       /*~~(PROTOCOL use)~~>*/socket.setEnabledProtocols(new String[]{PROTOCOL});
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -215,7 +504,9 @@ _Records taint flows from sources to sinks with their taint types._
 | Column Name | Description |
 | ----------- | ----------- |
 | Source file | The source file that the method call occurred in. |
+| Source line | The line number where the taint source is located. |
 | Source | The source code where taint originates. |
+| Sink line | The line number where the taint sink is located. |
 | Sink | The sink code where taint flows to. |
 | Taint type | The taint type that matched at the sink. |
 

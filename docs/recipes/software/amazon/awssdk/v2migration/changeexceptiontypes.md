@@ -40,27 +40,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `com.amazonaws.AmazonServiceException getRequestId()`
   * newMethodName: `requestId`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.AmazonServiceException getErrorCode()`
-  * newMethodName: `awsErrorDetails().errorCode`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.AmazonServiceException getServiceName()`
-  * newMethodName: `awsErrorDetails().serviceName`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.AmazonServiceException getErrorMessage()`
-  * newMethodName: `awsErrorDetails().errorMessage`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.AmazonServiceException getStatusCode()`
-  * newMethodName: `awsErrorDetails().sdkHttpResponse().statusCode`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.AmazonServiceException getHttpHeaders()`
-  * newMethodName: `awsErrorDetails().sdkHttpResponse().headers`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.AmazonServiceException getRawResponse()`
-  * newMethodName: `awsErrorDetails().rawResponse().asByteArray`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `com.amazonaws.AmazonServiceException getRawResponseContent()`
-  * newMethodName: `awsErrorDetails().rawResponse().asUtf8String`
 * [Add a comment to a method](../../../../software/amazon/awssdk/v2migration/addcommenttomethod)
   * methodPattern: `com.amazonaws.AmazonServiceException getErrorType()`
   * comment: `getErrorType is not supported in v2. AwsServiceException is a service error in v2. Consider removing it.`
@@ -113,27 +92,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.amazonaws.AmazonServiceException getRequestId()
       newMethodName: requestId
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.AmazonServiceException getErrorCode()
-      newMethodName: awsErrorDetails().errorCode
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.AmazonServiceException getServiceName()
-      newMethodName: awsErrorDetails().serviceName
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.AmazonServiceException getErrorMessage()
-      newMethodName: awsErrorDetails().errorMessage
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.AmazonServiceException getStatusCode()
-      newMethodName: awsErrorDetails().sdkHttpResponse().statusCode
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.AmazonServiceException getHttpHeaders()
-      newMethodName: awsErrorDetails().sdkHttpResponse().headers
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.AmazonServiceException getRawResponse()
-      newMethodName: awsErrorDetails().rawResponse().asByteArray
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.amazonaws.AmazonServiceException getRawResponseContent()
-      newMethodName: awsErrorDetails().rawResponse().asUtf8String
   - software.amazon.awssdk.v2migration.AddCommentToMethod:
       methodPattern: com.amazonaws.AmazonServiceException getErrorType()
       comment: getErrorType is not supported in v2. AwsServiceException is a service error in v2. Consider removing it.

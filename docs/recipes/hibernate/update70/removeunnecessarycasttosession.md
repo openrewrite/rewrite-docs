@@ -37,8 +37,8 @@ This recipe is used as part of the following composite recipes:
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class SomeClass {
-    public void doSomething(SessionFactory sessionFactory) {
+class SomeClass {
+    void doSomething(SessionFactory sessionFactory) {
         Session session = (Session) sessionFactory.createEntityManager();
     }
 }
@@ -49,8 +49,8 @@ public class SomeClass {
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class SomeClass {
-    public void doSomething(SessionFactory sessionFactory) {
+class SomeClass {
+    void doSomething(SessionFactory sessionFactory) {
         Session session = sessionFactory.createEntityManager();
     }
 }
@@ -61,8 +61,8 @@ public class SomeClass {
 
 ```diff
 @@ -6,1 +6,1 @@
-public class SomeClass {
-    public void doSomething(SessionFactory sessionFactory) {
+class SomeClass {
+    void doSomething(SessionFactory sessionFactory) {
 -       Session session = (Session) sessionFactory.createEntityManager();
 +       Session session = sessionFactory.createEntityManager();
     }

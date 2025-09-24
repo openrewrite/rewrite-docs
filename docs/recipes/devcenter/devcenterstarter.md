@@ -35,8 +35,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `3.5.0`
   * upgradeRecipe: `io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5`
 * [Move to a later Java version](../devcenter/javaversionupgrade)
-  * majorVersion: `21`
-  * upgradeRecipe: `org.openrewrite.java.migrate.UpgradeToJava21`
+  * majorVersion: `25`
+  * upgradeRecipe: `org.openrewrite.java.migrate.UpgradeToJava25`
 * [Move to JUnit 5](../devcenter/junitjupiterupgrade)
 * [OWASP top ten](../devcenter/securitystarter)
 
@@ -59,8 +59,8 @@ recipeList:
       version: 3.5.0
       upgradeRecipe: io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5
   - io.moderne.devcenter.JavaVersionUpgrade:
-      majorVersion: 21
-      upgradeRecipe: org.openrewrite.java.migrate.UpgradeToJava21
+      majorVersion: 25
+      upgradeRecipe: org.openrewrite.java.migrate.UpgradeToJava25
   - io.moderne.devcenter.JUnitJupiterUpgrade
   - io.moderne.devcenter.SecurityStarter
 

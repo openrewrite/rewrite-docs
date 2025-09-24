@@ -25,6 +25,79 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.usertype.UserType;
+
+class UserTypeString implements UserType<String> {
+
+    @Override
+    default String nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, @Deprecated Object owner) {
+      return null;
+    }
+
+    @Override
+    default void nullSafeSet(PreparedStatement st, String value, int position, SharedSessionContractImplementor session) {
+    }
+}
+```
+
+###### After
+```java
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import org.hibernate.type.descriptor.WrapperOptions;
+import org.hibernate.usertype.UserType;
+
+class UserTypeString implements UserType<String> {
+
+    @Override
+    default String nullSafeGet(ResultSet rs, int position, WrapperOptions session) {
+      return null;
+    }
+
+    @Override
+    default void nullSafeSet(PreparedStatement st, String value, int position, WrapperOptions session) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+-import org.hibernate.engine.spi.SharedSessionContractImplementor;
++import org.hibernate.type.descriptor.WrapperOptions;
+import org.hibernate.usertype.UserType;
+@@ -9,1 +9,1 @@
+
+    @Override
+-   default String nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, @Deprecated Object owner) {
++   default String nullSafeGet(ResultSet rs, int position, WrapperOptions session) {
+      return null;
+@@ -14,1 +14,1 @@
+
+    @Override
+-   default void nullSafeSet(PreparedStatement st, String value, int position, SharedSessionContractImplementor session) {
++   default void nullSafeSet(PreparedStatement st, String value, int position, WrapperOptions session) {
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

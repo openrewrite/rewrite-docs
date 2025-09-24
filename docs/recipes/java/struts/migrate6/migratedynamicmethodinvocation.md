@@ -19,6 +19,13 @@ _Identifies Struts configurations using Dynamic Method Invocation (DMI) and mark
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Struts 6.0](/recipes/java/struts/migrate6/migratestruts6.md)
+
 ## Example
 
 

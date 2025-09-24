@@ -104,6 +104,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `log4j-slf4j-impl`
   * newVersion: `2.x`
 * [Upgrade Log4j 2.x dependency version](../../../java/logging/log4j/upgradelog4j2dependencyversion)
+* [Inline methods annotated with `@InlineMe`](../../../java/logging/log4j/inlinemethods)
 
 </TabItem>
 
@@ -191,6 +192,7 @@ recipeList:
       newArtifactId: log4j-slf4j-impl
       newVersion: 2.x
   - org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion
+  - org.openrewrite.java.logging.log4j.InlineMethods
 
 ```
 </TabItem>

@@ -28,7 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change method invocation return type](../../../../software/amazon/awssdk/v2migration/openrewrite/changemethodinvocationreturntype)
+* [Change method invocation return type](../../../../java/changemethodinvocationreturntype)
   * methodPattern: `com.amazonaws.services.s3.event.S3EventNotification.S3EventNotificationRecord getEventNameAsEnum()`
   * newReturnType: `String`
 * [Change method name](../../../../java/changemethodname)
@@ -56,7 +56,7 @@ displayName: Change S3EventNotification methods to v2.
 description: |
   Change S3EventNotification methods to v2.
 recipeList:
-  - software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType:
+  - org.openrewrite.java.ChangeMethodInvocationReturnType:
       methodPattern: com.amazonaws.services.s3.event.S3EventNotification.S3EventNotificationRecord getEventNameAsEnum()
       newReturnType: String
   - org.openrewrite.java.ChangeMethodName:
@@ -80,7 +80,6 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2experimental.md)
 * [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
 
 

@@ -46,15 +46,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `software.amazon.awssdk.transfer.s3.model.ResumableTransfer serialize(java.io.OutputStream)`
   * newMethodName: `serializeToOutputStream`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `software.amazon.awssdk.transfer.s3.progress.TransferProgress getBytesTransferred()`
-  * newMethodName: `snapshot().transferredBytes`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `software.amazon.awssdk.transfer.s3.progress.TransferProgress getTotalBytesToTransfer()`
-  * newMethodName: `snapshot().totalBytes`
-* [Change method name](../../../../java/changemethodname)
-  * methodPattern: `software.amazon.awssdk.transfer.s3.progress.TransferProgress getPercentTransferred()`
-  * newMethodName: `snapshot().ratioTransferred`
 
 </TabItem>
 
@@ -86,15 +77,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: software.amazon.awssdk.transfer.s3.model.ResumableTransfer serialize(java.io.OutputStream)
       newMethodName: serializeToOutputStream
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: software.amazon.awssdk.transfer.s3.progress.TransferProgress getBytesTransferred()
-      newMethodName: snapshot().transferredBytes
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: software.amazon.awssdk.transfer.s3.progress.TransferProgress getTotalBytesToTransfer()
-      newMethodName: snapshot().totalBytes
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: software.amazon.awssdk.transfer.s3.progress.TransferProgress getPercentTransferred()
-      newMethodName: snapshot().ratioTransferred
 
 ```
 </TabItem>
@@ -104,7 +86,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2experimental.md)
+* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
 
 
 ## Usage

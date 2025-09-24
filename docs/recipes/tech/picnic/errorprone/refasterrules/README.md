@@ -1,5 +1,9 @@
 # Refasterrules
 
+## Categories
+
+* [Tech](/recipes/tech/picnic/errorprone/refasterrules/tech)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

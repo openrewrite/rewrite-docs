@@ -18,6 +18,77 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.type.descriptor.jdbc.JsonJdbcType;
+
+@Entity
+public class JsonExample {
+    @Id
+    private Long id;
+
+    @JdbcType(JsonJdbcType.class)
+    @Column(name = "json_data")
+    private String jsonData;
+}
+```
+
+###### After
+```java
+package com.example;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
+@Entity
+public class JsonExample {
+    @Id
+    private Long id;
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "json_data")
+    private String jsonData;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,2 +6,2 @@
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+-import org.hibernate.annotations.JdbcType;
+-import org.hibernate.type.descriptor.jdbc.JsonJdbcType;
++import org.hibernate.annotations.JdbcTypeCode;
++import org.hibernate.type.SqlTypes;
+
+@@ -14,1 +14,1 @@
+    private Long id;
+
+-   @JdbcType(JsonJdbcType.class)
++   @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "json_data")
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

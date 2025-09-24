@@ -5,6 +5,7 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 ## Categories
 
 * [Gradle](/recipes/github/gradle)
+* [Security](/recipes/github/security)
 
 ## Composite Recipes
 
@@ -28,6 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove unused workflow dispatch inputs](./removeunusedworkflowdispatchinputs.md)
 * [Remove workflow input argument](./removeworkflowinputargument.md)
 * [Replace GitHub Action secret names](./replacesecrets.md)
+* [Replace `actions/setup-python` with `astral-sh/setup-uv`](./setuppythontouv.md)
 * [Replace runners for a job](./replacerunners.md)
 * [Replace secret key names in GitHub Actions](./replacesecretkeys.md)
 * [Setup Java dependency caching](./setupjavacaching.md)

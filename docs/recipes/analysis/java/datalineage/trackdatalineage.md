@@ -62,7 +62,9 @@ _Records taint flows from sources to sinks with their taint types._
 | Column Name | Description |
 | ----------- | ----------- |
 | Source file | The source file that the method call occurred in. |
+| Source line | The line number where the taint source is located. |
 | Source | The source code where taint originates. |
+| Sink line | The line number where the taint sink is located. |
 | Sink | The sink code where taint flows to. |
 | Taint type | The taint type that matched at the sink. |
 

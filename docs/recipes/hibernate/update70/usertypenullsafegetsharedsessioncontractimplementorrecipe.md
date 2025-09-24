@@ -25,6 +25,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.usertype.BaseUserTypeSupport;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+class UserTypeNullSafeTest {
+    void testUserTypeNullSafe(BaseUserTypeSupport<String> type, ResultSet rs, int index, SharedSessionContractImplementor session) throws SQLException {
+        type.nullSafeGet(rs, index, session, null);
+        type.nullSafeGet(rs, index, session, new Object());
+    }
+}
+```
+
+###### After
+```java
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.usertype.BaseUserTypeSupport;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+class UserTypeNullSafeTest {
+    void testUserTypeNullSafe(BaseUserTypeSupport<String> type, ResultSet rs, int index, SharedSessionContractImplementor session) throws SQLException {
+        type.nullSafeGet(rs, index, session);
+        type.nullSafeGet(rs, index, session);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,2 +8,2 @@
+class UserTypeNullSafeTest {
+    void testUserTypeNullSafe(BaseUserTypeSupport<String> type, ResultSet rs, int index, SharedSessionContractImplementor session) throws SQLException {
+-       type.nullSafeGet(rs, index, session, null);
+-       type.nullSafeGet(rs, index, session, new Object());
++       type.nullSafeGet(rs, index, session);
++       type.nullSafeGet(rs, index, session);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

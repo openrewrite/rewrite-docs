@@ -25,6 +25,71 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example;
+
+import org.hibernate.LockOptions;
+import org.hibernate.Session;
+
+public class FindDirectConstructorEmpty {
+    public void m(Session session) {
+        Object loaded = session.get(
+            Object.class,
+            1L,
+            new LockOptions());
+    }
+}
+```
+
+###### After
+```java
+package com.example;
+
+import org.hibernate.Session;
+
+public class FindDirectConstructorEmpty {
+    public void m(Session session) {
+        Object loaded = session.find(
+            Object.class,
+            1L);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+package com.example;
+
+-import org.hibernate.LockOptions;
+import org.hibernate.Session;
+@@ -8,1 +7,1 @@
+public class FindDirectConstructorEmpty {
+    public void m(Session session) {
+-       Object loaded = session.get(
++       Object loaded = session.find(
+            Object.class,
+@@ -10,2 +9,1 @@
+        Object loaded = session.get(
+            Object.class,
+-           1L,
+-           new LockOptions());
++           1L);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

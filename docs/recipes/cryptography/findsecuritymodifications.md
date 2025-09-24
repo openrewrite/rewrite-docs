@@ -19,6 +19,51 @@ _Finds invocations of java.security.Security methods that modify security config
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.security.Security;
+
+public class SecurityExample {
+    public void removeBouncyCastle() {
+        // Remove the BouncyCastle provider
+        Security.removeProvider("BouncyCastleProvider");
+    }
+}
+```
+
+###### After
+```java
+import java.security.Security;
+
+public class SecurityExample {
+    public void removeBouncyCastle() {
+        // Remove the BouncyCastle provider
+        /*~~>*/Security.removeProvider("BouncyCastleProvider");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    public void removeBouncyCastle() {
+        // Remove the BouncyCastle provider
+-       Security.removeProvider("BouncyCastleProvider");
++       /*~~>*/Security.removeProvider("BouncyCastleProvider");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

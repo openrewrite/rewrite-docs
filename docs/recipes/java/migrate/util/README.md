@@ -26,6 +26,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `iterator().next()` with `getFirst()`](./iteratornext.md)
 * [Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`](./replacemathrandomwiththreadlocalrandomrecipe.md)
 * [`Stream&lt;Optional&gt;` idiom recipe](./optionalstreamrecipe.md)
+* [Use `Reader.of(CharSequence)` for non-synchronized readers](./migratestringreadertoreaderof.md)
 * [Use `getFirst()` instead of `stream().findFirst().orElseThrow()`](./streamfindfirst.md)
 
 

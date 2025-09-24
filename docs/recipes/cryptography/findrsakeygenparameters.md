@@ -19,6 +19,53 @@ _Finds RSAKeyGenParameterSpec instantiations and extracts their parameter values
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.security.spec.RSAKeyGenParameterSpec;
+
+public class RSAKeyExample {
+    public void generateKey() {
+        // Basic RSA key generation with 2048 bits and F4 exponent
+        RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(2048,
+            RSAKeyGenParameterSpec.F4);
+    }
+}
+```
+
+###### After
+```java
+import java.security.spec.RSAKeyGenParameterSpec;
+
+public class RSAKeyExample {
+    public void generateKey() {
+        // Basic RSA key generation with 2048 bits and F4 exponent
+        RSAKeyGenParameterSpec spec = /*~~>*/new RSAKeyGenParameterSpec(2048,
+            RSAKeyGenParameterSpec.F4);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    public void generateKey() {
+        // Basic RSA key generation with 2048 bits and F4 exponent
+-       RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(2048,
++       RSAKeyGenParameterSpec spec = /*~~>*/new RSAKeyGenParameterSpec(2048,
+            RSAKeyGenParameterSpec.F4);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
