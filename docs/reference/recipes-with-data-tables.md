@@ -335,7 +335,7 @@ Locates XML parsers that are not configured to prevent XML External Entity (XXE)
   * **org.openrewrite.analysis.java.taint.table.TaintFlowTable**: *Records taint flows from sources to sinks with their taint types.*
 
 
-### [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md)
+### [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
  
 _io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5_
 
@@ -5258,7 +5258,7 @@ Locates and reports on all licenses in use.
  
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-09-08T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-09-22T1103.
 
 #### Data tables:
 
@@ -5977,7 +5977,7 @@ Find Spring components, including controllers, services, repositories, return ty
   * **org.openrewrite.java.spring.table.SpringComponentRelationships**: *A table of relationships between Spring components.*
 
 
-### [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5.md)
+### [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
  
 _org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5_
 
@@ -6259,6 +6259,281 @@ Change the groupId, artifactId and/or the version of a specified Maven Compiler 
 _io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion_
 
 Sync Maven Compiler plugin annotation processor version with the one provided by the BOM.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.0.0](/recipes/quarkus/migratetoquarkus_v3_0_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_0_0_
+
+Quarkus update recipes to upgrade your application to 3.0.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.1.0](/recipes/quarkus/migratetoquarkus_v3_1_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0_
+
+Quarkus update recipes to upgrade your application to 3.1.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.2.0](/recipes/quarkus/migratetoquarkus_v3_2_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0_
+
+Quarkus update recipes to upgrade your application to 3.2.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.3.0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0_
+
+Quarkus update recipes to upgrade your application to 3.3.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.5.0](/recipes/quarkus/migratetoquarkus_v3_5_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_5_0_
+
+Quarkus update recipes to upgrade your application to 3.5.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.6.0](/recipes/quarkus/migratetoquarkus_v3_6_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_6_0_
+
+Quarkus update recipes to upgrade your application to 3.6.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.7.0](/recipes/quarkus/migratetoquarkus_v3_7_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_7_0_
+
+Quarkus update recipes to upgrade your application to 3.7.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.8.0](/recipes/quarkus/migratetoquarkus_v3_8_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_8_0_
+
+Quarkus update recipes to upgrade your application to 3.8.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.8.3](/recipes/quarkus/migratetoquarkus_v3_8_3.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_8_3_
+
+Quarkus update recipes to upgrade your application to 3.8.3.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.9.0](/recipes/quarkus/migratetoquarkus_v3_9_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_9_0_
+
+Quarkus update recipes to upgrade your application to 3.9.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.10.0](/recipes/quarkus/migratetoquarkus_v3_10_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_10_0_
+
+Quarkus update recipes to upgrade your application to 3.10.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.11.0](/recipes/quarkus/migratetoquarkus_v3_11_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_11_0_
+
+Quarkus update recipes to upgrade your application to 3.11.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.12.0](/recipes/quarkus/migratetoquarkus_v3_12_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_12_0_
+
+Quarkus update recipes to upgrade your application to 3.12.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.13.0](/recipes/quarkus/migratetoquarkus_v3_13_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_13_0_
+
+Quarkus update recipes to upgrade your application to 3.13.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.15.0](/recipes/quarkus/migratetoquarkus_v3_15_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_15_0_
+
+Quarkus update recipes to upgrade your application to 3.15.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.17.0](/recipes/quarkus/migratetoquarkus_v3_17_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_17_0_
+
+Quarkus update recipes to upgrade your application to 3.17.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.18.0](/recipes/quarkus/migratetoquarkus_v3_18_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_18_0_
+
+Quarkus update recipes to upgrade your application to 3.18.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.19.0](/recipes/quarkus/migratetoquarkus_v3_19_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_19_0_
+
+Quarkus update recipes to upgrade your application to 3.19.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.20.1](/recipes/quarkus/migratetoquarkus_v3_20_1.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_20_1_
+
+Quarkus update recipes to upgrade your application to 3.20.1.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.21.0](/recipes/quarkus/migratetoquarkus_v3_21_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_21_0_
+
+Quarkus update recipes to upgrade your application to 3.21.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.22.0](/recipes/quarkus/migratetoquarkus_v3_22_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_22_0_
+
+Quarkus update recipes to upgrade your application to 3.22.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.23.0](/recipes/quarkus/migratetoquarkus_v3_23_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_23_0_
+
+Quarkus update recipes to upgrade your application to 3.23.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.24.0](/recipes/quarkus/migratetoquarkus_v3_24_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_24_0_
+
+Quarkus update recipes to upgrade your application to 3.24.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.25.0](/recipes/quarkus/migratetoquarkus_v3_25_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_25_0_
+
+Quarkus update recipes to upgrade your application to 3.25.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [Quarkus Updates Aggregate 3.26.0](/recipes/quarkus/migratetoquarkus_v3_26_0.md)
+ 
+_org.openrewrite.quarkus.MigrateToQuarkus_v3_26_0_
+
+Quarkus update recipes to upgrade your application to 3.26.0.
 
 #### Data tables:
 
