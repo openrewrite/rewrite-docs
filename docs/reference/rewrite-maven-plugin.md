@@ -17,7 +17,7 @@ The OpenRewrite Maven plugin offers these goals:
 * `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder.
 * `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
 * `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
-* `mvn rewrite:typetable` - Generate a type attribution table for Java sources. This goal is typically used for debugging and analysis purposes.
+* `mvn rewrite:typetable` - [Generate a type table](/authoring-recipes/multiple-versions#typetable-generation-for-maven-projects) to support multiple versions of a single library.
 
 :::info
 _`rewrite`_ name-spaced properties can be used for substituting plugin properties:
@@ -78,7 +78,7 @@ It generally makes sense to apply the plugin to the root `pom.xml` in a reposito
 * `pomCacheEnabled` - This flag determines if OpenRewrite will cache `pom.xml` and meta-data using an on-disk cache. The default is `true`
 * `recipeArtifactCoordinates` - Alternative way to specify recipe dependencies as Maven coordinates. Can be used instead of or in addition to plugin dependencies. For example, `-Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-dependencies:1.0.0`.
 * `recipeChangeLogLevel` - The log level used to log changes performed by recipes. Available values are `ERROR`, `WARN`, `INFO`, `DEBUG`. Default is `WARN`. For example, `-Drewrite.recipeChangeLogLevel=INFO`.
-* `reportOutputDirectory` - Custom output directory for dryRun reports. If not specified, defaults to `target/site/rewrite`. For example, `-DreportOutputDirectory=/custom/path`.
+* `reportOutputDirectory` - Custom output directory for dryRun reports. If not specified, defaults to `target/rewrite`. For example, `-DreportOutputDirectory=/custom/path`.
 * `resolvePropertiesInYaml` - Whether to resolve Maven properties in YAML configuration files. Default is `true`. Set to `false` to disable property resolution. For example, `-Drewrite.resolvePropertiesInYaml=false`.
 * `rewriteSkip` - Skip the execution of the plugin. Default is `false`. Useful for temporarily disabling rewrite without removing the configuration. For example, `-Drewrite.skip=true`.
 * `runPerSubmodule` - Run recipes per submodule rather than in an aggregated fashion across all modules. Default is `false`. For example, `-Drewrite.runPerSubmodule=true`.
@@ -140,12 +140,7 @@ To find out what recipes a rewrite module provides, see its documentation and th
 
 ## The "TypeTable" goal
 
-Execute `mvn rewrite:typetable` to generate a type attribution table for Java sources in your project. This goal is primarily used for debugging and analysis purposes, helping to understand how types are resolved and attributed in your codebase.
-
-The typetable goal binds to the `generate-resources` phase by default and can be useful for:
-* Debugging type resolution issues
-* Understanding the type hierarchy in your project
-* Analyzing type usage patterns
+Execute `mvn rewrite:typetable` to [generate a type table](/authoring-recipes/multiple-versions#typetable-generation-for-maven-projects) to support multiple versions of a single library.
 
 ## The "Run" goal
 
