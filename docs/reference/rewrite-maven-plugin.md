@@ -45,7 +45,8 @@ It generally makes sense to apply the plugin to the root `pom.xml` in a reposito
 * `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `exclusions` - Skips parsing for any paths matching these exclusions. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. For example, `-Drewrite.exclusions=*/some/irrelevant/or/expensive/directory/**,docs/**`.
-*   `plainTextMasks` - A set of file masks to denote which files should be parsed as plain text. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. **Exclusions take precedence over any plain text masks.** If this configuration is not explicitly defined the default masks are
+* `additionalPlainTextMasks` - Allows adding additional plain text masks without overriding the defaults. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. These masks are added to the default set of plain text masks. If you need to override the default masks entirely, use `plainTextMasks` instead. For example, `-Drewrite.additionalPlainTextMasks=**/*.ext,**/.in-root`.
+*   `plainTextMasks` - A set of file masks to denote which files should be parsed as plain text. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. **Exclusions take precedence over any plain text masks.** If this configuration is specified, it completely overrides the default masks, and `additionalPlainTextMasks` will have no effect. If not explicitly defined, the default masks are
 
     ```bash title="Default masks"
     **/META-INF/services/**
@@ -99,6 +100,10 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           <exclusions>
             <exclusion>*/some/irrelevant/or/expensive/directory/**</exclusion>
           </exclusions>
+          <additionalPlainTextMasks>
+            <additionalPlainTextMask>**/.custom-ext</additionalPlainTextMask>
+            <additionalPlainTextMask>**/.config-file</additionalPlainTextMask>
+          </additionalPlainTextMasks>
           <plainTextMasks>
             <plainTextMask>**/.txt</plainTextMask>
           </plainTextMasks>
