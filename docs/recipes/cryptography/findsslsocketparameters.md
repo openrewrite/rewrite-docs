@@ -19,6 +19,61 @@ _Finds SSLSocket setter method invocations and extracts their parameter values i
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.SSLParameters;
+
+public class SSLParamsExample {
+    public void configureWithParams() throws Exception {
+        SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+        SSLSocket socket = (SSLSocket) factory.createSocket();
+        SSLParameters params = new SSLParameters();
+        params.setCipherSuites(new String[]{"TLS_AES_128_GCM_SHA256"});
+        socket.setSSLParameters(params);
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.SSLParameters;
+
+public class SSLParamsExample {
+    public void configureWithParams() throws Exception {
+        SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+        SSLSocket socket = (SSLSocket) factory.createSocket();
+        SSLParameters params = new SSLParameters();
+        params.setCipherSuites(new String[]{"TLS_AES_128_GCM_SHA256"});
+        /*~~>*/socket.setSSLParameters(params);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -11,1 +11,1 @@
+        SSLParameters params = new SSLParameters();
+        params.setCipherSuites(new String[]{"TLS_AES_128_GCM_SHA256"});
+-       socket.setSSLParameters(params);
++       /*~~>*/socket.setSSLParameters(params);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

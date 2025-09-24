@@ -33,9 +33,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](../../../../software/amazon/awssdk/v2migration/addtransfermanagerdependency)
 * [Add AWS SDK for Java v2 S3 Event Notification dependency if needed](../../../../software/amazon/awssdk/v2migration/adds3eventnotificationdependency)
 * [Change v1 Maven/Gradle dependencies to v2](../../../../software/amazon/awssdk/v2migration/upgradesdkdependencies)
-* [Add imports and comments to unsupported S3 transforms.](../../../../software/amazon/awssdk/v2migration/s3addimportsandcomments)
 * [S3 Event Notification method to v2](../../../../software/amazon/awssdk/v2migration/s3eventnotificationmethodtov2)
 * [Change S3 types to v2.](../../../../software/amazon/awssdk/v2migration/s3typestov2)
 * [V1 S3Object to V2](../../../../software/amazon/awssdk/v2migration/s3streamingresponsetov2)
@@ -43,11 +43,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2)
 * [Change S3 methods to v2.](../../../../software/amazon/awssdk/v2migration/s3methodstov2)
 * [Change S3EventNotification methods to v2.](../../../../software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2)
+* [S3 POJOs to V2](../../../../software/amazon/awssdk/v2migration/s3pojotov2)
 * [Change S3 method constructors to fluent builder calls](../../../../software/amazon/awssdk/v2migration/s3methodsconstructortofluent)
 * [Convert v1 AmazonS3URI to v2 S3Uri](../../../../software/amazon/awssdk/v2migration/s3uritov2)
 * [Change v1 enum getters to v2](../../../../software/amazon/awssdk/v2migration/enumgetterstov2)
+* [Change SDK TransferManager types from v1 to v2](../../../../software/amazon/awssdk/v2migration/changetransfermanagertypes)
 * [Change SDK S3EventNotification types from v1 to v2](../../../../software/amazon/awssdk/v2migration/changes3eventnotificationtypes)
 * [Change AWS SDK for Java v1 types to v2 equivalents](../../../../software/amazon/awssdk/v2migration/changesdktype)
+* [SDK Exceptions Methods to V2](../../../../software/amazon/awssdk/v2migration/sdkexceptiontov2)
 * [Change SDK core types from v1 to v2](../../../../software/amazon/awssdk/v2migration/changesdkcoretypes)
 * [V1 client builder variations to builder()](../../../../software/amazon/awssdk/v2migration/v1buildervariationstov2builder)
 * [Change new objects creation to Builder pattern](../../../../software/amazon/awssdk/v2migration/newclasstobuilderpattern)
@@ -62,6 +65,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [V1 S3 non-streaming requests to V2](../../../../software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2complex)
 * [V1 S3 PutObjectRequest, AmazonS3.putObject(PutObjectRequest), and TransferManager.upload(PutObjectRequest) to V2](../../../../software/amazon/awssdk/v2migration/s3putobjectrequesttov2)
 * [Convert V1 setters to V2 toBuilder setters](../../../../software/amazon/awssdk/v2migration/setterstobuilderv2)
+* [Add imports and comments to unsupported S3 transfer manager transforms.](../../../../software/amazon/awssdk/v2migration/s3tmaddcomments)
+* [Change TransferManager simple methods to v2.](../../../../software/amazon/awssdk/v2migration/changetransfermanagersimplemethods)
 
 </TabItem>
 
@@ -78,9 +83,9 @@ tags:
   - sdk
   - aws
 recipeList:
+  - software.amazon.awssdk.v2migration.AddTransferManagerDependency
   - software.amazon.awssdk.v2migration.AddS3EventNotificationDependency
   - software.amazon.awssdk.v2migration.UpgradeSdkDependencies
-  - software.amazon.awssdk.v2migration.S3AddImportsAndComments
   - software.amazon.awssdk.v2migration.S3EventNotificationMethodToV2
   - software.amazon.awssdk.v2migration.S3TypesToV2
   - software.amazon.awssdk.v2migration.S3StreamingResponseToV2
@@ -88,11 +93,14 @@ recipeList:
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2
   - software.amazon.awssdk.v2migration.S3MethodsToV2
   - software.amazon.awssdk.v2migration.S3EventNotificationMethodsToV2
+  - software.amazon.awssdk.v2migration.S3PojoToV2
   - software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent
   - software.amazon.awssdk.v2migration.S3UriToV2
   - software.amazon.awssdk.v2migration.EnumGettersToV2
+  - software.amazon.awssdk.v2migration.ChangeTransferManagerTypes
   - software.amazon.awssdk.v2migration.ChangeS3EventNotificationTypes
   - software.amazon.awssdk.v2migration.ChangeSdkType
+  - software.amazon.awssdk.v2migration.SdkExceptionToV2
   - software.amazon.awssdk.v2migration.ChangeSdkCoreTypes
   - software.amazon.awssdk.v2migration.V1BuilderVariationsToV2Builder
   - software.amazon.awssdk.v2migration.NewClassToBuilderPattern
@@ -107,6 +115,8 @@ recipeList:
   - software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2Complex
   - software.amazon.awssdk.v2migration.S3PutObjectRequestToV2
   - software.amazon.awssdk.v2migration.SettersToBuilderV2
+  - software.amazon.awssdk.v2migration.S3TmAddComments
+  - software.amazon.awssdk.v2migration.ChangeTransferManagerSimpleMethods
 
 ```
 </TabItem>

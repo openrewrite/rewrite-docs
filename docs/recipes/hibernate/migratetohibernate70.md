@@ -31,6 +31,9 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
   <groupId>com.example</groupId>
   <artifactId>demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>org.hibernate.orm</groupId>
@@ -55,6 +58,9 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
   <groupId>com.example</groupId>
   <artifactId>demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>org.hibernate.orm</groupId>

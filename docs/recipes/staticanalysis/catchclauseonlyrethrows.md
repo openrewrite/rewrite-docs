@@ -40,55 +40,6 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-class A {
-    void foo() throws IllegalAccessException {
-        try {
-            throw new IllegalAccessException();
-        } catch (Exception e) {
-            throw e; // `e` is removed below
-        }
-    }
-}
-```
-
-###### After
-```java
-class A {
-    void foo() throws IllegalAccessException {
-        throw new IllegalAccessException();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,5 +3,1 @@
-class A {
-    void foo() throws IllegalAccessException {
--       try {
--           throw new IllegalAccessException();
--       } catch (Exception e) {
--           throw e; // `e` is removed below
--       }
-+       throw new IllegalAccessException();
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -128,6 +79,55 @@ class A {
 -           throw e;
 -       }
 +       new FileReader("").read();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    void foo() throws IllegalAccessException {
+        try {
+            throw new IllegalAccessException();
+        } catch (Exception e) {
+            throw e; // `e` is removed below
+        }
+    }
+}
+```
+
+###### After
+```java
+class A {
+    void foo() throws IllegalAccessException {
+        throw new IllegalAccessException();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,5 +3,1 @@
+class A {
+    void foo() throws IllegalAccessException {
+-       try {
+-           throw new IllegalAccessException();
+-       } catch (Exception e) {
+-           throw e; // `e` is removed below
+-       }
++       throw new IllegalAccessException();
     }
 ```
 </TabItem>

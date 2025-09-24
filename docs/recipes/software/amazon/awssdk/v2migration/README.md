@@ -1,9 +1,5 @@
 # V2migration
 
-## Categories
-
-* [Openrewrite](/recipes/software/amazon/awssdk/v2migration/openrewrite)
-
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
@@ -24,7 +20,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change v1 Maven/Gradle dependencies to v2](./upgradesdkdependencies.md)
 * [Change v1 enum getters to v2](./enumgetterstov2.md)
 * [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](./awssdkjavav1tov2.md)
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](./awssdkjavav1tov2experimental.md)
 
 ## Recipes
 
@@ -32,7 +27,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](./addtransfermanagerdependency.md)
 * [Add a comment to a method](./addcommenttomethod.md)
 * [Add imports and comments to unsupported S3 transfer manager transforms.](./s3tmaddcomments.md)
-* [Add imports and comments to unsupported S3 transforms.](./s3addimportsandcomments.md)
 * [Change AWS SDK for Java v1 types to v2 equivalents](./changesdktype.md)
 * [Convert ByteBuffer to SdkBytes](./bytebuffertosdkbytes.md)
 * [Convert Date to Instant](./datetoinstant.md)
@@ -42,7 +36,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert v1 AmazonS3URI to v2 S3Uri](./s3uritov2.md)
 * [Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for sync and NettyNioAsyncHttpClient for async](./httpsettingstohttpclient.md)
 * [S3 Event Notification method to v2](./s3eventnotificationmethodtov2.md)
-* [Transfer Manager Methods to V2](./transfermanagermethodstov2.md)
+* [S3 POJOs to V2](./s3pojotov2.md)
+* [SDK Exceptions Methods to V2](./sdkexceptiontov2.md)
 * [Transform 'new' expressions to builders](./newclasstobuilder.md)
 * [Transform 'new' expressions to static factory methods](./newclasstostaticfactory.md)
 * [V1 Enum Casing to V2](./enumcasingtov2.md)

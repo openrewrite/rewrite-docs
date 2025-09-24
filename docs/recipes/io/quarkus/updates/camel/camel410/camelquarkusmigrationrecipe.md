@@ -44,6 +44,14 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Quarkus Updates Aggregate 3.18.0](/recipes/quarkus/migratetoquarkus_v3_18_0.md)
+* [Quarkus Updates Aggregate 3.20.1](/recipes/quarkus/migratetoquarkus_v3_20_1.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):

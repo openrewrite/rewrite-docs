@@ -1,20 +1,15 @@
 ---
-sidebar_label: "Add null checks for boxed API fields"
+sidebar_label: "Migrate `AdminClient.alterConfigs()` to `incrementalAlterConfigs()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add null checks for boxed API fields
+# Migrate `AdminClient.alterConfigs()` to `incrementalAlterConfigs()`
 
-**io.moderne.elastic.elastic9.BoxedApiField**
+**io.moderne.kafka.MigrateAlterConfigsToIncrementalAlterConfigs**
 
-_Adds null checks when using API fields that changed from primitive to boxed types. In Elasticsearch Java Client 9.0, certain fields that were always present and returned primitives now return boxed types to support null values, requiring null checks to prevent NPEs._
-
-### Tags
-
-* [elasticsearch](/reference/recipes-by-tag#elasticsearch)
-* [migration](/reference/recipes-by-tag#migration)
+_Migrates the removed `AdminClient.alterConfigs()` method to `incrementalAlterConfigs()` for Kafka 4.0 compatibility._
 
 ## Recipe source
 
@@ -23,50 +18,31 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
-## Options
-
-| Type | Name | Description | Example |
-| -- | -- | -- | -- |
-| `String` | fullyQualifiedName | The fully qualified name of the class containing the field that returns a boxed type. | `co.elastic.clients.elasticsearch._types.aggregations.SingleMetricAggregateBase` |
-| `String` | field | The name of the field/method that now returns a boxed type. | `value` |
-
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Boxed return types of API fields for Elasticsearch 9](/recipes/elastic/elastic9/boxedapifields.md)
+* [Migrate to Kafka 4.0](/recipes/kafka/migratetokafka40.md)
 
 
 ## Usage
 
-This recipe has required configuration parameters and can only be run by users of Moderne.
-To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
-Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
-
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.BoxedApiFieldExample
-displayName: Add null checks for boxed API fields example
-recipeList:
-  - io.moderne.elastic.elastic9.BoxedApiField: 
-      fullyQualifiedName: co.elastic.clients.elasticsearch._types.aggregations.SingleMetricAggregateBase
-      field: value
-```
-
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
+
+
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe BoxedApiField --recipe-option "fullyQualifiedName=co.elastic.clients.elasticsearch._types.aggregations.SingleMetricAggregateBase" --recipe-option "field=value"
+mod run . --recipe MigrateAlterConfigsToIncrementalAlterConfigs
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-elastic:{{VERSION_IO_MODERNE_RECIPE_REWRITE_ELASTIC}}
+mod config recipes jar install io.moderne.recipe:rewrite-kafka:{{VERSION_IO_MODERNE_RECIPE_REWRITE_KAFKA}}
 ```
 </TabItem>
 </Tabs>
@@ -75,7 +51,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-elastic:{{VERSION_IO_MO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.elastic.elastic9.BoxedApiField" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.kafka.MigrateAlterConfigsToIncrementalAlterConfigs" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

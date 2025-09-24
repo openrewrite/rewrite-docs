@@ -28,10 +28,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change method invocation return type](../../../../software/amazon/awssdk/v2migration/openrewrite/changemethodinvocationreturntype)
+* [Change method invocation return type](../../../../java/changemethodinvocationreturntype)
   * methodPattern: `com.amazonaws.services.s3.transfer.TransferManager resumeDownload(..)`
   * newReturnType: `software.amazon.awssdk.transfer.s3.model.FileDownload`
-* [Change method invocation return type](../../../../software/amazon/awssdk/v2migration/openrewrite/changemethodinvocationreturntype)
+* [Change method invocation return type](../../../../java/changemethodinvocationreturntype)
   * methodPattern: `com.amazonaws.services.s3.transfer.TransferManager resumeUpload(..)`
   * newReturnType: `software.amazon.awssdk.transfer.s3.model.FileUpload`
 * [Change type](../../../../java/changetype)
@@ -101,10 +101,10 @@ displayName: Change SDK TransferManager types from v1 to v2
 description: |
   Change SDK TransferManager types from v1 to v2.
 recipeList:
-  - software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType:
+  - org.openrewrite.java.ChangeMethodInvocationReturnType:
       methodPattern: com.amazonaws.services.s3.transfer.TransferManager resumeDownload(..)
       newReturnType: software.amazon.awssdk.transfer.s3.model.FileDownload
-  - software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType:
+  - org.openrewrite.java.ChangeMethodInvocationReturnType:
       methodPattern: com.amazonaws.services.s3.transfer.TransferManager resumeUpload(..)
       newReturnType: software.amazon.awssdk.transfer.s3.model.FileUpload
   - org.openrewrite.java.ChangeType:
@@ -170,7 +170,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2experimental.md)
+* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
 
 
 ## Usage

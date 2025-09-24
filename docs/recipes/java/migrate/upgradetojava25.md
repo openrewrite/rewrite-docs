@@ -35,9 +35,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Java 21](../../java/migrate/upgradetojava21)
 * [Upgrade Java version](../../java/migrate/upgradejavaversion)
   * version: `25`
+* [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
+  * minimumJavaMajorVersion: `25`
+* [Migrate `System.out.print` to Java 25 IO utility class](../../java/migrate/io/replacesystemoutwithioprint)
+* [Migrate `public static void main(String[] args)` to instance `void main()`](../../java/migrate/lang/migratemainmethodtoinstancemain)
 * [Use `Process#waitFor(Duration)`](../../java/migrate/lang/migrateprocesswaitforduration)
 * [Replace unused variables with underscore](../../java/migrate/lang/replaceunusedvariableswithunderscore)
 * [Replace `Inflater` and `Deflater` `end()` calls with `close()`](../../java/migrate/util/migrateinflaterdeflatertoclose)
+* [Use `Reader.of(CharSequence)` for non-synchronized readers](../../java/migrate/util/migratestringreadertoreaderof)
 * [Remove Security AccessController](../../java/migrate/accesscontroller)
 * [Remove Security Policy](../../java/migrate/removesecuritypolicy)
 * [Remove Security SecurityManager](../../java/migrate/removesecuritymanager)
@@ -61,9 +66,14 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava21
   - org.openrewrite.java.migrate.UpgradeJavaVersion:
       version: 25
+  - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
+      minimumJavaMajorVersion: 25
+  - org.openrewrite.java.migrate.io.ReplaceSystemOutWithIOPrint
+  - org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain
   - org.openrewrite.java.migrate.lang.MigrateProcessWaitForDuration
   - org.openrewrite.java.migrate.lang.ReplaceUnusedVariablesWithUnderscore
   - org.openrewrite.java.migrate.util.MigrateInflaterDeflaterToClose
+  - org.openrewrite.java.migrate.util.MigrateStringReaderToReaderOf
   - org.openrewrite.java.migrate.AccessController
   - org.openrewrite.java.migrate.RemoveSecurityPolicy
   - org.openrewrite.java.migrate.RemoveSecurityManager

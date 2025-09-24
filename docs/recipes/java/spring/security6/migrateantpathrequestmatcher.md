@@ -38,11 +38,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-public class SecurityConfig {
-    public SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
+class SecurityConfig {
+    SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
             .authorizeHttpRequests(req ->
-                req.requestMatchers(org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
+                req.requestMatchers(AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
         return httpSecurity.build();
     }
 }
@@ -54,8 +54,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
 
-public class SecurityConfig {
-    public SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
+class SecurityConfig {
+    SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
             .authorizeHttpRequests(req ->
                 req.requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/images/**")).permitAll());
@@ -77,7 +77,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @@ -9,1 +9,1 @@
         httpSecurity
             .authorizeHttpRequests(req ->
--               req.requestMatchers(org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
+-               req.requestMatchers(AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
 +               req.requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/images/**")).permitAll());
         return httpSecurity.build();
 ```

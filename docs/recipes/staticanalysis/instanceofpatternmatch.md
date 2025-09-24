@@ -26,6 +26,95 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class LeftNode {
+    int bar() {
+        return 0;
+    }
+}
+class RightNode {
+    int bar() {
+        return 1;
+    }
+}
+
+class Foo {
+    void bar(Object o1, Object o2) {
+        if (o1 instanceof LeftNode && o2 instanceof RightNode) {
+          ((LeftNode)o1).bar();
+          ((RightNode)o2).bar();
+        }
+        else if (o1 instanceof RightNode && o2 instanceof LeftNode) {
+          ((RightNode)o1).bar();
+          ((LeftNode)o2).bar();
+        }
+    }
+}
+```
+
+###### After
+```java
+class LeftNode {
+    int bar() {
+        return 0;
+    }
+}
+class RightNode {
+    int bar() {
+        return 1;
+    }
+}
+
+class Foo {
+    void bar(Object o1, Object o2) {
+        if (o1 instanceof LeftNode node2 && o2 instanceof RightNode node3) {
+          node2.bar();
+          node3.bar();
+        }
+        else if (o1 instanceof RightNode node && o2 instanceof LeftNode node1) {
+          node.bar();
+          node1.bar();
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -14,3 +14,3 @@
+class Foo {
+    void bar(Object o1, Object o2) {
+-       if (o1 instanceof LeftNode && o2 instanceof RightNode) {
+-         ((LeftNode)o1).bar();
+-         ((RightNode)o2).bar();
++       if (o1 instanceof LeftNode node2 && o2 instanceof RightNode node3) {
++         node2.bar();
++         node3.bar();
+        }
+@@ -18,3 +18,3 @@
+          ((RightNode)o2).bar();
+        }
+-       else if (o1 instanceof RightNode && o2 instanceof LeftNode) {
+-         ((RightNode)o1).bar();
+-         ((LeftNode)o2).bar();
++       else if (o1 instanceof RightNode node && o2 instanceof LeftNode node1) {
++         node.bar();
++         node1.bar();
+        }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

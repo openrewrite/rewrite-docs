@@ -31,6 +31,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Kafka 4.0](/recipes/kafka/migratetokafka40.md)
+* [Migrate to Kafka 4.1](/recipes/kafka/migratetokafka41.md)
 * [Removed deprecated property camel.main.lightweight](/recipes/org/apache/camel/upgrade/camel411/removedlightweight.md)
 
 ## Example

@@ -1,30 +1,64 @@
 ---
-sidebar_label: "Transfer Manager Methods to V2"
+sidebar_label: "Quarkus Updates Aggregate 3.2.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Transfer Manager Methods to V2
+# Quarkus Updates Aggregate 3.2.0
 
-**software.amazon.awssdk.v2migration.TransferManagerMethodsToV2**
+**org.openrewrite.quarkus.MigrateToQuarkus\_v3\_2\_0**
 
-_Transfer Manager Methods to V2_
+_Quarkus update recipes to upgrade your application to 3.2.0._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.TransferManagerMethodsToV2), 
+[GitHub](https://github.com/search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Quarkus Updates Aggregate 3.1.0](../quarkus/migratetoquarkus_v3_1_0)
+* [io.quarkus.updates.core.quarkus32.InjectMock](../io/quarkus/updates/core/quarkus32/injectmock)
+* [io.quarkus.updates.core.quarkus32.ApplicationProperties](../io/quarkus/updates/core/quarkus32/applicationproperties)
+* [io.quarkus.updates.core.quarkus32.ApplicationYml](../io/quarkus/updates/core/quarkus32/applicationyml)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0
+displayName: Quarkus Updates Aggregate 3.2.0
+description: |
+  Quarkus update recipes to upgrade your application to 3.2.0.
+recipeList:
+  - org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0
+  - io.quarkus.updates.core.quarkus32.InjectMock
+  - io.quarkus.updates.core.quarkus32.ApplicationProperties
+  - io.quarkus.updates.core.quarkus32.ApplicationYml
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2experimental.md)
+* [Quarkus Updates Aggregate 3.3.0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
 
 
 ## Usage
@@ -41,7 +75,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("software.amazon.awssdk.v2migration.TransferManagerMethodsToV2")
+    activeRecipe("org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0")
     setExportDatatables(true)
 }
 
@@ -74,7 +108,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("software.amazon.awssdk.v2migration.TransferManagerMethodsToV2")
+        activeRecipe("org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -109,7 +143,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>software.amazon.awssdk.v2migration.TransferManagerMethodsToV2</recipe>
+            <recipe>org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -132,7 +166,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=software.amazon.awssdk.v2migration.TransferManagerMethodsToV2 -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -140,7 +174,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe TransferManagerMethodsToV2
+mod run . --recipe MigrateToQuarkus_v3_2_0
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -154,7 +188,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.TransferManagerMethodsToV2" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -213,6 +247,25 @@ _Statistics used in analyzing the performance of recipes._
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

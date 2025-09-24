@@ -4,7 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Inline Guava method calls](./noguavainlinememethods.md)
+* [Inline methods annotated with `@InlineMe`](./noguavainlinememethods.md)
 * [Prefer `Integer#compareUnsigned`](./preferintegercompareunsigned.md)
 * [Prefer `Integer#divideUnsigned`](./preferintegerdivideunsigned.md)
 * [Prefer `Long#compareUnsigned`](./preferlongcompareunsigned.md)

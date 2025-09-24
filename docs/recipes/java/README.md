@@ -50,7 +50,7 @@ _Basic building blocks for transforming Java code._
 * [Create Java class](./createemptyjavaclass.md)
 * [Delete method argument](./deletemethodargument.md)
 * [Demonstrate rendering of `Markup` markers](./recipemarkupdemonstration.md)
-* [Inline methods annotated with `@InlineMe`](./inlinemethodcalls.md)
+* [Inline method calls](./inlinemethodcalls.md)
 * [Order imports](./orderimports.md)
 * [Randomize tree IDs](./randomizeid.md)
 * [Remove annotation](./removeannotation.md)

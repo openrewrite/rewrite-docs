@@ -1,23 +1,19 @@
 ---
-sidebar_label: "Inline Guava method calls"
+sidebar_label: "Inline methods annotated with `@InlineMe`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Inline Guava method calls
+# Inline methods annotated with `@InlineMe`
 
 **org.openrewrite.java.migrate.guava.NoGuavaInlineMeMethods**
 
-_Inline Guava method calls that are annotated with `@InlineMe` to their replacement method._
-
-### Tags
-
-* [guava](/reference/recipes-by-tag#guava)
+_Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/inline-guava-methods.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
@@ -32,7 +28,291 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Inline methods annotated with `@InlineMe`](../../../java/inlinemethodcalls)
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Booleans hashCode(boolean)`
+  * replacement: `Boolean.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Booleans compare(boolean, boolean)`
+  * replacement: `Boolean.compare(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Longs hashCode(long)`
+  * replacement: `Long.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Longs compare(long, long)`
+  * replacement: `Long.compare(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Ints hashCode(int)`
+  * replacement: `Integer.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Ints compare(int, int)`
+  * replacement: `Integer.compare(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.graph.ImmutableValueGraph copyOf(com.google.common.graph.ImmutableValueGraph)`
+  * replacement: `checkNotNull(graph)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Doubles hashCode(double)`
+  * replacement: `Double.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Doubles compare(double, double)`
+  * replacement: `Double.compare(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Doubles isFinite(double)`
+  * replacement: `Double.isFinite(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Streams stream(java.util.Collection)`
+  * replacement: `collection.stream()`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Streams stream(java.util.Optional)`
+  * replacement: `optional.stream()`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Streams stream(java.util.OptionalInt)`
+  * replacement: `optional.stream()`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Streams stream(java.util.OptionalLong)`
+  * replacement: `optional.stream()`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Streams stream(java.util.OptionalDouble)`
+  * replacement: `optional.stream()`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Range apply(java.lang.Comparable)`
+  * replacement: `this.contains(input)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Range test(java.lang.Comparable)`
+  * replacement: `this.contains(input)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.FluentIterable from(com.google.common.collect.FluentIterable)`
+  * replacement: `checkNotNull(iterable)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.ImmutableList asList()`
+  * replacement: `this`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Chars hashCode(char)`
+  * replacement: `Character.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Chars compare(char, char)`
+  * replacement: `Character.compare(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.TreeBasedTable rowComparator()`
+  * replacement: `requireNonNull(this.rowKeySet().comparator())`
+  * staticImports: `[java.util.Objects.requireNonNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Multisets unmodifiableMultiset(com.google.common.collect.ImmutableMultiset)`
+  * replacement: `checkNotNull(multiset)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Iterators unmodifiableIterator(com.google.common.collect.UnmodifiableIterator)`
+  * replacement: `checkNotNull(iterator)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Iterators peekingIterator(com.google.common.collect.PeekingIterator)`
+  * replacement: `checkNotNull(iterator)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Ordering from(com.google.common.collect.Ordering)`
+  * replacement: `checkNotNull(ordering)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Ordering binarySearch(java.util.List, java.lang.Object)`
+  * replacement: `Collections.binarySearch(sortedList, key, this)`
+  * imports: `[java.util.Collections]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Bytes hashCode(byte)`
+  * replacement: `Byte.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Multimaps unmodifiableMultimap(com.google.common.collect.ImmutableMultimap)`
+  * replacement: `checkNotNull(delegate)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Multimaps unmodifiableSetMultimap(com.google.common.collect.ImmutableSetMultimap)`
+  * replacement: `checkNotNull(delegate)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Multimaps unmodifiableListMultimap(com.google.common.collect.ImmutableListMultimap)`
+  * replacement: `checkNotNull(delegate)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.base.Equivalence test(java.lang.Object, java.lang.Object)`
+  * replacement: `this.equivalent(t, u)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Sets newSetFromMap(java.util.Map)`
+  * replacement: `Collections.newSetFromMap(map)`
+  * imports: `[java.util.Collections]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Lists newCopyOnWriteArrayList()`
+  * replacement: `new CopyOnWriteArrayList<>()`
+  * imports: `[java.util.concurrent.CopyOnWriteArrayList]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.base.Strings repeat(java.lang.String, int)`
+  * replacement: `string.repeat(count)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.hash.BloomFilter apply(java.lang.Object)`
+  * replacement: `this.mightContain(input)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.hash.BloomFilter test(java.lang.Object)`
+  * replacement: `this.mightContain(input)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.base.CharMatcher apply(java.lang.Character)`
+  * replacement: `this.matches(character)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.base.CharMatcher test(java.lang.Character)`
+  * replacement: `this.matches(character)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.ComparisonChain compare(java.lang.Boolean, java.lang.Boolean)`
+  * replacement: `this.compareFalseFirst(left, right)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files toString(java.io.File, java.nio.charset.Charset)`
+  * replacement: `Files.asCharSource(file, charset).read()`
+  * imports: `[com.google.common.io.Files]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files write(java.lang.CharSequence, java.io.File, java.nio.charset.Charset)`
+  * replacement: `Files.asCharSink(to, charset).write(from)`
+  * imports: `[com.google.common.io.Files]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files copy(java.io.File, java.nio.charset.Charset, java.lang.Appendable)`
+  * replacement: `Files.asCharSource(from, charset).copyTo(to)`
+  * imports: `[com.google.common.io.Files]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files append(java.lang.CharSequence, java.io.File, java.nio.charset.Charset)`
+  * replacement: `Files.asCharSink(to, charset, FileWriteMode.APPEND).write(from)`
+  * imports: `[com.google.common.io.Files, com.google.common.io.FileWriteMode]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files readFirstLine(java.io.File, java.nio.charset.Charset)`
+  * replacement: `Files.asCharSource(file, charset).readFirstLine()`
+  * imports: `[com.google.common.io.Files]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files readLines(java.io.File, java.nio.charset.Charset, com.google.common.io.LineProcessor)`
+  * replacement: `Files.asCharSource(file, charset).readLines(callback)`
+  * imports: `[com.google.common.io.Files]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files readBytes(java.io.File, com.google.common.io.ByteProcessor)`
+  * replacement: `Files.asByteSource(file).read(processor)`
+  * imports: `[com.google.common.io.Files]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.io.Files hash(java.io.File, com.google.common.hash.HashFunction)`
+  * replacement: `Files.asByteSource(file).hash(hashFunction)`
+  * imports: `[com.google.common.io.Files]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.util.concurrent.FluentFuture from(com.google.common.util.concurrent.FluentFuture)`
+  * replacement: `checkNotNull(future)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.base.Converter apply(java.lang.Object)`
+  * replacement: `this.convert(a)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Shorts hashCode(short)`
+  * replacement: `Short.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Shorts compare(short, short)`
+  * replacement: `Short.compare(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.graph.ImmutableGraph copyOf(com.google.common.graph.ImmutableGraph)`
+  * replacement: `checkNotNull(graph)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Floats hashCode(float)`
+  * replacement: `Float.hashCode(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Floats compare(float, float)`
+  * replacement: `Float.compare(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.Floats isFinite(float)`
+  * replacement: `Float.isFinite(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.collect.Iterables unmodifiableIterable(com.google.common.collect.ImmutableCollection)`
+  * replacement: `checkNotNull(iterable)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.primitives.UnsignedBytes toInt(byte)`
+  * replacement: `Byte.toUnsignedInt(value)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.graph.ImmutableNetwork copyOf(com.google.common.graph.ImmutableNetwork)`
+  * replacement: `checkNotNull(network)`
+  * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.math.LongMath checkedAdd(long, long)`
+  * replacement: `Math.addExact(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.math.LongMath checkedSubtract(long, long)`
+  * replacement: `Math.subtractExact(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.math.LongMath checkedMultiply(long, long)`
+  * replacement: `Math.multiplyExact(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.math.IntMath checkedAdd(int, int)`
+  * replacement: `Math.addExact(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.math.IntMath checkedSubtract(int, int)`
+  * replacement: `Math.subtractExact(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
+* [Inline method calls](../../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.math.IntMath checkedMultiply(int, int)`
+  * replacement: `Math.multiplyExact(a, b)`
+  * classpathFromResources: `[guava-33.5.0-jre]`
 
 </TabItem>
 
@@ -42,13 +322,295 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.NoGuavaInlineMeMethods
-displayName: Inline Guava method calls
+displayName: Inline methods annotated with `@InlineMe`
 description: |
-  Inline Guava method calls that are annotated with `@InlineMe` to their replacement method.
-tags:
-  - guava
+  Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 recipeList:
-  - org.openrewrite.java.InlineMethodCalls
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Booleans hashCode(boolean)
+      replacement: Boolean.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Booleans compare(boolean, boolean)
+      replacement: Boolean.compare(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Longs hashCode(long)
+      replacement: Long.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Longs compare(long, long)
+      replacement: Long.compare(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Ints hashCode(int)
+      replacement: Integer.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Ints compare(int, int)
+      replacement: Integer.compare(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.graph.ImmutableValueGraph copyOf(com.google.common.graph.ImmutableValueGraph)
+      replacement: checkNotNull(graph)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Doubles hashCode(double)
+      replacement: Double.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Doubles compare(double, double)
+      replacement: Double.compare(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Doubles isFinite(double)
+      replacement: Double.isFinite(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Streams stream(java.util.Collection)
+      replacement: collection.stream()
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Streams stream(java.util.Optional)
+      replacement: optional.stream()
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Streams stream(java.util.OptionalInt)
+      replacement: optional.stream()
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Streams stream(java.util.OptionalLong)
+      replacement: optional.stream()
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Streams stream(java.util.OptionalDouble)
+      replacement: optional.stream()
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Range apply(java.lang.Comparable)
+      replacement: this.contains(input)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Range test(java.lang.Comparable)
+      replacement: this.contains(input)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.FluentIterable from(com.google.common.collect.FluentIterable)
+      replacement: checkNotNull(iterable)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.ImmutableList asList()
+      replacement: this
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Chars hashCode(char)
+      replacement: Character.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Chars compare(char, char)
+      replacement: Character.compare(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.TreeBasedTable rowComparator()
+      replacement: requireNonNull(this.rowKeySet().comparator())
+      staticImports: [java.util.Objects.requireNonNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Multisets unmodifiableMultiset(com.google.common.collect.ImmutableMultiset)
+      replacement: checkNotNull(multiset)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Iterators unmodifiableIterator(com.google.common.collect.UnmodifiableIterator)
+      replacement: checkNotNull(iterator)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Iterators peekingIterator(com.google.common.collect.PeekingIterator)
+      replacement: checkNotNull(iterator)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Ordering from(com.google.common.collect.Ordering)
+      replacement: checkNotNull(ordering)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Ordering binarySearch(java.util.List, java.lang.Object)
+      replacement: Collections.binarySearch(sortedList, key, this)
+      imports: [java.util.Collections]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Bytes hashCode(byte)
+      replacement: Byte.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Multimaps unmodifiableMultimap(com.google.common.collect.ImmutableMultimap)
+      replacement: checkNotNull(delegate)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Multimaps unmodifiableSetMultimap(com.google.common.collect.ImmutableSetMultimap)
+      replacement: checkNotNull(delegate)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Multimaps unmodifiableListMultimap(com.google.common.collect.ImmutableListMultimap)
+      replacement: checkNotNull(delegate)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.base.Equivalence test(java.lang.Object, java.lang.Object)
+      replacement: this.equivalent(t, u)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Sets newSetFromMap(java.util.Map)
+      replacement: Collections.newSetFromMap(map)
+      imports: [java.util.Collections]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Lists newCopyOnWriteArrayList()
+      replacement: new CopyOnWriteArrayList<>()
+      imports: [java.util.concurrent.CopyOnWriteArrayList]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.base.Strings repeat(java.lang.String, int)
+      replacement: string.repeat(count)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.hash.BloomFilter apply(java.lang.Object)
+      replacement: this.mightContain(input)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.hash.BloomFilter test(java.lang.Object)
+      replacement: this.mightContain(input)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.base.CharMatcher apply(java.lang.Character)
+      replacement: this.matches(character)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.base.CharMatcher test(java.lang.Character)
+      replacement: this.matches(character)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.ComparisonChain compare(java.lang.Boolean, java.lang.Boolean)
+      replacement: this.compareFalseFirst(left, right)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files toString(java.io.File, java.nio.charset.Charset)
+      replacement: Files.asCharSource(file, charset).read()
+      imports: [com.google.common.io.Files]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files write(java.lang.CharSequence, java.io.File, java.nio.charset.Charset)
+      replacement: Files.asCharSink(to, charset).write(from)
+      imports: [com.google.common.io.Files]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files copy(java.io.File, java.nio.charset.Charset, java.lang.Appendable)
+      replacement: Files.asCharSource(from, charset).copyTo(to)
+      imports: [com.google.common.io.Files]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files append(java.lang.CharSequence, java.io.File, java.nio.charset.Charset)
+      replacement: Files.asCharSink(to, charset, FileWriteMode.APPEND).write(from)
+      imports: [com.google.common.io.Files, com.google.common.io.FileWriteMode]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files readFirstLine(java.io.File, java.nio.charset.Charset)
+      replacement: Files.asCharSource(file, charset).readFirstLine()
+      imports: [com.google.common.io.Files]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files readLines(java.io.File, java.nio.charset.Charset, com.google.common.io.LineProcessor)
+      replacement: Files.asCharSource(file, charset).readLines(callback)
+      imports: [com.google.common.io.Files]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files readBytes(java.io.File, com.google.common.io.ByteProcessor)
+      replacement: Files.asByteSource(file).read(processor)
+      imports: [com.google.common.io.Files]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.io.Files hash(java.io.File, com.google.common.hash.HashFunction)
+      replacement: Files.asByteSource(file).hash(hashFunction)
+      imports: [com.google.common.io.Files]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.util.concurrent.FluentFuture from(com.google.common.util.concurrent.FluentFuture)
+      replacement: checkNotNull(future)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.base.Converter apply(java.lang.Object)
+      replacement: this.convert(a)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Shorts hashCode(short)
+      replacement: Short.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Shorts compare(short, short)
+      replacement: Short.compare(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.graph.ImmutableGraph copyOf(com.google.common.graph.ImmutableGraph)
+      replacement: checkNotNull(graph)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Floats hashCode(float)
+      replacement: Float.hashCode(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Floats compare(float, float)
+      replacement: Float.compare(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.Floats isFinite(float)
+      replacement: Float.isFinite(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.collect.Iterables unmodifiableIterable(com.google.common.collect.ImmutableCollection)
+      replacement: checkNotNull(iterable)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.primitives.UnsignedBytes toInt(byte)
+      replacement: Byte.toUnsignedInt(value)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.graph.ImmutableNetwork copyOf(com.google.common.graph.ImmutableNetwork)
+      replacement: checkNotNull(network)
+      staticImports: [com.google.common.base.Preconditions.checkNotNull]
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.math.LongMath checkedAdd(long, long)
+      replacement: Math.addExact(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.math.LongMath checkedSubtract(long, long)
+      replacement: Math.subtractExact(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.math.LongMath checkedMultiply(long, long)
+      replacement: Math.multiplyExact(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.math.IntMath checkedAdd(int, int)
+      replacement: Math.addExact(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.math.IntMath checkedSubtract(int, int)
+      replacement: Math.subtractExact(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.math.IntMath checkedMultiply(int, int)
+      replacement: Math.multiplyExact(a, b)
+      classpathFromResources: [guava-33.5.0-jre]
 
 ```
 </TabItem>

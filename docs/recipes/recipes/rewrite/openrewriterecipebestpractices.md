@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Inline methods annotated with `@InlineMe`](../../java/inlinemethodcalls)
+* [Inline methods annotated with `@InlineMe`](../../recipes/rewrite/inlinemethods)
 * [Java Recipe best practices](../../java/recipes/javarecipebestpractices)
 * [Recipe testing best practices](../../java/recipes/recipetestingbestpractices)
 * [Recipe nullability best practices](../../java/recipes/recipenullabilitybestpractices)
@@ -69,7 +69,7 @@ displayName: OpenRewrite recipe best practices
 description: |
   Best practices for OpenRewrite recipe development.
 recipeList:
-  - org.openrewrite.java.InlineMethodCalls
+  - org.openrewrite.recipes.rewrite.InlineMethods
   - org.openrewrite.java.recipes.JavaRecipeBestPractices
   - org.openrewrite.java.recipes.RecipeTestingBestPractices
   - org.openrewrite.java.recipes.RecipeNullabilityBestPractices

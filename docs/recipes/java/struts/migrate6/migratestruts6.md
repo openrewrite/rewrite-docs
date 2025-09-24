@@ -29,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](../../../java/struts/migrate6/migrateawareinterfaces)
+* [Migrate Dynamic Method Invocation to explicit action mappings](../../../java/struts/migrate6/migratedynamicmethodinvocation)
 * [Migrate OpenSymphony classes to Struts 6.0](../../../java/struts/migrate6/migrateopensymphonyclasses)
 * [Upgrade Struts 6.0 dependencies](../../../java/struts/migrate6/upgradestruts6dependencies)
 * [Migrate to Struts 6.0 constants](../../../java/struts/migrate6/migratestruts6constants)
@@ -48,6 +49,7 @@ description: |
   Migrate Struts 2.x to Struts 6.0
 recipeList:
   - org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces
+  - org.openrewrite.java.struts.migrate6.MigrateDynamicMethodInvocation
   - org.openrewrite.java.struts.migrate6.MigrateOpenSymphonyClasses
   - org.openrewrite.java.struts.migrate6.UpgradeStruts6Dependencies
   - org.openrewrite.java.struts.migrate6.MigrateStruts6Constants

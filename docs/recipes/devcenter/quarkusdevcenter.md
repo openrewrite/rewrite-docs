@@ -41,8 +41,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `3.26.x`
   * upgradeRecipe: `io.moderne.devcenter.UpgradeQuarkusUniverseBom`
 * [Move to a later Java version](../devcenter/javaversionupgrade)
-  * majorVersion: `21`
-  * upgradeRecipe: `org.openrewrite.java.migrate.UpgradeToJava21`
+  * majorVersion: `25`
+  * upgradeRecipe: `org.openrewrite.java.migrate.UpgradeToJava25`
 * [OWASP top ten](../devcenter/securitystarter)
 
 </TabItem>
@@ -70,8 +70,8 @@ recipeList:
       version: 3.26.x
       upgradeRecipe: io.moderne.devcenter.UpgradeQuarkusUniverseBom
   - io.moderne.devcenter.JavaVersionUpgrade:
-      majorVersion: 21
-      upgradeRecipe: org.openrewrite.java.migrate.UpgradeToJava21
+      majorVersion: 25
+      upgradeRecipe: org.openrewrite.java.migrate.UpgradeToJava25
   - io.moderne.devcenter.SecurityStarter
 
 ```

@@ -33,6 +33,9 @@ This recipe is used as part of the following composite recipes:
 
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/io/quarkus/updates/core/quarkus37/deprecatedlogrecordthreadid.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/java/migrate/deprecatedlogrecordthreadid.md)
+* [Change S3 types to v2.](/recipes/software/amazon/awssdk/v2migration/s3typestov2.md)
+* [Change S3EventNotification methods to v2.](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
+* [Change SDK TransferManager types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
 * [Change method invocation return type](/recipes/java/migrate/changemethodinvocationreturntype.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 

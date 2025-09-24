@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.httpcomponents.client5`
   * artifactId: `httpclient5`
   * version: `5.4.x`
+  * onlyIfUsing: `org.apache.http..*`
   * acceptTransitive: `true`
 * [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
   * groupId: `org.apache.httpcomponents`
@@ -67,6 +68,7 @@ recipeList:
       groupId: org.apache.httpcomponents.client5
       artifactId: httpclient5
       version: 5.4.x
+      onlyIfUsing: org.apache.http..*
       acceptTransitive: true
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.apache.httpcomponents

@@ -27,6 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | value | The value of the new property key. | `newPropValue` |
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
 | `String` | delimiter | *Optional*. Property entries support different delimiters (`=`, `:`, or whitespace). The default value is `=` unless provided the delimiter of the new property entry. | `:` |
+| `Boolean` | orderedInsertion | *Optional*. Whether to attempt adding the property in an order following alphabetic sorting. The default value is `true`. | `false` |
 
 
 ## Used by
@@ -47,6 +48,7 @@ This recipe is used as part of the following composite recipes:
 |value|`true`|
 |comment|`null`|
 |delimiter|`null`|
+|orderedInsertion||
 
 
 <Tabs groupId="beforeAfter">
@@ -92,6 +94,7 @@ recipeList:
       value: newPropValue
       comment: This is a comment
       delimiter: :
+      orderedInsertion: false
 ```
 
 Now that `com.yourorg.AddPropertyExample` has been defined, activate it in your build file:
@@ -145,7 +148,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddProperty --recipe-option "property=management.metrics.enable.process.files" --recipe-option "value=newPropValue" --recipe-option "comment=This is a comment" --recipe-option "delimiter=:"
+mod run . --recipe AddProperty --recipe-option "property=management.metrics.enable.process.files" --recipe-option "value=newPropValue" --recipe-option "comment=This is a comment" --recipe-option "delimiter=:" --recipe-option "orderedInsertion=false"
 ```
 
 If the recipe is not available locally, then you can install it using:

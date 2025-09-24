@@ -25,6 +25,61 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.engine.spi.SessionFactoryImplementor;
+import org.hibernate.metamodel.spi.ValueAccess;
+import org.hibernate.usertype.CompositeUserType;
+
+class CompositeUserTypeTest {
+    void testCompositeUserType(CompositeUserType type, org.hibernate.metamodel.spi.ValueAccess va, org.hibernate.engine.spi.SessionFactoryImplementor session) {
+        type.instantiate(va, session);
+        type.isInstance(null, session);
+        type.isSameClass(null, session);
+    }
+}
+```
+
+###### After
+```java
+import org.hibernate.engine.spi.SessionFactoryImplementor;
+import org.hibernate.metamodel.spi.ValueAccess;
+import org.hibernate.usertype.CompositeUserType;
+
+class CompositeUserTypeTest {
+    void testCompositeUserType(CompositeUserType type, org.hibernate.metamodel.spi.ValueAccess va, org.hibernate.engine.spi.SessionFactoryImplementor session) {
+        type.instantiate(va);
+        type.isInstance(null);
+        type.isSameClass(null);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,3 +7,3 @@
+class CompositeUserTypeTest {
+    void testCompositeUserType(CompositeUserType type, org.hibernate.metamodel.spi.ValueAccess va, org.hibernate.engine.spi.SessionFactoryImplementor session) {
+-       type.instantiate(va, session);
+-       type.isInstance(null, session);
+-       type.isSameClass(null, session);
++       type.instantiate(va);
++       type.isInstance(null);
++       type.isSameClass(null);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

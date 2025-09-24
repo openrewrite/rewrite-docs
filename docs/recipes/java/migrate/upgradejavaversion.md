@@ -73,6 +73,8 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 * [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
+* [Upgrade Java to 11+ for Kafka clients](/recipes/kafka/upgradejavaforkafkaclients.md)
+* [Upgrade Java to 17+ for Kafka broker/tools](/recipes/kafka/upgradejavaforkafkabroker.md)
 * [Upgrade build to Java 11](/recipes/java/migrate/upgradebuildtojava11.md)
 * [Upgrade build to Java 17](/recipes/java/migrate/upgradebuildtojava17.md)
 * [Upgrade build to Java 21](/recipes/java/migrate/upgradebuildtojava21.md)

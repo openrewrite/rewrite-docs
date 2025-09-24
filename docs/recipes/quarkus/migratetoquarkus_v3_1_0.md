@@ -1,57 +1,65 @@
 ---
-sidebar_label: "Change method invocation return type"
+sidebar_label: "Quarkus Updates Aggregate 3.1.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Change method invocation return type
+# Quarkus Updates Aggregate 3.1.0
 
-**software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType**
+**org.openrewrite.quarkus.MigrateToQuarkus\_v3\_1\_0**
 
-_Changes the return type of a method invocation._
+_Quarkus update recipes to upgrade your application to 3.1.0._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType), 
+[GitHub](https://github.com/search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Options
 
-| Type | Name | Description | Example |
-| -- | -- | -- | -- |
-| `String` | methodPattern | A method pattern is used to find matching method invocations. | `org.mockito.Matchers anyVararg()` |
-| `String` | newReturnType | The fully qualified new return type of method invocation. | `long` |
+## Definition
 
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Quarkus Updates Aggregate 3.0.0](../quarkus/migratetoquarkus_v3_0_0)
+* [io.quarkus.updates.core.quarkus31.RemoveMockitoInline](../io/quarkus/updates/core/quarkus31/removemockitoinline)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0
+displayName: Quarkus Updates Aggregate 3.1.0
+description: |
+  Quarkus update recipes to upgrade your application to 3.1.0.
+recipeList:
+  - org.openrewrite.quarkus.MigrateToQuarkus_v3_0_0
+  - io.quarkus.updates.core.quarkus31.RemoveMockitoInline
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Change S3 types to v2.](/recipes/software/amazon/awssdk/v2migration/s3typestov2.md)
-* [Change S3EventNotification methods to v2.](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
-* [Change SDK TransferManager types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
+* [Quarkus Updates Aggregate 3.2.0](/recipes/quarkus/migratetoquarkus_v3_2_0.md)
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodInvocationReturnTypeExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ChangeMethodInvocationReturnTypeExample
-displayName: Change method invocation return type example
-recipeList:
-  - software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType:
-      methodPattern: org.mockito.Matchers anyVararg()
-      newReturnType: long
-```
-
-Now that `com.yourorg.ChangeMethodInvocationReturnTypeExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -63,7 +71,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.ChangeMethodInvocationReturnTypeExample")
+    activeRecipe("org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0")
     setExportDatatables(true)
 }
 
@@ -75,9 +83,48 @@ dependencies {
     rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-<TabItem value="maven" label="Maven">
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
 
 1. Add the following to your `pom.xml` file:
 
@@ -92,7 +139,7 @@ dependencies {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.ChangeMethodInvocationReturnTypeExample</recipe>
+            <recipe>org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -107,14 +154,23 @@ dependencies {
   </build>
 </project>
 ```
+
 2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0 -Drewrite.exportDatatables=true
+```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeMethodInvocationReturnType --recipe-option "methodPattern=org.mockito.Matchers anyVararg()" --recipe-option "newReturnType=long"
+mod run . --recipe MigrateToQuarkus_v3_1_0
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -128,7 +184,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.openrewrite.ChangeMethodInvocationReturnType" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -187,6 +243,25 @@ _Statistics used in analyzing the performance of recipes._
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Add imports and comments to unsupported S3 transforms."
+sidebar_label: "S3 POJOs to V2"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add imports and comments to unsupported S3 transforms.
+# S3 POJOs to V2
 
-**software.amazon.awssdk.v2migration.S3AddImportsAndComments**
+**software.amazon.awssdk.v2migration.S3PojoToV2**
 
-_Add imports and comments to unsupported S3 transforms._
+_S3 POJOs to V2_
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3AddImportsAndComments), 
+[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3PojoToV2), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -24,7 +24,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2 including S3 Transfer Manager.](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2experimental.md)
 * [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
 
 
@@ -42,7 +41,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("software.amazon.awssdk.v2migration.S3AddImportsAndComments")
+    activeRecipe("software.amazon.awssdk.v2migration.S3PojoToV2")
     setExportDatatables(true)
 }
 
@@ -75,7 +74,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("software.amazon.awssdk.v2migration.S3AddImportsAndComments")
+        activeRecipe("software.amazon.awssdk.v2migration.S3PojoToV2")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -110,7 +109,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>software.amazon.awssdk.v2migration.S3AddImportsAndComments</recipe>
+            <recipe>software.amazon.awssdk.v2migration.S3PojoToV2</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -133,7 +132,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=software.amazon.awssdk.v2migration.S3AddImportsAndComments -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=software.amazon.awssdk.v2migration.S3PojoToV2 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -141,7 +140,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe S3AddImportsAndComments
+mod run . --recipe S3PojoToV2
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -155,7 +154,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.S3AddImportsAndComments" />
+<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.S3PojoToV2" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

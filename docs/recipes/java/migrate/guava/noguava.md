@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
-* [Inline Guava method calls](../../../java/migrate/guava/noguavainlinememethods)
+* [Inline methods annotated with `@InlineMe`](../../../java/migrate/guava/noguavainlinememethods)
 * [Prefer `new ArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewarraylist)
 * [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
 * [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
@@ -141,22 +141,22 @@ recipeList:
 
 ###### Before
 ```java
-import com.google.common.base.Optional;
+import com.google.common.base.MoreObjects;
 
 class A {
-    Optional<String> foo() {
-        return Optional.absent();
+    Object foo(Object obj) {
+        return MoreObjects.firstNonNull(obj, "default");
     }
 }
 ```
 
 ###### After
 ```java
-import java.util.Optional;
+import java.util.Objects;
 
 class A {
-    Optional<String> foo() {
-        return Optional.empty();
+    Object foo(Object obj) {
+        return Objects.requireNonNullElse(obj, "default");
     }
 }
 ```
@@ -166,14 +166,14 @@ class A {
 
 ```diff
 @@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
+-import com.google.common.base.MoreObjects;
++import java.util.Objects;
 
 @@ -5,1 +5,1 @@
 class A {
-    Optional<String> foo() {
--       return Optional.absent();
-+       return Optional.empty();
+    Object foo(Object obj) {
+-       return MoreObjects.firstNonNull(obj, "default");
++       return Objects.requireNonNullElse(obj, "default");
     }
 ```
 </TabItem>
@@ -193,6 +193,55 @@ class A {
 import com.google.common.base.Optional;
 
 class A {
+    Optional<String> foo() {
+        return Optional.absent();
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.empty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -5,1 +5,1 @@
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
     String foo(Optional<String> optional) {
         try {
             return optional.get();
@@ -238,7 +287,7 @@ class A {
 
 ---
 
-##### Example 3
+##### Example 4
 
 
 <Tabs groupId="beforeAfter">
@@ -287,7 +336,7 @@ class A {
 
 ---
 
-##### Example 4
+##### Example 5
 
 
 <Tabs groupId="beforeAfter">
@@ -336,7 +385,7 @@ class A {
 
 ---
 
-##### Example 5
+##### Example 6
 
 
 <Tabs groupId="beforeAfter">
@@ -387,55 +436,6 @@ class A {
 -       } catch (IllegalStateException e) {
 +       } catch (NoSuchElementException e) {
             return "";
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 6
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.google.common.base.MoreObjects;
-
-class A {
-    Object foo(Object obj) {
-        return MoreObjects.firstNonNull(obj, "default");
-    }
-}
-```
-
-###### After
-```java
-import java.util.Objects;
-
-class A {
-    Object foo(Object obj) {
-        return Objects.requireNonNullElse(obj, "default");
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import com.google.common.base.MoreObjects;
-+import java.util.Objects;
-
-@@ -5,1 +5,1 @@
-class A {
-    Object foo(Object obj) {
--       return MoreObjects.firstNonNull(obj, "default");
-+       return Objects.requireNonNullElse(obj, "default");
-    }
 ```
 </TabItem>
 </Tabs>

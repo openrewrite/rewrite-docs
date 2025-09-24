@@ -1,20 +1,15 @@
 ---
-sidebar_label: "Boxed return types of API fields for Elasticsearch 9"
+sidebar_label: "Migrate `ConsumerGroupState` to `GroupState`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Boxed return types of API fields for Elasticsearch 9
+# Migrate `ConsumerGroupState` to `GroupState`
 
-**io.moderne.elastic.elastic9.BoxedApiFields**
+**io.moderne.kafka.MigrateConsumerGroupStateToGroupState**
 
-_Changes primitive return types of various API response fields to their boxed counterparts to align with Elasticsearch 9 specifications._
-
-### Tags
-
-* [elasticsearch](/reference/recipes-by-tag#elasticsearch)
-* [migration](/reference/recipes-by-tag#migration)
+_Migrates from the deprecated `ConsumerGroupState` to `GroupState` for Kafka 4.0 compatibility. `ConsumerGroupState` was deprecated in favor of `GroupState` which supports both consumer groups and share groups._
 
 ## Recipe source
 
@@ -28,100 +23,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from Elasticsearch 8 to 9](/recipes/elastic/elastic9/migratetoelasticsearch9.md)
-
-## Examples
-##### Example 1
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import co.elastic.clients.elasticsearch._types.aggregations.SingleMetricAggregateBase;
-
-class Test {
-    void test(SingleMetricAggregateBase aggregate) {
-        double value = aggregate.value();
-        System.out.println("Value: " + value);
-    }
-}
-```
-
-###### After
-```java
-import co.elastic.clients.elasticsearch._types.aggregations.SingleMetricAggregateBase;
-
-class Test {
-    void test(SingleMetricAggregateBase aggregate) {
-        double value = aggregate.value() != null ? aggregate.value() : 0.0;
-        System.out.println("Value: " + value);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,1 +5,1 @@
-class Test {
-    void test(SingleMetricAggregateBase aggregate) {
--       double value = aggregate.value();
-+       double value = aggregate.value() != null ? aggregate.value() : 0.0;
-        System.out.println("Value: " + value);
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import co.elastic.clients.elasticsearch._types.aggregations.SingleMetricAggregateBase;
-
-class Test {
-    void test(SingleMetricAggregateBase aggregate) {
-        double value = aggregate.value();
-        System.out.println("Value: " + value);
-    }
-}
-```
-
-###### After
-```java
-import co.elastic.clients.elasticsearch._types.aggregations.SingleMetricAggregateBase;
-
-class Test {
-    void test(SingleMetricAggregateBase aggregate) {
-        double value = aggregate.value() != null ? aggregate.value() : 0.0;
-        System.out.println("Value: " + value);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,1 +5,1 @@
-class Test {
-    void test(SingleMetricAggregateBase aggregate) {
--       double value = aggregate.value();
-+       double value = aggregate.value() != null ? aggregate.value() : 0.0;
-        System.out.println("Value: " + value);
-```
-</TabItem>
-</Tabs>
+* [Migrate to Kafka 4.0](/recipes/kafka/migratetokafka40.md)
 
 
 ## Usage
@@ -135,12 +37,12 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe BoxedApiFields
+mod run . --recipe MigrateConsumerGroupStateToGroupState
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-elastic:{{VERSION_IO_MODERNE_RECIPE_REWRITE_ELASTIC}}
+mod config recipes jar install io.moderne.recipe:rewrite-kafka:{{VERSION_IO_MODERNE_RECIPE_REWRITE_KAFKA}}
 ```
 </TabItem>
 </Tabs>
@@ -149,7 +51,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-elastic:{{VERSION_IO_MO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.elastic.elastic9.BoxedApiFields" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.kafka.MigrateConsumerGroupStateToGroupState" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

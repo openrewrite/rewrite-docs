@@ -67,6 +67,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
+* [Quarkus Updates Aggregate 3.0.0](/recipes/quarkus/migratetoquarkus_v3_0_0.md)
 
 
 ## Usage
