@@ -253,7 +253,21 @@ The JAXB and JAX-WS dependencies will only be added to the project if types from
 Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
 :::
 
-### Known Limitations
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.migrate.UpgradeToJava17
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
+```
+
+## Known Limitations
 
 The following is a list of known limitations/issues:
 

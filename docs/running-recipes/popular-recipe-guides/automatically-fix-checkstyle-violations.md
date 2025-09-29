@@ -243,6 +243,20 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
 </project>
 ```
 
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.staticanalysis.CodeCleanup
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
+```
+
 ## Known Limitations
 
 We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a checkstyle policy violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue (or help out the community by contributing one yourself).

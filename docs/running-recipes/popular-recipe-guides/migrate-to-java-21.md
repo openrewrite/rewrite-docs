@@ -141,6 +141,20 @@ public class Example {
 The above example class demonstrates a few of the most common changes when migrating from Java 17 to 21. That being said, there are many additional tasks covered by this recipe that are not represented in this example. Check out the [migrate to Java 21 documentation](../../recipes/java/migrate/upgradetojava21.md) for a full list of what the recipe does.
 :::
 
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.migrate.UpgradeToJava21
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
+```
+
 ## See how this recipe works across multiple open-source repositories
 
 import RecipeCallout from '@site/src/components/ModerneLink';
