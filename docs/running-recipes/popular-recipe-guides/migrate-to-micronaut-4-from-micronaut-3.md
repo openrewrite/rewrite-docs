@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 In this guide, we'll look at using OpenRewrite to perform an automated migration from Micronaut 3.x to Micronaut 4.x
 
-If you want to learn more about the process that went into developing these recipes, check out the [Micronaut framework 4.0 release blog post](https://www.moderne.io/blog/micronaut-framework-4-0-automated-upgrade-with-openrewrite).
+If you want to learn more about the process that went into developing these recipes, check out the [Micronaut framework 4.0 release blog post](https://www.moderne.ai/blog/micronaut-framework-4-0-automated-upgrade-with-openrewrite).
 
 ## Configuration
 See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/micronaut/micronaut3to4migration.md). This is also where you can find the full list of changes it will make.

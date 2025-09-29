@@ -79,7 +79,7 @@ That being said, there are two things you can do:
 
 Using these two approaches together in separate runs means you can likely create something that's feasible to review.
 
-Worth noting, though, is that each recipe run will need to build up the Lossless Semantic Tree (LST) – which can take some time (especially for larger projects). If you'd like to speed that up, you can have a look at [Moderne](https://www.moderne.io/) where we allow you to use precomputed LSTs.
+Worth noting, though, is that each recipe run will need to build up the Lossless Semantic Tree (LST) – which can take some time (especially for larger projects). If you'd like to speed that up, you can have a look at [Moderne](https://www.moderne.ai/) where we allow you to use precomputed LSTs.
 
 ## Are partial or parallel recipe runs supported with the Gradle plugin?
 

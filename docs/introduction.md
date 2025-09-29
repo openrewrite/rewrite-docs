@@ -51,7 +51,7 @@ assertTrue(condition);
 
 ## Refactoring at scale with Moderne
 
-[Moderne](https://www.moderne.io/) is a commercial platform designed to run the OpenRewrite recipe catalog with incredible efficiency, supporting large codebases and multiple repositories. It's a place where platform teams and developers can collaborate to drive migrations across their codebases, mass-commit code fixes, and perform large-scale impact analyses.
+[Moderne](https://www.moderne.ai/) is a commercial platform designed to run the OpenRewrite recipe catalog with incredible efficiency, supporting large codebases and multiple repositories. It's a place where platform teams and developers can collaborate to drive migrations across their codebases, mass-commit code fixes, and perform large-scale impact analyses.
 
 See how Moderne and OpenRewrite work in different ways to transform your code:
 
@@ -59,6 +59,6 @@ See how Moderne and OpenRewrite work in different ways to transform your code:
 
 <br/>
 
-Moderne freely runs an [open public service](https://www.moderne.io/try-moderne) for the benefit of tens of thousands of open-source projects. The platform can streamline your recipe customization and creation, enabling quick assembly and testing. It also includes a multi-repo command line interface (CLI) to enable developers to run and customize recipes locally.
+Moderne freely runs an [open public service](https://www.moderne.ai/try-moderne) for the benefit of tens of thousands of open-source projects. The platform can streamline your recipe customization and creation, enabling quick assembly and testing. It also includes a multi-repo command line interface (CLI) to enable developers to run and customize recipes locally.
 
-To understand better how Moderne can help your team, [contact us](https://www.moderne.io/contact-us).
+To understand better how Moderne can help your team, [contact us](https://www.moderne.ai/contact-us).
