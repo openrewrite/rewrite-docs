@@ -79,7 +79,6 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
 
   i18n: {
     defaultLocale: "en",
@@ -120,8 +119,16 @@ const config: Config = {
     ],
   ],
 
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
+    }
+  },
+
   future: {
     experimental_faster: true,
+    v4: true,
   },
 
   themeConfig: {
