@@ -12,7 +12,7 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from S
 
 ## Configuration
 
-See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/spring/boot3/upgradespringboot_3_5.md). This is also where you can find the full list of changes it will make.
+See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md). This is also where you can find the full list of changes it will make.
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
