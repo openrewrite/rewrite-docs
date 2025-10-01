@@ -1,0 +1,79 @@
+# OpenRewrite Documentation
+
+> Large-scale automated source code refactoring
+> https://docs.openrewrite.org
+
+This file provides essential OpenRewrite documentation for AI assistants.
+For comprehensive documentation, see llms-full.txt.
+
+## Quick Links
+
+* Home: https://docs.openrewrite.org
+* GitHub: https://github.com/openrewrite
+* Recipe Catalog: https://docs.openrewrite.org/recipes
+* Slack: https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA
+* Discord: https://discord.gg/xk3ZKrhWAb
+
+
+## Getting started
+
+* [Introduction to OpenRewrite](https://docs.openrewrite.org/introduction): Overview of OpenRewrite and how it works
+* [Quickstart guide](https://docs.openrewrite.org/running-recipes/getting-started): Setting up your project and running recipes
+* [Customize recipes](https://docs.openrewrite.org/running-recipes/customize-recipe): How to customize recipes to meet your needs
+
+## Running recipes
+
+* [Run on Maven projects](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build): Running rewrite on a Maven project without modifying the build
+* [Run on Gradle projects](https://docs.openrewrite.org/running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build): Running rewrite on a Gradle project without modifying the build
+* [Gradle plugin configuration](https://docs.openrewrite.org/reference/gradle-plugin-configuration): Complete Gradle plugin setup and configuration
+* [Maven plugin configuration](https://docs.openrewrite.org/reference/rewrite-maven-plugin): Complete Maven plugin setup and configuration
+
+## Popular migration guides
+
+* [Migrate to Java 17](https://docs.openrewrite.org/running-recipes/popular-recipe-guides/migrate-to-java-17): Automated migration to Java 17
+* [Migrate to Java 21](https://docs.openrewrite.org/running-recipes/popular-recipe-guides/migrate-to-java-21): Automated migration to Java 21
+* [Migrate to Spring Boot 3](https://docs.openrewrite.org/running-recipes/popular-recipe-guides/migrate-to-spring-3): Migrate to Spring Boot 3.0/3.2/3.3/3.4/3.5
+* [Migrate Spring Boot 1 to 2](https://docs.openrewrite.org/running-recipes/popular-recipe-guides/spring-boot-2.x-migration-from-spring-boot-1.x): Migrate from Spring Boot 1.x to Spring Boot 2.x
+* [Migrate to Jakarta EE 10](https://docs.openrewrite.org/running-recipes/popular-recipe-guides/migrate-to-jakarta-ee-10): Migrate deprecated javax.xml.bind packages to jakarta.xml.bind
+* [Migrate to JUnit 5](https://docs.openrewrite.org/running-recipes/popular-recipe-guides/migrate-from-junit-4-to-junit-5): Migrate from JUnit 4 to JUnit 5
+* [Common static analysis fixes](https://docs.openrewrite.org/running-recipes/popular-recipe-guides/common-static-analysis-issue-remediation): Automatically fix common static analysis issues
+
+## Core concepts
+
+* [Lossless Semantic Trees (LST)](https://docs.openrewrite.org/concepts-and-explanations/lossless-semantic-trees): Understanding LST representation of source code
+* [Java LST examples](https://docs.openrewrite.org/concepts-and-explanations/lst-examples): Examples of how Java code is represented as LSTs
+* [Recipes](https://docs.openrewrite.org/concepts-and-explanations/recipes): How recipes work and how to compose them
+* [Visitors](https://docs.openrewrite.org/concepts-and-explanations/visitors): Pattern for traversing and modifying LSTs
+* [Markers](https://docs.openrewrite.org/concepts-and-explanations/markers): Metadata attached to LST elements
+
+## Authoring recipes
+
+* [Types of recipes](https://docs.openrewrite.org/authoring-recipes/types-of-recipes): Overview of declarative, Refaster, and imperative recipes
+* [Recipe development environment](https://docs.openrewrite.org/authoring-recipes/recipe-development-environment): Setting up your environment for recipe development
+* [Write a Java refactoring recipe](https://docs.openrewrite.org/authoring-recipes/writing-a-java-refactoring-recipe): Step-by-step guide to writing imperative recipes
+* [Refaster recipes](https://docs.openrewrite.org/authoring-recipes/refaster-recipes): Template-based recipe development with Refaster
+* [Recipe testing](https://docs.openrewrite.org/authoring-recipes/recipe-testing): Testing recipes with RewriteTest
+* [Recipe conventions](https://docs.openrewrite.org/authoring-recipes/recipe-conventions-and-best-practices): Best practices for recipe development
+
+## Reference
+
+* [Frequently asked questions](https://docs.openrewrite.org/reference/faq): Common questions about OpenRewrite
+* [Supported languages](https://docs.openrewrite.org/reference/supported-languages): Languages and frameworks supported by OpenRewrite
+* [Recipes by tag](https://docs.openrewrite.org/reference/recipes-by-tag): Browse recipes by category
+* [Method patterns](https://docs.openrewrite.org/reference/method-patterns): Syntax for matching methods in recipes
+
+## Core concepts
+
+* **Recipe**: A program that makes automated changes to source code
+* **LST (Lossless Semantic Tree)**: Type-attributed, format-preserving tree representation of source code
+* **Visitor**: Pattern for traversing and modifying LSTs
+* **Marker**: Metadata attached to LST elements
+* **Data Table**: Structured output from recipes for reporting
+
+## Resources
+
+* OpenRewrite GitHub: https://github.com/openrewrite
+* Moderne Docs: https://docs.moderne.io
+* Moderne Platform: https://www.moderne.ai
+* Public Instance: https://app.moderne.io
+* Community: https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA
