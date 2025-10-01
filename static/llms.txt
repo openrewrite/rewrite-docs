@@ -62,7 +62,7 @@ For comprehensive documentation, see llms-full.txt.
 * [Recipes by tag](https://docs.openrewrite.org/reference/recipes-by-tag): Browse recipes by category
 * [Method patterns](https://docs.openrewrite.org/reference/method-patterns): Syntax for matching methods in recipes
 
-## Core concepts
+## Key terminology
 
 * **Recipe**: A program that makes automated changes to source code
 * **LST (Lossless Semantic Tree)**: Type-attributed, format-preserving tree representation of source code

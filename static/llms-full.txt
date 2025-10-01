@@ -5291,7 +5291,7 @@ This file provides a comprehensive directory of all OpenRewrite documentation fo
 * [Find YAML properties](https://docs.openrewrite.org/recipes/yaml/search/findproperty)
 * [Unfold YAML properties](https://docs.openrewrite.org/recipes/yaml/unfoldproperties)
 
-## Core concepts
+## Key terminology
 
 * **Recipe**: A program that makes automated changes to source code
 * **LST (Lossless Semantic Tree)**: Type-attributed, format-preserving tree representation of source code

@@ -220,7 +220,7 @@ For comprehensive documentation, see llms-full.txt.
   }
 
   output += `
-## Core concepts
+## Key terminology
 
 * **Recipe**: A program that makes automated changes to source code
 * **LST (Lossless Semantic Tree)**: Type-attributed, format-preserving tree representation of source code
@@ -294,7 +294,7 @@ This file provides a comprehensive directory of all OpenRewrite documentation fo
   }
 
   output += `
-## Core concepts
+## Key terminology
 
 * **Recipe**: A program that makes automated changes to source code
 * **LST (Lossless Semantic Tree)**: Type-attributed, format-preserving tree representation of source code
