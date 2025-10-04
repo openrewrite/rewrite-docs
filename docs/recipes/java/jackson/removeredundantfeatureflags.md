@@ -1,74 +1,59 @@
 ---
-sidebar_label: "Jackson best practices"
+sidebar_label: "Remove redundant Jackson 3 feature flag configurations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Jackson best practices
+# Remove redundant Jackson 3 feature flag configurations
 
-**org.openrewrite.java.jackson.JacksonBestPractices**
+**org.openrewrite.java.jackson.RemoveRedundantFeatureFlags**
 
-_Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations._
+_Remove `ObjectMapper` feature flag configurations that set values to their new Jackson 3 defaults. For example, `disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)` and `configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)` are redundant since this is now disabled by default in Jackson 3._
 
 ### Tags
 
-* [best practices](/reference/recipes-by-tag#best practices)
-* [jackson-2](/reference/recipes-by-tag#jackson)
+* [jackson-3](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-best-practices.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/RemoveRedundantFeatureFlags.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Options
 
-## Definition
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | featureName | The fully qualified feature flag name that has a new default in Jackson 3. Format: `ClassName.FEATURE_NAME` (e.g., `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY`). | `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY` |
+| `Boolean` | newDefaultValue | The new default boolean value for this feature flag in Jackson 3. | `true` |
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Remove redundant `@JsonProperty` argument](../../java/jackson/removeredundantjsonpropertyvalue)
-* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
-  * groupId: `com.fasterxml.jackson*`
-  * artifactId: `*`
-  * newVersion: `2.x`
-  * overrideManagedVersion: `false`
 
-</TabItem>
+## Used by
 
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+This recipe is used as part of the following composite recipes:
 
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jackson.JacksonBestPractices
-displayName: Jackson best practices
-description: |
-  Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
-tags:
-  - best practices
-  - jackson-2
-recipeList:
-  - org.openrewrite.java.jackson.RemoveRedundantJsonPropertyValue
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.fasterxml.jackson*
-      artifactId: "*"
-      newVersion: 2.x
-      overrideManagedVersion: false
+* [Remove redundant Jackson 3 feature flag configurations](/recipes/java/jackson/upgradejackson_2_3_removeredundantfeatureflags.md)
 
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveRedundantFeatureFlagsExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.RemoveRedundantFeatureFlagsExample
+displayName: Remove redundant Jackson 3 feature flag configurations example
+recipeList:
+  - org.openrewrite.java.jackson.RemoveRedundantFeatureFlags:
+      featureName: MapperFeature.SORT_PROPERTIES_ALPHABETICALLY
+      newDefaultValue: true
+```
+
+Now that `com.yourorg.RemoveRedundantFeatureFlagsExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -80,7 +65,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
+    activeRecipe("com.yourorg.RemoveRedundantFeatureFlagsExample")
     setExportDatatables(true)
 }
 
@@ -92,48 +77,9 @@ dependencies {
     rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
 }
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
+<TabItem value="maven" label="Maven">
 
 1. Add the following to your `pom.xml` file:
 
@@ -148,7 +94,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jackson.JacksonBestPractices</recipe>
+            <recipe>com.yourorg.RemoveRedundantFeatureFlagsExample</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -163,23 +109,14 @@ gradle --init-script init.gradle rewriteRun
   </build>
 </project>
 ```
-
 2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.JacksonBestPractices -Drewrite.exportDatatables=true
-```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JacksonBestPractices
+mod run . --recipe RemoveRedundantFeatureFlags --recipe-option "featureName=MapperFeature.SORT_PROPERTIES_ALPHABETICALLY" --recipe-option "newDefaultValue=true"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -193,7 +130,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.JacksonBestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.RemoveRedundantFeatureFlags" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

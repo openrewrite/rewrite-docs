@@ -9,11 +9,14 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.jackson.UpgradeJackson\_2\_3**
 
-_Migrate applications to the latest Jackson 3.x release._
+```
+Migrate applications to the latest Jackson 3.x release. This recipe handles package changes (`com.fasterxml.jackson` -> `tools.jackson`), dependency updates, core class renames, exception renames, and method renames (e.g., `JsonGenerator.writeObject()` -> `writePOJO()`, `JsonParser.getCurrentValue()` -> `currentValue()`).
+```
+
 
 ### Tags
 
-* [jackson](/reference/recipes-by-tag#jackson)
+* [jackson-3](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 
@@ -32,61 +35,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrates Jackson 2.x base exceptions to Jackson 3.x base exceptions](../../java/jackson/upgradejackson_2_and_3_base_exceptions)
-* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
-  * groupId: `com.fasterxml.jackson.core`
-  * artifactId: `jackson-annotations`
-  * newVersion: `2.20`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.core`
-  * oldArtifactId: `jackson-core`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-core`
-  * newVersion: `3.0.0-rc10`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson`
-  * oldArtifactId: `jackson-bom`
-  * newGroupId: `tools.jackson`
-  * newArtifactId: `jackson-bom`
-  * newVersion: `3.0.0-rc10`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.core`
-  * oldArtifactId: `jackson-databind`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc10`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.module`
-  * oldArtifactId: `jackson-module-parameter-names`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc10`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.datatype`
-  * oldArtifactId: `jackson-datatype-jdk8`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc10`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.datatype`
-  * oldArtifactId: `jackson-datatype-jsr310`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-databind`
-  * newVersion: `3.0.0-rc10`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonParseException`
-  * newFullyQualifiedTypeName: `tools.jackson.core.StreamReadException`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonGenerationException`
-  * newFullyQualifiedTypeName: `tools.jackson.core.StreamWriteException`
-* [Rename package name](../../java/changepackage)
-  * oldPackageName: `com.fasterxml.jackson.core`
-  * newPackageName: `tools.jackson.core`
-  * recursive: `true`
-* [Rename package name](../../java/changepackage)
-  * oldPackageName: `com.fasterxml.jackson.databind`
-  * newPackageName: `tools.jackson.databind`
-  * recursive: `true`
+* [Upgrade Jackson 2.x dependencies to 3.x](../../java/jackson/upgradejackson_2_3_dependencies)
+* [Update Jackson 2.x types to 3.x](../../java/jackson/upgradejackson_2_3_typechanges)
+* [Rename Jackson 2.x methods to 3.x equivalents](../../java/jackson/upgradejackson_2_3_methodrenames)
+* [Remove redundant Jackson 3 feature flag configurations](../../java/jackson/upgradejackson_2_3_removeredundantfeatureflags)
+* [Remove registrations of modules built-in to Jackson 3](../../java/jackson/removebuiltinmoduleregistrations)
+* [Use modern date/time serialization defaults](../../java/jackson/usemoderndatetimeserialization)
+* [Update Jackson package names from 2.x to 3.x](../../java/jackson/upgradejackson_2_3_packagechanges)
 
 </TabItem>
 
@@ -98,71 +53,176 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.jackson.UpgradeJackson_2_3
 displayName: Migrates from Jackson 2.x to Jackson 3.x
 description: |
-  Migrate applications to the latest Jackson 3.x release.
+  Migrate applications to the latest Jackson 3.x release. This recipe handles package changes (`com.fasterxml.jackson` -&gt; `tools.jackson`), dependency updates, core class renames, exception renames, and method renames (e.g., `JsonGenerator.writeObject()` -&gt; `writePOJO()`, `JsonParser.getCurrentValue()` -&gt; `currentValue()`).
 tags:
-  - jackson
+  - jackson-3
 recipeList:
-  - org.openrewrite.java.jackson.UpgradeJackson_2_And_3_Base_Exceptions
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.fasterxml.jackson.core
-      artifactId: jackson-annotations
-      newVersion: 2.20
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.core
-      oldArtifactId: jackson-core
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-core
-      newVersion: 3.0.0-rc10
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson
-      oldArtifactId: jackson-bom
-      newGroupId: tools.jackson
-      newArtifactId: jackson-bom
-      newVersion: 3.0.0-rc10
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.core
-      oldArtifactId: jackson-databind
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc10
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.module
-      oldArtifactId: jackson-module-parameter-names
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc10
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.datatype
-      oldArtifactId: jackson-datatype-jdk8
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc10
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.datatype
-      oldArtifactId: jackson-datatype-jsr310
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-databind
-      newVersion: 3.0.0-rc10
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonParseException
-      newFullyQualifiedTypeName: tools.jackson.core.StreamReadException
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonGenerationException
-      newFullyQualifiedTypeName: tools.jackson.core.StreamWriteException
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: com.fasterxml.jackson.core
-      newPackageName: tools.jackson.core
-      recursive: true
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: com.fasterxml.jackson.databind
-      newPackageName: tools.jackson.databind
-      recursive: true
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags
+  - org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations
+  - org.openrewrite.java.jackson.UseModernDateTimeSerialization
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges
 
 ```
 </TabItem>
 </Tabs>
 ## Examples
 ##### Example 1
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writeObject(value);
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writePOJO(value);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.core.JsonGenerator;
++import tools.jackson.core.JsonGenerator;
+
+@@ -5,1 +5,1 @@
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+-       gen.writeObject(value);
++       gen.writePOJO(value);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.19.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.20</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+-           <version>2.19.0</version>
++           <version>2.20</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonFactory;
+
+class Test {
+    JsonFactory factory = new JsonFactory();
+}
+```
+
+###### After
+```java
+import tools.jackson.core.TokenStreamFactory;
+
+class Test {
+    TokenStreamFactory factory = new TokenStreamFactory();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.core.JsonFactory;
++import tools.jackson.core.TokenStreamFactory;
+
+@@ -4,1 +4,1 @@
+
+class Test {
+-   JsonFactory factory = new JsonFactory();
++   TokenStreamFactory factory = new TokenStreamFactory();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
 
 
 <Tabs groupId="beforeAfter">
@@ -191,9 +251,9 @@ class Test {
 ###### After
 ```java
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tools.jackson.core.JsonFactory;
 import tools.jackson.core.JsonFactoryBuilder;
 import tools.jackson.databind.ObjectMapper;
+import tools.jackson.core.TokenStreamFactory;
 
 class Test {
     public String foo(@JsonProperty("foo") String foo) {
@@ -202,7 +262,7 @@ class Test {
 
     static void helloJackson() {
         Object[] input = new Object[] { "one", "two" };
-        JsonFactory factory = new JsonFactoryBuilder().build();
+        TokenStreamFactory factory = new JsonFactoryBuilder().build();
     }
 }
 ```
@@ -216,10 +276,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 -import com.fasterxml.jackson.core.JsonFactory;
 -import com.fasterxml.jackson.core.JsonFactoryBuilder;
 -import com.fasterxml.jackson.databind.ObjectMapper;
-+import tools.jackson.core.JsonFactory;
 +import tools.jackson.core.JsonFactoryBuilder;
 +import tools.jackson.databind.ObjectMapper;
++import tools.jackson.core.TokenStreamFactory;
 
+@@ -13,1 +13,1 @@
+    static void helloJackson() {
+        Object[] input = new Object[] { "one", "two" };
+-       JsonFactory factory = new JsonFactoryBuilder().build();
++       TokenStreamFactory factory = new JsonFactoryBuilder().build();
+    }
 ```
 </TabItem>
 </Tabs>
@@ -268,7 +334,160 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 ---
 
-##### Example 2
+##### Example 5
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writeObject(value);
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writePOJO(value);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.core.JsonGenerator;
++import tools.jackson.core.JsonGenerator;
+
+@@ -5,1 +5,1 @@
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+-       gen.writeObject(value);
++       gen.writePOJO(value);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.19.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.20</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+-           <version>2.19.0</version>
++           <version>2.20</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 7
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonFactory;
+
+class Test {
+    JsonFactory factory = new JsonFactory();
+}
+```
+
+###### After
+```java
+import tools.jackson.core.TokenStreamFactory;
+
+class Test {
+    TokenStreamFactory factory = new TokenStreamFactory();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.core.JsonFactory;
++import tools.jackson.core.TokenStreamFactory;
+
+@@ -4,1 +4,1 @@
+
+class Test {
+-   JsonFactory factory = new JsonFactory();
++   TokenStreamFactory factory = new TokenStreamFactory();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 8
 
 
 <Tabs groupId="beforeAfter">
@@ -297,9 +516,9 @@ class Test {
 ###### After
 ```java
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tools.jackson.core.JsonFactory;
 import tools.jackson.core.JsonFactoryBuilder;
 import tools.jackson.databind.ObjectMapper;
+import tools.jackson.core.TokenStreamFactory;
 
 class Test {
     public String foo(@JsonProperty("foo") String foo) {
@@ -308,7 +527,7 @@ class Test {
 
     static void helloJackson() {
         Object[] input = new Object[] { "one", "two" };
-        JsonFactory factory = new JsonFactoryBuilder().build();
+        TokenStreamFactory factory = new JsonFactoryBuilder().build();
     }
 }
 ```
@@ -322,10 +541,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 -import com.fasterxml.jackson.core.JsonFactory;
 -import com.fasterxml.jackson.core.JsonFactoryBuilder;
 -import com.fasterxml.jackson.databind.ObjectMapper;
-+import tools.jackson.core.JsonFactory;
 +import tools.jackson.core.JsonFactoryBuilder;
 +import tools.jackson.databind.ObjectMapper;
++import tools.jackson.core.TokenStreamFactory;
 
+@@ -13,1 +13,1 @@
+    static void helloJackson() {
+        Object[] input = new Object[] { "one", "two" };
+-       JsonFactory factory = new JsonFactoryBuilder().build();
++       TokenStreamFactory factory = new JsonFactoryBuilder().build();
+    }
 ```
 </TabItem>
 </Tabs>

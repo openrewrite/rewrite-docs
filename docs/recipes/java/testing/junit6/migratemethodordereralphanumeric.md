@@ -1,74 +1,92 @@
 ---
-sidebar_label: "Jackson best practices"
+sidebar_label: "Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Jackson best practices
+# Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`
 
-**org.openrewrite.java.jackson.JacksonBestPractices**
+**org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric**
 
-_Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations._
-
-### Tags
-
-* [best practices](/reference/recipes-by-tag#best practices)
-* [jackson-2](/reference/recipes-by-tag#jackson)
+_JUnit 6 removed the `MethodOrderer.Alphanumeric` class. This recipe migrates usages to `MethodOrderer.MethodName` which provides similar functionality._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-best-practices.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit6/MigrateMethodOrdererAlphanumeric.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-## Definition
+## Used by
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Remove redundant `@JsonProperty` argument](../../java/jackson/removeredundantjsonpropertyvalue)
-* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
-  * groupId: `com.fasterxml.jackson*`
-  * artifactId: `*`
-  * newVersion: `2.x`
-  * overrideManagedVersion: `false`
+This recipe is used as part of the following composite recipes:
+
+* [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.Test;
+
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
+class MyTest {
+    @Test
+    void test1() {
+    }
+
+    @Test
+    void test2() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.Test;
+
+@TestMethodOrder(MethodOrderer.MethodName.class)
+class MyTest {
+    @Test
+    void test1() {
+    }
+
+    @Test
+    void test2() {
+    }
+}
+```
 
 </TabItem>
+<TabItem value="diff" label="Diff" >
 
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+```diff
+@@ -5,1 +5,1 @@
+import org.junit.jupiter.api.Test;
 
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jackson.JacksonBestPractices
-displayName: Jackson best practices
-description: |
-  Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
-tags:
-  - best practices
-  - jackson-2
-recipeList:
-  - org.openrewrite.java.jackson.RemoveRedundantJsonPropertyValue
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.fasterxml.jackson*
-      artifactId: "*"
-      newVersion: 2.x
-      overrideManagedVersion: false
-
+-@TestMethodOrder(MethodOrderer.Alphanumeric.class)
++@TestMethodOrder(MethodOrderer.MethodName.class)
+class MyTest {
 ```
 </TabItem>
 </Tabs>
 
+
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -80,7 +98,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
+    activeRecipe("org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric")
     setExportDatatables(true)
 }
 
@@ -89,7 +107,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
 }
 ```
 
@@ -110,10 +128,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
+        activeRecipe("org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -148,14 +166,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jackson.JacksonBestPractices</recipe>
+            <recipe>org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-jackson</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
+            <artifactId>rewrite-testing-frameworks</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -171,7 +189,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.JacksonBestPractices -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -179,12 +197,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JacksonBestPractices
+mod run . --recipe MigrateMethodOrdererAlphanumeric
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>
@@ -193,7 +211,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.JacksonBestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

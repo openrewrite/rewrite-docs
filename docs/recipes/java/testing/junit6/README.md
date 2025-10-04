@@ -9,5 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Migrate JUnit JRE conditions](./minimumjreconditions.md)
+* [Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`](./migratemethodordereralphanumeric.md)
+* [Remove `InvocationInterceptor.interceptDynamicTest`](./removeinterceptdynamictest.md)
 
 

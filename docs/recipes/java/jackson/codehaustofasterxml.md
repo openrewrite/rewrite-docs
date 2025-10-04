@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML._
 
+### Tags
+
+* [jackson-2](/reference/recipes-by-tag#jackson)
+
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/codehaus-to-fasterxml.yml), 
@@ -45,6 +49,8 @@ name: org.openrewrite.java.jackson.CodehausToFasterXML
 displayName: Migrate from Jackson Codehaus (legacy) to Jackson FasterXML
 description: |
   In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
+tags:
+  - jackson-2
 recipeList:
   - org.openrewrite.java.jackson.codehaus.RemoveDoublyAnnotatedCodehausAnnotations
   - org.openrewrite.java.jackson.codehaus.TransferJsonSerializeArgumentsFromCodehausToFasterXML

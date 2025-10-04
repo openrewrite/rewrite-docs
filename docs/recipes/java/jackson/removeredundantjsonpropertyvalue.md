@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Remove `@JsonProperty` annotation or value attribute when the value matches the argument name._
 
+### Tags
+
+* [jackson-2](/reference/recipes-by-tag#jackson)
+
 ## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/RemoveRedundantJsonPropertyValue.java), 

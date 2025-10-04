@@ -1,24 +1,23 @@
 ---
-sidebar_label: "Jackson best practices"
+sidebar_label: "Upgrade Jackson 2.x dependencies to 3.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Jackson best practices
+# Upgrade Jackson 2.x dependencies to 3.x
 
-**org.openrewrite.java.jackson.JacksonBestPractices**
+**org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_Dependencies**
 
-_Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations._
+_Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs._
 
 ### Tags
 
-* [best practices](/reference/recipes-by-tag#best practices)
-* [jackson-2](/reference/recipes-by-tag#jackson)
+* [jackson-3](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-best-practices.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-2-3.yml), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
@@ -33,12 +32,47 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Remove redundant `@JsonProperty` argument](../../java/jackson/removeredundantjsonpropertyvalue)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
-  * groupId: `com.fasterxml.jackson*`
-  * artifactId: `*`
-  * newVersion: `2.x`
-  * overrideManagedVersion: `false`
+  * groupId: `com.fasterxml.jackson.core`
+  * artifactId: `jackson-annotations`
+  * newVersion: `2.20`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.core`
+  * oldArtifactId: `jackson-core`
+  * newGroupId: `tools.jackson.core`
+  * newArtifactId: `jackson-core`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson`
+  * oldArtifactId: `jackson-bom`
+  * newGroupId: `tools.jackson`
+  * newArtifactId: `jackson-bom`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.core`
+  * oldArtifactId: `jackson-databind`
+  * newGroupId: `tools.jackson.core`
+  * newArtifactId: `jackson-databind`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-parameter-names`
+  * newGroupId: `tools.jackson.core`
+  * newArtifactId: `jackson-databind`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.datatype`
+  * oldArtifactId: `jackson-datatype-jdk8`
+  * newGroupId: `tools.jackson.core`
+  * newArtifactId: `jackson-databind`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.datatype`
+  * oldArtifactId: `jackson-datatype-jsr310`
+  * newGroupId: `tools.jackson.core`
+  * newArtifactId: `jackson-databind`
+  * newVersion: `3.0.x`
+* [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 
 </TabItem>
 
@@ -47,24 +81,65 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jackson.JacksonBestPractices
-displayName: Jackson best practices
+name: org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies
+displayName: Upgrade Jackson 2.x dependencies to 3.x
 description: |
-  Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
+  Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs.
 tags:
-  - best practices
-  - jackson-2
+  - jackson-3
 recipeList:
-  - org.openrewrite.java.jackson.RemoveRedundantJsonPropertyValue
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.fasterxml.jackson*
-      artifactId: "*"
-      newVersion: 2.x
-      overrideManagedVersion: false
+      groupId: com.fasterxml.jackson.core
+      artifactId: jackson-annotations
+      newVersion: 2.20
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.core
+      oldArtifactId: jackson-core
+      newGroupId: tools.jackson.core
+      newArtifactId: jackson-core
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson
+      oldArtifactId: jackson-bom
+      newGroupId: tools.jackson
+      newArtifactId: jackson-bom
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.core
+      oldArtifactId: jackson-databind
+      newGroupId: tools.jackson.core
+      newArtifactId: jackson-databind
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-parameter-names
+      newGroupId: tools.jackson.core
+      newArtifactId: jackson-databind
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.datatype
+      oldArtifactId: jackson-datatype-jdk8
+      newGroupId: tools.jackson.core
+      newArtifactId: jackson-databind
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.datatype
+      oldArtifactId: jackson-datatype-jsr310
+      newGroupId: tools.jackson.core
+      newArtifactId: jackson-databind
+      newVersion: 3.0.x
+  - org.openrewrite.maven.RemoveDuplicateDependencies
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
+
 
 ## Usage
 
@@ -80,7 +155,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
+    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies")
     setExportDatatables(true)
 }
 
@@ -113,7 +188,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
+        activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -148,7 +223,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jackson.JacksonBestPractices</recipe>
+            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -171,7 +246,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.JacksonBestPractices -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -179,7 +254,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JacksonBestPractices
+mod run . --recipe UpgradeJackson_2_3_Dependencies
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -193,7 +268,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.JacksonBestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

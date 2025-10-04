@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Upgrade to JUnit 5.14](../../../java/testing/junit5/upgradetojunit514)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.junit.platform`
   * artifactId: `junit-platform-jfr`
@@ -43,6 +44,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.junit.platform`
   * artifactId: `junit-platform-suite-commons`
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
+  * groupId: `org.junit.jupiter`
+  * artifactId: `junit-jupiter-migrationsupport`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter*`
@@ -65,6 +69,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newMethodName: `computeIfAbsent`
   * matchOverrides: `true`
   * ignoreDefinition: `true`
+* [Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`](../../../java/testing/junit6/migratemethodordereralphanumeric)
+* [Remove `InvocationInterceptor.interceptDynamicTest`](../../../java/testing/junit6/removeinterceptdynamictest)
+* [Delete property by key](../../../properties/deleteproperty)
+  * propertyKey: `junit.jupiter.tempdir.scope`
+* [Delete property by key](../../../properties/deleteproperty)
+  * propertyKey: `junit.jupiter.params.arguments.conversion.locale.format`
 
 </TabItem>
 
@@ -82,6 +92,7 @@ tags:
   - testing
   - jupiter
 recipeList:
+  - org.openrewrite.java.testing.junit5.UpgradeToJUnit514
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.junit.platform
       artifactId: junit-platform-jfr
@@ -91,6 +102,9 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.junit.platform
       artifactId: junit-platform-suite-commons
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: org.junit.jupiter
+      artifactId: junit-jupiter-migrationsupport
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter*
@@ -113,6 +127,12 @@ recipeList:
       newMethodName: computeIfAbsent
       matchOverrides: true
       ignoreDefinition: true
+  - org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric
+  - org.openrewrite.java.testing.junit6.RemoveInterceptDynamicTest
+  - org.openrewrite.properties.DeleteProperty:
+      propertyKey: junit.jupiter.tempdir.scope
+  - org.openrewrite.properties.DeleteProperty:
+      propertyKey: junit.jupiter.params.arguments.conversion.locale.format
 
 ```
 </TabItem>

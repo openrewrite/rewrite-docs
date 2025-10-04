@@ -1,70 +1,78 @@
 ---
-sidebar_label: "Jackson best practices"
+sidebar_label: "Use modern date/time serialization defaults"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Jackson best practices
+# Use modern date/time serialization defaults
 
-**org.openrewrite.java.jackson.JacksonBestPractices**
+**org.openrewrite.java.jackson.UseModernDateTimeSerialization**
 
-_Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations._
+_Remove redundant `@JsonFormat` annotations on `java.time` types that specify ISO-8601 patterns, as Jackson 3 uses ISO-8601 as the default format (with `WRITE_DATES_AS_TIMESTAMPS` now disabled by default)._
 
 ### Tags
 
-* [best practices](/reference/recipes-by-tag#best practices)
-* [jackson-2](/reference/recipes-by-tag#jackson)
+* [jackson-3](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-best-practices.yml), 
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/UseModernDateTimeSerialization.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-## Definition
+## Used by
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Remove redundant `@JsonProperty` argument](../../java/jackson/removeredundantjsonpropertyvalue)
-* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
-  * groupId: `com.fasterxml.jackson*`
-  * artifactId: `*`
-  * newVersion: `2.x`
-  * overrideManagedVersion: `false`
+This recipe is used as part of the following composite recipes:
+
+* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDateTime;
+
+class Event {
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime timestamp;
+}
+```
+
+###### After
+```java
+import java.time.LocalDateTime;
+
+class Event {
+    private LocalDateTime timestamp;
+}
+```
 
 </TabItem>
+<TabItem value="diff" label="Diff" >
 
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+```diff
+@@ -1,1 +1,0 @@
+-import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDateTime;
+@@ -5,1 +4,0 @@
 
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jackson.JacksonBestPractices
-displayName: Jackson best practices
-description: |
-  Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
-tags:
-  - best practices
-  - jackson-2
-recipeList:
-  - org.openrewrite.java.jackson.RemoveRedundantJsonPropertyValue
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: com.fasterxml.jackson*
-      artifactId: "*"
-      newVersion: 2.x
-      overrideManagedVersion: false
-
+class Event {
+-   @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime timestamp;
 ```
 </TabItem>
 </Tabs>
+
 
 ## Usage
 
@@ -80,7 +88,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
+    activeRecipe("org.openrewrite.java.jackson.UseModernDateTimeSerialization")
     setExportDatatables(true)
 }
 
@@ -113,7 +121,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jackson.JacksonBestPractices")
+        activeRecipe("org.openrewrite.java.jackson.UseModernDateTimeSerialization")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -148,7 +156,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jackson.JacksonBestPractices</recipe>
+            <recipe>org.openrewrite.java.jackson.UseModernDateTimeSerialization</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -171,7 +179,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.JacksonBestPractices -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UseModernDateTimeSerialization -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -179,7 +187,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JacksonBestPractices
+mod run . --recipe UseModernDateTimeSerialization
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -193,7 +201,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.JacksonBestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UseModernDateTimeSerialization" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
