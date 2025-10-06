@@ -42,7 +42,7 @@ All recipe names, descriptions, and parameters should follow our [recipe naming 
 
 By following these conventions, you'll ensure that:
 
-* The [documentation](../recipes/) generated for your recipe is valid and clear to others
+* The [documentation](../recipes) generated for your recipe is valid and clear to others
 * The [Moderne platform](https://app.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative
@@ -195,3 +195,37 @@ A warning sign of this mistake is a `ScanningRecipe` with a `boolean` field in i
 We recently saw this mistake in the Gradle `AddDependency` recipe. Check out [how we fixed that](https://github.com/openrewrite/rewrite/commit/f7c5e926fc6c08a971a53081190a7946d0f750f9).
 
 Any time you see a boolean in a scanning recipe's accumulator, ask yourself if it should be a `Map<JavaProject, Boolean>` instead.
+
+### Compose visitors with TreeVisitor.visit()
+
+When authoring complex recipes it can be desirable to invoke visitors from within other visitors.
+This allows for clean organization of distinct functionality into distinct units, and reuse of existing code.
+`TreeVisitor.doAfterVisit()` is a valid way of invoking another visitor, but it scheduled the supplied visitor to run after the current visitor, and sometimes it is convenient to have the other visitor apply its changes immediately.
+A recipe author who does not know better may reason "I'm working with a method invocation, it will be clean and direct to call my sub-visitor's `visitMethodInvocation()` method", but this is almost always a mistake.
+
+When directly invoking another visitor always use it's `visit()` method rather than more specific methods like `visitMethodInvocation()`.
+
+Directly calling a specialized visit method should be avoided because it bypasses functionality provided by `TreeVisitor.visit()` which most visitors implicitly depend upon, including:
+- Having access to a cursor which connects up to the root of the tree.
+- `TreeVisitor.preVisit()` and `TreeVisit.postVisit()` called at the appropriate times.
+- `TreeVisitor.stopAfterPreVisit()` stops traversal as expected.
+- `TreeVisitor.isAcceptable()` guards against applying the visitor to inapplicable LSTs.
+
+It may not immediately cause problems if the visitor you're invoking does not require any of that functionality. 
+But future authors will assume that all the usual facilities are available and be confused when the cursor is incorrect, or they get a `ClassCastException` because their `JavaVisitor` tried to visit a YAML document.
+
+Correct inline invocation of another visitor on the current LST element looks like this:
+```java
+class SomeJavaVisitor extends JavaVisitor<ExecutionContext> {
+    @Override
+    public J visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
+        J m = super.visitMethodInvocation(method, ctx);
+        m = new OtherJavaVisitor()
+                // When invoking other visitors always use the overload of visit() which accepts a cursor.
+                // visit() expects to be called with a cursor pointing to the parent Tree of the current element.
+                // visitNonNull() is preferable to visit() if you know that the other visitor does not delete elements.
+                .visit(m, ctx, getCursor().getParentTreeCursor());
+        return m;
+    }
+}
+```
