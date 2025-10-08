@@ -196,25 +196,21 @@ We recently saw this mistake in the Gradle `AddDependency` recipe. Check out [ho
 
 Any time you see a boolean in a scanning recipe's accumulator, ask yourself if it should be a `Map<JavaProject, Boolean>` instead.
 
-### Compose visitors with TreeVisitor.visit()
+### Compose visitors with `TreeVisitor.visit()`
 
-When authoring complex recipes it can be desirable to invoke visitors from within other visitors.
-This allows for clean organization of distinct functionality into distinct units, and reuse of existing code.
-`TreeVisitor.doAfterVisit()` is a valid way of invoking another visitor, but it scheduled the supplied visitor to run after the current visitor, and sometimes it is convenient to have the other visitor apply its changes immediately.
-A recipe author who does not know better may reason "I'm working with a method invocation, it will be clean and direct to call my sub-visitor's `visitMethodInvocation()` method", but this is almost always a mistake.
+**Always use `TreeVisitor.visit()` when invoking another visitor from within a visitor.** Never directly call specialized methods like `visitMethodInvocation()`.
 
-When directly invoking another visitor always use it's `visit()` method rather than more specific methods like `visitMethodInvocation()`.
+Directly calling specialized visit methods bypasses critical functionality that most visitors depend on:
 
-Directly calling a specialized visit method should be avoided because it bypasses functionality provided by `TreeVisitor.visit()` which most visitors implicitly depend upon, including:
-- Having access to a cursor which connects up to the root of the tree.
-- `TreeVisitor.preVisit()` and `TreeVisit.postVisit()` called at the appropriate times.
-- `TreeVisitor.stopAfterPreVisit()` stops traversal as expected.
-- `TreeVisitor.isAcceptable()` guards against applying the visitor to inapplicable LSTs.
+* Having access to a cursor which connects up to the root of the tree
+* `TreeVisitor.preVisit()` and `TreeVisitor.postVisit()` called at the appropriate times
+* `TreeVisitor.stopAfterPreVisit()` stops traversal as expected
+* `TreeVisitor.isAcceptable()` guards against applying the visitor to inapplicable LSTs
 
-It may not immediately cause problems if the visitor you're invoking does not require any of that functionality. 
-But future authors will assume that all the usual facilities are available and be confused when the cursor is incorrect, or they get a `ClassCastException` because their `JavaVisitor` tried to visit a YAML document.
+It may not immediately cause problems if the visitor you're invoking does not require any of that functionality. But future authors will assume that all the usual facilities are available and be confused when the cursor is incorrect, or they get a `ClassCastException` because their `JavaVisitor` tried to visit a YAML document.
 
 Correct inline invocation of another visitor on the current LST element looks like this:
+
 ```java
 class SomeJavaVisitor extends JavaVisitor<ExecutionContext> {
     @Override
