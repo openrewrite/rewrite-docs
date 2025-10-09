@@ -8,7 +8,7 @@ description: How to build and develop OpenRewrite – including IDE tips and OS 
 
 OpenRewrite is built with [Gradle](https://gradle.org/). It is not typically necessary to manually install Gradle, as invoking the `./gradlew` (Linux and Mac) or `gradlew.bat` (Windows) shell scripts will download the appropriate version of Gradle to your user directory.
 
-OpenRewrite requires several JDK versions to be installed on your system to accommodate the rewrite-java-8, -11, 17 and -21 modules.
+OpenRewrite requires several JDK versions to be installed on your system to accommodate the rewrite-java-8, 11, 17, 21, and 25 modules.
 If you wish to limit the JDKs required, follow the instructions in `IDE.properties.tmp` in the root of `openrewrite/rewrite`.
 
 :::danger
