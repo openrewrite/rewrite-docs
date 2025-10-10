@@ -27,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](./completeexceptionlogging.md)
 * [Loggers should be named for their enclosing classes](./loggersnamedforenclosingclass.md)
 * [Match `if (is*Enabled())` with logging statements](./matchisloglevelenabledwithlogstatements.md)
+* [Optimize log statements](./wrapexpensivelogstatementsinconditionals.md)
 * [Replace JUL `Level.ALL` logging with SLF4J's trace level](./jullevelalltotracerecipe.md)
 * [Replace JUL `Logger.config(Supplier&lt;String&gt;)` with SLF4J's `Logger.atInfo().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierconfigrecipe.md)
 * [Replace JUL `Logger.fine(Supplier&lt;String&gt;)` with SLF4J's `Logger.atDebug().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerecipe.md)
@@ -72,6 +73,5 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace parameterized JUL level call with corresponding SLF4J method calls](./julparameterizedarguments.md)
 * [SLF4J logging statements should begin with constants](./slf4jlogshouldbeconstant.md)
 * [Strip `toString()` from arguments](./striptostringfromarguments.md)
-* [Wrap expensive log statements in conditionals](./wrapexpensivelogstatementsinconditionals.md)
 
 

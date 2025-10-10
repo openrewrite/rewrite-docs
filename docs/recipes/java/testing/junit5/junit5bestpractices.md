@@ -1,11 +1,11 @@
 ---
-sidebar_label: "JUnit Jupiter best practices"
+sidebar_label: "JUnit 5 best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# JUnit Jupiter best practices
+# JUnit 5 best practices
 
 **org.openrewrite.java.testing.junit5.JUnit5BestPractices**
 
@@ -34,23 +34,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration)
-* [Migrate Hamcrest assertions to JUnit Jupiter](../../../java/testing/hamcrest/migratehamcresttojunit5)
-* [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports)
-* [Clean Up Assertions](../../../java/testing/junit5/cleanupassertions)
-* [Replace `@CsvSource` with `@ValueSource` for single method arguments](../../../java/testing/junit5/csvsourcetovaluesource)
-* [Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes)
-* [Remove JUnit `assertTrue(true)` and `assertFalse(false)`](../../../java/testing/cleanup/assertliteralbooleanremovedrecipe)
-* [Remove `test` prefix from JUnit 5 tests](../../../java/testing/cleanup/removetestprefix)
-* [Simplify `throws` statements of tests](../../../java/testing/cleanup/simplifytestthrows)
-* [Remove `public` visibility of JUnit 5 tests](../../../java/testing/cleanup/testsshouldnotbepublic)
-* [Test methods should have void return type](../../../java/testing/cleanup/testmethodsshouldbevoid)
-* [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](../../../java/testing/junit5/addparameterizedtestannotation)
-* [Remove duplicates uses of @TestTemplate implementations for a single method](../../../java/testing/junit5/removeduplicatetesttemplates)
-* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`](../../../java/testing/junit5/removetrycatchfailblocks)
-* [Make lifecycle methods non private](../../../java/testing/junit5/lifecyclenonprivate)
-* [Applies JUnit 5 `assertThrows` on last statement in lambda block only](../../../java/testing/junit5/assertthrowsonlaststatement)
-* [assertTrue(x instanceof y) to assertInstanceOf(y.class, x)](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)
-* [Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`](../../../java/testing/junit5/useassertsame)
+* [Upgrade to JUnit 5.14](../../../java/testing/junit5/upgradetojunit514)
+* [JUnit Jupiter best practices](../../../java/testing/junit/jupiterbestpractices)
 
 </TabItem>
 
@@ -60,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.JUnit5BestPractices
-displayName: JUnit Jupiter best practices
+displayName: JUnit 5 best practices
 description: |
   Applies best practices to tests.
 tags:
@@ -68,23 +53,8 @@ tags:
   - testing
 recipeList:
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
-  - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToJUnit5
-  - org.openrewrite.java.testing.junit5.StaticImports
-  - org.openrewrite.java.testing.junit5.CleanupAssertions
-  - org.openrewrite.java.testing.junit5.CsvSourceToValueSource
-  - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes
-  - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanRemovedRecipe
-  - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
-  - org.openrewrite.java.testing.cleanup.SimplifyTestThrows
-  - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
-  - org.openrewrite.java.testing.cleanup.TestMethodsShouldBeVoid
-  - org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation
-  - org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates
-  - org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks
-  - org.openrewrite.java.testing.junit5.LifecycleNonPrivate
-  - org.openrewrite.java.testing.junit5.AssertThrowsOnLastStatement
-  - org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf
-  - org.openrewrite.java.testing.junit5.UseAssertSame
+  - org.openrewrite.java.testing.junit5.UpgradeToJUnit514
+  - org.openrewrite.java.testing.junit.JupiterBestPractices
 
 ```
 </TabItem>
@@ -98,6 +68,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`JUnit5BestPracticesTest#changeBeforeToBeforeEach`
 
 
 <Tabs groupId="beforeAfter">
@@ -151,6 +122,7 @@ import org.junit.Before;
 ---
 
 ##### Example 2
+`JUnit5BestPracticesTest#changeBeforeToBeforeEach`
 
 
 <Tabs groupId="beforeAfter">
@@ -383,10 +355,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

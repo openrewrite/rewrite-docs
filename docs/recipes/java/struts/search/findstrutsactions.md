@@ -19,6 +19,61 @@ _Find actions and their associated definitions._
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<struts>
+    <package name="basicstruts2" extends="struts-default">
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+        <action name="hello" class="org.apache.struts.helloworld.action.HelloWorldAction" method="execute">
+            <result name="success">/HelloWorld.jsp</result>
+        </action>
+    </package>
+</struts>
+```
+
+###### After
+```xml
+<struts>
+    <package name="basicstruts2" extends="struts-default">
+        <!--~~>--><action name="index">
+            <result>/index.jsp</result>
+        </action>
+        <!--~~>--><action name="hello" class="org.apache.struts.helloworld.action.HelloWorldAction" method="execute">
+            <result name="success">/HelloWorld.jsp</result>
+        </action>
+    </package>
+</struts>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+<struts>
+    <package name="basicstruts2" extends="struts-default">
+-       <action name="index">
++       <!--~~>--><action name="index">
+            <result>/index.jsp</result>
+@@ -6,1 +6,1 @@
+            <result>/index.jsp</result>
+        </action>
+-       <action name="hello" class="org.apache.struts.helloworld.action.HelloWorldAction" method="execute">
++       <!--~~>--><action name="hello" class="org.apache.struts.helloworld.action.HelloWorldAction" method="execute">
+            <result name="success">/HelloWorld.jsp</result>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -218,10 +273,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

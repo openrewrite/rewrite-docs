@@ -27,6 +27,83 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `Boolean` | immutable | *Optional*. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |  |
 | `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. | `org.example.Buildable builder()` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|builderType|`Buildable.Builder`|
+|immutable|`true`|
+|builderCreator|`Buildable builder()`|
+
+
+###### Unchanged
+```java
+class Buildable {
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+        public Builder option(String option) {
+            return this;
+        }
+    }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test() {
+        int a = 0;
+        Buildable.Builder builder = Buildable.builder();
+        String b = "rewrite-java";
+        int c = 0;
+        builder = builder.option(b);
+        int d = 0;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test() {
+        int a = 0;
+        String b = "rewrite-java";
+        int c = 0;
+        Buildable.Builder builder = Buildable.builder()
+                .option(b);
+        int d = 0;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,0 @@
+    void test() {
+        int a = 0;
+-       Buildable.Builder builder = Buildable.builder();
+        String b = "rewrite-java";
+@@ -7,1 +6,2 @@
+        String b = "rewrite-java";
+        int c = 0;
+-       builder = builder.option(b);
++       Buildable.Builder builder = Buildable.builder()
++               .option(b);
+        int d = 0;
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -174,10 +251,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

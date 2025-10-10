@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Spring Boot 3.2](../../../java/spring/boot3/upgradespringboot_3_2)
+* [Migrate to Spring Security 6.3](../../../java/spring/security6/upgradespringsecurity_6_3)
 * [Migrate Spring Boot properties to 3.3](../../../java/spring/boot3/springbootproperties_3_3)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
@@ -89,6 +90,7 @@ tags:
   - boot
 recipeList:
   - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2
+  - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_3
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_3
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
@@ -141,6 +143,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`SpringCloudVersionUpgradeTest#upgradeSpringCloudVersion`
 
 
 ###### Unchanged
@@ -150,17 +153,29 @@ project
 
 ###### Unchanged
 ```xml title="pom.xml"
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>fooservice</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <properties>
+        <java.version>11</java.version>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <mockito.version>2.18.3</mockito.version>
+    </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.datastax.oss</groupId>
-                <artifactId>java-driver-bom</artifactId>
-                <version>4.17.0</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -172,49 +187,7 @@ project
 ---
 
 ##### Example 2
-
-
-###### Unchanged
-```mavenProject
-project
-```
-
-###### Unchanged
-```xml title="pom.xml"
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>fooservice</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
-    </parent>
-    <properties>
-        <java.version>11</java.version>
-        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
-        <mockito.version>2.18.3</mockito.version>
-    </properties>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-</project>
-```
-
----
-
-##### Example 3
+`SpringDataStaxCassandraTest#groupIdChangeCassandraBom`
 
 
 ###### Unchanged
@@ -245,7 +218,8 @@ project
 
 ---
 
-##### Example 4
+##### Example 3
+`SpringCloudVersionUpgradeTest#upgradeSpringCloudVersion`
 
 
 ###### Unchanged
@@ -278,6 +252,38 @@ project
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
+
+---
+
+##### Example 4
+`SpringDataStaxCassandraTest#groupIdChangeCassandraBom`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>fooservice</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.datastax.oss</groupId>
+                <artifactId>java-driver-bom</artifactId>
+                <version>4.17.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -468,10 +474,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

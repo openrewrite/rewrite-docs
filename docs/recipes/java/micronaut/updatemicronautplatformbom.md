@@ -60,6 +60,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`UpdateBuildPluginsTest#updateGradleBuildPlugins`
 
 
 ###### Unchanged
@@ -84,13 +85,150 @@ repositories {
 ```
 
 ###### Unchanged
-```properties
+```properties title="gradle.properties"
 micronautVersion=3.9.1
 ```
 
 ---
 
 ##### Example 2
+`UpdateMicronautDataTest#updateSQLAnnotations`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+import io.micronaut.data.jdbc.annotation.JoinColumn;
+import io.micronaut.data.jdbc.annotation.JoinColumns;
+import io.micronaut.data.jdbc.annotation.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+###### After
+```java
+import io.micronaut.data.annotation.sql.ColumnTransformer;
+import io.micronaut.data.annotation.sql.JoinColumn;
+import io.micronaut.data.annotation.sql.JoinColumns;
+import io.micronaut.data.annotation.sql.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+-import io.micronaut.data.jdbc.annotation.JoinColumn;
+-import io.micronaut.data.jdbc.annotation.JoinColumns;
+-import io.micronaut.data.jdbc.annotation.JoinTable;
++import io.micronaut.data.annotation.sql.ColumnTransformer;
++import io.micronaut.data.annotation.sql.JoinColumn;
++import io.micronaut.data.annotation.sql.JoinColumns;
++import io.micronaut.data.annotation.sql.JoinTable;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 3
+`UpdateMicronautSessionTest#updateGradleDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut.session:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,1 +5,1 @@
+}
+dependencies {
+-   implementation("io.micronaut:micronaut-session")
++   implementation("io.micronaut.session:micronaut-session")
+}
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 4
+`UpdateBuildPluginsTest#updateGradleBuildPlugins`
 
 
 ###### Unchanged
@@ -115,8 +253,144 @@ repositories {
 ```
 
 ###### Unchanged
-```properties
+```properties title="gradle.properties"
 micronautVersion=3.9.1
+```
+
+---
+
+##### Example 5
+`UpdateMicronautDataTest#updateSQLAnnotations`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+import io.micronaut.data.jdbc.annotation.JoinColumn;
+import io.micronaut.data.jdbc.annotation.JoinColumns;
+import io.micronaut.data.jdbc.annotation.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+###### After
+```java
+import io.micronaut.data.annotation.sql.ColumnTransformer;
+import io.micronaut.data.annotation.sql.JoinColumn;
+import io.micronaut.data.annotation.sql.JoinColumns;
+import io.micronaut.data.annotation.sql.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+-import io.micronaut.data.jdbc.annotation.JoinColumn;
+-import io.micronaut.data.jdbc.annotation.JoinColumns;
+-import io.micronaut.data.jdbc.annotation.JoinTable;
++import io.micronaut.data.annotation.sql.ColumnTransformer;
++import io.micronaut.data.annotation.sql.JoinColumn;
++import io.micronaut.data.annotation.sql.JoinColumns;
++import io.micronaut.data.annotation.sql.JoinTable;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 6
+`UpdateMicronautSessionTest#updateGradleDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut.session:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,1 +5,1 @@
+}
+dependencies {
+-   implementation("io.micronaut:micronaut-session")
++   implementation("io.micronaut.session:micronaut-session")
+}
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
 ```
 
 
@@ -320,10 +594,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

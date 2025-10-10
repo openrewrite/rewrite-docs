@@ -105,6 +105,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.jbehave.core.junit.JUnitStories`
   * newFullyQualifiedTypeName: `org.jbehave.core.junit.JupiterStories`
 * [Use Arquillian JUnit 5 Extension](../../../java/testing/arquillian/arquillianjunit4toarquillianjunit5)
+* [Use Byteman JUnit 5 dependency](../../../java/testing/byteman/bytemanjunit4tobytemanjunit5)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](../../../java/testing/dbrider/migratedbriderspringtodbriderjunit5)
 
 </TabItem>
@@ -194,6 +195,7 @@ recipeList:
       oldFullyQualifiedTypeName: org.jbehave.core.junit.JUnitStories
       newFullyQualifiedTypeName: org.jbehave.core.junit.JupiterStories
   - org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5
+  - org.openrewrite.java.testing.byteman.BytemanJUnit4ToBytemanJUnit5
   - org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5
 
 ```
@@ -204,12 +206,13 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [JUnit Jupiter best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
+* [JUnit 5 best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
 * [Migrate Health Checks to Spring Boot](/recipes/java/dropwizard/migratetests.md)
 * [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
 
 ## Examples
 ##### Example 1
+`EnclosedToNestedTest#oneInnerClass`
 
 
 <Tabs groupId="beforeAfter">
@@ -277,6 +280,7 @@ public class RootTest {
 ---
 
 ##### Example 2
+`JUnit5MigrationTest#assertThatReceiver`
 
 
 <Tabs groupId="beforeAfter">
@@ -346,6 +350,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 ---
 
 ##### Example 3
+`JunitMockitoUpgradeIntegrationTest#replaceMockAnnotation`
 
 
 <Tabs groupId="beforeAfter">
@@ -473,6 +478,7 @@ public class MockitoTests {
 ---
 
 ##### Example 4
+`EnclosedToNestedTest#oneInnerClass`
 
 
 <Tabs groupId="beforeAfter">
@@ -540,6 +546,7 @@ public class RootTest {
 ---
 
 ##### Example 5
+`JUnit5MigrationTest#assertThatReceiver`
 
 
 <Tabs groupId="beforeAfter">
@@ -609,6 +616,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 ---
 
 ##### Example 6
+`JunitMockitoUpgradeIntegrationTest#replaceMockAnnotation`
 
 
 <Tabs groupId="beforeAfter">
@@ -915,10 +923,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

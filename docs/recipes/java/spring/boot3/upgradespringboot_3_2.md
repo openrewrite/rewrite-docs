@@ -89,6 +89,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `2.5.x`
 * [Migrate to Hibernate 6.4.x](../../../hibernate/migratetohibernate64)
+* [Use `spring.reactor.context-propagation` property](../../../java/spring/boot3/migratehookstoreactorcontextproperty)
 * [Relocate Launcher Classes](../../../java/spring/boot3/relocatelauncherclasses)
 * [Upgrade MyBatis to Spring Boot 3.2](../../../java/spring/boot3/upgrademybatistospringboot_3_2)
 * [Upgrade to SpringDoc 2.5](../../../java/springdoc/upgradespringdoc_2_5)
@@ -164,6 +165,7 @@ recipeList:
       artifactId: "*"
       newVersion: 2.5.x
   - org.openrewrite.hibernate.MigrateToHibernate64
+  - org.openrewrite.java.spring.boot3.MigrateHooksToReactorContextProperty
   - org.openrewrite.java.spring.boot3.RelocateLauncherClasses
   - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_2
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_2_5
@@ -360,10 +362,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

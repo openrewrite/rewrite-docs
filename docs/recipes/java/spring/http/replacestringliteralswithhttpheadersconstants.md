@@ -17,14 +17,284 @@ _Replace String literals with `org.springframework.http.HttpHeaders` constants._
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCEPT`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCEPT_CHARSET`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCEPT_ENCODING`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCEPT_LANGUAGE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCEPT_PATCH`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCEPT_RANGES`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_MAX_AGE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_REQUEST_HEADERS`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ACCESS_CONTROL_REQUEST_METHOD`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.AGE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ALLOW`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.AUTHORIZATION`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CACHE_CONTROL`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONNECTION`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONTENT_ENCODING`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONTENT_DISPOSITION`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONTENT_LANGUAGE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONTENT_LENGTH`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONTENT_LOCATION`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONTENT_RANGE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.CONTENT_TYPE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.COOKIE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.DATE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ETAG`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.EXPECT`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.EXPIRES`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.FROM`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.HOST`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.IF_MATCH`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.IF_MODIFIED_SINCE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.IF_NONE_MATCH`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.IF_RANGE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.IF_UNMODIFIED_SINCE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.LAST_MODIFIED`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.LINK`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.LOCATION`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.MAX_FORWARDS`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.ORIGIN`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.PRAGMA`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.PROXY_AUTHENTICATE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.PROXY_AUTHORIZATION`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.RANGE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.REFERER`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.RETRY_AFTER`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.SERVER`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.SET_COOKIE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.SET_COOKIE2`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.TE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.TRAILER`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.TRANSFER_ENCODING`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.UPGRADE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.USER_AGENT`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.VARY`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.VIA`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.WARNING`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.HttpHeaders.WWW_AUTHENTICATE`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants
+displayName: Replace String literals with `HttpHeaders` constants
+description: |
+  Replace String literals with `org.springframework.http.HttpHeaders` constants.
+recipeList:
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCEPT
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCEPT_CHARSET
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCEPT_ENCODING
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCEPT_LANGUAGE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCEPT_PATCH
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCEPT_RANGES
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_MAX_AGE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_REQUEST_HEADERS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ACCESS_CONTROL_REQUEST_METHOD
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.AGE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ALLOW
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.AUTHORIZATION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CACHE_CONTROL
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONNECTION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONTENT_ENCODING
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONTENT_DISPOSITION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONTENT_LANGUAGE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONTENT_LENGTH
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONTENT_LOCATION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONTENT_RANGE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.CONTENT_TYPE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.COOKIE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.DATE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ETAG
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.EXPECT
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.EXPIRES
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.FROM
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.HOST
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.IF_MATCH
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.IF_MODIFIED_SINCE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.IF_NONE_MATCH
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.IF_RANGE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.IF_UNMODIFIED_SINCE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.LAST_MODIFIED
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.LINK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.LOCATION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.MAX_FORWARDS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.ORIGIN
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.PRAGMA
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.PROXY_AUTHENTICATE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.PROXY_AUTHORIZATION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.RANGE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.REFERER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.RETRY_AFTER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.SERVER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.SET_COOKIE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.SET_COOKIE2
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.TE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.TRAILER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.TRANSFER_ENCODING
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.UPGRADE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.USER_AGENT
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.VARY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.VIA
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.WARNING
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.HttpHeaders.WWW_AUTHENTICATE
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
+* [Replace String literals with Spring constants](/recipes/java/spring/boot3/replacestringliteralswithconstants.md)
 
 
 ## Usage
@@ -208,10 +478,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

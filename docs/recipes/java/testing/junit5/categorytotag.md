@@ -26,6 +26,79 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.experimental.categories.Category;
+
+@Category(value = SlowTests.class)
+public class B {
+
+}
+@Category(value = {SlowTests.class, FastTests.class})
+public class C {
+
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Tag;
+
+@Tag("SlowTests")
+public class B {
+
+}
+
+@Tag("SlowTests")
+@Tag("FastTests")
+public class C {
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.experimental.categories.Category;
++import org.junit.jupiter.api.Tag;
+
+@@ -3,1 +3,1 @@
+import org.junit.experimental.categories.Category;
+
+-@Category(value = SlowTests.class)
++@Tag("SlowTests")
+public class B {
+@@ -7,1 +7,3 @@
+
+}
+-@Category(value = {SlowTests.class, FastTests.class})
++
++@Tag("SlowTests")
++@Tag("FastTests")
+public class C {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+public interface FastTests {}
+```
+
+###### Unchanged
+```java
+public interface SlowTests {}
+```
+
 
 ## Usage
 
@@ -208,10 +281,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

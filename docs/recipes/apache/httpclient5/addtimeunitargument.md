@@ -34,6 +34,59 @@ This recipe is used as part of the following composite recipes:
 * [Adds `TimeUnit` to timeouts and duration methods](/recipes/apache/httpclient5/upgradeapachehttpclient_5_timeunit.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|methodPattern|`A method(int)`|
+|timeUnit|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class B {
+    void test() {
+        A a = new A();
+        a.method(100);
+    }
+}
+```
+
+###### After
+```java
+import java.util.concurrent.TimeUnit;
+
+class B {
+    void test() {
+        A a = new A();
+        a.method(100, TimeUnit.MILLISECONDS);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,2 @@
++import java.util.concurrent.TimeUnit;
++
+class B {
+@@ -4,1 +6,1 @@
+    void test() {
+        A a = new A();
+-       a.method(100);
++       a.method(100, TimeUnit.MILLISECONDS);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -181,10 +234,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

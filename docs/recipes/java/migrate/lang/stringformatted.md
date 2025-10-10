@@ -32,6 +32,52 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|addParentheses|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+class A {
+    String str = String.format("foo"
+            + "%s", "a");
+}
+```
+
+###### After
+```java
+package com.example.app;
+class A {
+    String str = ("foo"
+            + "%s").formatted("a");
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,2 @@
+package com.example.app;
+class A {
+-   String str = String.format("foo"
+-           + "%s", "a");
++   String str = ("foo"
++           + "%s").formatted("a");
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -214,10 +260,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [`AssertJBigIntegerRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes)
 * [`AssertJByteRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjbyterulesrecipes)
 * [`AssertJDoubleRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjdoublerulesrecipes)
+* [Refaster rules related to AssertJ assertions over `File`s](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes)
 * [`AssertJFloatRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjfloatrulesrecipes)
 * [`AssertJIntegerRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjintegerrulesrecipes)
 * [`AssertJLongRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes)
@@ -92,6 +93,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes
@@ -323,10 +325,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

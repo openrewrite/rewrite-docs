@@ -26,6 +26,97 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 
+## Example
+
+
+###### Unchanged
+```java
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class AbstractTest {
+    @Before
+    public void before() {
+    }
+
+    @After
+    public void after() {
+    }
+
+    @Test
+    public void test() {
+    }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+public class A extends AbstractTest {
+    public void before() {
+    }
+
+    public void after() {
+    }
+
+    public void test() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class A extends AbstractTest {
+    @BeforeEach
+    public void before() {
+    }
+
+    @AfterEach
+    public void after() {
+    }
+
+    @Test
+    public void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,4 @@
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
+public class A extends AbstractTest {
+@@ -2,0 +6,1 @@
+public class A extends AbstractTest {
++   @BeforeEach
+    public void before() {
+@@ -5,0 +10,1 @@
+    }
+
++   @AfterEach
+    public void after() {
+@@ -8,0 +14,1 @@
+    }
+
++   @Test
+    public void test() {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -208,10 +299,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

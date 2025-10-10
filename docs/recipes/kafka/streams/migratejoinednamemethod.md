@@ -29,6 +29,97 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Kafka 2.3](/recipes/kafka/migratetokafka23.md)
 
+## Examples
+##### Example 1
+`MigrateJoinedNameMethodTest#migrateNamedToAs`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.kafka.streams.kstream.Joined;
+
+class KafkaProcessor {
+    void configureJoin(Joined<String, String, String> joined) {
+        joined.named("my-join");
+    }
+}
+```
+
+###### After
+```java
+import org.apache.kafka.streams.kstream.Joined;
+
+class KafkaProcessor {
+    void configureJoin(Joined<String, String, String> joined) {
+        joined.as("my-join");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class KafkaProcessor {
+    void configureJoin(Joined<String, String, String> joined) {
+-       joined.named("my-join");
++       joined.as("my-join");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateJoinedNameMethodTest#migrateNamedToAs`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.kafka.streams.kstream.Joined;
+
+class KafkaProcessor {
+    void configureJoin(Joined<String, String, String> joined) {
+        joined.named("my-join");
+    }
+}
+```
+
+###### After
+```java
+import org.apache.kafka.streams.kstream.Joined;
+
+class KafkaProcessor {
+    void configureJoin(Joined<String, String, String> joined) {
+        joined.as("my-join");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class KafkaProcessor {
+    void configureJoin(Joined<String, String, String> joined) {
+-       joined.named("my-join");
++       joined.as("my-join");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -109,10 +200,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

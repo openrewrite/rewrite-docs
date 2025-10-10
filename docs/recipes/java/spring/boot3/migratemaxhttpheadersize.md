@@ -64,6 +64,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`UpgradeSpringBoot3ConfigurationTest#moveMaxHttpHeaderSize`
 
 
 ###### Unchanged
@@ -72,17 +73,17 @@ test
 ```
 
 <Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
+<TabItem value="src/main/resources/application.properties" label="src/main/resources/application.properties">
 
 
 ###### Before
-```properties
+```properties title="src/main/resources/application.properties"
 # application.properties
 server.max-http-header-size=10KB
 ```
 
 ###### After
-```properties
+```properties title="src/main/resources/application.properties"
 # application.properties
 server.max-http-request-header-size=10KB
 ```
@@ -91,6 +92,8 @@ server.max-http-request-header-size=10KB
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/resources/application.properties
++++ src/main/resources/application.properties
 @@ -2,1 +2,1 @@
 # application.properties
 -server.max-http-header-size=10KB
@@ -101,17 +104,17 @@ server.max-http-request-header-size=10KB
 </Tabs>
 
 <Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
+<TabItem value="src/main/resources/application.yml" label="src/main/resources/application.yml">
 
 
 ###### Before
-```yaml
+```yaml title="src/main/resources/application.yml"
     server:
       max-http-header-size: 10KB
 ```
 
 ###### After
-```yaml
+```yaml title="src/main/resources/application.yml"
     server:
       max-http-request-header-size: 10KB
 ```
@@ -120,6 +123,8 @@ server.max-http-request-header-size=10KB
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/resources/application.yml
++++ src/main/resources/application.yml
 @@ -2,1 +2,1 @@
     server:
 -     max-http-header-size: 10KB
@@ -132,6 +137,7 @@ server.max-http-request-header-size=10KB
 ---
 
 ##### Example 2
+`UpgradeSpringBoot3ConfigurationTest#moveMaxHttpHeaderSize`
 
 
 ###### Unchanged
@@ -140,17 +146,17 @@ test
 ```
 
 <Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
+<TabItem value="src/main/resources/application.properties" label="src/main/resources/application.properties">
 
 
 ###### Before
-```properties
+```properties title="src/main/resources/application.properties"
 # application.properties
 server.max-http-header-size=10KB
 ```
 
 ###### After
-```properties
+```properties title="src/main/resources/application.properties"
 # application.properties
 server.max-http-request-header-size=10KB
 ```
@@ -159,6 +165,8 @@ server.max-http-request-header-size=10KB
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/resources/application.properties
++++ src/main/resources/application.properties
 @@ -2,1 +2,1 @@
 # application.properties
 -server.max-http-header-size=10KB
@@ -169,17 +177,17 @@ server.max-http-request-header-size=10KB
 </Tabs>
 
 <Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
+<TabItem value="src/main/resources/application.yml" label="src/main/resources/application.yml">
 
 
 ###### Before
-```yaml
+```yaml title="src/main/resources/application.yml"
     server:
       max-http-header-size: 10KB
 ```
 
 ###### After
-```yaml
+```yaml title="src/main/resources/application.yml"
     server:
       max-http-request-header-size: 10KB
 ```
@@ -188,6 +196,8 @@ server.max-http-request-header-size=10KB
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/resources/application.yml
++++ src/main/resources/application.yml
 @@ -2,1 +2,1 @@
     server:
 -     max-http-header-size: 10KB
@@ -379,10 +389,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

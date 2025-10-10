@@ -50,7 +50,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Prefer `Flux#take(long)` over `Flux#take(long, boolean)` where relevant](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtakerecipe)
 * [Refaster template `ReactorRules.MonoDefaultIfEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monodefaultifemptyrecipe)
 * [Refaster template `ReactorRules.FluxDefaultIfEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxdefaultifemptyrecipe)
-* [Refaster template `ReactorRules.FluxEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxemptyrecipe)
 * [Refaster template `ReactorRules.FluxJust`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxjustrecipe)
 * [Refaster template `ReactorRules.MonoIdentity`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe)
 * [Refaster template `ReactorRules.MonoSingle`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monosinglerecipe)
@@ -127,6 +126,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ReactorRules.MonoFromFutureAsyncLoadingCacheGet`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfutureasyncloadingcachegetrecipe)
 * [Refaster template `ReactorRules.MonoFromFutureAsyncLoadingCacheGetAll`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfutureasyncloadingcachegetallrecipe)
 * [Refaster template `ReactorRules.FluxFromStreamSupplier`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxfromstreamsupplierrecipe)
+* [Refaster template `ReactorRules.FluxNext`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxnextrecipe)
 
 </TabItem>
 
@@ -162,7 +162,6 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTakeRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoDefaultIfEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxDefaultIfEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxJustRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoIdentityRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoSingleRecipe
@@ -239,6 +238,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureAsyncLoadingCacheGetRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureAsyncLoadingCacheGetAllRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxFromStreamSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxNextRecipe
 
 ```
 </TabItem>
@@ -432,10 +432,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

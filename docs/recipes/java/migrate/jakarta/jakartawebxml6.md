@@ -38,10 +38,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * elementName: `web-app`
   * attributeName: `version`
   * newValue: `6.0`
+  * oldValue: `^[12345]\.\d+$`
+  * regex: `true`
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `web-app`
   * attributeName: `xsi:schemaLocation`
-  * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd`
+  * newValue: `${prefix}6_0${suffix}`
+  * oldValue: `(?s)(?<prefix>.*https://jakarta\.ee/xml/ns/jakartaee/web-app_)5_\d+(?<suffix>\.xsd.*)`
+  * regex: `true`
 
 </TabItem>
 
@@ -63,10 +67,14 @@ recipeList:
       elementName: web-app
       attributeName: version
       newValue: 6.0
+      oldValue: ^[12345]\.\d+$
+      regex: true
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: web-app
       attributeName: xsi:schemaLocation
-      newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd
+      newValue: ${prefix}6_0${suffix}
+      oldValue: (?s)(?<prefix>.*https://jakarta\.ee/xml/ns/jakartaee/web-app_)5_\d+(?<suffix>\.xsd.*)
+      regex: true
 
 ```
 </TabItem>
@@ -260,10 +268,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

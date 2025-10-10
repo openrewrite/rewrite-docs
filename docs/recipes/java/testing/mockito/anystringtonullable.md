@@ -19,6 +19,68 @@ _Since Mockito 2.10 `anyString()` no longer matches null values. Use `nullable(C
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+###### Unchanged
+```java
+class Example {
+    String greet(String name) {
+        return "Hello " + name;
+    }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+class MyTest {
+    void test() {
+        Example example = mock(Example.class);
+        when(example.greet(anyString())).thenReturn("Hello world");
+    }
+}
+```
+
+###### After
+```java
+import static org.mockito.ArgumentMatchers.nullable;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+class MyTest {
+    void test() {
+        Example example = mock(Example.class);
+        when(example.greet(nullable(String.class))).thenReturn("Hello world");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import static org.mockito.Mockito.anyString;
++import static org.mockito.ArgumentMatchers.nullable;
+import static org.mockito.Mockito.mock;
+@@ -8,1 +8,1 @@
+    void test() {
+        Example example = mock(Example.class);
+-       when(example.greet(anyString())).thenReturn("Hello world");
++       when(example.greet(nullable(String.class))).thenReturn("Hello world");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -201,10 +263,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

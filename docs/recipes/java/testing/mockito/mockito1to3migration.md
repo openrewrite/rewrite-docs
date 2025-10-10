@@ -236,7 +236,66 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`Mockito1to3MigrationTest#migrateSomeMethodsAndDependencies`
 
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-all:1.10.19")
+    testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -9,2 +9,2 @@
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+-   testImplementation("org.mockito:mockito-all:1.10.19")
+-   testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
++   testImplementation("org.mockito:mockito-core:3.12.4")
++   testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+```
+</TabItem>
+</Tabs>
 
 <Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">
@@ -244,58 +303,58 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-package mockito.example;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import static org.mockito.ArgumentMatchers.anyListOf;
-import static org.mockito.ArgumentMatchers.anySetOf;
-import static org.mockito.ArgumentMatchers.anyMapOf;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Matchers.anyListOf;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
-public class MockitoVarargMatcherTest {
-    public static class Foo {
-        public boolean addList(List<String> strings) { return true; }
-        public boolean addSet(Set<String> strings) { return true; }
-        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+class MyTest {
+    @Mock
+    Object objectMock;
+
+    private A subject;
+
+    @BeforeEach
+    void setup() {
+        subject = new A();
     }
-    public void usesVarargMatcher() {
-        Foo mockFoo = mock(Foo.class);
-        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
-        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
-        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
+
+    @Test
+    void someTest() {
+        when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
     }
 }
 ```
 
 ###### After
 ```java
-package mockito.example;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
 import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.ArgumentMatchers.anySet;
-import static org.mockito.ArgumentMatchers.anyMap;
-import static org.mockito.Mockito.mock;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
-public class MockitoVarargMatcherTest {
-    public static class Foo {
-        public boolean addList(List<String> strings) { return true; }
-        public boolean addSet(Set<String> strings) { return true; }
-        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+class MyTest {
+    @Mock
+    Object objectMock;
+
+    private A subject;
+
+    @BeforeEach
+    void setup() {
+        subject = new A();
     }
-    public void usesVarargMatcher() {
-        Foo mockFoo = mock(Foo.class);
-        when(mockFoo.addList(anyList())).thenReturn(true);
-        when(mockFoo.addSet(anySet())).thenReturn(true);
-        when(mockFoo.addMap(anyMap())).thenReturn(true);
+
+    @Test
+    void someTest() {
+        when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
     }
 }
 ```
@@ -304,26 +363,102 @@ public class MockitoVarargMatcherTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -7,3 +7,3 @@
-import java.util.Set;
+@@ -5,3 +5,3 @@
+import org.mockito.Mock;
 
--import static org.mockito.ArgumentMatchers.anyListOf;
--import static org.mockito.ArgumentMatchers.anySetOf;
--import static org.mockito.ArgumentMatchers.anyMapOf;
+-import static org.mockito.Matchers.anyListOf;
+-import static org.mockito.Matchers.anyObject;
+-import static org.mockito.Matchers.anyString;
 +import static org.mockito.ArgumentMatchers.anyList;
-+import static org.mockito.ArgumentMatchers.anySet;
-+import static org.mockito.ArgumentMatchers.anyMap;
-import static org.mockito.Mockito.mock;
-@@ -21,3 +21,3 @@
-    public void usesVarargMatcher() {
-        Foo mockFoo = mock(Foo.class);
--       when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
--       when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
--       when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
-+       when(mockFoo.addList(anyList())).thenReturn(true);
-+       when(mockFoo.addSet(anySet())).thenReturn(true);
-+       when(mockFoo.addMap(anyMap())).thenReturn(true);
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
+@@ -23,1 +23,1 @@
+    @Test
+    void someTest() {
+-       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
++       when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
     }
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>org.example</groupId>
+  <artifactId>some-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.11.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-all</artifactId>
+          <version>1.10.19</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>2.28.2</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>org.example</groupId>
+  <artifactId>some-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.11.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-core</artifactId>
+          <version>3.12.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>3.12.4</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -13,2 +13,2 @@
+      <dependency>
+          <groupId>org.mockito</groupId>
+-         <artifactId>mockito-all</artifactId>
+-         <version>1.10.19</version>
++         <artifactId>mockito-core</artifactId>
++         <version>3.12.4</version>
+      </dependency>
+@@ -19,1 +19,1 @@
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+-         <version>2.28.2</version>
++         <version>3.12.4</version>
+      </dependency>
 ```
 </TabItem>
 </Tabs>
@@ -331,235 +466,7 @@ import static org.mockito.Mockito.mock;
 ---
 
 ##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="build.gradle" label="build.gradle">
-
-
-###### Before
-```groovy title="build.gradle"
-plugins {
-    id 'java-library'
-}
-repositories {
-    mavenCentral()
-}
-dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
-    testImplementation("org.mockito:mockito-all:1.10.19")
-    testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
-}
-test {
-    useJUnitPlatform()
-}
-```
-
-###### After
-```groovy title="build.gradle"
-plugins {
-    id 'java-library'
-}
-repositories {
-    mavenCentral()
-}
-dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
-    testImplementation("org.mockito:mockito-core:3.12.4")
-    testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
-}
-test {
-    useJUnitPlatform()
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- build.gradle
-+++ build.gradle
-@@ -9,2 +9,2 @@
-dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
--   testImplementation("org.mockito:mockito-all:1.10.19")
--   testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
-+   testImplementation("org.mockito:mockito-core:3.12.4")
-+   testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
-}
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-
-import static org.mockito.Matchers.anyListOf;
-import static org.mockito.Matchers.anyObject;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.when;
-
-class MyTest {
-    @Mock
-    Object objectMock;
-
-    private A subject;
-
-    @BeforeEach
-    void setup() {
-        subject = new A();
-    }
-
-    @Test
-    void someTest() {
-        when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
-    }
-}
-```
-
-###### After
-```java
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-
-import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
-
-class MyTest {
-    @Mock
-    Object objectMock;
-
-    private A subject;
-
-    @BeforeEach
-    void setup() {
-        subject = new A();
-    }
-
-    @Test
-    void someTest() {
-        when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,3 +5,3 @@
-import org.mockito.Mock;
-
--import static org.mockito.Matchers.anyListOf;
--import static org.mockito.Matchers.anyObject;
--import static org.mockito.Matchers.anyString;
-+import static org.mockito.ArgumentMatchers.anyList;
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
-@@ -23,1 +23,1 @@
-    @Test
-    void someTest() {
--       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
-+       when(subject.someMethod(any(), anyString(), anyList())).thenReturn(false);
-    }
-```
-</TabItem>
-</Tabs>
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-  <groupId>org.example</groupId>
-  <artifactId>some-project</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <dependencies>
-      <dependency>
-          <groupId>org.junit.jupiter</groupId>
-          <artifactId>junit-jupiter-api</artifactId>
-          <version>5.11.4</version>
-      </dependency>
-      <dependency>
-          <groupId>org.mockito</groupId>
-          <artifactId>mockito-all</artifactId>
-          <version>1.10.19</version>
-      </dependency>
-      <dependency>
-          <groupId>org.mockito</groupId>
-          <artifactId>mockito-junit-jupiter</artifactId>
-          <version>2.28.2</version>
-      </dependency>
-  </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <groupId>org.example</groupId>
-  <artifactId>some-project</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <dependencies>
-      <dependency>
-          <groupId>org.junit.jupiter</groupId>
-          <artifactId>junit-jupiter-api</artifactId>
-          <version>5.11.4</version>
-      </dependency>
-      <dependency>
-          <groupId>org.mockito</groupId>
-          <artifactId>mockito-core</artifactId>
-          <version>3.12.4</version>
-      </dependency>
-      <dependency>
-          <groupId>org.mockito</groupId>
-          <artifactId>mockito-junit-jupiter</artifactId>
-          <version>3.12.4</version>
-      </dependency>
-  </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -13,2 +13,2 @@
-      <dependency>
-          <groupId>org.mockito</groupId>
--         <artifactId>mockito-all</artifactId>
--         <version>1.10.19</version>
-+         <artifactId>mockito-core</artifactId>
-+         <version>3.12.4</version>
-      </dependency>
-@@ -19,1 +19,1 @@
-          <groupId>org.mockito</groupId>
-          <artifactId>mockito-junit-jupiter</artifactId>
--         <version>2.28.2</version>
-+         <version>3.12.4</version>
-      </dependency>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 3
+`MockitoMatchersToArgumentMatchersTest#mockitoAnyListOfToListOf`
 
 
 <Tabs groupId="beforeAfter">
@@ -654,7 +561,8 @@ import static org.mockito.Mockito.mock;
 
 ---
 
-##### Example 4
+##### Example 3
+`Mockito1to3MigrationTest#migrateSomeMethodsAndDependencies`
 
 
 <Tabs groupId="beforeAfter">
@@ -877,6 +785,102 @@ import static org.mockito.Mockito.when;
 -         <version>2.28.2</version>
 +         <version>3.12.4</version>
       </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`MockitoMatchersToArgumentMatchersTest#mockitoAnyListOfToListOf`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.anySetOf;
+import static org.mockito.ArgumentMatchers.anyMapOf;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
+    }
+}
+```
+
+###### After
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyList())).thenReturn(true);
+        when(mockFoo.addSet(anySet())).thenReturn(true);
+        when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,3 +7,3 @@
+import java.util.Set;
+
+-import static org.mockito.ArgumentMatchers.anyListOf;
+-import static org.mockito.ArgumentMatchers.anySetOf;
+-import static org.mockito.ArgumentMatchers.anyMapOf;
++import static org.mockito.ArgumentMatchers.anyList;
++import static org.mockito.ArgumentMatchers.anySet;
++import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+@@ -21,3 +21,3 @@
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+-       when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+-       when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+-       when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
++       when(mockFoo.addList(anyList())).thenReturn(true);
++       when(mockFoo.addSet(anySet())).thenReturn(true);
++       when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
 ```
 </TabItem>
 </Tabs>
@@ -1063,10 +1067,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

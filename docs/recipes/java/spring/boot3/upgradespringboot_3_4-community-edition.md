@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Framework 6.2](../../../java/spring/framework/upgradespringframework_6_2)
 * [Migrate to Spring Cloud 2024](../../../java/spring/cloud2024/upgradespringcloud_2024)
 * [Migrate to Spring Data 3.4](../../../java/spring/data/upgradespringdata_3_4)
+* [Migrate to Spring Security 6.4](../../../java/spring/security6/upgradespringsecurity_6_4)
 * [Migrate Spring Boot properties to 3.4](../../../java/spring/boot3/springbootproperties_3_4)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
@@ -96,6 +97,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2
   - org.openrewrite.java.spring.cloud2024.UpgradeSpringCloud_2024
   - org.openrewrite.java.spring.data.UpgradeSpringData_3_4
+  - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_4
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_4
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
@@ -328,10 +330,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

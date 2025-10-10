@@ -174,6 +174,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../java/dependencies/removedependency)
   * groupId: `org.hibernate`
   * artifactId: `hibernate-entitymanager`
+* [Remove Maven managed dependency](../maven/removemanageddependency)
+  * groupId: `org.hibernate`
+  * artifactId: `hibernate-entitymanager`
 * [Add Gradle or Maven dependency](../java/dependencies/adddependency)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
@@ -341,6 +344,9 @@ recipeList:
       newArtifactId: hibernate-testing
       newVersion: 6.0.x
   - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: org.hibernate
+      artifactId: hibernate-entitymanager
+  - org.openrewrite.maven.RemoveManagedDependency:
       groupId: org.hibernate
       artifactId: hibernate-entitymanager
   - org.openrewrite.java.dependencies.AddDependency:
@@ -546,10 +552,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

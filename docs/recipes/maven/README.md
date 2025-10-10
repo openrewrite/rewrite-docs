@@ -41,6 +41,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change Maven plugin executions](./changepluginexecutions.md)
 * [Change Maven plugin group and artifact ID](./changeplugingroupidandartifactid.md)
 * [Change Maven project property value](./changepropertyvalue.md)
+* [Convert managed dependencies to runtime dependencies](./managedtoruntimedependencies.md)
 * [Enable Develocity build cache](./enabledevelocitybuildcache.md)
 * [Exclude Maven dependency](./excludedependency.md)
 * [Increment Maven project version](./incrementprojectversion.md)

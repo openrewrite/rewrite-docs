@@ -98,6 +98,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`CookieConstantsTest#cookieConstantsMapping`
 
 
 <Tabs groupId="beforeAfter">
@@ -106,44 +107,26 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.mime.MinimalField;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.StringBody;
-import org.apache.http.util.EntityUtils;
+import org.apache.http.client.config.CookieSpecs;
 
 class A {
-    void method(HttpEntity entity, String urlStr) throws Exception {
-        HttpUriRequest getRequest = new HttpGet(urlStr);
-        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
-        MinimalField field = new MinimalField("A", "B");
-        EntityUtils.consume(entity);
+    void method() {
+        String c1 = CookieSpecs.IGNORE_COOKIES;
+        String c2 = CookieSpecs.STANDARD;
+        String c3 = CookieSpecs.STANDARD_STRICT;
     }
 }
 ```
 
 ###### After
 ```java
-import org.apache.hc.core5.http.ContentType;
-import org.apache.hc.core5.http.io.entity.EntityUtils;
-import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
-import org.apache.hc.client5.http.entity.mime.MimeField;
-import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
-import org.apache.hc.client5.http.entity.mime.StringBody;
+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
 
 class A {
-    void method(HttpEntity entity, String urlStr) throws Exception {
-        HttpUriRequest getRequest = new HttpGet(urlStr);
-        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
-        MimeField field = new MimeField("A", "B");
-        EntityUtils.consume(entity);
+    void method() {
+        String c1 = StandardCookieSpec.IGNORE;
+        String c2 = StandardCookieSpec.RELAXED;
+        String c3 = StandardCookieSpec.STRICT;
     }
 }
 ```
@@ -152,30 +135,20 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,8 +1,8 @@
--import org.apache.http.HttpEntity;
--import org.apache.http.client.methods.HttpGet;
--import org.apache.http.client.methods.HttpUriRequest;
--import org.apache.http.entity.ContentType;
--import org.apache.http.entity.mime.MinimalField;
--import org.apache.http.entity.mime.MultipartEntityBuilder;
--import org.apache.http.entity.mime.content.StringBody;
--import org.apache.http.util.EntityUtils;
-+import org.apache.hc.core5.http.ContentType;
-+import org.apache.hc.core5.http.io.entity.EntityUtils;
-+import org.apache.hc.core5.http.HttpEntity;
-+import org.apache.hc.client5.http.classic.methods.HttpGet;
-+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
-+import org.apache.hc.client5.http.entity.mime.MimeField;
-+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
-+import org.apache.hc.client5.http.entity.mime.StringBody;
+@@ -1,1 +1,1 @@
+-import org.apache.http.client.config.CookieSpecs;
++import org.apache.hc.client5.http.cookie.StandardCookieSpec;
 
-@@ -15,1 +15,1 @@
-        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
--       MinimalField field = new MinimalField("A", "B");
-+       MimeField field = new MimeField("A", "B");
-        EntityUtils.consume(entity);
+@@ -5,3 +5,3 @@
+class A {
+    void method() {
+-       String c1 = CookieSpecs.IGNORE_COOKIES;
+-       String c2 = CookieSpecs.STANDARD;
+-       String c3 = CookieSpecs.STANDARD_STRICT;
++       String c1 = StandardCookieSpec.IGNORE;
++       String c2 = StandardCookieSpec.RELAXED;
++       String c3 = StandardCookieSpec.STRICT;
+    }
 ```
 </TabItem>
 </Tabs>
@@ -183,6 +156,7 @@ class A {
 ---
 
 ##### Example 2
+`MigrateAuthScopeTest#authScopeAnyTest`
 
 
 <Tabs groupId="beforeAfter">
@@ -191,38 +165,22 @@ class A {
 
 ###### Before
 ```java
-import javax.net.ssl.SSLContext;
+import org.apache.http.auth.AuthScope;
 
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.ssl.SSLContexts;
-
-class HttpClientManager {
-    void create() {
-        SSLContext sslContext = SSLContexts.createDefault();
-        SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
-        HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+class A {
+    void method() {
+        AuthScope any = AuthScope.ANY;
     }
 }
 ```
 
 ###### After
 ```java
-import javax.net.ssl.SSLContext;
+import org.apache.hc.client5.http.auth.AuthScope;
 
-import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
-import org.apache.hc.client5.http.io.HttpClientConnectionManager;
-import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
-import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
-import org.apache.hc.core5.ssl.SSLContexts;
-
-class HttpClientManager {
-    void create() {
-        SSLContext sslContext = SSLContexts.createDefault();
-        TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
-        HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
-        HttpClients.custom().setConnectionManager(cm).build();
+class A {
+    void method() {
+        AuthScope any = new AuthScope(null, -1);
     }
 }
 ```
@@ -231,27 +189,15 @@ class HttpClientManager {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,3 +3,6 @@
-import javax.net.ssl.SSLContext;
+@@ -1,1 +1,1 @@
+-import org.apache.http.auth.AuthScope;
++import org.apache.hc.client5.http.auth.AuthScope;
 
--import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
--import org.apache.http.impl.client.HttpClients;
--import org.apache.http.ssl.SSLContexts;
-+import org.apache.hc.client5.http.impl.classic.HttpClients;
-+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
-+import org.apache.hc.client5.http.io.HttpClientConnectionManager;
-+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
-+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
-+import org.apache.hc.core5.ssl.SSLContexts;
-
-@@ -10,2 +13,3 @@
-    void create() {
-        SSLContext sslContext = SSLContexts.createDefault();
--       SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
--       HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
-+       TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
-+       HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
-+       HttpClients.custom().setConnectionManager(cm).build();
+@@ -5,1 +5,1 @@
+class A {
+    void method() {
+-       AuthScope any = AuthScope.ANY;
++       AuthScope any = new AuthScope(null, -1);
     }
 ```
 </TabItem>
@@ -260,6 +206,7 @@ import javax.net.ssl.SSLContext;
 ---
 
 ##### Example 3
+`MigrateHttpResponseTest#migratesHttpResponseToClassicHttpResponse`
 
 
 <Tabs groupId="beforeAfter">
@@ -268,22 +215,40 @@ import javax.net.ssl.SSLContext;
 
 ###### Before
 ```java
-import org.apache.http.auth.AuthScope;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
-class A {
-    void method() {
-        AuthScope any = AuthScope.ANY;
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        HttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
     }
 }
 ```
 
 ###### After
 ```java
-import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
 
-class A {
-    void method() {
-        AuthScope any = new AuthScope(null, -1);
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
     }
 }
 ```
@@ -292,16 +257,24 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,1 @@
--import org.apache.http.auth.AuthScope;
-+import org.apache.hc.client5.http.auth.AuthScope;
+@@ -1,5 +1,5 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.HttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClients;
++import org.apache.hc.core5.http.ClassicHttpResponse;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
 
-@@ -5,1 +5,1 @@
-class A {
-    void method() {
--       AuthScope any = AuthScope.ANY;
-+       AuthScope any = new AuthScope(null, -1);
-    }
+@@ -13,1 +13,1 @@
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+-       HttpResponse response = httpClient.execute(httpGet);
++       ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
 ```
 </TabItem>
 </Tabs>
@@ -309,6 +282,85 @@ class A {
 ---
 
 ##### Example 4
+`MigrateSSLConnectionSocketFactoryTest#migratesToDefaultClientTlsStrategy`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.io.HttpClientConnectionManager;
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
+import org.apache.hc.core5.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
+        HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
+        HttpClients.custom().setConnectionManager(cm).build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,6 @@
+import javax.net.ssl.SSLContext;
+
+-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+-import org.apache.http.impl.client.HttpClients;
+-import org.apache.http.ssl.SSLContexts;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
++import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
++import org.apache.hc.client5.http.io.HttpClientConnectionManager;
++import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
++import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
++import org.apache.hc.core5.ssl.SSLContexts;
+
+@@ -10,2 +13,3 @@
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+-       SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+-       HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
++       TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
++       HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
++       HttpClients.custom().setConnectionManager(cm).build();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+`NewRequestLineTest#removeRequestLineHttpResponse`
 
 
 <Tabs groupId="beforeAfter">
@@ -377,7 +429,8 @@ class A {
 
 ---
 
-##### Example 5
+##### Example 6
+`NewStatusLineTest#removeStatusLineHttpResponse`
 
 
 <Tabs groupId="beforeAfter">
@@ -472,139 +525,8 @@ class A {
 
 ---
 
-##### Example 6
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.apache.http.client.config.CookieSpecs;
-
-class A {
-    void method() {
-        String c1 = CookieSpecs.IGNORE_COOKIES;
-        String c2 = CookieSpecs.STANDARD;
-        String c3 = CookieSpecs.STANDARD_STRICT;
-    }
-}
-```
-
-###### After
-```java
-import org.apache.hc.client5.http.cookie.StandardCookieSpec;
-
-class A {
-    void method() {
-        String c1 = StandardCookieSpec.IGNORE;
-        String c2 = StandardCookieSpec.RELAXED;
-        String c3 = StandardCookieSpec.STRICT;
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.apache.http.client.config.CookieSpecs;
-+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
-
-@@ -5,3 +5,3 @@
-class A {
-    void method() {
--       String c1 = CookieSpecs.IGNORE_COOKIES;
--       String c2 = CookieSpecs.STANDARD;
--       String c3 = CookieSpecs.STANDARD_STRICT;
-+       String c1 = StandardCookieSpec.IGNORE;
-+       String c2 = StandardCookieSpec.RELAXED;
-+       String c3 = StandardCookieSpec.STRICT;
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
 ##### Example 7
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-
-import java.io.IOException;
-
-class HttpClientManager {
-    void getEntity() throws IOException {
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://example.com");
-        HttpResponse response = httpClient.execute(httpGet);
-        HttpEntity entity = response.getEntity();
-    }
-}
-```
-
-###### After
-```java
-import org.apache.hc.core5.http.ClassicHttpResponse;
-import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.HttpClients;
-
-import java.io.IOException;
-
-class HttpClientManager {
-    void getEntity() throws IOException {
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://example.com");
-        ClassicHttpResponse response = httpClient.execute(httpGet);
-        HttpEntity entity = response.getEntity();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,5 +1,5 @@
--import org.apache.http.HttpEntity;
--import org.apache.http.HttpResponse;
--import org.apache.http.client.methods.HttpGet;
--import org.apache.http.impl.client.CloseableHttpClient;
--import org.apache.http.impl.client.HttpClients;
-+import org.apache.hc.core5.http.ClassicHttpResponse;
-+import org.apache.hc.core5.http.HttpEntity;
-+import org.apache.hc.client5.http.classic.methods.HttpGet;
-+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-+import org.apache.hc.client5.http.impl.classic.HttpClients;
-
-@@ -13,1 +13,1 @@
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://example.com");
--       HttpResponse response = httpClient.execute(httpGet);
-+       ClassicHttpResponse response = httpClient.execute(httpGet);
-        HttpEntity entity = response.getEntity();
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 8
+`UpgradeApacheHttpClient5Test#importReplacementsInGroupsWithSomeSpecificMappings`
 
 
 <Tabs groupId="beforeAfter">
@@ -689,7 +611,192 @@ class A {
 
 ---
 
+##### Example 8
+`CookieConstantsTest#cookieConstantsMapping`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.config.CookieSpecs;
+
+class A {
+    void method() {
+        String c1 = CookieSpecs.IGNORE_COOKIES;
+        String c2 = CookieSpecs.STANDARD;
+        String c3 = CookieSpecs.STANDARD_STRICT;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+class A {
+    void method() {
+        String c1 = StandardCookieSpec.IGNORE;
+        String c2 = StandardCookieSpec.RELAXED;
+        String c3 = StandardCookieSpec.STRICT;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.client.config.CookieSpecs;
++import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+@@ -5,3 +5,3 @@
+class A {
+    void method() {
+-       String c1 = CookieSpecs.IGNORE_COOKIES;
+-       String c2 = CookieSpecs.STANDARD;
+-       String c3 = CookieSpecs.STANDARD_STRICT;
++       String c1 = StandardCookieSpec.IGNORE;
++       String c2 = StandardCookieSpec.RELAXED;
++       String c3 = StandardCookieSpec.STRICT;
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
 ##### Example 9
+`MigrateAuthScopeTest#authScopeAnyTest`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = AuthScope.ANY;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = new AuthScope(null, -1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.auth.AuthScope;
++import org.apache.hc.client5.http.auth.AuthScope;
+
+@@ -5,1 +5,1 @@
+class A {
+    void method() {
+-       AuthScope any = AuthScope.ANY;
++       AuthScope any = new AuthScope(null, -1);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 10
+`MigrateHttpResponseTest#migratesHttpResponseToClassicHttpResponse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        HttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.HttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClients;
++import org.apache.hc.core5.http.ClassicHttpResponse;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+@@ -13,1 +13,1 @@
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+-       HttpResponse response = httpClient.execute(httpGet);
++       ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 11
+`MigrateSSLConnectionSocketFactoryTest#migratesToDefaultClientTlsStrategy`
 
 
 <Tabs groupId="beforeAfter">
@@ -766,56 +873,8 @@ import javax.net.ssl.SSLContext;
 
 ---
 
-##### Example 10
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.apache.http.auth.AuthScope;
-
-class A {
-    void method() {
-        AuthScope any = AuthScope.ANY;
-    }
-}
-```
-
-###### After
-```java
-import org.apache.hc.client5.http.auth.AuthScope;
-
-class A {
-    void method() {
-        AuthScope any = new AuthScope(null, -1);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.apache.http.auth.AuthScope;
-+import org.apache.hc.client5.http.auth.AuthScope;
-
-@@ -5,1 +5,1 @@
-class A {
-    void method() {
--       AuthScope any = AuthScope.ANY;
-+       AuthScope any = new AuthScope(null, -1);
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 11
+##### Example 12
+`NewRequestLineTest#removeRequestLineHttpResponse`
 
 
 <Tabs groupId="beforeAfter">
@@ -884,7 +943,8 @@ class A {
 
 ---
 
-##### Example 12
+##### Example 13
+`NewStatusLineTest#removeStatusLineHttpResponse`
 
 
 <Tabs groupId="beforeAfter">
@@ -979,64 +1039,8 @@ class A {
 
 ---
 
-##### Example 13
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.apache.http.client.config.CookieSpecs;
-
-class A {
-    void method() {
-        String c1 = CookieSpecs.IGNORE_COOKIES;
-        String c2 = CookieSpecs.STANDARD;
-        String c3 = CookieSpecs.STANDARD_STRICT;
-    }
-}
-```
-
-###### After
-```java
-import org.apache.hc.client5.http.cookie.StandardCookieSpec;
-
-class A {
-    void method() {
-        String c1 = StandardCookieSpec.IGNORE;
-        String c2 = StandardCookieSpec.RELAXED;
-        String c3 = StandardCookieSpec.STRICT;
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.apache.http.client.config.CookieSpecs;
-+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
-
-@@ -5,3 +5,3 @@
-class A {
-    void method() {
--       String c1 = CookieSpecs.IGNORE_COOKIES;
--       String c2 = CookieSpecs.STANDARD;
--       String c3 = CookieSpecs.STANDARD_STRICT;
-+       String c1 = StandardCookieSpec.IGNORE;
-+       String c2 = StandardCookieSpec.RELAXED;
-+       String c3 = StandardCookieSpec.STRICT;
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
 ##### Example 14
+`UpgradeApacheHttpClient5Test#importReplacementsInGroupsWithSomeSpecificMappings`
 
 
 <Tabs groupId="beforeAfter">
@@ -1046,39 +1050,43 @@ class A {
 ###### Before
 ```java
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MinimalField;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.util.EntityUtils;
 
-import java.io.IOException;
-
-class HttpClientManager {
-    void getEntity() throws IOException {
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://example.com");
-        HttpResponse response = httpClient.execute(httpGet);
-        HttpEntity entity = response.getEntity();
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MinimalField field = new MinimalField("A", "B");
+        EntityUtils.consume(entity);
     }
 }
 ```
 
 ###### After
 ```java
-import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.entity.mime.MimeField;
+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
+import org.apache.hc.client5.http.entity.mime.StringBody;
 
-import java.io.IOException;
-
-class HttpClientManager {
-    void getEntity() throws IOException {
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://example.com");
-        ClassicHttpResponse response = httpClient.execute(httpGet);
-        HttpEntity entity = response.getEntity();
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
     }
 }
 ```
@@ -1087,24 +1095,30 @@ class HttpClientManager {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,5 +1,5 @@
+@@ -1,8 +1,8 @@
 -import org.apache.http.HttpEntity;
--import org.apache.http.HttpResponse;
 -import org.apache.http.client.methods.HttpGet;
--import org.apache.http.impl.client.CloseableHttpClient;
--import org.apache.http.impl.client.HttpClients;
-+import org.apache.hc.core5.http.ClassicHttpResponse;
+-import org.apache.http.client.methods.HttpUriRequest;
+-import org.apache.http.entity.ContentType;
+-import org.apache.http.entity.mime.MinimalField;
+-import org.apache.http.entity.mime.MultipartEntityBuilder;
+-import org.apache.http.entity.mime.content.StringBody;
+-import org.apache.http.util.EntityUtils;
++import org.apache.hc.core5.http.ContentType;
++import org.apache.hc.core5.http.io.entity.EntityUtils;
 +import org.apache.hc.core5.http.HttpEntity;
 +import org.apache.hc.client5.http.classic.methods.HttpGet;
-+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-+import org.apache.hc.client5.http.impl.classic.HttpClients;
++import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
++import org.apache.hc.client5.http.entity.mime.MimeField;
++import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
++import org.apache.hc.client5.http.entity.mime.StringBody;
 
-@@ -13,1 +13,1 @@
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://example.com");
--       HttpResponse response = httpClient.execute(httpGet);
-+       ClassicHttpResponse response = httpClient.execute(httpGet);
-        HttpEntity entity = response.getEntity();
+@@ -15,1 +15,1 @@
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+-       MinimalField field = new MinimalField("A", "B");
++       MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
 ```
 </TabItem>
 </Tabs>
@@ -1291,10 +1305,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

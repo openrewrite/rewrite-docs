@@ -47,6 +47,131 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`UpdateTaskExecutorsTest#updateExecuteOnTaskExecutors`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.scheduling.TaskExecutors;
+import io.micronaut.scheduling.annotation.ExecuteOn;
+
+import jakarta.inject.Singleton;
+
+@Singleton
+public class GenericService {
+
+    @ExecuteOn(TaskExecutors.IO)
+    public void doSomeBlockingIOTask() {
+
+    }
+}
+```
+
+###### After
+```java
+import io.micronaut.scheduling.TaskExecutors;
+import io.micronaut.scheduling.annotation.ExecuteOn;
+
+import jakarta.inject.Singleton;
+
+@Singleton
+public class GenericService {
+
+    @ExecuteOn(TaskExecutors.BLOCKING)
+    public void doSomeBlockingIOTask() {
+
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,1 +9,1 @@
+public class GenericService {
+
+-   @ExecuteOn(TaskExecutors.IO)
++   @ExecuteOn(TaskExecutors.BLOCKING)
+    public void doSomeBlockingIOTask() {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 2
+`UpdateTaskExecutorsTest#updateExecuteOnTaskExecutors`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.scheduling.TaskExecutors;
+import io.micronaut.scheduling.annotation.ExecuteOn;
+
+import jakarta.inject.Singleton;
+
+@Singleton
+public class GenericService {
+
+    @ExecuteOn(TaskExecutors.IO)
+    public void doSomeBlockingIOTask() {
+
+    }
+}
+```
+
+###### After
+```java
+import io.micronaut.scheduling.TaskExecutors;
+import io.micronaut.scheduling.annotation.ExecuteOn;
+
+import jakarta.inject.Singleton;
+
+@Singleton
+public class GenericService {
+
+    @ExecuteOn(TaskExecutors.BLOCKING)
+    public void doSomeBlockingIOTask() {
+
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,1 +9,1 @@
+public class GenericService {
+
+-   @ExecuteOn(TaskExecutors.IO)
++   @ExecuteOn(TaskExecutors.BLOCKING)
+    public void doSomeBlockingIOTask() {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
 
 ## Usage
 
@@ -229,10 +354,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

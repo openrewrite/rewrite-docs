@@ -17,14 +17,160 @@ _Replace String literals with `org.springframework.http.MediaType` constants._
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.ALL_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_ATOM_XML_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_CBOR_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_GRAPHQL_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_GRAPHQL_RESPONSE_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_JSON_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_PDF_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_UTF8_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_PROBLEM_XML_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_PROTOBUF_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_RSS_XML_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_NDJSON_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_STREAM_JSON_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_XHTML_XML_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.APPLICATION_XML_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.IMAGE_GIF_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.IMAGE_JPEG_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.IMAGE_PNG_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.MULTIPART_MIXED_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.MULTIPART_RELATED_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.TEXT_HTML_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.TEXT_MARKDOWN_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.TEXT_PLAIN_VALUE`
+* [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
+  * fullyQualifiedConstantName: `org.springframework.http.MediaType.TEXT_XML_VALUE`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants
+displayName: Replace String literals with `MediaType` constants
+description: |
+  Replace String literals with `org.springframework.http.MediaType` constants.
+recipeList:
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.ALL_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_ATOM_XML_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_CBOR_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_GRAPHQL_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_GRAPHQL_RESPONSE_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_JSON_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_PDF_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_UTF8_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_PROBLEM_XML_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_PROTOBUF_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_RSS_XML_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_NDJSON_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_STREAM_JSON_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_XHTML_XML_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_XML_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.IMAGE_GIF_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.IMAGE_JPEG_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.IMAGE_PNG_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.MULTIPART_MIXED_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.MULTIPART_RELATED_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.TEXT_HTML_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.TEXT_MARKDOWN_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.TEXT_PLAIN_VALUE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      fullyQualifiedConstantName: org.springframework.http.MediaType.TEXT_XML_VALUE
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
+* [Replace String literals with Spring constants](/recipes/java/spring/boot3/replacestringliteralswithconstants.md)
 
 
 ## Usage
@@ -208,10 +354,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

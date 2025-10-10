@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find annotations](./findannotations.md)
 * [Find class hierarchy](./findclasshierarchy.md)
 * [Find compile errors](./findcompileerrors.md)
+* [Find distinct methods in use](./finddistinctmethods.md)
 * [Find empty classes](./findemptyclasses.md)
 * [Find fields](./findfields.md)
 * [Find fields of type](./findfieldsoftype.md)

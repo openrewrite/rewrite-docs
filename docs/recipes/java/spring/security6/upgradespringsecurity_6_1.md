@@ -33,7 +33,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Security 6.0](../../../java/spring/security6/upgradespringsecurity_6_0)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.security`
   * artifactId: `*`
@@ -63,7 +62,6 @@ tags:
   - spring
   - security
 recipeList:
-  - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.security
       artifactId: "*"
@@ -87,7 +85,6 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
-* [Migrate to Spring Security 6.2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md)
 
 
 ## Usage
@@ -271,10 +268,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

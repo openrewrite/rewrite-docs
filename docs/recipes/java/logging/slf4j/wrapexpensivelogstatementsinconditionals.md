@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Wrap expensive log statements in conditionals"
+sidebar_label: "Optimize log statements"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Wrap expensive log statements in conditionals
+# Optimize log statements
 
 **org.openrewrite.java.logging.slf4j.WrapExpensiveLogStatementsInConditionals**
 
-_When trace, debug and info log statements use methods for constructing log messages, those methods are called regardless of whether the log level is enabled. This recipe encapsulates those log statements in an `if` statement that checks the log level before calling the log method. It then bundles surrounding log statements with the same log level into the `if` statement to improve readability of the resulting code._
+_When trace, debug and info log statements use methods for constructing log messages, those methods are called regardless of whether the log level is enabled. This recipe optimizes these statements by either wrapping them in if-statements (SLF4J 1.x) or converting them to fluent API calls (SLF4J 2.0+) to ensure expensive methods are only called when necessary._
 
 ## Recipe source
 
@@ -26,7 +26,75 @@ This recipe is used as part of the following composite recipes:
 
 * [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
 
-## Example
+## Examples
+##### Example 1
+`WrapExpensiveLogStatementsInConditionalsSlf4j2Test#convertToFluentApiWithExpensiveArgument`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.slf4j.Logger;
+
+class A {
+    void method(Logger logger) {
+        logger.info("Result: {}", calculateResult());
+        logger.info("This was {} and {}", doExpensiveOperation(), "bar");
+    }
+
+    String calculateResult() {
+        return "result";
+    }
+
+    String doExpensiveOperation() {
+        return "foo";
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+
+class A {
+    void method(Logger logger) {
+        logger.atInfo().addArgument(() -> calculateResult()).log("Result: {}");
+        logger.atInfo().addArgument(() -> doExpensiveOperation()).addArgument("bar").log("This was {} and {}");
+    }
+
+    String calculateResult() {
+        return "result";
+    }
+
+    String doExpensiveOperation() {
+        return "foo";
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+class A {
+    void method(Logger logger) {
+-       logger.info("Result: {}", calculateResult());
+-       logger.info("This was {} and {}", doExpensiveOperation(), "bar");
++       logger.atInfo().addArgument(() -> calculateResult()).log("Result: {}");
++       logger.atInfo().addArgument(() -> doExpensiveOperation()).addArgument("bar").log("This was {} and {}");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`WrapExpensiveLogStatementsInConditionalsTest#documentationExample`
 
 
 <Tabs groupId="beforeAfter">
@@ -263,10 +331,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

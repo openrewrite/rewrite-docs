@@ -25,6 +25,111 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Kafka 4.1](/recipes/kafka/migratetokafka41.md)
 
+## Examples
+##### Example 1
+`MigrateAdminListConsumerGroupsTest#migrateListConsumerGroupsNoArgs`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.kafka.clients.admin.Admin;
+import org.apache.kafka.clients.admin.ListConsumerGroupsResult;
+
+class KafkaAdminExample {
+    void listGroups(Admin adminClient) {
+        ListConsumerGroupsResult result = adminClient.listConsumerGroups();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.kafka.clients.admin.Admin;
+import org.apache.kafka.clients.admin.ListGroupsResult;
+
+class KafkaAdminExample {
+    void listGroups(Admin adminClient) {
+        ListGroupsResult result = adminClient.listGroups();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import org.apache.kafka.clients.admin.Admin;
+-import org.apache.kafka.clients.admin.ListConsumerGroupsResult;
++import org.apache.kafka.clients.admin.ListGroupsResult;
+
+@@ -6,1 +6,1 @@
+class KafkaAdminExample {
+    void listGroups(Admin adminClient) {
+-       ListConsumerGroupsResult result = adminClient.listConsumerGroups();
++       ListGroupsResult result = adminClient.listGroups();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateAdminListConsumerGroupsTest#migrateListConsumerGroupsNoArgs`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.kafka.clients.admin.Admin;
+import org.apache.kafka.clients.admin.ListConsumerGroupsResult;
+
+class KafkaAdminExample {
+    void listGroups(Admin adminClient) {
+        ListConsumerGroupsResult result = adminClient.listConsumerGroups();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.kafka.clients.admin.Admin;
+import org.apache.kafka.clients.admin.ListGroupsResult;
+
+class KafkaAdminExample {
+    void listGroups(Admin adminClient) {
+        ListGroupsResult result = adminClient.listGroups();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import org.apache.kafka.clients.admin.Admin;
+-import org.apache.kafka.clients.admin.ListConsumerGroupsResult;
++import org.apache.kafka.clients.admin.ListGroupsResult;
+
+@@ -6,1 +6,1 @@
+class KafkaAdminExample {
+    void listGroups(Admin adminClient) {
+-       ListConsumerGroupsResult result = adminClient.listConsumerGroups();
++       ListGroupsResult result = adminClient.listGroups();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -105,10 +210,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

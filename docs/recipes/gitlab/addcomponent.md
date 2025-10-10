@@ -80,17 +80,17 @@ recipeList:
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
+<TabItem value=".gitlab-ci.yml" label=".gitlab-ci.yml">
 
 
 ###### Before
-```yaml
+```yaml title=".gitlab-ci.yml"
 include:
   - template: Gradle.gitlab-ci.yml
 ```
 
 ###### After
-```yaml
+```yaml title=".gitlab-ci.yml"
 include:
   - template: Gradle.gitlab-ci.yml
   - component: $CI_SERVER_FQDN/components/opentofu/full-pipeline@0.10.0
@@ -103,6 +103,8 @@ include:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- .gitlab-ci.yml
++++ .gitlab-ci.yml
 @@ -3,0 +3,4 @@
 include:
   - template: Gradle.gitlab-ci.yml
@@ -263,10 +265,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

@@ -56,6 +56,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioinputbuffers.md)
 * [Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
+* [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
 * [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
 * [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
@@ -97,6 +98,7 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `java.util.function.Predicate`](/recipes/java/migrate/guava/preferjavautilpredicate.md)
 * [Quarkus 1.13 migration from Quarkus 1.11](/recipes/quarkus/quarkus1to1_13migration.md)
 * [Recommended Fit API becomes Assignment Recommendation API](/recipes/ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
+* [Rename Jackson 2.x methods to 3.x equivalents](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
 * [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](/recipes/java/testing/testcontainers/gethostmigration.md)
 * [Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`](/recipes/java/migrate/javaee8/servletisrequestedsessionidfromurl.md)
@@ -112,6 +114,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
 * [Replace deprecated setters in `RestTemplateBuilder`](/recipes/java/spring/boot3/replaceresttemplatebuildermethods.md)
 * [The header name for the List metadata has changed](/recipes/org/apache/camel/upgrade/camel43/kafkametadata.md)
+* [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [Upgrade to the latest Timefold Solver](/recipes/ai/timefold/solver/migration/tolatest.md)
 * [Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`](/recipes/java/migrate/concurrent/migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
@@ -282,10 +285,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

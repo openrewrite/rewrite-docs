@@ -160,6 +160,139 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
 
+## Examples
+##### Example 1
+`UpdateGradleTest#upgradeGradleWrapperAndPlugins`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id "java"
+    id "org.springframework.boot" version "2.6.15"
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="gradle/wrapper/gradle-wrapper.properties" label="gradle/wrapper/gradle-wrapper.properties">
+
+
+###### Before
+```properties title="gradle/wrapper/gradle-wrapper.properties"
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
+
+###### After
+```properties title="gradle/wrapper/gradle-wrapper.properties"
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.9.4-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionSha256Sum=3e240228538de9f18772a574e99a0ba959e83d6ef351014381acd9631781389a
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- gradle/wrapper/gradle-wrapper.properties
++++ gradle/wrapper/gradle-wrapper.properties
+@@ -3,1 +3,1 @@
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.9.4-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+@@ -6,0 +6,1 @@
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
++distributionSha256Sum=3e240228538de9f18772a574e99a0ba959e83d6ef351014381acd9631781389a
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpdateGradleTest#upgradeGradleWrapperAndPlugins`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id "java"
+    id "org.springframework.boot" version "2.6.15"
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="gradle/wrapper/gradle-wrapper.properties" label="gradle/wrapper/gradle-wrapper.properties">
+
+
+###### Before
+```properties title="gradle/wrapper/gradle-wrapper.properties"
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
+
+###### After
+```properties title="gradle/wrapper/gradle-wrapper.properties"
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.9.4-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionSha256Sum=3e240228538de9f18772a574e99a0ba959e83d6ef351014381acd9631781389a
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- gradle/wrapper/gradle-wrapper.properties
++++ gradle/wrapper/gradle-wrapper.properties
+@@ -3,1 +3,1 @@
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.9.4-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+@@ -6,0 +6,1 @@
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
++distributionSha256Sum=3e240228538de9f18772a574e99a0ba959e83d6ef351014381acd9631781389a
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -342,10 +475,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

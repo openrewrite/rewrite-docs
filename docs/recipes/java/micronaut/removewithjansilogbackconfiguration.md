@@ -54,6 +54,131 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 
+## Examples
+##### Example 1
+`RemoveWithJansiLogbackConfigurationTest#removeWithJansi`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="logback.xml" label="logback.xml">
+
+
+###### Before
+```xml title="logback.xml"
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+```
+
+###### After
+```xml title="logback.xml"
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- logback.xml
++++ logback.xml
+@@ -3,1 +3,0 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+-       <withJansi>true</withJansi>
+        <!-- encoders are assigned the type
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RemoveWithJansiLogbackConfigurationTest#removeWithJansi`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="logback.xml" label="logback.xml">
+
+
+###### Before
+```xml title="logback.xml"
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+```
+
+###### After
+```xml title="logback.xml"
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- logback.xml
++++ logback.xml
+@@ -3,1 +3,0 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+-       <withJansi>true</withJansi>
+        <!-- encoders are assigned the type
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -236,10 +361,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

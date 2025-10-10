@@ -35,11 +35,11 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="MyFirst.csproj" label="MyFirst.csproj">
 
 
 ###### Before
-```xml
+```xml title="MyFirst.csproj"
 <Project ToolsVersion="4.0" DefaultTargets="FullPublish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
@@ -52,7 +52,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ```
 
 ###### After
-```xml
+```xml title="MyFirst.csproj"
 <Project ToolsVersion="4.0" DefaultTargets="FullPublish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <!--~~(Contoso.Utility.UsefulStuff:3.6.*)~~>--><PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
@@ -68,6 +68,8 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- MyFirst.csproj
++++ MyFirst.csproj
 @@ -3,2 +3,2 @@
 <Project ToolsVersion="4.0" DefaultTargets="FullPublish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
@@ -180,10 +182,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

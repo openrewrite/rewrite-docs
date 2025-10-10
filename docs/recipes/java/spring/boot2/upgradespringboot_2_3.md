@@ -142,6 +142,287 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
 
+## Examples
+##### Example 1
+`Boot22UpgradeTest#addJavaxValidationApi`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.springframework.samples.petclinic.vet;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+public class Vet {
+    @NotEmpty
+    private String lastName;
+}
+```
+
+###### After
+```java
+package org.springframework.samples.petclinic.vet;
+
+import javax.validation.constraints.NotEmpty;
+
+public class Vet {
+    @NotEmpty
+    private String lastName;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package org.springframework.samples.petclinic.vet;
+
+-import org.hibernate.validator.constraints.NotEmpty;
++import javax.validation.constraints.NotEmpty;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.2.13.RELEASE</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.13.RELEASE</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.2.13.RELEASE</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.12.RELEASE</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+-   <version>2.2.13.RELEASE</version>
++   <version>2.3.12.RELEASE</version>
+  </parent>
+@@ -20,0 +20,4 @@
+  <dependencies>
+    <dependency>
++     <groupId>javax.validation</groupId>
++     <artifactId>validation-api</artifactId>
++   </dependency>
++   <dependency>
+      <groupId>org.springframework.boot</groupId>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`Boot22UpgradeTest#addJavaxValidationApi`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.springframework.samples.petclinic.vet;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+public class Vet {
+    @NotEmpty
+    private String lastName;
+}
+```
+
+###### After
+```java
+package org.springframework.samples.petclinic.vet;
+
+import javax.validation.constraints.NotEmpty;
+
+public class Vet {
+    @NotEmpty
+    private String lastName;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package org.springframework.samples.petclinic.vet;
+
+-import org.hibernate.validator.constraints.NotEmpty;
++import javax.validation.constraints.NotEmpty;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.2.13.RELEASE</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.13.RELEASE</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples</groupId>
+  <artifactId>spring-petclinic</artifactId>
+  <version>2.2.13.RELEASE</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.12.RELEASE</version>
+  </parent>
+  <name>petclinic</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+-   <version>2.2.13.RELEASE</version>
++   <version>2.3.12.RELEASE</version>
+  </parent>
+@@ -20,0 +20,4 @@
+  <dependencies>
+    <dependency>
++     <groupId>javax.validation</groupId>
++     <artifactId>validation-api</artifactId>
++   </dependency>
++   <dependency>
+      <groupId>org.springframework.boot</groupId>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -324,10 +605,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

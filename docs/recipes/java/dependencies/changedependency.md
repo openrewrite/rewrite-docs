@@ -61,6 +61,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Tag Libraries to 2.0 (Jakarta EE 9)](/recipes/com/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
 * [Migrate `cucumber-java8` to `cucumber-java`](/recipes/cucumber/jvm/cucumberjava8tojava.md)
 * [Migrate com.intellij:annotations to org.jetbrains:annotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
+* [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
 * [Migrate dependencies from Jackson Codehaus (legacy) to FasterXML](/recipes/java/jackson/codehaus/codehausdependencytofasterxml.md)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](/recipes/io/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
@@ -135,7 +136,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to JavaEE8](/recipes/java/migrate/javaee8-recipe.md)
 * [Migrate to New Spring Cloud Gateway Modules and Starters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
 * [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
-* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
@@ -146,16 +146,20 @@ This recipe is used as part of the following composite recipes:
 * [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](/recipes/apache/commons/io/relocateapachecommonsio.md)
+* [Replace Derby driver with Quarkus JDBC Derby](/recipes/quarkus/spring/derbydrivertoquarkus.md)
+* [Replace H2 driver with Quarkus JDBC H2](/recipes/quarkus/spring/h2drivertoquarkus.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
 * [Update Apache Commons FileUpload2 package for EE10](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
 * [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
 * [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+* [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
 * [Upgrade Struts 6.0 dependencies](/recipes/java/struts/migrate6/upgradestruts6dependencies.md)
 * [Upgrade dependencies to Spring Cloud 2022](/recipes/java/spring/cloud2022/dependencyupgrades.md)
 * [Upgrade to Cucumber-JVM 2.x](/recipes/cucumber/jvm/upgradecucumber2x.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
+* [Use Byteman JUnit 5 dependency](/recipes/java/testing/byteman/bytemanjunit4tobytemanjunit5.md)
 * [Use Jakarta Swagger Artifacts](/recipes/openapi/swagger/usejakartaswaggerartifacts.md)
 * [Use OkHttp 3 MockWebServer for JUnit 5](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
 * [Use XMLUnit Legacy for JUnit 5](/recipes/java/testing/junit5/usexmlunitlegacy.md)
@@ -384,10 +388,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

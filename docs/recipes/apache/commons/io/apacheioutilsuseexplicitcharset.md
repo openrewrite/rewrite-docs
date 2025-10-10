@@ -30,6 +30,160 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | encoding | *Optional*. The default encoding to use, must be a standard charset. | `UTF_8` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|encoding|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.io.IOUtils;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
+import java.net.URI;
+import java.net.URL;
+
+class T {
+    InputStream inputStream;
+    OutputStream outputStream;
+    Reader reader;
+    Writer writer;
+    CharSequence charSequence;
+    String someString;
+    byte[] bytes;
+    URI uri;
+    URL url;
+    char[] chars;
+    StringBuffer stringBuffer;
+
+    void flex() {
+        IOUtils.copy(inputStream, writer);
+        IOUtils.copy(reader, outputStream);
+        IOUtils.readLines(inputStream);
+        IOUtils.toByteArray(someString);
+        IOUtils.toByteArray(reader);
+        IOUtils.toCharArray(inputStream);
+        IOUtils.toInputStream(charSequence);
+        IOUtils.toInputStream("Test");
+        IOUtils.toString("Test".getBytes());
+        IOUtils.toString(inputStream);
+        IOUtils.toString(uri);
+        IOUtils.toString(url);
+        IOUtils.write(bytes, writer);
+        IOUtils.write(chars, outputStream);
+        IOUtils.write(charSequence, outputStream);
+        IOUtils.write(someString, outputStream);
+        IOUtils.write(stringBuffer, outputStream);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.commons.io.IOUtils;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
+import java.net.URI;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+
+class T {
+    InputStream inputStream;
+    OutputStream outputStream;
+    Reader reader;
+    Writer writer;
+    CharSequence charSequence;
+    String someString;
+    byte[] bytes;
+    URI uri;
+    URL url;
+    char[] chars;
+    StringBuffer stringBuffer;
+
+    void flex() {
+        IOUtils.copy(inputStream, writer, StandardCharsets.UTF_8);
+        IOUtils.copy(reader, outputStream, StandardCharsets.UTF_8);
+        IOUtils.readLines(inputStream, StandardCharsets.UTF_8);
+        someString.getBytes(StandardCharsets.UTF_8);
+        IOUtils.toByteArray(reader, StandardCharsets.UTF_8);
+        IOUtils.toCharArray(inputStream, StandardCharsets.UTF_8);
+        IOUtils.toInputStream(charSequence, StandardCharsets.UTF_8);
+        IOUtils.toInputStream("Test", StandardCharsets.UTF_8);
+        IOUtils.toString("Test".getBytes(), StandardCharsets.UTF_8);
+        IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+        IOUtils.toString(uri, StandardCharsets.UTF_8);
+        IOUtils.toString(url, StandardCharsets.UTF_8);
+        IOUtils.write(bytes, writer, StandardCharsets.UTF_8);
+        IOUtils.write(chars, outputStream, StandardCharsets.UTF_8);
+        IOUtils.write(charSequence, outputStream, StandardCharsets.UTF_8);
+        IOUtils.write(someString, outputStream, StandardCharsets.UTF_8);
+        IOUtils.write(stringBuffer, outputStream, StandardCharsets.UTF_8);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,0 +8,1 @@
+import java.net.URI;
+import java.net.URL;
++import java.nio.charset.StandardCharsets;
+
+@@ -23,17 +24,17 @@
+
+    void flex() {
+-       IOUtils.copy(inputStream, writer);
+-       IOUtils.copy(reader, outputStream);
+-       IOUtils.readLines(inputStream);
+-       IOUtils.toByteArray(someString);
+-       IOUtils.toByteArray(reader);
+-       IOUtils.toCharArray(inputStream);
+-       IOUtils.toInputStream(charSequence);
+-       IOUtils.toInputStream("Test");
+-       IOUtils.toString("Test".getBytes());
+-       IOUtils.toString(inputStream);
+-       IOUtils.toString(uri);
+-       IOUtils.toString(url);
+-       IOUtils.write(bytes, writer);
+-       IOUtils.write(chars, outputStream);
+-       IOUtils.write(charSequence, outputStream);
+-       IOUtils.write(someString, outputStream);
+-       IOUtils.write(stringBuffer, outputStream);
++       IOUtils.copy(inputStream, writer, StandardCharsets.UTF_8);
++       IOUtils.copy(reader, outputStream, StandardCharsets.UTF_8);
++       IOUtils.readLines(inputStream, StandardCharsets.UTF_8);
++       someString.getBytes(StandardCharsets.UTF_8);
++       IOUtils.toByteArray(reader, StandardCharsets.UTF_8);
++       IOUtils.toCharArray(inputStream, StandardCharsets.UTF_8);
++       IOUtils.toInputStream(charSequence, StandardCharsets.UTF_8);
++       IOUtils.toInputStream("Test", StandardCharsets.UTF_8);
++       IOUtils.toString("Test".getBytes(), StandardCharsets.UTF_8);
++       IOUtils.toString(inputStream, StandardCharsets.UTF_8);
++       IOUtils.toString(uri, StandardCharsets.UTF_8);
++       IOUtils.toString(url, StandardCharsets.UTF_8);
++       IOUtils.write(bytes, writer, StandardCharsets.UTF_8);
++       IOUtils.write(chars, outputStream, StandardCharsets.UTF_8);
++       IOUtils.write(charSequence, outputStream, StandardCharsets.UTF_8);
++       IOUtils.write(someString, outputStream, StandardCharsets.UTF_8);
++       IOUtils.write(stringBuffer, outputStream, StandardCharsets.UTF_8);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -212,10 +366,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

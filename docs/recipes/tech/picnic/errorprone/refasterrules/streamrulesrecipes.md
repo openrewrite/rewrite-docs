@@ -29,7 +29,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `StreamRules.Joining`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$joiningrecipe)
-* [Refaster template `StreamRules.EmptyStream`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$emptystreamrecipe)
 * [Refaster template `StreamRules.StreamOfNullable`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamofnullablerecipe)
 * [Refaster template `StreamRules.ConcatOneStream`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$concatonestreamrecipe)
 * [Refaster template `StreamRules.ConcatTwoStreams`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$concattwostreamsrecipe)
@@ -59,6 +58,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `StreamRules.StreamOf3`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamof3recipe)
 * [Refaster template `StreamRules.StreamOf4`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamof4recipe)
 * [Refaster template `StreamRules.StreamOf5`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamof5recipe)
+* [Refaster template `StreamRules.StreamsStream`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamsstreamrecipe)
+* [Refaster template `StreamRules.CollectionParallelStream`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$collectionparallelstreamrecipe)
 
 </TabItem>
 
@@ -73,7 +74,6 @@ description: |
   Refaster rules related to expressions dealing with `Stream`s. [Source](https://error-prone.picnic.tech/refasterrules/StreamRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$JoiningRecipe
-  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$EmptyStreamRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOfNullableRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$ConcatOneStreamRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$ConcatTwoStreamsRecipe
@@ -103,6 +103,8 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOf3Recipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOf4Recipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOf5Recipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamsStreamRecipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$CollectionParallelStreamRecipe
 
 ```
 </TabItem>
@@ -296,10 +298,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
