@@ -26,6 +26,101 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package abc;
+import org.springframework.jdbc.core.JdbcTemplate;
+import java.util.List;
+
+public class MyDao {
+
+    final JdbcTemplate jdbcTemplate;
+
+    public MyDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public User getUser(String first, String last) {
+        Object[] args = new Object[]{first, last};
+        return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", args, User.class);
+    }
+
+    public User getUser2(String first, String last) {
+        Object[] args = new Object[]{first, last};
+         return jdbcTemplate.queryForObject("", args, (resultSet, i) -> {
+            User user = new User();
+            user.setName(resultSet.getString("NAME"));
+            user.setAge(resultSet.getInt("AGE"));
+            return user;
+        });
+    }
+}
+```
+
+###### After
+```java
+package abc;
+import org.springframework.jdbc.core.JdbcTemplate;
+import java.util.List;
+
+public class MyDao {
+
+    final JdbcTemplate jdbcTemplate;
+
+    public MyDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public User getUser(String first, String last) {
+        Object[] args = new Object[]{first, last};
+        return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", User.class, args);
+    }
+
+    public User getUser2(String first, String last) {
+        Object[] args = new Object[]{first, last};
+         return jdbcTemplate.queryForObject("", (resultSet, i) -> {
+            User user = new User();
+            user.setName(resultSet.getString("NAME"));
+            user.setAge(resultSet.getInt("AGE"));
+            return user;
+        }, args);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -15,1 +15,1 @@
+    public User getUser(String first, String last) {
+        Object[] args = new Object[]{first, last};
+-       return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", args, User.class);
++       return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", User.class, args);
+    }
+@@ -20,1 +20,1 @@
+    public User getUser2(String first, String last) {
+        Object[] args = new Object[]{first, last};
+-        return jdbcTemplate.queryForObject("", args, (resultSet, i) -> {
++        return jdbcTemplate.queryForObject("", (resultSet, i) -> {
+            User user = new User();
+@@ -25,1 +25,1 @@
+            user.setAge(resultSet.getInt("AGE"));
+            return user;
+-       });
++       }, args);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -208,10 +303,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

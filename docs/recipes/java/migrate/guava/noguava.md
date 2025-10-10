@@ -133,6 +133,55 @@ recipeList:
 </Tabs>
 ## Examples
 ##### Example 1
+`NoGuavaJava21Test#preferMathClampForDouble`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.primitives.Doubles;
+
+class Test {
+    public double testMethod() {
+        return Doubles.constrainToRange(20D, 10D, 100D);
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    public double testMethod() {
+        return Math.clamp(20D, 10D, 100D);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import com.google.common.primitives.Doubles;
+-
+class Test {
+@@ -5,1 +3,1 @@
+class Test {
+    public double testMethod() {
+-       return Doubles.constrainToRange(20D, 10D, 100D);
++       return Math.clamp(20D, 10D, 100D);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaTest#moreObjectsFirstNonNullToObjectsRequireNonNullElse`
 
 
 <Tabs groupId="beforeAfter">
@@ -181,7 +230,8 @@ class A {
 
 ---
 
-##### Example 2
+##### Example 3
+`PreferJavaUtilOptionalTest#absentToEmpty`
 
 
 <Tabs groupId="beforeAfter">
@@ -230,7 +280,8 @@ class A {
 
 ---
 
-##### Example 3
+##### Example 4
+`NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 
 <Tabs groupId="beforeAfter">
@@ -287,7 +338,56 @@ class A {
 
 ---
 
-##### Example 4
+##### Example 5
+`NoGuavaJava21Test#preferMathClampForDouble`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.primitives.Doubles;
+
+class Test {
+    public double testMethod() {
+        return Doubles.constrainToRange(20D, 10D, 100D);
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    public double testMethod() {
+        return Math.clamp(20D, 10D, 100D);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import com.google.common.primitives.Doubles;
+-
+class Test {
+@@ -5,1 +3,1 @@
+class Test {
+    public double testMethod() {
+-       return Doubles.constrainToRange(20D, 10D, 100D);
++       return Math.clamp(20D, 10D, 100D);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+`NoGuavaTest#moreObjectsFirstNonNullToObjectsRequireNonNullElse`
 
 
 <Tabs groupId="beforeAfter">
@@ -336,7 +436,8 @@ class A {
 
 ---
 
-##### Example 5
+##### Example 7
+`PreferJavaUtilOptionalTest#absentToEmpty`
 
 
 <Tabs groupId="beforeAfter">
@@ -385,7 +486,8 @@ class A {
 
 ---
 
-##### Example 6
+##### Example 8
+`NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 
 <Tabs groupId="beforeAfter">
@@ -622,10 +724,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

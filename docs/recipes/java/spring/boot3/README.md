@@ -28,6 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Relocate Launcher Classes](./relocatelauncherclasses.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
 * [Replace `@MockBean` and `@SpyBean`](./replacemockbeanandspybean.md)
+* [Replace String literals with Spring constants](./replacestringliteralswithconstants.md)
 * [Replace deprecated setters in `RestTemplateBuilder`](./replaceresttemplatebuildermethods.md)
 * [Spring Boot 3.3 best practices (only)](./springboot3bestpracticesonly.md)
 * [Spring Boot 3.5 best practices](./springboot3bestpractices.md)
@@ -79,5 +80,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade MyBatis to Spring Boot 2.0](./upgrademybatistospringboot_2_0.md)
 * [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](./upgradespringcloudawstospringboot_3_4.md)
 * [Use `kafkaAwareTransactionManager` setter](./replacekafkatransactionmanagersetter.md)
+* [Use `spring.reactor.context-propagation` property](./migratehookstoreactorcontextproperty.md)
 
 

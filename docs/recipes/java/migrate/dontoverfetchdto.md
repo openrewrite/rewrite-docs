@@ -26,6 +26,78 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | dtoType | The fully qualified name of the DTO. | `animals.Dog` |
 | `String` | dtoDataElement | Replace the DTO as a method parameter when only this data element is used. | `name` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|dtoType|`animals.Dog`|
+|dtoDataElement|`name`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import animals.Dog;
+
+class Test {
+    boolean test(Dog dog, int age) {
+        if(dog.getName() != null) {
+            return true;
+        }
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    boolean test(java.lang.String name, int age) {
+        if(name != null) {
+            return true;
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import animals.Dog;
+-
+class Test {
+@@ -4,2 +2,2 @@
+
+class Test {
+-   boolean test(Dog dog, int age) {
+-       if(dog.getName() != null) {
++   boolean test(java.lang.String name, int age) {
++       if(name != null) {
+            return true;
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+package animals;
+public class Dog {
+    String name;
+    String breed;
+    public String getName() {
+        return name;
+    }
+    public String getBreed() {
+        return breed;
+    }
+}
+```
+
 
 ## Usage
 
@@ -173,10 +245,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

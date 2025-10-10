@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.github.SetupPythonToUv**
 
-_Replace `actions/setup-python` action with `astral-sh/setup-uv` action for faster Python environment setup and dependency management.  **Benefits of UV:** - Significantly faster package installation and environment setup - Built-in dependency resolution and locking - Integrated caching for improved CI performance - Drop-in replacement for pip workflows  **Transformations applied:** - `actions/setup-python@v5` → `astral-sh/setup-uv@v6` - `cache: 'pip'` → `enable-cache: 'true'` - `pip install -r requirements.txt` → `uv sync` (configurable strategy) - `python -m <module>` → `uv run <module>` - Removes unnecessary `pip install --upgrade pip` steps  **Sync strategies:** - `basic`: Basic synchronization (`uv sync`) - `locked`: Use locked dependencies (`uv sync --locked`) - `full`: Install all extras and dev dependencies (`uv sync --all-extras --dev`)  See the [UV GitHub integration guide](https://docs.astral.sh/uv/guides/integration/github/) for more details._
+_Replace `actions/setup-python` action with `astral-sh/setup-uv` action for faster Python environment setup and dependency management.  **Benefits of UV:**  - Significantly faster package installation and environment setup  - Built-in dependency resolution and locking  - Integrated caching for improved CI performance  - Drop-in replacement for pip workflows  **Transformations applied:**  - `actions/setup-python@v5` → `astral-sh/setup-uv@v6`  - `cache: 'pip'` → `enable-cache: 'true'`  - `pip install -r requirements.txt` → `uv sync` (configurable strategy)  - `python -m <module>` → `uv run <module>`  - Removes unnecessary `pip install --upgrade pip` steps  **Sync strategies:**  - `basic`: Basic synchronization (`uv sync`)  - `locked`: Use locked dependencies (`uv sync --locked`)  - `full`: Install all extras and dev dependencies (`uv sync --all-extras --dev`)  See the [UV GitHub integration guide](https://docs.astral.sh/uv/guides/integration/github/) for more details._
 
 ## Recipe source
 
@@ -32,6 +32,81 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 When disabled, only the action itself is replaced. Defaults to `true`. | `true` |
 | `Boolean` | enableCache | *Optional*. Whether to automatically convert `cache: 'pip'` to `enable-cache: 'true'` for UV's built-in caching. When disabled, cache settings are left unchanged. Defaults to `true`. | `true` |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|uvVersion|`null`|
+|syncStrategy|`null`|
+|transformPipCommands|`null`|
+|enableCache|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value=".github/workflows/test.yml" label=".github/workflows/test.yml">
+
+
+###### Before
+```yaml title=".github/workflows/test.yml"
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python -m pytest
+```
+
+###### After
+```yaml title=".github/workflows/test.yml"
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.11'
+      - run: uv sync
+      - run: uv run pytest
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- .github/workflows/test.yml
++++ .github/workflows/test.yml
+@@ -10,1 +10,1 @@
+    steps:
+      - uses: actions/checkout@v4
+-     - uses: actions/setup-python@v5
++     - uses: astral-sh/setup-uv@v6
+        with:
+@@ -13,2 +13,2 @@
+        with:
+          python-version: '3.11'
+-     - run: pip install -r requirements.txt
+-     - run: python -m pytest
++     - run: uv sync
++     - run: uv run pytest
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -215,10 +290,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

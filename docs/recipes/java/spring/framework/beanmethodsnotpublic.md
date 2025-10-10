@@ -26,6 +26,103 @@ This recipe is used as part of the following composite recipes:
 
 * [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import a.b.c.DataSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
+
+public class DatabaseConfiguration {
+
+    // primary comments
+    @Primary
+    @Bean
+    public DataSource dataSource() {
+        return new DataSource();
+    }
+
+    @Bean // comments
+    public final DataSource dataSource2() {
+        return new DataSource();
+    }
+
+    @Bean
+    // comments
+    public static DataSource dataSource3() {
+        return new DataSource();
+    }
+}
+```
+
+###### After
+```java
+import a.b.c.DataSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
+
+public class DatabaseConfiguration {
+
+    // primary comments
+    @Primary
+    @Bean
+    DataSource dataSource() {
+        return new DataSource();
+    }
+
+    @Bean // comments
+    final DataSource dataSource2() {
+        return new DataSource();
+    }
+
+    @Bean // comments
+    static DataSource dataSource3() {
+        return new DataSource();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,1 +10,1 @@
+    @Primary
+    @Bean
+-   public DataSource dataSource() {
++   DataSource dataSource() {
+        return new DataSource();
+@@ -15,1 +15,1 @@
+
+    @Bean // comments
+-   public final DataSource dataSource2() {
++   final DataSource dataSource2() {
+        return new DataSource();
+@@ -19,3 +19,2 @@
+    }
+
+-   @Bean
+-   // comments
+-   public static DataSource dataSource3() {
++   @Bean // comments
++   static DataSource dataSource3() {
+        return new DataSource();
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+package a.b.c;
+public class DataSource {}
+```
+
 
 ## Usage
 
@@ -208,10 +305,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

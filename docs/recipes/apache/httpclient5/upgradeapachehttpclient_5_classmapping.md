@@ -35,6 +35,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.CloseableHttpResponse`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.classic.CloseableHttpResponse`
 * [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpEntityEnclosingRequestBase`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase`
+* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpRequestBase`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase`
 * [Rename package name](../../java/changepackage)
@@ -264,6 +267,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.config.SocketConfig.Builder`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.SocketConfig.Builder`
 * [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.http.impl.nio.client`
+  * newPackageName: `org.apache.hc.client5.http.impl.async`
+* [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.impl`
   * newPackageName: `org.apache.hc.core5.http.impl.io`
 * [Change type](../../java/changetype)
@@ -444,6 +450,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.CloseableHttpResponse
       newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.classic.CloseableHttpResponse
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpEntityEnclosingRequestBase
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpRequestBase
       newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase
@@ -673,6 +682,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.config.SocketConfig.Builder
       newFullyQualifiedTypeName: org.apache.hc.core5.http.io.SocketConfig.Builder
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.http.impl.nio.client
+      newPackageName: org.apache.hc.client5.http.impl.async
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.impl
       newPackageName: org.apache.hc.core5.http.impl.io
@@ -1028,10 +1040,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.assertj.core.util.CheckReturnValue`
   * newFullyQualifiedTypeName: `org.assertj.core.annotation.CheckReturnValue`
 * [Migrate Hamcrest assertions to AssertJ](../../../java/testing/hamcrest/migratehamcresttoassertj)
+* [Migrate Google Truth to AssertJ](../../../java/testing/truth/migratetruthtoassertj)
 * [Migrate Fest 2.x to AssertJ](../../../java/testing/assertj/festtoassertj)
 * [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj)
 * [Migrate TestNG assertions to AssertJ](../../../java/testing/testng/testngtoassertj)
@@ -105,6 +106,7 @@ recipeList:
       oldFullyQualifiedTypeName: org.assertj.core.util.CheckReturnValue
       newFullyQualifiedTypeName: org.assertj.core.annotation.CheckReturnValue
   - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ
+  - org.openrewrite.java.testing.truth.MigrateTruthToAssertJ
   - org.openrewrite.java.testing.assertj.FestToAssertj
   - org.openrewrite.java.testing.assertj.JUnitToAssertj
   - org.openrewrite.java.testing.testng.TestNgToAssertj
@@ -147,6 +149,7 @@ recipeList:
 </Tabs>
 ## Examples
 ##### Example 1
+`AssertJBestPracticesTest#convertsIsEqualToEmptyString`
 
 
 <Tabs groupId="beforeAfter">
@@ -190,6 +193,7 @@ class Test {
 ---
 
 ##### Example 2
+`TestNgToAssertJTest#failWithMessage`
 
 
 <Tabs groupId="beforeAfter">
@@ -237,6 +241,7 @@ class Test {
 ---
 
 ##### Example 3
+`AssertJBestPracticesTest#convertsIsEqualToEmptyString`
 
 
 <Tabs groupId="beforeAfter">
@@ -280,6 +285,7 @@ class Test {
 ---
 
 ##### Example 4
+`TestNgToAssertJTest#failWithMessage`
 
 
 <Tabs groupId="beforeAfter">
@@ -506,10 +512,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

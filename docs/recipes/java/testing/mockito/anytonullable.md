@@ -26,6 +26,89 @@ This recipe is used as part of the following composite recipes:
 
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 
+## Example
+
+
+###### Unchanged
+```java
+class Example {
+    String greet(Object obj) {
+        return "Hello " + obj;
+    }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.any;
+
+class MyTest {
+     void test() {
+        Example example = mock(Example.class);
+        when(example.greet(any(Object.class))).thenReturn("Hello world");
+     }
+}
+```
+
+###### After
+```java
+import static org.mockito.ArgumentMatchers.nullable;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+class MyTest {
+     void test() {
+        Example example = mock(Example.class);
+        when(example.greet(nullable(Object.class))).thenReturn("Hello world");
+     }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,1 @@
++import static org.mockito.ArgumentMatchers.nullable;
+import static org.mockito.Mockito.mock;
+@@ -3,1 +4,0 @@
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+-import static org.mockito.Mockito.any;
+
+@@ -8,1 +8,1 @@
+     void test() {
+        Example example = mock(Example.class);
+-       when(example.greet(any(Object.class))).thenReturn("Hello world");
++       when(example.greet(nullable(Object.class))).thenReturn("Hello world");
+     }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>foo</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
 
 ## Usage
 
@@ -208,10 +291,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

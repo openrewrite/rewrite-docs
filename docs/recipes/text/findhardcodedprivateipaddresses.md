@@ -22,11 +22,11 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+<TabItem value="src/main/java/A.java" label="src/main/java/A.java">
 
 
 ###### Before
-```java
+```java title="src/main/java/A.java"
 class Test {
     void ipTest() {
         String privateAddress1 = "10.10.20.20";
@@ -47,7 +47,7 @@ class Test {
 ```
 
 ###### After
-```java
+```java title="src/main/java/A.java"
 class Test {
     void ipTest() {
         String privateAddress1 = "~~>10.10.20.20";
@@ -71,6 +71,8 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/java/A.java
++++ src/main/java/A.java
 @@ -3,3 +3,3 @@
 class Test {
     void ipTest() {
@@ -190,10 +192,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

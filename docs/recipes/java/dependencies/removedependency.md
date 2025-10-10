@@ -39,6 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+* [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
 * [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
 * [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
@@ -49,12 +50,43 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
+* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 * [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Remove JavaEE dependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](/recipes/java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot.md)
 * [Remove unnecessary dependencies](/recipes/java/micronaut/removeunnecessarydependencies.md)
+* [Replace Derby test driver with Quarkus JDBC Derby (test scope)](/recipes/quarkus/spring/derbytestdrivertoquarkus.md)
+* [Replace H2 test driver with Quarkus JDBC H2 (test scope)](/recipes/quarkus/spring/h2testdrivertoquarkus.md)
 * [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Replace Spring Boot AMQP with Quarkus Messaging AMQP](/recipes/quarkus/spring/springbootamqptoquarkusreactive.md)
+* [Replace Spring Boot AMQP with Quarkus Messaging RabbitMQ](/recipes/quarkus/spring/springbootamqptoquarkusclassic.md)
+* [Replace Spring Boot ActiveMQ with Quarkus Artemis JMS](/recipes/quarkus/spring/springbootactivemqtoquarkus.md)
+* [Replace Spring Boot Actuator with Quarkus SmallRye Health](/recipes/quarkus/spring/springbootactuatortoquarkus.md)
+* [Replace Spring Boot Artemis with Quarkus Artemis JMS](/recipes/quarkus/spring/springbootartemistoquarkus.md)
+* [Replace Spring Boot Batch with Quarkus Scheduler](/recipes/quarkus/spring/springbootbatchtoquarkus.md)
+* [Replace Spring Boot Cache with Quarkus Cache](/recipes/quarkus/spring/springbootcachetoquarkus.md)
+* [Replace Spring Boot Data JPA with Quarkus Hibernate ORM Panache](/recipes/quarkus/spring/springbootdatajpatoquarkus.md)
+* [Replace Spring Boot Data MongoDB with Quarkus MongoDB Panache](/recipes/quarkus/spring/springbootdatamongotoquarkus.md)
+* [Replace Spring Boot Data REST with Quarkus REST](/recipes/quarkus/spring/springbootdataresttoquarkus.md)
+* [Replace Spring Boot Data Redis with Quarkus Redis Client](/recipes/quarkus/spring/springbootdataredistoquarkus.md)
+* [Replace Spring Boot Elasticsearch with Quarkus Elasticsearch REST Client](/recipes/quarkus/spring/springbootelasticsearchtoquarkus.md)
+* [Replace Spring Boot Integration with Camel Quarkus](/recipes/quarkus/spring/springbootintegrationtoquarkus.md)
+* [Replace Spring Boot JDBC with Quarkus Agroal](/recipes/quarkus/spring/springbootjdbctoquarkus.md)
+* [Replace Spring Boot Mail with Quarkus Mailer](/recipes/quarkus/spring/springbootmailtoquarkus.md)
+* [Replace Spring Boot OAuth2 Client with Quarkus OIDC Client](/recipes/quarkus/spring/springbootoauth2clienttoquarkus.md)
+* [Replace Spring Boot OAuth2 Resource Server with Quarkus OIDC](/recipes/quarkus/spring/springbootoauth2resourceservertoquarkus.md)
+* [Replace Spring Boot Quartz with Quarkus Quartz](/recipes/quarkus/spring/springbootquartztoquarkus.md)
+* [Replace Spring Boot Security with Quarkus Security](/recipes/quarkus/spring/springbootsecuritytoquarkus.md)
+* [Replace Spring Boot Test with Quarkus JUnit 5](/recipes/quarkus/spring/springboottesttoquarkus.md)
+* [Replace Spring Boot Thymeleaf with Quarkus Qute](/recipes/quarkus/spring/springbootthymeleaftoquarkus.md)
+* [Replace Spring Boot Validation with Quarkus Hibernate Validator](/recipes/quarkus/spring/springbootvalidationtoquarkus.md)
+* [Replace Spring Boot Web with Quarkus RESTEasy Classic](/recipes/quarkus/spring/springbootwebtoquarkusclassic.md)
+* [Replace Spring Boot Web with Quarkus REST](/recipes/quarkus/spring/springbootwebtoquarkusreactive.md)
+* [Replace Spring Boot WebFlux with Quarkus REST Client](/recipes/quarkus/spring/springbootwebfluxtoquarkusreactive.md)
+* [Replace Spring Boot WebSocket with Quarkus WebSockets](/recipes/quarkus/spring/springbootwebsockettoquarkus.md)
+* [Replace Spring Kafka with Quarkus Kafka Client](/recipes/quarkus/spring/springkafkatoquarkusclassic.md)
+* [Replace Spring Kafka with Quarkus Messaging Kafka](/recipes/quarkus/spring/springkafkatoquarkusreactive.md)
 * [Replace SpringFox Dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
 * [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
 * [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
@@ -279,10 +311,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

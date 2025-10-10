@@ -35,11 +35,11 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="packages.config" label="packages.config">
 
 
 ###### Before
-```xml
+```xml title="packages.config"
 <?xml version="1.0" encoding="utf-8"?>
 <packages>
   <package id="Microsoft.Web.Xdt" version="2.1.1" targetFramework="net46" />
@@ -48,7 +48,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ```
 
 ###### After
-```xml
+```xml title="packages.config"
 <?xml version="1.0" encoding="utf-8"?>
 <packages>
   <package id="Microsoft.Web.Xdt" version="2.1.2" targetFramework="net46" />
@@ -60,6 +60,8 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- packages.config
++++ packages.config
 @@ -3,1 +3,1 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packages>
@@ -162,10 +164,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

@@ -119,6 +119,24 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.dependencies.table.DependencyUsageEvidence" label="DependencyUsageEvidence">
+
+### Dependency usage evidence
+**org.openrewrite.java.dependencies.table.DependencyUsageEvidence**
+
+_Evidence showing that a dependency is in use in the project._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Evidence | The evidence showing this dependency is in use (e.g., a type name, property value, or transitive dependency). |
+| Evidence type | The type of evidence: 'Type usage', 'Property/YAML reference', or 'Transitive dependency'. |
+| Source path | The path to the source file where the evidence was found. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -165,10 +183,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

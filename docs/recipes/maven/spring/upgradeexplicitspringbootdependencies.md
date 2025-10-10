@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Parameter | Value |
 | -- | -- |
 |fromVersion|`2.7.X`|
-|toVersion|`3.0.0-M3`|
+|toVersion|`3.0.0`|
 
 
 <Tabs groupId="beforeAfter">
@@ -45,15 +45,6 @@ This recipe is available under the [Moderne Source Available License](https://do
     <groupId>com.example</groupId>
     <artifactId>explicit-deps-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -76,25 +67,16 @@ This recipe is available under the [Moderne Source Available License](https://do
     <groupId>com.example</groupId>
     <artifactId>explicit-deps-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.0.0-M3</version>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.0.0-M3</version>
+            <version>3.0.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -107,17 +89,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -18,1 +18,1 @@
+@@ -9,1 +9,1 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
 -           <version>2.7.3</version>
-+           <version>3.0.0-M3</version>
++           <version>3.0.0</version>
         </dependency>
-@@ -23,1 +23,1 @@
+@@ -14,1 +14,1 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
 -           <version>2.7.3</version>
-+           <version>3.0.0-M3</version>
++           <version>3.0.0</version>
             <scope>test</scope>
 ```
 </TabItem>
@@ -247,10 +229,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

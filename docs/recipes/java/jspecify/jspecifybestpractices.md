@@ -61,14 +61,15 @@ recipeList:
 </Tabs>
 ## Examples
 ##### Example 1
+`JSpecifyBestPracticesTest#migrateFromJavaxAnnotationApiToJspecify`
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+<TabItem value="src/main/java/org/openrewrite/example/package-info.java" label="src/main/java/org/openrewrite/example/package-info.java">
 
 
 ###### Before
-```java
+```java title="src/main/java/org/openrewrite/example/package-info.java"
 @ParametersAreNonnullByDefault
 package org.openrewrite.example;
 
@@ -76,7 +77,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 ```
 
 ###### After
-```java
+```java title="src/main/java/org/openrewrite/example/package-info.java"
 @NullMarked
 package org.openrewrite.example;
 
@@ -87,6 +88,8 @@ import org.jspecify.annotations.NullMarked;
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/java/org/openrewrite/example/package-info.java
++++ src/main/java/org/openrewrite/example/package-info.java
 @@ -1,1 +1,1 @@
 -@ParametersAreNonnullByDefault
 +@NullMarked
@@ -253,14 +256,15 @@ foo
 ---
 
 ##### Example 2
+`JSpecifyBestPracticesTest#migrateFromJavaxAnnotationApiToJspecify`
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+<TabItem value="src/main/java/org/openrewrite/example/package-info.java" label="src/main/java/org/openrewrite/example/package-info.java">
 
 
 ###### Before
-```java
+```java title="src/main/java/org/openrewrite/example/package-info.java"
 @ParametersAreNonnullByDefault
 package org.openrewrite.example;
 
@@ -268,7 +272,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 ```
 
 ###### After
-```java
+```java title="src/main/java/org/openrewrite/example/package-info.java"
 @NullMarked
 package org.openrewrite.example;
 
@@ -279,6 +283,8 @@ import org.jspecify.annotations.NullMarked;
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/java/org/openrewrite/example/package-info.java
++++ src/main/java/org/openrewrite/example/package-info.java
 @@ -1,1 +1,1 @@
 -@ParametersAreNonnullByDefault
 +@NullMarked
@@ -624,10 +630,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

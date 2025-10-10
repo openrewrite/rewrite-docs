@@ -33,22 +33,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `PrimitiveRules.GreaterThan`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe)
 * [Refaster template `PrimitiveRules.GreaterThanOrEqualTo`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe)
 * [Refaster template `PrimitiveRules.LongToIntExact`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtointexactrecipe)
-* [Refaster template `PrimitiveRules.BooleanHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$booleanhashcoderecipe)
-* [Refaster template `PrimitiveRules.ByteHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$bytehashcoderecipe)
-* [Refaster template `PrimitiveRules.CharacterHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$characterhashcoderecipe)
-* [Refaster template `PrimitiveRules.ShortHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shorthashcoderecipe)
-* [Refaster template `PrimitiveRules.IntegerHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerhashcoderecipe)
-* [Refaster template `PrimitiveRules.LongHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longhashcoderecipe)
-* [Refaster template `PrimitiveRules.FloatHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floathashcoderecipe)
-* [Refaster template `PrimitiveRules.DoubleHashCode`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doublehashcoderecipe)
 * [Refaster template `PrimitiveRules.CharacterBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$characterbytesrecipe)
 * [Refaster template `PrimitiveRules.ShortBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shortbytesrecipe)
 * [Refaster template `PrimitiveRules.IntegerBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerbytesrecipe)
 * [Refaster template `PrimitiveRules.LongBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longbytesrecipe)
 * [Refaster template `PrimitiveRules.FloatBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floatbytesrecipe)
 * [Refaster template `PrimitiveRules.DoubleBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doublebytesrecipe)
-* [Refaster template `PrimitiveRules.FloatIsFinite`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floatisfiniterecipe)
-* [Refaster template `PrimitiveRules.DoubleIsFinite`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doubleisfiniterecipe)
 * [Refaster template `PrimitiveRules.IntegerSignumIsPositive`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integersignumispositiverecipe)
 * [Refaster template `PrimitiveRules.IntegerSignumIsNegative`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integersignumisnegativerecipe)
 * [Refaster template `PrimitiveRules.LongSignumIsPositive`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longsignumispositiverecipe)
@@ -88,22 +78,12 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanOrEqualToRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToIntExactRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$BooleanHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ByteHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleHashCodeRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleBytesRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatIsFiniteRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleIsFiniteRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsPositiveRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsNegativeRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongSignumIsPositiveRecipe
@@ -318,10 +298,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

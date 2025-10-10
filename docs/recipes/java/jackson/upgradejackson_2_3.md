@@ -70,55 +70,7 @@ recipeList:
 </Tabs>
 ## Examples
 ##### Example 1
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.fasterxml.jackson.core.JsonGenerator;
-
-class Test {
-    void test(JsonGenerator gen, Object value) throws Exception {
-        gen.writeObject(value);
-    }
-}
-```
-
-###### After
-```java
-import tools.jackson.core.JsonGenerator;
-
-class Test {
-    void test(JsonGenerator gen, Object value) throws Exception {
-        gen.writePOJO(value);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import com.fasterxml.jackson.core.JsonGenerator;
-+import tools.jackson.core.JsonGenerator;
-
-@@ -5,1 +5,1 @@
-class Test {
-    void test(JsonGenerator gen, Object value) throws Exception {
--       gen.writeObject(value);
-+       gen.writePOJO(value);
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
+`Jackson3DependenciesTest#jacksonAnnotations`
 
 
 <Tabs groupId="beforeAfter">
@@ -177,7 +129,58 @@ class Test {
 
 ---
 
+##### Example 2
+`Jackson3MethodRenamesTest#jsonGeneratorWriteObject`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writeObject(value);
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writePOJO(value);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.core.JsonGenerator;
++import tools.jackson.core.JsonGenerator;
+
+@@ -5,1 +5,1 @@
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+-       gen.writeObject(value);
++       gen.writePOJO(value);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
 ##### Example 3
+`Jackson3TypeChangesTest#jsonFactory`
 
 
 <Tabs groupId="beforeAfter">
@@ -223,6 +226,7 @@ class Test {
 ---
 
 ##### Example 4
+`UpgradeJackson_2_3Test#jacksonUpgradeToVersion3`
 
 
 <Tabs groupId="beforeAfter">
@@ -335,55 +339,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 ---
 
 ##### Example 5
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.fasterxml.jackson.core.JsonGenerator;
-
-class Test {
-    void test(JsonGenerator gen, Object value) throws Exception {
-        gen.writeObject(value);
-    }
-}
-```
-
-###### After
-```java
-import tools.jackson.core.JsonGenerator;
-
-class Test {
-    void test(JsonGenerator gen, Object value) throws Exception {
-        gen.writePOJO(value);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import com.fasterxml.jackson.core.JsonGenerator;
-+import tools.jackson.core.JsonGenerator;
-
-@@ -5,1 +5,1 @@
-class Test {
-    void test(JsonGenerator gen, Object value) throws Exception {
--       gen.writeObject(value);
-+       gen.writePOJO(value);
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 6
+`Jackson3DependenciesTest#jacksonAnnotations`
 
 
 <Tabs groupId="beforeAfter">
@@ -442,7 +398,58 @@ class Test {
 
 ---
 
+##### Example 6
+`Jackson3MethodRenamesTest#jsonGeneratorWriteObject`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writeObject(value);
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.core.JsonGenerator;
+
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+        gen.writePOJO(value);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.core.JsonGenerator;
++import tools.jackson.core.JsonGenerator;
+
+@@ -5,1 +5,1 @@
+class Test {
+    void test(JsonGenerator gen, Object value) throws Exception {
+-       gen.writeObject(value);
++       gen.writePOJO(value);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
 ##### Example 7
+`Jackson3TypeChangesTest#jsonFactory`
 
 
 <Tabs groupId="beforeAfter">
@@ -488,6 +495,7 @@ class Test {
 ---
 
 ##### Example 8
+`UpgradeJackson_2_3Test#jacksonUpgradeToVersion3`
 
 
 <Tabs groupId="beforeAfter">
@@ -779,10 +787,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

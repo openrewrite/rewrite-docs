@@ -88,101 +88,36 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`Java8toJava11Test#needToJaxb2MavenPlugin`
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
+###### Unchanged
+```mavenProject
+project
+```
 
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
-  <properties>
-    <wro4j.version>1.8.0</wro4j.version>
-  </properties>
   <build>
     <plugins>
       <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.3.1</version>
       </plugin>
     </plugins>
   </build>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <properties>
-    <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -6,1 +6,1 @@
-  <version>1</version>
-  <properties>
--   <wro4j.version>1.8.0</wro4j.version>
-+   <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-```
-</TabItem>
-</Tabs>
 
 ---
 
 ##### Example 2
-
-
-###### Unchanged
-```mavenProject
-project
-```
-
-###### Unchanged
-```xml title="pom.xml"
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>2.3.1</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
----
-
-##### Example 3
+`UpgradeWro4jMavenPluginVersionTest#v1OnJava11`
 
 
 <Tabs groupId="beforeAfter">
@@ -249,7 +184,8 @@ project
 
 ---
 
-##### Example 4
+##### Example 3
+`Java8toJava11Test#needToJaxb2MavenPlugin`
 
 
 ###### Unchanged
@@ -274,6 +210,74 @@ project
   </build>
 </project>
 ```
+
+---
+
+##### Example 4
+`UpgradeWro4jMavenPluginVersionTest#v1OnJava11`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <properties>
+    <wro4j.version>1.8.0</wro4j.version>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>ro.isdc.wro4j</groupId>
+        <artifactId>wro4j-maven-plugin</artifactId>
+        <version>${wro4j.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <properties>
+    <wro4j.version>1.10.1</wro4j.version>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>ro.isdc.wro4j</groupId>
+        <artifactId>wro4j-maven-plugin</artifactId>
+        <version>${wro4j.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,1 +6,1 @@
+  <version>1</version>
+  <properties>
+-   <wro4j.version>1.8.0</wro4j.version>
++   <wro4j.version>1.10.1</wro4j.version>
+  </properties>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -476,10 +480,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.sql.ChangeFunctionName**
 
-_When migrating between dialects, often one name can be substituted for another. For example, Oracle's NVL function can be replaced with Postgres COALESCE._
+_When migrating between dialects, often one name can be substituted for another. For example, Oracle's `NVL` function can be replaced with Postgres `COALESCE`._
 
 ## Recipe source
 
@@ -24,6 +24,14 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | -- | -- | -- | -- |
 | `String` | oldFunctionName | The name of the function to find, case insensitive. | `NVL` |
 | `String` | newFunctionName | The new name to use. This will match the casing of the original method when a replacement is made. | `COALESCE` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Convert Oracle functions to PostgreSQL](/recipes/sql/convertoraclefunctionstopostgres.md)
+* [Convert SQL Server functions to PostgreSQL](/recipes/sql/convertsqlserverfunctionstopostgres.md)
 
 
 ## Usage
@@ -146,10 +154,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

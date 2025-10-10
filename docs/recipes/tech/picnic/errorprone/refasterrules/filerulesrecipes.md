@@ -36,6 +36,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Prefer `Files#createTempFile(Path, String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfileincustomdirectorytofilerecipe)
 * [Refaster template `FileRules.PathToFileMkDirsFilesExists`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$pathtofilemkdirsfilesexistsrecipe)
 * [Refaster template `FileRules.FileMkDirsFileExists`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filemkdirsfileexistsrecipe)
+* [Refaster template `FileRules.FilesNewBufferedReaderPathOf`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderpathofrecipe)
+* [Refaster template `FileRules.FilesNewBufferedReaderToPath`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreadertopathrecipe)
+* [Refaster template `FileRules.FilesNewBufferedReaderPathOfWithCharset`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderpathofwithcharsetrecipe)
+* [Refaster template `FileRules.FilesNewBufferedReaderToPathWithCharset`](../../../../tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreadertopathwithcharsetrecipe)
 
 </TabItem>
 
@@ -57,6 +61,10 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileInCustomDirectoryToFileRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathToFileMkDirsFilesExistsRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe
 
 ```
 </TabItem>
@@ -250,10 +258,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

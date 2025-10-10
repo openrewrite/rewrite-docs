@@ -12,6 +12,7 @@ _Basic building blocks for transforming JSON._
 * [Add value to JSON Object](./addkeyvalue.md)
 * [Change key](./changekey.md)
 * [Change value](./changevalue.md)
+* [Create JSON file](./createjsonfile.md)
 * [Delete key](./deletekey.md)
 
 

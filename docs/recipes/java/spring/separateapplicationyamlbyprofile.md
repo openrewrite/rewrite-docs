@@ -19,6 +19,53 @@ _The Spring team's recommendation is to separate profile properties into their o
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+
+###### New file
+```yaml title="application-test.yml"
+name: test
+```
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+name: main
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+name: test
+```
+
+###### After
+```yaml
+name: main
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,6 +2,0 @@
+name: main
+----
+-spring:
+- config:
+-   activate:
+-     on-profile: test
+-name: test
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -201,10 +248,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

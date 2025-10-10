@@ -103,6 +103,163 @@ This recipe is used as part of the following composite recipes:
 * [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
 
+## Examples
+##### Example 1
+`UpdateLombokToJava11Test#updateLombokToJava11`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import lombok.experimental.Wither;
+import lombok.experimental.Builder;
+import lombok.experimental.Value;
+
+@Wither
+@Builder
+@Value
+public class Fred {
+    private String firstName;
+    private String lastName;
+}
+```
+
+###### After
+```java
+import lombok.Value;
+import lombok.With;
+import lombok.Builder;
+
+@With
+@Builder
+@Value
+public class Fred {
+    private String firstName;
+    private String lastName;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,3 @@
+-import lombok.experimental.Wither;
+-import lombok.experimental.Builder;
+-import lombok.experimental.Value;
++import lombok.Value;
++import lombok.With;
++import lombok.Builder;
+
+@@ -5,1 +5,1 @@
+import lombok.experimental.Value;
+
+-@Wither
++@With
+@Builder
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.jackson</groupId>
+    <artifactId>jackson-legacy</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`UpdateLombokToJava11Test#updateLombokToJava11`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import lombok.experimental.Wither;
+import lombok.experimental.Builder;
+import lombok.experimental.Value;
+
+@Wither
+@Builder
+@Value
+public class Fred {
+    private String firstName;
+    private String lastName;
+}
+```
+
+###### After
+```java
+import lombok.Value;
+import lombok.With;
+import lombok.Builder;
+
+@With
+@Builder
+@Value
+public class Fred {
+    private String firstName;
+    private String lastName;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,3 @@
+-import lombok.experimental.Wither;
+-import lombok.experimental.Builder;
+-import lombok.experimental.Value;
++import lombok.Value;
++import lombok.With;
++import lombok.Builder;
+
+@@ -5,1 +5,1 @@
+import lombok.experimental.Value;
+
+-@Wither
++@With
+@Builder
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.jackson</groupId>
+    <artifactId>jackson-legacy</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
 
 ## Usage
 
@@ -285,10 +442,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

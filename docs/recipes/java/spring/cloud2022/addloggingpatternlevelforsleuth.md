@@ -26,6 +26,73 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 
+## Example
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/application.properties" label="src/main/resources/application.properties">
+
+
+###### Before
+```properties title="src/main/resources/application.properties"
+foo=bar
+```
+
+###### After
+```properties title="src/main/resources/application.properties"
+foo=bar
+# Logging pattern containing traceId and spanId; no longer provided through Sleuth by default
+logging.pattern.level="%5p [,%X{traceId:-},%X{spanId:-}]"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/application.properties
++++ src/main/resources/application.properties
+@@ -2,0 +2,3 @@
+foo=bar
++# Logging pattern containing traceId and spanId; no longer provided through Sleuth by default
++logging.pattern.level="%5p [,%X{traceId:-},%X{spanId:-}]"
++
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>explicit-deps-app</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+
+###### New file
+```yaml title="src/main/resources/application.yml"
+logging:
+  pattern:
+    # Logging pattern containing traceId and spanId; no longer provided through Sleuth by default
+    level: "%5p [,%X{traceId:-},%X{spanId:-}]"
+```
+
+
 
 ## Usage
 
@@ -208,10 +275,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

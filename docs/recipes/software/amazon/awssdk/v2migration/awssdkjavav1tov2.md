@@ -36,6 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](../../../../software/amazon/awssdk/v2migration/addtransfermanagerdependency)
 * [Add AWS SDK for Java v2 S3 Event Notification dependency if needed](../../../../software/amazon/awssdk/v2migration/adds3eventnotificationdependency)
 * [Change v1 Maven/Gradle dependencies to v2](../../../../software/amazon/awssdk/v2migration/upgradesdkdependencies)
+* [Add imports and comments to unsupported S3 transforms.](../../../../software/amazon/awssdk/v2migration/s3addimportsandcomments)
 * [S3 Event Notification method to v2](../../../../software/amazon/awssdk/v2migration/s3eventnotificationmethodtov2)
 * [Change S3 types to v2.](../../../../software/amazon/awssdk/v2migration/s3typestov2)
 * [V1 S3Object to V2](../../../../software/amazon/awssdk/v2migration/s3streamingresponsetov2)
@@ -67,6 +68,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Convert V1 setters to V2 toBuilder setters](../../../../software/amazon/awssdk/v2migration/setterstobuilderv2)
 * [Add imports and comments to unsupported S3 transfer manager transforms.](../../../../software/amazon/awssdk/v2migration/s3tmaddcomments)
 * [Change TransferManager simple methods to v2.](../../../../software/amazon/awssdk/v2migration/changetransfermanagersimplemethods)
+* [Transfer Manager Methods to V2](../../../../software/amazon/awssdk/v2migration/transfermanagermethodstov2)
 
 </TabItem>
 
@@ -86,6 +88,7 @@ recipeList:
   - software.amazon.awssdk.v2migration.AddTransferManagerDependency
   - software.amazon.awssdk.v2migration.AddS3EventNotificationDependency
   - software.amazon.awssdk.v2migration.UpgradeSdkDependencies
+  - software.amazon.awssdk.v2migration.S3AddImportsAndComments
   - software.amazon.awssdk.v2migration.S3EventNotificationMethodToV2
   - software.amazon.awssdk.v2migration.S3TypesToV2
   - software.amazon.awssdk.v2migration.S3StreamingResponseToV2
@@ -117,6 +120,7 @@ recipeList:
   - software.amazon.awssdk.v2migration.SettersToBuilderV2
   - software.amazon.awssdk.v2migration.S3TmAddComments
   - software.amazon.awssdk.v2migration.ChangeTransferManagerSimpleMethods
+  - software.amazon.awssdk.v2migration.TransferManagerMethodsToV2
 
 ```
 </TabItem>
@@ -303,10 +307,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

@@ -39,7 +39,10 @@ This recipe is used as part of the following composite recipes:
 * [Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications](/recipes/java/migrate/removedjaxbmoduleprovided.md)
 * [Do not package `java.xml.ws` module in WebSphere Liberty applications](/recipes/java/migrate/removedjavaxmlwsmoduleprovided.md)
 * [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+* [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
+* [Replace Derby driver with Quarkus JDBC Derby](/recipes/quarkus/spring/derbydrivertoquarkus.md)
+* [Replace H2 driver with Quarkus JDBC H2](/recipes/quarkus/spring/h2drivertoquarkus.md)
 
 ## Example
 
@@ -227,10 +230,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

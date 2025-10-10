@@ -25,6 +25,53 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Kafka 2.4](/recipes/kafka/migratetokafka24.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.kafka.streams.processor.ProcessorContext;
+import org.apache.kafka.streams.state.WindowStore;
+
+class KafkaProcessor {
+    void process(ProcessorContext context) {
+        WindowStore<String, Long> store = context.getStateStore("myStore");
+        store.put("key", 100L);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.kafka.streams.processor.ProcessorContext;
+import org.apache.kafka.streams.state.WindowStore;
+
+class KafkaProcessor {
+    void process(ProcessorContext context) {
+        WindowStore<String, Long> store = context.getStateStore("myStore");
+        store.put("key", 100L, context.timestamp());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+    void process(ProcessorContext context) {
+        WindowStore<String, Long> store = context.getStateStore("myStore");
+-       store.put("key", 100L);
++       store.put("key", 100L, context.timestamp());
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -105,10 +152,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

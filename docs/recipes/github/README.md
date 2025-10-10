@@ -11,6 +11,7 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate from tibdex/github-app-token to actions/create-github-app-token](./migratetibdexgithubapptokentoactions.md)
 * [Replace OSSRH secrets with Sonatype secrets](./replaceossrhsecretswithsonatype.md)
 
 ## Recipes
@@ -34,6 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace secret key names in GitHub Actions](./replacesecretkeys.md)
 * [Setup Java dependency caching](./setupjavacaching.md)
 * [Upgrade `actions/setup-java` `java-version`](./setupjavaupgradejavaversion.md)
+* [Upgrade `actions/setup-node` `node-version`](./setupnodeupgradenodeversion.md)
 * [Upgrade `slackapi/slack-github-action`](./upgradeslacknotificationversion2.md)
 * [Use `actions/setup-java` IBM `semeru` distribution](./setupjavaadoptopenj9tosemeru.md)
 * [Use `actions/setup-java` `temurin` distribution](./setupjavaadoptopenjdktotemurin.md)

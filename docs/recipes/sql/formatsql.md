@@ -27,6 +27,14 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `Integer` | maxColumnLength | *Optional*. Defaults to 50. | `100` |
 | `Boolean` | uppercase | *Optional*. Defaults to false (not safe to use when SQL dialect has case-sensitive identifiers). | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Oracle SQL to PostgreSQL](/recipes/sql/migrateoracletopostgres.md)
+* [Migrate SQL Server to PostgreSQL](/recipes/sql/migratesqlservertopostgres.md)
+
 ## Example
 
 
@@ -156,10 +164,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

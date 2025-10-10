@@ -32,6 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate from tibdex/github-app-token to actions/create-github-app-token](/recipes/github/migratetibdexgithubapptokentoactions.md)
 * [Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`](/recipes/github/gradle/renamegradlebuildactiontosetupgradle.md)
 * [Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`](/recipes/github/gradle/renamewrappervalidationaction.md)
 
@@ -46,11 +47,11 @@ This recipe is used as part of the following composite recipes:
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
+<TabItem value=".github/workflows/ci.yml" label=".github/workflows/ci.yml">
 
 
 ###### Before
-```yaml
+```yaml title=".github/workflows/ci.yml"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -62,7 +63,7 @@ jobs:
 ```
 
 ###### After
-```yaml
+```yaml title=".github/workflows/ci.yml"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -77,6 +78,8 @@ jobs:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- .github/workflows/ci.yml
++++ .github/workflows/ci.yml
 @@ -8,1 +8,1 @@
         uses: actions/checkout@v4
       - name: Validate wrapper
@@ -235,10 +238,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

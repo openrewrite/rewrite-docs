@@ -29,6 +29,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `org.openrewrite.SourceFile#getStyle(java.lang.Class)`
+  * replacement: `Style.from(styleClass, this)`
+  * imports: `[org.openrewrite.style.Style]`
+  * classpathFromResources: `[rewrite-core-8.62.3]`
+* [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `org.openrewrite.SourceFile#getStyle(java.lang.Class, ..)`
+  * replacement: `Style.from(styleClass, this, () -> defaultStyle)`
+  * imports: `[org.openrewrite.style.Style]`
+  * classpathFromResources: `[rewrite-core-8.62.3]`
+* [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.maven.trait.Traits mavenDependency()`
   * replacement: `new MavenDependency.Matcher()`
   * imports: `[org.openrewrite.maven.MavenDependency]`
@@ -117,6 +127,16 @@ description: |
   Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 recipeList:
   - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: org.openrewrite.SourceFile#getStyle(java.lang.Class)
+      replacement: Style.from(styleClass, this)
+      imports: [org.openrewrite.style.Style]
+      classpathFromResources: [rewrite-core-8.62.3]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: org.openrewrite.SourceFile#getStyle(java.lang.Class, ..)
+      replacement: Style.from(styleClass, this, () -> defaultStyle)
+      imports: [org.openrewrite.style.Style]
+      classpathFromResources: [rewrite-core-8.62.3]
+  - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.maven.trait.Traits mavenDependency()
       replacement: new MavenDependency.Matcher()
       imports: [org.openrewrite.maven.MavenDependency]
@@ -201,6 +221,111 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
+
+## Examples
+##### Example 1
+`RemoveTraitsUsageTest#javaLiteral`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.java.trait.Literal;
+import org.openrewrite.java.trait.Traits;
+import org.openrewrite.marker.SearchResult;
+
+class Test {
+    void test() {
+        Literal.Matcher literal = Traits.literal();
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.java.trait.Literal;
+import org.openrewrite.marker.SearchResult;
+
+class Test {
+    void test() {
+        Literal.Matcher literal = new Literal.Matcher();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import org.openrewrite.java.trait.Literal;
+-import org.openrewrite.java.trait.Traits;
+import org.openrewrite.marker.SearchResult;
+@@ -7,1 +6,1 @@
+class Test {
+    void test() {
+-       Literal.Matcher literal = Traits.literal();
++       Literal.Matcher literal = new Literal.Matcher();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RemoveTraitsUsageTest#javaLiteral`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.java.trait.Literal;
+import org.openrewrite.java.trait.Traits;
+import org.openrewrite.marker.SearchResult;
+
+class Test {
+    void test() {
+        Literal.Matcher literal = Traits.literal();
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.java.trait.Literal;
+import org.openrewrite.marker.SearchResult;
+
+class Test {
+    void test() {
+        Literal.Matcher literal = new Literal.Matcher();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import org.openrewrite.java.trait.Literal;
+-import org.openrewrite.java.trait.Traits;
+import org.openrewrite.marker.SearchResult;
+@@ -7,1 +6,1 @@
+class Test {
+    void test() {
+-       Literal.Matcher literal = Traits.literal();
++       Literal.Matcher literal = new Literal.Matcher();
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -384,10 +509,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

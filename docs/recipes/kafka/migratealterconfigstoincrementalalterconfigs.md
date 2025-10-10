@@ -25,6 +25,92 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Kafka 4.0](/recipes/kafka/migratetokafka40.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.Config;
+import org.apache.kafka.clients.admin.ConfigEntry;
+import org.apache.kafka.common.config.ConfigResource;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Collections;
+
+class KafkaAdminExample {
+    void updateConfig(AdminClient adminClient) {
+        ConfigResource resource = new ConfigResource(ConfigResource.Type.TOPIC, "my-topic");
+        Config config = new Config(Collections.singleton(
+            new ConfigEntry("retention.ms", "86400000")));
+        Map<ConfigResource, Config> configs = new HashMap<>();
+        configs.put(resource, config);
+        adminClient.alterConfigs(configs);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.AlterConfigOp;
+import org.apache.kafka.clients.admin.Config;
+import org.apache.kafka.clients.admin.ConfigEntry;
+import org.apache.kafka.common.config.ConfigResource;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Collections;
+
+class KafkaAdminExample {
+    void updateConfig(AdminClient adminClient) {
+        ConfigResource resource = new ConfigResource(ConfigResource.Type.TOPIC, "my-topic");
+        Collection<AlterConfigOp> config = Collections.singleton(new AlterConfigOp(new ConfigEntry("retention.ms", "86400000"), AlterConfigOp.OpType.SET));
+        Map<ConfigResource, Collection<AlterConfigOp>> configs = new HashMap<>();
+        configs.put(resource, config);
+        adminClient.incrementalAlterConfigs(configs);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import org.apache.kafka.clients.admin.AdminClient;
++import org.apache.kafka.clients.admin.AlterConfigOp;
+import org.apache.kafka.clients.admin.Config;
+@@ -5,0 +6,2 @@
+import org.apache.kafka.clients.admin.ConfigEntry;
+import org.apache.kafka.common.config.ConfigResource;
++
++import java.util.Collection;
+import java.util.Map;
+@@ -12,3 +15,2 @@
+    void updateConfig(AdminClient adminClient) {
+        ConfigResource resource = new ConfigResource(ConfigResource.Type.TOPIC, "my-topic");
+-       Config config = new Config(Collections.singleton(
+-           new ConfigEntry("retention.ms", "86400000")));
+-       Map<ConfigResource, Config> configs = new HashMap<>();
++       Collection<AlterConfigOp> config = Collections.singleton(new AlterConfigOp(new ConfigEntry("retention.ms", "86400000"), AlterConfigOp.OpType.SET));
++       Map<ConfigResource, Collection<AlterConfigOp>> configs = new HashMap<>();
+        configs.put(resource, config);
+@@ -16,1 +18,1 @@
+        Map<ConfigResource, Config> configs = new HashMap<>();
+        configs.put(resource, config);
+-       adminClient.alterConfigs(configs);
++       adminClient.incrementalAlterConfigs(configs);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -105,10 +191,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

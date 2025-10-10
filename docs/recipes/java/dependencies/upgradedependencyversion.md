@@ -140,7 +140,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md)
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md)
-* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
 * [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
@@ -173,6 +172,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Faces open source libraries](/recipes/java/migrate/jakarta/upgradefaces41opensourcelibraries.md)
 * [Upgrade Faces open source libraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
 * [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
+* [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
 * [Upgrade Log4j 2.x dependency version](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
 * [Upgrade MyBatis to Spring Boot 2.0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
 * [Upgrade MyBatis to Spring Boot 2.1](/recipes/java/spring/boot3/upgrademybatistospringboot_2_1.md)
@@ -195,6 +195,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade dependencies to Spring Cloud 2025](/recipes/java/spring/cloud2025/dependencyupgrades.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
+* [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [Upgrade to SpringDoc 2.2](/recipes/java/springdoc/upgradespringdoc_2_2.md)
@@ -420,10 +421,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

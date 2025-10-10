@@ -38,6 +38,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * elementName: `web-app`
   * attributeName: `version`
   * newValue: `5.0`
+  * oldValue: `^[1234]\.\d+$`
+  * regex: `true`
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `web-app`
   * attributeName: `xmlns`
@@ -46,6 +48,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * elementName: `web-app`
   * attributeName: `xsi:schemaLocation`
   * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd`
+  * oldValue: `.*xml/ns/javaee.*`
+  * regex: `true`
 * [Find and replace](../../../text/findandreplace)
   * find: `javax.`
   * replace: `jakarta.`
@@ -75,6 +79,8 @@ recipeList:
       elementName: web-app
       attributeName: version
       newValue: 5.0
+      oldValue: ^[1234]\.\d+$
+      regex: true
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: web-app
       attributeName: xmlns
@@ -83,6 +89,8 @@ recipeList:
       elementName: web-app
       attributeName: xsi:schemaLocation
       newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd
+      oldValue: .*xml/ns/javaee.*
+      regex: true
   - org.openrewrite.text.FindAndReplace:
       find: javax.
       replace: jakarta.
@@ -104,14 +112,15 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`JavaxWebXmlToJakartaWebXmlTest#migrateSun`
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="web.xml" label="web.xml">
 
 
 ###### Before
-```xml
+```xml title="web.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -125,7 +134,7 @@ This recipe is used as part of the following composite recipes:
 ```
 
 ###### After
-```xml
+```xml title="web.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -142,6 +151,8 @@ This recipe is used as part of the following composite recipes:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- web.xml
++++ web.xml
 @@ -2,1 +2,1 @@
 <?xml version="1.0" encoding="UTF-8"?>
 -<web-app xmlns="http://java.sun.com/xml/ns/javaee"
@@ -168,14 +179,15 @@ This recipe is used as part of the following composite recipes:
 ---
 
 ##### Example 2
+`JavaxWebXmlToJakartaWebXmlTest#migrateSun`
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="web.xml" label="web.xml">
 
 
 ###### Before
-```xml
+```xml title="web.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -189,7 +201,7 @@ This recipe is used as part of the following composite recipes:
 ```
 
 ###### After
-```xml
+```xml title="web.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -206,6 +218,8 @@ This recipe is used as part of the following composite recipes:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- web.xml
++++ web.xml
 @@ -2,1 +2,1 @@
 <?xml version="1.0" encoding="UTF-8"?>
 -<web-app xmlns="http://java.sun.com/xml/ns/javaee"
@@ -411,10 +425,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

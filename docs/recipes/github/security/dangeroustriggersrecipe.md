@@ -30,11 +30,11 @@ This recipe is used as part of the following composite recipes:
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
+<TabItem value=".github/workflows/test.yml" label=".github/workflows/test.yml">
 
 
 ###### Before
-```yaml
+```yaml title=".github/workflows/test.yml"
 on: pull_request_target
 jobs:
   test:
@@ -44,7 +44,7 @@ jobs:
 ```
 
 ###### After
-```yaml
+```yaml title=".github/workflows/test.yml"
 ~~(The 'pull_request_target' trigger is almost always used insecurely. It runs with write permissions in the context of the target repository, potentially allowing code injection from pull requests. Consider using 'pull_request' instead, or implement proper isolation.)~~>on: pull_request_target
 jobs:
   test:
@@ -57,6 +57,8 @@ jobs:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- .github/workflows/test.yml
++++ .github/workflows/test.yml
 @@ -1,1 +1,1 @@
 -on: pull_request_target
 +~~(The 'pull_request_target' trigger is almost always used insecurely. It runs with write permissions in the context of the target repository, potentially allowing code injection from pull requests. Consider using 'pull_request' instead, or implement proper isolation.)~~>on: pull_request_target
@@ -247,10 +249,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

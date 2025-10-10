@@ -30,27 +30,27 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.ai.timefold.solver`
-  * newValue: `1.26.1`
+  * newValue: `1.26.2`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.timefold`
-  * newValue: `1.26.1`
+  * newValue: `1.26.2`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `ai.timefold.solver.version`
-  * newValue: `1.26.1`
+  * newValue: `1.26.2`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefold.version`
-  * newValue: `1.26.1`
+  * newValue: `1.26.2`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefoldVersion`
-  * newValue: `1.26.1`
+  * newValue: `1.26.2`
   * addIfMissing: `false`
   * trustParent: `true`
 
@@ -68,27 +68,27 @@ description: |
 recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.ai.timefold.solver
-      newValue: 1.26.1
+      newValue: 1.26.2
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.timefold
-      newValue: 1.26.1
+      newValue: 1.26.2
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: ai.timefold.solver.version
-      newValue: 1.26.1
+      newValue: 1.26.2
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefold.version
-      newValue: 1.26.1
+      newValue: 1.26.2
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefoldVersion
-      newValue: 1.26.1
+      newValue: 1.26.2
       addIfMissing: false
       trustParent: true
 
@@ -284,10 +284,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

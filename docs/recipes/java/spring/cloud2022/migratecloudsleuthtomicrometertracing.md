@@ -282,6 +282,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`MigrateCloudSleuthToMicrometerTracingTest#migrateTracer`
 
 
 <Tabs groupId="beforeAfter">
@@ -337,6 +338,80 @@ public class SessionInfoOperator {
 ---
 
 ##### Example 2
+`MigrateProjectTest#migrateProperties`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/application.properties" label="src/main/resources/application.properties">
+
+
+###### Before
+```properties title="src/main/resources/application.properties"
+spring.sleuth.baggage.correlation-enabled=true
+```
+
+###### After
+```properties title="src/main/resources/application.properties"
+management.tracing.baggage.correlation.enabled=true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/application.properties
++++ src/main/resources/application.properties
+@@ -1,1 +1,1 @@
+-spring.sleuth.baggage.correlation-enabled=true
++management.tracing.baggage.correlation.enabled=true
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/application.yml" label="src/main/resources/application.yml">
+
+
+###### Before
+```yaml title="src/main/resources/application.yml"
+spring:
+    sleuth:
+        baggage:
+            correlation-enabled: true
+```
+
+###### After
+```yaml title="src/main/resources/application.yml"
+management.tracing.baggage.correlation.enabled: true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/application.yml
++++ src/main/resources/application.yml
+@@ -1,4 +1,1 @@
+-spring:
+-   sleuth:
+-       baggage:
+-           correlation-enabled: true
++management.tracing.baggage.correlation.enabled: true
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+`MigrateCloudSleuthToMicrometerTracingTest#migrateTracer`
 
 
 <Tabs groupId="beforeAfter">
@@ -384,6 +459,79 @@ public class SessionInfoOperator {
 @@ -1,1 +1,1 @@
 -import org.springframework.cloud.sleuth.Tracer;
 +import io.micrometer.tracing.Tracer;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`MigrateProjectTest#migrateProperties`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/application.properties" label="src/main/resources/application.properties">
+
+
+###### Before
+```properties title="src/main/resources/application.properties"
+spring.sleuth.baggage.correlation-enabled=true
+```
+
+###### After
+```properties title="src/main/resources/application.properties"
+management.tracing.baggage.correlation.enabled=true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/application.properties
++++ src/main/resources/application.properties
+@@ -1,1 +1,1 @@
+-spring.sleuth.baggage.correlation-enabled=true
++management.tracing.baggage.correlation.enabled=true
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/application.yml" label="src/main/resources/application.yml">
+
+
+###### Before
+```yaml title="src/main/resources/application.yml"
+spring:
+    sleuth:
+        baggage:
+            correlation-enabled: true
+```
+
+###### After
+```yaml title="src/main/resources/application.yml"
+management.tracing.baggage.correlation.enabled: true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/application.yml
++++ src/main/resources/application.yml
+@@ -1,4 +1,1 @@
+-spring:
+-   sleuth:
+-       baggage:
+-           correlation-enabled: true
++management.tracing.baggage.correlation.enabled: true
 
 ```
 </TabItem>
@@ -571,10 +719,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

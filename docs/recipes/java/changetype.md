@@ -48,6 +48,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioinputbuffers.md)
 * [Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
+* [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
 * [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
@@ -67,6 +68,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate TaskMetadata and ThreadMetadata](/recipes/kafka/streams/migratetaskandthreadmetadata.md)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](/recipes/kafka/migrateadminlistconsumergroups.md)
 * [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
+* [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoreclear.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)
 * [Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoresetcredentials.md)
@@ -98,6 +100,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 * [Migrate to Hibernate 6.6.x](/recipes/hibernate/migratetohibernate66.md)
+* [Migrate to Hibernate 7 JFR APIs](/recipes/hibernate/update70/migratetohibernate7jfr.md)
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 * [Migrate to Kafka 2.5](/recipes/kafka/migratetokafka25.md)
 * [Migrate to Micrometer 1.13](/recipes/micrometer/upgrademicrometer_1_13.md)
@@ -110,8 +113,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
-* [Migrates Jackson 2.x base exceptions to Jackson 3.x base exceptions](/recipes/java/jackson/upgradejackson_2_and_3_base_exceptions.md)
-* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
@@ -134,6 +135,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
 * [Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
+* [Replace `@SpringBootApplication` with Quarkus equivalent](/recipes/quarkus/spring/replacespringbootapplication.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 * [Replace `ResourceResolver` with `ResourceHandler`](/recipes/com/oracle/weblogic/rewrite/jakarta/removedjakartafaces3resourceresolver.md)
 * [Replace `ResourceResolver` with `ResourceHandler`](/recipes/java/migrate/jakarta/removedjakartafacesresourceresolver.md)
@@ -148,10 +150,12 @@ This recipe is used as part of the following composite recipes:
 * [Testcontainers best practices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
 * [The package scan classes has moved from camel-base-engine to camel-support - java](/recipes/org/apache/camel/upgrade/camel412/scanclassesmoved.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
+* [Update Jackson 2.x types to 3.x](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update the Micronaut Security library](/recipes/java/micronaut/updatemicronautsecurity.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
 * [Upgrade to Axonframework 4.x Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
+* [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [Upgrade to the latest Timefold Solver](/recipes/ai/timefold/solver/migration/tolatest.md)
@@ -327,10 +331,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

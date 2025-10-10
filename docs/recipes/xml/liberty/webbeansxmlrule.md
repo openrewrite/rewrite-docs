@@ -23,11 +23,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="src/main/resources/META-INF/beans.xml" label="src/main/resources/META-INF/beans.xml">
 
 
 ###### Before
-```xml
+```xml title="src/main/resources/META-INF/beans.xml"
 <WebBeans xmlns="urn:java:ee"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="
@@ -37,7 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```
 
 ###### After
-```xml
+```xml title="src/main/resources/META-INF/beans.xml"
 <beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
@@ -49,6 +49,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/resources/META-INF/beans.xml
++++ src/main/resources/META-INF/beans.xml
 @@ -1,1 +1,1 @@
 -<WebBeans xmlns="urn:java:ee"
 +<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
@@ -252,10 +254,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

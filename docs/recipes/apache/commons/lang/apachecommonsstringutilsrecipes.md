@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `StringUtils.deleteWhitespace(String)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$deletewhitespacerecipe)
 * [Replace `StringUtils.equalsIgnoreCase(CharSequence, CharSequence)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$equalsignorecaserecipe)
 * [Replace `StringUtils.equals(CharSequence, CharSequence)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$equalsrecipe)
+* [Replace `StringUtils.join(Iterable&lt;? extends CharSequence&gt;, String)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$stringjoinseparatoriterablecharsequencerecipe)
 * [Replace `StringUtils.lowerCase(String)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$lowercaserecipe)
 * [Replace `StringUtils.removeEnd(String, String)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$removeendrecipe)
 * [Replace `StringUtils.replace(String, String, String)` with JDK provided API](../../../apache/commons/lang/apachecommonsstringutilsrecipes$replacerecipe)
@@ -66,6 +67,7 @@ recipeList:
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$DeleteWhitespaceRecipe
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$EqualsIgnoreCaseRecipe
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$EqualsRecipe
+  - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$StringJoinSeparatorIterableCharSequenceRecipe
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$LowercaseRecipe
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$RemoveEndRecipe
   - org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$ReplaceRecipe
@@ -542,10 +544,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

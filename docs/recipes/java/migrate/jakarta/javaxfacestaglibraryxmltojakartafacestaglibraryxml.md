@@ -96,14 +96,15 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`JavaxFacesTagLibraryXmlToJakartaFacesTagLibraryXmlTest#migrateSun`
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="faces-taglib.xml" label="faces-taglib.xml">
 
 
 ###### Before
-```xml
+```xml title="faces-taglib.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <facelet-taglib version="1.0"
                 xmlns="http://java.sun.com/xml/ns/javaee"
@@ -118,7 +119,7 @@ This recipe is used as part of the following composite recipes:
 ```
 
 ###### After
-```xml
+```xml title="faces-taglib.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <facelet-taglib version="3.0"
                 xmlns="https://jakarta.ee/xml/ns/jakartaee"
@@ -136,6 +137,8 @@ This recipe is used as part of the following composite recipes:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- faces-taglib.xml
++++ faces-taglib.xml
 @@ -2,2 +2,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
 -<facelet-taglib version="1.0"
@@ -162,14 +165,15 @@ This recipe is used as part of the following composite recipes:
 ---
 
 ##### Example 2
+`JavaxFacesTagLibraryXmlToJakartaFacesTagLibraryXmlTest#migrateSun`
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="faces-taglib.xml" label="faces-taglib.xml">
 
 
 ###### Before
-```xml
+```xml title="faces-taglib.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <facelet-taglib version="1.0"
                 xmlns="http://java.sun.com/xml/ns/javaee"
@@ -184,7 +188,7 @@ This recipe is used as part of the following composite recipes:
 ```
 
 ###### After
-```xml
+```xml title="faces-taglib.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <facelet-taglib version="3.0"
                 xmlns="https://jakarta.ee/xml/ns/jakartaee"
@@ -202,6 +206,8 @@ This recipe is used as part of the following composite recipes:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- faces-taglib.xml
++++ faces-taglib.xml
 @@ -2,2 +2,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
 -<facelet-taglib version="1.0"
@@ -407,10 +413,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>

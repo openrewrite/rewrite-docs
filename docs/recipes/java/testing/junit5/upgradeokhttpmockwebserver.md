@@ -80,6 +80,215 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 
+## Examples
+##### Example 1
+`UpgradeOkHttpMockWebServerTest#shouldUpgradeMavenDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import okhttp3.mockwebserver.MockWebServer;
+
+class Test {
+    void test() {
+        MockWebServer server = new MockWebServer();
+    }
+}
+```
+
+###### After
+```java
+import mockwebserver3.MockWebServer;
+
+class Test {
+    void test() {
+        MockWebServer server = new MockWebServer();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import okhttp3.mockwebserver.MockWebServer;
++import mockwebserver3.MockWebServer;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>mockwebserver</artifactId>
+      <version>4.10.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>mockwebserver3-junit5</artifactId>
+      <version>5.1.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -9,2 +9,2 @@
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+-     <artifactId>mockwebserver</artifactId>
+-     <version>4.10.0</version>
++     <artifactId>mockwebserver3-junit5</artifactId>
++     <version>5.1.0</version>
+    </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeOkHttpMockWebServerTest#shouldUpgradeMavenDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import okhttp3.mockwebserver.MockWebServer;
+
+class Test {
+    void test() {
+        MockWebServer server = new MockWebServer();
+    }
+}
+```
+
+###### After
+```java
+import mockwebserver3.MockWebServer;
+
+class Test {
+    void test() {
+        MockWebServer server = new MockWebServer();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import okhttp3.mockwebserver.MockWebServer;
++import mockwebserver3.MockWebServer;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>mockwebserver</artifactId>
+      <version>4.10.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>mockwebserver3-junit5</artifactId>
+      <version>5.1.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -9,2 +9,2 @@
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+-     <artifactId>mockwebserver</artifactId>
+-     <version>4.10.0</version>
++     <artifactId>mockwebserver3-junit5</artifactId>
++     <version>5.1.0</version>
+    </dependency>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -262,10 +471,8 @@ _Statistics used in analyzing the performance of recipes._
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
 | Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time (ns) | 99 out of 100 scans completed in this amount of time. |
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time (ns) | 99 out of 100 edits completed in this amount of time. |
 | Max edit time (ns) | The max time editing any one source file. |
 
 </TabItem>
