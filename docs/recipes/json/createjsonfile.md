@@ -24,7 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | relativeFileName | File path of new file. | `foo/bar/baz.json` |
-| `String` | fileContents | *Optional*. Multiline text content for the file. | `{"a":{"property":"value"},"another":{"property":"value"}}` |
+| `String` | fileContents | *Optional*. Multiline text content for the file. | <pre>{<br />  "a": {<br />    "property": "value"<br />  },<br />  "another": {<br />    "property": "value"<br />  }<br />}</pre> |
 | `String` | fileContentsUrl | *Optional*. URL to file containing text content for the file. Use either `fileContents` or `fileContentsUrl` option. | `http://foo.bar/baz.json` |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
