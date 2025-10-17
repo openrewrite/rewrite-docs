@@ -1,2 +1,6 @@
 # API Keys - never commit these!
 anthropic.key
+*.key
+
+# Skill ID - specific to each user's account
+skill-id.txt

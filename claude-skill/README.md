@@ -27,63 +27,66 @@ openrewrite-recipe-skill/
 └── checklist-recipe-development.md         # Comprehensive checklist
 ```
 
-## How to Upload This Skill
+## Quick Start
+
+For detailed installation and usage instructions, see the [Claude Skill documentation](../docs/reference/claude-skill.md).
+
+### For Claude.ai (Recommended)
+
+```bash
+# 1. Clone and navigate
+git clone https://github.com/openrewrite/rewrite-docs.git
+cd rewrite-docs/claude-skill
+
+# 2. Create ZIP file
+zip -r openrewrite-recipe-writer.zip SKILL.md *.java *.yml *.md -x README.md
+
+# 3. Upload to claude.ai
+# Go to Settings > Capabilities > Skills and upload the ZIP
+```
+
+### For Claude API
+
+```bash
+# 1. Navigate to this directory
+cd claude-skill
+
+# 2. Set up your API key
+echo "your-anthropic-api-key" > anthropic.key
+
+# 3. Upload the skill
+./upload-skill.sh
+```
+
+The script automatically:
+- Creates the skill in your API workspace (first run)
+- Saves the skill ID to `skill-id.txt`
+- Updates the existing skill on subsequent runs
+
+**Note**: Skills uploaded via API are separate from claude.ai - you must upload to each platform where you want to use it.
 
 ### Prerequisites
-- Claude API key
-- All skill files in this directory
+- For claude.ai: Account at [claude.ai](https://claude.ai)
+- For API: API key from [console.anthropic.com](https://console.anthropic.com/)
+- Command-line tools: `zip`, `curl`, `jq`
 
-### Setting Up Your API Key
+## How the Upload Script Works
 
-For convenience, you can store your API key in a file:
+The `upload-skill.sh` script intelligently handles both creating and updating the skill:
 
-```bash
-# Create anthropic.key file (already in .gitignore)
-echo "your-api-key-here" > anthropic.key
+**First Run (Create):**
+1. Checks for `skill-id.txt` - not found
+2. Makes a POST request to create a new skill
+3. Extracts the skill ID from the response
+4. Saves it to `skill-id.txt` for future use
 
-# Then load it for upload
-export ANTHROPIC_API_KEY=$(cat anthropic.key)
-```
+**Subsequent Runs (Update):**
+1. Checks for `skill-id.txt` - found
+2. Reads the skill ID
+3. Makes a PATCH request to update the existing skill
+4. Shows the new version number
 
-The `.gitignore` file in this directory already excludes `anthropic.key` to prevent accidental commits.
-
-### Upload via Claude Skills API
-
-Use the following cURL command to upload this skill:
-
-```bash
-curl https://api.anthropic.com/v1/skills \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: skills-2025-10-02" \
-  -F "display_title=OpenRewrite Recipe Writer" \
-  -F "files=@SKILL.md" \
-  -F "files=@template-imperative-recipe.java" \
-  -F "files=@template-declarative-recipe.yml" \
-  -F "files=@template-recipe-test.java" \
-  -F "files=@example-say-hello-recipe.java" \
-  -F "files=@example-scanning-recipe.java" \
-  -F "files=@example-declarative-migration.yml" \
-  -F "files=@checklist-recipe-development.md"
-```
-
-**Note:** Run this command from inside the `openrewrite-recipe-skill/` directory.
-
-### Response
-
-On success (HTTP 200), you'll receive:
-```json
-{
-  "id": "skill_xxxxx",
-  "created_at": "2025-10-16T...",
-  "updated_at": "2025-10-16T...",
-  "latest_version": 1,
-  "source": "custom",
-  "type": "skill"
-}
-```
-
-Save the `id` to reference or update this skill later.
+This means you only need one script for both operations!
 
 ## How to Use This Skill
 
@@ -214,22 +217,17 @@ Claude: Absolutely! Here's how to structure your test:
 [Provides test template with specific examples]
 ```
 
-## Updating This Skill
+## Updating the Skill
 
-To update an existing skill:
+When skill files are updated (new examples, improved templates, etc.):
 
 ```bash
-curl https://api.anthropic.com/v1/skills/{skill_id} \
-  -X PATCH \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: skills-2025-10-02" \
-  -F "files=@SKILL.md" \
-  -F "files=@template-imperative-recipe.java" \
-  # ... (include all files)
+cd claude-skill
+git pull origin master  # Get latest changes
+./upload-skill.sh       # Upload the updates
 ```
 
-Replace `{skill_id}` with the ID from the upload response.
+The script detects the existing `skill-id.txt` and automatically updates your skill.
 
 ## Skill Metadata
 
