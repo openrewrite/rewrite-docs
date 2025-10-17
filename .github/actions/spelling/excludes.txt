@@ -89,6 +89,7 @@
 ^generate-llms-txt.js
 ^docs/reference/
 ^.claude/
+^claude-skill/
 ^robots.txt
 ^CNAME
 ^src/
