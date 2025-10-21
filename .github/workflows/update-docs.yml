@@ -8,8 +8,9 @@ on:
         type: boolean
         description: Only update the latest versions of every OpenRewrite module
         default: true
-  schedule:
-    - cron: 0 0 * * *
+  # Disabled because we have a broken recipe. 
+  # schedule:
+  #   - cron: 0 0 * * *
 
 concurrency:
   group: "update-docs"
