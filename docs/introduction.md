@@ -39,7 +39,7 @@ import static org.junit.Assert.assertTrue;
 assertTrue(condition);
 ```
 
-<ReactPlayer url='https://www.youtube.com/watch?v=uViRlX-RahA' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=6LGL64AwEEY' controls="true" />
 
 ## Get started
 
@@ -55,7 +55,7 @@ assertTrue(condition);
 
 See how Moderne and OpenRewrite work in different ways to transform your code:
 
-<ReactPlayer url='https://www.youtube.com/watch?v=Q-ej2lCJHRs' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=Q-ej2lCJHRs' controls="true" />
 
 <br/>
 
