@@ -24,7 +24,7 @@ The Java 25 migration recipe can be applied by including OpenRewrite's plugin to
   }
   
   rewrite {
-      activeRecipe("org.openrewrite.java.migrate.UpgradeToJava21")
+      activeRecipe("org.openrewrite.java.migrate.UpgradeToJava25")
       setExportDatatables(true)
   }
   
@@ -43,6 +43,7 @@ The Java 25 migration recipe can be applied by including OpenRewrite's plugin to
 </TabItem>
 
 <TabItem value="maven" label="Maven">
+
 ```xml title="pom.xml"
 <project>
   <build>
