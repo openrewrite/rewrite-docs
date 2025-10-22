@@ -78,8 +78,8 @@ _2 recipes_
 _17 recipes_
 
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md) - _Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUtils` and add the Commons Text dependency._
-* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md) - _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`_
-* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md) - _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`_
+* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md) - _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`._
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md) - _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`._
 * [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md) - _Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md) - _Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md) - _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html)._
@@ -1256,7 +1256,7 @@ _4 recipes_
 
 ## guava
 
-_46 recipes_
+_47 recipes_
 
 * [Prefer `Files#createTempDirectory()`](/recipes/java/migrate/guava/noguavacreatetempdir.md) - _Replaces Guava `Files#createTempDir()` with Java `Files#createTempDirectory(..)`. Transformations are limited to scopes throwing or catching `java.io.IOException`._
 * [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md) - _Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare` or `com.google.common.primitives.UnsignedInts#compareUnsigned`._
@@ -1273,6 +1273,7 @@ _46 recipes_
 * [Prefer `Math#clamp`](/recipes/java/migrate/guava/prefermathclamp.md) - _Prefer `java.lang.Math#clamp` instead of using `com.google.common.primitives.*#constrainToRange`._
 * [Prefer `Math#multiplyExact`](/recipes/java/migrate/guava/prefermathmultiplyexact.md) - _Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.primitives.IntMath#checkedMultiply` or `com.google.common.primitives.IntMath#multiplyExact`._
 * [Prefer `Math#subtractExact`](/recipes/java/migrate/guava/prefermathsubtractexact.md) - _Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.primitives.IntMath#checkedSubtract` or `com.google.common.primitives.IntMath#subtractExact`._
+* [Prefer `Predicate.and(Predicate)`](/recipes/java/migrate/guava/noguavapredicatesandor.md) - _Prefer `Predicate.and(Predicate)` over `Predicates.and(Predicate, Predicate)`._
 * [Prefer `Runnable::run`](/recipes/java/migrate/guava/noguavadirectexecutor.md) - _`Executor` is a SAM-compatible interface, so `Runnable::run` is just as succinct as `MoreExecutors.directExecutor()` but without the third-party library requirement._
 * [Prefer `Short#compare`](/recipes/java/migrate/guava/prefershortcompare.md) - _Prefer `java.lang.Short#compare` instead of using `com.google.common.primitives.Shorts#compare`._
 * [Prefer `String#join()` over Guava `Joiner#join()`](/recipes/java/migrate/guava/preferjavastringjoin.md) - _Replaces supported calls to `com.google.common.base.Joiner#join()` with `java.lang.String#join()`._
@@ -1347,8 +1348,8 @@ _3 recipes_
 
 _4 recipes_
 
-* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md) - _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`_
-* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md) - _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`_
+* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md) - _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`._
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md) - _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`._
 * [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md) - _Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md) - _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions._
 
@@ -1374,7 +1375,7 @@ _1 recipe_
 
 ## jackson
 
-_13 recipes_
+_14 recipes_
 
 * [Jackson best practices](/recipes/java/jackson/jacksonbestpractices.md) - _Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations._
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehausclassestofasterxml.md) - _In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML._
@@ -1385,6 +1386,7 @@ _13 recipes_
 * [Remove redundant `@JsonProperty` argument](/recipes/java/jackson/removeredundantjsonpropertyvalue.md) - _Remove `@JsonProperty` annotation or value attribute when the value matches the argument name._
 * [Remove registrations of modules built-in to Jackson 3](/recipes/java/jackson/removebuiltinmoduleregistrations.md) - _In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` calls for these modules._
 * [Rename Jackson 2.x methods to 3.x equivalents](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md) - _Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`)._
+* [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](/recipes/java/jackson/replacestreamwritecapability.md) - _In Jackson 3, `JsonGenerator.canWriteBinaryNatively()` and `canWriteFormattedNumbers()` were removed and replaced with the `StreamWriteCapability` enum. This recipe updates these method calls to use `getWriteCapabilities().isEnabled(StreamWriteCapability.*)` instead._
 * [Update Jackson 2.x types to 3.x](/recipes/java/jackson/upgradejackson_2_3_typechanges.md) - _Update Jackson type names including exception types and core class renames._
 * [Update Jackson package names from 2.x to 3.x](/recipes/java/jackson/upgradejackson_2_3_packagechanges.md) - _Update Jackson package imports from `com.fasterxml.jackson` to `tools.jackson`._
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md) - _Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs._
@@ -2650,7 +2652,7 @@ _173 recipes_
 * [Default comes last](/recipes/staticanalysis/defaultcomeslast.md) - _Ensure the `default` case comes last after all the cases in a switch statement._
 * [End files with a single newline](/recipes/java/format/emptynewlineatendoffile.md) - _Some tools work better when files end with an empty line._
 * [Enum values should be compared with &quot;==&quot;](/recipes/staticanalysis/compareenumswithequalityoperator.md) - _Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!Enum equals(java.lang.Object)` will change to `!=`._
-* [Equals avoids null](/recipes/staticanalysis/equalsavoidsnull.md) - _Checks that any combination of String literals is on the left side of an `equals()` comparison. Also checks for String literals assigned to some field (such as `someString.equals(anotherString = &quot;text&quot;))`._
+* [Equals avoids null](/recipes/staticanalysis/equalsavoidsnull.md) - _Checks that any combination of String literals is on the left side of an `equals()` comparison. Also checks for String literals assigned to some field (such as `someString.equals(anotherString = &quot;text&quot;))`. And removes redundant null checks in conjunction with equals comparisons._
 * [Explicit initialization](/recipes/staticanalysis/explicitinitialization.md) - _Checks if any class or object member is explicitly initialized to default for its type value:  - `null` for object references  - zero for numeric types and `char`  - and `false` for `boolean` Removes explicit initializations where they aren't necessary._
 * [Fall through](/recipes/staticanalysis/fallthrough.md) - _Checks for fall-through in switch statements, adding `break` statements in locations where a case contains Java code but does not have a `break`, `return`, `throw`, or `continue` statement._
 * [Finalize classes with private constructors](/recipes/staticanalysis/finalclass.md) - _Adds the `final` modifier to classes that expose no public or package-private constructors._
@@ -2889,7 +2891,7 @@ _1 recipe_
 
 ## security
 
-_58 recipes_
+_59 recipes_
 
 * [Find AWS secrets](/recipes/java/security/secrets/findawssecrets.md) - _Locates AWS secrets stored in plain text in code._
 * [Find Artifactory secrets](/recipes/java/security/secrets/findartifactorysecrets.md) - _Locates Artifactory secrets stored in plain text in code._
@@ -2932,6 +2934,7 @@ _58 recipes_
 * [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md) - _Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md) - _Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md) - _Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](/recipes/apache/commons/io/relocateapachecommonsio.md) - _The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 * [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md) - _The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.AccessController`._
@@ -2981,7 +2984,7 @@ _12 recipes_
 
 ## spring
 
-_128 recipes_
+_129 recipes_
 
 * [Add Spring compatibility extensions for commonly used annotations](/recipes/quarkus/spring/addspringcompatibilityextensions.md) - _Adds Quarkus Spring compatibility extensions when Spring annotations are detected in the codebase._
 * [Add or replace Spring Boot build plugin with Quarkus build plugin](/recipes/quarkus/spring/migratemavenplugin.md) - _Remove Spring Boot Maven plugin if present and add Quarkus Maven plugin using the same version as the quarkus-bom._
@@ -3059,6 +3062,7 @@ _128 recipes_
 * [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md) - _Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md) - _Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+* [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md) - _Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md) - _Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](/recipes/java/spring/boot3/actuatorendpointsanitization.md) - _Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228_
 * [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](/recipes/java/spring/security6/removeuseauthorizationmanager.md) - _In Spring Security 6, `&lt;websocket-message-broker&gt;` defaults `use-authorization-manager` to `true`. So, the `use-authorization-manager` attribute for message security is no longer needed and can be removed._

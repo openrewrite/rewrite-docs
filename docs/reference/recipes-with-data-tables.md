@@ -63,7 +63,7 @@ This recipe searches for instances in code that may be impacted by post quantum 
   * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
 
 
-### [Move to JUnit 5](/recipes/devcenter/junitjupiterupgrade.md)
+### [Move to JUnit 6](/recipes/devcenter/junitjupiterupgrade.md)
  
 _io.moderne.devcenter.JUnitJupiterUpgrade_
 
@@ -666,17 +666,6 @@ Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Find Gradle `dependencies` blocks](/recipes/gradle/search/finddependencyhandler.md)
- 
-_org.openrewrite.gradle.search.FindDependencyHandler_
-
-Find the dependency handler containing any number of dependency definitions.
-
-#### Data tables:
-
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
 ### [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
@@ -5269,7 +5258,7 @@ Locates and reports on all licenses in use.
  
 _org.openrewrite.java.dependencies.DependencyVulnerabilityCheck_
 
-This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-10-06T1102.
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/). Last updated: 2025-10-20T1103.
 
 #### Data tables:
 
@@ -5739,17 +5728,6 @@ Updates plugins to version compatible with Java 17.
 _org.openrewrite.java.migrate.UpgradeToJava6_
 
 This recipe will apply changes commonly needed when upgrading to Java 6. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [Add missing `isWrapperFor` and `unwrap` methods.](/recipes/java/migrate/jrewrapperinterface.md)
- 
-_org.openrewrite.java.migrate.JREWrapperInterface_
-
-Add method implementations stubs to classes that implement `java.sql.Wrapper`.
 
 #### Data tables:
 
