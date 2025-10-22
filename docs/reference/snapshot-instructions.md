@@ -96,5 +96,5 @@ For instance, if the latest release of the `rewrite-maven-plugin` is `6.21.1`, t
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:6.22.0-SNAPSHOT:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:3.20.0-SNAPSHOT -Drewrite.activeRecipes=org.openrewrite.java.migrate.guava.NoGuava -Drewrite.exportDatatables=true ```
-
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:6.22.0-SNAPSHOT:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:3.20.0-SNAPSHOT -Drewrite.activeRecipes=org.openrewrite.java.migrate.guava.NoGuava -Drewrite.exportDatatables=true
+```
