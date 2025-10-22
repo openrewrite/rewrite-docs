@@ -45,6 +45,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Reorder annotations alphabetically](../../staticanalysis/reorderannotations)
 * [Use static import](../../java/usestaticimport)
   * methodPattern: `org.openrewrite..Assertions *(..)`
+* [Use static import](../../java/usestaticimport)
+  * methodPattern: `org.openrewrite.test.RewriteTest *(..)`
+* [Use static import](../../java/usestaticimport)
+  * methodPattern: `org.openrewrite.test.SourceSpecs *(..)`
 
 </TabItem>
 
@@ -75,6 +79,10 @@ recipeList:
   - org.openrewrite.staticanalysis.ReorderAnnotations
   - org.openrewrite.java.UseStaticImport:
       methodPattern: org.openrewrite..Assertions *(..)
+  - org.openrewrite.java.UseStaticImport:
+      methodPattern: org.openrewrite.test.RewriteTest *(..)
+  - org.openrewrite.java.UseStaticImport:
+      methodPattern: org.openrewrite.test.SourceSpecs *(..)
 
 ```
 </TabItem>

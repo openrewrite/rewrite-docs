@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore\_5\_NioInputBuffers**
 
-_Mapping of specifically `*InputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x_
+_Mapping of specifically `*InputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x._
 
 ## Recipe source
 
@@ -73,7 +73,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioInputBuffers
 displayName: Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x
 description: |
-  Mapping of specifically `*InputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x
+  Mapping of specifically `*InputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
 recipeList:
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO: Check this usage, as implementation has changed to match that of old `.available()` method.

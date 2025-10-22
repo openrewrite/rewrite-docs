@@ -41,8 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
 * [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
 * [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewtreemap)
+* [Prefer `Predicate.and(Predicate)`](../../../java/migrate/guava/noguavapredicatesandor)
 * [Prefer `Arrays.asList(..)` over Guava primitives](../../../java/migrate/guava/noguavaprimitiveaslist)
 * [Refaster style Guava to Java migration recipes](../../../java/migrate/guava/noguavarefasterrecipes)
+* [Prefer `new HashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewhashmap)
 * [Prefer `new HashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewhashset)
 * [Prefer `new ConcurrentHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset)
 * [Prefer `new LinkedHashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset)
@@ -96,8 +98,10 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewLinkedList
   - org.openrewrite.java.migrate.guava.NoGuavaMapsNewTreeMap
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicatesAndOr
   - org.openrewrite.java.migrate.guava.NoGuavaPrimitiveAsList
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes
+  - org.openrewrite.java.migrate.guava.NoGuavaMapsNewHashMap
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet

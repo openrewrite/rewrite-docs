@@ -1,48 +1,104 @@
 ---
-sidebar_label: "Migrate `web.xml` using Java EE"
+sidebar_label: "Change TOML value"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate `web.xml` using Java EE
+# Change TOML value
 
-**org.openrewrite.spring.webxml.MigrateToJavaXServletConfiguration**
+**org.openrewrite.toml.ChangeValue**
 
-_Migrates `web.xml` content to Spring Boot Configuration classes using Java EE javax namespace._
+_Change the value of a TOML key._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/ChangeValue.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Options
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate `web.xml` to Java Configuration](/recipes/spring/webxml/removewebxml.md)
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | keyPath | A TOML path expression to locate a key. | `package.version` |
+| `String` | newValue | The new value for the key. | `"2.0.0"` |
 
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeValueExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ChangeValueExample
+displayName: Change TOML value example
+recipeList:
+  - org.openrewrite.toml.ChangeValue:
+      keyPath: package.version
+      newValue: "2.0.0"
+```
+
+Now that `com.yourorg.ChangeValueExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
 
+rewrite {
+    activeRecipe("com.yourorg.ChangeValueExample")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+```
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>com.yourorg.ChangeValueExample</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToJavaXServletConfiguration
+mod run . --recipe ChangeValue --recipe-option "keyPath=package.version" --recipe-option "newValue="2.0.0""
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite:rewrite-toml:{{VERSION_ORG_OPENREWRITE_REWRITE_TOML}}
 ```
 </TabItem>
 </Tabs>
@@ -51,7 +107,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.spring.webxml.MigrateToJavaXServletConfiguration" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.toml.ChangeValue" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

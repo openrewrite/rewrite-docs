@@ -33,6 +33,45 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.yaml.YAMLParser$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.yaml.YAMLReadFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.yaml.YAMLGenerator$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.yaml.YAMLWriteFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.xml.XmlReadFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.xml.XmlWriteFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.csv.CsvParser$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.csv.CsvReadFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.csv.CsvGenerator$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.csv.CsvWriteFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.cbor.CBORGenerator$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.cbor.CBORWriteFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.avro.AvroParser$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.avro.AvroReadFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.avro.AvroGenerator$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.avro.AvroWriteFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.smile.SmileParser$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.smile.SmileReadFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.smile.SmileGenerator$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.smile.SmileWriteFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.ion.IonParser$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.ion.IonReadFeature`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.dataformat.ion.IonGenerator$Feature`
+  * newFullyQualifiedTypeName: `tools.jackson.dataformat.ion.IonWriteFeature`
+* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonParseException`
   * newFullyQualifiedTypeName: `tools.jackson.core.StreamReadException`
 * [Change type](../../java/changetype)
@@ -95,6 +134,45 @@ description: |
 tags:
   - jackson-3
 recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.yaml.YAMLParser$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.yaml.YAMLReadFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.yaml.YAMLGenerator$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.yaml.YAMLWriteFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.xml.XmlReadFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.xml.XmlWriteFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.csv.CsvParser$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.csv.CsvReadFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.csv.CsvGenerator$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.csv.CsvWriteFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.cbor.CBORGenerator$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.cbor.CBORWriteFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.avro.AvroParser$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.avro.AvroReadFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.avro.AvroGenerator$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.avro.AvroWriteFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.smile.SmileParser$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.smile.SmileReadFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.smile.SmileGenerator$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.smile.SmileWriteFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.ion.IonParser$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.ion.IonReadFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.dataformat.ion.IonGenerator$Feature
+      newFullyQualifiedTypeName: tools.jackson.dataformat.ion.IonWriteFeature
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonParseException
       newFullyQualifiedTypeName: tools.jackson.core.StreamReadException

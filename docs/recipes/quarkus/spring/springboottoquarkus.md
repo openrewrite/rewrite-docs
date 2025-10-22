@@ -101,27 +101,9 @@ recipeList:
 
 
 ###### Unchanged
-```xml title="pom.xml"
-<project>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.0</version>
-    </parent>
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <properties>
-        <java.version>17</java.version>
-    </properties>
-</project>
+```mavenProject
+project
 ```
-
----
-
-##### Example 2
-`SpringBootToQuarkusTest#migrateSpringBootParentToQuarkusBOM`
-
 
 ###### Unchanged
 ```xml title="pom.xml"
@@ -137,6 +119,46 @@ recipeList:
     <properties>
         <java.version>17</java.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`SpringBootToQuarkusTest#migrateSpringBootParentToQuarkusBOM`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.0</version>
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 </project>
 ```
 

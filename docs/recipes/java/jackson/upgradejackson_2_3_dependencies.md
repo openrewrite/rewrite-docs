@@ -61,6 +61,48 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newArtifactId: `jackson-databind`
   * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.dataformat`
+  * oldArtifactId: `jackson-dataformat-yaml`
+  * newGroupId: `tools.jackson.dataformat`
+  * newArtifactId: `jackson-dataformat-yaml`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.dataformat`
+  * oldArtifactId: `jackson-dataformat-xml`
+  * newGroupId: `tools.jackson.dataformat`
+  * newArtifactId: `jackson-dataformat-xml`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.dataformat`
+  * oldArtifactId: `jackson-dataformat-csv`
+  * newGroupId: `tools.jackson.dataformat`
+  * newArtifactId: `jackson-dataformat-csv`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.dataformat`
+  * oldArtifactId: `jackson-dataformat-cbor`
+  * newGroupId: `tools.jackson.dataformat`
+  * newArtifactId: `jackson-dataformat-cbor`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.dataformat`
+  * oldArtifactId: `jackson-dataformat-avro`
+  * newGroupId: `tools.jackson.dataformat`
+  * newArtifactId: `jackson-dataformat-avro`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.dataformat`
+  * oldArtifactId: `jackson-dataformat-smile`
+  * newGroupId: `tools.jackson.dataformat`
+  * newArtifactId: `jackson-dataformat-smile`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.dataformat`
+  * oldArtifactId: `jackson-dataformat-ion`
+  * newGroupId: `tools.jackson.dataformat`
+  * newArtifactId: `jackson-dataformat-ion`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-jdk8`
   * newGroupId: `tools.jackson.core`
@@ -115,6 +157,48 @@ recipeList:
       oldArtifactId: jackson-module-parameter-names
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.dataformat
+      oldArtifactId: jackson-dataformat-yaml
+      newGroupId: tools.jackson.dataformat
+      newArtifactId: jackson-dataformat-yaml
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.dataformat
+      oldArtifactId: jackson-dataformat-xml
+      newGroupId: tools.jackson.dataformat
+      newArtifactId: jackson-dataformat-xml
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.dataformat
+      oldArtifactId: jackson-dataformat-csv
+      newGroupId: tools.jackson.dataformat
+      newArtifactId: jackson-dataformat-csv
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.dataformat
+      oldArtifactId: jackson-dataformat-cbor
+      newGroupId: tools.jackson.dataformat
+      newArtifactId: jackson-dataformat-cbor
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.dataformat
+      oldArtifactId: jackson-dataformat-avro
+      newGroupId: tools.jackson.dataformat
+      newArtifactId: jackson-dataformat-avro
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.dataformat
+      oldArtifactId: jackson-dataformat-smile
+      newGroupId: tools.jackson.dataformat
+      newArtifactId: jackson-dataformat-smile
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.dataformat
+      oldArtifactId: jackson-dataformat-ion
+      newGroupId: tools.jackson.dataformat
+      newArtifactId: jackson-dataformat-ion
       newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype

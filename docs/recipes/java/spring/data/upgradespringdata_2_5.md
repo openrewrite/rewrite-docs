@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Spring Data 2.5"
+sidebar_label: "Migrate to Spring Data JPA 2.5"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Data 2.5
+# Migrate to Spring Data JPA 2.5
 
 **org.openrewrite.java.spring.data.UpgradeSpringData\_2\_5**
 
@@ -39,7 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.data.UpgradeSpringData_2_5
-displayName: Migrate to Spring Data 2.5
+displayName: Migrate to Spring Data JPA 2.5
 description: |
   Migrate applications to the latest Spring Data 2.5 release.
 recipeList:

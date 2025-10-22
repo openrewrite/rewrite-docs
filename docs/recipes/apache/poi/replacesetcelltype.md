@@ -19,6 +19,13 @@ _`Cell.setCellType()` can be configured with either an integer or a the `CellTyp
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
+
 ## Example
 
 

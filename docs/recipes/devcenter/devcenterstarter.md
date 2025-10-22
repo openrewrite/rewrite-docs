@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Move to a later Java version](../devcenter/javaversionupgrade)
   * majorVersion: `25`
   * upgradeRecipe: `org.openrewrite.java.migrate.UpgradeToJava25`
-* [Move to JUnit 5](../devcenter/junitjupiterupgrade)
+* [Move to JUnit 6](../devcenter/junitjupiterupgrade)
 * [OWASP top ten](../devcenter/securitystarter)
 
 </TabItem>

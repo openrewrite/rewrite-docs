@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Move to JUnit 5"
+sidebar_label: "Move to JUnit 6"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Move to JUnit 5
+# Move to JUnit 6
 
 **io.moderne.devcenter.JUnitJupiterUpgrade**
 

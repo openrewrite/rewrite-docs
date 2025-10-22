@@ -72,7 +72,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Add missing `isWrapperFor` and `unwrap` methods.](/recipes/java/migrate/jrewrapperinterface.md)
+* [Migrate to Java 6](/recipes/java/migrate/upgradetojava6.md)
 
 ## Examples
 ##### Example 1

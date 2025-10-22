@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient4.MappingDeprecatedClasses**
 
-_Uses new classes/methods instead of the deprecated ones_
+_Uses new classes/methods instead of the deprecated ones._
 
 ## Recipe source
 
@@ -49,7 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient4.MappingDeprecatedClasses
 displayName: Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements
 description: |
-  Uses new classes/methods instead of the deprecated ones
+  Uses new classes/methods instead of the deprecated ones.
 recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.apache.http.client.params.CookiePolicy.RFC_2109

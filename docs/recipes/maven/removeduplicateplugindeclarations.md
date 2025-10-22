@@ -1,51 +1,84 @@
 ---
-sidebar_label: "Delete empty `web.xml` files"
+sidebar_label: "Remove duplicate plugin declarations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Delete empty `web.xml` files
+# Remove duplicate plugin declarations
 
-**io.moderne.java.spring.framework.webxml.DeleteEmptyWebXml**
+**org.openrewrite.maven.RemoveDuplicatePluginDeclarations**
 
-_Deletes `web.xml` files that contain only an empty `<web-app>` root element with no child elements._
+_Maven 4 rejects duplicate plugin declarations (same groupId and artifactId) with an error. This recipe removes duplicate plugin declarations, keeping only the first occurrence._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveDuplicatePluginDeclarations.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Used by
 
-## Example
+This recipe is used as part of the following composite recipes:
 
-
-###### Unchanged
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app>
-</web-app>
-```
+* [Migrate to Maven 4](/recipes/maven/migratetomaven4.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 <Tabs groupId="projectType">
 
+<TabItem value="maven" label="Maven POM">
 
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.maven.RemoveDuplicatePluginDeclarations</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.RemoveDuplicatePluginDeclarations -Drewrite.exportDatatables=true
+```
+
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DeleteEmptyWebXml
+mod run . --recipe RemoveDuplicatePluginDeclarations
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
 ```
 </TabItem>
 </Tabs>
@@ -54,7 +87,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.framework.webxml.DeleteEmptyWebXml" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.RemoveDuplicatePluginDeclarations" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

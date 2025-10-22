@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore\_5\_NioUtilMapping**
 
-_Mapping of all the compatible utility classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x_
+_Mapping of all the compatible utility classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x._
 
 ## Recipe source
 
@@ -42,7 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioUtilMapping
 displayName: Migrate to Apache HttpCore Nio Util Classes to Apache HttpCore 5.x
 description: |
-  Mapping of all the compatible utility classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x
+  Mapping of all the compatible utility classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
 recipeList:
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioInputBuffers
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioOutputBuffers

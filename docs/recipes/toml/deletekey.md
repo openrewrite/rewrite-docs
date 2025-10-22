@@ -1,48 +1,102 @@
 ---
-sidebar_label: "Migrate `web.xml` using Jakarta EE"
+sidebar_label: "Delete TOML key"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate `web.xml` using Jakarta EE
+# Delete TOML key
 
-**org.openrewrite.spring.webxml.MigrateToJakartaEEServletConfiguration**
+**org.openrewrite.toml.DeleteKey**
 
-_Migrates `web.xml` content to Spring Boot Configuration classes using Jakarta EE namespace._
+_Delete a TOML key-value pair._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/DeleteKey.java), 
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Options
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate `web.xml` to Java Configuration](/recipes/spring/webxml/removewebxml.md)
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | keyPath | A TOML path expression to locate a key. | `package.keywords` |
 
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteKeyExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.DeleteKeyExample
+displayName: Delete TOML key example
+recipeList:
+  - org.openrewrite.toml.DeleteKey:
+      keyPath: package.keywords
+```
+
+Now that `com.yourorg.DeleteKeyExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
 
+rewrite {
+    activeRecipe("com.yourorg.DeleteKeyExample")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+```
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>com.yourorg.DeleteKeyExample</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToJakartaEEServletConfiguration
+mod run . --recipe DeleteKey --recipe-option "keyPath=package.keywords"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite:rewrite-toml:{{VERSION_ORG_OPENREWRITE_REWRITE_TOML}}
 ```
 </TabItem>
 </Tabs>
@@ -51,7 +105,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.spring.webxml.MigrateToJakartaEEServletConfiguration" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.toml.DeleteKey" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

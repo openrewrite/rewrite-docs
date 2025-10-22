@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies**
 
-_Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`_
+_Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`._
 
 ### Tags
 
@@ -62,7 +62,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies
 displayName: Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies
 description: |
-  Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`
+  Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`.
 tags:
   - apache
   - httpclient

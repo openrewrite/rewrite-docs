@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Boot 3.3](../../../java/spring/boot3/upgradespringboot_3_3)
 * [Migrate to Spring Framework 6.2](../../../java/spring/framework/upgradespringframework_6_2)
 * [Migrate to Spring Cloud 2024](../../../java/spring/cloud2024/upgradespringcloud_2024)
-* [Migrate to Spring Data 3.4](../../../java/spring/data/upgradespringdata_3_4)
+* [Migrate to Spring Data JPA 3.4](../../../java/spring/data/upgradespringdata_3_4)
 * [Migrate to Spring Security 6.4](../../../java/spring/security6/upgradespringsecurity_6_4)
 * [Migrate Spring Boot properties to 3.4](../../../java/spring/boot3/springbootproperties_3_4)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)

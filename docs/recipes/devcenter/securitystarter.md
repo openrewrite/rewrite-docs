@@ -74,6 +74,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`ReportAsSecurityIssuesTest#reportSecret`
 
 
 <Tabs groupId="beforeAfter">
@@ -124,6 +125,7 @@ class Foo {
 ---
 
 ##### Example 2
+`ReportAsSecurityIssuesTest#reportSecret`
 
 
 <Tabs groupId="beforeAfter">

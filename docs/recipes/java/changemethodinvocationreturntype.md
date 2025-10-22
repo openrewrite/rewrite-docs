@@ -38,6 +38,7 @@ This recipe is used as part of the following composite recipes:
 * [Change SDK TransferManager types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
 * [Change method invocation return type](/recipes/java/migrate/changemethodinvocationreturntype.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
+* [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
 
 ## Example
 

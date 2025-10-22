@@ -52,7 +52,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Testcontainers best practices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
+* [Migrate to testcontainers-java 2.x](/recipes/java/testing/testcontainers/testcontainers2migration.md)
 
 
 ## Usage

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.java.spring.framework.webxml.WebXmlToWebApplicationInitializer**
 
-_Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests._
+_Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests.It creates a `WebXmlWebAppInitializer` class in `src/main/java` with respect to submodules if they contain java files.**If it finds an existing `WebXmlWebAppInitializer`, it skips the creation**._
 
 ## Recipe source
 
@@ -57,11 +57,11 @@ main
 ```
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="src/main/webapp/WEB-INF/web.xml" label="src/main/webapp/WEB-INF/web.xml">
 
 
 ###### Before
-```xml
+```xml title="src/main/webapp/WEB-INF/web.xml"
 <?xml version="1.0"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd">
@@ -81,7 +81,7 @@ main
 ```
 
 ###### After
-```xml
+```xml title="src/main/webapp/WEB-INF/web.xml"
 <?xml version="1.0"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd">
@@ -94,6 +94,8 @@ main
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- src/main/webapp/WEB-INF/web.xml
++++ src/main/webapp/WEB-INF/web.xml
 @@ -6,10 +6,0 @@
 
 <web-app>

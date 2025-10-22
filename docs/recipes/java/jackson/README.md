@@ -25,6 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
+* [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](./replacestreamwritecapability.md)
 * [Use modern date/time serialization defaults](./usemoderndatetimeserialization.md)
 
 

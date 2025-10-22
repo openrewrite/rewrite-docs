@@ -98,6 +98,109 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 
+## Examples
+##### Example 1
+`WordUtilsToCommonsTextTest#migrateWordUtilsToCommonsText`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.lang.WordUtils;
+
+class Lang2 {
+    String capitalize(String str) {
+        return WordUtils.capitalize(str);
+    }
+
+    String wrap(String str, int width) {
+        return WordUtils.wrap(str, width);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.commons.text.WordUtils;
+
+class Lang2 {
+    String capitalize(String str) {
+        return WordUtils.capitalize(str);
+    }
+
+    String wrap(String str, int width) {
+        return WordUtils.wrap(str, width);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.commons.lang.WordUtils;
++import org.apache.commons.text.WordUtils;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`WordUtilsToCommonsTextTest#migrateWordUtilsToCommonsText`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.lang.WordUtils;
+
+class Lang2 {
+    String capitalize(String str) {
+        return WordUtils.capitalize(str);
+    }
+
+    String wrap(String str, int width) {
+        return WordUtils.wrap(str, width);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.commons.text.WordUtils;
+
+class Lang2 {
+    String capitalize(String str) {
+        return WordUtils.capitalize(str);
+    }
+
+    String wrap(String str, int width) {
+        return WordUtils.wrap(str, width);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.commons.lang.WordUtils;
++import org.apache.commons.text.WordUtils;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

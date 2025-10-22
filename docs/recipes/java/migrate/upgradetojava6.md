@@ -21,6 +21,10 @@ _This recipe will apply changes commonly needed when upgrading to Java 6. This r
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -28,6 +32,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Upgrade JaCoCo](../../java/migrate/jacoco/upgradejacoco)
+* [Prefer `EnumSet of(..)`](../../java/migrate/util/useenumsetof)
 * [Add missing `isWrapperFor` and `unwrap` methods.](../../java/migrate/jrewrapperinterface)
 
 </TabItem>
@@ -44,6 +50,8 @@ description: |
 tags:
   - java6
 recipeList:
+  - org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo
+  - org.openrewrite.java.migrate.util.UseEnumSetOf
   - org.openrewrite.java.migrate.JREWrapperInterface
 
 ```

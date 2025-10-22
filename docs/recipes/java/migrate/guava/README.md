@@ -39,6 +39,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Long#parseUnsignedInt`](./preferlongparseunsignedlong.md)
 * [Prefer `Long#remainderUnsigned`](./preferlongremainderunsigned.md)
 * [Prefer `Map.of(..)` in Java 9 or higher](./noguavaimmutablemapof.md)
+* [Prefer `Predicate.and(Predicate)`](./noguavapredicatesandor.md)
 * [Prefer `Runnable::run`](./noguavadirectexecutor.md)
 * [Prefer `Set.of(..)` in Java 9 or higher](./noguavaimmutablesetof.md)
 * [Prefer `Short#compare`](./prefershortcompare.md)
