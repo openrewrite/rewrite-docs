@@ -58,7 +58,6 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
-* [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
 
 ## Example
 

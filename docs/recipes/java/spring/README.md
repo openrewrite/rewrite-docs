@@ -47,6 +47,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface](./norepoannotationonrepointerface.md)
 * [Rename bean](./renamebean.md)
 * [Separate application YAML by profile](./separateapplicationyamlbyprofile.md)
+* [Separate `application.properties` by profile](./separateapplicationpropertiesbyprofile.md)
 * [Update the API manifest](./updateapimanifest.md)
 
 

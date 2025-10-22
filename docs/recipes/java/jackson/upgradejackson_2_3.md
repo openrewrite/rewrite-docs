@@ -41,6 +41,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Remove redundant Jackson 3 feature flag configurations](../../java/jackson/upgradejackson_2_3_removeredundantfeatureflags)
 * [Remove registrations of modules built-in to Jackson 3](../../java/jackson/removebuiltinmoduleregistrations)
 * [Use modern date/time serialization defaults](../../java/jackson/usemoderndatetimeserialization)
+* [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](../../java/jackson/replacestreamwritecapability)
 * [Update Jackson package names from 2.x to 3.x](../../java/jackson/upgradejackson_2_3_packagechanges)
 
 </TabItem>
@@ -63,6 +64,7 @@ recipeList:
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags
   - org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations
   - org.openrewrite.java.jackson.UseModernDateTimeSerialization
+  - org.openrewrite.java.jackson.ReplaceStreamWriteCapability
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges
 
 ```

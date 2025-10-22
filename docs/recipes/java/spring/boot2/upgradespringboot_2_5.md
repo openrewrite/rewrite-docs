@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Spring Boot 2.4](../../../java/spring/boot2/upgradespringboot_2_4)
-* [Migrate to Spring Data 2.5](../../../java/spring/data/upgradespringdata_2_5)
+* [Migrate to Spring Data JPA 2.5](../../../java/spring/data/upgradespringdata_2_5)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`

@@ -41,7 +41,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Update Default Servlet Handler for Spring Framework if empty](../../../../../../com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler)
 * [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](../../../../../../com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager)
 * [Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x](../../../../../../com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver)
-* [Migrate to Spring Data 2.7](../../../../../../java/spring/data/upgradespringdata_2_7)
+* [Migrate to Spring Data JPA 2.7](../../../../../../java/spring/data/upgradespringdata_2_7)
 * [Upgrade Spring Data BOM to 2024.1.x](../../../../../../com/oracle/weblogic/rewrite/spring/data/upgradespringdatabom)
 * [Upgrade Spring Data JPA to 3.4.6](../../../../../../com/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa)
 

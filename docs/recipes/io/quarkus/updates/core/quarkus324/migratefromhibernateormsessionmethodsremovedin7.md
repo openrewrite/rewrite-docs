@@ -61,9 +61,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../../../../../java/changemethodname)
   * methodPattern: `org.hibernate.Session save(String, Object)`
   * newMethodName: `persist`
-* [Change method name](../../../../../java/changemethodname)
-  * methodPattern: `org.hibernate.Session update(Object)`
-  * newMethodName: `merge`
 
 </TabItem>
 
@@ -110,9 +107,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.hibernate.Session save(String, Object)
       newMethodName: persist
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.hibernate.Session update(Object)
-      newMethodName: merge
 
 ```
 </TabItem>

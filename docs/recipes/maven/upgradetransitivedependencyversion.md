@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |  |
 | `String` | onlyIfUsing | *Optional*. Only add managed dependencies to projects having a dependency matching the expression. | `org.apache.logging.log4j:log4j*` |
 | `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |  |
+| `String` | because | *Optional*. The reason for upgrading the transitive dependency. This will be added as an XML comment preceding the managed dependency. | `CVE-2021-1234` |
 
 ## Example
 
@@ -49,6 +50,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |releasesOnly|`null`|
 |onlyIfUsing|`null`|
 |addToRootPom|`null`|
+|because||
 
 
 <Tabs groupId="beforeAfter">
@@ -141,6 +143,7 @@ recipeList:
       classifier: test
       versionPattern: '-jre'
       onlyIfUsing: org.apache.logging.log4j:log4j*
+      because: CVE-2021-1234
 ```
 
 Now that `com.yourorg.UpgradeTransitiveDependencyVersionExample` has been defined, activate it in your build file:
@@ -176,7 +179,7 @@ Now that `com.yourorg.UpgradeTransitiveDependencyVersionExample` has been define
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeTransitiveDependencyVersion --recipe-option "groupId=org.apache.logging.log4j" --recipe-option "artifactId=log4j-bom" --recipe-option "version=latest.release" --recipe-option "scope=import" --recipe-option "type=pom" --recipe-option "classifier=test" --recipe-option "versionPattern='-jre'" --recipe-option "onlyIfUsing=org.apache.logging.log4j:log4j*"
+mod run . --recipe UpgradeTransitiveDependencyVersion --recipe-option "groupId=org.apache.logging.log4j" --recipe-option "artifactId=log4j-bom" --recipe-option "version=latest.release" --recipe-option "scope=import" --recipe-option "type=pom" --recipe-option "classifier=test" --recipe-option "versionPattern='-jre'" --recipe-option "onlyIfUsing=org.apache.logging.log4j:log4j*" --recipe-option "because=CVE-2021-1234"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -88,6 +88,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate xmlns entries in `webservices.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
 * [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](/recipes/java/spring/security6/removeuseauthorizationmanager.md)
 * [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
+* [Upgrade to Maven model version 4.1.0](/recipes/maven/upgradetomodelversion410.md)
 
 ## Example
 

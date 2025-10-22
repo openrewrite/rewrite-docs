@@ -54,7 +54,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Data 2.5](/recipes/java/spring/data/upgradespringdata_2_5.md)
+* [Migrate to Spring Data JPA 2.5](/recipes/java/spring/data/upgradespringdata_2_5.md)
 
 
 ## Usage

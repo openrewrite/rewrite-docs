@@ -54,7 +54,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework`
   * artifactId: `*`
   * newVersion: `5.3.x`
-* [Migrate to Spring Data 2.7](../../../java/spring/data/upgradespringdata_2_7)
+* [Migrate to Spring Data JPA 2.7](../../../java/spring/data/upgradespringdata_2_7)
 * [Migrate to Spring Security 5.7](../../../java/spring/security5/upgradespringsecurity_5_7)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springdoc`

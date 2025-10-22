@@ -77,7 +77,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `junit`
   * artifactId: `junit`
-* [Exclude JUnit 4, unless Testcontainers is used](../../../java/testing/junit5/excludejunit4unlessusingtestcontainers)
+* [Exclude JUnit 4, unless Spring Boot Testcontainers is used](../../../java/testing/junit5/excludejunit4unlessusingtestcontainers)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.junit.vintage`
   * artifactId: `junit-vintage-engine`

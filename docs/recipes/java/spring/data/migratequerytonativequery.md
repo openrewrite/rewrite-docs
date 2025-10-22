@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Data 3.4](/recipes/java/spring/data/upgradespringdata_3_4.md)
+* [Migrate to Spring Data JPA 3.4](/recipes/java/spring/data/upgradespringdata_3_4.md)
 
 ## Example
 

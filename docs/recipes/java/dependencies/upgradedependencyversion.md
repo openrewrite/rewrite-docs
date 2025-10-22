@@ -149,7 +149,7 @@ This recipe is used as part of the following composite recipes:
 * [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](/recipes/java/testing/junit5/updatemockwebserver.md)
 * [Prefer the Java 11 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava11.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
-* [Testcontainers best practices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
+* [Rename Testcontainers dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
 * [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
 * [Update Eclipse Yasson Dependencies to 3.0.x](/recipes/java/migrate/jakarta/updateyassondependencies.md)
 * [Update EclipseLink Dependencies to 4.x](/recipes/java/migrate/jakarta/updateeclipselinkdependencies.md)

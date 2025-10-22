@@ -43,7 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.poi`
   * artifactId: `poi*`
   * newVersion: `3.x`
-* [Change method invocation return type](../../java/migrate/changemethodinvocationreturntype)
+* [Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`](../../apache/poi/replacesetboldweightwithsetbold)
+* [Apache POI use `Cell.setCellType(CellType)`](../../apache/poi/replacesetcelltype)
+* [Change method invocation return type](../../java/changemethodinvocationreturntype)
   * methodPattern: `org.apache.poi.ss.usermodel.Cell getCellType()`
   * newReturnType: `org.apache.poi.ss.usermodel.CellType`
 * [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
@@ -246,7 +248,9 @@ recipeList:
       groupId: org.apache.poi
       artifactId: poi*
       newVersion: 3.x
-  - org.openrewrite.java.migrate.ChangeMethodInvocationReturnType:
+  - org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBold
+  - org.openrewrite.apache.poi.ReplaceSetCellType
+  - org.openrewrite.java.ChangeMethodInvocationReturnType:
       methodPattern: org.apache.poi.ss.usermodel.Cell getCellType()
       newReturnType: org.apache.poi.ss.usermodel.CellType
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:

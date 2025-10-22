@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient5.MigrateAuthScope**
 
-_Replace removed constant `org.apache.http.auth.AuthScope.AuthScope.ANY` with `new org.apache.hc.client5.http.auth.AuthScope(null, -1)`_
+_Replace removed constant `org.apache.http.auth.AuthScope.AuthScope.ANY` with `new org.apache.hc.client5.http.auth.AuthScope(null, -1)`._
 
 ## Recipe source
 

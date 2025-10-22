@@ -31,7 +31,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Find Gradle `dependencies` blocks](/recipes/gradle/search/finddependencyhandler.md)
 * [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md)
 * [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
 * [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)

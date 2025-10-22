@@ -146,6 +146,7 @@ This recipe is used as part of the following composite recipes:
 * [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](/recipes/apache/commons/io/relocateapachecommonsio.md)
+* [Rename Testcontainers dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
 * [Replace Derby driver with Quarkus JDBC Derby](/recipes/quarkus/spring/derbydrivertoquarkus.md)
 * [Replace H2 driver with Quarkus JDBC H2](/recipes/quarkus/spring/h2drivertoquarkus.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)

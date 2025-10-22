@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient\_5\_DeprecatedMethods**
 
-_Migrates deprecated methods to their equivalent ones in 5.x_
+_Migrates deprecated methods to their equivalent ones in 5.x._
 
 ## Recipe source
 
@@ -57,7 +57,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods
 displayName: Migrate to ApacheHttpClient 5.x deprecated methods from 4.x
 description: |
-  Migrates deprecated methods to their equivalent ones in 5.x
+  Migrates deprecated methods to their equivalent ones in 5.x.
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.hc.client5.http.config.RequestConfig.Builder setSocketTimeout(int)

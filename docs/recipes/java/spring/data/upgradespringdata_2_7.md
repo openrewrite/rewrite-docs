@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate to Spring Data 2.7"
+sidebar_label: "Migrate to Spring Data JPA 2.7"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Data 2.7
+# Migrate to Spring Data JPA 2.7
 
 **org.openrewrite.java.spring.data.UpgradeSpringData\_2\_7**
 
-_Migrate applications to the latest Spring Data 2.7 release._
+_Migrate applications to the latest Spring Data JPA 2.7 release._
 
 ## Recipe source
 
@@ -34,9 +34,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.data.UpgradeSpringData_2_7
-displayName: Migrate to Spring Data 2.7
+displayName: Migrate to Spring Data JPA 2.7
 description: |
-  Migrate applications to the latest Spring Data 2.7 release.
+  Migrate applications to the latest Spring Data JPA 2.7 release.
 recipeList:
   - org.openrewrite.java.spring.data.UseJpaRepositoryGetReferenceById
 

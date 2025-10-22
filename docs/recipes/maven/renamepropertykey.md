@@ -33,6 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Drop prefixless expressions in POM](/recipes/maven/cleanup/prefixlessexpressions.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Replace removed root directory properties](/recipes/maven/replaceremovedrootdirectoryproperties.md)
 
 ## Example
 

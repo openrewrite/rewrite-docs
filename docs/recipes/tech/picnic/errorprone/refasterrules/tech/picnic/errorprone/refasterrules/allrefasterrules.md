@@ -36,6 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [`AssertJIntegerRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjintegerrulesrecipes)
 * [`AssertJLongRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes)
 * [`AssertJShortRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjshortrulesrecipes)
+* [`AssertJStreamRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes)
 * [`AssortedRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes)
 * [`BigDecimalRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes)
 * [`BugCheckerRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes)
@@ -98,6 +99,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes

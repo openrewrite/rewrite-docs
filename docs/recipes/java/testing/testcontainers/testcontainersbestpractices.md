@@ -17,10 +17,6 @@ _Apply best practices to Testcontainers usage._
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -28,15 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `org.testcontainers`
-  * artifactId: `*`
-  * newVersion: `1.21.x`
-* [Explicit container images and versions](../../../java/testing/testcontainers/explicitcontainerimages)
-* [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](../../../java/testing/testcontainers/gethostmigration)
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.testcontainers.containers.DockerComposeContainer`
-  * newFullyQualifiedTypeName: `org.testcontainers.containers.ComposeContainer`
+* [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 
 </TabItem>
 
@@ -50,15 +38,7 @@ displayName: Testcontainers best practices
 description: |
   Apply best practices to Testcontainers usage.
 recipeList:
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.testcontainers
-      artifactId: "*"
-      newVersion: 1.21.x
-  - org.openrewrite.java.testing.testcontainers.ExplicitContainerImages
-  - org.openrewrite.java.testing.testcontainers.GetHostMigration
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.testcontainers.containers.DockerComposeContainer
-      newFullyQualifiedTypeName: org.testcontainers.containers.ComposeContainer
+  - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
 
 ```
 </TabItem>

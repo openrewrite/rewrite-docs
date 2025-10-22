@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate to Spring Data 3.4"
+sidebar_label: "Migrate to Spring Data JPA 3.4"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Data 3.4
+# Migrate to Spring Data JPA 3.4
 
 **org.openrewrite.java.spring.data.UpgradeSpringData\_3\_4**
 
-_Migrate applications to the latest Spring Data 3.4 release._
+_Migrate applications to the latest Spring Data JPA 3.4 release._
 
 ## Recipe source
 
@@ -34,9 +34,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.data.UpgradeSpringData_3_4
-displayName: Migrate to Spring Data 3.4
+displayName: Migrate to Spring Data JPA 3.4
 description: |
-  Migrate applications to the latest Spring Data 3.4 release.
+  Migrate applications to the latest Spring Data JPA 3.4 release.
 recipeList:
   - org.openrewrite.java.spring.data.MigrateQueryToNativeQuery
 

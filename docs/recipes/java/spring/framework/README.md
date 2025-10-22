@@ -2,6 +2,7 @@
 
 ## Categories
 
+* [Beansxml](/recipes/java/spring/framework/beansxml)
 * [Webxml](/recipes/java/spring/framework/webxml)
 
 ## Composite Recipes

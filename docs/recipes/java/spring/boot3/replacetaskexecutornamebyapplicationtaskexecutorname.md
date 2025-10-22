@@ -32,6 +32,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`ReplaceTaskExecutorNameByApplicationTaskExecutorNameTest#qualifier`
 
 
 <Tabs groupId="beforeAfter">
@@ -87,6 +88,7 @@ class Test {
 ---
 
 ##### Example 2
+`ReplaceTaskExecutorNameByApplicationTaskExecutorNameTest#qualifier`
 
 
 <Tabs groupId="beforeAfter">

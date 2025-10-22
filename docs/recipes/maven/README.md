@@ -15,6 +15,11 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Apache Maven best practices](./bestpractices.md)
+* [Migrate to Maven 4](./migratetomaven4.md)
+* [Replace deprecated lifecycle phases](./replacedeprecatedlifecyclephases.md)
+* [Replace modules with subprojects](./replacemoduleswithsubprojects.md)
+* [Replace removed root directory properties](./replaceremovedrootdirectoryproperties.md)
+* [Upgrade to Maven model version 4.1.0](./upgradetomodelversion410.md)
 
 ## Recipes
 
@@ -54,6 +59,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove Maven plugin dependency](./removeplugindependency.md)
 * [Remove Maven project property](./removeproperty.md)
 * [Remove duplicate Maven dependencies](./removeduplicatedependencies.md)
+* [Remove duplicate plugin declarations](./removeduplicateplugindeclarations.md)
 * [Remove exclusion](./removeexclusion.md)
 * [Remove redundant explicit dependency and plugin versions](./removeredundantdependencyversions.md)
 * [Remove redundant properties](./removeredundantproperties.md)
@@ -68,6 +74,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade Maven parent project version](./upgradeparentversion.md)
 * [Upgrade Maven plugin version](./upgradepluginversion.md)
 * [Upgrade transitive Maven dependencies](./upgradetransitivedependencyversion.md)
+* [Use Maven 4 parent inference](./useparentinference.md)
 * [Use Maven compiler plugin release configuration](./usemavencompilerpluginreleaseconfiguration.md)
 
 

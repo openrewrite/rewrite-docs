@@ -189,6 +189,109 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`CommonStaticAnalysisIssuesPerformanceTest#indexOfOnList`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+
+class Test {
+    static boolean hasIndex(List<String> strList, String str) {
+        if (strList.indexOf(str) > 0) {
+        }
+        return strList.indexOf(str) > 0;
+    }
+}
+```
+
+###### After
+```java
+import java.util.List;
+
+class Test {
+    static boolean hasIndex(List<String> strList, String str) {
+        strList.indexOf(str);
+        return strList.indexOf(str) >= 1;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,3 +5,2 @@
+class Test {
+    static boolean hasIndex(List<String> strList, String str) {
+-       if (strList.indexOf(str) > 0) {
+-       }
+-       return strList.indexOf(str) > 0;
++       strList.indexOf(str);
++       return strList.indexOf(str) >= 1;
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`CommonStaticAnalysisIssuesPerformanceTest#indexOfOnList`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+
+class Test {
+    static boolean hasIndex(List<String> strList, String str) {
+        if (strList.indexOf(str) > 0) {
+        }
+        return strList.indexOf(str) > 0;
+    }
+}
+```
+
+###### After
+```java
+import java.util.List;
+
+class Test {
+    static boolean hasIndex(List<String> strList, String str) {
+        strList.indexOf(str);
+        return strList.indexOf(str) >= 1;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,3 +5,2 @@
+class Test {
+    static boolean hasIndex(List<String> strList, String str) {
+-       if (strList.indexOf(str) > 0) {
+-       }
+-       return strList.indexOf(str) > 0;
++       strList.indexOf(str);
++       return strList.indexOf(str) >= 1;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

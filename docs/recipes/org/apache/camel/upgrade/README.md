@@ -10,6 +10,7 @@
 * [Camel412](/recipes/org/apache/camel/upgrade/camel412)
 * [Camel413](/recipes/org/apache/camel/upgrade/camel413)
 * [Camel414](/recipes/org/apache/camel/upgrade/camel414)
+* [Camel415](/recipes/org/apache/camel/upgrade/camel415)
 * [Camel42](/recipes/org/apache/camel/upgrade/camel42)
 * [Camel43](/recipes/org/apache/camel/upgrade/camel43)
 * [Camel44](/recipes/org/apache/camel/upgrade/camel44)

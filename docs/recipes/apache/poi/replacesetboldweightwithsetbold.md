@@ -19,6 +19,13 @@ _Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`.
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
+
 ## Example
 
 

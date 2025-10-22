@@ -24,7 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | relativeFileName | File path of new file. | `foo/bar/baz.json` |
-| `String` | fileContents | |
+| `String` | fileContents | *Optional*. Multiline text content for the file. | `{"a": {"property": "value"}, "another": {"property": "value"}}` |
 | `String` | fileContentsUrl | *Optional*. URL to file containing text content for the file. Use either `fileContents` or `fileContentsUrl` option. | `http://foo.bar/baz.json` |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
@@ -41,15 +41,7 @@ displayName: Create JSON file example
 recipeList:
   - org.openrewrite.json.CreateJsonFile:
       relativeFileName: foo/bar/baz.json
-      fileContents: >
-        {
-          "a": {
-            "property": "value"
-          },
-          "another": {
-            "property": "value"
-          }
-        }
+      fileContents: '{"a": {"property": "value"}, "another": {"property": "value"}}'
       fileContentsUrl: http://foo.bar/baz.json
 ```
 
@@ -99,27 +91,19 @@ repositories {
 ```
 2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
-    <TabItem value="moderne-cli" label="Moderne CLI">
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
-    ```shell title="shell"
-    mod run . --recipe CreateJsonFile --recipe-option "relativeFileName=foo/bar/baz.json" --recipe-option "fileContents=>
-{
-  "a": {
-    "property": "value"
-  },
-  "another": {
-    "property": "value"
-  }
-}" --recipe-option "fileContentsUrl=http://foo.bar/baz.json"
-    ```
+```shell title="shell"
+mod run . --recipe CreateJsonFile --recipe-option "relativeFileName=foo/bar/baz.json" --recipe-option "fileContents='{"a": {"property": "value"}, "another": {"property": "value"}}'" --recipe-option "fileContentsUrl=http://foo.bar/baz.json"
+```
 
-    If the recipe is not available locally, then you can install it using:
-    ```shell
-    mod config recipes jar install org.openrewrite:rewrite-json:{{VERSION_ORG_OPENREWRITE_REWRITE_JSON}}
-    ```
-    </TabItem>
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite:rewrite-json:{{VERSION_ORG_OPENREWRITE_REWRITE_JSON}}
+```
+</TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories

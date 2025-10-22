@@ -33,6 +33,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `com.google.common.base.Predicates not(com.google.common.base.Predicate)`
+  * fullyQualifiedTargetTypeName: `java.util.function.Predicate`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.google.common.base.Predicates equalTo(..)`
+  * newMethodName: `isEqual`
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `com.google.common.base.Predicates isEqual(..)`
+  * fullyQualifiedTargetTypeName: `java.util.function.Predicate`
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `com.google.common.base.Predicate apply(..)`
   * newMethodName: `test`
@@ -56,6 +65,15 @@ tags:
   - RSPEC-S4738
   - guava
 recipeList:
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: com.google.common.base.Predicates not(com.google.common.base.Predicate)
+      fullyQualifiedTargetTypeName: java.util.function.Predicate
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.google.common.base.Predicates equalTo(..)
+      newMethodName: isEqual
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: com.google.common.base.Predicates isEqual(..)
+      fullyQualifiedTargetTypeName: java.util.function.Predicate
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.google.common.base.Predicate apply(..)
       newMethodName: test

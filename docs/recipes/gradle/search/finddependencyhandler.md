@@ -13,40 +13,12 @@ _Find the dependency handler containing any number of dependency definitions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle.yml), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindDependencyHandler.java), 
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Find method usages](../../java/search/findmethods)
-  * methodPattern: `RewriteGradleProject dependencies(groovy.lang.Closure)`
-  * matchOverrides: `false`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.gradle.search.FindDependencyHandler
-displayName: Find Gradle `dependencies` blocks
-description: |
-  Find the dependency handler containing any number of dependency definitions.
-recipeList:
-  - org.openrewrite.java.search.FindMethods:
-      methodPattern: RewriteGradleProject dependencies(groovy.lang.Closure)
-      matchOverrides: false
-
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
@@ -138,23 +110,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.java.table.MethodCalls" label="MethodCalls">
-
-### Method calls
-**org.openrewrite.java.table.MethodCalls**
-
-_The text of matching method invocations._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The source file that the method call occurred in. |
-| Method call | The text of the method call. |
-| Class name | The class name of the method call. |
-| Method name | The method name of the method call. |
-| Argument types | The argument types of the method call. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

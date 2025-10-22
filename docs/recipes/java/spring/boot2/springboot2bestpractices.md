@@ -38,6 +38,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove the `@Autowired` annotation on inferred constructor](../../../java/spring/noautowiredonconstructor)
 * [Migrate `RestTemplateBuilder`](../../../java/spring/boot2/resttemplatebuilderrequestfactory)
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](../../../java/spring/boot2/replacedeprecatedenvironmenttestutils)
+* [Separate `application.properties` by profile](../../../java/spring/separateapplicationpropertiesbyprofile)
+* [Separate application YAML by profile](../../../java/spring/separateapplicationyamlbyprofile)
 
 </TabItem>
 
@@ -59,6 +61,8 @@ recipeList:
   - org.openrewrite.java.spring.NoAutowiredOnConstructor
   - org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory
   - org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils
+  - org.openrewrite.java.spring.SeparateApplicationPropertiesByProfile
+  - org.openrewrite.java.spring.SeparateApplicationYamlByProfile
 
 ```
 </TabItem>

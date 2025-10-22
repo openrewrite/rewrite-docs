@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.apache.httpclient5.UpgradeApacheHttpCoreNioDependencies**
 
-_Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`_
+_Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`._
 
 ### Tags
 
@@ -52,7 +52,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient5.UpgradeApacheHttpCoreNioDependencies
 displayName: Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency
 description: |
-  Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`
+  Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`.
 tags:
   - apache
   - httpclient
