@@ -92,7 +92,7 @@ However, this investment enables transformations that would be impossible or ext
 Type attribution is one of the key characteristics that makes OpenRewrite's LSTs "semantic" rather than just "syntactic":
 
 * **Syntax** (from the parser) tells us the structure: "This is a method call"
-* **Types** (from attribution) tell us the meaning: "This calls `java.utill.List.add(Object)`"
+* **Types** (from attribution) tell us the meaning: "This calls `java.util.List.add(Object)`"
 * **Formatting** (preserved in LST) tells us the style: "There's a space after the comma"
 
 Together, these three elements give OpenRewrite a more complete understanding of your code – enough to accurately transform it while preserving both correctness and style.
