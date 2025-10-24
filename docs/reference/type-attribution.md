@@ -1,5 +1,5 @@
 ---
-description: A detailed, technical look into type attribution and how OpenRewrite uses it.
+description: A detailed, technical look into type attribution and how to use it in OpenRewrite recipes.
 ---
 
 # Type attribution for recipe authors
