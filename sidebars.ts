@@ -119,6 +119,7 @@ const sidebars: SidebarsConfig = {
         'reference/gradle-plugin-configuration',
         'reference/supported-languages',
         'reference/snapshot-instructions',
+        'reference/type-attribution',
         'reference/jsonpath-and-jsonpathmatcher-reference',
         'reference/yaml-format-reference',
         'reference/method-patterns',

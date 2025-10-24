@@ -1,88 +1,90 @@
-# Type Attribution
+---
+description: A detailed, technical look into type attribution and how OpenRewrite uses it.
+---
 
-Type attribution is the process of associating semantic type information with syntactic elements in the Lossless Semantic Tree (LST).
-This metadata enables OpenRewrite recipes to make informed decisions when transforming code, such as determining if two expressions are assignment-compatible or differentiating between syntactically similar but semantically distinct code.
-For example, differentiating between an SLF4J `log.info()` and a LOG4J `log.info()` can be difficult from when working with raw text or an unattributed syntax tree, but is easy with type attribution.
+# Type attribution
+
+Type attribution is the process of associating semantic type information with syntactic elements in the Lossless Semantic Tree (LST). This metadata enables OpenRewrite recipes to make informed decisions when transforming code, such as determining assignment compatibility or differentiating between syntactically similar but semantically distinct code.
+
+For example, type attribution lets us differentiate between an SLF4J `log.info()` and a LOG4J `log.info()` – which is extremely difficult to do if you are working with raw text or an unattributed syntax tree.
 
 In OpenRewrite's LST, recipes interact with type attribution primarily through:
 
-1. **LST Elements with Type Information** - Tree nodes that implement `TypedTree` and carry a `JavaType` reference
-2. **JavaType** - Interface whose implementations collectively model Java's type system
-3. **Utilities like MethodMatcher and TypeUtils** - Provide convenient access to common type related operations.
+1. **LST Elements with Type Information** - Each tree node implements `TypedTree` and carries a `JavaType` reference
+2. **JavaType** - An interface whose implementations collectively model Java's type system
+3. **Utilities like MethodMatcher and TypeUtils** - Which are classes that provide convenient access to common type-related operations.
 
-These classes originate in the Java type system, but OpenRewrite re-uses these classes for multiple languages so these types appear in LSTs representing languages like Kotlin and TypeScript as well.
+While these classes originate in the Java type system, OpenRewrite re-uses these classes for multiple languages. That means these types appear in LSTs representing languages like Kotlin and TypeScript as well.
 
 ## The JavaType hierarchy
 
-`JavaType` is the root interface implemented by all type information in OpenRewrite.
-The interface is substantially empty with the important data and behavior belonging to its subclasses.
+`JavaType` is the root interface implemented by all type information in OpenRewrite. The interface itself is mostly empty – with the important data and behavior belonging to its subclasses.
 
 ### JavaType.FullyQualified
 
-Many JavaType implementations share a common interface: `JavaType.FullyQualified`.
-This interface is implemented by `Annotation`, `Class`, `Parameterized`, `ShallowClass`, and `Unknown`.
-All implementations of this interface provide a fully qualified name of the class (e.g., `"java.util.List"`).
-Excepting `ShallowClass` and `Unknown`, the other implementations further provide access to the type's supertype, interfaces, methods, fields, and other metadata.
+Many JavaType implementations share a common interface: `JavaType.FullyQualified`. This interface is implemented by `Annotation`, `Class`, `Parameterized`, `ShallowClass`, and `Unknown`.
+
+All implementations of this interface provide a fully qualified name of the class (e.g., `"java.util.List"`). Also, except for `ShallowClass` and `Unknown`, the other implementations further provide access to the type's supertype, interfaces, methods, fields, and other metadata.
 
 When working with types it is common to check if a type is a `FullyQualified` instance before accessing its fully qualified name or other structural information.
 
 ### JavaType implementations
 
-- **`JavaType.Class`** - Represents a fully-qualified class or interface with complete metadata:
-    - Fully qualified name (e.g., `"java.util.List"`)
-    - Supertype and interfaces
-    - Type parameters (e.g., `E` in `List<E>`)
-    - Fields (as `JavaType.Variable`)
-    - Methods (as `JavaType.Method`)
-    - Annotations
-    - Flags (public, static, final, etc.)
+* **`JavaType.Class`** - Represents a fully-qualified class or interface with complete metadata:
+    * Fully qualified name (e.g., `"java.util.List"`)
+    * Supertype and interfaces
+    * Type parameters (e.g., `E` in `List<E>`)
+    * Fields (as `JavaType.Variable`)
+    * Methods (as `JavaType.Method`)
+    * Annotations
+    * Flags (public, static, final, etc.)
 
-- **`JavaType.Parameterized`** - Represents a parameterized type application:
-    - The raw type (a `FullyQualified`)
-    - Type arguments (e.g., `String` in `List<String>`)
-    - Example: `List<String>` vs. raw `List`
+* **`JavaType.Parameterized`** - Represents a parameterized type application:
+    * The raw type (a `FullyQualified`)
+    * Type arguments (e.g., `String` in `List<String>`)
+    * Example: `List<String>` vs. raw `List`
 
-- **`JavaType.ShallowClass`** - A lightweight `Class` variant containing only the fully qualified name:
-    - Used when a recipe needs to manually construct type information but only knows the fully qualified name
-    - Lacks the deep metadata (methods, fields, supertype) that a full `JavaType.Class` provides
-    - Useful as a fallback when full type information is unavailable
-    - **Best Practice**: Prefer obtaining complete type information from `JavaTemplate` or `JavaParser` when possible, but use `ShallowClass.build("com.example.MyClass")` if a more robust approach is unavailable.
+* **`JavaType.ShallowClass`** - A lightweight `Class` variant containing only the fully qualified name:
+    * Used when a recipe needs to manually construct type information but only knows the fully qualified name
+    * Lacks the deep metadata (methods, fields, supertype) that a full `JavaType.Class` provides
+    * Useful as a fallback when full type information is unavailable
+    * **Best Practice**: Prefer obtaining complete type information from `JavaTemplate` or `JavaParser` when possible, but use `ShallowClass.build("com.example.MyClass")` if a more robust approach is unavailable.
 
-- **`JavaType.GenericTypeVariable`** - Represents type parameters and wildcards:
-    - Name (e.g., `"T"`, `"E"`, or `"?"` for wildcards)
-    - Bounds (e.g., `String` in `T extends String`)
-    - Variance (`INVARIANT`, `COVARIANT` for `? extends`, `CONTRAVARIANT` for `? super`)
+* **`JavaType.GenericTypeVariable`** - Represents type parameters and wildcards:
+    * Name (e.g., `"T"`, `"E"`, or `"?"` for wildcards)
+    * Bounds (e.g., `String` in `T extends String`)
+    * Variance (`INVARIANT`, `COVARIANT` for `? extends`, `CONTRAVARIANT` for `? super`)
 
-- **`JavaType.Array`** - Represents array types:
-    - Element type (which may itself be an array)
-    - Example: `String[]`, `int[][]`
+* **`JavaType.Array`** - Represents array types:
+    * Element type (which may itself be an array)
+    * Example: `String[]`, `int[][]`
 
-- **`JavaType.Primitive`** - Enum representing primitive types:
-    - Values: `Boolean`, `Byte`, `Char`, `Short`, `Int`, `Long`, `Float`, `Double`, `Void`, `String`, `Null`, `None`
+* **`JavaType.Primitive`** - Enum representing primitive types:
+    * Values: `Boolean`, `Byte`, `Char`, `Short`, `Int`, `Long`, `Float`, `Double`, `Void`, `String`, `Null`, `None`
 
-- **`JavaType.Method`** - Represents a method signature:
-    - Declaring type
-    - Method name
-    - Return type
-    - Parameter types and names
-    - Thrown exceptions
-    - Modifiers
-    - Type parameters declared by the method
+* **`JavaType.Method`** - Represents a method signature:
+    * Declaring type
+    * Method name
+    * Return type
+    * Parameter types and names
+    * Thrown exceptions
+    * Modifiers
+    * Type parameters declared by the method
 
-- **`JavaType.Variable`** - Represents a field or variable:
-    - Owner (the class or method declaring the variable)
-    - Variable type
-    - Variable name
+* **`JavaType.Variable`** - Represents a field or variable:
+    * Owner (the class or method declaring the variable)
+    * Variable type
+    * Variable name
 
-- **`JavaType.Unknown`** - Singleton sentinel value for unresolved types
+* **`JavaType.Unknown`** - Singleton sentinel value for unresolved types
 
-- **`JavaType.Intersection`** - Represents intersection types (e.g., `T extends A & B`)
+* **`JavaType.Intersection`** - Represents intersection types (e.g., `T extends A & B`)
 
-- **`JavaType.MultiCatch`** - Represents multi-catch exception types (e.g., `IOException | SQLException`)
+* **`JavaType.MultiCatch`** - Represents multi-catch exception types (e.g., `IOException | SQLException`)
 
 ## Accessing type attribution in LST Elements
 
-Typed LST elements implement the `TypedTree` interface allows a `JavaType` implementation to be retrieved from the LST element with `getType()` and updated with `withType()`:
+Typed LST elements implement the `TypedTree` interface, which allows retrieving a `JavaType` from the LST element with `getType()` and updating it with `withType()`:
 
 ```java
 public interface TypedTree {
@@ -91,18 +93,18 @@ public interface TypedTree {
 }
 ```
 
-### Common Typed Elements
+### Common typed elements
 
-- **`J.Identifier`** - Simple name references
-- **`J.FieldAccess`** - Qualified field access (e.g., `obj.field`)
-- **`J.MethodInvocation`** - Method invocations
-- **`J.NewClass`** - Constructor invocations
-- **`J.Binary`** - Binary operations (e.g., `a + b`)
-- **`J.Assignment`** - Assignments (e.g., `x = y`)
-- **`J.VariableDeclarations.NamedVariable`** - Variable declarations (e.g.: the `s` in `String s`)
-- **`J.ClassDeclaration`** - Class declarations (type is `JavaType.FullyQualified`)
+* **`J.Identifier`** - Simple name references
+* **`J.FieldAccess`** - Qualified field access (e.g., `obj.field`)
+* **`J.MethodInvocation`** - Method invocations
+* **`J.NewClass`** - Constructor invocations
+* **`J.Binary`** - Binary operations (e.g., `a + b`)
+* **`J.Assignment`** - Assignments (e.g., `x = y`)
+* **`J.VariableDeclarations.NamedVariable`** - Variable declarations (e.g.: the `s` in `String s`)
+* **`J.ClassDeclaration`** - Class declarations (type is `JavaType.FullyQualified`)
 
-### Example: Method Invocation Type Attribution
+### Example: Method invocation type attribution
 
 ```java
 List<String> list = new ArrayList<>();
@@ -110,22 +112,22 @@ String first = list.get(0);
 ```
 
 In the LST for `list.get(0)`:
-- `J.MethodInvocation.getType()` will provide the return-type of `String`
-- `J.MethodInvocation.getMethodType()` provides access to a `JavaType.Method` with:
-    - Name: `"get"`
-    - Declaring type: `java.util.List<E>`
-    - Return type: `E` (resolved to `String` in this context)
-    - Parameter types: `[int]`
-- The select expression `list` has type `JavaType.Parameterized` with:
-    - Raw type: `java.util.List`
-    - Type parameters: `[String]`
+* `J.MethodInvocation.getType()` will provide the return-type of `String`
+* `J.MethodInvocation.getMethodType()` provides access to a `JavaType.Method` with:
+    * Name: `"get"`
+    * Declaring type: `java.util.List<E>`
+    * Return type: `E` (resolved to `String` in this context)
+    * Parameter types: `[int]`
+* The select expression `list` has type `JavaType.Parameterized` with:
+    * Raw type: `java.util.List`
+    * Type parameters: `[String]`
 
 
-## TypeUtils: Working with Types
+## TypeUtils: Working with types
 
 The `org.openrewrite.java.tree.TypeUtils` provides utilities for reading, comparing, and working with types.
 
-### Type Comparison
+### Type comparison
 
 These methods provide different levels of type compatibility checking:
 
@@ -147,13 +149,15 @@ boolean matches = TypeUtils.isOfClassType(intType, "int");
 ```
 
 Key differences:
-- **`isOfType()`** requires exact type equality (same class, same type parameters)
-- **`isAssignableTo()`** considers type compatibility including primitive widening, boxing/unboxing, and subtype relationships
-- **`isOfClassType()`** matches against a string representation (FQN for classes, keyword for primitives)
 
-### Type Casting Helpers
+* **`isOfType()`** requires exact type equality (same class, same type parameters)
+* **`isAssignableTo()`** considers type compatibility including primitive widening, boxing/unboxing, and subtype relationships
+* **`isOfClassType()`** matches against a string representation (FQN for classes, keyword for primitives)
 
-Each of these methods return `null` if it would not be valid to interpret the argument as of that type.
+### Type casting helpers
+
+Each of these methods return `null` if it would not be valid to interpret the argument as of that type:
+
 ```java
 JavaType.Class clazz = TypeUtils.asClass(type);
 JavaType.Parameterized parameterized = TypeUtils.asParameterized(type);
@@ -162,14 +166,14 @@ JavaType.Array array = TypeUtils.asArray(type);
 JavaType.Primitive primitive = TypeUtils.asPrimitive(type);
 ```
 
-### Type Validation
+### Type validation
 
 ```java
 // Check if a type is fully resolved (no Unknown or null parts)
 boolean wellFormed = TypeUtils.isWellFormedType(type);
 ```
 
-### FQN Comparison
+### FQN comparison
 
 ```java
 // Compare fully qualified names (handles $ vs . for inner classes)
@@ -179,9 +183,9 @@ boolean equal = TypeUtils.fullyQualifiedNamesAreEqual(
 ); // returns true
 ```
 
-## Practical Patterns
+## Practical patterns
 
-### Checking Method Signatures
+### Checking method signatures
 
 When you need to identify specific method invocations, use `MethodMatcher` for a declarative approach or manually inspect the method's type information.
 
@@ -199,7 +203,7 @@ public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, Execu
 }
 ```
 
-**Manual Type Inspection:**
+**Manual type inspection:**
 
 ```java
 @Override
@@ -217,47 +221,50 @@ public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, Execu
 ```
 
 The `MethodMatcher` approach is generally preferred because it:
-- Handles method signature matching with a concise pattern string
-- Automatically considers inheritance (matches on supertypes/interfaces)
-- Supports wildcards and overloaded method matching
-- Is more readable
 
-### Finding Method Overrides
+* Handles method signature matching with a concise pattern string
+* Automatically considers inheritance (matches on supertypes/interfaces)
+* Supports wildcards and overloaded method matching
+* Is more readable
+
+### Finding method overrides
 
 Given a method type, searches the declaring type's parent and interfaces for a method with the same name and signature.
-This method will return an empty optional if the method, the method's declaring type, or the method's generic signature is `null`.
-This is useful when you need to determine whether a given method overrides a superclass method or not, or need to inspect something about the superclass' method signature.
+Returns an empty optional if the method, its declaring type, or generic signature is `null`.
+
+This is useful when you need to determine whether a given method overrides a superclass method or need to inspect something about the superclass' method signature.
 
 ```java
 JavaType.Method overridden = TypeUtils.findOverriddenMethod(method)
     .orElse(null);
 ```
 
-## Common Problems
+## Common problems
 
-### Import Manipulation Failing
+### Import manipulation failing
 
 New recipe authors often wonder why an import isn't being added or removed when they call `JavaVisitor.maybeAddImport()` or `maybeRemoveImport()`. These methods take type attribution into account:
 
-- **`maybeAddImport()`** won't add an import if nothing within the LST is type attributed with the type of the requested import
-- **`maybeRemoveImport()`** won't remove an import if anything remains with the old type
+* **`maybeAddImport()`** won't add an import if nothing within the LST is type attributed with the type of the requested import
+* **`maybeRemoveImport()`** won't remove an import if anything remains with the old type
 
 These methods have parameters which allow you to force the removal/addition of an import regardless of type attribution, but using the override is rarely necessary in a well-formed recipe.
 
-### Tests Failing with "Type is Missing or Malformed"
+### Tests failing with "type is missing or malformed"
 
 This error typically occurs in one of two scenarios:
 
-**1. The parser cannot fully type-attribute the "before" code**
+1. **The parser cannot fully type-attribute the "before" code**
 
-The parser provided to the test cannot successfully parse the "before" text into a fully type-attributed LST.
-This happens when types referenced in the code aren't available to the parser.
+    * The parser provided to the test cannot successfully parse the "before" text into a fully type-attributed LST. This happens when types referenced in the code aren't available to the parser.
 
-**2. The recipe inserts LST elements missing type attribution**
+2. **The recipe inserts LST elements missing type attribution**
 
-When a recipe creates new LST elements (e.g., via `JavaTemplate`) without proper type information, validation will fail.
+    * When a recipe creates new LST elements (e.g., via `JavaTemplate`) without proper type information, validation will fail.
 
-**Solution: Provide Type Information via Classpath**
+:::tip **Solution**:
+Provide type information via Classpath
+:::
 
 In both cases, the resolution is to provide the parser a classpath with definitions for all types that appear within the code being parsed.
 
@@ -308,7 +315,7 @@ Without the `classpathFromResources()` call, the parser wouldn't be able to reso
 
 TypeTables are lightweight serialized type information files that provide just what's needed for type attribution without requiring full JAR files.
 
-**Alternative: Using `classpath()` with Runtime Dependencies**
+**Alternative: Using `classpath()` with runtime dependencies**
 
 Types can also be provided via the `classpath()` method, which looks up dependencies from the runtime classpath of the recipe module:
 
@@ -318,10 +325,10 @@ JavaParser.fromJavaVersion().classpath("slf4j-api");
 
 This approach has downsides that make `classpathFromResources()` preferred:
 
-- **Version conflicts**: Only one version of a JAR can be loaded from the runtime classpath. A recipe module that migrates between multiple versions of a dependency can only have one version on its runtime classpath.
-- **Security scanner false positives**: Taking a runtime dependency on a JAR can cause security scanners to emit false-positive warnings. A recipe module whose purpose is to *fix* a vulnerability may be flagged as *having* that vulnerability.
+* **Version conflicts**: Only one version of a JAR can be loaded from the runtime classpath. A recipe module that migrates between multiple versions of a dependency can only have one version on its runtime classpath.
+* **Security scanner false positives**: Taking a runtime dependency on a JAR can cause security scanners to emit false-positive warnings. A recipe module whose purpose is to *fix* a vulnerability may be flagged as *having* that vulnerability.
 
-**Opting Out of Type Validation**
+**Opting out of type validation**
 
 It is possible to opt out of the well-formed-types safeguard in `RewriteTest`, though this should be done sparingly:
 
@@ -374,4 +381,5 @@ void myRecipeTest() {
 ```
 
 A recipe which manipulates an LST to include missing or invalid type information can produce valid diffs, but will compose poorly with other recipes that want to read and act upon the now-invalid type information.
+
 If a recipe which produces invalid type information is used in a large composite recipe it can be very difficult to debug why expected changes were not made.
