@@ -162,6 +162,7 @@ const sidebars: SidebarsConfig = {
         'concepts-and-explanations/lst-examples',
         'concepts-and-explanations/yaml-lst-examples',
         'concepts-and-explanations/tree-visiting-printer',
+        'concepts-and-explanations/type-attribution',
         'concepts-and-explanations/build-plugin-lst',
         'concepts-and-explanations/environment',
         'concepts-and-explanations/javatemplate',

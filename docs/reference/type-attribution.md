@@ -2,7 +2,7 @@
 description: A detailed, technical look into type attribution and how OpenRewrite uses it.
 ---
 
-# Type attribution
+# Type attribution for recipe authors
 
 Type attribution is the process of associating semantic type information with syntactic elements in the Lossless Semantic Tree (LST). This metadata enables OpenRewrite recipes to make informed decisions when transforming code, such as determining assignment compatibility or differentiating between syntactically similar but semantically distinct code.
 
@@ -78,7 +78,7 @@ When working with types it is common to check if a type is a `FullyQualified` in
 
 * **`JavaType.Unknown`** - Singleton sentinel value for unresolved types
 
-* **`JavaType.Intersection`** - Represents intersection types (e.g., `T extends A & B`)
+* **`JavaType.Intersection`** - Used when doing casts like (`Function & Serializable`).
 
 * **`JavaType.MultiCatch`** - Represents multi-catch exception types (e.g., `IOException | SQLException`)
 
