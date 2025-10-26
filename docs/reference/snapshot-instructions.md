@@ -92,6 +92,26 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 
 To use snapshot versions via the Maven command line, follow the same logic as in the above `Maven insructions` for the rewrite-maven-plugin and the recipe versions.
 
+The first step is to update your `pom.xml` file by modifying the `repositories` section to include the location of the OpenRewrite snapshots:
+
+```xml title="pom.xml"
+<repositories>
+    <!-- Possibly other repositories -->
+    <!-- ... -->
+    <repository>
+        <id>rewrite-snapshots</id>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>rewrite-snapshots</id>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
+    </pluginRepository>
+</pluginRepositories>
+```
+
+Next, you have to update the version numbers specified in the command line.
 For instance, if the latest release of the `rewrite-maven-plugin` is `6.21.1`, the snapshot version would be `6.22.0-SNAPSHOT`. And if the latest release of the  `rewrite-migrate-java` recipe is `3.19.0`, , the snapshot version would be `3.20.0-SNAPSHOT`.
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
