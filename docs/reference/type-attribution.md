@@ -10,7 +10,7 @@ For example, type attribution lets us differentiate between an SLF4J `log.info()
 
 In OpenRewrite's LST, recipes interact with type attribution primarily through:
 
-1. **LST Elements with Type Information** - Each tree node implements `TypedTree` and carries a `JavaType` reference
+1. **LST Elements with Type Information** - LST nodes that implement `TypedTree` carry a `JavaType` reference
 2. **JavaType** - An interface whose implementations collectively model Java's type system
 3. **Utilities like MethodMatcher and TypeUtils** - Which are classes that provide convenient access to common type-related operations.
 
