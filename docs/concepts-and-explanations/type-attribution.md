@@ -48,7 +48,18 @@ This is why OpenRewrite needs access to your dependencies and classpath – it n
 
 Type attribution transforms OpenRewrite from a sophisticated find-and-replace tool into something that truly understands your code. Because of type attribution, OpenRewrite can:
 
-### 1. Perform framework-specific migrations
+### 1. Search for code semantically
+
+Type attribution enables precise, type-aware search that goes far beyond text matching. When searching for code, OpenRewrite can:
+
+* Find all calls to a specific method from a specific class (e.g., `java.util.List.add()` but not `java.util.Set.add()`)
+* Distinguish between identically-named methods from different frameworks (e.g., SLF4J's `logger.info()` vs Log4j's `logger.info()`)
+* Locate all usages of a particular type, even when referenced through imports, inheritance, or qualified names
+* Search across method overloads and overrides, understanding the exact signature being invoked
+
+This semantic search capability is foundational for both writing recipes and understanding codebases – you can find exactly what you're looking for without getting false positives from similar-looking code.
+
+### 2. Perform framework-specific migrations
 
 When migrating from JUnit 4 to JUnit 5, OpenRewrite can distinguish between:
 
@@ -56,7 +67,7 @@ When migrating from JUnit 4 to JUnit 5, OpenRewrite can distinguish between:
 * Static imports from `org.junit.Assert` vs. `org.hamcrest.MatcherAssert`
 * Exception testing patterns specific to JUnit 4
 
-### 2. Safely upgrade dependencies
+### 3. Safely upgrade dependencies
 
 Type information allows OpenRewrite to:
 
@@ -65,7 +76,7 @@ Type information allows OpenRewrite to:
 * Add necessary adapters or compatibility layers
 * Update imports and fully-qualified references
 
-### 3. Refactor across many files
+### 4. Refactor across many files
 
 Because type attribution preserves relationships between files, OpenRewrite can:
 
@@ -73,7 +84,7 @@ Because type attribution preserves relationships between files, OpenRewrite can:
 * Change a class's package and update all imports and references
 * Extract interfaces while maintaining type correctness
 
-### 4. Develop language-agnostic patterns
+### 5. Develop language-agnostic patterns
 
 While type attribution comes from language-specific compilers, OpenRewrite maps these concepts into a common model. This allows similar refactoring patterns to work across multiple languages that share concepts (like Java, Kotlin, and Groovy all running on the JVM).
 
