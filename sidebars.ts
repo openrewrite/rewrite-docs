@@ -161,6 +161,7 @@ const sidebars: SidebarsConfig = {
         'concepts-and-explanations/lossless-semantic-trees',
         'concepts-and-explanations/lst-examples',
         'concepts-and-explanations/yaml-lst-examples',
+        'concepts-and-explanations/javascript-lst-examples',
         'concepts-and-explanations/tree-visiting-printer',
         'concepts-and-explanations/type-attribution',
         'concepts-and-explanations/build-plugin-lst',
