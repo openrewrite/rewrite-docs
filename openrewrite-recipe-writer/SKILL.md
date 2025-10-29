@@ -314,20 +314,23 @@ if (methodInvocation.getType() != null &&
 
 ## Resources
 
-This skill includes several supporting files:
+This skill includes several supporting files organized by purpose:
 
-- **Templates:**
-  - `template-imperative-recipe.java` - Boilerplate for imperative recipes
-  - `template-declarative-recipe.yml` - YAML recipe template
-  - `template-recipe-test.java` - Test class template
+- **Templates** (`assets/`) - Files used as starting points for recipe development:
+  - `assets/template-imperative-recipe.java` - Boilerplate for imperative recipes
+  - `assets/template-declarative-recipe.yml` - YAML recipe template
+  - `assets/template-recipe-test.java` - Test class template
 
-- **Examples:**
-  - `example-say-hello-recipe.java` - Complete working recipe
-  - `example-scanning-recipe.java` - Advanced ScanningRecipe pattern
-  - `example-declarative-migration.yml` - Real-world YAML examples
+- **Examples** (`references/`) - Reference documentation loaded as needed:
+  - `references/example-say-hello-recipe.java` - Complete working recipe
+  - `references/example-scanning-recipe.java` - Advanced ScanningRecipe pattern
+  - `references/example-declarative-migration.yml` - Real-world YAML examples
 
-- **Checklist:**
-  - `checklist-recipe-development.md` - Comprehensive verification checklist
+- **Checklist** (`references/`) - Verification guide:
+  - `references/checklist-recipe-development.md` - Comprehensive verification checklist
+
+- **Scripts** (`scripts/`) - Utility scripts:
+  - `scripts/upload-skill.sh` - Script to upload/update the skill via API
 
 ## Quick Reference
 
