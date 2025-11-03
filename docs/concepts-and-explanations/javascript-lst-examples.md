@@ -23,7 +23,11 @@ To see how these LST types work together in real code, check out the [putting it
 
 ## JavaScript-specific LST types
 
-This section contains LST types that are unique to JavaScript and TypeScript. They handle language features that don't exist in Java.
+This section covers some of the most important JS types that are unique to JavaScript and TypeScript. These types handle language features that don't exist in Java.
+
+:::note
+This is not an exhaustive list. Instead, this section contains the most common LST elements you'll use when writing recipes.
+:::
 
 ### CompilationUnit
 
@@ -66,23 +70,18 @@ await fetch(url)
 
 ### Binary
 
-A [JS.Binary](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L1779-L1861) represents binary expressions with operators.
+A [JS.Binary](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L1779-L1861) represents binary expressions with JavaScript-specific operators that don't exist in Java, such as strict equality/inequality operators.
 
 **Code example:**
 
 ```typescript
-1 + 2
+value === null       // strict equality
+obj !== undefined    // strict inequality
 ```
 
-### ConditionalType
-
-A [JS.ConditionalType](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L469-L543) represents TypeScript conditional types using the `extends` keyword and ternary-like syntax.
-
-**Code example:**
-
-```typescript
-T extends null ? never : T
-```
+:::note
+Common binary operators like `+`, `-`, `*` are represented using `J.Binary` (the shared Java type) – not `JS.Binary`.
+:::
 
 ### Delete
 
@@ -93,6 +92,28 @@ A [JS.Delete](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javasc
 ```typescript
 delete obj.property
 ```
+
+### FunctionCall
+
+A [JS.FunctionCall](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L715-L864) represents function/method calls in JavaScript that cannot be modeled as `J.MethodInvocation`. This is used for call syntax that's not possible in Java.
+
+**Code example:**
+
+```typescript
+function greet(name: string) {
+  return function (greeting: string) {
+    return `${greeting}, ${name}!`;
+  };
+}
+
+// The interesting part: greet("Alice")("Hello")
+console.log(greet("Alice")("Hello"));
+```
+
+In the expression `greet("Alice")("Hello")`:
+
+* `greet("Alice")` is modeled as a `J.MethodInvocation`
+* `("Hello")` is modeled as a `JS.FunctionCall` (this type of functionality is not possible in Java)
 
 ### Export
 
@@ -116,6 +137,12 @@ import { Helper } from './utils';
 import type { Config } from './types';
 ```
 
+:::note
+CommonJS `require()` calls are not represented as `JS.Import`. Instead, they're modeled as `J.MethodInvocation`, which illustrates the hybrid nature of JavaScript LST modeling. 
+
+For example, `const fs = require('fs')` would be represented as a `J.VariableDeclarations` – with a `J.MethodInvocation` as its initializer.
+:::
+
 ### Intersection
 
 A [JS.Intersection](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L3598-L3666) represents types combined with the `&` operator in TypeScript.
@@ -129,23 +156,6 @@ Readable & Writable
 BaseClass & { id: string }
 ```
 
-### LiteralType
-
-A [JS.LiteralType](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L1867-L1894) represents TypeScript's literal types - specific string, number, or boolean values used as types.
-
-**Code examples:**
-
-```typescript
-// Each string in this union is a separate LiteralType
-type Status = 'pending' | 'success' | 'error';
-
-function updateStatus(status: Status) {
-  // ...
-}
-
-// Mixed literal types in a union
-type Response = 200 | 404 | 'timeout' | false;
-```
 
 ### ObjectBindingPattern
 
@@ -167,40 +177,6 @@ A [JS.TemplateExpression](https://github.com/openrewrite/rewrite/blob/v8.65.0/re
 `Hello, ${name}!`
 ```
 
-### TypeDeclaration
-
-A [JS.TypeDeclaration](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L3021-L3123) represents TypeScript type aliases.
-
-**Code examples:**
-
-```typescript
-type ID = string | number;
-type Status = 'active' | 'inactive' | { custom: true };
-type NonNull<T> = T extends null ? never : T;
-```
-
-### TypeInfo
-
-A [JS.TypeInfo](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L3709-L3740) is a wrapper that represents TypeScript type annotations - the colon and type that follow a variable, parameter, or property name. The TypeInfo itself contains the actual type expression (like `J.Identifier` for simple types or `J.ParameterizedType` for generics).
-
-**Code examples:**
-
-```typescript
-name: string        // TypeInfo contains J.Identifier("string")
-age: number         // TypeInfo contains J.Identifier("number")
-result: Promise<T>  // TypeInfo contains J.ParameterizedType
-user: User          // TypeInfo contains J.Identifier("User")
-```
-
-### TypeLiteral
-
-A [JS.TypeLiteral](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-javascript/src/main/java/org/openrewrite/javascript/tree/JS.java#L4121-L4150) represents object type literals in TypeScript.
-
-**Code example:**
-
-```typescript
-{ custom: true }  // when used as a type
-```
 
 ### Union
 
@@ -284,15 +260,22 @@ A [J.Literal](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-java/s
 
 ### MethodDeclaration
 
-Functions in JavaScript/TypeScript are represented using [J.MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3881-L4171) for both standalone functions and class methods. This includes async functions, generic functions, and methods with TypeScript type annotations.
+Functions in JavaScript/TypeScript are represented using [J.MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v8.65.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3881-L4171) for function declarations and class methods. This includes async functions, generic functions, and methods with TypeScript type annotations.
 
 **Code examples:**
 
 ```typescript
+// Function declaration
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+
+// Class method
 add(item: T): void {
   this.items.push(item);
 }
 
+// Async function
 async fetch(url: string): Promise<T[]> {
   const response = await fetch(url);
   return response.json();
@@ -399,39 +382,58 @@ This function contains:
         - **J.Identifier**: `response`
         - **J.Identifier**: `text`
 
-### Example 3: Union type with literal types
+### Example 3: Function chaining with JS.FunctionCall
 
 ```typescript
-type Result = { success: true; data: string } | { success: false; error: string };
+function createValidator(type: string) {
+  return function(value: any) {
+    if (type === 'email') {
+      return value !== null && value.includes('@');
+    }
+    return value !== undefined;
+  };
+}
+
+const isValid = createValidator('email')('test@example.com');
 ```
 
-This type declaration contains:
+This example demonstrates both `JS.Binary` operators and `JS.FunctionCall`:
 
-- **JS.TypeDeclaration**: The entire type alias
-  - **J.Identifier**: `Result`
-  - **JS.Union**: The union type
-    - **JS.TypeLiteral**: First object type `{ success: true; data: string }`
-      - **J.Block**: Contains the properties
-        - **J.VariableDeclarations**: `success: true`
-          - **JS.TypeInfo**: The type annotation
-            - **JS.LiteralType**: The literal type `true`
-              - **J.Literal**: `true`
-          - **J.VariableDeclarations.NamedVariable**: `success`
-        - **J.VariableDeclarations**: `data: string`
-          - **JS.TypeInfo**: The type annotation
-            - **J.Identifier**: `string`
-          - **J.VariableDeclarations.NamedVariable**: `data`
-    - **JS.TypeLiteral**: Second object type `{ success: false; error: string }`
-      - **J.Block**: Contains the properties
-        - **J.VariableDeclarations**: `success: false`
-          - **JS.TypeInfo**: The type annotation
-            - **JS.LiteralType**: The literal type `false`
-              - **J.Literal**: `false`
-          - **J.VariableDeclarations.NamedVariable**: `success`
-        - **J.VariableDeclarations**: `error: string`
-          - **JS.TypeInfo**: The type annotation
-            - **J.Identifier**: `string`
-          - **J.VariableDeclarations.NamedVariable**: `error`
+- **J.MethodDeclaration**: `createValidator` function
+  - **J.Identifier**: `createValidator`
+  - **J.VariableDeclarations**: The `type` parameter
+    - **JS.TypeInfo**: The `: string` type annotation
+      - **J.Identifier**: `string`
+    - **J.VariableDeclarations.NamedVariable**: `type`
+  - **J.Block**: Function body
+    - **J.Return**: Returns the inner function
+      - **JS.StatementExpression**: Wraps the function expression
+        - **J.MethodDeclaration**: The anonymous inner function
+          - **J.VariableDeclarations**: The `value` parameter with `: any`
+          - **J.Block**: Inner function body
+            - **J.If**: The email check
+              - **J.ControlParentheses**: Wraps condition
+                - **JS.Binary**: `type === 'email'` (JS-specific operator)
+                  - **J.Identifier**: `type`
+                  - **J.Literal**: `'email'`
+              - **J.Block**: If body
+                - **J.Return**: Compound boolean expression
+                  - **J.Binary**: `&&` (standard operator)
+                    - **JS.Binary**: `value !== null` (JS-specific)
+                      - **J.Identifier**: `value`
+                      - **J.Literal**: `null`
+                    - **J.MethodInvocation**: `value.includes('@')`
+            - **J.Return**: Default return
+              - **JS.Binary**: `value !== undefined` (JS-specific)
+                - **J.Identifier**: `value`
+                - **J.Identifier**: `undefined`
+- **J.VariableDeclarations**: The `isValid` constant
+  - **J.VariableDeclarations.NamedVariable**: `isValid`
+    - **JS.FunctionCall**: The chained function call
+      - **J.MethodInvocation**: `createValidator('email')`
+        - **J.Identifier**: `createValidator`
+        - **J.Literal**: `'email'`
+      - **J.Literal**: `'test@example.com'` (the argument to the returned function)
 
 ### Example 4: Class with generics
 
