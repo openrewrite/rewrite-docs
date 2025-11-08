@@ -182,8 +182,7 @@ test("verify AST structure", () => {
 Check that specific markers are added:
 
 ```typescript
-import {SearchResult} from "@openrewrite/rewrite";
-import {randomId} from "@openrewrite/rewrite";
+import {SearchResult, randomId} from "@openrewrite/rewrite";
 
 test("verify markers added", () => {
     const spec = new RecipeSpec();

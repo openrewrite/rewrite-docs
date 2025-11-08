@@ -510,11 +510,9 @@ These types preserve exact formatting, whitespace, and comments from the origina
 When you know the exact structure you're transforming, directly referencing AST properties is often clearer than pattern matching:
 
 ```typescript
-import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
-import {template} from "@openrewrite/rewrite/javascript";
-import {J, isMethodInvocation} from "@openrewrite/rewrite/java";
 import {ExecutionContext} from "@openrewrite/rewrite";
-import {MethodMatcher} from "@openrewrite/rewrite/java";
+import {JavaScriptVisitor, template} from "@openrewrite/rewrite/javascript";
+import {J, isMethodInvocation, MethodMatcher} from "@openrewrite/rewrite/java";
 
 export class BufferSliceToSubarray extends Recipe {
     name = "org.openrewrite.javascript.migrate.buffer-slice-to-subarray";
@@ -560,19 +558,115 @@ export class BufferSliceToSubarray extends Recipe {
 - Simple structural changes (rename method, reorder arguments)
 - You need precise control over what's preserved vs. regenerated
 
-### Template Type Attribution
+### Configuring Templates and Patterns for Type Attribution
 
-Templates automatically parse and type-attribute generated code:
+Templates and patterns can be configured with `context` and `dependencies` to enable proper type attribution. This is essential when your transformation uses types or functions that need to be resolved.
+
+**Using `configure()` method:**
 
 ```typescript
-// Template automatically:
-// 1. Parses the code
-// 2. Resolves types
-// 3. Attributes type information
-// 4. Preserves formatting from captures
+import {capture, pattern, template} from "@openrewrite/rewrite/javascript";
 
-const tmpl = template`const x: string = ${capture()}`;
+// Configure a template with context and dependencies
+const tmpl = template`isDate(${capture('value')})`
+    .configure({
+        context: [
+            'import { isDate } from "util"'
+        ],
+        dependencies: {
+            'util': '^1.0.0'
+        }
+    });
 ```
+
+**Context options:**
+
+```typescript
+interface TemplateOptions {
+    // Import statements or other context code needed for type resolution
+    context?: string[];
+
+    // Alternative name for context (both work the same)
+    imports?: string[];
+
+    // Package dependencies with versions
+    dependencies?: Record<string, string>;
+}
+```
+
+**Complete example with type attribution:**
+
+```typescript
+import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
+import {JavaScriptVisitor, capture, pattern, template} from "@openrewrite/rewrite/javascript";
+import {J} from "@openrewrite/rewrite/java";
+
+export class UseDateValidator extends Recipe {
+    name = "org.openrewrite.javascript.migrate.use-date-validator";
+    displayName = "Use date validator";
+    description = "Replace custom date checks with library function";
+
+    async editor(): Promise<TreeVisitor<any, ExecutionContext>> {
+        const value = capture('value');
+
+        // Pattern doesn't need configuration for matching
+        const pat = pattern`isValidDate(${value})`;
+
+        // Template needs configuration for type attribution
+        const tmpl = template`isDate(${value})`
+            .configure({
+                context: [
+                    'import { isDate } from "date-utils"'
+                ],
+                dependencies: {
+                    'date-utils': '^2.0.0'
+                }
+            });
+
+        return new class extends JavaScriptVisitor<ExecutionContext> {
+            protected async visitMethodInvocation(
+                method: J.MethodInvocation,
+                ctx: ExecutionContext
+            ): Promise<J | undefined> {
+                const match = await pat.match(method, this.cursor);
+                if (match) {
+                    return await tmpl.apply(this.cursor, method, match);
+                }
+                return method;
+            }
+        }
+    }
+}
+```
+
+**Multiple imports and dependencies:**
+
+```typescript
+const tmpl = template`
+    const result = await fetch(${url});
+    const data = await result.json();
+    validate(data);
+`.configure({
+    context: [
+        'import { fetch } from "node-fetch"',
+        'import { validate } from "./validators"'
+    ],
+    dependencies: {
+        'node-fetch': '^3.0.0'
+    }
+});
+```
+
+**When to use configuration:**
+- Your template references external types or functions
+- You need type information for the generated code
+- You're adding imports that need to be resolved
+- Your transformation depends on specific package versions
+
+**When configuration is NOT needed:**
+- Simple code restructuring (renaming, reordering)
+- Template only uses captured values from the pattern
+- No external types or imports are referenced
 
 ## The rewrite() Helper
 
@@ -675,18 +769,111 @@ if (result) {
 return method;
 ```
 
+### Combining Rules
+
+Rules can be composed using `andThen()` and `orElse()` for cleaner chaining:
+
+**Using `orElse()` for fallback behavior:**
+
+```typescript
+// Try first rule, if it doesn't match try second rule
+const rule1 = rewrite(() => {
+    const args = capture({ variadic: true });
+    return {
+        before: pattern`console.log(${args})`,
+        after: template`logger.info(${args})`
+    };
+});
+
+const rule2 = rewrite(() => {
+    const args = capture({ variadic: true });
+    return {
+        before: pattern`console.error(${args})`,
+        after: template`logger.error(${args})`
+    };
+});
+
+// Combine: try rule1, if no match try rule2
+const combinedRule = rule1.orElse(rule2);
+return await combinedRule.tryOn(this.cursor, method) || method;
+```
+
+**Using `andThen()` for sequential transformations:**
+
+```typescript
+// Apply first rule, then apply second rule to the result
+const addAwait = rewrite(() => {
+    const call = capture();
+    return {
+        before: pattern`fetch(${call})`,
+        after: template`await fetch(${call})`
+    };
+});
+
+const addErrorHandling = rewrite(() => {
+    const expr = capture();
+    return {
+        before: pattern`await ${expr}`,
+        after: template`await ${expr}.catch(handleError)`
+    };
+});
+
+// Combine: apply addAwait, then apply addErrorHandling to result
+const combinedRule = addAwait.andThen(addErrorHandling);
+return await combinedRule.tryOn(this.cursor, method) || method;
+```
+
+**Chaining multiple rules:**
+
+```typescript
+const rule1 = rewrite(() => { /* ... */ });
+const rule2 = rewrite(() => { /* ... */ });
+const rule3 = rewrite(() => { /* ... */ });
+
+// Try rule1, fallback to rule2, fallback to rule3
+const combined = rule1.orElse(rule2).orElse(rule3);
+return await combined.tryOn(this.cursor, method) || method;
+
+// Or apply sequentially
+const sequential = rule1.andThen(rule2).andThen(rule3);
+return await sequential.tryOn(this.cursor, method) || method;
+```
+
+**Comparison with manual approach:**
+
+```typescript
+// Manual approach (verbose)
+let result = await rule1.tryOn(this.cursor, method);
+if (!result) {
+    result = await rule2.tryOn(this.cursor, method);
+}
+if (!result) {
+    result = await rule3.tryOn(this.cursor, method);
+}
+return result || method;
+
+// Using orElse() (cleaner)
+const combined = rule1.orElse(rule2).orElse(rule3);
+return await combined.tryOn(this.cursor, method) || method;
+```
+
+**When to use:**
+- `orElse()` - When you have multiple alternative transformations (try each until one matches)
+- `andThen()` - When transformations should be applied sequentially (pipeline pattern)
+- Both can be chained for complex transformation logic
+
 ## Advanced Features
 
 ### Multiple Patterns
 
-Try multiple patterns in sequence:
+Try multiple patterns in sequence. While you can do this manually, prefer using `orElse()` for cleaner code (see [Combining Rules](#combining-rules)):
 
 ```typescript
 protected async visitMethodInvocation(
     method: J.MethodInvocation,
     ctx: ExecutionContext
 ): Promise<J | undefined> {
-    // Try pattern 1
+    // Manual approach
     const rule1 = rewrite(() => {
         const methodName = capture();
         return {
@@ -697,7 +884,6 @@ protected async visitMethodInvocation(
     let result = await rule1.tryOn(this.cursor, method);
     if (result) return result;
 
-    // Try pattern 2
     const rule2 = rewrite(() => {
         const methodName = capture();
         const arg = capture();
@@ -710,6 +896,35 @@ protected async visitMethodInvocation(
     if (result) return result;
 
     return method;
+}
+```
+
+**Better approach using `orElse()`:**
+
+```typescript
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    const rule1 = rewrite(() => {
+        const methodName = capture();
+        return {
+            before: pattern`foo.${methodName}()`,
+            after: template`bar.${methodName}()`
+        };
+    });
+
+    const rule2 = rewrite(() => {
+        const methodName = capture();
+        const arg = capture();
+        return {
+            before: pattern`baz.${methodName}(${arg})`,
+            after: template`qux.${methodName}(${arg})`
+        };
+    });
+
+    // Cleaner: try rule1, if no match try rule2
+    return await rule1.orElse(rule2).tryOn(this.cursor, method) || method;
 }
 ```
 
@@ -931,14 +1146,3 @@ await tmpl.apply(this.cursor, node, match);
 3. **Cache compiled patterns** - Don't recreate pattern objects in hot paths
 4. **Prefer `any()` over unused captures** - Slightly more efficient
 5. **Use constraints sparingly** - They're evaluated after structural match succeeds
-
-## Examples in the Codebase
-
-Explore the test files in `rewrite-javascript/rewrite/test/javascript/templating/` for additional examples:
-
-- `basic.test.ts` - Simple transformations
-- `pattern-matching.test.ts` - Pattern matching examples
-- `variadic-basic.test.ts` & `variadic-matching.test.ts` - Variadic captures
-- `capture-constraints.test.ts` - Constraint usage
-- `capture-property-access.test.ts` - Property access patterns
-- `builder-api.test.ts` - Builder API examples

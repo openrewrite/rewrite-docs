@@ -10,6 +10,7 @@ Guide for creating and testing OpenRewrite recipes in TypeScript.
 ## Skill Resources
 
 This skill includes additional reference materials:
+- **references/lst-concepts.md** - Core LST concepts: wrapper types (RightPadded, LeftPadded, Container), spacing, and formatting
 - **references/patterns-and-templates.md** - Comprehensive guide to pattern matching and template system
 - **references/examples.md** - Complete recipe examples with detailed explanations
 - **references/testing-recipes.md** - Advanced testing strategies with AST assertions and validation
@@ -20,12 +21,16 @@ Load these references as needed for detailed information on specific topics.
 
 1. [Quick Start](#quick-start)
 2. [Recipe Structure](#recipe-structure)
-3. [Visitor Pattern](#visitor-pattern)
-4. [Pattern Matching & Templates](#pattern-matching--templates)
-5. [Testing Recipes](#testing-recipes)
-6. [Common Patterns](#common-patterns)
-7. [Troubleshooting](#troubleshooting)
-8. [Package Structure](#package-structure)
+3. [LST Core Concepts](#lst-core-concepts)
+4. [Visitor Pattern](#visitor-pattern)
+5. [Pattern Matching & Templates](#pattern-matching--templates)
+6. [Utility Functions](#utility-functions)
+7. [Testing Recipes](#testing-recipes)
+8. [Common Patterns](#common-patterns)
+9. [Troubleshooting](#troubleshooting)
+10. [Package Structure](#package-structure)
+11. [Further Reading](#further-reading)
+12. [Best Practices](#best-practices)
 
 ## Quick Start
 
@@ -40,9 +45,9 @@ Follow this checklist when creating a new recipe:
 - [ ] Create visitor extending `JavaScriptVisitor` or `JavaScriptIsoVisitor`
 - [ ] Override visit methods for target AST nodes
 - [ ] Use `produce()` from `immer` for immutable updates
+- [ ] Use `maybeAddImport()` / `maybeRemoveImport()` for import management as needed
+- [ ] Use `maybeAutoFormat()` to format modified code
 - [ ] Write tests using `RecipeSpec` and `rewriteRun()`
-- [ ] Verify tests pass with `./gradlew :rewrite-javascript:npm_test`
-- [ ] Run license format with `./gradlew licenseFormat`
 
 ## Recipe Structure
 
@@ -159,6 +164,116 @@ export class MyScanningRecipe extends ScanningRecipe<Set<string>, ExecutionConte
 }
 ```
 
+## LST Core Concepts
+
+**For comprehensive details, see [references/lst-concepts.md](references/lst-concepts.md).**
+
+### What is LST?
+
+LST (Lossless Semantic Tree) is OpenRewrite's AST representation that preserves **everything** about your source code:
+- Type information and semantic structure
+- Exact formatting and whitespace
+- All comments
+- Source positions
+
+**Key principle:** Parse → Transform → Print produces identical output when no changes are made.
+
+### Wrapper Types
+
+LST uses wrapper types to preserve formatting information on AST elements.
+
+**J.RightPadded\<T>** - Wraps an element with trailing space/comments:
+```typescript
+// In: obj  /* comment */ .method()
+const select: J.RightPadded<Expression> = method.select;
+// select.element = Identifier("obj")
+// select.after = Space with "  /* comment */ "
+```
+
+**J.LeftPadded\<T>** - Wraps an element with leading space/comments:
+```typescript
+// In: x  +  y
+const binary: J.Binary = ...;
+// binary.operator.before = Space with "  "
+// binary.operator.element = Operator.Add
+```
+
+**J.Container\<T>** - Represents delimited lists (arguments, array elements):
+```typescript
+// In: foo( a , b , c )
+const args: J.Container<Expression> = method.arguments;
+// args.before = Space with "( "
+// args.elements[0].element = Identifier("a")
+// args.elements[0].after = Space with " , "
+```
+
+### The `prefix` Property
+
+**Every LST element** has a `prefix: J.Space` property containing whitespace and comments before that element:
+
+```typescript
+// In:
+//   // Line comment
+//   const x = 1;
+
+const varDecl: J.VariableDeclarations = ...;
+// varDecl.prefix.comments[0] = Comment("// Line comment")
+// varDecl.prefix.whitespace = "\n  "
+```
+
+### Accessing Wrapped Elements
+
+Always access through wrapper properties:
+
+```typescript
+// ✅ Correct - access element inside wrapper
+const selectExpr = method.select.element;  // RightPadded → element
+const firstArg = method.arguments.elements[0].element;  // Container → element
+
+// ❌ Wrong - this is the wrapper, not the element
+const selectExpr = method.select;  // This is J.RightPadded<Expression>
+```
+
+### Using Wrappers in Templates
+
+Templates can accept wrapper types directly:
+
+```typescript
+// J.RightPadded - extracts and preserves formatting
+const select = method.select;
+return await template`${select}.newMethod()`.apply(cursor, method);
+
+// J.Container - expands all elements with formatting
+const args = method.arguments;
+return await template`newMethod(${args})`.apply(cursor, method);
+```
+
+### Visitor Methods for Wrappers
+
+Override these to visit wrapped elements:
+
+```typescript
+// Visit RightPadded elements
+protected async visitRightPadded<T extends J>(
+    right: J.RightPadded<T>,
+    p: ExecutionContext
+): Promise<J.RightPadded<T>>
+
+// Visit LeftPadded elements
+protected async visitLeftPadded<T extends J>(
+    left: J.LeftPadded<T>,
+    p: ExecutionContext
+): Promise<J.LeftPadded<T>>
+
+// Visit Container elements
+protected async visitContainer<T extends J>(
+    container: J.Container<T>,
+    p: ExecutionContext
+): Promise<J.Container<T>>
+```
+
+See [LST Core Concepts Guide](references/lst-concepts.md) for detailed examples and patterns.
+
 ## Visitor Pattern
 
 ### JavaScriptVisitor Base Class
@@ -260,9 +375,11 @@ protected async visitMethodInvocation(
 ```
 
 **Cursor methods:**
-- `cursor.parent?.value` - Direct parent (may be padding/container node)
-- `cursor.parentTree()?.value` - Parent tree node (skips J.RightPadded, J.LeftPadded, J.Container)
+- `cursor.parent?.value` - Direct parent (may be wrapper like J.RightPadded or J.Container)
+- `cursor.parentTree()?.value` - Parent tree node (skips wrappers: J.RightPadded, J.LeftPadded, J.Container)
 - `cursor.firstEnclosing(predicate)` - Find first ancestor matching predicate
+
+See [LST Core Concepts](references/lst-concepts.md) for details on wrapper types.
 
 ## Pattern Matching & Templates
 
@@ -289,6 +406,20 @@ if (match) {
     return await tmpl.apply(cursor, node, match);
 }
 ```
+
+**Type Attribution with `configure()`:**
+
+When templates reference external types or imports, use `configure()` to enable proper type attribution:
+
+```typescript
+const tmpl = template`isDate(${capture('value')})`
+    .configure({
+        context: ['import { isDate } from "date-utils"'],
+        dependencies: {'date-utils': '^2.0.0'}
+    });
+```
+
+See [Configuring Templates for Type Attribution](references/patterns-and-templates.md#configuring-templates-and-patterns-for-type-attribution) for complete details.
 
 ### When to Use Patterns vs Visitors
 
@@ -321,6 +452,241 @@ protected async visitMethodInvocation(
     return method;
 }
 ```
+
+## Utility Functions
+
+OpenRewrite provides several utility functions to help with common recipe tasks like formatting and import management.
+
+### Formatting Functions
+
+**autoFormat()**
+
+Automatically formats a source file according to language conventions and detected style:
+
+```typescript
+import {autoFormat} from "@openrewrite/rewrite";
+
+// In your visitor method
+protected async visitJsCompilationUnit(
+    cu: JS.CompilationUnit,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Make transformations
+    const modified = produce(cu, draft => {
+        // ... modifications
+    });
+
+    // Apply automatic formatting to entire file
+    return await autoFormat(modified, ctx, this.cursor);
+}
+```
+
+**What it does:**
+- Normalizes whitespace and indentation
+- Applies consistent formatting across the file
+- Uses detected style conventions from the existing code
+- Ensures code looks professionally formatted after transformation
+
+**When to use:**
+- After significant structural changes
+- When generated code needs formatting
+- At the end of a transformation to ensure consistency
+
+**maybeAutoFormat()**
+
+Conditionally formats code only if it was modified:
+
+```typescript
+import {maybeAutoFormat} from "@openrewrite/rewrite";
+
+protected async visitMethodDeclaration(
+    method: J.MethodDeclaration,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Only format if we actually changed something
+    if (shouldTransform(method)) {
+        const modified = transformMethod(method);
+        return await maybeAutoFormat(method, modified, ctx, this.cursor);
+    }
+
+    return method;
+}
+```
+
+**What it does:**
+- Compares the original and modified nodes
+- Only applies formatting if changes were detected
+- Avoids unnecessary formatting operations
+- More efficient than unconditional `autoFormat()`
+
+**Parameters:**
+- `before` - Original node before transformation
+- `after` - Modified node after transformation
+- `ctx` - Execution context
+- `cursor` - Current cursor position
+
+**When to use:**
+- In visitor methods where changes are conditional
+- When you want to avoid formatting unchanged code
+- For performance optimization in large codebases
+
+### Import Management Functions
+
+**maybeAddImport()**
+
+Adds an import statement if it doesn't already exist:
+
+```typescript
+import {maybeAddImport} from "@openrewrite/rewrite/javascript";
+
+protected async visitJsCompilationUnit(
+    cu: JS.CompilationUnit,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Ensure the import exists
+    let modified = await maybeAddImport(
+        cu,
+        "lodash",           // Package name
+        "isEqual",          // Named import
+        null,               // Alias (null for no alias)
+        ctx
+    );
+
+    // Or add a default import
+    modified = await maybeAddImport(
+        cu,
+        "react",            // Package name
+        null,               // null for default import
+        "React",            // Default import name
+        ctx
+    );
+
+    // Or add namespace import
+    modified = await maybeAddImport(
+        cu,
+        "fs",               // Package name
+        "*",                // Wildcard for namespace
+        "fs",               // Namespace alias
+        ctx
+    );
+
+    return modified;
+}
+```
+
+**What it does:**
+- Checks if the import already exists
+- Adds the import only if not present
+- Places import in appropriate location (top of file)
+- Handles different import styles:
+  - Named imports: `import { isEqual } from "lodash"`
+  - Default imports: `import React from "react"`
+  - Namespace imports: `import * as fs from "fs"`
+
+**Parameters:**
+- `cu` - Compilation unit to modify
+- `packageName` - Package to import from
+- `member` - Member to import (null for default, "*" for namespace)
+- `alias` - Alias name (member alias for named, default name for default, namespace name for wildcard)
+- `ctx` - Execution context
+
+**When to use:**
+- After adding code that requires new imports
+- When transforming to use different APIs/libraries
+- To ensure dependencies are properly imported
+
+**maybeRemoveImport()**
+
+Removes an import statement if it's no longer used:
+
+```typescript
+import {maybeRemoveImport} from "@openrewrite/rewrite/javascript";
+
+protected async visitJsCompilationUnit(
+    cu: JS.CompilationUnit,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Remove unused named import
+    let modified = await maybeRemoveImport(
+        cu,
+        "lodash",           // Package name
+        "oldFunction",      // Named import to remove
+        ctx
+    );
+
+    // Remove entire import if all members unused
+    modified = await maybeRemoveImport(
+        cu,
+        "unused-package",   // Package name
+        null,               // null removes entire import
+        ctx
+    );
+
+    return modified;
+}
+```
+
+**What it does:**
+- Scans the file to check if import is used
+- Removes import only if no references found
+- Can remove individual named imports or entire import statements
+- Keeps imports that are still referenced
+
+**Parameters:**
+- `cu` - Compilation unit to modify
+- `packageName` - Package name
+- `member` - Member to remove (null to remove entire import)
+- `ctx` - Execution context
+
+**When to use:**
+- After removing code that used certain imports
+- When refactoring to eliminate dependencies
+- To clean up unused imports automatically
+
+### Combining Utilities
+
+Common pattern combining import management and formatting:
+
+```typescript
+protected async visitJsCompilationUnit(
+    cu: JS.CompilationUnit,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    let modified = cu;
+
+    // Add new import
+    modified = await maybeAddImport(
+        modified,
+        "new-library",
+        "newFunction",
+        null,
+        ctx
+    );
+
+    // Remove old import
+    modified = await maybeRemoveImport(
+        modified,
+        "old-library",
+        "oldFunction",
+        ctx
+    );
+
+    // Format if changes were made
+    return await maybeAutoFormat(cu, modified, ctx, this.cursor);
+}
+```
+
+### Best Practices
+
+1. **Use maybeAutoFormat() in visitor methods** - More efficient than unconditional formatting
+
+2. **Manage imports at CompilationUnit level** - Always apply import functions to `JS.CompilationUnit`
+
+3. **Check before removing imports** - `maybeRemoveImport()` already checks usage, safe to call
+
+4. **Chain import operations** - Apply to the result of previous operations
+
+5. **Format after all changes** - Apply formatting once at the end, not after each change
 
 ## Testing Recipes
 
@@ -471,6 +837,8 @@ test("verify AST structure", () => {
 ```
 
 ## Common Patterns
+
+Quick reference patterns for common recipe scenarios. For complete recipe examples, see [references/examples.md](references/examples.md).
 
 ### Pattern: Simple AST Modification
 
@@ -653,23 +1021,33 @@ function isAsyncMethod(node: J): node is J.MethodDeclaration {
 
 ## Package Structure
 
-The OpenRewrite JavaScript implementation is published as the NPM package **`@openrewrite/rewrite`**.
+OpenRewrite for JavaScript/TypeScript is published as the NPM package **`@openrewrite/rewrite`**.
 
-**Key directories when working in the repository:**
+**Import structure:**
 
-- **Recipe implementations**: `src/javascript/migrate/`
-- **Core types**: `src/java/tree.ts` and `src/javascript/tree.ts`
-- **Visitor base**: `src/javascript/visitor.ts`
-- **Pattern/Template system**: `src/javascript/templating/`
+```typescript
+// Core types and utilities
+import {Recipe, TreeVisitor, ExecutionContext, autoFormat, maybeAutoFormat} from "@openrewrite/rewrite";
 
-**Note:** Source code includes JSDoc documentation. Explore the source when additional context is needed beyond this skill.
+// Java AST types and type guards
+import {J, isIdentifier, isLiteral, isMethodInvocation} from "@openrewrite/rewrite/java";
+
+// JavaScript/TypeScript specific
+import {JavaScriptVisitor, capture, pattern, template, rewrite} from "@openrewrite/rewrite/javascript";
+import {maybeAddImport, maybeRemoveImport} from "@openrewrite/rewrite/javascript";
+
+// Testing utilities
+import {RecipeSpec} from "@openrewrite/rewrite/test";
+import {javascript, typescript} from "@openrewrite/rewrite/javascript";
+```
 
 ## Further Reading
 
-- **[references/patterns-and-templates.md](references/patterns-and-templates.md)** - Deep dive into pattern matching and templates
-- **[references/examples.md](references/examples.md)** - Complete recipe examples with explanations
+- **[references/lst-concepts.md](references/lst-concepts.md)** - LST structure and wrapper types
+- **[references/patterns-and-templates.md](references/patterns-and-templates.md)** - Pattern matching and template system
+- **[references/examples.md](references/examples.md)** - Complete recipe examples
+- **[references/testing-recipes.md](references/testing-recipes.md)** - Testing strategies
 - **[OpenRewrite Documentation](https://docs.openrewrite.org/)** - Official documentation
-- **[GitHub Repository](https://github.com/openrewrite/rewrite)** - Browse source code and examples
 
 ## Best Practices
 

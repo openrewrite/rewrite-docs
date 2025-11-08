@@ -11,6 +11,7 @@ Complete, real-world examples of OpenRewrite recipes in TypeScript.
 5. [Scanning Recipe](#example-5-scanning-recipe)
 6. [Complex Pattern Matching](#example-6-complex-pattern-matching)
 7. [Conditional Transformation](#example-7-conditional-transformation)
+8. [Template with Type Attribution](#example-8-template-with-type-attribution)
 
 ## Example 1: Simple Visitor-Based Recipe
 
@@ -19,9 +20,6 @@ Complete, real-world examples of OpenRewrite recipes in TypeScript.
 ### Recipe Implementation
 
 ```typescript
-/*
- * rewrite-javascript/rewrite/src/javascript/migrate/es6/modernize-octal-literals.ts
- */
 import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
 import {J} from "@openrewrite/rewrite/java";
 import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
@@ -112,9 +110,6 @@ For more test examples including multiple literals, edge cases, and negative tes
 ### Recipe Implementation
 
 ```typescript
-/*
- * Hypothetical: rewrite-javascript/rewrite/src/javascript/logging/use-custom-logger.ts
- */
 import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
 import {J} from "@openrewrite/rewrite/java";
 import {capture, pattern, template, rewrite} from "@openrewrite/rewrite/javascript";
@@ -189,15 +184,9 @@ For variadic argument testing and negative test cases, see [Testing Recipes Guid
 ### Recipe Implementation
 
 ```typescript
-/*
- * Hypothetical: rewrite-javascript/rewrite/src/javascript/refactor/rename-method.ts
- */
-import {Option, Recipe} from "@openrewrite/rewrite";
-import {TreeVisitor} from "@openrewrite/rewrite";
-import {ExecutionContext} from "@openrewrite/rewrite";
-import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
-import {J, isIdentifier} from "@openrewrite/rewrite/java";
-import {capture, pattern, template, rewrite} from "@openrewrite/rewrite/javascript";
+import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
+import {capture, JavaScriptVisitor, pattern, rewrite, template} from "@openrewrite/rewrite/javascript";
+import {isIdentifier, J} from "@openrewrite/rewrite/java";
 
 export class RenameMethod extends Recipe {
     name = "org.openrewrite.javascript.refactor.rename-method";
@@ -257,7 +246,7 @@ export class RenameMethod extends Recipe {
 
                 // Build rule based on whether owner is specified
                 const rule = rewrite(() => {
-                    const args = capture({ variadic: true });
+                    const args = capture({variadic: true});
                     if (owner) {
                         return {
                             before: pattern`${owner}.${oldName}(${args})`,
@@ -321,15 +310,9 @@ For comprehensive testing examples including edge cases, optional parameters, an
 ### Recipe Implementation
 
 ```typescript
-/*
- * Hypothetical: rewrite-javascript/rewrite/src/javascript/migrate/add-async-suffix.ts
- */
-import {Recipe} from "@openrewrite/rewrite";
-import {TreeVisitor} from "@openrewrite/rewrite";
-import {ExecutionContext} from "@openrewrite/rewrite";
-import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
-import {J, isIdentifier} from "@openrewrite/rewrite/java";
-import {capture, pattern, template} from "@openrewrite/rewrite/javascript";
+import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
+import {capture, JavaScriptVisitor, pattern, template} from "@openrewrite/rewrite/javascript";
+import {isIdentifier, J} from "@openrewrite/rewrite/java";
 
 export class AddAsyncSuffix extends Recipe {
     name = "org.openrewrite.javascript.migrate.add-async-suffix";
@@ -338,7 +321,7 @@ export class AddAsyncSuffix extends Recipe {
 
     async editor(): Promise<TreeVisitor<any, ExecutionContext>> {
         const methodName = capture<J.Identifier>('methodName');
-        const args = capture({ variadic: true });
+        const args = capture({variadic: true});
 
         return new class extends JavaScriptVisitor<ExecutionContext> {
             protected async visitMethodInvocation(
@@ -405,16 +388,9 @@ For examples with variadic arguments, complex expressions, and argument preserva
 ### Recipe Implementation
 
 ```typescript
-/*
- * Hypothetical: rewrite-javascript/rewrite/src/javascript/analysis/mark-called-functions.ts
- */
-import {ScanningRecipe} from "@openrewrite/rewrite";
-import {TreeVisitor} from "@openrewrite/rewrite";
-import {ExecutionContext} from "@openrewrite/rewrite";
+import {ExecutionContext, randomId, ScanningRecipe, SearchResult, TreeVisitor} from "@openrewrite/rewrite";
 import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
-import {J, isIdentifier} from "@openrewrite/rewrite/java";
-import {SearchResult} from "@openrewrite/rewrite";
-import {randomId} from "@openrewrite/rewrite";
+import {isIdentifier, J} from "@openrewrite/rewrite/java";
 
 export class MarkCalledFunctions extends ScanningRecipe<Set<string>, ExecutionContext> {
     name = "org.openrewrite.javascript.analysis.mark-called-functions";
@@ -509,15 +485,9 @@ For examples using `afterRecipe` to verify markers and scanning recipe edge case
 ### Recipe Implementation
 
 ```typescript
-/*
- * Hypothetical: rewrite-javascript/rewrite/src/javascript/refactor/simplify-chain.ts
- */
-import {Recipe} from "@openrewrite/rewrite";
-import {TreeVisitor} from "@openrewrite/rewrite";
-import {ExecutionContext} from "@openrewrite/rewrite";
-import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
+import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
+import {capture, JavaScriptVisitor, pattern, rewrite, template} from "@openrewrite/rewrite/javascript";
 import {J} from "@openrewrite/rewrite/java";
-import {capture, pattern, template, rewrite} from "@openrewrite/rewrite/javascript";
 
 export class SimplifyChain extends Recipe {
     name = "org.openrewrite.javascript.refactor.simplify-chain";
@@ -529,10 +499,10 @@ export class SimplifyChain extends Recipe {
             const mapArg = capture<J.ArrowFunction>({
                 name: 'mapArg',
                 constraint: (n) => n.kind === J.Kind.Lambda &&
-                                   (n as J.Lambda).body.kind === J.Kind.Block
+                    (n as J.Lambda).body.kind === J.Kind.Block
             });
-            const filterArg = capture({ name: 'filterArg' });
-            const array = capture({ name: 'array' });
+            const filterArg = capture({name: 'filterArg'});
+            const array = capture({name: 'array'});
 
             return {
                 before: pattern`${array}.map(${mapArg}).filter(${filterArg})`,
@@ -572,15 +542,9 @@ export class SimplifyChain extends Recipe {
 ### Recipe Implementation
 
 ```typescript
-/*
- * Hypothetical: rewrite-javascript/rewrite/src/javascript/migrate/optimize-assertions.ts
- */
-import {Recipe} from "@openrewrite/rewrite";
-import {TreeVisitor} from "@openrewrite/rewrite";
-import {ExecutionContext} from "@openrewrite/rewrite";
-import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
-import {J, isLiteral} from "@openrewrite/rewrite/java";
-import {capture, pattern, template} from "@openrewrite/rewrite/javascript";
+import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
+import {capture, JavaScriptVisitor, pattern, template} from "@openrewrite/rewrite/javascript";
+import {isLiteral, J} from "@openrewrite/rewrite/java";
 
 export class OptimizeAssertions extends Recipe {
     name = "org.openrewrite.javascript.migrate.optimize-assertions";
@@ -613,7 +577,7 @@ export class OptimizeAssertions extends Recipe {
                     // Both literals: use strict equality
                     tmpl = template`assert.strictEqual(${left}, ${right})`;
                 } else if (this.isObjectExpression(leftVal) ||
-                           this.isObjectExpression(rightVal)) {
+                    this.isObjectExpression(rightVal)) {
                     // Object comparison: use deep equal
                     tmpl = template`assert.deepEqual(${left}, ${right})`;
                 } else {
@@ -626,7 +590,7 @@ export class OptimizeAssertions extends Recipe {
 
             private isObjectExpression(node: J | undefined): boolean {
                 return node?.kind === J.Kind.NewArray ||
-                       node?.kind === J.Kind.NewClass;
+                    node?.kind === J.Kind.NewClass;
             }
         }
     }
@@ -666,24 +630,94 @@ For examples with object comparisons, negative tests, and conditional transforma
 - **Type guard functions** - Use `isLiteral()` or check `node?.kind === J.Kind.Literal`
 - **Selective transformation** - Return original when no optimization applies
 
-## Running Examples
+## Example 8: Template with Type Attribution
 
-Build and test:
+**Goal:** Replace custom validation with library function, using `configure()` for proper type attribution
 
-```bash
-# Install dependencies
-./gradlew :rewrite-javascript:npmInstall
+### Recipe Implementation
 
-# Run all tests
-./gradlew :rewrite-javascript:npm_test
+```typescript
+import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
+import {JavaScriptVisitor, capture, pattern, template} from "@openrewrite/rewrite/javascript";
+import {J} from "@openrewrite/rewrite/java";
 
-# Run specific test
-cd rewrite-javascript/rewrite
-npm test -- modernize-octal-literals.test.ts
+export class UseValidatorLibrary extends Recipe {
+    name = "org.openrewrite.javascript.migrate.use-validator-library";
+    displayName = "Use validator library";
+    description = "Replace custom validation with library functions";
 
-# Build
-./gradlew :rewrite-javascript:npm_run_build
+    async editor(): Promise<TreeVisitor<any, ExecutionContext>> {
+        const value = capture('value');
+        const type = capture('type');
+
+        // Pattern for matching custom validation
+        const pat = pattern`isValid(${value}, ${type})`;
+
+        // Template with context and dependencies for type attribution
+        const tmpl = template`validate(${value}, ${type})`
+            .configure({
+                // Provide import context for type resolution
+                context: [
+                    'import { validate } from "validator-lib"',
+                    'import type { ValidationRule } from "validator-lib"'
+                ],
+                // Specify package dependencies
+                dependencies: {
+                    'validator-lib': '^3.0.0'
+                }
+            });
+
+        return new class extends JavaScriptVisitor<ExecutionContext> {
+            protected async visitMethodInvocation(
+                method: J.MethodInvocation,
+                ctx: ExecutionContext
+            ): Promise<J | undefined> {
+                const match = await pat.match(method, this.cursor);
+                if (match) {
+                    // Template will be parsed with proper type information
+                    // from the configured context and dependencies
+                    return await tmpl.apply(this.cursor, method, match);
+                }
+                return method;
+            }
+        }
+    }
+}
 ```
+
+### Tests
+
+```typescript
+import {describe, test} from "@jest/globals";
+import {RecipeSpec} from "@openrewrite/rewrite/test";
+import {UseValidatorLibrary} from "./use-validator-library";
+import {javascript} from "@openrewrite/rewrite/javascript";
+
+describe("use-validator-library", () => {
+    test("replace custom validation", () => {
+        const spec = new RecipeSpec();
+        spec.recipe = new UseValidatorLibrary();
+
+        return spec.rewriteRun(
+            javascript(
+                `isValid(email, "email");`,
+                `validate(email, "email");`
+            )
+        );
+    });
+});
+```
+
+For examples with type-aware transformations and dependency management, see [Testing Recipes Guide](./testing-recipes.md).
+
+### Key Takeaways
+
+- **configure() method** - Add context and dependencies to templates
+- **context option** - Provide import statements for type resolution
+- **dependencies option** - Specify package versions needed
+- **Type attribution** - Generated code has proper type information
+- **Multiple imports** - Array of context strings for complex setups
+- **When to use** - Any template referencing external types or functions
 
 ## Summary
 
