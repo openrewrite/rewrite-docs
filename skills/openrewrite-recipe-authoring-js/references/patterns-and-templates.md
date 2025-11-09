@@ -587,9 +587,6 @@ interface TemplateOptions {
     // Import statements or other context code needed for type resolution
     context?: string[];
 
-    // Alternative name for context (both work the same)
-    imports?: string[];
-
     // Package dependencies with versions
     dependencies?: Record<string, string>;
 }
@@ -1041,20 +1038,77 @@ function buildPattern(methodNames: string[]): Pattern {
 // Creates: pattern`obj.nested.method(${capture({ variadic: true })})`
 ```
 
-### Lenient Type Matching
+### Type Checking in Patterns
 
-During development, use lenient mode to prototype without full type attribution:
+**Important:** By default, pattern matching uses **lenient type checking**. This means patterns will match code even when types don't exactly match, which is useful during development and prototyping.
+
+#### Default Lenient Behavior
 
 ```typescript
-// In tests or prototyping:
-const pat = pattern`foo(${capture()})`;
-const tmpl = template`bar(${capture()})`;
+// Pattern with lenient type checking (default)
+const pat = pattern`someApi.method(${capture()})`;
 
-// Pattern/template system works without complete type information
-// Useful for rapid iteration before adding proper type support
+// Will match all of these despite different types:
+// - someApi.method(42)          // number literal
+// - someApi.method("string")    // string literal
+// - someApi.method(variable)    // identifier
+// - someApi.method(obj.prop)    // field access
 ```
 
-**Note:** Production recipes should have proper type attribution. Lenient mode is for prototyping only.
+#### Strict Type Checking
+
+To enforce strict type checking, set `lenientTypeMatching` to `false`:
+
+```typescript
+// Enable strict type checking
+const pat = pattern`someApi.method(${capture()})`
+    .configure({
+        lenientTypeMatching: false  // Enforce exact type matches
+    });
+
+// Now pattern only matches if types align exactly
+```
+
+#### Configuration Options
+
+```typescript
+const pat = pattern`...`.configure({
+    // Type matching mode
+    lenientTypeMatching?: boolean,  // Default: true (lenient matching)
+
+    // Other configuration options
+    context: [...],          // Import context for type resolution
+    dependencies: {...},     // Package dependencies for type attribution
+    parserOptions: {...}     // Parser settings (for templates, not patterns)
+});
+```
+
+#### When to Use Each Mode
+
+**Use Lenient (default, `lenientTypeMatching: true`):**
+- During initial development and prototyping
+- When matching patterns across different type contexts
+- For flexible transformations that work with various types
+- When exact type information isn't critical
+- When patterns without type annotations should match typed code
+
+**Use Strict (`lenientTypeMatching: false`):**
+- For type-sensitive transformations
+- When ensuring type safety is critical
+- In production recipes requiring exact type matches
+- When working with overloaded methods where type matters
+- When both pattern and target must have matching type annotations
+
+```typescript
+// Example: Strict mode for overloaded method disambiguation
+const datePattern = pattern`new Date(${capture()})`
+    .configure({
+        lenientTypeMatching: false,  // Only match Date constructors with correct arg types
+        context: ['// Date constructor context']
+    });
+```
+
+**Note:** While lenient mode is convenient for development, consider using strict type checking in production recipes where type safety is important.
 
 ## Common Pitfalls
 

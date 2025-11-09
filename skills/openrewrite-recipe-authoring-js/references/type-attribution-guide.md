@@ -82,14 +82,17 @@ const tmpl = template`React.useState(${capture('initialValue')})`
 ### Configuration Options
 
 ```typescript
-interface TemplateConfiguration {
-    // Import statements and type declarations
+interface PatternConfiguration {
+    // Type matching mode (default: true for lenient matching)
+    lenientTypeMatching?: boolean;
+
+    // Import statements and type declarations for context
     context?: string[];
 
     // Package dependencies for type resolution
     dependencies?: Record<string, string>;
 
-    // Additional parser options
+    // Parser options (mainly for templates, not patterns)
     parserOptions?: {
         jsx?: boolean;
         tsx?: boolean;
@@ -364,6 +367,165 @@ test("preserves type information", () => {
     });
 });
 ```
+
+## Testing Type Attribution with npm and package.json
+
+When testing recipes that require type attribution from external libraries, use the `npm` function with `packageJson` to create a realistic Node.js environment:
+
+### Basic Setup for Type Attribution Testing
+
+```typescript
+import {npm, typescript, packageJson} from "@openrewrite/rewrite/javascript";
+import {RecipeSpec} from "@openrewrite/rewrite/test";
+
+test("recipe with proper type attribution", async () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new MyRecipe();
+
+    const sources = npm(
+        __dirname,  // Where node_modules will be created
+
+        // Define dependencies for type attribution
+        packageJson(JSON.stringify({
+            name: "test-project",
+            dependencies: {
+                "axios": "^1.4.0",
+                "lodash": "^4.17.21"
+            },
+            devDependencies: {
+                "@types/lodash": "^4.14.195"
+            }
+        })),
+
+        // Your test file can now resolve types from dependencies
+        typescript(
+            `import axios from 'axios';
+             const data = await axios.get('/api/data');`,
+            `import axios from 'axios';
+             const { data } = await axios.get('/api/data');`
+        )
+    );
+
+    // npm returns async generator, convert to array
+    const sourcesArray = [];
+    for await (const source of sources) {
+        sourcesArray.push(source);
+    }
+
+    return spec.rewriteRun(...sourcesArray);
+});
+```
+
+### Complex Type Attribution Example
+
+```typescript
+test("transform with full type context", async () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new AddTypeValidation();
+
+    const sources = npm(
+        __dirname,
+
+        packageJson(JSON.stringify({
+            dependencies: {
+                "zod": "^3.22.0",
+                "react": "^18.0.0"
+            },
+            devDependencies: {
+                "@types/react": "^18.0.0"
+            }
+        })),
+
+        tsx(
+            `import React from 'react';
+
+             interface UserProps {
+                 name: string;
+                 age: number;
+             }
+
+             function UserComponent(props: UserProps) {
+                 return <div>{props.name}</div>;
+             }`,
+
+            `import React from 'react';
+             import { z } from 'zod';
+
+             const UserPropsSchema = z.object({
+                 name: z.string(),
+                 age: z.number()
+             });
+
+             type UserProps = z.infer<typeof UserPropsSchema>;
+
+             function UserComponent(props: UserProps) {
+                 const validated = UserPropsSchema.parse(props);
+                 return <div>{validated.name}</div>;
+             }`
+        ).withPath("src/components/User.tsx")
+    );
+
+    const sourcesArray = [];
+    for await (const source of sources) {
+        sourcesArray.push(source);
+    }
+
+    return spec.rewriteRun(...sourcesArray);
+});
+```
+
+### Recipe Implementation with Type Context
+
+When your recipe's patterns/templates need type attribution, ensure the test provides the necessary dependencies:
+
+```typescript
+export class AddDateValidation extends Recipe {
+    async editor(): Promise<TreeVisitor<any, ExecutionContext>> {
+        return new class extends JavaScriptVisitor<ExecutionContext> {
+            protected async visitMethodDeclaration(
+                method: J.MethodDeclaration,
+                ctx: ExecutionContext
+            ): Promise<J | undefined> {
+                // This template requires date-fns types to be available
+                const validationCode = template`
+                    if (!isValid(date)) {
+                        throw new Error("Invalid date");
+                    }
+                `.configure({
+                    context: ['import { isValid } from "date-fns"'],
+                    dependencies: {'date-fns': '^2.30.0'}
+                });
+
+                // Template can only resolve isValid if date-fns is in package.json
+                // during testing
+                return await this.insertValidation(method, validationCode);
+            }
+        };
+    }
+}
+
+// Test with proper dependencies
+test("add date validation", async () => {
+    const sources = npm(
+        __dirname,
+        packageJson(JSON.stringify({
+            dependencies: {
+                "date-fns": "^2.30.0"  // Required for type attribution
+            }
+        })),
+        typescript(/* test code */)
+    );
+    // ... rest of test
+});
+```
+
+### Key Points for Testing Type Attribution
+
+1. **Always include type dependencies**: Both runtime and @types packages
+2. **Use npm() for realistic environment**: Simulates actual project setup
+3. **Match configure() dependencies**: Test dependencies should match what's in configure()
+4. **Cache optimization**: npm() caches installations for faster subsequent runs
+5. **Async handling**: Remember npm() returns an async generator
 
 ## Advanced Topics
 

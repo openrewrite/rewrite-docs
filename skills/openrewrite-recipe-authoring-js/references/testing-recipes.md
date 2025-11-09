@@ -92,17 +92,42 @@ spec.recipe = recipe;
 
 ## Source Specifications
 
-Each source file specification supports several options:
+OpenRewrite provides several functions to create source specifications for different file types:
 
-### Basic Options
+### Available Source Functions
 
 ```typescript
-import {javascript, typescript} from "@openrewrite/rewrite/javascript";
+import {
+    javascript,   // JavaScript files
+    typescript,   // TypeScript files
+    jsx,         // JSX files (React)
+    tsx,         // TSX files (TypeScript React)
+    npm,         // Multi-file projects with package.json
+    packageJson  // package.json files
+} from "@openrewrite/rewrite/javascript";
 
-// Minimal - just before and after
+// JavaScript
 javascript(
     `const x = 1;`,
     `const y = 1;`
+)
+
+// TypeScript
+typescript(
+    `let x: number = 1;`,
+    `let y: number = 1;`
+)
+
+// JSX (React)
+jsx(
+    `<Button onClick={handler}>Click</Button>`,
+    `<Button onClick={newHandler}>Click</Button>`
+)
+
+// TSX (TypeScript React)
+tsx(
+    `<Button<string> onClick={handler}>Click</Button>`,
+    `<Button<string> onClick={newHandler}>Click</Button>`
 )
 
 // With custom path
@@ -122,6 +147,7 @@ When you expect no changes, omit the `after` parameter:
 ```typescript
 // File should not be modified
 javascript(`const x = 1;`)
+tsx(`<App />`)  // TSX with no expected changes
 ```
 
 ### Source Spec Object Structure
@@ -139,6 +165,183 @@ interface SourceSpec<T extends SourceFile> {
     afterRecipe?: (sourceFile: T) => T | void | Promise<T> | Promise<void>;
     ext: string;                     // File extension
 }
+```
+
+## Testing with npm and package.json
+
+The `npm` function enables testing recipes in a realistic Node.js environment with dependencies installed. This is crucial for **type attribution** when your recipe needs to understand external library types.
+
+### Basic npm Usage
+
+```typescript
+import {npm, javascript, packageJson} from "@openrewrite/rewrite/javascript";
+
+test("transform with dependencies", async () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new MyRecipe();
+
+    // Use npm to create a project environment
+    const sources = npm(
+        __dirname,  // Directory for node_modules installation
+
+        // Define package.json with dependencies
+        packageJson(JSON.stringify({
+            name: "test-project",
+            version: "1.0.0",
+            dependencies: {
+                "lodash": "^4.17.21",
+                "react": "^18.0.0"
+            },
+            devDependencies: {
+                "@types/lodash": "^4.14.195",
+                "@types/react": "^18.0.0"
+            }
+        })),
+
+        // JavaScript files can now use types from dependencies
+        javascript(
+            `import _ from "lodash";
+             const result = _.debounce(fn, 100);`,
+            `import { debounce } from "lodash";
+             const result = debounce(fn, 100);`
+        ).withPath("src/index.js")
+    );
+
+    // Convert async generator to array
+    const sourcesArray = [];
+    for await (const source of sources) {
+        sourcesArray.push(source);
+    }
+
+    return spec.rewriteRun(...sourcesArray);
+});
+```
+
+### Type Attribution with package.json
+
+When testing recipes that generate code using external libraries, proper type attribution requires the dependencies to be available:
+
+```typescript
+test("add typed library call", async () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new AddDateValidation();
+
+    const sources = npm(
+        __dirname,
+
+        // Dependencies needed for type attribution
+        packageJson(JSON.stringify({
+            dependencies: {
+                "date-fns": "^2.30.0"
+            },
+            devDependencies: {
+                "@types/node": "^20.0.0"
+            }
+        })),
+
+        typescript(
+            `function processDate(input: string) {
+                 // Process date
+             }`,
+            `import { isValid, parseISO } from "date-fns";
+
+             function processDate(input: string) {
+                 const date = parseISO(input);
+                 if (!isValid(date)) {
+                     throw new Error("Invalid date");
+                 }
+                 // Process date
+             }`
+        ).withPath("src/dates.ts")
+    );
+
+    const sourcesArray = [];
+    for await (const source of sources) {
+        sourcesArray.push(source);
+    }
+
+    return spec.rewriteRun(...sourcesArray);
+});
+```
+
+### Testing React Components with npm
+
+```typescript
+test("transform React component", async () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new ConvertClassToFunction();
+
+    const sources = npm(
+        __dirname,
+
+        packageJson(JSON.stringify({
+            dependencies: {
+                "react": "^18.0.0",
+                "react-dom": "^18.0.0"
+            },
+            devDependencies: {
+                "@types/react": "^18.0.0",
+                "@types/react-dom": "^18.0.0"
+            }
+        })),
+
+        tsx(
+            `import React from 'react';
+
+             class MyComponent extends React.Component {
+                 render() {
+                     return <div>Hello</div>;
+                 }
+             }`,
+            `import React from 'react';
+
+             function MyComponent() {
+                 return <div>Hello</div>;
+             }`
+        ).withPath("src/MyComponent.tsx")
+    );
+
+    const sourcesArray = [];
+    for await (const source of sources) {
+        sourcesArray.push(source);
+    }
+
+    return spec.rewriteRun(...sourcesArray);
+});
+```
+
+### Important Notes about npm Function
+
+1. **Caching**: The `npm` function caches installed dependencies to avoid redundant installations
+2. **Relative Path**: The first argument to `npm` is the directory where `node_modules` will be created
+3. **Async Generator**: `npm` returns an async generator, so you need to iterate over it to get the sources
+4. **Type Resolution**: Having the actual packages installed enables proper type resolution in patterns and templates
+5. **Performance**: First test run may be slower due to npm install, subsequent runs use cache
+
+### Using packageJson Separately
+
+You can also test transformations on `package.json` itself:
+
+```typescript
+test("update package.json dependencies", () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new UpdateDependencyVersion();
+
+    return spec.rewriteRun(
+        packageJson(
+            JSON.stringify({
+                dependencies: {
+                    "lodash": "^3.0.0"
+                }
+            }, null, 2),
+            JSON.stringify({
+                dependencies: {
+                    "lodash": "^4.17.21"
+                }
+            }, null, 2)
+        )
+    );
+});
 ```
 
 ## AST Assertions with afterRecipe
