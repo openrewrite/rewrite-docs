@@ -5,12 +5,19 @@ Understanding the Lossless Semantic Tree (LST) structure and wrapper types.
 ## Table of Contents
 
 1. [What is LST?](#what-is-lst)
-2. [Wrapper Types](#wrapper-types)
-3. [Spacing and Formatting](#spacing-and-formatting)
-4. [Markers](#markers)
-5. [Utility Functions](#utility-functions)
-6. [Working with Wrappers](#working-with-wrappers)
-7. [Common Patterns](#common-patterns)
+2. [Immutability and Change Detection](#immutability-and-change-detection) **(CRITICAL)**
+3. [Wrapper Types](#wrapper-types)
+4. [Spacing and Formatting](#spacing-and-formatting)
+5. [Markers](#markers)
+6. [Utility Functions](#utility-functions)
+7. [Working with Wrappers](#working-with-wrappers)
+8. [Common Patterns](#common-patterns)
+   - [Pattern 1: Navigate to Actual Element](#pattern-1-navigate-to-actual-element)
+   - [Pattern 2: Preserve Formatting](#pattern-2-preserve-formatting-with-direct-wrapper-usage)
+   - [Pattern 3: Check Wrapper Existence](#pattern-3-check-wrapper-existence)
+   - [Pattern 4: Iterate Container Elements](#pattern-4-iterate-container-elements)
+   - [Pattern 5: Modify Spacing](#pattern-5-modify-spacing)
+   - [Pattern 6: Filter/Remove Elements (CRITICAL)](#pattern-6-filterremove-elements-from-container-critical)
 
 ## What is LST?
 
@@ -78,6 +85,152 @@ JS.Export              // export const x = 1
 
 This design allows OpenRewrite to leverage existing infrastructure while supporting JavaScript/TypeScript-specific features.
 
+## Immutability and Change Detection
+
+**CRITICAL CONCEPT:** OpenRewrite uses **referential equality** (`===`) to detect changes made by visitors.
+
+### How Change Detection Works
+
+When a visitor method returns:
+- **Same object reference** (`node === result`) → No change detected, original node preserved
+- **Different object reference** (`node !== result`) → Change detected, transformed node used
+
+```typescript
+protected async visitLiteral(
+    literal: J.Literal,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    if (literal.value === 0) {
+        // Return SAME object → OpenRewrite knows nothing changed
+        return literal;
+    }
+
+    // Return DIFFERENT object → OpenRewrite detects a change
+    return produce(literal, draft => {
+        draft.value = literal.value + 1;
+    });
+}
+```
+
+### Why This Matters
+
+1. **Performance** - OpenRewrite skips reprinting unchanged subtrees
+2. **Correctness** - Only modified code is affected
+3. **Tracking** - OpenRewrite knows exactly what changed
+
+### Why Use Immer
+
+**OpenRewrite visitor methods are async** - they return `Promise<T>` to support async operations like pattern matching and type resolution. This is why Immer is essential for LST transformations.
+
+Immer's `produce()` is **strongly recommended** because it automatically handles referential equality:
+
+```typescript
+import {produce} from "immer";
+
+// ✅ CORRECT - Immer returns original if no changes made
+const result = produce(node, draft => {
+    // If you don't modify draft, immer returns original node
+    // referential equality is preserved!
+});
+
+// result === node if no modifications were made
+// result !== node only if draft was actually modified
+```
+
+**Immer guarantees:**
+- If you modify the draft → returns new object (`result !== original`)
+- If you don't modify the draft → returns original object (`result === original`)
+- You never need to manually check "did I change anything?"
+
+### Why `produceAsync()` is Provided
+
+Since visitor methods are async and many operations (pattern matching, type checks) require `await`, OpenRewrite provides `produceAsync()`:
+
+```typescript
+import {produceAsync} from "@openrewrite/rewrite";
+
+// ✅ Use produceAsync() for async operations
+protected async visitMethodDeclaration(
+    method: J.MethodDeclaration,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    return await produceAsync(method, async draft => {
+        // Can use await here for pattern matching!
+        const match = await pattern.match(draft.body.statements[0], this.cursor);
+
+        if (match) {
+            draft.body.statements = []; // Modify based on async check
+        }
+        // produceAsync() still preserves referential equality
+    });
+}
+```
+
+**When to use each:**
+- **`produce()`** - For synchronous transformations (use regular immer)
+- **`produceAsync()`** - For async transformations (pattern matching, type checks, etc.) - import from `@openrewrite/rewrite`
+
+Both preserve referential equality automatically!
+
+### Manual Immutability (NOT Recommended)
+
+Without immer, you must manually preserve referential equality:
+
+```typescript
+// ❌ BAD - Always creates new object even if no change needed
+return {
+    ...literal,
+    value: literal.value  // Same value but new object!
+};
+// This tells OpenRewrite there was a change even though value is identical
+
+// ✅ BETTER - Manual check
+if (literal.value !== newValue) {
+    return {...literal, value: newValue};  // Changed
+}
+return literal;  // Unchanged - same reference
+```
+
+**Always prefer immer's `produce()`** - it handles this automatically and correctly.
+
+### Example: Conditional Transformation
+
+```typescript
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Check if this needs transformation
+    if (!shouldTransform(method)) {
+        // Return original → no change detected
+        return method;
+    }
+
+    // Use produce() → automatically handles referential equality
+    return produce(method, draft => {
+        // Only modify if needed
+        if (draft.select) {
+            draft.select.element = newExpression;
+        }
+        // If no modifications happen in this branch,
+        // immer returns original method
+    });
+}
+```
+
+### Key Takeaways
+
+1. **OpenRewrite uses `===` for change detection** - Same reference = no change
+2. **Visitor methods are async** - They return `Promise<T>` to support pattern matching and type resolution
+3. **Use `produceAsync()` for async operations** - Pattern matching, type checks, etc. (import from `@openrewrite/rewrite`)
+4. **Use `produce()` for synchronous operations** - Simple transformations without async logic (from `immer`)
+5. **Both preserve referential equality** - Automatically return original if no modifications made
+6. **Return original object when no changes** - Don't create unnecessary new objects
+7. **Never manually spread/copy unless necessary** - Let immer decide
+8. **Performance benefit** - Unchanged subtrees are not reprinted
+
+This is why the pattern examples throughout this guide always use `produce()` or `produceAsync()` - they're the safest and most efficient way to transform LST nodes.
+
 ## Wrapper Types
 
 LST uses wrapper types to attach formatting information to elements. These wrappers are generic containers that hold both the element and its associated spacing.
@@ -88,11 +241,13 @@ Wraps an element with **trailing** space and comments (space that comes **after*
 
 ```typescript
 interface RightPadded<T> {
-    element: T;           // The wrapped element
+    element: T;           // The wrapped element - ALWAYS use .element to access!
     after: J.Space;       // Trailing whitespace and comments
     markers: Markers;     // Metadata markers
 }
 ```
+
+**IMPORTANT:** When navigating the LST model, you must use the `.element` property to access the actual element inside the wrapper.
 
 **When used:**
 - Method invocation select: `obj.method()` - space after `obj`
@@ -103,8 +258,18 @@ interface RightPadded<T> {
 ```typescript
 // In: obj  /* comment */ .method()
 const select: J.RightPadded<Expression> = method.select;
-// select.element = Identifier("obj")
+// select.element = Identifier("obj")  ← Access via .element property
 // select.after = Space with "  /* comment */ "
+
+// ✅ Correct - Access the element
+if (isIdentifier(select.element)) {
+    console.log(select.element.simpleName);
+}
+
+// ❌ Wrong - Don't use the wrapper directly
+if (isIdentifier(select)) {  // Type error! select is RightPadded, not Identifier
+    // ...
+}
 ```
 
 **Visitor method:**
@@ -759,6 +924,126 @@ return produce(method, draft => {
     }
 });
 ```
+
+### Pattern 6: Filter/Remove Elements from Container (CRITICAL)
+
+**Preferred Pattern:** Use `produceAsync()` to enable async operations (like pattern matching) inside the callback.
+
+**Why `produceAsync()` is better:**
+- **Supports async callbacks** - You can use `await` for pattern matching inside the callback
+- **Keeps logic together** - All transformation logic in one place
+- **Automatic referential equality** - Returns original if no modifications made
+- **Cleaner code** - No need to build arrays outside and check lengths
+
+```typescript
+import {produceAsync} from "@openrewrite/rewrite";
+import {J, Statement} from "@openrewrite/rewrite/java";
+
+// ✅ PREFERRED - Use produceAsync() for async operations
+protected async visitMethodDeclaration(
+    method: J.MethodDeclaration,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    if (!method.body) return method;
+
+    return await produceAsync(method, async draft => {
+        if (draft.body) {
+            const newStatements: J.RightPadded<Statement>[] = [];
+
+            for (const stmt of draft.body.statements) {
+                // ✅ Can use await here because produceAsync supports async!
+                const match = await pattern.match(stmt.element, this.cursor);
+
+                if (!match) {
+                    newStatements.push(stmt);  // Keep non-matching statements
+                }
+            }
+
+            // Only modify if we removed something (automatic referential equality)
+            if (newStatements.length !== draft.body.statements.length) {
+                draft.body.statements = newStatements;
+            }
+        }
+    });
+}
+```
+
+**Alternative Pattern:** If not using pattern matching or other async operations, build array outside `produce()`:
+
+```typescript
+import {produce} from "immer";
+
+// ✅ ALTERNATIVE - Build filtered array outside produce() (synchronous operations)
+protected async visitMethodDeclaration(
+    method: J.MethodDeclaration,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    if (!method.body) return method;
+
+    // Build filtered array using original (non-draft) wrappers
+    const newStatements: J.RightPadded<Statement>[] = [];
+
+    for (const stmt of method.body.statements) {
+        if (!shouldRemove(stmt.element)) {
+            newStatements.push(stmt);  // Keep statements we want
+        }
+    }
+
+    // Only use produce if we actually removed something
+    if (newStatements.length !== method.body.statements.length) {
+        return produce(method, draft => {
+            if (draft.body) {
+                draft.body.statements = newStatements;
+            }
+        });
+    }
+
+    return method;
+}
+```
+
+**Key Points:**
+1. **Use `produceAsync()` for async operations** - Pattern matching, type checks, etc.
+2. **Import from `@openrewrite/rewrite`** - Not from the language-specific packages
+3. **Automatic referential equality** - Both `produce()` and `produceAsync()` preserve it
+4. **Check before modifying** - Only modify `draft.body.statements` if length changed
+
+**Real-world example - Remove binding statements from React constructor:**
+```typescript
+import {produceAsync} from "@openrewrite/rewrite";
+import {pattern, capture} from "@openrewrite/rewrite/javascript";
+import {J, Statement} from "@openrewrite/rewrite/java";
+
+// Pattern: this.method = this.method.bind(this)
+const methodName = capture<J.Identifier>({name: 'methodName'});
+const bindingPattern = pattern`this.${methodName} = this.${methodName}.bind(this)`;
+
+// Use produceAsync to enable async pattern matching inside callback
+return await produceAsync(constructor, async draft => {
+    if (draft.body) {
+        const newStatements: J.RightPadded<Statement>[] = [];
+
+        for (const stmt of draft.body.statements) {
+            const match = await bindingPattern.match(stmt.element, this.cursor);
+
+            if (!match) {
+                newStatements.push(stmt);  // Keep non-binding statements
+            }
+        }
+
+        // Only modify if we removed something
+        if (newStatements.length !== draft.body.statements.length) {
+            draft.body.statements = newStatements;
+        }
+    }
+});
+```
+
+**This pattern applies to:**
+- Removing statements from method bodies with async pattern matching
+- Filtering arguments based on async type checks
+- Removing elements from arrays based on async validation
+- Any container filtering that requires async operations
 
 ## Why Wrappers Exist
 

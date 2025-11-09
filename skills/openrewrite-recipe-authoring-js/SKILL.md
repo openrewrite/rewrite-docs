@@ -12,6 +12,7 @@ Guide for creating and testing OpenRewrite recipes in TypeScript.
 This skill includes additional reference materials:
 - **references/lst-concepts.md** - Core LST concepts: wrapper types (RightPadded, LeftPadded, Container), spacing, and formatting
 - **references/patterns-and-templates.md** - Comprehensive guide to pattern matching and template system
+- **references/type-attribution-guide.md** - Type attribution, configure() usage, and ensuring proper type context
 - **references/examples.md** - Complete recipe examples with detailed explanations
 - **references/testing-recipes.md** - Advanced testing strategies with AST assertions and validation
 
@@ -91,7 +92,8 @@ Follow this checklist when creating a new recipe:
 - [ ] Implement `editor()` method returning a visitor
 - [ ] Create visitor extending `JavaScriptVisitor` or `JavaScriptIsoVisitor`
 - [ ] Override visit methods for target AST nodes
-- [ ] Use `produce()` from `immer` for immutable updates
+- [ ] **Use `produceAsync()` for async operations** (pattern matching, type checks) - import from `@openrewrite/rewrite`
+- [ ] Use `produce()` from `immer` for synchronous immutable updates
 - [ ] Use `maybeAddImport()` / `maybeRemoveImport()` for import management as needed
 - [ ] Use `maybeAutoFormat()` to format modified code
 - [ ] Write tests using `RecipeSpec` and `rewriteRun()`
@@ -213,115 +215,32 @@ export class MyScanningRecipe extends ScanningRecipe<Set<string>, ExecutionConte
 
 ## LST Core Concepts
 
-**For comprehensive details, see [references/lst-concepts.md](references/lst-concepts.md).**
+LST (Lossless Semantic Tree) is OpenRewrite's AST representation that preserves **everything** about your source code - formatting, whitespace, comments, and type information. The key principle: Parse → Transform → Print produces identical output when no changes are made.
 
-### What is LST?
+### Quick Reference
 
-LST (Lossless Semantic Tree) is OpenRewrite's AST representation that preserves **everything** about your source code:
-- Type information and semantic structure
-- Exact formatting and whitespace
-- All comments
-- Source positions
-
-**Key principle:** Parse → Transform → Print produces identical output when no changes are made.
-
-### Wrapper Types
-
-LST uses wrapper types to preserve formatting information on AST elements.
-
-**J.RightPadded\<T>** - Wraps an element with trailing space/comments:
-```typescript
-// In: obj  /* comment */ .method()
-const select: J.RightPadded<Expression> = method.select;
-// select.element = Identifier("obj")
-// select.after = Space with "  /* comment */ "
-```
-
-**J.LeftPadded\<T>** - Wraps an element with leading space/comments:
-```typescript
-// In: x  +  y
-const binary: J.Binary = ...;
-// binary.operator.before = Space with "  "
-// binary.operator.element = Operator.Add
-```
-
-**J.Container\<T>** - Represents delimited lists (arguments, array elements):
-```typescript
-// In: foo( a , b , c )
-const args: J.Container<Expression> = method.arguments;
-// args.before = Space with " " (space after opening paren)
-// args.elements[0].element = Identifier("a")
-// args.elements[0].after = Space with " " (space after "a")
-
-// Note: Delimiters ( , ) are NOT in LST - printer adds them
-```
-
-### The `prefix` Property
-
-**Every LST element** has a `prefix: J.Space` property containing whitespace and comments before that element:
+LST uses wrapper types to preserve formatting around AST elements:
+- **`J.RightPadded<T>`** - Element with trailing space/comments
+- **`J.LeftPadded<T>`** - Element with leading space/comments
+- **`J.Container<T>`** - Delimited lists (arguments, array elements)
 
 ```typescript
-// In:
-//   // Line comment
-//   const x = 1;
+// Always access the element inside wrappers:
+const selectExpr = method.select.element;  // ✅ Correct - unwrap RightPadded
+const firstArg = method.arguments.elements[0].element;  // ✅ Correct - unwrap Container element
 
-const varDecl: J.VariableDeclarations = ...;
-// varDecl.prefix.comments[0].text = " Line comment" (no "//" prefix)
-// varDecl.prefix.whitespace = "  " (leading spaces before "const")
+// Templates handle wrappers automatically:
+const args = method.arguments;  // J.Container
+await template`newMethod(${args})`.apply(cursor, method);  // Expands with formatting
 ```
 
-### Accessing Wrapped Elements
+**Important:** Every LST element has a `prefix: J.Space` property containing whitespace/comments before it.
 
-Always access through wrapper properties:
-
-```typescript
-// ✅ Correct - access element inside wrapper
-const selectExpr = method.select.element;  // RightPadded → element
-const firstArg = method.arguments.elements[0].element;  // Container → element
-
-// ❌ Wrong - this is the wrapper, not the element
-const selectExpr = method.select;  // This is J.RightPadded<Expression>
-```
-
-### Using Wrappers in Templates
-
-Templates can accept wrapper types directly:
-
-```typescript
-// J.RightPadded - extracts and preserves formatting
-const select = method.select;
-return await template`${select}.newMethod()`.apply(cursor, method);
-
-// J.Container - expands all elements with formatting
-const args = method.arguments;
-return await template`newMethod(${args})`.apply(cursor, method);
-```
-
-### Visitor Methods for Wrappers
-
-Override these to visit wrapped elements:
-
-```typescript
-// Visit RightPadded elements
-protected async visitRightPadded<T extends J>(
-    right: J.RightPadded<T>,
-    p: ExecutionContext
-): Promise<J.RightPadded<T>>
-
-// Visit LeftPadded elements
-protected async visitLeftPadded<T extends J>(
-    left: J.LeftPadded<T>,
-    p: ExecutionContext
-): Promise<J.LeftPadded<T>>
-
-// Visit Container elements
-protected async visitContainer<T extends J>(
-    container: J.Container<T>,
-    p: ExecutionContext
-): Promise<J.Container<T>>
-```
-
-See [LST Core Concepts Guide](references/lst-concepts.md) for detailed examples and patterns.
+📖 **See [references/lst-concepts.md](references/lst-concepts.md) for comprehensive coverage including:**
+- Detailed wrapper type explanations with examples
+- Immutability and referential equality patterns
+- Spacing and formatting preservation
+- Advanced visitor methods for wrappers
 
 ## Visitor Pattern
 
@@ -432,35 +351,21 @@ See [LST Core Concepts](references/lst-concepts.md) for details on wrapper types
 
 ## Pattern Matching & Templates
 
-**For comprehensive details, see [references/patterns-and-templates.md](references/patterns-and-templates.md).**
-
-### Quick Overview
-
 The pattern/template system provides a declarative way to match and transform code:
 
 ```typescript
 import {capture, pattern, template} from "@openrewrite/rewrite/javascript";
 
-// Define captures
-const oldMethod = capture<J.Identifier>('oldMethod');
+// Match and transform
 const args = capture({ variadic: true });
-
-// Match pattern
-const pat = pattern`foo.${oldMethod}(${args})`;
+const pat = pattern`oldApi.method(${args})`;
 const match = await pat.match(node);
 
 if (match) {
-    // Generate replacement
-    const tmpl = template`bar.${oldMethod}Async(${args})`;
-    return await tmpl.apply(cursor, node, match);
+    return await template`newApi.methodAsync(${args})`.apply(cursor, node, match);
 }
-```
 
-**Type Attribution with `configure()`:**
-
-When templates reference external types or imports, use `configure()` to enable proper type attribution:
-
-```typescript
+// Configure templates for type attribution when needed
 const tmpl = template`isDate(${capture('value')})`
     .configure({
         context: ['import { isDate } from "date-utils"'],
@@ -468,39 +373,14 @@ const tmpl = template`isDate(${capture('value')})`
     });
 ```
 
-See [Configuring Templates for Type Attribution](references/patterns-and-templates.md#configuring-templates-and-patterns-for-type-attribution) for complete details.
+**Decision Guide:** Use patterns for declarative transformations of specific structures. Use visitors for conditional logic and context-aware transformations. Combine both for maximum flexibility.
 
-### When to Use Patterns vs Visitors
-
-**Use Patterns When:**
-- Matching specific code structures
-- Need declarative, readable transformations
-- Working with method calls, property access, literals
-- Want to capture and reuse parts of matched code
-
-**Use Visitors When:**
-- Need conditional logic based on context
-- Traversing entire files or large subtrees
-- Complex transformations requiring multiple steps
-- Need access to parent/ancestor nodes via Cursor
-
-**Combine Both:**
-```typescript
-protected async visitMethodInvocation(
-    method: J.MethodInvocation,
-    ctx: ExecutionContext
-): Promise<J | undefined> {
-    // Use visitor to narrow scope, pattern to match
-    const pat = pattern`oldApi.${capture()}(${capture()})`;
-    const match = await pat.match(method, this.cursor);
-
-    if (match) {
-        return await template`newApi.${capture()}(${capture()})`.apply(this.cursor, method, match);
-    }
-
-    return method;
-}
-```
+📖 **See [references/patterns-and-templates.md](references/patterns-and-templates.md) for comprehensive coverage including:**
+- Capture types and constraints
+- Variadic and any() placeholders
+- Type attribution with configure()
+- The rewrite() helper function
+- Advanced matching patterns
 
 ## Utility Functions
 
@@ -739,192 +619,71 @@ protected async visitJsCompilationUnit(
 
 ## Testing Recipes
 
-### Basic Test Structure
+Use `RecipeSpec` with `rewriteRun()` to test transformations:
 
 ```typescript
 import {describe, test} from "@jest/globals";
 import {RecipeSpec} from "@openrewrite/rewrite/test";
 import {javascript} from "@openrewrite/rewrite/javascript";
-import {MyRecipe} from "./my-recipe";  // Your recipe implementation
 
 describe("my-recipe", () => {
     const spec = new RecipeSpec();
     spec.recipe = new MyRecipe();
 
-    test("transforms old pattern to new pattern", () => {
+    test("transforms old to new pattern", () => {
         return spec.rewriteRun(
-            //language=javascript
             javascript(
-                `const x = oldPattern();`,
-                `const x = newPattern();`
+                `const x = oldPattern();`,  // before
+                `const x = newPattern();`   // after
             )
         );
     });
 
-    test("does not transform unrelated code", () => {
+    test("with recipe options", () => {
+        spec.recipe = new MyRecipe({ option: "value" });
         return spec.rewriteRun(
-            //language=javascript
-            javascript(
-                `const x = unrelatedCode();`
-            )
+            javascript(`// test code`)
         );
     });
 });
 ```
 
-### Testing with Recipe Options
-
-```typescript
-describe("configurable-recipe", () => {
-    test("uses custom method name with constructor", () => {
-        const spec = new RecipeSpec();
-        // Instantiate with options via constructor
-        spec.recipe = new ConfigurableRecipe({
-            methodName: "customMethod",
-            newMethodName: "newCustomMethod"
-        });
-
-        return spec.rewriteRun(
-            javascript(
-                `customMethod();`,
-                `newCustomMethod();`
-            )
-        );
-    });
-
-    test("uses custom method name with property assignment", () => {
-        const spec = new RecipeSpec();
-        // Alternative: set properties after instantiation
-        const recipe = new ConfigurableRecipe();
-        recipe.methodName = "customMethod";
-        recipe.newMethodName = "newCustomMethod";
-        spec.recipe = recipe;
-
-        return spec.rewriteRun(
-            javascript(
-                `customMethod();`,
-                `newCustomMethod();`
-            )
-        );
-    });
-});
-```
-
-### Pattern-Based Testing
-
-For recipes using patterns/templates, test edge cases:
-
-```typescript
-describe("pattern-based-recipe", () => {
-    const spec = new RecipeSpec();
-    spec.recipe = new MyPatternRecipe();
-
-    test("matches simple case", () => {
-        return spec.rewriteRun(
-            javascript(`foo.bar()`, `baz.bar()`)
-        );
-    });
-
-    test("matches with arguments", () => {
-        return spec.rewriteRun(
-            javascript(`foo.bar(a, b)`, `baz.bar(a, b)`)
-        );
-    });
-
-    test("preserves nested structure", () => {
-        return spec.rewriteRun(
-            javascript(
-                `foo.bar(x.y())`,
-                `baz.bar(x.y())`
-            )
-        );
-    });
-
-    test("does not match different pattern", () => {
-        return spec.rewriteRun(
-            javascript(`other.method()`)
-        );
-    });
-});
-```
-
-### Advanced Testing
-
-For comprehensive testing strategies including:
-
-- **AST Assertions** - Use `afterRecipe` to inspect the transformed AST structure
-- **Pre-Recipe Setup** - Use `beforeRecipe` to prepare test data
-- **Dynamic Validation** - Use function-based `after` for flexible assertions
-- **Data Table Testing** - Validate data collected during recipe execution
-- **Cross-File Testing** - Test transformations across multiple files
-- **Generated Files** - Test recipes that create new files
-
-See the detailed [Testing Recipes Guide](./references/testing-recipes.md) for examples and patterns.
-
-Quick example of AST assertions:
-
-```typescript
-test("verify AST structure", () => {
-    const spec = new RecipeSpec();
-    spec.recipe = new MyRecipe();
-
-    return spec.rewriteRun({
-        ...javascript(
-            `if (true) foo();`,
-            `if (bar()) bar();`
-        ),
-        afterRecipe: (cu: JS.CompilationUnit) => {
-            // Navigate and assert on the transformed AST
-            const ifStmt = cu.statements[0].element as J.If;
-            const condition = ifStmt.ifCondition.tree.element;
-
-            expect(condition.kind).toBe(J.Kind.MethodInvocation);
-            expect((condition as J.MethodInvocation).name.simpleName).toBe('bar');
-        }
-    });
-});
-```
+📖 **See [references/testing-recipes.md](references/testing-recipes.md) for advanced testing including:**
+- AST assertions with `afterRecipe`
+- Pre/post recipe hooks
+- Cross-file transformations
+- Data table validation
+- Testing generated files
 
 ## Common Patterns
 
 Quick reference patterns for common recipe scenarios. For complete recipe examples, see [references/examples.md](references/examples.md).
 
-### Pattern: Simple AST Modification
+### Pattern 1: Simple Property Renaming
 
 ```typescript
-protected async visitLiteral(
-    literal: J.Literal,
+protected async visitIdentifier(
+    ident: J.Identifier,
     ctx: ExecutionContext
 ): Promise<J | undefined> {
-    if (typeof literal.value === 'string' && literal.value === 'old') {
-        return produce(literal, draft => {
-            draft.value = 'new';
-            draft.valueSource = '"new"';
-        });
+    if (ident.simpleName === 'oldName') {
+        return ident.withName('newName');
     }
-    return literal;
+    return ident;
 }
 ```
 
-### Pattern: Conditional Transformation
+### Pattern 2: Method Call Transformation
 
 ```typescript
-import {isIdentifier} from "@openrewrite/rewrite/java";
-
 protected async visitMethodInvocation(
     method: J.MethodInvocation,
     ctx: ExecutionContext
 ): Promise<J | undefined> {
-    // Check if method name matches
-    if (!isIdentifier(method.name)) {
+    if (!isIdentifier(method.name) || method.name.simpleName !== 'oldMethod') {
         return method;
     }
 
-    if (method.name.simpleName !== 'oldMethod') {
-        return method;
-    }
-
-    // Transform
     return produce(method, draft => {
         if (isIdentifier(draft.name)) {
             draft.name = draft.name.withName('newMethod');
@@ -933,9 +692,159 @@ protected async visitMethodInvocation(
 }
 ```
 
-### Pattern: Using Helper Function
+### Pattern 3: Add Method Arguments
 
-For complex logic, extract to the `rewrite` helper:
+```typescript
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    if (isIdentifier(method.name) && method.name.simpleName === 'targetMethod') {
+        // Add a new argument to existing ones
+        return await template`${method.select}.${method.name}(${method.arguments}, "newParam")`
+            .apply(this.cursor, method);
+    }
+    return method;
+}
+```
+
+### Pattern 4: Replace Binary Operators
+
+```typescript
+protected async visitBinary(
+    binary: J.Binary,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    if (binary.operator.element === J.Binary.Type.Equal) {
+        // Change == to ===
+        return produce(binary, draft => {
+            draft.operator = draft.operator.withElement(J.Binary.Type.TripleEqual);
+        });
+    }
+    return binary;
+}
+```
+
+### Pattern 5: Transform Arrow Functions
+
+```typescript
+protected async visitArrowFunction(
+    arrow: JS.ArrowFunction,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Convert arrow function to regular function
+    const params = arrow.parameters;
+    const body = arrow.body;
+
+    return await template`function(${params}) ${body}`
+        .apply(this.cursor, arrow);
+}
+```
+
+### Pattern 6: Async/Await Conversion
+
+```typescript
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    if (isIdentifier(method.name) && method.name.simpleName === 'then') {
+        // Convert promise.then() to await
+        const promise = method.select.element;
+        return await template`await ${promise}`.apply(this.cursor, method);
+    }
+    return method;
+}
+```
+
+### Pattern 7: Import Management
+
+```typescript
+protected async visitJsCompilationUnit(
+    cu: JS.CompilationUnit,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    let modified = cu;
+
+    // Add new import if needed
+    modified = await maybeAddImport(modified, "lodash", "debounce", null, ctx);
+
+    // Remove old import
+    modified = await maybeRemoveImport(modified, "old-library", "oldFunction", ctx);
+
+    return await maybeAutoFormat(cu, modified, ctx, this.cursor);
+}
+```
+
+### Pattern 8: Class Property Addition
+
+```typescript
+protected async visitClassDeclaration(
+    classDecl: J.ClassDeclaration,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Add a new property to the class
+    const newProperty = await template`state = { count: 0 };`.build<JS.PropertyAssignment>();
+
+    return produce(classDecl, draft => {
+        if (draft.body) {
+            draft.body.statements.unshift(J.rightPadded(newProperty, J.space()));
+        }
+    });
+}
+```
+
+### Pattern 9: Conditional Deletion
+
+```typescript
+protected async visitVariableDeclarations(
+    varDecls: J.VariableDeclarations,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Delete unused variables
+    if (varDecls.variables.some(v => isIdentifier(v.element.name) &&
+        v.element.name.simpleName === 'deprecatedVar')) {
+        return undefined; // Returning undefined deletes the node
+    }
+    return varDecls;
+}
+```
+
+### Pattern 10: Using Execution Context
+
+```typescript
+protected async visitClassDeclaration(
+    classDecl: J.ClassDeclaration,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Store data in context for later passes
+    if (isIdentifier(classDecl.name)) {
+        let classNames = ctx.getMessage<Set<string>>('classNames') || new Set();
+        classNames.add(classDecl.name.simpleName);
+        ctx.putMessage('classNames', classNames);
+    }
+    return classDecl;
+}
+```
+
+### Pattern 11: Pattern Matching with Constraints
+
+```typescript
+const methodName = capture<J.Identifier>({
+    constraint: (n) => isIdentifier(n) && n.simpleName.startsWith('handle')
+});
+const args = capture({ variadic: true });
+
+const pat = pattern`this.${methodName}(${args})`;
+const match = await pat.match(node);
+
+if (match) {
+    const name = match.get(methodName);
+    return await template`this.${name}Async(${args})`.apply(cursor, node, match);
+}
+```
+
+### Pattern 12: Using rewrite() Helper
 
 ```typescript
 import {rewrite, capture, pattern, template} from "@openrewrite/rewrite/javascript";
@@ -957,9 +866,7 @@ protected async visitMethodInvocation(
 }
 ```
 
-### Pattern: Marker-Based Tracking
-
-Use markers to track changes or metadata:
+### Pattern 13: Marker-Based Reporting
 
 ```typescript
 import {SearchResult} from "@openrewrite/rewrite";
@@ -969,12 +876,56 @@ protected async visitMethodInvocation(
     ctx: ExecutionContext
 ): Promise<J | undefined> {
     if (matchesPattern(method)) {
-        // Mark for reporting
+        // Mark for reporting without transformation
         return method.withMarkers(
-            method.markers.add(new SearchResult(randomId(), "Found match"))
+            method.markers.add(new SearchResult(randomId(), "Found deprecated API usage"))
         );
     }
     return method;
+}
+```
+
+### Pattern 14: Type-Safe Visitor Navigation
+
+```typescript
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Find enclosing class
+    const enclosingClass = this.cursor.firstEnclosing(isClassDeclaration);
+
+    if (enclosingClass && isIdentifier(enclosingClass.name)) {
+        console.log(`Method ${method.name} is in class ${enclosingClass.name.simpleName}`);
+    }
+
+    return method;
+}
+```
+
+### Pattern 15: Statement Manipulation
+
+```typescript
+protected async visitBlock(
+    block: J.Block,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Remove all console.log statements
+    return produce(block, draft => {
+        draft.statements = draft.statements.filter(stmt => {
+            const s = stmt.element;
+            if (s.kind !== J.Kind.MethodInvocation) return true;
+
+            const method = s as J.MethodInvocation;
+            if (!isFieldAccess(method.select.element)) return true;
+
+            const fieldAccess = method.select.element as J.FieldAccess;
+            return !(isIdentifier(fieldAccess.target) &&
+                    fieldAccess.target.simpleName === 'console' &&
+                    isIdentifier(fieldAccess.name.element) &&
+                    fieldAccess.name.element.simpleName === 'log');
+        });
+    });
 }
 ```
 
@@ -1094,6 +1045,7 @@ import {javascript, typescript} from "@openrewrite/rewrite/javascript";
 
 - **[references/lst-concepts.md](references/lst-concepts.md)** - LST structure and wrapper types
 - **[references/patterns-and-templates.md](references/patterns-and-templates.md)** - Pattern matching and template system
+- **[references/type-attribution-guide.md](references/type-attribution-guide.md)** - Type attribution and configure() usage
 - **[references/examples.md](references/examples.md)** - Complete recipe examples
 - **[references/testing-recipes.md](references/testing-recipes.md)** - Testing strategies
 - **[OpenRewrite Documentation](https://docs.openrewrite.org/)** - Official documentation

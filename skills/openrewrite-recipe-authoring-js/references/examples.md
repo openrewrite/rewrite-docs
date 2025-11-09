@@ -658,12 +658,12 @@ export class UseValidatorLibrary extends Recipe {
             .configure({
                 // Provide import context for type resolution
                 context: [
-                    'import { validate } from "validator-lib"',
-                    'import type { ValidationRule } from "validator-lib"'
+                    'import { validate } from "validator"',
+                    'import type { ValidationRule } from "validator"'
                 ],
-                // Specify package dependencies
+                // Specify package dependencies with @types/ for type definitions
                 dependencies: {
-                    'validator-lib': '^3.0.0'
+                    '@types/validator': '^13.11.0'
                 }
             });
 
@@ -718,6 +718,224 @@ For examples with type-aware transformations and dependency management, see [Tes
 - **Type attribution** - Generated code has proper type information
 - **Multiple imports** - Array of context strings for complex setups
 - **When to use** - Any template referencing external types or functions
+
+## Example 9: React Codemod - Remove Manual Method Bindings
+
+**Goal:** Remove manual method binding statements from React component constructors as part of a React migration. This demonstrates a real-world codemod use case with pattern matching and type attribution.
+
+### Recipe Implementation
+
+```typescript
+import {ExecutionContext, Recipe, TreeVisitor, produceAsync} from "@openrewrite/rewrite";
+import {J, Statement, isIdentifier} from "@openrewrite/rewrite/java";
+import {JavaScriptVisitor, capture, pattern} from "@openrewrite/rewrite/javascript";
+
+export class RemoveMethodBindings extends Recipe {
+    name = "org.openrewrite.javascript.react.RemoveMethodBindings";
+    displayName = "Remove manual method bindings from React components";
+    description = "Removes this.method = this.method.bind(this) statements from React component constructors.";
+
+    async editor(): Promise<TreeVisitor<any, ExecutionContext>> {
+        return new RemoveBindingsVisitor();
+    }
+}
+
+class RemoveBindingsVisitor extends JavaScriptVisitor<ExecutionContext> {
+
+    protected async visitMethodDeclaration(
+        method: J.MethodDeclaration,
+        ctx: ExecutionContext
+    ): Promise<J | undefined> {
+        // Only process constructors
+        if (!isIdentifier(method.name) || method.name.simpleName !== 'constructor') {
+            return await super.visitMethodDeclaration(method, ctx);
+        }
+
+        if (!method.body) {
+            return method;
+        }
+
+        // Create pattern to match binding statements
+        // Pattern: this.methodName = this.methodName.bind(this)
+        const methodName = capture<J.Identifier>({name: 'methodName'});
+
+        const bindingPattern = pattern`this.${methodName} = this.${methodName}.bind(this)`
+            .configure({
+                context: ['React.Component', 'this'],
+                dependencies: {'@types/react': '^18.0.0'}
+            });
+
+        // Use produceAsync to enable async pattern matching inside the callback
+        return await produceAsync(method, async draft => {
+            if (draft.body) {
+                const newStatements: J.RightPadded<Statement>[] = [];
+
+                for (const stmt of draft.body.statements) {
+                    // Can use await here because produceAsync supports async callbacks!
+                    const match = await bindingPattern.match(stmt.element, this.cursor);
+
+                    if (!match) {
+                        newStatements.push(stmt);  // Keep non-binding statements
+                    }
+                }
+
+                // Only modify if we removed something (automatic referential equality)
+                if (newStatements.length !== draft.body.statements.length) {
+                    draft.body.statements = newStatements;
+                }
+            }
+        });
+
+        return method;
+    }
+}
+```
+
+### Tests
+
+```typescript
+import {describe, test} from "@jest/globals";
+import {RecipeSpec} from "@openrewrite/rewrite/test";
+import {javascript} from "@openrewrite/rewrite/javascript";
+import {RemoveMethodBindings} from "./react-bind-to-arrow-working";
+
+describe("RemoveMethodBindings", () => {
+    test("remove single binding statement", () => {
+        const spec = new RecipeSpec();
+        spec.recipe = new RemoveMethodBindings();
+
+        return spec.rewriteRun(
+            javascript(
+                `class MyComponent extends React.Component {
+                    constructor() {
+                        super();
+                        this.handleClick = this.handleClick.bind(this);
+                    }
+
+                    handleClick() {
+                        console.log('clicked');
+                    }
+                }`,
+                `class MyComponent extends React.Component {
+                    constructor() {
+                        super();
+                    }
+
+                    handleClick() {
+                        console.log('clicked');
+                    }
+                }`
+            )
+        );
+    });
+
+    test("remove multiple binding statements", () => {
+        const spec = new RecipeSpec();
+        spec.recipe = new RemoveMethodBindings();
+
+        return spec.rewriteRun(
+            javascript(
+                `class MyComponent extends Component {
+                    constructor(props) {
+                        super(props);
+                        this.handleClick = this.handleClick.bind(this);
+                        this.handleSubmit = this.handleSubmit.bind(this);
+                    }
+
+                    handleClick() {
+                        this.setState({ clicked: true });
+                    }
+
+                    handleSubmit(event) {
+                        event.preventDefault();
+                    }
+                }`,
+                `class MyComponent extends Component {
+                    constructor(props) {
+                        super(props);
+                    }
+
+                    handleClick() {
+                        this.setState({ clicked: true });
+                    }
+
+                    handleSubmit(event) {
+                        event.preventDefault();
+                    }
+                }`
+            )
+        );
+    });
+
+    test("preserve other constructor statements", () => {
+        const spec = new RecipeSpec();
+        spec.recipe = new RemoveMethodBindings();
+
+        return spec.rewriteRun(
+            javascript(
+                `class MyComponent extends React.Component {
+                    constructor(props) {
+                        super(props);
+                        this.state = { count: 0 };
+                        this.handleClick = this.handleClick.bind(this);
+                        this.ref = React.createRef();
+                    }
+
+                    handleClick() {
+                        console.log('clicked');
+                    }
+                }`,
+                `class MyComponent extends React.Component {
+                    constructor(props) {
+                        super(props);
+                        this.state = { count: 0 };
+                        this.ref = React.createRef();
+                    }
+
+                    handleClick() {
+                        console.log('clicked');
+                    }
+                }`
+            )
+        );
+    });
+
+    test("no change when no bindings exist", () => {
+        const spec = new RecipeSpec();
+        spec.recipe = new RemoveMethodBindings();
+
+        return spec.rewriteRun(
+            javascript(
+                `class MyComponent extends React.Component {
+                    constructor() {
+                        super();
+                        this.state = { value: '' };
+                    }
+
+                    handleChange(event) {
+                        this.setState({ value: event.target.value });
+                    }
+                }`
+            )
+        );
+    });
+});
+```
+
+### Key Takeaways
+
+- **Real-world codemod** - Practical React migration example
+- **Pattern with captures** - Use `capture<T>()` to extract matched values
+- **Type attribution** - `configure()` with React context and dependencies ensures patterns only match in React components
+- **CRITICAL: Use `produceAsync()`** - Enables async pattern matching inside the callback
+- **Import from core** - `produceAsync` is imported from `@openrewrite/rewrite` (not language packages)
+- **Automatic referential equality** - `produceAsync()` automatically preserves referential equality when no changes made
+- **Clean async code** - All transformation logic stays together in one callback
+- **Statement filtering** - Build new array inside `produceAsync()`, check length before modifying
+- **Multiple tests** - Cover different scenarios: single/multiple bindings, preservation, no-change cases
+- **Complete working example** - This example compiles and works with `@openrewrite/rewrite@next`
+
+For more complex implementations that also convert methods to arrow functions, see the `examples/` directory in the skill repository. This simplified version demonstrates the core pattern matching and transformation concepts.
 
 ## Summary
 

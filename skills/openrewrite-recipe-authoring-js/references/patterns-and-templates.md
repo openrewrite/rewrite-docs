@@ -568,13 +568,14 @@ Templates and patterns can be configured with `context` and `dependencies` to en
 import {capture, pattern, template} from "@openrewrite/rewrite/javascript";
 
 // Configure a template with context and dependencies
+// Note: dependencies should use @types/ packages for type definitions
 const tmpl = template`isDate(${capture('value')})`
     .configure({
         context: [
             'import { isDate } from "util"'
         ],
         dependencies: {
-            'util': '^1.0.0'
+            '@types/node': '^20.0.0'  // util is built-in, types from @types/node
         }
     });
 ```
@@ -616,10 +617,10 @@ export class UseDateValidator extends Recipe {
         const tmpl = template`isDate(${value})`
             .configure({
                 context: [
-                    'import { isDate } from "date-utils"'
+                    'import { isDate } from "date-fns"'
                 ],
                 dependencies: {
-                    'date-utils': '^2.0.0'
+                    '@types/date-fns': '^2.6.0'  // Use @types/ for type definitions
                 }
             });
 
@@ -652,7 +653,7 @@ const tmpl = template`
         'import { validate } from "./validators"'
     ],
     dependencies: {
-        'node-fetch': '^3.0.0'
+        '@types/node-fetch': '^2.6.0'  // Use @types/ packages for type definitions
     }
 });
 ```
