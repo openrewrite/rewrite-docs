@@ -666,6 +666,92 @@ const tmpl = template`
 - Template only uses captured values from the pattern
 - No external types or imports are referenced
 
+### Semantic Matching with Type Attribution
+
+**🎯 KEY FEATURE:** When patterns are configured with `context` and `dependencies`, they use **semantic matching** based on type information, not just syntax. This means a single pattern can match multiple syntactic forms automatically.
+
+**Example - Matching both qualified and unqualified calls:**
+
+```typescript
+import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
+import {JavaScriptVisitor, capture, pattern, template, rewrite} from "@openrewrite/rewrite/javascript";
+
+export class MigrateReplServer extends Recipe {
+    name = "org.openrewrite.nodejs.migrate-repl-server";
+    displayName = "Migrate REPL Server API";
+    description = "Migrate deprecated repl API usage";
+
+    async editor(): Promise<TreeVisitor<any, ExecutionContext>> {
+        const rule = rewrite(() => {
+            const args = capture({ variadic: true });
+            return {
+                // Configure pattern with context for semantic matching
+                before: pattern`repl.REPLServer(${args})`.configure({
+                    context: ['const repl = require("repl")'],
+                    dependencies: {
+                        '@types/node': '^20.0.0'
+                    }
+                }),
+                after: template`repl.Server(${args})`
+            };
+        });
+
+        return new class extends JavaScriptVisitor<ExecutionContext> {
+            protected async visitMethodInvocation(
+                method: J.MethodInvocation,
+                ctx: ExecutionContext
+            ): Promise<J | undefined> {
+                return await rule.tryOn(this.cursor, method) || method;
+            }
+        }
+    }
+}
+```
+
+**What this pattern matches automatically:**
+
+```typescript
+// ✅ Matches qualified call
+const repl = require("repl");
+const server = new repl.REPLServer();
+
+// ✅ ALSO matches unqualified call (semantic matching!)
+const { REPLServer } = require("repl");
+const server = new REPLServer();
+
+// ✅ ALSO matches with import
+import { REPLServer } from "repl";
+const server = new REPLServer();
+
+// ✅ ALSO matches with namespace import
+import * as repl from "repl";
+const server = new repl.REPLServer();
+```
+
+**Why semantic matching works:**
+1. Pattern is configured with `context` that imports `repl`
+2. Pattern matcher resolves the type of `repl.REPLServer` using context
+3. When matching code, it checks if `REPLServer` resolves to the same type
+4. If types match, the pattern matches - regardless of syntax differences
+
+**Without configuration (syntax-only matching):**
+
+```typescript
+// ❌ Only matches exact syntax
+const pat = pattern`repl.REPLServer(${args})`;  // No configure()
+
+// Matches: repl.REPLServer()
+// Does NOT match: REPLServer() (different syntax)
+```
+
+**Benefits of semantic matching:**
+- **One pattern matches many forms** - No need to write separate patterns for each import style
+- **More robust** - Works with different import styles (require, import, destructuring)
+- **Type-safe** - Only matches when types actually match, preventing false positives
+- **Simpler recipes** - Less pattern matching code to maintain
+
+**Best practice:** Always configure patterns with `context` and `dependencies` when matching API calls or type-specific code. This enables powerful semantic matching instead of brittle syntax matching.
+
 ## The rewrite() Helper
 
 The `rewrite()` function creates a reusable transformation rule that combines pattern matching and template application:

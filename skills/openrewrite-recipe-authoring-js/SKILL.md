@@ -151,7 +151,9 @@ const tmpl = template`isDate(${capture('value')})`
     });
 ```
 
-📖 See **references/patterns-and-templates.md** for complete guide.
+**🎯 Semantic Matching:** When patterns are configured with `context` and `dependencies`, they use type-based semantic matching instead of syntax-only matching. This means a single pattern like `pattern\`repl.REPLServer()\`` can automatically match `repl.REPLServer()`, `REPLServer()`, and `new REPLServer()` - regardless of import style - because they all resolve to the same type.
+
+📖 See **references/patterns-and-templates.md** for complete guide including semantic matching examples.
 
 ### The `rewrite()` Helper (PRIMARY Pattern Approach)
 
@@ -427,6 +429,48 @@ test("transforms code", () => {
 1. Whether your transformation uses `template` (which auto-formats) or manual AST construction
 2. The exact whitespace in your expected output string
 3. Whether `maybeAutoFormat()` should be applied after transformation
+
+### Testing No-Change Cases
+
+**Important:** Always test cases where your recipe should NOT make changes. This ensures your recipe doesn't transform unrelated code.
+
+```typescript
+test("does not transform unrelated code", () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new MyRecipe();
+
+    return spec.rewriteRun(
+        // Single argument = no change expected
+        javascript(`const x = unrelatedPattern();`)
+    );
+});
+```
+
+**Pattern:**
+- **Two arguments** `javascript(before, after)` - Expects transformation
+- **One argument** `javascript(code)` - Expects NO change (code stays the same)
+
+**Example - Testing both positive and negative cases:**
+```typescript
+test("transforms only target pattern", () => {
+    const spec = new RecipeSpec();
+    spec.recipe = new RenameMethodRecipe({ oldName: "oldMethod", newName: "newMethod" });
+
+    return spec.rewriteRun(
+        // Should transform
+        javascript(
+            `obj.oldMethod();`,
+            `obj.newMethod();`
+        ),
+        // Should NOT transform - different method name
+        javascript(`obj.differentMethod();`),
+        // Should NOT transform - different context
+        javascript(`const oldMethod = 'string';`)
+    );
+});
+```
+
+**Best practice:** Include multiple no-change test cases to verify your recipe's specificity and avoid false positives.
 
 ### Testing with Dependencies
 

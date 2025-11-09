@@ -9,9 +9,10 @@ Type attribution is the process of associating type information with AST nodes d
 1. [Understanding Type Attribution](#understanding-type-attribution)
 2. [When Type Attribution Is Needed](#when-type-attribution-is-needed)
 3. [Using configure() for Type Context](#using-configure-for-type-context)
-4. [Common Type Attribution Patterns](#common-type-attribution-patterns)
-5. [Debugging Type Attribution Issues](#debugging-type-attribution-issues)
-6. [Best Practices](#best-practices)
+4. [Semantic Matching with Type Attribution](#semantic-matching-with-type-attribution)
+5. [Common Type Attribution Patterns](#common-type-attribution-patterns)
+6. [Debugging Type Attribution Issues](#debugging-type-attribution-issues)
+7. [Best Practices](#best-practices)
 
 ## Understanding Type Attribution
 
@@ -92,6 +93,92 @@ interface PatternOptions {
     // Package dependencies for type resolution
     dependencies?: Record<string, string>;
 }
+```
+
+## Semantic Matching with Type Attribution
+
+**Key Benefit:** When patterns are configured with type context, OpenRewrite uses semantic matching based on types, not just syntax. This allows a single pattern to match multiple syntactic forms that resolve to the same type.
+
+### How Semantic Matching Works
+
+```typescript
+// Pattern configured with type context
+const rule = rewrite(() => {
+    const args = capture({ variadic: true });
+    return {
+        before: pattern`repl.REPLServer(${args})`.configure({
+            context: ['const repl = require("repl")'],
+            dependencies: {
+                '@types/node': '^20.0.0'
+            }
+        }),
+        after: template`repl.Server(${args})`
+    };
+});
+```
+
+**This single pattern matches ALL these forms:**
+
+```typescript
+// Form 1: Qualified with namespace
+const repl = require("repl");
+new repl.REPLServer();
+
+// Form 2: Destructured
+const { REPLServer } = require("repl");
+new REPLServer();
+
+// Form 3: ES6 named import
+import { REPLServer } from "repl";
+new REPLServer();
+
+// Form 4: ES6 namespace import
+import * as repl from "repl";
+new repl.REPLServer();
+```
+
+### Why Semantic Matching Matters
+
+**Without type context (syntax-only):**
+- Pattern `repl.REPLServer()` only matches exact syntax `repl.REPLServer()`
+- Need separate patterns for each import style
+- Brittle and error-prone
+
+**With type context (semantic):**
+- Pattern resolves `repl.REPLServer` to its type using context
+- Matches any code that resolves to the same type
+- Robust across different import styles
+- Single pattern, multiple matches
+
+### Best Practices for Semantic Matching
+
+1. **Always configure patterns for API matching:**
+```typescript
+// ✅ Good - enables semantic matching
+pattern`library.method()`.configure({
+    context: ['import library from "library"'],
+    dependencies: {'@types/library': '^1.0.0'}
+})
+
+// ❌ Bad - only syntax matching
+pattern`library.method()`
+```
+
+2. **Use appropriate @types packages:**
+```typescript
+// For Node.js built-ins
+dependencies: {'@types/node': '^20.0.0'}
+
+// For third-party libraries
+dependencies: {'@types/react': '^18.0.0'}
+```
+
+3. **Include all relevant imports in context:**
+```typescript
+context: [
+    'import React from "react"',
+    'import { useState } from "react"'
+]
 ```
 
 ## Common Type Attribution Patterns
