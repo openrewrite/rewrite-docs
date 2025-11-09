@@ -275,18 +275,42 @@ protected async visitBlock(
 ## Pattern 16: Working with JSX/TSX
 
 ```typescript
-protected async visitJsxElement(
-    element: JS.JsxElement,
+import {JSX} from "@openrewrite/rewrite/javascript";
+import {isIdentifier} from "@openrewrite/rewrite/java";
+
+protected async visitJsxTag(
+    tag: JSX.Tag,
     ctx: ExecutionContext
 ): Promise<J | undefined> {
-    // Transform class components to functional
-    if (isIdentifier(element.name) && element.name.simpleName === 'Component') {
-        return await template`<FunctionalComponent {...${element.attributes}} />`
-            .apply(this.cursor, element);
+    // Visit children first
+    tag = await super.visitJsxTag(tag, ctx) as JSX.Tag;
+
+    // Check if this is a specific component by name
+    const openName = tag.openName;
+    if (isIdentifier(openName) && openName.simpleName === 'OldComponent') {
+        // Transform to new component name using template
+        return await template`<NewComponent {...${tag.attributes}}>
+            ${tag.children}
+        </NewComponent>`.apply(this.cursor, tag);
     }
-    return element;
+
+    return tag;
 }
 ```
+
+**JSX Structure:**
+- `JSX.Tag` - Main JSX element (`<Component>...</Component>` or `<Component />`)
+- `tag.openName` - Opening tag name (NameTree: Identifier or FieldAccess)
+- `tag.attributes` - List of JSX attributes and spread attributes
+- `tag.children` - Child elements/expressions (null for self-closing tags)
+- `tag.isSelfClosing()` - Check if self-closing tag
+- `tag.hasChildren()` - Check if has children
+
+**Other JSX types:**
+- `JSX.Attribute` - Regular attribute (`key="value"`)
+- `JSX.SpreadAttribute` - Spread syntax (`{...props}`)
+- `JSX.EmbeddedExpression` - JavaScript expressions in JSX (`{expression}`)
+- `JSX.NamespacedName` - Namespaced names (`React.Fragment`)
 
 ## Pattern 17: Type Annotation Handling
 

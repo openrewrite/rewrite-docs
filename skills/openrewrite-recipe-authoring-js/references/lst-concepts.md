@@ -44,7 +44,7 @@ const   x  =  1  ;  // comment
 
 ### JavaScript/TypeScript LST Model
 
-The JavaScript/TypeScript LST model reuses the Java LST model (`J`) where possible and only introduces new types (`JS`) when necessary.
+The JavaScript/TypeScript LST model reuses the Java LST model (`J`) where possible and introduces new types in separate namespaces (`JS` and `JSX`) when necessary.
 
 **Shared from Java (`J`):**
 - Method invocations (`J.MethodInvocation`)
@@ -60,16 +60,24 @@ The JavaScript/TypeScript LST model reuses the Java LST model (`J`) where possib
 **JavaScript-specific (`JS`):**
 - Arrow functions (`J.Lambda` - reused, but with JS-specific printing)
 - Template literals (`JS.TemplateLiteral`)
-- JSX elements (`JSX.Tag`, `JSX.Attribute`)
 - Await expressions (`JS.Await`)
 - TypeScript-specific types (`JS.TypeOperator`, `JS.MappedType`)
 - Export/Import statements (`JS.Export`, `JS.Import`)
+
+**JSX/TSX-specific (`JSX`) - Separate namespace:**
+- JSX elements (`JSX.Tag`) - `<Component>...</Component>` or `<Component />`
+- JSX attributes (`JSX.Attribute`) - `key="value"`
+- JSX spread attributes (`JSX.SpreadAttribute`) - `{...props}`
+- JSX embedded expressions (`JSX.EmbeddedExpression`) - `{expression}`
+- JSX namespaced names (`JSX.NamespacedName`) - `React.Fragment`
 
 **Why this matters:**
 - Recipes can use familiar `J.*` types for common structures
 - Most visitor methods work on `J.*` types
 - JavaScript-specific features are in `JS.*` namespace
+- **JSX/TSX elements are in the separate `JSX.*` namespace**
 - TypeScript is treated as JavaScript with type annotations
+- Import `JSX` separately: `import {JSX} from "@openrewrite/rewrite/javascript"`
 
 **Example:**
 ```typescript
@@ -83,8 +91,13 @@ J.If                   // if (condition) { }
 // These are JS types (JavaScript-specific)
 JS.Await               // await promise
 JS.TemplateLiteral     // `hello ${name}`
-JSX.Tag                // <div>...</div>
 JS.Export              // export const x = 1
+
+// These are JSX types (separate namespace for JSX/TSX)
+JSX.Tag                // <div>...</div>
+JSX.Attribute          // key="value"
+JSX.SpreadAttribute    // {...props}
+JSX.EmbeddedExpression // {expression}
 ```
 
 This design allows OpenRewrite to leverage existing infrastructure while supporting JavaScript/TypeScript-specific features.
