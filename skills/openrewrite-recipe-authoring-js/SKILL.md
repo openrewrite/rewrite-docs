@@ -34,10 +34,57 @@ Load these references as needed for detailed information on specific topics.
 
 ## Quick Start
 
+### Project Setup
+
+**Required Dependencies:**
+
+```json
+{
+  "dependencies": {
+    "@openrewrite/rewrite": "^8.66.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.5.4",
+    "immer": "^10.0.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.6.2"
+  }
+}
+```
+
+**TypeScript Configuration:**
+
+Use `module: "Node16"` and `moduleResolution: "node16"` for proper ESM support:
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "Node16",
+    "moduleResolution": "node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "declaration": true
+  }
+}
+```
+
+**Installation:**
+
+```bash
+npm install @openrewrite/rewrite@next  # Use @next for latest features
+npm install --save-dev typescript @types/node immer @jest/globals jest
+```
+
 ### Recipe Development Workflow
 
 Follow this checklist when creating a new recipe:
 
+- [ ] Set up project with required dependencies
+- [ ] Configure TypeScript with Node16 module resolution
 - [ ] Define recipe class extending `Recipe`
 - [ ] Implement `name`, `displayName`, `description` properties
 - [ ] Add `@Option` fields if recipe needs configuration
@@ -202,9 +249,11 @@ const binary: J.Binary = ...;
 ```typescript
 // In: foo( a , b , c )
 const args: J.Container<Expression> = method.arguments;
-// args.before = Space with "( "
+// args.before = Space with " " (space after opening paren)
 // args.elements[0].element = Identifier("a")
-// args.elements[0].after = Space with " , "
+// args.elements[0].after = Space with " " (space after "a")
+
+// Note: Delimiters ( , ) are NOT in LST - printer adds them
 ```
 
 ### The `prefix` Property
@@ -217,8 +266,8 @@ const args: J.Container<Expression> = method.arguments;
 //   const x = 1;
 
 const varDecl: J.VariableDeclarations = ...;
-// varDecl.prefix.comments[0] = Comment("// Line comment")
-// varDecl.prefix.whitespace = "\n  "
+// varDecl.prefix.comments[0].text = " Line comment" (no "//" prefix)
+// varDecl.prefix.whitespace = "  " (leading spaces before "const")
 ```
 
 ### Accessing Wrapped Elements
