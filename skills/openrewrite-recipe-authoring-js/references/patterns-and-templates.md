@@ -1077,9 +1077,8 @@ const pat = pattern`...`.configure({
     lenientTypeMatching?: boolean,  // Default: true (lenient matching)
 
     // Other configuration options
-    context: [...],          // Import context for type resolution
-    dependencies: {...},     // Package dependencies for type attribution
-    parserOptions: {...}     // Parser settings (for templates, not patterns)
+    context?: [...],          // Import context for type resolution
+    dependencies?: {...}      // Package dependencies for type attribution
 });
 ```
 

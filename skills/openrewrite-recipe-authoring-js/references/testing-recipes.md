@@ -175,45 +175,49 @@ The `npm` function enables testing recipes in a realistic Node.js environment wi
 
 ```typescript
 import {npm, javascript, packageJson} from "@openrewrite/rewrite/javascript";
+import {withDir} from 'tmp-promise';  // Clean temp directory management
 
 test("transform with dependencies", async () => {
     const spec = new RecipeSpec();
     spec.recipe = new MyRecipe();
 
-    // Use npm to create a project environment
-    const sources = npm(
-        __dirname,  // Directory for node_modules installation
+    // Use temp directory to avoid polluting project
+    await withDir(async (tmpDir) => {
+        // Use npm to create a project environment
+        const sources = npm(
+            tmpDir.path,  // Temp directory for node_modules installation
 
-        // Define package.json with dependencies
-        packageJson(JSON.stringify({
-            name: "test-project",
-            version: "1.0.0",
-            dependencies: {
-                "lodash": "^4.17.21",
-                "react": "^18.0.0"
-            },
-            devDependencies: {
-                "@types/lodash": "^4.14.195",
-                "@types/react": "^18.0.0"
-            }
-        })),
+            // Define package.json with dependencies
+            packageJson(JSON.stringify({
+                name: "test-project",
+                version: "1.0.0",
+                dependencies: {
+                    "lodash": "^4.17.21",
+                    "react": "^18.0.0"
+                },
+                devDependencies: {
+                    "@types/lodash": "^4.14.195",
+                    "@types/react": "^18.0.0"
+                }
+            })),
 
-        // JavaScript files can now use types from dependencies
-        javascript(
-            `import _ from "lodash";
-             const result = _.debounce(fn, 100);`,
-            `import { debounce } from "lodash";
-             const result = debounce(fn, 100);`
-        ).withPath("src/index.js")
-    );
+            // JavaScript files can now use types from dependencies
+            javascript(
+                `import _ from "lodash";
+                 const result = _.debounce(fn, 100);`,
+                `import { debounce } from "lodash";
+                 const result = debounce(fn, 100);`
+            ).withPath("src/index.js")
+        );
 
-    // Convert async generator to array
-    const sourcesArray = [];
-    for await (const source of sources) {
-        sourcesArray.push(source);
-    }
+        // Convert async generator to array
+        const sourcesArray = [];
+        for await (const source of sources) {
+            sourcesArray.push(source);
+        }
 
-    return spec.rewriteRun(...sourcesArray);
+        return spec.rewriteRun(...sourcesArray);
+    }, {unsafeCleanup: true});  // Clean up temp directory after test
 });
 ```
 
@@ -222,45 +226,49 @@ test("transform with dependencies", async () => {
 When testing recipes that generate code using external libraries, proper type attribution requires the dependencies to be available:
 
 ```typescript
+import {withDir} from 'tmp-promise';
+
 test("add typed library call", async () => {
     const spec = new RecipeSpec();
     spec.recipe = new AddDateValidation();
 
-    const sources = npm(
-        __dirname,
+    await withDir(async (tmpDir) => {
+        const sources = npm(
+            tmpDir.path,  // Clean temp directory
 
-        // Dependencies needed for type attribution
-        packageJson(JSON.stringify({
-            dependencies: {
-                "date-fns": "^2.30.0"
-            },
-            devDependencies: {
-                "@types/node": "^20.0.0"
-            }
-        })),
+            // Dependencies needed for type attribution
+            packageJson(JSON.stringify({
+                dependencies: {
+                    "date-fns": "^2.30.0"
+                },
+                devDependencies: {
+                    "@types/node": "^20.0.0"
+                }
+            })),
 
-        typescript(
-            `function processDate(input: string) {
-                 // Process date
-             }`,
-            `import { isValid, parseISO } from "date-fns";
+            typescript(
+                `function processDate(input: string) {
+                     // Process date
+                 }`,
+                `import { isValid, parseISO } from "date-fns";
 
-             function processDate(input: string) {
-                 const date = parseISO(input);
-                 if (!isValid(date)) {
-                     throw new Error("Invalid date");
-                 }
-                 // Process date
-             }`
-        ).withPath("src/dates.ts")
-    );
+                 function processDate(input: string) {
+                     const date = parseISO(input);
+                     if (!isValid(date)) {
+                         throw new Error("Invalid date");
+                     }
+                     // Process date
+                 }`
+            ).withPath("src/dates.ts")
+        );
 
-    const sourcesArray = [];
-    for await (const source of sources) {
-        sourcesArray.push(source);
-    }
+        const sourcesArray = [];
+        for await (const source of sources) {
+            sourcesArray.push(source);
+        }
 
-    return spec.rewriteRun(...sourcesArray);
+        return spec.rewriteRun(...sourcesArray);
+    }, {unsafeCleanup: true});
 });
 ```
 
@@ -271,52 +279,55 @@ test("transform React component", async () => {
     const spec = new RecipeSpec();
     spec.recipe = new ConvertClassToFunction();
 
-    const sources = npm(
-        __dirname,
+    await withDir(async (tmpDir) => {
+        const sources = npm(
+            tmpDir.path,
 
-        packageJson(JSON.stringify({
-            dependencies: {
-                "react": "^18.0.0",
-                "react-dom": "^18.0.0"
-            },
-            devDependencies: {
-                "@types/react": "^18.0.0",
-                "@types/react-dom": "^18.0.0"
-            }
-        })),
+            packageJson(JSON.stringify({
+                dependencies: {
+                    "react": "^18.0.0",
+                    "react-dom": "^18.0.0"
+                },
+                devDependencies: {
+                    "@types/react": "^18.0.0",
+                    "@types/react-dom": "^18.0.0"
+                }
+            })),
 
-        tsx(
-            `import React from 'react';
+            tsx(
+                `import React from 'react';
 
-             class MyComponent extends React.Component {
-                 render() {
+                 class MyComponent extends React.Component {
+                     render() {
+                         return <div>Hello</div>;
+                     }
+                 }`,
+                `import React from 'react';
+
+                 function MyComponent() {
                      return <div>Hello</div>;
-                 }
-             }`,
-            `import React from 'react';
+                 }`
+            ).withPath("src/MyComponent.tsx")
+        );
 
-             function MyComponent() {
-                 return <div>Hello</div>;
-             }`
-        ).withPath("src/MyComponent.tsx")
-    );
+        const sourcesArray = [];
+        for await (const source of sources) {
+            sourcesArray.push(source);
+        }
 
-    const sourcesArray = [];
-    for await (const source of sources) {
-        sourcesArray.push(source);
-    }
-
-    return spec.rewriteRun(...sourcesArray);
+        return spec.rewriteRun(...sourcesArray);
+    }, {unsafeCleanup: true});
 });
 ```
 
 ### Important Notes about npm Function
 
-1. **Caching**: The `npm` function caches installed dependencies to avoid redundant installations
-2. **Relative Path**: The first argument to `npm` is the directory where `node_modules` will be created
+1. **Use Temp Directories**: Always use `tmp-promise` with `withDir` to create clean temp directories for tests
+2. **Caching**: The `npm` function caches installed dependencies to avoid redundant installations
 3. **Async Generator**: `npm` returns an async generator, so you need to iterate over it to get the sources
 4. **Type Resolution**: Having the actual packages installed enables proper type resolution in patterns and templates
 5. **Performance**: First test run may be slower due to npm install, subsequent runs use cache
+6. **Cleanup**: Use `{unsafeCleanup: true}` with `withDir` to ensure temp directories are cleaned up
 
 ### Using packageJson Separately
 

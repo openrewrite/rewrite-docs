@@ -719,89 +719,95 @@ import {describe, test} from "@jest/globals";
 import {RecipeSpec} from "@openrewrite/rewrite/test";
 import {UseValidatorLibrary} from "./use-validator-library";
 import {npm, typescript, packageJson} from "@openrewrite/rewrite/javascript";
+import {withDir} from 'tmp-promise';
 
 describe("use-validator-library with type attribution", () => {
     test("replace validation with proper types", async () => {
         const spec = new RecipeSpec();
         spec.recipe = new UseValidatorLibrary();
 
-        // Create project environment with dependencies
-        const sources = npm(
-            __dirname,  // Directory for node_modules
+        await withDir(async (tmpDir) => {
+            // Create project environment with dependencies
+            const sources = npm(
+                tmpDir.path,  // Temp directory for clean tests
 
-            // Define package.json with the validator library
-            packageJson(JSON.stringify({
-                name: "test-project",
-                version: "1.0.0",
-                dependencies: {
-                    "validator": "^13.11.0"
-                },
-                devDependencies: {
-                    "@types/validator": "^13.11.0"
-                }
-            })),
+                // Define package.json with the validator library
+                packageJson(JSON.stringify({
+                    name: "test-project",
+                    version: "1.0.0",
+                    dependencies: {
+                        "validator": "^13.11.0"
+                    },
+                    devDependencies: {
+                        "@types/validator": "^13.11.0"
+                    }
+                })),
 
-            // Test file with proper type context
-            typescript(
-                `import { isValid } from "./custom-validation";
+                // Test file with proper type context
+                typescript(
+                    `import { isValid } from "./custom-validation";
 
-                 function validateEmail(email: string): boolean {
-                     return isValid(email, "email");
-                 }`,
+                     function validateEmail(email: string): boolean {
+                         return isValid(email, "email");
+                     }`,
 
-                `import { validate } from "validator";
+                    `import { validate } from "validator";
 
-                 function validateEmail(email: string): boolean {
-                     return validate(email, "email");
-                 }`
-            ).withPath("src/validation.ts")
-        );
+                     function validateEmail(email: string): boolean {
+                         return validate(email, "email");
+                     }`
+                ).withPath("src/validation.ts")
+            );
 
-        // Convert async generator to array
-        const sourcesArray = [];
-        for await (const source of sources) {
-            sourcesArray.push(source);
-        }
+            // Convert async generator to array
+            const sourcesArray = [];
+            for await (const source of sources) {
+                sourcesArray.push(source);
+            }
 
-        return spec.rewriteRun(...sourcesArray);
+            return spec.rewriteRun(...sourcesArray);
+        }, {unsafeCleanup: true});
     });
 
     test("adds import when needed", async () => {
         const spec = new RecipeSpec();
         spec.recipe = new UseValidatorLibrary();
 
-        const sources = npm(
-            __dirname,
+        await withDir(async (tmpDir) => {
+            const sources = npm(
+                tmpDir.path,
 
-            packageJson(JSON.stringify({
-                dependencies: {
-                    "validator": "^13.11.0"
-                },
-                devDependencies: {
-                    "@types/validator": "^13.11.0"
-                }
-            })),
+                packageJson(JSON.stringify({
+                    dependencies: {
+                        "validator": "^13.11.0"
+                    },
+                    devDependencies: {
+                        "@types/validator": "^13.11.0"
+                    }
+                })),
 
-            // Without existing import
-            typescript(
-                `function check(value: string): boolean {
-                     return isValid(value, "email");
-                 }`,
+                // Without existing import
+                typescript(
+                    `function check(value: string): boolean {
+                         return isValid(value, "email");
+                     }`,
 
-                `import { validate } from "validator";
+                    `import { validate } from "validator";
 
-                 function check(value: string): boolean {
-                     return validate(value, "email");
-                 }`
-            )
-        );
+                     function check(value: string): boolean {
+                         return validate(value, "email");
+                     }`
+                )
+            );
 
-        const sourcesArray = [];
-        for await (const source of sources) {
-            sourcesArray.push(source);
-        }
+            // Convert async generator to array
+            const sourcesArray = [];
+            for await (const source of sources) {
+                sourcesArray.push(source);
+            }
 
-        return spec.rewriteRun(...sourcesArray);
+            return spec.rewriteRun(...sourcesArray);
+        }, {unsafeCleanup: true});
     });
 });
 ```

@@ -82,7 +82,7 @@ const tmpl = template`React.useState(${capture('initialValue')})`
 ### Configuration Options
 
 ```typescript
-interface PatternConfiguration {
+interface PatternOptions {
     // Type matching mode (default: true for lenient matching)
     lenientTypeMatching?: boolean;
 
@@ -91,12 +91,6 @@ interface PatternConfiguration {
 
     // Package dependencies for type resolution
     dependencies?: Record<string, string>;
-
-    // Parser options (mainly for templates, not patterns)
-    parserOptions?: {
-        jsx?: boolean;
-        tsx?: boolean;
-    };
 }
 ```
 
@@ -128,8 +122,7 @@ const tmpl = template`<Button onClick={${capture('handler')}}>${capture('childre
         ],
         dependencies: {
             'react': '^18.0.0'
-        },
-        parserOptions: { jsx: true }
+        }
     });
 ```
 
@@ -139,8 +132,7 @@ const tmpl = template`<Button onClick={${capture('handler')}}>${capture('childre
 // Working with generic types
 const tmpl = template`new Map<string, ${capture('valueType')}>()`
     .configure({
-        context: ['// TypeScript environment'],
-        parserOptions: { tsx: true }
+        context: ['// TypeScript environment']
     });
 ```
 
@@ -340,7 +332,7 @@ const tmpl = template`
     }
 `
     .configure({
-        parserOptions: { tsx: true }
+        context: ['// TypeScript context with generic support']
     });
 ```
 
@@ -377,42 +369,45 @@ When testing recipes that require type attribution from external libraries, use 
 ```typescript
 import {npm, typescript, packageJson} from "@openrewrite/rewrite/javascript";
 import {RecipeSpec} from "@openrewrite/rewrite/test";
+import {withDir} from 'tmp-promise';
 
 test("recipe with proper type attribution", async () => {
     const spec = new RecipeSpec();
     spec.recipe = new MyRecipe();
 
-    const sources = npm(
-        __dirname,  // Where node_modules will be created
+    await withDir(async (tmpDir) => {
+        const sources = npm(
+            tmpDir.path,  // Clean temp directory
 
-        // Define dependencies for type attribution
-        packageJson(JSON.stringify({
-            name: "test-project",
-            dependencies: {
-                "axios": "^1.4.0",
-                "lodash": "^4.17.21"
-            },
-            devDependencies: {
-                "@types/lodash": "^4.14.195"
-            }
-        })),
+            // Define dependencies for type attribution
+            packageJson(JSON.stringify({
+                name: "test-project",
+                dependencies: {
+                    "axios": "^1.4.0",
+                    "lodash": "^4.17.21"
+                },
+                devDependencies: {
+                    "@types/lodash": "^4.14.195"
+                }
+            })),
 
-        // Your test file can now resolve types from dependencies
-        typescript(
-            `import axios from 'axios';
-             const data = await axios.get('/api/data');`,
-            `import axios from 'axios';
-             const { data } = await axios.get('/api/data');`
-        )
-    );
+            // Your test file can now resolve types from dependencies
+            typescript(
+                `import axios from 'axios';
+                 const data = await axios.get('/api/data');`,
+                `import axios from 'axios';
+                 const { data } = await axios.get('/api/data');`
+            )
+        );
 
-    // npm returns async generator, convert to array
-    const sourcesArray = [];
-    for await (const source of sources) {
-        sourcesArray.push(source);
-    }
+        // npm returns async generator, convert to array
+        const sourcesArray = [];
+        for await (const source of sources) {
+            sourcesArray.push(source);
+        }
 
-    return spec.rewriteRun(...sourcesArray);
+        return spec.rewriteRun(...sourcesArray);
+    }, {unsafeCleanup: true});
 });
 ```
 
@@ -423,10 +418,11 @@ test("transform with full type context", async () => {
     const spec = new RecipeSpec();
     spec.recipe = new AddTypeValidation();
 
-    const sources = npm(
-        __dirname,
+    await withDir(async (tmpDir) => {
+        const sources = npm(
+            tmpDir.path,
 
-        packageJson(JSON.stringify({
+            packageJson(JSON.stringify({
             dependencies: {
                 "zod": "^3.22.0",
                 "react": "^18.0.0"
@@ -465,12 +461,13 @@ test("transform with full type context", async () => {
         ).withPath("src/components/User.tsx")
     );
 
-    const sourcesArray = [];
-    for await (const source of sources) {
-        sourcesArray.push(source);
-    }
+        const sourcesArray = [];
+        for await (const source of sources) {
+            sourcesArray.push(source);
+        }
 
-    return spec.rewriteRun(...sourcesArray);
+        return spec.rewriteRun(...sourcesArray);
+    }, {unsafeCleanup: true});
 });
 ```
 
@@ -506,16 +503,18 @@ export class AddDateValidation extends Recipe {
 
 // Test with proper dependencies
 test("add date validation", async () => {
-    const sources = npm(
-        __dirname,
-        packageJson(JSON.stringify({
-            dependencies: {
-                "date-fns": "^2.30.0"  // Required for type attribution
-            }
-        })),
-        typescript(/* test code */)
-    );
-    // ... rest of test
+    await withDir(async (tmpDir) => {
+        const sources = npm(
+            tmpDir.path,
+            packageJson(JSON.stringify({
+                dependencies: {
+                    "date-fns": "^2.30.0"  // Required for type attribution
+                }
+            })),
+            typescript(/* test code */)
+        );
+        // ... rest of test
+    }, {unsafeCleanup: true});
 });
 ```
 
@@ -571,7 +570,7 @@ const tmpl = template`
     }
 `
     .configure({
-        parserOptions: { tsx: true }
+        context: ['// TypeScript context with generic support']
     });
 
 // Using with specific type

@@ -243,35 +243,38 @@ Use `npm` with `packageJson` for type attribution:
 
 ```typescript
 import {npm, packageJson, typescript} from "@openrewrite/rewrite/javascript";
+import {withDir} from 'tmp-promise';
 
 test("with dependencies", async () => {
-    const sources = npm(
-        __dirname,  // node_modules location
+    await withDir(async (tmpDir) => {
+        const sources = npm(
+            tmpDir.path,  // Temp directory for clean tests
 
-        packageJson(JSON.stringify({
-            dependencies: {
-                "lodash": "^4.17.21"
-            },
-            devDependencies: {
-                "@types/lodash": "^4.14.195"
-            }
-        })),
+            packageJson(JSON.stringify({
+                dependencies: {
+                    "lodash": "^4.17.21"
+                },
+                devDependencies: {
+                    "@types/lodash": "^4.14.195"
+                }
+            })),
 
-        typescript(
-            `import _ from "lodash";
-             _.debounce(fn, 100);`,
-            `import { debounce } from "lodash";
-             debounce(fn, 100);`
-        )
-    );
+            typescript(
+                `import _ from "lodash";
+                 _.debounce(fn, 100);`,
+                `import { debounce } from "lodash";
+                 debounce(fn, 100);`
+            )
+        );
 
-    // Convert async generator
-    const sourcesArray = [];
-    for await (const source of sources) {
-        sourcesArray.push(source);
-    }
+        // Convert async generator
+        const sourcesArray = [];
+        for await (const source of sources) {
+            sourcesArray.push(source);
+        }
 
-    return spec.rewriteRun(...sourcesArray);
+        return spec.rewriteRun(...sourcesArray);
+    }, {unsafeCleanup: true});
 });
 ```
 
