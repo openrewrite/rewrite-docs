@@ -10,8 +10,12 @@ Understanding the Lossless Semantic Tree (LST) structure and wrapper types.
 4. [Spacing and Formatting](#spacing-and-formatting)
 5. [Markers](#markers)
 6. [Utility Functions](#utility-functions)
-7. [Working with Wrappers](#working-with-wrappers)
-8. [Common Patterns](#common-patterns)
+7. [Creating AST Elements](#creating-ast-elements)
+   - [Using Object Literals](#using-object-literals)
+   - [Using the `template` Tagged Template](#using-the-template-tagged-template)
+   - [Choosing Between Approaches](#choosing-between-approaches)
+8. [Working with Wrappers](#working-with-wrappers)
+9. [Common Patterns](#common-patterns)
    - [Pattern 1: Navigate to Actual Element](#pattern-1-navigate-to-actual-element)
    - [Pattern 2: Preserve Formatting](#pattern-2-preserve-formatting-with-direct-wrapper-usage)
    - [Pattern 3: Check Wrapper Existence](#pattern-3-check-wrapper-existence)
@@ -693,6 +697,229 @@ const methodInvocation: J.MethodInvocation = {
 };
 ```
 
+## Creating AST Elements
+
+There are two primary ways to create new LST nodes in JavaScript/TypeScript recipes:
+
+1. **Object literals with `kind` property** - For direct, low-level AST construction
+2. **`template` tagged template** - For declarative, high-level code generation
+
+**Important:** Unlike some AST frameworks, OpenRewrite does **not** provide dedicated factory functions for creating AST elements. Instead, you construct them using one of these two approaches.
+
+### Using Object Literals
+
+**⚠️ WARNING: This approach is NOT recommended for most use cases. Use templates instead (see next section).**
+
+Create AST nodes directly using object literals with the corresponding `kind` property. This approach is extremely verbose and makes type attribution very difficult to get right. Use only for very simple cases like creating a single identifier or literal.
+
+```typescript
+import {emptySpace, singleSpace, emptyMarkers, emptyContainer} from "@openrewrite/rewrite/java";
+import {J} from "@openrewrite/rewrite/java";
+
+// Create an identifier
+const identifier: J.Identifier = {
+    kind: J.Kind.Identifier,
+    prefix: emptySpace,
+    markers: emptyMarkers,
+    simpleName: "myVariable",
+    type: null
+};
+
+// Create a literal
+const literal: J.Literal = {
+    kind: J.Kind.Literal,
+    prefix: emptySpace,
+    markers: emptyMarkers,
+    value: 42,
+    valueSource: "42",
+    type: null
+};
+
+// Create a complex structure: console.log("hello")
+const methodInvocation: J.MethodInvocation = {
+    kind: J.Kind.MethodInvocation,
+    prefix: emptySpace,
+    markers: emptyMarkers,
+    select: {
+        element: {
+            kind: J.Kind.Identifier,
+            prefix: emptySpace,
+            markers: emptyMarkers,
+            simpleName: "console",
+            type: null
+        },
+        after: emptySpace,
+        markers: emptyMarkers
+    },
+    name: {
+        kind: J.Kind.Identifier,
+        prefix: emptySpace,
+        markers: emptyMarkers,
+        simpleName: "log",
+        type: null
+    },
+    arguments: {
+        kind: J.Kind.Container,
+        before: emptySpace,
+        markers: emptyMarkers,
+        elements: [
+            {
+                element: {
+                    kind: J.Kind.Literal,
+                    prefix: emptySpace,
+                    markers: emptyMarkers,
+                    value: "hello",
+                    valueSource: '"hello"',
+                    type: null
+                },
+                after: emptySpace,
+                markers: emptyMarkers
+            }
+        ]
+    },
+    methodType: null
+};
+```
+
+**When to use object literals:**
+- **Only for very simple cases** - single identifiers or literals
+- Making small modifications to existing nodes with `produce()`
+
+**Drawbacks:**
+- **Extremely verbose** - Even simple structures require many lines of code
+- **Type attribution is very difficult to get right** - Manual type construction is error-prone and complex
+- Must manually handle all wrapper types and spacing
+- Easy to create invalid AST structures
+- Not recommended for anything beyond trivial nodes
+
+### Using the `template` Tagged Template
+
+Create AST nodes declaratively by writing code as a template string. The template system parses the code and generates a properly attributed AST. This is the **preferred approach** for most code generation.
+
+```typescript
+import {template} from "@openrewrite/rewrite/javascript";
+
+// Simple template - creates console.log("hello")
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    return await template`console.log("hello")`.apply(this.cursor, method);
+}
+```
+
+**With captured values:**
+```typescript
+import {capture, pattern, template} from "@openrewrite/rewrite/javascript";
+
+const msg = capture('msg');
+const pat = pattern`oldLogger(${msg})`;
+const match = await pat.match(method, this.cursor);
+
+if (match) {
+    // Reuse captured value in new template
+    return await template`console.log(${msg})`.apply(this.cursor, method, match);
+}
+```
+
+**With type attribution configuration:**
+```typescript
+// Configure template with context for proper type attribution
+const tmpl = template`isDate(${capture('value')})`
+    .configure({
+        context: [
+            'import { isDate } from "util"'
+        ],
+        dependencies: {
+            '@types/node': '^20.0.0'
+        }
+    });
+
+return await tmpl.apply(this.cursor, method, match);
+```
+
+**When to use templates:**
+- Generating new code from scratch (most common case)
+- Transforming matched patterns
+- Need automatic type attribution
+- Want readable, maintainable code generation
+- Replacing complex AST structures
+
+**Benefits:**
+- Concise and readable - write code as code, not as AST
+- Automatic type attribution when configured
+- Preserves formatting from captured values
+- Less error-prone than manual construction
+- Handles wrapper types automatically
+
+### Choosing Between Approaches
+
+**Use object literals ONLY when:**
+- Creating very simple primitive nodes (single identifier or literal)
+- Making small modifications to existing nodes with `produce()`
+- **Warning:** Avoid object literals for anything more complex - type attribution is extremely difficult to get right manually
+
+**Use templates when (almost always):**
+- **Generating any expression or statement** (99% of cases)
+- Replacing matched code patterns
+- Need type information on generated code
+- Creating anything beyond a single identifier or literal
+- Readability and maintainability matter
+- Working with any nested structures
+
+**Example comparison:**
+
+```typescript
+// Object literal approach - verbose but precise
+const call = {
+    kind: J.Kind.MethodInvocation,
+    prefix: emptySpace,
+    markers: emptyMarkers,
+    select: {
+        element: {
+            kind: J.Kind.Identifier,
+            prefix: emptySpace,
+            markers: emptyMarkers,
+            simpleName: "logger",
+            type: null
+        },
+        after: emptySpace,
+        markers: emptyMarkers
+    },
+    name: {
+        kind: J.Kind.Identifier,
+        prefix: emptySpace,
+        markers: emptyMarkers,
+        simpleName: "info",
+        type: null
+    },
+    arguments: {
+        kind: J.Kind.Container,
+        before: emptySpace,
+        markers: emptyMarkers,
+        elements: [
+            {
+                element: messageExpr,  // Existing expression
+                after: emptySpace,
+                markers: emptyMarkers
+            }
+        ]
+    },
+    methodType: null
+};
+
+// Template approach - concise and readable
+const msg = capture('msg');
+const match = await pattern`console.log(${msg})`.match(method, this.cursor);
+if (match) {
+    return await template`logger.info(${msg})`.apply(this.cursor, method, match);
+}
+```
+
+**Recommendation:** **Always use templates unless you're creating a single, simple identifier or literal.** Object literals are extremely verbose and type attribution is very difficult to get right manually. Even for simple nodes, templates are often the better choice for correctness and maintainability.
+
+For comprehensive documentation on templates, see [Pattern Matching and Templates](patterns-and-templates.md).
+
 ## Working with Wrappers
 
 ### Accessing Elements
@@ -1115,6 +1342,13 @@ Now formatting is explicit and preserved through transformations. The printer kn
 9. **Templates handle wrappers** - Pass them directly to preserve formatting
 10. **Visitor methods exist** - Override to transform wrapped elements
 
+**Creating AST elements:**
+- **No factory functions** - OpenRewrite does not provide dedicated factory functions
+- **Object literals** - Use object literals with `kind` property ONLY for very simple cases (single identifiers/literals)
+- **Templates** - Use `template` tagged template for declarative code generation (strongly preferred - use for 99% of cases)
+- **Type attribution warning** - Object literals make type attribution extremely difficult to get right
+- **Recommendation** - Always use templates unless creating a single, trivial node
+
 **Utility functions:**
 - **Space:** `emptySpace`, `singleSpace`, `space(whitespace)`
 - **Markers:** `emptyMarkers`, `markers(...)`, `marker(id, data)`, `findMarker(o, kind)`
@@ -1127,7 +1361,7 @@ Now formatting is explicit and preserved through transformations. The printer kn
 - Custom visitor logic (override wrapper visitor methods)
 
 **When to use utility functions:**
-- Creating new LST elements (use `emptySpace`, `emptyMarkers`)
+- Creating new LST elements with object literals (use `emptySpace`, `emptyMarkers`)
 - Normalizing spacing (use `singleSpace`)
 - Setting specific whitespace (use `space(whitespace)`)
 - Creating empty lists (use `emptyContainer()`)
