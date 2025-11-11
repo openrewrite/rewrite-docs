@@ -419,7 +419,7 @@ const enclosing = cursor.firstEnclosing(isMethodDeclaration);
 
 ### Import Management
 
-**Adding/Removing imports:**
+Utility functions for managing imports:
 - `maybeAddImport(cu, pkg, member, alias, ctx)` - Add import if missing
 - `maybeRemoveImport(cu, pkg, member, ctx)` - Remove unused import
 
@@ -440,49 +440,9 @@ protected async visitJsCompilationUnit(
 }
 ```
 
-**Transforming CommonJS require() statements:**
+**⚠️ Known Limitation**: Direct ES6 `import` statement transformations can be challenging due to complex AST structure. Prefer using `maybeAddImport`/`maybeRemoveImport` or transforming import usage instead of the import statement itself.
 
-CommonJS transformations work well using pattern matching:
-
-```typescript
-// Transform: const crypto = require('crypto')
-// To: const tls = require('tls')
-
-const rule = rewrite(() => {
-    const varName = capture();
-    return {
-        before: pattern`const ${varName} = require('crypto')`,
-        after: template`const ${varName} = require('tls')`
-    };
-});
-
-return await rule.tryOn(this.cursor, node) || node;
-```
-
-**ES6 Import Transformations:**
-
-⚠️ **Known Limitation**: Direct transformation of ES6 `import` statements can be challenging due to complex AST structure.
-
-**Working approach** - Use helper functions:
-```typescript
-// Use maybeAddImport/maybeRemoveImport instead of direct AST manipulation
-protected async visitJsCompilationUnit(
-    cu: JS.CompilationUnit,
-    ctx: ExecutionContext
-): Promise<J | undefined> {
-    // Remove old import, add new one
-    let modified = await maybeRemoveImport(cu, "old-module", "oldExport", ctx);
-    modified = await maybeAddImport(modified, "new-module", "newExport", null, ctx);
-    return modified;
-}
-```
-
-**Alternative** - Transform the import usage instead of the import statement:
-```typescript
-// Instead of changing: import { old } from "lib"
-// Change the usage: old() -> new()
-// Then use maybeAddImport/maybeRemoveImport to fix imports
-```
+📖 See **references/common-patterns.md** (Pattern 7) for CommonJS `require()` transformations and ES6 import workarounds.
 
 ## Testing
 

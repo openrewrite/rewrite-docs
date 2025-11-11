@@ -102,6 +102,8 @@ protected async visitMethodInvocation(
 
 ## Pattern 7: Import Management
 
+### Basic Import Add/Remove
+
 ```typescript
 protected async visitJsCompilationUnit(
     cu: JS.CompilationUnit,
@@ -116,6 +118,82 @@ protected async visitJsCompilationUnit(
     modified = await maybeRemoveImport(modified, "old-library", "oldFunction", ctx);
 
     return await maybeAutoFormat(cu, modified, ctx, this.cursor);
+}
+```
+
+### CommonJS require() Transformations
+
+CommonJS transformations work well using pattern matching:
+
+```typescript
+// Transform: const crypto = require('crypto')
+// To: const tls = require('tls')
+
+protected async visitVariableDeclarations(
+    varDecls: J.VariableDeclarations,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    const rule = rewrite(() => {
+        const varName = capture();
+        return {
+            before: pattern`const ${varName} = require('crypto')`,
+            after: template`const ${varName} = require('tls')`
+        };
+    });
+
+    return await rule.tryOn(this.cursor, varDecls) || varDecls;
+}
+```
+
+### ES6 Import Transformations
+
+**⚠️ Known Limitation**: Direct transformation of ES6 `import` statements can be challenging due to complex AST structure.
+
+**Recommended approach** - Use helper functions instead of direct AST manipulation:
+
+```typescript
+protected async visitJsCompilationUnit(
+    cu: JS.CompilationUnit,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Remove old import, add new one
+    let modified = await maybeRemoveImport(cu, "old-module", "oldExport", ctx);
+    modified = await maybeAddImport(modified, "new-module", "newExport", null, ctx);
+    return modified;
+}
+```
+
+**Alternative approach** - Transform the import usage instead of the import statement:
+
+```typescript
+// Instead of changing: import { old } from "lib"
+// Change the usage: old() -> new()
+// Then use maybeAddImport/maybeRemoveImport to fix imports
+
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    const rule = rewrite(() => {
+        const args = capture({ variadic: true });
+        return {
+            before: pattern`oldExport(${args})`,
+            after: template`newExport(${args})`
+        };
+    });
+
+    return await rule.tryOn(this.cursor, method) || method;
+}
+
+// In visitJsCompilationUnit:
+protected async visitJsCompilationUnit(
+    cu: JS.CompilationUnit,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    // Cleanup imports after transforming usage
+    let modified = await maybeRemoveImport(cu, "old-module", "oldExport", ctx);
+    modified = await maybeAddImport(modified, "new-module", "newExport", null, ctx);
+    return modified;
 }
 ```
 
