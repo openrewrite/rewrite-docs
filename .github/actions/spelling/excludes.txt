@@ -89,7 +89,8 @@
 ^generate-llms-txt.js
 ^docs/reference/
 ^.claude/
-^claude-skill/
+^.claude-plugin/
+^openrewrite-recipe-writer/
 ^robots.txt
 ^CNAME
 ^src/
