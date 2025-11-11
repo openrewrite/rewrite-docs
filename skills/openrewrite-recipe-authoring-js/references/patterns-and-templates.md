@@ -20,13 +20,25 @@ The pattern/template system provides a declarative way to match and transform Ja
 - **Patterns** match code structures and capture parts for reuse
 - **Templates** generate new code using captured values
 - **Captures** bind matched AST nodes to variables
-- **rewrite()** combines pattern matching with template application into a composable transformation
+- **rewrite()** combines pattern matching with template application into simple substitution rules
+- **Direct pattern/template** provides full procedural control for complex transformations
+
+**API Design Philosophy:**
+
+This API is designed specifically for **TypeScript recipe authoring**. The use of TypeScript enables:
+- **Template literals** - Natural syntax for patterns and templates using tagged template literals
+- **Type parameters** - IDE autocomplete and type hints for captures (e.g., `capture<J.Identifier>()`)
+- **Type safety** - Compile-time checking and IntelliSense support
+- **Modern JavaScript features** - Leverages TypeScript's advanced type system
+
+While recipes can transform JavaScript code, the recipe authoring experience is optimized for TypeScript developers.
 
 **Benefits:**
 - More readable than manual AST manipulation
 - Automatically handles parsing and type attribution
 - Captures preserve all formatting and comments
 - Type-safe with TypeScript
+- Flexible: use declarative `rewrite()` for simple cases, procedural pattern/template for complex logic
 
 ## Basic Concepts
 
@@ -98,6 +110,8 @@ const y = _('name');  // Equivalent to capture('name')
 ```
 
 **Important:** Generic type parameters (`<J.Identifier>`) are only for IDE autocomplete. They do NOT enforce types at runtime. Use `constraint` for runtime validation.
+
+**Design note:** The type parameter syntax is a TypeScript-specific feature that provides IDE support. This is one example of how the API is designed to leverage TypeScript's type system for a better developer experience.
 
 ### Capture Options
 
@@ -334,6 +348,88 @@ builder.addCapture(capture());
 builder.add(')');
 const tmpl = builder.build();
 ```
+
+### How Template Construction Works
+
+**⚠️ CRITICAL CONCEPT:** Templates undergo a two-phase process that determines how template parameters are handled:
+
+**Phase 1: Template Construction (happens once when template is created)**
+
+When you write `template\`...\``, the system constructs valid JavaScript/TypeScript code string that will be parsed into an AST:
+
+1. **`raw()` parameters** - String expressions are **evaluated immediately** and **directly spliced** into the code string
+2. **Other parameters** (captures, params) - Substituted with **unique placeholder identifiers**
+3. The resulting code string **must be syntactically valid JS/TS** - it gets parsed!
+
+**Phase 2: Template Application (happens each time template.apply() is called)**
+
+When you call `template.apply()`, the placeholder identifiers are replaced with actual captured AST nodes.
+
+**Example - What gets constructed:**
+
+```typescript
+const method: J.MethodDeclaration = /* some method */;
+const args = capture({ variadic: true });
+
+// ❌ WRONG - Invalid code will be constructed!
+template`function f() ${method.body}`
+// Constructs: "function f() <PLACEHOLDER_1>"
+// This is INVALID - missing { } braces!
+// Parser will fail during template construction
+
+// ✅ CORRECT - Valid code will be constructed
+template`function f() { ${method.body!.statements} }`
+// Constructs: "function f() { <PLACEHOLDER_1> }"
+// This is VALID - proper function body syntax
+// Parser succeeds, placeholder replaced during apply()
+```
+
+**Why This Matters:**
+
+The template string must represent **syntactically valid code structure**. Think of template parameters as placeholders that will be filled in later - the surrounding code must still parse correctly.
+
+**Common Mistakes:**
+
+```typescript
+// ❌ Missing braces for block
+template`function f() ${block}`
+// Becomes: "function f() <ID>" - Invalid!
+
+// ✅ Include the braces
+template`function f() { ${block.statements} }`
+// Becomes: "function f() { <ID> }" - Valid!
+
+// ❌ Missing parentheses for arguments
+template`foo${args}`
+// Becomes: "foo<ID>" - Invalid function call!
+
+// ✅ Include the parentheses
+template`foo(${args})`
+// Becomes: "foo(<ID>)" - Valid!
+
+// ❌ Missing property access dot
+template`obj${prop}`
+// Becomes: "obj<ID>" - Invalid!
+
+// ✅ Include the dot
+template`obj.${prop}`
+// Becomes: "obj.<ID>" - Valid!
+```
+
+**Using `raw()` for Dynamic Code:**
+
+Since `raw()` strings are spliced in at construction time, they're perfect for dynamic code that comes from recipe options:
+
+```typescript
+const logLevel = this.logLevel;  // Recipe option: "info", "warn", "error"
+
+// raw() evaluated at construction time
+template`logger.${raw(logLevel)}(${msg})`
+// Constructs: "logger.info(<ID>)" or "logger.warn(<ID>)" etc.
+// The method name is baked into the template AST
+```
+
+**Key Principle:** Always ensure your template string, with placeholders substituted by identifiers, represents valid JavaScript/TypeScript syntax.
 
 ### Template Application
 
@@ -754,7 +850,7 @@ const pat = pattern`repl.REPLServer(${args})`;  // No configure()
 
 ## The rewrite() Helper
 
-The `rewrite()` function creates a reusable transformation rule that combines pattern matching and template application:
+The `rewrite()` function creates a reusable transformation rule that combines pattern matching and template application. It's ideal for simple pattern-to-template substitutions but has limitations for complex transformations.
 
 ```typescript
 import {rewrite, capture, pattern, template} from "@openrewrite/rewrite/javascript";
@@ -784,6 +880,15 @@ protected async visitMethodInvocation(
 3. The rule's `tryOn()` method tries to match the pattern and applies the template
 4. Returns the transformed node or `undefined` if no match
 
+**Best for:** Simple pattern-to-template substitutions where one AST subtree is replaced with another.
+
+**Limitations:** Cannot handle:
+- Complex conditional logic based on captured values
+- Multiple templates selected dynamically
+- Inspecting captured values before deciding on transformation
+- Side effects (e.g., collecting statistics, adding markers)
+- Combining pattern matching with manual AST manipulation
+
 **Builder function pattern:**
 ```typescript
 const rule = rewrite(() => {
@@ -799,9 +904,63 @@ const rule = rewrite(() => {
 return await rule.tryOn(this.cursor, node) || node;
 ```
 
+### When to Use `rewrite()` vs Direct Pattern/Template
+
+**Use `rewrite()` when:**
+- Transformation is a straightforward A → B substitution
+- No conditional logic needed beyond pattern matching
+- Single template applies to all matches
+- Composing multiple simple transformations with `orElse()`/`andThen()`
+
+**Use direct `pattern`/`template` when:**
+- Need conditional logic based on captured values
+- Different templates for different conditions
+- Combining pattern matching with other transformations
+- Inspecting matched values before deciding what to do
+- Need side effects (tracking, logging, markers)
+- Building templates dynamically from captured data
+
+**Example requiring direct pattern/template approach:**
+
+```typescript
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    const methodName = capture<J.Identifier>('method');
+    const args = capture({ variadic: true });
+    const pat = pattern`api.${methodName}(${args})`;
+
+    const match = await pat.match(method, this.cursor);
+    if (!match) return method;
+
+    const nameNode = match.get(methodName);
+    if (!isIdentifier(nameNode)) return method;
+
+    // Complex conditional logic - can't use rewrite() for this
+    let tmpl;
+    if (nameNode.simpleName.startsWith('get')) {
+        tmpl = template`newApi.${methodName}Sync(${args})`;
+    } else if (nameNode.simpleName.startsWith('set')) {
+        // Different template with extra parameter
+        tmpl = template`newApi.${methodName}Async(${args}, callback)`;
+    } else if (nameNode.simpleName.includes('Stream')) {
+        // Yet another template
+        tmpl = template`newApi.stream.${methodName}(${args})`;
+    } else {
+        // Don't transform
+        return method;
+    }
+
+    return await tmpl.apply(this.cursor, method, match);
+}
+```
+
+**Key difference:** `rewrite()` is declarative (what to transform) while direct pattern/template is procedural (how to transform). Use whichever fits your transformation's complexity.
+
 ### rewrite() with Conditional Logic
 
-Add context-aware validation with the `where` predicate:
+Add context-aware validation with the `where` predicate. This provides some flexibility but is still limited to yes/no decisions - you cannot choose different templates based on conditions:
 
 ```typescript
 import {_} from "@openrewrite/rewrite/javascript";
@@ -829,7 +988,11 @@ The `where` predicate receives:
 - `cursor`: Cursor at the matched node for context inspection
 - Returns: `true` to apply transformation, `false` to skip
 
-Post-transformation modifications:
+**Limitation:** The `where` predicate only decides whether to apply the transformation - it cannot select between different templates. For that, use the direct pattern/template approach.
+
+**Post-transformation modifications:**
+
+You can modify the result of a `rewrite()` transformation, but this is often a sign that direct pattern/template would be cleaner:
 
 ```typescript
 const rule = rewrite(() => {
@@ -845,6 +1008,7 @@ const result = await rule.tryOn(this.cursor, method);
 
 if (result) {
     // Additional transformation after rewrite
+    // This works, but direct pattern/template might be clearer
     return produce(result, draft => {
         // Modify draft
     });
@@ -852,6 +1016,8 @@ if (result) {
 
 return method;
 ```
+
+**Note:** If you need post-transformation modifications, consider whether the direct pattern/template approach would be more straightforward.
 
 ### Combining Rules
 

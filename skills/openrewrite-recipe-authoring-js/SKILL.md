@@ -17,6 +17,12 @@ Load these references as needed for detailed information:
 
 ## Quick Start
 
+**Important:** The OpenRewrite JavaScript/TypeScript API is designed specifically for TypeScript. While it can transform JavaScript code, recipe authoring should be done in TypeScript to leverage:
+- Template literal syntax for patterns and templates
+- Type-safe capture definitions
+- Full IDE autocomplete and type checking
+- Decorator support for recipe options
+
 ### Installation
 
 ```bash
@@ -33,7 +39,7 @@ npm install --save-dev typescript @types/node immer @jest/globals jest
     "module": "Node16",        // Required for ESM
     "moduleResolution": "node16",
     "strict": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true  // Required for @Option decorator
   }
 }
 ```
@@ -140,6 +146,10 @@ if (match) {
 }
 ```
 
+**⚠️ Template Construction Rule:** Templates must produce syntactically valid JavaScript/TypeScript code. Template parameters become placeholders, so surrounding syntax must be complete. For example, `template\`function f() { ${method.body!.statements} }\`` works because braces are included, but `template\`function f() ${method.body}\`` fails because it would generate invalid code.
+
+📖 See **references/patterns-and-templates.md** (section "How Template Construction Works") for complete details on the two-phase template construction process.
+
 Configure patterns for strict type checking or type attribution:
 
 ```typescript
@@ -155,9 +165,9 @@ const tmpl = template`isDate(${capture('value')})`
 
 📖 See **references/patterns-and-templates.md** for complete guide including semantic matching examples.
 
-### The `rewrite()` Helper (PRIMARY Pattern Approach)
+### The `rewrite()` Helper (Simple Pattern-to-Template Transformations)
 
-**⭐ RECOMMENDED:** For pattern-based transformations, use `rewrite()` + `tryOn()` - this is the cleanest and most declarative approach:
+**⭐ RECOMMENDED for simple substitutions:** When you need to replace one subtree with another, use `rewrite()` + `tryOn()` - this is the cleanest and most declarative approach:
 
 ```typescript
 import {rewrite, capture, pattern, template} from "@openrewrite/rewrite/javascript";
@@ -181,13 +191,56 @@ protected async visitMethodInvocation(
 }
 ```
 
-**Why use `rewrite()` + `tryOn()`:**
-- ✅ Most concise and readable approach
+**When `rewrite()` works well:**
+- ✅ Simple pattern-to-template substitutions (A → B)
+- ✅ Most concise and readable for these cases
 - ✅ Combines pattern matching and template application
 - ✅ Returns `undefined` if no match, making fallback easy
 - ✅ Composable with `orElse()` and `andThen()`
 - ✅ Declarative - focuses on "what" not "how"
 - ✅ **Auto-formats the generated code** - Templates automatically format output
+
+**When to use `pattern`/`template` directly instead:**
+- 🔧 Complex conditional logic based on captured values
+- 🔧 Multiple transformations needed on the same node
+- 🔧 Need to inspect captured values before deciding on transformation
+- 🔧 Building different templates based on runtime conditions
+- 🔧 Combining pattern matching with manual AST manipulation
+- 🔧 Side effects or state updates during transformation (e.g., collecting information)
+
+**Example - Complex logic requiring direct pattern/template use:**
+
+```typescript
+protected async visitMethodInvocation(
+    method: J.MethodInvocation,
+    ctx: ExecutionContext
+): Promise<J | undefined> {
+    const methodName = capture<J.Identifier>('method');
+    const args = capture({ variadic: true });
+    const pat = pattern`api.${methodName}(${args})`;
+
+    const match = await pat.match(method, this.cursor);
+    if (!match) return method;
+
+    const nameNode = match.get(methodName);
+    if (!isIdentifier(nameNode)) return method;
+
+    // Complex conditional logic based on captured values
+    let tmpl;
+    if (nameNode.simpleName.startsWith('get')) {
+        tmpl = template`newApi.${methodName}Sync(${args})`;
+    } else if (nameNode.simpleName.startsWith('set')) {
+        tmpl = template`newApi.${methodName}Async(${args}, callback)`;
+    } else {
+        // Don't transform this case
+        return method;
+    }
+
+    return await tmpl.apply(this.cursor, method, match);
+}
+```
+
+**Trade-off:** `rewrite()` is more declarative but less flexible. For complex transformations, the procedural approach with direct `pattern`/`template` usage offers full control.
 
 **Important:** `template` (and by extension `rewrite()`) automatically formats the generated code according to OpenRewrite's formatting rules. This means:
 - You don't need to worry about spacing/indentation in template strings
@@ -645,7 +698,9 @@ import {javascript, typescript, jsx, tsx, npm, packageJson} from "@openrewrite/r
 
 ## Best Practices
 
-1. **Prefer `rewrite()` for pattern-based transformations** - Most declarative and maintainable approach
+1. **Choose the right tool for pattern-based transformations:**
+   - Use `rewrite()` for simple pattern-to-template substitutions (most declarative)
+   - Use `pattern`/`template` directly for complex conditional logic or procedural transformations
 2. **Call `super.visitX()` first (default)** - Ensures children are visited before parent transformations; skip only when you have a specific reason
 3. **Always unwrap wrapper types** - Use `.element` to access actual nodes from RightPadded/Container/LeftPadded
 4. **Test edge cases** - Empty arguments, nested calls, different node types
