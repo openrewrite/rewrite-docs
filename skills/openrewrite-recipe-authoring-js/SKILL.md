@@ -5,15 +5,49 @@ description: This skill should be used when authoring OpenRewrite recipes in Typ
 
 # Authoring OpenRewrite Recipes in TypeScript
 
+## When NOT to Use This Skill
+
+Do NOT use this skill for:
+- Authoring OpenRewrite recipes in **Java** - use the `openrewrite-recipe-writer` skill instead
+- General JavaScript/TypeScript programming questions unrelated to OpenRewrite
+- Questions about running existing OpenRewrite recipes (use OpenRewrite documentation)
+- Build tool configuration unrelated to recipe development
+- General refactoring advice without OpenRewrite context
+
 ## Skill Resources
 
-Load these references as needed for detailed information:
+This skill includes supporting files organized by purpose:
+
+### Templates (`assets/`)
+Starting points for recipe development:
+- **assets/template-basic-recipe.ts** - Boilerplate for simple recipe
+- **assets/template-recipe-with-options.ts** - Recipe with configurable options
+- **assets/template-recipe-test.ts** - Test class template
+- **assets/template-pattern-rewrite.ts** - Pattern/template transformation example
+
+**Load when:** Creating a new recipe or needing a template to start from
+
+### Guides (`references/`)
+Detailed reference documentation:
 - **references/lst-concepts.md** - LST structure, wrapper types, immutability
 - **references/patterns-and-templates.md** - Pattern matching and template system
 - **references/type-attribution-guide.md** - Type attribution and configure() usage
+- **references/testing-recipes.md** - Testing strategies and npm usage
+
+**Load when:** Deep dive into specific concepts or troubleshooting
+
+### Patterns and Examples (`references/`)
+Ready-to-use code:
 - **references/common-patterns.md** - 18 ready-to-use recipe patterns
 - **references/examples.md** - 9 complete recipe examples with tests
-- **references/testing-recipes.md** - Testing strategies and npm usage
+
+**Load when:** Needing to see a complete example or looking for a specific pattern
+
+### Checklist (`references/`)
+Verification guide:
+- **references/checklist-recipe-development.md** - Comprehensive development checklist
+
+**Load when:** Reviewing a recipe for completeness or ensuring best practices
 
 ## Quick Start
 
