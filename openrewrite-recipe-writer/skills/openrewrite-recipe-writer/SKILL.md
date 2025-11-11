@@ -39,7 +39,9 @@ Choose the appropriate recipe type based on your needs:
 ### Declarative YAML Recipes (Preferred)
 
 **Use when:** Composing existing recipes with configuration
+
 **Advantages:** No code, simple, maintainable
+
 **Example use case:** Combining framework migration steps
 
 ```yaml
@@ -53,16 +55,37 @@ recipeList:
   - com.yourorg.OtherRecipe
 ```
 
+**Finding Recipes to Use:**
+When building declarative YAML recipes, consult the recipe catalog CSV files in the `references/` directory:
+
+- `references/recipes-top.csv` - 50 commonly used recipes across all categories (best starting point)
+- `references/recipes-java-basic.csv` - 32 basic Java refactoring operations
+- `references/recipes-spring-boot-common.csv` - 60 Spring Boot migrations and best practices
+- `references/recipes-framework-migrations-common.csv` - 16 major framework migrations (diverse frameworks)
+- `references/recipes-testing-common.csv` - 60 most useful testing recipes (JUnit, Mockito, AssertJ)
+- `references/recipes-dependencies-common.csv` - 49 dependency operations (Maven+Gradle when possible)
+- `references/recipes-security-common.csv` - 30 security vulnerability detection and fixes
+- `references/recipes-xml-yaml-json-common.csv` - 50 configuration file operations
+- `references/recipes-static-analysis-common.csv` - 50 code analysis and search recipes
+- `references/recipes-logging-common.csv` - 50 logging framework operations
+- `references/recipes-file-operations.csv` - 14 file and text manipulation operations
+
+**Usage Pattern:** Start with `recipes-top.csv`, then consult the specific category file based on what the user needs. These curated lists contain the most practical and commonly used recipes for each category.
+
 ### Refaster Template Recipes
 
 **Use when:** Simple expression/statement replacements
+
 **Advantages:** Faster than imperative, type-aware
+
 **Example use case:** Replace `StringUtils.equals()` with `Objects.equals()`
 
 ### Imperative Java Recipes
 
 **Use when:** Complex logic, conditional transformations, custom analysis
+
 **Advantages:** Full control, complex transformations
+
 **Example use case:** Add modifiers only to variables that aren't reassigned
 
 **Decision Rule:** If it can be declarative, make it declarative. Use imperative only when necessary.
@@ -373,6 +396,22 @@ This skill includes several supporting files organized by purpose:
 
   **Load when:** Needing to see a complete example, asking "show me an example", or understanding advanced patterns
 
+- **Recipe Catalogs** (`references/`) - Curated lists for finding recipes when building declarative YAML recipes:
+  - `references/recipes-top.csv` - 50 commonly used recipes (best starting point)
+  - `references/recipes-java-basic.csv` - 32 basic Java refactoring operations
+  - `references/recipes-spring-boot-common.csv` - 60 Spring Boot migrations and best practices
+  - `references/recipes-framework-migrations-common.csv` - 16 major framework migrations (10 different frameworks)
+  - `references/recipes-testing-common.csv` - 60 most useful testing recipes
+  - `references/recipes-dependencies-common.csv` - 49 dependency operations (Maven+Gradle when possible)
+  - `references/recipes-security-common.csv` - 30 security vulnerability recipes
+  - `references/recipes-xml-yaml-json-common.csv` - 50 configuration file operations
+  - `references/recipes-static-analysis-common.csv` - 50 code analysis recipes
+  - `references/recipes-logging.csv` - 153 logging framework recipes
+  - `references/recipes-file-operations.csv` - 14 file manipulation recipes
+  - Note: `references/recipes-all.csv` exists for maintenance/script purposes but is too large (4,958 recipes) to be used directly
+
+  **Load when:** Looking for existing recipes
+  
 - **Checklist** (`references/`) - Verification guide:
 
   - `references/checklist-recipe-development.md` - Comprehensive verification checklist covering planning, implementation, testing, and distribution

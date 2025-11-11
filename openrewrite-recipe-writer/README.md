@@ -19,10 +19,48 @@ openrewrite-recipe-writer/        # Plugin directory
 │   ├── example-say-hello-recipe.java
 │   ├── example-scanning-recipe.java
 │   ├── example-declarative-migration.yml
-│   └── checklist-recipe-development.md
+│   ├── checklist-recipe-development.md
+│   ├── recipes-top.csv           # 50 commonly used recipes
+│   ├── recipes-*.csv             # Curated recipe catalogs by category
+│   └── recipes-all.csv           # Complete recipe catalog (4,958 recipes - for maintenance only)
 └── scripts/                      # Executable scripts
-    └── upload-skill.sh           # Upload skill via Claude API
+    ├── upload-skill.sh           # Upload skill via Claude API
+    ├── categorize_recipes.py     # Generate category files from recipes-all.csv
+    └── create_curated_lists.py   # Create curated -common.csv files
 ```
+
+## Recipe Catalogs
+
+The skill includes curated CSV files containing OpenRewrite recipes that Claude can reference when helping build declarative YAML recipes:
+
+### Available Catalogs
+- `recipes-top.csv` - 50 commonly used recipes (best starting point)
+- `recipes-java-basic.csv` - 32 basic Java refactoring operations
+- `recipes-spring-boot-common.csv` - 60 Spring Boot migrations and best practices
+- `recipes-framework-migrations-common.csv` - 16 major framework migrations (10 diverse frameworks)
+- `recipes-testing-common.csv` - 60 most useful testing recipes
+- `recipes-dependencies-common.csv` - 49 dependency operations (Maven+Gradle when possible)
+- `recipes-security-common.csv` - 30 security vulnerability recipes
+- `recipes-xml-yaml-json-common.csv` - 50 configuration file operations
+- `recipes-static-analysis-common.csv` - 50 code analysis recipes
+- `recipes-logging-common.csv` - 50 logging framework operations
+- `recipes-file-operations.csv` - 14 file manipulation recipes
+
+### Maintaining Recipe Catalogs
+
+The `recipes-all.csv` file (1.6MB, 4,958 recipes) is the source data but too large for Claude to read directly. To update the curated catalogs:
+
+```bash
+# 1. Update recipes-all.csv with new recipe data
+
+# 2. Regenerate all category files
+python3 scripts/categorize_recipes.py
+
+# 3. Regenerate curated -common.csv files
+python3 scripts/create_curated_lists.py
+```
+
+The scripts automatically select the most useful recipes for each category based on naming patterns and common use cases.
 
 ## Installation
 
@@ -30,17 +68,37 @@ openrewrite-recipe-writer/        # Plugin directory
 
 ### For Claude Code (Plugin - Recommended)
 
-Install directly from GitHub:
+**From GitHub:**
 
 ```bash
 /plugin install openrewrite/rewrite-docs/openrewrite-recipe-writer
 ```
 
-Or from a local clone:
+**From a local clone (for development):**
 
 ```bash
-# From the rewrite-docs repository root
-/plugin install ./openrewrite-recipe-writer
+# 1. Navigate to the repo root
+cd ~/Documents/GitHub/openrewrite/rewrite-docs
+
+# 2. Create a temporary marketplace.json
+cat > .claude-plugin/marketplace.json << 'EOF'
+{
+  "name": "openrewrite-local",
+  "owner": "Local Development",
+  "plugins": [{
+    "name": "openrewrite-recipe-writer",
+    "source": "./openrewrite-recipe-writer"
+  }]
+}
+EOF
+
+# 3. Add as local marketplace
+/plugin marketplace add ~/Documents/GitHub/openrewrite/rewrite-docs
+
+# 4. Install the plugin
+/plugin install openrewrite-recipe-writer@openrewrite-local
+
+# 5. Restart Claude Code
 ```
 
 **Verify installation:**
