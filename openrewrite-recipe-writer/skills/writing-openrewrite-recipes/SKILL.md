@@ -1,6 +1,7 @@
 ---
-name: openrewrite-recipe-writer
-description: Expert in creating OpenRewrite recipes for automated code transformations and refactoring. Automatically activates when creating/writing/building OpenRewrite recipes, working with .java recipe files, RewriteTest files, recipe YAML files, LST visitors, JavaTemplate, visitor patterns, or when discussing recipe types (declarative YAML, Refaster templates, imperative Java recipes). Use when you need to migrate code, transform ASTs, write custom refactoring rules, or automate code modifications.
+name: writing-openrewrite-recipes
+description: Use when creating/writing/building OpenRewrite recipes, working with .java recipe files, RewriteTest files, recipe YAML files, LST visitors, JavaTemplate, visitor patterns, or when discussing recipe types (declarative YAML, Refaster templates, imperative Java recipes) - guides creation of OpenRewrite recipes for automated code transformations, AST manipulation, custom refactoring rules, and code migration.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
 # OpenRewrite Recipe Writing Skill
@@ -89,6 +90,14 @@ When building declarative YAML recipes, consult the recipe catalog CSV files in 
 **Example use case:** Add modifiers only to variables that aren't reassigned
 
 **Decision Rule:** If it can be declarative, make it declarative. Use imperative only when necessary.
+
+## Examples Quick Reference
+
+Navigate to the right example based on your needs:
+
+- **New to recipes?** Start with `references/example-say-hello-recipe.java`
+- **Need multi-file analysis?** See `references/example-scanning-recipe.java`
+- **Composing recipes?** Check `references/example-declarative-migration.yml`
 
 ## Imperative Recipe Development Workflow
 

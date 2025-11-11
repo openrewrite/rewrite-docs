@@ -2,6 +2,39 @@
 
 Use this checklist to ensure you've covered all important aspects of recipe development.
 
+## Contents
+- [Planning Phase](#planning-phase)
+  - [Recipe Type Selection](#recipe-type-selection)
+  - [Requirements Gathering](#requirements-gathering)
+- [Implementation Phase](#implementation-phase)
+  - [Recipe Class Structure](#recipe-class-structure)
+  - [Visitor Implementation](#visitor-implementation)
+  - [JavaTemplate Usage](#javatemplate-usage)
+  - [Advanced Features](#advanced-features)
+  - [Imports and Dependencies](#imports-and-dependencies)
+- [Testing Phase](#testing-phase)
+  - [Test Structure](#test-structure)
+  - [Test Coverage](#test-coverage)
+  - [Test Quality](#test-quality)
+- [Code Quality Phase](#code-quality-phase)
+  - [Best Practices](#best-practices)
+  - [Naming Conventions](#naming-conventions)
+  - [Performance](#performance)
+  - [Multi-Module Support](#multi-module-support)
+- [Documentation Phase](#documentation-phase)
+  - [Code Documentation](#code-documentation)
+  - [External Documentation](#external-documentation)
+- [Distribution Phase](#distribution-phase)
+  - [Build Configuration](#build-configuration)
+  - [Publishing](#publishing)
+- [Final Verification](#final-verification)
+  - [Smoke Testing](#smoke-testing)
+  - [Common Pitfalls Avoided](#common-pitfalls-avoided)
+- [Recipe-Specific Checklists](#recipe-specific-checklists)
+  - [For Declarative Recipes](#for-declarative-recipes)
+  - [For Refaster Template Recipes](#for-refaster-template-recipes)
+- [Notes](#notes)
+
 ## Planning Phase
 
 ### Recipe Type Selection

@@ -22,6 +22,6 @@
     "./commands/create-recipe.md"
   ],
   "skills": [
-    "./skills/openrewrite-recipe-writer"
+    "./skills/writing-openrewrite-recipes"
   ]
 }
