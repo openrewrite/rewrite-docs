@@ -2,7 +2,7 @@
 description: What's changed in OpenRewrite version 8.66.1.
 ---
 
-# 8.66.1 release (2025-11-11)
+# 8.66.1 release (2025-11-04)
 
 _Total recipe count: 4972_
 
