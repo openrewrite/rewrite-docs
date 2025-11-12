@@ -13,7 +13,7 @@ _Migrate to version 9.x. See the Gradle upgrade guide from [version 8.x to 9.0](
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/gradle/MigrateToGradle9.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/resources/META-INF/rewrite/gradle-9.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 

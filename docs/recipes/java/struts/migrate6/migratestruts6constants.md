@@ -13,7 +13,7 @@ _All Xwork constants had been already deprecated, with this version all of them 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/migrate6/MigrateStruts6Constants.java),
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/resources/META-INF/rewrite/struts6.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 

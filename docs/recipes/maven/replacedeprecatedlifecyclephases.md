@@ -13,7 +13,7 @@ _Maven 4 deprecated all `pre-*` and `post-*` lifecycle phases in favor of the `b
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/ReplaceDeprecatedLifecyclePhases.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/resources/META-INF/rewrite/maven.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

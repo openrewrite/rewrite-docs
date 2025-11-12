@@ -17,7 +17,7 @@ _Migrate applications to the latest Netty 4.2.x release._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-netty/blob/main/src/main/java/org/openrewrite/netty/UpgradeNetty_4_1_to_4_2.java),
+[GitHub](https://github.com/openrewrite/rewrite-netty/blob/main/src/main/resources/META-INF/rewrite/netty-4_1_to_4_2.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-netty/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-netty/)
 

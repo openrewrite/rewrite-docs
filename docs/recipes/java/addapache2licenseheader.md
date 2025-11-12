@@ -17,7 +17,7 @@ _Adds the Apache Software License Version 2.0 to Java source files which are mis
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/AddApache2LicenseHeader.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/resources/META-INF/rewrite/apache-license-header.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 

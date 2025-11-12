@@ -13,7 +13,7 @@ _Migrate Okio dependencies to 3.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/java/org/openrewrite/okio/UpgradeOkio3Dependencies.java),
+[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okio-3.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/)
 

@@ -13,7 +13,7 @@ _Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and de
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/MigrateToMaven4.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/resources/META-INF/rewrite/maven.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

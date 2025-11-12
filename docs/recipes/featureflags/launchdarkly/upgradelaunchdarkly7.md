@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when migrating to LaunchDarkly 7
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/UpgradeLaunchDarkly7.java),
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/resources/META-INF/rewrite/launchdarkly-7.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 

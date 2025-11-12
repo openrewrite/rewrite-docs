@@ -17,7 +17,7 @@ _Migrate applications to the latest Micrometer 1.13 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/UpgradeMicrometer_1_13.java),
+[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/resources/META-INF/rewrite/micrometer-13.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 

@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when migrating Micrometer._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/UpgradeMicrometer.java),
+[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/resources/META-INF/rewrite/micrometer.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 

@@ -13,7 +13,7 @@ _This recipe will apply changes commonly needed when migrating to OkHttp 5.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/java/org/openrewrite/okhttp/UpgradeOkHttp5.java),
+[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-5.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/)
 
