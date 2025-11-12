@@ -184,14 +184,15 @@ if (match) {
 
 📖 See **references/patterns-and-templates.md** (section "How Template Construction Works") for complete details on the two-phase template construction process.
 
-Configure patterns for strict type checking or type attribution:
+Configure patterns for strict type checking, type attribution, or debugging:
 
 ```typescript
 const tmpl = template`isDate(${capture('value')})`
     .configure({
         lenientTypeMatching: false,  // Override default lenient type matching
         context: ['import { isDate } from "date-utils"'],
-        dependencies: {'date-utils': '^2.0.0'}
+        dependencies: {'date-utils': '^2.0.0'},
+        debug: true  // Enable debug logging globally, or pass { debug: true } to individual match() calls
     });
 ```
 
@@ -571,10 +572,65 @@ test("with dependencies", async () => {
 - Check pattern matches AST structure
 
 ### Pattern doesn't match
+
+**Quick debugging steps:**
 - Print AST structure to debug
 - Use `any()` for parts to ignore
 - Check variadic captures for lists
 - Test pattern in isolation
+
+**Debug Logging (Recommended):**
+
+When pattern matches fail unexpectedly, enable debug logging to see exactly why:
+
+```typescript
+const args = capture({ variadic: true });
+const pat = pattern`oldApi.method(${args})`;
+
+// Option 1: Enable debug globally for all matches
+const patWithDebug = pat.configure({ debug: true });
+const match = await patWithDebug.match(node, cursor);
+
+// Option 2: Enable debug for a single match() call
+const match2 = await pat.match(node, cursor, { debug: true });
+
+// If match fails, debug logs show:
+// - Which AST node caused the mismatch
+// - The exact path through the AST where it failed
+// - Expected vs actual values at the failure point
+// - Backtracking attempts for variadic captures
+```
+
+**Debug output example:**
+
+```
+[Pattern #1] foo(${args}, 999)
+[Pattern #1] ❌ FAILED matching against J$MethodInvocation:
+[Pattern #1]   foo(1, 2, 3, 42)
+[Pattern #1]    At path:  [J$MethodInvocation#arguments → 3]
+[Pattern #1]    Reason:   structural-mismatch
+[Pattern #1]    Expected: 999
+[Pattern #1]    Actual:   42
+```
+
+**What debug logs reveal:**
+- **Path** - Shows exactly where in the AST the mismatch occurred (e.g., `[J$MethodInvocation#arguments → 3]` means the 4th argument)
+- **Reason** - Type of mismatch (structural-mismatch, kind-mismatch, value-mismatch, constraint-failed, etc.)
+- **Expected/Actual** - The values that don't match
+- **Backtracking info** - For variadic captures, shows which consumption amounts were tried
+
+**Common mismatch reasons:**
+- `structural-mismatch` - Values differ (e.g., different method names, different literal values)
+- `kind-mismatch` - AST node types don't match (e.g., expecting Identifier but got Literal)
+- `value-mismatch` - Property values don't match
+- `constraint-failed` - Capture constraint returned false
+- `array-length-mismatch` - Container lengths differ (when no variadic captures present)
+
+**Tip:** Debug logs are especially useful for:
+- Understanding why a pattern doesn't match similar-looking code
+- Debugging variadic capture behavior
+- Verifying that constraints are working as expected
+- Identifying subtle AST structure differences
 
 ### Type errors with captures
 ```typescript

@@ -11,7 +11,8 @@ Comprehensive guide to the pattern/template system for declarative code transfor
 5. [Templates](#templates)
 6. [The rewrite() Helper](#the-rewrite-helper)
 7. [Advanced Features](#advanced-features)
-8. [Common Pitfalls](#common-pitfalls)
+8. [Debugging Pattern Matching](#debugging-pattern-matching)
+9. [Common Pitfalls](#common-pitfalls)
 
 ## Overview
 
@@ -1360,6 +1361,176 @@ const datePattern = pattern`new Date(${capture()})`
 ```
 
 **Note:** While lenient mode is convenient for development, consider using strict type checking in production recipes where type safety is important.
+
+## Debugging Pattern Matching
+
+When patterns fail to match code unexpectedly, enable debug logging to understand exactly why the match failed.
+
+### Enabling Debug Mode
+
+Debug mode can be enabled in two ways:
+
+**Option 1: Global configuration** - Debug all matches for a pattern:
+
+```typescript
+const args = capture({ variadic: true });
+const pat = pattern`oldApi.method(${args})`
+    .configure({ debug: true });
+
+const match = await pat.match(node, cursor);
+// All matches with this pattern will log debug information
+```
+
+**Option 2: Per-call option** - Debug a specific match call:
+
+```typescript
+const args = capture({ variadic: true });
+const pat = pattern`oldApi.method(${args})`;
+
+const match = await pat.match(node, cursor, { debug: true });
+// Only this specific match call will log debug information
+```
+
+### Understanding Debug Output
+
+When a pattern fails to match, debug logs show exactly where and why.
+
+**Example: Successful match**
+
+```
+[Pattern #1] foo(${args}, 42)
+[Pattern #1] ✅ SUCCESS matching against J$MethodInvocation:
+[Pattern #1]   foo(1, 2, 3, 42)
+[Pattern #1]    Captured 'args': [J$Literal, J$Literal, J$Literal]
+```
+
+**Example: Failed match**
+
+```
+[Pattern #2] foo(${args}, 999)
+[Pattern #2] ❌ FAILED matching against J$MethodInvocation:
+[Pattern #2]   foo(1, 2, 3, 42)
+[Pattern #2]    At path:  [J$MethodInvocation#arguments → 3]
+[Pattern #2]    Reason:   structural-mismatch
+[Pattern #2]    Expected: 999
+[Pattern #2]    Actual:   42
+```
+
+**Example: Multiple patterns in a test**
+
+When debug is enabled, each pattern match attempt is logged with its pattern number:
+
+```
+[Pattern #1] foo(${args}, 42)
+[Pattern #1] ✅ SUCCESS matching against J$MethodInvocation:
+[Pattern #1]   foo(1, 2, 3, 42)
+[Pattern #1]    Captured 'args': [J$Literal, J$Literal, J$Literal]
+
+[Pattern #2] foo(${args}, 999)
+[Pattern #2] ❌ FAILED matching against J$MethodInvocation:
+[Pattern #2]   foo(1, 2, 3, 42)
+[Pattern #2]    At path:  [J$MethodInvocation#arguments → 3]
+[Pattern #2]    Reason:   structural-mismatch
+[Pattern #2]    Expected: 999
+[Pattern #2]    Actual:   42
+
+[Pattern #3] console.log(${value})
+[Pattern #3] ❌ FAILED matching against J$MethodInvocation:
+[Pattern #3]   console.error(42)
+[Pattern #3]    At path:  []
+[Pattern #3]    Reason:   value-mismatch
+[Pattern #3]    Expected: "log"
+[Pattern #3]    Actual:   "error"
+```
+
+**Debug output components:**
+
+- **Pattern identifier** - `[Pattern #1]` shows which pattern is being evaluated
+- **Match status** - ✅ SUCCESS or ❌ FAILED
+- **AST node type** - `J$MethodInvocation` shows what type is being matched
+- **Code snippet** - Shows the actual code being matched
+- **Path** - Shows exactly where in the AST the mismatch occurred
+  - Example: `[J$MethodInvocation#arguments → 3]` means the 4th argument (0-indexed)
+- **Reason** - Type of mismatch (see below)
+- **Expected/Actual** - The values that don't match
+
+### Mismatch Reasons
+
+Debug logs categorize failures by reason:
+
+- **`structural-mismatch`** - Values differ (e.g., different method names, literal values)
+  ```
+  Expected: "log"
+  Actual:   "error"
+  ```
+
+- **`kind-mismatch`** - AST node types don't match
+  ```
+  Expected: Kind J$Identifier
+  Actual:   Kind J$Literal
+  ```
+
+- **`value-mismatch`** - Property values don't match
+  ```
+  Expected: value: 999
+  Actual:   value: 42
+  ```
+
+- **`constraint-failed`** - Capture constraint returned false
+  ```
+  Constraint failed for capture: myCapture
+  ```
+
+- **`array-length-mismatch`** - Container lengths differ (when no variadic captures)
+  ```
+  Expected: Array[2]
+  Actual:   Array[3]
+  ```
+
+### Variadic Capture Debugging
+
+For variadic captures, debug logs show backtracking behavior:
+
+```
+[Pattern #2] Trying variadic consumption: 3 elements
+[Pattern #2] Backtracking - trying 2 elements
+[Pattern #2] Backtracking - trying 1 element
+[Pattern #2] ❌ FAILED - all consumption amounts exhausted
+```
+
+This helps understand:
+- Which consumption amounts were attempted
+- Where each attempt failed
+- Why the final match failed
+
+### Using Debug Logs Effectively
+
+**When to enable debug mode:**
+- Pattern doesn't match code that looks similar
+- Understanding why a pattern is too broad or too narrow
+- Verifying constraint behavior
+- Debugging variadic capture issues
+- Identifying subtle AST structure differences
+
+**Reading the path:**
+- Paths are hierarchical: `[J$MethodInvocation#arguments → 3]`
+- Container property: `#arguments`
+- Index: `→ 3` (0-based, so this is the 4th argument)
+- Nested paths show the full traversal
+
+**Common debugging patterns:**
+```typescript
+// Enable debug temporarily during development
+const pat = pattern`...`.configure({ debug: true });
+
+// Or enable for specific suspicious cases
+if (someCondition) {
+    match = await pat.match(node, cursor, { debug: true });
+}
+
+// Disable debug in production (default is false)
+const pat = pattern`...`;  // No debug output
+```
 
 ## Common Pitfalls
 
