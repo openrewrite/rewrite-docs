@@ -14,23 +14,28 @@ Recipe created for the following Refaster template:
 static final class AssertThatThrownByWithFailMessageSupplierIsInstanceOf<T extends Throwable> {
     
     @BeforeTemplate
-    void before(Executable throwingCallable, Supplier<String> supplier, Class<T> clazz) {
+    @SuppressWarnings(value = "java:S4449")
+    void before(Executable throwingCallable, Supplier<@Nullable String> supplier, Class<T> clazz) {
         assertThrows(clazz, throwingCallable, supplier);
     }
     
     @AfterTemplate
     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(ThrowingCallable throwingCallable, Supplier<String> supplier, Class<T> clazz) {
+    void after(ThrowingCallable throwingCallable, Supplier<@Nullable String> supplier, Class<T> clazz) {
         assertThatThrownBy(throwingCallable).withFailMessage(supplier).isInstanceOf(clazz);
     }
 }
 ```
 .
 
+### Tags
+
+* [RSPEC-S4449](https://sonarsource.github.io/rspec/#/rspec/S4449)
+
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsInstanceOfRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsInstanceOfRecipe),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

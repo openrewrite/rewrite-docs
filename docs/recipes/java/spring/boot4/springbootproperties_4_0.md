@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Migrate Spring Boot properties to 4.0
 
-**io.moderne.java.spring.boot4.SpringBootProperties\_4\_0**
+**org.openrewrite.java.spring.boot4.SpringBootProperties\_4\_0**
 
 _Migrate properties found in `application.properties` and `application.yml`._
 
@@ -18,18 +18,721 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot4/SpringBootProperties_4_0.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.health.mongo.enabled`
+  * newPropertyKey: `management.health.mongodb.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.logging.export.enabled`
+  * newPropertyKey: `management.opentelemetry.logging.export.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.metrics.mongo.command.enabled`
+  * newPropertyKey: `management.metrics.mongodb.command.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.metrics.mongo.connectionpool.enabled`
+  * newPropertyKey: `management.metrics.mongodb.connectionpool.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.observations.long-task-timer.enabled`
+  * newPropertyKey: `management.metrics.observations.ignored-meters`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging`
+  * newPropertyKey: `management.opentelemetry.logging.export`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging.compression`
+  * newPropertyKey: `management.opentelemetry.logging.export.compression`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging.connect-timeout`
+  * newPropertyKey: `management.opentelemetry.logging.export.connect-timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging.endpoint`
+  * newPropertyKey: `management.opentelemetry.logging.export.endpoint`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging.export.enabled`
+  * newPropertyKey: `management.opentelemetry.logging.export.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging.headers`
+  * newPropertyKey: `management.opentelemetry.logging.export.headers`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging.timeout`
+  * newPropertyKey: `management.opentelemetry.logging.export.timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.otlp.logging.transport`
+  * newPropertyKey: `management.opentelemetry.logging.export.transport`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.servlet.encoding.charset`
+  * newPropertyKey: `spring.servlet.encoding.charset`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.servlet.encoding.enabled`
+  * newPropertyKey: `spring.servlet.encoding.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.servlet.encoding.force`
+  * newPropertyKey: `spring.servlet.encoding.force`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.servlet.encoding.force-request`
+  * newPropertyKey: `spring.servlet.encoding.force-request`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.servlet.encoding.force-response`
+  * newPropertyKey: `spring.servlet.encoding.force-response`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.dao.exceptiontranslation.enabled`
+  * newPropertyKey: `spring.persistence.exceptiontranslation.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.additional-hosts`
+  * newPropertyKey: `spring.mongodb.additional-hosts`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.authentication-database`
+  * newPropertyKey: `spring.mongodb.authentication-database`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.database`
+  * newPropertyKey: `spring.mongodb.database`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.host`
+  * newPropertyKey: `spring.mongodb.host`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.password`
+  * newPropertyKey: `spring.mongodb.password`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.port`
+  * newPropertyKey: `spring.mongodb.port`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.protocol`
+  * newPropertyKey: `spring.mongodb.protocol`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.replica-set-name`
+  * newPropertyKey: `spring.mongodb.replica-set-name`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.ssl.bundle`
+  * newPropertyKey: `spring.mongodb.ssl.bundle`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.ssl.enabled`
+  * newPropertyKey: `spring.mongodb.ssl.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.uri`
+  * newPropertyKey: `spring.mongodb.uri`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.username`
+  * newPropertyKey: `spring.mongodb.username`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.uuid-representation`
+  * newPropertyKey: `spring.mongodb.representation.uuid`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.client.connect-timeout`
+  * newPropertyKey: `spring.http.clients.connect-timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.client.factory`
+  * newPropertyKey: `spring.http.clients.imperative.factory`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.client.read-timeout`
+  * newPropertyKey: `spring.http.clients.read-timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.client.redirects`
+  * newPropertyKey: `spring.http.clients.redirects`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.client.ssl.bundle`
+  * newPropertyKey: `spring.http.clients.ssl.bundle`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.reactiveclient.connect-timeout`
+  * newPropertyKey: `spring.http.clients.connect-timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.reactiveclient.connector`
+  * newPropertyKey: `spring.http.clients.reactive.connector`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.reactiveclient.read-timeout`
+  * newPropertyKey: `spring.http.clients.read-timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.reactiveclient.redirects`
+  * newPropertyKey: `spring.http.clients.redirects`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.http.reactiveclient.ssl.bundle`
+  * newPropertyKey: `spring.http.clients.ssl.bundle`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.read`
+  * newPropertyKey: `spring.jackson.json.read`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.write`
+  * newPropertyKey: `spring.jackson.json.write`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.kafka.retry.topic.backoff.random`
+  * newPropertyKey: `spring.kafka.retry.topic.backoff.jitter`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.session.redis.cleanup-cron`
+  * newPropertyKey: `spring.session.data.redis.cleanup-cron`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.session.redis.configure-action`
+  * newPropertyKey: `spring.session.data.redis.configure-action`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.session.redis.flush-mode`
+  * newPropertyKey: `spring.session.data.redis.flush-mode`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.session.redis.namespace`
+  * newPropertyKey: `spring.session.data.redis.namespace`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.session.redis.repository-type`
+  * newPropertyKey: `spring.session.data.redis.repository-type`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.session.redis.save-mode`
+  * newPropertyKey: `spring.session.data.redis.save-mode`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.api-token`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.api-token-type`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.application.cluster-name`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.application.custom-tags`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.application.name`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.application.service-name`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.application.shard-name`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.batch-size`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.connect-timeout`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.enabled`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.global-prefix`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.read-timeout`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.report-day-distribution`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.report-hour-distribution`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.report-minute-distribution`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.metrics.export.step`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.sender.batch-size`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.sender.flush-interval`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.sender.max-queue-size`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.sender.message-size`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.source`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.trace-derived-custom-tag-keys`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.tracing.export.enabled`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.wavefront.uri`
+  * comment: `This property is deprecated: Wavefront is end-of-life.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson.generator`
+  * comment: `This property is deprecated: Partially replaced by 'spring.jackson.json.read'.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson.parser`
+  * comment: `This property is deprecated: Partially replaced by 'spring.jackson.json.write'.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.constructor-detector`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.datatype.enum`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.datatype.json-node`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.date-format`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.default-leniency`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.default-property-inclusion`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.deserialization`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.generator`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.locale`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.mapper`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.parser`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.property-naming-strategy`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.serialization`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.time-zone`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jackson2.visibility`
+  * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.neo4j.pool.metrics-enabled`
+  * comment: `This property is deprecated: Use 'management.metrics.enable' to restrict certain metrics.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.test.observability.auto-configure`
+  * comment: `This property is deprecated: Superseded by 'spring.test.metrics.export' and 'spring.test.tracing.export'.`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot4.SpringBootProperties_4_0
+displayName: Migrate Spring Boot properties to 4.0
+description: |
+  Migrate properties found in `application.properties` and `application.yml`.
+tags:
+  - spring
+  - boot
+recipeList:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.health.mongo.enabled
+      newPropertyKey: management.health.mongodb.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.logging.export.enabled
+      newPropertyKey: management.opentelemetry.logging.export.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.mongo.command.enabled
+      newPropertyKey: management.metrics.mongodb.command.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.mongo.connectionpool.enabled
+      newPropertyKey: management.metrics.mongodb.connectionpool.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.observations.long-task-timer.enabled
+      newPropertyKey: management.metrics.observations.ignored-meters
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging
+      newPropertyKey: management.opentelemetry.logging.export
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging.compression
+      newPropertyKey: management.opentelemetry.logging.export.compression
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging.connect-timeout
+      newPropertyKey: management.opentelemetry.logging.export.connect-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging.endpoint
+      newPropertyKey: management.opentelemetry.logging.export.endpoint
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging.export.enabled
+      newPropertyKey: management.opentelemetry.logging.export.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging.headers
+      newPropertyKey: management.opentelemetry.logging.export.headers
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging.timeout
+      newPropertyKey: management.opentelemetry.logging.export.timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.logging.transport
+      newPropertyKey: management.opentelemetry.logging.export.transport
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.servlet.encoding.charset
+      newPropertyKey: spring.servlet.encoding.charset
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.servlet.encoding.enabled
+      newPropertyKey: spring.servlet.encoding.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.servlet.encoding.force
+      newPropertyKey: spring.servlet.encoding.force
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.servlet.encoding.force-request
+      newPropertyKey: spring.servlet.encoding.force-request
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.servlet.encoding.force-response
+      newPropertyKey: spring.servlet.encoding.force-response
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.dao.exceptiontranslation.enabled
+      newPropertyKey: spring.persistence.exceptiontranslation.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.additional-hosts
+      newPropertyKey: spring.mongodb.additional-hosts
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.authentication-database
+      newPropertyKey: spring.mongodb.authentication-database
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.database
+      newPropertyKey: spring.mongodb.database
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.host
+      newPropertyKey: spring.mongodb.host
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.password
+      newPropertyKey: spring.mongodb.password
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.port
+      newPropertyKey: spring.mongodb.port
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.protocol
+      newPropertyKey: spring.mongodb.protocol
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.replica-set-name
+      newPropertyKey: spring.mongodb.replica-set-name
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.ssl.bundle
+      newPropertyKey: spring.mongodb.ssl.bundle
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.ssl.enabled
+      newPropertyKey: spring.mongodb.ssl.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.uri
+      newPropertyKey: spring.mongodb.uri
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.username
+      newPropertyKey: spring.mongodb.username
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.uuid-representation
+      newPropertyKey: spring.mongodb.representation.uuid
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.client.connect-timeout
+      newPropertyKey: spring.http.clients.connect-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.client.factory
+      newPropertyKey: spring.http.clients.imperative.factory
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.client.read-timeout
+      newPropertyKey: spring.http.clients.read-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.client.redirects
+      newPropertyKey: spring.http.clients.redirects
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.client.ssl.bundle
+      newPropertyKey: spring.http.clients.ssl.bundle
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.reactiveclient.connect-timeout
+      newPropertyKey: spring.http.clients.connect-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.reactiveclient.connector
+      newPropertyKey: spring.http.clients.reactive.connector
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.reactiveclient.read-timeout
+      newPropertyKey: spring.http.clients.read-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.reactiveclient.redirects
+      newPropertyKey: spring.http.clients.redirects
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.http.reactiveclient.ssl.bundle
+      newPropertyKey: spring.http.clients.ssl.bundle
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.read
+      newPropertyKey: spring.jackson.json.read
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.write
+      newPropertyKey: spring.jackson.json.write
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.kafka.retry.topic.backoff.random
+      newPropertyKey: spring.kafka.retry.topic.backoff.jitter
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.session.redis.cleanup-cron
+      newPropertyKey: spring.session.data.redis.cleanup-cron
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.session.redis.configure-action
+      newPropertyKey: spring.session.data.redis.configure-action
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.session.redis.flush-mode
+      newPropertyKey: spring.session.data.redis.flush-mode
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.session.redis.namespace
+      newPropertyKey: spring.session.data.redis.namespace
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.session.redis.repository-type
+      newPropertyKey: spring.session.data.redis.repository-type
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.session.redis.save-mode
+      newPropertyKey: spring.session.data.redis.save-mode
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.api-token
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.api-token-type
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.application.cluster-name
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.application.custom-tags
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.application.name
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.application.service-name
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.application.shard-name
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.batch-size
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.connect-timeout
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.enabled
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.global-prefix
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.read-timeout
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.report-day-distribution
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.report-hour-distribution
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.report-minute-distribution
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.metrics.export.step
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.sender.batch-size
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.sender.flush-interval
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.sender.max-queue-size
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.sender.message-size
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.source
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.trace-derived-custom-tag-keys
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.tracing.export.enabled
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.wavefront.uri
+      comment: This property is deprecated: Wavefront is end-of-life.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson.generator
+      comment: This property is deprecated: Partially replaced by 'spring.jackson.json.read'.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson.parser
+      comment: This property is deprecated: Partially replaced by 'spring.jackson.json.write'.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.constructor-detector
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.datatype.enum
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.datatype.json-node
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.date-format
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.default-leniency
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.default-property-inclusion
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.deserialization
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.generator
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.locale
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.mapper
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.parser
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.property-naming-strategy
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.serialization
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.time-zone
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jackson2.visibility
+      comment: This property is deprecated: Deprecated in favor of Jackson 3
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.neo4j.pool.metrics-enabled
+      comment: This property is deprecated: Use 'management.metrics.enable' to restrict certain metrics.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.test.observability.auto-configure
+      comment: This property is deprecated: Superseded by 'spring.test.metrics.export' and 'spring.test.tracing.export'.
+
+```
+</TabItem>
+</Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 4.0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.spring.boot4.SpringBootProperties_4_0")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.spring.boot4.SpringBootProperties_4_0")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.spring.boot4.SpringBootProperties_4_0</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot4.SpringBootProperties_4_0 -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -40,7 +743,7 @@ mod run . --recipe SpringBootProperties_4_0
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -49,7 +752,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot4.SpringBootProperties_4_0" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot4.SpringBootProperties_4_0" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

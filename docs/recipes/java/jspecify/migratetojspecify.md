@@ -17,8 +17,8 @@ _This recipe will migrate to JSpecify annotations from various other nullability
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jspecify.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/jspecify/MigrateToJSpecify.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -65,6 +65,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
+* [Migrate to Spring Boot 4.0](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
 
 

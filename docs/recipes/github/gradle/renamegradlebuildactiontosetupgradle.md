@@ -18,8 +18,8 @@ _Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gra
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/gradle.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/gradle/RenameGradleBuildActionToSetupGradle.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

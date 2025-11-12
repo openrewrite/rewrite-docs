@@ -13,8 +13,8 @@ _`hudson.Util.getPastTimeString` has been [deprecated](https://github.com/jenkin
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/hudson-migrations.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/migrate/hudson/UtilGetPastTimeStringToGetTimeSpanString.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

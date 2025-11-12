@@ -13,8 +13,8 @@ _Prefer the use of `StandardBasicTypes.*` in `NativeQuery.addScalar(...)` invoca
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/AddScalarPreferStandardBasicTypes.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/AddScalarPreferStandardBasicTypes.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

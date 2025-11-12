@@ -1,58 +1,34 @@
 ---
-sidebar_label: "Update `jakarta.annotation-api` dependency if it exists"
+sidebar_label: "Prefer `Predicate.isEqual(Object)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update `jakarta.annotation-api` dependency if it exists
+# Prefer `Predicate.isEqual(Object)`
 
-**org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta**
+**org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo**
 
-_Counteract the `jakarta.annotation-api` by updating to `jakarta` namespace_
+_Prefer `Predicate.isEqual(Object)` over `Predicates.equalTo(Object)`._
+
+### Tags
+
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaPredicatesEqualTo.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate deprecated `javax.annotation` to `jakarta.annotation`](../../java/migrate/jakarta/javaxannotationmigrationtojakartaannotation)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta
-displayName: Update `jakarta.annotation-api` dependency if it exists
-description: |
-  Counteract the `jakarta.annotation-api` by updating to `jakarta` namespace
-recipeList:
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
 
 
 ## Usage
@@ -69,7 +45,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta")
+    activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo")
     setExportDatatables(true)
 }
 
@@ -102,7 +78,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta")
+        activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -137,7 +113,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta</recipe>
+            <recipe>org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -160,7 +136,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -168,7 +144,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdateJakartaAnnotationsIfExistsForJakarta
+mod run . --recipe NoGuavaPredicatesEqualTo
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -182,7 +158,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

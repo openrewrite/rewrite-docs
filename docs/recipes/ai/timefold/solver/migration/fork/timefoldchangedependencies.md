@@ -13,8 +13,8 @@ _Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timef
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.fork.TimefoldChangeDependencies), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.fork.TimefoldChangeDependencies),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

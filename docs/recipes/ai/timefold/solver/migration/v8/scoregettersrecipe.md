@@ -13,8 +13,8 @@ _Use `score()` instead of `getScore()` on `Score` implementations._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.ScoreGettersRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.ScoreGettersRecipe),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

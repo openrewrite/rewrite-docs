@@ -59,8 +59,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`](./removedfileiofinalizemethods.md)
 * [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](./removedzipfinalizemethods.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](./jre17agentmainpremainpublic.md)
-* [Update `jakarta.annotation-api` dependency if it exists](./updatejakartaannotationsifforjavax.md)
-* [Update `jakarta.annotation-api` dependency if it exists](./updatejakartaannotationsifexistsforjakarta.md)
 * [Upgrade Java version](./upgradejavaversion.md)
 * [Upgrade plugins to Java 11 compatible versions](./upgradepluginsforjava11.md)
 * [Upgrade plugins to Java 17 compatible versions](./upgradepluginsforjava17.md)

@@ -1,21 +1,21 @@
 ---
-sidebar_label: "Inline methods annotated with `@InlineMe`"
+sidebar_label: "Migrate to Spring Framework 7.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Inline methods annotated with `@InlineMe`
+# Migrate to Spring Framework 7.0
 
-**org.openrewrite.java.logging.log4j.InlineMethods**
+**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_7\_0**
 
-_Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table._
+_Migrate applications to the latest Spring Framework 7.0 release._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/inline-logging-methods.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/UpgradeSpringFramework_7_0.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -28,28 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Inline method calls](../../../java/inlinemethodcalls)
-  * methodPattern: `org.apache.logging.log4j.message.StructuredDataId StructuredDataId(java.lang.String, int, java.lang.String[], java.lang.String[])`
-  * replacement: `this(name, String.valueOf(enterpriseNumber), required, optional)`
-  * classpathFromResources: `[log4j-api-2.25.2]`
-* [Inline method calls](../../../java/inlinemethodcalls)
-  * methodPattern: `org.apache.logging.log4j.message.StructuredDataId StructuredDataId(java.lang.String, int, java.lang.String[], java.lang.String[], int)`
-  * replacement: `this(name, String.valueOf(enterpriseNumber), required, optional, maxLength)`
-  * classpathFromResources: `[log4j-api-2.25.2]`
-* [Inline method calls](../../../java/inlinemethodcalls)
-  * methodPattern: `org.apache.logging.log4j.message.StructuredDataId makeId(java.lang.String, int)`
-  * replacement: `this.makeId(defaultId, String.valueOf(anEnterpriseNumber))`
-  * classpathFromResources: `[log4j-api-2.25.2]`
-* [Inline method calls](../../../java/inlinemethodcalls)
-  * methodPattern: `org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)`
-  * replacement: `this(pattern, Arrays.stream(args).toArray(Object[]::new), throwable)`
-  * imports: `[java.util.Arrays]`
-  * classpathFromResources: `[log4j-api-2.25.2]`
-* [Inline method calls](../../../java/inlinemethodcalls)
-  * methodPattern: `org.apache.logging.log4j.MarkerManager getMarker(java.lang.String, org.apache.logging.log4j.Marker)`
-  * replacement: `MarkerManager.getMarker(name).addParents(parent)`
-  * imports: `[org.apache.logging.log4j.MarkerManager]`
-  * classpathFromResources: `[log4j-api-2.25.2]`
+* [Migrate to Spring Framework 6.2](../../../java/spring/framework/upgradespringframework_6_2)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework`
+  * artifactId: `*`
+  * newVersion: `7.0.x`
+* [JUnit 6 migration from JUnit 5.x](../../../java/testing/junit6/junit5to6migration)
+* [Migrates from Jackson 2.x to Jackson 3.x](../../../java/jackson/upgradejackson_2_3)
 
 </TabItem>
 
@@ -58,33 +43,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.logging.log4j.InlineMethods
-displayName: Inline methods annotated with `@InlineMe`
+name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0
+displayName: Migrate to Spring Framework 7.0
 description: |
-  Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
+  Migrate applications to the latest Spring Framework 7.0 release.
 recipeList:
-  - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: org.apache.logging.log4j.message.StructuredDataId StructuredDataId(java.lang.String, int, java.lang.String[], java.lang.String[])
-      replacement: this(name, String.valueOf(enterpriseNumber), required, optional)
-      classpathFromResources: [log4j-api-2.25.2]
-  - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: org.apache.logging.log4j.message.StructuredDataId StructuredDataId(java.lang.String, int, java.lang.String[], java.lang.String[], int)
-      replacement: this(name, String.valueOf(enterpriseNumber), required, optional, maxLength)
-      classpathFromResources: [log4j-api-2.25.2]
-  - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: org.apache.logging.log4j.message.StructuredDataId makeId(java.lang.String, int)
-      replacement: this.makeId(defaultId, String.valueOf(anEnterpriseNumber))
-      classpathFromResources: [log4j-api-2.25.2]
-  - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)
-      replacement: this(pattern, Arrays.stream(args).toArray(Object[]::new), throwable)
-      imports: [java.util.Arrays]
-      classpathFromResources: [log4j-api-2.25.2]
-  - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: org.apache.logging.log4j.MarkerManager getMarker(java.lang.String, org.apache.logging.log4j.Marker)
-      replacement: MarkerManager.getMarker(name).addParents(parent)
-      imports: [org.apache.logging.log4j.MarkerManager]
-      classpathFromResources: [log4j-api-2.25.2]
+  - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: "*"
+      newVersion: 7.0.x
+  - org.openrewrite.java.testing.junit6.JUnit5to6Migration
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3
 
 ```
 </TabItem>
@@ -94,12 +64,12 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+* [Migrate to Spring Boot 4.0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -111,7 +81,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.logging.log4j.InlineMethods")
+    activeRecipe("org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0")
     setExportDatatables(true)
 }
 
@@ -120,7 +90,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
 }
 ```
 
@@ -141,10 +111,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.logging.log4j.InlineMethods")
+        activeRecipe("org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -179,14 +149,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.logging.log4j.InlineMethods</recipe>
+            <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -202,7 +172,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.logging.log4j.InlineMethods -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -210,12 +180,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe InlineMethods
+mod run . --recipe UpgradeSpringFramework_7_0
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -224,7 +194,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.logging.log4j.InlineMethods" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

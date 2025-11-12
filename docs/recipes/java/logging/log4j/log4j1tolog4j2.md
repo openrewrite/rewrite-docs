@@ -18,8 +18,8 @@ _Migrates Log4j 1.x to Log4j 2.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/log4j/Log4j1ToLog4j2.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 :::info
@@ -104,7 +104,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `log4j-slf4j-impl`
   * newVersion: `2.x`
 * [Upgrade Log4j 2.x dependency version](../../../java/logging/log4j/upgradelog4j2dependencyversion)
-* [Inline methods annotated with `@InlineMe`](../../../java/logging/log4j/inlinemethods)
+* [Inline `log4j-api` methods annotated with `@InlineMe`](../../../org/apache/logging/log4j/inlinelog4japimethods)
 
 </TabItem>
 
@@ -192,7 +192,7 @@ recipeList:
       newArtifactId: log4j-slf4j-impl
       newVersion: 2.x
   - org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion
-  - org.openrewrite.java.logging.log4j.InlineMethods
+  - org.apache.logging.log4j.InlineLog4jApiMethods
 
 ```
 </TabItem>

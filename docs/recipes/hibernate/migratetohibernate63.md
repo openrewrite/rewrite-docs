@@ -13,8 +13,8 @@ _This recipe will apply changes commonly needed when migrating to Hibernate 6.3.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.3.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateToHibernate63.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
 :::info

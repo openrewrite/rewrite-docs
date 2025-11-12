@@ -19,8 +19,8 @@ _Finds potential security issues in GitHub Actions workflows, based on [Zizmor](
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/security.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/security/GitHubActionsSecurity.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 :::info

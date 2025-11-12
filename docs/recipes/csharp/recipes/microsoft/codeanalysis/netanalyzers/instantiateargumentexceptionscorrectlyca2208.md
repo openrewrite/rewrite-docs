@@ -13,8 +13,8 @@ _A call is made to the default (parameterless) constructor of an exception type 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/InstantiateArgumentExceptionsCorrectlyCA2208.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/InstantiateArgumentExceptionsCorrectlyCA2208.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

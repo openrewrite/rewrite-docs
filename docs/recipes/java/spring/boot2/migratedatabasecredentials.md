@@ -13,8 +13,8 @@ _If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateDatabaseCredentials.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -29,9 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentialsfortoolyaml)
+  * tool: `flyway`
 * [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentialsfortoolproperties)
+  * tool: `flyway`
 * [Migrate liquibase credentials](../../../java/spring/boot2/migratedatabasecredentialsfortoolyaml)
+  * tool: `liquibase`
 * [Migrate liquibase credentials](../../../java/spring/boot2/migratedatabasecredentialsfortoolproperties)
+  * tool: `liquibase`
 
 </TabItem>
 
@@ -45,10 +49,14 @@ displayName: Migrate flyway and liquibase credentials
 description: |
   If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans.
 recipeList:
-  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolYaml
-  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolProperties
-  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolYaml
-  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolProperties
+  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolYaml:
+      tool: flyway
+  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolProperties:
+      tool: flyway
+  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolYaml:
+      tool: liquibase
+  - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolProperties:
+      tool: liquibase
 
 ```
 </TabItem>

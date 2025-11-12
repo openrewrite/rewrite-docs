@@ -13,8 +13,8 @@ _Find compile scoped Spring Web dependency for Maven and Gradle, both direct and
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-web-dependency.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/http/SpringWebDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -212,6 +212,7 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
+| Dependency graph | The dependency path that requested the dependency. |
 
 </TabItem>
 

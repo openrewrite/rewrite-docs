@@ -13,8 +13,8 @@ _Refaster rules related to Jackson expressions and statements. [Source](https://
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JacksonRulesRecipes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JacksonRulesRecipes),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

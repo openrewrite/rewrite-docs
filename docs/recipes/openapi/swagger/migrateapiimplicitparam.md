@@ -13,8 +13,8 @@ _Migrate `@ApiImplicitParam` to `@Parameter`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiImplicitParam.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiImplicitParam.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

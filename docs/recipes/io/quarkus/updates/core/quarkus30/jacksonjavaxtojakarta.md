@@ -13,8 +13,8 @@ _Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackso
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JacksonJavaxToJakarta), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JacksonJavaxToJakarta),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

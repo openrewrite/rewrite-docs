@@ -13,8 +13,8 @@ _Upgrade Struts 2.x dependencies to Struts 6.0._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/resources/META-INF/rewrite/struts6.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/migrate6/UpgradeStruts6Dependencies.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 
 :::info

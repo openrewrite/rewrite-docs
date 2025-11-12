@@ -14,28 +14,34 @@ Recipe created for the following Refaster template:
 static final class AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException {
     
     @BeforeTemplate
-    void before(Executable throwingCallable, Supplier<String> supplier) {
+    @SuppressWarnings(value = "java:S4449")
+    void before(Executable throwingCallable, Supplier<@Nullable String> supplier) {
         assertDoesNotThrow(throwingCallable, supplier);
     }
     
     @BeforeTemplate
-    void before(ThrowingSupplier<?> throwingCallable, Supplier<String> supplier) {
+    @SuppressWarnings(value = "java:S4449")
+    void before(ThrowingSupplier<?> throwingCallable, Supplier<@Nullable String> supplier) {
         assertDoesNotThrow(throwingCallable, supplier);
     }
     
     @AfterTemplate
     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(ThrowingCallable throwingCallable, Supplier<String> supplier) {
+    void after(ThrowingCallable throwingCallable, Supplier<@Nullable String> supplier) {
         assertThatCode(throwingCallable).withFailMessage(supplier).doesNotThrowAnyException();
     }
 }
 ```
 .
 
+### Tags
+
+* [RSPEC-S4449](https://sonarsource.github.io/rspec/#/rspec/S4449)
+
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyExceptionRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyExceptionRecipe),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

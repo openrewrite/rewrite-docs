@@ -13,8 +13,8 @@ _Change the groupId and/or the artifactId of a specified Maven plugin. Optionall
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -27,7 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldArtifactId | The old artifactId to replace. The artifact ID is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `my-deprecated-maven-plugin` |
 | `String` | newGroupId | *Optional*. The new group ID to use. | `corp.internal.openrewrite.recipe` |
 | `String` | newArtifactId | *Optional*. The new artifact ID to use. | `my-new-maven-plugin` |
-| `String` | newVersion | *Optional*. An exact version number. | `29.X` |
+| `String` | newVersion | *Optional*. An exact version number. | `29.0` |
 
 
 ## Used by
@@ -232,7 +232,7 @@ recipeList:
       oldArtifactId: my-deprecated-maven-plugin
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-maven-plugin
-      newVersion: 29.X
+      newVersion: 29.0
 ```
 
 Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined, activate it in your build file:
@@ -268,7 +268,7 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined,
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangePluginGroupIdAndArtifactId --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newVersion=29.X"
+mod run . --recipe ChangePluginGroupIdAndArtifactId --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newVersion=29.0"
 ```
 
 If the recipe is not available locally, then you can install it using:

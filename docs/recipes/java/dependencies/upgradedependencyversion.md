@@ -13,8 +13,8 @@ _For Gradle projects, upgrade the version of a dependency in a `build.gradle` fi
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -124,6 +124,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
 * [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
 * [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
+* [Migrate to Spring Boot 4.0](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Migrate to Spring Framework 5.0](/recipes/java/spring/framework/upgradespringframework_5_0.md)
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
@@ -132,6 +133,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2 for WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring Framework 7.0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
 * [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
 * [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md)
 * [Migrate to Spring Security 6.0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md)

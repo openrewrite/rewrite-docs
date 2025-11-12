@@ -133,6 +133,7 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
+| Dependency graph | The dependency path that requested the dependency. |
 
 </TabItem>
 

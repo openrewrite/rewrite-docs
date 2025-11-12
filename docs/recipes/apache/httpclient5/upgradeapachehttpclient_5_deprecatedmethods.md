@@ -13,8 +13,8 @@ _Migrates deprecated methods to their equivalent ones in 5.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/UpgradeApacheHttpClient_5_DeprecatedMethods.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 :::info

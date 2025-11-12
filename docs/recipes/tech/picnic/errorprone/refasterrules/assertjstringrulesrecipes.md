@@ -13,8 +13,8 @@ _Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStri
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -75,6 +75,49 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class Test {
+    void test(String actual) {
+        assertThat(actual).isEqualTo("");
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class Test {
+    void test(String actual) {
+        assertThat(actual).isEmpty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class Test {
+    void test(String actual) {
+-       assertThat(actual).isEqualTo("");
++       assertThat(actual).isEmpty();
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

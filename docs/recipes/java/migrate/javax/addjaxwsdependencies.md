@@ -21,8 +21,8 @@ _This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 appli
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/javax/AddJaxwsDependencies.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -49,9 +49,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `jakarta.xml.ws-api`
   * newVersion: `2.3.x`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `jakarta.xml.ws`
-  * artifactId: `jakarta.xml.ws-api`
-  * version: `2.3.x`
+  * groupId: `jakarta.jws`
+  * artifactId: `jakarta.jws-api`
+  * version: `2.1.x`
   * onlyIfUsing: `javax.jws..*`
   * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
@@ -105,9 +105,9 @@ recipeList:
       newArtifactId: jakarta.xml.ws-api
       newVersion: 2.3.x
   - org.openrewrite.java.dependencies.AddDependency:
-      groupId: jakarta.xml.ws
-      artifactId: jakarta.xml.ws-api
-      version: 2.3.x
+      groupId: jakarta.jws
+      artifactId: jakarta.jws-api
+      version: 2.1.x
       onlyIfUsing: javax.jws..*
       acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:

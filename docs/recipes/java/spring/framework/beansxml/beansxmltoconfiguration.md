@@ -30,11 +30,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class BeansConfiguration {
+class BeansConfiguration {
     @Bean
-    public UserService userService() {
-        UserService bean = new UserService();
-        return bean;
+    UserService userService() {
+        return new UserService();
     }
 }
 ```

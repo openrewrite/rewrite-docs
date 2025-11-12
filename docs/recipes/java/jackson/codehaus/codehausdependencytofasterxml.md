@@ -13,8 +13,8 @@ _Replace Codehaus Jackson dependencies with FasterXML Jackson dependencies, and 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/CodehausDependencyToFasterXML.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/CodehausDependencyToFasterXML.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
 :::info

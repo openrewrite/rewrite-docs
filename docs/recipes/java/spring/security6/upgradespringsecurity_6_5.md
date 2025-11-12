@@ -18,8 +18,8 @@ _Migrate applications to the latest Spring Security 6.5 release. This recipe wil
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-65.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/UpgradeSpringSecurity_6_5.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -79,6 +79,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
+* [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md)
 
 
 ## Usage

@@ -14,23 +14,28 @@ Recipe created for the following Refaster template:
 static final class AssertThatObjectArrayWithFailMessageSupplierContainsExactly {
     
     @BeforeTemplate
-    void before(Object[] actual, Supplier<String> message, Object[] expected) {
+    @SuppressWarnings(value = "java:S4449")
+    void before(Object[] actual, Supplier<@Nullable String> message, Object[] expected) {
         assertArrayEquals(expected, actual, message);
     }
     
     @AfterTemplate
     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(Object[] actual, Supplier<String> message, Object[] expected) {
+    void after(Object[] actual, Supplier<@Nullable String> message, Object[] expected) {
         assertThat(actual).withFailMessage(message).containsExactly(expected);
     }
 }
 ```
 .
 
+### Tags
+
+* [RSPEC-S4449](https://sonarsource.github.io/rspec/#/rspec/S4449)
+
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

@@ -13,8 +13,8 @@ _Replace Spring stereotype and injection annotations with CDI equivalents._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/resources/META-INF/rewrite/spring-boot-to-quarkus.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/StereotypeAnnotationsToCDI.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 
 :::info

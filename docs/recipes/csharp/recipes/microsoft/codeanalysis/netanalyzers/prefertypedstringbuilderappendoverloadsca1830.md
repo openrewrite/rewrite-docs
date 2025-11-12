@@ -13,8 +13,8 @@ _StringBuilder.Append and StringBuilder.Insert provide overloads for multiple ty
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/PreferTypedStringBuilderAppendOverloadsCA1830.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/PreferTypedStringBuilderAppendOverloadsCA1830.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

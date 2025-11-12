@@ -13,8 +13,8 @@ _Replace calls to `Logger.log(Level, ...)` with the corresponding eponymous leve
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/jboss/LoggerLevelArgumentToMethod.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/jboss/LoggerLevelArgumentToMethod.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

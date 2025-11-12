@@ -13,8 +13,8 @@ _Run [ESLint](https://eslint.org/) across the code to fix common static analysis
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ESLint.java), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ESLint.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -45,7 +45,6 @@ This recipe is used as part of the following composite recipes:
 * [A story should not have a redundant name property](/recipes/codemods/cleanup/storybook/noredundantstoryname.md)
 * [Deprecated hierarchy separator in title property](/recipes/codemods/cleanup/storybook/hierarchyseparator.md)
 * [Disallow Jasmine globals](/recipes/codemods/cleanup/jest/nojasmineglobals.md)
-* [Disallow `if` statements as the only statement in `if` blocks without `else`.](/recipes/codemods/cleanup/javascript/nolonelyif.md)
 * [Disallow `new Array()`.](/recipes/codemods/cleanup/javascript/nonewarray.md)
 * [Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals](/recipes/codemods/cleanup/javascript/prefernumericliterals.md)
 * [Disallow alias methods](/recipes/codemods/cleanup/jest/noaliasmethods.md)
@@ -57,6 +56,7 @@ This recipe is used as part of the following composite recipes:
 * [Disallow equal signs explicitly at the beginning of regular expressions](/recipes/codemods/cleanup/javascript/nodivregex.md)
 * [Disallow extra closing tags for components without children](/recipes/codemods/cleanup/react/selfclosingcomp.md)
 * [Disallow extra closing tags for components without children](/recipes/codemods/format/jsxselfclosingcomp.md)
+* [Disallow if statements as the only statement in else blocks](/recipes/codemods/cleanup/javascript/nolonelyif.md)
 * [Disallow initializing variables to undefined](/recipes/codemods/cleanup/javascript/noundefinit.md)
 * [Disallow leading or trailing decimal points in numeric literals](/recipes/codemods/format/nofloatingdecimal.md)
 * [Disallow member access from `await` expression.](/recipes/codemods/cleanup/javascript/noawaitexpressionmember.md)

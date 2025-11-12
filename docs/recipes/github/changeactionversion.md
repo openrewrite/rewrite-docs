@@ -13,8 +13,8 @@ _Change the version of a GitHub Action in any `.github/workflows/*.yml` file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -25,6 +25,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | -- | -- | -- | -- |
 | `String` | action | Name of the action to update. | `actions/setup-java` |
 | `String` | version | Version to use. | `v4` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate `astral-sh/setup-uv` from v6 to v7](/recipes/github/migratesetupuvv6tov7.md)
 
 ## Example
 

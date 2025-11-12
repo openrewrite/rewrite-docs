@@ -13,8 +13,8 @@ _This recipe is intended to break down the modernization of very old plugins int
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/java-8.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ModernizePluginForJava8.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 :::info
@@ -107,6 +107,10 @@ recipeList:
     </dependencies>
     <repositories>
         <repository>
+            <id>maven-central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
             <id>repo.jenkins-ci.org</id>
             <url>http://repo.jenkins-ci.org/public/</url>
         </repository>
@@ -146,6 +150,10 @@ recipeList:
         </dependency>
     </dependencies>
     <repositories>
+        <repository>
+            <id>maven-central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
         <repository>
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>
@@ -194,7 +202,7 @@ recipeList:
             <artifactId>junit</artifactId>
 -           <version>1.12</version>
         </dependency>
-@@ -23,1 +33,1 @@
+@@ -27,1 +37,1 @@
         <repository>
             <id>repo.jenkins-ci.org</id>
 -           <url>http://repo.jenkins-ci.org/public/</url>
@@ -237,6 +245,10 @@ recipeList:
     </dependencies>
     <repositories>
         <repository>
+            <id>maven-central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
             <id>repo.jenkins-ci.org</id>
             <url>http://repo.jenkins-ci.org/public/</url>
         </repository>
@@ -276,6 +288,10 @@ recipeList:
         </dependency>
     </dependencies>
     <repositories>
+        <repository>
+            <id>maven-central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
         <repository>
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>
@@ -324,7 +340,7 @@ recipeList:
             <artifactId>junit</artifactId>
 -           <version>1.12</version>
         </dependency>
-@@ -23,1 +33,1 @@
+@@ -27,1 +37,1 @@
         <repository>
             <id>repo.jenkins-ci.org</id>
 -           <url>http://repo.jenkins-ci.org/public/</url>

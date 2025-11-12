@@ -13,8 +13,8 @@ _For determining whether the object contains or not any items, prefer using 'IsE
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferIsEmptyOverCountCA1836.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferIsEmptyOverCountCA1836.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

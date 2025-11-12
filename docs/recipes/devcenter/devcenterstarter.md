@@ -13,8 +13,8 @@ _This is a default DevCenter configuration that can be used as a starting point 
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/devcenter-starter.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/DevCenterStarter.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 
 :::info

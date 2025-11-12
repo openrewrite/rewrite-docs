@@ -20,8 +20,8 @@ _Migrates Spring Boot starter dependencies to their Quarkus equivalents, removin
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/resources/META-INF/rewrite/boot-starters.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/MigrateBootStarters.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 
 :::info

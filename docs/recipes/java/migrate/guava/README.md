@@ -4,7 +4,6 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Inline methods annotated with `@InlineMe`](./noguavainlinememethods.md)
 * [Prefer `Integer#compareUnsigned`](./preferintegercompareunsigned.md)
 * [Prefer `Integer#divideUnsigned`](./preferintegerdivideunsigned.md)
 * [Prefer `Long#compareUnsigned`](./preferlongcompareunsigned.md)
@@ -25,11 +24,17 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Change Guava's `Predicate` into `java.util.function.Predicate` where possible](./noguavapredicate.md)
 * [`Preconditions.checkNotNull` to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnulltoobjectsrequirenonnullrecipe.md)
 * [`Preconditions.checkNotNull` with `Object` message to `Objects.requireNonNull` with `String.valueOf`](./noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullmessagetypeobjectrecipe.md)
 * [`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe.md)
 * [Prefer `Arrays.asList(..)` over Guava primitives](./noguavaprimitiveaslist.md)
+* [Prefer `Collection.stream().anyMatch(Predicate)`](./noguavaiterablesanyfilter.md)
+* [Prefer `Collection.stream().filter(Predicate)`](./noguavasetsfilter.md)
+* [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](./noguavacollections2transform.md)
+* [Prefer `Collection.stream().map(Function)` over `Iterables.transform`](./noguavaiterablestransform.md)
 * [Prefer `Files#createTempDirectory()`](./noguavacreatetempdir.md)
+* [Prefer `Function.compose(Function)`](./noguavafunctionscompose.md)
 * [Prefer `Integer#compare`](./preferintegercompare.md)
 * [Prefer `Integer#parseUnsignedInt`](./preferintegerparseunsignedint.md)
 * [Prefer `Integer#remainderUnsigned`](./preferintegerremainderunsigned.md)
@@ -39,7 +44,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Long#parseUnsignedInt`](./preferlongparseunsignedlong.md)
 * [Prefer `Long#remainderUnsigned`](./preferlongremainderunsigned.md)
 * [Prefer `Map.of(..)` in Java 9 or higher](./noguavaimmutablemapof.md)
+* [Prefer `Optional.stream().collect(Collectors.toSet())`](./noguavaoptionalasset.md)
 * [Prefer `Predicate.and(Predicate)`](./noguavapredicatesandor.md)
+* [Prefer `Predicate.isEqual(Object)`](./noguavapredicatesequalto.md)
 * [Prefer `Runnable::run`](./noguavadirectexecutor.md)
 * [Prefer `Set.of(..)` in Java 9 or higher](./noguavaimmutablesetof.md)
 * [Prefer `Short#compare`](./prefershortcompare.md)

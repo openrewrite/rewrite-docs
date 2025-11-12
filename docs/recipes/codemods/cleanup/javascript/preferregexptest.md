@@ -13,8 +13,8 @@ _Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule det
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/unicorn.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/cleanup/javascript/PreferRegexpTest.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

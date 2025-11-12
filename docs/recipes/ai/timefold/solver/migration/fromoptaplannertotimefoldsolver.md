@@ -13,8 +13,8 @@ _Replaces your method/field calls, GAVs, etc. To replace deprecated methods too,
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.FromOptaPlannerToTimefoldSolver), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.FromOptaPlannerToTimefoldSolver),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

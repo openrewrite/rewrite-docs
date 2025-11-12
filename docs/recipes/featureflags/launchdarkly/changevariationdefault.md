@@ -13,8 +13,8 @@ _Change the default value for `Variation` invocations for feature key._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/ChangeVariationDefault.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/ChangeVariationDefault.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

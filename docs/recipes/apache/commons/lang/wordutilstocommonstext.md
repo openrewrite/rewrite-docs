@@ -18,8 +18,8 @@ _Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUti
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-commons-lang-2-3.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/lang/WordUtilsToCommonsText.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 :::info

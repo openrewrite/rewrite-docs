@@ -13,8 +13,8 @@ _This recipe searches for instances in code that may be impacted by post quantum
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-cryptography/blob/main/rewrite-cryptography/src/main/resources/META-INF/rewrite/pqc.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-cryptography/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-cryptography/blob/main/src/main/java/io/moderne/cryptography/PostQuantumCryptography.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-cryptography/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-cryptography/)
 
 :::info

@@ -13,8 +13,8 @@ _Migrates Quarkus 1.11 to 1.13._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/quarkus.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/Quarkus1to1_13Migration.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 :::info

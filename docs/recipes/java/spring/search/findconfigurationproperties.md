@@ -1,63 +1,105 @@
 ---
-sidebar_label: "Update `jakarta.annotation-api` dependency if it exists"
+sidebar_label: "Find Spring `@ConfigurationProperties`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update `jakarta.annotation-api` dependency if it exists
+# Find Spring `@ConfigurationProperties`
 
-**org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax**
+**org.openrewrite.java.spring.search.FindConfigurationProperties**
 
-_Counteract the `jakarta.annotation-api` by updating to `jakarta` namespace_
+_Find all classes annotated with `@ConfigurationProperties` and extract their prefix values. This is useful for discovering all externalized configuration properties in Spring Boot applications._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/search/FindConfigurationProperties.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
 
-## Definition
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate deprecated `javax.annotation` to `jakarta.annotation`](../../java/migrate/jakarta/javaxannotationmigrationtojakartaannotation)
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package test;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@ConfigurationProperties("my.service")
+public class MyProperties {
+    private boolean enabled;
+    private String url;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+}
+```
+
+###### After
+```java
+package test;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+/*~~(@ConfigurationProperties("my.service"))~~>*/@ConfigurationProperties("my.service")
+public class MyProperties {
+    private boolean enabled;
+    private String url;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+}
+```
 
 </TabItem>
+<TabItem value="diff" label="Diff" >
 
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+```diff
+@@ -4,1 +4,1 @@
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax
-displayName: Update `jakarta.annotation-api` dependency if it exists
-description: |
-  Counteract the `jakarta.annotation-api` by updating to `jakarta` namespace
-recipeList:
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
-
+-@ConfigurationProperties("my.service")
++/*~~(@ConfigurationProperties("my.service"))~~>*/@ConfigurationProperties("my.service")
+public class MyProperties {
 ```
 </TabItem>
 </Tabs>
 
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -69,7 +111,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax")
+    activeRecipe("org.openrewrite.java.spring.search.FindConfigurationProperties")
     setExportDatatables(true)
 }
 
@@ -78,7 +120,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
 }
 ```
 
@@ -99,10 +141,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax")
+        activeRecipe("org.openrewrite.java.spring.search.FindConfigurationProperties")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -137,14 +179,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax</recipe>
+            <recipe>org.openrewrite.java.spring.search.FindConfigurationProperties</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -160,7 +202,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.search.FindConfigurationProperties -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -168,12 +210,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdateJakartaAnnotationsIfForJavax
+mod run . --recipe FindConfigurationProperties
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -182,7 +224,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.search.FindConfigurationProperties" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -190,6 +232,21 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.spring.table.ConfigurationPropertiesTable" label="ConfigurationPropertiesTable">
+
+### Configuration properties
+**org.openrewrite.java.spring.table.ConfigurationPropertiesTable**
+
+_Classes annotated with `@ConfigurationProperties` and their prefix values._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path to the source file containing the @ConfigurationProperties annotation. |
+| Class type | The fully qualified name of the class annotated with @ConfigurationProperties. |
+| Prefix | The prefix/value attribute of the @ConfigurationProperties annotation. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

@@ -13,8 +13,8 @@ _Upgrades Maven POMs from model version 4.0.0 to 4.1.0, enabling new Maven 4 fea
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/UpgradeToModelVersion410.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 :::info
@@ -41,7 +41,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * elementName: `/project`
   * attributeName: `xsi:schemaLocation`
   * newValue: `$14.1.0$24.1.0$3`
-  * oldValue: `(http://maven\.apache\.org/POM/)4\.0\.0(\s+http://maven\.apache\.org/xsd/maven-)4\.0\.0(\.xsd)`
+  * oldValue: `(http://maven\.apache\.org/POM/)4\.0\.0(\s+http[s]?://maven\.apache\.org/xsd/maven-)4\.0\.0(\.xsd)`
   * regex: `true`
 
 </TabItem>
@@ -69,7 +69,7 @@ recipeList:
       elementName: /project
       attributeName: xsi:schemaLocation
       newValue: $14.1.0$24.1.0$3
-      oldValue: (http://maven\.apache\.org/POM/)4\.0\.0(\s+http://maven\.apache\.org/xsd/maven-)4\.0\.0(\.xsd)
+      oldValue: (http://maven\.apache\.org/POM/)4\.0\.0(\s+http[s]?://maven\.apache\.org/xsd/maven-)4\.0\.0(\.xsd)
       regex: true
 
 ```

@@ -20,8 +20,8 @@ _Replaces Spring Boot database driver dependencies with their Quarkus JDBC exten
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/resources/META-INF/rewrite/database-drivers.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/MigrateDatabaseDrivers.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 
 :::info

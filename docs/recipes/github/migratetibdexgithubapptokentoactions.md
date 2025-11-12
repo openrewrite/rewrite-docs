@@ -18,8 +18,8 @@ _Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/github.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/MigrateTibdexGitHubAppTokenToActions.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 :::info

@@ -28,6 +28,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Spring Boot 4.0](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
 
 

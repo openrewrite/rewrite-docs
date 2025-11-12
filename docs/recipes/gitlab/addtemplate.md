@@ -13,8 +13,8 @@ _Add a GitLab template to an existing list, or add a new list where none was pre
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddTemplate.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddTemplate.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

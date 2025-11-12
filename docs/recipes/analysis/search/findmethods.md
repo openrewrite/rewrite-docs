@@ -13,8 +13,8 @@ _Find method usages by pattern._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

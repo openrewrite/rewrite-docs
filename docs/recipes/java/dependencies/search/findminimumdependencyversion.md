@@ -13,8 +13,8 @@ _The oldest dependency version in use is the lowest dependency version in use in
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumDependencyVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumDependencyVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -242,6 +242,7 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
+| Dependency graph | The dependency path that requested the dependency. |
 
 </TabItem>
 

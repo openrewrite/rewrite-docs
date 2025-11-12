@@ -18,8 +18,8 @@ _Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-4-5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient4/UpgradeApacheHttpClient_4_5.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 :::info

@@ -13,8 +13,8 @@ _Ensure the XML declaration `<?jelly escape-by-default='true'?>` is present in a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/AddJellyXmlDeclaration.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/AddJellyXmlDeclaration.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

@@ -13,8 +13,8 @@ _Finds RSAKeyGenParameterSpec instantiations and extracts their parameter values
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-cryptography/blob/main/rewrite-cryptography/src/main/java/io/moderne/cryptography/FindRSAKeyGenParameters.java), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-cryptography/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-cryptography/blob/main/src/main/java/io/moderne/cryptography/FindRSAKeyGenParameters.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-cryptography/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-cryptography/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

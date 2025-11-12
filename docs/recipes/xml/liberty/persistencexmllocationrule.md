@@ -13,8 +13,8 @@ _This recipes moves persistence.xml files into the root META-INF directory in so
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/xml/liberty/PersistenceXmlLocationRule.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/xml/liberty/PersistenceXmlLocationRule.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

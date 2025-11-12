@@ -19,8 +19,8 @@ _Enforce consistent brace style for blocks in `<template>` See rule details for 
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-vue.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/cleanup/vue/BraceStyle.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

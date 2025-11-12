@@ -17,8 +17,8 @@ _The `com.sun.net.ssl.internal.ssl.Provider` provider name was removed._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.RemovedLegacySunJSSEProviderName), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.RemovedLegacySunJSSEProviderName),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

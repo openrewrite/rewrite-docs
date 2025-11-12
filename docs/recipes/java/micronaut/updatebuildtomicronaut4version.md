@@ -13,8 +13,8 @@ _This recipe will update the Micronaut version to 4.x for a Gradle or Maven buil
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpdateBuildToMicronaut4Version.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 
 :::info

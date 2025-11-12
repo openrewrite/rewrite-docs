@@ -13,8 +13,8 @@ _Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/resources/META-INF/rewrite/recipebestpractice.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/RecipeNullabilityBestPractices.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 
 :::info

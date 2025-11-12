@@ -13,8 +13,8 @@ _Rename a method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodName.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/ChangeMethodName.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -67,6 +67,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Boot 3.5 deprecated classes and methods](/recipes/java/spring/boot3/springboot35deprecations.md)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](/recipes/kafka/migrateadminlistconsumergroups.md)
+* [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/springdoc/apiinfobuildertoinfo.md)
 * [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
 * [Migrate `Joined.named()` to `Joined.as()`](/recipes/kafka/streams/migratejoinednamemethod.md)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
@@ -95,7 +96,6 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `java.util.Objects#hash`](/recipes/java/migrate/guava/preferjavautilobjectshashcode.md)
 * [Prefer `java.util.Objects#requireNonNullElse`](/recipes/java/migrate/guava/preferjavautilobjectsrequirenonnullelse.md)
 * [Prefer `java.util.Optional`](/recipes/java/migrate/guava/preferjavautiloptional.md)
-* [Prefer `java.util.function.Predicate`](/recipes/java/migrate/guava/preferjavautilpredicate.md)
 * [Quarkus 1.13 migration from Quarkus 1.11](/recipes/quarkus/quarkus1to1_13migration.md)
 * [Recommended Fit API becomes Assignment Recommendation API](/recipes/ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
 * [Refactored dataFormats](/recipes/org/apache/camel/upgrade/camel415/dataformats.md)

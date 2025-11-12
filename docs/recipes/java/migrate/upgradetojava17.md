@@ -17,8 +17,8 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeToJava17.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -76,8 +76,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `mapstruct*`
   * newVersion: `1.6.x`
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbinding)
-* [Update `jakarta.annotation-api` dependency if it exists](../../java/migrate/updatejakartaannotationsifforjavax)
-* [Update `jakarta.annotation-api` dependency if it exists](../../java/migrate/updatejakartaannotationsifexistsforjakarta)
 
 </TabItem>
 
@@ -137,8 +135,6 @@ recipeList:
       artifactId: mapstruct*
       newVersion: 1.6.x
   - org.openrewrite.java.migrate.AddLombokMapstructBinding
-  - org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfForJavax
-  - org.openrewrite.java.migrate.UpdateJakartaAnnotationsIfExistsForJakarta
 
 ```
 </TabItem>

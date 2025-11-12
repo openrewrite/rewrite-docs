@@ -19,8 +19,8 @@ _Suggest using toContain() See rule details for [jest/prefer-to-contain](https:/
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-jest.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/cleanup/jest/PreferToContain.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

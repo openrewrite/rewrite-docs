@@ -18,8 +18,8 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/Assertj.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 :::info
@@ -52,6 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions)
 * [Shorten AssertJ assertions](../../../java/testing/assertj/simplifyassertjassertions)
 * [Simplify AssertJ assertions with `hasSize` argument](../../../java/testing/assertj/simplifyhassizeassertion)
+* [Simplify AssertJ assertions on SequencedCollection](../../../java/testing/assertj/simplifysequencedcollectionassertions)
 * [Refaster rules related to AssertJ assertions over `BigDecimal`s](../../../tech/picnic/errorprone/refasterrules/assertjbigdecimalrulesrecipes)
 * [Adopt AssertJ BigInteger Assertions](../../../java/testing/assertj/assertjbigintegerrulesrecipes)
 * [`AssertJBooleanRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbooleanrulesrecipes)
@@ -115,6 +116,7 @@ recipeList:
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyHasSizeAssertion
+  - org.openrewrite.java.testing.assertj.SimplifySequencedCollectionAssertions
   - tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes
   - org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes

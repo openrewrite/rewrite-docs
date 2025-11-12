@@ -13,8 +13,8 @@ _Adds the Quarkus Maven plugin using the same version as the quarkus-bom in depe
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/AddQuarkusMavenPlugin.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/AddQuarkusMavenPlugin.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

@@ -13,8 +13,8 @@ _Upgrades the Apache Maven parent POM to the latest version._
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/apache-maven-devcenter.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/UpgradeMavenSharedParent.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

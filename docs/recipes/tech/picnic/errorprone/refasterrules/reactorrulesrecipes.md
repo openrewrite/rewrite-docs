@@ -13,8 +13,8 @@ _Refaster rules related to Reactor expressions and statements. [Source](https://
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -29,6 +29,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ReactorRules.MonoEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoemptyrecipe)
+* [Refaster template `ReactorRules.MonoTimeoutDurationMonoEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutdurationmonoemptyrecipe)
+* [Refaster template `ReactorRules.MonoTimeoutDurationMonoJust`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutdurationmonojustrecipe)
+* [Refaster template `ReactorRules.MonoTimeoutDuration`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutdurationrecipe)
+* [Refaster template `ReactorRules.MonoTimeoutPublisherMonoEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutpublishermonoemptyrecipe)
+* [Refaster template `ReactorRules.MonoTimeoutPublisherMonoJust`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutpublishermonojustrecipe)
+* [Refaster template `ReactorRules.MonoTimeoutPublisher`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutpublisherrecipe)
 * [Refaster template `ReactorRules.MonoJust`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monojustrecipe)
 * [Refaster template `ReactorRules.MonoJustOrEmptyObject`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monojustoremptyobjectrecipe)
 * [Refaster template `ReactorRules.MonoJustOrEmptyOptional`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monojustoremptyoptionalrecipe)
@@ -50,6 +56,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Prefer `Flux#take(long)` over `Flux#take(long, boolean)` where relevant](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtakerecipe)
 * [Refaster template `ReactorRules.MonoDefaultIfEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monodefaultifemptyrecipe)
 * [Refaster template `ReactorRules.FluxDefaultIfEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxdefaultifemptyrecipe)
+* [Refaster template `ReactorRules.FluxTimeoutFluxEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtimeoutfluxemptyrecipe)
 * [Refaster template `ReactorRules.FluxJust`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxjustrecipe)
 * [Refaster template `ReactorRules.MonoIdentity`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe)
 * [Refaster template `ReactorRules.MonoSingle`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monosinglerecipe)
@@ -141,6 +148,12 @@ description: |
   Refaster rules related to Reactor expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationMonoEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationMonoJustRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutPublisherMonoEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutPublisherMonoJustRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutPublisherRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustOrEmptyObjectRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustOrEmptyOptionalRecipe
@@ -162,6 +175,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTakeRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoDefaultIfEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxDefaultIfEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTimeoutFluxEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxJustRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoIdentityRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoSingleRecipe

@@ -11,6 +11,7 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate `astral-sh/setup-uv` from v6 to v7](./migratesetupuvv6tov7.md)
 * [Migrate from tibdex/github-app-token to actions/create-github-app-token](./migratetibdexgithubapptokentoactions.md)
 * [Replace OSSRH secrets with Sonatype secrets](./replaceossrhsecretswithsonatype.md)
 

@@ -13,8 +13,8 @@ _Convert Micrometer Timer to Observations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/TimerToObservation.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/TimerToObservation.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

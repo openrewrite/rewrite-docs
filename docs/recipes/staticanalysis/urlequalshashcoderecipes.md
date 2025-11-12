@@ -17,8 +17,8 @@ _Uses of `equals()` and `hashCode()` cause `java.net.URL` to make blocking inter
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/URLEqualsHashCode.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/URLEqualsHashCode.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 :::info

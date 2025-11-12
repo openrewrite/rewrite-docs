@@ -13,8 +13,8 @@ _Change a given type to another._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/ChangeType.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -68,6 +68,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
 * [Migrate TaskMetadata and ThreadMetadata](/recipes/kafka/streams/migratetaskandthreadmetadata.md)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](/recipes/kafka/migrateadminlistconsumergroups.md)
+* [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/springdoc/apiinfobuildertoinfo.md)
 * [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoreclear.md)
@@ -122,7 +123,6 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `java.nio.charset.StandardCharsets`](/recipes/java/migrate/guava/preferjavaniocharsetstandardcharsets.md)
 * [Prefer `java.util.Optional`](/recipes/java/migrate/guava/preferjavautiloptional.md)
 * [Prefer `java.util.function.Function`](/recipes/java/migrate/guava/preferjavautilfunction.md)
-* [Prefer `java.util.function.Predicate`](/recipes/java/migrate/guava/preferjavautilpredicate.md)
 * [Prefer `java.util.function.Supplier`](/recipes/java/migrate/guava/preferjavautilsupplier.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
 * [Recommended Fit API becomes Assignment Recommendation API](/recipes/ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
@@ -146,6 +146,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace any Lombok log annotations with target logging framework annotation](/recipes/java/logging/changelomboklogannotation.md)
 * [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](/recipes/org/apache/camel/upgrade/camel44/defaultjsonschemaloader.md)
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+* [Replace elements of SpringFox's security with Swagger's security models](/recipes/java/springdoc/securitycontexttosecurityscheme.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
 * [Substitute removed Faces Managed Beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
 * [Tag Enum has been deprecated](/recipes/org/apache/camel/upgrade/camel41/tracingtag.md)
@@ -153,6 +154,7 @@ This recipe is used as part of the following composite recipes:
 * [The package scan classes has moved from camel-base-engine to camel-support - java](/recipes/org/apache/camel/upgrade/camel412/scanclassesmoved.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
 * [Update Jackson 2.x types to 3.x](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
+* [Update Jetty EE9 to Jetty EE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update the Micronaut Security library](/recipes/java/micronaut/updatemicronautsecurity.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)

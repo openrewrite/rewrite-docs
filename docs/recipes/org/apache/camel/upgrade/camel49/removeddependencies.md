@@ -13,8 +13,8 @@ _Removed deprecated components (camel-groovy-dsl, camel-js-dsl, camel-jsh-dsl, c
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel49.removedDependencies), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel49.removedDependencies),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

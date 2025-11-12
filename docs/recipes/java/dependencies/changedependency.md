@@ -13,8 +13,8 @@ _Change the group ID, artifact ID, and/or the version of a specified Gradle or M
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -151,6 +151,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace H2 driver with Quarkus JDBC H2](/recipes/quarkus/spring/h2drivertoquarkus.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
 * [Update Apache Commons FileUpload2 package for EE10](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
+* [Update Jetty EE9 to Jetty EE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
 * [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
 * [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
