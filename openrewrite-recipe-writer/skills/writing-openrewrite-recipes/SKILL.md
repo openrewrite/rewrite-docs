@@ -1,21 +1,48 @@
 ---
-name: openrewrite-recipe-writer
-description: Expert guidance for writing OpenRewrite recipes - automated refactoring operations for source code. Helps choose recipe types, structure code, write tests, and follow best practices.
+name: writing-openrewrite-recipes
+description: Use when creating/writing/building OpenRewrite recipes, working with .java recipe files, RewriteTest files, recipe YAML files, LST visitors, JavaTemplate, visitor patterns, or when discussing recipe types (declarative YAML, Refaster templates, imperative Java recipes) - guides creation of OpenRewrite recipes for automated code transformations, AST manipulation, custom refactoring rules, and code migration.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
 # OpenRewrite Recipe Writing Skill
 
 ## Overview
 
-OpenRewrite recipes are automated refactoring operations that modify Lossless Semantic Trees (LSTs) representing source code. This skill guides you through creating recipes efficiently and correctly.
+OpenRewrite recipes are automated refactoring operations that modify Lossless Semantic Trees (LSTs) representing source code. This skill guides through creating recipes efficiently and correctly.
+
+## When NOT to Use This Skill
+
+Do NOT use this skill for:
+- General Java programming questions unrelated to OpenRewrite
+- Questions about running existing OpenRewrite recipes (use OpenRewrite documentation)
+- Build tool configuration unrelated to recipe development
+- General refactoring advice without OpenRewrite context
+
+## Quick Start Decision Tree
+
+To determine the best approach quickly:
+
+1. Can the transformation be expressed by composing existing recipes?
+   → **Use Declarative YAML** (see Declarative YAML Recipes section below)
+
+2. Is it a simple expression/statement replacement pattern?
+   → **Use Refaster Template** (see Refaster Template Recipes section below)
+
+3. Requires complex logic, conditional transformations, or custom analysis?
+   → **Use Imperative Java Recipe** (see Imperative Recipe Development Workflow below)
+
+For imperative recipes, proceed to "Imperative Recipe Development Workflow" below.
 
 ## Recipe Type Selection
 
 Choose the appropriate recipe type based on your needs:
 
 ### Declarative YAML Recipes (Preferred)
+
 **Use when:** Composing existing recipes with configuration
+
 **Advantages:** No code, simple, maintainable
+
 **Example use case:** Combining framework migration steps
 
 ```yaml
@@ -29,17 +56,48 @@ recipeList:
   - com.yourorg.OtherRecipe
 ```
 
+**Finding Recipes to Use:**
+When building declarative YAML recipes, consult the recipe catalog CSV files in the `references/` directory:
+
+- `references/recipes-top.csv` - 50 commonly used recipes across all categories (best starting point)
+- `references/recipes-java-basic.csv` - 32 basic Java refactoring operations
+- `references/recipes-spring-boot-common.csv` - 60 Spring Boot migrations and best practices
+- `references/recipes-framework-migrations-common.csv` - 16 major framework migrations (diverse frameworks)
+- `references/recipes-testing-common.csv` - 60 most useful testing recipes (JUnit, Mockito, AssertJ)
+- `references/recipes-dependencies-common.csv` - 49 dependency operations (Maven+Gradle when possible)
+- `references/recipes-security-common.csv` - 30 security vulnerability detection and fixes
+- `references/recipes-xml-yaml-json-common.csv` - 50 configuration file operations
+- `references/recipes-static-analysis-common.csv` - 50 code analysis and search recipes
+- `references/recipes-logging-common.csv` - 50 logging framework operations
+- `references/recipes-file-operations.csv` - 14 file and text manipulation operations
+
+**Usage Pattern:** Start with `recipes-top.csv`, then consult the specific category file based on what the user needs. These curated lists contain the most practical and commonly used recipes for each category.
+
 ### Refaster Template Recipes
+
 **Use when:** Simple expression/statement replacements
+
 **Advantages:** Faster than imperative, type-aware
+
 **Example use case:** Replace `StringUtils.equals()` with `Objects.equals()`
 
 ### Imperative Java Recipes
+
 **Use when:** Complex logic, conditional transformations, custom analysis
+
 **Advantages:** Full control, complex transformations
+
 **Example use case:** Add modifiers only to variables that aren't reassigned
 
 **Decision Rule:** If it can be declarative, make it declarative. Use imperative only when necessary.
+
+## Examples Quick Reference
+
+Navigate to the right example based on your needs:
+
+- **New to recipes?** Start with `references/example-say-hello-recipe.java`
+- **Need multi-file analysis?** See `references/example-scanning-recipe.java`
+- **Composing recipes?** Check `references/example-declarative-migration.yml`
 
 ## Imperative Recipe Development Workflow
 
@@ -73,10 +131,11 @@ public class YourRecipe extends Recipe {
 ```
 
 **Key Points:**
+
 - Use `@Value` and `@EqualsAndHashCode(callSuper = false)` for immutability
-- All recipes must be serializable.
-- Options define configurable parameters
-- `getVisitor()` returns a NEW instance each time (no caching)
+- Ensure all recipes are serializable
+- Define configurable parameters using `@Option` fields
+- Return a NEW instance from `getVisitor()` each time (no caching)
 
 ### 2. Implement the Visitor
 
@@ -102,11 +161,12 @@ public class YourVisitor extends JavaIsoVisitor<ExecutionContext> {
 ```
 
 **Visitor Guidelines:**
-- Use `JavaIsoVisitor` when returning same type (most common)
+
+- Use `JavaIsoVisitor` when returning the same type (most common)
 - Use `JavaVisitor` only when changing LST types
-- Usually call `super.visitX()` to traverse subtree. Only when the state of the recipe is such that you know there could be no further edits below the current LST element should you omit the `super` call.
+- Call `super.visitX()` to traverse subtree in most cases. Omit the `super` call only when certain there could be no further edits below the current LST element
 - Return unchanged LST if no change needed (referential equality check)
-- LSTs are immutable. Use `.withX()` methods.
+- Treat LSTs as immutable. Use `.withX()` methods for modifications
 
 ### 3. Use JavaTemplate for Complex Changes
 
@@ -124,11 +184,12 @@ classDecl = template.apply(
 ```
 
 **Template Tips:**
+
 - Use `#{}` for string parameters
 - Use `#{any(Type)}` for typed LST elements
 - Declare imports: `.imports("java.util.List")`
 - Add classpath: `.javaParser(JavaParser.fromJavaVersion().classpath("library-name"))`
-- Context-free templates (default) are faster
+- Prefer context-free templates (default) as they are faster
 - Use `.contextSensitive()` only when referencing local scope
 
 ### 4. Add Preconditions (Performance)
@@ -146,7 +207,7 @@ public TreeVisitor<?, ExecutionContext> getVisitor() {
 }
 ```
 
-**Benefits:** Recipes only run on relevant files
+**Benefits:** Limits recipe execution to relevant files only, improving performance
 
 ## Testing Recipes
 
@@ -198,14 +259,16 @@ class YourRecipeTest implements RewriteTest {
 Notice how in Java template strings, the end `"""` delimiter is one indent to the right of the open delimiter. Java trims everything to the left of that same column.
 
 **Testing Best Practices:**
+
 - Test both changes AND no-changes cases
 - Test edge cases
-- Be aware that the test harness runs multiple cycles - ensures idempotence
-- Always add `//language=XXX` comments to the highest level statement whose string arguments entirely consist of code snippets of that same language. This helps the IDE syntax highlight the test code.
+- Note that the test harness runs multiple cycles to ensure idempotence
+- Add `//language=XXX` comments to the highest level statement whose string arguments entirely consist of code snippets of that same language. This helps the IDE syntax highlight the test code
 
 ## ScanningRecipe Pattern
 
 Use when you need to:
+
 - See all files before making changes
 - Generate new files based on analysis
 - Share data across multiple files
@@ -251,17 +314,20 @@ public class YourScanningRecipe extends ScanningRecipe<YourAccumulator> {
 ## Critical Best Practices
 
 ### Do No Harm
+
 - If unsure whether a change is safe, DON'T make it
 - Make minimal, least invasive changes
 - Respect existing formatting
 
 ### Immutability & Idempotence
+
 - Recipes must be immutable (no mutable state)
 - Same input → same output, always
 - Use `@Value` and `@EqualsAndHashCode(callSuper = false)`
 - `getVisitor()` must return NEW instance
 
 ### Never Mutate LSTs
+
 ```java
 // WRONG
 method.getArguments().remove(0);
@@ -273,38 +339,45 @@ method.withArguments(ListUtils.map(method.getArguments(), (i, arg) ->
 ```
 
 ### Naming Conventions
+
 - Display names: Sentence case, code in backticks, end with period
 - Example: "Change type from `OldType` to `NewType`."
 - Recipe names: `com.yourorg.VerbNoun` (e.g., `com.yourorg.ChangePackage`)
 
 ### State Management
+
 - Within visitor: Use Cursor messaging (`getCursor().putMessage()`)
 - Between visitors: Use ScanningRecipe accumulator
 - Never use ExecutionContext for visitor state
 
 ### Multi-Module Projects
+
 - Track per-project data: `Map<JavaProject, T>`
 - Don't assume single project per repository
 
 ## Common Patterns
 
 ### Adding Imports
+
 ```java
 maybeAddImport("java.util.List");
 maybeAddImport("java.util.Collections", "emptyList");
 ```
 
 ### Removing Imports
+
 ```java
 maybeRemoveImport("old.package.Type");
 ```
 
 ### Chaining Visitors
+
 ```java
 doAfterVisit(new OtherRecipe().getVisitor());
 ```
 
 ### Checking Types
+
 ```java
 if (methodInvocation.getType() != null &&
     TypeUtils.isOfClassType(methodInvocation.getType(), "com.example.Type")) {
@@ -314,24 +387,56 @@ if (methodInvocation.getType() != null &&
 
 ## Resources
 
-This skill includes several supporting files:
+This skill includes several supporting files organized by purpose:
 
-- **Templates:**
-  - `template-imperative-recipe.java` - Boilerplate for imperative recipes
-  - `template-declarative-recipe.yml` - YAML recipe template
-  - `template-recipe-test.java` - Test class template
+- **Templates** (`assets/`) - Files used as starting points for recipe development:
 
-- **Examples:**
-  - `example-say-hello-recipe.java` - Complete working recipe
-  - `example-scanning-recipe.java` - Advanced ScanningRecipe pattern
-  - `example-declarative-migration.yml` - Real-world YAML examples
+  - `assets/template-imperative-recipe.java` - Boilerplate for imperative recipes
+  - `assets/template-declarative-recipe.yml` - YAML recipe template
+  - `assets/template-recipe-test.java` - Test class template
 
-- **Checklist:**
-  - `checklist-recipe-development.md` - Comprehensive verification checklist
+  **Load when:** Creating a new recipe or needing a template to start from
+
+- **Examples** (`references/`) - Reference documentation loaded as needed:
+
+  - `references/example-say-hello-recipe.java` - Complete working recipe with test and YAML usage
+  - `references/example-scanning-recipe.java` - Advanced ScanningRecipe pattern for multi-file analysis
+  - `references/example-declarative-migration.yml` - Real-world YAML migration examples
+
+  **Load when:** Needing to see a complete example, asking "show me an example", or understanding advanced patterns
+
+- **Recipe Catalogs** (`references/`) - Curated lists for finding recipes when building declarative YAML recipes:
+  - `references/recipes-top.csv` - 50 commonly used recipes (best starting point)
+  - `references/recipes-java-basic.csv` - 32 basic Java refactoring operations
+  - `references/recipes-spring-boot-common.csv` - 60 Spring Boot migrations and best practices
+  - `references/recipes-framework-migrations-common.csv` - 16 major framework migrations (10 different frameworks)
+  - `references/recipes-testing-common.csv` - 60 most useful testing recipes
+  - `references/recipes-dependencies-common.csv` - 49 dependency operations (Maven+Gradle when possible)
+  - `references/recipes-security-common.csv` - 30 security vulnerability recipes
+  - `references/recipes-xml-yaml-json-common.csv` - 50 configuration file operations
+  - `references/recipes-static-analysis-common.csv` - 50 code analysis recipes
+  - `references/recipes-logging.csv` - 153 logging framework recipes
+  - `references/recipes-file-operations.csv` - 14 file manipulation recipes
+  - Note: `references/recipes-all.csv` exists for maintenance/script purposes but is too large (4,958 recipes) to be used directly
+
+  **Load when:** Looking for existing recipes
+  
+- **Checklist** (`references/`) - Verification guide:
+
+  - `references/checklist-recipe-development.md` - Comprehensive verification checklist covering planning, implementation, testing, and distribution
+
+  **Load when:** Reviewing a recipe for completeness, ensuring best practices, or preparing for distribution
+
+- **Scripts** (`scripts/`) - Utility scripts:
+
+  - `scripts/upload-skill.sh` - Script to upload/update the skill via API
+
+  **Load when:** Managing the skill itself (meta-operation)
 
 ## Quick Reference
 
 **Key Classes:**
+
 - `Recipe` - Base class for all recipes
 - `JavaIsoVisitor<ExecutionContext>` - Most common visitor
 - `JavaTemplate` - For generating code snippets
@@ -339,15 +444,17 @@ This skill includes several supporting files:
 - `ScanningRecipe<T>` - Multi-file analysis
 
 **Key Methods:**
+
 - `getVisitor()` - Returns visitor instance
 - `super.visitX()` - Traverse subtree
 - `.withX()` - Create modified LST copy
 - `ListUtils.map()` - Transform lists without mutation
 - `doAfterVisit()` - Chain additional visitors
 
-**Ask me for help with:**
+**Use this skill for help with:**
+
 - Choosing the right recipe type
-- Structuring your recipe class
+- Structuring recipe classes
 - Writing visitor logic
 - Using JavaTemplate
 - Writing tests
