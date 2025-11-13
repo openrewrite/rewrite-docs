@@ -195,6 +195,7 @@ This recipe is used as part of the following composite recipes:
 * [Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`](/recipes/java/spring/boot2/migratehttpmessageconverterspackagename.md)
 * [Use `org.springframework.boot.web.servlet.error.ErrorController`](/recipes/java/spring/boot2/migrateerrorcontrollerpackagename.md)
 * [Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`](/recipes/java/spring/boot2/migratespringbootservletinitializerpackagename.md)
+* [Use non-deprecated related sorting fields and methods](/recipes/ai/timefold/solver/migration/v8/sortingmigrationrecipe.md)
 * [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/io/quarkus/updates/core/quarkus30/additionalchanges.md)
 * [io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage](/recipes/io/quarkus/updates/core/quarkus319/moveaccesstokenannotationtonewpackage.md)
 * [io.quarkus.updates.core.quarkus32.InjectMock](/recipes/io/quarkus/updates/core/quarkus32/injectmock.md)

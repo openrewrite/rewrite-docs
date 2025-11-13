@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Inline `log4j-api` methods annotated with `@InlineMe`"
+sidebar_label: "Inline `log4j-api-2` methods annotated with `@InlineMe`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Inline `log4j-api` methods annotated with `@InlineMe`
+# Inline `log4j-api-2` methods annotated with `@InlineMe`
 
 **org.apache.logging.log4j.InlineLog4jApiMethods**
 
@@ -13,21 +13,26 @@ _Automatically generated recipes to inline method calls based on `@InlineMe` ann
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.logging.log4j.InlineLog4jApiMethods),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/inline-log4j-api-methods.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Inline method calls](../../../../java/inlinemethodcalls)
+  * methodPattern: `org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)`
+  * replacement: `this(pattern, Arrays.stream(args).toArray(Object[]::new), throwable)`
+  * imports: `[java.util.Arrays]`
+  * classpathFromResources: `[log4j-api-2]`
 * [Inline method calls](../../../../java/inlinemethodcalls)
   * methodPattern: `org.apache.logging.log4j.message.StructuredDataId StructuredDataId(java.lang.String, int, java.lang.String[], java.lang.String[])`
   * replacement: `this(name, String.valueOf(enterpriseNumber), required, optional)`
@@ -39,11 +44,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Inline method calls](../../../../java/inlinemethodcalls)
   * methodPattern: `org.apache.logging.log4j.message.StructuredDataId makeId(java.lang.String, int)`
   * replacement: `this.makeId(defaultId, String.valueOf(anEnterpriseNumber))`
-  * classpathFromResources: `[log4j-api-2]`
-* [Inline method calls](../../../../java/inlinemethodcalls)
-  * methodPattern: `org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)`
-  * replacement: `this(pattern, Arrays.stream(args).toArray(Object[]::new), throwable)`
-  * imports: `[java.util.Arrays]`
   * classpathFromResources: `[log4j-api-2]`
 * [Inline method calls](../../../../java/inlinemethodcalls)
   * methodPattern: `org.apache.logging.log4j.MarkerManager getMarker(java.lang.String, org.apache.logging.log4j.Marker)`
@@ -59,10 +59,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.logging.log4j.InlineLog4jApiMethods
-displayName: Inline `log4j-api` methods annotated with `@InlineMe`
+displayName: Inline `log4j-api-2` methods annotated with `@InlineMe`
 description: |
   Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 recipeList:
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)
+      replacement: this(pattern, Arrays.stream(args).toArray(Object[]::new), throwable)
+      imports: [java.util.Arrays]
+      classpathFromResources: [log4j-api-2]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.apache.logging.log4j.message.StructuredDataId StructuredDataId(java.lang.String, int, java.lang.String[], java.lang.String[])
       replacement: this(name, String.valueOf(enterpriseNumber), required, optional)
@@ -74,11 +79,6 @@ recipeList:
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.apache.logging.log4j.message.StructuredDataId makeId(java.lang.String, int)
       replacement: this.makeId(defaultId, String.valueOf(anEnterpriseNumber))
-      classpathFromResources: [log4j-api-2]
-  - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)
-      replacement: this(pattern, Arrays.stream(args).toArray(Object[]::new), throwable)
-      imports: [java.util.Arrays]
       classpathFromResources: [log4j-api-2]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.apache.logging.log4j.MarkerManager getMarker(java.lang.String, org.apache.logging.log4j.Marker)
@@ -99,7 +99,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -120,7 +120,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
 }
 ```
 
@@ -141,7 +141,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
     }
     rewrite {
         activeRecipe("org.apache.logging.log4j.InlineLog4jApiMethods")
@@ -185,8 +185,8 @@ gradle --init-script init.gradle rewriteRun
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
+            <artifactId>rewrite-logging-frameworks</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -202,7 +202,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.apache.logging.log4j.InlineLog4jApiMethods -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:RELEASE -Drewrite.activeRecipes=org.apache.logging.log4j.InlineLog4jApiMethods -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -215,7 +215,7 @@ mod run . --recipe InlineLog4jApiMethods
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>

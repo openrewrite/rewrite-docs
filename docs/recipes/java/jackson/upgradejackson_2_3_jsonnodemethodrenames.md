@@ -1,26 +1,29 @@
 ---
-sidebar_label: "Add AWS SDK for Java v2 S3 Event Notification dependency if needed"
+sidebar_label: "Rename Jackson 2.x methods to 3.x equivalents for JsonNode"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add AWS SDK for Java v2 S3 Event Notification dependency if needed
+# Rename Jackson 2.x methods to 3.x equivalents for JsonNode
 
-**software.amazon.awssdk.v2migration.AddS3EventNotificationDependency**
+**org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_JsonNodeMethodRenames**
 
-_This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used_
+_Rename JsonNode methods that were renamed in 3.x (e.g., `elements()` to `values()`, `fields()` to `entries()`)._
 
 ### Tags
 
-* [sdk](/reference/recipes-by-tag#sdk)
-* [aws](/reference/recipes-by-tag#aws)
+* [jackson-3](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddS3EventNotificationDependency),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-2-3.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -29,11 +32,33 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
-  * groupId: `software.amazon.awssdk`
-  * artifactId: `s3-event-notifications`
-  * version: `2.38.2`
-  * onlyIfUsing: `com.amazonaws.services.s3.event.S3EventNotification`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode asText(..)`
+  * newMethodName: `asString`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode elements()`
+  * newMethodName: `values`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode fields()`
+  * newMethodName: `properties`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode fieldNames()`
+  * newMethodName: `propertyNames`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode findValuesAsText(..)`
+  * newMethodName: `findValuesAsString`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode isContainerNode()`
+  * newMethodName: `isContainer`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode isTextual()`
+  * newMethodName: `isString`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode textValue()`
+  * newMethodName: `asString`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.JsonNode with(..)`
+  * newMethodName: `withObject`
 
 </TabItem>
 
@@ -42,19 +67,40 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: software.amazon.awssdk.v2migration.AddS3EventNotificationDependency
-displayName: Add AWS SDK for Java v2 S3 Event Notification dependency if needed
+name: org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames
+displayName: Rename Jackson 2.x methods to 3.x equivalents for JsonNode
 description: |
-  This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used
+  Rename JsonNode methods that were renamed in 3.x (e.g., `elements()` to `values()`, `fields()` to `entries()`).
 tags:
-  - sdk
-  - aws
+  - jackson-3
 recipeList:
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: software.amazon.awssdk
-      artifactId: s3-event-notifications
-      version: 2.38.2
-      onlyIfUsing: com.amazonaws.services.s3.event.S3EventNotification
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode asText(..)
+      newMethodName: asString
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode elements()
+      newMethodName: values
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode fields()
+      newMethodName: properties
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode fieldNames()
+      newMethodName: propertyNames
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode findValuesAsText(..)
+      newMethodName: findValuesAsString
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode isContainerNode()
+      newMethodName: isContainer
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode isTextual()
+      newMethodName: isString
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode textValue()
+      newMethodName: asString
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.JsonNode with(..)
+      newMethodName: withObject
 
 ```
 </TabItem>
@@ -64,12 +110,12 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
+* [Rename Jackson 2.x methods to 3.x equivalents](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -81,7 +127,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("software.amazon.awssdk.v2migration.AddS3EventNotificationDependency")
+    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames")
     setExportDatatables(true)
 }
 
@@ -90,7 +136,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
 }
 ```
 
@@ -111,10 +157,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
     }
     rewrite {
-        activeRecipe("software.amazon.awssdk.v2migration.AddS3EventNotificationDependency")
+        activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -149,14 +195,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>software.amazon.awssdk.v2migration.AddS3EventNotificationDependency</recipe>
+            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
+            <artifactId>rewrite-jackson</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -172,7 +218,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=software.amazon.awssdk.v2migration.AddS3EventNotificationDependency -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -180,12 +226,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddS3EventNotificationDependency
+mod run . --recipe UpgradeJackson_2_3_JsonNodeMethodRenames
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}
 ```
 </TabItem>
 </Tabs>
@@ -194,7 +240,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.AddS3EventNotificationDependency" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

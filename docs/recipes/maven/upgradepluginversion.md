@@ -61,6 +61,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Migrate to WebLogic 14.1.1](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Update Plugins for Jakarta EE 10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
 * [Update the WebLogic version to 14.1.2](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
 * [Update the WebLogic version to 15.1.1](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
 * [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)

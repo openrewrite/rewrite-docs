@@ -35,6 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Add Micronaut build plugins to 4.x](/recipes/java/micronaut/updatebuildplugins.md)
+* [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/io/quarkus/updates/core/quarkus30/additionalchanges.md)
 
 ## Examples

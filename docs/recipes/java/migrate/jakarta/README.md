@@ -77,6 +77,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Update Jakarta EE XML Web Services Dependencies for EE 10.](./updatejakartaxmlwsee10.md)
 * [Update Jetty EE9 to Jetty EE10](./jettyupgradeee10.md)
 * [Update Jetty9 to Jetty12](./jettyupgradeee9.md)
+* [Update Plugins for Jakarta EE 10](./migratepluginsforjakarta10.md)
 * [Update RestLet to 2.6.0](./updaterestlet2_6.md)
 * [Upgrade Faces open source libraries](./upgradefaces3opensourcelibraries.md)
 * [Upgrade Faces open source libraries](./upgradefaces4opensourcelibraries.md)

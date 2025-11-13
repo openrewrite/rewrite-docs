@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Rename Jackson 2.x methods to 3.x equivalents"
+sidebar_label: "Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Rename Jackson 2.x methods to 3.x equivalents
+# Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator
 
-**org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_MethodRenames**
+**org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_JsonGeneratorMethodRenames**
 
-_Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`)._
+_Rename JsonGenerator methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`)._
 
 ### Tags
 
@@ -32,9 +32,54 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](../../java/jackson/upgradejackson_2_3_jsongeneratormethodrenames)
-* [Rename Jackson 2.x methods to 3.x equivalents for JsonParser](../../java/jackson/upgradejackson_2_3_jsonparsermethodrenames)
-* [Rename Jackson 2.x methods to 3.x equivalents for JsonNode](../../java/jackson/upgradejackson_2_3_jsonnodemethodrenames)
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator getCodec()`
+  * newMethodName: `objectWriteContext`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator getCurrentValue()`
+  * newMethodName: `currentValue`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator setCurrentValue(..)`
+  * newMethodName: `assignCurrentValue`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeObject(..)`
+  * newMethodName: `writePOJO`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeArrayFieldStart(..)`
+  * newMethodName: `writeArrayPropertyStart`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeBinaryField(..)`
+  * newMethodName: `writeBinaryProperty`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeBooleanField(..)`
+  * newMethodName: `writeBooleanProperty`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeFieldId(..)`
+  * newMethodName: `writePropertyId`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeFieldName(..)`
+  * newMethodName: `writeName`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeNullField(..)`
+  * newMethodName: `writeNullProperty`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeNumberField(..)`
+  * newMethodName: `writeNumberProperty`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeObjectField(..)`
+  * newMethodName: `writeObjectProperty`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeObjectFieldStart(..)`
+  * newMethodName: `writeObjectPropertyStart`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeOmittedField(..)`
+  * newMethodName: `writeOmittedProperty`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writePOJOField(..)`
+  * newMethodName: `writePOJOProperty`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeStringField(..)`
+  * newMethodName: `writeStringProperty`
 
 </TabItem>
 
@@ -43,16 +88,61 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames
-displayName: Rename Jackson 2.x methods to 3.x equivalents
+name: org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames
+displayName: Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator
 description: |
-  Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
+  Rename JsonGenerator methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
 tags:
   - jackson-3
 recipeList:
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator getCodec()
+      newMethodName: objectWriteContext
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator getCurrentValue()
+      newMethodName: currentValue
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator setCurrentValue(..)
+      newMethodName: assignCurrentValue
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeObject(..)
+      newMethodName: writePOJO
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeArrayFieldStart(..)
+      newMethodName: writeArrayPropertyStart
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeBinaryField(..)
+      newMethodName: writeBinaryProperty
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeBooleanField(..)
+      newMethodName: writeBooleanProperty
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeFieldId(..)
+      newMethodName: writePropertyId
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeFieldName(..)
+      newMethodName: writeName
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeNullField(..)
+      newMethodName: writeNullProperty
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeNumberField(..)
+      newMethodName: writeNumberProperty
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeObjectField(..)
+      newMethodName: writeObjectProperty
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeObjectFieldStart(..)
+      newMethodName: writeObjectPropertyStart
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeOmittedField(..)
+      newMethodName: writeOmittedProperty
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writePOJOField(..)
+      newMethodName: writePOJOProperty
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeStringField(..)
+      newMethodName: writeStringProperty
 
 ```
 </TabItem>
@@ -62,7 +152,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
+* [Rename Jackson 2.x methods to 3.x equivalents](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
 
 
 ## Usage
@@ -79,7 +169,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames")
+    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames")
     setExportDatatables(true)
 }
 
@@ -112,7 +202,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames")
+        activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -147,7 +237,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames</recipe>
+            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -170,7 +260,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -178,7 +268,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeJackson_2_3_MethodRenames
+mod run . --recipe UpgradeJackson_2_3_JsonGeneratorMethodRenames
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -192,7 +282,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

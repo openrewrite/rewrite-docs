@@ -48,6 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewtreemap)
 * [Prefer `Predicate.and(Predicate)`](../../../java/migrate/guava/noguavapredicatesandor)
 * [Prefer `Predicate.isEqual(Object)`](../../../java/migrate/guava/noguavapredicatesequalto)
+* [Prefer `A.class::isInstance`](../../../java/migrate/guava/noguavapredicatesinstanceof)
 * [Prefer `Arrays.asList(..)` over Guava primitives](../../../java/migrate/guava/noguavaprimitiveaslist)
 * [Refaster style Guava to Java migration recipes](../../../java/migrate/guava/noguavarefasterrecipes)
 * [Prefer `new HashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewhashmap)
@@ -112,6 +113,7 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaMapsNewTreeMap
   - org.openrewrite.java.migrate.guava.NoGuavaPredicatesAndOr
   - org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf
   - org.openrewrite.java.migrate.guava.NoGuavaPrimitiveAsList
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes
   - org.openrewrite.java.migrate.guava.NoGuavaMapsNewHashMap

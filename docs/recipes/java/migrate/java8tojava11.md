@@ -42,6 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](../../java/migrate/castarraysaslisttolist)
 * [Add explicit JAXB API dependencies and runtime](../../java/migrate/javax/addjaxbdependencieswithruntime)
 * [Add explicit JAX-WS dependencies](../../java/migrate/javax/addjaxwsdependencies)
+* [Migrate JAXB-WS Plugin](../../java/migrate/javax/migratejaxbwsplugin)
 * [Add explicit Inject dependencies](../../java/migrate/javax/addinjectdependencies)
 * [Add explicit Common Annotations dependencies](../../java/migrate/javax/addcommonannotationsdependencies)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](../../staticanalysis/bigdecimalroundingconstantstoenums)
@@ -114,6 +115,7 @@ recipeList:
   - org.openrewrite.java.migrate.CastArraysAsListToList
   - org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithRuntime
   - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
+  - org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin
   - org.openrewrite.java.migrate.javax.AddInjectDependencies
   - org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies
   - org.openrewrite.staticanalysis.BigDecimalRoundingConstantsToEnums

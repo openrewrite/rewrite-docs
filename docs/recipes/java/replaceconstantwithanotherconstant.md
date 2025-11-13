@@ -47,6 +47,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](/recipes/java/migrate/jakarta/removeduicomponentconstant.md)
 * [Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant](/recipes/java/migrate/removedrmiconnectorservercredentialtypesconstant.md)
 * [The header name for the List metadata has changed](/recipes/org/apache/camel/upgrade/camel43/kafkametadata.md)
+* [Use non-deprecated related sorting fields and methods](/recipes/ai/timefold/solver/migration/v8/sortingmigrationrecipe.md)
 * [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7](/recipes/io/quarkus/updates/core/quarkus324/migratefromhibernateormvariousremovedin7.md)
 
 

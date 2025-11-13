@@ -63,9 +63,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jaxb2-maven-plugin`
   * newVersion: `3.x`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
-  * groupId: `org.codehaus.mojo`
+  * groupId: `org.jvnet.jaxb`
   * artifactId: `jaxb-maven-plugin`
-  * newVersion: `4.x`
+  * newVersion: `3.x`
 * [Migrate XJC Bindings to Jakata XML](../../../java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding)
 
 </TabItem>
@@ -113,9 +113,9 @@ recipeList:
       artifactId: jaxb2-maven-plugin
       newVersion: 3.x
   - org.openrewrite.maven.UpgradePluginVersion:
-      groupId: org.codehaus.mojo
+      groupId: org.jvnet.jaxb
       artifactId: jaxb-maven-plugin
-      newVersion: 4.x
+      newVersion: 3.x
   - org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding
 
 ```

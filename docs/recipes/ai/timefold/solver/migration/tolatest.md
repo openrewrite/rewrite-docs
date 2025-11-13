@@ -57,6 +57,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [ConstraintStreams: use asConstraint() methods to define constraints](../../../../ai/timefold/solver/migration/v8/asconstraintrecipe)
 * [Constraint Streams: don't use package name in the asConstraint() method](../../../../ai/timefold/solver/migration/v8/removeconstraintpackagerecipe)
 * [Recommended Fit API becomes Assignment Recommendation API](../../../../ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe)
+* [Use non-deprecated related sorting fields and methods](../../../../ai/timefold/solver/migration/v8/sortingmigrationrecipe)
 * [Remove unused imports](../../../../java/removeunusedimports)
 * [Change the Timefold version](../../../../ai/timefold/solver/migration/changeversion)
 
@@ -101,6 +102,7 @@ recipeList:
   - ai.timefold.solver.migration.v8.AsConstraintRecipe
   - ai.timefold.solver.migration.v8.RemoveConstraintPackageRecipe
   - ai.timefold.solver.migration.v8.SolutionManagerRecommendAssignmentRecipe
+  - ai.timefold.solver.migration.v8.SortingMigrationRecipe
   - org.openrewrite.java.RemoveUnusedImports
   - ai.timefold.solver.migration.ChangeVersion
 

@@ -35,6 +35,7 @@ This recipe is used as part of the following composite recipes:
 * [Add `prefer-application-packages` for JPA in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
 * [Add `prefer-application-packages` for SLF4J in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [Update Default Servlet Handler for Spring Framework if empty](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
 
 

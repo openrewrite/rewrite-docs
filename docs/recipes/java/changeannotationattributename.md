@@ -41,6 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
+* [Use non-deprecated related sorting fields and methods](/recipes/ai/timefold/solver/migration/v8/sortingmigrationrecipe.md)
 
 
 ## Usage

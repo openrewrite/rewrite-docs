@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](../../../java/migrate/jakarta/migrationtojakarta10apis)
+* [Update Plugins for Jakarta EE 10](../../../java/migrate/jakarta/migratepluginsforjakarta10)
 * [Update Jetty EE9 to Jetty EE10](../../../java/migrate/jakarta/jettyupgradeee10)
 * [Upgrade to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces3xmigrationtofaces4x)
 * [Use `isParametersProvided()`](../../../java/migrate/jakarta/removedisparmetersprovidedmethod)
@@ -77,6 +78,7 @@ tags:
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
   - org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis
+  - org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10
   - org.openrewrite.java.migrate.jakarta.JettyUpgradeEE10
   - org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x
   - org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod

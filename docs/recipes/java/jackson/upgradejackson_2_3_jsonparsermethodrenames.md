@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Rename Jackson 2.x methods to 3.x equivalents"
+sidebar_label: "Rename Jackson 2.x methods to 3.x equivalents for JsonParser"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Rename Jackson 2.x methods to 3.x equivalents
+# Rename Jackson 2.x methods to 3.x equivalents for JsonParser
 
-**org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_MethodRenames**
+**org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_JsonParserMethodRenames**
 
-_Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`)._
+_Rename JsonParser methods that were renamed in 3.x (e.g., `getTextCharacters()` to `getStringCharacters()`, `getCurrentValue()` to `currentValue()`)._
 
 ### Tags
 
@@ -32,9 +32,39 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](../../java/jackson/upgradejackson_2_3_jsongeneratormethodrenames)
-* [Rename Jackson 2.x methods to 3.x equivalents for JsonParser](../../java/jackson/upgradejackson_2_3_jsonparsermethodrenames)
-* [Rename Jackson 2.x methods to 3.x equivalents for JsonNode](../../java/jackson/upgradejackson_2_3_jsonnodemethodrenames)
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getCodec()`
+  * newMethodName: `objectReadContext`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getCurrentLocation()`
+  * newMethodName: `currentLocation`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getTokenLocation()`
+  * newMethodName: `currentTokenLocation`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getCurrentValue()`
+  * newMethodName: `currentValue`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser setCurrentValue(..)`
+  * newMethodName: `assignCurrentValue`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getText(..)`
+  * newMethodName: `getString`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getTextCharacters()`
+  * newMethodName: `getStringCharacters`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getTextLength()`
+  * newMethodName: `getStringLength`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getTextOffset()`
+  * newMethodName: `getStringOffset`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser hasTextCharacters()`
+  * newMethodName: `hasStringCharacters`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser nextTextValue()`
+  * newMethodName: `nextStringValue`
 
 </TabItem>
 
@@ -43,16 +73,46 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames
-displayName: Rename Jackson 2.x methods to 3.x equivalents
+name: org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames
+displayName: Rename Jackson 2.x methods to 3.x equivalents for JsonParser
 description: |
-  Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
+  Rename JsonParser methods that were renamed in 3.x (e.g., `getTextCharacters()` to `getStringCharacters()`, `getCurrentValue()` to `currentValue()`).
 tags:
   - jackson-3
 recipeList:
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getCodec()
+      newMethodName: objectReadContext
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getCurrentLocation()
+      newMethodName: currentLocation
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getTokenLocation()
+      newMethodName: currentTokenLocation
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getCurrentValue()
+      newMethodName: currentValue
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser setCurrentValue(..)
+      newMethodName: assignCurrentValue
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getText(..)
+      newMethodName: getString
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getTextCharacters()
+      newMethodName: getStringCharacters
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getTextLength()
+      newMethodName: getStringLength
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getTextOffset()
+      newMethodName: getStringOffset
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser hasTextCharacters()
+      newMethodName: hasStringCharacters
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser nextTextValue()
+      newMethodName: nextStringValue
 
 ```
 </TabItem>
@@ -62,7 +122,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
+* [Rename Jackson 2.x methods to 3.x equivalents](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
 
 
 ## Usage
@@ -79,7 +139,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames")
+    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames")
     setExportDatatables(true)
 }
 
@@ -112,7 +172,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames")
+        activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -147,7 +207,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames</recipe>
+            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -170,7 +230,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -178,7 +238,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeJackson_2_3_MethodRenames
+mod run . --recipe UpgradeJackson_2_3_JsonParserMethodRenames
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -192,7 +252,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

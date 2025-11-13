@@ -104,7 +104,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `log4j-slf4j-impl`
   * newVersion: `2.x`
 * [Upgrade Log4j 2.x dependency version](../../../java/logging/log4j/upgradelog4j2dependencyversion)
-* [Inline `log4j-api` methods annotated with `@InlineMe`](../../../org/apache/logging/log4j/inlinelog4japimethods)
+* [Inline `log4j-api-2` methods annotated with `@InlineMe`](../../../org/apache/logging/log4j/inlinelog4japimethods)
 
 </TabItem>
 

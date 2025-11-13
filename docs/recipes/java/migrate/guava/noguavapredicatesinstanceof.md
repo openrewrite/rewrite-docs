@@ -1,84 +1,104 @@
 ---
-sidebar_label: "Inline method calls"
+sidebar_label: "Prefer `A.class::isInstance`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Inline method calls
+# Prefer `A.class::isInstance`
 
-**org.openrewrite.java.InlineMethodCalls**
+**org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf**
 
-_Inline method calls using a template replacement pattern. Supports both method invocations and constructor calls, with optional imports._
+_Prefer `A.class::isInstance` over `Predicates.instanceOf(A.class)`._
+
+### Tags
+
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/InlineMethodCalls.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaPredicatesInstanceOf.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
-
-## Options
-
-| Type | Name | Description | Example |
-| -- | -- | -- | -- |
-| `String` | methodPattern | A method pattern that is used to find matching method invocations. | `com.google.common.base.Preconditions checkNotNull(..)` |
-| `String` | replacement | The replacement template for the method invocation. Parameters can be referenced using their names from the original method. | `java.util.Objects.requireNonNull(#{p0})` |
-| `Set` | imports | *Optional*. List of regular imports to add when the replacement is made. | `["java.util.Objects"]` |
-| `Set` | staticImports | *Optional*. List of static imports to add when the replacement is made. | `["java.util.Collections.emptyList"]` |
-| `Set` | classpathFromResources | *Optional*. List of paths to JAR files on the classpath for parsing the replacement template. | `["guava-33.4.8-jre"]` |
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Inline `guava` methods annotated with `@InlineMe`](/recipes/com/google/guava/inlineguavamethods.md)
-* [Inline `log4j-api-2` methods annotated with `@InlineMe`](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
-* [Inline methods annotated with `@InlineMe`](/recipes/recipes/rewrite/inlinemethods.md)
+* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.InlineMethodCallsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.InlineMethodCallsExample
-displayName: Inline method calls example
-recipeList:
-  - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.base.Preconditions checkNotNull(..)
-      replacement: java.util.Objects.requireNonNull(#{p0})
-      imports: ["java.util.Objects"]
-      staticImports: ["java.util.Collections.emptyList"]
-      classpathFromResources: ["guava-33.4.8-jre"]
-```
-
-Now that `com.yourorg.InlineMethodCallsExample` has been defined, activate it in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
 1. Add the following to your `build.gradle` file:
+
 ```groovy title="build.gradle"
 plugins {
     id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.InlineMethodCallsExample")
+    activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf")
     setExportDatatables(true)
 }
 
 repositories {
     mavenCentral()
 }
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+}
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-<TabItem value="maven" label="Maven">
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
 
 1. Add the following to your `pom.xml` file:
 
@@ -93,27 +113,43 @@ repositories {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.InlineMethodCallsExample</recipe>
+            <recipe>org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf</recipe>
           </activeRecipes>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
 </project>
 ```
+
 2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf -Drewrite.exportDatatables=true
+```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe InlineMethodCalls --recipe-option "methodPattern=com.google.common.base.Preconditions checkNotNull(..)" --recipe-option "replacement=java.util.Objects.requireNonNull(#{p0})" --recipe-option "imports=["java.util.Objects"]" --recipe-option "staticImports=["java.util.Collections.emptyList"]" --recipe-option "classpathFromResources=["guava-33.4.8-jre"]"
+mod run . --recipe NoGuavaPredicatesInstanceOf
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -122,7 +158,7 @@ mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENRE
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.InlineMethodCalls" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

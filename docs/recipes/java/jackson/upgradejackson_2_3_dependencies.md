@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Remove Jackson 2.x modules included in jackson-databind in 3.x.](../../java/jackson/upgradejackson_2_3_removemodules)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.fasterxml.jackson.core`
   * artifactId: `jackson-annotations`
@@ -130,6 +131,7 @@ description: |
 tags:
   - jackson-3
 recipeList:
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson.core
       artifactId: jackson-annotations

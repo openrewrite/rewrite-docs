@@ -120,6 +120,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `net.bytebuddy`
   * artifactId: `byte-buddy*`
   * newVersion: `1.11.13`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.mockito.Mockito anyObject()`
+  * newMethodName: `any`
 
 </TabItem>
 
@@ -223,6 +226,9 @@ recipeList:
       groupId: net.bytebuddy
       artifactId: byte-buddy*
       newVersion: 1.11.13
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.mockito.Mockito anyObject()
+      newMethodName: any
 
 ```
 </TabItem>

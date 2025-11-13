@@ -1,39 +1,41 @@
 ---
-sidebar_label: "Add AWS SDK for Java v2 S3 Event Notification dependency if needed"
+sidebar_label: "Update Plugins for Jakarta EE 10"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add AWS SDK for Java v2 S3 Event Notification dependency if needed
+# Update Plugins for Jakarta EE 10
 
-**software.amazon.awssdk.v2migration.AddS3EventNotificationDependency**
+**org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10**
 
-_This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used_
-
-### Tags
-
-* [sdk](/reference/recipes-by-tag#sdk)
-* [aws](/reference/recipes-by-tag#aws)
+_Update plugin to be compatible with Jakarta EE 10._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddS3EventNotificationDependency),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
-  * groupId: `software.amazon.awssdk`
-  * artifactId: `s3-event-notifications`
-  * version: `2.38.2`
-  * onlyIfUsing: `com.amazonaws.services.s3.event.S3EventNotification`
+* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
+  * groupId: `org.codehaus.mojo`
+  * artifactId: `jaxb2-maven-plugin`
+  * newVersion: `4.x`
+* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
+  * groupId: `org.jvnet.jaxb`
+  * artifactId: `jaxb-maven-plugin`
+  * newVersion: `4.x`
 
 </TabItem>
 
@@ -42,19 +44,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: software.amazon.awssdk.v2migration.AddS3EventNotificationDependency
-displayName: Add AWS SDK for Java v2 S3 Event Notification dependency if needed
+name: org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10
+displayName: Update Plugins for Jakarta EE 10
 description: |
-  This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used
-tags:
-  - sdk
-  - aws
+  Update plugin to be compatible with Jakarta EE 10.
 recipeList:
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: software.amazon.awssdk
-      artifactId: s3-event-notifications
-      version: 2.38.2
-      onlyIfUsing: com.amazonaws.services.s3.event.S3EventNotification
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.codehaus.mojo
+      artifactId: jaxb2-maven-plugin
+      newVersion: 4.x
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.jvnet.jaxb
+      artifactId: jaxb-maven-plugin
+      newVersion: 4.x
 
 ```
 </TabItem>
@@ -64,12 +66,12 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
+* [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -81,7 +83,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("software.amazon.awssdk.v2migration.AddS3EventNotificationDependency")
+    activeRecipe("org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10")
     setExportDatatables(true)
 }
 
@@ -90,7 +92,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
 }
 ```
 
@@ -111,10 +113,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
-        activeRecipe("software.amazon.awssdk.v2migration.AddS3EventNotificationDependency")
+        activeRecipe("org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -149,14 +151,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>software.amazon.awssdk.v2migration.AddS3EventNotificationDependency</recipe>
+            <recipe>org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -172,7 +174,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=software.amazon.awssdk.v2migration.AddS3EventNotificationDependency -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -180,12 +182,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddS3EventNotificationDependency
+mod run . --recipe MigratePluginsForJakarta10
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -194,7 +196,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERS
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.AddS3EventNotificationDependency" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -202,6 +204,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add image argument to container constructor](./explicitcontainerimage.md)
+* [Adopt `@Container` and add `@Testcontainers`](./addtestcontainersannotations.md)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](./gethostmigration.md)
 * [Testcontainers best practices](./testcontainersbestpractices.md)
 

@@ -10,6 +10,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add explicit JAXB API dependencies](./addjaxbapidependencies.md)
 * [Add explicit JAXB API dependencies and remove runtimes](./addjaxbdependencieswithoutruntime.md)
 * [Add explicit JAXB API dependencies and runtime](./addjaxbdependencieswithruntime.md)
+* [Migrate JAXB-WS Plugin](./migratejaxbwsplugin.md)
 * [Migrate from OpenJPA to EclipseLink JPA](./openjpatoeclipselink.md)
 * [Use modernized `javax.lang.model.util` APIs](./javaxlangmodelutil.md)
 * [Use modernized `javax.xml.stream` APIs](./javaxxmlstreamapis.md)
