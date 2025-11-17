@@ -13,7 +13,7 @@ _Add a parent pom to a Maven pom.xml. Does nothing if a parent pom is already pr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/AddParentPom.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddParentPom.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The group ID of the maven parent pom to be adopted. | `org.springframework.boot` |
 | `String` | artifactId | The artifact ID of the maven parent pom to be adopted. | `spring-boot-starter-parent` |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. | `29.X` |
@@ -33,7 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |groupId|`org.springframework.boot`|
 |artifactId|`spring-boot-starter-parent`|
 |version|`1.5.12.RELEASE`|

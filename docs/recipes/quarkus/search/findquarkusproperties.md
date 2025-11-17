@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The property key to look for. | `quarkus.http.port` |
 | `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be searched on all profiles. | `dev` |
 | `Boolean` | searchAllProfiles | *Optional*. If set, the property will be searched on all available profiles. Defaults to `true` if the profile is not defined. | `false` |

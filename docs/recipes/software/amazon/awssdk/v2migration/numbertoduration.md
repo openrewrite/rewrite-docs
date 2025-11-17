@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `com.amazonaws.ClientConfiguration setRequestTimeout(int)` |
 | `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value to convert. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 

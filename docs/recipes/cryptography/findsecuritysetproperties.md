@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | properties | *Optional*. A list of the properties we want to prevent being set with `Security.setProperty(..)`. | `crypto.policy` |
 
 
@@ -35,7 +35,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |properties|`List.of("crypto.policy")`|
 
 

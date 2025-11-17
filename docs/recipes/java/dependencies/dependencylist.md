@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Scope` | scope | *Optional*. The scope of the dependencies to include in the report.Defaults to "Compile" Valid options: `Compile`, `Runtime`, `TestRuntime` | `Compile` |
 | `boolean` | includeTransitive | *Optional*. Whether or not to include transitive dependencies in the report. Defaults to including only direct dependencies.Defaults to false. | `true` |
 | `boolean` | validateResolvable | *Optional*. When enabled the recipe will attempt to download every dependency it encounters, reporting on any failures. This can be useful for identifying dependencies that have become unavailable since an LST was produced.Defaults to false. Valid options: `true`, `false` | `true` |

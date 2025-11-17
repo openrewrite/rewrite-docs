@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | dtoType | The fully qualified name of the DTO. | `animals.Dog` |
 | `String` | dtoDataElement | Replace the DTO as a method parameter when only this data element is used. | `name` |
 
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |dtoType|`animals.Dog`|
 |dtoDataElement|`name`|
 

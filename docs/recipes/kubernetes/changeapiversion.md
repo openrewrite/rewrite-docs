@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldApiVersion | The old Kubernetes API version to match. | `flowcontrol.apiserver.k8s.io/v1beta3` |
 | `String` | newApiVersion | The new Kubernetes API version to change to. | `flowcontrol.apiserver.k8s.io/v1` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
@@ -43,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldApiVersion|`flowcontrol.apiserver.k8s.io/v1beta3`|
 |newApiVersion|`flowcontrol.apiserver.k8s.io/v1`|
 |fileMatcher|`null`|

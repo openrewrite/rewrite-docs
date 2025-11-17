@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Boolean` | convertToList | *Optional*. Also replace `Stream.collect(Collectors.toList())` with `Stream.toList()`. *BEWARE*: Attempts to modify the returned list, result in an `UnsupportedOperationException`! |  |
 
 
@@ -41,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |convertToList|`false`|
 
 

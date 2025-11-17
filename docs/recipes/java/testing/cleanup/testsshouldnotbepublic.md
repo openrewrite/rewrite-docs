@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Boolean` | removeProtectedModifiers | *Optional*. Also remove protected modifiers from test methods | `true` |
 
 
@@ -41,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |removeProtectedModifiers|`false`|
 
 

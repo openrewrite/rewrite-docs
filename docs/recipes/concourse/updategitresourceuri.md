@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldURIPattern | *Optional*. The old URI value to replace. This can be a regex pattern. If left empty, replace all occurrences. | `https://github.com/openrewrite/rewrite` |
 | `String` | newURI | New URI value to replace the old URI value with. | `git@gitlab.com:openrewrite/rewrite.git` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pipeline*.yml` |
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldURIPattern|`https://github.com/openrewrite/rewrite0`|
 |newURI|`git@github.com:openrewrite/rewrite1.git`|
 |fileMatcher|`null`|

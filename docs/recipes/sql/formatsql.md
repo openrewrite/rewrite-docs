@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | sqlDialect | *Optional*. Check out https://github.com/vertical-blank/sql-formatter#dialect for supported dialects. Valid options: `sql`, `mariadb`, `mysql`, `postgresql`, `db2`, `plsql`, `n1ql`, `redshift`, `spark`, `tsql` | `postgresql` |
 | `String` | indent | *Optional*. Defaults to two spaces. | `    ` |
 | `Integer` | maxColumnLength | *Optional*. Defaults to 50. | `100` |

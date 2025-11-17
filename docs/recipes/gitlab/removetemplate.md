@@ -22,14 +22,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldTemplate | The name of the template to match. | `Terraform/Base.gitlab-ci.yml` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldTemplate|`Terraform/Base.gitlab-ci.yml`|
 
 

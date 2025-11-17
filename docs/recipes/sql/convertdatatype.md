@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldDataType | The data type to find and replace, case insensitive. | `VARCHAR2` |
 | `String` | newDataType | The new data type to use as replacement. | `VARCHAR` |
 

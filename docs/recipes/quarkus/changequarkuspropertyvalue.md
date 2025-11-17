@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The name of the property key whose value is to be changed. Supports regex. | `quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy` |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. | `read-sync` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `read-sync` |

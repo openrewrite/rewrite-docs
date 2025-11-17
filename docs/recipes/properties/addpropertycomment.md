@@ -13,7 +13,7 @@ _Add a new comment before a property key if not already present, optionally comm
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/properties/AddPropertyComment.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddPropertyComment.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The name of the property to add comment. | `management.metrics.binders` |
 | `String` | comment | The comment to be added. | `comment` |
 | `Boolean` | commentOutProperty | *Optional*. If true, property will be commented out. | `true` |
@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`management.metrics.enable.process.files`|
 |comment|`myComment`|
 |commentOutProperty|`false`|

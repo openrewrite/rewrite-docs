@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | featureName | The fully qualified feature flag name that has a new default in Jackson 3. Format: `ClassName.FEATURE_NAME` (e.g., `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY`). | `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY` |
 | `Boolean` | newDefaultValue | The new default boolean value for this feature flag in Jackson 3. | `true` |
 

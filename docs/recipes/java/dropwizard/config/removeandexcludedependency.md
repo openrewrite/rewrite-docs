@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate to remove 'org.mockito' | `org.mockito` |
 | `String` | artifactId | The second part of a dependency coordinate to remove 'mockito-core' | `mockito-core` |
 

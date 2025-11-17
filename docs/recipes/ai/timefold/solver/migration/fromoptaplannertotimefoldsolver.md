@@ -102,7 +102,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * attributeName: `name`
   * newValue: `ai.timefold.solver`
   * oldValue: `org.optaplanner`
-* [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](../../../../ai/timefold/solver/migration/fork/timefoldchangedependencies)
 * [Rename Maven property key](../../../../maven/renamepropertykey)
   * oldKey: `version.org.optaplanner`
   * newKey: `version.ai.timefold.solver`
@@ -214,7 +213,6 @@ recipeList:
       attributeName: name
       newValue: ai.timefold.solver
       oldValue: org.optaplanner
-  - ai.timefold.solver.migration.fork.TimefoldChangeDependencies
   - org.openrewrite.maven.RenamePropertyKey:
       oldKey: version.org.optaplanner
       newKey: version.ai.timefold.solver

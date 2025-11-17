@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | getAWTIsWindowsTranslucencyPattern | *Optional*. The method pattern to match and replace. | `com.sun.awt.AWTUtilities isTranslucencySupported(com.sun.awt.AWTUtilities.Translucency)` |
 | `String` | isWindowOpaquePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities isWindowOpaque(java.awt.Window)` |
 | `String` | isTranslucencyCapablePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities isTranslucencyCapable(java.awt.GraphicsConfiguration)` |
@@ -42,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |getAWTIsWindowsTranslucencyPattern|`com.test.AWTUtilitiesTest isTranslucencySupported1(com.test.AWTUtilitiesTest.Translucency)`|
 |isWindowOpaquePattern|`com.test.AWTUtilitiesTest isWindowOpaque(java.awt.Window)`|
 |isTranslucencyCapablePattern|`com.test.AWTUtilitiesTest isTranslucencyCapable(java.awt.GraphicsConfiguration)`|

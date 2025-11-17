@@ -13,7 +13,7 @@ _Create a new TOML file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/toml/CreateTomlFile.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/CreateTomlFile.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | relativeFileName | File path of the new file. | `pyproject.toml` |
 | `String` | fileContents | *Optional*. Multiline text content for the file. | <pre>[tool.poetry]<br />name = "my-project"<br />version = "0.1.0"</pre> |
 | `String` | fileContentsUrl | *Optional*. URL to fetch the TOML file contents from a remote source. | `https://raw.githubusercontent.com/example/repo/main/pyproject.toml` |

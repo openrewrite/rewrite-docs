@@ -13,7 +13,7 @@ _Change the parent pom of a Maven pom.xml by matching the existing parent via gr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/ChangeParentPom.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldGroupId | The group ID of the Maven parent pom to be changed away from. | `org.springframework.boot` |
 | `String` | newGroupId | *Optional*. The group ID of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldGroupId`. | `org.springframework.boot` |
 | `String` | oldArtifactId | The artifact ID of the maven parent pom to be changed away from. | `spring-boot-starter-parent` |
@@ -50,7 +50,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldGroupId|`org.springframework.boot`|
 |newGroupId|`com.fasterxml.jackson`|
 |oldArtifactId|`spring-boot-starter-parent`|
@@ -127,7 +127,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldGroupId|`org.springframework.cloud`|
 |newGroupId|`null`|
 |oldArtifactId|`spring-cloud-config-dependencies`|

@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `String` | defaultValue | The default value to use in feature flag invocations. | `true` |
 
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |featureKey|`flag-key-123abc`|
 |defaultValue|`true`|
 

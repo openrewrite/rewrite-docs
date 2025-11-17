@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | upgradeRecipe | *Optional*. The recipe to use to upgrade. | `org.openrewrite.java.testing.junit5.JUnit4to5Migration` |
 
 

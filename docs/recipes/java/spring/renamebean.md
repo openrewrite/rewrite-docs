@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | type | *Optional*.  | `foo.MyType` |
 | `String` | oldName |  | `fooBean` |
 | `String` | newName |  | `barBean` |
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |type|`sample.MyType`|
 |oldName|`foo`|
 |newName|`bar`|
@@ -94,7 +94,7 @@ class A {
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |type|`sample.Foo`|
 |oldName|`foo`|
 |newName|`bar`|
@@ -149,7 +149,7 @@ class Bar {
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |type|`sample.MyType`|
 |oldName|`foo`|
 |newName|`bar`|

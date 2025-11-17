@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `URL` | azulUrl | 'Azul Intelligence Cloud endpoint. | `https://YOUR_ENDPOINT.azul.com` |
 | `String` | azulApiKey | API key used to make REST requests to Azul Intelligence Cloud. | `YOUR-API-KEY` |
 | `String` | markDeprecatedAfter | *Optional*. Classes that haven't been used in this duration will be marked deprecated but not yet for removal. Defaults to P4W | `P4W` |

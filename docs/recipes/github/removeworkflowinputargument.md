@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | workflowReference | The workflow reference to match (e.g., `org/repo/.github/workflows/myWorkflow.yml`). | `org/repo/.github/workflows/myWorkflow.yml` |
 | `String` | version | The version of the workflow to match (e.g., `v1.2.3`). | `v1.2.3` |
 | `String` | inputArgumentName | The name of the input argument to remove. | `myInputToRemove` |
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |workflowReference|`org/repo/.github/workflows/myWorkflow.yml`|
 |version|`v1.2.3`|
 |inputArgumentName|`myInputToRemove`|

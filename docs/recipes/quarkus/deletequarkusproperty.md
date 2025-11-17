@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The name of the property key whose value is to be deleted. | `quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy` |
 | `String` | oldValue | *Optional*. Only delete the property value if it matches the configured `oldValue`. | `read-sync` |
 | `String` | profile | *Optional*. The profile where the property should be deleted. If not specified, the property will be deleted from all profiles by default. | `dev` |

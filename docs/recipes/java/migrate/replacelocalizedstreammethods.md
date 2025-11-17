@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | localizedInputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
 | `String` | localizedOutputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
 
@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |localizedInputStreamMethodMatcher|`com.test.Runtime1 getLocalizedInputStream1(java.io.InputStream)`|
 |localizedOutputStreamMethodMatcher|`com.test.Runtime1 getLocalizedOutputStream1(java.io.OutputStream)`|
 

@@ -13,7 +13,7 @@ _Adds a new property to a property file. Attempts to place the new property in a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/properties/AddProperty.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | property | The property key to add. | `management.metrics.enable.process.files` |
 | `String` | value | The value of the new property key. | `newPropValue` |
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
@@ -43,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |property|`management.metrics.enable.process.files`|
 |value|`true`|
 |comment|`null`|

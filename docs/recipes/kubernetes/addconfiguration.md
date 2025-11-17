@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | apiVersion | *Optional*. The Kubernetes resource API version to use. | `policy/v1beta1` |
 | `String` | resourceKind | The Kubernetes resource type the configured is required on. | `PodSecurityPolicy` |
 | `String` | configurationPath | A JsonPath expression to locate Kubernetes configuration. Must be an absolute path. | `$.spec` |
@@ -47,7 +47,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |apiVersion|`null`|
 |resourceKind|`Pod`|
 |configurationPath|`$.spec`|

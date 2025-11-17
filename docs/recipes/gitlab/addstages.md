@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | stages | Stages to add. | `build,test,deploy` |
 | `Boolean` | acceptTheirs | *Optional*. When the set of stages would conflict, prefer the original value. |  |
 | `InsertMode` | insertMode | *Optional*. Choose an insertion point when multiple mappings exist. Default is `Last`. Valid options: `Before`, `After`, `Last` |  |
@@ -67,7 +67,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |stages|`List.of("build", "test", "deploy")`|
 |acceptTheirs|`false`|
 |insertMode|`null`|

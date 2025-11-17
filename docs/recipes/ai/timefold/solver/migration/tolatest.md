@@ -44,20 +44,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `ai.timefold.solver.core.api.score.stream.ConstraintFactory fromUniquePair(..)`
   * newMethodName: `forEachUniquePair`
-* [ScoreManager: explain(), update()](../../../../ai/timefold/solver/migration/v8/scoremanagermethodsrecipe)
 * [Change type](../../../../java/changetype)
   * oldFullyQualifiedTypeName: `ai.timefold.solver.core.api.score.ScoreManager`
   * newFullyQualifiedTypeName: `ai.timefold.solver.core.api.solver.SolutionManager`
   * ignoreDefinition: `true`
-* [Score: use shorter getters](../../../../ai/timefold/solver/migration/v8/scoregettersrecipe)
-* [Replace getConstraint*() with getConstraintRef()](../../../../ai/timefold/solver/migration/v8/constraintrefrecipe)
-* [SolverManager: use builder API](../../../../ai/timefold/solver/migration/v8/solvermanagerbuilderrecipe)
-* [PlanningVariable's `nullable` is newly called `unassignedValues`](../../../../ai/timefold/solver/migration/v8/nullablerecipe)
-* [Use non-deprecated SingleConstraintAssertion methods](../../../../ai/timefold/solver/migration/v8/singleconstraintassertionmethodsrecipe)
-* [ConstraintStreams: use asConstraint() methods to define constraints](../../../../ai/timefold/solver/migration/v8/asconstraintrecipe)
-* [Constraint Streams: don't use package name in the asConstraint() method](../../../../ai/timefold/solver/migration/v8/removeconstraintpackagerecipe)
-* [Recommended Fit API becomes Assignment Recommendation API](../../../../ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe)
-* [Use non-deprecated related sorting fields and methods](../../../../ai/timefold/solver/migration/v8/sortingmigrationrecipe)
 * [Remove unused imports](../../../../java/removeunusedimports)
 * [Change the Timefold version](../../../../ai/timefold/solver/migration/changeversion)
 
@@ -89,20 +79,10 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: ai.timefold.solver.core.api.score.stream.ConstraintFactory fromUniquePair(..)
       newMethodName: forEachUniquePair
-  - ai.timefold.solver.migration.v8.ScoreManagerMethodsRecipe
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: ai.timefold.solver.core.api.score.ScoreManager
       newFullyQualifiedTypeName: ai.timefold.solver.core.api.solver.SolutionManager
       ignoreDefinition: true
-  - ai.timefold.solver.migration.v8.ScoreGettersRecipe
-  - ai.timefold.solver.migration.v8.ConstraintRefRecipe
-  - ai.timefold.solver.migration.v8.SolverManagerBuilderRecipe
-  - ai.timefold.solver.migration.v8.NullableRecipe
-  - ai.timefold.solver.migration.v8.SingleConstraintAssertionMethodsRecipe
-  - ai.timefold.solver.migration.v8.AsConstraintRecipe
-  - ai.timefold.solver.migration.v8.RemoveConstraintPackageRecipe
-  - ai.timefold.solver.migration.v8.SolutionManagerRecommendAssignmentRecipe
-  - ai.timefold.solver.migration.v8.SortingMigrationRecipe
   - org.openrewrite.java.RemoveUnusedImports
   - ai.timefold.solver.migration.ChangeVersion
 

@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | annotationToAdd | The annotation that should be added. | `org.springframework.stereotype.Component` |
 | `String` | targetSupertypeName | The supertype that should looked for. | `javax.ws.rs.Path` |
 | `Boolean` | annotateInnerClasses | *Optional*. Boolean whether to annotate inner classes of the matched annotation |  |
@@ -41,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |annotationToAdd|`javax.persistence.Entity`|
 |targetSupertypeName|`java.util.AbstractList`|
 |annotateInnerClasses|`false`|

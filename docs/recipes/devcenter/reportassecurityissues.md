@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | fixRecipe | *Optional*. The recipe to use to fix these issues. | `org.openrewrite.java.security.OwaspTopTen` |
 
 

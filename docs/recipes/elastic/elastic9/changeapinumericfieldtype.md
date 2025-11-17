@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | fullyQualifiedName | The fully qualified name of the class containing the field | `co.elastic.clients.elasticsearch.core.MsearchRequest` |
 | `String` | field | The name of the field/method that has changed type | `maxConcurrentSearches` |
 | `String` | targetType | The new type that the field returns in Elasticsearch 9 | `java.lang.Integer` |

@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | minimumVersion | *Optional*. Determine if the provided version is the minimum JUnit version. If both JUnit 4 and JUnit 5 are present, the minimum version is JUnit 4. If only one version is present, that version is the minimum version. Valid options: `4`, `5` | `4` |
 
 

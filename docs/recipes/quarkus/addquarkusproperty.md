@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | property | The property key to add. | `quarkus.http.port` |
 | `String` | value | The value of the new property key. | `9090` |
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
@@ -45,7 +45,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |property|`quarkus.http.port`|
 |value|`9090`|
 |comment|`null`|

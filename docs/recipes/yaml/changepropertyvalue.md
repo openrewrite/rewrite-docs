@@ -13,7 +13,7 @@ _Change a YAML property. Expects dot notation for nested YAML mappings, similar 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The key to look for. Supports glob patterns. | `management.metrics.binders.*.enabled` |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. | `newValue` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `oldValue` |
@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`my.prop`|
 |newValue|`bar`|
 |oldValue|`null`|

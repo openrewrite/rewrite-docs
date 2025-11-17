@@ -13,7 +13,7 @@ _Create a new Properties file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/properties/CreatePropertiesFile.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/CreatePropertiesFile.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | relativeFileName | File path of new file. | `foo/bar/baz.properties` |
 | `String` | fileContents | *Optional*. Multiline text content for the file. | `a.property=value` |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |relativeFileName|`test/test.properties`|
 |fileContents|`# This is a comment
 x.y=z
@@ -61,7 +61,7 @@ x.y=z
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |relativeFileName|`test/test.properties`|
 |fileContents|`after=true`|
 |overwriteExisting|`true`|

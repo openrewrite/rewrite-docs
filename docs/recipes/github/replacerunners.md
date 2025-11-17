@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | jobName | The name of the job to update | `build` |
 | `List` | runners | The new list of runners to set | `ubuntu-latest` |
 
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |jobName|`build`|
 |runners|`List.of("ubuntu-latest", "MyRunner")`|
 

@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldSecretName | The name of the secret to be replaced | `OSSRH_S01_USERNAME` |
 | `String` | newSecretName | The new secret name to use | `SONATYPE_USERNAME` |
 | `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.yml` |
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldSecretName|`OSSRH_S01_USERNAME`|
 |newSecretName|`SONATYPE_USERNAME`|
 |fileMatcher|`null`|

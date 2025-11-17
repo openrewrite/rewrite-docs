@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The groupId to use. | `corp.internal.openrewrite.recipe` |
 | `String` | artifactId | The artifactId to use. | `my-new-annotation-processor` |
 | `String` | version | An exact version string for the annotation processor path. | `${micronaut.validation}` |

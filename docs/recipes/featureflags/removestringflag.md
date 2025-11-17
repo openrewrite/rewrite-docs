@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern to match against. The first argument must be the feature key as `String`. | `dev.openfeature.sdk.Client getBooleanValue(String, Boolean)` |
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `String` | replacementValue | The value to replace the feature flag check with. | `topic-456` |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |methodPattern|`com.acme.bank.InHouseFF getStringFeatureFlagValue(String, String)`|
 |featureKey|`flag-key-123abc`|
 |replacementValue|`topic-456`|

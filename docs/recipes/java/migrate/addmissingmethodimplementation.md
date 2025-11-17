@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | fullyQualifiedClassName | A fully qualified class being implemented with missing method. | `com.yourorg.FooBar` |
 | `String` | methodPattern | A method pattern for matching required method definition. | `*..* hello(..)` |
 | `String` | methodTemplateString | Template of method to add | `public String hello() { return \"Hello from #{}!\"; }` |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |fullyQualifiedClassName|`I1`|
 |methodPattern|`*..* m1()`|
 |methodTemplateString|`public void m1() { System.out.println("m1"); }`|

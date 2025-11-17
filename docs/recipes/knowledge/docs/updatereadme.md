@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | prompt | *Optional*. Prompt that guides the LLM on how you want the README structured. | `Improve the title and description if they aren't very good.` |
 
 

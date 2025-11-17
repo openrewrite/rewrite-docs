@@ -13,7 +13,7 @@ _Comment out a YAML property and add a comment in front._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/yaml/CommentOutProperty.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CommentOutProperty.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The key to be commented out. | `applicability.singleSource` |
 | `String` | commentText | The comment text to be added before the specified key. | `The `foo` property is deprecated, please migrate` |
 | `Boolean` | commentOutProperty | *Optional*. If false, property wouldn't be commented out, only comment will be added. By default, set to true | `true` |
@@ -40,7 +40,7 @@ comment out a map entry
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`foo.bar.sequence.propertyA`|
 |commentText|`Some comments`|
 |commentOutProperty|`null`|
@@ -95,7 +95,7 @@ comment out entire sequence
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`foo.bar.sequence`|
 |commentText|`Some comments`|
 |commentOutProperty|`null`|
@@ -156,7 +156,7 @@ comment out a map entry
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`foo.bar.sequence.propertyA`|
 |commentText|`Some comments`|
 |commentOutProperty|`false`|
@@ -209,7 +209,7 @@ comment out a map entry
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`foo.bar.sequence.name`|
 |commentText|`Some comments`|
 |commentOutProperty|`false`|
@@ -262,7 +262,7 @@ comment out entire sequence
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`foo.bar.sequence`|
 |commentText|`Some comments`|
 |commentOutProperty|`false`|

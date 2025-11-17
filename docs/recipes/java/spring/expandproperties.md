@@ -22,14 +22,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | sourceFileMask | *Optional*. An optional source file path mask use to restrict which YAML files will be expanded by this recipe. | `**/application*.yml` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |sourceFileMask|`null`|
 
 

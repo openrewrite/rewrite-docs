@@ -13,7 +13,7 @@ _Inline method calls using a template replacement pattern. Supports both method 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/InlineMethodCalls.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/InlineMethodCalls.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `com.google.common.base.Preconditions checkNotNull(..)` |
 | `String` | replacement | The replacement template for the method invocation. Parameters can be referenced using their names from the original method. | `java.util.Objects.requireNonNull(#{p0})` |
 | `Set` | imports | *Optional*. List of regular imports to add when the replacement is made. | `["java.util.Objects"]` |

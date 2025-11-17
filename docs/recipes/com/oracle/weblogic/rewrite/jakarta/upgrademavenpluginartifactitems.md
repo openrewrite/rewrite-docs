@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldGroupId | The old group ID to replace. | `javax` |
 | `String` | oldArtifactId | The old artifact ID to replace. | `javax` |
 | `String` | newGroupId | The new group ID to use. | `jakarta.platform` |

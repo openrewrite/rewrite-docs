@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Set` | rules | *Optional*. Names of rules to enable. If not provided, putout's default rules are used. | `remove-unused-variables` |
 | `String` | printer | *Optional*. By default Putout uses its own [putout](https://github.com/coderaiser/putout?tab=readme-ov-file#printer) printer for formatting code. You can choose an alternative printer. Valid options: `putout`, `recast`, `babel` |  |
 

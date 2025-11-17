@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | fieldName | *Optional*. Name of the log field to replace. If not specified, the field name is not checked and any field that satisfies the other checks is converted. | `LOGGER` |
 
 

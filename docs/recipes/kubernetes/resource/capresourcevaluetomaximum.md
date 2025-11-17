@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | resourceValueType | The type of resource to search for. Valid options: `limits`, `requests` | `limits` |
 | `String` | resourceType | The type of resource value to search for. Valid options: `cpu`, `memory` | `memory` |
 | `String` | resourceLimit | The resource maximum to search for to find resources that request more than the maximum. | `2Gi` |
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |resourceValueType|`limits`|
 |resourceType|`memory`|
 |resourceLimit|`64Mi`|

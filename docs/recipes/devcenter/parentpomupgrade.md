@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | cardName | The display name of the DevCenter card | `Upgrade internal Parent POM` |
 | `String` | groupIdPattern | Group identifier used to match POM parents. | `org.springframework.boot` |
 | `String` | artifactIdPattern | Artifact identifier used to match POM parents. | `spring-boot-parent` |

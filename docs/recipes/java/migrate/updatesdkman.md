@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | newVersion | *Optional*. The Java version to update to. | `17` |
 | `String` | newDistribution | *Optional*. The JVM distribution to use. | `tem` |
 

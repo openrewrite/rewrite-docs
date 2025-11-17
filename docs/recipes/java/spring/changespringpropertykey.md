@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldPropertyKey | The property key to rename. | `management.metrics.binders.*.enabled` |
 | `String` | newPropertyKey | The new name for the property key. | `management.metrics.enable.process.files` |
 | `List` | except | *Optional*. Regex. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. | `jvm` |
@@ -65,7 +65,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldPropertyKey|`server.servlet-path`|
 |newPropertyKey|`server.servlet.path`|
 |except|`null`|

@@ -13,7 +13,7 @@ _Alters XML Attribute value within specified element of a specific resource vers
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | elementName | *Optional*. The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. | `property` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `newfoo.bar.attribute.value.string` |
 | `String` | newValue | The new value to be used for the namespace. | `newfoo.bar.attribute.value.string` |
@@ -45,7 +45,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |elementName|`web-app`|
 |oldValue|`null`|
 |newValue|`http://java.sun.com/xml/ns/j2ee`|

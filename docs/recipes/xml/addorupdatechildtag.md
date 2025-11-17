@@ -13,7 +13,7 @@ _Adds or updates a child element below the parent(s) matching the provided `pare
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/xml/AddOrUpdateChildTag.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddOrUpdateChildTag.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | parentXPath | XPath identifying the parent to which a child tag must be added | `/project//plugin//configuration` |
 | `String` | newChildTag | The XML of the new child to add or update on the parent tag. | `<skip>true</skip>` |
 | `Boolean` | replaceExisting | *Optional*. Set to `false` to not replace the child tag if it already exists. Defaults to true. |  |

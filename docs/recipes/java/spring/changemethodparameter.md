@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find the method declarations to modify. | `com.yourorg.A foo(int, int)` |
 | `String` | parameterType | The new type of the parameter that gets updated. | `java.lang.String` |
 | `Integer` | parameterIndex | A zero-based index that indicates the position at which the parameter will be added. | `0` |
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |methodPattern|`foo.Foo#bar(..)`|
 |parameterType|`long`|
 |parameterIndex|`0`|

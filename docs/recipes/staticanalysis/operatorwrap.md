@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `WrapOption` | wrapOption | *Optional*. The operator wrapping style to enforce, which may differ from the configured or detected style. Valid options: `EOL`, `NL` | `NL` |
 
 
@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |wrapOption|`null`|
 
 

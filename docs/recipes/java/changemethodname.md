@@ -13,7 +13,7 @@ _Rename a method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/ChangeMethodName.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodName.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `org.mockito.Matchers anyVararg()` |
 | `String` | newMethodName | The method name that will replace the existing name. | `any` |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
@@ -83,7 +83,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
-* [PlanningVariable's `nullable` is newly called `unassignedValues`](/recipes/ai/timefold/solver/migration/v8/nullablerecipe.md)
 * [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
 * [Prefer `Integer#divideUnsigned`](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
 * [Prefer `Long#compareUnsigned`](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
@@ -97,7 +96,6 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `java.util.Objects#requireNonNullElse`](/recipes/java/migrate/guava/preferjavautilobjectsrequirenonnullelse.md)
 * [Prefer `java.util.Optional`](/recipes/java/migrate/guava/preferjavautiloptional.md)
 * [Quarkus 1.13 migration from Quarkus 1.11](/recipes/quarkus/quarkus1to1_13migration.md)
-* [Recommended Fit API becomes Assignment Recommendation API](/recipes/ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
 * [Refactored dataFormats](/recipes/org/apache/camel/upgrade/camel415/dataformats.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](/recipes/java/jackson/upgradejackson_2_3_jsongeneratormethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonNode](/recipes/java/jackson/upgradejackson_2_3_jsonnodemethodrenames.md)
@@ -149,7 +147,6 @@ This recipe is used as part of the following composite recipes:
 * [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](/recipes/java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory.md)
 * [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](/recipes/java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory.md)
 * [Use `setEagerFilterInit(boolean)`](/recipes/java/spring/boot2/migrateundertowservletwebserverfactoryseteagerinitfilters.md)
-* [Use non-deprecated related sorting fields and methods](/recipes/ai/timefold/solver/migration/v8/sortingmigrationrecipe.md)
 * [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmSessionMethodsRemovedIn7](/recipes/io/quarkus/updates/core/quarkus324/migratefromhibernateormsessionmethodsremovedin7.md)
 * [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](/recipes/io/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith.md)
 * [io.quarkus.updates.core.quarkus35.MutinyUniMemoizeAtLeast](/recipes/io/quarkus/updates/core/quarkus35/mutinyunimemoizeatleast.md)

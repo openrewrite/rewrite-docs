@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | containerClass | The fully qualified name of the container class to use. | `org.testcontainers.containers.NginxContainer` |
 | `String` | image | The image to use for the container. | `nginx:1.9.4` |
 | `Boolean` | parseImage | *Optional*. Whether to call `DockerImageName.parse(image)`. |  |
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |containerClass|`org.testcontainers.containers.NginxContainer`|
 |image|`nginx:1.9.4`|
 |parseImage|`null`|

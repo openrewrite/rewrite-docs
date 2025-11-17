@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | resourceKind | *Optional*. The Kubernetes resource type to search on. | `Pod` |
 | `String` | configurationPath | A JsonPath expression to locate Kubernetes configuration. | `$.spec.containers.livenessProbe` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
@@ -42,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |resourceKind|`Pod`|
 |configurationPath|`$.spec.containers[*].livenessProbe`|
 |fileMatcher|`null`|

@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | key | The name of the property key to change. | `jenkins.version` |
 | `String` | minimumVersion | Value to apply to the matching property if < this. | `2.375.1` |
 
@@ -41,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |key|`jenkins.version`|
 |minimumVersion|`2.452.4`|
 

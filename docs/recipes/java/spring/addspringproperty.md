@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | property | The property key to add. | `management.metrics.enable.process.files` |
 | `String` | value | The value of the new property key. | `true` |
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |property|`server.servlet.path`|
 |value|`/tmp/my-server-path`|
 |comment|`null`|

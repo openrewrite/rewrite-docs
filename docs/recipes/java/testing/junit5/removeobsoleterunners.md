@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | obsoleteRunners | The fully qualified class names of the JUnit 4 runners to be removed. | `org.junit.runners.JUnit4` |
 
 
@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |obsoleteRunners|`List.of(
               "org.junit.runners.JUnit4",
               "org.junit.runners.BlockJUnit4ClassRunner"

@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The groupId of the annotation processor. | `org.hibernate.orm` |
 | `String` | artifactId | The artifactId of the annotation processor. | `hibernate-jpamodelgen` |
 

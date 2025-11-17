@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldLiteralValue | The `String` value to replace. | `apple` |
 | `String` | newLiteralValue | The `String` value to replace with. | `orange` |
 

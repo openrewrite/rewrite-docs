@@ -13,7 +13,7 @@ _Apply the specified XSLT transformation on matching files. Note that there are 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/xml/XsltTransformation.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/XsltTransformation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | xslt | *Optional*. The transformation to be applied. | `<xsl:stylesheet ...>...</xsl:stylesheet>` |
 | `String` | xsltResource | *Optional*. Recipe transformation provided as a classpath resource. | `/changePlugin.xslt` |
 | `String` | filePattern | A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. | `**/*.xml` |
@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |xslt|`xslt`|
 |xsltResource|`null`|
 |filePattern|`**/*.xml`|

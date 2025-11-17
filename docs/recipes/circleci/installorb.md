@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | orbKey | The orb key to be followed by an orb slug identifying a specific orb version. | `kube` |
 | `String` | slug | A specific orb to install, in the form `<namespace>/<orb-name>@1.2.3`. | `circleci/kubernetes@0.11.0` |
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |orbKey|`java`|
 |slug|`circleci/openjdk:jdk`|
 

@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `boolean` | includeJavaLangException | *Optional*. Whether to include `java.lang.Exception` in the list of checked exceptions to remove. Unlike other checked exceptions, `java.lang.Exception` is also the superclass of unchecked exceptions. So removing `catch(Exception e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
 | `boolean` | includeJavaLangThrowable | *Optional*. Whether to include `java.lang.Throwable` in the list of exceptions to remove. Unlike other checked exceptions, `java.lang.Throwable` is also the superclass of unchecked exceptions. So removing `catch(Throwable e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
 
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |includeJavaLangException|`false`|
 |includeJavaLangThrowable|`false`|
 

@@ -21,14 +21,14 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | ipAddressReplacement | *Optional*. If specified, replaces hard-coded IP addresses with this value. Default is 'IP_ADDRESS_REPLACED' | `IP_ADDRESS_REPLACED` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |ipAddressReplacement|`null`|
 
 

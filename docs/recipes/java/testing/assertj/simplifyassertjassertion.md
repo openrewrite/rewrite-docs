@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | assertToReplace | *Optional*. The assertion method that should be replaced. | `hasSize` |
 | `String` | literalArgument | The literal argument passed into the assertion to replace; use "null" for `null`. | `0` |
 | `String` | dedicatedAssertion | The zero argument assertion to adopt instead. | `isEmpty` |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |assertToReplace|`isEqualTo`|
 |literalArgument|`null`|
 |dedicatedAssertion|`isNull`|

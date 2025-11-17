@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldKeyName | The name of the key to be replaced | `ossrh_username` |
 | `String` | newKeyName | The new key name to use | `sonatype_username` |
 | `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.yml` |

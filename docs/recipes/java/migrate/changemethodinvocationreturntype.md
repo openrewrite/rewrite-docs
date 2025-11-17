@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
 | `String` | newReturnType | The fully qualified new return type of method invocation. | `long` |
 
@@ -63,7 +63,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |methodPattern|`java.lang.Integer parseInt(String)`|
 |newReturnType|`long`|
 

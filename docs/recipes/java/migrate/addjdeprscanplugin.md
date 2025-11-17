@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | release | *Optional*. Specifies the Java SE release that provides the set of deprecated APIs for scanning. | `11` |
 
 

@@ -13,7 +13,7 @@ _Adds a new Maven Repository or updates a matching repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/AddRepository.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRepository.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | id | A unique name to describe the repository. | `repo-id` |
 | `String` | url | The URL of the repository. | `http://myrepo.maven.com/repo` |
 | `String` | repoName | *Optional*. A display name for the repository. | `My Great Repo Name` |
@@ -39,7 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |id|`myRepo`|
 |url|`http://myrepo.maven.com/repo`|
 |repoName|`null`|

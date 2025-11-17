@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | secretName | The type of secret that this recipe is looking for. | `AWS Access Key` |
 | `String` | keyPattern | *Optional*. A regular expression to match a 'key' against. For example, a key  | `[a-zA-Z0-9+\/=]{88}` |
 | `String` | valuePattern | A regular expression to search for. | `[a-zA-Z0-9+\/=]{88}` |

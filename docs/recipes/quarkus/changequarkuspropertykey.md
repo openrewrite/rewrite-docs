@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldPropertyKey | The property key to rename. Supports regex. | `quarkus.hibernate-search-orm.automatic-indexing.synchronization.strategy` |
 | `String` | newPropertyKey | The new name for the property key. Supports regex. | `quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy` |
 | `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be changed on all profiles by default. | `dev` |

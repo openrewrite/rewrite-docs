@@ -22,14 +22,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `boolean` | includeStdLib | *Optional*. When enabled calls to methods in packages beginning with "java", "groovy", and "kotlin" will be included in the report. By default these are omitted. |  |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |includeStdLib|`true`|
 
 

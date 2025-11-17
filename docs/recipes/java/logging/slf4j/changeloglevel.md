@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Level` | from | The log level to change from. | `INFO` |
 | `Level` | to | The log level to change to. | `DEBUG` |
 | `String` | startsWith | *Optional*. Only change log statements that start with this string. When omitted all log statements of the specified level are changed. | `LaunchDarkly` |
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |from|`ChangeLogLevel.Level.INFO`|
 |to|`ChangeLogLevel.Level.DEBUG`|
 |startsWith|`LaunchDarkly`|

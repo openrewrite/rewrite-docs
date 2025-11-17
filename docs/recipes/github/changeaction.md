@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldAction | Name of the action to match. | `gradle/wrapper-validation-action` |
 | `String` | newAction | Name of the action to use instead. | `gradle/actions/wrapper-validation` |
 | `String` | newVersion | New version to use. | `v3` |
@@ -40,7 +40,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldAction|`gradle/wrapper-validation-action`|
 |newAction|`gradle/actions/wrapper-validation`|
 |newVersion|`v3`|

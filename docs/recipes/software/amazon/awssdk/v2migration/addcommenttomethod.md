@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `org.mockito.Matchers anyVararg()` |
 | `String` | comment | A comment to add to this method. | `This method is not supported in AWS SDK for Java v2.` |
 

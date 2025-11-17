@@ -13,7 +13,7 @@ _Move content to another HCL file, deleting it in the original file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/hcl/MoveContentToFile.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/MoveContentToFile.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | contentPath | A JSONPath expression specifying the block to move. | `$.provider` |
 | `String` | fromPath | The source path of the file from which content is being moved. | `from.tf` |
 | `String` | destinationPath | The source path of the file to move the content to. | `to.tf` |
@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |contentPath|`$.before`|
 |fromPath|`from.tf`|
 |destinationPath|`to.tf`|

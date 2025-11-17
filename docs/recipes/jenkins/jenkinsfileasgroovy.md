@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | filePattern | *Optional*. A glob pattern to match Jenkinsfile paths. Defaults to `**/Jenkinsfile*`. | `**/Jenkinsfile*` |
 
 

@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | template | The template key to look for | `Terraform/Base.gitlab-ci.yml` |
 
 
@@ -56,7 +56,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |template|`Gradle.gitlab-ci.yml`|
 
 

@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | component | Component name. | `TODO Provide a usage example for the docs` |
 | `String` | oldPropertyKey | The property key to rename. | `TODO Provide a usage example for the docs` |
 | `String` | newPropertyKey | The prefix to be replaced with. | `TODO Provide a usage example for the docs` |

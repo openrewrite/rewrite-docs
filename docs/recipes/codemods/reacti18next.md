@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | translationFilePath | *Optional*. Path to the translation JSON file where extracted strings will be stored. Defaults to `translations.json` in the root of the project. | `./src/locales/en.json` |
 | `String` | importName | The package name to import translation functions from. Required. | `react-i18next` |
 | `String` | translationRoot | *Optional*. Root key in the translation file to organize translations under. Defaults to `common`. | `common` |

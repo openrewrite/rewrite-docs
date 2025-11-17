@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | patterns | *Optional*. The lint target files. This can contain any of file paths, directory paths, and glob patterns. | `lib/**/*.js` |
 | `String` | parser | *Optional*. Parser used by ESLint to parse the source files. Defaults to `@typescript-eslint/parser`. See [ESLint documentation](https://eslint.org/docs/latest/use/configure/parsers) for more details. | `esprima` |
 | `List` | parserOptions | *Optional*. A list of parser options for ESLint. The format is `key: value`. Defaults to `ecmaVersion: "latest", ecmaFeatures: { jsx: true }, sourceType: "module"`. See [ESLint documentation](https://eslint.org/docs/latest/use/configure/language-options#specifying-parser-options) for more details. | `ecmaVersion: 6, ecmaFeatures: { jsx: true }` |

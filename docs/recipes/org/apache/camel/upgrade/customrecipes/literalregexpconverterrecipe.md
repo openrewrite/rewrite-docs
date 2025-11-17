@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | regexp | Regexp for matching a literal. | `TODO Provide a usage example for the docs` |
 | `String` | replacement | Replacement to use. | `TODO Provide a usage example for the docs` |
 

@@ -27,7 +27,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method used to find matching statements to parameterize. | `org.slf4j.Logger info(..)` |
 | `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |  |
 
@@ -43,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |methodPattern|`org.slf4j.Logger info(..)`|
 |removeToString|`false`|
 

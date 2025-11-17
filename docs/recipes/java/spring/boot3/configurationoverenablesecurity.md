@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `boolean` | forceAddConfiguration | Force add `@Configuration` regardless current Boot version. | `true` |
 
 
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |forceAddConfiguration|`false`|
 
 
@@ -87,7 +87,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |forceAddConfiguration|`true`|
 
 

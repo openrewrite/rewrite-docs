@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Boolean` | preserveFactoriesFile | *Optional*. Don't delete the `spring.factories` for backward compatibility. |  |
 
 

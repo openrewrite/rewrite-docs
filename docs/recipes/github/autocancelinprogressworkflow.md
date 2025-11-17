@@ -22,14 +22,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | accessToken | *Optional*. Optionally provide the key name of a repository or organization secret that contains a GitHub personal access token with permission to cancel workflows. | `WORKFLOWS_ACCESS_TOKEN` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |accessToken|`null`|
 
 

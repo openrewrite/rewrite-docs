@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Integer` | releaseVersion | The new value for the release configuration. This recipe prefers `${java.version}` if defined. | `11` |
 
 
@@ -54,7 +54,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |releaseVersion|`11`|
 
 

@@ -13,7 +13,7 @@ _Change a property value leaving the key intact._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/properties/ChangePropertyValue.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The name of the property key whose value is to be changed. Supports glob patterns. | `management.metrics.binders.*.enabled` |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. | `newValue` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `oldValue` |
@@ -42,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`management.metrics.binders.files.enabled`|
 |newValue|`false`|
 |oldValue|`null`|

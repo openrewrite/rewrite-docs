@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | fullyQualifiedClassName | A fully-qualified class name to be replaced. | `org.springframework.batch.core.listener.JobExecutionListenerSupport` |
 | `String` | fullyQualifiedInterfaceName | A fully-qualified Interface name to replace by. | `org.springframework.batch.core.JobExecutionListener` |
 

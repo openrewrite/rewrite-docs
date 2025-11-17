@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | repository | *Optional*. The repository part of the image name to search for in containers and initContainers. | `gcr.io` |
 | `String` | imageName | The image name to search for in containers and initContainers. | `nginx` |
 | `String` | imageTag | *Optional*. The tag part of the image name to search for in containers and initContainers. | `v1.2.3` |
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |repository|`repo.id/account/bucket`|
 |imageName|`image`|
 |imageTag|`v1.2.3`|

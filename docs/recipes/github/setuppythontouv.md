@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | uvVersion | *Optional*. The version of the `astral-sh/setup-uv` action to use. Defaults to `v6`. | `v6` |
 | `String` | syncStrategy | *Optional*. Strategy for the `uv sync` command replacement. Valid options: `basic`, `locked`, `full` | `locked` |
                     | `Boolean` | transformPipCommands | *Optional*. Whether to transform `pip install` commands to `uv` equivalents:
@@ -37,7 +37,7 @@ When disabled, only the action itself is replaced. Defaults to `true`. | `true` 
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |uvVersion|`null`|
 |syncStrategy|`null`|
 |transformPipCommands|`null`|

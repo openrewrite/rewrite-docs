@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldPropertyKey | The property key to rename. | `TODO Provide a usage example for the docs` |
 | `String` | newPrefix | The prefix to be replaced with. | `TODO Provide a usage example for the docs` |
 | `List` | exclusions | Regexp for exclusions | `camel.springboot.main-run-controller` |

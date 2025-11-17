@@ -13,7 +13,7 @@ _Some annotations accept arguments. This recipe renames an existing attribute._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/ChangeAnnotationAttributeName.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeAnnotationAttributeName.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | annotationType | The fully qualified name of the annotation. | `org.junit.Test` |
 | `String` | oldAttributeName | The name of attribute to change. | `timeout` |
 | `String` | newAttributeName | The new attribute name to use. | `waitFor` |
@@ -37,11 +37,9 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from `@ApiOperation` to `@Operation`](/recipes/openapi/swagger/migrateapioperationtooperation.md)
 * [Migrate from `@ApiParam` to `@Parameter`](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
 * [Migrate from `@ApiResponses` to `@ApiResponses`](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
-* [PlanningVariable's `nullable` is newly called `unassignedValues`](/recipes/ai/timefold/solver/migration/v8/nullablerecipe.md)
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
-* [Use non-deprecated related sorting fields and methods](/recipes/ai/timefold/solver/migration/v8/sortingmigrationrecipe.md)
 
 
 ## Usage

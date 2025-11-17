@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `Double` | replacementValue | The value to replace the feature flag check with. | `3.14` |
 
@@ -58,7 +58,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |featureKey|`flag-key-123abc`|
 |replacementValue|`3.14`|
 

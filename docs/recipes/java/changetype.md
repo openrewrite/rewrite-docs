@@ -13,7 +13,7 @@ _Change a given type to another._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/ChangeType.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. | `org.junit.Assume` |
 | `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. | `org.junit.jupiter.api.Assumptions` |
 | `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |
@@ -125,7 +125,6 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `java.util.function.Function`](/recipes/java/migrate/guava/preferjavautilfunction.md)
 * [Prefer `java.util.function.Supplier`](/recipes/java/migrate/guava/preferjavautilsupplier.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
-* [Recommended Fit API becomes Assignment Recommendation API](/recipes/ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](/recipes/hibernate/typedescriptortotype.md)
 * [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/authenticationhttpclientconfigurer.md)
 * [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/furyjava.md)
@@ -195,7 +194,6 @@ This recipe is used as part of the following composite recipes:
 * [Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`](/recipes/java/spring/boot2/migratehttpmessageconverterspackagename.md)
 * [Use `org.springframework.boot.web.servlet.error.ErrorController`](/recipes/java/spring/boot2/migrateerrorcontrollerpackagename.md)
 * [Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`](/recipes/java/spring/boot2/migratespringbootservletinitializerpackagename.md)
-* [Use non-deprecated related sorting fields and methods](/recipes/ai/timefold/solver/migration/v8/sortingmigrationrecipe.md)
 * [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/io/quarkus/updates/core/quarkus30/additionalchanges.md)
 * [io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage](/recipes/io/quarkus/updates/core/quarkus319/moveaccesstokenannotationtonewpackage.md)
 * [io.quarkus.updates.core.quarkus32.InjectMock](/recipes/io/quarkus/updates/core/quarkus32/injectmock.md)

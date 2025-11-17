@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | fullyQualifiedName | The fully qualified name of the class containing the field to rename. | `co.elastic.clients.elasticsearch.snapshot.RepositoryVerifyIntegrityResponse` |
 | `String` | field | The name of the field/method to rename. | `valueBody` |
 | `String` | newField | The new name for the field/method. | `result` |

@@ -13,7 +13,7 @@ _Change the project version of a Maven pom.xml. Identifies the project to be cha
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/maven/ChangeProjectVersion.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeProjectVersion.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The group ID of the maven project to change its version. This can be a glob expression. | `org.openrewrite` |
 | `String` | artifactId | The artifact ID of the maven project to change its version. This can be a glob expression. | `*` |
 | `String` | newVersion | The new version to replace the maven project version. | `8.4.2` |
@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |groupId|`org.openrewrite`|
 |artifactId|`rewrite-maven`|
 |newVersion|`8.4.2`|

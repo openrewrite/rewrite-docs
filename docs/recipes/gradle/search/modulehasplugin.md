@@ -13,7 +13,7 @@ _Searches for Gradle Projects (modules) that have a plugin matching the specifie
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/gradle/search/ModuleHasPlugin.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/ModuleHasPlugin.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | pluginId | The unique identifier used to apply a plugin in the `plugins` block. Note that this alone is insufficient to search for plugins applied by fully qualified class name and the `buildscript` block. | ``com.jfrog.bintray`` |
 | `String` | pluginClass | *Optional*. The fully qualified name of a class implementing a Gradle plugin.  | `com.jfrog.bintray.gradle.BintrayPlugin` |
 
@@ -30,7 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |pluginId|`org.openrewrite.rewrite`|
 |pluginClass|`org.openrewrite.gradle.RewritePlugin`|
 

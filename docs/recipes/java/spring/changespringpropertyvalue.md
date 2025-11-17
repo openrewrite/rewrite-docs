@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The name of the property key whose value is to be changed. | `management.metrics.binders.files.enabled` |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. | `management.metrics.enable.process.files` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `false` |
@@ -42,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`server.port`|
 |newValue|`8081`|
 |oldValue|`null`|

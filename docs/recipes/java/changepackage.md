@@ -13,7 +13,7 @@ _A recipe that will rename a package name in package statements, imports, and fu
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/java/ChangePackage.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldPackageName | The package name to replace. | `com.yourorg.foo` |
 | `String` | newPackageName | New package name to replace the old package name with. | `com.yourorg.bar` |
 | `Boolean` | recursive | *Optional*. Recursively change subpackage names |  |

@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The name of the property key to comment out. | `management.metrics.binders.files.enabled` |
 | `String` | comment | Comment to replace the property key. | `This property is deprecated and no longer applicable starting from Spring Boot 3.0.x` |
 
@@ -57,7 +57,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |propertyKey|`server.port`|
 |comment|`This property has been removed.`|
 

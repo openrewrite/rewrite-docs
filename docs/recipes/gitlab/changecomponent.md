@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldComponent | The name of the component to match. | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
 | `String` | oldComponentVersion | Version of the existing component to use match. | `0.10.0` |
 | `String` | newComponent | *Optional*. Name of the new component to use instead. | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
@@ -66,7 +66,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldComponent|`some-component`|
 |oldComponentVersion|`0.10.0`|
 |newComponent|`other-component`|

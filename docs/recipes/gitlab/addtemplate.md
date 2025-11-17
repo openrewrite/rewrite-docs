@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | newTemplate | Name of the template to use instead. | `OpenTofu/Base.gitlab-ci.yml` |
 | `InsertMode` | insertMode | *Optional*. Choose an insertion point when multiple mappings exist. Default is `Last`. Valid options: `Before`, `After`, `Last` |  |
 
@@ -67,7 +67,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |newTemplate|`Jobs/SAST.gitlab-ci.yml`|
 |insertMode|`null`|
 
