@@ -215,7 +215,7 @@ const config: Config = {
         },
         {
           href: "https://docs.moderne.io",
-          label: "Moderne",
+          label: "Moderne docs",
           position: "right",
         },
       ],
