@@ -126,6 +126,45 @@ const config: Config = {
     }
   },
 
+  plugins: [
+    [
+      'docusaurus-plugin-llms',
+      {
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: false,
+        generateMarkdownFiles: true,
+        docsDir: 'docs',
+        title: 'OpenRewrite Documentation',
+        description: 'Large-scale automated source code refactoring',
+        excludeImports: true,
+        removeDuplicateHeadings: true,
+        customLLMFiles: [
+          {
+            filename: 'llms-getting-started.txt',
+            includePatterns: ['introduction.md', '**/running-recipes/**/*'],
+            fullContent: false,
+            title: 'OpenRewrite Getting Started',
+            description: 'Introduction and guides for running OpenRewrite recipes',
+          },
+          {
+            filename: 'llms-authoring.txt',
+            includePatterns: ['**/authoring-recipes/**/*'],
+            fullContent: false,
+            title: 'OpenRewrite Recipe Development',
+            description: 'Guides for creating and testing OpenRewrite recipes',
+          },
+          {
+            filename: 'llms-reference.txt',
+            includePatterns: ['**/reference/**/*', '**/concepts-and-explanations/**/*'],
+            fullContent: false,
+            title: 'OpenRewrite Reference & Concepts',
+            description: 'Technical reference documentation and core concepts',
+          },
+        ],
+      },
+    ],
+  ],
+
   future: {
     experimental_faster: true,
     v4: true,
