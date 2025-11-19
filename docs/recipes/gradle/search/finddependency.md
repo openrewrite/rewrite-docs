@@ -34,6 +34,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupId | The first part of a dependency coordinate identifying its publisher. | `com.google.guava` |
 | `String` | artifactId | The second part of a dependency coordinate uniquely identifying it among artifacts from the same publisher. | `guava` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. If omitted then all configurations will be searched. | `api` |
+| `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `3.0.0` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 
 ## Example
 
@@ -43,6 +45,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |groupId|`org.openrewrite`|
 |artifactId|`rewrite-core`|
 |configuration|`api`|
+|version||
+|versionPattern||
 
 
 <Tabs groupId="beforeAfter">
@@ -110,6 +114,8 @@ recipeList:
       groupId: com.google.guava
       artifactId: guava
       configuration: api
+      version: 3.0.0
+      versionPattern: '-jre'
 ```
 
 Now that `com.yourorg.FindDependencyExample` has been defined, activate it in your build file:
@@ -139,7 +145,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "configuration=api"
+mod run . --recipe FindDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "configuration=api" --recipe-option "version=3.0.0" --recipe-option "versionPattern='-jre'"
 ```
 
 If the recipe is not available locally, then you can install it using:
