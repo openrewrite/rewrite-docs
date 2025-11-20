@@ -95,7 +95,6 @@ Since preconditions work on already-parsed files, they're not the right tool if 
 
 * ❌ **Don't use preconditions** - the Groovy files will still be parsed and fail
 * ✅ **Use exclusions** - skip parsing Groovy files: `exclusion("**/*.groovy")`
-* ✅ **Use plainTextMask** - parse Groovy files as text: `plainTextMask("**/*.groovy")`
 
 For information on how to configure each of these, please see:
 
