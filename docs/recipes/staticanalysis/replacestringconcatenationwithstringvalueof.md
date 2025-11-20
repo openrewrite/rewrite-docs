@@ -30,6 +30,45 @@ This recipe is used as part of the following composite recipes:
 
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void method() {
+        String s = "" + 1;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void method() {
+        String s = String.valueOf(1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class Test {
+    void method() {
+-       String s = "" + 1;
++       String s = String.valueOf(1);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

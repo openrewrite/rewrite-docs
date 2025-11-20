@@ -29,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Use `JpaSort.of(..)`](../../../java/spring/data/migratejpasort)
+* [Use `QuerydslPredicateExecutor&lt;T&gt;`](../../../java/spring/data/migratequerydsljparepository)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.mongodb`
   * artifactId: `mongodb-driver-legacy`
@@ -61,6 +62,7 @@ description: |
   Migrate applications to the latest Spring Data 2.3 release.
 recipeList:
   - org.openrewrite.java.spring.data.MigrateJpaSort
+  - org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.mongodb
       artifactId: mongodb-driver-legacy

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Spring Boot 4.0"
+sidebar_label: "Migrate to Spring Boot 4.0 (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Boot 4.0
+# Migrate to Spring Boot 4.0 (Community Edition)
 
 **org.openrewrite.java.spring.boot4.UpgradeSpringBoot\_4\_0**
 
@@ -33,9 +33,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Boot 3.5](../../../java/spring/boot3/upgradespringboot_3_5-community-edition)
+* [Migrate to Spring Boot 3.5 (Community Edition)](../../../java/spring/boot3/upgradespringboot_3_5-community-edition)
 * [Migrate to Spring Framework 7.0](../../../java/spring/framework/upgradespringframework_7_0)
+* [Migrate to Spring Security 7.0](../../../java/spring/security7/upgradespringsecurity_7_0)
+* [Migrate to Spring Batch 6.0 from 5.2](../../../java/spring/batch/springbatch5to6migration)
 * [Migrate Spring Boot properties to 4.0](../../../java/spring/boot4/springbootproperties_4_0)
+* [Replace `@MockBean` and `@SpyBean`](../../../java/spring/boot4/replacemockbeanandspybean)
+* [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 
 </TabItem>
 
@@ -45,7 +49,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0
-displayName: Migrate to Spring Boot 4.0
+displayName: Migrate to Spring Boot 4.0 (Community Edition)
 description: |
   Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
 tags:
@@ -54,7 +58,11 @@ tags:
 recipeList:
   - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0
+  - org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0
+  - org.openrewrite.java.spring.batch.SpringBatch5To6Migration
   - org.openrewrite.java.spring.boot4.SpringBootProperties_4_0
+  - org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean
+  - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
 
 ```
 </TabItem>
@@ -64,7 +72,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 4.0](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 
 
 ## Usage

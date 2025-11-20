@@ -30,6 +30,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe.md)
 * [Prefer `A.class::isInstance`](./noguavapredicatesinstanceof.md)
 * [Prefer `Arrays.asList(..)` over Guava primitives](./noguavaprimitiveaslist.md)
+* [Prefer `Collection.stream().allMatch(Predicate)`](./noguavaiterablesall.md)
 * [Prefer `Collection.stream().anyMatch(Predicate)`](./noguavaiterablesanyfilter.md)
 * [Prefer `Collection.stream().filter(Predicate)`](./noguavasetsfilter.md)
 * [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](./noguavacollections2transform.md)

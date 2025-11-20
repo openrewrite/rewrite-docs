@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | oldKeyName | The name of the key to be replaced | `ossrh_username` |
 | `String` | newKeyName | The new key name to use | `sonatype_username` |
-| `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.yml` |
+| `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.{yml,yaml}` |
 
 
 ## Used by
@@ -48,7 +48,7 @@ recipeList:
   - org.openrewrite.github.ReplaceSecretKeys:
       oldKeyName: ossrh_username
       newKeyName: sonatype_username
-      fileMatcher: .github/workflows/*.yml
+      fileMatcher: .github/workflows/*.{yml,yaml}
 ```
 
 Now that `com.yourorg.ReplaceSecretKeysExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}` in your build file:
@@ -114,7 +114,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceSecretKeys --recipe-option "oldKeyName=ossrh_username" --recipe-option "newKeyName=sonatype_username" --recipe-option "fileMatcher=.github/workflows/*.yml"
+mod run . --recipe ReplaceSecretKeys --recipe-option "oldKeyName=ossrh_username" --recipe-option "newKeyName=sonatype_username" --recipe-option "fileMatcher=.github/workflows/*.{yml,yaml}"
 ```
 
 If the recipe is not available locally, then you can install it using:

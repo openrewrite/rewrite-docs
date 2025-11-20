@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07) or the non standard options @hourly @daily @weekly @weekdays @weekends @monthly @yearly. | `@daily` |
-| `String` | workflowFileMatcher | *Optional*. Matches one or more workflows to update. Defaults to `*.yml` | `build.yml` |
+| `String` | workflowFileMatcher | *Optional*. Matches one or more workflows to update. Defaults to `*.{yml,yaml}` | `build.yml` |
 
 
 ## Usage

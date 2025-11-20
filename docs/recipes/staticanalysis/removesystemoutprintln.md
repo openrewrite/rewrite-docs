@@ -36,17 +36,32 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
+import java.io.PrintStream;
+
 class Test {
-    void test() {
+    void printOut() {
         System.out.println("Hello, world!");
+    }
+    void printErr() {
+        System.err.println("Hello, world!");
+    }
+    void printStream(PrintStream printStream) {
+        printStream.println("Hello, world!");
     }
 }
 ```
 
 ###### After
 ```java
+import java.io.PrintStream;
+
 class Test {
-    void test() {
+    void printOut() {
+    }
+    void printErr() {
+    }
+    void printStream(PrintStream printStream) {
+        printStream.println("Hello, world!");
     }
 }
 ```
@@ -55,10 +70,15 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,1 +3,0 @@
+@@ -5,1 +5,0 @@
 class Test {
-    void test() {
+    void printOut() {
 -       System.out.println("Hello, world!");
+    }
+@@ -8,1 +7,0 @@
+    }
+    void printErr() {
+-       System.err.println("Hello, world!");
     }
 ```
 </TabItem>

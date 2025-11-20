@@ -51,6 +51,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
+* [Migrate to Spring Boot 4.0 modular starters](/recipes/java/spring/boot4/migratetomodularstarters.md)
 * [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Remove Jackson 2.x modules included in jackson-databind in 3.x.](/recipes/java/jackson/upgradejackson_2_3_removemodules.md)

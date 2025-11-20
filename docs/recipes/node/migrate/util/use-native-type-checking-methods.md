@@ -11,6 +11,24 @@ import TabItem from '@theme/TabItem';
 
 _The `util` module's type-checking methods have been removed in Node 22._
 
+### Tags
+
+* [DEP0052](/reference/recipes-by-tag#dep0052)
+* [DEP0053](/reference/recipes-by-tag#dep0053)
+* [DEP0054](/reference/recipes-by-tag#dep0054)
+* [DEP0044](/reference/recipes-by-tag#dep0044)
+* [DEP0055](/reference/recipes-by-tag#dep0055)
+* [DEP0050](/reference/recipes-by-tag#dep0050)
+* [DEP0051](/reference/recipes-by-tag#dep0051)
+* [DEP0049](/reference/recipes-by-tag#dep0049)
+* [DEP0045](/reference/recipes-by-tag#dep0045)
+* [DEP0056](/reference/recipes-by-tag#dep0056)
+* [DEP0046](/reference/recipes-by-tag#dep0046)
+* [DEP0057](/reference/recipes-by-tag#dep0057)
+* [DEP0047](/reference/recipes-by-tag#dep0047)
+* [DEP0058](/reference/recipes-by-tag#dep0058)
+* [DEP0048](/reference/recipes-by-tag#dep0048)
+
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.node.migrate.util.use-native-type-checking-methods),

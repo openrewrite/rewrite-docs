@@ -1,25 +1,26 @@
 ---
-sidebar_label: "Replace `@MockBean` and `@SpyBean`"
+sidebar_label: "Migrate to Spring Security 7.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `@MockBean` and `@SpyBean`
+# Migrate to Spring Security 7.0
 
-**org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean**
+**org.openrewrite.java.spring.security7.UpgradeSpringSecurity\_7\_0**
 
-_Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`._
+_Migrate applications to the latest Spring Security 7.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+
+### Tags
+
+* [spring](/reference/recipes-by-tag#spring)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/replace-mock-and-spybean.yml),
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-70.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -28,34 +29,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change annotation attribute name](../../../java/changeannotationattributename)
-  * annotationType: `org.springframework.boot.test.mock.mockito.MockBean`
-  * oldAttributeName: `answer`
-  * newAttributeName: `answers`
-* [Remove annotation attribute](../../../java/removeannotationattribute)
-  * annotationType: `org.springframework.boot.test.mock.mockito.MockBean`
-  * attributeName: `classes`
-* [Remove annotation attribute](../../../java/removeannotationattribute)
-  * annotationType: `org.springframework.boot.test.mock.mockito.MockBean`
-  * attributeName: `value`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.springframework.boot.test.mock.mockito.MockBean`
-  * newFullyQualifiedTypeName: `org.springframework.test.context.bean.override.mockito.MockitoBean`
-* [Remove annotation attribute](../../../java/removeannotationattribute)
-  * annotationType: `org.springframework.boot.test.mock.mockito.SpyBean`
-  * attributeName: `classes`
-* [Remove annotation attribute](../../../java/removeannotationattribute)
-  * annotationType: `org.springframework.boot.test.mock.mockito.SpyBean`
-  * attributeName: `value`
-* [Remove annotation attribute](../../../java/removeannotationattribute)
-  * annotationType: `org.springframework.boot.test.mock.mockito.SpyBean`
-  * attributeName: `proxyTargetAware`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.springframework.boot.test.mock.mockito.SpyBean`
-  * newFullyQualifiedTypeName: `org.springframework.test.context.bean.override.mockito.MockitoSpyBean`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.springframework.boot.test.mock.mockito.MockReset`
-  * newFullyQualifiedTypeName: `org.springframework.test.context.bean.override.mockito.MockReset`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `*`
+  * newVersion: `7.0.x`
+  * overrideManagedVersion: `false`
 
 </TabItem>
 
@@ -64,137 +42,29 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean
-displayName: Replace `@MockBean` and `@SpyBean`
+name: org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0
+displayName: Migrate to Spring Security 7.0
 description: |
-  Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`.
+  Migrate applications to the latest Spring Security 7.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+tags:
+  - spring
+  - security
 recipeList:
-  - org.openrewrite.java.ChangeAnnotationAttributeName:
-      annotationType: org.springframework.boot.test.mock.mockito.MockBean
-      oldAttributeName: answer
-      newAttributeName: answers
-  - org.openrewrite.java.RemoveAnnotationAttribute:
-      annotationType: org.springframework.boot.test.mock.mockito.MockBean
-      attributeName: classes
-  - org.openrewrite.java.RemoveAnnotationAttribute:
-      annotationType: org.springframework.boot.test.mock.mockito.MockBean
-      attributeName: value
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.springframework.boot.test.mock.mockito.MockBean
-      newFullyQualifiedTypeName: org.springframework.test.context.bean.override.mockito.MockitoBean
-  - org.openrewrite.java.RemoveAnnotationAttribute:
-      annotationType: org.springframework.boot.test.mock.mockito.SpyBean
-      attributeName: classes
-  - org.openrewrite.java.RemoveAnnotationAttribute:
-      annotationType: org.springframework.boot.test.mock.mockito.SpyBean
-      attributeName: value
-  - org.openrewrite.java.RemoveAnnotationAttribute:
-      annotationType: org.springframework.boot.test.mock.mockito.SpyBean
-      attributeName: proxyTargetAware
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.springframework.boot.test.mock.mockito.SpyBean
-      newFullyQualifiedTypeName: org.springframework.test.context.bean.override.mockito.MockitoSpyBean
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.springframework.boot.test.mock.mockito.MockReset
-      newFullyQualifiedTypeName: org.springframework.test.context.bean.override.mockito.MockReset
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: "*"
+      newVersion: 7.0.x
+      overrideManagedVersion: false
 
 ```
 </TabItem>
 </Tabs>
-## Examples
-##### Example 1
-`ReplaceMockBeanAndSpyBeanTest#replacesMockBeanWithMockitoBean`
 
+## Used by
 
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+This recipe is used as part of the following composite recipes:
 
-
-###### Before
-```java
-import org.springframework.boot.test.mock.mockito.MockBean;
-
-public class SomeTest {
-    @MockBean
-    private String someService;
-}
-```
-
-###### After
-```java
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
-
-public class SomeTest {
-    @MockitoBean
-    private String someService;
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.springframework.boot.test.mock.mockito.MockBean;
-+import org.springframework.test.context.bean.override.mockito.MockitoBean;
-
-@@ -4,1 +4,1 @@
-
-public class SomeTest {
--   @MockBean
-+   @MockitoBean
-    private String someService;
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`ReplaceMockBeanAndSpyBeanTest#replacesMockBeanWithMockitoBean`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.springframework.boot.test.mock.mockito.MockBean;
-
-public class SomeTest {
-    @MockBean
-    private String someService;
-}
-```
-
-###### After
-```java
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
-
-public class SomeTest {
-    @MockitoBean
-    private String someService;
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.springframework.boot.test.mock.mockito.MockBean;
-+import org.springframework.test.context.bean.override.mockito.MockitoBean;
-
-@@ -4,1 +4,1 @@
-
-public class SomeTest {
--   @MockBean
-+   @MockitoBean
-    private String someService;
-```
-</TabItem>
-</Tabs>
+* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
 
 ## Usage
@@ -211,7 +81,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean")
+    activeRecipe("org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0")
     setExportDatatables(true)
 }
 
@@ -244,7 +114,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean")
+        activeRecipe("org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -279,7 +149,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean</recipe>
+            <recipe>org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -302,7 +172,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -310,7 +180,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceMockBeanAndSpyBean
+mod run . --recipe UpgradeSpringSecurity_7_0
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -324,7 +194,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.ReplaceMockBeanAndSpyBean" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

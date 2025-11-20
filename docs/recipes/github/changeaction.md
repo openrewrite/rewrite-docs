@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.github.ChangeAction**
 
-_Change a GitHub Action in any `.github/workflows/*.yml` file._
+_Change a GitHub Action in any workflow._
 
 ## Recipe source
 

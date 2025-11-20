@@ -144,7 +144,6 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 * [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
 * [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)

@@ -35,6 +35,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
 * [Migrate `Joined.named()` to `Joined.as()`](/recipes/kafka/streams/migratejoinednamemethod.md)
 * [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/springfoxtospringdoc.md)
+* [Replace deprecated RequestMatcherProvider with new API](/recipes/java/spring/boot4/replacedeprecatedrequestmatcherprovider.md)
 
 
 ## Usage

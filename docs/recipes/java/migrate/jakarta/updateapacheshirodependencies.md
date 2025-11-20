@@ -32,10 +32,41 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.shiro`
   * artifactId: `*`
   * newClassifier: `jakarta`
+* [Change a Gradle dependency classifier](../../../gradle/changedependencyclassifier)
+  * groupId: `org.apache.shiro`
+  * artifactId: `*`
+  * newClassifier: `jakarta`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.apache.shiro`
   * artifactId: `*`
   * newVersion: `2.0.x`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.apache.shiro.codec`
+  * newPackageName: `org.apache.shiro.lang.codec`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.shiro.util.ByteSource`
+  * newFullyQualifiedTypeName: `org.apache.shiro.lang.util.ByteSource`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.shiro.util.StringUtils`
+  * newFullyQualifiedTypeName: `org.apache.shiro.lang.util.StringUtils`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `io.buji`
+  * artifactId: `buji-pac4j`
+  * newVersion: `9.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.pac4j`
+  * artifactId: `*`
+  * newVersion: `6.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.pac4j`
+  * oldArtifactId: `javaee-pac4j`
+  * newArtifactId: `pac4j-jakartaee`
+  * newVersion: `6.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.pac4j`
+  * oldArtifactId: `pac4j-javaee`
+  * newArtifactId: `pac4j-jakartaee`
+  * newVersion: `6.x`
 
 </TabItem>
 
@@ -53,10 +84,41 @@ recipeList:
       groupId: org.apache.shiro
       artifactId: "*"
       newClassifier: jakarta
+  - org.openrewrite.gradle.ChangeDependencyClassifier:
+      groupId: org.apache.shiro
+      artifactId: "*"
+      newClassifier: jakarta
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.apache.shiro
       artifactId: "*"
       newVersion: 2.0.x
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.shiro.codec
+      newPackageName: org.apache.shiro.lang.codec
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.shiro.util.ByteSource
+      newFullyQualifiedTypeName: org.apache.shiro.lang.util.ByteSource
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.shiro.util.StringUtils
+      newFullyQualifiedTypeName: org.apache.shiro.lang.util.StringUtils
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: io.buji
+      artifactId: buji-pac4j
+      newVersion: 9.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.pac4j
+      artifactId: "*"
+      newVersion: 6.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.pac4j
+      oldArtifactId: javaee-pac4j
+      newArtifactId: pac4j-jakartaee
+      newVersion: 6.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.pac4j
+      oldArtifactId: pac4j-javaee
+      newArtifactId: pac4j-jakartaee
+      newVersion: 6.x
 
 ```
 </TabItem>
@@ -67,6 +129,59 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
+
+## Examples
+##### Example 1
+`UpdateApacheShiroDependenciesTest#migrateShiroDependenciesMaven`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>com.example.shiro</groupId>
+    <artifactId>shiro-legacy</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.13.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`UpdateApacheShiroDependenciesTest#migrateShiroDependenciesMaven`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>com.example.shiro</groupId>
+    <artifactId>shiro-legacy</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.13.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 
 ## Usage

@@ -67,7 +67,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Boot 3.5 deprecated classes and methods](/recipes/java/spring/boot3/springboot35deprecations.md)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](/recipes/kafka/migrateadminlistconsumergroups.md)
-* [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/springdoc/apiinfobuildertoinfo.md)
+* [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/spring/doc/apiinfobuildertoinfo.md)
 * [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
 * [Migrate `Joined.named()` to `Joined.as()`](/recipes/kafka/streams/migratejoinednamemethod.md)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)

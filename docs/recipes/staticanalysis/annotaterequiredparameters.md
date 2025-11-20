@@ -1,90 +1,43 @@
 ---
-sidebar_label: "Replace elements of SpringFox's security with Swagger's security models"
+sidebar_label: "Annotate required method parameters with `@NonNull`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace elements of SpringFox's security with Swagger's security models
+# Annotate required method parameters with `@NonNull`
 
-**org.openrewrite.java.springdoc.SecurityContextToSecurityScheme**
+**org.openrewrite.staticanalysis.AnnotateRequiredParameters**
 
-_Replace `ApiKey`, `AuthorizationScope`, and `SecurityScheme` elements with Swagger's equivalents._
+_Add `@NonNull` to parameters of public methods that are explicitly checked for `null` and throw an exception if null. By default `org.jspecify.annotations.NonNull` is used, but through the `nonNullAnnotationClass` option a custom annotation can be provided. When providing a custom `nonNullAnnotationClass` that annotation should be meta annotated with `@Target(TYPE_USE)`. This recipe scans for methods that do not already have parameters annotated with `@NonNull` annotation and checks for null validation patterns that throw exceptions, such as `if (param == null) throw new IllegalArgumentException()`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/springdoc/SecurityContextToSecurityScheme.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/AnnotateRequiredParameters.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Options
 
-## Definition
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | nonNullAnnotationClass | *Optional*. The fully qualified name of the @NonNull annotation. The annotation should be meta annotated with `@Target(TYPE_USE)`. Defaults to `org.jspecify.annotations.NonNull` | `org.jspecify.annotations.NonNull` |
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `springfox.documentation.service.ApiKey`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.models.security.SecurityScheme`
-  * ignoreDefinition: `true`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `springfox.documentation.service.SecurityScheme`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.models.security.SecurityScheme`
-  * ignoreDefinition: `true`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `springfox.documentation.service.SecurityReference`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.models.security.SecurityRequirement`
-  * ignoreDefinition: `true`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `springfox.documentation.service.AuthorizationScope`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.models.security.Scopes`
-  * ignoreDefinition: `true`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.springdoc.SecurityContextToSecurityScheme
-displayName: Replace elements of SpringFox's security with Swagger's security models
-description: |
-  Replace `ApiKey`, `AuthorizationScope`, and `SecurityScheme` elements with Swagger's equivalents.
-recipeList:
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: springfox.documentation.service.ApiKey
-      newFullyQualifiedTypeName: io.swagger.v3.oas.models.security.SecurityScheme
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: springfox.documentation.service.SecurityScheme
-      newFullyQualifiedTypeName: io.swagger.v3.oas.models.security.SecurityScheme
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: springfox.documentation.service.SecurityReference
-      newFullyQualifiedTypeName: io.swagger.v3.oas.models.security.SecurityRequirement
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: springfox.documentation.service.AuthorizationScope
-      newFullyQualifiedTypeName: io.swagger.v3.oas.models.security.Scopes
-      ignoreDefinition: true
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/springfoxtospringdoc.md)
+* [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
 
 ## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|nonNullAnnotationClass|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -93,25 +46,23 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-import springfox.documentation.service.ApiKey;
-
 class Test {
-    ApiKey apiKey() {
-        return new ApiKey("api_key", "X-API-KEY", "header");
+    public void process(String value) {
+        if (value == null) {
+            throw new IllegalArgumentException("value cannot be null");
+        }
+        System.out.println(value);
     }
 }
 ```
 
 ###### After
 ```java
-import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.jspecify.annotations.NonNull;
 
 class Test {
-    SecurityScheme apiKey() {
-        return new SecurityScheme()
-                .type(SecurityScheme.Type.APIKEY)
-                .name("X-API-KEY")
-                .in(SecurityScheme.In.HEADER);
+    public void process(@NonNull String value) {
+        System.out.println(value);
     }
 }
 ```
@@ -120,21 +71,18 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,1 @@
--import springfox.documentation.service.ApiKey;
-+import io.swagger.v3.oas.models.security.SecurityScheme;
-
-@@ -4,2 +4,5 @@
-
+@@ -1,0 +1,2 @@
++import org.jspecify.annotations.NonNull;
++
 class Test {
--   ApiKey apiKey() {
--       return new ApiKey("api_key", "X-API-KEY", "header");
-+   SecurityScheme apiKey() {
-+       return new SecurityScheme()
-+               .type(SecurityScheme.Type.APIKEY)
-+               .name("X-API-KEY")
-+               .in(SecurityScheme.In.HEADER);
-    }
+@@ -2,4 +4,1 @@
+class Test {
+-   public void process(String value) {
+-       if (value == null) {
+-           throw new IllegalArgumentException("value cannot be null");
+-       }
++   public void process(@NonNull String value) {
+        System.out.println(value);
 ```
 </TabItem>
 </Tabs>
@@ -142,7 +90,7 @@ class Test {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -154,7 +102,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.springdoc.SecurityContextToSecurityScheme")
+    activeRecipe("org.openrewrite.staticanalysis.AnnotateRequiredParameters")
     setExportDatatables(true)
 }
 
@@ -163,7 +111,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
 }
 ```
 
@@ -184,10 +132,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+        rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.springdoc.SecurityContextToSecurityScheme")
+        activeRecipe("org.openrewrite.staticanalysis.AnnotateRequiredParameters")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -222,14 +170,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.springdoc.SecurityContextToSecurityScheme</recipe>
+            <recipe>org.openrewrite.staticanalysis.AnnotateRequiredParameters</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
+            <artifactId>rewrite-static-analysis</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -245,7 +193,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.springdoc.SecurityContextToSecurityScheme -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.AnnotateRequiredParameters -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -253,12 +201,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe SecurityContextToSecurityScheme
+mod run . --recipe AnnotateRequiredParameters
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>
@@ -267,7 +215,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.springdoc.SecurityContextToSecurityScheme" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.AnnotateRequiredParameters" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

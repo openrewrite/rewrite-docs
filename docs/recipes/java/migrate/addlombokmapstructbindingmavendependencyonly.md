@@ -1,21 +1,21 @@
 ---
-sidebar_label: "Migrate `ApiInfoBuilder` to `Info`"
+sidebar_label: "Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate `ApiInfoBuilder` to `Info`
+# Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used
 
-**org.openrewrite.java.springdoc.ApiInfoBuilderToInfo**
+**org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly**
 
-_Migrate SpringFox's `ApiInfoBuilder` to Swagger's `Info`._
+_Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks_
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/springdoc/ApiInfoBuilderToInfo.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -28,19 +28,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `springfox.documentation.builders.ApiInfoBuilder termsOfServiceUrl(String)`
-  * newMethodName: `termsOfService`
-  * matchOverrides: `true`
-  * ignoreDefinition: `true`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `springfox.documentation.service.ApiInfo`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.models.info.Info`
-  * ignoreDefinition: `true`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `springfox.documentation.builders.ApiInfoBuilder`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.models.info.Info`
-  * ignoreDefinition: `true`
+* [Add Maven dependency](../../maven/adddependency)
+  * groupId: `org.projectlombok`
+  * artifactId: `lombok-mapstruct-binding`
+  * version: `0.2.0`
+  * acceptTransitive: `false`
 
 </TabItem>
 
@@ -49,24 +41,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.springdoc.ApiInfoBuilderToInfo
-displayName: Migrate `ApiInfoBuilder` to `Info`
+name: org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly
+displayName: Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used
 description: |
-  Migrate SpringFox's `ApiInfoBuilder` to Swagger's `Info`.
+  Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks
 recipeList:
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: springfox.documentation.builders.ApiInfoBuilder termsOfServiceUrl(String)
-      newMethodName: termsOfService
-      matchOverrides: true
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: springfox.documentation.service.ApiInfo
-      newFullyQualifiedTypeName: io.swagger.v3.oas.models.info.Info
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: springfox.documentation.builders.ApiInfoBuilder
-      newFullyQualifiedTypeName: io.swagger.v3.oas.models.info.Info
-      ignoreDefinition: true
+  - org.openrewrite.maven.AddDependency:
+      groupId: org.projectlombok
+      artifactId: lombok-mapstruct-binding
+      version: 0.2.0
+      acceptTransitive: false
 
 ```
 </TabItem>
@@ -76,97 +60,12 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/springfoxtospringdoc.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
-
-class Test {
-    ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Springfox petstore API")
-                .description("Lorem Ipsum")
-                .termsOfServiceUrl("http://springfox.io")
-                .contact(new Contact("springfox", "", ""))
-                .license("Apache License Version 2.0")
-                .licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")
-                .version("2.0")
-                .build();
-    }
-}
-```
-
-###### After
-```java
-import io.swagger.v3.oas.models.info.Contact;
-import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.info.License;
-
-class Test {
-    Info apiInfo() {
-        return new Info()
-                .title("Springfox petstore API")
-                .description("Lorem Ipsum")
-                .termsOfService("http://springfox.io")
-                .contact(new Contact().name("springfox").url("").email(""))
-                .license(new License().name("Apache License Version 2.0").url("https://github.com/springfox/springfox/blob/master/LICENSE"))
-                .version("2.0");
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,3 +1,3 @@
--import springfox.documentation.builders.ApiInfoBuilder;
--import springfox.documentation.service.ApiInfo;
--import springfox.documentation.service.Contact;
-+import io.swagger.v3.oas.models.info.Contact;
-+import io.swagger.v3.oas.models.info.Info;
-+import io.swagger.v3.oas.models.info.License;
-
-@@ -6,2 +6,2 @@
-
-class Test {
--   ApiInfo apiInfo() {
--       return new ApiInfoBuilder()
-+   Info apiInfo() {
-+       return new Info()
-                .title("Springfox petstore API")
-@@ -10,6 +10,4 @@
-                .title("Springfox petstore API")
-                .description("Lorem Ipsum")
--               .termsOfServiceUrl("http://springfox.io")
--               .contact(new Contact("springfox", "", ""))
--               .license("Apache License Version 2.0")
--               .licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")
--               .version("2.0")
--               .build();
-+               .termsOfService("http://springfox.io")
-+               .contact(new Contact().name("springfox").url("").email(""))
-+               .license(new License().name("Apache License Version 2.0").url("https://github.com/springfox/springfox/blob/master/LICENSE"))
-+               .version("2.0");
-    }
-```
-</TabItem>
-</Tabs>
+* [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -178,7 +77,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.springdoc.ApiInfoBuilderToInfo")
+    activeRecipe("org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly")
     setExportDatatables(true)
 }
 
@@ -187,7 +86,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
 }
 ```
 
@@ -208,10 +107,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.springdoc.ApiInfoBuilderToInfo")
+        activeRecipe("org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -246,14 +145,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.springdoc.ApiInfoBuilderToInfo</recipe>
+            <recipe>org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -269,7 +168,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.springdoc.ApiInfoBuilderToInfo -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -277,12 +176,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ApiInfoBuilderToInfo
+mod run . --recipe AddLombokMapstructBindingMavenDependencyOnly
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -291,7 +190,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.springdoc.ApiInfoBuilderToInfo" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

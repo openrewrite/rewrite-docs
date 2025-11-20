@@ -23,7 +23,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | fromVersion | XRage pattern for spring version used to limit which projects should be updated | ` 2.7.+` |
+| `String` | fromVersion | XRange pattern for spring version used to limit which projects should be updated | ` 2.7.+` |
 | `String` | toVersion | Upgrade version of `org.springframework.boot` | `3.0.0-M3` |
 
 ## Example

@@ -71,6 +71,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md)
+
 ## Examples
 ##### Example 1
 `RenameNimbusdsJsonObjectPackageNameTest#renamePackage`

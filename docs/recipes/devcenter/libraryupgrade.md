@@ -23,7 +23,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | cardName | The display name of the DevCenter card | `Move to Spring Boot 3.5.0` |
+| `String` | cardName | The display name of the DevCenter card | `Move to Spring Boot 4.0` |
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. | `com.fasterxml.jackson.module` |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `jackson-module-*` |
 | `String` | version | The target version of the upgrade. Specify the version out to the desired patch version. | `3.4.1` |
@@ -49,7 +49,7 @@ name: com.yourorg.LibraryUpgradeExample
 displayName: Library upgrade example
 recipeList:
   - io.moderne.devcenter.LibraryUpgrade:
-      cardName: Move to Spring Boot 3.5.0
+      cardName: Move to Spring Boot 4.0
       groupIdPattern: com.fasterxml.jackson.module
       artifactIdPattern: jackson-module-*
       version: 3.4.1
@@ -119,7 +119,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe LibraryUpgrade --recipe-option "cardName=Move to Spring Boot 3.5.0" --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "version=3.4.1" --recipe-option "upgradeRecipe=io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5"
+mod run . --recipe LibraryUpgrade --recipe-option "cardName=Move to Spring Boot 4.0" --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "version=3.4.1" --recipe-option "upgradeRecipe=io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5"
 ```
 
 If the recipe is not available locally, then you can install it using:

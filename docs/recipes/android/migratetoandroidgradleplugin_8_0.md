@@ -19,6 +19,13 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Android Gradle Plugin 8.1](/recipes/android/migratetoandroidgradleplugin_8_1.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:

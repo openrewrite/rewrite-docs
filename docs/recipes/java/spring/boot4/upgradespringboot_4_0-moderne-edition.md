@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Spring Boot 4.0"
+sidebar_label: "Migrate to Spring Boot 4.0 (Moderne Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Boot 4.0
+# Migrate to Spring Boot 4.0 (Moderne Edition)
 
 **io.moderne.java.spring.boot4.UpgradeSpringBoot\_4\_0**
 

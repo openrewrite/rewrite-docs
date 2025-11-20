@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
+* [Migrate to Spring Boot 3.4 (Moderne Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
 
 
 ## Usage
