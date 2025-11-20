@@ -172,11 +172,11 @@ import {capture, pattern, template} from "@openrewrite/rewrite/javascript";
 
 const args = capture({ variadic: true });
 const pat = pattern`oldApi.method(${args})`;  // Lenient type checking by default
-const match = await pat.match(node);
+const match = await pat.match(node, this.cursor);
 
 if (match) {
     return await template`newApi.methodAsync(${args})`
-        .apply(cursor, node, match);
+        .apply(node, this.cursor, { values: match });
 }
 ```
 
@@ -271,7 +271,7 @@ protected async visitMethodInvocation(
         return method;
     }
 
-    return await tmpl.apply(this.cursor, method, match);
+    return await tmpl.apply(method, this.cursor, { values: match });
 }
 ```
 
@@ -359,7 +359,7 @@ protected async visitMethodInvocation(
 ): Promise<J | undefined> {
     if (shouldCompletelyReplace(method)) {
         // Don't call super - we're replacing the whole thing
-        return await template`newExpression()`.apply(this.cursor, method);
+        return await template`newExpression()`.apply(method, this.cursor);
     }
 
     // For other cases, visit children first
@@ -421,23 +421,30 @@ const enclosing = cursor.firstEnclosing(isMethodDeclaration);
 ### Import Management
 
 Utility functions for managing imports:
-- `maybeAddImport(cu, pkg, member, alias, ctx)` - Add import if missing
-- `maybeRemoveImport(cu, pkg, member, ctx)` - Remove unused import
+- `maybeAddImport(visitor, options)` - Add import if missing
+- `maybeRemoveImport(visitor, module, member?)` - Remove unused import
 
 ```typescript
 protected async visitJsCompilationUnit(
     cu: JS.CompilationUnit,
     ctx: ExecutionContext
 ): Promise<J | undefined> {
-    let modified = cu;
-
     // Add import: import { debounce } from "lodash"
-    modified = await maybeAddImport(modified, "lodash", "debounce", null, ctx);
+    maybeAddImport(this, { module: "lodash", member: "debounce" });
+
+    // Add default import: import React from "react"
+    maybeAddImport(this, { module: "react", member: "default", alias: "React" });
+
+    // Add namespace import: import * as fs from "fs"
+    maybeAddImport(this, { module: "fs", member: "*", alias: "fs" });
+
+    // Add side-effect import: import "polyfills"
+    maybeAddImport(this, { module: "polyfills", sideEffectOnly: true });
 
     // Remove import
-    modified = await maybeRemoveImport(modified, "old-lib", "oldFn", ctx);
+    maybeRemoveImport(this, "old-lib", "oldFn");
 
-    return modified;
+    return cu;
 }
 ```
 

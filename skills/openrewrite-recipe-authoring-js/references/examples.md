@@ -338,7 +338,7 @@ export class AddAsyncSuffix extends Recipe {
                         const newName = name.simpleName + 'Async';
 
                         // Use property access in template
-                        return await template`api.${newName}(${args})`.apply(this.cursor, method, match);
+                        return await template`api.${newName}(${args})`.apply(method, this.cursor, { values: match });
                     }
                 }
 
@@ -585,7 +585,7 @@ export class OptimizeAssertions extends Recipe {
                     return method;
                 }
 
-                return await tmpl.apply(this.cursor, method, match);
+                return await tmpl.apply(method, this.cursor, { values: match });
             }
 
             private isObjectExpression(node: J | undefined): boolean {
@@ -676,7 +676,7 @@ export class UseValidatorLibrary extends Recipe {
                 if (match) {
                     // Template will be parsed with proper type information
                     // from the configured context and dependencies
-                    return await tmpl.apply(this.cursor, method, match);
+                    return await tmpl.apply(method, this.cursor, { values: match });
                 }
                 return method;
             }

@@ -45,7 +45,7 @@ protected async visitMethodInvocation(
     if (isIdentifier(method.name) && method.name.simpleName === 'targetMethod') {
         // Add a new argument to existing ones
         return await template`${method.select}.${method.name}(${method.arguments}, "newParam")`
-            .apply(this.cursor, method);
+            .apply(method, this.cursor);
     }
     return method;
 }
@@ -80,7 +80,7 @@ protected async visitArrowFunction(
     const body = arrow.body;
 
     return await template`function(${params}) ${body}`
-        .apply(this.cursor, arrow);
+        .apply(arrow, this.cursor);
 }
 ```
 
@@ -94,7 +94,7 @@ protected async visitMethodInvocation(
     if (isIdentifier(method.name) && method.name.simpleName === 'then') {
         // Convert promise.then() to await
         const promise = method.select.element;
-        return await template`await ${promise}`.apply(this.cursor, method);
+        return await template`await ${promise}`.apply(method, this.cursor);
     }
     return method;
 }
@@ -109,15 +109,13 @@ protected async visitJsCompilationUnit(
     cu: JS.CompilationUnit,
     ctx: ExecutionContext
 ): Promise<J | undefined> {
-    let modified = cu;
-
     // Add new import if needed
-    modified = await maybeAddImport(modified, "lodash", "debounce", null, ctx);
+    maybeAddImport(this, { module: "lodash", member: "debounce" });
 
     // Remove old import
-    modified = await maybeRemoveImport(modified, "old-library", "oldFunction", ctx);
+    maybeRemoveImport(this, "old-library", "oldFunction");
 
-    return await maybeAutoFormat(cu, modified, ctx, this.cursor);
+    return await maybeAutoFormat(cu, cu, ctx, this.cursor);
 }
 ```
 
@@ -157,9 +155,9 @@ protected async visitJsCompilationUnit(
     ctx: ExecutionContext
 ): Promise<J | undefined> {
     // Remove old import, add new one
-    let modified = await maybeRemoveImport(cu, "old-module", "oldExport", ctx);
-    modified = await maybeAddImport(modified, "new-module", "newExport", null, ctx);
-    return modified;
+    maybeRemoveImport(this, "old-module", "oldExport");
+    maybeAddImport(this, { module: "new-module", member: "newExport" });
+    return cu;
 }
 ```
 
@@ -191,9 +189,9 @@ protected async visitJsCompilationUnit(
     ctx: ExecutionContext
 ): Promise<J | undefined> {
     // Cleanup imports after transforming usage
-    let modified = await maybeRemoveImport(cu, "old-module", "oldExport", ctx);
-    modified = await maybeAddImport(modified, "new-module", "newExport", null, ctx);
-    return modified;
+    maybeRemoveImport(this, "old-module", "oldExport");
+    maybeAddImport(this, { module: "new-module", member: "newExport" });
+    return cu;
 }
 ```
 
@@ -257,11 +255,11 @@ const methodName = capture<J.Identifier>({
 const args = capture({ variadic: true });
 
 const pat = pattern`this.${methodName}(${args})`;
-const match = await pat.match(node);
+const match = await pat.match(node, this.cursor);
 
 if (match) {
     const name = match.get(methodName);
-    return await template`this.${name}Async(${args})`.apply(cursor, node, match);
+    return await template`this.${name}Async(${args})`.apply(node, this.cursor, { values: match });
 }
 ```
 
@@ -369,7 +367,7 @@ protected async visitJsxTag(
         // Transform to new component name using template
         return await template`<NewComponent {...${tag.attributes}}>
             ${tag.children}
-        </NewComponent>`.apply(this.cursor, tag);
+        </NewComponent>`.apply(tag, this.cursor);
     }
 
     return tag;
