@@ -16,7 +16,7 @@ Note that values passed to declarative recipes are subject to YAML interpretatio
 
 There are two places where you can define an OpenRewrite YAML file:
 
-1. Within the `rewrite.yml` file of a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md)
+1. Within the `rewrite.yml` file of a project that applies rewrite recipes via the [rewrite-gradle-plugin](./gradle-plugin-configuration.md) or [rewrite-maven-plugin](./rewrite-maven-plugin.md)
 2. Inside the `META-INF/rewrite` folder of a JAR (such as in the [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/main/src/main/resources/META-INF/rewrite))
 
 If you define a recipe or style in the `rewrite.yml` file, they _will not_ be included in the JARs published from your project.
@@ -48,13 +48,13 @@ You can find the full recipe schema [here](https://github.com/openrewrite/rewrit
 | tags                                               | array of strings                                                                                            | A list of strings that help categorize this recipe                      |
 | estimatedEffortPerOccurrence                       | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something |
 | causesAnotherCycle                                 | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)  |
-| [recipeList](yaml-format-reference.md#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                          |
+| [recipeList](#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                          |
 
 ### Preconditions
 
-Preconditions are used to limit which source files a recipe is allowed to make edits to. In other words, they act as filters that allow you to target specific files, directories, or patterns. 
+Preconditions are used to limit which source files a recipe is allowed to make edits to. In other words, they act as filters that allow you to target specific files, directories, or patterns.
 
-This is particularly useful when you want a recipe to run only on a subset of the codebase. 
+This is particularly useful when you want a recipe to run only on a subset of the codebase.
 
 Technically, almost any recipe can serve as a precondition, but in practice, lightweight and fast recipes – often based on simple searches – are preferred. These ensure performance remains optimal during large-scale code transformations.
 
@@ -62,10 +62,17 @@ When a recipe is used as a precondition, it determines whether a source file sho
 
 If a file does not satisfy the precondition, the recipe list is skipped for _that_ file entirely. When multiple recipes are used as preconditions, _all_ of them must make a change to the file for it to be considered to meet the precondition.
 
-:::info 
+:::info
 Changes made by preconditions are not included in the final result of the recipe.
 Changes made by preconditions are used _only_ to determine if the recipe should edit a particular source file.
 :::
+
+It's important to understand that preconditions operate on **already-parsed** source files. OpenRewrite runs in two distinct phases:
+
+1. **Parsing phase**: All source files (except those in `exclusions`) are parsed into LSTs
+2. **Recipe execution phase**: Preconditions determine which parsed files the recipe should modify
+
+This means preconditions cannot prevent files from being parsed - they only control whether recipes apply to files that have already been successfully parsed.
 
 :::warning
 Preconditions only apply to files that already exist in the source set. They cannot prevent the creation of new files.
@@ -74,6 +81,27 @@ If a recipe generates files during the `generate` phase, those files will always
 
 To conditionally generate files, implement a custom scanning recipe. You can define logic in the scanning phase based on existing source files, and use that context in the generate phase to control whether a file should be created.
 :::
+
+#### Preconditions vs. Exclusions
+
+Since preconditions work on already-parsed files, they're not the right tool if you need to skip parsing certain files. Below is a table that should help you make an informed decision on when to use one feature over another:
+
+| Feature           | Purpose                     | When It Runs         | Use Case                                                              |
+|-------------------|-----------------------------|----------------------|-----------------------------------------------------------------------|
+| **Exclusions**    | Skip parsing files entirely | During parsing phase | Avoid parse errors, skip expensive directories, ignore generated code |
+| **PlainTextMask** | Parse files as plain text   | During parsing phase | Parse files that would fail language-specific parsers                 |
+| **Preconditions** | Control recipe application  | After parsing phase  | Apply recipes to specific subsets of successfully-parsed files        |
+
+**Example scenario:** If you have Groovy files that fail to parse in a Java project:
+
+* ❌ **Don't use preconditions** - the Groovy files will still be parsed and fail
+* ✅ **Use exclusions** - skip parsing Groovy files: `exclusion("**/*.groovy")`
+* ✅ **Use plainTextMask** - parse Groovy files as text: `plainTextMask("**/*.groovy")`
+
+For information on how to configure each of these, please see:
+
+* [Gradle plugin configuration](./gradle-plugin-configuration.md#configuring-the-rewrite-dsl)
+* [Maven plugin configuration](./rewrite-maven-plugin.md)
 
 #### Adding preconditions to a YAML recipe
 
@@ -226,7 +254,7 @@ You can find the full style schema [here](https://github.com/openrewrite/rewrite
 :::
 
 | Key          | Type             | Description                                                       |
-| ------------ | ---------------- | ----------------------------------------------------------------- |
+|--------------|------------------|-------------------------------------------------------------------|
 | type         | const            | A constant: `specs.openrewrite.org/v1beta/style`                  |
 | name         | string           | A fully qualified, unique name for this style                     |
 | displayName  | string           | A human-readable name for this style (does not end with a period) |
