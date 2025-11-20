@@ -32,9 +32,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 - `Continue`: append new content to existing file contents. If existing file is not plaintext, recipe does nothing.
 - `Replace`: remove existing content from file.
 - `Leave`: *(default)* do nothing. Existing file is fully preserved.
+- `Merge`: append only lines from new content that are not already present in the file. Lines are compared line-by-line after trimming whitespace. Preserves existing line order.
 
 Note: this only affects the first interaction with the specified file per Rewrite execution.
-Subsequent instances of this recipe in the same Rewrite execution will always append. Valid options: `Continue`, `Replace`, `Leave` |  |
+Subsequent instances of this recipe in the same Rewrite execution will always append. Valid options: `Continue`, `Replace`, `Leave`, `Merge` |  |
 
 
 ## Usage

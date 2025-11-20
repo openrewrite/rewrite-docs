@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.github.ChangeActionVersion**
 
-_Change the version of a GitHub Action in any `.github/workflows/*.yml` file._
+_Change the version of a GitHub Action in any workflow._
 
 ## Recipe source
 
@@ -43,11 +43,11 @@ This recipe is used as part of the following composite recipes:
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value=".github/workflows/ci.yml" label=".github/workflows/ci.yml">
+<TabItem value=".github/workflows/ci.yaml" label=".github/workflows/ci.yaml">
 
 
 ###### Before
-```yaml title=".github/workflows/ci.yml"
+```yaml title=".github/workflows/ci.yaml"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
 ```
 
 ###### After
-```yaml title=".github/workflows/ci.yml"
+```yaml title=".github/workflows/ci.yaml"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -70,8 +70,8 @@ jobs:
 <TabItem value="diff" label="Diff" >
 
 ```diff
---- .github/workflows/ci.yml
-+++ .github/workflows/ci.yml
+--- .github/workflows/ci.yaml
++++ .github/workflows/ci.yaml
 @@ -6,1 +6,1 @@
     steps:
       - uses: actions/checkout@v2

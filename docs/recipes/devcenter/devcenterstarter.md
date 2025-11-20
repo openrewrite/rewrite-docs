@@ -29,11 +29,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Library upgrade](../devcenter/libraryupgrade)
-  * cardName: `Move to Spring Boot 3.5.0`
+  * cardName: `Move to Spring Boot 4.0`
   * groupIdPattern: `org.springframework.boot`
   * artifactIdPattern: `*`
-  * version: `3.5.0`
-  * upgradeRecipe: `io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5`
+  * version: `4.0.0`
+  * upgradeRecipe: `io.moderne.java.spring.boot4.UpgradeSpringBoot_4_0`
 * [Move to a later Java version](../devcenter/javaversionupgrade)
   * majorVersion: `25`
   * upgradeRecipe: `org.openrewrite.java.migrate.UpgradeToJava25`
@@ -53,11 +53,11 @@ description: |
   This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
 recipeList:
   - io.moderne.devcenter.LibraryUpgrade:
-      cardName: Move to Spring Boot 3.5.0
+      cardName: Move to Spring Boot 4.0
       groupIdPattern: org.springframework.boot
       artifactIdPattern: "*"
-      version: 3.5.0
-      upgradeRecipe: io.moderne.java.spring.boot3.UpgradeSpringBoot_3_5
+      version: 4.0.0
+      upgradeRecipe: io.moderne.java.spring.boot4.UpgradeSpringBoot_4_0
   - io.moderne.devcenter.JavaVersionUpgrade:
       majorVersion: 25
       upgradeRecipe: org.openrewrite.java.migrate.UpgradeToJava25

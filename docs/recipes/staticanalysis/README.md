@@ -27,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add `serialVersionUID` to a `Serializable` class when missing](./addserialversionuidtoserializable.md)
 * [Annotate methods which may return `null` with `@Nullable`](./annotatenullablemethods.md)
 * [Annotate null-checked method parameters with `@Nullable`](./annotatenullableparameters.md)
+* [Annotate required method parameters with `@NonNull`](./annotaterequiredparameters.md)
 * [Atomic Boolean, Integer, and Long equality checks compare their values](./atomicprimitiveequalsusesget.md)
 * [Avoid boxed boolean expressions](./avoidboxedbooleanexpressions.md)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](./bigdecimalroundingconstantstoenums.md)

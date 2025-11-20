@@ -61,6 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update EclipseLink Dependencies to 4.x](../../../java/migrate/jakarta/updateeclipselinkdependencies)
 * [Update Apache Commons FileUpload2 package for EE10](../../../java/migrate/jakarta/updatefileupload2dependencies)
 * [Update Eclipse Yasson Dependencies to 3.0.x](../../../java/migrate/jakarta/updateyassondependencies)
+* [Update Fastjson for Jakarta EE 10](../../../java/migrate/jakarta/migratefastjsonforjakarta10)
 
 </TabItem>
 
@@ -105,6 +106,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies
   - org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies
   - org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies
+  - org.openrewrite.java.migrate.jakarta.MigrateFastjsonForJakarta10
 
 ```
 </TabItem>

@@ -30,6 +30,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Collection;
+
+import com.google.common.base.Predicates;
+import com.google.common.collect.Iterables;
+
+class Test {
+    boolean test(Collection<Object> collection) {
+        return Iterables.all(collection, Predicates.instanceOf(String.class));
+    }
+}
+```
+
+###### After
+```java
+import java.util.Collection;
+
+import com.google.common.collect.Iterables;
+
+class Test {
+    boolean test(Collection<Object> collection) {
+        return Iterables.all(collection, String.class::isInstance);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+import java.util.Collection;
+
+-import com.google.common.base.Predicates;
+import com.google.common.collect.Iterables;
+@@ -8,1 +7,1 @@
+class Test {
+    boolean test(Collection<Object> collection) {
+-       return Iterables.all(collection, Predicates.instanceOf(String.class));
++       return Iterables.all(collection, String.class::isInstance);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

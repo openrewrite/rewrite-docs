@@ -40,8 +40,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `springfox.documentation.spring.web.plugins.Docket <constructor>(..)`
 * [Migrate from Swagger to SpringDoc and OpenAPI](../../java/springdoc/swaggertospringdoc)
 * [Replace SpringFox Dependencies](../../java/springdoc/replacespringfoxdependencies)
-* [Migrate `ApiInfoBuilder` to `Info`](../../java/springdoc/apiinfobuildertoinfo)
-* [Replace elements of SpringFox's security with Swagger's security models](../../java/springdoc/securitycontexttosecurityscheme)
+* [Migrate `ApiInfoBuilder` to `Info`](../../java/spring/doc/apiinfobuildertoinfo)
+* [Replace elements of SpringFox's security with Swagger's security models](../../java/spring/doc/securitycontexttosecurityscheme)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](../../java/springdoc/migratespringdoccommon)
 
 </TabItem>
@@ -66,8 +66,8 @@ recipeList:
       methodPattern: springfox.documentation.spring.web.plugins.Docket <constructor>(..)
   - org.openrewrite.java.springdoc.SwaggerToSpringDoc
   - org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies
-  - org.openrewrite.java.springdoc.ApiInfoBuilderToInfo
-  - org.openrewrite.java.springdoc.SecurityContextToSecurityScheme
+  - org.openrewrite.java.spring.doc.ApiInfoBuilderToInfo
+  - org.openrewrite.java.spring.doc.SecurityContextToSecurityScheme
   - org.openrewrite.java.springdoc.MigrateSpringdocCommon
 
 ```

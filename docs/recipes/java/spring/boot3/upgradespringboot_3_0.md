@@ -90,6 +90,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade to SpringDoc 2.1](../../../java/springdoc/upgradespringdoc_2)
 * [Migrate to Hibernate 6.1.x](../../../hibernate/migratetohibernate61)
 * [Upgrade MyBatis to Spring Boot 3.0](../../../java/spring/boot3/upgrademybatistospringboot_3_0)
+* [Migrate SAP cloud foundry logging support to Spring Boot 3.x](../../../java/spring/boot3/migratesapcfjavaloggingsupport)
 
 </TabItem>
 
@@ -163,6 +164,7 @@ recipeList:
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_2
   - org.openrewrite.hibernate.MigrateToHibernate61
   - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_0
+  - org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport
 
 ```
 </TabItem>

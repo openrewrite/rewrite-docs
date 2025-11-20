@@ -38,10 +38,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.apache.commons`
   * oldArtifactId: `commons-fileupload2-jakarta`
   * newArtifactId: `commons-fileupload2-jakarta-servlet5`
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `org.apache.commons`
-  * artifactId: `*`
-  * newVersion: `2.0.0-M4`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.commons.fileload.disk`
   * newPackageName: `org.apache.commons.fileload2.core`
@@ -77,10 +73,6 @@ recipeList:
       oldGroupId: org.apache.commons
       oldArtifactId: commons-fileupload2-jakarta
       newArtifactId: commons-fileupload2-jakarta-servlet5
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.apache.commons
-      artifactId: "*"
-      newVersion: 2.0.0-M4
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.commons.fileload.disk
       newPackageName: org.apache.commons.fileload2.core

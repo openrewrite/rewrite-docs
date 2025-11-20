@@ -23,6 +23,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Android Gradle Plugin 8.7](/recipes/android/migratetoandroidgradleplugin_8_7.md)
 * [Upgrade to Android SDK 35](/recipes/android/upgradetoandroidsdk35.md)
 
 

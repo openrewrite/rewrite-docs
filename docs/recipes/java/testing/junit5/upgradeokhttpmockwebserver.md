@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `com.squareup.okhttp3`
   * oldArtifactId: `mockwebserver`
   * newArtifactId: `mockwebserver3-junit5`
-  * newVersion: `5.1.0`
+  * newVersion: `5.x`
 
 </TabItem>
 
@@ -68,7 +68,7 @@ recipeList:
       oldGroupId: com.squareup.okhttp3
       oldArtifactId: mockwebserver
       newArtifactId: mockwebserver3-junit5
-      newVersion: 5.1.0
+      newVersion: 5.x
 
 ```
 </TabItem>
@@ -128,11 +128,7 @@ class Test {
 project
 ```
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -148,41 +144,6 @@ project
   </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
-      <artifactId>mockwebserver3-junit5</artifactId>
-      <version>5.1.0</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -9,2 +9,2 @@
-    <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
--     <artifactId>mockwebserver</artifactId>
--     <version>4.10.0</version>
-+     <artifactId>mockwebserver3-junit5</artifactId>
-+     <version>5.1.0</version>
-    </dependency>
-```
-</TabItem>
-</Tabs>
 
 ---
 
@@ -233,11 +194,7 @@ class Test {
 project
 ```
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -253,41 +210,6 @@ project
   </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
-      <artifactId>mockwebserver3-junit5</artifactId>
-      <version>5.1.0</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -9,2 +9,2 @@
-    <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
--     <artifactId>mockwebserver</artifactId>
--     <version>4.10.0</version>
-+     <artifactId>mockwebserver3-junit5</artifactId>
-+     <version>5.1.0</version>
-    </dependency>
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage

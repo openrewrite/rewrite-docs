@@ -36,7 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- |
 |groupId|`org.openrewrite`|
 |artifactId|`rewrite-core`|
-|version|`null`|
+|version|`8.0.0`|
 |versionPattern|`null`|
 |configuration|`null`|
 

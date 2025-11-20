@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find missing `@Option` `example` values](./missingoptionexample.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)
 * [New line at the end of `SourceSpecs` text blocks](./sourcespectextblocknewline.md)
+* [Recipe classes should be public](./recipeclassesshouldbepublic.md)
 * [Recipe classes should not have mutable `static` fields](./nomutablestaticfieldsinrecipes.md)
 * [Refactor RewriteTest to use defaults method](./userewritetestdefaults.md)
 * [Refaster template `IsLiteralNull`](./isliteralnullrecipe.md)

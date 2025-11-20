@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from `@ApiModelProperty` to `@Schema`](/recipes/openapi/swagger/migrateapimodelpropertytoschema.md)
 * [Migrate from `@ApiOperation` to `@Operation`](/recipes/openapi/swagger/migrateapioperationtooperation.md)
 * [Migrate from `@ApiParam` to `@Parameter`](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
-* [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
+* [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 
 

@@ -27,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Check for github-actions updates weekly](./dependabotcheckforgithubactionsupdatesweekly.md)
 * [Find GitHub action secret references](./findgithubactionsecretreferences.md)
 * [Find jobs missing timeout](./findmissingtimeout.md)
+* [Is GitHub Actions Workflow](./isgithubactionsworkflow.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)
 * [Remove unused workflow dispatch inputs](./removeunusedworkflowdispatchinputs.md)
 * [Remove workflow input argument](./removeworkflowinputargument.md)

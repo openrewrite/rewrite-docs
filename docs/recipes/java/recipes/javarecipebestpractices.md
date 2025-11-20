@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Find missing `@Option` `example` values](../../java/recipes/missingoptionexample)
 * [Recipe classes should not have mutable `static` fields](../../java/recipes/nomutablestaticfieldsinrecipes)
 * [Use of `@EqualsAndHashCode` on `Recipe`](../../java/recipes/recipeequalsandhashcodecallsuper)
+* [Recipe classes should be public](../../java/recipes/recipeclassesshouldbepublic)
 * [Use `Tree.randomId()` in LST constructors](../../java/recipes/usetreerandomid)
 * [Fix missing braces](../../staticanalysis/needbraces)
 * [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
@@ -62,6 +63,7 @@ recipeList:
   - org.openrewrite.java.recipes.MissingOptionExample
   - org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes
   - org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper
+  - org.openrewrite.java.recipes.RecipeClassesShouldBePublic
   - org.openrewrite.java.recipes.UseTreeRandomId
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln

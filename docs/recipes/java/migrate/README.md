@@ -28,6 +28,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](./addlombokmapstructbindingmavendependencyonly.md)
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](./addlombokmapstructbinding.md)
 * [Add missing `isWrapperFor` and `unwrap` methods.](./jrewrapperinterface.md)
 * [Adds missing JDBC interface methods.](./jrejdbcinterfacenewmethods.md)

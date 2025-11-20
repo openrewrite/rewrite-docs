@@ -67,6 +67,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Exclude JUnit 4, unless Spring Boot Testcontainers is used](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
+* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Testcontainers best practices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
 
 

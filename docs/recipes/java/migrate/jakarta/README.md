@@ -73,6 +73,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Update Apache Commons Email to Email2 for Jakarta](./updateapachecommonsemaildependencies.md)
 * [Update Apache Commons FileUpload2 package for EE10](./updatefileupload2dependencies.md)
 * [Update Apache Shiro Dependencies to 2.0.x](./updateapacheshirodependencies.md)
+* [Update Fastjson for Jakarta EE 10](./migratefastjsonforjakarta10.md)
 * [Update GlassFish Jersey Dependencies to 3.1.x](./updatejerseydependencies.md)
 * [Update Jakarta EE XML Web Services Dependencies for EE 10.](./updatejakartaxmlwsee10.md)
 * [Update Jetty EE9 to Jetty EE10](./jettyupgradeee10.md)

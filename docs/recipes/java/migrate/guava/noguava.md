@@ -38,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
 * [Prefer `Function.compose(Function)`](../../../java/migrate/guava/noguavafunctionscompose)
+* [Prefer `Collection.stream().allMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesall)
 * [Prefer `Collection.stream().anyMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesanyfilter)
 * [Prefer `Collection.stream().map(Function)` over `Iterables.transform`](../../../java/migrate/guava/noguavaiterablestransform)
 * [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](../../../java/migrate/guava/noguavacollections2transform)
@@ -103,6 +104,7 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir
   - org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor
   - org.openrewrite.java.migrate.guava.NoGuavaFunctionsCompose
+  - org.openrewrite.java.migrate.guava.NoGuavaIterablesAll
   - org.openrewrite.java.migrate.guava.NoGuavaIterablesAnyFilter
   - org.openrewrite.java.migrate.guava.NoGuavaIterablesTransform
   - org.openrewrite.java.migrate.guava.NoGuavaCollections2Transform
@@ -226,7 +228,7 @@ import java.util.function.Predicate;
 
 class A {
     public static Predicate<String> isHelloPredicate() {
-        return Predicate.isEqual("hello");
+        return Predicate.<String>isEqual("hello");
     }
 }
 ```
@@ -244,7 +246,7 @@ class A {
 class A {
     public static Predicate<String> isHelloPredicate() {
 -       return Predicates.equalTo("hello");
-+       return Predicate.isEqual("hello");
++       return Predicate.<String>isEqual("hello");
     }
 ```
 </TabItem>
@@ -547,7 +549,7 @@ import java.util.function.Predicate;
 
 class A {
     public static Predicate<String> isHelloPredicate() {
-        return Predicate.isEqual("hello");
+        return Predicate.<String>isEqual("hello");
     }
 }
 ```
@@ -565,7 +567,7 @@ class A {
 class A {
     public static Predicate<String> isHelloPredicate() {
 -       return Predicates.equalTo("hello");
-+       return Predicate.isEqual("hello");
++       return Predicate.<String>isEqual("hello");
     }
 ```
 </TabItem>

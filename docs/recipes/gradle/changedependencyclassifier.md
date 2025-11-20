@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newClassifier | *Optional*. A qualification classifier for the dependency. | `sources` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. | `api` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+
 ## Example
 
 ###### Parameters

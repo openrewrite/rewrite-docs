@@ -69,6 +69,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `PingHealthIndicator`](../../../java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator)
 * [Use `WebTestClientBuilderCustomizer`](../../../java/spring/boot2/migratewebtestclientbuildercustomizerpackagename)
 * [Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`](../../../java/spring/boot2/migrateconfigurationpropertiesbindingpostprocessorvalidatorbeanname)
+* [Use `DiskSpaceHealthIndicator(File, DataSize)`](../../../java/spring/boot2/migratediskspacehealthindicatorconstructor)
 * [Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`](../../../java/spring/boot2/springbootmavenpluginmigrateagenttoagents)
 * [Migrate Spring Boot properties to 2.2](../../../java/spring/boot2/springbootproperties_2_2)
 * [Change type](../../../java/changetype)
@@ -127,6 +128,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateApplicationHealthIndicatorToPingHealthIndicator
   - org.openrewrite.java.spring.boot2.MigrateWebTestClientBuilderCustomizerPackageName
   - org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName
+  - org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor
   - org.openrewrite.java.spring.boot2.SpringBootMavenPluginMigrateAgentToAgents
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_2
   - org.openrewrite.java.ChangeType:
