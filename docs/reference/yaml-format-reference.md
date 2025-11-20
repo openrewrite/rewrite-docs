@@ -89,7 +89,6 @@ Since preconditions work on already-parsed files, they're not the right tool if 
 | Feature           | Purpose                     | When It Runs         | Use Case                                                              |
 |-------------------|-----------------------------|----------------------|-----------------------------------------------------------------------|
 | **Exclusions**    | Skip parsing files entirely | During parsing phase | Avoid parse errors, skip expensive directories, ignore generated code |
-| **PlainTextMask** | Parse files as plain text   | During parsing phase | Parse files that would fail language-specific parsers                 |
 | **Preconditions** | Control recipe application  | After parsing phase  | Apply recipes to specific subsets of successfully-parsed files        |
 
 **Example scenario:** If you have Groovy files that fail to parse in a Java project:
