@@ -91,6 +91,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Hibernate 6.6.x](/recipes/hibernate/migratetohibernate66.md)
 * [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
 * [Migrate to Hibernate for Jakarta EE 9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
+* [Migrate to JasperReports 5.6.x](/recipes/jasperreports/upgradetojasperreports5.md)
+* [Migrate to JasperReports 6](/recipes/jasperreports/upgradetojasperreports6.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to Kafka 2.3](/recipes/kafka/migratetokafka23.md)
 * [Migrate to Kafka 2.4](/recipes/kafka/migratetokafka24.md)

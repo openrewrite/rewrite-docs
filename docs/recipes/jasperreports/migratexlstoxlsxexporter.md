@@ -1,15 +1,19 @@
 ---
-sidebar_label: "Find React component"
+sidebar_label: "Migrate JRXlsExporter to JRXlsxExporter"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find React component
+# Migrate JRXlsExporter to JRXlsxExporter
 
-**org.openrewrite.react.search.FindReactComponent**
+**io.moderne.jasperreports.MigrateXlsToXlsxExporter**
 
-_Locates usages of React components across the codebase including JSX elements and other references. If `componentName` is `null`, finds all React components._
+_Migrates the deprecated `JRXlsExporter` to the new `JRXlsxExporter` class in JasperReports 6. Also updates related configuration classes from XLS to XLSX variants._
+
+### Tags
+
+* [jasperreports](/reference/recipes-by-tag#jasperreports)
 
 ## Recipe source
 
@@ -18,11 +22,12 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
-## Options
 
-| Type | Name | Description | Example |
-| --- | --- | --- | --- |
-| `String` | componentName | *Optional*. The name of the React component to find. If `null`, finds all React components. | `Button` |
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to JasperReports 6](/recipes/jasperreports/upgradetojasperreports6.md)
 
 
 ## Usage
@@ -36,12 +41,12 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindReactComponent
+mod run . --recipe MigrateXlsToXlsxExporter
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-react:{{VERSION_IO_MODERNE_RECIPE_REWRITE_REACT}}
+mod config recipes jar install io.moderne.recipe:rewrite-jasperreports:{{VERSION_IO_MODERNE_RECIPE_REWRITE_JASPERREPORTS}}
 ```
 </TabItem>
 </Tabs>
@@ -50,7 +55,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-react:{{VERSION_IO_MODE
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.react.search.FindReactComponent" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.jasperreports.MigrateXlsToXlsxExporter" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -58,25 +63,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.react.table.ReactComponentUses" label="ReactComponentUses">
-
-### React component uses
-**org.openrewrite.react.table.ReactComponentUses**
-
-_Information about React component usages including imports, JSX tags, and other references._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The source file that contains the component usage. |
-| Component name | The name of the React component being used. |
-| Usage type | The type of usage: 'import' (component is imported), 'jsx-tag' (component is used as JSX tag), 'declaration' (component is defined/declared), 'reference' (component is referenced in code), or 're-export' (component is re-exported). |
-| Import type | For imports: 'named', 'default', 'namespace', or 'aliased'. For other usage types: null. |
-| Alias name | The aliased name if the component was imported with an alias (e.g., 'CustomButton' for 'import {Button as CustomButton}'). Otherwise null. |
-| Import path | The import path/module specifier (e.g., './components/Button'). For JSX tags and references: null. |
-| Component type | The type of React component: 'functional' for function components, 'class' for class components, 'forwardRef' for components wrapped with forwardRef(), 'memo' for components wrapped with memo(), 'lazy' for components wrapped with lazy(), or null if type cannot be determined. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
