@@ -71,7 +71,7 @@ _Information about React component usages including imports, JSX tags, and other
 | Component name | The name of the React component being used. |
 | Usage type | The type of usage: 'import' (component is imported), 'jsx-tag' (component is used as JSX tag), 'declaration' (component is defined/declared), 'reference' (component is referenced in code), or 're-export' (component is re-exported). |
 | Import type | For imports: 'named', 'default', 'namespace', or 'aliased'. For other usage types: null. |
-| Alias name | The aliased name if the component was imported with an alias (e.g., 'CustomButton' for 'import {Button as CustomButton}'). Otherwise null. |
+| Alias name | The aliased name if the component was imported with an alias (e.g., 'CustomButton' for `import {Button as CustomButton}`). Otherwise null. |
 | Import path | The import path/module specifier (e.g., './components/Button'). For JSX tags and references: null. |
 | Component type | The type of React component: 'functional' for function components, 'class' for class components, 'forwardRef' for components wrapped with forwardRef(), 'memo' for components wrapped with memo(), 'lazy' for components wrapped with lazy(), or null if type cannot be determined. |
 
