@@ -8,25 +8,29 @@ A Claude Code plugin that provides expert guidance for writing OpenRewrite recip
 openrewrite-recipe-writer/        # Plugin directory
 ├── .claude-plugin/
 │   └── plugin.json               # Plugin manifest
-├── SKILL.md                      # Main skill instructions
+├── commands/                     # Slash commands
+│   └── create-recipe.md          # /openrewrite-recipe:create-recipe command
 ├── README.md                     # This file
 ├── .gitignore                    # Git configuration
-├── assets/                       # Templates used in output
-│   ├── template-imperative-recipe.java
-│   ├── template-declarative-recipe.yml
-│   └── template-recipe-test.java
-├── references/                   # Documentation loaded as needed
-│   ├── example-say-hello-recipe.java
-│   ├── example-scanning-recipe.java
-│   ├── example-declarative-migration.yml
-│   ├── checklist-recipe-development.md
-│   ├── recipes-top.csv           # 50 commonly used recipes
-│   ├── recipes-*.csv             # Curated recipe catalogs by category
-│   └── recipes-all.csv           # Complete recipe catalog (4,958 recipes - for maintenance only)
-└── scripts/                      # Executable scripts
-    ├── upload-skill.sh           # Upload skill via Claude API
-    ├── categorize_recipes.py     # Generate category files from recipes-all.csv
-    └── create_curated_lists.py   # Create curated -common.csv files
+└── skills/                       # Plugin skills
+    └── writing-openrewrite-recipes/
+        ├── SKILL.md              # Main skill instructions
+        ├── assets/               # Templates used in output
+        │   ├── template-imperative-recipe.java
+        │   ├── template-declarative-recipe.yml
+        │   └── template-recipe-test.java
+        ├── references/           # Documentation loaded as needed
+        │   ├── example-say-hello-recipe.java
+        │   ├── example-scanning-recipe.java
+        │   ├── example-declarative-migration.yml
+        │   ├── checklist-recipe-development.md
+        │   ├── recipes-top.csv   # 50 commonly used recipes
+        │   ├── recipes-*.csv     # Curated recipe catalogs by category
+        │   └── recipes-all.csv   # Complete recipe catalog (4,958 recipes - for maintenance only)
+        └── scripts/              # Executable scripts
+            ├── upload-skill.sh   # Upload skill via Claude API
+            ├── categorize_recipes.py     # Generate category files from recipes-all.csv
+            └── create_curated_lists.py   # Create curated -common.csv files
 ```
 
 ## Recipe Catalogs
@@ -64,14 +68,18 @@ The scripts automatically select the most useful recipes for each category based
 
 ## Installation
 
-> **Note**: This plugin currently contains only a skill. Plugins can also include commands, agents, hooks, and MCP servers (Claude Code only), but this plugin doesn't use those features yet.
+> **Note**: This plugin contains a skill (`writing-openrewrite-recipes`) and a slash command (`/openrewrite-recipe:create-recipe`). Plugins can also include agents, hooks, and MCP servers, but this plugin doesn't use those features yet.
 
 ### For Claude Code (Plugin - Recommended)
 
 **From GitHub:**
 
 ```bash
-/plugin install openrewrite/rewrite-docs/openrewrite-recipe-writer
+# Add the OpenRewrite marketplace
+/plugin marketplace add openrewrite/rewrite-docs
+
+# Install the plugin (note: plugin name is "openrewrite-recipe", not the directory name)
+/plugin install openrewrite-recipe@openrewrite
 ```
 
 **From a local clone (for development):**
@@ -80,25 +88,13 @@ The scripts automatically select the most useful recipes for each category based
 # 1. Navigate to the repo root
 cd ~/Documents/GitHub/openrewrite/rewrite-docs
 
-# 2. Create a temporary marketplace.json
-cat > .claude-plugin/marketplace.json << 'EOF'
-{
-  "name": "openrewrite-local",
-  "owner": "Local Development",
-  "plugins": [{
-    "name": "openrewrite-recipe-writer",
-    "source": "./openrewrite-recipe-writer"
-  }]
-}
-EOF
-
-# 3. Add as local marketplace
+# 2. Add the local marketplace (uses existing .claude-plugin/marketplace.json)
 /plugin marketplace add ~/Documents/GitHub/openrewrite/rewrite-docs
 
-# 4. Install the plugin
-/plugin install openrewrite-recipe-writer@openrewrite-local
+# 3. Install the plugin using the marketplace name from marketplace.json
+/plugin install openrewrite-recipe@openrewrite
 
-# 5. Restart Claude Code
+# 4. Restart Claude Code if needed
 ```
 
 **Verify installation:**
@@ -113,17 +109,17 @@ Alternatively, install as a standalone skill without plugin features:
 
 ```bash
 # Global installation
-cp -r openrewrite-recipe-writer ~/.claude/skills/openrewrite-recipe-writer
+cp -r openrewrite-recipe-writer/skills/writing-openrewrite-recipes ~/.claude/skills/writing-openrewrite-recipes
 
 # Or symlink for development
-ln -s "$(pwd)/openrewrite-recipe-writer" ~/.claude/skills/openrewrite-recipe-writer
+ln -s "$(pwd)/openrewrite-recipe-writer/skills/writing-openrewrite-recipes" ~/.claude/skills/writing-openrewrite-recipes
 ```
 
 ### For Claude.ai (Web Interface)
 
 ```bash
-cd openrewrite-recipe-writer
-zip -r openrewrite-recipe-writer.zip SKILL.md .gitignore assets/ references/ scripts/
+cd openrewrite-recipe-writer/skills/writing-openrewrite-recipes
+zip -r openrewrite-recipe-writer.zip SKILL.md assets/ references/ scripts/
 ```
 
 Then upload to [claude.ai](https://claude.ai) → Settings → Capabilities → Skills
@@ -131,7 +127,7 @@ Then upload to [claude.ai](https://claude.ai) → Settings → Capabilities → 
 ### For Claude API
 
 ```bash
-cd openrewrite-recipe-writer
+cd openrewrite-recipe-writer/skills/writing-openrewrite-recipes
 
 # Set up your API key
 echo "your-anthropic-api-key" > anthropic.key
@@ -163,9 +159,9 @@ Once uploaded, Claude will automatically use this skill when you ask questions a
 ## Contributing
 
 To improve this plugin/skill:
-1. Update SKILL.md or bundled resources (assets/, references/, scripts/)
-2. For Claude Code plugin: Changes in local clone are reflected immediately
-3. For Claude.ai: Re-package and upload the zip file
+1. Update skill files in `skills/writing-openrewrite-recipes/` (SKILL.md, assets/, references/, scripts/) or commands in `commands/`
+2. For Claude Code plugin: Changes in local clone are reflected immediately after reloading
+3. For Claude.ai: Re-package and upload the zip file from the skill directory
 4. Commit and push changes to distribute via GitHub
 
 ## License
