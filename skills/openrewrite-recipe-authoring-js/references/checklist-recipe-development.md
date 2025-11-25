@@ -55,7 +55,8 @@ Use this checklist to ensure you've covered all important aspects of recipe deve
 - [ ] Used `.tryOn()` with fallback (`|| node`)
 - [ ] Used `.orElse()` for alternative transformations (if needed)
 - [ ] Used `.andThen()` for sequential transformations (if needed)
-- [ ] Added `where` predicate for context-aware filtering (if needed)
+- [ ] Added `preMatch` predicate for context filtering before pattern matching (if needed)
+- [ ] Added `postMatch` predicate for filtering based on captured values (if needed)
 
 ### Advanced Features (if applicable)
 - [ ] Used cursor navigation (`cursor.parentTree()`, `cursor.firstEnclosing()`)

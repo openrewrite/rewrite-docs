@@ -961,18 +961,22 @@ protected async visitMethodInvocation(
 
 ### rewrite() with Conditional Logic
 
-Add context-aware validation with the `where` predicate. This provides some flexibility but is still limited to yes/no decisions - you cannot choose different templates based on conditions:
+Add context-aware filtering with the `preMatch` and `postMatch` predicates:
+
+- **`preMatch`**: Evaluated BEFORE pattern matching. Use for efficient early filtering based on AST context (cursor navigation). If it returns false, pattern matching is skipped entirely.
+- **`postMatch`**: Evaluated AFTER pattern matching succeeds. Use when you need access to captured values to decide whether to apply the transformation.
 
 ```typescript
 import {_} from "@openrewrite/rewrite/javascript";
 
+// preMatch example: Filter by context before expensive pattern matching
 const rule = rewrite(() => {
     const promise = _('promise');
     return {
         before: pattern`await ${promise}`,
         after: template`await ${promise}.catch(handleError)`,
-        // Only apply inside async functions
-        where: (node, cursor) => {
+        // Only attempt matching inside async functions
+        preMatch: (node, {cursor}) => {
             const method = cursor.firstEnclosing((n): n is J.MethodDeclaration =>
                 n.kind === J.Kind.MethodDeclaration
             );
@@ -984,12 +988,29 @@ const rule = rewrite(() => {
 return await rule.tryOn(this.cursor, method) || method;
 ```
 
-The `where` predicate receives:
-- `node`: The matched AST node
-- `cursor`: Cursor at the matched node for context inspection
-- Returns: `true` to apply transformation, `false` to skip
+```typescript
+// postMatch example: Filter based on captured values
+const rule = rewrite(() => {
+    const x = _('x');
+    const y = _('y');
+    return {
+        before: pattern`${x} + ${y}`,
+        after: template`${y} + ${x}`,
+        // Only swap if 'x' is a specific identifier
+        postMatch: (node, {captures}) => {
+            const xNode = captures.get('x') as J.Identifier;
+            return xNode?.simpleName === 'priority';
+        }
+    };
+});
+```
 
-**Limitation:** The `where` predicate only decides whether to apply the transformation - it cannot select between different templates. For that, use the direct pattern/template approach.
+The predicates receive:
+- **`preMatch`**: `(node, {cursor})` - cursor for AST navigation, no captures yet
+- **`postMatch`**: `(node, {cursor, captures})` - cursor and captured values from pattern matching
+- Returns: `true` to proceed, `false` to skip
+
+**Limitation:** These predicates only decide whether to apply the transformation - they cannot select between different templates. For that, use the direct pattern/template approach.
 
 **Post-transformation modifications:**
 
