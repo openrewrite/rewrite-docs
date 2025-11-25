@@ -8,7 +8,7 @@ on:
         type: boolean
         description: Only update the latest versions of every OpenRewrite module
         default: true
-  schedule:
+  #schedule:
     # - cron: 0 0 * * *
 
 concurrency:
