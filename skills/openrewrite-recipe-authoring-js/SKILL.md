@@ -92,6 +92,7 @@ Follow this checklist when creating recipes:
 - [ ] **For manual AST modifications:** Use `produce()` from `immer` for immutable updates
 - [ ] **For async operations in produce:** Use `produceAsync()` from `@openrewrite/rewrite`
 - [ ] Write tests using `RecipeSpec` and `rewriteRun()`
+- [ ] Register recipe in `activate()` function (see [Recipe Registration](#recipe-registration))
 
 ## Core Concepts
 
@@ -751,6 +752,93 @@ import {maybeAddImport, maybeRemoveImport} from "@openrewrite/rewrite/javascript
 // Testing
 import {RecipeSpec} from "@openrewrite/rewrite/test";
 import {javascript, typescript, jsx, tsx, npm, packageJson} from "@openrewrite/rewrite/javascript";
+
+// Recipe Registration
+import {RecipeRegistry} from "@openrewrite/rewrite";
+```
+
+## Recipe Registration
+
+To make recipes discoverable by OpenRewrite, export an `activate()` function from the package entry point (typically `index.ts`). This function receives a `RecipeRegistry` and registers recipe classes with it.
+
+### Basic Registration
+
+```typescript
+import { RecipeRegistry } from '@openrewrite/rewrite';
+import { MyRecipe } from './my-recipe';
+import { AnotherRecipe } from './another-recipe';
+
+export async function activate(registry: RecipeRegistry): Promise<void> {
+    registry.register(MyRecipe);
+    registry.register(AnotherRecipe);
+}
+
+// Also export recipe classes for direct use
+export { MyRecipe } from './my-recipe';
+export { AnotherRecipe } from './another-recipe';
+```
+
+### Important Notes
+
+1. **Pass the class, not an instance**: `registry.register(MyRecipe)` not `registry.register(new MyRecipe())`
+
+2. **Recipes must be instantiable without arguments**: The registry creates a temporary instance to read the recipe's `name` property. Recipes with required options (no defaults) cannot be registered this way.
+
+```typescript
+// ✅ Can be registered - no required options
+export class MyRecipe extends Recipe {
+    name = "org.example.MyRecipe";
+    // ...
+}
+
+// ✅ Can be registered - has default value
+export class ConfigurableRecipe extends Recipe {
+    @Option({ displayName: "Target", description: "..." })
+    target!: string;
+
+    constructor(options?: { target?: string }) {
+        super(options);
+        this.target ??= 'default';  // Default allows no-arg construction
+    }
+}
+
+// ❌ Cannot be registered - required option with no default
+export class RequiredOptionRecipe extends Recipe {
+    @Option({ displayName: "Required", description: "..." })
+    required!: string;
+
+    constructor(options: { required: string }) {  // No default!
+        super(options);
+    }
+}
+```
+
+3. **Async function**: The `activate()` function should be `async` and return `Promise<void>`.
+
+### Complete Example
+
+```typescript
+// src/index.ts
+import { RecipeRegistry } from '@openrewrite/rewrite';
+
+// Re-export all recipes for direct import
+export { MigrateApiCalls } from './migrate-api-calls';
+export { UpdateImports } from './update-imports';
+export { FindDeprecatedUsage } from './find-deprecated-usage';
+
+// Import for registration
+import { MigrateApiCalls } from './migrate-api-calls';
+import { UpdateImports } from './update-imports';
+// FindDeprecatedUsage not imported - has required options
+
+/**
+ * Register all recipes that can be instantiated without arguments.
+ */
+export async function activate(registry: RecipeRegistry): Promise<void> {
+    registry.register(MigrateApiCalls);
+    registry.register(UpdateImports);
+    // FindDeprecatedUsage omitted - requires options
+}
 ```
 
 ## Best Practices
