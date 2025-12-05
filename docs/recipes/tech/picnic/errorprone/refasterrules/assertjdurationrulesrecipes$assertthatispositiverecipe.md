@@ -14,7 +14,12 @@ Recipe created for the following Refaster template:
 static final class AssertThatIsPositive {
     
     @BeforeTemplate
-    AbstractDurationAssert<?> before(Duration duration) {
+    AbstractBooleanAssert<?> before(Duration duration) {
+        return assertThat(duration.isPositive()).isTrue();
+    }
+    
+    @BeforeTemplate
+    AbstractDurationAssert<?> before2(Duration duration) {
         return assertThat(duration).isGreaterThan(Duration.ZERO);
     }
     

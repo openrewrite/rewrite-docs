@@ -25,6 +25,13 @@ _Replace deprecated `new crypto.Hash(algorithm)` constructor calls with `crypto.
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Node.js 22](/recipes/node/migrate/upgrade-node-22.md)
+
+
 ## Usage
 
 In order to run JavaScript recipes, you will need to use the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro).

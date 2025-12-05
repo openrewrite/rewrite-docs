@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorCompleteRecipe**
 
-_Prefer `Mono#onErrorComplete()` over more contrived alternatives._
+_Prefer `Mono#onErrorComplete()` over more contrived alternatives, and don't chain it with redundant calls to `Mono#doOnError`._
 
 ## Recipe source
 

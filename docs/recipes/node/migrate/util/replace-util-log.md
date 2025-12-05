@@ -24,6 +24,13 @@ _Replace deprecated `util.log()` calls with `console.log()`. Note: `util.log()` 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Node.js 24](/recipes/node/migrate/upgrade-node-24.md)
+
+
 ## Usage
 
 In order to run JavaScript recipes, you will need to use the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro).

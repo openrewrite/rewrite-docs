@@ -34,6 +34,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `StreamRules.ConcatTwoStreams`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$concattwostreamsrecipe)
 * [Refaster template `StreamRules.StreamFilterSorted`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfiltersortedrecipe)
 * [Refaster template `StreamRules.StreamFilterSortedWithComparator`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfiltersortedwithcomparatorrecipe)
+* [Refaster template `StreamRules.StreamDistinctSorted`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamdistinctsortedrecipe)
+* [Refaster template `StreamRules.StreamDistinctSortedWithComparator`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamdistinctsortedwithcomparatorrecipe)
 * [Refaster template `StreamRules.StreamMapFirst`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streammapfirstrecipe)
 * [Refaster template `StreamRules.StreamFindAnyIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfindanyisemptyrecipe)
 * [Refaster template `StreamRules.StreamFindAnyIsPresent`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfindanyispresentrecipe)
@@ -79,6 +81,8 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$ConcatTwoStreamsRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamDistinctSortedRecipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamDistinctSortedWithComparatorRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapFirstRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFindAnyIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFindAnyIsPresentRecipe

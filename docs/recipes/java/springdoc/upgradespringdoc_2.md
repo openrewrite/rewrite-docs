@@ -32,6 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate from Swagger to OpenAPI](../../openapi/swagger/swaggertoopenapi)
 * [Use Jakarta Swagger Artifacts](../../openapi/swagger/usejakartaswaggerartifacts)
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springdoc.core.SpringDocUtils`
@@ -117,6 +118,7 @@ description: |
 tags:
   - springdoc
 recipeList:
+  - org.openrewrite.openapi.swagger.SwaggerToOpenAPI
   - org.openrewrite.openapi.swagger.UseJakartaSwaggerArtifacts
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springdoc.core.SpringDocUtils

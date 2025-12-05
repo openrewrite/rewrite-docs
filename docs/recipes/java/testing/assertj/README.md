@@ -76,6 +76,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Simplify AssertJ assertions with `hasSize` argument](./simplifyhassizeassertion.md)
 * [Simplify AssertJ assertions with literal arguments](./simplifyassertjassertion.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertion.md)
+* [Simplify `assertThat(collection.stream().map(...))` to `assertThat(collection).extracting(...)`](./simplifystreammaptoextracting.md)
 * [Simplify redundant AssertJ assertion chains](./simplifyredundantassertjchains.md)
 
 

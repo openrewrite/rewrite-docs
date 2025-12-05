@@ -39,7 +39,49 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Batch 6.0 from 5.2](../../../java/spring/batch/springbatch5to6migration)
 * [Migrate Spring Boot properties to 4.0](../../../java/spring/boot4/springbootproperties_4_0)
 * [Replace `@MockBean` and `@SpyBean`](../../../java/spring/boot4/replacemockbeanandspybean)
+* [Migrate to Hibernate 7.1.x](../../../hibernate/migratetohibernate71)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `*`
+  * newVersion: `4.0.x`
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-dependencies`
+  * newVersion: `4.0.x`
+  * overrideManagedVersion: `true`
+* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-maven-plugin`
+  * newVersion: `4.0.x`
+* [Upgrade Maven parent project version](../../../maven/upgradeparentversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-parent`
+  * newVersion: `4.0.x`
+* [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion)
+  * pluginIdPattern: `org.springframework.boot`
+  * newVersion: `4.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.springframework.boot`
+  * oldArtifactId: `spring-boot-starter-oauth2-authorization-server`
+  * newArtifactId: `spring-boot-starter-security-oauth2-authorization-server`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.springframework.boot`
+  * oldArtifactId: `spring-boot-starter-oauth2-client`
+  * newArtifactId: `spring-boot-starter-security-oauth2-client`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.springframework.boot`
+  * oldArtifactId: `spring-boot-starter-oauth2-resource-server`
+  * newArtifactId: `spring-boot-starter-security-oauth2-resource-server`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.springframework.boot`
+  * oldArtifactId: `spring-boot-starter-web`
+  * newArtifactId: `spring-boot-starter-webmvc`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.springframework.boot`
+  * oldArtifactId: `spring-boot-starter-web-services`
+  * newArtifactId: `spring-boot-starter-webservices`
 
 </TabItem>
 
@@ -62,7 +104,49 @@ recipeList:
   - org.openrewrite.java.spring.batch.SpringBatch5To6Migration
   - org.openrewrite.java.spring.boot4.SpringBootProperties_4_0
   - org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean
+  - org.openrewrite.hibernate.MigrateToHibernate71
   - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.boot
+      artifactId: "*"
+      newVersion: 4.0.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-dependencies
+      newVersion: 4.0.x
+      overrideManagedVersion: true
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-maven-plugin
+      newVersion: 4.0.x
+  - org.openrewrite.maven.UpgradeParentVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-parent
+      newVersion: 4.0.x
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: org.springframework.boot
+      newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.springframework.boot
+      oldArtifactId: spring-boot-starter-oauth2-authorization-server
+      newArtifactId: spring-boot-starter-security-oauth2-authorization-server
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.springframework.boot
+      oldArtifactId: spring-boot-starter-oauth2-client
+      newArtifactId: spring-boot-starter-security-oauth2-client
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.springframework.boot
+      oldArtifactId: spring-boot-starter-oauth2-resource-server
+      newArtifactId: spring-boot-starter-security-oauth2-resource-server
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.springframework.boot
+      oldArtifactId: spring-boot-starter-web
+      newArtifactId: spring-boot-starter-webmvc
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.springframework.boot
+      oldArtifactId: spring-boot-starter-web-services
+      newArtifactId: spring-boot-starter-webservices
 
 ```
 </TabItem>

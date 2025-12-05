@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.java.spring.boot3.ResolveTaskExecutorFromContext**
 
-_Use bean name `applicationTaskExecutor` instead of `taskExecutor` when resolving `TaskExecutor` Bean from application context_
+_Use bean name `applicationTaskExecutor` instead of `taskExecutor` when resolving `TaskExecutor` Bean from application context._
 
 ## Recipe source
 

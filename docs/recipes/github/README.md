@@ -17,6 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add cooldown periods to Dependabot configuration](./adddependabotcooldown.md)
 * [Add cron workflow trigger](./addcrontrigger.md)
 * [Add manual workflow trigger](./addmanualtrigger.md)
 * [Cancel in-progress workflow when it is triggered again](./autocancelinprogressworkflow.md)

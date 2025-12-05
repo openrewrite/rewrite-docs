@@ -20,7 +20,11 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Hibernate 6.4.x](./migratetohibernate64.md)
 * [Migrate to Hibernate 6.5.x](./migratetohibernate65.md)
 * [Migrate to Hibernate 6.6.x](./migratetohibernate66.md)
+* [Migrate to Hibernate 6.6.x](./migratetohibernate66.md)
 * [Migrate to Hibernate 7.0.x](./migratetohibernate70.md)
+* [Migrate to Hibernate 7.0.x](./migratetohibernate70.md)
+* [Migrate to Hibernate 7.1.x](./migratetohibernate71.md)
+* [Migrate to Hibernate 7.1.x](./migratetohibernate71.md)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](./typedescriptortotype.md)
 
 ## Recipes

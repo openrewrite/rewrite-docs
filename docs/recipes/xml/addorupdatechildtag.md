@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Add Quarkus Maven plugin](/recipes/quarkus/spring/addquarkusmavenplugin.md)
 * [Add `prefer-application-packages` for JPA in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
 * [Add `prefer-application-packages` for SLF4J in `weblogic.xml`](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)

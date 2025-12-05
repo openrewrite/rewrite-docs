@@ -7,80 +7,179 @@ import TabItem from '@theme/TabItem';
 
 # Migrate to Hibernate 7.0.x
 
-**io.moderne.hibernate.MigrateToHibernate70**
+**org.openrewrite.hibernate.MigrateToHibernate70**
 
 _This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x._
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-7.0.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+## Definition
 
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Hibernate 6.6.x](../hibernate/migratetohibernate66)
+* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
+  * groupId: `org.hibernate.orm`
+  * artifactId: `*`
+  * newVersion: `7.0.x`
+* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
+  * oldGroupId: `org.hibernate.orm`
+  * oldArtifactId: `hibernate-jpamodelgen`
+  * newArtifactId: `hibernate-processor`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.hibernate.MigrateToHibernate70
+displayName: Migrate to Hibernate 7.0.x
+description: |
+  This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x.
+recipeList:
+  - org.openrewrite.hibernate.MigrateToHibernate66
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.hibernate.orm
+      artifactId: "*"
+      newVersion: 7.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.hibernate.orm
+      oldArtifactId: hibernate-jpamodelgen
+      newArtifactId: hibernate-processor
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
-
-## Examples
-##### Example 1
-`MigrateToHibernate70Test#upgradeHibernateDependencyTo70`
-
-
-###### Unchanged
-```xml title="pom.xml"
-<project>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <properties>
-    <maven.compiler.release>17</maven.compiler.release>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.hibernate.orm</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>6.5.0.Final</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
----
-
-##### Example 2
-`MigrateToHibernate70Test#upgradeHibernateDependencyTo70`
-
-
-###### Unchanged
-```xml title="pom.xml"
-<project>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <properties>
-    <maven.compiler.release>17</maven.compiler.release>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.hibernate.orm</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>6.5.0.Final</version>
-    </dependency>
-  </dependencies>
-</project>
-```
+* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
+* [Migrate to Hibernate 7.1.x](/recipes/hibernate/migratetohibernate71.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.hibernate.MigrateToHibernate70")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.hibernate.MigrateToHibernate70")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.hibernate.MigrateToHibernate70</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-hibernate</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHibernate70 -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -91,7 +190,7 @@ mod run . --recipe MigrateToHibernate70
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_IO_MODERNE_RECIPE_REWRITE_HIBERNATE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}
 ```
 </TabItem>
 </Tabs>
@@ -100,7 +199,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-hibernate:{{VERSION_IO_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.hibernate.MigrateToHibernate70" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHibernate70" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

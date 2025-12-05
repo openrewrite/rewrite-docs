@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperIdentity`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperidentityrecipe)
 * [Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperaddinputlinesexpectunchangedrecipe)
 * [Refaster template `BugCheckerRules.NameContentEquals`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$namecontentequalsrecipe)
+* [Refaster template `BugCheckerRules.ASTHelpersGetStartPosition`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$asthelpersgetstartpositionrecipe)
 
 </TabItem>
 
@@ -47,6 +48,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperAddInputLinesExpectUnchangedRecipe
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$NameContentEqualsRecipe
+  - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ASTHelpersGetStartPositionRecipe
 
 ```
 </TabItem>

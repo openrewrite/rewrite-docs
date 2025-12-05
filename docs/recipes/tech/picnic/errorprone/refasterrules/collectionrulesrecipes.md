@@ -47,6 +47,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `CollectionRules.OptionalFirstCollectionElement`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$optionalfirstcollectionelementrecipe)
 * [Refaster template `CollectionRules.RemoveOptionalFirstNavigableSetElement`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$removeoptionalfirstnavigablesetelementrecipe)
 * [Refaster template `CollectionRules.CollectionForEach`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionforeachrecipe)
+* [Refaster template `CollectionRules.CollectionIteratorNext`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectioniteratornextrecipe)
+* [Refaster template `CollectionRules.SequencedCollectionGetFirst`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$sequencedcollectiongetfirstrecipe)
+* [Refaster template `CollectionRules.SequencedCollectionGetLast`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$sequencedcollectiongetlastrecipe)
+* [Refaster template `CollectionRules.ListAddFirst`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$listaddfirstrecipe)
+* [Refaster template `CollectionRules.ListAdd`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$listaddrecipe)
+* [Refaster template `CollectionRules.ListRemoveFirst`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$listremovefirstrecipe)
+* [Refaster template `CollectionRules.ListRemoveLast`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$listremovelastrecipe)
+* [Refaster template `CollectionRules.SortedSetFirst`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$sortedsetfirstrecipe)
+* [Refaster template `CollectionRules.SortedSetLast`](../../../../tech/picnic/errorprone/refasterrules/collectionrulesrecipes$sortedsetlastrecipe)
 
 </TabItem>
 
@@ -79,6 +88,15 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$OptionalFirstCollectionElementRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$RemoveOptionalFirstNavigableSetElementRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionForEachRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIteratorNextRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SequencedCollectionGetFirstRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SequencedCollectionGetLastRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ListAddFirstRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ListAddRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ListRemoveFirstRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ListRemoveLastRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SortedSetFirstRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SortedSetLastRecipe
 
 ```
 </TabItem>

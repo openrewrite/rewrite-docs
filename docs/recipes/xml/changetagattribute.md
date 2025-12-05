@@ -37,6 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
 * [Migrate XJC Bindings to Jakata XML](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Migrate to Struts 6.0 constants](/recipes/java/struts/migrate6/migratestruts6constants.md)
 * [Migrate xmlns entries and javax. packages in `ejb-jar.xml` files](/recipes/java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml.md)
 * [Migrate xmlns entries and javax. packages in `validation.xml` files](/recipes/java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml.md)

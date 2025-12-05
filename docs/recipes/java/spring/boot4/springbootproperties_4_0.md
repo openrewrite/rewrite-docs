@@ -43,12 +43,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPropertyKey: `management.metrics.mongo.connectionpool.enabled`
   * newPropertyKey: `management.metrics.mongodb.connectionpool.enabled`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.observations.long-task-timer.enabled`
-  * newPropertyKey: `management.metrics.observations.ignored-meters`
-* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.otlp.logging`
-  * newPropertyKey: `management.opentelemetry.logging.export.otlp`
-* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.otlp.logging.compression`
   * newPropertyKey: `management.opentelemetry.logging.export.otlp.compression`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
@@ -126,6 +120,27 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.zipkin.tracing.read-timeout`
   * newPropertyKey: `management.tracing.export.zipkin.read-timeout`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.error.include-binding-errors`
+  * newPropertyKey: `spring.web.error.include-binding-errors`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.error.include-exception`
+  * newPropertyKey: `spring.web.error.include-exception`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.error.include-message`
+  * newPropertyKey: `spring.web.error.include-message`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.error.include-path`
+  * newPropertyKey: `spring.web.error.include-path`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.error.include-stacktrace`
+  * newPropertyKey: `spring.web.error.include-stacktrace`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.error.path`
+  * newPropertyKey: `spring.web.error.path`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `server.error.whitelabel.enabled`
+  * newPropertyKey: `spring.web.error.whitelabel.enabled`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.servlet.encoding.charset`
   * newPropertyKey: `spring.servlet.encoding.charset`
@@ -246,6 +261,39 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.test.mockmvc.webdriver.enabled`
   * newPropertyKey: `spring.test.mockmvc.htmlunit.webdriver.enabled`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.test.webclient.mockrestserviceserver.enabled`
+  * newPropertyKey: `spring.test.restclient.mockrestserviceserver.enabled`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.endpoints.jackson2.isolated-object-mapper`
+  * comment: `This property is deprecated: Jackson 3 is preferred.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.access-token`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.batch-size`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.connect-timeout`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.enabled`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.published-histogram-type`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.read-timeout`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.source`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.step`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.uri`
+  * comment: `This property is deprecated: SignalFX is no longer supported.`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
   * propertyKey: `management.wavefront.api-token`
   * comment: `This property is deprecated: Wavefront is end-of-life.`
@@ -413,12 +461,6 @@ recipeList:
       oldPropertyKey: management.metrics.mongo.connectionpool.enabled
       newPropertyKey: management.metrics.mongodb.connectionpool.enabled
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.observations.long-task-timer.enabled
-      newPropertyKey: management.metrics.observations.ignored-meters
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.otlp.logging
-      newPropertyKey: management.opentelemetry.logging.export.otlp
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.otlp.logging.compression
       newPropertyKey: management.opentelemetry.logging.export.otlp.compression
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
@@ -496,6 +538,27 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.zipkin.tracing.read-timeout
       newPropertyKey: management.tracing.export.zipkin.read-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.error.include-binding-errors
+      newPropertyKey: spring.web.error.include-binding-errors
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.error.include-exception
+      newPropertyKey: spring.web.error.include-exception
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.error.include-message
+      newPropertyKey: spring.web.error.include-message
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.error.include-path
+      newPropertyKey: spring.web.error.include-path
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.error.include-stacktrace
+      newPropertyKey: spring.web.error.include-stacktrace
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.error.path
+      newPropertyKey: spring.web.error.path
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.error.whitelabel.enabled
+      newPropertyKey: spring.web.error.whitelabel.enabled
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.servlet.encoding.charset
       newPropertyKey: spring.servlet.encoding.charset
@@ -616,6 +679,39 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.test.mockmvc.webdriver.enabled
       newPropertyKey: spring.test.mockmvc.htmlunit.webdriver.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.test.webclient.mockrestserviceserver.enabled
+      newPropertyKey: spring.test.restclient.mockrestserviceserver.enabled
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.endpoints.jackson2.isolated-object-mapper
+      comment: This property is deprecated: Jackson 3 is preferred.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.access-token
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.batch-size
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.connect-timeout
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.enabled
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.published-histogram-type
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.read-timeout
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.source
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.step
+      comment: This property is deprecated: SignalFX is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.uri
+      comment: This property is deprecated: SignalFX is no longer supported.
   - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
       propertyKey: management.wavefront.api-token
       comment: This property is deprecated: Wavefront is end-of-life.

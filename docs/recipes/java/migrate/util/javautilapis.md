@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `List.of(..)`](../../../java/migrate/util/migratecollectionsunmodifiablelist)
 * [Prefer `Set.of(..)`](../../../java/migrate/util/migratecollectionsunmodifiableset)
 * [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](../../../java/migrate/util/replacestreamcollectwithtolist)
+* [Prefer `Map.of(..)`](../../../java/migrate/util/usemapof)
 
 </TabItem>
 
@@ -53,6 +54,7 @@ recipeList:
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet
   - org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList
+  - org.openrewrite.java.migrate.util.UseMapOf
 
 ```
 </TabItem>

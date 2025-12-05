@@ -39,6 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Java 17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
 * [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
 * [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
 * [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
 * [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)

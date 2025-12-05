@@ -28,6 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrates `camel 4.15` application to `camel 4.16`](../../../../org/apache/camel/upgrade/camel416/camelmigrationrecipe)
 * [Migrates `camel 4.14` application to `camel 4.15`](../../../../org/apache/camel/upgrade/camel415/camelmigrationrecipe)
 * [Migrates `camel 4.13` application to `camel 4.14`](../../../../org/apache/camel/upgrade/camel414/camelmigrationrecipe)
 * [Migrates `camel 4.12` application to `camel 4.13`](../../../../org/apache/camel/upgrade/camel413/camelmigrationrecipe)
@@ -68,6 +69,7 @@ displayName: Migrate to 4.14.0
 description: |
   Migrates Apache Camel application to 4.14.0.
 recipeList:
+  - org.apache.camel.upgrade.camel416.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel415.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel414.CamelMigrationRecipe
   - org.apache.camel.upgrade.camel413.CamelMigrationRecipe
