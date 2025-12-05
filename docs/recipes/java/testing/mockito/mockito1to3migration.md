@@ -105,6 +105,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
+* [Adds Mockito extensions to Mockito tests](../../../java/testing/mockito/addmockitoextensionifannotationsused)
 * [Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners](../../../java/testing/mockito/removeinitmocksifrunnersspecified)
 * [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
@@ -211,6 +212,7 @@ recipeList:
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
+  - org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed
   - org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified
   - org.openrewrite.java.testing.mockito.ReplacePowerMockito
   - org.openrewrite.java.dependencies.ChangeDependency:
@@ -340,13 +342,16 @@ class MyTest {
 ```java
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class MyTest {
     @Mock
     Object objectMock;
@@ -369,7 +374,17 @@ class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,3 +5,3 @@
+@@ -3,0 +3,1 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+@@ -4,0 +5,1 @@
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
+
+@@ -5,3 +7,3 @@
 import org.mockito.Mock;
 
 -import static org.mockito.Matchers.anyListOf;
@@ -379,7 +394,12 @@ import org.mockito.Mock;
 +import static org.mockito.ArgumentMatchers.any;
 +import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
-@@ -23,1 +23,1 @@
+@@ -10,0 +12,1 @@
+import static org.mockito.Mockito.when;
+
++@ExtendWith(MockitoExtension.class)
+class MyTest {
+@@ -23,1 +26,1 @@
     @Test
     void someTest() {
 -       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
@@ -666,13 +686,16 @@ class MyTest {
 ```java
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class MyTest {
     @Mock
     Object objectMock;
@@ -695,7 +718,17 @@ class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,3 +5,3 @@
+@@ -3,0 +3,1 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+@@ -4,0 +5,1 @@
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
+
+@@ -5,3 +7,3 @@
 import org.mockito.Mock;
 
 -import static org.mockito.Matchers.anyListOf;
@@ -705,7 +738,12 @@ import org.mockito.Mock;
 +import static org.mockito.ArgumentMatchers.any;
 +import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
-@@ -23,1 +23,1 @@
+@@ -10,0 +12,1 @@
+import static org.mockito.Mockito.when;
+
++@ExtendWith(MockitoExtension.class)
+class MyTest {
+@@ -23,1 +26,1 @@
     @Test
     void someTest() {
 -       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);

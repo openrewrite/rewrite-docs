@@ -30,6 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `BigDecimalRules.BigDecimalZero`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalzerorecipe)
 * [Refaster template `BigDecimalRules.BigDecimalOne`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalonerecipe)
+* [Refaster template `BigDecimalRules.BigDecimalTwo`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimaltworecipe)
 * [Refaster template `BigDecimalRules.BigDecimalTen`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimaltenrecipe)
 * [Refaster template `BigDecimalRules.BigDecimalValueOf`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe)
 * [Refaster template `BigDecimalRules.BigDecimalSignumIsZero`](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumiszerorecipe)
@@ -50,6 +51,7 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalZeroRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalOneRecipe
+  - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalTwoRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalTenRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsZeroRecipe

@@ -37,6 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Enabled to Access Spring Boot Properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
 * [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 
 ## Example
 

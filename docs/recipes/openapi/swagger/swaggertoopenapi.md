@@ -97,6 +97,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
+* [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 
 ## Examples
 ##### Example 1

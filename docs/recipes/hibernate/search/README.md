@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Find JPQL definitions](./findjpqldefinitions.md)
+* [Find JPQL definitions (Moderne Edition)](./findjpqldefinitions-moderne-edition.md)
 
 

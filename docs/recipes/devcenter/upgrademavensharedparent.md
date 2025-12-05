@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Upgrade Apache Maven Parent"
+sidebar_label: "Upgrade Maven Shared Parent"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Upgrade Apache Maven Parent
+# Upgrade Maven Shared Parent
 
 **io.moderne.devcenter.UpgradeMavenSharedParent**
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: io.moderne.devcenter.UpgradeMavenSharedParent
-displayName: Upgrade Apache Maven Parent
+displayName: Upgrade Maven Shared Parent
 description: |
   Upgrades the Apache Maven parent POM to the latest version.
 recipeList:

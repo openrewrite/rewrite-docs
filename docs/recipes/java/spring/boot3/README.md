@@ -50,6 +50,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `@Configuration` to classes with `@EnableXXXSecurity` annotations](./configurationoverenablesecurity.md)
+* [Add `@SpringBootApplication` class](./addspringbootapplication.md)
 * [Add `@Valid` annotation to fields](./addvalidtoconfigurationpropertiesfields.md)
 * [Add `@Valid` to nested properties in `@ConfigurationProperties`](./addvalidtonestedconfigproperties.md)
 * [Add `SetUseTrailingSlashMatch()` in configuration](./addsetusetrailingslashmatch.md)
@@ -84,6 +85,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `taskExecutor` with `applicationTaskExecutor`](./resolvetaskexecutorfromcontext.md)
 * [Spring Boot 3.3 best practices](./springboot33bestpractices.md)
 * [Update OpenTelemetry resource attributes](./updateopentelemetryresourceattributes.md)
+* [Update Prometheus Pushgateway Dependency Coordinates](./updateprometheuspushgateway.md)
 * [Upgrade MyBatis to Spring Boot 2.0](./upgrademybatistospringboot_2_0.md)
 * [Upgrade Spring Cloud AWS to Spring Boot 3.4 compatible version](./upgradespringcloudawstospringboot_3_4.md)
 * [Use `kafkaAwareTransactionManager` setter](./replacekafkatransactionmanagersetter.md)

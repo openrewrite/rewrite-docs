@@ -98,6 +98,105 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.partition.support.StepExecutionAggregator`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.partition.StepExecutionAggregator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.ChunkListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.ChunkListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.ItemProcessListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.ItemProcessListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.ItemReadListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.ItemReadListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.ItemWriteListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.ItemWriteListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobExecutionListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.JobExecutionListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.SkipListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.SkipListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.StepExecutionListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.StepExecutionListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.StepListener`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.listener.StepListener`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.Job`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.Job`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobExecution`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.JobExecution`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobExecutionException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.JobExecutionException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobInstance`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.JobInstance`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobInterruptedException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.JobInterruptedException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobKeyGenerator`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.JobKeyGenerator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.DefaultJobKeyGenerator`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.DefaultJobKeyGenerator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.StartLimitExceededException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.StartLimitExceededException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.UnexpectedJobExecutionException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.UnexpectedJobExecutionException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.CompositeJobParametersValidator`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.CompositeJobParametersValidator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.DefaultJobParametersValidator`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.DefaultJobParametersValidator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParameter`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParameter`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParameters`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParameters`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParametersBuilder`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersBuilder`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParametersIncrementer`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersIncrementer`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParametersInvalidException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersInvalidException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParametersValidator`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersValidator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.job.launch.support.RunIdIncrementer`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.RunIdIncrementer`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.job.launch.support.DataFieldMaxValueJobParametersIncrementer`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.DataFieldMaxValueJobParametersIncrementer`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.Step`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.step.Step`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.StepContribution`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.step.StepContribution`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.StepExecution`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.step.StepExecution`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.integration.chunk.ChunkHandler`
+  * newFullyQualifiedTypeName: `org.springframework.batch.integration.chunk.ChunkRequestHandler`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.support.JobRepositoryFactoryBean`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.repository.support.JdbcJobRepositoryFactoryBean`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.support.JobExplorerFactoryBean`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.support.JdbcJobExplorerFactoryBean`
 
 </TabItem>
 
@@ -179,6 +278,105 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.partition.support.StepExecutionAggregator
       newFullyQualifiedTypeName: org.springframework.batch.core.partition.StepExecutionAggregator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.ChunkListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.ChunkListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.ItemProcessListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.ItemProcessListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.ItemReadListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.ItemReadListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.ItemWriteListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.ItemWriteListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobExecutionListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.JobExecutionListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.SkipListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.SkipListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.StepExecutionListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.StepExecutionListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.StepListener
+      newFullyQualifiedTypeName: org.springframework.batch.core.listener.StepListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.Job
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.Job
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobExecution
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.JobExecution
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobExecutionException
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.JobExecutionException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobInstance
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.JobInstance
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobInterruptedException
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.JobInterruptedException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobKeyGenerator
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.JobKeyGenerator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.DefaultJobKeyGenerator
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.DefaultJobKeyGenerator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.StartLimitExceededException
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.StartLimitExceededException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.UnexpectedJobExecutionException
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.UnexpectedJobExecutionException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.CompositeJobParametersValidator
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.CompositeJobParametersValidator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.DefaultJobParametersValidator
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.DefaultJobParametersValidator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobParameter
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParameter
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobParameters
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParameters
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobParametersBuilder
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersBuilder
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobParametersIncrementer
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersIncrementer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobParametersInvalidException
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersInvalidException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.JobParametersValidator
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersValidator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.job.launch.support.RunIdIncrementer
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.RunIdIncrementer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.job.launch.support.DataFieldMaxValueJobParametersIncrementer
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.DataFieldMaxValueJobParametersIncrementer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.Step
+      newFullyQualifiedTypeName: org.springframework.batch.core.step.Step
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.StepContribution
+      newFullyQualifiedTypeName: org.springframework.batch.core.step.StepContribution
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.StepExecution
+      newFullyQualifiedTypeName: org.springframework.batch.core.step.StepExecution
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.integration.chunk.ChunkHandler
+      newFullyQualifiedTypeName: org.springframework.batch.integration.chunk.ChunkRequestHandler
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.repository.support.JobRepositoryFactoryBean
+      newFullyQualifiedTypeName: org.springframework.batch.core.repository.support.JdbcJobRepositoryFactoryBean
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.support.JobExplorerFactoryBean
+      newFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.support.JdbcJobExplorerFactoryBean
 
 ```
 </TabItem>

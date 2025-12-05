@@ -27,6 +27,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
 | `String` | executions | *Optional*. Plugin goal executions provided as raw XML. Supplying `null` will remove any existing executions. | `<execution><phase>validate</phase><goals><goal>dryRun</goal></goals></execution>` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Quarkus Maven plugin](/recipes/quarkus/spring/addquarkusmavenplugin.md)
+
 ## Example
 
 ###### Parameters

@@ -13,6 +13,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Adds Mockito extensions to Mockito tests](./addmockitoextensionifannotationsused.md)
 * [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](./simplifymockitoverifywhengiven.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
 * [Cleanup PowerMock imports](./cleanuppowermockimports.md)

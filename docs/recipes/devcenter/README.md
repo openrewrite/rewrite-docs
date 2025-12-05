@@ -20,9 +20,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Parent POM upgrade](./parentpomupgrade.md)
 * [Report as security issues](./reportassecurityissues.md)
 * [Upgrade Apache Maven Parent](./upgrademavenparent.md)
-* [Upgrade Apache Maven Parent](./upgrademavenpluginsparent.md)
-* [Upgrade Apache Maven Parent](./upgrademavensharedparent.md)
 * [Upgrade Apache Parent POM](./upgradeapacheparent.md)
+* [Upgrade Maven Plugins Parent](./upgrademavenpluginsparent.md)
+* [Upgrade Maven Shared Parent](./upgrademavensharedparent.md)
 * [Upgrade Quarkus Universe BOM](./upgradequarkusuniversebom.md)
 * [Vulnerabilities status](./dependencyvulnerabilitycheck.md)
 

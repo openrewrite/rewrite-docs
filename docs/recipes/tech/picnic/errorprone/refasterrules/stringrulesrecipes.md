@@ -44,8 +44,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `StringRules.StringValueOfMethodReference`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofmethodreferencerecipe)
 * [Refaster template `StringRules.SubstringRemainder`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$substringremainderrecipe)
 * [Refaster template `StringRules.Utf8EncodedLength`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$utf8encodedlengthrecipe)
-* [Refaster template `StringRules.StringIndexOfChar`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharrecipe)
-* [Refaster template `StringRules.StringIndexOfString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringrecipe)
+* [Refaster template `StringRules.StringIndexOfCharFromIndex`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharfromindexrecipe)
+* [Refaster template `StringRules.StringIndexOfCharBetweenIndices`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharbetweenindicesrecipe)
+* [Refaster template `StringRules.StringIndexOfStringFromIndex`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringfromindexrecipe)
+* [Refaster template `StringRules.StringIndexOfStringBetweenIndices`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringbetweenindicesrecipe)
 * [Refaster template `StringRules.StringLastIndexOfChar`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharrecipe)
 * [Refaster template `StringRules.StringLastIndexOfString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringrecipe)
 * [Refaster template `StringRules.StringLastIndexOfCharWithIndex`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharwithindexrecipe)
@@ -80,8 +82,10 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfMethodReferenceRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$SubstringRemainderRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$Utf8EncodedLengthRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharFromIndexRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharBetweenIndicesRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringFromIndexRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringBetweenIndicesRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharWithIndexRecipe

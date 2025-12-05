@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.ChangeSpringPropertyKey**
 
-_Change Spring application property keys existing in either Properties or YAML files, and in `@Value` annotations._
+_Change Spring application property keys existing in either Properties or YAML files, and in `@Value`, `@ConditionalOnProperty` or `@SpringBootTest` annotations._
 
 ## Recipe source
 

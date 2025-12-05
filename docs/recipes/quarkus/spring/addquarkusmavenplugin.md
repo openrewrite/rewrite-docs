@@ -17,14 +17,155 @@ _Adds the Quarkus Maven plugin using the same version as the quarkus-bom in depe
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change Maven plugin executions](../../maven/changepluginexecutions)
+  * groupId: `io.quarkus.platform`
+  * artifactId: `quarkus-maven-plugin`
+  * executions: `<execution><goals><goal>build</goal><goal>generate-code</goal><goal>generate-code-tests</goal></goals></execution>`
+* [Add or update child tag](../../xml/addorupdatechildtag)
+  * parentXPath: `//plugin[artifactId='quarkus-maven-plugin']`
+  * newChildTag: `<extensions>true</extensions>`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.quarkus.spring.AddQuarkusMavenPlugin
+displayName: Add Quarkus Maven plugin
+description: |
+  Adds the Quarkus Maven plugin using the same version as the quarkus-bom in dependency management.
+recipeList:
+  - org.openrewrite.maven.ChangePluginExecutions:
+      groupId: io.quarkus.platform
+      artifactId: quarkus-maven-plugin
+      executions: <execution><goals><goal>build</goal><goal>generate-code</goal><goal>generate-code-tests</goal></goals></execution>
+  - org.openrewrite.xml.AddOrUpdateChildTag:
+      parentXPath: //plugin[artifactId='quarkus-maven-plugin']
+      newChildTag: <extensions>true</extensions>
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
 * [Add or replace Spring Boot build plugin with Quarkus build plugin](/recipes/quarkus/spring/migratemavenplugin.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>3.17.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>3.17.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-maven-plugin</artifactId>
+                <version>3.17.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>generate-code</goal>
+                            <goal>generate-code-tests</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -17,0 +17,19 @@
+        </dependencies>
+    </dependencyManagement>
++   <build>
++       <plugins>
++           <plugin>
++               <groupId>io.quarkus.platform</groupId>
++               <artifactId>quarkus-maven-plugin</artifactId>
++               <version>3.17.0</version>
++               <executions>
++                   <execution>
++                       <goals>
++                           <goal>build</goal>
++                           <goal>generate-code</goal>
++                           <goal>generate-code-tests</goal>
++                       </goals>
++                   </execution>
++               </executions>
++               <extensions>true</extensions>
++           </plugin>
++       </plugins>
++   </build>
+</project>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

@@ -22,6 +22,10 @@ _Migrate applications to the latest Spring Security 7.0 release. This recipe wil
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -34,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `7.0.x`
   * overrideManagedVersion: `false`
+* [Remove throws exception in `SecurityConfigurer` methods `init` and `configure`](../../../java/spring/security7/securityconfigurerremovethrowsexception)
 
 </TabItem>
 
@@ -55,6 +60,7 @@ recipeList:
       artifactId: "*"
       newVersion: 7.0.x
       overrideManagedVersion: false
+  - org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException
 
 ```
 </TabItem>

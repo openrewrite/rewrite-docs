@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to JasperReports 5.6.x](/recipes/jasperreports/upgradetojasperreports5.md)
 * [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
 
 ## Example

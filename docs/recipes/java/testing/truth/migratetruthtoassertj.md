@@ -188,7 +188,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.google.common.truth.ThrowableSubject`
   * newFullyQualifiedTypeName: `org.assertj.core.api.AbstractThrowableAssert`
-* [Remove unused imports](../../../java/removeunusedimports)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.google.common.truth.Truth`
   * newFullyQualifiedTypeName: `org.assertj.core.api.Assertions`
@@ -366,7 +365,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.google.common.truth.ThrowableSubject
       newFullyQualifiedTypeName: org.assertj.core.api.AbstractThrowableAssert
-  - org.openrewrite.java.RemoveUnusedImports
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.google.common.truth.Truth
       newFullyQualifiedTypeName: org.assertj.core.api.Assertions

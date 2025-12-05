@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate from Jakarta annotation API to JSpecify](../../java/jspecify/migratefromjakartaannotationapi)
 * [Migrate from JetBrains annotations to JSpecify](../../java/jspecify/migratefromjetbrainsannotations)
 * [Migrate from Micrometer annotations to JSpecify](../../java/jspecify/migratefrommicrometerannotations)
+* [Migrate from Micronaut Framework annotations to JSpecify](../../java/jspecify/migratefrommicronautannotations)
 
 </TabItem>
 
@@ -55,6 +56,7 @@ recipeList:
   - org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi
   - org.openrewrite.java.jspecify.MigrateFromJetbrainsAnnotations
   - org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations
+  - org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations
 
 ```
 </TabItem>

@@ -135,6 +135,16 @@ This recipe is used as part of the following composite recipes:
                 <groupId>io.quarkus.platform</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>3.2.5.Final</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>generate-code</goal>
+                            <goal>generate-code-tests</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <extensions>true</extensions>
             </plugin>
         </plugins>
     </build>
@@ -147,7 +157,7 @@ This recipe is used as part of the following composite recipes:
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -19,3 +19,3 @@
+@@ -19,3 +19,13 @@
         <plugins>
             <plugin>
 -               <groupId>org.springframework.boot</groupId>
@@ -156,6 +166,16 @@ This recipe is used as part of the following composite recipes:
 +               <groupId>io.quarkus.platform</groupId>
 +               <artifactId>quarkus-maven-plugin</artifactId>
 +               <version>3.2.5.Final</version>
++               <executions>
++                   <execution>
++                       <goals>
++                           <goal>build</goal>
++                           <goal>generate-code</goal>
++                           <goal>generate-code-tests</goal>
++                       </goals>
++                   </execution>
++               </executions>
++               <extensions>true</extensions>
             </plugin>
 ```
 </TabItem>
@@ -223,6 +243,16 @@ This recipe is used as part of the following composite recipes:
                 <groupId>io.quarkus.platform</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>3.2.5.Final</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>generate-code</goal>
+                            <goal>generate-code-tests</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <extensions>true</extensions>
             </plugin>
         </plugins>
     </build>
@@ -235,7 +265,7 @@ This recipe is used as part of the following composite recipes:
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -19,3 +19,3 @@
+@@ -19,3 +19,13 @@
         <plugins>
             <plugin>
 -               <groupId>org.springframework.boot</groupId>
@@ -244,6 +274,16 @@ This recipe is used as part of the following composite recipes:
 +               <groupId>io.quarkus.platform</groupId>
 +               <artifactId>quarkus-maven-plugin</artifactId>
 +               <version>3.2.5.Final</version>
++               <executions>
++                   <execution>
++                       <goals>
++                           <goal>build</goal>
++                           <goal>generate-code</goal>
++                           <goal>generate-code-tests</goal>
++                       </goals>
++                   </execution>
++               </executions>
++               <extensions>true</extensions>
             </plugin>
 ```
 </TabItem>

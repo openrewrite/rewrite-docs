@@ -24,6 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | style | *Optional*. See https://docs.openrewrite.org/concepts-and-explanations/styles for a description on styles. | <pre>type: specs.openrewrite.org/v1beta/style<br />name: com.yourorg.YesTabsNoStarImports<br />styleConfigs:<br />  - org.openrewrite.java.style.TabsAndIndentsStyle:<br />      useTabCharacter: true</pre> |
+| `Boolean` | removeCustomLineBreaks | *Optional*. Do you want to remove custom line breaks? (default false) |  |
 
 
 ## Usage
