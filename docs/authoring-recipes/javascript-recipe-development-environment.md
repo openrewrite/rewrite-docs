@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # JavaScript recipe development environment
 
-This guide covers setting up your development environment for creating OpenRewrite recipes for JavaScript and TypeScript codebases.
+This guide covers everything you need to know to set up your development environment for creating and running JavaScript/TypeScript OpenRewrite recipes.
 
 ## Prerequisites
 
