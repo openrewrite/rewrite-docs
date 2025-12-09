@@ -14,27 +14,27 @@ This guide covers everything you need to know to set up your development environ
 Before you begin, please make sure you have the following installed on your system: 
 
 * [Node.js](https://nodejs.org/) (version 18 or later)
-  * Includes npm for package management
+  * We use npm for package management
 * [TypeScript](https://www.typescriptlang.org/) (version 5.0+)
   * We recommend writing recipes in TypeScript for better type safety
 * [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro)
-  * Required for running and testing JavaScript recipes
+  * This is required for running and testing JavaScript recipes
 * A code editor with TypeScript support such as:
   * [Visual Studio Code](https://code.visualstudio.com/)
   * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
 ## Automatic project setup
 
-The easiest way to get started developing your own JavaScript recipes is to use the [javascript-recipe-starter](https://github.com/moderneinc/javascript-recipe-starter) repository as a template. It comes already set up with:
+The easiest way to get started developing your own JavaScript recipes is to use the [javascript-recipe-starter repository](https://github.com/moderneinc/javascript-recipe-starter) as a template. By default, it comes set up with:
 
-* All necessary dependencies and build configuration
-* Multiple example recipes demonstrating different patterns
+* All of the necessary dependencies and build configurations you need
+* Multiple example recipes that demonstrate different recipe patterns
 * Comprehensive tests for each recipe
 * TypeScript configuration optimized for OpenRewrite development
 
 To use the template:
 
-1. Visit the [javascript-recipe-starter](https://github.com/moderneinc/javascript-recipe-starter) repository
+1. Visit the [javascript-recipe-starter repository](https://github.com/moderneinc/javascript-recipe-starter)
 2. Click the "Use this template" button
 3. Clone your new repository and install dependencies:
 
@@ -50,11 +50,11 @@ npm install
 npm test
 ```
 
-If you've chosen to use the template, you can skip to [Testing recipes locally](#testing-recipes-locally). If you prefer to set up a project manually, continue with the instructions below.
+If you've chosen to use the template, you can skip to the [testing recipes locally section](#testing-recipes-locally). If you prefer to set up a project manually, continue with the instructions below.
 
 ## Manual project setup
 
-If you prefer not to use the template, you can set up a new project from scratch using npm:
+If you prefer not to use our template repository, you can set up a new project from scratch using npm. We'll start by initializing the project and creating the basic directories:
 
 ```bash
 # Create a new directory for your project
@@ -68,9 +68,9 @@ npm init -y
 mkdir -p src test
 ```
 
-### Dependencies
+### Install dependencies
 
-Install the core OpenRewrite framework and required dependencies:
+Next, let's install the core OpenRewrite framework and the required dependencies:
 
 ```bash
 # Core OpenRewrite framework - should be compatible with your Moderne CLI version
@@ -83,9 +83,11 @@ npm install immer
 npm install --save-dev typescript jest @jest/globals ts-jest rimraf
 ```
 
-### TypeScript configuration
+### Configure TypeScript
 
-Create a `tsconfig.json` file in your project root with the following configuration:
+With the dependencies installed, we now need to provide some TypeScript configuration.
+
+Create a `tsconfig.json` file in your project root that looks like:
 
 ```json title="tsconfig.json"
 {
@@ -110,16 +112,16 @@ Create a `tsconfig.json` file in your project root with the following configurat
 }
 ```
 
-Key settings explained:
+#### Key settings explained:
 
 * **`outDir`**: Where compiled JavaScript will be output (typically `dist` or `build`)
-* **`experimentalDecorators`**: Required for using `@Option` decorator in recipes
+* **`experimentalDecorators`**: Required for using the `@Option` decorator in recipes
 * **`declaration`**: Generates `.d.ts` type definition files
 * **`strict`**: Enables all strict type checking options
 
-### Build configuration
+### Set up build/publishing configuration
 
-For publishing, create a separate `tsconfig.build.json` that extends the base configuration:
+The above configuration isn't enough if you want to publish your recipes so others can use them. In order to publish recipes, please create a separate `tsconfig.build.json` that extends the base configuration:
 
 ```json title="tsconfig.build.json"
 {
@@ -145,9 +147,9 @@ The base `tsconfig.json` file includes `test/**/*` and sets `rootDir: "./"` - wh
 The other file, `tsconfig.build.json` is specifically for **building the published package**. It sets `rootDir: "./src"` so the output structure is correct (e.g., `dist/index.js` instead of `dist/src/index.js`). Additionally, it only includes source files to keep test code out of the published package.
 :::
 
-### Jest configuration
+### Configure tests (Jest)
 
-Create a `jest.config.js` file for testing:
+Next, we need to configure tests. We typically use Jest - but you are welcome to use whatever testing framework you like. Below is an example of what our `jest.config.js` file looks like:
 
 ```javascript title="jest.config.js"
 module.exports = {
@@ -167,9 +169,9 @@ module.exports = {
 };
 ```
 
-### Package.json scripts
+### Update your `package.json`
 
-Add build and test scripts to your `package.json`:
+Add the following build and test scripts to your `package.json`:
 
 ```json title="package.json"
 {
@@ -185,24 +187,9 @@ Add build and test scripts to your `package.json`:
 }
 ```
 
-### Project layout
+### Create an index file to register your recipes
 
-With the setup complete, organize your files in this structure:
-
-```
-my-openrewrite-recipes/
-├── src/
-│   ├── my-recipe.ts           # Recipe implementations
-│   └── index.ts               # Export and register your recipes
-├── test/
-│   └── my-recipe.test.ts      # Recipe tests
-├── package.json
-├── tsconfig.json              # TypeScript config for development
-├── tsconfig.build.json        # TypeScript config for building
-└── jest.config.js
-```
-
-Create an `index.ts` file to export and register your recipes:
+In order for the Moderne CLI to discover your recipes, you need to export them. To do so, create a `src/index.ts` file that looks like:
 
 ```typescript title="src/index.ts"
 import { RecipeRegistry } from '@openrewrite/rewrite';
@@ -226,6 +213,23 @@ export function activate(registry: RecipeRegistry) {
 :::warning
 The `activate()` function is **required** for the Moderne CLI to discover your recipes. Without it, `mod run` will not find your recipes even if they're properly exported and built.
 :::
+
+### Project layout
+
+With the setup complete, we recommend organizing your directories/files to look like:
+
+```
+my-openrewrite-recipes/
+├── src/
+│   ├── my-recipe.ts           # Recipe implementations
+│   └── index.ts               # Export and register your recipes
+├── test/
+│   └── my-recipe.test.ts      # Recipe tests
+├── package.json
+├── tsconfig.json              # TypeScript config for development
+├── tsconfig.build.json        # TypeScript config for building
+└── jest.config.js
+```
 
 With all of that done, your project setup is complete!
 
@@ -308,7 +312,7 @@ Ensure your `package.json` is set up for publishing. Below is an example of what
 
 ### Step 2: Publish to npm
 
-First, ensure you're logged in to npm:
+Next, ensure you're logged in to npm:
 
 ```bash
 npm login
@@ -330,7 +334,7 @@ If your package name is scoped (starts with `@`), you'll need to add `--access p
 
 ### Step 3: Use your published recipes
 
-Once published, others can install and use your recipes:
+Once published, you can have other people install and use your recipes by having them run the following commands:
 
 ```bash
 # Install the published recipe package
