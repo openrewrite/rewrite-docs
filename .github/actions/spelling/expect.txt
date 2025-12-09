@@ -62,6 +62,7 @@ httpclient
 httpcomponents
 httpcore
 IHzb
+immer
 initscript
 inlineme
 Intelli
