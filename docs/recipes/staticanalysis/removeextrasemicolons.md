@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.RemoveExtraSemicolons**
 
-_Removes not needed semicolons. Semicolons are considered not needed:  * Optional semicolons at the end of try-with-resources,  * after the last enum value if no field or method is defined,  * no statement between two semicolon._
+Removes not needed semicolons. Semicolons are considered not needed:
+ * Optional semicolons at the end of try-with-resources,
+ * after the last enum value if no field or method is defined,
+ * no statement between two semicolon.
 
 ### Tags
 

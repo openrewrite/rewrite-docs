@@ -31,9 +31,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [`@Type` annotation type parameter migration (Community Edition)](./typeannotationparameter-community-edition.md)
 * [AddScalarPreferStandardBasicTypesForHibernate5 (Community Edition)](./addscalarpreferstandardbasictypes-community-edition.md)
-* [Migrate `UserType` to Hibernate 6 (Community Edition)](./migrateusertype-community-edition.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)](./migratetohypersistenceutilshibernate62-community-edition.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)](./migratetohypersistenceutilshibernate63-community-edition.md)
+* [Migrate `UserType` to Hibernate 6 (Community Edition)](./migrateusertype-community-edition.md)
 * [Migration of `ResultCheckStyle` to `Expectation` (Community Edition)](./migrateresultcheckstyletoexpectation-community-edition.md)
 * [Remove invalid `@GeneratedValue` annotation (Community Edition)](./removeinvalidhibernategeneratedvalueannotation-community-edition.md)
 * [Replace `@LazyCollection` with `jakarta.persistence.FetchType` (Community Edition)](./replacelazycollectionannotation-community-edition.md)

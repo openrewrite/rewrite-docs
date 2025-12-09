@@ -88,7 +88,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springdoc`
   * artifactId: `*`
   * newVersion: `2.5.x`
-* [Migrate to Hibernate 6.4.x](../../../hibernate/migratetohibernate64)
+* [Migrate to Hibernate 6.4.x (Community Edition)](../../../hibernate/migratetohibernate64-community-edition)
 * [Use `spring.reactor.context-propagation` property](../../../java/spring/boot3/migratehookstoreactorcontextproperty)
 * [Relocate Launcher Classes](../../../java/spring/boot3/relocatelauncherclasses)
 * [Upgrade MyBatis to Spring Boot 3.2](../../../java/spring/boot3/upgrademybatistospringboot_3_2)

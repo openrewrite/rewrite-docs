@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.UpgradeDependencyVersion**
 
-_Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `"group:artifact:version"`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations._
+Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:
+ * `String` notation: `"group:artifact:version"` 
+ * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
+Can update version numbers which are defined earlier in the same file in variable declarations.
 
 ## Recipe source
 

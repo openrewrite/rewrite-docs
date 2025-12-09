@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)
 
-**org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3**
+**org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63**
 
 _This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`._
 
@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
   * oldGroupId: `io.hypersistence`
   * oldArtifactId: `hypersistence-utils-hibernate-62`
   * newGroupId: `io.hypersistence`
@@ -38,7 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3
+name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63
 displayName: Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)
 description: |
   This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
@@ -75,7 +75,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3")
+    activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63")
     setExportDatatables(true)
 }
 
@@ -108,7 +108,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3")
+        activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -143,7 +143,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3</recipe>
+            <recipe>org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -166,7 +166,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3 -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -174,7 +174,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe 3
+mod run . --recipe MigrateToHypersistenceUtilsHibernate63
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -188,7 +188,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

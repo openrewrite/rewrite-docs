@@ -9,7 +9,18 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.MigrateDependenciesToVersionCatalog**
 
-_Migrates Gradle project dependencies to use the [version catalog](https://docs.gradle.org/current/userguide/platforms.html) feature. Supports migrating dependency declarations of various forms:  * `String` notation: `"group:artifact:version"`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`  * Property references: `"group:artifact:$version"` or `"group:artifact:${version}"`  The recipe will:  * Create a `gradle/libs.versions.toml` file with version declarations  * Replace dependency declarations with catalog references (e.g., `libs.springCore`)  * Migrate version properties from `gradle.properties` to the version catalog  * Preserve project dependencies unchanged  **Note:** If a version catalog already exists, the recipe will not modify it._
+Migrates Gradle project dependencies to use the [version catalog](https://docs.gradle.org/current/userguide/platforms.html) feature. Supports migrating dependency declarations of various forms:
+ * `String` notation: `"group:artifact:version"`
+ * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
+ * Property references: `"group:artifact:$version"` or `"group:artifact:${version}"`
+
+The recipe will:
+ * Create a `gradle/libs.versions.toml` file with version declarations
+ * Replace dependency declarations with catalog references (e.g., `libs.springCore`)
+ * Migrate version properties from `gradle.properties` to the version catalog
+ * Preserve project dependencies unchanged
+
+**Note:** If a version catalog already exists, the recipe will not modify it.
 
 ## Recipe source
 

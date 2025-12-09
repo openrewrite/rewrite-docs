@@ -9,7 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.UnnecessaryThrows**
 
-_Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` or `protected` and the exception is not documented via a JavaDoc as a `@throws` tag._
+Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:
+
+ - The declaring class or the method declaration is `final`.
+ - The method declaration is `static` or `private`.
+ - The method overrides a method declaration in a super class and the super class does not throw the exception.
+ - The method is `public` or `protected` and the exception is not documented via a JavaDoc as a `@throws` tag.
 
 ### Tags
 

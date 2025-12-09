@@ -9,7 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.dependencies.UpgradeDependencyVersion**
 
-_For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `"group:artifact:version"`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
+For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:
+ * `String` notation: `"group:artifact:version"` 
+ * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
+It is possible to update version numbers which are defined earlier in the same file in variable declarations.
+
+For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
 
 ## Recipe source
 
@@ -42,7 +47,7 @@ This recipe is used as part of the following composite recipes:
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 * [Jackson best practices](/recipes/java/jackson/jacksonbestpractices.md)
 * [Migrate Ehcache from javax to jakarta namespace](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
-* [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
+* [Migrate Hibernate dependencies to 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernatedependencies60-community-edition.md)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
 * [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
 * [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
@@ -84,14 +89,15 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate from Elasticsearch 8 to 9](/recipes/elastic/elastic9/migratetoelasticsearch9.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
-* [Migrate to Hibernate 6.1.x](/recipes/hibernate/migratetohibernate61.md)
-* [Migrate to Hibernate 6.2.x](/recipes/hibernate/migratetohibernate62.md)
-* [Migrate to Hibernate 6.3.x](/recipes/hibernate/migratetohibernate63.md)
-* [Migrate to Hibernate 6.4.x](/recipes/hibernate/migratetohibernate64.md)
-* [Migrate to Hibernate 6.5.x](/recipes/hibernate/migratetohibernate65.md)
-* [Migrate to Hibernate 6.6.x](/recipes/hibernate/migratetohibernate66.md)
-* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
-* [Migrate to Hibernate 7.1.x](/recipes/hibernate/migratetohibernate71.md)
+* [Migrate to Hibernate 6.1.x (Community Edition)](/recipes/hibernate/migratetohibernate61-community-edition.md)
+* [Migrate to Hibernate 6.2.x (Community Edition)](/recipes/hibernate/migratetohibernate62-community-edition.md)
+* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63-community-edition.md)
+* [Migrate to Hibernate 6.4.x (Community Edition)](/recipes/hibernate/migratetohibernate64-community-edition.md)
+* [Migrate to Hibernate 6.5.x (Community Edition)](/recipes/hibernate/migratetohibernate65-community-edition.md)
+* [Migrate to Hibernate 6.6.x (Community Edition)](/recipes/hibernate/migratetohibernate66-community-edition.md)
+* [Migrate to Hibernate 6.6.x (Moderne Edition)](/recipes/hibernate/migratetohibernate66-moderne-edition.md)
+* [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
+* [Migrate to Hibernate 7.1.x (Community Edition)](/recipes/hibernate/migratetohibernate71-community-edition.md)
 * [Migrate to Hibernate for Jakarta EE 9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
 * [Migrate to JasperReports 5.6.x](/recipes/jasperreports/upgradetojasperreports5.md)
 * [Migrate to JasperReports 6](/recipes/jasperreports/upgradetojasperreports6.md)

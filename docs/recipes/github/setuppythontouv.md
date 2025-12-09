@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.github.SetupPythonToUv**
 
-_Replace `actions/setup-python` action with `astral-sh/setup-uv` action for faster Python environment setup and dependency management.  **Benefits of UV:**  - Significantly faster package installation and environment setup  - Built-in dependency resolution and locking  - Integrated caching for improved CI performance  - Drop-in replacement for pip workflows  **Transformations applied:**  - `actions/setup-python@v5` → `astral-sh/setup-uv@v6`  - `cache: 'pip'` → `enable-cache: 'true'`  - `pip install -r requirements.txt` → `uv sync` (configurable strategy)  - `python -m <module>` → `uv run <module>`  - Removes unnecessary `pip install --upgrade pip` steps  **Sync strategies:**  - `basic`: Basic synchronization (`uv sync`)  - `locked`: Use locked dependencies (`uv sync --locked`)  - `full`: Install all extras and dev dependencies (`uv sync --all-extras --dev`)  See the [UV GitHub integration guide](https://docs.astral.sh/uv/guides/integration/github/) for more details._
+Replace `actions/setup-python` action with `astral-sh/setup-uv` action for faster Python environment setup and dependency management.
+
+**Benefits of UV:**
+ - Significantly faster package installation and environment setup
+ - Built-in dependency resolution and locking
+ - Integrated caching for improved CI performance
+ - Drop-in replacement for pip workflows
+
+**Transformations applied:**
+ - `actions/setup-python@v5` → `astral-sh/setup-uv@v6`
+ - `cache: 'pip'` → `enable-cache: 'true'`
+ - `pip install -r requirements.txt` → `uv sync` (configurable strategy)
+ - `python -m <module>` → `uv run <module>`
+ - Removes unnecessary `pip install --upgrade pip` steps
+
+**Sync strategies:**
+ - `basic`: Basic synchronization (`uv sync`)
+ - `locked`: Use locked dependencies (`uv sync --locked`)
+ - `full`: Install all extras and dev dependencies (`uv sync --all-extras --dev`)
+
+See the [UV GitHub integration guide](https://docs.astral.sh/uv/guides/integration/github/) for more details.
 
 ## Recipe source
 

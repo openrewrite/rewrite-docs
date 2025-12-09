@@ -9,7 +9,13 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.lombok.AdoptLombokGetterMethodNames**
 
-_Rename methods that are effectively getter to the name Lombok would give them.  Limitations:  - If two methods in a class are effectively the same getter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is._
+Rename methods that are effectively getter to the name Lombok would give them.
+
+Limitations:
+ - If two methods in a class are effectively the same getter then one's name will be corrected and the others name will be left as it is.
+ - If the correct name for a method is already taken by another method then the name will not be corrected.
+ - Method name swaps or circular renaming within a class cannot be performed because the names block each other.
+E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is.
 
 ## Recipe source
 

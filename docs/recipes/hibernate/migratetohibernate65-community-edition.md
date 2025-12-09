@@ -63,6 +63,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 6.6.x (Community Edition)](/recipes/hibernate/migratetohibernate66-community-edition.md)
+* [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
 
 
 ## Usage

@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)](../hibernate/typedescriptortotype-community-edition)
 * [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](../java/migrate/jakarta/javaxpersistencetojakartapersistence)
 * [Migrate xmlns entries in `persistence.xml` files](../java/migrate/jakarta/javaxpersistencexmltojakartapersistencexml)
-* [Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate6/0-community-edition)
+* [Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate60-community-edition)
 
 </TabItem>
 
@@ -58,7 +58,7 @@ recipeList:
   - org.openrewrite.hibernate.TypeDescriptorToType
   - org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence
   - org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml
-  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.0
+  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60
 
 ```
 </TabItem>

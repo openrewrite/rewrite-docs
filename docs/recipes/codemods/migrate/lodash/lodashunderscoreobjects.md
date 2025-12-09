@@ -9,14 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.lodash.LodashUnderscoreObjects**
 
-```
 - `_.clone(x)` -> `{ ...x }`
 - `_.extend({}, x, y)` -> `{ ...x, ...y }`
 - `_.extend(obj, x, y)` -> `Object.assign(obj, x, y)`
 - `_.keys(x)` -> `Object.keys(x)`
 - `_.pairs(x)` -> `Object.entries(x)`
 - `_.values(x)` -> `Object.values(x)`
-```
 
 
 ### Tags

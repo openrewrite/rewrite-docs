@@ -61,6 +61,8 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 6.2.x (Community Edition)](/recipes/hibernate/migratetohibernate62-community-edition.md)
+* [Migrate to Hibernate for Jakarta EE 9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
 
 ## Examples
 ##### Example 1

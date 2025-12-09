@@ -9,7 +9,9 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.junit6.MinimumJreConditions**
 
-_This recipe will:  - Remove tests that are only active on JREs that are below the specified version.  - Adjust ranges to use minimum the specified version._
+This recipe will:
+ - Remove tests that are only active on JREs that are below the specified version.
+ - Adjust ranges to use minimum the specified version.
 
 ## Recipe source
 

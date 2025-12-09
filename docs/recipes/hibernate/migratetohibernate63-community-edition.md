@@ -29,8 +29,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Hibernate 6.2.x (Community Edition)](../hibernate/migratetohibernate62-community-edition)
-* [Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate6/2-community-edition)
-* [Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate6/3-community-edition)
+* [Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate62-community-edition)
+* [Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate63-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
   * artifactId: `*`
@@ -49,8 +49,8 @@ description: |
   This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernate62
-  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.2
-  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3
+  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62
+  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.hibernate.orm
       artifactId: "*"
