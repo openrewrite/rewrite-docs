@@ -64,8 +64,10 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'authoring-recipes/recipe-development-environment',
+        'authoring-recipes/javascript-recipe-development-environment',
         'authoring-recipes/types-of-recipes',
         'authoring-recipes/writing-a-java-refactoring-recipe',
+        'authoring-recipes/writing-a-javascript-refactoring-recipe',
         'authoring-recipes/refaster-recipes',
         'authoring-recipes/recipe-testing',
         'authoring-recipes/recipe-conventions-and-best-practices',
