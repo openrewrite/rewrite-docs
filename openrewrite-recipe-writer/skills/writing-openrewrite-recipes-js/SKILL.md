@@ -1,5 +1,5 @@
 ---
-name: openrewrite-recipe-authoring-js
+name: writing-openrewrite-recipes-js
 description: This skill should be used when authoring OpenRewrite recipes in TypeScript for automated code transformations. Covers recipe structure, visitor patterns, pattern matching, templates, testing strategies, and troubleshooting.
 ---
 
