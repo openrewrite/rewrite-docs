@@ -22,8 +22,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-                    | `String` | applicationFolder | *Optional*. When your source code repo contains multiple java projects/modules, it's impossible to decide in which one to add the the Application class in a guaranteed way.
-By setting this property, you can filter out sourcepaths (supporting glob) to make 1 module/project applicable as Applications module. | `**/*-web/` |
+| `String` | applicationFolder | *Optional*. When your source code repo contains multiple java projects/modules, it's impossible to decide in which one to add the the Application class in a guaranteed way.<br />By setting this property, you can filter out sourcepaths (supporting glob) to make 1 module/project applicable as Applications module. | `**/*-web/` |
 
 
 ## Usage

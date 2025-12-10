@@ -25,8 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | find | The text to find. This snippet can be multiline. | `blacklist` |
 | `Boolean` | regex | *Optional*. If true, `find` will be interpreted as a Regular Expression. Default `false`. |  |
-                    | `Set` | regexOptions | *Optional*. Regex processing options. Multiple options may be specified. These options do nothing if `regex` mode is not enabled.
-* Case-sensitive - The search will be sensitive to letter case. * Multiline - Allows `^` and `$` to match the beginning and end of lines, respectively.* Dot all - Allows `.` to match line terminators. Valid options: `Case-sensitive`, `Multiline`, `Dot all` |  |
+| `Set` | regexOptions | *Optional*. Regex processing options. Multiple options may be specified. These options do nothing if `regex` mode is not enabled.<br />* Case-sensitive - The search will be sensitive to letter case. * Multiline - Allows `^` and `$` to match the beginning and end of lines, respectively.* Dot all - Allows `.` to match line terminators. Valid options: `Case-sensitive`, `Multiline`, `Dot all` |  |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*.java` |
 
 

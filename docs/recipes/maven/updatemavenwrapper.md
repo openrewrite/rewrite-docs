@@ -24,14 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | wrapperVersion | *Optional*. An exact version number or node-style semver selector used to select the wrapper version number. | `3.x` |
-                    | `String` | wrapperDistribution | *Optional*. The distribution of the Maven wrapper to use.
-
-* "bin" uses a `maven-wrapper.jar` compiled binary.
-* "only-script" uses a lite version of `mvnw`/`mvnw.cmd` using wget/curl or powershell. (required wrapper 3.2.0 or newer)
-* "script" downloads `maven-wrapper.jar` or `MavenWrapperDownloader.java` to then download a full distribution.
-* "source" uses `MavenWrapperDownloader.java` source file.
-
-Defaults to "bin". Valid options: `bin`, `only-script`, `script`, `source` |  |
+| `String` | wrapperDistribution | *Optional*. The distribution of the Maven wrapper to use.<br /><br />* "bin" uses a `maven-wrapper.jar` compiled binary.<br />* "only-script" uses a lite version of `mvnw`/`mvnw.cmd` using wget/curl or powershell. (required wrapper 3.2.0 or newer)<br />* "script" downloads `maven-wrapper.jar` or `MavenWrapperDownloader.java` to then download a full distribution.<br />* "source" uses `MavenWrapperDownloader.java` source file.<br /><br />Defaults to "bin". Valid options: `bin`, `only-script`, `script`, `source` |  |
 | `String` | distributionVersion | *Optional*. An exact version number or node-style semver selector used to select the Maven version number. | `3.x` |
 | `String` | repositoryUrl | *Optional*. The URL of the repository to download the Maven wrapper and distribution from. Supports repositories with a Maven layout. Defaults to `https://repo.maven.apache.org/maven2`. | `https://repo.maven.apache.org/maven2` |
 | `Boolean` | addIfMissing | *Optional*. Add a Maven wrapper, if it's missing. Defaults to `true`. |  |

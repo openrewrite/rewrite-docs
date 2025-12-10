@@ -45,12 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | uvVersion | *Optional*. The version of the `astral-sh/setup-uv` action to use. Defaults to `v6`. | `v6` |
 | `String` | syncStrategy | *Optional*. Strategy for the `uv sync` command replacement. Valid options: `basic`, `locked`, `full` | `locked` |
-                    | `Boolean` | transformPipCommands | *Optional*. Whether to transform `pip install` commands to `uv` equivalents:
-- `pip install -r requirements.txt` → `uv sync`
-- `pip install .` → `uv sync`
-- `python -m pytest` → `uv run pytest`
-
-When disabled, only the action itself is replaced. Defaults to `true`. | `true` |
+| `Boolean` | transformPipCommands | *Optional*. Whether to transform `pip install` commands to `uv` equivalents:<br />- `pip install -r requirements.txt` → `uv sync`<br />- `pip install .` → `uv sync`<br />- `python -m pytest` → `uv run pytest`<br /><br />When disabled, only the action itself is replaced. Defaults to `true`. | `true` |
 | `Boolean` | enableCache | *Optional*. Whether to automatically convert `cache: 'pip'` to `enable-cache: 'true'` for UV's built-in caching. When disabled, cache settings are left unchanged. Defaults to `true`. | `true` |
 
 ## Example

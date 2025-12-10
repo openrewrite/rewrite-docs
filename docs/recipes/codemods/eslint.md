@@ -33,9 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `List` | extend | *Optional*. A list of extends for ESLint. | `eslint:recommended, prettier` |
 | `List` | rules | *Optional*. List of rules to be checked by ESLint. Optionally, the severity and other rule options can also be specified as e.g. `off`, `warn` or `["error", "always"]`. The severity `off` is useful when the rule is declared by an extended [shareable config](https://eslint.org/docs/latest/extend/ways-to-extend#shareable-configs). For more information, see the [ESLint documentation](https://eslint.org/docs/latest/use/configure/rules) | `eqeqeq: warn, multiline-comment-style: ["error", "starred-block"], prettier/prettier` |
 | `Boolean` | fix | *Optional*. Automatically fix violations when possible. Defaults to `true`. | `false` |
-                    | `String` | configFile | *Optional*. Allows specifying the full ESLint configuration file contents as multiline JSON. See [ESLint documentation](https://eslint.org/docs/latest/use/configure/configuration-files) for more details.
-
-Note that this will override any other configuration options. | `{}` |
+| `String` | configFile | *Optional*. Allows specifying the full ESLint configuration file contents as multiline JSON. See [ESLint documentation](https://eslint.org/docs/latest/use/configure/configuration-files) for more details.<br /><br />Note that this will override any other configuration options. | `{}` |
 
 
 ## Used by
