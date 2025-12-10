@@ -8,7 +8,7 @@ description: This skill should be used when authoring OpenRewrite recipes in Typ
 ## When NOT to Use This Skill
 
 Do NOT use this skill for:
-- Authoring OpenRewrite recipes in **Java** - use the `openrewrite-recipe-writer` skill instead
+- Authoring OpenRewrite recipes in **Java** - use the `writing-openrewrite-recipes` skill instead
 - General JavaScript/TypeScript programming questions unrelated to OpenRewrite
 - Questions about running existing OpenRewrite recipes (use OpenRewrite documentation)
 - Build tool configuration unrelated to recipe development
