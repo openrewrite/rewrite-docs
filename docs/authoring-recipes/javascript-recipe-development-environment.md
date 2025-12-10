@@ -252,12 +252,14 @@ This will output compiled JavaScript to the `dist` directory (or whatever you sp
 Point the Moderne CLI to your local build output:
 
 ```bash
-# Install from your local dist folder
-mod config recipes npm install ~/path/to/your-recipe-repo/dist
+# Add recipes to the CLI by pointing to your dist dir
+mod config recipes npm install /path/to/your-recipe-repo/dist
 ```
 
 :::tip
 The path should point to the directory containing your compiled JavaScript (the `outDir` from your `tsconfig.json`), **not** your project root. This is typically `dist` or `build`.
+
+Also, we **strongly recommend** using an absolute path instead of a relative path when installing recipes. This is because when you run the `mod config recipes list` command in the CLI it will show the path you ran the `install` command with rather than the absolute path.
 :::
 
 ### Step 3: Configure the CLI to build JavaScript LSTs
@@ -270,7 +272,7 @@ Once installed, run your recipe on one or more repositories:
 
 ```bash
 # Navigate to the codebase you want to transform
-cd ~/path/to/target-codebase
+cd /path/to/target-codebase
 
 # Build the LST
 mod build .
