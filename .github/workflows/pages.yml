@@ -39,9 +39,8 @@ jobs:
 
       - name: Build website
         run: |
-          yarn build 2>&1 | tee build.log
-          MARKDOWN_COUNT=$(grep -c "Generated markdown file:" build.log || true)
-          echo "Generated $MARKDOWN_COUNT LLM markdown files" >> $GITHUB_STEP_SUMMARY
+          set -o pipefail
+          yarn build 2>&1 | { grep -v "^Generated markdown file:" || true; }
         env:
           NODE_OPTIONS: --max-old-space-size=8192
           DOCUSAURUS_IGNORE_SSG_WARNINGS: true
