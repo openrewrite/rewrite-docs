@@ -848,7 +848,7 @@ const tmpl = template`isDate(${capture('value')})`
         }
     });
 
-return await tmpl.apply(this.cursor, method, match);
+return await tmpl.apply(this.cursor, method, {values: match});
 ```
 
 **When to use templates:**
@@ -925,7 +925,7 @@ const call = {
 const msg = capture('msg');
 const match = await pattern`console.log(${msg})`.match(method, this.cursor);
 if (match) {
-    return await template`logger.info(${msg})`.apply(this.cursor, method, match);
+    return await template`logger.info(${msg})`.apply(this.cursor, method, {values: match});
 }
 ```
 

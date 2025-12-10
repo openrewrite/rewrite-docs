@@ -58,7 +58,7 @@ protected async visitMethodInvocation(
 
     if (match) {
         // Replace with: baz.qux()
-        return await template`baz.qux()`.apply(this.cursor, method, match);
+        return await template`baz.qux()`.apply(this.cursor, method, {values: match});
     }
 
     return method;
@@ -76,7 +76,7 @@ const match = await pat.match(method, this.cursor);
 
 if (match) {
     // Use captured method name in template
-    return await template`bar.${methodName}()`.apply(this.cursor, method, match);
+    return await template`bar.${methodName}()`.apply(this.cursor, method, {values: match});
 }
 
 // Example: foo.getData() -> bar.getData()
@@ -439,9 +439,9 @@ const tmpl = template`foo.bar(${capture()})`;
 
 // Apply template with match result
 const result = await tmpl.apply(
-    cursor,      // Current cursor position
-    node,        // Node being replaced
-    matchResult  // Captures from pattern match
+    cursor,                // Current cursor position
+    node,                  // Node being replaced
+    {values: matchResult}  // Captures from pattern match
 );
 ```
 
@@ -483,9 +483,9 @@ const newName = param('newName');
 const tmpl = template`function ${newName}() { ... }`;
 
 // Apply with parameters
-await tmpl.apply(cursor, node, matchResult, {
+await tmpl.apply(cursor, node, {values: {
     [newName]: someValue
-});
+}});
 ```
 
 ### Raw Code Insertion
@@ -524,7 +524,7 @@ class MyRecipe extends Recipe {
 
                 if (match) {
                     // Insert log level as raw code at construction time
-                    return await template`logger.${raw(logLevel)}(${msg})`.apply(this.cursor, method, match);
+                    return await template`logger.${raw(logLevel)}(${msg})`.apply(this.cursor, method, {values: match});
                     // Produces: logger.info(...) or logger.warn(...) etc.
                 }
                 return method;
@@ -725,7 +725,7 @@ export class UseDateValidator extends Recipe {
             ): Promise<J | undefined> {
                 const match = await pat.match(method, this.cursor);
                 if (match) {
-                    return await tmpl.apply(this.cursor, method, match);
+                    return await tmpl.apply(this.cursor, method, {values: match});
                 }
                 return method;
             }
@@ -953,7 +953,7 @@ protected async visitMethodInvocation(
         return method;
     }
 
-    return await tmpl.apply(this.cursor, method, match);
+    return await tmpl.apply(this.cursor, method, {values: match});
 }
 ```
 
@@ -1263,7 +1263,7 @@ if (match) {
         tmpl = template`newApi.${method}Async(${args})`;
     }
 
-    return await tmpl.apply(this.cursor, node, match);
+    return await tmpl.apply(this.cursor, node, {values: match});
 }
 ```
 
@@ -1631,10 +1631,10 @@ template`${method.name.simpleName}`  // Safe now
 
 ```typescript
 // ❌ WRONG - Template needs cursor context for proper attribution
-await tmpl.apply(null, node, match);  // Might not type-attribute properly
+await tmpl.apply(null, node, {values: match});  // Might not type-attribute properly
 
 // ✅ CORRECT - Always pass current cursor
-await tmpl.apply(this.cursor, node, match);
+await tmpl.apply(this.cursor, node, {values: match});
 ```
 
 ## Performance Tips
