@@ -505,6 +505,9 @@ regexp?\.MustCompile\(`[^`]*`\)
 # sed regular expressions
 sed 's/(?:[^/]*?[a-zA-Z]{3,}[^/]*?/){2}
 
+# ignore import/require statements with scoped packages
+^.*(?:import|require)\s*.*from\s*(['"])@[\w-]+/[\w-]+\g{-1}
+
 # node packages
 (["'])\@[^/'" ]+/[^/'" ]+\g{-1}
 
