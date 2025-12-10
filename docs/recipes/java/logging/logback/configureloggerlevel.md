@@ -13,8 +13,8 @@ _Within logback.xml configuration files sets the specified log level for a parti
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/ConfigureLoggerLevel.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/ConfigureLoggerLevel.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | className | The fully qualified class name to configure the log level for | `com.example.MyClass` |
 | `LogLevel` | logLevel | The log level to set for the class Valid options: `trace`, `debug`, `info`, `warn`, `error`, `off` | `off` |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, '**/logback.xml' is used. | `**/logback-spring.xml` |
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |className|`org.springframework`|
 |logLevel|`ConfigureLoggerLevel.LogLevel.off`|
 |filePattern|`null`|

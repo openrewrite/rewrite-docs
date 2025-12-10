@@ -18,8 +18,8 @@ _Migrate applications to the latest Spring Security 5.8 release. This recipe wil
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -53,6 +53,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use new `Pbkdf2PasswordEncoder` factory methods](../../../java/spring/security5/updatepbkdf2passwordencoder)
 * [Use new `SCryptPasswordEncoder` factory methods](../../../java/spring/security5/updatescryptpasswordencoder)
 * [Use new `Argon2PasswordEncoder` factory methods](../../../java/spring/security5/updateargon2passwordencoder)
+* [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](../../../java/spring/security5/renamenimbusdsjsonobjectpackagename)
 * [Replace global method security with method security](../../../java/spring/security5/replaceglobalmethodsecuritywithmethodsecurity)
 * [Replace global method security with method security](../../../java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml)
 
@@ -91,6 +92,7 @@ recipeList:
   - org.openrewrite.java.spring.security5.UpdatePbkdf2PasswordEncoder
   - org.openrewrite.java.spring.security5.UpdateSCryptPasswordEncoder
   - org.openrewrite.java.spring.security5.UpdateArgon2PasswordEncoder
+  - org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName
   - org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurity
   - org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurityXml
 

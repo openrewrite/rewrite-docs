@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Boolean` | addMarker | *Optional*. Add a marker with the cyclomatic complexity value and threshold. |  |
 
 

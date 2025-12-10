@@ -13,8 +13,8 @@ _A recipe to find the minimum version of JUnit dependencies. This recipe is desi
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumJUnitVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumJUnitVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | minimumVersion | *Optional*. Determine if the provided version is the minimum JUnit version. If both JUnit 4 and JUnit 5 are present, the minimum version is JUnit 4. If only one version is present, that version is the minimum version. Valid options: `4`, `5` | `4` |
 
 
@@ -178,6 +178,7 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
+| Dependency graph | The dependency path that requested the dependency. |
 
 </TabItem>
 

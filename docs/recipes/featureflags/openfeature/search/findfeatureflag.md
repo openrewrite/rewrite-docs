@@ -13,8 +13,8 @@ _Find an OpenFeature feature flag._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/openfeature/search/FindFeatureFlag.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/openfeature/search/FindFeatureFlag.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | featureKey | *Optional*. The unique key for the feature flag. | `flag-key-123abc` |
 
 

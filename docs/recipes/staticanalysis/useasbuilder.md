@@ -13,8 +13,8 @@ _Chain calls to builder methods that are on separate lines into one chain of bui
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | builderType | Fully qualified name of the Builder | `org.example.Buildable.Builder` |
 | `Boolean` | immutable | *Optional*. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |  |
 | `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. | `org.example.Buildable builder()` |
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |builderType|`Buildable.Builder`|
 |immutable|`true`|
 |builderCreator|`Buildable builder()`|

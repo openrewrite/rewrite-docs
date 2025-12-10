@@ -13,8 +13,8 @@ _Remove method invocations if syntactically safe._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveMethodInvocations.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveMethodInvocations.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A pattern to match method invocations for removal. A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.lang.StringBuilder append(java.lang.String)` |
 
 
@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Avoid using the deprecated empty `finalize()` method in `java.desktop`](/recipes/java/migrate/deletedeprecatedfinalize.md)
+* [Migrate Spring Boot 3.4 deprecated classes and methods](/recipes/java/spring/boot3/springboot34deprecations.md)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
@@ -38,6 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Java 17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
 * [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
 * [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
 * [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
 * [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)
@@ -46,6 +48,7 @@ This recipe is used as part of the following composite recipes:
 * [Remove `Thread.destroy()` and `Thread.stop(Throwable)`](/recipes/java/migrate/threadstopdestroy.md)
 * [Remove `getComment` and `getVersion` methods](/recipes/java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
 * [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
+* [Resolve Deprecations in Spring Boot 3.3](/recipes/java/spring/boot3/resolvedeprecationsspringboot_3_3.md)
 
 
 ## Usage

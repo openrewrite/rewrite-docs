@@ -1,0 +1,51 @@
+Fully Qualified Recipe Name,Recipe Name,Description
+org.openrewrite.DeleteSourceFiles,Delete files,Delete files by source path.
+org.openrewrite.MoveFile,Move a file,Move a file to a different directory. The file name will remain the same.
+org.openrewrite.RenameFile,Rename a file,Rename a file while keeping it in the same directory.
+org.openrewrite.SetFilePermissions,Set file permission attributes,Set a file's read write and executable permission attributes.
+org.openrewrite.text.AppendToTextFile,Append to text file,Appends or replaces content of an existing plain text file or creates a new one if it doesn't already exist. Please note that this recipes requires existing plain text files' format to be successfully parsable by OpenRewrite. If a file is left unchanged it might be parsed as a `Quark` rather than plain text. In such case use the `plainTextMask` option. See the [Gradle](https://docs.openrewrite.org/reference/gradle-plugin-configuration#configuring-the-rewrite-dsl) or [Maven](https://openrewrite.github.io/rewrite-maven-plugin/run-mojo.html#plainTextMasks) plugin configuration page.
+org.openrewrite.text.ChangeText,Change text,Completely replaces the contents of the text file with other text. Use together with a `FindSourceFiles` precondition to limit which files are changed.
+org.openrewrite.text.FindAndReplace,Find and replace,Textual find and replace optionally interpreting the search query as a Regular Expression (regex). When operating on source files that are language-specific Lossless Semantic Tree such as Java or XML this operation converts the source file to plain text for the rest of the recipe run. So if you are combining this recipe with language-specific recipes in a single recipe run put all the language-specific recipes before this recipe.
+org.openrewrite.java.AddCommentToImport,Add comment to import statement,Add a comment to an import statement in a Java source file.
+org.openrewrite.java.AddCommentToMethod,Add comment to method declarations,Add a comment to method declarations in a Java source file.
+org.openrewrite.java.AddCommentToMethodInvocations,Add comment to method invocations,Add a comment to method invocations in a Java source file.
+org.openrewrite.java.AddLicenseHeader,Add license header,Adds license headers to Java source files when missing. Does not override existing license headers.
+org.openrewrite.java.AddLiteralMethodArgument,Add a literal method argument,Add a literal `String` or `int` argument to method invocations.
+org.openrewrite.java.AddMethodParameter,Add method parameter to a method declaration,Adds a new method parameter to an existing method declaration.
+org.openrewrite.java.AddNullMethodArgument,Add a `null` method argument,Add a `null` argument to method invocations.
+org.openrewrite.java.AddOrUpdateAnnotationAttribute,Add or update annotation attribute,Some annotations accept arguments. This recipe sets an existing argument to the specified value or adds the argument if it is not already set.
+org.openrewrite.java.ChangeAnnotationAttributeName,Change annotation attribute name,Some annotations accept arguments. This recipe renames an existing attribute.
+org.openrewrite.java.ChangeMethodAccessLevel,Change method access level,Change the access level (public protected private package private) of a method.
+org.openrewrite.java.ChangeMethodInvocationReturnType,Change method invocation return type,Changes the return type of a method invocation.
+org.openrewrite.java.ChangeMethodName,Change method name,Rename a method.
+org.openrewrite.java.ChangeMethodTargetToStatic,Change method target to static,Change method invocations to static method calls.
+org.openrewrite.java.ChangeMethodTargetToVariable,Change method target to variable,Change method invocations to method calls on a variable.
+org.openrewrite.java.ChangePackage,Rename package name,A recipe that will rename a package name in package statements imports and fully-qualified types.
+org.openrewrite.java.ChangePackageInStringLiteral,Rename package name in String literals,A recipe that will rename a package name in String literals.
+org.openrewrite.java.ChangeStaticFieldToMethod,Change static field access to static method access,Migrate accesses to a static field to invocations of a static method.
+org.openrewrite.java.ChangeType,Change type,Change a given type to another.
+org.openrewrite.java.ChangeTypeInStringLiteral,Change type in String literals,Change a given type to another when used in a String literal.
+org.openrewrite.java.DeleteMethodArgument,Delete method argument,Delete an argument from method invocations.
+org.openrewrite.java.NoStaticImport,Remove static import,Removes static imports and replaces them with qualified references. For example `emptyList()` becomes `Collections.emptyList()`.
+org.openrewrite.java.RemoveAnnotation,Remove annotation,Remove matching annotations wherever they occur.
+org.openrewrite.java.RemoveAnnotationAttribute,Remove annotation attribute,Some annotations accept arguments. This recipe removes an existing attribute.
+org.openrewrite.java.RemoveImplements,Remove interface implementations,Removes `implements` clauses from classes implementing the specified interface. Removes `@Overrides` annotations from methods which no longer override anything.
+org.openrewrite.java.RemoveMethodInvocations,Remove method invocations,Remove method invocations if syntactically safe.
+org.openrewrite.java.RemoveUnusedImports,Remove unused imports,Remove imports for types that are not referenced. As a precaution against incorrect changes no imports will be removed from any source where unknown types are referenced. The most common cause of unknown types is the use of annotation processors not supported by OpenRewrite such as lombok.
+org.openrewrite.java.ReplaceAnnotation,Replace annotation,Replace an Annotation with another one if the annotation pattern matches. Only fixed parameters can be set in the replacement.
+org.openrewrite.java.ReplaceConstant,Replace constant with literal value,Replace a named constant with a literal value when you wish to remove the old constant. A `String` literal must include escaped quotes.
+org.openrewrite.java.ReplaceConstantWithAnotherConstant,Replace constant with another constant,Replace a constant with another constant adding/removing import on class if needed.
+org.openrewrite.java.ReplaceMethodInvocationWithConstant,Replace method invocation with constant,Replace all method invocations matching the method pattern with the specified constant.
+org.openrewrite.java.ReplaceStringLiteralValue,Replace `String` literal,Replace the value of a complete `String` literal.
+org.openrewrite.java.ReplaceStringLiteralWithConstant,Replace String literal with constant,Replace String literal with constant adding import on class if needed.
+org.openrewrite.java.ShortenFullyQualifiedTypeReferences,Add imports for fully qualified references to types,Any fully qualified references to Java types will be replaced with corresponding simple names and import statements provided that it doesn't result in any conflicts with other imports or types declared in the local compilation unit.
+org.openrewrite.text.CreateTextFile,Create text file,Creates a new plain text file.
+org.openrewrite.java.CreateEmptyJavaClass,Create Java class,Create a new empty Java class.
+org.openrewrite.json.CreateJsonFile,Create JSON file,Create a new JSON file.
+org.openrewrite.properties.CreatePropertiesFile,Create Properties file,Create a new Properties file.
+org.openrewrite.toml.CreateTomlFile,Create TOML file,Create a new TOML file.
+org.openrewrite.xml.CreateXmlFile,Create XML file,Create a new XML file.
+org.openrewrite.yaml.ChangePropertyValue,Change YAML property,Change a YAML property. Expects dot notation for nested YAML mappings similar to how Spring Boot interprets `application.yml` files.
+org.openrewrite.yaml.CoalesceProperties,Coalesce YAML properties,Simplify nested map hierarchies into their simplest dot separated property form similar to how Spring Boot interprets `application.yml` files.
+org.openrewrite.yaml.MergeYaml,Merge YAML snippet,Merge a YAML snippet with an existing YAML document.
+org.openrewrite.yaml.UnfoldProperties,Unfold YAML properties,Transforms dot-separated property keys in YAML files into nested map hierarchies to enhance clarity and readability or for compatibility with tools expecting structured YAML.

@@ -13,8 +13,8 @@ _Merge a TOML row into an array table. If a row with the same identifying proper
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/MergeTableRow.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/MergeTableRow.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | tableName | The name of the TOML array table to merge into (e.g., 'package.contributors'). | `package.contributors` |
 | `String` | row | The TOML key-value pairs to merge. Should contain the objectIdentifyingProperty. | `name = "Alice Smith"\nemail = "alice@example.com"` |
 | `String` | identifyingKey | The property name used to match existing rows. When a row with this property value exists, it will be merged; otherwise, a new row is inserted. When the original row has more properties than the incoming row, these original properties are preserved. Entries with null values in the incoming row will result in the removal of the property from the original row. | `name` |

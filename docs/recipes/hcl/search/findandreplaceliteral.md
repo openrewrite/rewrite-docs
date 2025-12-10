@@ -13,8 +13,8 @@ _Find and replace literal values in HCL files. This recipe parses the source fil
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/search/FindAndReplaceLiteral.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/search/FindAndReplaceLiteral.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | find | The literal to find (and replace) | `blacklist` |
 | `String` | replace | *Optional*. The replacement literal for `find`. This snippet can be multiline. | `denylist` |
 | `Boolean` | regex | *Optional*. Default false. If true, `find` will be interpreted as a Regular Expression, and capture group contents will be available in `replace`. |  |
@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |find|`app-cluster`|
 |replace|`new-app-cluster`|
 |regex|`null`|

@@ -13,8 +13,8 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | pluginGroupId | The first part of a dependency coordinate 'io.jenkins.plugins:ARTIFACT_ID:VERSION'. | `io.jenkins.plugins` |
 | `String` | pluginArtifactId | The second part of a dependency coordinate 'GROUP_ID:jackson2-api:VERSION'. | `jackson2-api` |
 | `String` | pluginVersion | An exact version number. | `1981.v17df70e84a_a_1` |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |pluginGroupId|`io.jenkins.plugins`|
 |pluginArtifactId|`commons-text-api`|
 |pluginVersion|`1.9-5.v7ea_44fe6061c`|
@@ -74,6 +74,10 @@ This recipe is used as part of the following composite recipes:
     </dependencies>
 
     <repositories>
+        <repository>
+            <id>maven-central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
         <repository>
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>
@@ -118,6 +122,10 @@ This recipe is used as part of the following composite recipes:
     </dependencies>
 
     <repositories>
+        <repository>
+            <id>maven-central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
         <repository>
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>

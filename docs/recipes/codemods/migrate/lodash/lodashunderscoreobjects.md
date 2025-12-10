@@ -9,14 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.lodash.LodashUnderscoreObjects**
 
-```
 - `_.clone(x)` -> `{ ...x }`
 - `_.extend({}, x, y)` -> `{ ...x, ...y }`
 - `_.extend(obj, x, y)` -> `Object.assign(obj, x, y)`
 - `_.keys(x)` -> `Object.keys(x)`
 - `_.pairs(x)` -> `Object.entries(x)`
 - `_.values(x)` -> `Object.values(x)`
-```
 
 
 ### Tags
@@ -27,8 +25,8 @@ import TabItem from '@theme/TabItem';
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/migrate.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/migrate.yml),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

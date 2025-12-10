@@ -13,8 +13,8 @@ _Adds entries to the project's `.gitignore` file. If no `.gitignore` file exists
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/AddToGitignore.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/AddToGitignore.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | entries | Multiline text containing gitignore entries to add, each on a separate line. Comments and blank lines are preserved. | <pre>*.tmp<br />.DS_Store<br />target/</pre> |
 | `String` | filePattern | *Optional*. A glob pattern to match `.gitignore` files to update. Defaults to only the root `.gitignore` file. Use `**/.gitignore` to update all `.gitignore` files in the repository, or specify a specific path like `src/.gitignore`. | `.gitignore` |
 

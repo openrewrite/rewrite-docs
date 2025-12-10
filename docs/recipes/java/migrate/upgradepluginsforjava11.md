@@ -17,8 +17,8 @@ _Updates plugins to version compatible with Java 11._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -46,6 +46,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.codehaus.mojo`
   * artifactId: `jaxb2-maven-plugin`
   * newVersion: `2.5.x`
+* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
+  * groupId: `org.jvnet.jaxb`
+  * artifactId: `jaxb-maven-plugin`
+  * newVersion: `2.0.X`
 
 </TabItem>
 
@@ -75,6 +79,10 @@ recipeList:
       groupId: org.codehaus.mojo
       artifactId: jaxb2-maven-plugin
       newVersion: 2.5.x
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.jvnet.jaxb
+      artifactId: jaxb-maven-plugin
+      newVersion: 2.0.X
 
 ```
 </TabItem>

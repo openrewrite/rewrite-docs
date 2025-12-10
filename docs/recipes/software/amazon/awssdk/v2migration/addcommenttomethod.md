@@ -13,8 +13,8 @@ _Add a comment to a method._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddCommentToMethod), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddCommentToMethod),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `org.mockito.Matchers anyVararg()` |
 | `String` | comment | A comment to add to this method. | `This method is not supported in AWS SDK for Java v2.` |
 

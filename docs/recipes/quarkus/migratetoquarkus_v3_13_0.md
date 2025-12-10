@@ -13,8 +13,8 @@ _Quarkus update recipes to upgrade your application to 3.13.0._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_13_0), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_13_0),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

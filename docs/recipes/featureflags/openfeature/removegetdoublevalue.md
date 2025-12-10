@@ -13,8 +13,8 @@ _Replace `getDoubleValue()` invocations for `featureKey` with `replacementValue`
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/openfeature/RemoveGetDoubleValue.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/openfeature/RemoveGetDoubleValue.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `Double` | replacementValue | The value to replace the feature flag check with. | `3.14` |
 
@@ -58,7 +58,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |featureKey|`flag-key-123abc`|
 |replacementValue|`3.14`|
 

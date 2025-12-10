@@ -13,8 +13,8 @@ _Add a GitLab component to an existing list, or add a new list where none was pr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | newComponent | Name of the component to use add. | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
 | `String` | version | Version of the component to add. | `0.10.0` |
 | `List` | inputs | *Optional*. The set of inputs to provide | `opentofu_version: 1.6.1` |
@@ -72,7 +72,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |newComponent|`$CI_SERVER_FQDN/components/opentofu/full-pipeline`|
 |version|`0.10.0`|
 |inputs|`List.of("version: 0.10.0", "opentofu_version: 1.6.1")`|

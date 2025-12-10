@@ -13,11 +13,18 @@ _Format Java code using a standard comprehensive set of Java formatting recipes.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/AutoFormat.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/AutoFormat.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | style | *Optional*. See https://docs.openrewrite.org/concepts-and-explanations/styles for a description on styles. | <pre>type: specs.openrewrite.org/v1beta/style<br />name: com.yourorg.YesTabsNoStarImports<br />styleConfigs:<br />  - org.openrewrite.java.style.TabsAndIndentsStyle:<br />      useTabCharacter: true</pre> |
+| `Boolean` | removeCustomLineBreaks | *Optional*. Do you want to remove custom line breaks? (default false) |  |
 
 
 ## Usage

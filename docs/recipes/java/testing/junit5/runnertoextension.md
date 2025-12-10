@@ -13,8 +13,8 @@ _Replace runners with the JUnit Jupiter extension equivalent._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RunnerToExtension.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RunnerToExtension.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | runners | The fully qualified class names of the JUnit 4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. | `[ org.springframework.test.context.junit4.SpringRunner ]` |
 | `String` | extension | The fully qualified class names of the JUnit Jupiter extension. | `org.springframework.test.context.junit.jupiter.SpringExtension` |
 
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |runners|`List.of("org.mockito.runners.MockitoJUnitRunner")`|
 |extension|`org.mockito.junit.jupiter.MockitoExtension`|
 

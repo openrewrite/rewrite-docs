@@ -18,8 +18,8 @@ _Migrate applications to the latest Spring Boot 3.1 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -61,7 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springdoc`
   * artifactId: `*`
   * newVersion: `2.2.x`
-* [Migrate to Hibernate 6.2.x](../../../hibernate/migratetohibernate62)
+* [Migrate to Hibernate 6.2.x (Community Edition)](../../../hibernate/migratetohibernate62-community-edition)
 * [Mockito 4 to 5.x upgrade only](../../../java/testing/mockito/mockito4to5only)
 * [Upgrade to SpringDoc 2.2](../../../java/springdoc/upgradespringdoc_2_2)
 

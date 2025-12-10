@@ -13,8 +13,8 @@ _Creates a simple base Jenkinsfile in Groovy for a Declarative Pipeline - locate
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 :::info

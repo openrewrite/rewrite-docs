@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.text.RemoveHardcodedIPAddressesFromComments**
 
-_Removes hard-coded IPv4 addresses from comments when they match private IP ranges or loopback addresses. This targets IP addresses that are commented out in various comment formats:  **Private IP ranges:**  * `192.168.0.0` to `192.168.255.255`  * `10.0.0.0` to `10.255.255.255`  * `172.16.0.0` to `172.31.255.255`  **Loopback IP range:**  * `127.0.0.0` to `127.255.255.255`  **Supported comment formats:**  * C-style line comments (`//`)  * C-style block comments (`/* */`)  * Shell/Python style comments (`#`)  * XML comments (`<!-- -->`)  * YAML comments (`#`)  * Properties file comments (`#` or `!`)  For line comments, the entire line is removed. For block comments, only the IP address is removed._
+Removes hard-coded IPv4 addresses from comments when they match private IP ranges or loopback addresses. This targets IP addresses that are commented out in various comment formats:
+
+**Private IP ranges:**
+ * `192.168.0.0` to `192.168.255.255`
+ * `10.0.0.0` to `10.255.255.255`
+ * `172.16.0.0` to `172.31.255.255`
+
+**Loopback IP range:**
+ * `127.0.0.0` to `127.255.255.255`
+
+**Supported comment formats:**
+ * C-style line comments (`//`)
+ * C-style block comments (`/* */`)
+ * Shell/Python style comments (`#`)
+ * XML comments (`<!-- -->`)
+ * YAML comments (`#`)
+ * Properties file comments (`#` or `!`)
+
+For line comments, the entire line is removed. For block comments, only the IP address is removed.
 
 ## Recipe source
 
@@ -21,14 +39,14 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | ipAddressReplacement | *Optional*. If specified, replaces hard-coded IP addresses with this value. Default is 'IP_ADDRESS_REPLACED' | `IP_ADDRESS_REPLACED` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |ipAddressReplacement|`null`|
 
 

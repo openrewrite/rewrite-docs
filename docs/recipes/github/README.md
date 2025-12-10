@@ -11,11 +11,13 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate `astral-sh/setup-uv` from v6 to v7](./migratesetupuvv6tov7.md)
 * [Migrate from tibdex/github-app-token to actions/create-github-app-token](./migratetibdexgithubapptokentoactions.md)
 * [Replace OSSRH secrets with Sonatype secrets](./replaceossrhsecretswithsonatype.md)
 
 ## Recipes
 
+* [Add cooldown periods to Dependabot configuration](./adddependabotcooldown.md)
 * [Add cron workflow trigger](./addcrontrigger.md)
 * [Add manual workflow trigger](./addmanualtrigger.md)
 * [Cancel in-progress workflow when it is triggered again](./autocancelinprogressworkflow.md)
@@ -26,6 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Check for github-actions updates weekly](./dependabotcheckforgithubactionsupdatesweekly.md)
 * [Find GitHub action secret references](./findgithubactionsecretreferences.md)
 * [Find jobs missing timeout](./findmissingtimeout.md)
+* [Is GitHub Actions Workflow](./isgithubactionsworkflow.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)
 * [Remove unused workflow dispatch inputs](./removeunusedworkflowdispatchinputs.md)
 * [Remove workflow input argument](./removeworkflowinputargument.md)

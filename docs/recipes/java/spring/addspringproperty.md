@@ -13,8 +13,8 @@ _Add a spring configuration property to a configuration file if it does not alre
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | property | The property key to add. | `management.metrics.enable.process.files` |
 | `String` | value | The value of the new property key. | `true` |
 | `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
@@ -33,13 +33,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Add MongoDB representation properties for UUID and BigDecimal](/recipes/java/spring/boot4/addmongodbrepresentationproperties.md)
 * [Enable Virtual Threads on Java 21](/recipes/java/spring/boot3/enablevirtualthreads.md)
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |property|`server.servlet.path`|
 |value|`/tmp/my-server-path`|
 |comment|`null`|

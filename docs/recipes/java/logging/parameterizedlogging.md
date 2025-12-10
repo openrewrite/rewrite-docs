@@ -18,8 +18,8 @@ _Transform logging statements using concatenation for messages and variables int
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -27,7 +27,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method used to find matching statements to parameterize. | `org.slf4j.Logger info(..)` |
 | `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |  |
 
@@ -43,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |methodPattern|`org.slf4j.Logger info(..)`|
 |removeToString|`false`|
 

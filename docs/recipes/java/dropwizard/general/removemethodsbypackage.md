@@ -13,8 +13,8 @@ _Removes any method that has a return type or parameter type from the specified 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/general/RemoveMethodsByPackage.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/general/RemoveMethodsByPackage.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | packageFilter | The package name to filter methods by. Methods with return types or parameter types in this package (or subpackages) will be removed. | `com.example.unwanted` |
 
 
@@ -36,7 +36,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |packageFilter|`com.example.deprecated`|
 
 

@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | apiToken | The API token for the VulnCheck api | `A_TOKEN_GENERATED_FROM_VULNCHECK` |
 | `String` | scope | *Optional*. Match dependencies with the specified scope. Default is `compile`. An explanation of what each scope means can be found in the [Apache Maven documentation](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Scope). Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 | `Boolean` | overrideTransitive | *Optional*. When enabled transitive dependencies with vulnerabilities will have their versions overridden. By default only direct dependencies have their version numbers upgraded. | `false` |

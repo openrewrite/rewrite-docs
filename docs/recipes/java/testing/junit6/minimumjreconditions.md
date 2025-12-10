@@ -9,12 +9,14 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.junit6.MinimumJreConditions**
 
-_This recipe will:  - Remove tests that are only active on JREs that are below the specified version.  - Adjust ranges to use minimum the specified version._
+This recipe will:
+ - Remove tests that are only active on JREs that are below the specified version.
+ - Adjust ranges to use minimum the specified version.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit6/MinimumJreConditions.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit6/MinimumJreConditions.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | javaVersion | The minimum JRE version to use for test conditions. | `17` |
 
 
@@ -36,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |javaVersion|`17`|
 
 

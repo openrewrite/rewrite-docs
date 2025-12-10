@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | agpVersion | The version of the Android Gradle Plugin to use. | `8.6.x` |
 | `String` | gradleWrapperVersion | The version of the Gradle Wrapper to use. | `(8.7, 9]` |
 

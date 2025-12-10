@@ -1,20 +1,20 @@
 ---
-sidebar_label: "Disallow `if` statements as the only statement in `if` blocks without `else`."
+sidebar_label: "Disallow if statements as the only statement in else blocks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow `if` statements as the only statement in `if` blocks without `else`.
+# Disallow if statements as the only statement in else blocks
 
 **org.openrewrite.codemods.cleanup.javascript.NoLonelyIf**
 
-_Disallow `if` statements as the only statement in `if` blocks without `else`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-lonely-if.md)_
+_Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)_
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/unicorn.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/base-eslint.yml),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["unicorn"],   "rules": {     "unicorn/no-lonely-if": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "rules": {     "no-lonely-if": 2   },   "globals": {     "browser": true,     "node": true   } } `
 
 </TabItem>
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoLonelyIf
-displayName: Disallow `if` statements as the only statement in `if` blocks without `else`.
+displayName: Disallow if statements as the only statement in else blocks
 description: |
-  Disallow `if` statements as the only statement in `if` blocks without `else`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-lonely-if.md)
+  Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if)
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true
@@ -46,9 +46,8 @@ recipeList:
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": ["./tsconfig.json"] },
-  "plugins": ["unicorn"],
   "rules": {
-    "unicorn/no-lonely-if": 2
+    "no-lonely-if": 2
   },
   "globals": {
     "browser": true,

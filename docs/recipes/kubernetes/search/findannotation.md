@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | annotationName | The name of the annotation to search for the existence of. | `mycompany.io/annotation` |
 | `String` | value | *Optional*. An optional regex expression that will find values that match. | `value.*` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |annotationName|`mycompany.io/annotation`|
 |value|`null`|
 |fileMatcher|`null`|

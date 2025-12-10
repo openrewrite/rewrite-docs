@@ -13,8 +13,8 @@ _Change a YAML property key while leaving the value intact. Expects dot notation
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyKey.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyKey.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldPropertyKey | The property key to rename. Supports glob patterns. | `management.metrics.binders.*.enabled` |
 | `String` | newPropertyKey | The new name for the property key. | `management.metrics.enable.process.files` |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |  |
@@ -46,7 +46,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldPropertyKey|`management.metrics.binders.*.enabled`|
 |newPropertyKey|`management.metrics.enable.process.files`|
 |relaxedBinding|`null`|
@@ -85,7 +85,7 @@ management.metrics.enable.process.files: true
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldPropertyKey|`a.b.c.d`|
 |newPropertyKey|`a.b.c`|
 |relaxedBinding|`null`|
@@ -124,7 +124,7 @@ a.b.c: true
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldPropertyKey|`spring.profiles`|
 |newPropertyKey|`spring.config.activate.on-profile`|
 |relaxedBinding|`null`|
@@ -164,7 +164,7 @@ spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldPropertyKey|`spring.profiles`|
 |newPropertyKey|`spring.config.activate.on-profile`|
 |relaxedBinding|`null`|

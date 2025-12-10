@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | rbacResourceType | Type of RBAC resource to which this recipe adds a rule. Valid options: `ClusterRole`, `Role` | `ClusterRole` |
 | `String` | rbacResourceName | Glob pattern of the name of the RBAC resource to which this recipe adds a rule. | `my-cluster-role` |
 | `Set` | apiGroups | Comma-separated list of API groups to which this rule refers. | `,v1` |
@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |rbacResourceType|`ClusterRole`|
 |rbacResourceName|`cluster-role`|
 |apiGroups|`Set.of("")`|

@@ -13,8 +13,8 @@ _Automatically generated recipes to inline method calls based on `@InlineMe` ann
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/resources/META-INF/rewrite/inline-rewrite-methods.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/resources/META-INF/rewrite/inline-rewrite-methods.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 
 :::info
@@ -42,77 +42,85 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.openrewrite.maven.trait.Traits mavenDependency()`
   * replacement: `new MavenDependency.Matcher()`
   * imports: `[org.openrewrite.maven.MavenDependency]`
-  * classpathFromResources: `[rewrite-maven-8.62.3]`
+  * classpathFromResources: `[rewrite-maven-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.maven.trait.Traits mavenPlugin()`
   * replacement: `new MavenPlugin.Matcher()`
   * imports: `[org.openrewrite.maven.MavenPlugin]`
-  * classpathFromResources: `[rewrite-maven-8.62.3]`
+  * classpathFromResources: `[rewrite-maven-8.64.0]`
+* [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `org.openrewrite.maven.AddManagedDependency AddManagedDependency(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.String, java.lang.Boolean)`
+  * replacement: `this(groupId, artifactId, version, scope, type, classifier, versionPattern, releasesOnly, onlyIfUsing, addToRootPom, null)`
+  * classpathFromResources: `[rewrite-maven-8.64.0]`
+* [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `org.openrewrite.maven.UpgradeTransitiveDependencyVersion UpgradeTransitiveDependencyVersion(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.String, java.lang.Boolean)`
+  * replacement: `this(groupId, artifactId, version, scope, type, classifier, versionPattern, releasesOnly, onlyIfUsing, addToRootPom, null)`
+  * classpathFromResources: `[rewrite-maven-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.maven.ChangeParentPom ChangeParentPom(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean)`
   * replacement: `this(oldGroupId, newGroupId, oldArtifactId, newArtifactId, newVersion, oldRelativePath, newRelativePath, versionPattern, allowVersionDowngrades, null)`
-  * classpathFromResources: `[rewrite-maven-8.62.3]`
+  * classpathFromResources: `[rewrite-maven-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId ChangeDependencyGroupIdAndArtifactId(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)`
   * replacement: `this(oldGroupId, oldArtifactId, newGroupId, newArtifactId, newVersion, versionPattern, false, true)`
-  * classpathFromResources: `[rewrite-maven-8.62.3]`
+  * classpathFromResources: `[rewrite-maven-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.gradle.ChangeDependency ChangeDependency(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean)`
   * replacement: `this(oldGroupId, oldArtifactId, newGroupId, newArtifactId, newVersion, versionPattern, overrideManagedVersion, true)`
-  * classpathFromResources: `[rewrite-gradle-8.62.3]`
+  * classpathFromResources: `[rewrite-gradle-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.gradle.trait.Traits gradleDependency()`
   * replacement: `new GradleDependency.Matcher()`
   * imports: `[org.openrewrite.gradle.GradleDependency]`
-  * classpathFromResources: `[rewrite-gradle-8.62.3]`
+  * classpathFromResources: `[rewrite-gradle-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.gradle.trait.Traits jvmTestSuite()`
   * replacement: `new JvmTestSuite.Matcher()`
   * imports: `[org.openrewrite.gradle.JvmTestSuite]`
-  * classpathFromResources: `[rewrite-gradle-8.62.3]`
+  * classpathFromResources: `[rewrite-gradle-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.ChangeMethodTargetToStatic ChangeMethodTargetToStatic(java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean)`
   * replacement: `this(methodPattern, fullyQualifiedTargetTypeName, returnType, matchOverrides, false)`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.trait.Traits literal()`
   * replacement: `new Literal.Matcher()`
   * imports: `[org.openrewrite.java.Literal]`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.trait.Traits variableAccess()`
   * replacement: `new VariableAccess.Matcher()`
   * imports: `[org.openrewrite.java.VariableAccess]`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.trait.Traits methodAccess(org.openrewrite.java.MethodMatcher)`
   * replacement: `new MethodAccess.Matcher()`
   * imports: `[org.openrewrite.java.MethodAccess]`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.trait.Traits methodAccess(java.lang.String)`
   * replacement: `new MethodAccess.Matcher(signature)`
   * imports: `[org.openrewrite.java.MethodAccess]`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.trait.Traits annotated(org.openrewrite.java.AnnotationMatcher)`
   * replacement: `new MethodAccess.Matcher(declaringType, methodName, args)`
   * imports: `[org.openrewrite.java.MethodAccess]`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.trait.Traits annotated(java.lang.String)`
   * replacement: `new Annotated.Matcher(signature)`
   * imports: `[org.openrewrite.java.Annotated]`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.java.trait.Traits annotated(java.lang.Class)`
   * replacement: `new Annotated.Matcher(annotationType)`
   * imports: `[org.openrewrite.java.Annotated]`
-  * classpathFromResources: `[rewrite-java-8.62.3]`
+  * classpathFromResources: `[rewrite-java-8.64.0]`
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `org.openrewrite.staticanalysis.RemoveUnusedLocalVariables RemoveUnusedLocalVariables(java.lang.String[], java.lang.Boolean)`
   * replacement: `new RemoveUnusedLocalVariables(ignoreVariablesNamed, null, withSideEffects)`
-  * classpathFromResources: `[rewrite-static-analysis-2.17.0]`
+  * classpathFromResources: `[rewrite-static-analysis-2.20.0]`
 
 </TabItem>
 
@@ -140,77 +148,85 @@ recipeList:
       methodPattern: org.openrewrite.maven.trait.Traits mavenDependency()
       replacement: new MavenDependency.Matcher()
       imports: [org.openrewrite.maven.MavenDependency]
-      classpathFromResources: [rewrite-maven-8.62.3]
+      classpathFromResources: [rewrite-maven-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.maven.trait.Traits mavenPlugin()
       replacement: new MavenPlugin.Matcher()
       imports: [org.openrewrite.maven.MavenPlugin]
-      classpathFromResources: [rewrite-maven-8.62.3]
+      classpathFromResources: [rewrite-maven-8.64.0]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: org.openrewrite.maven.AddManagedDependency AddManagedDependency(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.String, java.lang.Boolean)
+      replacement: this(groupId, artifactId, version, scope, type, classifier, versionPattern, releasesOnly, onlyIfUsing, addToRootPom, null)
+      classpathFromResources: [rewrite-maven-8.64.0]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: org.openrewrite.maven.UpgradeTransitiveDependencyVersion UpgradeTransitiveDependencyVersion(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.String, java.lang.Boolean)
+      replacement: this(groupId, artifactId, version, scope, type, classifier, versionPattern, releasesOnly, onlyIfUsing, addToRootPom, null)
+      classpathFromResources: [rewrite-maven-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.maven.ChangeParentPom ChangeParentPom(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean)
       replacement: this(oldGroupId, newGroupId, oldArtifactId, newArtifactId, newVersion, oldRelativePath, newRelativePath, versionPattern, allowVersionDowngrades, null)
-      classpathFromResources: [rewrite-maven-8.62.3]
+      classpathFromResources: [rewrite-maven-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId ChangeDependencyGroupIdAndArtifactId(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
       replacement: this(oldGroupId, oldArtifactId, newGroupId, newArtifactId, newVersion, versionPattern, false, true)
-      classpathFromResources: [rewrite-maven-8.62.3]
+      classpathFromResources: [rewrite-maven-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.gradle.ChangeDependency ChangeDependency(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean)
       replacement: this(oldGroupId, oldArtifactId, newGroupId, newArtifactId, newVersion, versionPattern, overrideManagedVersion, true)
-      classpathFromResources: [rewrite-gradle-8.62.3]
+      classpathFromResources: [rewrite-gradle-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.gradle.trait.Traits gradleDependency()
       replacement: new GradleDependency.Matcher()
       imports: [org.openrewrite.gradle.GradleDependency]
-      classpathFromResources: [rewrite-gradle-8.62.3]
+      classpathFromResources: [rewrite-gradle-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.gradle.trait.Traits jvmTestSuite()
       replacement: new JvmTestSuite.Matcher()
       imports: [org.openrewrite.gradle.JvmTestSuite]
-      classpathFromResources: [rewrite-gradle-8.62.3]
+      classpathFromResources: [rewrite-gradle-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.ChangeMethodTargetToStatic ChangeMethodTargetToStatic(java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean)
       replacement: this(methodPattern, fullyQualifiedTargetTypeName, returnType, matchOverrides, false)
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.trait.Traits literal()
       replacement: new Literal.Matcher()
       imports: [org.openrewrite.java.Literal]
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.trait.Traits variableAccess()
       replacement: new VariableAccess.Matcher()
       imports: [org.openrewrite.java.VariableAccess]
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.trait.Traits methodAccess(org.openrewrite.java.MethodMatcher)
       replacement: new MethodAccess.Matcher()
       imports: [org.openrewrite.java.MethodAccess]
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.trait.Traits methodAccess(java.lang.String)
       replacement: new MethodAccess.Matcher(signature)
       imports: [org.openrewrite.java.MethodAccess]
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.trait.Traits annotated(org.openrewrite.java.AnnotationMatcher)
       replacement: new MethodAccess.Matcher(declaringType, methodName, args)
       imports: [org.openrewrite.java.MethodAccess]
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.trait.Traits annotated(java.lang.String)
       replacement: new Annotated.Matcher(signature)
       imports: [org.openrewrite.java.Annotated]
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.java.trait.Traits annotated(java.lang.Class)
       replacement: new Annotated.Matcher(annotationType)
       imports: [org.openrewrite.java.Annotated]
-      classpathFromResources: [rewrite-java-8.62.3]
+      classpathFromResources: [rewrite-java-8.64.0]
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.openrewrite.staticanalysis.RemoveUnusedLocalVariables RemoveUnusedLocalVariables(java.lang.String[], java.lang.Boolean)
       replacement: new RemoveUnusedLocalVariables(ignoreVariablesNamed, null, withSideEffects)
-      classpathFromResources: [rewrite-static-analysis-2.17.0]
+      classpathFromResources: [rewrite-static-analysis-2.20.0]
 
 ```
 </TabItem>

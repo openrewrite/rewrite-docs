@@ -9,12 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.github.ChangeActionVersion**
 
-_Change the version of a GitHub Action in any `.github/workflows/*.yml` file._
+_Change the version of a GitHub Action in any workflow._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,25 +22,32 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | action | Name of the action to update. | `actions/setup-java` |
 | `String` | version | Version to use. | `v4` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate `astral-sh/setup-uv` from v6 to v7](/recipes/github/migratesetupuvv6tov7.md)
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |action|`actions/setup-java`|
 |version|`v4`|
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value=".github/workflows/ci.yml" label=".github/workflows/ci.yml">
+<TabItem value=".github/workflows/ci.yaml" label=".github/workflows/ci.yaml">
 
 
 ###### Before
-```yaml title=".github/workflows/ci.yml"
+```yaml title=".github/workflows/ci.yaml"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -50,7 +57,7 @@ jobs:
 ```
 
 ###### After
-```yaml title=".github/workflows/ci.yml"
+```yaml title=".github/workflows/ci.yaml"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -63,8 +70,8 @@ jobs:
 <TabItem value="diff" label="Diff" >
 
 ```diff
---- .github/workflows/ci.yml
-+++ .github/workflows/ci.yml
+--- .github/workflows/ci.yaml
++++ .github/workflows/ci.yaml
 @@ -6,1 +6,1 @@
     steps:
       - uses: actions/checkout@v2

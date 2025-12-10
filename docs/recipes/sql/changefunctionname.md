@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldFunctionName | The name of the function to find, case insensitive. | `NVL` |
 | `String` | newFunctionName | The new name to use. This will match the casing of the original method when a replacement is made. | `COALESCE` |
 

@@ -36,6 +36,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Enable Develocity build cache](./enabledevelocitybuildcache.md)
 * [Enable Gradle build cache](./enablegradlebuildcache.md)
 * [Enable Gradle parallel execution](./enablegradleparallelexecution.md)
+* [Migrate Gradle project dependencies to version catalog](./migratedependenciestoversioncatalog.md)
 * [Migrate to Gradle 5 from Gradle 4](./migratetogradle5.md)
 * [Remove a Gradle dependency](./removedependency.md)
 * [Remove an enabled Gradle preview feature](./removeenablefeaturepreview.md)

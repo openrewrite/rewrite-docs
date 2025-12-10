@@ -13,8 +13,8 @@ _Find usage of forbidden or dangerous GitHub Actions that have known security vu
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/security/ForbiddenUses.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/security/ForbiddenUses.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | additionalDangerousActions | *Optional*. Additional actions to flag as dangerous, beyond the built-in list. These will be merged with the default dangerous actions. | `["some-org/dangerous-action@v1", "another-org/risky-action@v2"]` |
 | `List` | additionalSuspiciousPatterns | *Optional*. Additional patterns to flag as suspicious, beyond the built-in patterns. These will be merged with the default suspicious patterns. | `["malware", "crypto-miner", "backdoor"]` |
 

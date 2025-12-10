@@ -6,6 +6,7 @@ _Recipes to rewrite Spring to Quarkus._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add Quarkus Maven plugin](./addquarkusmavenplugin.md)
 * [Add Spring compatibility extensions for commonly used annotations](./addspringcompatibilityextensions.md)
 * [Add or replace Spring Boot build plugin with Quarkus build plugin](./migratemavenplugin.md)
 * [Migrate `@EnableXyz` annotations to Quarkus extensions](./enableannotationstoquarkusdependencies.md)
@@ -49,7 +50,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Add Quarkus Maven plugin](./addquarkusmavenplugin.md)
 * [Convert Spring `ResponseEntity` to JAX-RS `Response`](./responseentitytojaxrsresponse.md)
 * [Convert Spring Web annotations to JAX-RS](./webtojaxrs.md)
 * [Remove Spring Boot 3.x parent POM](./removespringbootparent.md)

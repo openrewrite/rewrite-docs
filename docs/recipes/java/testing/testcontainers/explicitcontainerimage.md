@@ -13,8 +13,8 @@ _Set the image to use for a container explicitly if unset, rather than relying o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/testcontainers/ExplicitContainerImage.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/testcontainers/ExplicitContainerImage.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | containerClass | The fully qualified name of the container class to use. | `org.testcontainers.containers.NginxContainer` |
 | `String` | image | The image to use for the container. | `nginx:1.9.4` |
 | `Boolean` | parseImage | *Optional*. Whether to call `DockerImageName.parse(image)`. |  |
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |containerClass|`org.testcontainers.containers.NginxContainer`|
 |image|`nginx:1.9.4`|
 |parseImage|`null`|

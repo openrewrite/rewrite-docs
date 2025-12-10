@@ -18,8 +18,8 @@ _This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer 
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddTransferManagerDependency), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddTransferManagerDependency),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
   * groupId: `software.amazon.awssdk`
   * artifactId: `s3-transfer-manager`
-  * version: `2.35.9`
+  * version: `2.40.0`
   * onlyIfUsing: `com.amazonaws.services.s3.transfer.TransferManager`
 
 </TabItem>
@@ -53,7 +53,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: software.amazon.awssdk
       artifactId: s3-transfer-manager
-      version: 2.35.9
+      version: 2.40.0
       onlyIfUsing: com.amazonaws.services.s3.transfer.TransferManager
 
 ```

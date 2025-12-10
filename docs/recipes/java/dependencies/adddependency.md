@@ -13,8 +13,8 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.guava` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION` | `guava` |
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `29.X` |
@@ -47,6 +47,7 @@ This recipe is used as part of the following composite recipes:
 * [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
 * [Add Hibernate ORM Core if has dependencies](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
 * [Add JBoss LogManager's SLF4J provider](/recipes/java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency.md)
+* [Add Jackson2 for Jersey using JSON](/recipes/java/spring/boot4/addjackson2forjerseyjson.md)
 * [Add Jakarta EE 9 Servlet Dependency](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
 * [Add Quarkus 2 dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
 * [Add Spring compatibility extensions for commonly used annotations](/recipes/quarkus/spring/addspringcompatibilityextensions.md)
@@ -65,7 +66,7 @@ This recipe is used as part of the following composite recipes:
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
 * [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
-* [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
+* [Migrate Hibernate dependencies to 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernatedependencies60-community-edition.md)
 * [Migrate JUnit asserts to AssertJ](/recipes/java/testing/assertj/junittoassertj.md)
 * [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
@@ -87,16 +88,18 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Jakarta annotation API to JSpecify](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
 * [Migrate from JetBrains annotations to JSpecify](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
 * [Migrate from Micrometer annotations to JSpecify](/recipes/java/jspecify/migratefrommicrometerannotations.md)
+* [Migrate from Micronaut Framework annotations to JSpecify](/recipes/java/jspecify/migratefrommicronautannotations.md)
 * [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
 * [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
 * [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
-* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
+* [Migrate to Hibernate 7.0.x (Moderne Edition)](/recipes/hibernate/migratetohibernate70-moderne-edition.md)
 * [Migrate to Kafka 3.0](/recipes/kafka/migratetokafka30.md)
 * [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
 * [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+* [Migrate to Spring Boot 4.0 modular starters](/recipes/java/spring/boot4/migratetomodularstarters.md)
 * [Migrate to Spring Data 2.3](/recipes/java/spring/data/upgradespringdata_2_3.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
 * [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)

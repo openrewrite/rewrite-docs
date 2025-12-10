@@ -11,6 +11,8 @@
 * [Find Gradle repository](./findrepository.md)
 * [Find Gradle wrappers](./findgradlewrapper.md)
 * [Gradle dependency insight](./dependencyinsight.md)
+* [List effective Gradle plugin repositories](./effectivegradlepluginrepositories.md)
+* [List effective Gradle project repositories](./effectivegradlerepositories.md)
 * [Module has dependency](./modulehasdependency.md)
 * [Module has plugin](./modulehasplugin.md)
 

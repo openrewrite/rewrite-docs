@@ -13,8 +13,8 @@ _Adds annotation if class extends or implements any of the specified target type
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/annotation/AddClassAnnotationIfSuperTypeExists.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/annotation/AddClassAnnotationIfSuperTypeExists.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | annotationToAdd | The annotation that should be added. | `org.springframework.stereotype.Component` |
 | `String` | targetSupertypeName | The supertype that should looked for. | `javax.ws.rs.Path` |
 | `Boolean` | annotateInnerClasses | *Optional*. Boolean whether to annotate inner classes of the matched annotation |  |
@@ -41,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |annotationToAdd|`javax.persistence.Entity`|
 |targetSupertypeName|`java.util.AbstractList`|
 |annotateInnerClasses|`false`|

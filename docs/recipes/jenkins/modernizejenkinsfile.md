@@ -13,8 +13,8 @@ _Updates `Jenkinsfile` to build with recommended Java versions, platforms, and s
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Create text file](../text/createtextfile)
-  * fileContents: `/*  See the documentation for more options:  https://github.com/jenkins-infra/pipeline-library/ */ buildPlugin(   forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests   configurations: [     [platform: 'linux', jdk: 21],     [platform: 'windows', jdk: 17], ]) `
+  * fileContents: `/*  See the documentation for more options:  https://github.com/jenkins-infra/pipeline-library/ */ buildPlugin(   forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests   configurations: [     [platform: 'linux', jdk: 25],     [platform: 'windows', jdk: 21], ]) `
   * relativeFileName: `Jenkinsfile`
   * overwriteExisting: `true`
 
@@ -50,8 +50,8 @@ buildPlugin(
   forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores
   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
   configurations: [
-    [platform: 'linux', jdk: 21],
-    [platform: 'windows', jdk: 17],
+    [platform: 'linux', jdk: 25],
+    [platform: 'windows', jdk: 21],
 ])
 
       relativeFileName: Jenkinsfile
@@ -84,8 +84,8 @@ buildPlugin(
   forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores
   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
   configurations: [
-    [platform: 'linux', jdk: 21],
-    [platform: 'windows', jdk: 17],
+    [platform: 'linux', jdk: 25],
+    [platform: 'windows', jdk: 21],
 ])
 ```
 
@@ -105,8 +105,8 @@ buildPlugin(
 + forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores
 + useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
 + configurations: [
-+   [platform: 'linux', jdk: 21],
-+   [platform: 'windows', jdk: 17],
++   [platform: 'linux', jdk: 25],
++   [platform: 'windows', jdk: 21],
 +])
 +
 ```
@@ -161,8 +161,8 @@ buildPlugin(
   forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores
   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
   configurations: [
-    [platform: 'linux', jdk: 21],
-    [platform: 'windows', jdk: 17],
+    [platform: 'linux', jdk: 25],
+    [platform: 'windows', jdk: 21],
 ])
 ```
 
@@ -182,8 +182,8 @@ buildPlugin(
 + forkCount: '1C', // run this number of tests in parallel for faster feedback.  If the number terminates with a 'C', the value will be multiplied by the number of available CPU cores
 + useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
 + configurations: [
-+   [platform: 'linux', jdk: 21],
-+   [platform: 'windows', jdk: 17],
++   [platform: 'linux', jdk: 25],
++   [platform: 'windows', jdk: 21],
 +])
 +
 ```

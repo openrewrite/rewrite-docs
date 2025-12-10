@@ -13,8 +13,8 @@ _Remove public modifier from `@Bean` methods. They no longer have to be public v
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/BeanMethodsNotPublic.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/BeanMethodsNotPublic.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -81,7 +81,8 @@ public class DatabaseConfiguration {
         return new DataSource();
     }
 
-    @Bean // comments
+    @Bean
+    // comments
     static DataSource dataSource3() {
         return new DataSource();
     }
@@ -104,13 +105,10 @@ public class DatabaseConfiguration {
 -   public final DataSource dataSource2() {
 +   final DataSource dataSource2() {
         return new DataSource();
-@@ -19,3 +19,2 @@
-    }
-
--   @Bean
--   // comments
+@@ -21,1 +21,1 @@
+    @Bean
+    // comments
 -   public static DataSource dataSource3() {
-+   @Bean // comments
 +   static DataSource dataSource3() {
         return new DataSource();
 ```

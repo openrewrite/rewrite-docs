@@ -19,8 +19,8 @@ _Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/hamcrest.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/hamcrest.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 :::info
@@ -41,8 +41,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * onlyIfUsing: `org.hamcrest.*`
   * acceptTransitive: `true`
 * [Use consistent Hamcrest matcher imports](../../../java/testing/hamcrest/consistenthamcrestmatcherimports)
-* [Migrate Hamcrest `is(Object)` to AssertJ](../../../java/testing/hamcrest/hamcrestismatchertoassertj)
 * [Migrate `anyOf` Hamcrest Matcher to AssertJ](../../../java/testing/hamcrest/hamcrestofmatcherstoassertj)
+* [Migrate Hamcrest `is(Object)` to AssertJ](../../../java/testing/hamcrest/hamcrestismatchertoassertj)
 * [Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ](../../../java/testing/hamcrest/assertthatbooleantoassertj)
 * [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj)
   * matcher: `comparesEqualTo`
@@ -308,8 +308,8 @@ recipeList:
       onlyIfUsing: org.hamcrest.*
       acceptTransitive: true
   - org.openrewrite.java.testing.hamcrest.ConsistentHamcrestMatcherImports
-  - org.openrewrite.java.testing.hamcrest.HamcrestIsMatcherToAssertJ
   - org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ
+  - org.openrewrite.java.testing.hamcrest.HamcrestIsMatcherToAssertJ
   - org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ
   - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
       matcher: comparesEqualTo

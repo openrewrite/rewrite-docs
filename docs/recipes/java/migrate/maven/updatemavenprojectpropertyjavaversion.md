@@ -9,12 +9,23 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion**
 
-_The Java version is determined by several project properties, including:   * `java.version`  * `jdk.version`  * `javaVersion`  * `jdkVersion`  * `maven.compiler.source`  * `maven.compiler.target`  * `maven.compiler.release`  * `release.version`  If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property._
+The Java version is determined by several project properties, including:
+
+ * `java.version`
+ * `jdk.version`
+ * `javaVersion`
+ * `jdkVersion`
+ * `maven.compiler.source`
+ * `maven.compiler.target`
+ * `maven.compiler.release`
+ * `release.version`
+
+If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UpdateMavenProjectPropertyJavaVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UpdateMavenProjectPropertyJavaVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Integer` | version | The Java version to upgrade to. | `11` |
 
 
@@ -54,7 +65,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |version|`17`|
 
 

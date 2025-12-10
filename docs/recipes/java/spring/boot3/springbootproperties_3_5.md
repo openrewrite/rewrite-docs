@@ -18,8 +18,8 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-35-properties.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-35-properties.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -33,6 +33,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.metrics.export.prometheus.pushgateway.base-url`
+  * newPropertyKey: `management.prometheus.metrics.export.pushgateway.address`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.promethus.metrics.export.pushgateway.base-url`
   * newPropertyKey: `management.prometheus.metrics.export.pushgateway.address`
@@ -88,6 +91,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPropertyKey: `spring.mvc.converters.preferred-json-mapper`
   * newPropertyKey: `spring.http.converters.preferred-json-mapper`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.prometheus.histogram-flavor`
+  * comment: `This property is deprecated: No longer supported by the Prometheus client.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
   * propertyKey: `management.signalfx.metrics.export.access-token`
   * comment: `This property is deprecated: Deprecated in Micrometer 1.15.0`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
@@ -130,6 +136,9 @@ tags:
   - spring
   - boot
 recipeList:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.export.prometheus.pushgateway.base-url
+      newPropertyKey: management.prometheus.metrics.export.pushgateway.address
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.promethus.metrics.export.pushgateway.base-url
       newPropertyKey: management.prometheus.metrics.export.pushgateway.address
@@ -185,6 +194,9 @@ recipeList:
       oldPropertyKey: spring.mvc.converters.preferred-json-mapper
       newPropertyKey: spring.http.converters.preferred-json-mapper
   - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.prometheus.histogram-flavor
+      comment: This property is deprecated: No longer supported by the Prometheus client.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
       propertyKey: management.signalfx.metrics.export.access-token
       comment: This property is deprecated: Deprecated in Micrometer 1.15.0
   - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
@@ -220,7 +232,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
+* [Migrate to Spring Boot 3.5 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
 
 
 ## Usage

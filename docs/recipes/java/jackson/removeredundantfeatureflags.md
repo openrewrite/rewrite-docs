@@ -17,8 +17,8 @@ _Remove `ObjectMapper` feature flag configurations that set values to their new 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/RemoveRedundantFeatureFlags.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/RemoveRedundantFeatureFlags.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | featureName | The fully qualified feature flag name that has a new default in Jackson 3. Format: `ClassName.FEATURE_NAME` (e.g., `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY`). | `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY` |
 | `Boolean` | newDefaultValue | The new default boolean value for this feature flag in Jackson 3. | `true` |
 

@@ -13,8 +13,8 @@ _Resolve common static analysis issues (also known as SAST issues)._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 :::info
@@ -80,6 +80,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `A.class.isInstance(a)` with `a instanceof A`](../staticanalysis/replaceclassisinstancewithinstanceof)
 * [Use method references in lambda](../staticanalysis/replacelambdawithmethodreference)
 * [Replace `StringBuilder#append` with `String`](../staticanalysis/replacestringbuilderwithstring)
+* [Replace String concatenation with `String.valueOf()`](../staticanalysis/replacestringconcatenationwithstringvalueof)
 * [Simplify `Arrays.asList(..)` with varargs](../staticanalysis/simplifyarraysaslist)
 * [Simplify boolean expression](../staticanalysis/simplifybooleanexpression)
 * [Simplify boolean return](../staticanalysis/simplifybooleanreturn)
@@ -165,6 +166,7 @@ recipeList:
   - org.openrewrite.staticanalysis.ReplaceClassIsInstanceWithInstanceof
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
+  - org.openrewrite.staticanalysis.ReplaceStringConcatenationWithStringValueOf
   - org.openrewrite.staticanalysis.SimplifyArraysAsList
   - org.openrewrite.staticanalysis.SimplifyBooleanExpression
   - org.openrewrite.staticanalysis.SimplifyBooleanReturn

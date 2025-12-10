@@ -18,8 +18,8 @@ _Prefer `java.util.Optional` instead of using `com.google.common.base.Optional`.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `java.util.Optional#orElse(null)` over `com.google.common.base.Optional#orNull()`](../../../java/migrate/guava/preferjavautiloptionalorelsenull)
 * [Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument](../../../java/migrate/guava/noguavaoptionalfromjavautil)
 * [Remove `com.google.common.base.Optional#toJavaUtil()`](../../../java/migrate/guava/noguavaoptionaltojavautil)
+* [Prefer `Optional.stream().collect(Collectors.toSet())`](../../../java/migrate/guava/noguavaoptionalasset)
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `com.google.common.base.Optional absent()`
   * newMethodName: `empty`
@@ -75,6 +76,7 @@ recipeList:
   - org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrElseNull
   - org.openrewrite.java.migrate.guava.NoGuavaOptionalFromJavaUtil
   - org.openrewrite.java.migrate.guava.NoGuavaOptionalToJavaUtil
+  - org.openrewrite.java.migrate.guava.NoGuavaOptionalAsSet
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.google.common.base.Optional absent()
       newMethodName: empty

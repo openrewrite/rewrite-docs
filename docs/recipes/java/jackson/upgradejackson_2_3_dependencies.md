@@ -17,8 +17,8 @@ _Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group ID
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-2-3.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-2-3.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
 :::info
@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Remove Jackson 2.x modules included in jackson-databind in 3.x.](../../java/jackson/upgradejackson_2_3_removemodules)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.fasterxml.jackson.core`
   * artifactId: `jackson-annotations`
@@ -61,46 +62,99 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newArtifactId: `jackson-databind`
   * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.dataformat`
-  * oldArtifactId: `jackson-dataformat-yaml`
-  * newGroupId: `tools.jackson.dataformat`
-  * newArtifactId: `jackson-dataformat-yaml`
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-scala_2.13`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-scala_2.13`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-scala_2.12`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-scala_2.12`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-scala_3`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-scala_3`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-kotlin`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-kotlin`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-no-ctor-deser`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-no-ctor-deser`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-jakarta-xmlbind-annotations`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-jakarta-xmlbind-annotations`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-mrbean`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-mrbean`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-jaxb-annotations`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-jaxb-annotations`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-afterburner`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-afterburner`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-guice7`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-guice7`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-modules-base`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-modules-base`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-osgi`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-osgi`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-guice`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-guice`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-android-record`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-android-record`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.module`
+  * oldArtifactId: `jackson-module-blackbird`
+  * newGroupId: `tools.jackson.module`
+  * newArtifactId: `jackson-module-blackbird`
   * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.dataformat`
-  * oldArtifactId: `jackson-dataformat-xml`
+  * oldArtifactId: `*`
   * newGroupId: `tools.jackson.dataformat`
-  * newArtifactId: `jackson-dataformat-xml`
-  * newVersion: `3.0.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.dataformat`
-  * oldArtifactId: `jackson-dataformat-csv`
-  * newGroupId: `tools.jackson.dataformat`
-  * newArtifactId: `jackson-dataformat-csv`
-  * newVersion: `3.0.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.dataformat`
-  * oldArtifactId: `jackson-dataformat-cbor`
-  * newGroupId: `tools.jackson.dataformat`
-  * newArtifactId: `jackson-dataformat-cbor`
-  * newVersion: `3.0.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.dataformat`
-  * oldArtifactId: `jackson-dataformat-avro`
-  * newGroupId: `tools.jackson.dataformat`
-  * newArtifactId: `jackson-dataformat-avro`
-  * newVersion: `3.0.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.dataformat`
-  * oldArtifactId: `jackson-dataformat-smile`
-  * newGroupId: `tools.jackson.dataformat`
-  * newArtifactId: `jackson-dataformat-smile`
-  * newVersion: `3.0.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.dataformat`
-  * oldArtifactId: `jackson-dataformat-ion`
-  * newGroupId: `tools.jackson.dataformat`
-  * newArtifactId: `jackson-dataformat-ion`
   * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
@@ -130,6 +184,7 @@ description: |
 tags:
   - jackson-3
 recipeList:
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson.core
       artifactId: jackson-annotations
@@ -159,46 +214,99 @@ recipeList:
       newArtifactId: jackson-databind
       newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.dataformat
-      oldArtifactId: jackson-dataformat-yaml
-      newGroupId: tools.jackson.dataformat
-      newArtifactId: jackson-dataformat-yaml
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-scala_2.13
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-scala_2.13
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-scala_2.12
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-scala_2.12
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-scala_3
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-scala_3
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-kotlin
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-kotlin
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-no-ctor-deser
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-no-ctor-deser
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-jakarta-xmlbind-annotations
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-jakarta-xmlbind-annotations
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-mrbean
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-mrbean
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-jaxb-annotations
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-jaxb-annotations
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-afterburner
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-afterburner
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-guice7
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-guice7
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-modules-base
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-modules-base
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-osgi
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-osgi
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-guice
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-guice
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-android-record
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-android-record
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.module
+      oldArtifactId: jackson-module-blackbird
+      newGroupId: tools.jackson.module
+      newArtifactId: jackson-module-blackbird
       newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.dataformat
-      oldArtifactId: jackson-dataformat-xml
+      oldArtifactId: "*"
       newGroupId: tools.jackson.dataformat
-      newArtifactId: jackson-dataformat-xml
-      newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.dataformat
-      oldArtifactId: jackson-dataformat-csv
-      newGroupId: tools.jackson.dataformat
-      newArtifactId: jackson-dataformat-csv
-      newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.dataformat
-      oldArtifactId: jackson-dataformat-cbor
-      newGroupId: tools.jackson.dataformat
-      newArtifactId: jackson-dataformat-cbor
-      newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.dataformat
-      oldArtifactId: jackson-dataformat-avro
-      newGroupId: tools.jackson.dataformat
-      newArtifactId: jackson-dataformat-avro
-      newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.dataformat
-      oldArtifactId: jackson-dataformat-smile
-      newGroupId: tools.jackson.dataformat
-      newArtifactId: jackson-dataformat-smile
-      newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.dataformat
-      oldArtifactId: jackson-dataformat-ion
-      newGroupId: tools.jackson.dataformat
-      newArtifactId: jackson-dataformat-ion
       newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype

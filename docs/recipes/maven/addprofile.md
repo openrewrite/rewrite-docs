@@ -13,8 +13,8 @@ _Add a maven profile to a `pom.xml` file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddProfile.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddProfile.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | id | The profile id. | `default` |
 | `String` | activation | *Optional*. activation details of a maven profile, provided as raw XML. | `<activation><foo>foo</foo></activation>` |
 | `String` | properties | *Optional*. properties of a maven profile, provided as raw XML. | `<properties><foo>foo</foo><bar>bar</bar></properties>` |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |id|`myprofile`|
 |activation|`<activation><foo>foo</foo></activation>`|
 |properties|`<properties><bar>bar</bar></properties>`|

@@ -13,8 +13,8 @@ _Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 :::info
@@ -148,6 +148,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.annotation`
   * newPackageName: `org.apache.hc.core5.annotation`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.apache.http.entity.mime.HttpMultipartMode.BROWSER_COMPATIBLE`
+  * fullyQualifiedConstantName: `org.apache.hc.client5.http.entity.mime.HttpMultipartMode.LEGACY`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.entity.mime.HttpMultipartMode`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.HttpMultipartMode`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.entity`
   * newPackageName: `org.apache.hc.core5.http.io.entity`
@@ -195,6 +201,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.pool`
   * newPackageName: `org.apache.hc.core5.pool`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.apache.http.protocol.HTTP.CONN_KEEP_ALIVE`
+  * fullyQualifiedConstantName: `org.apache.hc.core5.http.HttpHeaders.KEEP_ALIVE`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.apache.http.protocol.HTTP.CONTENT_LEN`
+  * fullyQualifiedConstantName: `org.apache.hc.core5.http.HttpHeaders.CONTENT_LENGTH`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.protocol.HTTP`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpHeaders`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.protocol`
   * newPackageName: `org.apache.hc.core5.http.protocol`
@@ -419,6 +434,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpConnectionFactory`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpConnectionFactory`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpEntityEnclosingRequest`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpEntityContainer`
 * [Reorder method arguments](../../java/reordermethodarguments)
   * methodPattern: `org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)`
   * newParameterNames: `[scheme, hostname, port]`
@@ -564,6 +582,12 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.annotation
       newPackageName: org.apache.hc.core5.annotation
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.apache.http.entity.mime.HttpMultipartMode.BROWSER_COMPATIBLE
+      fullyQualifiedConstantName: org.apache.hc.client5.http.entity.mime.HttpMultipartMode.LEGACY
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.entity.mime.HttpMultipartMode
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.HttpMultipartMode
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.entity
       newPackageName: org.apache.hc.core5.http.io.entity
@@ -611,6 +635,15 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.pool
       newPackageName: org.apache.hc.core5.pool
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.apache.http.protocol.HTTP.CONN_KEEP_ALIVE
+      fullyQualifiedConstantName: org.apache.hc.core5.http.HttpHeaders.KEEP_ALIVE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.apache.http.protocol.HTTP.CONTENT_LEN
+      fullyQualifiedConstantName: org.apache.hc.core5.http.HttpHeaders.CONTENT_LENGTH
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.protocol.HTTP
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.HttpHeaders
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.protocol
       newPackageName: org.apache.hc.core5.http.protocol
@@ -835,6 +868,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.HttpConnectionFactory
       newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpConnectionFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.core5.http.HttpEntityEnclosingRequest
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.HttpEntityContainer
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)
       newParameterNames: [scheme, hostname, port]

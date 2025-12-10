@@ -13,8 +13,8 @@ _Remove a specific input argument from calls to a reusable workflow._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/RemoveWorkflowInputArgument.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/RemoveWorkflowInputArgument.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | workflowReference | The workflow reference to match (e.g., `org/repo/.github/workflows/myWorkflow.yml`). | `org/repo/.github/workflows/myWorkflow.yml` |
 | `String` | version | The version of the workflow to match (e.g., `v1.2.3`). | `v1.2.3` |
 | `String` | inputArgumentName | The name of the input argument to remove. | `myInputToRemove` |
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |workflowReference|`org/repo/.github/workflows/myWorkflow.yml`|
 |version|`v1.2.3`|
 |inputArgumentName|`myInputToRemove`|

@@ -9,12 +9,17 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.lombok.AdoptLombokSetterMethodNames**
 
-_Rename methods that are effectively setter to the name Lombok would give them. Limitations:  - If two methods in a class are effectively the same setter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is._
+Rename methods that are effectively setter to the name Lombok would give them.
+Limitations:
+ - If two methods in a class are effectively the same setter then one's name will be corrected and the others name will be left as it is.
+ - If the correct name for a method is already taken by another method then the name will not be corrected.
+ - Method name swaps or circular renaming within a class cannot be performed because the names block each other.
+E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lombok/AdoptLombokSetterMethodNames.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lombok/AdoptLombokSetterMethodNames.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

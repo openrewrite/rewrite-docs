@@ -13,8 +13,8 @@ _Apply the specified executions to a Maven plugin. Will not add the plugin if it
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,16 +22,23 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `org.openrewrite.maven` |
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
 | `String` | executions | *Optional*. Plugin goal executions provided as raw XML. Supplying `null` will remove any existing executions. | `<execution><phase>validate</phase><goals><goal>dryRun</goal></goals></execution>` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Quarkus Maven plugin](/recipes/quarkus/spring/addquarkusmavenplugin.md)
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |groupId|`org.openrewrite.maven`|
 |artifactId|`rewrite-maven-plugin`|
 |executions|`null`|

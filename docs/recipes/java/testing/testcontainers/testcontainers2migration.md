@@ -13,8 +13,8 @@ _Change dependencies and types to migrate to testcontainers-java 2.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/testcontainers.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/testcontainers.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 :::info
@@ -28,6 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Adopt `@Container` and add `@Testcontainers`](../../../java/testing/testcontainers/addtestcontainersannotations)
 * [Explicit container images and versions](../../../java/testing/testcontainers/explicitcontainerimages)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](../../../java/testing/testcontainers/gethostmigration)
 * [Change type](../../../java/changetype)
@@ -48,6 +49,7 @@ displayName: Migrate to testcontainers-java 2.x
 description: |
   Change dependencies and types to migrate to testcontainers-java 2.x.
 recipeList:
+  - org.openrewrite.java.testing.testcontainers.AddTestcontainersAnnotations
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImages
   - org.openrewrite.java.testing.testcontainers.GetHostMigration
   - org.openrewrite.java.ChangeType:
@@ -64,7 +66,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Exclude JUnit 4, unless Spring Boot Testcontainers is used](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
+* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Testcontainers best practices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
 
 

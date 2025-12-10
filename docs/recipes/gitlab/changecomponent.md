@@ -13,8 +13,8 @@ _Change a GitLab Component in use._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/ChangeComponent.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/ChangeComponent.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldComponent | The name of the component to match. | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
 | `String` | oldComponentVersion | Version of the existing component to use match. | `0.10.0` |
 | `String` | newComponent | *Optional*. Name of the new component to use instead. | `$CI_SERVER_FQDN/components/opentofu/full-pipeline` |
@@ -66,7 +66,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldComponent|`some-component`|
 |oldComponentVersion|`0.10.0`|
 |newComponent|`other-component`|

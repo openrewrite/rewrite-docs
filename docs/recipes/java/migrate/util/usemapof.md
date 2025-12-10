@@ -13,11 +13,18 @@ _Prefer `Map.of(..)` instead of using `java.util.Map#put(..)` in Java 10 or high
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/UseMapOf.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/UseMapOf.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
 
 ## Example
 

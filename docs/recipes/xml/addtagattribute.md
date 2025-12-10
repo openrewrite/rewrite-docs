@@ -13,8 +13,8 @@ _Add new XML attribute with value on a specified element._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddTagAttribute.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddTagAttribute.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | elementName | The name of the element whose attribute's value is to be added. Interpreted as an XPath expression. | `//beans/bean` |
 | `String` | attributeName | The name of the new attribute. | `attribute-name` |
 | `String` | newValue | The new value to be used for key specified by `attributeName`. | `value-to-add` |
@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |elementName|`bean`|
 |attributeName|`scope`|
 |newValue|`singleton`|

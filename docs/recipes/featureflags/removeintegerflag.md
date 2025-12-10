@@ -13,8 +13,8 @@ _Replace method invocations for feature key with value, and simplify constant if
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/RemoveIntegerFlag.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/RemoveIntegerFlag.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern to match against. The first argument must be the feature key as `String`. | `dev.openfeature.sdk.Client getIntegerValue(String, Integer)` |
 | `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
 | `Integer` | replacementValue | The value to replace the feature flag check with. | `42` |
@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |methodPattern|`com.acme.bank.InHouseFF getIntegerFeatureFlagValue(String, Integer)`|
 |featureKey|`flag-key-123abc`|
 |replacementValue|`42`|

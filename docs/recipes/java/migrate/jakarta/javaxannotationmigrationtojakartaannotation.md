@@ -19,8 +19,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -113,8 +113,6 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
-* [Update `jakarta.annotation-api` dependency if it exists](/recipes/java/migrate/updatejakartaannotationsifexistsforjakarta.md)
-* [Update `jakarta.annotation-api` dependency if it exists](/recipes/java/migrate/updatejakartaannotationsifforjavax.md)
 * [Update jakarta annotations dependency](/recipes/java/micronaut/updatejakartaannotations.md)
 
 

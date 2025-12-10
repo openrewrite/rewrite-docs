@@ -13,8 +13,8 @@ _A precondition which returns false if visiting a Gradle file which includes the
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DoesNotIncludeDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DoesNotIncludeDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,9 +22,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `com.google.guava` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `guava` |
+| `String` | version | *Optional*. Match only dependencies with the specified resolved version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
 | `String` | configuration | *Optional*. Match dependencies with the specified scope. If not specified, all configurations will be searched. | `compileClasspath` |
 
 
@@ -41,6 +42,7 @@ recipeList:
   - org.openrewrite.gradle.search.DoesNotIncludeDependency:
       groupId: com.google.guava
       artifactId: guava
+      version: 1.x
       configuration: compileClasspath
 ```
 
@@ -71,7 +73,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DoesNotIncludeDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "configuration=compileClasspath"
+mod run . --recipe DoesNotIncludeDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=1.x" --recipe-option "configuration=compileClasspath"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -17,8 +17,8 @@ _This recipe will migrate to JSpecify annotations from various other nullability
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jspecify.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jspecify.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate from Jakarta annotation API to JSpecify](../../java/jspecify/migratefromjakartaannotationapi)
 * [Migrate from JetBrains annotations to JSpecify](../../java/jspecify/migratefromjetbrainsannotations)
 * [Migrate from Micrometer annotations to JSpecify](../../java/jspecify/migratefrommicrometerannotations)
+* [Migrate from Micronaut Framework annotations to JSpecify](../../java/jspecify/migratefrommicronautannotations)
 
 </TabItem>
 
@@ -55,6 +56,7 @@ recipeList:
   - org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi
   - org.openrewrite.java.jspecify.MigrateFromJetbrainsAnnotations
   - org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations
+  - org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations
 
 ```
 </TabItem>
@@ -65,6 +67,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
 
 

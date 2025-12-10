@@ -29,7 +29,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v5
 
       # Run generator
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: 'openrewrite/rewrite-recipe-markdown-generator'
           path: 'rewrite-recipe-markdown-generator'
@@ -38,7 +38,7 @@ jobs:
         working-directory: rewrite-recipe-markdown-generator
 
       # Checkout docs repository
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           path: 'rewrite-docs'

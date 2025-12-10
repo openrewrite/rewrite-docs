@@ -13,8 +13,8 @@ _Change the groupId and the artifactId of an artifactItem in the configuration s
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldGroupId | The old group ID to replace. | `javax` |
 | `String` | oldArtifactId | The old artifact ID to replace. | `javax` |
 | `String` | newGroupId | The new group ID to use. | `jakarta.platform` |

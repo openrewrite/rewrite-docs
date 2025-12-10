@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | resembles | The text, either a natural language description or a code sample, that you are looking for. | `HTTP request with Content-Type application/json` |
 | `int` | k | Since AI based matching has a higher latency than rules based matching, we do a first pass to find the top k methods using embeddings. To narrow the scope, you can specify the top k methods as method filters. | `5` |
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |resembles|`HTTP request with Content-Type application/json`|
 |k|`4`|
 

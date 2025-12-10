@@ -14,23 +14,28 @@ Recipe created for the following Refaster template:
 static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffset {
     
     @BeforeTemplate
-    void before(double[] actual, Supplier<String> messageSupplier, double[] expected, double delta) {
+    @SuppressWarnings(value = "java:S4449")
+    void before(double[] actual, Supplier<@Nullable String> messageSupplier, double[] expected, double delta) {
         assertArrayEquals(expected, actual, delta, messageSupplier);
     }
     
     @AfterTemplate
     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(double[] actual, Supplier<String> messageSupplier, double[] expected, double delta) {
+    void after(double[] actual, Supplier<@Nullable String> messageSupplier, double[] expected, double delta) {
         assertThat(actual).withFailMessage(messageSupplier).containsExactly(expected, offset(delta));
     }
 }
 ```
 .
 
+### Tags
+
+* [RSPEC-S4449](https://sonarsource.github.io/rspec/#/rspec/S4449)
+
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | fieldNames | Field names to search for. | `password,dateOfBirth,dob,ssn` |
 | `Boolean` | transitive | *Optional*. Find model objects that contain other model objects that contain sensitive data. |  |
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |fieldNames|`List.of("birthdate")`|
 |transitive|`true`|
 

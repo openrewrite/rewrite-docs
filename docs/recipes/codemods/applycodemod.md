@@ -13,8 +13,8 @@ _Applies a codemod represented by an NPM package to all source files._
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ApplyCodemod.java), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ApplyCodemod.java),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | transform | Transform to be applied using the executable. | `-t path/to/transform/optimus-prime` |
 | `String` | executable | *Optional*. Path to the codemod executable relative to the NPM directory. Defaults to `jscodeshift/bin/jscodeshift.js`. | `@next/codemod/bin/next-codemod.js` |
 | `String` | fileFilter | Optional glob pattern to filter files to apply the codemod to. Defaults to all files. Note: not all codemods support file glob filtering. | `**/*.(j|t)sx` |

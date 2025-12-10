@@ -13,8 +13,8 @@ _Takes two patterns for the start/end methods to find flow between._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | startMethodPattern | A method pattern that is used to find matching the start point's method invocations. | `java.util.List add(..)` |
 | `Boolean` | startMatchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 | `String` | endMethodPattern | A method pattern that is used to find matching the end point's method invocations. | `java.util.List add(..)` |
@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |startMethodPattern|`java.util.LinkedList <constructor>()`|
 |startMatchOverrides|`true`|
 |endMethodPattern|`java.util.LinkedList remove()`|

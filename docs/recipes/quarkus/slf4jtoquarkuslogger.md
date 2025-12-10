@@ -13,8 +13,8 @@ _Removes usage of SLF4J Logger fields, adjusts imports, and replaces logger meth
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/Slf4jToQuarkusLogger.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/Slf4jToQuarkusLogger.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

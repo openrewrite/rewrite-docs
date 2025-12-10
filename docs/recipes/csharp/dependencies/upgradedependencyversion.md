@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | packagePattern | Package glob pattern used to match dependencies. | `Microsoft*` |
 | `String` | newVersion | An exact version number. | `12.3` |
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |packagePattern|`Microsoft.*`|
 |newVersion|`2.1.2`|
 

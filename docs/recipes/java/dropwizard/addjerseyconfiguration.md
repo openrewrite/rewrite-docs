@@ -13,8 +13,8 @@ _Configures essential Jersey properties in Spring Boot that complement the Jerse
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/AddJerseyConfiguration.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/resources/META-INF/rewrite/configuration-recipes.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 
 :::info

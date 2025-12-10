@@ -18,8 +18,8 @@ _Applies best practices to Spring Boot 3 applications, without chaining in upgra
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/best-practices.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/best-practices.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -36,7 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Normalize Spring properties to kebab-case](../../../java/spring/propertiestokebabcase)
 * [Enable Virtual Threads on Java 21](../../../java/spring/boot3/enablevirtualthreads)
 * [Remove `public` from `@Bean` methods](../../../java/spring/framework/beanmethodsnotpublic)
+* [Bean methods should return concrete types](../../../java/spring/boot3/precisebeantype)
 * [Replace String literals with Spring constants](../../../java/spring/boot3/replacestringliteralswithconstants)
+* [Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface](../../../java/spring/norepoannotationonrepointerface)
 
 </TabItem>
 
@@ -56,7 +58,9 @@ recipeList:
   - org.openrewrite.java.spring.PropertiesToKebabCase
   - org.openrewrite.java.spring.boot3.EnableVirtualThreads
   - org.openrewrite.java.spring.framework.BeanMethodsNotPublic
+  - org.openrewrite.java.spring.boot3.PreciseBeanType
   - org.openrewrite.java.spring.boot3.ReplaceStringLiteralsWithConstants
+  - org.openrewrite.java.spring.NoRepoAnnotationOnRepoInterface
 
 ```
 </TabItem>

@@ -1,10 +1,5 @@
 # Migration
 
-## Categories
-
-* [Fork](/recipes/ai/timefold/solver/migration/fork)
-* [V8](/recipes/ai/timefold/solver/migration/v8)
-
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

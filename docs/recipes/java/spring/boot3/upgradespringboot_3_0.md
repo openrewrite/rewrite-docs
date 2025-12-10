@@ -18,8 +18,8 @@ _Migrate applications to the latest Spring Boot 3.0 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -88,8 +88,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Security 6.0](../../../java/spring/security6/upgradespringsecurity_6_0)
 * [Migrate to Spring Cloud 2022](../../../java/spring/cloud2022/upgradespringcloud_2022)
 * [Upgrade to SpringDoc 2.1](../../../java/springdoc/upgradespringdoc_2)
-* [Migrate to Hibernate 6.1.x](../../../hibernate/migratetohibernate61)
+* [Migrate to Hibernate 6.1.x (Community Edition)](../../../hibernate/migratetohibernate61-community-edition)
 * [Upgrade MyBatis to Spring Boot 3.0](../../../java/spring/boot3/upgrademybatistospringboot_3_0)
+* [Migrate SAP cloud foundry logging support to Spring Boot 3.x](../../../java/spring/boot3/migratesapcfjavaloggingsupport)
 
 </TabItem>
 
@@ -163,6 +164,7 @@ recipeList:
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_2
   - org.openrewrite.hibernate.MigrateToHibernate61
   - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_0
+  - org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport
 
 ```
 </TabItem>

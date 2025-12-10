@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | keyPath | The key to match and replace. | `$.resources[?(@.type == 'git')].source.uri` |
 | `String` | oldValue | *Optional*. Only change if the existing value matches. | `https://github.com/openrewrite/rewrite0` |
 | `String` | newValue | New value to replace the old value with. | `git@github.com:openrewrite/rewrite1.git` |
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |keyPath|`$.resources[?(@.type == 'git')].source.uri`|
 |oldValue|`https://github.com/openrewrite/rewrite0`|
 |newValue|`git@github.com:openrewrite/rewrite1.git`|

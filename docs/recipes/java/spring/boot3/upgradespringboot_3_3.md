@@ -18,8 +18,8 @@ _Migrate applications to the latest Spring Boot 3.3 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-33.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-33.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -70,7 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springdoc`
   * artifactId: `*`
   * newVersion: `2.6.x`
-* [Migrate to Hibernate 6.5.x](../../../hibernate/migratetohibernate65)
+* [Migrate to Hibernate 6.5.x (Community Edition)](../../../hibernate/migratetohibernate65-community-edition)
 * [Migrate to Flyway 10](../../../java/flyway/migratetoflyway10)
 * [Upgrade to SpringDoc 2.6](../../../java/springdoc/upgradespringdoc_2_6)
 
@@ -138,7 +138,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+* [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
 * [Spring Boot 3.3 best practices](/recipes/java/spring/boot3/springboot33bestpractices.md)
 
 ## Examples

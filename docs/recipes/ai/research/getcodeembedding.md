@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | codeSnippetType | Choose whether you want to get an embedding for the classes or methods. Valid options: `methods`, `classes` | `methods` |
 
 

@@ -9,12 +9,17 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.dependencies.UpgradeDependencyVersion**
 
-_For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `"group:artifact:version"`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
+For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:
+ * `String` notation: `"group:artifact:version"` 
+ * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
+It is possible to update version numbers which are defined earlier in the same file in variable declarations.
+
+For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `com.fasterxml.jackson*` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `jackson-module*` |
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number.  | `29.X` |
@@ -42,7 +47,7 @@ This recipe is used as part of the following composite recipes:
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 * [Jackson best practices](/recipes/java/jackson/jacksonbestpractices.md)
 * [Migrate Ehcache from javax to jakarta namespace](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
-* [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
+* [Migrate Hibernate dependencies to 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernatedependencies60-community-edition.md)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
 * [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
 * [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
@@ -51,6 +56,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate OkHttp dependencies to 5.x](/recipes/okhttp/upgradeokhttp5dependencies.md)
 * [Migrate Okio dependencies to 3.x](/recipes/okio/upgradeokio3dependencies.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
+* [Migrate Spring Retry to Spring Resilience](/recipes/java/spring/boot4/migratespringretry.md)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
@@ -81,17 +87,20 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
-* [Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
 * [Migrate from Elasticsearch 8 to 9](/recipes/elastic/elastic9/migratetoelasticsearch9.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
-* [Migrate to Hibernate 6.1.x](/recipes/hibernate/migratetohibernate61.md)
-* [Migrate to Hibernate 6.2.x](/recipes/hibernate/migratetohibernate62.md)
-* [Migrate to Hibernate 6.3.x](/recipes/hibernate/migratetohibernate63.md)
-* [Migrate to Hibernate 6.4.x](/recipes/hibernate/migratetohibernate64.md)
-* [Migrate to Hibernate 6.5.x](/recipes/hibernate/migratetohibernate65.md)
-* [Migrate to Hibernate 6.6.x](/recipes/hibernate/migratetohibernate66.md)
-* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
+* [Migrate to Hibernate 6.1.x (Community Edition)](/recipes/hibernate/migratetohibernate61-community-edition.md)
+* [Migrate to Hibernate 6.2.x (Community Edition)](/recipes/hibernate/migratetohibernate62-community-edition.md)
+* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63-community-edition.md)
+* [Migrate to Hibernate 6.4.x (Community Edition)](/recipes/hibernate/migratetohibernate64-community-edition.md)
+* [Migrate to Hibernate 6.5.x (Community Edition)](/recipes/hibernate/migratetohibernate65-community-edition.md)
+* [Migrate to Hibernate 6.6.x (Community Edition)](/recipes/hibernate/migratetohibernate66-community-edition.md)
+* [Migrate to Hibernate 6.6.x (Moderne Edition)](/recipes/hibernate/migratetohibernate66-moderne-edition.md)
+* [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
+* [Migrate to Hibernate 7.1.x (Community Edition)](/recipes/hibernate/migratetohibernate71-community-edition.md)
 * [Migrate to Hibernate for Jakarta EE 9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
+* [Migrate to JasperReports 5.6.x](/recipes/jasperreports/upgradetojasperreports5.md)
+* [Migrate to JasperReports 6](/recipes/jasperreports/upgradetojasperreports6.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to Kafka 2.3](/recipes/kafka/migratetokafka23.md)
 * [Migrate to Kafka 2.4](/recipes/kafka/migratetokafka24.md)
@@ -111,6 +120,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Reactor 3.5](/recipes/reactive/reactor/upgradereactor_3_5.md)
 * [Migrate to Scala 2.12.+](/recipes/scala/migrate/upgradescala_2_12.md)
 * [Migrate to Spring Batch 5.0 from 4.3](/recipes/java/spring/batch/springbatch4to5migration.md)
+* [Migrate to Spring Batch 6.0 from 5.2](/recipes/java/spring/batch/springbatch5to6migration.md)
 * [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
 * [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
 * [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
@@ -121,9 +131,10 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
 * [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
+* [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+* [Migrate to Spring Boot 3.5 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
+* [Migrate to Spring Boot 3.5 (Moderne Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
+* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Framework 5.0](/recipes/java/spring/framework/upgradespringframework_5_0.md)
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
@@ -132,6 +143,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2 for WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring Framework 7.0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
 * [Migrate to Spring Security 5.8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md)
 * [Migrate to Spring Security 6.0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md)
@@ -140,6 +153,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Security 6.3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md)
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md)
+* [Migrate to Spring Security 7.0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
 * [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
@@ -208,7 +222,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |groupId|`com.google.guava`|
 |artifactId|`guava`|
 |newVersion|`30.x`|

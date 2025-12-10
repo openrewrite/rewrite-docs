@@ -13,8 +13,8 @@ _Replace references to GitHub Action secrets in workflow files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ReplaceSecrets.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ReplaceSecrets.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,10 +22,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldSecretName | The name of the secret to be replaced | `OSSRH_S01_USERNAME` |
 | `String` | newSecretName | The new secret name to use | `SONATYPE_USERNAME` |
-| `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.yml` |
+| `String` | fileMatcher | *Optional*. Optional file path matcher | `.github/workflows/*.{yml,yaml}` |
 
 
 ## Used by
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldSecretName|`OSSRH_S01_USERNAME`|
 |newSecretName|`SONATYPE_USERNAME`|
 |fileMatcher|`null`|
@@ -112,7 +112,7 @@ recipeList:
   - org.openrewrite.github.ReplaceSecrets:
       oldSecretName: OSSRH_S01_USERNAME
       newSecretName: SONATYPE_USERNAME
-      fileMatcher: .github/workflows/*.yml
+      fileMatcher: .github/workflows/*.{yml,yaml}
 ```
 
 Now that `com.yourorg.ReplaceSecretsExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}` in your build file:
@@ -178,7 +178,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceSecrets --recipe-option "oldSecretName=OSSRH_S01_USERNAME" --recipe-option "newSecretName=SONATYPE_USERNAME" --recipe-option "fileMatcher=.github/workflows/*.yml"
+mod run . --recipe ReplaceSecrets --recipe-option "oldSecretName=OSSRH_S01_USERNAME" --recipe-option "newSecretName=SONATYPE_USERNAME" --recipe-option "fileMatcher=.github/workflows/*.{yml,yaml}"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -13,8 +13,8 @@ _Replace `System.out` and `System.err` print statements with a logger._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/SystemPrintToLogging.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/SystemPrintToLogging.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 :::info
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Boolean` | addLogger | *Optional*. Add a logger field to the class if it isn't already present. |  |
 | `String` | loggerName | *Optional*. The name of the logger to use when generating a field. | `log` |
 | `String` | loggingFramework | *Optional*. The logging framework to use. Valid options: `SLF4J`, `Log4J1`, `Log4J2`, `JUL`, `COMMONS` |  |

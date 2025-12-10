@@ -17,8 +17,8 @@ _Add the `lombok-mapstruct-binding` annotation processor as needed when both Map
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -38,11 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `0.2.0`
   * configuration: `annotationProcessor`
   * acceptTransitive: `false`
-* [Add Maven dependency](../../maven/adddependency)
-  * groupId: `org.projectlombok`
-  * artifactId: `lombok-mapstruct-binding`
-  * version: `0.2.0`
-  * acceptTransitive: `false`
+* [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbindingmavendependencyonly)
 * [Add an annotation processor to `maven-compiler-plugin`](../../maven/addannotationprocessor)
   * groupId: `org.projectlombok`
   * artifactId: `lombok-mapstruct-binding`
@@ -68,11 +64,7 @@ recipeList:
       version: 0.2.0
       configuration: annotationProcessor
       acceptTransitive: false
-  - org.openrewrite.maven.AddDependency:
-      groupId: org.projectlombok
-      artifactId: lombok-mapstruct-binding
-      version: 0.2.0
-      acceptTransitive: false
+  - org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly
   - org.openrewrite.maven.AddAnnotationProcessor:
       groupId: org.projectlombok
       artifactId: lombok-mapstruct-binding
@@ -87,6 +79,111 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+
+## Examples
+##### Example 1
+`AddLombokMapstructBindingTest#addForGradle`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins { id 'java' }
+repositories { mavenCentral() }
+dependencies {
+    implementation "org.projectlombok:lombok:1.18.42"
+    implementation "org.mapstruct:mapstruct:1.6.3"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins { id 'java' }
+repositories { mavenCentral() }
+dependencies {
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+
+    implementation "org.projectlombok:lombok:1.18.42"
+    implementation "org.mapstruct:mapstruct:1.6.3"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -4,0 +4,2 @@
+repositories { mavenCentral() }
+dependencies {
++   annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
++
+    implementation "org.projectlombok:lombok:1.18.42"
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 2
+`AddLombokMapstructBindingTest#addForGradle`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins { id 'java' }
+repositories { mavenCentral() }
+dependencies {
+    implementation "org.projectlombok:lombok:1.18.42"
+    implementation "org.mapstruct:mapstruct:1.6.3"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins { id 'java' }
+repositories { mavenCentral() }
+dependencies {
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+
+    implementation "org.projectlombok:lombok:1.18.42"
+    implementation "org.mapstruct:mapstruct:1.6.3"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -4,0 +4,2 @@
+repositories { mavenCentral() }
+dependencies {
++   annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
++
+    implementation "org.projectlombok:lombok:1.18.42"
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
 
 
 ## Usage

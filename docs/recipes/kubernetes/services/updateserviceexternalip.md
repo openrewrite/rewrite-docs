@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | ipToFind | An `externalIP` address to find in the service's external IPs. | `192.168.0.1` |
 | `String` | ipToUpdate | An `externalIP` address to update to in the service's external IPs. | `10.10.0.1` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pod-*.yml` |
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |ipToFind|`192.168.0.1`|
 |ipToUpdate|`10.10.0.1`|
 |fileMatcher|`null`|

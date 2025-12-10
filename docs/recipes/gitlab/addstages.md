@@ -13,8 +13,8 @@ _Add or Update the set of stages defined in `.gitlab-ci.yml`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddStages.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddStages.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | stages | Stages to add. | `build,test,deploy` |
 | `Boolean` | acceptTheirs | *Optional*. When the set of stages would conflict, prefer the original value. |  |
 | `InsertMode` | insertMode | *Optional*. Choose an insertion point when multiple mappings exist. Default is `Last`. Valid options: `Before`, `After`, `Last` |  |
@@ -67,7 +67,7 @@ recipeList:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |stages|`List.of("build", "test", "deploy")`|
 |acceptTheirs|`false`|
 |insertMode|`null`|

@@ -17,8 +17,8 @@ _Apply JSpecify best practices, such as migrating off of alternatives, and addin
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jspecify.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jspecify.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to JSpecify](../../java/jspecify/migratetojspecify)
 * [Annotate methods which may return `null` with `@Nullable`](../../staticanalysis/annotatenullablemethods)
 * [Annotate null-checked method parameters with `@Nullable`](../../staticanalysis/annotatenullableparameters)
+* [Annotate required method parameters with `@NonNull`](../../staticanalysis/annotaterequiredparameters)
 * [Move `@Nullable` method annotations to the return type](../../staticanalysis/nullableonmethodreturntype)
 
 </TabItem>
@@ -54,6 +55,7 @@ recipeList:
   - org.openrewrite.java.jspecify.MigrateToJSpecify
   - org.openrewrite.staticanalysis.AnnotateNullableMethods
   - org.openrewrite.staticanalysis.AnnotateNullableParameters
+  - org.openrewrite.staticanalysis.AnnotateRequiredParameters
   - org.openrewrite.staticanalysis.NullableOnMethodReturnType
 
 ```

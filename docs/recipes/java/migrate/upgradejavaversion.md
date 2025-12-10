@@ -13,8 +13,8 @@ _Upgrade build plugin configuration to use the specified Java version. This reci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Integer` | version | The Java version to upgrade to. | `11` |
 
 
@@ -73,6 +73,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 * [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
+* [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
 * [Upgrade Java to 11+ for Kafka clients](/recipes/kafka/upgradejavaforkafkaclients.md)
 * [Upgrade Java to 17+ for Kafka broker/tools](/recipes/kafka/upgradejavaforkafkabroker.md)
 * [Upgrade build to Java 11](/recipes/java/migrate/upgradebuildtojava11.md)
@@ -83,7 +84,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |version|`17`|
 
 

@@ -9,12 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.AddLiteralMethodArgument**
 
-_Add a literal `String` or `int` argument to method invocations._
+_Add a literal `String` or primitive argument to method invocations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddLiteralMethodArgument.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddLiteralMethodArgument.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,11 +22,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `com.yourorg.A foo(int, int)` |
-| `int` | argumentIndex | A zero-based index that indicates which argument will be added as null to the method invocation. | `0` |
-| `Object` | literal | The literal value that we add the argument for. | `abc` |
-| `String` | primitiveType | *Optional*. The type of the parameter that we add the argument for. Defaults to `String`. Valid options: `String`, `int`, `short`, `long`, `float`, `double`, `boolean`, `char` | `String` |
+| `int` | argumentIndex | A zero-based index indicating where to insert the new argument. | `0` |
+| `Object` | literal | The literal value to add as an argument. | `abc` |
+| `String` | primitiveType | *Optional*. The parameter type for the added argument. Defaults to `String`. Valid options: `String`, `int`, `short`, `long`, `float`, `double`, `boolean`, `char` | `String` |
 
 
 ## Used by

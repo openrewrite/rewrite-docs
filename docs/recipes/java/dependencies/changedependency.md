@@ -13,8 +13,8 @@ _Change the group ID, artifact ID, and/or the version of a specified Gradle or M
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldGroupId | The old group ID to replace. The group ID is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `org.openrewrite.recipe` |
 | `String` | oldArtifactId | The old artifact ID to replace. The artifact ID is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `rewrite-testing-frameworks` |
 | `String` | newGroupId | *Optional*. The new group ID to use. Defaults to the existing group ID. | `corp.internal.openrewrite.recipe` |
@@ -46,10 +46,10 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md)
 * [Migrate Bouncy Castle to `jdk18on`](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
-* [Migrate Hibernate Types to Hypersistence Utils 6.0](/recipes/hibernate/migratetohypersistenceutilshibernate6/0.md)
-* [Migrate Hibernate Types to Hypersistence Utils 6.2](/recipes/hibernate/migratetohypersistenceutilshibernate6/2.md)
-* [Migrate Hibernate Types to Hypersistence Utils 6.3](/recipes/hibernate/migratetohypersistenceutilshibernate6/3.md)
-* [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
+* [Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)](/recipes/hibernate/migratetohypersistenceutilshibernate60-community-edition.md)
+* [Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)](/recipes/hibernate/migratetohypersistenceutilshibernate62-community-edition.md)
+* [Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)](/recipes/hibernate/migratetohypersistenceutilshibernate63-community-edition.md)
+* [Migrate Hibernate dependencies to 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernatedependencies60-community-edition.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
@@ -130,12 +130,14 @@ This recipe is used as part of the following composite recipes:
 * [Migrate javax.mvc to 2.0 (Jakarta EE 9)](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
-* [Migrate to Hibernate Validator 8.0.x](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
+* [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
+* [Migrate to Hibernate Validator 8.0.x (Community Edition)](/recipes/hibernate/validator/hibernatevalidator_8_0-community-edition.md)
 * [Migrate to Hibernate for Jakarta EE 9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
 * [Migrate to HtmlUnit 3.x](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
 * [Migrate to JavaEE8](/recipes/java/migrate/javaee8-recipe.md)
 * [Migrate to New Spring Cloud Gateway Modules and Starters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
-* [Migrate to Spring Boot 3.4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+* [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
@@ -151,7 +153,11 @@ This recipe is used as part of the following composite recipes:
 * [Replace H2 driver with Quarkus JDBC H2](/recipes/quarkus/spring/h2drivertoquarkus.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
 * [Update Apache Commons FileUpload2 package for EE10](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
+* [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+* [Update Fastjson for Jakarta EE 10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
+* [Update Jetty EE9 to Jetty EE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
 * [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
+* [Update Prometheus Pushgateway Dependency Coordinates](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
 * [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
 * [Upgrade Struts 6.0 dependencies](/recipes/java/struts/migrate6/upgradestruts6dependencies.md)
@@ -177,7 +183,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldGroupId|`commons-lang`|
 |oldArtifactId|`commons-lang`|
 |newGroupId|`org.apache.commons`|

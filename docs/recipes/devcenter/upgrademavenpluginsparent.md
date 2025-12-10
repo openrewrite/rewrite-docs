@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Upgrade Apache Maven Parent"
+sidebar_label: "Upgrade Maven Plugins Parent"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Upgrade Apache Maven Parent
+# Upgrade Maven Plugins Parent
 
 **io.moderne.devcenter.UpgradeMavenPluginsParent**
 
@@ -13,8 +13,8 @@ _Upgrades the Apache Maven parent POM to the latest version._
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/apache-maven-devcenter.yml), 
-[Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues), 
+[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/apache-maven-devcenter.yml),
+[Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: io.moderne.devcenter.UpgradeMavenPluginsParent
-displayName: Upgrade Apache Maven Parent
+displayName: Upgrade Maven Plugins Parent
 description: |
   Upgrades the Apache Maven parent POM to the latest version.
 recipeList:

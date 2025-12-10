@@ -18,8 +18,8 @@ _Migrate applications to the latest Spring Boot 3.2 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-32.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-32.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -88,7 +88,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springdoc`
   * artifactId: `*`
   * newVersion: `2.5.x`
-* [Migrate to Hibernate 6.4.x](../../../hibernate/migratetohibernate64)
+* [Migrate to Hibernate 6.4.x (Community Edition)](../../../hibernate/migratetohibernate64-community-edition)
 * [Use `spring.reactor.context-propagation` property](../../../java/spring/boot3/migratehookstoreactorcontextproperty)
 * [Relocate Launcher Classes](../../../java/spring/boot3/relocatelauncherclasses)
 * [Upgrade MyBatis to Spring Boot 3.2](../../../java/spring/boot3/upgrademybatistospringboot_3_2)

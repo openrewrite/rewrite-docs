@@ -9,7 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.text.FindHardcodedPrivateIPAddresses**
 
-_Locates mentions of hard-coded IPv4 addresses from private IP ranges. Private IP ranges include:   * `192.168.0.0` to `192.168.255.255`  * `10.0.0.0` to `10.255.255.255`  * `172.16.0.0` to `172.31.255.255`  It is not detecting the localhost subnet `127.0.0.0` to `127.255.255.255`._
+Locates mentions of hard-coded IPv4 addresses from private IP ranges. Private IP ranges include: 
+ * `192.168.0.0` to `192.168.255.255`
+ * `10.0.0.0` to `10.255.255.255`
+ * `172.16.0.0` to `172.31.255.255`
+
+It is not detecting the localhost subnet `127.0.0.0` to `127.255.255.255`.
 
 ## Recipe source
 

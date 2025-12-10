@@ -13,8 +13,8 @@ _Finds occurrences of a Quarkus property key._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | propertyKey | The property key to look for. | `quarkus.http.port` |
 | `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be searched on all profiles. | `dev` |
 | `Boolean` | searchAllProfiles | *Optional*. If set, the property will be searched on all available profiles. Defaults to `true` if the profile is not defined. | `false` |

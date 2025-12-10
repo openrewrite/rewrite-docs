@@ -13,8 +13,8 @@ _Update Apache Camel configurations keys_
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.customRecipes.PropertiesAndYamlKeyUpdate), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.customRecipes.PropertiesAndYamlKeyUpdate),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldPropertyKey | The configuration key to rename. | `TODO Provide a usage example for the docs` |
 | `String` | newPropertyKey | The configuration to be replaced with. | `TODO Provide a usage example for the docs` |
 

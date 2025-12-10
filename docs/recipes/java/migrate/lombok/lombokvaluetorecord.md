@@ -17,8 +17,8 @@ _Convert Lombok `@Value` annotated classes to standard Java Records._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lombok/LombokValueToRecord.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lombok/LombokValueToRecord.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -26,14 +26,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Boolean` | useExactToString | *Optional*. When set the `toString` format from Lombok is used in the migrated record. |  |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |useExactToString|`false`|
 
 
@@ -49,7 +49,7 @@ import lombok.Value;
 
 @Value
 public class A {
-   String test;
+    String test;
 }
 ```
 
@@ -58,7 +58,7 @@ public class A {
 package example;
 
 public record A(
-   String test) {
+        String test) {
 }
 ```
 
@@ -73,9 +73,9 @@ package example;
 -
 -@Value
 -public class A {
--  String test;
+-   String test;
 +public record A(
-+  String test) {
++       String test) {
 }
 ```
 </TabItem>

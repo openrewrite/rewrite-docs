@@ -13,8 +13,8 @@ _Find method usages by pattern._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `java.util.List add(..)` |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 | `String` | flow | *Optional*. When enabled, show the data or taint flow of the method invocation. Valid options: `none`, `data`, `taint` |  |
@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |methodPattern|`A <constructor>(String)`|
 |matchOverrides|`false`|
 |flow|`null`|

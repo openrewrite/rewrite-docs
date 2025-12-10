@@ -17,8 +17,8 @@ _These recipes help with the Migration to Jakarta EE 10, flagging and updating d
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -34,6 +34,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](../../../java/migrate/jakarta/migrationtojakarta10apis)
+* [Update Plugins for Jakarta EE 10](../../../java/migrate/jakarta/migratepluginsforjakarta10)
+* [Update Jetty EE9 to Jetty EE10](../../../java/migrate/jakarta/jettyupgradeee10)
 * [Upgrade to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces3xmigrationtofaces4x)
 * [Use `isParametersProvided()`](../../../java/migrate/jakarta/removedisparmetersprovidedmethod)
 * [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](../../../java/migrate/jakarta/removedsoapelementfactory)
@@ -59,6 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update EclipseLink Dependencies to 4.x](../../../java/migrate/jakarta/updateeclipselinkdependencies)
 * [Update Apache Commons FileUpload2 package for EE10](../../../java/migrate/jakarta/updatefileupload2dependencies)
 * [Update Eclipse Yasson Dependencies to 3.0.x](../../../java/migrate/jakarta/updateyassondependencies)
+* [Update Fastjson for Jakarta EE 10](../../../java/migrate/jakarta/migratefastjsonforjakarta10)
 
 </TabItem>
 
@@ -76,6 +79,8 @@ tags:
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
   - org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis
+  - org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10
+  - org.openrewrite.java.migrate.jakarta.JettyUpgradeEE10
   - org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x
   - org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod
   - org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory
@@ -101,6 +106,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies
   - org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies
   - org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies
+  - org.openrewrite.java.migrate.jakarta.MigrateFastjsonForJakarta10
 
 ```
 </TabItem>
@@ -115,6 +121,29 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`JakartaEE10Test#chainedJettyUpgradeEE10`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-server</artifactId>
+            <version>9.4.58.v20250814</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
 `UpdateAnnotationAttributeJavaxToJakartaTest#replaceInterfaceName`
 
 
@@ -164,7 +193,30 @@ class Test {
 
 ---
 
-##### Example 2
+##### Example 3
+`JakartaEE10Test#chainedJettyUpgradeEE10`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-server</artifactId>
+            <version>9.4.58.v20250814</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 4
 `UpdateAnnotationAttributeJavaxToJakartaTest#replaceInterfaceName`
 
 

@@ -13,8 +13,8 @@ _Visitors that are parameterized with `ExecutionContext` should use the paramete
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/ExecutionContextParameterName.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/ExecutionContextParameterName.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | parameterName | *Optional*. The name or prefix to use for the `ExecutionContext` parameter. | `ctx` |
 
 
@@ -36,7 +36,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |parameterName|`null`|
 
 

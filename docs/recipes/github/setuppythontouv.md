@@ -9,12 +9,32 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.github.SetupPythonToUv**
 
-_Replace `actions/setup-python` action with `astral-sh/setup-uv` action for faster Python environment setup and dependency management.  **Benefits of UV:**  - Significantly faster package installation and environment setup  - Built-in dependency resolution and locking  - Integrated caching for improved CI performance  - Drop-in replacement for pip workflows  **Transformations applied:**  - `actions/setup-python@v5` → `astral-sh/setup-uv@v6`  - `cache: 'pip'` → `enable-cache: 'true'`  - `pip install -r requirements.txt` → `uv sync` (configurable strategy)  - `python -m <module>` → `uv run <module>`  - Removes unnecessary `pip install --upgrade pip` steps  **Sync strategies:**  - `basic`: Basic synchronization (`uv sync`)  - `locked`: Use locked dependencies (`uv sync --locked`)  - `full`: Install all extras and dev dependencies (`uv sync --all-extras --dev`)  See the [UV GitHub integration guide](https://docs.astral.sh/uv/guides/integration/github/) for more details._
+Replace `actions/setup-python` action with `astral-sh/setup-uv` action for faster Python environment setup and dependency management.
+
+**Benefits of UV:**
+ - Significantly faster package installation and environment setup
+ - Built-in dependency resolution and locking
+ - Integrated caching for improved CI performance
+ - Drop-in replacement for pip workflows
+
+**Transformations applied:**
+ - `actions/setup-python@v5` → `astral-sh/setup-uv@v6`
+ - `cache: 'pip'` → `enable-cache: 'true'`
+ - `pip install -r requirements.txt` → `uv sync` (configurable strategy)
+ - `python -m <module>` → `uv run <module>`
+ - Removes unnecessary `pip install --upgrade pip` steps
+
+**Sync strategies:**
+ - `basic`: Basic synchronization (`uv sync`)
+ - `locked`: Use locked dependencies (`uv sync --locked`)
+ - `full`: Install all extras and dev dependencies (`uv sync --all-extras --dev`)
+
+See the [UV GitHub integration guide](https://docs.astral.sh/uv/guides/integration/github/) for more details.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupPythonToUv.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupPythonToUv.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | uvVersion | *Optional*. The version of the `astral-sh/setup-uv` action to use. Defaults to `v6`. | `v6` |
 | `String` | syncStrategy | *Optional*. Strategy for the `uv sync` command replacement. Valid options: `basic`, `locked`, `full` | `locked` |
                     | `Boolean` | transformPipCommands | *Optional*. Whether to transform `pip install` commands to `uv` equivalents:
@@ -37,7 +57,7 @@ When disabled, only the action itself is replaced. Defaults to `true`. | `true` 
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |uvVersion|`null`|
 |syncStrategy|`null`|
 |transformPipCommands|`null`|

@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | namePattern | Name glob pattern used to match dependencies | `@apollo*` |
 | `String` | version | Set the version to upgrade to.Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. | `1.x` |
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |namePattern|`lodash*`|
 |version|`^4`|
 

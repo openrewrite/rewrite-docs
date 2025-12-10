@@ -13,8 +13,8 @@ _Update GlassFish Jersey Dependencies to 3.1.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -52,6 +52,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.glassfish.jersey.ext`
   * artifactId: `*`
   * newVersion: `3.1.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.tyrus`
+  * artifactId: `*`
+  * newVersion: `2.1.x`
 
 </TabItem>
 
@@ -89,6 +93,10 @@ recipeList:
       groupId: org.glassfish.jersey.ext
       artifactId: "*"
       newVersion: 3.1.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.tyrus
+      artifactId: "*"
+      newVersion: 2.1.x
 
 ```
 </TabItem>

@@ -28,6 +28,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](./addlombokmapstructbindingmavendependencyonly.md)
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](./addlombokmapstructbinding.md)
 * [Add missing `isWrapperFor` and `unwrap` methods.](./jrewrapperinterface.md)
 * [Adds missing JDBC interface methods.](./jrejdbcinterfacenewmethods.md)
@@ -59,8 +60,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`](./removedfileiofinalizemethods.md)
 * [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](./removedzipfinalizemethods.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](./jre17agentmainpremainpublic.md)
-* [Update `jakarta.annotation-api` dependency if it exists](./updatejakartaannotationsifforjavax.md)
-* [Update `jakarta.annotation-api` dependency if it exists](./updatejakartaannotationsifexistsforjakarta.md)
 * [Upgrade Java version](./upgradejavaversion.md)
 * [Upgrade plugins to Java 11 compatible versions](./upgradepluginsforjava11.md)
 * [Upgrade plugins to Java 17 compatible versions](./upgradepluginsforjava17.md)

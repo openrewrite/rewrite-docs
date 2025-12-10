@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.java.spring.framework.webxml.WebXmlToWebApplicationInitializer**
 
-_Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests.It creates a `WebXmlWebAppInitializer` class in `src/main/java` with respect to submodules if they contain java files.**If it finds an existing `WebXmlWebAppInitializer`, it skips the creation**._
+_Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests. It creates a `WebXmlWebAppInitializer` class in `src/main/java` with respect to submodules if they contain java files. **If it finds an existing `WebXmlWebAppInitializer`, it skips the creation**._
 
 ## Recipe source
 
@@ -21,98 +21,53 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `boolean` | useJakartaEE | If true, the recipe will migrate to Jakarta EE 9+ namespaces. If false, it will use the javax.servlet namespace. | `true` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |useJakartaEE|`true`|
 
 
 
 ###### New file
-```java
+```java title="WebXmlWebAppInitializer.java"
 import org.springframework.web.WebApplicationInitializer;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRegistration;
 
 public class WebXmlWebAppInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", org.springframework.web.servlet.DispatcherServlet.class);
-        dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/services/*");
+        servletContext.setAttribute("jakarta.servlet.context.display-name", "My Web Application");
     }
 }
 ```
 
 
 ###### Unchanged
+```java
+class Locator {}
+```
+
+###### Unchanged
 ```mavenProject
 main
 ```
 
-<Tabs groupId="beforeAfter">
-<TabItem value="src/main/webapp/WEB-INF/web.xml" label="src/main/webapp/WEB-INF/web.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="src/main/webapp/WEB-INF/web.xml"
 <?xml version="1.0"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-    <servlet>
-        <servlet-name>dispatcher</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/services/*</url-pattern>
-    </servlet-mapping>
+    <display-name>My Web Application</display-name>
 </web-app>
 ```
-
-###### After
-```xml title="src/main/webapp/WEB-INF/web.xml"
-<?xml version="1.0"?>
-<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-        "http://java.sun.com/dtd/web-app_2_3.dtd">
-
-<web-app>
-</web-app>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- src/main/webapp/WEB-INF/web.xml
-+++ src/main/webapp/WEB-INF/web.xml
-@@ -6,10 +6,0 @@
-
-<web-app>
--   <servlet>
--       <servlet-name>dispatcher</servlet-name>
--       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
--       <load-on-startup>1</load-on-startup>
--   </servlet>
--
--   <servlet-mapping>
--       <servlet-name>dispatcher</servlet-name>
--       <url-pattern>/services/*</url-pattern>
--   </servlet-mapping>
-</web-app>
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage

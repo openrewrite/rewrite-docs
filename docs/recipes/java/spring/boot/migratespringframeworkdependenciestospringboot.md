@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate Spring Framework Dependencies to Spring Boot"
+sidebar_label: "Migrate Spring Framework dependencies to Spring Boot"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Spring Framework Dependencies to Spring Boot
+# Migrate Spring Framework dependencies to Spring Boot
 
 **io.moderne.java.spring.boot.MigrateSpringFrameworkDependenciesToSpringBoot**
 
-_Migrate Spring Framework Dependencies to Spring Boot._
+_Migrate Spring Framework dependencies to Spring Boot._
 
 ## Recipe source
 

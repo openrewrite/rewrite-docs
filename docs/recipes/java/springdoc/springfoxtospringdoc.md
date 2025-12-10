@@ -20,8 +20,8 @@ _Migrate from SpringFox Swagger to SpringDoc and OpenAPI._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/springdoc.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/springdoc.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -35,8 +35,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Add comment to method invocations](../../java/addcommenttomethodinvocations)
+  * comment: `TODO: The transformation of Docket to OpenAPI is too complex to be adequately handled in a recipe. See https://springdoc.org/migrating-from-springfox.html for guidance.`
+  * methodPattern: `springfox.documentation.spring.web.plugins.Docket <constructor>(..)`
 * [Migrate from Swagger to SpringDoc and OpenAPI](../../java/springdoc/swaggertospringdoc)
 * [Replace SpringFox Dependencies](../../java/springdoc/replacespringfoxdependencies)
+* [Migrate `ApiInfoBuilder` to `Info`](../../java/spring/doc/apiinfobuildertoinfo)
+* [Replace elements of SpringFox's security with Swagger's security models](../../java/spring/doc/securitycontexttosecurityscheme)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](../../java/springdoc/migratespringdoccommon)
 
 </TabItem>
@@ -56,8 +61,13 @@ tags:
   - springdoc
   - swagger
 recipeList:
+  - org.openrewrite.java.AddCommentToMethodInvocations:
+      comment: TODO: The transformation of Docket to OpenAPI is too complex to be adequately handled in a recipe. See https://springdoc.org/migrating-from-springfox.html for guidance.
+      methodPattern: springfox.documentation.spring.web.plugins.Docket <constructor>(..)
   - org.openrewrite.java.springdoc.SwaggerToSpringDoc
   - org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies
+  - org.openrewrite.java.spring.doc.ApiInfoBuilderToInfo
+  - org.openrewrite.java.spring.doc.SecurityContextToSecurityScheme
   - org.openrewrite.java.springdoc.MigrateSpringdocCommon
 
 ```

@@ -18,8 +18,8 @@ _Upgrade hibernate libraries to Jakarta EE9 versions._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -33,7 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.1.x](../../../../../hibernate/migratetohibernate61)
+* [Migrate to Hibernate 6.1.x (Community Edition)](../../../../../hibernate/migratetohibernate61-community-edition)
 * [Add Hibernate ORM Core if has dependencies](../../../../../com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61)
 * [Upgrade Gradle or Maven dependency versions](../../../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.search`

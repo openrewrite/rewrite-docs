@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | scope | Match dependencies with the specified scope Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 | `Boolean` | addMarkers | *Optional*. Report each license transitively used by a dependency in search results. |  |
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |scope|`runtime`|
 |addMarkers|`true`|
 

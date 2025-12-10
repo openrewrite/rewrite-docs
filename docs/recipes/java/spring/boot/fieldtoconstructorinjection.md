@@ -25,6 +25,69 @@ This recipe is used as part of the following composite recipes:
 
 * [Spring Boot 3.5 best practices](/recipes/java/spring/boot3/springboot3bestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+class MyService {
+    @Autowired
+    private MyRepository repository;
+}
+```
+
+###### After
+```java
+package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+class MyService {
+    private MyRepository repository;
+
+    public MyService() {
+    }
+
+    @Autowired
+    public MyService(MyRepository repository) {
+        this.repository = repository;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,0 @@
+
+class MyService {
+-   @Autowired
+    private MyRepository repository;
+@@ -8,0 +7,8 @@
+    @Autowired
+    private MyRepository repository;
++
++   public MyService() {
++   }
++
++   @Autowired
++   public MyService(MyRepository repository) {
++       this.repository = repository;
++   }
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

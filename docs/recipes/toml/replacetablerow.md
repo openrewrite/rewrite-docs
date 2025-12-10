@@ -13,8 +13,8 @@ _Replace a TOML table row with new content. If a row with the same identifying p
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/ReplaceTableRow.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/ReplaceTableRow.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | tableName | The name of the TOML array table to replace rows in (e.g., 'package.contributors'). | `package.contributors` |
 | `String` | row | The TOML key-value pairs to replace with. Should contain the objectIdentifyingProperty. | `name = "Alice Smith"\nemail = "alice@example.com"` |
 | `String` | identifyingKey | The property name used to match existing rows. When a row with this property value exists, it will be replaced; otherwise, a new row will not be inserted (see MergeTableRow). | `name` |

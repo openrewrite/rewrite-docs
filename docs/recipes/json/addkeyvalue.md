@@ -13,8 +13,8 @@ _Adds a `value` at the specified `keyPath` with the specified `key`, if the key 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/AddKeyValue.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/AddKeyValue.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | keyPath | A JsonPath expression to locate the *parent* JSON entry. | `'$.subjects.*' or '$.' or '$.x[1].y.*' etc.` |
 | `String` | key | The key to create. | `myKey` |
 | `String` | value | The value to add to the document at the specified key. Can be of any type representing JSON value. String values should be quoted to be inserted as Strings. | ``"myValue"` or `{"a": 1}` or `[ 123 ]`` |
@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |keyPath|`$.`|
 |key|`key`|
 |value|`"val"`|

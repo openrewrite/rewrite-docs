@@ -13,8 +13,8 @@ _This recipe replaces several static calls  in `com.sun.awt.AWTUtilities` with t
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceComSunAWTUtilitiesMethods.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceComSunAWTUtilitiesMethods.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | getAWTIsWindowsTranslucencyPattern | *Optional*. The method pattern to match and replace. | `com.sun.awt.AWTUtilities isTranslucencySupported(com.sun.awt.AWTUtilities.Translucency)` |
 | `String` | isWindowOpaquePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities isWindowOpaque(java.awt.Window)` |
 | `String` | isTranslucencyCapablePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities isTranslucencyCapable(java.awt.GraphicsConfiguration)` |
@@ -42,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |getAWTIsWindowsTranslucencyPattern|`com.test.AWTUtilitiesTest isTranslucencySupported1(com.test.AWTUtilitiesTest.Translucency)`|
 |isWindowOpaquePattern|`com.test.AWTUtilitiesTest isWindowOpaque(java.awt.Window)`|
 |isTranslucencyCapablePattern|`com.test.AWTUtilitiesTest isTranslucencyCapable(java.awt.GraphicsConfiguration)`|

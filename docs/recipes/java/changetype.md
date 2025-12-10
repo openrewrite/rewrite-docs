@@ -13,8 +13,8 @@ _Change a given type to another._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. | `org.junit.Assume` |
 | `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. | `org.junit.jupiter.api.Assumptions` |
 | `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |
@@ -41,6 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Change region related classes](/recipes/software/amazon/awssdk/v2migration/changeregiontypes.md)
 * [Changed types of camel AI nested headers classes](/recipes/org/apache/camel/upgrade/camel415/ainestedheadersclasses.md)
 * [Clean up various issues with the code.](/recipes/java/dropwizard/codecleanup.md)
+* [Different java type for ServerCertificateValidator in camel-milo](/recipes/org/apache/camel/upgrade/camel416/camelmilocertificate.md)
 * [Each camel-debezium module has its own subpackage corresponding to the database type](/recipes/org/apache/camel/upgrade/camel49/debeziumchangetypes.md)
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
@@ -52,6 +53,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
 * [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
+* [Migrate JRXlsExporter to JRXlsxExporter](/recipes/jasperreports/migratexlstoxlsxexporter.md)
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
@@ -68,6 +70,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
 * [Migrate TaskMetadata and ThreadMetadata](/recipes/kafka/streams/migratetaskandthreadmetadata.md)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](/recipes/kafka/migrateadminlistconsumergroups.md)
+* [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/spring/doc/apiinfobuildertoinfo.md)
 * [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoreclear.md)
@@ -86,6 +89,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from JetBrains annotations to JSpecify](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
 * [Migrate from Micrometer annotations to JSpecify](/recipes/java/jspecify/migratefrommicrometerannotations.md)
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
+* [Migrate from Micronaut Framework annotations to JSpecify](/recipes/java/jspecify/migratefrommicronautannotations.md)
 * [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
 * [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
@@ -100,19 +104,23 @@ This recipe is used as part of the following composite recipes:
 * [Migrate moved types between Camel 3.x and Camel 4.x](/recipes/org/apache/camel/upgrade/camel40/changetypes.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
-* [Migrate to Hibernate 6.6.x](/recipes/hibernate/migratetohibernate66.md)
-* [Migrate to Hibernate 7 JFR APIs](/recipes/hibernate/update70/migratetohibernate7jfr.md)
-* [Migrate to Hibernate 7.0.x](/recipes/hibernate/migratetohibernate70.md)
+* [Migrate to Hibernate 6.6.x (Moderne Edition)](/recipes/hibernate/migratetohibernate66-moderne-edition.md)
+* [Migrate to Hibernate 7 JFR APIs (Moderne Edition)](/recipes/hibernate/update70/migratetohibernate7jfr-moderne-edition.md)
+* [Migrate to Hibernate 7.0.x (Moderne Edition)](/recipes/hibernate/migratetohibernate70-moderne-edition.md)
+* [Migrate to JasperReports 5.6.x](/recipes/jasperreports/upgradetojasperreports5.md)
 * [Migrate to Kafka 2.5](/recipes/kafka/migratetokafka25.md)
 * [Migrate to Micrometer 1.13](/recipes/micrometer/upgrademicrometer_1_13.md)
 * [Migrate to Spring Batch 5.0 from 4.3](/recipes/java/spring/batch/springbatch4to5migration.md)
+* [Migrate to Spring Batch 6.0 from 5.2](/recipes/java/spring/batch/springbatch5to6migration.md)
 * [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
 * [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Migrate to Spring Data 2.3](/recipes/java/spring/data/upgradespringdata_2_3.md)
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
 * [Migrate to testcontainers-java 2.x](/recipes/java/testing/testcontainers/testcontainers2migration.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
@@ -122,11 +130,9 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `java.nio.charset.StandardCharsets`](/recipes/java/migrate/guava/preferjavaniocharsetstandardcharsets.md)
 * [Prefer `java.util.Optional`](/recipes/java/migrate/guava/preferjavautiloptional.md)
 * [Prefer `java.util.function.Function`](/recipes/java/migrate/guava/preferjavautilfunction.md)
-* [Prefer `java.util.function.Predicate`](/recipes/java/migrate/guava/preferjavautilpredicate.md)
 * [Prefer `java.util.function.Supplier`](/recipes/java/migrate/guava/preferjavautilsupplier.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
-* [Recommended Fit API becomes Assignment Recommendation API](/recipes/ai/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
-* [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](/recipes/hibernate/typedescriptortotype.md)
+* [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)](/recipes/hibernate/typedescriptortotype-community-edition.md)
 * [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/authenticationhttpclientconfigurer.md)
 * [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/furyjava.md)
 * [Renamed classes for API](/recipes/org/apache/camel/upgrade/camel47/renamedclasses.md)
@@ -136,7 +142,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
 * [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
 * [Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
-* [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot3/replacemockbeanandspybean.md)
+* [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
 * [Replace `@SpringBootApplication` with Quarkus equivalent](/recipes/quarkus/spring/replacespringbootapplication.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 * [Replace `ResourceResolver` with `ResourceHandler`](/recipes/com/oracle/weblogic/rewrite/jakarta/removedjakartafaces3resourceresolver.md)
@@ -146,13 +152,19 @@ This recipe is used as part of the following composite recipes:
 * [Replace any Lombok log annotations with target logging framework annotation](/recipes/java/logging/changelomboklogannotation.md)
 * [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](/recipes/org/apache/camel/upgrade/camel44/defaultjsonschemaloader.md)
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+* [Replace deprecated RequestMatcherProvider with new API](/recipes/java/spring/boot4/replacedeprecatedrequestmatcherprovider.md)
+* [Replace elements of SpringFox's security with Swagger's security models](/recipes/java/spring/doc/securitycontexttosecurityscheme.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
 * [Substitute removed Faces Managed Beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
 * [Tag Enum has been deprecated](/recipes/org/apache/camel/upgrade/camel41/tracingtag.md)
 * [Testcontainers 2 container classes](/recipes/java/testing/testcontainers/testcontainers2containerclasses.md)
 * [The package scan classes has moved from camel-base-engine to camel-support - java](/recipes/org/apache/camel/upgrade/camel412/scanclassesmoved.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
+* [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+* [Update Fastjson for Jakarta EE 10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
 * [Update Jackson 2.x types to 3.x](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
+* [Update JasperReports exporter configuration](/recipes/jasperreports/migrateexporterconfigtojasper6.md)
+* [Update Jetty EE9 to Jetty EE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update the Micronaut Security library](/recipes/java/micronaut/updatemicronautsecurity.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)

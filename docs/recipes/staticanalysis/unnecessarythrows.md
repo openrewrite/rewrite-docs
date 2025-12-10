@@ -9,7 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.UnnecessaryThrows**
 
-_Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` or `protected` and the exception is not documented via a JavaDoc as a `@throws` tag._
+Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:
+
+ - The declaring class or the method declaration is `final`.
+ - The method declaration is `static` or `private`.
+ - The method overrides a method declaration in a super class and the super class does not throw the exception.
+ - The method is `public` or `protected` and the exception is not documented via a JavaDoc as a `@throws` tag.
 
 ### Tags
 
@@ -17,8 +22,8 @@ _Remove unnecessary `throws` declarations. This recipe will only remove unused, 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnnecessaryThrows.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnnecessaryThrows.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

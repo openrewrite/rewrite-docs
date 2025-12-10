@@ -13,8 +13,8 @@ _Add an annotation processor to the maven compiler plugin. Will not do anything 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddAnnotationProcessor.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddAnnotationProcessor.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of the coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. | `org.projectlombok` |
 | `String` | artifactId | The second part of a coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. | `lombok-mapstruct-binding` |
 | `String` | version | The third part of a coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. Note that an exact version is expected | `0.2.0` |
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |groupId|`org.projectlombok`|
 |artifactId|`lombok-mapstruct-binding`|
 |version|`0.2.0`|

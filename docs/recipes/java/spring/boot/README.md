@@ -11,6 +11,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert field injection to constructor injection](./fieldtoconstructorinjection.md)
 * [Is likely a Spring Boot project](./islikelyspringboot.md)
 * [Is likely not a Spring Boot project](./islikelynotspringboot.md)
-* [Migrate Spring Framework Dependencies to Spring Boot](./migratespringframeworkdependenciestospringboot.md)
+* [Migrate Spring Framework dependencies to Spring Boot](./migratespringframeworkdependenciestospringboot.md)
 
 

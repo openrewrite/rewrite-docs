@@ -9,12 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.RemoveSystemOutPrintln**
 
-_Print statements are often left accidentally after debugging an issue._
+_Print statements are often left accidentally after debugging an issue. This recipe removes all `System.out#println` and `System.err#println` statements from the code._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveSystemOutPrintln.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveSystemOutPrintln.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -36,17 +36,32 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
+import java.io.PrintStream;
+
 class Test {
-    void test() {
+    void printOut() {
         System.out.println("Hello, world!");
+    }
+    void printErr() {
+        System.err.println("Hello, world!");
+    }
+    void printStream(PrintStream printStream) {
+        printStream.println("Hello, world!");
     }
 }
 ```
 
 ###### After
 ```java
+import java.io.PrintStream;
+
 class Test {
-    void test() {
+    void printOut() {
+    }
+    void printErr() {
+    }
+    void printStream(PrintStream printStream) {
+        printStream.println("Hello, world!");
     }
 }
 ```
@@ -55,10 +70,15 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,1 +3,0 @@
+@@ -5,1 +5,0 @@
 class Test {
-    void test() {
+    void printOut() {
 -       System.out.println("Hello, world!");
+    }
+@@ -8,1 +7,0 @@
+    }
+    void printErr() {
+-       System.err.println("Hello, world!");
     }
 ```
 </TabItem>

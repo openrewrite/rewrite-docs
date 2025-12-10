@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Spring Boot 3.5"
+sidebar_label: "Migrate to Spring Boot 3.5 (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Boot 3.5
+# Migrate to Spring Boot 3.5 (Community Edition)
 
 **org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_5**
 
@@ -18,8 +18,8 @@ _Migrate applications to the latest Spring Boot 3.5 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-35.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-35.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
@@ -33,9 +33,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Boot 3.4](../../../java/spring/boot3/upgradespringboot_3_4-community-edition)
+* [Migrate to Spring Boot 3.4 (Community Edition)](../../../java/spring/boot3/upgradespringboot_3_4-community-edition)
 * [Migrate Spring Boot properties to 3.5](../../../java/spring/boot3/springbootproperties_3_5)
 * [Migrate to Spring Cloud 2025](../../../java/spring/cloud2025/upgradespringcloud_2025)
+* [Update Prometheus Pushgateway Dependency Coordinates](../../../java/spring/boot3/updateprometheuspushgateway)
 * [Migrate to Spring Security 6.5](../../../java/spring/security6/upgradespringsecurity_6_5)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
@@ -67,7 +68,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5
-displayName: Migrate to Spring Boot 3.5
+displayName: Migrate to Spring Boot 3.5 (Community Edition)
 description: |
   Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
 tags:
@@ -77,6 +78,7 @@ recipeList:
   - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_5
   - org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025
+  - org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
@@ -108,7 +110,8 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.5](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
+* [Migrate to Spring Boot 3.5 (Moderne Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
+* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
 ## Examples
 ##### Example 1

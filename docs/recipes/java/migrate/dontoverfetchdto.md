@@ -13,8 +13,8 @@ _Replace method parameters that have DTOs with their data elements when only the
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/DontOverfetchDto.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/DontOverfetchDto.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | dtoType | The fully qualified name of the DTO. | `animals.Dog` |
 | `String` | dtoDataElement | Replace the DTO as a method parameter when only this data element is used. | `name` |
 
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |dtoType|`animals.Dog`|
 |dtoDataElement|`name`|
 

@@ -13,8 +13,8 @@ _Update Struts DTD to reflect the specified version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | strutsVersion | The Struts version to migrate to. Valid options: `2.3`, `2.5`, `6.0` | `6.0` |
 
 
@@ -36,7 +36,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |strutsVersion|`6.0`|
 
 

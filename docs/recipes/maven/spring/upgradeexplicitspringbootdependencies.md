@@ -13,8 +13,8 @@ _Upgrades dependencies according to the specified version of spring boot. Spring
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,15 +22,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
-| `String` | fromVersion | XRage pattern for spring version used to limit which projects should be updated | ` 2.7.+` |
+| --- | --- | --- | --- |
+| `String` | fromVersion | XRange pattern for spring version used to limit which projects should be updated | ` 2.7.+` |
 | `String` | toVersion | Upgrade version of `org.springframework.boot` | `3.0.0-M3` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |fromVersion|`2.7.X`|
 |toVersion|`3.0.0`|
 

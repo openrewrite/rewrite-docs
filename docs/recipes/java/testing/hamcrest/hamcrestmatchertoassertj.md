@@ -13,8 +13,8 @@ _Migrate from Hamcrest `Matcher` to AssertJ assertions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestMatcherToAssertJ.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestMatcherToAssertJ.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | matcher | *Optional*. The Hamcrest `Matcher` to migrate to JUnit5. | `equalTo` |
 | `String` | assertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
 | `String` | argumentType | *Optional*. The type of the argument to the Hamcrest `Matcher`. | `java.math.BigDecimal` |
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |matcher|`equalTo`|
 |assertion|`isEqualTo`|
 |argumentType|`null`|

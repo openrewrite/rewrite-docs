@@ -17,8 +17,8 @@ _Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writ
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-2-3.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-2-3.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
 :::info
@@ -32,39 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeObject(..)`
-  * newMethodName: `writePOJO`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator getCurrentValue()`
-  * newMethodName: `currentValue`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator setCurrentValue(..)`
-  * newMethodName: `assignCurrentValue`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonParser getTextCharacters()`
-  * newMethodName: `getStringCharacters`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonParser getCurrentLocation()`
-  * newMethodName: `currentLocation`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonParser getTokenLocation()`
-  * newMethodName: `currentTokenLocation`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonParser getCurrentValue()`
-  * newMethodName: `currentValue`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.core.JsonParser setCurrentValue(..)`
-  * newMethodName: `assignCurrentValue`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.databind.JsonNode elements()`
-  * newMethodName: `values`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.databind.JsonNode isContainerNode()`
-  * newMethodName: `isContainer`
-* [Change method name](../../java/changemethodname)
-  * methodPattern: `com.fasterxml.jackson.databind.JsonNode fields()`
-  * newMethodName: `entries`
+* [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](../../java/jackson/upgradejackson_2_3_jsongeneratormethodrenames)
+* [Rename Jackson 2.x methods to 3.x equivalents for JsonParser](../../java/jackson/upgradejackson_2_3_jsonparsermethodrenames)
+* [Rename Jackson 2.x methods to 3.x equivalents for JsonNode](../../java/jackson/upgradejackson_2_3_jsonnodemethodrenames)
 
 </TabItem>
 
@@ -80,39 +50,9 @@ description: |
 tags:
   - jackson-3
 recipeList:
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonGenerator writeObject(..)
-      newMethodName: writePOJO
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonGenerator getCurrentValue()
-      newMethodName: currentValue
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonGenerator setCurrentValue(..)
-      newMethodName: assignCurrentValue
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonParser getTextCharacters()
-      newMethodName: getStringCharacters
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonParser getCurrentLocation()
-      newMethodName: currentLocation
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonParser getTokenLocation()
-      newMethodName: currentTokenLocation
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonParser getCurrentValue()
-      newMethodName: currentValue
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.core.JsonParser setCurrentValue(..)
-      newMethodName: assignCurrentValue
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.databind.JsonNode elements()
-      newMethodName: values
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.databind.JsonNode isContainerNode()
-      newMethodName: isContainer
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.fasterxml.jackson.databind.JsonNode fields()
-      newMethodName: entries
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames
 
 ```
 </TabItem>

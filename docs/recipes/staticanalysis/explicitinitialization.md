@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.ExplicitInitialization**
 
-_Checks if any class or object member is explicitly initialized to default for its type value:  - `null` for object references  - zero for numeric types and `char`  - and `false` for `boolean` Removes explicit initializations where they aren't necessary._
+Checks if any class or object member is explicitly initialized to default for its type value:
+ - `null` for object references
+ - zero for numeric types and `char`
+ - and `false` for `boolean`
+Removes explicit initializations where they aren't necessary.
 
 ### Tags
 
@@ -17,8 +21,8 @@ _Checks if any class or object member is explicitly initialized to default for i
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ExplicitInitialization.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ExplicitInitialization.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).

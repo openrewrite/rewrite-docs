@@ -21,14 +21,14 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | source | *Optional*. The source of the required provider, e.g. `hashicorp/aws`. | `hashicorp/aws` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |source|`null`|
 
 

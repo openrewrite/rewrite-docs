@@ -13,8 +13,8 @@ _Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.common
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -38,10 +38,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.apache.commons`
   * oldArtifactId: `commons-fileupload2-jakarta`
   * newArtifactId: `commons-fileupload2-jakarta-servlet5`
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `org.apache.commons`
-  * artifactId: `*`
-  * newVersion: `2.0.0-M4`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.commons.fileload.disk`
   * newPackageName: `org.apache.commons.fileload2.core`
@@ -77,10 +73,6 @@ recipeList:
       oldGroupId: org.apache.commons
       oldArtifactId: commons-fileupload2-jakarta
       newArtifactId: commons-fileupload2-jakarta-servlet5
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.apache.commons
-      artifactId: "*"
-      newVersion: 2.0.0-M4
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.commons.fileload.disk
       newPackageName: org.apache.commons.fileload2.core

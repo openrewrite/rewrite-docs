@@ -13,8 +13,8 @@ _Checks if the project is a Jenkins plugin by the presence of a managed version 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,14 +22,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | version | The value of the `<jenkins.version>` property. | `[1,)` |
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |version|`*`|
 
 
@@ -48,6 +48,10 @@ This recipe is available under the [Moderne Source Available License](https://do
     <artifactId>my-plugin</artifactId>
     <version>0.1</version>
     <repositories>
+          <repository>
+              <id>maven-central</id>
+              <url>https://repo1.maven.org/maven2/</url>
+          </repository>
         <repository>
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>
@@ -67,6 +71,10 @@ This recipe is available under the [Moderne Source Available License](https://do
     <artifactId>my-plugin</artifactId>
     <version>0.1</version>
     <repositories>
+          <repository>
+              <id>maven-central</id>
+              <url>https://repo1.maven.org/maven2/</url>
+          </repository>
         <repository>
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>

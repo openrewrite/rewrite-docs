@@ -13,8 +13,8 @@ _A precondition which returns false if visiting a Gradle file / Maven pom which 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/DoesNotIncludeDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/DoesNotIncludeDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,9 +22,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `com.google.guava` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `guava` |
+| `String` | version | *Optional*. Match only dependencies with the specified resolved version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
 | `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. | `true` |
 | `String` | scope | *Optional*. Default any. If specified, only the requested scope's classpaths will be checked. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 | `String` | configuration | *Optional*. Match dependencies with the specified configuration. If not specified, all configurations will be searched. | `compileClasspath` |
@@ -33,9 +34,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |groupId|`org.springframework`|
 |artifactId|`spring-beans`|
+|version|`null`|
 |onlyDirect|`false`|
 |scope|`compile`|
 |configuration|`compileClasspath`|
@@ -151,6 +153,7 @@ recipeList:
   - org.openrewrite.java.dependencies.search.DoesNotIncludeDependency:
       groupId: com.google.guava
       artifactId: guava
+      version: 1.x
       onlyDirect: true
       scope: compile
       configuration: compileClasspath
@@ -219,7 +222,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DoesNotIncludeDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "onlyDirect=true" --recipe-option "scope=compile" --recipe-option "configuration=compileClasspath"
+mod run . --recipe DoesNotIncludeDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=1.x" --recipe-option "onlyDirect=true" --recipe-option "scope=compile" --recipe-option "configuration=compileClasspath"
 ```
 
 If the recipe is not available locally, then you can install it using:

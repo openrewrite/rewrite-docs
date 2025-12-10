@@ -19,8 +19,8 @@ _This recipe will update the `xmlns` entries in `weblogic-wsee-standaloneclient.
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

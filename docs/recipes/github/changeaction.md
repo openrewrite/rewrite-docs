@@ -9,12 +9,12 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.github.ChangeAction**
 
-_Change a GitHub Action in any `.github/workflows/*.yml` file._
+_Change a GitHub Action in any workflow._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeAction.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeAction.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldAction | Name of the action to match. | `gradle/wrapper-validation-action` |
 | `String` | newAction | Name of the action to use instead. | `gradle/actions/wrapper-validation` |
 | `String` | newVersion | New version to use. | `v3` |
@@ -40,7 +40,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |oldAction|`gradle/wrapper-validation-action`|
 |newAction|`gradle/actions/wrapper-validation`|
 |newVersion|`v3`|

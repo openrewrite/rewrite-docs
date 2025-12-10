@@ -13,8 +13,8 @@ _Removes XML tags matching the provided expression._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | xPath | An XPath expression used to find matching tags. | `/project/dependencies/dependency` |
 | `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. | `'**/application-*.xml'` |
 
@@ -33,6 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
 * [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Remove withJansi Logback configuration](/recipes/java/micronaut/removewithjansilogbackconfiguration.md)
 * [Update Default Servlet Handler for Spring Framework if empty](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
@@ -41,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |xPath|`//bean`|
 |fileMatcher|`**/beans.xml`|
 

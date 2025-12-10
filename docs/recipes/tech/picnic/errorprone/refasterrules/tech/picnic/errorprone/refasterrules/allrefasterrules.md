@@ -13,8 +13,8 @@ _Collection of all Refaster rules from Picnic's error-prone-contrib project._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.tech.picnic.errorprone.refasterrules.AllRefasterRules), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.tech.picnic.errorprone.refasterrules.AllRefasterRules),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -59,7 +59,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [`ImmutableSortedSetRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes)
 * [`ImmutableTableRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes)
 * [`IntStreamRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes)
-* [`JacksonRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/jacksonrulesrecipes)
 * [`LongStreamRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes)
 * [`MapEntryRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/mapentryrulesrecipes)
 * [`MapRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/maprulesrecipes)
@@ -73,6 +72,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [`PrimitiveRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes)
 * [`RandomGeneratorRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes)
 * [`RxJava2AdapterRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes)
+* [`SpringTestRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/springtestrulesrecipes)
 * [`StreamRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes)
 * [`StringRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes)
 * [`SuggestedFixRules` Refaster recipes](../../../../../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes)
@@ -122,7 +122,6 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes
   - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes
-  - tech.picnic.errorprone.refasterrules.JacksonRulesRecipes
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes
   - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes
@@ -136,6 +135,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes
   - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes
+  - tech.picnic.errorprone.refasterrules.SpringTestRulesRecipes
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes

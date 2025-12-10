@@ -1,20 +1,20 @@
 ---
-sidebar_label: "Exclude JUnit 4, unless Spring Boot Testcontainers is used"
+sidebar_label: "Exclude JUnit 4, unless Testcontainers is used"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Exclude JUnit 4, unless Spring Boot Testcontainers is used
+# Exclude JUnit 4, unless Testcontainers is used
 
 **org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers**
 
-_Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers 1.x is used._
+_Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 :::info
@@ -28,7 +28,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 * [Exclude Maven dependency](../../../maven/excludedependency)
   * groupId: `junit`
   * artifactId: `junit`
@@ -41,11 +40,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers
-displayName: Exclude JUnit 4, unless Spring Boot Testcontainers is used
+displayName: Exclude JUnit 4, unless Testcontainers is used
 description: |
-  Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers 1.x is used.
+  Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used.
 recipeList:
-  - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
   - org.openrewrite.maven.ExcludeDependency:
       groupId: junit
       artifactId: junit

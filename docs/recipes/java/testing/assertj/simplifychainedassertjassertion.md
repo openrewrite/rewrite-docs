@@ -17,8 +17,8 @@ _Many AssertJ chained assertions have dedicated assertions that function the sam
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/SimplifyChainedAssertJAssertion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/SimplifyChainedAssertJAssertion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | chainedAssertion | *Optional*. The chained AssertJ assertion to move to dedicated assertion. | `equals` |
 | `String` | assertToReplace | *Optional*. The AssertJ assert that should be replaced. | `isTrue` |
 | `String` | dedicatedAssertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
@@ -43,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |chainedAssertion|`isEmpty`|
 |assertToReplace|`isTrue`|
 |dedicatedAssertion|`isEmpty`|

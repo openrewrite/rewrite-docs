@@ -13,8 +13,8 @@ _Refaster rules related to `com.google.errorprone.bugpatterns.BugChecker` classe
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperIdentity`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperidentityrecipe)
 * [Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$bugcheckerrefactoringtesthelperaddinputlinesexpectunchangedrecipe)
 * [Refaster template `BugCheckerRules.NameContentEquals`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$namecontentequalsrecipe)
+* [Refaster template `BugCheckerRules.ASTHelpersGetStartPosition`](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes$asthelpersgetstartpositionrecipe)
 
 </TabItem>
 
@@ -47,6 +48,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperAddInputLinesExpectUnchangedRecipe
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$NameContentEqualsRecipe
+  - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ASTHelpersGetStartPositionRecipe
 
 ```
 </TabItem>

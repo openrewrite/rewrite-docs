@@ -64,8 +64,10 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'authoring-recipes/recipe-development-environment',
+        'authoring-recipes/javascript-recipe-development-environment',
         'authoring-recipes/types-of-recipes',
         'authoring-recipes/writing-a-java-refactoring-recipe',
+        'authoring-recipes/writing-a-javascript-refactoring-recipe',
         'authoring-recipes/refaster-recipes',
         'authoring-recipes/recipe-testing',
         'authoring-recipes/recipe-conventions-and-best-practices',
@@ -186,6 +188,9 @@ const sidebars: SidebarsConfig = {
         keywords: ['changelog'],
       },
       items: [
+        'changelog/8-68-1-Release',
+        'changelog/8-67-0-Release',
+        'changelog/8-66-1-Release',
         'changelog/8-64-0-Release',
         'changelog/8-63-0-Release',
         'changelog/8-62-4-Release',

@@ -13,8 +13,8 @@ _Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackso
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -136,9 +136,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.jakarta.rs.json.JacksonXmlBindJsonProvider`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `com.fasterxml.jackson.jaxrs.json`
+  * newPackageName: `com.fasterxml.jackson.jakarta.rs.json`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationIntrospector`
 
 </TabItem>
 
@@ -260,9 +266,15 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider
       newFullyQualifiedTypeName: com.fasterxml.jackson.jakarta.rs.json.JacksonXmlBindJsonProvider
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.fasterxml.jackson.jaxrs.json
+      newPackageName: com.fasterxml.jackson.jakarta.rs.json
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule
       newFullyQualifiedTypeName: com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector
+      newFullyQualifiedTypeName: com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationIntrospector
 
 ```
 </TabItem>

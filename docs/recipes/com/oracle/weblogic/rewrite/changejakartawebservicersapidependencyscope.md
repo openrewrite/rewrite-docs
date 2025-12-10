@@ -17,8 +17,8 @@ _This recipe will change the jakarta.ws.rs-api dependency scope to provided when
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.ChangeJakartaWebServiceRSAPIDependencyScope), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.ChangeJakartaWebServiceRSAPIDependencyScope),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

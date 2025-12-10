@@ -18,8 +18,8 @@ _Migrate from Swagger to OpenAPI._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 
 :::info
@@ -97,6 +97,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
+* [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 
 ## Examples
 ##### Example 1

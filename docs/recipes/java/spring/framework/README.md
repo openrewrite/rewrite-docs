@@ -18,10 +18,12 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Framework 6.0](./upgradespringframework_6_0.md)
 * [Migrate to Spring Framework 6.1](./upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)
+* [Migrate to Spring Framework 7.0](./upgradespringframework_7_0.md)
 
 ## Recipes
 
 * [`@Bean` methods may not return `void`](./beanmethodreturnnull.md)
+* [Add `@Nullable` to optional Spring web parameters](./nullablespringwebparameters.md)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](./migrateinstantiationawarebeanpostprocessoradapter.md)
 * [Is likely a Spring Framework project](./islikelyspringframework.md)
 * [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](./migratehandlerinterceptor.md)

@@ -14,7 +14,12 @@ Recipe created for the following Refaster template:
 static final class AssertThatIsPositive {
     
     @BeforeTemplate
-    AbstractDurationAssert<?> before(Duration duration) {
+    AbstractBooleanAssert<?> before(Duration duration) {
+        return assertThat(duration.isPositive()).isTrue();
+    }
+    
+    @BeforeTemplate
+    AbstractDurationAssert<?> before2(Duration duration) {
         return assertThat(duration).isGreaterThan(Duration.ZERO);
     }
     
@@ -28,8 +33,8 @@ static final class AssertThatIsPositive {
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsPositiveRecipe), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsPositiveRecipe),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

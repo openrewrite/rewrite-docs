@@ -18,8 +18,8 @@ _Prefer `java.util.function.Predicate` instead of using `com.google.common.base.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -36,19 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `com.google.common.base.Predicates not(com.google.common.base.Predicate)`
   * fullyQualifiedTargetTypeName: `java.util.function.Predicate`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `com.google.common.base.Predicates equalTo(..)`
-  * newMethodName: `isEqual`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `com.google.common.base.Predicates isEqual(..)`
-  * fullyQualifiedTargetTypeName: `java.util.function.Predicate`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `com.google.common.base.Predicate apply(..)`
-  * newMethodName: `test`
-  * matchOverrides: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.google.common.base.Predicate`
-  * newFullyQualifiedTypeName: `java.util.function.Predicate`
+* [Change Guava's `Predicate` into `java.util.function.Predicate` where possible](../../../java/migrate/guava/noguavapredicate)
 
 </TabItem>
 
@@ -68,19 +56,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: com.google.common.base.Predicates not(com.google.common.base.Predicate)
       fullyQualifiedTargetTypeName: java.util.function.Predicate
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.google.common.base.Predicates equalTo(..)
-      newMethodName: isEqual
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: com.google.common.base.Predicates isEqual(..)
-      fullyQualifiedTargetTypeName: java.util.function.Predicate
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.google.common.base.Predicate apply(..)
-      newMethodName: test
-      matchOverrides: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.google.common.base.Predicate
-      newFullyQualifiedTypeName: java.util.function.Predicate
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicate
 
 ```
 </TabItem>

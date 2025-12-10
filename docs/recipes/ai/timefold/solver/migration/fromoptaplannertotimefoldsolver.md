@@ -13,8 +13,8 @@ _Replaces your method/field calls, GAVs, etc. To replace deprecated methods too,
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.FromOptaPlannerToTimefoldSolver), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.FromOptaPlannerToTimefoldSolver),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
@@ -102,7 +102,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * attributeName: `name`
   * newValue: `ai.timefold.solver`
   * oldValue: `org.optaplanner`
-* [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](../../../../ai/timefold/solver/migration/fork/timefoldchangedependencies)
 * [Rename Maven property key](../../../../maven/renamepropertykey)
   * oldKey: `version.org.optaplanner`
   * newKey: `version.ai.timefold.solver`
@@ -214,7 +213,6 @@ recipeList:
       attributeName: name
       newValue: ai.timefold.solver
       oldValue: org.optaplanner
-  - ai.timefold.solver.migration.fork.TimefoldChangeDependencies
   - org.openrewrite.maven.RenamePropertyKey:
       oldKey: version.org.optaplanner
       newKey: version.ai.timefold.solver

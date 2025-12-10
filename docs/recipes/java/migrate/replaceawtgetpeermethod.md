@@ -13,8 +13,8 @@ _This recipe replaces the use of `getPeer()` method in `java.awt.*` classes. `co
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceAWTGetPeerMethod.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceAWTGetPeerMethod.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | getPeerMethodPattern | *Optional*. The method pattern to match and replace. | `java.awt.* getPeer()` |
 | `String` | lightweightPeerFQCN | *Optional*. The fully qualified class name of the LightweightPeer interface to replace in `instanceof`. | `java.awt.peer.LightweightPeer` |
 
@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |getPeerMethodPattern|`com.test.Component1 getPeer()`|
 |lightweightPeerFQCN|`com.test.TestDummy`|
 

@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Boolean` | randomSampling | Do random sampling or use clusters based on embeddings to sample. |  |
 | `int` | numberOfCenters | *Optional*. Number of diverse centers to sample if you don't do random sampling per repository. | `3` |
 

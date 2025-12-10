@@ -13,8 +13,8 @@ _Change the log level of SLF4J log statements._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `Level` | from | The log level to change from. | `INFO` |
 | `Level` | to | The log level to change to. | `DEBUG` |
 | `String` | startsWith | *Optional*. Only change log statements that start with this string. When omitted all log statements of the specified level are changed. | `LaunchDarkly` |
@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |from|`ChangeLogLevel.Level.INFO`|
 |to|`ChangeLogLevel.Level.DEBUG`|
 |startsWith|`LaunchDarkly`|

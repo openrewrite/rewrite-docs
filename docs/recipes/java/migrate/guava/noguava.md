@@ -17,8 +17,8 @@ _Guava filled in important gaps in the Java standard library and still does. But
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -32,19 +32,28 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Inline `guava` methods annotated with `@InlineMe`](../../../com/google/guava/inlineguavamethods)
 * [Prefer the Java 11 standard library instead of Guava](../../../java/migrate/guava/noguavajava11)
 * [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
-* [Inline methods annotated with `@InlineMe`](../../../java/migrate/guava/noguavainlinememethods)
+* [Prefer `Function.compose(Function)`](../../../java/migrate/guava/noguavafunctionscompose)
+* [Prefer `Collection.stream().allMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesall)
+* [Prefer `Collection.stream().anyMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesanyfilter)
+* [Prefer `Collection.stream().map(Function)` over `Iterables.transform`](../../../java/migrate/guava/noguavaiterablestransform)
+* [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](../../../java/migrate/guava/noguavacollections2transform)
 * [Prefer `new ArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewarraylist)
 * [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
 * [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
+* [Prefer `new LinkedHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewlinkedhashmap)
 * [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewtreemap)
 * [Prefer `Predicate.and(Predicate)`](../../../java/migrate/guava/noguavapredicatesandor)
+* [Prefer `Predicate.isEqual(Object)`](../../../java/migrate/guava/noguavapredicatesequalto)
+* [Prefer `A.class::isInstance`](../../../java/migrate/guava/noguavapredicatesinstanceof)
 * [Prefer `Arrays.asList(..)` over Guava primitives](../../../java/migrate/guava/noguavaprimitiveaslist)
 * [Refaster style Guava to Java migration recipes](../../../java/migrate/guava/noguavarefasterrecipes)
 * [Prefer `new HashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewhashmap)
+* [Prefer `Collection.stream().filter(Predicate)`](../../../java/migrate/guava/noguavasetsfilter)
 * [Prefer `new HashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewhashset)
 * [Prefer `new ConcurrentHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset)
 * [Prefer `new LinkedHashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset)
@@ -89,19 +98,28 @@ description: |
 tags:
   - guava
 recipeList:
+  - com.google.guava.InlineGuavaMethods
   - org.openrewrite.java.migrate.guava.NoGuavaJava11
   - org.openrewrite.java.migrate.guava.NoGuavaJava21
   - org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir
   - org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor
-  - org.openrewrite.java.migrate.guava.NoGuavaInlineMeMethods
+  - org.openrewrite.java.migrate.guava.NoGuavaFunctionsCompose
+  - org.openrewrite.java.migrate.guava.NoGuavaIterablesAll
+  - org.openrewrite.java.migrate.guava.NoGuavaIterablesAnyFilter
+  - org.openrewrite.java.migrate.guava.NoGuavaIterablesTransform
+  - org.openrewrite.java.migrate.guava.NoGuavaCollections2Transform
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewLinkedList
+  - org.openrewrite.java.migrate.guava.NoGuavaMapsNewLinkedHashMap
   - org.openrewrite.java.migrate.guava.NoGuavaMapsNewTreeMap
   - org.openrewrite.java.migrate.guava.NoGuavaPredicatesAndOr
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf
   - org.openrewrite.java.migrate.guava.NoGuavaPrimitiveAsList
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes
   - org.openrewrite.java.migrate.guava.NoGuavaMapsNewHashMap
+  - org.openrewrite.java.migrate.guava.NoGuavaSetsFilter
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet
@@ -185,6 +203,121 @@ class Test {
 ---
 
 ##### Example 2
+`NoGuavaPredicatesEqualToTest#predicatesEqualToToPredicateIsEqual`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicates.equalTo("hello");
+    }
+}
+```
+
+###### After
+```java
+import java.util.function.Predicate;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicate.<String>isEqual("hello");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import com.google.common.base.Predicate;
+-import com.google.common.base.Predicates;
++import java.util.function.Predicate;
+
+@@ -6,1 +5,1 @@
+class A {
+    public static Predicate<String> isHelloPredicate() {
+-       return Predicates.equalTo("hello");
++       return Predicate.<String>isEqual("hello");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+`NoGuavaSetsFilterTest#replaceSetsFilter`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Set;
+
+import com.google.common.base.Predicate;
+import com.google.common.collect.Sets;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return Sets.filter(set, isNotNull);
+    }
+}
+```
+
+###### After
+```java
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,2 @@
+import java.util.Set;
++import java.util.function.Predicate;
++import java.util.stream.Collectors;
+
+@@ -3,3 +5,0 @@
+import java.util.Set;
+
+-import com.google.common.base.Predicate;
+-import com.google.common.collect.Sets;
+-
+class Test {
+@@ -8,1 +7,1 @@
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+-       return Sets.filter(set, isNotNull);
++       return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
 `NoGuavaTest#moreObjectsFirstNonNullToObjectsRequireNonNullElse`
 
 
@@ -234,7 +367,7 @@ class A {
 
 ---
 
-##### Example 3
+##### Example 5
 `PreferJavaUtilOptionalTest#absentToEmpty`
 
 
@@ -284,7 +417,7 @@ class A {
 
 ---
 
-##### Example 4
+##### Example 6
 `NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 
@@ -342,7 +475,7 @@ class A {
 
 ---
 
-##### Example 5
+##### Example 7
 `NoGuavaJava21Test#preferMathClampForDouble`
 
 
@@ -390,7 +523,122 @@ class Test {
 
 ---
 
-##### Example 6
+##### Example 8
+`NoGuavaPredicatesEqualToTest#predicatesEqualToToPredicateIsEqual`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicates.equalTo("hello");
+    }
+}
+```
+
+###### After
+```java
+import java.util.function.Predicate;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicate.<String>isEqual("hello");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import com.google.common.base.Predicate;
+-import com.google.common.base.Predicates;
++import java.util.function.Predicate;
+
+@@ -6,1 +5,1 @@
+class A {
+    public static Predicate<String> isHelloPredicate() {
+-       return Predicates.equalTo("hello");
++       return Predicate.<String>isEqual("hello");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 9
+`NoGuavaSetsFilterTest#replaceSetsFilter`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Set;
+
+import com.google.common.base.Predicate;
+import com.google.common.collect.Sets;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return Sets.filter(set, isNotNull);
+    }
+}
+```
+
+###### After
+```java
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,2 @@
+import java.util.Set;
++import java.util.function.Predicate;
++import java.util.stream.Collectors;
+
+@@ -3,3 +5,0 @@
+import java.util.Set;
+
+-import com.google.common.base.Predicate;
+-import com.google.common.collect.Sets;
+-
+class Test {
+@@ -8,1 +7,1 @@
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+-       return Sets.filter(set, isNotNull);
++       return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 10
 `NoGuavaTest#moreObjectsFirstNonNullToObjectsRequireNonNullElse`
 
 
@@ -440,7 +688,7 @@ class A {
 
 ---
 
-##### Example 7
+##### Example 11
 `PreferJavaUtilOptionalTest#absentToEmpty`
 
 
@@ -490,7 +738,7 @@ class A {
 
 ---
 
-##### Example 8
+##### Example 12
 `NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 

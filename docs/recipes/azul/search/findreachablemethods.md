@@ -21,7 +21,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `URL` | azulUrl | 'Azul Intelligence Cloud endpoint. | `https://YOUR_ENDPOINT.azul.com` |
 | `String` | azulApiKey | API key used to make REST requests to Azul Intelligence Cloud. | `your-api-key` |
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |azulUrl|`URI.create(requireNonNull(properties.getProperty("azul.url"))).toURL()`|
 |azulApiKey|`requireNonNull(properties.getProperty("azul.key"))`|
 

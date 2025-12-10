@@ -7,7 +7,7 @@ _Best practices for JUnit Jupiter tests._
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Clean Up Assertions](./cleanupassertions.md)
-* [Exclude JUnit 4, unless Spring Boot Testcontainers is used](./excludejunit4unlessusingtestcontainers.md)
+* [Exclude JUnit 4, unless Testcontainers is used](./excludejunit4unlessusingtestcontainers.md)
 * [JUnit 5 best practices](./junit5bestpractices.md)
 * [JUnit Jupiter migration from JUnit 4.x](./junit4to5migration.md)
 * [Upgrade Surefire Plugin](./upgradesurefireplugin.md)

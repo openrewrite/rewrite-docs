@@ -13,8 +13,8 @@ _Alters the value of XML tags matching the provided expression. When regex is en
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagValue.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagValue.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
@@ -22,7 +22,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | elementName | The name of the element whose value is to be changed. Interpreted as an XPath Expression. | `/settings/servers/server/username` |
 | `String` | oldValue | *Optional*. The old value of the tag. Interpreted as pattern if regex is enabled. | `user` |
 | `String` | newValue | The new value for the tag. Supports capture groups when regex is enabled. If literal $,\ characters are needed in newValue, with regex true, then it should be escaped. | `user` |
@@ -36,6 +36,7 @@ This recipe is used as part of the following composite recipes:
 * [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](/recipes/com/oracle/weblogic/rewrite/jakarta/facesjndinameschanged3.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Removed OpenJPA providers in the persistence.xml file](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
 * [Replace deprecated lifecycle phases](/recipes/maven/replacedeprecatedlifecyclephases.md)
 * [Upgrade to Maven model version 4.1.0](/recipes/maven/upgradetomodelversion410.md)
@@ -44,7 +45,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Parameters
 | Parameter | Value |
-| -- | -- |
+| --- | --- |
 |elementName|`/dependency/version`|
 |oldValue|`null`|
 |newValue|`2.0`|

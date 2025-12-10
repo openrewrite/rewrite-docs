@@ -27,7 +27,6 @@
   --ifm-code-font-size: 95%;
   --ifm-color-base: rgba(4, 24, 52);
   --ifm-color-content: var(--ifm-color-base);
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-color-announcement-bar-bg: var(--ifm-color-mint);
   --ifm-color-announcement-bar-text: #041834;
   --ifm-navbar-background-color: var(--ifm-background-color);
@@ -77,7 +76,6 @@ html[data-theme='dark'] {
   --ifm-color-primary-light: #97aedb;
   --ifm-color-primary-lighter: #a3b8df;
   --ifm-color-primary-lightest: #c9d5ec;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-color-base: #fff;
   --ifm-heading-color: #fff;
   --ifm-menu-color: #fff;
@@ -415,4 +413,26 @@ html[data-theme='dark'] .footer .footer__bottom::before {
 
 h1, .markdown h2, .markdown h3, .markdown h4 {
   font-weight: bold;
+}
+
+/* Colorblind-friendly code highlighting */
+:root {
+  /* Light theme highlight colors - colorblind accessible */
+  --docusaurus-highlighted-code-line-bg: rgba(217, 119, 6, 0.15); /* Darker amber background */
+  --docusaurus-highlighted-code-line-border: #d97706; /* Darker amber border */
+}
+
+html[data-theme='dark'] {
+  /* Dark theme highlight colors - colorblind accessible */
+  --docusaurus-highlighted-code-line-bg: rgba(251, 191, 36, 0.2); /* Warm amber background */
+  --docusaurus-highlighted-code-line-border: #fbbf24; /* Lighter amber border */
+}
+
+/* Docusaurus highlight styles */
+.theme-code-block-highlighted-line {
+  background-color: var(--docusaurus-highlighted-code-line-bg);
+  border-left: 3px solid var(--docusaurus-highlighted-code-line-border);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 calc(var(--ifm-pre-padding) - 3px) 0 var(--ifm-pre-padding);
 }

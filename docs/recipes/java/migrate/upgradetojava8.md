@@ -17,8 +17,8 @@ _This recipe will apply changes commonly needed when upgrading to Java 8. This r
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-8.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-8.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
@@ -33,6 +33,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Java 7](../../java/migrate/upgradetojava7)
+* [Upgrade Java version](../../java/migrate/upgradejavaversion)
+  * version: `8`
 * [MBean and MXBean interfaces must be public](../../java/migrate/mxbeanrule)
 * [Migrate Bouncy Castle to `jdk18on`](../../java/migrate/bouncecastlefromjdk15ontojdk18on)
 * [Remove method invocations](../../java/removemethodinvocations)
@@ -53,6 +55,8 @@ tags:
   - java8
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava7
+  - org.openrewrite.java.migrate.UpgradeJavaVersion:
+      version: 8
   - org.openrewrite.java.migrate.MXBeanRule
   - org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On
   - org.openrewrite.java.RemoveMethodInvocations:

@@ -6,10 +6,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'claude-skill/**'
-      - 'docs/**'
-      - 'src/**'
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -21,7 +17,7 @@ jobs:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4

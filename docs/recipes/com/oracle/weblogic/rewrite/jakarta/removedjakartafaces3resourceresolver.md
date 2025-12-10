@@ -13,8 +13,8 @@ _The `ResourceResolver` class was removed in Jakarta Faces 3.0.  The functionali
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.RemovedJakartaFaces3ResourceResolver), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.RemovedJakartaFaces3ResourceResolver),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info

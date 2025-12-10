@@ -13,8 +13,8 @@ _Ensures there's only one `@DocumentExample` annotated `@Test` method per test c
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/SingleDocumentExample.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/SingleDocumentExample.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
