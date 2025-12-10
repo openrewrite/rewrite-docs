@@ -1,3 +1,7 @@
+---
+description: What's changed in OpenRewrite version 8.1.12.
+---
+
 # 8.1.12 release (2023-07-24)
 
 ## New Recipes

@@ -1,3 +1,7 @@
+---
+description: What's changed in OpenRewrite version 8.9.6.
+---
+
 # 8.9.6 release (2023-11-21)
 
 ## New Artifacts
