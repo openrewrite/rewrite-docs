@@ -1,3 +1,7 @@
+---
+description: Jmockit OpenRewrite recipes.
+---
+
 # Jmockit
 
 ## Composite Recipes

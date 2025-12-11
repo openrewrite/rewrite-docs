@@ -1,3 +1,7 @@
+---
+description: Hcl OpenRewrite recipes.
+---
+
 # Hcl
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Unleash OpenRewrite recipes.
+---
+
 # Unleash
 
 _Recipes to perform [Unleash](https://getunleash.io/) migration tasks._

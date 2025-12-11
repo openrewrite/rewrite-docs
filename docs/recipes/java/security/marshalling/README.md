@@ -1,3 +1,7 @@
+---
+description: Marshalling OpenRewrite recipes.
+---
+
 # Marshalling
 
 ## Recipes

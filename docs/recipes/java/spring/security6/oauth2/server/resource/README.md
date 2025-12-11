@@ -1,3 +1,7 @@
+---
+description: Resource OpenRewrite recipes.
+---
+
 # Resource
 
 ## Recipes

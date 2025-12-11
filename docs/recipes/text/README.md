@@ -1,3 +1,7 @@
+---
+description: Text OpenRewrite recipes.
+---
+
 # Text
 
 _Recipes for text operations._

@@ -1,3 +1,7 @@
+---
+description: Plugins OpenRewrite recipes.
+---
+
 # Plugins
 
 ## Composite Recipes

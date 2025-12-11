@@ -1,3 +1,7 @@
+---
+description: Lombok OpenRewrite recipes.
+---
+
 # Lombok
 
 ## Categories

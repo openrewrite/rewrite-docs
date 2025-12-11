@@ -1,3 +1,7 @@
+---
+description: Privacy OpenRewrite recipes.
+---
+
 # Privacy
 
 ## Recipes

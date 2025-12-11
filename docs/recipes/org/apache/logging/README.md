@@ -1,3 +1,7 @@
+---
+description: Logging OpenRewrite recipes.
+---
+
 # Logging
 
 ## Categories

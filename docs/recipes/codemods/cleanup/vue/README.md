@@ -1,3 +1,7 @@
+---
+description: Vue OpenRewrite recipes.
+---
+
 # Vue
 
 ## Recipes

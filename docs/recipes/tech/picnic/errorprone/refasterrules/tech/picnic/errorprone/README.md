@@ -1,3 +1,7 @@
+---
+description: Errorprone OpenRewrite recipes.
+---
+
 # Errorprone
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Meziantou OpenRewrite recipes.
+---
+
 # Meziantou
 
 ## Categories

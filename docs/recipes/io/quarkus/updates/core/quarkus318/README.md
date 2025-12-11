@@ -1,3 +1,7 @@
+---
+description: Quarkus318 OpenRewrite recipes.
+---
+
 # Quarkus318
 
 ## Recipes

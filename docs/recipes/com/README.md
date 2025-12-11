@@ -1,3 +1,7 @@
+---
+description: Com OpenRewrite recipes.
+---
+
 # Com
 
 ## Categories

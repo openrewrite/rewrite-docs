@@ -1,3 +1,7 @@
+---
+description: Joda OpenRewrite recipes.
+---
+
 # Joda
 
 ## Categories

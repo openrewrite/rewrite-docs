@@ -1,3 +1,7 @@
+---
+description: Servlet OpenRewrite recipes.
+---
+
 # Servlet
 
 ## Recipes

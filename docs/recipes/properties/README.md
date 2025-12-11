@@ -1,3 +1,7 @@
+---
+description: Properties OpenRewrite recipes.
+---
+
 # Properties
 
 ## Categories

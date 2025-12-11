@@ -1,3 +1,7 @@
+---
+description: Datalineage OpenRewrite recipes.
+---
+
 # Datalineage
 
 ## Recipes

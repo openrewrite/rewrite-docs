@@ -1,3 +1,7 @@
+---
+description: Controlflow OpenRewrite recipes.
+---
+
 # Controlflow
 
 ## Recipes

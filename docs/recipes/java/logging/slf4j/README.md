@@ -1,3 +1,7 @@
+---
+description: SLF4J OpenRewrite recipes.
+---
+
 # SLF4J
 
 _Recipes related to [Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.org/)._

@@ -1,3 +1,7 @@
+---
+description: Analyzers OpenRewrite recipes.
+---
+
 # Analyzers
 
 ## Recipes

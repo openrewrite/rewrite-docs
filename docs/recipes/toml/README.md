@@ -1,3 +1,7 @@
+---
+description: Toml OpenRewrite recipes.
+---
+
 # Toml
 
 ## Recipes

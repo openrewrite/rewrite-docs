@@ -1,3 +1,7 @@
+---
+description: javax APIs OpenRewrite recipes.
+---
+
 # javax APIs
 
 ## Composite Recipes

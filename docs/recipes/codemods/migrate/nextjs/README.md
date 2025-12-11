@@ -1,3 +1,7 @@
+---
+description: Next.js OpenRewrite recipes.
+---
+
 # Next.js
 
 _Recipes that modernize the use of [Next.js](https://nextjs.org/)._

@@ -1,3 +1,7 @@
+---
+description: Security analysis OpenRewrite recipes.
+---
+
 # Security analysis
 
 _Security-focused analysis recipes that detect vulnerabilities like SQL injection, cross-site scripting (XSS), and other taint-based security issues._

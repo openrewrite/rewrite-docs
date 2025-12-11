@@ -1,3 +1,7 @@
+---
+description: Examples OpenRewrite recipes.
+---
+
 # Examples
 
 ## Categories

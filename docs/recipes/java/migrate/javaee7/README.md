@@ -1,3 +1,7 @@
+---
+description: Javaee7 OpenRewrite recipes.
+---
+
 # Javaee7
 
 ## Recipes

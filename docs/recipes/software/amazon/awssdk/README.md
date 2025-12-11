@@ -1,3 +1,7 @@
+---
+description: Awssdk OpenRewrite recipes.
+---
+
 # Awssdk
 
 ## Categories

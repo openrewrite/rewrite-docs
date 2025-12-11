@@ -1,3 +1,7 @@
+---
+description: Verification OpenRewrite recipes.
+---
+
 # Verification
 
 ## Composite Recipes

@@ -1,3 +1,7 @@
+---
+description: Hudson OpenRewrite recipes.
+---
+
 # Hudson
 
 ## Recipes

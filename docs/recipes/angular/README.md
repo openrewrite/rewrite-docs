@@ -1,3 +1,7 @@
+---
+description: Angular OpenRewrite recipes.
+---
+
 # Angular
 
 ## Categories

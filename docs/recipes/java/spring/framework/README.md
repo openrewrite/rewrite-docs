@@ -1,3 +1,7 @@
+---
+description: Spring Framework OpenRewrite recipes.
+---
+
 # Spring Framework
 
 ## Categories

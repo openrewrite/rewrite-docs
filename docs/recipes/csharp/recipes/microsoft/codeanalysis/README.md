@@ -1,3 +1,7 @@
+---
+description: Codeanalysis OpenRewrite recipes.
+---
+
 # Codeanalysis
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Customrecipes OpenRewrite recipes.
+---
+
 # Customrecipes
 
 ## Composite Recipes

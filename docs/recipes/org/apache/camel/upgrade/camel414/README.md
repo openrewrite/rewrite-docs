@@ -1,3 +1,7 @@
+---
+description: Camel414 OpenRewrite recipes.
+---
+
 # Camel414
 
 ## Composite Recipes

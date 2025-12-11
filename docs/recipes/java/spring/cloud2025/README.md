@@ -1,3 +1,7 @@
+---
+description: Cloud2025 OpenRewrite recipes.
+---
+
 # Cloud2025
 
 ## Composite Recipes

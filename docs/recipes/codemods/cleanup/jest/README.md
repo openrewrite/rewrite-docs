@@ -1,3 +1,7 @@
+---
+description: Jest OpenRewrite recipes.
+---
+
 # Jest
 
 _Recipes that cleanup Jest code._

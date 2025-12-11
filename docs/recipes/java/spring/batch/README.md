@@ -1,3 +1,7 @@
+---
+description: Spring Batch OpenRewrite recipes.
+---
+
 # Spring Batch
 
 ## Composite Recipes

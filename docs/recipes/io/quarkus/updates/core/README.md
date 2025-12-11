@@ -1,3 +1,7 @@
+---
+description: Core OpenRewrite recipes.
+---
+
 # Core
 
 ## Categories

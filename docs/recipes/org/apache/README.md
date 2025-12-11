@@ -1,3 +1,7 @@
+---
+description: Apache OpenRewrite recipes.
+---
+
 # Apache
 
 ## Categories

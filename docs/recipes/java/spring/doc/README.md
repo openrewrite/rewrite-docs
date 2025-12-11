@@ -1,3 +1,7 @@
+---
+description: Doc OpenRewrite recipes.
+---
+
 # Doc
 
 ## Composite Recipes

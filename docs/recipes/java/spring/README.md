@@ -1,3 +1,7 @@
+---
+description: Spring OpenRewrite recipes.
+---
+
 # Spring
 
 _Recipes for upgrading and patching [Spring](https://spring.io/) applications._

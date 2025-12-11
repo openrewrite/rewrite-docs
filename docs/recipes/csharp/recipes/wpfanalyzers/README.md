@@ -1,3 +1,7 @@
+---
+description: Wpfanalyzers OpenRewrite recipes.
+---
+
 # Wpfanalyzers
 
 ## Recipes

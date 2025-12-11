@@ -1,3 +1,7 @@
+---
+description: Struts OpenRewrite recipes.
+---
+
 # Struts
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Data OpenRewrite recipes.
+---
+
 # Data
 
 ## Recipes

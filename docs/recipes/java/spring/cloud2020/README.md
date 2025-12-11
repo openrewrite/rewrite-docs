@@ -1,3 +1,7 @@
+---
+description: Cloud2020 OpenRewrite recipes.
+---
+
 # Cloud2020
 
 ## Composite Recipes

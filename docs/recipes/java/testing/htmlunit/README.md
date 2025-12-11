@@ -1,3 +1,7 @@
+---
+description: Htmlunit OpenRewrite recipes.
+---
+
 # Htmlunit
 
 ## Composite Recipes

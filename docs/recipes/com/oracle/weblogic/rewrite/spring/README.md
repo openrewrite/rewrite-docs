@@ -1,3 +1,7 @@
+---
+description: Spring OpenRewrite recipes.
+---
+
 # Spring
 
 ## Categories

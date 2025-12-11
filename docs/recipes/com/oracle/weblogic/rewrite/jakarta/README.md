@@ -1,3 +1,7 @@
+---
+description: Jakarta OpenRewrite recipes.
+---
+
 # Jakarta
 
 ## Composite Recipes

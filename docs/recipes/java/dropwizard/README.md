@@ -1,3 +1,7 @@
+---
+description: Dropwizard OpenRewrite recipes.
+---
+
 # Dropwizard
 
 _Recipes for upgrading and patching [Dropwizard](https://dropwizard.io/) applications._

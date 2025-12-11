@@ -1,3 +1,7 @@
+---
+description: Recipes OpenRewrite recipes.
+---
+
 # Recipes
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Terraform OpenRewrite recipes.
+---
+
 # Terraform
 
 ## Categories

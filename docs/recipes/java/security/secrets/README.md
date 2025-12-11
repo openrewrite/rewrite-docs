@@ -1,3 +1,7 @@
+---
+description: Secrets OpenRewrite recipes.
+---
+
 # Secrets
 
 ## Composite Recipes

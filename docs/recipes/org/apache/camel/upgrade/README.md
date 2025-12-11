@@ -1,3 +1,7 @@
+---
+description: Upgrade OpenRewrite recipes.
+---
+
 # Upgrade
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Math OpenRewrite recipes.
+---
+
 # Math
 
 ## Composite Recipes

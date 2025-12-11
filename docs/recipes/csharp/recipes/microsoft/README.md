@@ -1,3 +1,7 @@
+---
+description: Microsoft OpenRewrite recipes.
+---
+
 # Microsoft
 
 ## Categories

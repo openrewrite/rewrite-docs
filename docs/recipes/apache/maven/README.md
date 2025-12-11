@@ -1,3 +1,7 @@
+---
+description: Maven OpenRewrite recipes.
+---
+
 # Maven
 
 ## Categories

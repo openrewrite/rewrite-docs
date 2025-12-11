@@ -1,3 +1,7 @@
+---
+description: Azul OpenRewrite recipes.
+---
+
 # Azul
 
 ## Categories

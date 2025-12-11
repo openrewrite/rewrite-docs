@@ -1,3 +1,7 @@
+---
+description: Es6 OpenRewrite recipes.
+---
+
 # Es6
 
 ## Recipes

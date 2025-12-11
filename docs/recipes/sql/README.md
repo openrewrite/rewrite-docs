@@ -1,3 +1,7 @@
+---
+description: SQL OpenRewrite recipes.
+---
+
 # SQL
 
 _SQL query processing and analysis._

@@ -1,3 +1,7 @@
+---
+description: Knowledge OpenRewrite recipes.
+---
+
 # Knowledge
 
 ## Categories

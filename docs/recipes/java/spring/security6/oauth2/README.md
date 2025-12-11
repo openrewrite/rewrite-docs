@@ -1,3 +1,7 @@
+---
+description: Oauth2 OpenRewrite recipes.
+---
+
 # Oauth2
 
 ## Categories

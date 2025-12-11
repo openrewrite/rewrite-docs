@@ -1,3 +1,7 @@
+---
+description: Xml OpenRewrite recipes.
+---
+
 # Xml
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Modernize OpenRewrite recipes.
+---
+
 # Modernize
 
 _Modernize your code to best use the project's current JDK version. Take advantage of newly available APIs and reduce the dependency of your code on third party dependencies where there is equivalent functionality in the Java standard library._

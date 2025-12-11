@@ -1,3 +1,7 @@
+---
+description: Jul OpenRewrite recipes.
+---
+
 # Jul
 
 ## Composite Recipes

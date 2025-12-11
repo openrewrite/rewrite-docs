@@ -1,3 +1,7 @@
+---
+description: Shared OpenRewrite recipes.
+---
+
 # Shared
 
 ## Composite Recipes

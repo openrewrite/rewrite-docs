@@ -1,3 +1,7 @@
+---
+description: java.sql APIs OpenRewrite recipes.
+---
+
 # java.sql APIs
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Node OpenRewrite recipes.
+---
+
 # Node
 
 ## Categories

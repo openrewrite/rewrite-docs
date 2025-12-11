@@ -1,3 +1,7 @@
+---
+description: Framework OpenRewrite recipes.
+---
+
 # Framework
 
 ## Composite Recipes

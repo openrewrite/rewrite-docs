@@ -1,3 +1,7 @@
+---
+description: 5to6 OpenRewrite recipes.
+---
+
 # 5to6
 
 ## Composite Recipes

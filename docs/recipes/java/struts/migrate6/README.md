@@ -1,3 +1,7 @@
+---
+description: Struts 6.0 OpenRewrite recipes.
+---
+
 # Struts 6.0
 
 _Migrate to Struts 6.0. The full migration guide can be found [here](https://cwiki.apache.org/confluence/display/WW/Struts+2.5+to+6.0.0+migration#Struts2.5to6.0.0migration-Staticmethodsaccess)._

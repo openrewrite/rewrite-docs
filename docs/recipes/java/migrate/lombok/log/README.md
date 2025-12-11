@@ -1,3 +1,7 @@
+---
+description: Log OpenRewrite recipes.
+---
+
 # Log
 
 ## Composite Recipes

@@ -1,3 +1,7 @@
+---
+description: Guava OpenRewrite recipes.
+---
+
 # Guava
 
 ## Composite Recipes

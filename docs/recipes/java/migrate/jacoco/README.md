@@ -1,3 +1,7 @@
+---
+description: JaCoCo OpenRewrite recipes.
+---
+
 # JaCoCo
 
 ## Composite Recipes

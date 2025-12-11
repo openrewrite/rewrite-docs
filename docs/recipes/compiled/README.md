@@ -1,3 +1,7 @@
+---
+description: Compiled OpenRewrite recipes.
+---
+
 # Compiled
 
 ## Categories

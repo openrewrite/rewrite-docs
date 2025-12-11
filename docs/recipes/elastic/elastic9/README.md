@@ -1,3 +1,7 @@
+---
+description: Elastic9 OpenRewrite recipes.
+---
+
 # Elastic9
 
 ## Composite Recipes

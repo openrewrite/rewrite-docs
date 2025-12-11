@@ -1,3 +1,7 @@
+---
+description: Wicket OpenRewrite recipes.
+---
+
 # Wicket
 
 ## Composite Recipes

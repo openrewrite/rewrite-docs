@@ -1,3 +1,7 @@
+---
+description: java.net APIs OpenRewrite recipes.
+---
+
 # java.net APIs
 
 ## Composite Recipes

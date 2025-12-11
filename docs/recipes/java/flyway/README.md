@@ -1,3 +1,7 @@
+---
+description: Flyway OpenRewrite recipes.
+---
+
 # Flyway
 
 ## Composite Recipes

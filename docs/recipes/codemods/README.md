@@ -1,3 +1,7 @@
+---
+description: JavaScript Codemods OpenRewrite recipes.
+---
+
 # JavaScript Codemods
 
 _Recipes that run JavaScript codemods._

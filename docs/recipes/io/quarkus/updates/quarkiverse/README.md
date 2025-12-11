@@ -1,3 +1,7 @@
+---
+description: Quarkiverse OpenRewrite recipes.
+---
+
 # Quarkiverse
 
 ## Categories

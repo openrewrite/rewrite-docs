@@ -1,3 +1,7 @@
+---
+description: C# OpenRewrite recipes.
+---
+
 # `C#`
 
 _Recipes for C# codebases._

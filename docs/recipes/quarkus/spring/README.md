@@ -1,3 +1,7 @@
+---
+description: Spring to Quarkus OpenRewrite recipes.
+---
+
 # Spring to Quarkus
 
 _Recipes to rewrite Spring to Quarkus._

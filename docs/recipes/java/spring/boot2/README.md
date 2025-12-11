@@ -1,3 +1,7 @@
+---
+description: Spring Boot 2.x OpenRewrite recipes.
+---
+
 # Spring Boot 2.x
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Swagger OpenRewrite recipes.
+---
+
 # Swagger
 
 _Recipes to perform [Swagger](https://swagger.io/) migration tasks._

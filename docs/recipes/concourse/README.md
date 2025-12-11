@@ -1,3 +1,7 @@
+---
+description: Concourse OpenRewrite recipes.
+---
+
 # Concourse
 
 _Recipes to perform [Concourse](https://concourse-ci.org/) hygiene and migration tasks._

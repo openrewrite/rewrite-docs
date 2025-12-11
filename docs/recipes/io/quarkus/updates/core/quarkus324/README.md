@@ -1,3 +1,7 @@
+---
+description: Quarkus324 OpenRewrite recipes.
+---
+
 # Quarkus324
 
 ## Composite Recipes

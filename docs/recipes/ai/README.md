@@ -1,3 +1,7 @@
+---
+description: Ai OpenRewrite recipes.
+---
+
 # AI
 
 ## Categories

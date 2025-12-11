@@ -1,3 +1,7 @@
+---
+description: AI tools OpenRewrite recipes.
+---
+
 # AI tools
 
 _Tools for researching AI integrations._

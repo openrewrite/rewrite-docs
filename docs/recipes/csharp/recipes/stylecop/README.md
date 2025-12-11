@@ -1,3 +1,7 @@
+---
+description: Stylecop OpenRewrite recipes.
+---
+
 # Stylecop
 
 ## Categories

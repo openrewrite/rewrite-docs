@@ -1,3 +1,7 @@
+---
+description: Log4j OpenRewrite recipes.
+---
+
 # Log4j
 
 ## Composite Recipes

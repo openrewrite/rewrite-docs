@@ -1,3 +1,7 @@
+---
+description: Updates OpenRewrite recipes.
+---
+
 # Updates
 
 ## Categories

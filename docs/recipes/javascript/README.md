@@ -1,3 +1,7 @@
+---
+description: Javascript OpenRewrite recipes.
+---
+
 # Javascript
 
 ## Categories

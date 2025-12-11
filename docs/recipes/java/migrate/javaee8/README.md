@@ -1,3 +1,7 @@
+---
+description: Javaee8 OpenRewrite recipes.
+---
+
 # Javaee8
 
 ## Composite Recipes

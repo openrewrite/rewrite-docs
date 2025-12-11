@@ -1,3 +1,7 @@
+---
+description: Spring Security 6.x OpenRewrite recipes.
+---
+
 # Spring Security 6.x
 
 ## Categories

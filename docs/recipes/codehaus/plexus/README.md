@@ -1,3 +1,7 @@
+---
+description: Plexus OpenRewrite recipes.
+---
+
 # Plexus
 
 ## Composite Recipes

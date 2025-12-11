@@ -1,3 +1,7 @@
+---
+description: Springdoc OpenRewrite recipes.
+---
+
 # Springdoc
 
 ## Composite Recipes

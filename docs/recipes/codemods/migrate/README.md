@@ -1,3 +1,7 @@
+---
+description: Modernize OpenRewrite recipes.
+---
+
 # Modernize
 
 _Recipes that modernize JavaScript code._

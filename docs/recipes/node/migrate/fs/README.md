@@ -1,3 +1,7 @@
+---
+description: Fs OpenRewrite recipes.
+---
+
 # Fs
 
 ## Recipes

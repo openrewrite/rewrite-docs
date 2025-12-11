@@ -1,3 +1,7 @@
+---
+description: JUnit Jupiter OpenRewrite recipes.
+---
+
 # JUnit Jupiter
 
 _Best practices for JUnit Jupiter tests._

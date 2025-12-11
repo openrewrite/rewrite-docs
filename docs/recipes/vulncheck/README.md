@@ -1,3 +1,7 @@
+---
+description: Vulncheck OpenRewrite recipes.
+---
+
 # Vulncheck
 
 ## Recipes

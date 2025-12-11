@@ -1,3 +1,7 @@
+---
+description: Quarkus 2.x OpenRewrite recipes.
+---
+
 # Quarkus 2.x
 
 ## Composite Recipes

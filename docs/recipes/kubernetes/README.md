@@ -1,3 +1,7 @@
+---
+description: Kubernetes OpenRewrite recipes.
+---
+
 # Kubernetes
 
 _Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration tasks._

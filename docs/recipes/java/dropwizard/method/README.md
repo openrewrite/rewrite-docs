@@ -1,3 +1,7 @@
+---
+description: Method OpenRewrite recipes.
+---
+
 # Method
 
 ## Recipes

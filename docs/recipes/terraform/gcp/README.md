@@ -1,3 +1,7 @@
+---
+description: GCP OpenRewrite recipes.
+---
+
 # GCP
 
 ## Composite Recipes

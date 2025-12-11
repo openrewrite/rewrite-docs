@@ -1,3 +1,7 @@
+---
+description: Svelte OpenRewrite recipes.
+---
+
 # Svelte
 
 ## Recipes

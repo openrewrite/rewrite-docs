@@ -1,3 +1,7 @@
+---
+description: Jspecify OpenRewrite recipes.
+---
+
 # Jspecify
 
 ## Composite Recipes

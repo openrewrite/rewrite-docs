@@ -1,3 +1,7 @@
+---
+description: Jackson OpenRewrite recipes.
+---
+
 # Jackson
 
 _Recipes to perform [Jackson](https://github.com/FasterXML/jackson) migration tasks._

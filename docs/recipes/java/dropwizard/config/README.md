@@ -1,3 +1,7 @@
+---
+description: Config OpenRewrite recipes.
+---
+
 # Config
 
 ## Composite Recipes

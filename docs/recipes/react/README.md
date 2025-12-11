@@ -1,3 +1,7 @@
+---
+description: React OpenRewrite recipes.
+---
+
 # React
 
 ## Categories

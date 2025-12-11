@@ -1,3 +1,7 @@
+---
+description: Cloud2024 OpenRewrite recipes.
+---
+
 # Cloud2024
 
 ## Composite Recipes

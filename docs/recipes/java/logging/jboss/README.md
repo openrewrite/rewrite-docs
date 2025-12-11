@@ -1,3 +1,7 @@
+---
+description: Jboss OpenRewrite recipes.
+---
+
 # Jboss
 
 ## Composite Recipes

@@ -1,3 +1,7 @@
+---
+description: Plugin OpenRewrite recipes.
+---
+
 # Plugin
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Weblogic OpenRewrite recipes.
+---
+
 # Weblogic
 
 ## Categories

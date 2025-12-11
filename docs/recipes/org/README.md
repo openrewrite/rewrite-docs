@@ -1,3 +1,7 @@
+---
+description: Org OpenRewrite recipes.
+---
+
 # Org
 
 ## Categories

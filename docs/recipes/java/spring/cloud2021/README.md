@@ -1,3 +1,7 @@
+---
+description: Cloud2021 OpenRewrite recipes.
+---
+
 # Cloud2021
 
 ## Composite Recipes

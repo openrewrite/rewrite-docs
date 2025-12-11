@@ -1,3 +1,7 @@
+---
+description: Minio38 OpenRewrite recipes.
+---
+
 # Minio38
 
 ## Recipes

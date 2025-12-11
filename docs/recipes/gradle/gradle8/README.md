@@ -1,3 +1,7 @@
+---
+description: Gradle8 OpenRewrite recipes.
+---
+
 # Gradle8
 
 ## Recipes

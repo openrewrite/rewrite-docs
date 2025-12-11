@@ -1,3 +1,7 @@
+---
+description: Codec OpenRewrite recipes.
+---
+
 # Codec
 
 ## Recipes

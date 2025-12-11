@@ -1,3 +1,7 @@
+---
+description: Update66 OpenRewrite recipes.
+---
+
 # Update66
 
 ## Composite Recipes

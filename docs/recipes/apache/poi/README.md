@@ -1,3 +1,7 @@
+---
+description: Poi OpenRewrite recipes.
+---
+
 # Poi
 
 ## Composite Recipes

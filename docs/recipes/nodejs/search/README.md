@@ -1,3 +1,7 @@
+---
+description: Search OpenRewrite recipes.
+---
+
 # Search
 
 ## Composite Recipes

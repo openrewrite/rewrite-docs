@@ -1,3 +1,7 @@
+---
+description: Streams OpenRewrite recipes.
+---
+
 # Streams
 
 ## Composite Recipes

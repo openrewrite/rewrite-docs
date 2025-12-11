@@ -1,3 +1,7 @@
+---
+description: OpenFeature OpenRewrite recipes.
+---
+
 # OpenFeature
 
 _Recipes to perform [OpenFeature](https://openfeature.dev/) migration tasks._

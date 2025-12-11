@@ -1,3 +1,7 @@
+---
+description: Moddy OpenRewrite recipes.
+---
+
 # Moddy
 
 ## Recipes

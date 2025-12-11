@@ -1,3 +1,7 @@
+---
+description: Roslynator OpenRewrite recipes.
+---
+
 # Roslynator
 
 ## Categories

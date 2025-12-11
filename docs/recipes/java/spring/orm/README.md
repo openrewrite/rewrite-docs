@@ -1,3 +1,7 @@
+---
+description: Orm OpenRewrite recipes.
+---
+
 # Orm
 
 ## Composite Recipes

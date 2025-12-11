@@ -1,3 +1,7 @@
+---
+description: Logging OpenRewrite recipes.
+---
+
 # Logging
 
 _Enforce logging best practices and migrate between logging frameworks._

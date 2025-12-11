@@ -1,3 +1,7 @@
+---
+description: Refasterrules OpenRewrite recipes.
+---
+
 # Refasterrules
 
 ## Categories

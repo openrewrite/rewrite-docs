@@ -1,3 +1,7 @@
+---
+description: Typescript OpenRewrite recipes.
+---
+
 # Typescript
 
 ## Recipes

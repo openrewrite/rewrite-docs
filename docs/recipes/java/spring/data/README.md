@@ -1,3 +1,7 @@
+---
+description: Spring Data OpenRewrite recipes.
+---
+
 # Spring Data
 
 ## Composite Recipes

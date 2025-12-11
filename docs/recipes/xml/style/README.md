@@ -1,3 +1,7 @@
+---
+description: Style OpenRewrite recipes.
+---
+
 # Style
 
 ## Recipes

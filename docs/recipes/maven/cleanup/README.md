@@ -1,3 +1,7 @@
+---
+description: Cleanup OpenRewrite recipes.
+---
+
 # Cleanup
 
 ## Composite Recipes

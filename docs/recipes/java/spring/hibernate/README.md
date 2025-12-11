@@ -1,3 +1,7 @@
+---
+description: Hibernate OpenRewrite recipes.
+---
+
 # Hibernate
 
 ## Recipes

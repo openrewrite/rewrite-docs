@@ -1,3 +1,7 @@
+---
+description: Utilities OpenRewrite recipes.
+---
+
 # Utilities
 
 ## Recipes

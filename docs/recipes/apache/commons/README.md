@@ -1,3 +1,7 @@
+---
+description: Commons OpenRewrite recipes.
+---
+
 # Commons
 
 ## Categories

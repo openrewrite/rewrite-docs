@@ -1,3 +1,7 @@
+---
+description: Netty OpenRewrite recipes.
+---
+
 # Netty
 
 _Recipes to perform [Netty](https://netty.io/) migration tasks._

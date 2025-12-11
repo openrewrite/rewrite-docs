@@ -1,3 +1,7 @@
+---
+description: Camel416 OpenRewrite recipes.
+---
+
 # Camel416
 
 ## Composite Recipes

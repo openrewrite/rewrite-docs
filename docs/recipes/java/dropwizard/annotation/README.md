@@ -1,3 +1,7 @@
+---
+description: Annotation OpenRewrite recipes.
+---
+
 # Annotation
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Spring Cloud 2022 OpenRewrite recipes.
+---
+
 # Spring Cloud 2022
 
 ## Composite Recipes

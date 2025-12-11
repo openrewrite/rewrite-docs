@@ -1,3 +1,7 @@
+---
+description: Java OpenRewrite recipes.
+---
+
 # Java
 
 _Basic building blocks for transforming Java code._

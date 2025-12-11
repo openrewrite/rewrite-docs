@@ -1,3 +1,7 @@
+---
+description: Security7 OpenRewrite recipes.
+---
+
 # Security7
 
 ## Composite Recipes

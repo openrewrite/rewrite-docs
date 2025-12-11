@@ -1,3 +1,7 @@
+---
+description: Quarkus37 OpenRewrite recipes.
+---
+
 # Quarkus37
 
 ## Composite Recipes

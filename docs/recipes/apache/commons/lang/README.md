@@ -1,3 +1,7 @@
+---
+description: Lang OpenRewrite recipes.
+---
+
 # Lang
 
 ## Composite Recipes

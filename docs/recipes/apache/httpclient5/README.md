@@ -1,3 +1,7 @@
+---
+description: Httpclient5 OpenRewrite recipes.
+---
+
 # Httpclient5
 
 ## Composite Recipes

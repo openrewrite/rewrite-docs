@@ -1,3 +1,7 @@
+---
+description: Format OpenRewrite recipes.
+---
+
 # Format
 
 ## Recipes

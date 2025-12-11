@@ -1,3 +1,7 @@
+---
+description: Logback OpenRewrite recipes.
+---
+
 # Logback
 
 _Recipes related to [`logback`](http://logback.qos.ch/documentation.html)._

@@ -1,3 +1,7 @@
+---
+description: Quarkus OpenRewrite recipes.
+---
+
 # Quarkus
 
 _Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications._

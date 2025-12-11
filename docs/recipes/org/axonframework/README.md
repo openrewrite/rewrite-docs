@@ -1,3 +1,7 @@
+---
+description: Axonframework OpenRewrite recipes.
+---
+
 # Axonframework
 
 ## Categories

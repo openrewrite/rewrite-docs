@@ -1,3 +1,7 @@
+---
+description: Quarkus35 OpenRewrite recipes.
+---
+
 # Quarkus35
 
 ## Recipes

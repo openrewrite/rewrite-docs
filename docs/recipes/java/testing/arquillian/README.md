@@ -1,3 +1,7 @@
+---
+description: Arquillian OpenRewrite recipes.
+---
+
 # Arquillian
 
 ## Composite Recipes

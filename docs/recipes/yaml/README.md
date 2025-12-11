@@ -1,3 +1,7 @@
+---
+description: YAML OpenRewrite recipes.
+---
+
 # YAML
 
 _Basic building blocks for transforming YAML._

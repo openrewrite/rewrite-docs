@@ -1,3 +1,7 @@
+---
+description: JSON OpenRewrite recipes.
+---
+
 # JSON
 
 _Basic building blocks for transforming JSON._

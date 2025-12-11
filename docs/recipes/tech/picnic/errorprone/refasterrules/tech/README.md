@@ -1,3 +1,7 @@
+---
+description: Tech OpenRewrite recipes.
+---
+
 # Tech
 
 ## Categories

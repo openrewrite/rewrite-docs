@@ -1,3 +1,7 @@
+---
+description: Hamcrest OpenRewrite recipes.
+---
+
 # Hamcrest
 
 ## Composite Recipes

@@ -1,3 +1,7 @@
+---
+description: java.util APIs OpenRewrite recipes.
+---
+
 # java.util APIs
 
 ## Composite Recipes

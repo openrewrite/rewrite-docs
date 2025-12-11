@@ -1,3 +1,7 @@
+---
+description: Quarkus326 OpenRewrite recipes.
+---
+
 # Quarkus326
 
 ## Composite Recipes

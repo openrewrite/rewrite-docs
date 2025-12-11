@@ -1,3 +1,7 @@
+---
+description: Feature flags OpenRewrite recipes.
+---
+
 # Feature flags
 
 _Recipes to perform feature flag migration tasks._

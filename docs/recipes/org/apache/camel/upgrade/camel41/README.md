@@ -1,3 +1,7 @@
+---
+description: Camel41 OpenRewrite recipes.
+---
+
 # Camel41
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Crypto OpenRewrite recipes.
+---
+
 # Crypto
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Test OpenRewrite recipes.
+---
+
 # Test
 
 ## Recipes

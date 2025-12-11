@@ -1,3 +1,7 @@
+---
+description: Update70 OpenRewrite recipes.
+---
+
 # Update70
 
 ## Composite Recipes

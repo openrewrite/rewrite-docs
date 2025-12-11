@@ -1,3 +1,7 @@
+---
+description: General OpenRewrite recipes.
+---
+
 # General
 
 ## Recipes

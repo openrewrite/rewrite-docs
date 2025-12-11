@@ -1,3 +1,7 @@
+---
+description: java.util.concurrent APIs OpenRewrite recipes.
+---
+
 # java.util.concurrent APIs
 
 ## Composite Recipes

@@ -1,3 +1,7 @@
+---
+description: Mui OpenRewrite recipes.
+---
+
 # Mui
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Camel415 OpenRewrite recipes.
+---
+
 # Camel415
 
 ## Recipes

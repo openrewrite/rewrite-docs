@@ -1,3 +1,7 @@
+---
+description: Junit OpenRewrite recipes.
+---
+
 # Junit
 
 ## Composite Recipes

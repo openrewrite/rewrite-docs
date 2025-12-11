@@ -1,3 +1,7 @@
+---
+description: XML OpenRewrite recipes.
+---
+
 # XML
 
 _Basic building blocks for transforming XML._

@@ -1,3 +1,7 @@
+---
+description: Netty OpenRewrite recipes.
+---
+
 # Netty
 
 ## Composite Recipes

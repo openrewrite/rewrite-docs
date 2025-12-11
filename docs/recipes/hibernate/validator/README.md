@@ -1,3 +1,7 @@
+---
+description: Validator OpenRewrite recipes.
+---
+
 # Validator
 
 ## Recipes

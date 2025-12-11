@@ -1,3 +1,7 @@
+---
+description: Minio OpenRewrite recipes.
+---
+
 # Minio
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Lodash OpenRewrite recipes.
+---
+
 # Lodash
 
 _Recipes that modernize the use of [Lodash](https://lodash.com/)._

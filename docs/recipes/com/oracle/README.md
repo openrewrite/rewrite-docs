@@ -1,3 +1,7 @@
+---
+description: Oracle OpenRewrite recipes.
+---
+
 # Oracle
 
 ## Categories

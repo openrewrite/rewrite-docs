@@ -1,3 +1,7 @@
+---
+description: java.util.logging APIs OpenRewrite recipes.
+---
+
 # java.util.logging APIs
 
 ## Composite Recipes

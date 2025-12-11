@@ -1,3 +1,7 @@
+---
+description: Spring Boot 3.x OpenRewrite recipes.
+---
+
 # Spring Boot 3.x
 
 ## Composite Recipes

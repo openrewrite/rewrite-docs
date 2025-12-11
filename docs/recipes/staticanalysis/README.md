@@ -1,3 +1,7 @@
+---
+description: Static analysis and remediation OpenRewrite recipes.
+---
+
 # Static analysis and remediation
 
 _Remediations for issues identified by SAST tools._

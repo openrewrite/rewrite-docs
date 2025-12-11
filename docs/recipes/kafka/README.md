@@ -1,3 +1,7 @@
+---
+description: Kafka OpenRewrite recipes.
+---
+
 # Kafka
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: GitLab OpenRewrite recipes.
+---
+
 # GitLab
 
 _Recipes to perform [GitLab](https://gitlab.com/) migration tasks._

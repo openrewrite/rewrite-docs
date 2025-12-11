@@ -1,3 +1,7 @@
+---
+description: Storybook OpenRewrite recipes.
+---
+
 # Storybook
 
 ## Recipes

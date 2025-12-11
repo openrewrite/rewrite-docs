@@ -1,3 +1,7 @@
+---
+description: Metrics OpenRewrite recipes.
+---
+
 # Metrics
 
 ## Recipes

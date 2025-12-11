@@ -1,3 +1,7 @@
+---
+description: Util OpenRewrite recipes.
+---
+
 # Util
 
 ## Recipes

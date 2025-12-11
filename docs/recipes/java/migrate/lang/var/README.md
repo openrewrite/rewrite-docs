@@ -1,3 +1,7 @@
+---
+description: Var OpenRewrite recipes.
+---
+
 # Var
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Devcenter OpenRewrite recipes.
+---
+
 # Devcenter
 
 ## Composite Recipes

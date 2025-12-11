@@ -1,3 +1,7 @@
+---
+description: Micrometer OpenRewrite recipes.
+---
+
 # Micrometer
 
 ## Composite Recipes

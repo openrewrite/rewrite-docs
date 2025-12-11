@@ -1,3 +1,7 @@
+---
+description: Zlib OpenRewrite recipes.
+---
+
 # Zlib
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Micrometer OpenRewrite recipes.
+---
+
 # Micrometer
 
 _Recipes to perform [Micrometer](https://micrometer.io/) migration tasks._

@@ -1,3 +1,7 @@
+---
+description: Groovy OpenRewrite recipes.
+---
+
 # Groovy
 
 ## Categories

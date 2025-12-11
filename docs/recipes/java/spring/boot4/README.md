@@ -1,3 +1,7 @@
+---
+description: Boot4 OpenRewrite recipes.
+---
+
 # Boot4
 
 ## Composite Recipes

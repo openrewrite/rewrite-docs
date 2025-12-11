@@ -1,3 +1,7 @@
+---
+description: Spring Cloud 2023 OpenRewrite recipes.
+---
+
 # Spring Cloud 2023
 
 ## Composite Recipes

@@ -1,3 +1,7 @@
+---
+description: Archunit OpenRewrite recipes.
+---
+
 # Archunit
 
 ## Composite Recipes

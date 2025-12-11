@@ -1,3 +1,7 @@
+---
+description: Migration OpenRewrite recipes.
+---
+
 # Migration
 
 ## Composite Recipes

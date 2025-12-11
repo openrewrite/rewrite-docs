@@ -1,3 +1,7 @@
+---
+description: Process OpenRewrite recipes.
+---
+
 # Process
 
 ## Recipes

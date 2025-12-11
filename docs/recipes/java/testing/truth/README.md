@@ -1,3 +1,7 @@
+---
+description: Google Truth OpenRewrite recipes.
+---
+
 # Google Truth
 
 ## Composite Recipes

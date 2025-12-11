@@ -1,3 +1,7 @@
+---
+description: Buffer OpenRewrite recipes.
+---
+
 # Buffer
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Apache OpenRewrite recipes.
+---
+
 # Apache
 
 _Recipes to perform [Apache](https://apache.org/) project migration tasks._

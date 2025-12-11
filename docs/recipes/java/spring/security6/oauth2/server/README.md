@@ -1,3 +1,7 @@
+---
+description: Server OpenRewrite recipes.
+---
+
 # Server
 
 ## Categories

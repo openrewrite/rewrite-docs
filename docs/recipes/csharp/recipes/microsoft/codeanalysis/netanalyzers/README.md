@@ -1,3 +1,7 @@
+---
+description: Netanalyzers OpenRewrite recipes.
+---
+
 # Netanalyzers
 
 ## Recipes

@@ -1,3 +1,7 @@
+---
+description: Beansxml OpenRewrite recipes.
+---
+
 # Beansxml
 
 ## Recipes

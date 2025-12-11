@@ -1,3 +1,7 @@
+---
+description: Httpclient4 OpenRewrite recipes.
+---
+
 # Httpclient4
 
 ## Composite Recipes

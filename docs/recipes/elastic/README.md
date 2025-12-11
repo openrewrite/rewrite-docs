@@ -1,3 +1,7 @@
+---
+description: Elastic OpenRewrite recipes.
+---
+
 # Elastic
 
 ## Categories

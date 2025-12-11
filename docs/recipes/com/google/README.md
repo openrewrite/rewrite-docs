@@ -1,3 +1,7 @@
+---
+description: Google OpenRewrite recipes.
+---
+
 # Google
 
 ## Categories

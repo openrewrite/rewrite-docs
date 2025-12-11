@@ -1,3 +1,7 @@
+---
+description: java.lang APIs OpenRewrite recipes.
+---
+
 # java.lang APIs
 
 ## Categories

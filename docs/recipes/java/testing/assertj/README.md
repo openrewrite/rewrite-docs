@@ -1,3 +1,7 @@
+---
+description: AssertJ OpenRewrite recipes.
+---
+
 # AssertJ
 
 ## Composite Recipes

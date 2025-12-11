@@ -1,3 +1,7 @@
+---
+description: Cryptography OpenRewrite recipes.
+---
+
 # Cryptography
 
 ## Composite Recipes

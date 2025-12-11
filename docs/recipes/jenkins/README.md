@@ -1,3 +1,7 @@
+---
+description: Jenkins OpenRewrite recipes.
+---
+
 # Jenkins
 
 _Recipes to perform [Jenkins](https://www.jenkins.io/) plugin hygiene and migration tasks._

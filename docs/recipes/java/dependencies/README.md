@@ -1,3 +1,7 @@
+---
+description: Dependencies OpenRewrite recipes.
+---
+
 # Dependencies
 
 ## Categories

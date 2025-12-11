@@ -1,3 +1,7 @@
+---
+description: File OpenRewrite recipes.
+---
+
 # File
 
 ## Composite Recipes

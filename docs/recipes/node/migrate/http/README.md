@@ -1,3 +1,7 @@
+---
+description: Http OpenRewrite recipes.
+---
+
 # Http
 
 ## Recipes

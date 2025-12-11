@@ -1,3 +1,7 @@
+---
+description: GitHub Actions OpenRewrite recipes.
+---
+
 # GitHub Actions
 
 _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene and migration tasks._

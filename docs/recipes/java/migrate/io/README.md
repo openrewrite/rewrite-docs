@@ -1,3 +1,7 @@
+---
+description: java.io APIs OpenRewrite recipes.
+---
+
 # java.io APIs
 
 ## Recipes
