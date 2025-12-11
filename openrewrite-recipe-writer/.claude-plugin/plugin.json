@@ -14,12 +14,14 @@
     "recipe",
     "refactoring",
     "java",
+    "javascript",
     "ast",
     "code-transformation",
     "testing"
   ],
   "commands": [
-    "./commands/create-recipe.md"
+    "./commands/create-recipe.md",
+    "./commands/create-js-recipe.md"
   ],
   "skills": [
     "./skills/writing-openrewrite-recipes",
