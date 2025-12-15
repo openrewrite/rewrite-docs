@@ -41,7 +41,7 @@ Regardless of where you define the style, the style must adhere to the following
 :::
 
 | Key          | Type             | Description                                                       |
-| ------------ | ---------------- | ----------------------------------------------------------------- |
+|--------------|------------------|-------------------------------------------------------------------|
 | type         | const            | A constant: `specs.openrewrite.org/v1beta/style`                  |
 | name         | string           | A fully qualified, unique name for this style                     |
 | displayName  | string           | A human-readable name for this style (does not end with a period) |
@@ -66,6 +66,83 @@ styleConfigs:
 
 To see how you would use this style in your project, please jump to [using styles](#using-styles).
 
+#### Style configs
+
+The `styleConfigs` array is where you define the specific formatting rules for your style. Each entry references a style config class and its configuration options.
+
+You can find all available Java style configs in the [rewrite-java style package](https://github.com/openrewrite/rewrite/tree/main/rewrite-java/src/main/java/org/openrewrite/java/style). Some of the most commonly used ones include:
+
+| Style config             | Description                                           |
+|--------------------------|-------------------------------------------------------|
+| `TabsAndIndentsStyle`    | Tabs vs. spaces, indent size, continuation indent     |
+| `SpacesStyle`            | Whitespace around operators, brackets, keywords       |
+| `ImportLayoutStyle`      | Import grouping, ordering, and star import thresholds |
+| `BlankLinesStyle`        | Blank lines before/after classes, methods, fields     |
+| `WrappingAndBracesStyle` | Line wrapping and brace placement                     |
+
+When creating your own style, you can combine multiple style configs to fully define your formatting preferences. If you don't configure a particular style config, OpenRewrite will do its best to detect the settings from your existing code.
+
+#### ImportLayoutStyle
+
+Let's take a look at one of the more complicated style configs: `ImportLayoutStyle`. This style config controls how imports are grouped, ordered, and when star imports should be used. You can adjust the following properties on it:
+
+| Property                    | Type             | Default          | Description                                                                                            |
+|-----------------------------|------------------|------------------|--------------------------------------------------------------------------------------------------------|
+| `classCountToUseStarImport` | int              | 5                | How many imports from the same package must be present before collapsing into a star import            |
+| `nameCountToUseStarImport`  | int              | 3                | How many static imports from the same type must be present before collapsing into a static star import |
+| `layout`                    | array of strings | [IntelliJ default](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java#L62-L71) | An ordered list defining how imports should be grouped and ordered                                     |
+| `packagesToFold`            | array of strings | empty            | Packages that should always use star imports when 1 or more types are in use                           |
+
+**Layout syntax**
+
+The `layout` property in `ImportLayoutStyle` accepts an array of strings that define import groupings. Each string must use one of the following formats:
+
+| Syntax                                          | Description                                                         |
+|-------------------------------------------------|---------------------------------------------------------------------|
+| `<blank line>`                                  | Adds a blank line separator between import groups                   |
+| `import <package>.*`                            | Match imports from a specific package, including subpackages        |
+| `import <package>.* without subpackages`        | Match imports from only that exact package, not subpackages         |
+| `import static <package>.*`                     | Match static imports from a specific package, including subpackages |
+| `import static <package>.* without subpackages` | Match static imports from only that exact package                   |
+| `import all other imports`                      | Catchall for all remaining non-static imports                       |
+| `import static all other imports`               | Catchall for all remaining static imports                           |
+
+:::warning
+The layout **must** contain at least one `import all other imports` entry and one `import static all other imports` entry.
+:::
+
+**Full example**
+
+Below is a full example of how you'd use `ImportLayoutStyle`. This example layout is very similar to the Google Java style:
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/style
+name: com.yourorg.CustomImportLayout
+styleConfigs:
+  - org.openrewrite.java.style.ImportLayoutStyle:
+      classCountToUseStarImport: 999
+      nameCountToUseStarImport: 999
+      layout:
+        - 'import java.*'
+        - 'import javax.*'
+        - '<blank line>'
+        - 'import all other imports'
+        - '<blank line>'
+        - 'import static all other imports'
+      packagesToFold:
+        - 'import java.awt.*'
+        - 'import static org.junit.jupiter.api.Assertions.*'
+```
+
+This configuration will:
+
+* Group `java.*` imports first, then `javax.*` imports
+* Add a blank line, then all other non-static imports
+* Add another blank line, then all static imports
+* Avoid star imports unless there are 999+ imports from the same package
+* Always use star imports for `java.awt.*` and static imports from `org.junit.jupiter.api.Assertions`
+
 ### Programmatically in Java
 
 When you go to [specify a style to use](#using-styles), the style needs to be a `NamedStyles`. A `NamedStyles` contains one or more `Style` objects.
@@ -87,7 +164,7 @@ Update your `build.gradle` file to include an `activeStyle` such as in:
 rewrite {
   activeRecipe("someRecipe")
 
-  // This style is made up for the sake of example.
+  // This style is made up to have an example.
   activeStyle("com.yourorg.YesTabsNoStarImports")
 }
 ```
@@ -108,7 +185,7 @@ Update your `pom.xml` file to include an `<activeStyles>` such as in:
         <!-- Recipes here -->
       </activeRecipes>
       <activeStyles>
-        <!-- This style is made up for sake of example. It isn't packaged with OpenRewrite -->
+        <!-- This style is made up to have an example. It isn't packaged with OpenRewrite -->
         <style>com.yourorg.YesTabsNoStarImports</style>
       </activeStyles>
     </configuration>
