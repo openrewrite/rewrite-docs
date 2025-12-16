@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add explicit dependency versions](./explicitdependencyversion.md)
 * [Add explicit `groupId` to Maven plugins](./explicitplugingroupid.md)
 * [Add explicit plugin versions](./explicitpluginversion.md)
 * [Dependency management dependencies should have a version](./dependencymanagementdependencyrequiresversion.md)

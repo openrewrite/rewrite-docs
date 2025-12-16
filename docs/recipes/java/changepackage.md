@@ -106,10 +106,14 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
 * [Migrate javax.mvc to 2.0 (Jakarta EE 9)](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
+* [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 * [Migrate to HtmlUnit 3.x](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
 * [Migrate to Micrometer 1.13](/recipes/micrometer/upgrademicrometer_1_13.md)
+* [Migrate to MockWebServer3 (core module)](/recipes/okhttp/upgrademockwebserver3.md)
+* [Migrate to MockWebServer3 with JUnit 4](/recipes/okhttp/upgrademockwebserver3junit4.md)
+* [Migrate to MockWebServer3 with JUnit 5](/recipes/okhttp/upgrademockwebserver3junit5.md)
 * [Migrate to Spring Batch 6.0 from 5.2](/recipes/java/spring/batch/springbatch5to6migration.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 * [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
@@ -123,6 +127,7 @@ This recipe is used as part of the following composite recipes:
 * [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
 * [Replace `com.sun.net.ssl` package](/recipes/java/migrate/sunnetsslpackageunavailable.md)
 * [Replace deprecated `org.springframework.boot.autoconfigure.mongo` API](/recipes/java/spring/boot4/replacedeprecatedautoconfiguremongoapi.md)
+* [Spring Boot 4.0 Module Starter Relocations](/recipes/java/spring/boot4/modulestarterrelocations.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
 * [Update Apache Commons FileUpload2 package for EE10](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
 * [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
@@ -246,6 +251,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

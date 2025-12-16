@@ -42,6 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ###### Before
 ```xml title="pom.xml"
 <project>
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>explicit-deps-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -50,6 +51,11 @@ This recipe is available under the [Moderne Source Available License](https://do
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.7.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-annotation</artifactId>
+            <version>4.2.8</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,6 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ###### After
 ```xml title="pom.xml"
 <project>
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>explicit-deps-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -72,6 +79,11 @@ This recipe is available under the [Moderne Source Available License](https://do
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-annotation</artifactId>
+            <version>4.2.13</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -89,13 +101,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -9,1 +9,1 @@
+@@ -10,1 +10,1 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
 -           <version>2.7.3</version>
 +           <version>3.0.0</version>
         </dependency>
-@@ -14,1 +14,1 @@
+@@ -15,1 +15,1 @@
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-annotation</artifactId>
+-           <version>4.2.8</version>
++           <version>4.2.13</version>
+        </dependency>
+@@ -20,1 +20,1 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
 -           <version>2.7.3</version>
@@ -198,6 +216,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

@@ -33,6 +33,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+  * propertyKey: `spring.jpa.hibernate.naming.implicit-strategy`
+  * newValue: `org.springframework.boot.hibernate.SpringImplicitNamingStrategy`
+  * oldValue: `org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.health.mongo.enabled`
   * newPropertyKey: `management.health.mongodb.enabled`
@@ -451,6 +455,10 @@ tags:
   - spring
   - boot
 recipeList:
+  - org.openrewrite.java.spring.ChangeSpringPropertyValue:
+      propertyKey: spring.jpa.hibernate.naming.implicit-strategy
+      newValue: org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+      oldValue: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.health.mongo.enabled
       newPropertyKey: management.health.mongodb.enabled
@@ -864,6 +872,143 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
+## Examples
+##### Example 1
+`UpgradeSpringBoot40ConfigurationTest#updateHibernateNaminImplicitStrategy`
+
+
+###### Unchanged
+```mavenProject
+test
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+# application.properties
+spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+```
+
+###### After
+```properties
+# application.properties
+spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+# application.properties
+-spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
++spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+---
+spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+```
+
+###### After
+```yaml
+---
+spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+---
+-spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
++spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeSpringBoot40ConfigurationTest#updateHibernateNaminImplicitStrategy`
+
+
+###### Unchanged
+```mavenProject
+test
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+# application.properties
+spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+```
+
+###### After
+```properties
+# application.properties
+spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+# application.properties
+-spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
++spring.jpa.hibernate.naming.implicit-strategy=org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+---
+spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+```
+
+###### After
+```yaml
+---
+spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+---
+-spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
++spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.hibernate.SpringImplicitNamingStrategy
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -1015,6 +1160,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

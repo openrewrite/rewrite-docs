@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Assertion arguments should be passed in the correct order](./assertionsargumentorder.md)
 * [Include an assertion in tests](./testsshouldincludeassertions.md)
 * [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](./asserttruecomparisontoassertequals.md)
+* [Kotlin test methods should have return type `Unit`](./kotlintestmethodsshouldreturnunit.md)
 * [Refaster template `AssertLiteralBooleanToFail.WithMessage`](./assertliteralbooleantofailrecipes$withmessagerecipe.md)
 * [Refaster template `AssertLiteralBooleanToFail.WithoutMessage`](./assertliteralbooleantofailrecipes$withoutmessagerecipe.md)
 * [Remove JUnit `assertTrue(true)` and `assertFalse(false)`](./assertliteralbooleanremovedrecipe.md)

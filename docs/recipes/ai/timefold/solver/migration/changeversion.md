@@ -30,27 +30,27 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.ai.timefold.solver`
-  * newValue: `1.28.0`
+  * newValue: `1.29.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.timefold`
-  * newValue: `1.28.0`
+  * newValue: `1.29.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `ai.timefold.solver.version`
-  * newValue: `1.28.0`
+  * newValue: `1.29.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefold.version`
-  * newValue: `1.28.0`
+  * newValue: `1.29.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefoldVersion`
-  * newValue: `1.28.0`
+  * newValue: `1.29.0`
   * addIfMissing: `false`
   * trustParent: `true`
 
@@ -68,27 +68,27 @@ description: |
 recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.ai.timefold.solver
-      newValue: 1.28.0
+      newValue: 1.29.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.timefold
-      newValue: 1.28.0
+      newValue: 1.29.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: ai.timefold.solver.version
-      newValue: 1.28.0
+      newValue: 1.29.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefold.version
-      newValue: 1.28.0
+      newValue: 1.29.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefoldVersion
-      newValue: 1.28.0
+      newValue: 1.29.0
       addIfMissing: false
       trustParent: true
 
@@ -253,6 +253,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

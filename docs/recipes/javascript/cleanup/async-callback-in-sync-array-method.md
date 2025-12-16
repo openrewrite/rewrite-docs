@@ -1,19 +1,27 @@
 ---
-sidebar_label: "Order imports"
+sidebar_label: "Detect async callbacks in synchronous array methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Order imports
+# Detect async callbacks in synchronous array methods
 
-**org.openrewrite.OrderImports**
+**org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method**
 
-_Sort top-level imports alphabetically within groups: no qualifier, asterisk, multiple, single._
+_Detects async callbacks passed to array methods like .some(), .every(), .filter() which don't await promises. This is a common bug where Promise objects are always truthy._
+
+### Tags
+
+* [async](/reference/recipes-by-tag#async)
+* [bug](/reference/recipes-by-tag#bug)
+* [cleanup](/reference/recipes-by-tag#cleanup)
+* [typescript](/reference/recipes-by-tag#typescript)
+* [javascript](/reference/recipes-by-tag#javascript)
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.OrderImports),
+[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 
@@ -34,5 +42,5 @@ mod config recipes npm install @openrewrite/rewrite
 Then, you can run the recipe via:
 
 ```shell title="Run the recipe"
-mod run . --recipe org.openrewrite.OrderImports
+mod run . --recipe org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method
 ```

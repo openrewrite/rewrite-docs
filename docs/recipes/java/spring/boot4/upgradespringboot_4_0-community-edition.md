@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `@MockBean` and `@SpyBean`](../../../java/spring/boot4/replacemockbeanandspybean)
 * [Migrate to Hibernate 7.1.x (Community Edition)](../../../hibernate/migratetohibernate71-community-edition)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
+* [Migrate to Spring Boot 4.0 modular starters](../../../java/spring/boot4/migratetomodularstarters)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -82,6 +83,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-web-services`
   * newArtifactId: `spring-boot-starter-webservices`
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-aop`
+  * unlessUsing: `org.aspectj.lang.annotation.*`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.springframework.boot`
+  * oldArtifactId: `spring-boot-starter-aop`
+  * newArtifactId: `spring-boot-starter-aspectj`
 
 </TabItem>
 
@@ -106,6 +115,7 @@ recipeList:
   - org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean
   - org.openrewrite.hibernate.MigrateToHibernate71
   - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
+  - org.openrewrite.java.spring.boot4.MigrateToModularStarters
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: "*"
@@ -147,6 +157,14 @@ recipeList:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-web-services
       newArtifactId: spring-boot-starter-webservices
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-aop
+      unlessUsing: org.aspectj.lang.annotation.*
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.springframework.boot
+      oldArtifactId: spring-boot-starter-aop
+      newArtifactId: spring-boot-starter-aspectj
 
 ```
 </TabItem>
@@ -309,6 +327,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

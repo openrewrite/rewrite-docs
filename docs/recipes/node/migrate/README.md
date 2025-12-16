@@ -11,6 +11,7 @@ description: Migrate OpenRewrite recipes.
 * [Fs](/recipes/node/migrate/fs)
 * [Http](/recipes/node/migrate/http)
 * [Process](/recipes/node/migrate/process)
+* [Tls](/recipes/node/migrate/tls)
 * [Util](/recipes/node/migrate/util)
 * [Zlib](/recipes/node/migrate/zlib)
 

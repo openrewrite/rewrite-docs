@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Adopt jackson 3](/recipes/java/spring/boot4/adoptjackson3.md)
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 * [Change SDK Exception types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
 * [Change SDK S3EventNotification types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changes3eventnotificationtypes.md)
@@ -65,7 +66,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate OpenSymphony classes to Struts 6.0](/recipes/java/struts/migrate6/migrateopensymphonyclasses.md)
 * [Migrate Resource Classes](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
-* [Migrate Spring Boot 3.5 deprecated classes and methods](/recipes/java/spring/boot3/springboot35deprecations.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
 * [Migrate TaskMetadata and ThreadMetadata](/recipes/kafka/streams/migratetaskandthreadmetadata.md)
@@ -102,6 +102,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](/recipes/java/springdoc/migratespringdoccommon.md)
 * [Migrate moved types between Camel 3.x and Camel 4.x](/recipes/org/apache/camel/upgrade/camel40/changetypes.md)
+* [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 * [Migrate to Hibernate 6.6.x (Moderne Edition)](/recipes/hibernate/migratetohibernate66-moderne-edition.md)
@@ -154,6 +155,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
 * [Replace deprecated RequestMatcherProvider with new API](/recipes/java/spring/boot4/replacedeprecatedrequestmatcherprovider.md)
 * [Replace elements of SpringFox's security with Swagger's security models](/recipes/java/spring/doc/securitycontexttosecurityscheme.md)
+* [Spring Boot 4.0 Module Starter Relocations](/recipes/java/spring/boot4/modulestarterrelocations.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
 * [Substitute removed Faces Managed Beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
 * [Tag Enum has been deprecated](/recipes/org/apache/camel/upgrade/camel41/tracingtag.md)
@@ -314,6 +316,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

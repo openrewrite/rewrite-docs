@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.javascript.dependencies.upgrade-dependency-version**
 
-_Upgrades the version of a dependency in `package.json` and updates the lock file by running the package manager._
+_Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager._
 
 ## Recipe source
 
@@ -23,8 +23,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `null` | packageName | The name of the npm package to upgrade (e.g., 'lodash', '@types/node') | `lodash` |
-| `null` | newVersion | The new version constraint to set (e.g., '^5.0.0', '~2.1.0', '3.0.0') | `^5.0.0` |
+| `null` | packageName | The name of the npm package to upgrade (e.g., `lodash`, `@types/node`) | `lodash` |
+| `null` | newVersion | The version constraint to set (e.g., `^5.0.0`, `~2.1.0`, `3.0.0`) | `^5.0.0` |
 
 
 ## Usage

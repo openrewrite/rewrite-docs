@@ -1,101 +1,38 @@
 ---
-sidebar_label: "Upgrade Micrometer"
+sidebar_label: "Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Upgrade Micrometer
+# Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin
 
-**org.openrewrite.micrometer.UpgradeMicrometer**
+**io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin**
 
-_This recipe will apply changes commonly needed when migrating Micrometer._
+```
+Add <extensions>true</extensions> to the quarkus-maven-plugin configuration if not already present.
+```
+
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/resources/META-INF/rewrite/micrometer.yml),
-[Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
-
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Micrometer 1.13](../micrometer/upgrademicrometer_1_13)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.micrometer.UpgradeMicrometer
-displayName: Upgrade Micrometer
-description: |
-  This recipe will apply changes commonly needed when migrating Micrometer.
-recipeList:
-  - org.openrewrite.micrometer.UpgradeMicrometer_1_13
-
-```
-</TabItem>
-</Tabs>
-## Examples
-##### Example 1
-`Dependencies#maven`
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-###### Unchanged
-```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>io.micrometer</groupId>
-      <artifactId>micrometer-core</artifactId>
-      <version>1.10.10</version>
-    </dependency>
-  </dependencies>
-</project>
-```
+## Used by
 
----
+This recipe is used as part of the following composite recipes:
 
-##### Example 2
-`Dependencies#maven`
-
-
-###### Unchanged
-```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>io.micrometer</groupId>
-      <artifactId>micrometer-core</artifactId>
-      <version>1.10.10</version>
-    </dependency>
-  </dependencies>
-</project>
-```
+* [io.quarkus.updates.core.quarkus331.CoreUpdate331](/recipes/io/quarkus/updates/core/quarkus331/coreupdate331.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micrometer` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -107,7 +44,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.micrometer.UpgradeMicrometer")
+    activeRecipe("io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin")
     setExportDatatables(true)
 }
 
@@ -116,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -137,10 +74,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.micrometer.UpgradeMicrometer")
+        activeRecipe("io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -175,14 +112,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.micrometer.UpgradeMicrometer</recipe>
+            <recipe>io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-micrometer</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}</version>
+            <artifactId>rewrite-third-party</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -198,7 +135,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-micrometer:RELEASE -Drewrite.activeRecipes=org.openrewrite.micrometer.UpgradeMicrometer -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -206,12 +143,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeMicrometer
+mod run . --recipe AddExtensionsTrueToQuarkusMavenPlugin
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-micrometer:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICROMETER}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>
@@ -220,7 +157,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-micrometer:{{VERSI
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.micrometer.UpgradeMicrometer" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -243,6 +180,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

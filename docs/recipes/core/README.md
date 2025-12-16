@@ -20,7 +20,6 @@ description: Core OpenRewrite recipes.
 * [Language composition report](./languagecomposition.md)
 * [List runtime classpath](./listruntimeclasspath.md)
 * [Move a file](./movefile.md)
-* [Order imports](./orderimports.md)
 * [Remove ignoral of files or directories from .gitignore](./excludefilefromgitignore.md)
 * [Rename a file](./renamefile.md)
 * [Set file permission attributes](./setfilepermissions.md)

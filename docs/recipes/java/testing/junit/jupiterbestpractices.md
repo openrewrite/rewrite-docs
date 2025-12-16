@@ -39,6 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `@CsvSource` with `@ValueSource` for single method arguments](../../../java/testing/junit5/csvsourcetovaluesource)
 * [Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes)
 * [Remove JUnit `assertTrue(true)` and `assertFalse(false)`](../../../java/testing/cleanup/assertliteralbooleanremovedrecipe)
+* [Kotlin test methods should have return type `Unit`](../../../java/testing/cleanup/kotlintestmethodsshouldreturnunit)
 * [Remove `test` prefix from JUnit 5 tests](../../../java/testing/cleanup/removetestprefix)
 * [Simplify `throws` statements of tests](../../../java/testing/cleanup/simplifytestthrows)
 * [Remove `public` visibility of JUnit 5 tests](../../../java/testing/cleanup/testsshouldnotbepublic)
@@ -72,6 +73,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.CsvSourceToValueSource
   - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes
   - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanRemovedRecipe
+  - org.openrewrite.java.testing.cleanup.KotlinTestMethodsShouldReturnUnit
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
   - org.openrewrite.java.testing.cleanup.SimplifyTestThrows
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
@@ -246,6 +248,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 
