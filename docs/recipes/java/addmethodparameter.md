@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | parameterName | The name of the parameter that gets added. | `name` |
 | `Integer` | parameterIndex | *Optional*. A zero-based index that indicates the position at which the parameter will be added. At the end by default. | `0` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate `DefaultResponseErrorHandler.handleError` method signature](/recipes/java/spring/framework/migratedefaultresponseerrorhandler.md)
+
 ## Example
 
 ###### Parameters
@@ -183,6 +190,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

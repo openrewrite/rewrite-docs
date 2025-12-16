@@ -13,6 +13,8 @@ description: Spring Framework OpenRewrite recipes.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add Spring Framework modular dependencies](./modularspringframeworkdependencies.md)
+* [Migrate `DefaultResponseErrorHandler.handleError` method signature](./migratedefaultresponseerrorhandler.md)
 * [Migrate breaking changes in `ResponseStatusException`](./migrateresponsestatusexception.md)
 * [Migrate removed Spring `Assert` methods](./migratespringassert.md)
 * [Migrate to Spring Framework 5.0](./upgradespringframework_5_0.md)
@@ -29,6 +31,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [`@Bean` methods may not return `void`](./beanmethodreturnnull.md)
 * [Add `@Nullable` to optional Spring web parameters](./nullablespringwebparameters.md)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](./migrateinstantiationawarebeanpostprocessoradapter.md)
+* [Convert JAX-RS annotations to Spring Web](./jaxrstospringweb.md)
 * [Is likely a Spring Framework project](./islikelyspringframework.md)
 * [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](./migratehandlerinterceptor.md)
 * [Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`](./migratehandlerresulthasexceptionhandlermethod.md)

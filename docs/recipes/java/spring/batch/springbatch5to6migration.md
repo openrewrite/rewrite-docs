@@ -197,6 +197,24 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.support.JobExplorerFactoryBean`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.support.JdbcJobExplorerFactoryBean`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.batch.core.step.job.JobStep setJobLauncher(org.springframework.batch.core.launch.JobLauncher)`
+  * newMethodName: `setJobOperator`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.batch.core.step.job.JobStepBuilder launcher(org.springframework.batch.core.launch.JobLauncher)`
+  * newMethodName: `operator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.launch.JobLauncher`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.launch.JobOperator`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.batch.core.step.tasklet.SystemCommandTasklet setJobExplorer(org.springframework.batch.core.repository.explore.JobExplorer)`
+  * newMethodName: `setJobRepository`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.batch.core.partition.support.RemoteStepExecutionAggregator setJobExplorer(org.springframework.batch.core.repository.explore.JobExplorer)`
+  * newMethodName: `setJobRepository`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.JobExplorer`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.repository.JobRepository`
 
 </TabItem>
 
@@ -377,6 +395,24 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.support.JobExplorerFactoryBean
       newFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.support.JdbcJobExplorerFactoryBean
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.batch.core.step.job.JobStep setJobLauncher(org.springframework.batch.core.launch.JobLauncher)
+      newMethodName: setJobOperator
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.batch.core.step.job.JobStepBuilder launcher(org.springframework.batch.core.launch.JobLauncher)
+      newMethodName: operator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.launch.JobLauncher
+      newFullyQualifiedTypeName: org.springframework.batch.core.launch.JobOperator
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.batch.core.step.tasklet.SystemCommandTasklet setJobExplorer(org.springframework.batch.core.repository.explore.JobExplorer)
+      newMethodName: setJobRepository
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.batch.core.partition.support.RemoteStepExecutionAggregator setJobExplorer(org.springframework.batch.core.repository.explore.JobExplorer)
+      newMethodName: setJobRepository
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.JobExplorer
+      newFullyQualifiedTypeName: org.springframework.batch.core.repository.JobRepository
 
 ```
 </TabItem>
@@ -387,6 +423,149 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
+
+## Examples
+##### Example 1
+`MigrateJobStepTest#jobLauncherInjectedWithBeanAnnotation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
+import org.springframework.batch.core.step.job.JobStep;
+import org.springframework.context.annotation.Bean;
+
+class MyJobConfig {
+
+    @Bean
+    JobStep myStep(JobRepository jobRepository, JobLauncher jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+        jobStep.setJobLauncher(jobLauncher);
+        return jobStep;
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.batch.core.launch.JobOperator;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
+import org.springframework.batch.core.step.job.JobStep;
+import org.springframework.context.annotation.Bean;
+
+class MyJobConfig {
+
+    @Bean
+    JobStep myStep(JobRepository jobRepository, JobOperator jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+        jobStep.setJobOperator(jobLauncher);
+        return jobStep;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.batch.core.launch.JobLauncher;
++import org.springframework.batch.core.launch.JobOperator;
+import org.springframework.batch.core.repository.JobRepository;
+@@ -10,1 +10,1 @@
+
+    @Bean
+-   JobStep myStep(JobRepository jobRepository, JobLauncher jobLauncher) {
++   JobStep myStep(JobRepository jobRepository, JobOperator jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+@@ -12,1 +12,1 @@
+    JobStep myStep(JobRepository jobRepository, JobLauncher jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+-       jobStep.setJobLauncher(jobLauncher);
++       jobStep.setJobOperator(jobLauncher);
+        return jobStep;
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateJobStepTest#jobLauncherInjectedWithBeanAnnotation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
+import org.springframework.batch.core.step.job.JobStep;
+import org.springframework.context.annotation.Bean;
+
+class MyJobConfig {
+
+    @Bean
+    JobStep myStep(JobRepository jobRepository, JobLauncher jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+        jobStep.setJobLauncher(jobLauncher);
+        return jobStep;
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.batch.core.launch.JobOperator;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
+import org.springframework.batch.core.step.job.JobStep;
+import org.springframework.context.annotation.Bean;
+
+class MyJobConfig {
+
+    @Bean
+    JobStep myStep(JobRepository jobRepository, JobOperator jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+        jobStep.setJobOperator(jobLauncher);
+        return jobStep;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.batch.core.launch.JobLauncher;
++import org.springframework.batch.core.launch.JobOperator;
+import org.springframework.batch.core.repository.JobRepository;
+@@ -10,1 +10,1 @@
+
+    @Bean
+-   JobStep myStep(JobRepository jobRepository, JobLauncher jobLauncher) {
++   JobStep myStep(JobRepository jobRepository, JobOperator jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+@@ -12,1 +12,1 @@
+    JobStep myStep(JobRepository jobRepository, JobLauncher jobLauncher) {
+        JobStep jobStep = new JobStep(jobRepository);
+-       jobStep.setJobLauncher(jobLauncher);
++       jobStep.setJobOperator(jobLauncher);
+        return jobStep;
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -539,6 +718,23 @@ _Source files that were modified by the recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
 
 </TabItem>
 

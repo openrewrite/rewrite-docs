@@ -8,4 +8,8 @@ description: Node OpenRewrite recipes.
 
 * [Migrate](/recipes/node/migrate)
 
+## Recipes
+
+* [Find and fix vulnerable npm dependencies](./dependency-vulnerability-check.md)
+
 

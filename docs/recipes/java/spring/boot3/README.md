@@ -54,7 +54,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `@Configuration` to classes with `@EnableXXXSecurity` annotations](./configurationoverenablesecurity.md)
-* [Add `@SpringBootApplication` class](./addspringbootapplication.md)
 * [Add `@Valid` annotation to fields](./addvalidtoconfigurationpropertiesfields.md)
 * [Add `@Valid` to nested properties in `@ConfigurationProperties`](./addvalidtonestedconfigproperties.md)
 * [Add `SetUseTrailingSlashMatch()` in configuration](./addsetusetrailingslashmatch.md)

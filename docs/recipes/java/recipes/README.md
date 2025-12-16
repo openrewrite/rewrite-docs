@@ -29,6 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Recipe classes should not have mutable `static` fields](./nomutablestaticfieldsinrecipes.md)
 * [Refactor RewriteTest to use defaults method](./userewritetestdefaults.md)
 * [Refaster template `IsLiteralNull`](./isliteralnullrecipe.md)
+* [Reorder `maybeRemoveImport` before `maybeAddImport`](./removeimportbeforeaddimport.md)
 * [Replace null with RewriteTest.doesNotExist()](./replacenullwithdoesnotexist.md)
 * [RewriteTest classes should not be public](./rewritetestclassesshouldnotbepublic.md)
 * [Show `@DocumentExample`s first](./reordertestmethods.md)

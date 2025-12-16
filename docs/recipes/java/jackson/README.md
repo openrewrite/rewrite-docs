@@ -30,10 +30,14 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Migrate `JSONNode` field iterator for Jackson 3](./jackson3jsonnodefielditerators.md)
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](./replacestreamwritecapability.md)
+* [Simplify catch clauses for Jackson exceptions](./simplifyjacksonexceptioncatch.md)
+* [Update configuration of serialization inclusion in ObjectMapper for Jackson 3](./updateserializationinclusionconfiguration.md)
+* [Use format alignment `ObjectMappers`](./useformatalignedobjectmappers.md)
 * [Use modern date/time serialization defaults](./usemoderndatetimeserialization.md)
 
 
