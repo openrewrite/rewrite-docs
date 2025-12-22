@@ -527,10 +527,10 @@ public class SayHelloRecipe extends Recipe {
                         .map(J.MethodDeclaration::getSimpleName)
                         .anyMatch("hello"::equals);
 
-            // If the class already has a `hello()` method, don't make any changes to it.
-            if (helloMethodExists) {
-                return classDecl;
-            }
+                // If the class already has a `hello()` method, don't make any changes to it.
+                if (helloMethodExists) {
+                    return classDecl;
+                }
 
                 // insert the defined method into the existing class declaration
                 return JavaTemplate.apply(
