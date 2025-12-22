@@ -495,7 +495,6 @@ public class SayHelloRecipe extends Recipe {
     @Option(displayName = "Fully Qualified Class Name",
             description = "A fully qualified class name indicating which class to add a hello() method to.",
             example = "com.yourorg.FooBar")
-    @NonNull
     String fullyQualifiedClassName;
 
     @Override
@@ -550,7 +549,6 @@ public class SayHelloRecipe extends Recipe {
 ```java
 package com.yourorg;
 
-import org.jspecify.annotations.NonNull;
 import org.openrewrite.ExecutionContext;
 import org.openrewrite.Option;
 import org.openrewrite.Recipe;
@@ -570,10 +568,9 @@ public final class SayHelloRecipe extends Recipe {
     @Option(displayName = "Fully Qualified Class Name",
             description = "A fully qualified class name indicating which class to add a `hello()` method to.",
             example = "`com.yourorg.FooBar`")
-    @NonNull
     private final String fullyQualifiedClassName;
 
-    public SayHelloRecipe(@NonNull String fullyQualifiedClassName) {
+    public SayHelloRecipe(String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
     }
 
