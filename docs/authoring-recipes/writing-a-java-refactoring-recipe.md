@@ -492,7 +492,7 @@ import java.util.Comparator;
 @Value
 @EqualsAndHashCode(callSuper = false)
 public class SayHelloRecipe extends Recipe {
-    @Option(displayName = "Fully Qualified Class Name",
+    @Option(displayName = "Fully qualified class name",
             description = "A fully qualified class name indicating which class to add a hello() method to.",
             example = "com.yourorg.FooBar")
     String fullyQualifiedClassName;
