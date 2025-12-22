@@ -660,8 +660,9 @@ class FooBar {
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SayHelloToFooBar
+description: Add `hello` method to class `com.yourorg.FooBar`.
 recipeList:
-  - org.openrewrite.samples.SayHelloRecipe:
+  - com.yourorg.SayHelloRecipe:
       fullyQualifiedClassName: com.yourorg.FooBar
 ```
 </TabItem>
