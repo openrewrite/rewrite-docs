@@ -567,7 +567,7 @@ import java.util.Objects;
 // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite.
 // Also note: All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
 public final class SayHelloRecipe extends Recipe {
-    @Option(displayName = "Fully qualified class name",
+    @Option(displayName = "Fully Qualified Class Name",
             description = "A fully qualified class name indicating which class to add a `hello()` method to.",
             example = "`com.yourorg.FooBar`")
     @NonNull
