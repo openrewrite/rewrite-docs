@@ -473,14 +473,18 @@ With all of that done, the complete `SayHelloRecipe` looks like this:
 ```java
 package com.yourorg;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-import org.openrewrite.*;
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.Option;
+import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
+import org.openrewrite.java.tree.TypeUtils;
+
+import java.util.Comparator;
 
 // Making your recipe immutable helps make them idempotent and eliminates categories of possible bugs.
 // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite.
@@ -493,12 +497,6 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     String fullyQualifiedClassName;
 
-    // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
-    @JsonCreator
-    public SayHelloRecipe(@JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
-        this.fullyQualifiedClassName = fullyQualifiedClassName;
-    }
-
     @Override
     public String getDisplayName() {
         return "Say 'Hello'";
@@ -506,7 +504,7 @@ public class SayHelloRecipe extends Recipe {
 
     @Override
     public String getDescription() {
-        return "Adds a \"hello\" method to the specified class.";
+        return "Adds a `hello` method to the specified class.";
     }
 
     @Override
@@ -515,34 +513,33 @@ public class SayHelloRecipe extends Recipe {
         return new JavaIsoVisitor<ExecutionContext>() {
 
             @Override
-            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
+            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext ctx) {
                 // Don't make changes to classes that don't match the fully qualified name
-                if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
+                if (!TypeUtils.isOfClassType(classDecl.getType(), fullyQualifiedClassName)) {
                     return classDecl;
                 }
 
                 // Check if the class already has a method named "hello".
                 boolean helloMethodExists = classDecl.getBody().getStatements().stream()
-                        .filter(statement -> statement instanceof J.MethodDeclaration)
+                        .filter(J.MethodDeclaration.class::isInstance)
                         .map(J.MethodDeclaration.class::cast)
-                        .anyMatch(methodDeclaration -> "hello".equals(methodDeclaration.getName().getSimpleName()));
+                        .map(J.MethodDeclaration::getSimpleName)
+                        .anyMatch("hello"::equals);
 
                 // If the class already has a `hello()` method, don't make any changes to it.
                 if (helloMethodExists) {
                     return classDecl;
                 }
 
-                // Interpolate the fullyQualifiedClassName into the template and use the resulting LST to update the class body
-                J.Block block = JavaTemplate.apply(
+                // insert the defined method into the existing class declaration
+                return JavaTemplate.apply(
                         "public String hello() { return \"Hello from #{}!\"; }",
-                        new Cursor(getCursor(), classDecl.getBody()),
-                        classDecl.getBody().getCoordinates().lastStatement(),
+                        updateCursor(classDecl),
+                        classDecl.getBody().getCoordinates().addMethodDeclaration(Comparator.comparing(J.MethodDeclaration::getSimpleName)),
                         fullyQualifiedClassName);
-                return classDecl.withBody(block);
             }
         };
     }
-
 }
 ```
 </TabItem>
@@ -552,25 +549,28 @@ public class SayHelloRecipe extends Recipe {
 ```java
 package com.yourorg;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.openrewrite.*;
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.Option;
+import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
+import org.openrewrite.java.tree.TypeUtils;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 // Making your recipe immutable helps make them idempotent and eliminates categories of possible bugs.
 // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite.
 // Also note: All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
-public class SayHelloRecipe extends Recipe {
-    @Option(displayName = "Fully qualified class name",
-            description = "A fully qualified class name indicating which class to add a hello() method to.",
-            example = "com.yourorg.FooBar")
-    String fullyQualifiedClassName;
+public final class SayHelloRecipe extends Recipe {
+    @Option(displayName = "Fully Qualified Class Name",
+            description = "A fully qualified class name indicating which class to add a `hello()` method to.",
+            example = "`com.yourorg.FooBar`")
+    private final String fullyQualifiedClassName;
 
-    // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
-    public SayHelloRecipe(@JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
+    public SayHelloRecipe(String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
     }
 
@@ -581,7 +581,7 @@ public class SayHelloRecipe extends Recipe {
 
     @Override
     public String getDescription() {
-        return "Adds a \"hello\" method to the specified class.";
+        return "Adds a `hello` method to the specified class.";
     }
 
     @Override
@@ -590,40 +590,39 @@ public class SayHelloRecipe extends Recipe {
         return new JavaIsoVisitor<ExecutionContext>() {
 
             @Override
-            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
+            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext ctx) {
                 // Don't make changes to classes that don't match the fully qualified name
-                if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
+                if (!TypeUtils.isOfClassType(classDecl.getType(), fullyQualifiedClassName)) {
                     return classDecl;
                 }
 
                 // Check if the class already has a method named "hello".
                 boolean helloMethodExists = classDecl.getBody().getStatements().stream()
-                        .filter(statement -> statement instanceof J.MethodDeclaration)
+                        .filter(J.MethodDeclaration.class::isInstance)
                         .map(J.MethodDeclaration.class::cast)
-                        .anyMatch(methodDeclaration -> methodDeclaration.getName().getSimpleName().equals("hello"));
+                        .map(J.MethodDeclaration::getSimpleName)
+                        .anyMatch("hello"::equals);
 
                 // If the class already has a `hello()` method, don't make any changes to it.
                 if (helloMethodExists) {
                     return classDecl;
                 }
 
-                // Interpolate the fullyQualifiedClassName into the template and use the resulting LST to update the class body
-                J.Block body = JavaTemplate.apply(
+                // insert the defined method into the existing class declaration
+                return JavaTemplate.apply(
                         "public String hello() { return \"Hello from #{}!\"; }",
-                        new Cursor(getCursor(), classDecl.getBody()),
-                        classDecl.getBody().getCoordinates().lastStatement(),
+                        updateCursor(classDecl),
+                        classDecl.getBody().getCoordinates().addMethodDeclaration(Comparator.comparing(J.MethodDeclaration::getSimpleName)),
                         fullyQualifiedClassName);
-                return classDecl.withBody(body);
             }
         };
     }
 
-    public String getFullyQualifiedClassName() {
-        return fullyQualifiedClassName;
-    }
-
-    public void setFullyQualifiedClassName(String fullyQualifiedClassName) {
-        this.fullyQualifiedClassName = fullyQualifiedClassName;
+    @Override
+    public String toString() {
+        return "SayHelloRecipe{" +
+                "fullyQualifiedClassName='" + fullyQualifiedClassName + '\'' +
+                '}';
     }
 
     @Override
@@ -638,13 +637,6 @@ public class SayHelloRecipe extends Recipe {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), fullyQualifiedClassName);
-    }
-
-    @Override
-    public String toString() {
-        return "SayHelloRecipe{" +
-                "fullyQualifiedClassName='" + fullyQualifiedClassName + '\'' +
-                '}';
     }
 }
 ```
@@ -674,6 +666,7 @@ class FooBar {
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.SayHelloToFooBar
+description: Add `hello` method to class `com.yourorg.FooBar`.
 recipeList:
   - com.yourorg.SayHelloRecipe:
       fullyQualifiedClassName: com.yourorg.FooBar
