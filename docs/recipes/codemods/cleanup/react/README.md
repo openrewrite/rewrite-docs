@@ -1,3 +1,7 @@
+---
+description: React OpenRewrite recipes.
+---
+
 # React
 
 ## Recipes
@@ -6,7 +10,7 @@
 * [Disallow missing parentheses around multiline JSX](./jsxwrapmultilines.md)
 * [Disallow multiple spaces between inline JSX props](./jsxpropsnomultispaces.md)
 * [Disallow problematic leaked values from being rendered](./jsxnoleakedrender.md)
-* [Disallow target="_blank" attribute without rel="noreferrer"](./jsxnotargetblank.md)
+* [Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;](./jsxnotargetblank.md)
 * [Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes](./jsxcurlybracepresence.md)
 * [Disallow unnecessary fragments](./jsxnouselessfragment.md)
 * [Disallow usage of unknown DOM property](./nounknownproperty.md)

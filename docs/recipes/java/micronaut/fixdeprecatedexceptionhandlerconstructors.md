@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Fix deprecated no-arg ExceptionHandler constructors"
+sidebar_label: "Fix deprecated no-arg `ExceptionHandler` constructors"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,12 +13,81 @@ _Adds `ErrorResponseProcessor` argument to deprecated no-arg `ExceptionHandler` 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/FixDeprecatedExceptionHandlerConstructors.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/FixDeprecatedExceptionHandlerConstructors.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package abc;
+
+import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
+
+public class ApiClientValidationExceptionHandler extends ConstraintExceptionHandler {
+    private void someMethod(){}
+}
+```
+
+###### After
+```java
+package abc;
+
+import io.micronaut.http.server.exceptions.response.ErrorResponseProcessor;
+import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
+import jakarta.inject.Inject;
+
+public class ApiClientValidationExceptionHandler extends ConstraintExceptionHandler {
+
+    @Inject
+    public ApiClientValidationExceptionHandler(ErrorResponseProcessor errorResponseProcessor) {
+        super(errorResponseProcessor);
+    }
+    private void someMethod(){}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,1 @@
+package abc;
+
++import io.micronaut.http.server.exceptions.response.ErrorResponseProcessor;
+import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
+@@ -4,0 +5,1 @@
+
+import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
++import jakarta.inject.Inject;
+
+@@ -6,0 +8,5 @@
+
+public class ApiClientValidationExceptionHandler extends ConstraintExceptionHandler {
++
++   @Inject
++   public ApiClientValidationExceptionHandler(ErrorResponseProcessor errorResponseProcessor) {
++       super(errorResponseProcessor);
++   }
+    private void someMethod(){}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -31,7 +100,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -44,7 +113,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}")
 }
 ```
 
@@ -65,7 +134,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}")
+        rewrite("org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors")
@@ -110,7 +179,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>{{VERSION_REWRITE_MICRONAUT}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,7 +208,7 @@ mod run . --recipe FixDeprecatedExceptionHandlerConstructors
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}
 ```
 </TabItem>
 </Tabs>
@@ -155,6 +224,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -169,6 +241,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -180,6 +273,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -190,13 +287,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jeremy Grelle](mailto:grellej@unityfoundation.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+</Tabs>

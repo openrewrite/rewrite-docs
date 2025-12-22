@@ -1,3 +1,7 @@
+---
+description: JUnit Jupiter OpenRewrite recipes.
+---
+
 # JUnit Jupiter
 
 _Best practices for JUnit Jupiter tests._
@@ -7,9 +11,11 @@ _Best practices for JUnit Jupiter tests._
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Clean Up Assertions](./cleanupassertions.md)
-* [JUnit Jupiter best practices](./junit5bestpractices.md)
+* [Exclude JUnit 4, unless Testcontainers is used](./excludejunit4unlessusingtestcontainers.md)
+* [JUnit 5 best practices](./junit5bestpractices.md)
 * [JUnit Jupiter migration from JUnit 4.x](./junit4to5migration.md)
 * [Upgrade Surefire Plugin](./upgradesurefireplugin.md)
+* [Upgrade to JUnit 5.14](./upgradetojunit514.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](./migrateassumptions.md)
 * [Use `MatcherAssert#assertThat(..)`](./usehamcrestassertthat.md)
 * [Use Mockito JUnit Jupiter extension](./usemockitoextension.md)
@@ -26,6 +32,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Cleanup JUnit imports](./cleanupjunitimports.md)
 * [Gradle `Test` use JUnit Jupiter](./gradleusejunitjupiter.md)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](./categorytotag.md)
+* [JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`](./timeoutruletoclassannotation.md)
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](./runnertoextension.md)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](./enclosedtonested.md)
 * [JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests](./parameterizedrunnertoparameterized.md)
@@ -38,13 +45,15 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Make lifecycle methods non private](./lifecyclenonprivate.md)
 * [Migrate JUnit 4 `@Test` annotations to JUnit 5](./updatetestannotation.md)
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](./migratejunittestcase.md)
+* [Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension](./environmentvariables.md)
 * [Migrate JUnit 4 lifecycle annotations to JUnit Jupiter](./updatebeforeafterannotations.md)
 * [Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`](./usetestmethodorder.md)
 * [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](./updatemockwebserver.md)
-* [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](./junitparamsrunnertoparameterized.md)
+* [Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests](./junitparamsrunnertoparameterized.md)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](./removeobsoleterunners.md)
 * [Remove duplicates uses of @TestTemplate implementations for a single method](./removeduplicatetesttemplates.md)
-* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -> { ... })`](./removetrycatchfailblocks.md)
+* [Replace `@CsvSource` with `@ValueSource` for single method arguments](./csvsourcetovaluesource.md)
+* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`](./removetrycatchfailblocks.md)
 * [Statically import JUnit Jupiter assertions](./staticimports.md)
 * [Use JUnit Jupiter `@Disabled`](./ignoretodisabled.md)
 * [Use JUnit Jupiter `@TempDir`](./temporaryfoldertotempdir.md)

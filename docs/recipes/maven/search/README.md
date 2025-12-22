@@ -1,3 +1,7 @@
+---
+description: Search OpenRewrite recipes.
+---
+
 # Search
 
 ## Recipes
@@ -10,10 +14,13 @@
 * [Find Maven plugin](./findplugin.md)
 * [Find Maven project properties](./findproperties.md)
 * [Find Maven projects](./findmavenproject.md)
+* [Find SCM tag](./findscm.md)
 * [Find effective maven settings](./findmavensettings.md)
 * [List effective Maven repositories](./effectivemavenrepositories.md)
 * [Maven dependency insight](./dependencyinsight.md)
 * [Maven parent insight](./parentpominsight.md)
 * [Maven repository order](./findrepositoryorder.md)
+* [Module has dependency](./modulehasdependency.md)
+* [Module has plugin](./modulehasplugin.md)
 
 

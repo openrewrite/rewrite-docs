@@ -1,7 +1,11 @@
+---
+description: A reference doc that explains what LST metadata is available to recipe authors.
+---
+
 # Framework provided markers
 
 Not everything a [Recipe](../concepts-and-explanations/recipes.md) may wish to know about an [LST](../concepts-and-explanations/lossless-semantic-trees.md) is contained in the LST itself.
-OpenRewrite attaches [Markers](../concepts-and-explanations/markers.md) to an LST provide Recipes access to relevant metadata.
+OpenRewrite attaches [Markers](../concepts-and-explanations/markers.md) to an LST to provide Recipes access to relevant metadata.
 This document provides Recipe authors a reference for what metadata is available and how to access it.
 
 ## Accessing provided markers

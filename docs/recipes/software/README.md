@@ -1,3 +1,7 @@
+---
+description: Software OpenRewrite recipes.
+---
+
 # Software
 
 ## Categories

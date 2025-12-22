@@ -1,3 +1,7 @@
+---
+description: Reactive OpenRewrite recipes.
+---
+
 # Reactive
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Instructions for setting up your local development environment to create OpenRewrite recipes.
+---
+
 import ReactPlayer from 'react-player';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,9 +16,9 @@ If you are looking to build [OpenRewrite](https://github.com/openrewrite/rewrite
 
 ## Prerequisites
 
-* [JDK](https://adoptopenjdk.net) (version 1.8+)
+* [JDK](https://adoptopenjdk.net) (Java 21)
   * A JRE alone is insufficient since OpenRewrite uses compiler internals and tools only found in the JDK
-* [Gradle](https://gradle.org) (version 4.0+ ) or [Maven](https://maven.apache.org) (version 3.2+)
+* [Gradle](https://gradle.org) (version 4.0+) or [Maven](https://maven.apache.org) (version 3.2+)
 * [IntelliJ](https://www.jetbrains.com/idea/download/) (version 2024.1+) with [built-in support](https://blog.jetbrains.com/idea/2024/02/intellij-idea-2024-1-eap-7/) for OpenRewrite
   * Other IDEs might work as well, but lack dedicated support
 
@@ -45,11 +49,15 @@ gradle init
 <TabItem value="maven" label="Maven">
 
 ```bash
-mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5
 ```
 
 </TabItem>
 </Tabs>
+
+:::tip
+If you are using Gradle, it is highly-recommended that you apply the [`org.openrewrite.build.recipe-library-base` plugin](https://plugins.gradle.org/plugin/org.openrewrite.build.recipe-library-base). The plugin automatically configures the project with meaningful conventions like necessary compiler options.
+:::
 
 ### Dependencies & dependency management
 
@@ -104,21 +112,29 @@ dependencies {
 
 ```xml title="pom.xml"
 <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.testSource>17</maven.compiler.testSource>
-    <maven.compiler.testTarget>17</maven.compiler.testTarget>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties>
 
 <dependencyManagement>
   <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-recipe-bom</artifactId>
           <version>{{VERSION_REWRITE_RECIPE_BOM}}</version>
           <type>pom</type>
           <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.36</version>
       </dependency>
   </dependencies>
 </dependencyManagement>
@@ -197,19 +213,17 @@ dependencies {
     <plugins>
         <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M9</version>
         </plugin>
-        <!-- lombok is optional, but recommended for authoring recipes -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.13.0</version>
             <configuration>
+                <!-- lombok is optional, but recommended for authoring recipes -->
                 <annotationProcessorPaths>
                     <path>
                         <groupId>org.projectlombok</groupId>
                         <artifactId>lombok</artifactId>
-                        <version>1.18.32</version>
                     </path>
                 </annotationProcessorPaths>
             </configuration>
@@ -261,6 +275,43 @@ tasks.compileJava {
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+```
+</TabItem>
+</Tabs>
+
+### Jackson deserialization
+
+Some recipe implementations may use [Jackson deserialization](https://github.com/FasterXML/jackson-annotations) by defining annotations such as `@JsonCreator` and `@JsonProperty`.
+
+In order to deserialize Java classes, you need to add the `-parameters` compiler argument. This is necessary for Jackson to be able to deserialize the constructor parameters of a class.
+
+<Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
+
+```groovy title="build.gradle"
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add('-parameters')
+}
+```
+</TabItem>
+
+<TabItem value="maven" label="Maven">
+
+```xml title="pom.xml"
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.14.0</version>
+            <configuration>
+                <compilerArgs>
+                    <arg>-parameters</arg>
+                </compilerArgs>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 ```
 </TabItem>
 </Tabs>

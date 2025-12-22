@@ -1,3 +1,7 @@
+---
+description: Dropwizard OpenRewrite recipes.
+---
+
 # Dropwizard
 
 ## Recipes

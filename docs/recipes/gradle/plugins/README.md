@@ -1,4 +1,15 @@
+---
+description: Plugins OpenRewrite recipes.
+---
+
 # Plugins
+
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Remove Develocity](./removedevelocity.md)
+* [Remove Develocity configuration](./removedevelocityconfiguration.md)
 
 ## Recipes
 

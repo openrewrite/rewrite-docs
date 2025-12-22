@@ -1,7 +1,11 @@
+---
+description: How to migrate to Jakarta EE 10.0.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrating to Jakarta EE 10.0
+# Migrate to Jakarta EE 10.0
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration to [Jakarta EE 10](https://jakarta.ee/release/10/). Jakarta EE 10 is packed with new features for building modernized, simplified, and lightweight cloud native Java applications. This new innovative community-driven release is designed for organizations looking to start developing new enterprise Java applications or advancing their existing ones.
 
@@ -151,6 +155,20 @@ This recipe will also remove `javax` implementations from a `build.gradle` file 
 dependencies {
     implementation "javax.servlet:javax.servlet-api:4.0.1"
 }
+```
+
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.migrate.jakarta.JakartaEE10
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 
 ## See how this recipe works across multiple open-source repositories

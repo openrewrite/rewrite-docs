@@ -1,4 +1,8 @@
-# Modifying methods with JavaTemplate
+---
+description: A deeper look into how you can use JavaTemplates to refactor/modify methods.
+---
+
+# Modifying methods with JavaTemplates
 
 Previously, we wrote a Java recipe that [added a hello() method to a class if it didn't already have one](./writing-a-java-refactoring-recipe.md). In that guide, we used a `JavaTemplate` to create a basic method. However, a `JavaTemplate` can be used for much more complicated changes, such as refactoring existing methods. Let's explore that.
 
@@ -347,7 +351,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
             // ...
 
             // Add a method body
-            addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody());
+            methodDeclaration = addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody());
 
             return methodDeclaration;
         }

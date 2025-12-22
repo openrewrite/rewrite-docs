@@ -1,12 +1,11 @@
+---
+sidebar_label: Running Rewrite on a Maven project without modifying the build
+description: How to run OpenRewrite on a Maven project without modifying any of the build files.
+---
+
 # Running Rewrite on a Maven project without modifying the build
 
-In this tutorial, we will apply a Rewrite [recipe](../concepts-and-explanations/recipes.md) to a source code repository built with Maven without modifying the build itself. The instructions for this differ slightly depending on whether or not the recipe has configuration parameters. Please note that you will need to have [Maven](https://maven.apache.org/download.cgi) installed in order to run the shell commands.
-
-:::info
-It is not possible to pass in configuration parameters from the command-line right now.
-[Our frequently asked questions](../reference/faq.md#is-it-possible-to-update-only-a-few-files-with-a-recipe-rather-than-all-of-them) goes into more detail why not.
-:::
-
+In this tutorial, we will apply a Rewrite [recipe](../concepts-and-explanations/recipes.md) to a source code repository built with Maven without modifying the build itself. The instructions for this differ slightly depending on whether or not the recipe has configuration parameters. Please note that you will need to have [Maven](https://maven.apache.org/download.cgi) installed to run the shell commands.
 
 ## Running a recipe without configuration parameters
 
@@ -33,6 +32,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## Running a recipe with configuration parameters
 
+### Using the `rewrite.yml` file
+
 If the recipe you're trying to run has configuration parameters, then you will need to:
 
 1. [Create or update a `rewrite.yml` file in your project root](../running-recipes/getting-started.md#step-5-run-a-recipe-with-yaml-configuration). In there, you will need to create a new recipe that wraps the recipe you want to run and specifies the parameters you want to use.
@@ -56,3 +57,20 @@ You could then run that recipe by executing the following shell command:
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=com.yourorg.NameYouDefine
 ```
+### Applying options in shell command.
+
+While the preferred way to configure recipes is through a `rewrite.yml` file, it is possible to pass configuration parameters directly from the command line. However, this only works when running a _single_ recipe.
+
+For example, to run the [AddCommentToMethod](../recipes/java/addcommenttomethod.md) recipe without modifying your `pom.xml`, you can use the following command:
+
+```shell
+mvn org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.activeRecipes=org.openrewrite.java.AddCommentToMethod \
+  -Drewrite.options=comment='Some comment with "quotes"',methodPattern="example.SomeClass someMethod(..)"
+```
+
+:::warning
+This approach does not scale well for larger projects. Each time you run a recipe from the command line, the LST is built from scratch before the recipe is applied. While this is fine for quick, one-off runs, it becomes inefficient if you run multiple recipes one after another. In contrast, when using a `rewrite.yml` file, all configured recipes are applied in a single pass, and the LST is only built once.
+
+For more information, see the [frequently asked questions](../reference/faq.md#is-it-possible-to-pass-arguments-to-a-recipe-from-the-command-line).
+:::

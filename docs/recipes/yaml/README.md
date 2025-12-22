@@ -1,3 +1,7 @@
+---
+description: YAML OpenRewrite recipes.
+---
+
 # YAML
 
 _Basic building blocks for transforming YAML._
@@ -22,5 +26,6 @@ _Basic building blocks for transforming YAML._
 * [Delete key](./deletekey.md)
 * [Delete property](./deleteproperty.md)
 * [Merge YAML snippet](./mergeyaml.md)
+* [Unfold YAML properties](./unfoldproperties.md)
 
 

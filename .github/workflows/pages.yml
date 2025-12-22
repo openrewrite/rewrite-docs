@@ -6,9 +6,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'docs/**'
-      - 'src/**'
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -20,7 +17,7 @@ jobs:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
@@ -31,8 +28,19 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/.docusaurus
+          key: |
+            ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+
       - name: Build website
-        run: yarn build
+        run: |
+          set -o pipefail
+          yarn build 2>&1 | { grep -v "^Generated markdown file:" || true; }
         env:
           NODE_OPTIONS: --max-old-space-size=8192
           DOCUSAURUS_IGNORE_SSG_WARNINGS: true

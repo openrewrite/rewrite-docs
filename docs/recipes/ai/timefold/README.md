@@ -1,3 +1,7 @@
+---
+description: Timefold OpenRewrite recipes.
+---
+
 # Timefold
 
 ## Categories

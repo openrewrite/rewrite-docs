@@ -1,3 +1,7 @@
+---
+description: Datafaker OpenRewrite recipes.
+---
+
 # Datafaker
 
 ## Composite Recipes

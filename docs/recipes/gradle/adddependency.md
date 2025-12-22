@@ -13,13 +13,16 @@ _Add a gradle dependency to a `build.gradle` file in the correct configuration b
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. | `com.google.guava` |
 | `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION' | `guava` |
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). | `29.X` |
@@ -31,9 +34,14 @@ _Add a gradle dependency to a `build.gradle` file in the correct configuration b
 | `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. | `com.fasterxml.jackson*` |
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
 
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add JUnit Platform Launcher](/recipes/gradle/addjunitplatformlauncher.md)
+* [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
+* [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
 
 
 ## Usage
@@ -66,7 +74,7 @@ Now that `com.yourorg.AddDependencyExample` has been defined, activate it in you
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -91,7 +99,7 @@ mod run . --recipe AddDependency --recipe-option "groupId=com.google.guava" --re
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_REWRITE_GRADLE}}
+mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}}
 ```
 </TabItem>
 </Tabs>
@@ -106,6 +114,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
 
 ### Maven metadata failures
 **org.openrewrite.maven.table.MavenMetadataFailures**
@@ -122,6 +133,10 @@ _Attempts to resolve maven metadata that failed._
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -136,6 +151,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -147,6 +183,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -157,10 +197,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

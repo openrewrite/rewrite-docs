@@ -1,0 +1,30 @@
+{
+  "name": "openrewrite-recipe",
+  "version": "1.1.0",
+  "description": "Expert guidance for writing OpenRewrite recipes - automated refactoring operations for source code. Includes templates, examples, and comprehensive best practices.",
+  "author": {
+    "name": "Moderne, Inc.",
+    "url": "https://github.com/openrewrite"
+  },
+  "homepage": "https://github.com/openrewrite/rewrite-docs/tree/master/openrewrite-recipe-writer",
+  "repository": "https://github.com/openrewrite/rewrite-docs",
+  "license": "Apache-2.0",
+  "keywords": [
+    "openrewrite",
+    "recipe",
+    "refactoring",
+    "java",
+    "javascript",
+    "ast",
+    "code-transformation",
+    "testing"
+  ],
+  "commands": [
+    "./commands/create-recipe.md",
+    "./commands/create-js-recipe.md"
+  ],
+  "skills": [
+    "./skills/writing-openrewrite-recipes",
+    "./skills/writing-openrewrite-recipes-js"
+  ]
+}

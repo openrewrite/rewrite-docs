@@ -1,3 +1,7 @@
+---
+description: Camel47 OpenRewrite recipes.
+---
+
 # Camel47
 
 ## Composite Recipes

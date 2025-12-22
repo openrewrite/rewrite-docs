@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to Quarkus 2
+description: How to automatically migrate from Quarkus 1 to Quarkus 2.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -220,7 +225,21 @@ quarkus.neo4j.pool.metrics.enabled=true
 </TabItem>
 </Tabs>
 
-### Known Limitations
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}
+```
+
+## Known Limitations
 
 | Unsupported Functionality                                                                                                     | Issue                                                           |
 | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |

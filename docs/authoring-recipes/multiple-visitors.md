@@ -1,3 +1,8 @@
+---
+sidebar_label: Multiple visitors in one recipe
+description: How to create recipes that contain and use multiple visitors.
+---
+
 # Creating multiple visitors in one recipe
 
 As you begin to write increasingly complex recipes, you will find that it is often necessary to have more than one visitor. This is because significant changes often require you to visit many types of [Lossless Semantic Trees](../concepts-and-explanations/lossless-semantic-trees.md) (LSTs) to figure out whether or not a change should be made.

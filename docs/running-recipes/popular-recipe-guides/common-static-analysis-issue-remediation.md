@@ -1,11 +1,15 @@
+---
+description: How to automatically resolve common static analysis issues.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Common Static Analysis Issue Remediation
+# Common static analysis issue remediation
 
 In this guide we'll look at using OpenRewrite to perform an automated remediation for many issues identified by common static analysis tools.
 
-### Example Configuration
+### Example configuration
 
 The [Common Static Analysis Recipe](../../recipes/staticanalysis/commonstaticanalysis.md) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
 
@@ -27,7 +31,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
 }
 ```
 
@@ -48,7 +52,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite.recipe</groupId>
         <artifactId>rewrite-static-analysis</artifactId>
-        <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+        <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
     </dependency>
     </dependencies>
 </plugin>
@@ -149,6 +153,20 @@ public class MessageExtBatch implements Serializable {
 ```
 	</TabItem>
 </Tabs>
+
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.staticanalysis.CommonStaticAnalysis
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
+```
 
 ## Known Limitations
 

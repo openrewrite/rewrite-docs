@@ -1,3 +1,9 @@
+---
+description: A technical overview of recipes and the lifecycle surrounding them. Includes example code and diagrams.
+---
+
+import ReactPlayer from 'react-player'
+
 # Recipes
 
 A recipe represents a group of search and refactoring operations that can be applied to a [Lossless Semantic Tree](./lossless-semantic-trees.md). A recipe can represent a single, stand-alone operation or it can be linked together with other recipes to accomplish a larger goal such as a framework migration.
@@ -12,6 +18,7 @@ Let's look at a simple example where a Java recipe performs an operation to chan
 
 ```java
 public class ChangeType extends Recipe {
+    // Standard recipe description and name ...
 
     private final String oldFullyQualifiedTypeName;
     private final String newFullyQualifiedTypeName;
@@ -101,6 +108,7 @@ recipeList:
 ```
 
 :::info
+Note that values passed to declarative recipes are subject to YAML interpretation. So `1.20` would be interpreted as a float, causing the trailing 0 to be dropped. Wrapping the value in single or double quotes will resolve this.
 For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](../reference/yaml-format-reference.md).
 :::
 
@@ -164,8 +172,6 @@ A `ScanningRecipe` extends the normal `Recipe` and adds two key objects: an [acc
 The `accumulator` object is a custom data structure defined by the recipe itself to store any information the recipe needs to function.
 The `scanner` object is a `visitor` which populates the `accumulator` with data.
 
-Scanning recipes may not be used as preconditions for declarative YAML recipes.
-
 Scanning recipes have three phases:
 
 1. A scanning phase that collects information while making no new code changes. In this phase, the `scanner` is called for each source file and information is added to the `accumulator` that the recipe will need for future steps.
@@ -173,9 +179,26 @@ Scanning recipes have three phases:
 2. An _optional_ generating phase where new files are created (if any are needed). In this phase, the `accumulator` can be accessed to determine whether or not a file should be created.
 3. An editing phase where the recipe makes changes, same as a regular `Recipe`. Like the generating phase, the `accumulator` can be accessed to inform how changes are made. Like a regular `Recipe` this phase makes changes to files one at a time, no random access to other source files is provided.
 
+:::tip
+If you create a declarative recipe and put two scanning recipes in the list of recipes, the execution cycle will look like:
+
+1. Scan A
+2. Scan B
+3. Generate A
+4. Generate B
+5. Edit A
+6. Edit B
+
+What this means is that all scanning visitors will see the state before any changes are made by any recipe edit visitor.
+However, scanning visitors [_will_ see prior newly generated files](https://github.com/openrewrite/rewrite/blob/0a2f1551826861d29c5a2297d81174d49fec6254/rewrite-core/src/main/java/org/openrewrite/scheduling/RecipeRunCycle.java#L133-L134), as those are visited separately before moving to the edit phase.
+:::
+
 ### Example
 
-[AddManagedDependency code](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java)
+<details>
+<summary>
+The `AddManagedDependency` scanning recipe.
+</summary>
 
 ```java
 // imports
@@ -292,6 +315,11 @@ public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Sc
   }
 }
 ```
+</details>
+
+[Link to the code](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java)
+
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=p62K0iRIzvA' controls="true" />
 
 ## Recipe Execution Pipeline
 

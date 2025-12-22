@@ -1,9 +1,14 @@
+---
+description: Maven OpenRewrite recipes.
+---
+
 # Maven
 
 ## Categories
 
 * [Cleanup](/recipes/maven/cleanup)
 * [Liberty](/recipes/maven/liberty)
+* [Plugin](/recipes/maven/plugin)
 * [Search](/recipes/maven/search)
 * [Security](/recipes/maven/security)
 * [Spring](/recipes/maven/spring)
@@ -14,6 +19,11 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Apache Maven best practices](./bestpractices.md)
+* [Migrate to Maven 4](./migratetomaven4.md)
+* [Replace deprecated lifecycle phases](./replacedeprecatedlifecyclephases.md)
+* [Replace modules with subprojects](./replacemoduleswithsubprojects.md)
+* [Replace removed root directory properties](./replaceremovedrootdirectoryproperties.md)
+* [Upgrade to Maven model version 4.1.0](./upgradetomodelversion410.md)
 
 ## Recipes
 
@@ -40,6 +50,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change Maven plugin executions](./changepluginexecutions.md)
 * [Change Maven plugin group and artifact ID](./changeplugingroupidandartifactid.md)
 * [Change Maven project property value](./changepropertyvalue.md)
+* [Convert managed dependencies to runtime dependencies](./managedtoruntimedependencies.md)
+* [Enable Develocity build cache](./enabledevelocitybuildcache.md)
 * [Exclude Maven dependency](./excludedependency.md)
 * [Increment Maven project version](./incrementprojectversion.md)
 * [Manage dependencies](./managedependencies.md)
@@ -51,16 +63,22 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove Maven plugin dependency](./removeplugindependency.md)
 * [Remove Maven project property](./removeproperty.md)
 * [Remove duplicate Maven dependencies](./removeduplicatedependencies.md)
+* [Remove duplicate plugin declarations](./removeduplicateplugindeclarations.md)
 * [Remove exclusion](./removeexclusion.md)
 * [Remove redundant explicit dependency and plugin versions](./removeredundantdependencyversions.md)
+* [Remove redundant properties](./removeredundantproperties.md)
 * [Remove repository](./removerepository.md)
 * [Remove unused properties](./removeunusedproperties.md)
 * [Rename Maven property key](./renamepropertykey.md)
 * [Set Maven project packaging](./changepackaging.md)
+* [Update Maven Java project properties](./updatemavenprojectpropertyjavaversion.md)
 * [Update Maven wrapper](./updatemavenwrapper.md)
+* [Update SCM with Git origin](./updatescmfromgitorigin.md)
 * [Upgrade Maven dependency version](./upgradedependencyversion.md)
 * [Upgrade Maven parent project version](./upgradeparentversion.md)
 * [Upgrade Maven plugin version](./upgradepluginversion.md)
 * [Upgrade transitive Maven dependencies](./upgradetransitivedependencyversion.md)
+* [Use Maven 4 parent inference](./useparentinference.md)
+* [Use Maven compiler plugin release configuration](./usemavencompilerpluginreleaseconfiguration.md)
 
 

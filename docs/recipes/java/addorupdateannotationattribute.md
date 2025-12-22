@@ -13,22 +13,30 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | annotationType | The fully qualified name of the annotation. | `org.junit.Test` |
 | `String` | attributeName | *Optional*. The name of attribute to change. If omitted defaults to 'value'. | `timeout` |
-| `String` | attributeValue | The value to set the attribute to. Set to `null` to remove the attribute. | `500` |
-| `Boolean` | addOnly | When set to `true` will not change existing annotation attribute values. |  |
-| `Boolean` | appendArray | If the attribute is an array, setting this option to `true` will append the value(s). In conjunction with `addOnly`, it is possible to control duplicates: `addOnly=true`, always append. `addOnly=false`, only append if the value is not already present. |  |
+| `String` | attributeValue | *Optional*. The value to set the attribute to. If the attribute is an array, provide values separated by comma to add multiple attributes at once. Set to `null` to remove the attribute. | `500` |
+| `String` | oldAttributeValue | *Optional*. The current value of the attribute, this can be used to filter where the change is applied. Set to `null` for wildcard behavior. | `400` |
+| `Boolean` | addOnly | *Optional*. If `true`, disables upgrading existing annotation attribute values, thus the recipe will only add the attribute if it does not already exist. If omitted or `false`, the recipe adds the attribute if missing or updates its value if present. |  |
+| `Boolean` | appendArray | *Optional*. If the attribute is an array and attribute is present, setting this option to `true` will append the value(s). Duplicate values will not be added. If omitted or `false`, the recipe will replace the existing value(s) with the new value(s). |  |
 
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Hibernate CascadeType constants (Moderne Edition)](/recipes/hibernate/update66/migratecascadetypes-moderne-edition.md)
+* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md)
 
 
 ## Usage
@@ -45,8 +53,7 @@ recipeList:
       annotationType: org.junit.Test
       attributeName: timeout
       attributeValue: 500
-      addOnly: null
-      appendArray: null
+      oldAttributeValue: 400
 ```
 
 Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined, activate it in your build file:
@@ -56,7 +63,7 @@ Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined, a
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -100,12 +107,12 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddOrUpdateAnnotationAttribute --recipe-option "annotationType=org.junit.Test" --recipe-option "attributeName=timeout" --recipe-option "attributeValue=500" --recipe-option "addOnly=null" --recipe-option "appendArray=null"
+mod run . --recipe AddOrUpdateAnnotationAttribute --recipe-option "annotationType=org.junit.Test" --recipe-option "attributeName=timeout" --recipe-option "attributeValue=500" --recipe-option "oldAttributeValue=400"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -121,6 +128,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -135,6 +145,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -146,6 +177,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -156,13 +191,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Marcel Reiter, [Filipe Roque](mailto:froque@premium-minds.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io)
+</Tabs>

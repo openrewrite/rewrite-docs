@@ -13,20 +13,20 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 
 ### Tags
 
-* apache
-* httpclient
+* [apache](/reference/recipes-by-tag#apache)
+* [httpclient](/reference/recipes-by-tag#httpclient)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -34,25 +34,23 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrates to ApacheHttpClient 4.5.x](../../apache/httpclient4/upgradeapachehttpclient_4_5)
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `org.apache.httpcomponents`
-  * oldArtifactId: `httpclient`
-  * newGroupId: `org.apache.httpcomponents.client5`
-  * newArtifactId: `httpclient5`
-  * newVersion: `5.4.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `org.apache.httpcomponents`
-  * oldArtifactId: `httpcore`
-  * newGroupId: `org.apache.httpcomponents.core5`
-  * newArtifactId: `httpcore5`
-  * newVersion: `5.3.x`
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](../../apache/httpclient5/upgradeapachehttpclientdependencies)
+* [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](../../apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping)
+* [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 * [Migrate `RequestConfig` to httpclient5](../../apache/httpclient5/migraterequestconfig)
 * [Migrate `UsernamePasswordCredentials` to httpclient5](../../apache/httpclient5/usernamepasswordcredentials)
+* [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/statusline)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_classmapping)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods)
 * [Adds `TimeUnit` to timeouts and duration methods](../../apache/httpclient5/upgradeapachehttpclient_5_timeunit)
-* [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/statusline)
 * [Replaces `AuthScope.ANY`](../../apache/httpclient5/migrateauthscope)
+* [Migrate deprecated `SSLConnectionSocketFactory` to `DefaultClientTlsStrategy`](../../apache/httpclient5/migratesslconnectionsocketfactory)
+* [Delete method argument](../../java/deletemethodargument)
+  * methodPattern: `org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)`
+  * argumentIndex: `0`
+* [Delete method argument](../../java/deletemethodargument)
+  * methodPattern: `org.apache.hc.client5.http.impl.auth.DigestSchemeFactory <constructor>(java.nio.charset.Charset)`
+  * argumentIndex: `0`
 
 </TabItem>
 
@@ -63,35 +61,1068 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5
 displayName: Migrate to ApacheHttpClient 5.x
-description: Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+description: |
+  Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 tags:
   - apache
   - httpclient
 recipeList:
   - org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.apache.httpcomponents
-      oldArtifactId: httpclient
-      newGroupId: org.apache.httpcomponents.client5
-      newArtifactId: httpclient5
-      newVersion: 5.4.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.apache.httpcomponents
-      oldArtifactId: httpcore
-      newGroupId: org.apache.httpcomponents.core5
-      newArtifactId: httpcore5
-      newVersion: 5.3.x
+  - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies
+  - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioClassMapping
+  - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.apache.httpclient5.MigrateRequestConfig
   - org.openrewrite.apache.httpclient5.UsernamePasswordCredentials
+  - org.openrewrite.apache.httpclient5.StatusLine
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit
-  - org.openrewrite.apache.httpclient5.StatusLine
   - org.openrewrite.apache.httpclient5.MigrateAuthScope
+  - org.openrewrite.apache.httpclient5.MigrateSSLConnectionSocketFactory
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)
+      argumentIndex: 0
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.apache.hc.client5.http.impl.auth.DigestSchemeFactory <constructor>(java.nio.charset.Charset)
+      argumentIndex: 0
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Framework 6.0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
+
+## Examples
+##### Example 1
+`CookieConstantsTest#cookieConstantsMapping`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.config.CookieSpecs;
+
+class A {
+    void method() {
+        String c1 = CookieSpecs.IGNORE_COOKIES;
+        String c2 = CookieSpecs.STANDARD;
+        String c3 = CookieSpecs.STANDARD_STRICT;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+class A {
+    void method() {
+        String c1 = StandardCookieSpec.IGNORE;
+        String c2 = StandardCookieSpec.RELAXED;
+        String c3 = StandardCookieSpec.STRICT;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.client.config.CookieSpecs;
++import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+@@ -5,3 +5,3 @@
+class A {
+    void method() {
+-       String c1 = CookieSpecs.IGNORE_COOKIES;
+-       String c2 = CookieSpecs.STANDARD;
+-       String c3 = CookieSpecs.STANDARD_STRICT;
++       String c1 = StandardCookieSpec.IGNORE;
++       String c2 = StandardCookieSpec.RELAXED;
++       String c3 = StandardCookieSpec.STRICT;
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateAuthScopeTest#authScopeAnyTest`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = AuthScope.ANY;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = new AuthScope(null, -1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.auth.AuthScope;
++import org.apache.hc.client5.http.auth.AuthScope;
+
+@@ -5,1 +5,1 @@
+class A {
+    void method() {
+-       AuthScope any = AuthScope.ANY;
++       AuthScope any = new AuthScope(null, -1);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+`MigrateHttpResponseTest#migratesHttpResponseToClassicHttpResponse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        HttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.HttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClients;
++import org.apache.hc.core5.http.ClassicHttpResponse;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+@@ -13,1 +13,1 @@
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+-       HttpResponse response = httpClient.execute(httpGet);
++       ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`MigrateSSLConnectionSocketFactoryTest#migratesToDefaultClientTlsStrategy`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.io.HttpClientConnectionManager;
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
+import org.apache.hc.core5.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
+        HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
+        HttpClients.custom().setConnectionManager(cm).build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,6 @@
+import javax.net.ssl.SSLContext;
+
+-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+-import org.apache.http.impl.client.HttpClients;
+-import org.apache.http.ssl.SSLContexts;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
++import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
++import org.apache.hc.client5.http.io.HttpClientConnectionManager;
++import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
++import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
++import org.apache.hc.core5.ssl.SSLContexts;
+
+@@ -10,2 +13,3 @@
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+-       SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+-       HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
++       TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
++       HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
++       HttpClients.custom().setConnectionManager(cm).build();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+`NewRequestLineTest#removeRequestLineHttpResponse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.ProtocolVersion;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+        String method = httpGet.getRequestLine().getMethod();
+        String uri = httpGet.getRequestLine().getUri();
+        ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.core5.http.message.RequestLine;
+import org.apache.hc.core5.http.ProtocolVersion;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
+        String method = new RequestLine(httpGet).getMethod();
+        String uri = new RequestLine(httpGet).getUri();
+        ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.ProtocolVersion;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.core5.http.message.RequestLine;
++import org.apache.hc.core5.http.ProtocolVersion;
+
+@@ -7,4 +8,4 @@
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+-       System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+-       String method = httpGet.getRequestLine().getMethod();
+-       String uri = httpGet.getRequestLine().getUri();
+-       ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
++       System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
++       String method = new RequestLine(httpGet).getMethod();
++       String uri = new RequestLine(httpGet).getUri();
++       ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+`NewStatusLineTest#removeStatusLineHttpResponse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpStatus;
+import org.apache.http.ProtocolVersion;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+        int statusCode = response.getStatusLine().getStatusCode();
+        String reason = response.getStatusLine().getReasonPhrase();
+        ProtocolVersion version = response.getStatusLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.core5.http.message.StatusLine;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.core5.http.ProtocolVersion;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + new StatusLine(response));
+        int statusCode = response.getCode();
+        String reason = response.getReasonPhrase();
+        ProtocolVersion version = response.getVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,6 +1,7 @@
+-import org.apache.http.HttpStatus;
+-import org.apache.http.ProtocolVersion;
+-import org.apache.http.client.methods.CloseableHttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClientBuilder;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
++import org.apache.hc.core5.http.message.StatusLine;
++import org.apache.hc.core5.http.HttpStatus;
++import org.apache.hc.core5.http.ProtocolVersion;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+
+@@ -16,4 +17,4 @@
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+-       System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+-       int statusCode = response.getStatusLine().getStatusCode();
+-       String reason = response.getStatusLine().getReasonPhrase();
+-       ProtocolVersion version = response.getStatusLine().getProtocolVersion();
++       System.out.println("response.getStatusLine() :: " + new StatusLine(response));
++       int statusCode = response.getCode();
++       String reason = response.getReasonPhrase();
++       ProtocolVersion version = response.getVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 7
+`UpgradeApacheHttpClient5Test#importReplacementsInGroupsWithSomeSpecificMappings`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MinimalField;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.util.EntityUtils;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MinimalField field = new MinimalField("A", "B");
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.entity.mime.MimeField;
+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
+import org.apache.hc.client5.http.entity.mime.StringBody;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,8 +1,8 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.client.methods.HttpUriRequest;
+-import org.apache.http.entity.ContentType;
+-import org.apache.http.entity.mime.MinimalField;
+-import org.apache.http.entity.mime.MultipartEntityBuilder;
+-import org.apache.http.entity.mime.content.StringBody;
+-import org.apache.http.util.EntityUtils;
++import org.apache.hc.core5.http.ContentType;
++import org.apache.hc.core5.http.io.entity.EntityUtils;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
++import org.apache.hc.client5.http.entity.mime.MimeField;
++import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
++import org.apache.hc.client5.http.entity.mime.StringBody;
+
+@@ -15,1 +15,1 @@
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+-       MinimalField field = new MinimalField("A", "B");
++       MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 8
+`CookieConstantsTest#cookieConstantsMapping`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.config.CookieSpecs;
+
+class A {
+    void method() {
+        String c1 = CookieSpecs.IGNORE_COOKIES;
+        String c2 = CookieSpecs.STANDARD;
+        String c3 = CookieSpecs.STANDARD_STRICT;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+class A {
+    void method() {
+        String c1 = StandardCookieSpec.IGNORE;
+        String c2 = StandardCookieSpec.RELAXED;
+        String c3 = StandardCookieSpec.STRICT;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.client.config.CookieSpecs;
++import org.apache.hc.client5.http.cookie.StandardCookieSpec;
+
+@@ -5,3 +5,3 @@
+class A {
+    void method() {
+-       String c1 = CookieSpecs.IGNORE_COOKIES;
+-       String c2 = CookieSpecs.STANDARD;
+-       String c3 = CookieSpecs.STANDARD_STRICT;
++       String c1 = StandardCookieSpec.IGNORE;
++       String c2 = StandardCookieSpec.RELAXED;
++       String c3 = StandardCookieSpec.STRICT;
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 9
+`MigrateAuthScopeTest#authScopeAnyTest`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = AuthScope.ANY;
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.auth.AuthScope;
+
+class A {
+    void method() {
+        AuthScope any = new AuthScope(null, -1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.http.auth.AuthScope;
++import org.apache.hc.client5.http.auth.AuthScope;
+
+@@ -5,1 +5,1 @@
+class A {
+    void method() {
+-       AuthScope any = AuthScope.ANY;
++       AuthScope any = new AuthScope(null, -1);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 10
+`MigrateHttpResponseTest#migratesHttpResponseToClassicHttpResponse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        HttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+import java.io.IOException;
+
+class HttpClientManager {
+    void getEntity() throws IOException {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+        ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.HttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClients;
++import org.apache.hc.core5.http.ClassicHttpResponse;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
+
+@@ -13,1 +13,1 @@
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://example.com");
+-       HttpResponse response = httpClient.execute(httpGet);
++       ClassicHttpResponse response = httpClient.execute(httpGet);
+        HttpEntity entity = response.getEntity();
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 11
+`MigrateSSLConnectionSocketFactoryTest#migratesToDefaultClientTlsStrategy`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+    }
+}
+```
+
+###### After
+```java
+import javax.net.ssl.SSLContext;
+
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.io.HttpClientConnectionManager;
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
+import org.apache.hc.core5.ssl.SSLContexts;
+
+class HttpClientManager {
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+        TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
+        HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
+        HttpClients.custom().setConnectionManager(cm).build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,6 @@
+import javax.net.ssl.SSLContext;
+
+-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+-import org.apache.http.impl.client.HttpClients;
+-import org.apache.http.ssl.SSLContexts;
++import org.apache.hc.client5.http.impl.classic.HttpClients;
++import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
++import org.apache.hc.client5.http.io.HttpClientConnectionManager;
++import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
++import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
++import org.apache.hc.core5.ssl.SSLContexts;
+
+@@ -10,2 +13,3 @@
+    void create() {
+        SSLContext sslContext = SSLContexts.createDefault();
+-       SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
+-       HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
++       TlsSocketStrategy tlsSocketStrategy = new DefaultClientTlsStrategy(sslContext);
++       HttpClientConnectionManager cm = PoolingHttpClientConnectionManagerBuilder.create().setTlsSocketStrategy(tlsSocketStrategy).build();
++       HttpClients.custom().setConnectionManager(cm).build();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 12
+`NewRequestLineTest#removeRequestLineHttpResponse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.ProtocolVersion;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+        String method = httpGet.getRequestLine().getMethod();
+        String uri = httpGet.getRequestLine().getUri();
+        ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.core5.http.message.RequestLine;
+import org.apache.hc.core5.http.ProtocolVersion;
+
+class A {
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
+        String method = new RequestLine(httpGet).getMethod();
+        String uri = new RequestLine(httpGet).getUri();
+        ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.ProtocolVersion;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.core5.http.message.RequestLine;
++import org.apache.hc.core5.http.ProtocolVersion;
+
+@@ -7,4 +8,4 @@
+    void method() {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+-       System.out.println("httpGet.getRequestLine() :: " + httpGet.getRequestLine());
+-       String method = httpGet.getRequestLine().getMethod();
+-       String uri = httpGet.getRequestLine().getUri();
+-       ProtocolVersion version = httpGet.getRequestLine().getProtocolVersion();
++       System.out.println("httpGet.getRequestLine() :: " + new RequestLine(httpGet));
++       String method = new RequestLine(httpGet).getMethod();
++       String uri = new RequestLine(httpGet).getUri();
++       ProtocolVersion version = new RequestLine(httpGet).getProtocolVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 13
+`NewStatusLineTest#removeStatusLineHttpResponse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpStatus;
+import org.apache.http.ProtocolVersion;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+        int statusCode = response.getStatusLine().getStatusCode();
+        String reason = response.getStatusLine().getReasonPhrase();
+        ProtocolVersion version = response.getStatusLine().getProtocolVersion();
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.core5.http.message.StatusLine;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.core5.http.ProtocolVersion;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+
+import java.io.IOException;
+
+class A {
+    void method() throws IOException {
+        HttpGet httpGet = new HttpGet("https://moderne.io");
+        CloseableHttpClient instance = HttpClientBuilder.create().build();
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+        System.out.println("response.getStatusLine() :: " + new StatusLine(response));
+        int statusCode = response.getCode();
+        String reason = response.getReasonPhrase();
+        ProtocolVersion version = response.getVersion();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,6 +1,7 @@
+-import org.apache.http.HttpStatus;
+-import org.apache.http.ProtocolVersion;
+-import org.apache.http.client.methods.CloseableHttpResponse;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.impl.client.CloseableHttpClient;
+-import org.apache.http.impl.client.HttpClientBuilder;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
++import org.apache.hc.core5.http.message.StatusLine;
++import org.apache.hc.core5.http.HttpStatus;
++import org.apache.hc.core5.http.ProtocolVersion;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
++import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+
+@@ -16,4 +17,4 @@
+        CloseableHttpResponse response = instance.execute(httpGet);
+
+-       System.out.println("response.getStatusLine() :: " + response.getStatusLine());
+-       int statusCode = response.getStatusLine().getStatusCode();
+-       String reason = response.getStatusLine().getReasonPhrase();
+-       ProtocolVersion version = response.getStatusLine().getProtocolVersion();
++       System.out.println("response.getStatusLine() :: " + new StatusLine(response));
++       int statusCode = response.getCode();
++       String reason = response.getReasonPhrase();
++       ProtocolVersion version = response.getVersion();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 14
+`UpgradeApacheHttpClient5Test#importReplacementsInGroupsWithSomeSpecificMappings`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MinimalField;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.util.EntityUtils;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MinimalField field = new MinimalField("A", "B");
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.entity.mime.MimeField;
+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
+import org.apache.hc.client5.http.entity.mime.StringBody;
+
+class A {
+    void method(HttpEntity entity, String urlStr) throws Exception {
+        HttpUriRequest getRequest = new HttpGet(urlStr);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+        MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,8 +1,8 @@
+-import org.apache.http.HttpEntity;
+-import org.apache.http.client.methods.HttpGet;
+-import org.apache.http.client.methods.HttpUriRequest;
+-import org.apache.http.entity.ContentType;
+-import org.apache.http.entity.mime.MinimalField;
+-import org.apache.http.entity.mime.MultipartEntityBuilder;
+-import org.apache.http.entity.mime.content.StringBody;
+-import org.apache.http.util.EntityUtils;
++import org.apache.hc.core5.http.ContentType;
++import org.apache.hc.core5.http.io.entity.EntityUtils;
++import org.apache.hc.core5.http.HttpEntity;
++import org.apache.hc.client5.http.classic.methods.HttpGet;
++import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
++import org.apache.hc.client5.http.entity.mime.MimeField;
++import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
++import org.apache.hc.client5.http.entity.mime.StringBody;
+
+@@ -15,1 +15,1 @@
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        StringBody body = new StringBody("stringbody", ContentType.TEXT_PLAIN);
+-       MinimalField field = new MinimalField("A", "B");
++       MimeField field = new MimeField("A", "B");
+        EntityUtils.consume(entity);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -103,7 +1134,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -116,7 +1147,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
 }
 ```
 
@@ -137,7 +1168,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5")
@@ -182,7 +1213,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_REWRITE_APACHE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -211,7 +1242,7 @@ mod run . --recipe UpgradeApacheHttpClient_5
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
 ```
 </TabItem>
 </Tabs>
@@ -227,6 +1258,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -241,6 +1275,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -252,6 +1307,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -262,13 +1321,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), SiBorea, Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+</Tabs>

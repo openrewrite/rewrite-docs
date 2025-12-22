@@ -1,3 +1,7 @@
+---
+description: Mui OpenRewrite recipes.
+---
+
 # Mui
 
 ## Recipes
@@ -36,21 +40,21 @@
 * [Renames components to slots](./joyrenamecomponentstoslots.md)
 * [Renames `gap` prop to `spacing`](./boxrenamegap.md)
 * [Renames `option` prop to `getOptionLabel`](./autocompleterenameoption.md)
-* [Renames `row` prop to `flexDirection="row"`](./joyrenamerowprop.md)
+* [Renames `row` prop to `flexDirection=&quot;row&quot;`](./joyrenamerowprop.md)
 * [Replaces `@mui` imports with `@mui/material`](./muireplace.md)
 * [Update the theme creation from `@mui/system@v5` to be compatible with `@pigment-css/react`](./themev.md)
 * [Update the usage of the `sx` prop to be compatible with `@pigment-css/react`](./sxprop.md)
 * [Updates base imports to use named exports](./baseusenamedexports.md)
 * [Updates `borderRadius` prop values](./boxborderradiusvalues.md)
-* [Updates `circle` prop to `variant="circular"`](./avatarcirclecircular.md)
-* [Updates `circular` prop to `variant="circular"`](./paginationroundcircular.md)
+* [Updates `circle` prop to `variant=&quot;circular&quot;`](./avatarcirclecircular.md)
+* [Updates `circular` prop to `variant=&quot;circular&quot;`](./paginationroundcircular.md)
 * [Updates createMuiTheme usage](./createtheme.md)
 * [Updates `down` prop for Hidden component](./hiddendownprops.md)
 * [Updates import paths for core styles](./corestylesimport.md)
 * [Updates `justify` prop to `justifyContent` for Grid component](./gridjustifyjustifycontent.md)
 * [Updates link underline on hover](./linkunderlinehover.md)
 * [Updates `minRows` and `maxRows` props for TextareaAutosize component](./textareaminmaxrows.md)
-* [Updates `overlap` prop to `variant="dot"`](./badgeoverlapvalue.md)
+* [Updates `overlap` prop to `variant=&quot;dot&quot;`](./badgeoverlapvalue.md)
 * [Updates props for Dialog component](./dialogprops.md)
 * [Updates props for DialogTitle component](./dialogtitleprops.md)
 * [Updates props for Modal component](./modalprops.md)

@@ -1,6 +1,10 @@
+---
+description: A list of what languages, formats, build tools, and frameworks supported by OpenRewrite.
+---
+
 # Supported languages
 
-As of February 2024, OpenRewrite supports:
+As of January 2025, OpenRewrite supports:
 
 ## Programming languages
 
@@ -8,18 +12,27 @@ As of February 2024, OpenRewrite supports:
 * Kotlin
 * Groovy
 
+:::info
+[Moderne](https://docs.moderne.io/) offers support for additional languages and frameworks (such as JavaScript, C#, Python, Ruby, COBOL, etc.). Consider checking that out if OpenRewrite doesn't meet your needs.
+
+If your project is open-source, you can use the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) to run many of the Moderne exclusive recipes against your project.
+:::
+
 ## Data formats
 
-* XML
-* Properties
-* YAML
+* HCL
 * JSON
+* Properties
 * Protobuf
+* TOML
+* XML
+* YAML
 
 ## Build tools
 
 * Maven
 * Gradle
+* Bazel, via the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro)
 
 ## Frameworks
 
@@ -31,7 +44,3 @@ Many different frameworks are supported such as (but not limited to):
 * Quarkus
 * Micronaut
 * Jakarta
-
-:::info
-[Moderne](https://docs.moderne.io/) offers support for additional languages and frameworks (such as JavaScript, Python, Ruby, COBOL, etc.). Consider checking that out if OpenRewrite doesn't meet your needs.
-:::

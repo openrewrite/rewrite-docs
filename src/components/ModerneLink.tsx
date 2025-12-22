@@ -15,7 +15,7 @@ export default function RecipeCallout({children, link}) {
             Run this recipe here <ExternalSVG />
           </a>
         </div>
-      </div> 
+      </div>
       <div>
         <ZoomableImage src={require('../../static/img/run-at-scale.png').default} />
       </div>

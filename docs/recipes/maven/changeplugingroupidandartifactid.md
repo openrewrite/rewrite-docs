@@ -9,26 +9,213 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.ChangePluginGroupIdAndArtifactId**
 
-_Change the groupId and/or the artifactId of a specified Maven plugin._
+_Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version. This recipe does not perform any validation and assumes all values passed are valid._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | oldGroupId | The old group ID to replace. The group ID is the first part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `org.openrewrite.recipe` |
 | `String` | oldArtifactId | The old artifactId to replace. The artifact ID is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `my-deprecated-maven-plugin` |
-| `String` | newGroupId | *Optional*. The new group ID to use. Defaults to the existing group ID. | `corp.internal.openrewrite.recipe` |
-| `String` | newArtifactId | *Optional*. The new artifact ID to use. Defaults to the existing artifact ID. | `my-new-maven-plugin` |
-| `String` | newArtifact | *Optional*. The new artifact ID to use. Defaults to the existing artifact ID. This property is deprecated, use newArtifactId instead. | `my-new-maven-plugin` |
+| `String` | newGroupId | *Optional*. The new group ID to use. | `corp.internal.openrewrite.recipe` |
+| `String` | newArtifactId | *Optional*. The new artifact ID to use. | `my-new-maven-plugin` |
+| `String` | newVersion | *Optional*. An exact version number. | `29.0` |
 
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add Micronaut build plugins to 4.x](/recipes/java/micronaut/updatebuildplugins.md)
+* [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
+* [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/io/quarkus/updates/core/quarkus30/additionalchanges.md)
+
+## Examples
+##### Example 1
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldGroupId|`io.quarkus`|
+|oldArtifactId|`quarkus-bootstrap-maven-plugin`|
+|newGroupId|`null`|
+|newArtifactId|`quarkus-extension-maven-plugin`|
+|newVersion|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
+                <version>3.0.0.Beta1</version>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>profile</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.quarkus</groupId>
+                        <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
+                        <version>3.0.0.Beta1</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-extension-maven-plugin</artifactId>
+                <version>3.0.0.Beta1</version>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>profile</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.quarkus</groupId>
+                        <artifactId>quarkus-extension-maven-plugin</artifactId>
+                        <version>3.0.0.Beta1</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+            <plugin>
+                <groupId>io.quarkus</groupId>
+-               <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
++               <artifactId>quarkus-extension-maven-plugin</artifactId>
+                <version>3.0.0.Beta1</version>
+@@ -22,1 +22,1 @@
+                    <plugin>
+                        <groupId>io.quarkus</groupId>
+-                       <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
++                       <artifactId>quarkus-extension-maven-plugin</artifactId>
+                        <version>3.0.0.Beta1</version>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldGroupId|`io.quarkus`|
+|oldArtifactId|`quarkus-bootstrap-maven-plugin`|
+|newGroupId|`null`|
+|newArtifactId|`quarkus-extension-maven-plugin`|
+|newVersion|`4.0.0`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
+                <version>3.0.0.Beta1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-extension-maven-plugin</artifactId>
+                <version>4.0.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,2 +10,2 @@
+            <plugin>
+                <groupId>io.quarkus</groupId>
+-               <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
+-               <version>3.0.0.Beta1</version>
++               <artifactId>quarkus-extension-maven-plugin</artifactId>
++               <version>4.0.0</version>
+            </plugin>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -46,7 +233,7 @@ recipeList:
       oldArtifactId: my-deprecated-maven-plugin
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-maven-plugin
-      newArtifact: my-new-maven-plugin
+      newVersion: 29.0
 ```
 
 Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined, activate it in your build file:
@@ -82,12 +269,12 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined,
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangePluginGroupIdAndArtifactId --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newArtifact=my-new-maven-plugin"
+mod run . --recipe ChangePluginGroupIdAndArtifactId --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newVersion=29.0"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_REWRITE_MAVEN}}
+mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
 ```
 </TabItem>
 </Tabs>
@@ -102,6 +289,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
 
 ### Maven metadata failures
 **org.openrewrite.maven.table.MavenMetadataFailures**
@@ -118,6 +308,10 @@ _Attempts to resolve maven metadata that failed._
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -132,6 +326,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -143,6 +358,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -153,13 +372,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[George Gastaldi](mailto:gegastaldi@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+</Tabs>

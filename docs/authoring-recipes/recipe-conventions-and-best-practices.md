@@ -1,3 +1,7 @@
+---
+description: A list of important conventions and best practices to keep in mind when writing OpenRewrite recipes.
+---
+
 # Recipe conventions and best practices
 
 To help you create reliable and scalable recipes, this document will describe an assortment of conventions and best practices to keep in mind when making new recipes.
@@ -38,7 +42,7 @@ All recipe names, descriptions, and parameters should follow our [recipe naming 
 
 By following these conventions, you'll ensure that:
 
-* The [documentation](../recipes/) generated for your recipe is valid and clear to others
+* The [documentation](../recipes) generated for your recipe is valid and clear to others
 * The [Moderne platform](https://app.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative
@@ -173,3 +177,51 @@ The `ExecutionContext` object, on the other hand, has a few key differences that
 Imagine one recipe author decided to write a `foo` object to the `ExecutionContext` so that the `bar` and `bash` functions could both interact with it. Now, let's imagine another recipe author, unaware of the fact that the other recipe wrote a `foo` object to the `ExecutionContext`, also decides that their recipe should read and write to a `foo` object. If those recipes get chained together, both of those recipes could break.
 
 Because of that, whenever shared state is needed within a single visitor or recipe, the cursor stack should be used instead of adding state to the execution context.
+
+### Remember multi-module projects exist
+
+One common mistake we see is people writing recipes that behaves as if there is only ever one project/module in a repository.
+
+In reality, there are numerous repositories that have multiple projects in them. Each project has its own code and dependencies. They _may_ have a relationship with one another, but they also may have none.
+
+This typically isn't an issue for recipes that operate on only a single file at a time, but `ScanningRecipe`s can unintentionally conflate repository-level information with project-level information.
+
+Unit tests won't catch this mistake because you won't write a test for it unless you're already thinking about it.=
+
+The `JavaProject` marker exists to help differentiate which project/module a particular `SourceFile` is associated with. These markers are added at parse time by the build plugins. In unit tests, however, they must be placed manually by the test author. Within a scanning recipe it is common to make a map of `Map<JavaProject, T>` to keep track of per-project information of type `T`.
+
+A warning sign of this mistake is a `ScanningRecipe` with a `boolean` field in its accumulator. That is appropriate if it is truly something repository-level being evaluated – such as checking the presence of a Gradle wrapper or a `.gitignore` file. However, if the recipe is looking at anything at all related to code or dependencies, it should be tracked per `JavaProject`.
+
+We recently saw this mistake in the Gradle `AddDependency` recipe. Check out [how we fixed that](https://github.com/openrewrite/rewrite/commit/f7c5e926fc6c08a971a53081190a7946d0f750f9).
+
+Any time you see a boolean in a scanning recipe's accumulator, ask yourself if it should be a `Map<JavaProject, Boolean>` instead.
+
+### Compose visitors with `TreeVisitor.visit()`
+
+**Always use `TreeVisitor.visit()` when invoking another visitor from within a visitor.** Never directly call specialized methods like `visitMethodInvocation()`.
+
+Directly calling specialized visit methods bypasses critical functionality that most visitors depend on:
+
+* Having access to a cursor which connects up to the root of the tree
+* `TreeVisitor.preVisit()` and `TreeVisitor.postVisit()` called at the appropriate times
+* `TreeVisitor.stopAfterPreVisit()` stops traversal as expected
+* `TreeVisitor.isAcceptable()` guards against applying the visitor to inapplicable LSTs
+
+It may not immediately cause problems if the visitor you're invoking does not require any of that functionality. But future authors will assume that all the usual facilities are available and be confused when the cursor is incorrect, or they get a `ClassCastException` because their `JavaVisitor` tried to visit a YAML document.
+
+Correct inline invocation of another visitor on the current LST element looks like this:
+
+```java
+class SomeJavaVisitor extends JavaVisitor<ExecutionContext> {
+    @Override
+    public J visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
+        J m = super.visitMethodInvocation(method, ctx);
+        m = new OtherJavaVisitor()
+                // When invoking other visitors always use the overload of visit() which accepts a cursor.
+                // visit() expects to be called with a cursor pointing to the parent Tree of the current element.
+                // visitNonNull() is preferable to visit() if you know that the other visitor does not delete elements.
+                .visit(m, ctx, getCursor().getParentTreeCursor());
+        return m;
+    }
+}
+```

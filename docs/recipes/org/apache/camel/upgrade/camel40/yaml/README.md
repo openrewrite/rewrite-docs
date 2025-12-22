@@ -1,3 +1,7 @@
+---
+description: Yaml OpenRewrite recipes.
+---
+
 # Yaml
 
 ## Recipes

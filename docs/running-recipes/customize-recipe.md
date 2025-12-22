@@ -1,3 +1,8 @@
+---
+sidebar_label: Customizing recipes
+description: How to customize recipes to meet your needs.
+---
+
 # How to customize recipes to meet your needs
 
 OpenRewrite recipes are **opinionated** – meaning that they encourage certain conventions, patterns, or practices. The idea behind this is to provide sensible defaults that work for _most_ people _most_ of the time without requiring any fiddling. 

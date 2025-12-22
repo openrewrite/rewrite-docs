@@ -1,3 +1,7 @@
+---
+description: Dependencies OpenRewrite recipes.
+---
+
 # Dependencies
 
 ## Categories
@@ -11,11 +15,11 @@
 * [Dependency insight for Gradle and Maven](./dependencyinsight.md)
 * [Dependency report](./dependencylist.md)
 * [Dependency resolution diagnostic](./dependencyresolutiondiagnostic.md)
+* [Find Maven and Gradle dependencies](./finddependency.md)
 * [Find and fix vulnerable dependencies](./dependencyvulnerabilitycheck.md)
 * [Find licenses in use in third-party dependencies](./dependencylicensecheck.md)
 * [Find relocated dependencies](./relocateddependencycheck.md)
 * [Remove a Gradle or Maven dependency](./removedependency.md)
-* [Remove expired suppressions](./removeexpiredsuppressions.md)
 * [Remove unused dependencies](./removeunuseddependencies.md)
 * [Software bill of materials](./softwarebillofmaterials.md)
 * [Upgrade Gradle or Maven dependency versions](./upgradedependencyversion.md)

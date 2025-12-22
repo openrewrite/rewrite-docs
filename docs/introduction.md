@@ -17,7 +17,7 @@ It consists of an auto-refactoring engine that runs prepackaged, open-source ref
 
  ## How does OpenRewrite work?
 
-<ReactPlayer url='https://www.youtube.com/watch?v=nz29-DWeV44' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=LgvqAzTxkEU' controls="true" />
 
 <br/>
 
@@ -39,7 +39,7 @@ import static org.junit.Assert.assertTrue;
 assertTrue(condition);
 ```
 
-<ReactPlayer url='https://www.youtube.com/watch?v=uViRlX-RahA' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=6LGL64AwEEY' controls="true" />
 
 ## Get started
 
@@ -51,14 +51,14 @@ assertTrue(condition);
 
 ## Refactoring at scale with Moderne
 
-[Moderne](https://www.moderne.io/) is a commercial platform designed to run the OpenRewrite recipe catalog with incredible efficiency, supporting large codebases and multiple repositories. It's a place where platform teams and developers can collaborate to drive migrations across their codebases, mass-commit code fixes, and perform large-scale impact analyses.
+[Moderne](https://www.moderne.ai/) is a commercial platform designed to run the OpenRewrite recipe catalog with incredible efficiency, supporting large codebases and multiple repositories. It's a place where platform teams and developers can collaborate to drive migrations across their codebases, mass-commit code fixes, and perform large-scale impact analyses.
 
 See how Moderne and OpenRewrite work in different ways to transform your code:
 
-<ReactPlayer url='https://www.youtube.com/watch?v=Q-ej2lCJHRs' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=Q-ej2lCJHRs' controls="true" />
 
 <br/>
 
-Moderne freely runs an [open public service](https://www.moderne.io/try-moderne) for the benefit of tens of thousands of open-source projects. The platform can streamline your recipe customization and creation, enabling quick assembly and testing. It also includes a multi-repo command line interface (CLI) to enable developers to run and customize recipes locally.
+Moderne freely runs an [open public service](https://www.moderne.ai/try-moderne) for the benefit of tens of thousands of open-source projects. The platform can streamline your recipe customization and creation, enabling quick assembly and testing. It also includes a multi-repo command line interface (CLI) to enable developers to run and customize recipes locally.
 
-To understand better how Moderne can help your team, [contact us](https://www.moderne.io/contact-us).
+To understand better how Moderne can help your team, [contact us](https://www.moderne.ai/contact-us).

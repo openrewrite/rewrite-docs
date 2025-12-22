@@ -1,3 +1,7 @@
+---
+description: Azure OpenRewrite recipes.
+---
+
 # Azure
 
 ## Composite Recipes

@@ -1,3 +1,7 @@
+---
+description: Feature flags OpenRewrite recipes.
+---
+
 # Feature flags
 
 _Recipes to perform feature flag migration tasks._
@@ -14,5 +18,7 @@ _Recipes to perform feature flag migration tasks._
 
 * [Remove a String feature flag for feature key](./removestringflag.md)
 * [Remove a boolean feature flag for feature key](./removebooleanflag.md)
+* [Remove a double feature flag for feature key](./removedoubleflag.md)
+* [Remove an integer feature flag for feature key](./removeintegerflag.md)
 
 

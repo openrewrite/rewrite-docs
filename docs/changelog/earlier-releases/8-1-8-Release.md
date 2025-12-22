@@ -1,3 +1,7 @@
+---
+description: What's changed in OpenRewrite version 8.1.8.
+---
+
 # 8.1.8 release (2023-07-13)
 
 ## New Artifacts

@@ -1,3 +1,7 @@
+---
+description: ECMAScript OpenRewrite recipes.
+---
+
 # ECMAScript
 
 _Recipes that improve the use of JavaScript and TypeScript code in general, including many stylistic and idiomatic corrections._

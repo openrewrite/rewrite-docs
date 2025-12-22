@@ -1,3 +1,7 @@
+---
+description: AWS OpenRewrite recipes.
+---
+
 # AWS
 
 ## Composite Recipes

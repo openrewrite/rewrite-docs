@@ -1,3 +1,7 @@
+---
+description: Modernize OpenRewrite recipes.
+---
+
 # Modernize
 
 _Modernize your code to best use the project's current JDK version. Take advantage of newly available APIs and reduce the dependency of your code on third party dependencies where there is equivalent functionality in the Java standard library._
@@ -10,7 +14,6 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Jakarta](/recipes/java/migrate/jakarta)
 * [Javaee7](/recipes/java/migrate/javaee7)
 * [Javaee8](/recipes/java/migrate/javaee8)
-* [Joda](/recipes/java/migrate/joda)
 * [Lombok](/recipes/java/migrate/lombok)
 * [Maven](/recipes/java/migrate/maven)
 * [Metrics](/recipes/java/migrate/metrics)
@@ -29,24 +32,35 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](./addlombokmapstructbindingmavendependencyonly.md)
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](./addlombokmapstructbinding.md)
 * [Add missing `isWrapperFor` and `unwrap` methods.](./jrewrapperinterface.md)
 * [Adds missing JDBC interface methods.](./jrejdbcinterfacenewmethods.md)
 * [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`](./removedsubjectmethods.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](./deprecatedlogrecordthreadid.md)
+* [Adopt switch pattern matching (JEP 441)](./switchpatternmatching.md)
 * [Avoid using the deprecated empty `finalize()` method in `java.desktop`](./deletedeprecatedfinalize.md)
 * [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](./removedmodifierandconstantbootstrapsconstructors.md)
-* [Do not use `java.xml.bind` and `java.activation` modules in WebSphere Liberty](./removedjaxbmoduleprovided.md)
+* [Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications](./removedjaxbmoduleprovided.md)
+* [Do not package `java.xml.ws` module in WebSphere Liberty applications](./removedjavaxmlwsmoduleprovided.md)
+* [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](./bouncycastlefromjdk15ontojdk15to18.md)
+* [Migrate Bouncy Castle to `jdk18on`](./bouncecastlefromjdk15ontojdk18on.md)
 * [Migrate to IBM Semeru Runtimes](./ibmsemeru.md)
 * [Migrate to Java 11](./java8tojava11.md)
 * [Migrate to Java 17](./upgradetojava17.md)
 * [Migrate to Java 21](./upgradetojava21.md)
+* [Migrate to Java 25](./upgradetojava25.md)
+* [Migrate to Java 6](./upgradetojava6.md)
 * [Migrate to Java 7](./upgradetojava7.md)
 * [Migrate to Java 8](./upgradetojava8.md)
 * [Migrate to JavaEE7](./javaee7-recipe.md)
 * [Migrate to JavaEE8](./javaee8-recipe.md)
 * [Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods](./removedruntimetracemethods.md)
+* [Remove Security AccessController](./accesscontroller.md)
+* [Remove Security Policy](./removesecuritypolicy.md)
+* [Remove Security SecurityManager](./removesecuritymanager.md)
 * [Remove `Thread.destroy()` and `Thread.stop(Throwable)`](./threadstopdestroy.md)
+* [Replace `System.getSecurityManager()` with `null`](./systemgetsecuritymanagertonull.md)
 * [Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`](./removedfileiofinalizemethods.md)
 * [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](./removedzipfinalizemethods.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](./jre17agentmainpremainpublic.md)
@@ -54,6 +68,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade plugins to Java 11 compatible versions](./upgradepluginsforjava11.md)
 * [Upgrade plugins to Java 17 compatible versions](./upgradepluginsforjava17.md)
 * [Upgrade plugins to Java 21 compatible versions](./upgradepluginsforjava21.md)
+* [Use `ZipException` instead of `ZipError`](./migrateziperrortozipexception.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](./jredonotusesunnetsslinternalsslprovider.md)
 
 ## Recipes
@@ -61,17 +76,18 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add `JDeprScan` Maven Plug-in](./addjdeprscanplugin.md)
 * [Add maven jar plugin to suppress illegal reflection warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
 * [Adds missing method implementations](./addmissingmethodimplementation.md)
+* [Adds `static` modifier to `@Produces` fields that are in session beans](./addstaticvariableonproducersessionbean.md)
 * [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](./beandiscovery.md)
 * [Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`](./arraystoreexceptiontotypenotpresentexception.md)
 * [Change `beans.xml` `schemaLocation` to match XML namespace](./beansxmlnamespace.md)
 * [Change `javax.tools.ToolProvider` methods calls to static](./removedtoolproviderconstructor.md)
 * [Change method invocation return type](./changemethodinvocationreturntype.md)
+* [Change `net.wasdev.maven.parent:java8-parent` to `:parent`](./wasdevmvnchangeparentartifactid.md)
 * [Disable the persistence unit second-level cache](./jpacacheproperties.md)
-* [Do not use `java.xml.ws` module in WebSphere Liberty](./removedjavaxmlwsmoduleprovided.md)
 * [Force indentation to either tabs or spaces](./usetabsorspaces.md)
 * [MBean and MXBean interfaces must be public](./mxbeanrule.md)
+* [Migrate com.intellij:annotations to org.jetbrains:annotations](./comintellijannotationstoorgjetbrainsannotations.md)
 * [Migrate from IBM Runtimes to Oracle Runtimes](./ibmjdktooraclejdk.md)
-* [Migrate to Java 6](./upgradetojava6.md)
 * [Migrate to JavaEE6](./javaee6.md)
 * [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
 * [Remove `Thread.countStackFrames()` method](./deprecatedcountstackframesmethod.md)
@@ -90,6 +106,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment](./replacelocalizedstreammethods.md)
 * [Replace `java.lang.ref.Reference.clone()` with constructor call](./referenceclonemethod.md)
 * [Replace `javax.security.auth.Policy` with `java.security.Policy`](./removedpolicy.md)
+* [Return String `jks` when  `KeyStore.getDefaultType()` is called](./changedefaultkeystore.md)
+* [Update SDKMan Java version](./updatesdkman.md)
 * [Upgrade build to Java 11](./upgradebuildtojava11.md)
 * [Upgrade build to Java 17](./upgradebuildtojava17.md)
 * [Upgrade build to Java 21](./upgradebuildtojava21.md)

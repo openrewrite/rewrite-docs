@@ -1,3 +1,7 @@
+---
+description: Cucumber-JVM OpenRewrite recipes.
+---
+
 # Cucumber-JVM
 
 _Recipes for upgrading [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm/)._

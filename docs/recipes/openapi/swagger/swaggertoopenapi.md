@@ -13,20 +13,20 @@ _Migrate from Swagger to OpenAPI._
 
 ### Tags
 
-* openapi
-* swagger
+* [openapi](/reference/recipes-by-tag#openapi)
+* [swagger](/reference/recipes-by-tag#swagger)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -35,22 +35,12 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `io.swagger`
-  * oldArtifactId: `swagger-annotations`
-  * newGroupId: `io.swagger.core.v3`
-  * newVersion: `2.2.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `io.swagger`
-  * oldArtifactId: `swagger-core`
-  * newGroupId: `io.swagger.core.v3`
-  * newVersion: `2.2.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `io.swagger`
-  * oldArtifactId: `swagger-models`
+  * oldArtifactId: `swagger-*`
   * newGroupId: `io.swagger.core.v3`
   * newVersion: `2.2.x`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `io.swagger.annotations.Tag`
-  * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.tags.Tag`
+  * oldFullyQualifiedTypeName: `io.swagger.annotations.Info`
+  * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.info.Info`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `springfox.documentation.annotations.ApiIgnore`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.Hidden`
@@ -61,6 +51,7 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Migrate from `@ApiParam` to `@Parameter`](../../openapi/swagger/migrateapiparamtoparameter)
 * [Migrate from `@ApiModelProperty` to `@Schema`](../../openapi/swagger/migrateapimodelpropertytoschema)
 * [Migrate from `@ApiModel` to `@Schema`](../../openapi/swagger/migrateapimodeltoschema)
+* [Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`](../../openapi/swagger/migrateswaggerdefinitiontoopenapidefinition)
 
 </TabItem>
 
@@ -71,29 +62,20 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.openapi.swagger.SwaggerToOpenAPI
 displayName: Migrate from Swagger to OpenAPI
-description: Migrate from Swagger to OpenAPI.
+description: |
+  Migrate from Swagger to OpenAPI.
 tags:
   - openapi
   - swagger
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: io.swagger
-      oldArtifactId: swagger-annotations
-      newGroupId: io.swagger.core.v3
-      newVersion: 2.2.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: io.swagger
-      oldArtifactId: swagger-core
-      newGroupId: io.swagger.core.v3
-      newVersion: 2.2.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: io.swagger
-      oldArtifactId: swagger-models
+      oldArtifactId: swagger-*
       newGroupId: io.swagger.core.v3
       newVersion: 2.2.x
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: io.swagger.annotations.Tag
-      newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.tags.Tag
+      oldFullyQualifiedTypeName: io.swagger.annotations.Info
+      newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.info.Info
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: springfox.documentation.annotations.ApiIgnore
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.Hidden
@@ -104,10 +86,188 @@ recipeList:
   - org.openrewrite.openapi.swagger.MigrateApiParamToParameter
   - org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema
   - org.openrewrite.openapi.swagger.MigrateApiModelToSchema
+  - org.openrewrite.openapi.swagger.MigrateSwaggerDefinitionToOpenAPIDefinition
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
+* [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
+
+## Examples
+##### Example 1
+`SwaggerToOpenAPITest#shouldChangeSwaggerArtifacts`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+  @ApiModelProperty(value = "ApiModelPropertyExampleValue", position = 1)
+  private String example;
+}
+```
+
+###### After
+```java
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(name="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+  @Schema(description = "ApiModelPropertyExampleValue")
+  private String example;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import io.swagger.annotations.ApiModel;
+-import io.swagger.annotations.ApiModelProperty;
++import io.swagger.v3.oas.annotations.media.Schema;
+
+@@ -4,1 +3,1 @@
+import io.swagger.annotations.ApiModelProperty;
+
+-@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
++@Schema(name="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+@@ -6,1 +5,1 @@
+@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+- @ApiModelProperty(value = "ApiModelPropertyExampleValue", position = 1)
++ @Schema(description = "ApiModelPropertyExampleValue")
+  private String example;
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <version>1.6.14</version>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-models</artifactId>
+      <version>1.6.14</version>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-core</artifactId>
+      <version>1.6.14</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`SwaggerToOpenAPITest#shouldChangeSwaggerArtifacts`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+  @ApiModelProperty(value = "ApiModelPropertyExampleValue", position = 1)
+  private String example;
+}
+```
+
+###### After
+```java
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(name="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+  @Schema(description = "ApiModelPropertyExampleValue")
+  private String example;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import io.swagger.annotations.ApiModel;
+-import io.swagger.annotations.ApiModelProperty;
++import io.swagger.v3.oas.annotations.media.Schema;
+
+@@ -4,1 +3,1 @@
+import io.swagger.annotations.ApiModelProperty;
+
+-@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
++@Schema(name="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+@@ -6,1 +5,1 @@
+@ApiModel(value="ApiModelExampleValue", description="ApiModelExampleDescription")
+class Example {
+- @ApiModelProperty(value = "ApiModelPropertyExampleValue", position = 1)
++ @Schema(description = "ApiModelPropertyExampleValue")
+  private String example;
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <version>1.6.14</version>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-models</artifactId>
+      <version>1.6.14</version>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-core</artifactId>
+      <version>1.6.14</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
 
 ## Usage
 
@@ -119,7 +279,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -132,7 +292,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_REWRITE_OPENAPI}}")
+    rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}")
 }
 ```
 
@@ -153,7 +313,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_REWRITE_OPENAPI}}")
+        rewrite("org.openrewrite.recipe:rewrite-openapi:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.openapi.swagger.SwaggerToOpenAPI")
@@ -198,7 +358,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-openapi</artifactId>
-            <version>{{VERSION_REWRITE_OPENAPI}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -227,7 +387,7 @@ mod run . --recipe SwaggerToOpenAPI
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-openapi:{{VERSION_REWRITE_OPENAPI}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-openapi:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_OPENAPI}}
 ```
 </TabItem>
 </Tabs>
@@ -243,6 +403,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -257,6 +420,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -268,6 +452,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -278,13 +466,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-SiBorea, [Tim te Beek](mailto:tim@moderne.io)
+</Tabs>

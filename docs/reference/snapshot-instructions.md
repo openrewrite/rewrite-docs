@@ -1,3 +1,7 @@
+---
+description: How to configure your project to access snapshot versions of OpenRewrite.
+---
+
 # How to use snapshot versions
 
 Right now, OpenRewrite does a full release once every 2-4 weeks. Between those releases, recipes are consistently being added or changed to meet the needs of our users. For many people, it's fine to wait until a new release to get access to these new features or recipes. Others, however, would like to have access right away.
@@ -16,7 +20,7 @@ repositories {
     // ...
 
     maven {
-        url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+        url = uri("https://central.sonatype.com/repository/maven-snapshots/")
     }
 }
 ```
@@ -41,13 +45,13 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
     <!-- ... -->
     <repository>
         <id>rewrite-snapshots</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
         <id>rewrite-snapshots</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </pluginRepository>
 </pluginRepositories>
 ```
@@ -83,3 +87,34 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 * You can look up the latest snapshot versions at Sonatype OSS
   - [Latest rewrite-maven-plugin version](https://oss.sonatype.org/#nexus-search;gav~org.openrewrite.maven~rewrite-maven-plugin~~~~kw,versionexpand)
   - [Latest rewrite recipe modules versions](https://oss.sonatype.org/#nexus-search;gav~org.openrewrite.recipe~~~~)
+
+## Maven Command Line instructions
+
+To use snapshot versions via the Maven command line, follow the same logic as in the above `Maven insructions` for the rewrite-maven-plugin and the recipe versions.
+
+The first step is to update your `pom.xml` file by modifying the `repositories` section to include the location of the OpenRewrite snapshots:
+
+```xml title="pom.xml"
+<repositories>
+    <!-- Possibly other repositories -->
+    <!-- ... -->
+    <repository>
+        <id>rewrite-snapshots</id>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>rewrite-snapshots</id>
+        <url>https://central.sonatype.com/repository/maven-snapshots</url>
+    </pluginRepository>
+</pluginRepositories>
+```
+
+Next, you have to update the version numbers specified in the command line.
+For instance, if the latest release of the `rewrite-maven-plugin` is `6.21.1`, the snapshot version would be `6.22.0-SNAPSHOT`. And if the latest release of the  `rewrite-migrate-java` recipe is `3.19.0`, , the snapshot version would be `3.20.0-SNAPSHOT`.
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:6.22.0-SNAPSHOT:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:3.20.0-SNAPSHOT -Drewrite.activeRecipes=org.openrewrite.java.migrate.guava.NoGuava -Drewrite.exportDatatables=true
+```

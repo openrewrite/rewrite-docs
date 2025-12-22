@@ -13,19 +13,71 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `List` | cveList | Update suppressions having any of the specified CVE tags. | `CVE-2022-1234` |
 | `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. | `2023-01-01` |
 
-## License
+## Example
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|cveList|`Collections.singletonList("CVE-2022-1234")`|
+|untilDate|`2020-02-01`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress until="2020-01-01Z">
+        <notes>
+        </notes>
+        <cve>CVE-2019-5678</cve>
+        <cve>CVE-2022-1234</cve>
+    </suppress>
+</suppressions>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress until="2020-02-01Z">
+        <notes>
+        </notes>
+        <cve>CVE-2019-5678</cve>
+        <cve>CVE-2022-1234</cve>
+    </suppress>
+</suppressions>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+-   <suppress until="2020-01-01Z">
++   <suppress until="2020-02-01Z">
+        <notes>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -50,7 +102,7 @@ Now that `com.yourorg.UpdateOwaspSuppressionDateExample` has been defined, activ
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -99,7 +151,7 @@ mod run . --recipe UpdateOwaspSuppressionDate --recipe-option "cveList=CVE-2022-
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_REWRITE_XML}}
+mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_ORG_OPENREWRITE_REWRITE_XML}}
 ```
 </TabItem>
 </Tabs>
@@ -115,6 +167,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -129,6 +184,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -140,6 +216,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -150,13 +230,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+</Tabs>

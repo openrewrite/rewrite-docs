@@ -1,3 +1,7 @@
+---
+description: A list of projects that have created OpenRewrite recipes and integrated them into their projects.
+---
+
 # OpenRewrite recipes created by the community
 
 This doc contains a list of projects that have created OpenRewrite recipes and integrated them into their projects to perform migrations with. 
@@ -43,6 +47,9 @@ If you want to see your project on this list - please feel free to click on the 
 * Jenkins [Plugin Modernizer Tool](https://github.com/jenkinsci/plugin-modernizer-tool/)
   * Plugin Modernizer is a generic CLI tool designed to automate the modernization of Jenkins plugins.
 
+* JHipster Lite's [Upgrade recipes](https://github.com/jhipster/jhipster-lite/pull/12959)
+  * JHipster Lite is a development platform to generate, develop & deploy modern web applications & microservices architecture, step by step - using Hexagonal Architecture.
+
 * [OpenAPI 3 recipes](https://github.com/desprez/rewrite-oas3)
   * OpenRewrite recipes for migrating Java swagger2 (OAS2) annotations to Open API 3 (OAS3).
 * [Morphia](https://github.com/MorphiaOrg/morphia/blob/master/upgrading/UpgradeFrom22to23.yml)
@@ -62,7 +69,11 @@ If you want to see your project on this list - please feel free to click on the 
 * Philzen's [Rewrite TestNG to JUnit 5](https://github.com/Philzen/rewrite-TestNG-to-JUnit5)
   * OpenRewrite recipes for migrating a project from TestNG to JUnit 5 (Jupiter).
 * [Langchain4j](https://github.com/langchain4j/langchain4j-openrewrite-recipes)
+* [Liftwizard](https://github.com/liftwizard/liftwizard/tree/main/liftwizard-utility/liftwizard-rewrite)
+    * Provides recipes for Eclipse Collections code transformations and general Java best practices.
 * [Morphia](https://github.com/MorphiaOrg/morphia/blob/5d750285266116bfded7ccb5acdaff3aea480811/rewrite/src/main/java/dev/morphia/rewrite/recipes/PipelineRewriteStage2.java)
   * A MongoDB object-document mapper in Java.
 * [A migrate from Camunda recipe](https://github.com/operaton/migrate-from-camunda-recipe)
   * Migrates a Camunda 7 instance to Operaton.
+* [Rewrite Format SQL](https://github.com/mhagnumdw/rewrite-format-sql)
+  * OpenRewrite recipes for formatting SQL code in text blocks in annotations.

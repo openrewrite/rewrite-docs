@@ -1,72 +1,65 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with primitives"
+sidebar_label: "`PrimitiveRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with primitives
+# `PrimitiveRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.PrimitiveRules`. [Source](https://error-prone.picnic.tech/refasterrules/PrimitiveRules)._
+_Refaster rules related to expressions dealing with primitives. [Source](https://error-prone.picnic.tech/refasterrules/PrimitiveRules)._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Avoid contrived ways of expressing the "less than" relationship](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanrecipe)
-* [Avoid contrived ways of expressing the "less than or equal to" relationship](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe)
-* [Avoid contrived ways of expressing the "greater than" relationship](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe)
-* [Avoid contrived ways of expressing the "greater than or equal to" relationship](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe)
-* [Prefer `Math#toIntExact(long)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtointexactrecipe)
-* [Prefer `Boolean#hashCode(boolean)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$booleanhashcoderecipe)
-* [Prefer `Byte#hashCode(byte)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$bytehashcoderecipe)
-* [Prefer `Character#hashCode(char)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$characterhashcoderecipe)
-* [Prefer `Short#hashCode(short)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shorthashcoderecipe)
-* [Prefer `Integer#hashCode(int)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerhashcoderecipe)
-* [Prefer `Long#hashCode(long)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longhashcoderecipe)
-* [Prefer `Float#hashCode(float)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floathashcoderecipe)
-* [Prefer `Double#hashCode(double)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doublehashcoderecipe)
-* [Prefer `Character#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$characterbytesrecipe)
-* [Prefer `Short#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shortbytesrecipe)
-* [Prefer `Integer#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerbytesrecipe)
-* [Prefer `Long#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longbytesrecipe)
-* [Prefer `Float#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floatbytesrecipe)
-* [Prefer `Double#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doublebytesrecipe)
-* [Prefer `Float#isFinite(float)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floatisfiniterecipe)
-* [Prefer `Double#isFinite(double)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doubleisfiniterecipe)
-* [Prefer an `Integer#signum(int)` comparison to 1 over less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integersignumispositiverecipe)
-* [Prefer an `Integer#signum(int)` comparison to -1 over less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integersignumisnegativerecipe)
-* [Prefer an `Long#signum(long)` comparison to 1 over less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longsignumispositiverecipe)
-* [Prefer an `Long#signum(long)` comparison to -1 over less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longsignumisnegativerecipe)
-* [Prefer JDK's `Integer#compareUnsigned(int, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integercompareunsignedrecipe)
-* [Prefer JDK's `Long#compareUnsigned(long, long)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longcompareunsignedrecipe)
-* [Prefer JDK's `Integer#divideUnsigned(int, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerdivideunsignedrecipe)
-* [Prefer JDK's `Long#divideUnsigned(long, long)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longdivideunsignedrecipe)
-* [Prefer JDK's `Integer#remainderUnsigned(int, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerremainderunsignedrecipe)
-* [Prefer JDK's `Long#remainderUnsigned(long, long)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longremainderunsignedrecipe)
-* [Prefer JDK's `Integer#parseUnsignedInt(String)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintrecipe)
-* [Prefer JDK's `Long#parseUnsignedLong(String)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongrecipe)
-* [Prefer JDK's `Integer#parseUnsignedInt(String, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintwithradixrecipe)
-* [Prefer JDK's `Long#parseUnsignedLong(String, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongwithradixrecipe)
-* [Prefer JDK's `Integer#toUnsignedString(int)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringrecipe)
-* [Prefer JDK's `Long#toUnsignedString(long)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringrecipe)
-* [Prefer JDK's `Integer#toUnsignedString(int,int)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringwithradixrecipe)
-* [Prefer JDK's `Long#toUnsignedString(long,int)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringwithradixrecipe)
+* [Refaster template `PrimitiveRules.LessThan`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanrecipe)
+* [Refaster template `PrimitiveRules.LessThanOrEqualTo`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe)
+* [Refaster template `PrimitiveRules.GreaterThan`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe)
+* [Refaster template `PrimitiveRules.GreaterThanOrEqualTo`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe)
+* [Refaster template `PrimitiveRules.LongToIntExact`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtointexactrecipe)
+* [Refaster template `PrimitiveRules.CharacterBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$characterbytesrecipe)
+* [Refaster template `PrimitiveRules.ShortBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shortbytesrecipe)
+* [Refaster template `PrimitiveRules.IntegerBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerbytesrecipe)
+* [Refaster template `PrimitiveRules.LongBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longbytesrecipe)
+* [Refaster template `PrimitiveRules.FloatBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floatbytesrecipe)
+* [Refaster template `PrimitiveRules.DoubleBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doublebytesrecipe)
+* [Refaster template `PrimitiveRules.IntegerSignumIsPositive`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integersignumispositiverecipe)
+* [Refaster template `PrimitiveRules.IntegerSignumIsNegative`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integersignumisnegativerecipe)
+* [Refaster template `PrimitiveRules.LongSignumIsPositive`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longsignumispositiverecipe)
+* [Refaster template `PrimitiveRules.LongSignumIsNegative`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longsignumisnegativerecipe)
+* [Refaster template `PrimitiveRules.IntegerCompareUnsigned`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integercompareunsignedrecipe)
+* [Refaster template `PrimitiveRules.LongCompareUnsigned`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longcompareunsignedrecipe)
+* [Refaster template `PrimitiveRules.IntegerDivideUnsigned`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerdivideunsignedrecipe)
+* [Refaster template `PrimitiveRules.LongDivideUnsigned`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longdivideunsignedrecipe)
+* [Refaster template `PrimitiveRules.IntegerRemainderUnsigned`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerremainderunsignedrecipe)
+* [Refaster template `PrimitiveRules.LongRemainderUnsigned`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longremainderunsignedrecipe)
+* [Refaster template `PrimitiveRules.IntegerParseUnsignedInt`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintrecipe)
+* [Refaster template `PrimitiveRules.LongParseUnsignedLong`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongrecipe)
+* [Refaster template `PrimitiveRules.IntegerParseUnsignedIntWithRadix`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintwithradixrecipe)
+* [Refaster template `PrimitiveRules.LongParseUnsignedLongWithRadix`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongwithradixrecipe)
+* [Refaster template `PrimitiveRules.IntegerToUnsignedString`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringrecipe)
+* [Refaster template `PrimitiveRules.LongToUnsignedString`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringrecipe)
+* [Refaster template `PrimitiveRules.IntegerToUnsignedStringWithRadix`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringwithradixrecipe)
+* [Refaster template `PrimitiveRules.LongToUnsignedStringWithRadix`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringwithradixrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedbytesrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedInts`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedintsrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedLongs`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedlongsrecipe)
 
 </TabItem>
 
@@ -76,30 +69,21 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes
-displayName: Refaster rules related to expressions dealing with primitives
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.PrimitiveRules`. [Source](https://error-prone.picnic.tech/refasterrules/PrimitiveRules).
+displayName: `PrimitiveRules` Refaster recipes
+description: |
+  Refaster rules related to expressions dealing with primitives. [Source](https://error-prone.picnic.tech/refasterrules/PrimitiveRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanOrEqualToRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanOrEqualToRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToIntExactRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$BooleanHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ByteHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleHashCodeRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleBytesRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatIsFiniteRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleIsFiniteRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsPositiveRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsNegativeRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongSignumIsPositiveRecipe
@@ -118,10 +102,20 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringWithRadixRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringWithRadixRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedBytesRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedIntsRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedLongsRecipe
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+
 
 ## Usage
 
@@ -133,7 +127,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -146,7 +140,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -167,7 +161,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
         activeRecipe("tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes")
@@ -212,7 +206,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_REWRITE_THIRD_PARTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -241,7 +235,7 @@ mod run . --recipe PrimitiveRulesRecipes
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>
@@ -257,6 +251,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -271,6 +268,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -282,6 +300,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -292,10 +314,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

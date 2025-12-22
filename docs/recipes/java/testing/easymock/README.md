@@ -1,3 +1,7 @@
+---
+description: Easymock OpenRewrite recipes.
+---
+
 # Easymock
 
 ## Composite Recipes

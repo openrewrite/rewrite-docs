@@ -1,3 +1,7 @@
+---
+description: Dbrider OpenRewrite recipes.
+---
+
 # Dbrider
 
 ## Composite Recipes

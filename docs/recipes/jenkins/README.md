@@ -1,3 +1,7 @@
+---
+description: Jenkins OpenRewrite recipes.
+---
+
 # Jenkins
 
 _Recipes to perform [Jenkins](https://www.jenkins.io/) plugin hygiene and migration tasks._
@@ -11,6 +15,7 @@ _Recipes to perform [Jenkins](https://www.jenkins.io/) plugin hygiene and migrat
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Create Jenkinsfile](./createjenkinsfile.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](./javaxannotationstospotbugs.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](./modernizeplugin.md)
 * [Modernize a Jenkins plugin to the latest versions supported by Java 8](./modernizepluginforjava8.md)
@@ -23,6 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Disables local file resolution for parent POM](./disablelocalresolutionforparentpom.md)
 * [Is the project a Jenkins plugin?](./isjenkinsplugin.md)
 * [Modernize Jenkinsfile](./modernizejenkinsfile.md)
+* [Parse `Jenkinsfile` as Groovy](./jenkinsfileasgroovy.md)
 * [Upgrade jenkins java version](./upgradejavaversion.md)
 * [Upgrade property's value to version](./upgradeversionproperty.md)
 * [Use Jenkins API plugin instead of libraries](./replacelibrarieswithapiplugin.md)

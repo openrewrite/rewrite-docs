@@ -1,3 +1,7 @@
+---
+description: A technical overview of what JavaTemplates are and how to use them.
+---
+
 # JavaTemplate
 
 More advanced refactoring recipes often require the construction of complex [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) elements. Manually constructing complex LST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into LST elements ready for use in a [visitor](./visitors.md).
@@ -13,11 +17,13 @@ More advanced refactoring recipes often require the construction of complex [Los
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate template =
-        JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")   // Code Snippet
+        JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")  // Code Snippet
             .javaParser(
-                JavaParser.fromJavaVersion()                                    // Parser
-                    .classpath("example-utils"))                                // Classpath lookup
-            .staticImports("org.example.StringUtils.withString")                // Additional import
+                JavaParser.fromJavaVersion()                                   // Parser
+                    .classpath("example-utils"))                               // Classpath lookup
+            .staticImports("org.example.StringUtils.withString")               // Additional import
+            .doAfterVariableSubstitution(System.out::println)                  // Optional side-effect
+            .doBeforeParseTemplate(System.out::println)                        // Optional side-effect
             .build();
 }
 ```
@@ -116,6 +122,43 @@ JavaTemplate.builder("Duration.ofMillis(#{any(int)})")
 There are many examples of `JavaTemplate` stubs in [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and [rewrite-spring](https://github.com/openrewrite/rewrite-spring).
 :::
 
+## Context-free vs. Context-sensitive JavaTemplates
+
+There are two types of JavaTemplates – each having their own advantages/disadvantages:
+
+A **context-free** JavaTemplate does not depend on the surrounding LST. It is a self-contained template that simply replaces or inserts code which doesn't require knowledge of the broader context of the source file. This is particularly useful for simple transformations like replacing method calls or inserting boilerplate code.
+
+For instance, the following template only refers to declarations (`java.lang.System`, `java.lang.System#out`, and `java.io.PrintStream#println(String)`) that are accessible from the Java compiler's classpath:
+
+```java
+JavaTemplate.builder("System.out.println(\"Hello, World!\");")
+            .build();
+```
+
+The main advantage of context-free templates is that they only need to be parsed once before their parameters can be substituted. This has a much smaller performance impact on recipe runs.
+
+A **context-sensitive** JavaTemplate, on the other hand, can refer to declarations within the surrounding LST it will end up getting embedded into. It can refer to declarations in the scope of the existing code, such as variables, fields, locally declared or imported types, or method parameters.
+
+An example can help this make more sense. Let's take a look at [a JavaTemplate in rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/MigrateURLDecoderDecode.java#L57-L63):
+
+```java
+m = JavaTemplate.builder("#{any(String)}, StandardCharsets.UTF_8")
+                .contextSensitive()
+                .imports("java.nio.charset.StandardCharsets")
+                .build().apply(
+                        getCursor(),
+                        m.getCoordinates().replaceArguments(),
+                        m.getArguments().toArray());
+```
+
+This has to be context-sensitive because, for the type attribution, it needs to be generated as part of a call to the correct method.
+
+In other words, context sensitivity makes the most sense when you want to reference a field that's awkward/difficult to get a type attributed reference of.
+
+This context of the surrounding code comes with a performance impact, though. Every time a context-sensitive JavaTemplate is applied, a small Java source file capturing all imports and declarations that are in scope needs to be generated and compiled using the Java compiler.
+
+Of course, that's not to say that you _shouldn't_ use them but, rather, that you should be aware of the cost of using them.
+
 ## Usage
 
 Once an instance of the template has been created it can be applied to an LST element with the method `JavaTemplate apply(..)`. This example visitor uses a template to replace all method invocations of `countLetters(String)` with `withString(String).length()`:
@@ -160,3 +203,112 @@ You might want to replace the entire method declaration with the template result
 :::info
 There are thousands of possible coordinates, many with no practical application. To avoid wasting effort implementing coordinates no one would ever use, coordinates have been implemented on an as-needed basis. If existing coordinates are insufficient to your needs, come tell us about it in the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared\_invite/zt-nj42n3ea-b\~62rIHzb3Vo0E1APKCXEA) or [file an issue](https://github.com/openrewrite/rewrite/issues).
 :::
+
+## Using JavaTemplates to match existing code
+
+As you've seen previously in this doc, JavaTemplates can be used to "generate" code that can be inserted into the LST model. That's not their only use-case, however. They can also be used to match existing code in the LST model.
+
+We extensively use this functionality in our [Refaster template recipes](../authoring-recipes/types-of-recipes.md#refaster-template-recipes). It can also be quite useful for tests.
+
+To help make this clearer, let's take a look at the [SimplifyTernary recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/SimplifyTernary.java#L46-L62):
+
+```java
+@RecipeDescriptor(
+        name = "Replace `booleanExpression ? false : true` with `!booleanExpression`",
+        description = "Replace ternary expressions like `booleanExpression ? false : true` with `!booleanExpression`."
+)
+public static class SimplifyTernaryFalseTrue {
+
+    @BeforeTemplate
+    boolean before(boolean expr) {
+        return expr ? false : true;
+    }
+
+    @AfterTemplate
+    boolean after(boolean expr) {
+        // We wrap the expression in parentheses as the input expression might be a complex expression
+        return !(expr);
+    }
+}
+```
+
+Behind the scenes, that recipe gets translated into the following code. Notice how we create JavaTemplates but only use them for _matching_.
+
+```java
+@NullMarked
+public static class SimplifyTernaryFalseTrueRecipe extends Recipe {
+
+    @Override
+    public String getDisplayName() {
+        return "Replace `booleanExpression ? false : true` with `!booleanExpression`";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Replace ternary expressions like `booleanExpression ? false : true` with `!booleanExpression`.";
+    }
+
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return new AbstractRefasterJavaVisitor() {
+            final JavaTemplate before = JavaTemplate.builder("#{expr:any(boolean)} ? false : true").build();
+            final JavaTemplate after = JavaTemplate.builder("!(#{expr:any(boolean)})").build();
+
+            @Override
+            public J visitTernary(J.Ternary elem, ExecutionContext ctx) {
+                JavaTemplate.Matcher matcher;
+                if ((matcher = before.matcher(getCursor())).find()) {
+                    return embed(
+                            after.apply(getCursor(), elem.getCoordinates().replace(), matcher.parameter(0)),
+                            getCursor(),
+                            ctx,
+                            REMOVE_PARENS, SHORTEN_NAMES, SIMPLIFY_BOOLEANS
+                    );
+                }
+                return super.visitTernary(elem, ctx);
+            }
+        };
+    }
+}
+```
+
+When a JavaTemplate is used for matching, then the `Matcher` can be used to "extract" the matched parameters. For instance, if you had an LST expression such as `foo.isOk() ? true : false` (where `foo` is a local variable or a method parameter), then this will be "matched". If you called `matcher.parameter(0)`, then the return would be the `foo.isOk()` expression.
+
+This can then be passed into another JavaTemplate to generate some new code (such as what was done with the `after` template above).
+
+Another useful example that doesn't involve Refaster recipes is our [JavaTemplateMatchTest class](https://github.com/openrewrite/rewrite/blob/main/rewrite-java-test/src/test/java/org/openrewrite/java/JavaTemplateMatchTest.java#L32). In there, you can see how we create a JavaTemplate for the use case of matching/finding code rather than replacing it.
+
+## Semantics class shortcut
+
+If you're looking for a more concise way to define JavaTemplates, the [Semantics class](https://github.com/openrewrite/rewrite-templating/blob/main/src/main/java/org/openrewrite/java/template/Semantics.java) offers a powerful alternative. Instead of writing the raw template string yourself, you can define the desired expression or statement directly in Java, and a annotation processor will automatically generate the corresponding template code for you.
+
+This approach helps you avoid dealing with the syntax of raw templates and lets the compiler validate your logic directly.
+
+For example, instead of writing:
+
+```java
+JavaTemplate isEmptyReplacement =
+        JavaTemplate.builder("(#{any(java.lang.String)} == null || #{any(java.lang.String)}.isEmpty())").build();
+```
+
+You can write:
+
+```java
+JavaTemplate isEmptyReplacement =
+        Semantics.expression(this, "IsEmpty", (String s) -> (s == null || s.isEmpty())).build();
+```
+
+Similarly, for statements:
+
+```java
+JavaTemplate newInstanceTemplate =
+        Semantics.statement(this, "Example", () -> { String example = "some statement"; }).build();
+```
+
+Behind the scenes, the annotation processor transforms these `Semantics.expression(...)` and `Semantics.statement(...)` calls into actual JavaTemplate definitions with proper substitution indicators and imports.
+
+:::info
+Prerequisite: To use this feature, make sure your project is set up for Refaster-style recipes with annotation processing enabled. See the [How to create a Refaster recipe](../authoring-recipes/refaster-recipes#how-to-create-a-refaster-recipe) section for more details.
+:::
+
+Since the Semantics class is functionally equivalent to defining a JavaTemplate manually, while offering compile-time safety and slightly less boilerplate, it is well-suited for cases where your template is just beyond what Refaster can express easily. It provides a convenient middle ground between Refaster and fully custom JavaTemplate logic.

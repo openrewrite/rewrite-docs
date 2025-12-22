@@ -1,3 +1,7 @@
+---
+description: Lang OpenRewrite recipes.
+---
+
 # Lang
 
 ## Composite Recipes
@@ -5,10 +9,12 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [`ApacheCommonsStringUtils` Refaster recipes](./apachecommonsstringutilsrecipes.md)
+* [Migrate `WordUtils` to Apache Commons Text](./wordutilstocommonstext.md)
 * [Migrates to Apache Commons Lang 3.x](./upgradeapachecommonslang_2_3.md)
 
 ## Recipes
 
+* [Remove redundant null check when using `StringUtils.isNotBlank(String)`](./apachecommonsstringutilsrecipes$removeredundantnullcheckwithisnotblankrecipe.md)
 * [Replace `StringUtils.abbreviate(String, int)` with JDK provided API](./apachecommonsstringutilsrecipes$abbreviaterecipe.md)
 * [Replace `StringUtils.capitalize(String)` with JDK provided API](./apachecommonsstringutilsrecipes$capitalizerecipe.md)
 * [Replace `StringUtils.defaultString(String)` with JDK provided API](./apachecommonsstringutilsrecipes$defaultstringrecipe.md)
@@ -16,6 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `StringUtils.deleteWhitespace(String)` with JDK provided API](./apachecommonsstringutilsrecipes$deletewhitespacerecipe.md)
 * [Replace `StringUtils.equals(CharSequence, CharSequence)` with JDK provided API](./apachecommonsstringutilsrecipes$equalsrecipe.md)
 * [Replace `StringUtils.equalsIgnoreCase(CharSequence, CharSequence)` with JDK provided API](./apachecommonsstringutilsrecipes$equalsignorecaserecipe.md)
+* [Replace `StringUtils.join(Iterable&lt;? extends CharSequence&gt;, String)` with JDK provided API](./apachecommonsstringutilsrecipes$stringjoinseparatoriterablecharsequencerecipe.md)
 * [Replace `StringUtils.lowerCase(String)` with JDK provided API](./apachecommonsstringutilsrecipes$lowercaserecipe.md)
 * [Replace `StringUtils.removeEnd(String, String)` with JDK provided API](./apachecommonsstringutilsrecipes$removeendrecipe.md)
 * [Replace `StringUtils.replace(String, String, String)` with JDK provided API](./apachecommonsstringutilsrecipes$replacerecipe.md)

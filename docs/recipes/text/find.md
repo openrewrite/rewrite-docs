@@ -13,23 +13,33 @@ _Textual search, optionally using Regular Expression (regex) to query._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/Find.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/Find.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | find | The text to find. This snippet can be multiline. | `blacklist` |
 | `Boolean` | regex | *Optional*. If true, `find` will be interpreted as a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression). Default `false`. |  |
 | `Boolean` | caseSensitive | *Optional*. If `true` the search will be sensitive to case. Default `false`. |  |
 | `Boolean` | multiline | *Optional*. When performing a regex search setting this to `true` allows "^" and "$" to match the beginning and end of lines, respectively. When performing a regex search when this is `false` "^" and "$" will match only the beginning and ending of the entire source file, respectively.Has no effect when not performing a regex search. Default `false`. |  |
 | `Boolean` | dotAll | *Optional*. When performing a regex search setting this to `true` allows "." to match line terminators.Has no effect when not performing a regex search. Default `false`. |  |
-| `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*.java` |
+| `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched. | `**/*.java` |
+| `Boolean` | description | *Optional*. Add the matched value(s) as description on the search result marker.  Default `false`. |  |
+| `Integer` | contextSize | *Optional*. The number of characters to include in the datatable before and after the match. Default `0`, `-1` indicates that the whole text should be used. | `50` |
 
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Find AI models in use](/recipes/ai/findmodelsinuse.md)
+* [Find GitHub action secret references](/recipes/github/findgithubactionsecretreferences.md)
+* [Find hardcoded IP addresses](/recipes/kubernetes/search/findharcodedipaddresses.md)
 
 
 ## Usage
@@ -45,6 +55,7 @@ recipeList:
   - org.openrewrite.text.Find:
       find: blacklist
       filePattern: '**/*.java'
+      contextSize: 50
 ```
 
 Now that `com.yourorg.FindExample` has been defined, activate it in your build file:
@@ -54,7 +65,7 @@ Now that `com.yourorg.FindExample` has been defined, activate it in your build f
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -98,12 +109,12 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe Find --recipe-option "find=blacklist" --recipe-option "filePattern='**/*.java'"
+mod run . --recipe Find --recipe-option "find=blacklist" --recipe-option "filePattern='**/*.java'" --recipe-option "contextSize=50"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_REWRITE_CORE}}
+mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}
 ```
 </TabItem>
 </Tabs>
@@ -119,6 +130,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.TextMatches" label="TextMatches">
+
 ### Text matches
 **org.openrewrite.table.TextMatches**
 
@@ -128,6 +142,10 @@ _Lines matching simple text search._
 | ----------- | ----------- |
 | Source path | The path to the source file. |
 | Match | The text of the match. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -143,6 +161,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -154,6 +193,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -164,13 +207,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+</Tabs>

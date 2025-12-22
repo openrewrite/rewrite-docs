@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to Micronaut 4
+description: How to automatically migrate from Micronaut 3 to Micronaut 4.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -5,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 In this guide, we'll look at using OpenRewrite to perform an automated migration from Micronaut 3.x to Micronaut 4.x
 
-If you want to learn more about the process that went into developing these recipes, check out the [Micronaut framework 4.0 release blog post](https://www.moderne.io/blog/micronaut-framework-4-0-automated-upgrade-with-openrewrite).
+If you want to learn more about the process that went into developing these recipes, check out the [Micronaut framework 4.0 release blog post](https://www.moderne.ai/blog/micronaut-framework-4-0-automated-upgrade-with-openrewrite).
 
 ## Configuration
 See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/micronaut/micronaut3to4migration.md). This is also where you can find the full list of changes it will make.
@@ -255,6 +260,20 @@ dependencies {
 ```
 </TabItem>
 </Tabs>
+
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.micronaut.Micronaut3to4Migration
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}
+```
 
 ## See how this recipe works across multiple open-source repositories
 

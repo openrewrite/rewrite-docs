@@ -1,3 +1,7 @@
+---
+description: A technical overview of the markers and how to configure/use them.
+---
+
 # Markers
 
 Markers annotate [LST](./lossless-semantic-trees.md) elements with metadata. [Visitors](./visitors.md) can read or attach any type implementing the [Marker](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/Marker.java) interface to any LST element's [Markers](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java). Markers can be used to identify search results or to communicate between Recipes during OpenRewrite execution. When an LST is printed back to source code most markers, being metadata, have no textual representation within the source. The exception is [SearchResult](#searchresult) Markers which are printed as comments that indicate the result of a search. OpenRewrite attaches [framework provided markers](../reference/framework-provided-markers.md) to LSTs.

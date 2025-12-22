@@ -1,3 +1,7 @@
+---
+description: Spring Security 5.x OpenRewrite recipes.
+---
+
 # Spring Security 5.x
 
 ## Categories

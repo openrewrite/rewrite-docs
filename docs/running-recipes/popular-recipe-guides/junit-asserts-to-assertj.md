@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate from JUnit Asserts to AssertJ
+description: How to migrate from JUnit Asserts to AssertJ.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -53,7 +58,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>{{VERSION_REWRITE_TESTING_FRAMEWORKS}}</version>
+          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -144,6 +149,20 @@ public class ExampleJunitTestClass {
 ```
 </TabItem>
 </Tabs>
+
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.testing.assertj.JUnitToAssertj
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
+```
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -1,3 +1,7 @@
+---
+description: Amqp OpenRewrite recipes.
+---
+
 # Amqp
 
 ## Recipes

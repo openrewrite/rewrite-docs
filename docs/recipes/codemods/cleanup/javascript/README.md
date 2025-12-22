@@ -1,3 +1,7 @@
+---
+description: Javascript OpenRewrite recipes.
+---
+
 # Javascript
 
 ## Recipes
@@ -7,7 +11,7 @@
 * [Disallow comparing `undefined` using `typeof`.](./notypeofundefined.md)
 * [Disallow else blocks after return statements in if statements](./noelsereturn.md)
 * [Disallow equal signs explicitly at the beginning of regular expressions](./nodivregex.md)
-* [Disallow `if` statements as the only statement in `if` blocks without `else`.](./nolonelyif.md)
+* [Disallow if statements as the only statement in else blocks](./nolonelyif.md)
 * [Disallow initializing variables to undefined](./noundefinit.md)
 * [Disallow member access from `await` expression.](./noawaitexpressionmember.md)
 * [Disallow negated conditions.](./nonegatedcondition.md)
@@ -68,7 +72,7 @@
 * [Forbid import of modules using absolute paths](./noabsolutepath.md)
 * [Forbid import statements with CommonJS module.exports](./noimportmoduleexports.md)
 * [Forbid importing packages through relative paths](./norelativepackages.md)
-* [Forbid namespace (a.k.a. "wildcard" `*`) imports.](./nonamespace.md)
+* [Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports.](./nonamespace.md)
 * [Forbid repeated import of the same module in multiple places](./noduplicates.md)
 * [Forbid unnecessary path segments in import and require statements](./nouselesspathsegments.md)
 * [Improve regexes by making them shorter, consistent, and safer.](./betterregex.md)
@@ -92,7 +96,7 @@
 * [Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence.](./prefersethas.md)
 * [Prefer `String#replaceAll()` over regex searches with the global flag.](./preferstringreplaceall.md)
 * [Prefer `String#slice()` over `String#substr()` and `String#substring()`.](./preferstringslice.md)
-* [Prefer `String#startsWith()` & `String#endsWith()` over `RegExp#test()`.](./preferstringstartsendswith.md)
+* [Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`.](./preferstringstartsendswith.md)
 * [Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`.](./preferstringtrimstartend.md)
 * [Prefer borrowing methods from the prototype instead of the instance.](./preferprototypemethods.md)
 * [Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.](./preferdomnoderemove.md)
@@ -119,7 +123,7 @@
 * [Require escape sequences to use uppercase values.](./escapecase.md)
 * [Require `let` or `const` instead of `var`](./novar.md)
 * [Require `new` when throwing an error.](./thrownewerror.md)
-* [Require or disallow "Yoda" conditions](./yoda.md)
+* [Require or disallow &quot;Yoda&quot; conditions](./yoda.md)
 * [Require or disallow Unicode byte order mark (BOM)](./unicodebom.md)
 * [Require or disallow assignment operator shorthand where possible](./operatorassignment.md)
 * [Require or disallow logical assignment operator shorthand](./logicalassignmentoperators.md)

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Use Files#createTempDirectory"
+sidebar_label: "Use `Files#createTempDirectory`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,22 +16,88 @@ Use `Files#createTempDirectory` when the sequence `File#createTempFile(..)`->`Fi
 
 ### Tags
 
-* CWE-379
+* [CWE-379](/reference/recipes-by-tag#cwe)
 * [RSPEC-S5445](https://sonarsource.github.io/rspec/#/rspec/S5445)
-* CWE-377
+* [CWE-377](/reference/recipes-by-tag#cwe)
 
 ## Recipe source
 
 This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
-## License
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Java security best practices](/recipes/java/security/javasecuritybestpractices.md)
+* [Remediate OWASP A08:2021 Software and data integrity failures](/recipes/java/security/owaspa08.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.File;
+import java.io.IOException;
+
+class A {
+    void b() throws IOException {
+        File tempDir;
+        tempDir = File.createTempFile("OverridesTest", "dir");
+        tempDir.delete();
+        tempDir.mkdir();
+        System.out.println(tempDir.getAbsolutePath());
+    }
+}
+```
+
+###### After
+```java
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
+class A {
+    void b() throws IOException {
+        File tempDir;
+        tempDir = Files.createTempDirectory("OverridesTest" + "dir").toFile();
+        System.out.println(tempDir.getAbsolutePath());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,1 @@
+import java.io.File;
+import java.io.IOException;
++import java.nio.file.Files;
+
+@@ -7,3 +8,1 @@
+    void b() throws IOException {
+        File tempDir;
+-       tempDir = File.createTempFile("OverridesTest", "dir");
+-       tempDir.delete();
+-       tempDir.mkdir();
++       tempDir = Files.createTempDirectory("OverridesTest" + "dir").toFile();
+        System.out.println(tempDir.getAbsolutePath());
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne run it via the Moderne CLI:
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
 
 
@@ -45,7 +111,7 @@ mod run . --recipe UseFilesCreateTempDirectory
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-security:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_SECURITY}}
 ```
 </TabItem>
 </Tabs>
@@ -61,6 +127,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -75,6 +144,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -86,6 +176,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -96,13 +190,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+</Tabs>

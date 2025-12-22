@@ -13,15 +13,15 @@ _Namespace values in web.xml must be consistent with the descriptor version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -53,7 +53,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.xml.liberty.WebDDNamespaceRule
 displayName: Use correct web-app namespace values
-description: Namespace values in web.xml must be consistent with the descriptor version.
+description: |
+  Namespace values in web.xml must be consistent with the descriptor version.
 recipeList:
   - org.openrewrite.xml.ChangeNamespaceValue:
       elementName: web-app
@@ -75,6 +76,84 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from WebSphere traditional to Liberty](/recipes/java/liberty/migratefromwebspheretoliberty.md)
+
+## Examples
+##### Example 1
+`WebDDNamespaceTest#replaceVersion24Test`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+    <display-name>testWebDDNamespace</display-name>
+</web-app>
+```
+
+###### After
+```xml
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+    <display-name>testWebDDNamespace</display-name>
+</web-app>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
++<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+    <display-name>testWebDDNamespace</display-name>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`WebDDNamespaceTest#replaceVersion24Test`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+    <display-name>testWebDDNamespace</display-name>
+</web-app>
+```
+
+###### After
+```xml
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+    <display-name>testWebDDNamespace</display-name>
+</web-app>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
++<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+    <display-name>testWebDDNamespace</display-name>
+```
+</TabItem>
+</Tabs>
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty` in your build file or by running a shell command (in which case no build changes are needed):
@@ -85,7 +164,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -98,7 +177,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_REWRITE_LIBERTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}")
 }
 ```
 
@@ -119,7 +198,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_REWRITE_LIBERTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.xml.liberty.WebDDNamespaceRule")
@@ -164,7 +243,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>{{VERSION_REWRITE_LIBERTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -193,7 +272,7 @@ mod run . --recipe WebDDNamespaceRule
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-liberty:{{VERSION_REWRITE_LIBERTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-liberty:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LIBERTY}}
 ```
 </TabItem>
 </Tabs>
@@ -209,6 +288,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -223,6 +305,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -234,6 +337,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -244,10 +351,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

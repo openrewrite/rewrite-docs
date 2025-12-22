@@ -13,25 +13,235 @@ _Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuej
 
 ### Tags
 
-* ESLint
-* vue
-* eslint-plugin-vue
+* [ESLint](/reference/recipes-by-tag#eslint)
+* [vue](/reference/recipes-by-tag#vue)
+* [eslint-plugin-vue](/reference/recipes-by-tag#eslint)
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-vue.yml),
+[Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
-## License
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview/).
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Lint source code with ESLint](../../../codemods/eslint)
+  * fix: `true`
+  * configFile: `{   "root": true,   "parser": "vue-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",     "ecmaVersion": "2015",     "sourceType": "module",       "ecmaFeatures": {       "jsx": true,       "experimentalObjectRestSpread": true     }   },   "plugins": ["vue"],   "rules": {     "vue/attributes-order": 2,     "vue/component-tags-order": 2,     "vue/order-in-components": 2,     "vue/this-in-template": 2,     "vue/block-order": 2,     "vue/block-tag-newline": 2,     "vue/component-name-in-template-casing": 2,     "vue/component-options-name-casing": 2,     "vue/define-macros-order": 2,     "vue/html-comment-content-newline": 2,     "vue/html-comment-content-spacing": 2,     "vue/html-comment-indent": 2,     "vue/new-line-between-multi-line-property": 2,     "vue/next-tick-style": 2,     "vue/no-required-prop-with-default": 2,     "vue/no-unsupported-features": 2,     "vue/no-useless-mustaches": 2,     "vue/no-useless-v-bind": 2,     "vue/padding-line-between-blocks": 2,     "vue/padding-line-between-tags": 2,     "vue/padding-lines-in-component-definition": 2,     "vue/prefer-define-options": 2,     "vue/prefer-separate-static-class": 2,     "vue/script-indent": 2,     "vue/static-class-names-order": 2,     "vue/v-for-delimiter-style": 2,     "vue/v-if-else-key": 2,     "vue/v-on-handler-style": 2,     "vue/array-bracket-newline": 2,     "vue/array-bracket-spacing": 2,     "vue/array-element-newline": 2,     "vue/arrow-spacing": 2,     "vue/block-spacing": 2,     "vue/brace-style": 2,     "vue/comma-dangle": 2,     "vue/comma-spacing": 2,     "vue/comma-style": 2,     "vue/dot-location": 2,     "vue/dot-notation": 2,     "vue/eqeqeq": 2,     "vue/func-call-spacing": 2,     "vue/key-spacing": 2,     "vue/keyword-spacing": 2,     "vue/multiline-ternary": 2,     "vue/no-extra-parens": 2,     "vue/object-curly-newline": 2,     "vue/object-curly-spacing": 2,     "vue/object-property-newline": 2,     "vue/object-shorthand": 2,     "vue/operator-linebreak": 2,     "vue/prefer-template": 2,     "vue/quote-props": 2,     "vue/space-in-parens": 2,     "vue/space-infix-ops": 2,     "vue/space-unary-ops": 2,     "vue/template-curly-spacing": 2,   },   "globals": {     "browser": true,     "node": true   } } `
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup
+displayName: Recommended vue code cleanup
+description: |
+  Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuejs.org/).
+tags:
+  - ESLint
+  - vue
+  - eslint-plugin-vue
+recipeList:
+  - org.openrewrite.codemods.ESLint:
+      fix: true
+      configFile: {
+  "root": true,
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": "2015",
+    "sourceType": "module",
+      "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["vue"],
+  "rules": {
+    "vue/attributes-order": 2,
+    "vue/component-tags-order": 2,
+    "vue/order-in-components": 2,
+    "vue/this-in-template": 2,
+    "vue/block-order": 2,
+    "vue/block-tag-newline": 2,
+    "vue/component-name-in-template-casing": 2,
+    "vue/component-options-name-casing": 2,
+    "vue/define-macros-order": 2,
+    "vue/html-comment-content-newline": 2,
+    "vue/html-comment-content-spacing": 2,
+    "vue/html-comment-indent": 2,
+    "vue/new-line-between-multi-line-property": 2,
+    "vue/next-tick-style": 2,
+    "vue/no-required-prop-with-default": 2,
+    "vue/no-unsupported-features": 2,
+    "vue/no-useless-mustaches": 2,
+    "vue/no-useless-v-bind": 2,
+    "vue/padding-line-between-blocks": 2,
+    "vue/padding-line-between-tags": 2,
+    "vue/padding-lines-in-component-definition": 2,
+    "vue/prefer-define-options": 2,
+    "vue/prefer-separate-static-class": 2,
+    "vue/script-indent": 2,
+    "vue/static-class-names-order": 2,
+    "vue/v-for-delimiter-style": 2,
+    "vue/v-if-else-key": 2,
+    "vue/v-on-handler-style": 2,
+    "vue/array-bracket-newline": 2,
+    "vue/array-bracket-spacing": 2,
+    "vue/array-element-newline": 2,
+    "vue/arrow-spacing": 2,
+    "vue/block-spacing": 2,
+    "vue/brace-style": 2,
+    "vue/comma-dangle": 2,
+    "vue/comma-spacing": 2,
+    "vue/comma-style": 2,
+    "vue/dot-location": 2,
+    "vue/dot-notation": 2,
+    "vue/eqeqeq": 2,
+    "vue/func-call-spacing": 2,
+    "vue/key-spacing": 2,
+    "vue/keyword-spacing": 2,
+    "vue/multiline-ternary": 2,
+    "vue/no-extra-parens": 2,
+    "vue/object-curly-newline": 2,
+    "vue/object-curly-spacing": 2,
+    "vue/object-property-newline": 2,
+    "vue/object-shorthand": 2,
+    "vue/operator-linebreak": 2,
+    "vue/prefer-template": 2,
+    "vue/quote-props": 2,
+    "vue/space-in-parens": 2,
+    "vue/space-infix-ops": 2,
+    "vue/space-unary-ops": 2,
+    "vue/template-curly-spacing": 2,
+  },
+  "globals": {
+    "browser": true,
+    "node": true
+  }
+}
+
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-codemods` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-codemods</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-codemods:RELEASE -Drewrite.activeRecipes=org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -42,7 +252,7 @@ mod run . --recipe RecommendedVueCodeCleanup
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION_REWRITE_CODEMODS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}
 ```
 </TabItem>
 </Tabs>
@@ -58,6 +268,28 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.codemods.ESLintMessages" label="ESLintMessages">
+
+### ESLint messages
+**org.openrewrite.codemods.ESLintMessages**
+
+_Errors and warnings as reported by ESLint._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source Path | The source path of the file. |
+| Rule ID | ESLint Rule ID. |
+| Severity | Either `Warning` or `Error`. |
+| Fatal | Is this a fatal error (like a parse error). |
+| Message | The message created by the rule. |
+| Line | Line in source file this message pertains to. |
+| Column | Column in source file this message pertains to. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -72,6 +304,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -83,6 +336,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -93,10 +350,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

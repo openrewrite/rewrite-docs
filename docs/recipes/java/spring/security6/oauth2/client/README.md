@@ -1,3 +1,7 @@
+---
+description: Client OpenRewrite recipes.
+---
+
 # Client
 
 ## Recipes

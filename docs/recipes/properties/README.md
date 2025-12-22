@@ -1,3 +1,7 @@
+---
+description: Properties OpenRewrite recipes.
+---
+
 # Properties
 
 ## Categories
@@ -11,6 +15,6 @@
 * [Change property key](./changepropertykey.md)
 * [Change property value](./changepropertyvalue.md)
 * [Create Properties file](./createpropertiesfile.md)
-* [Delete Property](./deleteproperty.md)
+* [Delete property by key](./deleteproperty.md)
 
 

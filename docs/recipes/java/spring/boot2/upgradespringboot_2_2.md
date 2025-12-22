@@ -13,20 +13,20 @@ _Migrate applications to the latest Spring Boot 2.2 release. This recipe will mo
 
 ### Tags
 
-* spring
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -40,6 +40,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `2.2.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-dependencies`
+  * newVersion: `2.2.x`
+  * overrideManagedVersion: `true`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-maven-plugin`
@@ -64,11 +69,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `PingHealthIndicator`](../../../java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator)
 * [Use `WebTestClientBuilderCustomizer`](../../../java/spring/boot2/migratewebtestclientbuildercustomizerpackagename)
 * [Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`](../../../java/spring/boot2/migrateconfigurationpropertiesbindingpostprocessorvalidatorbeanname)
+* [Use `DiskSpaceHealthIndicator(File, DataSize)`](../../../java/spring/boot2/migratediskspacehealthindicatorconstructor)
 * [Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`](../../../java/spring/boot2/springbootmavenpluginmigrateagenttoagents)
 * [Migrate Spring Boot properties to 2.2](../../../java/spring/boot2/springbootproperties_2_2)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.test.rule.OutputCapture`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.system.OutputCaptureRule`
+* [Upgrade MyBatis to Spring Boot 2.2](../../../java/spring/boot3/upgrademybatistospringboot_2_2)
 
 </TabItem>
 
@@ -79,7 +86,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2
 displayName: Migrate to Spring Boot 2.2
-description: Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
+description: |
+  Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
 tags:
   - spring
   - boot
@@ -88,9 +96,14 @@ recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_2
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
-      artifactId: *
+      artifactId: "*"
       newVersion: 2.2.x
       overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-dependencies
+      newVersion: 2.2.x
+      overrideManagedVersion: true
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-maven-plugin
@@ -110,20 +123,29 @@ recipeList:
       addIfMissing: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springdoc
-      artifactId: *
+      artifactId: "*"
       newVersion: 1.3.x
   - org.openrewrite.java.spring.boot2.MigrateApplicationHealthIndicatorToPingHealthIndicator
   - org.openrewrite.java.spring.boot2.MigrateWebTestClientBuilderCustomizerPackageName
   - org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName
+  - org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor
   - org.openrewrite.java.spring.boot2.SpringBootMavenPluginMigrateAgentToAgents
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_2
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.test.rule.OutputCapture
       newFullyQualifiedTypeName: org.springframework.boot.test.system.OutputCaptureRule
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_2
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+
 
 ## Usage
 
@@ -135,7 +157,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -148,7 +170,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
 }
 ```
 
@@ -169,7 +191,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2")
@@ -214,7 +236,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_REWRITE_SPRING}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -243,7 +265,7 @@ mod run . --recipe UpgradeSpringBoot_2_2
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -259,6 +281,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -273,6 +298,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -284,6 +330,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -294,13 +344,30 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Kyle Scully](mailto:scullykns@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), SiBorea, [Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Kun Li, Tyler Van Gorder, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Aaron Gershman, Josh Soref, nbruno, [Kun Li](mailto:kun@moderne.io), eocantu
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+</Tabs>

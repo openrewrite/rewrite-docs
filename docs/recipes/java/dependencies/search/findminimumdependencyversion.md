@@ -13,20 +13,115 @@ _The oldest dependency version in use is the lowest dependency version in use in
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumDependencyVersion.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumDependencyVersion.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupIdPattern | Group ID glob pattern used to match dependencies. | `com.fasterxml.jackson.module` |
 | `String` | artifactIdPattern | Artifact ID glob pattern used to match dependencies. | `jackson-module-*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
 
-## License
+## Example
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupIdPattern|`com.fasterxml.jackson*`|
+|artifactIdPattern|`jackson-core`|
+|version|`2.14-2.16`|
+
+
+###### Unchanged
+```mavenProject
+core
+```
+
+###### Unchanged
+```mavenProject
+server
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>org.openrewrite</groupId>
+  <artifactId>core</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>2.14.0</version>
+      </dependency>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.15.0</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<!--~~(com.fasterxml.jackson.core:jackson-core:2.14.0)~~>--><project>
+  <groupId>org.openrewrite</groupId>
+  <artifactId>core</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>2.14.0</version>
+      </dependency>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.15.0</version>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -1,1 +1,1 @@
+-<project>
++<!--~~(com.fasterxml.jackson.core:jackson-core:2.14.0)~~>--><project>
+  <groupId>org.openrewrite</groupId>
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <groupId>org.openrewrite</groupId>
+  <artifactId>server</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>2.15.0</version>
+      </dependency>
+  </dependencies>
+</project>
+```
 
 
 ## Usage
@@ -45,7 +140,7 @@ recipeList:
       version: 1.x
 ```
 
-Now that `com.yourorg.FindMinimumDependencyVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
+Now that `com.yourorg.FindMinimumDependencyVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -53,7 +148,7 @@ Now that `com.yourorg.FindMinimumDependencyVersionExample` has been defined, act
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -66,7 +161,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -93,7 +188,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>{{VERSION_REWRITE_JAVA_DEPENDENCIES}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,7 +208,7 @@ mod run . --recipe FindMinimumDependencyVersion --recipe-option "groupIdPattern=
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}
 ```
 </TabItem>
 </Tabs>
@@ -129,6 +224,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.DependenciesInUse" label="DependenciesInUse">
+
 ### Dependencies in use
 **org.openrewrite.maven.table.DependenciesInUse**
 
@@ -143,7 +241,11 @@ _Direct and transitive dependencies in use._
 | Version | The resolved version. |
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
-| Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
+| Count | How many times does this dependency appear. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -159,6 +261,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -170,6 +293,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -180,10 +307,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

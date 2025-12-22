@@ -1,3 +1,7 @@
+---
+description: How to automatically fix checkstyle violations.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -32,7 +36,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -128,7 +132,7 @@ dependencies {
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-static-analysis</artifactId>
-          <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -213,7 +217,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -237,6 +241,20 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
     </plugins>
   </build>
 </project>
+```
+
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.staticanalysis.CodeCleanup
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
 ```
 
 ## Known Limitations

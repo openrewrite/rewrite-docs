@@ -1,3 +1,7 @@
+---
+description: Research OpenRewrite recipes.
+---
+
 # Research
 
 ## Recipes

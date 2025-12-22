@@ -1,3 +1,7 @@
+---
+description: A look into the various ways you can specify versions of dependencies.
+---
+
 # Dependency version selectors
 
 Dependency management recipes, such as [Upgrade Maven Dependency Version](../recipes/maven/upgradedependencyversion.md) or [Add Maven Dependency](../recipes/maven/adddependency.md), accept version numbers as parameters. If you know the exact version number up front you can configure such recipes with it. But the desired version number isn't always knowable up front, or no single version number may be adequate when what is desired can't be known in advance, or might change over time. Dependency management recipes support a variety of version selectors to help express these more complex constraints. These patterns assume that version numbers generally conform to [Semantic Versioning](https://semver.org).
@@ -34,20 +38,20 @@ This is very similar to the above hyphenated range except that you can specify e
 | ---------------- | ---------------------------- | ---------------- |
 | `[1.0.0,1.5.0]`  | 1.0.0, 1.5.0, 1.5.1          | 1.5.0            |
 | `[1.0.0,1.5.0)`  | 1.0.0, 1.5.0, 1.5.1          | 1.0.0            |
-| `(1.0.0,1.5.0)`  | 1.0.0, 1.2.0 1.5.0, 1.5.1    | 1.2.0            |
+| `(1.0.0,1.5.0)`  | 1.0.0, 1.2.0, 1.5.0, 1.5.1   | 1.2.0            |
 | `[1,1.5.0)`      | 1.0.0, 1.5.0, 1.5.1          | 1.5.0            |
 | `[1,)`           | 1.0.0, 1.5.0, 1.5.1          | 1.5.1            |
 | `(,999)`         | 1.0.0, 1.5.0, 1.5.1          | 1.5.1            |
 
 ### XRange
 
-Any of `X`, `x`, or `*` are interpreted as a wildcard and may be used instead of numeric values in the [major, minor, patch] tuple.
+Any of `X`, `x`, or `*` are interpreted as a wildcard and may be used instead of numeric values in the [major, minor, patch] tuple. The wildcard must be at the end of the version selector.
 
 | Version Selector | Available Versions         | Selected Version |
 | ---------------- | -------------------------- | ---------------- |
-| `1.x.0`          | 1.0.0, 1.1.0, 1.1.1, 2.0.0 | 1.1.0            |
-| `1.x.x`          | 1.0.0, 1.1.0, 1.1.1, 2.0.0 | 1.1.1            |
-| `x.x.x`          | 1.0.0, 1.1.0, 1.1.1, 2.0.0 | 2.0.0            |
+| `1.0.x`          | 1.0.0, 1.0.1, 1.1.0, 2.0.0 | 1.0.1            |
+| `1.x`            | 1.0.0, 1.0.1, 1.1.0, 2.0.0 | 1.1.0            |
+| `x`              | 1.0.0, 1.1.0, 1.1.0, 2.0.0 | 2.0.0            |
 
 ### Tilde range
 

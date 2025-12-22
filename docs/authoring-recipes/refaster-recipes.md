@@ -1,3 +1,8 @@
+---
+sidebar_label: Creating Refaster template recipes
+description: A step-by-step guide to creating Refaster template recipes and their corresponding tests.
+---
+
 import ReactPlayer from 'react-player';
 
 import Tabs from '@theme/Tabs';
@@ -32,6 +37,10 @@ Here is an example of what a Refaster template looks like:
 import com.google.errorprone.refaster.annotation.AfterTemplate;
 import com.google.errorprone.refaster.annotation.BeforeTemplate;
 
+@RecipeDescriptor(
+    name = "Prefer StringIsEmpty",
+    description = "Prefer String#isEmpty() over alternatives that check the string's length."
+)
 public class StringIsEmpty {
   @BeforeTemplate
   boolean equalsEmptyString(String string) {
@@ -150,7 +159,7 @@ dependencies {
                     <path>
                         <groupId>org.openrewrite</groupId>
                         <artifactId>rewrite-templating</artifactId>
-                        <version>{{VERSION_REWRITE_TEMPLATING}}</version>
+                        <version>{{VERSION_ORG_OPENREWRITE_REWRITE_TEMPLATING}}</version>
                     </path>
                 </annotationProcessorPaths>
             </configuration>
@@ -162,7 +171,55 @@ dependencies {
 </TabItem>
 </Tabs>
 
+### Compiling with Java 9 or higher
 
+The annotation processor used to generate the Refaster template recipe implementation will automatically add an annotation of type `javax.annotation.Generated`. This annotation was removed from the JDK in Java 9.
+
+If your project uses Java 9 or higher, you will need to add the dependency `jakarta.annotation:jakarta.annotation-api:3.0.0` to the compilation classpath. The dependency contributes the `jakarta.annotation.Generated` annotation which is the replacement for the `javax.annotation.Generated` class. In addition, you will need to provide the flag `-Arewrite.generatedAnnotation=jakarta.annotation.Generated` to the Java compiler.
+
+<Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
+
+```groovy title="build.gradle"
+dependencies {
+    implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")
+}
+
+tasks.named("compileJava", JavaCompile).configure {
+    options.compilerArgs.add("-Arewrite.generatedAnnotation=jakarta.annotation.Generated")
+}
+```
+
+</TabItem>
+
+<TabItem value="maven" label="Maven">
+
+```xml title="pom.xml"
+<dependencies>
+    <dependency>
+        <groupId>jakarta.annotation</groupId>
+        <artifactId>jakarta.annotation-api</artifactId>
+        <version>3.0.0</version>
+    </dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <compilerArgs>
+                    <arg>-Arewrite.generatedAnnotation=jakarta.annotation.Generated</arg>
+                </compilerArgs>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+
+</TabItem>
+</Tabs>
 
 ### Create a Java class
 

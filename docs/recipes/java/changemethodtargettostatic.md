@@ -13,22 +13,65 @@ _Change method invocations to static method calls._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. The original method call may or may not be a static method invocation. | `com.google.common.collect.ImmutableSet of(..)` |
+| --- | --- | --- | --- |
+| `String` | methodPattern | The original method call may or may not be a static method invocation. A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `com.google.common.collect.ImmutableSet of(..)` |
 | `String` | fullyQualifiedTargetTypeName | A fully-qualified class name of the type upon which the static method is defined. | `java.util.Set` |
 | `String` | returnType | *Optional*. Sometimes changing the target type also changes the return type. In the Guava example, changing from `ImmutableSet#of(..)` to `Set#of(..)` widens the return type from Guava's `ImmutableSet` to just `java.util.Set`. | `java.util.Set` |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |  |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 | `Boolean` | matchUnknownTypes | *Optional*. When enabled, include method invocations which appear to match if full type information is missing. Using matchUnknownTypes can improve recipe resiliency for an AST with missing type information, but also increases the risk of false-positive matches on unrelated method invocations. |  |
 
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
+* [Change `javax.tools.ToolProvider` methods calls to static](/recipes/java/migrate/removedtoolproviderconstructor.md)
+* [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+* [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
+* [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+* [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
+* [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
+* [Prefer `Integer#compare`](/recipes/java/migrate/guava/preferintegercompare.md)
+* [Prefer `Integer#divideUnsigned`](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
+* [Prefer `Integer#parseUnsignedInt`](/recipes/java/migrate/guava/preferintegerparseunsignedint.md)
+* [Prefer `Integer#remainderUnsigned`](/recipes/java/migrate/guava/preferintegerremainderunsigned.md)
+* [Prefer `Long#compareUnsigned`](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
+* [Prefer `Long#compare`](/recipes/java/migrate/guava/preferlongcompare.md)
+* [Prefer `Long#divideUnsigned`](/recipes/java/migrate/guava/preferlongdivideunsigned.md)
+* [Prefer `Long#parseUnsignedInt`](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
+* [Prefer `Long#remainderUnsigned`](/recipes/java/migrate/guava/preferlongremainderunsigned.md)
+* [Prefer `Math#addExact`](/recipes/java/migrate/guava/prefermathaddexact.md)
+* [Prefer `Math#clamp`](/recipes/java/migrate/guava/prefermathclamp.md)
+* [Prefer `Math#multiplyExact`](/recipes/java/migrate/guava/prefermathmultiplyexact.md)
+* [Prefer `Math#subtractExact`](/recipes/java/migrate/guava/prefermathsubtractexact.md)
+* [Prefer `Short#compare`](/recipes/java/migrate/guava/prefershortcompare.md)
+* [Prefer `java.lang.Char#compare`](/recipes/java/migrate/guava/prefercharcompare.md)
+* [Prefer `java.util.Collections#synchronizedNavigableMap`](/recipes/java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap.md)
+* [Prefer `java.util.Collections#unmodifiableNavigableMap`](/recipes/java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap.md)
+* [Prefer `java.util.Objects#equals`](/recipes/java/migrate/guava/preferjavautilobjectsequals.md)
+* [Prefer `java.util.Objects#hash`](/recipes/java/migrate/guava/preferjavautilobjectshashcode.md)
+* [Prefer `java.util.Objects#requireNonNullElse`](/recipes/java/migrate/guava/preferjavautilobjectsrequirenonnullelse.md)
+* [Prefer `java.util.function.Predicate`](/recipes/java/migrate/guava/preferjavautilpredicate.md)
+* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Replace `Paths.get` with `Path.of`](/recipes/java/migrate/nio/file/pathsgettopathof.md)
+* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](/recipes/staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
+* [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md)
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
+* [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md)
+* [Use `ObjectUtils#isEmpty(Object)`](/recipes/java/spring/framework/useobjectutilsisempty.md)
+* [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
 
 
 ## Usage
@@ -54,7 +97,7 @@ Now that `com.yourorg.ChangeMethodTargetToStaticExample` has been defined, activ
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -103,7 +146,7 @@ mod run . --recipe ChangeMethodTargetToStatic --recipe-option "methodPattern=com
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_REWRITE_JAVA}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -119,6 +162,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -133,6 +179,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -144,6 +211,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -154,13 +225,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim@moderne.io), Tyler Van Gorder, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com)
+</Tabs>

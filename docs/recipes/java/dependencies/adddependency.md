@@ -13,13 +13,16 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.guava` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION` | `guava` |
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `29.X` |
@@ -35,9 +38,111 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 | `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |  |
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
 
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Add AWS SDK for Java v2 S3 Event Notification dependency if needed](/recipes/software/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
+* [Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
+* [Add Hibernate ORM Core if has dependencies](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+* [Add JBoss LogManager's SLF4J provider](/recipes/java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency.md)
+* [Add Jackson2 for Jersey using JSON](/recipes/java/spring/boot4/addjackson2forjerseyjson.md)
+* [Add Jakarta EE 9 Servlet Dependency](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
+* [Add Quarkus 2 dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
+* [Add Spring Framework modular dependencies](/recipes/java/spring/framework/modularspringframeworkdependencies.md)
+* [Add Spring compatibility extensions for commonly used annotations](/recipes/quarkus/spring/addspringcompatibilityextensions.md)
+* [Add `javax.validation-api` dependency](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)
+* [Add `org.hamcrest:hamcrest` if it is used.](/recipes/java/testing/hamcrest/addhamcrestifused.md)
+* [Add explicit Common Annotations dependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
+* [Add explicit Inject dependencies](/recipes/java/migrate/javax/addinjectdependencies.md)
+* [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [Add missing Flyway module for MySQL](/recipes/java/flyway/addflywaymodulemysql.md)
+* [Add missing Flyway module for Oracle](/recipes/java/flyway/addflywaymoduleoracle.md)
+* [Add missing Flyway module for PostgreSQL](/recipes/java/flyway/addflywaymodulepostgresql.md)
+* [Add missing Flyway module for SQL Server](/recipes/java/flyway/addflywaymodulesqlserver.md)
+* [Change v1 Maven/Gradle dependencies to v2](/recipes/software/amazon/awssdk/v2migration/upgradesdkdependencies.md)
+* [Cucumber to JUnit test `@Suite`](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+* [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
+* [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
+* [Migrate Hibernate dependencies to 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernatedependencies60-community-edition.md)
+* [Migrate JUnit asserts to AssertJ](/recipes/java/testing/assertj/junittoassertj.md)
+* [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
+* [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+* [Migrate Log4j 2.x to Logback](/recipes/java/logging/logback/log4jtologback.md)
+* [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
+* [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+* [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
+* [Migrate `@EnableXyz` annotations to Quarkus extensions](/recipes/quarkus/spring/enableannotationstoquarkusdependencies.md)
+* [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
+* [Migrate dependencies from Jackson Codehaus (legacy) to FasterXML](/recipes/java/jackson/codehaus/codehausdependencytofasterxml.md)
+* [Migrate deprecated `javax.mail` packages to `jakarta.mail`](/recipes/java/migrate/jakarta/javaxmailtojakartamail.md)
+* [Migrate deprecated `javax.servlet` packages to `jakarta.servlet`](/recipes/java/migrate/jakarta/javaxservlettojakartaservlet.md)
+* [Migrate deprecated `javax.ws` packages to `jakarta.ws`](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
+* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate from Elasticsearch 8 to 9](/recipes/elastic/elastic9/migratetoelasticsearch9.md)
+* [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
+* [Migrate from Jakarta annotation API to JSpecify](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
+* [Migrate from JetBrains annotations to JSpecify](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
+* [Migrate from Micrometer annotations to JSpecify](/recipes/java/jspecify/migratefrommicrometerannotations.md)
+* [Migrate from Micronaut Framework annotations to JSpecify](/recipes/java/jspecify/migratefrommicronautannotations.md)
+* [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
+* [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
+* [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
+* [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
+* [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
+* [Migrate to Hibernate 7.0.x (Moderne Edition)](/recipes/hibernate/migratetohibernate70-moderne-edition.md)
+* [Migrate to Kafka 3.0](/recipes/kafka/migratetokafka30.md)
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+* [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
+* [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+* [Migrate to Spring Boot 4.0 modular starters](/recipes/java/spring/boot4/migratetomodularstarters.md)
+* [Migrate to Spring Data 2.3](/recipes/java/spring/data/upgradespringdata_2_3.md)
+* [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
+* [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)
+* [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
+* [Replace Derby test driver with Quarkus JDBC Derby (test scope)](/recipes/quarkus/spring/derbytestdrivertoquarkus.md)
+* [Replace H2 test driver with Quarkus JDBC H2 (test scope)](/recipes/quarkus/spring/h2testdrivertoquarkus.md)
+* [Replace Spring Boot AMQP with Quarkus Messaging AMQP](/recipes/quarkus/spring/springbootamqptoquarkusreactive.md)
+* [Replace Spring Boot AMQP with Quarkus Messaging RabbitMQ](/recipes/quarkus/spring/springbootamqptoquarkusclassic.md)
+* [Replace Spring Boot ActiveMQ with Quarkus Artemis JMS](/recipes/quarkus/spring/springbootactivemqtoquarkus.md)
+* [Replace Spring Boot Actuator with Quarkus SmallRye Health](/recipes/quarkus/spring/springbootactuatortoquarkus.md)
+* [Replace Spring Boot Artemis with Quarkus Artemis JMS](/recipes/quarkus/spring/springbootartemistoquarkus.md)
+* [Replace Spring Boot Batch with Quarkus Scheduler](/recipes/quarkus/spring/springbootbatchtoquarkus.md)
+* [Replace Spring Boot Cache with Quarkus Cache](/recipes/quarkus/spring/springbootcachetoquarkus.md)
+* [Replace Spring Boot Data JPA with Quarkus Hibernate ORM Panache](/recipes/quarkus/spring/springbootdatajpatoquarkus.md)
+* [Replace Spring Boot Data MongoDB with Quarkus MongoDB Panache](/recipes/quarkus/spring/springbootdatamongotoquarkus.md)
+* [Replace Spring Boot Data REST with Quarkus REST](/recipes/quarkus/spring/springbootdataresttoquarkus.md)
+* [Replace Spring Boot Data Redis with Quarkus Redis Client](/recipes/quarkus/spring/springbootdataredistoquarkus.md)
+* [Replace Spring Boot Elasticsearch with Quarkus Elasticsearch REST Client](/recipes/quarkus/spring/springbootelasticsearchtoquarkus.md)
+* [Replace Spring Boot Integration with Camel Quarkus](/recipes/quarkus/spring/springbootintegrationtoquarkus.md)
+* [Replace Spring Boot JDBC with Quarkus Agroal](/recipes/quarkus/spring/springbootjdbctoquarkus.md)
+* [Replace Spring Boot Mail with Quarkus Mailer](/recipes/quarkus/spring/springbootmailtoquarkus.md)
+* [Replace Spring Boot OAuth2 Client with Quarkus OIDC Client](/recipes/quarkus/spring/springbootoauth2clienttoquarkus.md)
+* [Replace Spring Boot OAuth2 Resource Server with Quarkus OIDC](/recipes/quarkus/spring/springbootoauth2resourceservertoquarkus.md)
+* [Replace Spring Boot Quartz with Quarkus Quartz](/recipes/quarkus/spring/springbootquartztoquarkus.md)
+* [Replace Spring Boot Security with Quarkus Security](/recipes/quarkus/spring/springbootsecuritytoquarkus.md)
+* [Replace Spring Boot Test with Quarkus JUnit 5](/recipes/quarkus/spring/springboottesttoquarkus.md)
+* [Replace Spring Boot Thymeleaf with Quarkus Qute](/recipes/quarkus/spring/springbootthymeleaftoquarkus.md)
+* [Replace Spring Boot Validation with Quarkus Hibernate Validator](/recipes/quarkus/spring/springbootvalidationtoquarkus.md)
+* [Replace Spring Boot Web with Quarkus RESTEasy Classic](/recipes/quarkus/spring/springbootwebtoquarkusclassic.md)
+* [Replace Spring Boot Web with Quarkus REST](/recipes/quarkus/spring/springbootwebtoquarkusreactive.md)
+* [Replace Spring Boot WebFlux with Quarkus REST Client](/recipes/quarkus/spring/springbootwebfluxtoquarkusreactive.md)
+* [Replace Spring Boot WebSocket with Quarkus WebSockets](/recipes/quarkus/spring/springbootwebsockettoquarkus.md)
+* [Replace Spring Kafka with Quarkus Kafka Client](/recipes/quarkus/spring/springkafkatoquarkusclassic.md)
+* [Replace Spring Kafka with Quarkus Messaging Kafka](/recipes/quarkus/spring/springkafkatoquarkusreactive.md)
+* [Replace SpringFox Dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
+* [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
+* [Update the Micronaut Retry support](/recipes/java/micronaut/addmicronautretrydependencyifneeded.md)
+* [Update the Micronaut Websocket support](/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded.md)
+* [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
+* [Use Mockito JUnit Jupiter extension](/recipes/java/testing/junit5/usemockitoextension.md)
+* [Use Vert.x JUnit 5 Extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
+* [Use `org.springframework.boot.web.server.LocalServerPort`](/recipes/java/spring/boot2/migratelocalserverportannotation.md)
 
 
 ## Usage
@@ -65,7 +170,7 @@ recipeList:
       acceptTransitive: true
 ```
 
-Now that `com.yourorg.AddDependencyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
+Now that `com.yourorg.AddDependencyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -73,7 +178,7 @@ Now that `com.yourorg.AddDependencyExample` has been defined, activate it and ta
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -86,7 +191,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -113,7 +218,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>{{VERSION_REWRITE_JAVA_DEPENDENCIES}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,7 +238,7 @@ mod run . --recipe AddDependency --recipe-option "groupId=com.google.guava" --re
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}
 ```
 </TabItem>
 </Tabs>
@@ -149,6 +254,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -163,6 +271,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -174,6 +303,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -184,10 +317,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -1,3 +1,7 @@
+---
+description: Solver OpenRewrite recipes.
+---
+
 # Solver
 
 ## Categories

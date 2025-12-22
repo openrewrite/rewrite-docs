@@ -18,7 +18,7 @@ const structuredData = {
     name: 'Moderne',
   },
   datePublished: new Date(),
-  softwareVersion: latestVersions["{{VERSION_REWRITE_CORE}}"],
+  softwareVersion: latestVersions["{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}"],
   downloadUrl: 'https://github.com/openrewrite/rewrite/releases',
   video: {
     '@type': 'VideoObject',
@@ -41,9 +41,34 @@ const config: Config = {
       },
       innerHTML: JSON.stringify(structuredData),
     },
+    // <link rel="preconnect" href="https://fonts.googleapis.com">
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    // <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
+      },
+    },
+
   ],
   tagline: description,
-  favicon: "img/favicon.svg",
+  favicon: "img/favicon.ico",
 
   url: "https://docs.openrewrite.org",
   baseUrl: "/",
@@ -54,12 +79,17 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
 
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
   },
+
+    scripts: [
+    {
+      src: 'reo.js',
+    }
+  ],
 
   presets: [
     [
@@ -89,8 +119,55 @@ const config: Config = {
     ],
   ],
 
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
+    }
+  },
+
+  plugins: [
+    [
+      'docusaurus-plugin-llms',
+      {
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: false,
+        generateMarkdownFiles: true,
+        docsDir: 'docs',
+        title: 'OpenRewrite Documentation',
+        description: 'Large-scale automated source code refactoring',
+        excludeImports: true,
+        removeDuplicateHeadings: true,
+        customLLMFiles: [
+          {
+            filename: 'llms-getting-started.txt',
+            includePatterns: ['introduction.md', '**/running-recipes/**/*'],
+            fullContent: false,
+            title: 'OpenRewrite Getting Started',
+            description: 'Introduction and guides for running OpenRewrite recipes',
+          },
+          {
+            filename: 'llms-authoring.txt',
+            includePatterns: ['**/authoring-recipes/**/*'],
+            fullContent: false,
+            title: 'OpenRewrite Recipe Development',
+            description: 'Guides for creating and testing OpenRewrite recipes',
+          },
+          {
+            filename: 'llms-reference.txt',
+            includePatterns: ['**/reference/**/*', '**/concepts-and-explanations/**/*'],
+            fullContent: false,
+            title: 'OpenRewrite Reference & Concepts',
+            description: 'Technical reference documentation and core concepts',
+          },
+        ],
+      },
+    ],
+  ],
+
   future: {
     experimental_faster: true,
+    v4: true,
   },
 
   themeConfig: {
@@ -100,19 +177,18 @@ const config: Config = {
       indexName: "openrewrite",
     },
     announcementBar: {
-      id: "code_remix",
+      id: "openrewrite_training",
       content:
-        'Now announcing the inaugural <a href="https://coderemix.ai/"><strong>Code Remix Summit</strong></a> – in Miami May 12th-14th. Use the code <strong>MODERNE3VIP</strong> for an additional $300 off.',
-      textColor: "#E3F2FD",
+        'Want to learn about OpenRewrite directly from the team? Sign up for a <a href="https://www.moderne.ai/moderne-openrewrite-training-hub">free training session</a>.',
     },
     image: "img/moderne-poster-logo.svg",
     colorMode: {
       respectPrefersColorScheme: true,
     },
     metadata: [
-      { 
-        name: 'keywords', 
-        content: 'auto-remediation, Java, migrate, Moderne, OpenRewrite, refactoring, SAST, SCA, Spring Boot Migration, security' 
+      {
+        name: 'keywords',
+        content: 'auto-remediation, Java, migrate, Moderne, OpenRewrite, refactoring, SAST, SCA, Spring Boot Migration, security'
       },
     ],
     navbar: {
@@ -139,70 +215,16 @@ const config: Config = {
         },
         {
           href: "https://docs.moderne.io",
-          label: "Moderne",
+          label: "Moderne docs",
           position: "right",
         },
       ],
     },
     footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Moderne",
-              href: "https://docs.moderne.io/",
-            },
-          ],
-        },
-        {
-          title: "OpenRewrite Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/openrewrite",
-            },
-            {
-              label: "Slack",
-              href: "https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA",
-            },
-            {
-              label: "Discord",
-              href: "https://discord.gg/xk3ZKrhWAb",
-            },
-            {
-              label: "Bluesky",
-              href: "https://bsky.app/profile/openrewrite.github.io",
-            },
-            {
-              label: "X",
-              href: "https://x.com/OpenRewrite",
-            }
-          ],
-        },
-        {
-          title: "Moderne",
-          items: [
-            {
-              label: "Moderne.ai",
-              href: "https://moderne.ai",
-            },
-            {
-              label: "Marketplace",
-              href: "https://app.moderne.io/marketplace",
-            },
-            {
-              label: "X",
-              href: "https://twitter.com/ModerneInc",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Moderne, Inc.`,
+      copyright: `© Moderne, ${new Date().getFullYear()}`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.vsDark,
       darkTheme: prismThemes.vsDark,
       additionalLanguages: [
         "bash",

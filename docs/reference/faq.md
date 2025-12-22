@@ -1,3 +1,7 @@
+---
+description: Frequently asked questions about OpenRewrite, Moderne, and recipe development.
+---
+
 import ReactPlayer from 'react-player';
 import TOCInline from '@theme/TOCInline';
 
@@ -51,17 +55,19 @@ mvn rewrite:run -Drewrite.exclusions="folderA,folderB"
 
 ## Why do artifact scanners detect vulnerabilities in recipe artifacts/JARs?
 
+:::tip
+If you're getting this warning from running the `downloadRecipeDependencies` Gradle task, you should consider using [TypeTables](../authoring-recipes/multiple-versions.md#typetables) instead. Not only will it greatly reduce the size of your dependencies, but it won't be flagged by a vulnerability scanner.
+:::
+
 In order to modernize and upgrade old or vulnerable code, some OpenRewrite recipe modules bundle copies of old libraries. Libraries bundled into recipe modules are never executed. That being said, these libraries are **never executed**.
 
 OpenRewrite exercises the Java compiler internally to compile code patterns that exist in these old and/or vulnerable libraries. These patterns are then used to **match** old or vulnerable code for the sake of modernizing or repairing it.
 
 Using a library in compilation in this way **does not trigger class initialization** in the way that reflection might, for example. In other words, code paths in libraries used in compilation are **never executed**.
 
-As an example of this, consider the case of [rewrite-spring](https://github.com/openrewrite/rewrite-spring). It has libraries bundled inside of the [META-INF/rewrite/classpath directory](https://github.com/openrewrite/rewrite-spring/tree/main/src/main/resources/META-INF/rewrite). However, those JARs are not made into a Fat Jar or a shaded library in the traditional sense. It is not possible that by using `rewrite-spring` that one of those libraries gets called.
-
 ## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
 
-This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](../recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 180 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
+This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](../recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 280 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
 
 This nuance is why we don't support intermediate steps to commit results; it would simply be too much to handle feasibly. Furthermore, we'd have to write out to disk repeatedly, which would slow the migration down even more.
 
@@ -73,7 +79,18 @@ That being said, there are two things you can do:
 
 Using these two approaches together in separate runs means you can likely create something that's feasible to review.
 
-Worth noting, though, is that each recipe run will need to build up the Lossless Semantic Tree (LST) – which can take some time (especially for larger projects). If you'd like to speed that up, you can have a look at [Moderne](https://www.moderne.io/) where we allow you to use precomputed LSTs.
+Worth noting, though, is that each recipe run will need to build up the Lossless Semantic Tree (LST) – which can take some time (especially for larger projects). If you'd like to speed that up, you can have a look at [Moderne](https://www.moderne.ai/) where we allow you to use precomputed LSTs.
+
+## Are partial or parallel recipe runs supported with the Gradle plugin?
+
+**No**, the Gradle plugin does not currently support partial or parallel recipe runs.
+If you need to run recipes incrementally or in parallel, consider these alternatives:
+
+1. Use the [Moderne CLI](https://docs.moderne.io/), which supports serializing LSTs and running recipes against them
+2. Use exclusions to limit parsing to specific files or directories
+3. Use preconditions to limit the scope of changes to specific files or directories
+
+For more details about this limitation, see [issue #212](https://github.com/openrewrite/rewrite-gradle-plugin/issues/212) in the rewrite-gradle-plugin repository.
 
 ## I'm getting `java.lang.OutOfMemoryError: Java heap space` when running OpenRewrite. 
 
@@ -121,7 +138,11 @@ Double check and adjust your dependency version, or add additional repository co
 
 ## My recipe appears to hang when running. What's happening? Is there a progress report?
 
-OpenRewrite is likely building up a model of your code and resolving types – this can take a while. Right now, there is not a progress report for recipe runs. However, there is a suggestion to add progress indicators that you can +1 [here](https://github.com/openrewrite/rewrite-maven-plugin/issues/544).
+OpenRewrite is probably still building up a model of your code and resolving types – this can take a while. Right now, there is not a progress report for recipe runs.
+
+## Can I tell OpenRewrite to NOT touch a certain file?
+
+Yes – [we describe how in our preconditions doc](./yaml-format-reference.md#using-preconditions-to-limit-what-files-are-touched).
 
 ## Can I create a report or summary of the changes made through OpenRewrite?
 
@@ -136,7 +157,7 @@ For more information, check out [getting started with data tables guide](https:/
 When a recipe fails to make changes, that's often because of malformed or missing type information.
 You can use the diagnostic [Find missing types recipe](../recipes/java/search/findmissingtypes.md),
 and [the data table it produces](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/data-tables/), to find missing types in your codebase.
-If there are any missing types you might want to double-check your dependencies are set up correctly, or whether you're using Lombok, as [Lombok leads to missing types](https://github.com/openrewrite/rewrite/issues/1297).
+If there are any missing types you might want to double-check your dependencies are set up correctly.
 
 It could also be that a particular file is not parsed correctly. In such cases you'll see log line output which files failed to parse.
 You can use the [Find source files with ParseExceptionResult markers](../recipes/core/findparsefailures.md) diagnostic recipe to find & report these issues.
@@ -203,9 +224,9 @@ This is a challenging problem for a couple of reasons:
 * Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.6/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L140-L160).
 * The [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin) requires you to either change your build file, or add an `init.gradle` script to run recipes.
 
-In general, we recommend folks write a `rewrite.yml` file to configure recipes, as that clears out any ambiguity as to which recipe instances to configure, and this approach is portable across the various tools that run OpenRewrite recipes.
+We generally recommend using a `rewrite.yml` file to configure recipes. This avoids ambiguity about which recipe instances are being configured and ensures the setup is portable across the different tools that run OpenRewrite recipes.
 
-For folks using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) we [recently added](https://github.com/openrewrite/rewrite-maven-plugin/pull/816) an option to pass in arguments to recipes, for single recipes only.
+If you're using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin), we [added basic support for passing arguments to recipes](https://github.com/openrewrite/rewrite-maven-plugin/pull/816), though it's currently limited to single-recipe runs.
 Using the below command you remove an argument plugin without modifying a `rewrite.yml` or `pom.xml` file:
 
 ```shell
@@ -295,3 +316,48 @@ Time savings estimates provide you with a general idea of how much time was save
 The assumption is that this time saved number represents how long it would take a developer to change the code, create a PR to review said change, and then merge/deploy it once it was reviewed. It _does not_ estimate how long it would take a developer to find this issue in the code (which, in some cases, can be quite a bit longer than making the change itself).
 
 [You can export data tables with those results per recipe](../running-recipes/data-tables.md).
+
+## Is there a way to tell `rewriteTest` to ignore formatting when comparing before and after? Likewise, can we just compare LST equivalence while ignoring static imports or fully qualified types?
+
+No there is not -- and very intentionally not so.
+
+The reason is that these differences can be indicative of underlying issues. For example:
+
+* Ignoring formatting differences might overlook cases where incorrect formatting affects code behavior or leads to compilation issues.
+
+* Ignoring import differences might cause problems if a necessary type is missing or not properly imported.
+
+Additionally, if `rewriteTest` ignores these issues, it could lead to problems composing multiple recipes together. The output of one recipe becomes the input for the next, and if that output contains formatting or import issues, it can cause issues downstream.
+
+Because of that, we recommend fixing the underlying causes of those differences.
+
+## How can I run OpenRewrite against Ant projects?
+
+One of our community members graciously [outlined how they did this](https://github.com/openrewrite/rewrite-docs/issues/247#issuecomment-2943431802). Please see that issue for more information on this.
+
+## Why doesn't OpenRewrite fully migrate my code?
+
+OpenRewrite recipes are designed with a focus on correctness over completeness. This means that what a recipe changes, it changes correctly, deterministically, and reproducibly. OpenRewrite endorses the [do no harm](../authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm) principle, thus it will never apply a transformation unless it can do so with full confidence that the change is both syntactically and semantically correct for your codebase.
+
+In contrast, completeness refers to whether a recipe covers all possible cases or patterns needed to fully migrate a given technology, framework, or API usage. Not every recipe is exhaustive. In fact, some recipes are intentionally scoped to handle a subset of migration patterns, often to avoid unintended side effects in complex or edge-case scenarios. Additionally, some recipes include constraints or guards that ensure transformations only occur when it's safe. If your code doesn't meet those conditions, the recipe may choose not to act.
+
+This approach is deliberate. Moderne prioritizes deterministic correctness over attempting to guess what the user intended, which can lead to broken code. This is **fundamentally different from AI-assisted code** generation tools, which may appear to do a "complete" migration but can introduce subtle bugs or inconsistencies because they rely on probabilistic models rather than formal LST and semantic analysis.
+
+### What about cases the recipe doesn't cover?
+
+If a recipe doesn't seem to result in a complete migration, it typically means one of two things:
+
+1. The recipe doesn't yet cover certain patterns (a completeness gap).
+2. The recipe contains safeguards that didn't match your code's context (a correctness constraint).
+
+:::info
+There's another practical reason why that's often overlooked; sometimes it isn't worth creating a recipe. If a particular migration pattern only affects a very small number of cases, the time and effort to write, test, and maintain a recipe might outweigh the benefit. In such cases, it's often more efficient to perform the change manually.
+:::
+
+### What should I do if the recipe isn't complete?
+
+* _Check whether combining existing recipes solves it._ Many recipes are designed to be composable.
+* _Contribute enhancements or request improvements._ The ecosystem grows because developers surface missing patterns.
+* _Evaluate whether manual fixes are the right trade-off._ For very rare or project-specific patterns, it may be faster and more practical to skip automation.
+
+The important thing to take away from this is that OpenRewrite recipes focus on being correct, safe, and deterministic – even if they aren't exhaustive.

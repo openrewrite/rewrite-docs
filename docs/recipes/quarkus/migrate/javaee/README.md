@@ -1,3 +1,7 @@
+---
+description: Javaee OpenRewrite recipes.
+---
+
 # Javaee
 
 ## Composite Recipes

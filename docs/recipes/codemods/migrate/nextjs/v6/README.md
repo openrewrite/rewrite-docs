@@ -1,3 +1,7 @@
+---
+description: V6 OpenRewrite recipes.
+---
+
 # V6
 
 ## Recipes

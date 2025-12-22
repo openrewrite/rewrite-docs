@@ -1,6 +1,6 @@
 ---
 keywords: [OpenRewrite, Java, Java 17, Java Migration]
-description: Automatically migrate from Java 8 to 17
+description: How to automatically migrate from Java 8 to 17.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,7 +18,7 @@ This recipe covers the following themes:
 
 ## Example Configuration
 
-The Java 17 migration recipe can be applied by including OpenRewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
+The Java 17 migration recipe can be applied by including OpenRewrite's plugin to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
@@ -147,7 +147,7 @@ public class Example {
 ```
 
 :::info
-The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.&#x20;
+The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.
 :::
 
 ### Maven pom
@@ -253,7 +253,21 @@ The JAXB and JAX-WS dependencies will only be added to the project if types from
 Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
 :::
 
-### Known Limitations
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.migrate.UpgradeToJava17
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
+```
+
+## Known Limitations
 
 The following is a list of known limitations/issues:
 

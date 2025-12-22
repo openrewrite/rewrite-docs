@@ -1,7 +1,11 @@
+---
+description: Controlflow OpenRewrite recipes.
+---
+
 # Controlflow
 
 ## Recipes
 
-* [Control Flow Visualization](./controlflowvisualization.md)
+* [Control flow visualization](./controlflowvisualization.md)
 
 

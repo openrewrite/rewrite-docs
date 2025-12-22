@@ -1,3 +1,7 @@
+---
+description: Quarkus OpenRewrite recipes.
+---
+
 # Quarkus
 
 ## Categories

@@ -1,3 +1,7 @@
+---
+description: Misk OpenRewrite recipes.
+---
+
 # Misk
 
 ## Composite Recipes

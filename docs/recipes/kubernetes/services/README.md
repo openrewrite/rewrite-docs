@@ -1,3 +1,7 @@
+---
+description: Services OpenRewrite recipes.
+---
+
 # Services
 
 ## Recipes

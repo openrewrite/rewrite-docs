@@ -1,3 +1,7 @@
+---
+description: Github OpenRewrite recipes.
+---
+
 # Github
 
 ## Recipes

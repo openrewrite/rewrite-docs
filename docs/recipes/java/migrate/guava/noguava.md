@@ -13,36 +13,50 @@ _Guava filled in important gaps in the Java standard library and still does. But
 
 ### Tags
 
-* guava
+* [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Inline `guava` methods annotated with `@InlineMe`](../../../com/google/guava/inlineguavamethods)
+* [Prefer the Java 11 standard library instead of Guava](../../../java/migrate/guava/noguavajava11)
+* [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
-* [Prefer `new ArrayList<>()`](../../../java/migrate/guava/noguavalistsnewarraylist)
-* [Prefer `new CopyOnWriteArrayList<>()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
-* [Prefer `new LinkedList<>()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
-* [Prefer `new TreeMap<>()`](../../../java/migrate/guava/noguavamapsnewtreemap)
+* [Prefer `Function.compose(Function)`](../../../java/migrate/guava/noguavafunctionscompose)
+* [Prefer `Collection.stream().allMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesall)
+* [Prefer `Collection.stream().anyMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesanyfilter)
+* [Prefer `Collection.stream().map(Function)` over `Iterables.transform`](../../../java/migrate/guava/noguavaiterablestransform)
+* [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](../../../java/migrate/guava/noguavacollections2transform)
+* [Prefer `new ArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewarraylist)
+* [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
+* [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
+* [Prefer `new LinkedHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewlinkedhashmap)
+* [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewtreemap)
+* [Prefer `Predicate.and(Predicate)`](../../../java/migrate/guava/noguavapredicatesandor)
+* [Prefer `Predicate.isEqual(Object)`](../../../java/migrate/guava/noguavapredicatesequalto)
+* [Prefer `A.class::isInstance`](../../../java/migrate/guava/noguavapredicatesinstanceof)
 * [Prefer `Arrays.asList(..)` over Guava primitives](../../../java/migrate/guava/noguavaprimitiveaslist)
 * [Refaster style Guava to Java migration recipes](../../../java/migrate/guava/noguavarefasterrecipes)
-* [Prefer `new HashSet<>()`](../../../java/migrate/guava/noguavasetsnewhashset)
-* [Prefer `new ConcurrentHashMap<>()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset)
-* [Prefer `new LinkedHashSet<>()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset)
+* [Prefer `new HashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewhashmap)
+* [Prefer `Collection.stream().filter(Predicate)`](../../../java/migrate/guava/noguavasetsfilter)
+* [Prefer `new HashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewhashset)
+* [Prefer `new ConcurrentHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset)
+* [Prefer `new LinkedHashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset)
 * [Prefer `java.nio.charset.StandardCharsets`](../../../java/migrate/guava/preferjavaniocharsetstandardcharsets)
 * [Prefer `java.util.Optional`](../../../java/migrate/guava/preferjavautiloptional)
 * [Prefer `java.util.function.Function`](../../../java/migrate/guava/preferjavautilfunction)
@@ -67,7 +81,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Math#addExact`](../../../java/migrate/guava/prefermathaddexact)
 * [Prefer `Math#subtractExact`](../../../java/migrate/guava/prefermathsubtractexact)
 * [Prefer `Math#multiplyExact`](../../../java/migrate/guava/prefermathmultiplyexact)
-* [Prefer `new AtomicReference<>()`](../../../java/migrate/guava/noguavaatomicsnewreference)
+* [Prefer `new AtomicReference&lt;&gt;()`](../../../java/migrate/guava/noguavaatomicsnewreference)
+* [`InputStreamRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/inputstreamrulesrecipes)
 
 </TabItem>
 
@@ -78,18 +93,33 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.NoGuava
 displayName: Prefer the Java standard library instead of Guava
-description: Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+description: |
+  Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
 tags:
   - guava
 recipeList:
+  - com.google.guava.InlineGuavaMethods
+  - org.openrewrite.java.migrate.guava.NoGuavaJava11
+  - org.openrewrite.java.migrate.guava.NoGuavaJava21
   - org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir
   - org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor
+  - org.openrewrite.java.migrate.guava.NoGuavaFunctionsCompose
+  - org.openrewrite.java.migrate.guava.NoGuavaIterablesAll
+  - org.openrewrite.java.migrate.guava.NoGuavaIterablesAnyFilter
+  - org.openrewrite.java.migrate.guava.NoGuavaIterablesTransform
+  - org.openrewrite.java.migrate.guava.NoGuavaCollections2Transform
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList
   - org.openrewrite.java.migrate.guava.NoGuavaListsNewLinkedList
+  - org.openrewrite.java.migrate.guava.NoGuavaMapsNewLinkedHashMap
   - org.openrewrite.java.migrate.guava.NoGuavaMapsNewTreeMap
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicatesAndOr
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo
+  - org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf
   - org.openrewrite.java.migrate.guava.NoGuavaPrimitiveAsList
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes
+  - org.openrewrite.java.migrate.guava.NoGuavaMapsNewHashMap
+  - org.openrewrite.java.migrate.guava.NoGuavaSetsFilter
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet
@@ -118,10 +148,652 @@ recipeList:
   - org.openrewrite.java.migrate.guava.PreferMathSubtractExact
   - org.openrewrite.java.migrate.guava.PreferMathMultiplyExact
   - org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference
+  - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes
 
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`NoGuavaJava21Test#preferMathClampForDouble`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.primitives.Doubles;
+
+class Test {
+    public double testMethod() {
+        return Doubles.constrainToRange(20D, 10D, 100D);
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    public double testMethod() {
+        return Math.clamp(20D, 10D, 100D);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import com.google.common.primitives.Doubles;
+-
+class Test {
+@@ -5,1 +3,1 @@
+class Test {
+    public double testMethod() {
+-       return Doubles.constrainToRange(20D, 10D, 100D);
++       return Math.clamp(20D, 10D, 100D);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaPredicatesEqualToTest#predicatesEqualToToPredicateIsEqual`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicates.equalTo("hello");
+    }
+}
+```
+
+###### After
+```java
+import java.util.function.Predicate;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicate.<String>isEqual("hello");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import com.google.common.base.Predicate;
+-import com.google.common.base.Predicates;
++import java.util.function.Predicate;
+
+@@ -6,1 +5,1 @@
+class A {
+    public static Predicate<String> isHelloPredicate() {
+-       return Predicates.equalTo("hello");
++       return Predicate.<String>isEqual("hello");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+`NoGuavaSetsFilterTest#replaceSetsFilter`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Set;
+
+import com.google.common.base.Predicate;
+import com.google.common.collect.Sets;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return Sets.filter(set, isNotNull);
+    }
+}
+```
+
+###### After
+```java
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,2 @@
+import java.util.Set;
++import java.util.function.Predicate;
++import java.util.stream.Collectors;
+
+@@ -3,3 +5,0 @@
+import java.util.Set;
+
+-import com.google.common.base.Predicate;
+-import com.google.common.collect.Sets;
+-
+class Test {
+@@ -8,1 +7,1 @@
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+-       return Sets.filter(set, isNotNull);
++       return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`NoGuavaTest#moreObjectsFirstNonNullToObjectsRequireNonNullElse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.MoreObjects;
+
+class A {
+    Object foo(Object obj) {
+        return MoreObjects.firstNonNull(obj, "default");
+    }
+}
+```
+
+###### After
+```java
+import java.util.Objects;
+
+class A {
+    Object foo(Object obj) {
+        return Objects.requireNonNullElse(obj, "default");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.MoreObjects;
++import java.util.Objects;
+
+@@ -5,1 +5,1 @@
+class A {
+    Object foo(Object obj) {
+-       return MoreObjects.firstNonNull(obj, "default");
++       return Objects.requireNonNullElse(obj, "default");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+`PreferJavaUtilOptionalTest#absentToEmpty`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.absent();
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.empty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -5,1 +5,1 @@
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+`NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (IllegalStateException e) {
+            return "";
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -7,1 +7,1 @@
+        try {
+            return optional.get();
+-       } catch (IllegalStateException e) {
++       } catch (NoSuchElementException e) {
+            return "";
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 7
+`NoGuavaJava21Test#preferMathClampForDouble`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.primitives.Doubles;
+
+class Test {
+    public double testMethod() {
+        return Doubles.constrainToRange(20D, 10D, 100D);
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    public double testMethod() {
+        return Math.clamp(20D, 10D, 100D);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import com.google.common.primitives.Doubles;
+-
+class Test {
+@@ -5,1 +3,1 @@
+class Test {
+    public double testMethod() {
+-       return Doubles.constrainToRange(20D, 10D, 100D);
++       return Math.clamp(20D, 10D, 100D);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 8
+`NoGuavaPredicatesEqualToTest#predicatesEqualToToPredicateIsEqual`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicates.equalTo("hello");
+    }
+}
+```
+
+###### After
+```java
+import java.util.function.Predicate;
+
+class A {
+    public static Predicate<String> isHelloPredicate() {
+        return Predicate.<String>isEqual("hello");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import com.google.common.base.Predicate;
+-import com.google.common.base.Predicates;
++import java.util.function.Predicate;
+
+@@ -6,1 +5,1 @@
+class A {
+    public static Predicate<String> isHelloPredicate() {
+-       return Predicates.equalTo("hello");
++       return Predicate.<String>isEqual("hello");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 9
+`NoGuavaSetsFilterTest#replaceSetsFilter`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Set;
+
+import com.google.common.base.Predicate;
+import com.google.common.collect.Sets;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return Sets.filter(set, isNotNull);
+    }
+}
+```
+
+###### After
+```java
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+        return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,2 @@
+import java.util.Set;
++import java.util.function.Predicate;
++import java.util.stream.Collectors;
+
+@@ -3,3 +5,0 @@
+import java.util.Set;
+
+-import com.google.common.base.Predicate;
+-import com.google.common.collect.Sets;
+-
+class Test {
+@@ -8,1 +7,1 @@
+class Test {
+    public static Set<Object> test(Set<Object> set, Predicate<Object> isNotNull) {
+-       return Sets.filter(set, isNotNull);
++       return set.stream().filter(isNotNull).collect(Collectors.toSet());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 10
+`NoGuavaTest#moreObjectsFirstNonNullToObjectsRequireNonNullElse`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.MoreObjects;
+
+class A {
+    Object foo(Object obj) {
+        return MoreObjects.firstNonNull(obj, "default");
+    }
+}
+```
+
+###### After
+```java
+import java.util.Objects;
+
+class A {
+    Object foo(Object obj) {
+        return Objects.requireNonNullElse(obj, "default");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.MoreObjects;
++import java.util.Objects;
+
+@@ -5,1 +5,1 @@
+class A {
+    Object foo(Object obj) {
+-       return MoreObjects.firstNonNull(obj, "default");
++       return Objects.requireNonNullElse(obj, "default");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 11
+`PreferJavaUtilOptionalTest#absentToEmpty`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.absent();
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.empty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -5,1 +5,1 @@
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 12
+`NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (IllegalStateException e) {
+            return "";
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    String foo(Optional<String> optional) {
+        try {
+            return optional.get();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -7,1 +7,1 @@
+        try {
+            return optional.get();
+-       } catch (IllegalStateException e) {
++       } catch (NoSuchElementException e) {
+            return "";
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -133,7 +805,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -146,7 +818,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
 }
 ```
 
@@ -167,7 +839,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.guava.NoGuava")
@@ -212,7 +884,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_REWRITE_MIGRATE_JAVA}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -241,7 +913,7 @@ mod run . --recipe NoGuava
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -257,6 +929,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -271,6 +946,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -282,6 +978,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -292,13 +992,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Tobias Lidskog](mailto:tlidskog@paypal.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Aaron Gershman, [Tim te Beek](mailto:timtebeek@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Rick Ossendrijver](mailto:rick.ossendrijver@gmail.com)
+</Tabs>

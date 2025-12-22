@@ -1,3 +1,7 @@
+---
+description: A technical overview of visitors and related concepts.
+---
+
 import ReactPlayer from 'react-player';
 
 # Visitors

@@ -1,3 +1,8 @@
+---
+sidebar_label: Testing recipes
+description: A deep, technical look into how to effectively write tests for OpenRewrite recipes.
+---
+
 import ReactPlayer from 'react-player';
 
 import Tabs from '@theme/Tabs';
@@ -7,13 +12,7 @@ import TabItem from '@theme/TabItem';
 
 When developing new recipes, it's very important to test them to ensure that they not only make the expected changes but that they also **don't** make unnecessary changes.
 
-To help you create tests that meet those standards, this guide will:
-
-* [Show you what dependencies you need to add to your project to utilize the OpenRewrite testing framework](#adding-dependencies)
-* [Provide a simple example recipe to discuss writing tests for](#sample-recipe)
-* [Present you with some examples of good tests for said recipe](#writing-tests)
-* [Explain the key classes that make up the tests](#rewritetest-interface)
-* [Give some additional advanced testing tips](#advanced-recipe-testing)
+To help you create tests that meet those standards, this guide will walk you through everything you need to know – from what dependencies to add, to example recipes and their tests, to advanced testing concepts. By the end, you should be writing great tests for your own recipes.
 
 <ReactPlayer url='https://www.youtube.com/watch?v=JAC9UIE80fs' controls="true" />
 
@@ -29,30 +28,31 @@ This guide assumes that:
 
 ## Adding dependencies
 
-Before you can go about writing tests, you'll want to add some dependencies to your project's build file so that you have all of the tools needed to create said tests:
+Before you can go about writing tests, you'll want to add some dependencies to your project's build file so that you have all of the tools needed to create said tests. 
+
+You may need to include additional dependencies depending on the type of recipes you want to create. For instance, [Refaster template recipes](./types-of-recipes.md#refaster-template-recipes) will need a few more dependencies (included below with comments).
 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
 ```groovy
-plugins {
-    id("java-library")
-}
-
-// ...
 dependencies {
+    // The bom version can also be set to a specific version
+    // https://github.com/openrewrite/rewrite-recipe-bom/releases
     implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
 
+    // The RewriteTest class needed for testing recipes
     testImplementation("org.openrewrite:rewrite-test")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
 
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
+    // Refaster style recipes need the rewrite-templating annotation processor and dependency for generated recipes
+    // https://github.com/openrewrite/rewrite-templating/releases
+    annotationProcessor("org.openrewrite:rewrite-templating:latest.release")
+    implementation("org.openrewrite:rewrite-templating")
 
-    // Optional dependency to make SLF4J logging work.
-    // Any SLF4J implementation can work here.
-    // Also requires a logback.xml file like:
-    // https://gist.github.com/mike-solomon/dabcb2cbd9bca33e4ffeee8fc1c09454
-    testRuntimeOnly("ch.qos.logback:logback-classic:1.2.+")
+    // The `@BeforeTemplate` and `@AfterTemplate` annotations are needed for refaster style recipes
+    compileOnly("com.google.errorprone:error_prone_core:latest.release") {
+        exclude("com.google.auto.service", "auto-service-annotations")
+    }
 
     // Optional dependency on assertJ to provide fluent assertions.
     testImplementation("org.assertj:assertj-core:latest.release")
@@ -64,11 +64,6 @@ dependencies {
 
 ```xml title="pom.xml"
 <project>
-    <properties>
-        <junit.version>5.8.2</junit.version>
-        <assertj.version>3.23.1</assertj.version>
-    </properties>
-    ...
     <dependencyManagement>
       <dependencies>
           <dependency>
@@ -78,27 +73,41 @@ dependencies {
               <type>pom</type>
               <scope>import</scope>
           </dependency>
+           <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.12.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
       </dependencies>
     </dependencyManagement>
     ...
     <dependencies>
+        <!-- The RewriteTest class needed for testing recipes -->
         <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+         <!-- Refaster style recipes need the rewrite-templating annotation processor and dependency for generated recipes -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>org.openrewrite</groupId>
+            <artifactId>rewrite-templating</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
         </dependency>
+
+        <!-- Makes Data flow analysis capabilities available to recipes -->
+        <dependency>
+            <groupId>org.openrewrite.meta</groupId>
+            <artifactId>rewrite-analysis</artifactId>
+        </dependency>
+
         <!-- Optional dependency on assertJ to provide fluent assertions. -->
         <dependency>
             <groupId>org.assertj</groupId>
@@ -123,7 +132,7 @@ This tutorial uses Java for tests, but which language you use is a matter of pre
 
 ## Sample recipe
 
-With the dependencies set up, we now need a recipe that we can write tests for. For the sake of an example, let's assume we have the following recipe that ensures a class's package declaration is all lowercase:
+With the dependencies set up, we now need a recipe that we can write tests for. For the sake of an example, let's assume we have an imperative recipes that ensures a class's package declaration is all lowercase (a [declarative recipe example](#declarative-recipe-testing) can be found later on).
 
 ```java
 package com.yourorg;
@@ -150,16 +159,6 @@ public class LowercasePackage extends Recipe {
     public String getDescription() {
         return "By convention, all Java package names should contain only lowercase letters, numbers, and dashes. " +
                 "This recipe converts any uppercase letters in package names to be lowercase.";
-    }
-
-    @Override
-    public Set<String> getTags() {
-        return Collections.singleton("RSPEC-120");
-    }
-
-    @Override
-    public @Nullable Duration getEstimatedEffortPerOccurrence() {
-        return Duration.ofMinutes(5);
     }
 
     @Override
@@ -321,6 +320,111 @@ At a minimum, a `SourceSpec` will define the type of source file (such as `java`
 In a majority of cases, though, a `SourceSpec` will also define an "after" state which defines what the source file contents will look like after it has been processed by the given recipe. In this case, the testing framework will pass the test if the source file has been transformed into the "after" state.
 
 A developer can assert additional conditions on a source file by using the `afterRecipe` callback that is defined on the `SourceSpec`. This can be convenient when asserting conditions on the resulting semantic model that are not represented in the rendering of the source code after the recipe has transformed the source file. For instance, you may want to confirm that the path to a file has changed such as in the [sample tests](#example-tests) above. This file path is not visible in the "after" code and can only be tested via this callback.
+
+By default, `RewriteTest.rewriteRun()` automatically trims trailing newlines from both the "before" and "after" source strings in your tests. This can cause issues when testing recipes that specifically handle end-of-file formatting. To preserve trailing newlines and test those edge cases, you can call the `noTrim()` method on your `SourceSpec`.
+
+## Declarative recipe testing
+
+Declarative recipes are largely tested in a similar way to imperative ones. The one key difference in tests is that you need to point the `spec` to your resources directory using the `recipeFromResources()` method.
+
+You can find an example of a declarative recipe and its respective tests below.
+
+### Sample recipe
+
+:::warning
+In order for your tests to function correctly, you must ensure that this recipe lives in your `src/main/resources/META-INF/rewrite` directory.
+:::
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.UseApacheStringUtils
+displayName: Use Apache `StringUtils`
+description: Replace Spring string utilities with Apache string utilities.
+recipeList:
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.apache.commons
+      artifactId: commons-lang3
+      version: latest.release
+      onlyIfUsing: org.springframework.util.StringUtils
+      configuration: implementation
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.util.StringUtils
+      newFullyQualifiedTypeName: org.apache.commons.lang3.StringUtils
+```
+
+### Example tests
+
+```java
+package com.yourorg;
+
+import org.junit.jupiter.api.Test;
+import org.openrewrite.DocumentExample;
+import org.openrewrite.java.JavaParser;
+import org.openrewrite.test.RecipeSpec;
+import org.openrewrite.test.RewriteTest;
+
+import static org.openrewrite.java.Assertions.java;
+
+class UseApacheStringUtilsTest implements RewriteTest {
+    @Override
+    public void defaults(RecipeSpec spec) {
+        spec.recipeFromResources("com.yourorg.UseApacheStringUtils")
+          // Notice how we only pass in `spring-core` as the classpath, but not `commons-lang3`.
+          // That's because we only need dependencies to compile the before code blocks, not the after code blocks.
+          .parser(JavaParser.fromJavaVersion().classpath("spring-core"));
+    }
+
+    @DocumentExample
+    @Test
+    void replacesStringEquals() {
+        rewriteRun(
+          //language=java
+          java(
+            """
+              import org.springframework.util.StringUtils;
+
+              class A {
+                  boolean test(String s) {
+                      return StringUtils.containsWhitespace(s);
+                  }
+              }
+              """,
+            """
+              import org.apache.commons.lang3.StringUtils;
+
+              class A {
+                  boolean test(String s) {
+                      return StringUtils.containsWhitespace(s);
+                  }
+              }
+              """
+          )
+        );
+    }
+
+    @Test
+    void noChangeWhenAlreadyUsingCommonsLang3() {
+        rewriteRun(
+          // By passing in `commons-lang3` as the classpath here, we ensure that the before code block compiles.
+          spec -> spec.parser(JavaParser.fromJavaVersion().classpath("commons-lang3")),
+          //language=java
+          java(
+            """
+              import org.apache.commons.lang3.StringUtils;
+
+              class A {
+                  boolean test(String s) {
+                      return StringUtils.containsWhitespace(s);
+                  }
+              }
+              """
+            // The absence of a second argument to `java` indicates that the after code block should be the same as the before code block.
+          )
+        );
+    }
+}
+```
 
 ## Advanced recipe testing
 

@@ -1,3 +1,7 @@
+---
+description: A step-by-step guide to creating imperative Java recipes and their corresponding tests.
+---
+
 import ReactPlayer from 'react-player';
 
 import Tabs from '@theme/Tabs';
@@ -28,6 +32,10 @@ class FooBar {
     }
 }
 ```
+
+:::tip
+We offer an entire [recipe authoring workshop](https://docs.moderne.io/hands-on-learning/fundamentals/workshop-overview/) that walks through everything you'd need to know to get started with recipes – from running them to the dev environment to writing different types of recipes. You may find it useful to work through that, too.
+:::
 
 <ReactPlayer url='https://www.youtube.com/watch?v=O3Se9Q25GCg' controls="true" />
 
@@ -211,52 +219,52 @@ class SayHelloRecipeTest implements RewriteTest {
     @Test
     void addsHelloToFooBar() {
         rewriteRun(
-            java(
-                """
-                    package com.yourorg;
+          java(
+            """
+              package com.yourorg;
 
-                    class FooBar {
-                    }
-                """,
-                """
-                    package com.yourorg;
+              class FooBar {
+              }
+              """,
+            """
+              package com.yourorg;
 
-                    class FooBar {
-                        public String hello() {
-                            return "Hello from com.yourorg.FooBar!";
-                        }
-                    }
-                """
-            )
+              class FooBar {
+                  public String hello() {
+                      return "Hello from com.yourorg.FooBar!";
+                  }
+              }
+              """
+          )
         );
     }
 
     @Test
     void doesNotChangeExistingHello() {
         rewriteRun(
-            java(
-                """
-                    package com.yourorg;
-        
-                    class FooBar {
-                        public String hello() { return ""; }
-                    }
-                """
-            )
+          java(
+            """
+              package com.yourorg;
+
+              class FooBar {
+                  public String hello() { return ""; }
+              }
+              """
+          )
         );
     }
 
     @Test
     void doesNotChangeOtherClasses() {
         rewriteRun(
-            java(
-                """
-                    package com.yourorg;
-        
-                    class Bash {
-                    }
-                """
-            )
+          java(
+            """
+              package com.yourorg;
+
+              class Bash {
+              }
+              """
+          )
         );
     }
 }
@@ -484,14 +492,15 @@ import java.util.Comparator;
 @Value
 @EqualsAndHashCode(callSuper = false)
 public class SayHelloRecipe extends Recipe {
-    @Option(displayName = "Fully qualified class name",
-            description = "A fully qualified class name indicating which class to add a `hello()` method to.",
-            example = "`com.yourorg.FooBar`")
+    @Option(displayName = "Fully Qualified Class Name",
+            description = "A fully qualified class name indicating which class to add a hello() method to.",
+            example = "com.yourorg.FooBar")
+    @NonNull
     String fullyQualifiedClassName;
 
     @Override
     public String getDisplayName() {
-        return "Say Hello";
+        return "Say 'Hello'";
     }
 
     @Override
@@ -518,10 +527,10 @@ public class SayHelloRecipe extends Recipe {
                         .map(J.MethodDeclaration::getSimpleName)
                         .anyMatch("hello"::equals);
 
-                // If the class already has a `hello()` method, don't make any changes to it.
-                if (helloMethodExists) {
-                    return classDecl;
-                }
+            // If the class already has a `hello()` method, don't make any changes to it.
+            if (helloMethodExists) {
+                return classDecl;
+            }
 
                 // insert the defined method into the existing class declaration
                 return JavaTemplate.apply(
@@ -570,7 +579,7 @@ public final class SayHelloRecipe extends Recipe {
 
     @Override
     public String getDisplayName() {
-        return "Say Hello";
+        return "Say 'Hello'";
     }
 
     @Override

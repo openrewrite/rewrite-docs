@@ -1,3 +1,7 @@
+---
+description: Migrate OpenRewrite recipes.
+---
+
 # Migrate
 
 ## Categories

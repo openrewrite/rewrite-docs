@@ -1,3 +1,7 @@
+---
+description: Scala OpenRewrite recipes.
+---
+
 # Scala
 
 ## Categories

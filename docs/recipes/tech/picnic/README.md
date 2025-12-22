@@ -1,3 +1,7 @@
+---
+description: Picnic OpenRewrite recipes.
+---
+
 # Picnic
 
 ## Categories

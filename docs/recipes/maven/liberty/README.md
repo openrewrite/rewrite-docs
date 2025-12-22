@@ -1,3 +1,7 @@
+---
+description: Liberty OpenRewrite recipes.
+---
+
 # Liberty
 
 ## Recipes

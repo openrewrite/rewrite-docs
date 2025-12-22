@@ -1,3 +1,7 @@
+---
+description: Io OpenRewrite recipes.
+---
+
 # Io
 
 ## Categories

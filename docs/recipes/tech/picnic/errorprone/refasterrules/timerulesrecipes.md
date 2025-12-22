@@ -1,139 +1,142 @@
 ---
-sidebar_label: "Refaster rules related to expressions dealing with time"
+sidebar_label: "`TimeRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster rules related to expressions dealing with time
+# `TimeRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.TimeRules`. [Source](https://error-prone.picnic.tech/refasterrules/TimeRules)._
+_Refaster rules related to expressions dealing with time. [Source](https://error-prone.picnic.tech/refasterrules/TimeRules)._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.TimeRulesRecipes), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), 
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.TimeRulesRecipes),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `Clock#instant()` over `Instant#now(Clock)`, as it is more concise and more "OOP-py"](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$clockinstantrecipe)
-* [Use `ZoneOffset#UTC` when possible](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$utcconstantrecipe)
-* [Prefer `LocalDate#ofInstant(Instant, ZoneId)` over more indirect alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateofinstantrecipe)
-* [Prefer `LocalDateTime#ofInstant(Instant, ZoneId)` over more indirect alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeofinstantrecipe)
-* [Prefer `LocalTime#ofInstant(Instant, ZoneId)` over more indirect alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeofinstantrecipe)
-* [Prefer `OffsetDateTime#ofInstant(Instant, ZoneId)` over more indirect alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeofinstantrecipe)
-* [Prefer `Instant#atOffset(ZoneOffset)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantatoffsetrecipe)
-* [Prefer `OffsetTime#ofInstant(Instant, ZoneId)` over more indirect alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeofinstantrecipe)
-* [Prefer `Instant#atZone(ZoneId)` over more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantatzonerecipe)
-* [Use `Clock#systemUTC()` when possible](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$utcclockrecipe)
-* [Prefer `Instant#EPOCH` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$epochinstantrecipe)
-* [Prefer `Instant#isBefore(Instant)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantisbeforerecipe)
-* [Prefer `Instant#isBefore(Instant)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantisafterrecipe)
-* [Prefer the `LocalTime#MIN` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminrecipe)
-* [Prefer `LocalDate#atStartOfDay()` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateatstartofdayrecipe)
-* [Prefer `ChronoLocalDate#isBefore(ChronoLocalDate)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldateisbeforerecipe)
-* [Prefer `ChronoLocalDate#isBefore(ChronoLocalDate)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldateisafterrecipe)
-* [Prefer `ChronoLocalDateTime#isBefore(ChronoLocalDateTime)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldatetimeisbeforerecipe)
-* [Prefer `ChronoLocalDateTime#isBefore(ChronoLocalDateTime)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldatetimeisafterrecipe)
-* [Prefer `ChronoZonedDateTime#isBefore(ChronoZonedDateTime)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronozoneddatetimeisbeforerecipe)
-* [Prefer `ChronoZonedDateTime#isBefore(ChronoZonedDateTime)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronozoneddatetimeisafterrecipe)
-* [Prefer `OffsetDateTime#isBefore(OffsetDateTime)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeisbeforerecipe)
-* [Prefer `OffsetDateTime#isBefore(OffsetDateTime)` over explicit comparison, as it yields more readable code](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeisafterrecipe)
+* [Refaster template `TimeRules.ClockInstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$clockinstantrecipe)
+* [Refaster template `TimeRules.UtcConstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$utcconstantrecipe)
+* [Refaster template `TimeRules.LocalDateOfInstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateofinstantrecipe)
+* [Refaster template `TimeRules.LocalDateTimeOfInstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeofinstantrecipe)
+* [Refaster template `TimeRules.LocalTimeOfInstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeofinstantrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeOfInstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeofinstantrecipe)
+* [Refaster template `TimeRules.InstantIdentity`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantidentityrecipe)
+* [Prefer `Instant#truncatedTo(TemporalUnit)` over less obvious alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instanttruncatedtomillisecondsrecipe)
+* [Refaster template `TimeRules.InstantTruncatedToSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instanttruncatedtosecondsrecipe)
+* [Refaster template `TimeRules.InstantAtOffset`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantatoffsetrecipe)
+* [Refaster template `TimeRules.OffsetTimeOfInstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeofinstantrecipe)
+* [Refaster template `TimeRules.InstantAtZone`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantatzonerecipe)
+* [Refaster template `TimeRules.UtcClock`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$utcclockrecipe)
+* [Refaster template `TimeRules.EpochInstant`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$epochinstantrecipe)
+* [Refaster template `TimeRules.InstantIsBefore`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantisbeforerecipe)
+* [Refaster template `TimeRules.InstantIsAfter`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$instantisafterrecipe)
+* [Refaster template `TimeRules.LocalTimeMin`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminrecipe)
+* [Refaster template `TimeRules.LocalDateAtStartOfDay`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateatstartofdayrecipe)
+* [Refaster template `TimeRules.ChronoLocalDateIsBefore`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldateisbeforerecipe)
+* [Refaster template `TimeRules.ChronoLocalDateIsAfter`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldateisafterrecipe)
+* [Refaster template `TimeRules.ChronoLocalDateTimeIsBefore`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldatetimeisbeforerecipe)
+* [Refaster template `TimeRules.ChronoLocalDateTimeIsAfter`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronolocaldatetimeisafterrecipe)
+* [Refaster template `TimeRules.ChronoZonedDateTimeIsBefore`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronozoneddatetimeisbeforerecipe)
+* [Refaster template `TimeRules.ChronoZonedDateTimeIsAfter`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$chronozoneddatetimeisafterrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeIsBefore`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeisbeforerecipe)
+* [Refaster template `TimeRules.OffsetDateTimeIsAfter`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeisafterrecipe)
 * [Refaster template `TimeRules.ZeroDuration`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zerodurationrecipe)
-* [Prefer `Duration#ofDays(long)` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofdaysrecipe)
-* [Prefer `Duration#ofHours(long)` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofhoursrecipe)
-* [Prefer `Duration#ofMillis(long)` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofmillisrecipe)
-* [Prefer `Duration#ofMinutes(long)` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofminutesrecipe)
-* [Prefer `Duration#ofNanos(long)` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofnanosrecipe)
-* [Prefer `Duration#ofSeconds(long)` over alternative representations](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofsecondsrecipe)
-* [Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) < p ><strong>Warning:</strong> this rewrite rule increases precision!](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationbetweeninstantsrecipe)
-* [Don't unnecessarily convert to and from milliseconds. (This way nanosecond precision is retained.) < p ><strong>Warning:</strong> this rewrite rule increases precision!](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationbetweenoffsetdatetimesrecipe)
-* [Prefer `Duration#isZero()` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationiszerorecipe)
+* [Refaster template `TimeRules.DurationOfDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofdaysrecipe)
+* [Refaster template `TimeRules.DurationOfHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofhoursrecipe)
+* [Refaster template `TimeRules.DurationOfMillis`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofmillisrecipe)
+* [Refaster template `TimeRules.DurationOfMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofminutesrecipe)
+* [Refaster template `TimeRules.DurationOfNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofnanosrecipe)
+* [Refaster template `TimeRules.DurationOfSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationofsecondsrecipe)
+* [Refaster template `TimeRules.DurationBetweenInstants`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationbetweeninstantsrecipe)
+* [Refaster template `TimeRules.DurationBetweenOffsetDateTimes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationbetweenoffsetdatetimesrecipe)
+* [Refaster template `TimeRules.DurationIsZero`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$durationiszerorecipe)
 * [Refaster template `TimeRules.ZeroPeriod`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zeroperiodrecipe)
-* [Prefer `LocalDate#plusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusdaysrecipe)
-* [Prefer `LocalDate#plusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusweeksrecipe)
-* [Prefer `LocalDate#plusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusmonthsrecipe)
-* [Prefer `LocalDate#plusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusyearsrecipe)
-* [Prefer `LocalDate#minusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusdaysrecipe)
-* [Prefer `LocalDate#minusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusweeksrecipe)
-* [Prefer `LocalDate#minusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusmonthsrecipe)
-* [Prefer `LocalDate#minusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusyearsrecipe)
-* [Prefer `LocalTime#plusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplusnanosrecipe)
-* [Prefer `LocalTime#plusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplussecondsrecipe)
-* [Prefer `LocalTime#plusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplusminutesrecipe)
-* [Prefer `LocalTime#plusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplushoursrecipe)
-* [Prefer `LocalTime#minusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminusnanosrecipe)
-* [Prefer `LocalTime#minusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminussecondsrecipe)
-* [Prefer `LocalTime#minusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminusminutesrecipe)
-* [Prefer `LocalTime#minusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminushoursrecipe)
-* [Prefer `OffsetTime#plusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplusnanosrecipe)
-* [Prefer `OffsetTime#plusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplussecondsrecipe)
-* [Prefer `OffsetTime#plusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplusminutesrecipe)
-* [Prefer `OffsetTime#plusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplushoursrecipe)
-* [Prefer `OffsetTime#minusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminusnanosrecipe)
-* [Prefer `OffsetTime#minusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminussecondsrecipe)
-* [Prefer `OffsetTime#minusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminusminutesrecipe)
-* [Prefer `OffsetTime#minusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminushoursrecipe)
-* [Prefer `LocalDateTime#plusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusnanosrecipe)
-* [Prefer `LocalDateTime#plusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplussecondsrecipe)
-* [Prefer `LocalDateTime#plusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusminutesrecipe)
-* [Prefer `LocalDateTime#plusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplushoursrecipe)
-* [Prefer `LocalDateTime#plusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusdaysrecipe)
-* [Prefer `LocalDateTime#plusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusweeksrecipe)
-* [Prefer `LocalDateTime#plusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusmonthsrecipe)
-* [Prefer `LocalDateTime#plusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusyearsrecipe)
-* [Prefer `LocalDateTime#minusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusnanosrecipe)
-* [Prefer `LocalDateTime#minusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminussecondsrecipe)
-* [Prefer `LocalDateTime#minusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusminutesrecipe)
-* [Prefer `LocalDateTime#minusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminushoursrecipe)
-* [Prefer `LocalDateTime#minusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusdaysrecipe)
-* [Prefer `LocalDateTime#minusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusweeksrecipe)
-* [Prefer `LocalDateTime#minusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusmonthsrecipe)
-* [Prefer `LocalDateTime#minusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusyearsrecipe)
-* [Prefer `OffsetDateTime#plusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusnanosrecipe)
-* [Prefer `OffsetDateTime#plusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplussecondsrecipe)
-* [Prefer `OffsetDateTime#plusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusminutesrecipe)
-* [Prefer `OffsetDateTime#plusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplushoursrecipe)
-* [Prefer `OffsetDateTime#plusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusdaysrecipe)
-* [Prefer `OffsetDateTime#plusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusweeksrecipe)
-* [Prefer `OffsetDateTime#plusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusmonthsrecipe)
-* [Prefer `OffsetDateTime#plusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusyearsrecipe)
-* [Prefer `OffsetDateTime#minusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusnanosrecipe)
-* [Prefer `OffsetDateTime#minusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminussecondsrecipe)
-* [Prefer `OffsetDateTime#minusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusminutesrecipe)
-* [Prefer `OffsetDateTime#minusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminushoursrecipe)
-* [Prefer `OffsetDateTime#minusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusdaysrecipe)
-* [Prefer `OffsetDateTime#minusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusweeksrecipe)
-* [Prefer `OffsetDateTime#minusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusmonthsrecipe)
-* [Prefer `OffsetDateTime#minusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusyearsrecipe)
-* [Prefer `ZonedDateTime#plusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusnanosrecipe)
-* [Prefer `ZonedDateTime#plusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplussecondsrecipe)
-* [Prefer `ZonedDateTime#plusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusminutesrecipe)
-* [Prefer `ZonedDateTime#plusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplushoursrecipe)
-* [Prefer `ZonedDateTime#plusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusdaysrecipe)
-* [Prefer `ZonedDateTime#plusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusweeksrecipe)
-* [Prefer `ZonedDateTime#plusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusmonthsrecipe)
-* [Prefer `ZonedDateTime#plusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusyearsrecipe)
-* [Prefer `ZonedDateTime#minusNanos(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusnanosrecipe)
-* [Prefer `ZonedDateTime#minusSeconds(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminussecondsrecipe)
-* [Prefer `ZonedDateTime#minusMinutes(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusminutesrecipe)
-* [Prefer `ZonedDateTime#minusHours(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminushoursrecipe)
-* [Prefer `ZonedDateTime#minusDays(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusdaysrecipe)
-* [Prefer `ZonedDateTime#minusWeeks(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusweeksrecipe)
-* [Prefer `ZonedDateTime#minusMonths(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusmonthsrecipe)
-* [Prefer `ZonedDateTime#minusYears(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusyearsrecipe)
+* [Refaster template `TimeRules.LocalDatePlusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusdaysrecipe)
+* [Refaster template `TimeRules.LocalDatePlusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusweeksrecipe)
+* [Refaster template `TimeRules.LocalDatePlusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusmonthsrecipe)
+* [Refaster template `TimeRules.LocalDatePlusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateplusyearsrecipe)
+* [Refaster template `TimeRules.LocalDateMinusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusdaysrecipe)
+* [Refaster template `TimeRules.LocalDateMinusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusweeksrecipe)
+* [Refaster template `TimeRules.LocalDateMinusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusmonthsrecipe)
+* [Refaster template `TimeRules.LocalDateMinusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdateminusyearsrecipe)
+* [Refaster template `TimeRules.LocalTimePlusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplusnanosrecipe)
+* [Refaster template `TimeRules.LocalTimePlusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplussecondsrecipe)
+* [Refaster template `TimeRules.LocalTimePlusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplusminutesrecipe)
+* [Refaster template `TimeRules.LocalTimePlusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeplushoursrecipe)
+* [Refaster template `TimeRules.LocalTimeMinusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminusnanosrecipe)
+* [Refaster template `TimeRules.LocalTimeMinusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminussecondsrecipe)
+* [Refaster template `TimeRules.LocalTimeMinusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminusminutesrecipe)
+* [Refaster template `TimeRules.LocalTimeMinusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localtimeminushoursrecipe)
+* [Refaster template `TimeRules.OffsetTimePlusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplusnanosrecipe)
+* [Refaster template `TimeRules.OffsetTimePlusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplussecondsrecipe)
+* [Refaster template `TimeRules.OffsetTimePlusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplusminutesrecipe)
+* [Refaster template `TimeRules.OffsetTimePlusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeplushoursrecipe)
+* [Refaster template `TimeRules.OffsetTimeMinusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminusnanosrecipe)
+* [Refaster template `TimeRules.OffsetTimeMinusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminussecondsrecipe)
+* [Refaster template `TimeRules.OffsetTimeMinusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminusminutesrecipe)
+* [Refaster template `TimeRules.OffsetTimeMinusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsettimeminushoursrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusnanosrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplussecondsrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusminutesrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplushoursrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusdaysrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusweeksrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusmonthsrecipe)
+* [Refaster template `TimeRules.LocalDateTimePlusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeplusyearsrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusnanosrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminussecondsrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusminutesrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminushoursrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusdaysrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusweeksrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusmonthsrecipe)
+* [Refaster template `TimeRules.LocalDateTimeMinusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeminusyearsrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusnanosrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplussecondsrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusminutesrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplushoursrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusdaysrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusweeksrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusmonthsrecipe)
+* [Refaster template `TimeRules.OffsetDateTimePlusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeplusyearsrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusnanosrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminussecondsrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusminutesrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminushoursrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusdaysrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusweeksrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusmonthsrecipe)
+* [Refaster template `TimeRules.OffsetDateTimeMinusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeminusyearsrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusnanosrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplussecondsrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusminutesrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplushoursrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusdaysrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusweeksrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusmonthsrecipe)
+* [Refaster template `TimeRules.ZonedDateTimePlusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeplusyearsrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusNanos`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusnanosrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusSeconds`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminussecondsrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusMinutes`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusminutesrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusHours`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminushoursrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusDays`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusdaysrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusWeeks`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusweeksrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusMonths`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusmonthsrecipe)
+* [Refaster template `TimeRules.ZonedDateTimeMinusYears`](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes$zoneddatetimeminusyearsrecipe)
 
 </TabItem>
 
@@ -143,8 +146,9 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.TimeRulesRecipes
-displayName: Refaster rules related to expressions dealing with time
-description: Refaster template recipes for `tech.picnic.errorprone.refasterrules.TimeRules`. [Source](https://error-prone.picnic.tech/refasterrules/TimeRules).
+displayName: `TimeRules` Refaster recipes
+description: |
+  Refaster rules related to expressions dealing with time. [Source](https://error-prone.picnic.tech/refasterrules/TimeRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ClockInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcConstantRecipe
@@ -152,6 +156,9 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimeOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeOfInstantRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIdentityRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToMillisecondsRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToSecondsRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantAtOffsetRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimeOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantAtZoneRecipe
@@ -257,6 +264,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
@@ -267,7 +281,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -280,7 +294,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -301,7 +315,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
         activeRecipe("tech.picnic.errorprone.refasterrules.TimeRulesRecipes")
@@ -346,7 +360,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>{{VERSION_REWRITE_THIRD_PARTY}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -375,7 +389,7 @@ mod run . --recipe TimeRulesRecipes
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>
@@ -391,6 +405,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -405,6 +422,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -416,6 +454,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -426,10 +468,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -1,3 +1,7 @@
+---
+description: Cobertura OpenRewrite recipes.
+---
+
 # Cobertura
 
 ## Recipes

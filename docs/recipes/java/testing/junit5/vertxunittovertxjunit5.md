@@ -13,20 +13,20 @@ _Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith`
 
 ### Tags
 
-* junit
-* testing
+* [junit](/reference/recipes-by-tag#junit)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -34,13 +34,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension)
-  * runners: `[org.vertx.testtools.VertxUnitRunner]`
-  * extension: `org.vertx.testtools.VertxExtension`
+  * runners: `[io.vertx.ext.unit.junit.VertxUnitRunner]`
+  * extension: `io.vertx.junit5.VertxExtension`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `io.vertx`
   * artifactId: `vertx-junit5`
   * version: `4.x`
-  * onlyIfUsing: `io.vertx.junit5.VertxExtension`
+  * onlyIfUsing: `io.vertx.ext.unit.junit.VertxUnitRunner`
   * acceptTransitive: `true`
 
 </TabItem>
@@ -52,24 +52,32 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5
 displayName: Use Vert.x JUnit 5 Extension
-description: Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
+description: |
+  Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
 tags:
   - junit
   - testing
 recipeList:
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
-      runners: [org.vertx.testtools.VertxUnitRunner]
-      extension: org.vertx.testtools.VertxExtension
+      runners: [io.vertx.ext.unit.junit.VertxUnitRunner]
+      extension: io.vertx.junit5.VertxExtension
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.vertx
       artifactId: vertx-junit5
       version: 4.x
-      onlyIfUsing: io.vertx.junit5.VertxExtension
+      onlyIfUsing: io.vertx.ext.unit.junit.VertxUnitRunner
       acceptTransitive: true
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+
 
 ## Usage
 
@@ -81,7 +89,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -94,7 +102,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
 }
 ```
 
@@ -115,7 +123,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5")
@@ -160,7 +168,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>{{VERSION_REWRITE_TESTING_FRAMEWORKS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -189,7 +197,7 @@ mod run . --recipe VertxUnitToVertxJunit5
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>
@@ -205,6 +213,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -219,6 +230,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -230,6 +262,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -240,13 +276,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Patrick Way, [Patrick](mailto:patway99@gmail.com), Tyler Van Gorder, [Michael Keppler](mailto:bananeweizen@gmx.de), [Aaron Gershman](mailto:aegershman@gmail.com)
+</Tabs>

@@ -1,182 +1,35 @@
 ---
-sidebar_label: "Spring Boot 3.x best practices"
+sidebar_label: "Spring Boot 3.5 best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Spring Boot 3.x best practices
+# Spring Boot 3.5 best practices
 
-**org.openrewrite.java.spring.boot3.SpringBoot3BestPractices**
+**io.moderne.java.spring.boot3.SpringBoot3BestPractices**
 
-_Applies best practices to Spring Boot 3 applications._
+_Applies best practices to Spring Boot 3.5+ applications._
 
 ### Tags
 
-* spring
-* boot
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/best-practices.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-## License
-
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 
-## Definition
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Java 21](../../../java/migrate/upgradetojava21)
-* [Migrate to Spring Boot 3.3](../../../java/spring/boot3/upgradespringboot_3_3)
-* [Enable Virtual Threads on Java 21](../../../java/spring/boot3/enablevirtualthreads)
-* [Remove `public` from `@Bean` methods](../../../java/spring/framework/beanmethodsnotpublic)
-* [Replace String literals with `HttpHeaders` constants](../../../java/spring/http/replacestringliteralswithhttpheadersconstants)
-* [Replace String literals with `MediaType` constants](../../../java/spring/http/replacestringliteralswithmediatypeconstants)
-* [Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls](../../../java/spring/http/simplifymediatypeparsecalls)
-* [Simplify WebTestClient expressions](../../../java/spring/http/simplifywebtestclientcalls)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.boot3.SpringBoot3BestPractices
-displayName: Spring Boot 3.x best practices
-description: Applies best practices to Spring Boot 3 applications.
-tags:
-  - spring
-  - boot
-recipeList:
-  - org.openrewrite.java.migrate.UpgradeToJava21
-  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3
-  - org.openrewrite.java.spring.boot3.EnableVirtualThreads
-  - org.openrewrite.java.spring.framework.BeanMethodsNotPublic
-  - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants
-  - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants
-  - org.openrewrite.java.spring.http.SimplifyMediaTypeParseCalls
-  - org.openrewrite.java.spring.http.SimplifyWebTestClientCalls
-
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
 
-1. Add the following to your `build.gradle` file:
 
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot3BestPractices")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
-}
-```
-
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot3BestPractices")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.spring.boot3.SpringBoot3BestPractices</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_REWRITE_SPRING}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.SpringBoot3BestPractices -Drewrite.exportDatatables=true
-```
-</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -187,7 +40,7 @@ mod run . --recipe SpringBoot3BestPractices
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
+mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MODERNE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -196,12 +49,15 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_R
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.SpringBoot3BestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.SpringBoot3BestPractices" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
@@ -217,6 +73,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -228,6 +105,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -238,13 +119,30 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Anu Ramamoorthy, Kun Li, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Kyle Scully](mailto:scullykns@gmail.com), pdesprez, [Aaron Gershman](mailto:aegershman@gmail.com), SiBorea, [Nick McKinney](mailto:mckinneynicholas@gmail.com), Simon Zilliken, [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), BhavanaPidapa, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Kun Li](mailto:kun@moderne.io), [Curtis](mailto:curtis@mail.ustc.edu.cn), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Tim te Beek](mailto:timtebeek@gmail.com), Adam Slaski, [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), Aaron Gershman, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Daryl Robbins, Michel Gonzalez, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), Evie Lau, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Fiete, ranuradh, nbruno, [Aleksandar A Simpson](mailto:alek@asu.me), [Greg Adams](mailto:gadams@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [BoykoAlex](mailto:aboyko@pivotal.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), Aakarshit Uppal, BramliAK, eocantu, Josh Soref, John Burns, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), Adriano Machado, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), [Mike Solomon](mailto:mike@moderne.io)
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+</Tabs>

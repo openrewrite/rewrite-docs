@@ -1,3 +1,7 @@
+---
+description: Node.js OpenRewrite recipes.
+---
+
 # Node.js
 
 _Node.js dependency and package management._

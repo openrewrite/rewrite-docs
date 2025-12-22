@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to Spring Boot 2 from Spring Boot 1
+description: How to automatically migrate from Spring Boot 1 to Spring Boot 2.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -52,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_REWRITE_SPRING}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -278,7 +283,21 @@ public class SchoolConfig {
 </TabItem>
 </Tabs>
 
-### Known Limitations
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
+```
+
+## Known Limitations
 
 | Unsupported Functionality                                                                        | Issue                                                          |
 | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |

@@ -1,3 +1,7 @@
+---
+description: Security OpenRewrite recipes.
+---
+
 # Security
 
 ## Recipes

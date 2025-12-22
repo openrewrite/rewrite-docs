@@ -1,3 +1,7 @@
+---
+description: Static analysis and remediation OpenRewrite recipes.
+---
+
 # Static analysis and remediation
 
 _Remediations for issues identified by SAST tools._
@@ -5,6 +9,7 @@ _Remediations for issues identified by SAST tools._
 ## Categories
 
 * [Java](/recipes/staticanalysis/java)
+* [Maven](/recipes/staticanalysis/maven)
 
 ## Composite Recipes
 
@@ -12,7 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Code cleanup](./codecleanup.md)
 * [Common static analysis issues](./commonstaticanalysis.md)
-* [Modernize `BufferedWriter` creation & prevent file descriptor leaks](./bufferedwritercreationrecipes.md)
+* [Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks](./bufferedwritercreationrecipes.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
 * [Simplify ternary expressions](./simplifyternaryrecipes.md)
@@ -20,10 +25,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* ['Collection.toArray()' should be passed an array of the proper type](./collectiontoarrayshouldhavepropertype.md)
 * [Add `@Serial` annotation to `serialVersionUID`](./addserialannotationtoserialversionuid.md)
 * [Add missing `@Override` to overriding and implementing methods](./missingoverrideannotation.md)
 * [Add `serialVersionUID` to a `Serializable` class when missing](./addserialversionuidtoserializable.md)
 * [Annotate methods which may return `null` with `@Nullable`](./annotatenullablemethods.md)
+* [Annotate null-checked method parameters with `@Nullable`](./annotatenullableparameters.md)
+* [Annotate required method parameters with `@NonNull`](./annotaterequiredparameters.md)
 * [Atomic Boolean, Integer, and Long equality checks compare their values](./atomicprimitiveequalsusesget.md)
 * [Avoid boxed boolean expressions](./avoidboxedbooleanexpressions.md)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](./bigdecimalroundingconstantstoenums.md)
@@ -35,15 +43,18 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change `StringBuilder` and `StringBuffer` character constructor argument to `String`](./newstringbuilderbufferwithcharargument.md)
 * [Changes code to use Java 17's `instanceof` pattern matching](./instanceofpatternmatch.md)
 * [Combine semantically equal catch blocks](./combinesemanticallyequalcatchblocks.md)
+* [Constructors of an `abstract` class should not be declared `public`](./abstractclasspublicconstructor.md)
 * [Control flow statement indentation](./controlflowindentation.md)
 * [Convert `new BufferedWriter(new FileWriter(File))` to `Files.newBufferedWriter(Path)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithfileargumentrecipe.md)
 * [Convert `new BufferedWriter(new FileWriter(File, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithfileandbooleanargumentsrecipe.md)
 * [Convert `new BufferedWriter(new FileWriter(String))` to `Files.newBufferedWriter(Path)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithstringargumentrecipe.md)
 * [Convert `new BufferedWriter(new FileWriter(String, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`](./bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithstringandbooleanargumentsrecipe.md)
+* [Convert `while (true)` with initial `if` break to loop condition](./moveconditionstowhile.md)
 * [Covariant equals](./covariantequals.md)
+* [Custom import order](./customimportorder.md)
 * [Default comes last](./defaultcomeslast.md)
 * [Don't use final on local variables](./nofinalizedlocalvariables.md)
-* [Enum values should be compared with "=="](./compareenumswithequalityoperator.md)
+* [Enum values should be compared with &quot;==&quot;](./compareenumswithequalityoperator.md)
 * [Equals avoids null](./equalsavoidsnull.md)
 * [Explicit initialization](./explicitinitialization.md)
 * [`Externalizable` classes have no-arguments constructor](./externalizablehasnoargsconstructor.md)
@@ -68,6 +79,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [No multiple variable declarations](./multiplevariabledeclarations.md)
 * [No primitive wrappers for #toString() or #compareTo(..)](./noprimitivewrappersfortostringorcompareto.md)
 * [Operator wrapping](./operatorwrap.md)
+* [Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`](./prefersystemgetpropertyovergetenv.md)
+* [Prefer direct comparison of numbers](./preferequalitycomparisonoverdifferencecheck.md)
+* [Prefer increment/decrement and compound assignment operators](./preferincrementoperator.md)
 * [Prefer `while` over `for` loops](./whileinsteadoffor.md)
 * [Properly use declaration-site type variance](./declarationsitetypevariance.md)
 * [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
@@ -85,6 +99,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove `finalize()` method](./nofinalizer.md)
 * [Remove garbage collection invocations](./removecallstosystemgc.md)
 * [Remove redundant casts](./removeredundanttypecast.md)
+* [Remove redundant null checks before instanceof](./removeredundantnullcheckbeforeinstanceof.md)
+* [Remove redundant null checks before literal equals](./removeredundantnullcheckbeforeliteralequals.md)
 * [Remove `toString()` calls on arrays](./removetostringcallsfromarrayinstances.md)
 * [Remove unnecessary parentheses](./unnecessaryparentheses.md)
 * [Remove unneeded assertions](./removeunneededassertion.md)
@@ -96,13 +112,16 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename caught exceptions in empty catch blocks to `ignored`](./renameexceptioninemptycatch.md)
 * [Rename methods named `hashcode`, `equal`, or `tostring`](./renamemethodsnamedhashcodeequalortostring.md)
 * [Rename packages to lowercase](./lowercasepackage.md)
+* [Reorder annotation attributes alphabetically](./reorderannotationattributes.md)
+* [Reorder annotations alphabetically](./reorderannotations.md)
 * [Replace `A.class.isInstance(a)` with `a instanceof A`](./replaceclassisinstancewithinstanceof.md)
 * [Replace `Optional#isPresent()` with `Optional#ifPresent()`](./replaceoptionalispresentwithifpresent.md)
-* [Replace Stream.toList() with Stream.collect(Collectors.toList())](./replacestreamtolistwithcollect.md)
+* [Replace String concatenation with `String.valueOf()`](./replacestringconcatenationwithstringvalueof.md)
 * [Replace `StringBuilder#append` with `String`](./replacestringbuilderwithstring.md)
 * [Replace `booleanExpression ? false : true` with `!booleanExpression`](./simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
 * [Replace `booleanExpression ? true : false` with `booleanExpression`](./simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
 * [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
+* [Replace `catch(Exception)` with specific declared exceptions thrown in the try block](./onlycatchdeclaredexceptions.md)
 * [Replace deprecated `Runtime#exec()` methods](./replacedeprecatedruntimeexecmethods.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
 * [Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`](./uselistsort.md)
@@ -114,11 +133,14 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace text block with regular string](./replacetextblockwithstring.md)
 * [Replaces `Object.notify()` with `Object.notifyAll()`](./useobjectnotifyall.md)
 * [Set charset encoding explicitly when calling `String#getBytes`](./explicitcharsetonstringgetbytes.md)
+* [Simplify `Arrays.asList(..)` with varargs](./simplifyarraysaslist.md)
 * [Simplify boolean expression](./simplifybooleanexpression.md)
+* [Simplify boolean expressions using De Morgan's laws](./simplifybooleanexpressionwithdemorgan.md)
 * [Simplify boolean return](./simplifybooleanreturn.md)
 * [Simplify compound statement](./simplifycompoundstatement.md)
 * [Simplify consecutive assignments](./simplifyconsecutiveassignments.md)
 * [Simplify constant if branch execution](./simplifyconstantifbranchexecution.md)
+* [Simplify `else` branch if it only has a single `if`](./simplifyelsebranch.md)
 * [Simplify `java.time.Duration` units](./simplifydurationcreationunits.md)
 * [Simplify lambda blocks to expressions](./lambdablocktoexpression.md)
 * [Sorted set stream should be collected to LinkedHashSet](./sortedsetstreamtolinkedhashset.md)
@@ -135,7 +157,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Unnecessary `return` as last statement in void method](./unnecessaryreturnaslaststatement.md)
 * [Unnecessary throws](./unnecessarythrows.md)
 * [Unwrap `@Repeatable` annotations](./unwraprepeatableannotations.md)
+* [Unwrap else block after return or throw statement](./unwrapelseafterreturn.md)
 * [Upper case literal suffixes](./uppercaseliteralsuffixes.md)
+* [Use %n instead of \n in format strings](./useportablenewlines.md)
 * [Use `Collection` interfaces](./usecollectioninterfaces.md)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](./isemptycalloncollections.md)
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](./noemptycollectionwithrawtype.md)

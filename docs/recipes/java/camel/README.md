@@ -1,3 +1,7 @@
+---
+description: Camel OpenRewrite recipes.
+---
+
 # Camel
 
 ## Categories

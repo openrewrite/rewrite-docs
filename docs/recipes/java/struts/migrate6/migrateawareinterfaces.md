@@ -1,33 +1,73 @@
 ---
-sidebar_label: "Migrate Struts 2.0 interceptors to action \"aware\" interfaces"
+sidebar_label: "Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Struts 2.0 interceptors to action "aware" interfaces
+# Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces
 
 **org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces**
 
-_These types have moved to a new package in Struts 6.0._
+_These types have moved to a new package in Struts 6.0 and their methods have been renamed from set* to with*._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/resources/META-INF/rewrite/struts6.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/resources/META-INF/rewrite/struts6.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ApplicationAware setApplication(java.util.Map)`
+  * newMethodName: `withApplication`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.SessionAware setSession(java.util.Map)`
+  * newMethodName: `withSession`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ParameterAware setParameters(java.util.Map)`
+  * newMethodName: `withParameters`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.HttpParametersAware setParameters(org.apache.struts2.dispatcher.HttpParameters)`
+  * newMethodName: `withParameters`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.PrincipalAware setPrincipalProxy(org.apache.struts2.interceptor.PrincipalProxy)`
+  * newMethodName: `withPrincipalProxy`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ServletRequestAware setServletRequest(javax.servlet.http.HttpServletRequest)`
+  * newMethodName: `withServletRequest`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.ServletResponseAware setServletResponse(javax.servlet.http.HttpServletResponse)`
+  * newMethodName: `withServletResponse`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.util.ServletContextAware setServletContext(javax.servlet.ServletContext)`
+  * newMethodName: `withServletContext`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.CookiesAware setCookiesMap(java.util.Map)`
+  * newMethodName: `withCookiesMap`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.struts2.interceptor.RequestAware setRequest(java.util.Map)`
+  * newMethodName: `withRequest`
+  * matchOverrides: `true`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.struts2.interceptor.ApplicationAware`
   * newFullyQualifiedTypeName: `org.apache.struts2.action.ApplicationAware`
@@ -67,9 +107,50 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces
-displayName: Migrate Struts 2.0 interceptors to action "aware" interfaces
-description: These types have moved to a new package in Struts 6.0.
+displayName: Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces
+description: |
+  These types have moved to a new package in Struts 6.0 and their methods have been renamed from set* to with*.
 recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ApplicationAware setApplication(java.util.Map)
+      newMethodName: withApplication
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.SessionAware setSession(java.util.Map)
+      newMethodName: withSession
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ParameterAware setParameters(java.util.Map)
+      newMethodName: withParameters
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.HttpParametersAware setParameters(org.apache.struts2.dispatcher.HttpParameters)
+      newMethodName: withParameters
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.PrincipalAware setPrincipalProxy(org.apache.struts2.interceptor.PrincipalProxy)
+      newMethodName: withPrincipalProxy
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ServletRequestAware setServletRequest(javax.servlet.http.HttpServletRequest)
+      newMethodName: withServletRequest
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.ServletResponseAware setServletResponse(javax.servlet.http.HttpServletResponse)
+      newMethodName: withServletResponse
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.util.ServletContextAware setServletContext(javax.servlet.ServletContext)
+      newMethodName: withServletContext
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.CookiesAware setCookiesMap(java.util.Map)
+      newMethodName: withCookiesMap
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.struts2.interceptor.RequestAware setRequest(java.util.Map)
+      newMethodName: withRequest
+      matchOverrides: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.struts2.interceptor.ApplicationAware
       newFullyQualifiedTypeName: org.apache.struts2.action.ApplicationAware
@@ -105,6 +186,168 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Struts 6.0](/recipes/java/struts/migrate6/migratestruts6.md)
+
+## Examples
+##### Example 1
+`MigrateAwareInterfacesTest#migrateSessionAware`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.interceptor.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+###### After
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.action.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void withSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+-import org.apache.struts2.interceptor.SessionAware;
++import org.apache.struts2.action.SessionAware;
+
+@@ -12,1 +12,1 @@
+
+    @Override
+-   public void setSession(Map<String, Object> session) {
++   public void withSession(Map<String, Object> session) {
+        this.session = session;
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateAwareInterfacesTest#migrateSessionAware`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.interceptor.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+###### After
+```java
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import org.apache.struts2.action.SessionAware;
+
+import java.util.Map;
+
+public class CustomSecurityInterceptor extends AbstractInterceptor implements SessionAware {
+
+    private Map<String, Object> session;
+
+    @Override
+    public void withSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    @Override
+    public String intercept(ActionInvocation invocation) throws Exception {
+        return invocation.invoke();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+-import org.apache.struts2.interceptor.SessionAware;
++import org.apache.struts2.action.SessionAware;
+
+@@ -12,1 +12,1 @@
+
+    @Override
+-   public void setSession(Map<String, Object> session) {
++   public void withSession(Map<String, Object> session) {
+        this.session = session;
+```
+</TabItem>
+</Tabs>
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-struts` in your build file or by running a shell command (in which case no build changes are needed):
@@ -115,7 +358,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -128,7 +371,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}")
+    rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}")
 }
 ```
 
@@ -149,7 +392,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}")
+        rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces")
@@ -194,7 +437,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-struts</artifactId>
-            <version>{{VERSION_REWRITE_STRUTS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -223,7 +466,7 @@ mod run . --recipe MigrateAwareInterfaces
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-struts:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STRUTS}}
 ```
 </TabItem>
 </Tabs>
@@ -239,6 +482,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -253,6 +499,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -264,6 +531,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -274,10 +545,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

@@ -1,3 +1,8 @@
+---
+sidebar_label: Migrate to JUnit 5
+description: How to automatically migrate from JUnit 4 to JUnit 5.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -53,7 +58,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-spring</artifactId>
-          <version>{{VERSION_REWRITE_SPRING}}</version>
+          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -116,7 +121,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>{{VERSION_REWRITE_TESTING_FRAMEWORKS}}</version>
+          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -387,7 +392,21 @@ public class ExampleJunitTestClass {
 Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
 :::
 
-### Known Limitations
+## Running this recipe with the Moderne CLI
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
+
+```shell title="shell"
+mod run . --recipe org.openrewrite.java.testing.junit5.JUnit5BestPractices
+```
+
+If the recipe is not available locally, then you can install it using:
+
+```shell title="shell"
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
+```
+
+## Known Limitations
 
 Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these cases, manual changes will be required after the automation has run. This list is not exhaustive. See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).
 

@@ -1,3 +1,8 @@
+---
+sidebar_label: Multiple source file types
+description: How to create recipes that examine many different types of files.
+---
+
 # Writing recipes over multiple source file types
 
 When creating new recipes, you may find it desirable to examine multiple source files, potentially of different types, to make key decisions in your visitor. For example, you may want to look for a particular condition to be present in a Maven POM file and, if that condition is met, alter an application property in a YAML file.

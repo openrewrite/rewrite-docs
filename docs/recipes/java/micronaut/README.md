@@ -1,3 +1,7 @@
+---
+description: Micronaut OpenRewrite recipes.
+---
+
 # Micronaut
 
 _Recipes for upgrading and patching [Micronaut](https://micronaut.io/) applications._

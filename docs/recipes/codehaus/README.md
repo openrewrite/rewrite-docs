@@ -1,3 +1,7 @@
+---
+description: Codehaus OpenRewrite recipes.
+---
+
 # Codehaus
 
 ## Categories

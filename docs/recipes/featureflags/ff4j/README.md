@@ -1,3 +1,7 @@
+---
+description: FF4j OpenRewrite recipes.
+---
+
 # FF4j
 
 _Recipes to perform [FF4j](https://ff4j.org/) migration tasks._

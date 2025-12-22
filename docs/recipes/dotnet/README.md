@@ -1,3 +1,7 @@
+---
+description: .NET OpenRewrite recipes.
+---
+
 # .NET
 
 _Recipes to migrate projects using .NET tools._

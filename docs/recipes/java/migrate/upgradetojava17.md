@@ -13,19 +13,19 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ### Tags
 
-* java17
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -63,6 +63,18 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `commons-codec`
   * artifactId: `commons-codec`
   * newVersion: `1.17.x`
+* [Upgrade Maven dependency version](../../maven/upgradedependencyversion)
+  * groupId: `com.github.spotbugs`
+  * artifactId: `spotbugs-maven-plugin`
+  * newVersion: `4.9.x`
+* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
+  * groupId: `com.github.spotbugs`
+  * artifactId: `spotbugs-maven-plugin`
+  * newVersion: `4.9.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.mapstruct`
+  * artifactId: `mapstruct*`
+  * newVersion: `1.6.x`
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbinding)
 
 </TabItem>
@@ -74,7 +86,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradeToJava17
 displayName: Migrate to Java 17
-description: This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
+description: |
+  This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
 tags:
   - java17
 recipeList:
@@ -109,11 +122,233 @@ recipeList:
       groupId: commons-codec
       artifactId: commons-codec
       newVersion: 1.17.x
+  - org.openrewrite.maven.UpgradeDependencyVersion:
+      groupId: com.github.spotbugs
+      artifactId: spotbugs-maven-plugin
+      newVersion: 4.9.x
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: com.github.spotbugs
+      artifactId: spotbugs-maven-plugin
+      newVersion: 4.9.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.mapstruct
+      artifactId: mapstruct*
+      newVersion: 1.6.x
   - org.openrewrite.java.migrate.AddLombokMapstructBinding
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
+
+## Examples
+##### Example 1
+`UpgradeToJava17Test#upgradeFromJava8ToJava17`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+   public String test() {
+       return String.format("Hello %s", "world");
+   }
+}
+```
+
+###### After
+```java
+class A {
+   public String test() {
+       return "Hello %s".formatted("world");
+   }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class A {
+   public String test() {
+-      return String.format("Hello %s", "world");
++      return "Hello %s".formatted("world");
+   }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -4,3 +4,3 @@
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+-   <java.version>1.8</java.version>
+-   <maven.compiler.source>1.8</maven.compiler.source>
+-   <maven.compiler.target>1.8</maven.compiler.target>
++   <java.version>17</java.version>
++   <maven.compiler.source>17</maven.compiler.source>
++   <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeToJava17Test#upgradeFromJava8ToJava17`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+   public String test() {
+       return String.format("Hello %s", "world");
+   }
+}
+```
+
+###### After
+```java
+class A {
+   public String test() {
+       return "Hello %s".formatted("world");
+   }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class A {
+   public String test() {
+-      return String.format("Hello %s", "world");
++      return "Hello %s".formatted("world");
+   }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -4,3 +4,3 @@
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+-   <java.version>1.8</java.version>
+-   <maven.compiler.source>1.8</maven.compiler.source>
+-   <maven.compiler.target>1.8</maven.compiler.target>
++   <java.version>17</java.version>
++   <maven.compiler.source>17</maven.compiler.source>
++   <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -125,7 +360,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -138,7 +373,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
 }
 ```
 
@@ -159,7 +394,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
@@ -204,7 +439,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>{{VERSION_REWRITE_MIGRATE_JAVA}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -233,7 +468,7 @@ mod run . --recipe UpgradeToJava17
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -249,6 +484,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -263,6 +501,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -274,6 +533,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -284,13 +547,30 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, eocantu, [Shannon Pamperl](mailto:shanman190@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Kun Li, Josh Soref
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+</Tabs>

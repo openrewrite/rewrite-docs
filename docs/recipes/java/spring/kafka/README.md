@@ -1,3 +1,7 @@
+---
+description: Spring Kafka OpenRewrite recipes.
+---
+
 # Spring Kafka
 
 ## Composite Recipes

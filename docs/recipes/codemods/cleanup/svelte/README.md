@@ -1,3 +1,7 @@
+---
+description: Svelte OpenRewrite recipes.
+---
+
 # Svelte
 
 ## Recipes
@@ -8,7 +12,7 @@
 * [disallow to use of the store itself as an operand. Need to use $ prefix or get function.](./requirestorereactiveaccess.md)
 * [disallow unnecessary mustache interpolations](./nouselessmustaches.md)
 * [enforce consistent indentation](./indent.md)
-* [enforce consistent spacing after the <!-- and before the --> in a HTML comment](./spacedhtmlcomment.md)
+* [enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment](./spacedhtmlcomment.md)
 * [enforce order of attributes](./sortattributes.md)
 * [enforce quotes style of HTML attributes](./htmlquotes.md)
 * [enforce self-closing style](./htmlselfclosing.md)

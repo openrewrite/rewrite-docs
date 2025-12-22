@@ -1,3 +1,7 @@
+---
+description: Collections OpenRewrite recipes.
+---
+
 # Collections
 
 ## Composite Recipes

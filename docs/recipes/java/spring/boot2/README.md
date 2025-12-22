@@ -1,3 +1,7 @@
+---
+description: Spring Boot 2.x OpenRewrite recipes.
+---
+
 # Spring Boot 2.x
 
 ## Categories
@@ -9,6 +13,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Add `javax.validation-api` dependency](./maybeaddjavaxvalidationapi.md)
+* [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](./databasecomponentandbeaninitializationordering.md)
 * [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](./springboot2junit4to5migration.md)
 * [Migrate Spring Boot properties to 2.0](./springbootproperties_2_0.md)
 * [Migrate Spring Boot properties to 2.1](./springbootproperties_2_1.md)
@@ -26,6 +31,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Boot 2.4](./upgradespringboot_2_4.md)
 * [Migrate to Spring Boot 2.6](./upgradespringboot_2_6.md)
 * [Migrate to Spring Boot 2.7](./upgradespringboot_2_7.md)
+* [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](./maybeaddspringbootstarteractuator.md)
 * [Spring Boot 2.x best practices](./springboot2bestpractices.md)
 * [Upgrade to Spring Boot 2.5](./upgradespringboot_2_5.md)
 * [Use `WebServerFactoryCustomizer`](./migratetowebserverfactorycustomizer.md)
@@ -34,7 +40,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add missing `@Configuration` annotation](./addconfigurationannotationifbeanspresent.md)
-* [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](./databasecomponentandbeaninitializationordering.md)
 * [Adjust configuration classes to use the `WebServerFactoryCustomizer` interface](./changeembeddedservletcontainercustomizer.md)
 * [Convert `HeadersConfigurer` chained calls into Lambda DSL](./headersconfigurerlambdadsl.md)
 * [Convert `HttpSecurity` chained calls into Lambda DSL](./httpsecuritylambdadsl.md)
@@ -45,6 +50,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`](./migrateactuatormediatypetoapiversion.md)
 * [Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`](./migratehsqlembeddeddatabaseconnection.md)
 * [Migrate multi-condition `@ConditionalOnBean` annotations](./conditionalonbeananynestedcondition.md)
+* [Migrate null credentials](./migratedatabasecredentialsfortoolproperties.md)
+* [Migrate null credentials](./migratedatabasecredentialsfortoolyaml.md)
+* [Migrate to Spring Boot 2.0](./upgradespringboot_2_0.md)
 * [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](./migrateloggingsystempropertyconstants.md)
 * [Move SAML relying party identity provider property to asserting party](./samlrelyingpartypropertyapplicationpropertiesmove.md)
 * [Remove `@SpringExtension`](./unnecessaryspringextension.md)
@@ -52,6 +60,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove unnecessary Spring `@RunWith`](./unnecessaryspringrunwith.md)
 * [Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`](./replaceextendwithandcontextconfiguration.md)
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](./replacedeprecatedenvironmenttestutils.md)
+* [Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](./databasecomponentandbeaninitializationorderingunconditionally.md)
 * [Use `AutoConfiguration#imports`](./moveautoconfigurationtoimportsfile.md)
 * [Use `DiskSpaceHealthIndicator(File, DataSize)`](./migratediskspacehealthindicatorconstructor.md)
 * [Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`](./migrateconfigurationpropertiesbindingpostprocessorvalidatorbeanname.md)

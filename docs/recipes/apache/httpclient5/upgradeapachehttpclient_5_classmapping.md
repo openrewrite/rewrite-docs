@@ -13,15 +13,15 @@ _Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.CloseableHttpResponse`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.classic.CloseableHttpResponse`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpEntityEnclosingRequestBase`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpRequestBase`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.HttpUriRequestBase`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.client.entity`
   * newPackageName: `org.apache.hc.client5.http.entity`
@@ -109,6 +115,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.impl.client.ProxyAuthenticationStrategy`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.auth.AuthSchemeProvider`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.AuthSchemeFactory`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.config.AuthSchemes`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.StandardAuthScheme`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.auth`
   * newPackageName: `org.apache.hc.client5.http.auth`
@@ -136,15 +148,35 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.annotation`
   * newPackageName: `org.apache.hc.core5.annotation`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.apache.http.entity.mime.HttpMultipartMode.BROWSER_COMPATIBLE`
+  * fullyQualifiedConstantName: `org.apache.hc.client5.http.entity.mime.HttpMultipartMode.LEGACY`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.entity.mime.HttpMultipartMode`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.HttpMultipartMode`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.entity`
   * newPackageName: `org.apache.hc.core5.http.io.entity`
+  * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.hc.core5.http.io.entity.mime`
+  * newPackageName: `org.apache.hc.client5.http.entity.mime`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.hc.client5.http.entity.mime.content`
+  * newPackageName: `org.apache.hc.client5.http.entity.mime`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.io.entity.ContentLengthStrategy`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ContentLengthStrategy`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.io.entity.ContentType`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ContentType`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.MinimalField`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.MimeField`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.entity.mime.MinimalField`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.entity.mime.MimeField`
+* [Replace `new StringEntity(String, String)` with `new StringEntity(String, Charset)`](../../apache/httpclient5/migratestringentitystringcharsetconstructor)
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.impl.bootstrap`
   * newPackageName: `org.apache.hc.core5.http.impl.bootstrap`
@@ -169,6 +201,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.pool`
   * newPackageName: `org.apache.hc.core5.pool`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.apache.http.protocol.HTTP.CONN_KEEP_ALIVE`
+  * fullyQualifiedConstantName: `org.apache.hc.core5.http.HttpHeaders.KEEP_ALIVE`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.apache.http.protocol.HTTP.CONTENT_LEN`
+  * fullyQualifiedConstantName: `org.apache.hc.core5.http.HttpHeaders.CONTENT_LENGTH`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.protocol.HTTP`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpHeaders`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.protocol`
   * newPackageName: `org.apache.hc.core5.http.protocol`
@@ -199,12 +240,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.client.utils.DateUtils`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.utils.DateUtils`
+* [Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`](../../apache/httpclient5/credentialsstoresetcredentials)
+* [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](../../apache/httpclient5/credentialsstoreclear)
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.CredentialsProvider`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.CredentialsProvider`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.client`
   * newPackageName: `org.apache.hc.client5.http`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.CredentialsProvider`
-  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.CredentialsProvider`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.AuthCache`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.AuthCache`
@@ -214,6 +257,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpClient`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.HttpClient`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpRequestRetryHandler`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpRequestRetryStrategy`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.ConnectionBackoffStrategy`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.ConnectionBackoffStrategy`
@@ -235,6 +281,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.config.SocketConfig.Builder`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.SocketConfig.Builder`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.http.impl.nio.client`
+  * newPackageName: `org.apache.hc.client5.http.impl.async`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.impl`
   * newPackageName: `org.apache.hc.core5.http.impl.io`
@@ -349,9 +398,24 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.HttpConnectionFactory`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpConnectionFactory`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.HttpRequest`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpRequest`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.HttpResponse`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpResponse`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.ResponseHandler`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientResponseHandler`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http`
   * newPackageName: `org.apache.hc.core5.http`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `org.apache.hc.core5.http.params`
+  * newPackageName: `org.apache.http.params`
+* [Add comment to import statement](../../java/addcommenttoimport)
+  * comment: `No generic migration for classes in the `org.apache.http.params` package exists, please migrate manually`
+  * typePattern: `org.apache.http.params..*`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.RequestLine`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.message.RequestLine`
@@ -371,14 +435,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpConnectionFactory`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpConnectionFactory`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.HttpRequest`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpRequest`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.HttpResponse`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpResponse`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.client.ResponseHandler`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientResponseHandler`
+  * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpEntityEnclosingRequest`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpEntityContainer`
 * [Reorder method arguments](../../java/reordermethodarguments)
   * methodPattern: `org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)`
   * newParameterNames: `[scheme, hostname, port]`
@@ -401,7 +459,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping
 displayName: Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x
-description: Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x.
+description: |
+  Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x.
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.client.methods
@@ -409,6 +468,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.CloseableHttpResponse
       newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.classic.CloseableHttpResponse
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpEntityEnclosingRequestBase
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpRequestBase
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.HttpUriRequestBase
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.client.entity
       newPackageName: org.apache.hc.client5.http.entity
@@ -484,6 +549,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.impl.client.ProxyAuthenticationStrategy
       newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.auth.AuthSchemeProvider
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.AuthSchemeFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.config.AuthSchemes
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.StandardAuthScheme
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.auth
       newPackageName: org.apache.hc.client5.http.auth
@@ -511,15 +582,35 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.annotation
       newPackageName: org.apache.hc.core5.annotation
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.apache.http.entity.mime.HttpMultipartMode.BROWSER_COMPATIBLE
+      fullyQualifiedConstantName: org.apache.hc.client5.http.entity.mime.HttpMultipartMode.LEGACY
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.entity.mime.HttpMultipartMode
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.HttpMultipartMode
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.entity
       newPackageName: org.apache.hc.core5.http.io.entity
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.hc.core5.http.io.entity.mime
+      newPackageName: org.apache.hc.client5.http.entity.mime
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.hc.client5.http.entity.mime.content
+      newPackageName: org.apache.hc.client5.http.entity.mime
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.io.entity.ContentLengthStrategy
       newFullyQualifiedTypeName: org.apache.hc.core5.http.ContentLengthStrategy
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.io.entity.ContentType
       newFullyQualifiedTypeName: org.apache.hc.core5.http.ContentType
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.MinimalField
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.MimeField
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.entity.mime.MinimalField
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.entity.mime.MimeField
+  - org.openrewrite.apache.httpclient5.MigrateStringEntityStringCharsetConstructor
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.impl.bootstrap
       newPackageName: org.apache.hc.core5.http.impl.bootstrap
@@ -544,6 +635,15 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.pool
       newPackageName: org.apache.hc.core5.pool
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.apache.http.protocol.HTTP.CONN_KEEP_ALIVE
+      fullyQualifiedConstantName: org.apache.hc.core5.http.HttpHeaders.KEEP_ALIVE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.apache.http.protocol.HTTP.CONTENT_LEN
+      fullyQualifiedConstantName: org.apache.hc.core5.http.HttpHeaders.CONTENT_LENGTH
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.protocol.HTTP
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.HttpHeaders
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.protocol
       newPackageName: org.apache.hc.core5.http.protocol
@@ -574,12 +674,14 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.client.utils.DateUtils
       newFullyQualifiedTypeName: org.apache.hc.client5.http.utils.DateUtils
+  - org.openrewrite.apache.httpclient5.CredentialsStoreSetCredentials
+  - org.openrewrite.apache.httpclient5.CredentialsStoreClear
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.CredentialsProvider
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.CredentialsProvider
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.client
       newPackageName: org.apache.hc.client5.http
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.hc.client5.http.CredentialsProvider
-      newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.CredentialsProvider
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.AuthCache
       newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.AuthCache
@@ -589,6 +691,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.HttpClient
       newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.HttpClient
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.HttpRequestRetryHandler
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.HttpRequestRetryStrategy
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.ConnectionBackoffStrategy
       newFullyQualifiedTypeName: org.apache.hc.client5.http.classic.ConnectionBackoffStrategy
@@ -610,6 +715,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.config.SocketConfig.Builder
       newFullyQualifiedTypeName: org.apache.hc.core5.http.io.SocketConfig.Builder
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.http.impl.nio.client
+      newPackageName: org.apache.hc.client5.http.impl.async
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.impl
       newPackageName: org.apache.hc.core5.http.impl.io
@@ -724,9 +832,24 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.HttpConnectionFactory
       newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpConnectionFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.HttpRequest
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpRequest
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.HttpResponse
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpResponse
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.ResponseHandler
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpClientResponseHandler
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http
       newPackageName: org.apache.hc.core5.http
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.hc.core5.http.params
+      newPackageName: org.apache.http.params
+  - org.openrewrite.java.AddCommentToImport:
+      comment: No generic migration for classes in the `org.apache.http.params` package exists, please migrate manually
+      typePattern: org.apache.http.params..*
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.RequestLine
       newFullyQualifiedTypeName: org.apache.hc.core5.http.message.RequestLine
@@ -746,14 +869,8 @@ recipeList:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.HttpConnectionFactory
       newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpConnectionFactory
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.HttpRequest
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpRequest
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.HttpResponse
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpResponse
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.client.ResponseHandler
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpClientResponseHandler
+      oldFullyQualifiedTypeName: org.apache.hc.core5.http.HttpEntityEnclosingRequest
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.HttpEntityContainer
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)
       newParameterNames: [scheme, hostname, port]
@@ -771,6 +888,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache` in your build file or by running a shell command (in which case no build changes are needed):
@@ -781,7 +905,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -794,7 +918,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+    rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
 }
 ```
 
@@ -815,7 +939,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}")
+        rewrite("org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping")
@@ -860,7 +984,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>{{VERSION_REWRITE_APACHE}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -889,7 +1013,7 @@ mod run . --recipe UpgradeApacheHttpClient_5_ClassMapping
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE}}
 ```
 </TabItem>
 </Tabs>
@@ -905,6 +1029,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -919,6 +1046,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -930,6 +1078,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -940,10 +1092,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

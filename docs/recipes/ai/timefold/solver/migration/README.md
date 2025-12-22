@@ -1,9 +1,8 @@
+---
+description: Migration OpenRewrite recipes.
+---
+
 # Migration
-
-## Categories
-
-* [Fork](/recipes/ai/timefold/solver/migration/fork)
-* [V8](/recipes/ai/timefold/solver/migration/v8)
 
 ## Composite Recipes
 

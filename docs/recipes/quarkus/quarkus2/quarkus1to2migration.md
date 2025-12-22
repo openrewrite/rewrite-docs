@@ -13,15 +13,15 @@ _Migrates Quarkus 1.x to 2.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/quarkus.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/quarkus.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Definition
@@ -31,10 +31,10 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 * [Quarkus 1.13 migration from Quarkus 1.11](../../quarkus/quarkus1to1_13migration)
 * [Use `@GrpcClient`](../../quarkus/quarkus2/grpcserviceannotationtogrpcclient)
 * [Remove `avro-maven-plugin`](../../quarkus/quarkus2/removeavromavenplugin)
-* [Use `@Identifier("default-kafka-broker")`](../../quarkus/quarkus2/useidentifierondefaultkafkabroker)
+* [Use `@Identifier(&quot;default-kafka-broker&quot;)`](../../quarkus/quarkus2/useidentifierondefaultkafkabroker)
 * [Use `PanacheEntityBase` static methods](../../quarkus/quarkus2/usepanacheentitybasestaticmethods)
-* [Use `Uni<T extends PanacheEntityBase>`](../../quarkus/quarkus2/usepanacheentitybaseunit)
-* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](../../quarkus/quarkus2/usereactivepanachemongoentitybaseunit)
+* [Use `Uni&lt;T extends PanacheEntityBase&gt;`](../../quarkus/quarkus2/usepanacheentitybaseunit)
+* [Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;`](../../quarkus/quarkus2/usereactivepanachemongoentitybaseunit)
 * [Change property key](../../properties/changepropertykey)
   * oldPropertyKey: `smallrye.jwt.sign.key-location`
   * newPropertyKey: `smallrye.jwt.sign.key.location`
@@ -97,7 +97,8 @@ This recipe is available under the [Apache License 2.0](https://www.apache.org/l
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration
 displayName: Quarkus 2.x migration from Quarkus 1.x
-description: Migrates Quarkus 1.x to 2.x.
+description: |
+  Migrates Quarkus 1.x to 2.x.
 recipeList:
   - org.openrewrite.quarkus.Quarkus1to1_13Migration
   - org.openrewrite.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient
@@ -163,6 +164,208 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Quarkus 3.26](/recipes/devcenter/upgradequarkus3_x.md)
+
+## Examples
+##### Example 1
+`Quarkus1to2MigrationPropertiesTest#smallryeJwt`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+smallrye.jwt.sign.key-location=/keys/signing
+smallrye.jwt.encrypt.key-location=/keys/encrypt
+```
+
+###### After
+```properties
+smallrye.jwt.sign.key.location=/keys/signing
+smallrye.jwt.encrypt.key.location=/keys/encrypt
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-smallrye.jwt.sign.key-location=/keys/signing
+-smallrye.jwt.encrypt.key-location=/keys/encrypt
++smallrye.jwt.sign.key.location=/keys/signing
++smallrye.jwt.encrypt.key.location=/keys/encrypt
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`Quarkus1to2MigrationTest#quteResourcePathToLocation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.quarkus.qute.api.ResourcePath;
+import io.quarkus.qute.Template;
+
+class ReportGenerator {
+    @ResourcePath("reports/v1/report_01")
+    Template report;
+
+    void generate() {
+        String result = report
+                .data("samples", new Object())
+                .render();
+    }
+}
+```
+
+###### After
+```java
+import io.quarkus.qute.Location;
+import io.quarkus.qute.Template;
+
+class ReportGenerator {
+    @Location("reports/v1/report_01")
+    Template report;
+
+    void generate() {
+        String result = report
+                .data("samples", new Object())
+                .render();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.quarkus.qute.api.ResourcePath;
++import io.quarkus.qute.Location;
+import io.quarkus.qute.Template;
+@@ -5,1 +5,1 @@
+
+class ReportGenerator {
+-   @ResourcePath("reports/v1/report_01")
++   @Location("reports/v1/report_01")
+    Template report;
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+`Quarkus1to2MigrationPropertiesTest#smallryeJwt`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+smallrye.jwt.sign.key-location=/keys/signing
+smallrye.jwt.encrypt.key-location=/keys/encrypt
+```
+
+###### After
+```properties
+smallrye.jwt.sign.key.location=/keys/signing
+smallrye.jwt.encrypt.key.location=/keys/encrypt
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-smallrye.jwt.sign.key-location=/keys/signing
+-smallrye.jwt.encrypt.key-location=/keys/encrypt
++smallrye.jwt.sign.key.location=/keys/signing
++smallrye.jwt.encrypt.key.location=/keys/encrypt
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`Quarkus1to2MigrationTest#quteResourcePathToLocation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.quarkus.qute.api.ResourcePath;
+import io.quarkus.qute.Template;
+
+class ReportGenerator {
+    @ResourcePath("reports/v1/report_01")
+    Template report;
+
+    void generate() {
+        String result = report
+                .data("samples", new Object())
+                .render();
+    }
+}
+```
+
+###### After
+```java
+import io.quarkus.qute.Location;
+import io.quarkus.qute.Template;
+
+class ReportGenerator {
+    @Location("reports/v1/report_01")
+    Template report;
+
+    void generate() {
+        String result = report
+                .data("samples", new Object())
+                .render();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.quarkus.qute.api.ResourcePath;
++import io.quarkus.qute.Location;
+import io.quarkus.qute.Template;
+@@ -5,1 +5,1 @@
+
+class ReportGenerator {
+-   @ResourcePath("reports/v1/report_01")
++   @Location("reports/v1/report_01")
+    Template report;
+```
+</TabItem>
+</Tabs>
+
+
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-quarkus` in your build file or by running a shell command (in which case no build changes are needed):
@@ -173,7 +376,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -186,7 +389,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}")
 }
 ```
 
@@ -207,7 +410,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
+        rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration")
@@ -252,7 +455,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>{{VERSION_REWRITE_QUARKUS}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -281,7 +484,7 @@ mod run . --recipe Quarkus1to2Migration
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}
 ```
 </TabItem>
 </Tabs>
@@ -297,6 +500,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -311,6 +517,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -322,6 +549,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -332,13 +563,30 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut.wannheden@gmail.com), Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), Kun Li, [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+</Tabs>

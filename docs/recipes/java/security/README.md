@@ -1,3 +1,7 @@
+---
+description: Security OpenRewrite recipes.
+---
+
 # Security
 
 _Recipes that find and eliminate vulnerable patterns in Java code._

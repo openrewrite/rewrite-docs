@@ -13,22 +13,96 @@ _Update the version of Gradle used in an existing Gradle wrapper. Queries servic
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java), 
-[Issue Tracker](https://github.com/openrewrite/rewrite/issues), 
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Options
 
 | Type | Name | Description | Example |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. Defaults to the latest release available from services.gradle.org if not specified. | `7.x` |
 | `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". Valid options: `bin`, `all` |  |
 | `Boolean` | addIfMissing | *Optional*. Add a Gradle wrapper, if it's missing. Defaults to `true`. |  |
-| `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution. Lookup of available versions still requires access to https://services.gradle.org When this is specified the exact literal values supplied for `version` and `distribution` will be interpolated into this string wherever `${version}` and `${distribution}` appear respectively. Defaults to https://services.gradle.org/distributions/gradle-`${version}`-`${distribution}`.zip. | `https://services.gradle.org/distributions/gradle-${version}-${distribution}.zip` |
+| `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution.<br />Specifies a custom location from which to download the Gradle wrapper scripts (gradlew, gradlew.bat, etc.). This is useful for setting up the Gradle wrapper without relying on Gradle's official distribution services.<br /><br />When this option is set, the version and distribution fields must not be specified — only one source of truth is allowed. The URI should point to a valid and reachable Gradle wrapper distribution (typically a .zip archive containing the wrapper files).<br />This is particularly helpful in environments where access to Gradle's central services is restricted or where custom Gradle wrapper setups are required.<br />If the URI is inaccessible, the recipe will leave the existing wrapper files in the repository unchanged, as they are generally compatible with various Gradle versions. | `https://services.gradle.org/distributions/gradle-8.5-bin.zip` |
 | `String` | distributionChecksum | *Optional*. The SHA-256 checksum of the Gradle distribution. If specified, the recipe will add the checksum along with the custom distribution URL. | `29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda` |
 
-## License
 
-This recipe is available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate to Gradle 5 from Gradle 4](/recipes/gradle/migratetogradle5.md)
+* [Migrate to Gradle 6 from Gradle 5](/recipes/gradle/migratetogradle6.md)
+* [Migrate to Gradle 7 from Gradle 6](/recipes/gradle/migratetogradle7.md)
+* [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
+* [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
+* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
+* [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
+* [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Upgrade Android Gradle Plugin (AGP) version](/recipes/android/upgradeandroidgradlepluginversion.md)
+* [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
+* [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
+* [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|version|`7.4.2`|
+|distribution|`null`|
+|addIfMissing|`null`|
+|wrapperUri|`null`|
+|distributionChecksum|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
+
+###### After
+```properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+@@ -6,0 +6,1 @@
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
++distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -41,7 +115,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -104,7 +178,7 @@ mod run . --recipe UpdateGradleWrapper
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_REWRITE_GRADLE}}
+mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}}
 ```
 </TabItem>
 </Tabs>
@@ -120,6 +194,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -134,6 +211,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -145,6 +243,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -155,10 +257,11 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
+
+</Tabs>

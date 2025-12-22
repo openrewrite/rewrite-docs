@@ -1,3 +1,8 @@
+---
+sidebar_label: Running text based recipes
+description: How to run create and run a text based recipe.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

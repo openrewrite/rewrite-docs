@@ -13,15 +13,15 @@ _Upgrade to Spring Boot 2.5 from any prior 2.x version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml), 
-[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), 
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
-## License
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license/).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Definition
@@ -29,12 +29,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Spring Boot 2.4](../../../java/spring/boot2/upgradespringboot_2_4)
-* [Migrate to Spring Data 2.5](../../../java/spring/data/upgradespringdata_2_5)
+* [Migrate to Spring Data JPA 2.5](../../../java/spring/data/upgradespringdata_2_5)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.5.x`
   * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-dependencies`
+  * newVersion: `2.5.x`
+  * overrideManagedVersion: `true`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-maven-plugin`
@@ -68,6 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.WebProperties$Resources`
 * [Migrate Spring Boot properties to 2.5](../../../java/spring/boot2/springbootproperties_2_5)
 * [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](../../../java/spring/boot2/databasecomponentandbeaninitializationordering)
+* [Upgrade MyBatis to Spring Boot 2.5](../../../java/spring/boot3/upgrademybatistospringboot_2_5)
 
 </TabItem>
 
@@ -78,15 +84,21 @@ This recipe is available under the [Moderne Source Available License](https://do
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5
 displayName: Upgrade to Spring Boot 2.5
-description: Upgrade to Spring Boot 2.5 from any prior 2.x version.
+description: |
+  Upgrade to Spring Boot 2.5 from any prior 2.x version.
 recipeList:
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_5
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
-      artifactId: *
+      artifactId: "*"
       newVersion: 2.5.x
       overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-dependencies
+      newVersion: 2.5.x
+      overrideManagedVersion: true
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-maven-plugin
@@ -120,10 +132,273 @@ recipeList:
       newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.WebProperties$Resources
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_5
   - org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering
+  - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_5
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
+
+## Examples
+##### Example 1
+`Maven#switchArtifactIdAndUpdateVersionNumber`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.30</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.0.33</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,3 +8,3 @@
+  <dependencies>
+    <dependency>
+-     <groupId>mysql</groupId>
+-     <artifactId>mysql-connector-java</artifactId>
+-     <version>8.0.30</version>
++     <groupId>com.mysql</groupId>
++     <artifactId>mysql-connector-j</artifactId>
++     <version>8.0.33</version>
+      <scope>runtime</scope>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`Gradle#switchArtifactIdAndUpdateVersionNumber`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,1 +10,1 @@
+
+dependencies {
+-   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
++   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+`Maven#switchArtifactIdAndUpdateVersionNumber`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.30</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.0.33</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,3 +8,3 @@
+  <dependencies>
+    <dependency>
+-     <groupId>mysql</groupId>
+-     <artifactId>mysql-connector-java</artifactId>
+-     <version>8.0.30</version>
++     <groupId>com.mysql</groupId>
++     <artifactId>mysql-connector-j</artifactId>
++     <version>8.0.33</version>
+      <scope>runtime</scope>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`Gradle#switchArtifactIdAndUpdateVersionNumber`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,1 +10,1 @@
+
+dependencies {
+-   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
++   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -135,7 +410,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
@@ -148,7 +423,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
 }
 ```
 
@@ -169,7 +444,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5")
@@ -214,7 +489,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_REWRITE_SPRING}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -243,7 +518,7 @@ mod run . --recipe UpgradeSpringBoot_2_5
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -259,6 +534,9 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**
 
@@ -273,6 +551,27 @@ _Source files that were modified by the recipe run._
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
 | Cycle | The recipe cycle in which the change was made. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
 ### Source files that errored on a recipe
 **org.openrewrite.table.SourcesFileErrors**
 
@@ -284,6 +583,10 @@ _The details of all errors produced by a recipe run._
 | Recipe that made changes | The specific recipe that made a change. |
 | Stack trace | The stack trace of the failure. |
 
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
 ### Recipe performance
 **org.openrewrite.table.RecipeRunStats**
 
@@ -294,13 +597,30 @@ _Statistics used in analyzing the performance of recipes._
 | The recipe | The recipe whose stats are being measured both individually and cumulatively. |
 | Source file count | The number of source files the recipe ran over. |
 | Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
-| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
-| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
-| Max scanning time | The max time scanning any one source file. |
-| Cumulative edit time | The total time spent across the editing phase of this recipe. |
-| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
-| Max edit time | The max time editing any one source file. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
 
+</TabItem>
 
-## Contributors
-Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), SiBorea, Fabian Krüger, [Sam Snyder](mailto:sam@moderne.io), Kun Li, nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Kun Li](mailto:kun@moderne.io), Tyler Van Gorder, [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman, Josh Soref, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), eocantu
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+</Tabs>

@@ -1,3 +1,7 @@
+---
+description: Liberty OpenRewrite recipes.
+---
+
 # Liberty
 
 ## Composite Recipes
@@ -12,5 +16,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Move persistence.xml file](./persistencexmllocationrule.md)
+* [Replace beans.xml file](./webbeansxmlrule.md)
 
 

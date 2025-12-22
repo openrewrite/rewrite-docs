@@ -1,0 +1,122 @@
+---
+# OpenRewrite Declarative Recipe Template
+# Save this file in: src/main/resources/META-INF/rewrite/
+
+# Required: Recipe type identifier
+type: specs.openrewrite.org/v1beta/recipe
+
+# Required: Fully qualified recipe name (convention: com.yourorg.RecipeName)
+name: com.yourorg.YourRecipeName
+
+# Required: Human-readable recipe name (sentence case, end with period if sentence)
+displayName: Your recipe display name
+
+# Required: Clear description of what the recipe does
+description: A clear description of what this recipe accomplishes. This can span multiple lines and should explain the purpose and effect of running this recipe.
+
+# Optional: Tags for categorization and searchability
+tags:
+  - category1
+  - category2
+  - framework-name
+
+# Optional: Estimated time saved by this recipe (in ISO-8601 duration format)
+# estimatedEffortPerOccurrence: PT5M
+
+# Optional: Set to true if this recipe requires multiple execution cycles
+# causesAnotherCycle: true
+
+# Optional: Define preconditions that files must meet to run this recipe
+# preconditions:
+#   - org.openrewrite.java.search.UsesType:
+#       fullyQualifiedTypeName: com.example.TargetType
+
+# Required: List of recipes to execute (in order)
+recipeList:
+  # Example: Recipe with no parameters
+  - org.openrewrite.java.format.AutoFormat
+
+  # Example: Recipe with parameters
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: old.package.OldType
+      newFullyQualifiedTypeName: new.package.NewType
+      # Optional parameter
+      ignoreDefinition: false
+
+  # Example: Another recipe with parameters
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.old.package
+      newPackageName: com.new.package
+      recursive: true
+
+  # Example: Add a dependency (only if type is used)
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.example
+      artifactId: example-library
+      version: latest.release
+      onlyIfUsing: com.example.SomeClass
+      configuration: implementation
+
+  # Example: Maven-specific recipe
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.apache.maven.plugins
+      artifactId: maven-compiler-plugin
+      newVersion: 3.11.0
+
+  # Add your recipes here
+  # - com.yourorg.AnotherRecipe
+  # - com.yourorg.YetAnotherRecipe:
+  #     parameter: value
+
+---
+# You can define multiple recipes in the same file by using '---' separator
+
+# type: specs.openrewrite.org/v1beta/recipe
+# name: com.yourorg.AnotherRecipe
+# displayName: Another recipe
+# description: Description of the second recipe.
+# recipeList:
+#   - ...
+
+# Common Recipe References:
+#
+# Java Type Changes:
+# - org.openrewrite.java.ChangeType
+# - org.openrewrite.java.ChangePackage
+# - org.openrewrite.java.ChangeMethodName
+# - org.openrewrite.java.ChangeFieldName
+#
+# Dependency Management:
+# - org.openrewrite.java.dependencies.AddDependency
+# - org.openrewrite.java.dependencies.RemoveDependency
+# - org.openrewrite.java.dependencies.ChangeDependency
+# - org.openrewrite.java.dependencies.UpgradeDependencyVersion
+#
+# Maven:
+# - org.openrewrite.maven.UpgradePluginVersion
+# - org.openrewrite.maven.UpgradeDependencyVersion
+# - org.openrewrite.maven.ChangePropertyValue
+#
+# Static Analysis:
+# - org.openrewrite.staticanalysis.CommonStaticAnalysis
+# - org.openrewrite.staticanalysis.FinalizeLocalVariables
+# - org.openrewrite.staticanalysis.RemoveUnusedImports
+#
+# Testing:
+# - org.openrewrite.java.testing.junit5.JUnit4to5Migration
+# - org.openrewrite.java.testing.junit5.AssertToAssertions
+#
+# Spring:
+# - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
+# - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
+#
+# Formatting:
+# - org.openrewrite.java.format.AutoFormat
+# - org.openrewrite.java.format.RemoveUnusedImports
+# - org.openrewrite.java.format.TabsAndIndents
+#
+# Search recipes (use these in preconditions):
+# - org.openrewrite.java.search.UsesType
+# - org.openrewrite.java.search.UsesMethod
+# - org.openrewrite.java.search.FindTypes
+# - org.openrewrite.java.search.FindMethods

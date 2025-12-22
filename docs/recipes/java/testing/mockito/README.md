@@ -1,3 +1,7 @@
+---
+description: Mockito OpenRewrite recipes.
+---
+
 # Mockito
 
 ## Composite Recipes
@@ -13,16 +17,22 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Call to Mockito method "verify", "when" or "given" should be simplified](./simplifymockitoverifywhengiven.md)
+* [Adds Mockito extensions to Mockito tests](./addmockitoextensionifannotationsused.md)
+* [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](./simplifymockitoverifywhengiven.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
+* [Cleanup PowerMock imports](./cleanuppowermockimports.md)
+* [Close unclosed static mocks](./closeunclosedstaticmocks.md)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](./mockitojunitrunnersilenttoextension.md)
 * [Remove `Mockito.times(0)` and `Mockito.times(1)`](./removetimeszeroandone.md)
-* [Remove initialization when using `@InjectMocks`](./noinitializationforinjectmock.md)
+* [Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners](./removeinitmocksifrunnersspecified.md)
+* [Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension](./mockitojunitrunnertoextension.md)
 * [Replace Mockito 1.x `anyString()` with `nullable(String.class)`](./anystringtonullable.md)
 * [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](./anytonullable.md)
 * [Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic](./mockitowhenonstatictomockstatic.md)
+* [Replace `MockitoAnnotations.initMocks(this)` to `MockitoAnnotations.openMocks(this)`](./replaceinitmocktoopenmock.md)
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](./powermockitomockstatictomockito.md)
-* [Replace `verifyZeroInteractions() to `verifyNoMoreInteractions()](./verifyzerotonomoreinteractions.md)
+* [Replace `PowerMockito.whenNew` with Mockito counterpart](./powermockitowhennewtomockito.md)
+* [Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`](./verifyzerotonomoreinteractions.md)
 * [Use static form of Mockito `MockUtil`](./mockutilstostatic.md)
 
 
