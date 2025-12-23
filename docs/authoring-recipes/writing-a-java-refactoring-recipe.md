@@ -288,7 +288,7 @@ public class SayHelloRecipe extends Recipe {
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
         // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
-        return new JavaIsoVisitor<ExecutionContext> {
+        return new JavaIsoVisitor<ExecutionContext>() {
             @Override
             public J.ClassDeclaration visitClassDeclaration (J.ClassDeclaration classDecl, ExecutionContext ctx){
                 // TODO: Filter out classes that don't match the fully qualified name
@@ -300,9 +300,7 @@ public class SayHelloRecipe extends Recipe {
             }
         } ;
     }
-}
-    }
-    
+}    
 ```
 
 Now, let's work through each of those TODOs.
@@ -316,19 +314,22 @@ All of our logic lives inside of the `visitClassDeclaration` method. To filter o
 public class SayHelloRecipe extends Recipe {
     // ...
 
-    public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
-        @Override
-        public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext ctx) {
-            // Don't make changes to classes that don't match the fully qualified name
-            if (!TypeUtils.isOfClassType(classDecl.getType(), fullyQualifiedClassName)) {
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return new JavaIsoVisitor<ExecutionContext>() {
+            @Override
+            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext ctx) {
+                // Don't make changes to classes that don't match the fully qualified name
+                if (!TypeUtils.isOfClassType(classDecl.getType(), fullyQualifiedClassName)) {
+                    return classDecl;
+                }
+
+                // TODO: Filter out classes that already have a `hello()` method
+
+                // TODO: Add a `hello()` method to classes that need it
                 return classDecl;
             }
-
-            // TODO: Filter out classes that already have a `hello()` method
-
-            // TODO: Add a `hello()` method to classes that need it
-            return classDecl;
-        }
+        };
     }
 }
 ```
@@ -341,30 +342,32 @@ To filter out classes that already have a `hello()` method, we need to first fig
 // ...
 public class SayHelloRecipe extends Recipe {
     // ...
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return new JavaIsoVisitor<ExecutionContext>() {
+            @Override
+            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext ctx) {
+                // Don't make changes to classes that don't match the fully qualified name
+                if (!TypeUtils.isOfClassType(classDecl.getType(), fullyQualifiedClassName)) {
+                    return classDecl;
+                }
 
-    public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
-        @Override
-        public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext ctx) {
-            // Don't make changes to classes that don't match the fully qualified name
-            if (!TypeUtils.isOfClassType(classDecl.getType(), fullyQualifiedClassName)) {
+                // Check if the class already has a method named "hello".
+                boolean helloMethodExists = classDecl.getBody().getStatements().stream()
+                        .filter(J.MethodDeclaration.class::isInstance)
+                        .map(J.MethodDeclaration.class::cast)
+                        .map(J.MethodDeclaration::getSimpleName)
+                        .anyMatch("hello"::equals);
+
+                // If the class already has a `hello()` method, don't make any changes to it.
+                if (helloMethodExists) {
+                    return classDecl;
+                }
+
+                // TODO: Add a `hello()` method to classes that need it
                 return classDecl;
             }
-
-            // Check if the class already has a method named "hello".
-            boolean helloMethodExists = classDecl.getBody().getStatements().stream()
-                    .filter(J.MethodDeclaration.class::isInstance)
-                    .map(J.MethodDeclaration.class::cast)
-                    .map(J.MethodDeclaration::getSimpleName)
-                    .anyMatch("hello"::equals);
-
-            // If the class already has a `hello()` method, don't make any changes to it.
-            if (helloMethodExists) {
-                return classDecl;
-            }
-
-            // TODO: Add a `hello()` method to classes that need it
-            return classDecl;
-        }
+        };
     }
 }
 ```
@@ -391,36 +394,39 @@ We then could use that template to add a `hello()` method as desired by:
 public class SayHelloRecipe extends Recipe {
     // ...
 
-    public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
-        private final JavaTemplate helloTemplate =
-                JavaTemplate.builder( "public String hello() { return \"Hello from #{}!\"; }")
-                        .build();
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return new JavaIsoVisitor<ExecutionContext>() {
+            private final JavaTemplate helloTemplate =
+                    JavaTemplate.builder("public String hello() { return \"Hello from #{}!\"; }")
+                            .build();
 
-        @Override
-        public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
-            // Don't make changes to classes that don't match the fully qualified name
-            if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
-                return classDecl;
+            @Override
+            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
+                // Don't make changes to classes that don't match the fully qualified name
+                if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
+                    return classDecl;
+                }
+
+                // Check if the class already has a method named "hello"
+                boolean helloMethodExists = classDecl.getBody().getStatements().stream()
+                        .filter(statement -> statement instanceof J.MethodDeclaration)
+                        .map(J.MethodDeclaration.class::cast)
+                        .anyMatch(methodDeclaration -> methodDeclaration.getName().getSimpleName().equals("hello"));
+
+                // If the class already has a `hello()` method, don't make any changes to it.
+                if (helloMethodExists) {
+                    return classDecl;
+                }
+
+                // insert the defined method into the existing class declaration
+                return JavaTemplate.apply(
+                        "public String hello() { return \"Hello from #{}!\"; }",
+                        updateCursor(classDecl),
+                        classDecl.getBody().getCoordinates().addMethodDeclaration(Comparator.comparing(J.MethodDeclaration::getSimpleName)),
+                        fullyQualifiedClassName);
             }
-
-            // Check if the class already has a method named "hello"
-            boolean helloMethodExists = classDecl.getBody().getStatements().stream()
-                    .filter(statement -> statement instanceof J.MethodDeclaration)
-                    .map(J.MethodDeclaration.class::cast)
-                    .anyMatch(methodDeclaration -> methodDeclaration.getName().getSimpleName().equals("hello"));
-
-            // If the class already has a `hello()` method, don't make any changes to it.
-            if (helloMethodExists) {
-                return classDecl;
-            }
-
-            // insert the defined method into the existing class declaration
-            return JavaTemplate.apply(
-                    "public String hello() { return \"Hello from #{}!\"; }",
-                    updateCursor(classDecl),
-                    classDecl.getBody().getCoordinates().addMethodDeclaration(Comparator.comparing(J.MethodDeclaration::getSimpleName)),
-                    fullyQualifiedClassName);
-        }
+        };
     }
 }
 ```
