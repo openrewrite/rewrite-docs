@@ -11,6 +11,8 @@ As of January 2025, OpenRewrite supports:
 * Java
 * Kotlin
 * Groovy
+* JavaScript
+* TypeScript
 
 :::info
 [Moderne](https://docs.moderne.io/) offers support for additional languages and frameworks (such as JavaScript, C#, Python, Ruby, COBOL, etc.). Consider checking that out if OpenRewrite doesn't meet your needs.
