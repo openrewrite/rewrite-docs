@@ -19,8 +19,7 @@ _In Kotlin, it's possible to add redundant nested parentheses in type definition
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -48,41 +47,6 @@ val y : Int = 42
 -val y : (((Int))) = 42
 +val x : Int = 42
 +val y : Int = 42
-
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-val sum : (Int, Int) -> (Int) = { a, b -> a + b }
-val double : ((Int)) -> ((Int)) = { a -> a * 2 }
-```
-
-###### After
-```kotlin
-val sum : (Int, Int) -> Int = { a, b -> a + b }
-val double : (Int) -> Int = { a -> a * 2 }
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,2 @@
--val sum : (Int, Int) -> (Int) = { a, b -> a + b }
--val double : ((Int)) -> ((Int)) = { a -> a * 2 }
-+val sum : (Int, Int) -> Int = { a, b -> a + b }
-+val double : (Int) -> Int = { a -> a * 2 }
 
 ```
 </TabItem>

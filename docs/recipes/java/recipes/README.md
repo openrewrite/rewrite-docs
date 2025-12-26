@@ -1,10 +1,8 @@
 ---
-description: OpenRewrite best practices OpenRewrite recipes.
+description: Recipes OpenRewrite recipes.
 ---
 
-# OpenRewrite best practices
-
-_Apply best practices to OpenRewrite recipes._
+# Recipes
 
 ## Composite Recipes
 

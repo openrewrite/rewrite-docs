@@ -1,130 +1,75 @@
 ---
-sidebar_label: "Remove unnecessary trailing semicolon"
+sidebar_label: "Copy JSON value"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove unnecessary trailing semicolon
+# Copy JSON value
 
-**org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon**
+**org.openrewrite.json.CopyValue**
 
-_Some Java programmers may mistakenly add semicolons at the end when writing Kotlin code, but in reality, they are not necessary._
+_Copies a JSON value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to create the new key if it does not exist._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/RemoveTrailingSemicolon.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/CopyValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Example
+## Options
 
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-fun method() {
-    var foo = 1;
-    var bar: Int;
-    var baz: String = "a";
-}
-```
-
-###### After
-```kotlin
-fun method() {
-    var foo = 1
-    var bar: Int
-    var baz: String = "a"
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,3 +2,3 @@
-fun method() {
--   var foo = 1;
--   var bar: Int;
--   var baz: String = "a";
-+   var foo = 1
-+   var bar: Int
-+   var baz: String = "a"
-}
-```
-</TabItem>
-</Tabs>
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | sourceKeyPath | A [JSONPath](https://www.rfc-editor.org/rfc/rfc9535.html) expression to locate a JSON value to copy. | `$.source.kind` |
+| `String` | sourceFilePath | *Optional*. The file path to the JSON file to copy the value from. If `null` then the value will be copied from any JSON file it appears within. | `src/main/resources/application.json` |
+| `String` | destinationKeyPath | A [JSONPath](https://www.rfc-editor.org/rfc/rfc9535.html) expression to locate the *parent* JSON entry. | `'$.subjects.*' or '$.' or '$.x[1].y.*' etc.` |
+| `String` | destinationKey | The key to create. | `myKey` |
+| `String` | destinationFilePath | *Optional*. The file path to the JSON file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.json` |
 
 
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.CopyValueExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.CopyValueExample
+displayName: Copy JSON value example
+recipeList:
+  - org.openrewrite.json.CopyValue:
+      sourceKeyPath: $.source.kind
+      sourceFilePath: src/main/resources/application.json
+      destinationKeyPath: '$.subjects.*' or '$.' or '$.x[1].y.*' etc.
+      destinationKey: myKey
+      destinationFilePath: src/main/resources/application.json
+```
+
+Now that `com.yourorg.CopyValueExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
 1. Add the following to your `build.gradle` file:
-
 ```groovy title="build.gradle"
 plugins {
     id("org.openrewrite.rewrite") version("latest.release")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon")
+    activeRecipe("com.yourorg.CopyValueExample")
     setExportDatatables(true)
 }
 
 repositories {
     mavenCentral()
 }
-
 ```
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:latest.release") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite:rewrite-java")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-</TabItem>
-<TabItem value="maven" label="Maven POM">
+<TabItem value="maven" label="Maven">
 
 1. Add the following to your `pom.xml` file:
 
@@ -139,7 +84,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon</recipe>
+            <recipe>com.yourorg.CopyValueExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -147,30 +92,19 @@ gradle --init-script init.gradle rewriteRun
   </build>
 </project>
 ```
-
 2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon -Drewrite.exportDatatables=true
-```
-
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveTrailingSemicolon
+mod run . --recipe CopyValue --recipe-option "sourceKeyPath=$.source.kind" --recipe-option "sourceFilePath=src/main/resources/application.json" --recipe-option "destinationKeyPath='$.subjects.*' or '$.' or '$.x[1].y.*' etc." --recipe-option "destinationKey=myKey" --recipe-option "destinationFilePath=src/main/resources/application.json"
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}
+mod config recipes jar install org.openrewrite:rewrite-json:{{VERSION_ORG_OPENREWRITE_REWRITE_JSON}}
 ```
 </TabItem>
 </Tabs>
@@ -179,7 +113,7 @@ mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPEN
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.json.CopyValue" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

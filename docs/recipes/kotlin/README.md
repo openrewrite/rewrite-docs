@@ -14,6 +14,7 @@ _Recipes to search and transform Kotlin._
 ## Recipes
 
 * [Find Kotlin sources and collect data metrics](./findkotlinsources.md)
+* [Order Kotlin imports](./orderimports.md)
 * [Rename type alias](./renametypealias.md)
 
 

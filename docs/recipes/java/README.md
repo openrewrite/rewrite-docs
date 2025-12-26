@@ -8,7 +8,7 @@ _Basic building blocks for transforming Java code._
 
 ## Categories
 
-* [AI tools](/recipes/java/ai)
+* [Ai](/recipes/java/ai)
 * [Camel](/recipes/java/camel)
 * [Dependencies](/recipes/java/dependencies)
 * [Dropwizard](/recipes/java/dropwizard)
@@ -22,7 +22,7 @@ _Basic building blocks for transforming Java code._
 * [Micronaut](/recipes/java/micronaut)
 * [Modernize](/recipes/java/migrate)
 * [Netty](/recipes/java/netty)
-* [OpenRewrite best practices](/recipes/java/recipes)
+* [Recipes](/recipes/java/recipes)
 * [Search](/recipes/java/search)
 * [Security](/recipes/java/security)
 * [Spring](/recipes/java/spring)

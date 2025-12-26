@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Remove unnecessary trailing semicolon"
+sidebar_label: "Order Kotlin imports"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove unnecessary trailing semicolon
+# Order Kotlin imports
 
-**org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon**
+**org.openrewrite.kotlin.OrderImports**
 
-_Some Java programmers may mistakenly add semicolons at the end when writing Kotlin code, but in reality, they are not necessary._
+_Groups and orders import statements. If a [style has been defined](https://docs.openrewrite.org/concepts-and-explanations/styles), this recipe will order the imports according to that style. If no style is detected, this recipe will default to ordering imports in the same way that IntelliJ IDEA does._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/RemoveTrailingSemicolon.java),
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/OrderImports.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 
@@ -28,35 +28,40 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Before
 ```kotlin
-fun method() {
-    var foo = 1;
-    var bar: Int;
-    var baz: String = "a";
-}
+import r.core.Flux
+import s.core.Flux
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.apache.commons.logging.Log
+import reactor.core.publisher.Mono
 ```
 
 ###### After
 ```kotlin
-fun method() {
-    var foo = 1
-    var bar: Int
-    var baz: String = "a"
-}
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.apache.commons.logging.Log
+import r.core.Flux
+import reactor.core.publisher.Mono
+import s.core.Flux
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -2,3 +2,3 @@
-fun method() {
--   var foo = 1;
--   var bar: Int;
--   var baz: String = "a";
-+   var foo = 1
-+   var bar: Int
-+   var baz: String = "a"
-}
+@@ -1,2 +1,0 @@
+-import r.core.Flux
+-import s.core.Flux
+import com.fasterxml.jackson.databind.ObjectMapper
+@@ -5,0 +3,1 @@
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.apache.commons.logging.Log
++import r.core.Flux
+import reactor.core.publisher.Mono
+@@ -6,0 +5,1 @@
+import org.apache.commons.logging.Log
+import reactor.core.publisher.Mono
++import s.core.Flux
+
 ```
 </TabItem>
 </Tabs>
@@ -76,7 +81,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon")
+    activeRecipe("org.openrewrite.kotlin.OrderImports")
     setExportDatatables(true)
 }
 
@@ -105,7 +110,7 @@ rootProject {
         rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon")
+        activeRecipe("org.openrewrite.kotlin.OrderImports")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -139,7 +144,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon</recipe>
+            <recipe>org.openrewrite.kotlin.OrderImports</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -156,7 +161,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.kotlin.OrderImports -Drewrite.exportDatatables=true
 ```
 
 </TabItem>
@@ -165,7 +170,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=or
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveTrailingSemicolon
+mod run . --recipe OrderImports
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -179,7 +184,7 @@ mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPEN
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.kotlin.cleanup.RemoveTrailingSemicolon" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.kotlin.OrderImports" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
