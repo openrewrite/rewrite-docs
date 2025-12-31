@@ -76,8 +76,8 @@ Next, let's install the core OpenRewrite framework and the required dependencies
 # Core OpenRewrite framework - should be compatible with your Moderne CLI version
 npm install @openrewrite/rewrite
 
-# Immer is required for modifying LSTs immutably
-npm install immer
+# Mutative is required for modifying LSTs immutably
+npm install mutative
 
 # Development dependencies for testing and building
 npm install --save-dev typescript jest @jest/globals ts-jest rimraf

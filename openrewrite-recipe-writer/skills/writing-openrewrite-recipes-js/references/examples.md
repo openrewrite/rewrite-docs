@@ -23,7 +23,7 @@ Complete, real-world examples of OpenRewrite recipes in TypeScript.
 import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
 import {J} from "@openrewrite/rewrite/java";
 import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
-import {produce} from "immer";
+import {create} from "mutative";
 
 export class ModernizeOctalLiterals extends Recipe {
     name = "org.openrewrite.javascript.migrate.es6.modernize-octal-literals";
@@ -57,7 +57,7 @@ export class ModernizeOctalLiterals extends Recipe {
                     const octalDigits = match[1];
                     const modernOctal = `0o${octalDigits}`;
 
-                    return produce(literal, draft => {
+                    return create(literal, draft => {
                         draft.valueSource = modernOctal;
                     });
                 }
@@ -99,7 +99,7 @@ For more test examples including multiple literals, edge cases, and negative tes
 - **Override specific visit methods** - `visitLiteral()` for literal nodes
 - **Type check values** - Ensure `literal.value` is a number
 - **Use regex for pattern matching** - String manipulation for source code
-- **Use `produce()` for immutability** - Modify draft, not original
+- **Use `create()` for immutability** - Modify draft, not original
 - **Return original if no change** - Early returns for efficiency
 - **Test edge cases** - Zero, hex, binary, already-modern octals
 
@@ -1048,7 +1048,7 @@ Key patterns across all examples:
 1. **Extend Recipe or ScanningRecipe**
 2. **Implement editor() returning a visitor**
 3. **Override specific visit methods**
-4. **Use produce() for immutable updates**
+4. **Use create() for immutable updates**
 5. **Pattern matching for declarative transformations**
 6. **Variadic captures for flexible argument matching**
 7. **Options for configurable recipes**

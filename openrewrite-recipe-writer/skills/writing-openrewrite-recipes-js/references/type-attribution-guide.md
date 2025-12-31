@@ -376,7 +376,7 @@ protected async visitNewClass(
     ctx: ExecutionContext
 ): Promise<J | undefined> {
     // Preserve the original type when transforming
-    const modified = produce(newClass, draft => {
+    const modified = create(newClass, draft => {
         // Modifications...
     });
 

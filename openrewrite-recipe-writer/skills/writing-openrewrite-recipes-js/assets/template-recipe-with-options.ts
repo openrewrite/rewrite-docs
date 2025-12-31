@@ -16,7 +16,7 @@
 import {ExecutionContext, Option, Recipe} from "@openrewrite/rewrite";
 import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
 import {J} from "@openrewrite/rewrite/java";
-import {produce} from "immer";
+import {create} from "mutative";
 
 /**
  * TODO: Add recipe description
@@ -52,7 +52,7 @@ export class MyConfigurableRecipe extends Recipe {
                 // TODO: Add transformation logic using optionValue
                 // Example:
                 // if (someCondition) {
-                //     return produce(visited, draft => {
+                //     return create(visited, draft => {
                 //         // Use optionValue to make changes
                 //     });
                 // }

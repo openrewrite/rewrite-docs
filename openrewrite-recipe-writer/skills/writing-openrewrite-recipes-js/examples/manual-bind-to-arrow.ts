@@ -16,7 +16,7 @@
 import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
 import {J, Expression, Statement, isIdentifier, isLiteral} from "@openrewrite/rewrite/java";
 import {JavaScriptVisitor, capture, pattern, template, raw} from "@openrewrite/rewrite/javascript";
-import {produce} from "immer";
+import {create} from "mutative";
 
 export class ManualBindToArrow extends Recipe {
     name = "org.openrewrite.javascript.react.manual-bind-to-arrow";
@@ -104,9 +104,9 @@ class ManualBindToArrowVisitor extends JavaScriptVisitor<ExecutionContext> {
 
             // Remove binding statements
             if (statementsToRemove.length > 0) {
-                const newMethod = produce(method, draft => {
+                const newMethod = create(method, draft => {
                     if (draft.body) {
-                        draft.body = produce(draft.body, bodyDraft => {
+                        draft.body = create(draft.body, bodyDraft => {
                             bodyDraft.statements = bodyDraft.statements.filter(
                                 stmt => !statementsToRemove.includes(stmt)
                             );
@@ -140,8 +140,8 @@ class ManualBindToArrowVisitor extends JavaScriptVisitor<ExecutionContext> {
 
         // Now convert marked methods to arrow functions
         if (this.methodsToConvert.size > 0) {
-            result = produce(result, draft => {
-                draft.body = produce(draft.body, bodyDraft => {
+            result = create(result, draft => {
+                draft.body = create(draft.body, bodyDraft => {
                     bodyDraft.statements = bodyDraft.statements.map(stmt => {
                         const stmtElement = stmt.element;
 
@@ -201,9 +201,9 @@ class ManualBindToArrowVisitor extends JavaScriptVisitor<ExecutionContext> {
         // Note: This is a simplified approach; full implementation would need
         // to properly handle async, type annotations, and parameter defaults
 
-        return produce(stmt, draft => {
+        return create(stmt, draft => {
             // Preserve comments from original method
-            draft.element = produce(method, methodDraft => {
+            draft.element = create(method, methodDraft => {
                 // Convert to variable declaration with arrow function
                 // This is a conceptual representation; actual implementation
                 // would use template application
@@ -218,8 +218,8 @@ class ManualBindToArrowVisitor extends JavaScriptVisitor<ExecutionContext> {
      * Remove constructors that only contain super() calls.
      */
     private removeEmptyConstructors(classDecl: J.ClassDeclaration): J.ClassDeclaration {
-        return produce(classDecl, draft => {
-            draft.body = produce(draft.body, bodyDraft => {
+        return create(classDecl, draft => {
+            draft.body = create(draft.body, bodyDraft => {
                 bodyDraft.statements = bodyDraft.statements.filter(stmt => {
                     const stmtElement = stmt.element;
 

@@ -61,7 +61,7 @@ Verification guide:
 
 ```bash
 npm install @openrewrite/rewrite@next  # Latest features
-npm install --save-dev typescript @types/node immer @jest/globals jest
+npm install --save-dev typescript @types/node @jest/globals jest
 ```
 
 ### TypeScript Configuration
@@ -89,8 +89,8 @@ Follow this checklist when creating recipes:
 - [ ] Create visitor extending `JavaScriptVisitor`
 - [ ] Override visit methods for target AST nodes
 - [ ] **For pattern-based transformations:** Use `rewrite()` helper with `tryOn()` method
-- [ ] **For manual AST modifications:** Use `produce()` from `immer` for immutable updates
-- [ ] **For async operations in produce:** Use `produceAsync()` from `@openrewrite/rewrite`
+- [ ] **For manual AST modifications:** Use `create()` from `mutative` for immutable updates
+- [ ] **For async operations:** Use `produceAsync()` from `@openrewrite/rewrite`
 - [ ] Write tests using `RecipeSpec` and `rewriteRun()`
 - [ ] Register recipe in `activate()` function (see [Recipe Registration](#recipe-registration))
 
@@ -390,9 +390,9 @@ if (!isMethodInvocation(node)) {
 // Now TypeScript knows node is J.MethodInvocation
 ```
 
-4. **Use produce() for modifications:**
+4. **Use create() for modifications:**
 ```typescript
-return produce(node, draft => {
+return create(node, draft => {
     draft.name = newName;
 });
 ```
@@ -651,15 +651,17 @@ const x = capture<J.Literal>({
 });
 ```
 
-### Immer produce() issues
+### Mutative create() issues
 ```typescript
+import {create} from "mutative";
+
 // ❌ Wrong - reassigning draft
-return produce(node, draft => {
+return create(node, draft => {
     draft = someOtherNode;  // Won't work
 });
 
 // ✅ Correct - modify properties
-return produce(node, draft => {
+return create(node, draft => {
     draft.name = newName;
 });
 ```
@@ -754,23 +756,30 @@ import {RecipeSpec} from "@openrewrite/rewrite/test";
 import {javascript, typescript, jsx, tsx, npm, packageJson} from "@openrewrite/rewrite/javascript";
 
 // Recipe Registration
-import {RecipeRegistry} from "@openrewrite/rewrite";
+import {RecipeMarketplace, CategoryDescriptor} from "@openrewrite/rewrite";
 ```
 
 ## Recipe Registration
 
-To make recipes discoverable by OpenRewrite, export an `activate()` function from the package entry point (typically `index.ts`). This function receives a `RecipeRegistry` and registers recipe classes with it.
+To make recipes discoverable by OpenRewrite, export an `activate()` function from the package entry point (typically `index.ts`). This function receives a `RecipeMarketplace` and installs recipe classes with a category path.
 
 ### Basic Registration
 
 ```typescript
-import { RecipeRegistry } from '@openrewrite/rewrite';
+import { RecipeMarketplace, CategoryDescriptor } from '@openrewrite/rewrite';
 import { MyRecipe } from './my-recipe';
 import { AnotherRecipe } from './another-recipe';
 
-export async function activate(registry: RecipeRegistry): Promise<void> {
-    registry.register(MyRecipe);
-    registry.register(AnotherRecipe);
+// Define your package's root category
+export const MyPackage: CategoryDescriptor[] = [{displayName: "My Package"}];
+
+// Define subcategories (they extend the parent path)
+export const Search: CategoryDescriptor[] = [...MyPackage, {displayName: "Search"}];
+export const Cleanup: CategoryDescriptor[] = [...MyPackage, {displayName: "Cleanup"}];
+
+export async function activate(marketplace: RecipeMarketplace): Promise<void> {
+    await marketplace.install(MyRecipe, MyPackage);
+    await marketplace.install(AnotherRecipe, Cleanup);
 }
 
 // Also export recipe classes for direct use
@@ -778,11 +787,30 @@ export { MyRecipe } from './my-recipe';
 export { AnotherRecipe } from './another-recipe';
 ```
 
+### Category Paths
+
+Categories are specified as arrays of `CategoryDescriptor` objects, from shallowest to deepest:
+
+```typescript
+// Root category for JavaScript recipes
+export const JavaScript: CategoryDescriptor[] = [{displayName: "JavaScript"}];
+
+// Nested category: JavaScript > Search
+export const Search: CategoryDescriptor[] = [...JavaScript, {displayName: "Search"}];
+
+// Nested category: JavaScript > Migrate > TypeScript
+export const Migrate: CategoryDescriptor[] = [...JavaScript, {displayName: "Migrate"}];
+export const MigrateTypeScript: CategoryDescriptor[] = [...Migrate, {
+    displayName: "TypeScript",
+    description: "Migrate TypeScript-specific patterns"
+}];
+```
+
 ### Important Notes
 
-1. **Pass the class, not an instance**: `registry.register(MyRecipe)` not `registry.register(new MyRecipe())`
+1. **Pass the class, not an instance**: `marketplace.install(MyRecipe, Category)` not `marketplace.install(new MyRecipe(), Category)`
 
-2. **Recipes must be instantiable without arguments**: The registry creates a temporary instance to read the recipe's `name` property. Recipes with required options (no defaults) cannot be registered this way.
+2. **Recipes must be instantiable without arguments**: The marketplace creates a temporary instance to read the recipe's descriptor. Recipes with required options (no defaults) cannot be registered this way.
 
 ```typescript
 // ✅ Can be registered - no required options
@@ -813,13 +841,18 @@ export class RequiredOptionRecipe extends Recipe {
 }
 ```
 
-3. **Async function**: The `activate()` function should be `async` and return `Promise<void>`.
+3. **Async function**: The `activate()` function should be `async` and return `Promise<void>`. Each `install()` call should be awaited.
 
 ### Complete Example
 
 ```typescript
 // src/index.ts
-import { RecipeRegistry } from '@openrewrite/rewrite';
+import { RecipeMarketplace, CategoryDescriptor } from '@openrewrite/rewrite';
+
+// Define category hierarchy
+export const MyLibrary: CategoryDescriptor[] = [{displayName: "My Library"}];
+export const Migrations: CategoryDescriptor[] = [...MyLibrary, {displayName: "Migrations"}];
+export const Search: CategoryDescriptor[] = [...MyLibrary, {displayName: "Search"}];
 
 // Re-export all recipes for direct import
 export { MigrateApiCalls } from './migrate-api-calls';
@@ -834,9 +867,9 @@ import { UpdateImports } from './update-imports';
 /**
  * Register all recipes that can be instantiated without arguments.
  */
-export async function activate(registry: RecipeRegistry): Promise<void> {
-    registry.register(MigrateApiCalls);
-    registry.register(UpdateImports);
+export async function activate(marketplace: RecipeMarketplace): Promise<void> {
+    await marketplace.install(MigrateApiCalls, Migrations);
+    await marketplace.install(UpdateImports, Migrations);
     // FindDeprecatedUsage omitted - requires options
 }
 ```

@@ -16,7 +16,7 @@
 import {ExecutionContext, Recipe} from "@openrewrite/rewrite";
 import {JavaScriptVisitor} from "@openrewrite/rewrite/javascript";
 import {J} from "@openrewrite/rewrite/java";
-import {produce} from "immer";
+import {create} from "mutative";
 
 /**
  * TODO: Add recipe description
@@ -38,8 +38,8 @@ export class MyRecipe extends Recipe {
                 const visited = await super.visitMethodInvocation(method, ctx) as J.MethodInvocation;
 
                 // TODO: Add transformation logic here
-                // Example: Modify the method invocation using produce
-                // return produce(visited, draft => {
+                // Example: Modify the method invocation using create
+                // return create(visited, draft => {
                 //     // Make changes to draft
                 // });
 
