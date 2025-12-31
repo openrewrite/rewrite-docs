@@ -192,21 +192,24 @@ Add the following build and test scripts to your `package.json`:
 In order for the Moderne CLI to discover your recipes, you need to export them. To do so, create a `src/index.ts` file that looks like:
 
 ```typescript title="src/index.ts"
-import { RecipeRegistry } from '@openrewrite/rewrite';
+import { RecipeMarketplace, CategoryDescriptor } from '@openrewrite/rewrite';
 import { MyRecipe } from './my-recipe';
 
 export { MyRecipe } from './my-recipe';
 // Export additional recipes here
 
+// Define category hierarchy for your recipes
+export const MyPackage: CategoryDescriptor[] = [{displayName: "My Recipes"}];
+
 /**
  * Activates and registers all recipes in this module.
  * This function is called by OpenRewrite to discover available recipes.
  *
- * @param registry The recipe registry to register recipes with
+ * @param marketplace The recipe marketplace to install recipes into
  */
-export function activate(registry: RecipeRegistry) {
-    registry.register(MyRecipe);
-    // Register additional recipes here
+export async function activate(marketplace: RecipeMarketplace): Promise<void> {
+    await marketplace.install(MyRecipe, MyPackage);
+    // Install additional recipes here
 }
 ```
 
