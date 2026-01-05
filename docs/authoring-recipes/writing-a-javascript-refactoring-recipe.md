@@ -79,19 +79,22 @@ Note that this recipe doesn't _do_ anything, yet - we'll get to that later.
 Next, let's ensure your recipe can be discovered and run by the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro). Update your `src/index.ts` to export and register the recipe:
 
 ```typescript title="index.ts"
-import { RecipeRegistry } from '@openrewrite/rewrite';
+import { RecipeMarketplace, CategoryDescriptor } from '@openrewrite/rewrite';
 import { MigrateUtilFunctions } from './migrate-util-functions';
 
 export { MigrateUtilFunctions } from './migrate-util-functions';
+
+// Define category hierarchy for your recipes
+export const MyPackage: CategoryDescriptor[] = [{displayName: "My Recipes"}];
 
 /**
  * Activates and registers all recipes in this module.
  * This function is called by OpenRewrite to discover available recipes.
  *
- * @param registry The recipe registry to register recipes with
+ * @param marketplace The recipe marketplace to install recipes into
  */
-export function activate(registry: RecipeRegistry) {
-    registry.register(MigrateUtilFunctions);
+export async function activate(marketplace: RecipeMarketplace): Promise<void> {
+    await marketplace.install(MigrateUtilFunctions, MyPackage);
 }
 ```
 

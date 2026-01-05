@@ -1031,7 +1031,7 @@ const result = await rule.tryOn(this.cursor, method);
 if (result) {
     // Additional transformation after rewrite
     // This works, but direct pattern/template might be clearer
-    return produce(result, draft => {
+    return create(result, draft => {
         // Modify draft
     });
 }

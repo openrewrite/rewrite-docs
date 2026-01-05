@@ -18,7 +18,7 @@
 import {ExecutionContext, Recipe, TreeVisitor, ScanningRecipe} from "@openrewrite/rewrite";
 import {J, Statement, Expression, isIdentifier, isMethodInvocation} from "@openrewrite/rewrite/java";
 import {JavaScriptVisitor, JS, capture, pattern, template, raw} from "@openrewrite/rewrite/javascript";
-import {produce} from "immer";
+import {create} from "mutative";
 
 export class ReactManualBindToArrow extends ScanningRecipe<Map<string, MethodBindingInfo>> {
     name = "org.openrewrite.javascript.react.ReactManualBindToArrow";
@@ -226,8 +226,8 @@ class MethodConversionVisitor extends JavaScriptVisitor<ExecutionContext> {
         classDecl: J.ClassDeclaration,
         ctx: ExecutionContext
     ): Promise<J.ClassDeclaration> {
-        return produce(classDecl, draft => {
-            draft.body = produce(draft.body, bodyDraft => {
+        return create(classDecl, draft => {
+            draft.body = create(draft.body, bodyDraft => {
                 bodyDraft.statements = bodyDraft.statements.map(stmt => {
                     const member = stmt.element;
 
@@ -239,10 +239,10 @@ class MethodConversionVisitor extends JavaScriptVisitor<ExecutionContext> {
                             method.body) {
 
                             // Remove binding statements
-                            return produce(stmt, stmtDraft => {
+                            return create(stmt, stmtDraft => {
                                 const methodDraft = stmtDraft.element as J.MethodDeclaration;
                                 if (methodDraft.body) {
-                                    methodDraft.body = produce(methodDraft.body, bodyDraftInner => {
+                                    methodDraft.body = create(methodDraft.body, bodyDraftInner => {
                                         bodyDraftInner.statements = bodyDraftInner.statements.filter(
                                             s => !this.isBindingStatement(s.element, ctx)
                                         );
@@ -284,8 +284,8 @@ class MethodConversionVisitor extends JavaScriptVisitor<ExecutionContext> {
         // For each bound method, convert to arrow function property
         // This is a simplified demonstration
 
-        return produce(classDecl, draft => {
-            draft.body = produce(draft.body, bodyDraft => {
+        return create(classDecl, draft => {
+            draft.body = create(draft.body, bodyDraft => {
                 bodyDraft.statements = bodyDraft.statements.map(stmt => {
                     const member = stmt.element;
 
@@ -346,15 +346,15 @@ class MethodConversionVisitor extends JavaScriptVisitor<ExecutionContext> {
         //     });
 
         // For now, return modified statement
-        return produce(stmt, draft => {
+        return create(stmt, draft => {
             // Preserve prefix (comments, whitespace) from original method
             draft.element = method as any; // Simplified
         });
     }
 
     private removeEmptyConstructor(classDecl: J.ClassDeclaration): J.ClassDeclaration {
-        return produce(classDecl, draft => {
-            draft.body = produce(draft.body, bodyDraft => {
+        return create(classDecl, draft => {
+            draft.body = create(draft.body, bodyDraft => {
                 bodyDraft.statements = bodyDraft.statements.filter(stmt => {
                     const member = stmt.element;
 

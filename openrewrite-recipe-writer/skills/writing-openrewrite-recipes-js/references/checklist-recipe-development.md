@@ -35,7 +35,7 @@ Use this checklist to ensure you've covered all important aspects of recipe deve
 - [ ] Called `super.visitX()` first in overridden visit methods (default pattern)
 - [ ] Checked for null before accessing type information
 - [ ] Implemented "do no harm" - return unchanged LST when unsure
-- [ ] Used `produce()` or `.withX()` methods instead of mutating LSTs
+- [ ] Used `create()` or `.withX()` methods instead of mutating LSTs
 - [ ] Always unwrapped wrapper types (`.element`) before accessing properties
 - [ ] Avoided creating unnecessary new objects (referential equality check)
 

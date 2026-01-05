@@ -27,7 +27,7 @@ protected async visitMethodInvocation(
         return method;
     }
 
-    return produce(method, draft => {
+    return create(method, draft => {
         if (isIdentifier(draft.name)) {
             draft.name = draft.name.withName('newMethod');
         }
@@ -60,7 +60,7 @@ protected async visitBinary(
 ): Promise<J | undefined> {
     if (binary.operator.element === J.Binary.Type.Equal) {
         // Change == to ===
-        return produce(binary, draft => {
+        return create(binary, draft => {
             draft.operator = draft.operator.withElement(J.Binary.Type.TripleEqual);
         });
     }
@@ -205,7 +205,7 @@ protected async visitClassDeclaration(
     // Add a new property to the class
     const newProperty = await template`state = { count: 0 };`.build<JS.PropertyAssignment>();
 
-    return produce(classDecl, draft => {
+    return create(classDecl, draft => {
         if (draft.body) {
             draft.body.statements.unshift(J.rightPadded(newProperty, J.space()));
         }
@@ -330,7 +330,7 @@ protected async visitBlock(
     ctx: ExecutionContext
 ): Promise<J | undefined> {
     // Remove all console.log statements
-    return produce(block, draft => {
+    return create(block, draft => {
         draft.statements = draft.statements.filter(stmt => {
             const s = stmt.element;
             if (s.kind !== J.Kind.MethodInvocation) return true;
@@ -397,7 +397,7 @@ protected async visitVariableDeclarations(
 ): Promise<J | undefined> {
     // Add type annotations
     if (varDecls.typeExpression === null) {
-        return produce(varDecls, draft => {
+        return create(varDecls, draft => {
             draft.typeExpression = J.createTypeExpression('string');
         });
     }

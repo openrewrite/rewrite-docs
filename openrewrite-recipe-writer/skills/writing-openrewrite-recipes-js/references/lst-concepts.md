@@ -123,7 +123,7 @@ protected async visitLiteral(
     }
 
     // Return DIFFERENT object → OpenRewrite detects a change
-    return produce(literal, draft => {
+    return create(literal, draft => {
         draft.value = literal.value + 1;
     });
 }
@@ -135,18 +135,18 @@ protected async visitLiteral(
 2. **Correctness** - Only modified code is affected
 3. **Tracking** - OpenRewrite knows exactly what changed
 
-### Why Use Immer
+### Why Use Mutative
 
-**OpenRewrite visitor methods are async** - they return `Promise<T>` to support async operations like pattern matching and type resolution. This is why Immer is essential for LST transformations.
+**OpenRewrite visitor methods are async** - they return `Promise<T>` to support async operations like pattern matching and type resolution. This is why Mutative is essential for LST transformations.
 
-Immer's `produce()` is **strongly recommended** because it automatically handles referential equality:
+Mutative's `create()` function is **strongly recommended** because it automatically handles referential equality:
 
 ```typescript
-import {produce} from "immer";
+import {create} from "mutative";
 
-// ✅ CORRECT - Immer returns original if no changes made
-const result = produce(node, draft => {
-    // If you don't modify draft, immer returns original node
+// ✅ CORRECT - Mutative returns original if no changes made
+const result = create(node, draft => {
+    // If you don't modify draft, mutative returns original node
     // referential equality is preserved!
 });
 
@@ -154,7 +154,7 @@ const result = produce(node, draft => {
 // result !== node only if draft was actually modified
 ```
 
-**Immer guarantees:**
+**Mutative guarantees:**
 - If you modify the draft → returns new object (`result !== original`)
 - If you don't modify the draft → returns original object (`result === original`)
 - You never need to manually check "did I change anything?"
@@ -184,14 +184,14 @@ protected async visitMethodDeclaration(
 ```
 
 **When to use each:**
-- **`produce()`** - For synchronous transformations (use regular immer)
+- **`create()`** - For synchronous transformations (from `mutative`)
 - **`produceAsync()`** - For async transformations (pattern matching, type checks, etc.) - import from `@openrewrite/rewrite`
 
 Both preserve referential equality automatically!
 
 ### Manual Immutability (NOT Recommended)
 
-Without immer, you must manually preserve referential equality:
+Without Mutative, you must manually preserve referential equality:
 
 ```typescript
 // ❌ BAD - Always creates new object even if no change needed
@@ -208,7 +208,7 @@ if (literal.value !== newValue) {
 return literal;  // Unchanged - same reference
 ```
 
-**Always prefer immer's `produce()`** - it handles this automatically and correctly.
+**Always prefer Mutative's `create()`** - it handles this automatically and correctly.
 
 ### Example: Conditional Transformation
 
@@ -223,14 +223,14 @@ protected async visitMethodInvocation(
         return method;
     }
 
-    // Use produce() → automatically handles referential equality
-    return produce(method, draft => {
+    // Use create() → automatically handles referential equality
+    return create(method, draft => {
         // Only modify if needed
         if (draft.select) {
             draft.select.element = newExpression;
         }
         // If no modifications happen in this branch,
-        // immer returns original method
+        // Mutative returns original method
     });
 }
 ```
@@ -240,13 +240,13 @@ protected async visitMethodInvocation(
 1. **OpenRewrite uses `===` for change detection** - Same reference = no change
 2. **Visitor methods are async** - They return `Promise<T>` to support pattern matching and type resolution
 3. **Use `produceAsync()` for async operations** - Pattern matching, type checks, etc. (import from `@openrewrite/rewrite`)
-4. **Use `produce()` for synchronous operations** - Simple transformations without async logic (from `immer`)
+4. **Use `create()` for synchronous operations** - Simple transformations without async logic (from `mutative`)
 5. **Both preserve referential equality** - Automatically return original if no modifications made
 6. **Return original object when no changes** - Don't create unnecessary new objects
-7. **Never manually spread/copy unless necessary** - Let immer decide
+7. **Never manually spread/copy unless necessary** - Let Mutative decide
 8. **Performance benefit** - Unchanged subtrees are not reprinted
 
-This is why the pattern examples throughout this guide always use `produce()` or `produceAsync()` - they're the safest and most efficient way to transform LST nodes.
+This is why the pattern examples throughout this guide always use `create()` or `produceAsync()` - they're the safest and most efficient way to transform LST nodes.
 
 ## Wrapper Types
 
@@ -534,13 +534,13 @@ const searchResult = findMarker<SearchResult>(
 );
 ```
 
-**Adding markers (with produce):**
+**Adding markers (with create):**
 ```typescript
-import {produce} from "immer";
+import {create} from "mutative";
 import {marker, markers, randomId} from "@openrewrite/rewrite";
 
 // Add a custom marker
-return produce(element, draft => {
+return create(element, draft => {
     const newMarker = marker(randomId(), {
         customProperty: "value"
     });
@@ -796,7 +796,7 @@ const methodInvocation: J.MethodInvocation = {
 
 **When to use object literals:**
 - **Only for very simple cases** - single identifiers or literals
-- Making small modifications to existing nodes with `produce()`
+- Making small modifications to existing nodes with `create()`
 
 **Drawbacks:**
 - **Extremely verbose** - Even simple structures require many lines of code
@@ -869,7 +869,7 @@ return await tmpl.apply(this.cursor, method, {values: match});
 
 **Use object literals ONLY when:**
 - Creating very simple primitive nodes (single identifier or literal)
-- Making small modifications to existing nodes with `produce()`
+- Making small modifications to existing nodes with `create()`
 - **Warning:** Avoid object literals for anything more complex - type attribution is extremely difficult to get right manually
 
 **Use templates when (almost always):**
@@ -983,17 +983,17 @@ return await template`foo(${argElements})`.apply(cursor, method);
 
 See [Templates - LST Container Types](patterns-and-templates.md#lst-container-types-as-parameters) for more details.
 
-### Modifying Wrappers with Immer
+### Modifying Wrappers with Mutative
 
-When modifying elements, use `produce()` to update wrappers immutably:
+When modifying elements, use `create()` to update wrappers immutably:
 
 ```typescript
-import {produce} from "immer";
+import {create} from "mutative";
 
 // Modify element inside RightPadded
-return produce(method, draft => {
+return create(method, draft => {
     if (draft.select) {
-        draft.select = produce(draft.select, selectDraft => {
+        draft.select = create(draft.select, selectDraft => {
             // Modify selectDraft.element
             selectDraft.element = newExpression;
         });
@@ -1001,10 +1001,10 @@ return produce(method, draft => {
 });
 
 // Modify elements in Container
-return produce(method, draft => {
-    draft.arguments = produce(draft.arguments, argsDraft => {
+return create(method, draft => {
+    draft.arguments = create(draft.arguments, argsDraft => {
         argsDraft.elements = argsDraft.elements.map(elem =>
-            produce(elem, elemDraft => {
+            create(elem, elemDraft => {
                 // Modify elemDraft.element
                 elemDraft.element = transformExpression(elemDraft.element);
             })
@@ -1028,7 +1028,7 @@ class MyVisitor extends JavaScriptVisitor<ExecutionContext> {
         const element = await this.visit(right.element, p);
 
         // Return new RightPadded with transformed element
-        return produce(right, draft => {
+        return create(right, draft => {
             draft.element = element as T;
         });
     }
@@ -1043,7 +1043,7 @@ class MyVisitor extends JavaScriptVisitor<ExecutionContext> {
             container.elements.map(elem => this.visitRightPadded(elem, p))
         );
 
-        return produce(container, draft => {
+        return create(container, draft => {
             draft.elements = elements as J.RightPadded<T>[];
         });
     }
@@ -1133,13 +1133,13 @@ protected async visitMethodInvocation(
 Adjust whitespace or comments while preserving structure:
 
 ```typescript
-import {produce} from "immer";
+import {create} from "mutative";
 
 // Add a comment before an element
 import {emptyMarkers} from "@openrewrite/rewrite";
 
-return produce(stmt, draft => {
-    draft.prefix = produce(draft.prefix, prefixDraft => {
+return create(stmt, draft => {
+    draft.prefix = create(draft.prefix, prefixDraft => {
         prefixDraft.comments = [
             ...prefixDraft.comments,
             {
@@ -1154,10 +1154,10 @@ return produce(stmt, draft => {
 });
 
 // Adjust trailing space in RightPadded
-return produce(method, draft => {
+return create(method, draft => {
     if (draft.select) {
-        draft.select = produce(draft.select, selectDraft => {
-            selectDraft.after = produce(selectDraft.after, afterDraft => {
+        draft.select = create(draft.select, selectDraft => {
+            selectDraft.after = create(selectDraft.after, afterDraft => {
                 afterDraft.whitespace = " ";  // Normalize to single space
             });
         });
@@ -1208,12 +1208,12 @@ protected async visitMethodDeclaration(
 }
 ```
 
-**Alternative Pattern:** If not using pattern matching or other async operations, build array outside `produce()`:
+**Alternative Pattern:** If not using pattern matching or other async operations, build array outside `create()`:
 
 ```typescript
-import {produce} from "immer";
+import {create} from "mutative";
 
-// ✅ ALTERNATIVE - Build filtered array outside produce() (synchronous operations)
+// ✅ ALTERNATIVE - Build filtered array outside create() (synchronous operations)
 protected async visitMethodDeclaration(
     method: J.MethodDeclaration,
     ctx: ExecutionContext
@@ -1229,9 +1229,9 @@ protected async visitMethodDeclaration(
         }
     }
 
-    // Only use produce if we actually removed something
+    // Only use create if we actually removed something
     if (newStatements.length !== method.body.statements.length) {
-        return produce(method, draft => {
+        return create(method, draft => {
             if (draft.body) {
                 draft.body.statements = newStatements;
             }
@@ -1245,7 +1245,7 @@ protected async visitMethodDeclaration(
 **Key Points:**
 1. **Use `produceAsync()` for async operations** - Pattern matching, type checks, etc.
 2. **Import from `@openrewrite/rewrite`** - Not from the language-specific packages
-3. **Automatic referential equality** - Both `produce()` and `produceAsync()` preserve it
+3. **Automatic referential equality** - Both `create()` and `produceAsync()` preserve it
 4. **Check before modifying** - Only modify `draft.body.statements` if length changed
 
 **Real-world example - Remove binding statements from React constructor:**

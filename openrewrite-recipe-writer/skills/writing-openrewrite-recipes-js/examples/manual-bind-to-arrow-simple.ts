@@ -8,7 +8,7 @@
 import {ExecutionContext, Recipe, TreeVisitor} from "@openrewrite/rewrite";
 import {J, isIdentifier} from "@openrewrite/rewrite/java";
 import {JavaScriptVisitor, JS, capture, pattern, template, raw, rewrite} from "@openrewrite/rewrite/javascript";
-import {produce} from "immer";
+import {create} from "mutative";
 
 export class ManualBindToArrowSimple extends Recipe {
     name = "org.openrewrite.javascript.react.manual-bind-to-arrow-simple";
@@ -71,9 +71,9 @@ class BindingRemovalVisitor extends JavaScriptVisitor<ExecutionContext> {
 
         // Remove binding statements by filtering out indices
         if (indicesToRemove.size > 0) {
-            return produce(method, draft => {
+            return create(method, draft => {
                 if (draft.body) {
-                    draft.body = produce(draft.body, bodyDraft => {
+                    draft.body = create(draft.body, bodyDraft => {
                         bodyDraft.statements = bodyDraft.statements.filter(
                             (_, index) => !indicesToRemove.has(index)
                         );
@@ -228,7 +228,7 @@ class CompleteTransformVisitor extends JavaScriptVisitor<ExecutionContext> {
  * 1. Using pattern().configure() with context and dependencies for type attribution
  * 2. Multi-pass transformation strategy
  * 3. Using ExecutionContext to pass data between visitor passes
- * 4. Handling complex AST transformations with produce()
+ * 4. Handling complex AST transformations with create()
  *
  * Production considerations:
  * - Need to handle 'self' variable cleanup

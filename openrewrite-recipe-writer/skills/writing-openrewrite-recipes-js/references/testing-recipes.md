@@ -498,7 +498,7 @@ Use `beforeRecipe` to modify the AST before the recipe runs:
 ### Adding Markers
 
 ```typescript
-import {produce} from "immer";
+import {create} from "mutative";
 
 test("recipe handles existing markers", () => {
     const spec = new RecipeSpec();
@@ -512,8 +512,8 @@ test("recipe handles existing markers", () => {
         beforeRecipe: (cu: JS.CompilationUnit) => {
             // Add a marker before recipe runs
             const stmt = cu.statements[0];
-            return produce(cu, draft => {
-                draft.statements[0] = produce(stmt, s => {
+            return create(cu, draft => {
+                draft.statements[0] = create(stmt, s => {
                     s.element.markers = s.element.markers.add(
                         new SearchResult(randomId(), "test marker")
                     );
@@ -548,7 +548,7 @@ test("recipe with pre-configured AST", () => {
             // Add type information or annotations programmatically
             // This is useful when testing recipes that depend on
             // specific AST structures that are hard to write directly
-            return produce(cu, draft => {
+            return create(cu, draft => {
                 // Modify the AST as needed
             });
         }
