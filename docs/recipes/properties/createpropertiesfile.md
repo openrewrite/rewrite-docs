@@ -34,8 +34,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Add application.properties if missing](/recipes/java/dropwizard/addmissingapplicationproperties.md)
 
-## Examples
-##### Example 1
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -49,48 +48,11 @@ x.y=z
 
 
 ###### New file
-```properties
+```properties title="test/test.properties"
 # This is a comment
 x.y=z
 ```
 
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|relativeFileName|`test/test.properties`|
-|fileContents|`after=true`|
-|overwriteExisting|`true`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
-
-
-###### Before
-```properties
-test.property=test
-```
-
-###### After
-```properties
-after=true
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--test.property=test
-+after=true
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage

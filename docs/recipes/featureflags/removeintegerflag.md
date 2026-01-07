@@ -34,6 +34,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Remove LaunchDarkly's `intVariation` for feature key](/recipes/featureflags/launchdarkly/removeintvariation.md)
 * [Remove OpenFeature's `getIntegerValue` for feature key](/recipes/featureflags/openfeature/removegetintegervalue.md)
+* [Remove Quarkus feature flag's `getInt` for feature key](/recipes/featureflags/quarkus/removegetint.md)
 
 ## Example
 

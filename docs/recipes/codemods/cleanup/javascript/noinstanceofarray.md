@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Require `Array.isArray()` instead of `instanceof Array`."
+sidebar_label: "Require `Array.isArray()` instead of `instanceof Array`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require `Array.isArray()` instead of `instanceof Array`.
+# Require `Array.isArray()` instead of `instanceof Array`
 
 **org.openrewrite.codemods.cleanup.javascript.NoInstanceofArray**
 
-_Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md)_
+_Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoInstanceofArray
-displayName: Require `Array.isArray()` instead of `instanceof Array`.
+displayName: Require `Array.isArray()` instead of `instanceof Array`
 description: |
-  Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md)
+  Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

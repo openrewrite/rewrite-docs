@@ -64,6 +64,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`AddJUnitPlatformLauncherTest#addJUnitPlatformLauncher`
 
 
 ###### Unchanged
@@ -95,6 +96,7 @@ project
 ---
 
 ##### Example 2
+`AddJUnitPlatformLauncherTest#addJUnitPlatformLauncher`
 
 
 ###### Unchanged

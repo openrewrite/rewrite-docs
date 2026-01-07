@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow number literals with zero fractions or dangling dots."
+sidebar_label: "Disallow number literals with zero fractions or dangling dots"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow number literals with zero fractions or dangling dots.
+# Disallow number literals with zero fractions or dangling dots
 
 **org.openrewrite.codemods.cleanup.javascript.NoZeroFractions**
 
-_Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md)_
+_Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoZeroFractions
-displayName: Disallow number literals with zero fractions or dangling dots.
+displayName: Disallow number literals with zero fractions or dangling dots
 description: |
-  Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md)
+  Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -19,6 +19,121 @@ _This recipe processes Maven POMs, converting all `<dependencyManagement>` entri
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>2.15.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.36</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>2.6</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>2.15.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -15,10 +15,0 @@
+                <scope>import</scope>
+            </dependency>
+-           <dependency>
+-               <groupId>org.slf4j</groupId>
+-               <artifactId>slf4j-api</artifactId>
+-               <version>1.7.36</version>
+-           </dependency>
+-           <dependency>
+-               <groupId>commons-lang</groupId>
+-               <artifactId>commons-lang</artifactId>
+-               <version>2.6</version>
+-           </dependency>
+        </dependencies>
+@@ -27,0 +17,14 @@
+        </dependencies>
+    </dependencyManagement>
++   <dependencies>
++       <dependency>
++           <groupId>org.slf4j</groupId>
++           <artifactId>slf4j-api</artifactId>
++           <version>1.7.36</version>
++           <scope>runtime</scope>
++       </dependency>
++       <dependency>
++           <groupId>commons-lang</groupId>
++           <artifactId>commons-lang</artifactId>
++           <version>2.6</version>
++           <scope>runtime</scope>
++       </dependency>
++   </dependencies>
+</project>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

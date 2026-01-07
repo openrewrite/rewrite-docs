@@ -67,6 +67,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+* [Upgrade to SpringDoc 3.0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
 
 
 ## Usage

@@ -1,8 +1,10 @@
 ---
-description: Amqp OpenRewrite recipes.
+description: AMQP OpenRewrite recipes.
 ---
 
-# Amqp
+# AMQP
+
+_Recipes for [Spring AMQP](https://spring.io/projects/spring-amqp) messaging._
 
 ## Recipes
 

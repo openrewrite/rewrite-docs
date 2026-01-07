@@ -92,6 +92,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`PrefixlessExpressionsTest#renamePrefixlessExpressions`
 
 
 <Tabs groupId="beforeAfter">
@@ -104,9 +105,9 @@ This recipe is used as part of the following composite recipes:
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <properties>
-    <other.version>1.0.0</other.version>
+    <other.version>1.0</other.version>
   </properties>
   <dependencies>
     <dependency>
@@ -139,9 +140,9 @@ This recipe is used as part of the following composite recipes:
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <properties>
-    <other.version>1.0.0</other.version>
+    <other.version>1.0</other.version>
   </properties>
   <dependencies>
     <dependency>
@@ -193,6 +194,7 @@ This recipe is used as part of the following composite recipes:
 ---
 
 ##### Example 2
+`PrefixlessExpressionsTest#renamePrefixlessExpressions`
 
 
 <Tabs groupId="beforeAfter">
@@ -205,9 +207,9 @@ This recipe is used as part of the following composite recipes:
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <properties>
-    <other.version>1.0.0</other.version>
+    <other.version>1.0</other.version>
   </properties>
   <dependencies>
     <dependency>
@@ -240,9 +242,9 @@ This recipe is used as part of the following composite recipes:
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <properties>
-    <other.version>1.0.0</other.version>
+    <other.version>1.0</other.version>
   </properties>
   <dependencies>
     <dependency>

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`."
+sidebar_label: "Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`.
+# Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferArrayFind**
 
-_Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md)_
+_Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferArrayFind
-displayName: Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`.
+displayName: Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`
 description: |
-  Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md)
+  Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

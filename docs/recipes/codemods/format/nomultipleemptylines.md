@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.NoMultipleEmptyLines**
 
-_Disallow multiple empty lines  See [rule details](https://eslint.style/rules/default/no-multiple-empty-lines)_
+_Disallow multiple empty lines  See [rule details](https://eslint.style/rules/default/no-multiple-empty-lines)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoMultipleEmptyLines
 displayName: Disallow multiple empty lines
 description: |
-  Disallow multiple empty lines  See [rule details](https://eslint.style/rules/default/no-multiple-empty-lines)
+  Disallow multiple empty lines  See [rule details](https://eslint.style/rules/default/no-multiple-empty-lines).
 tags:
   - eslint
   - stylistic

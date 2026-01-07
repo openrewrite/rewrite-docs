@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer using the `node:` protocol when importing Node.js builtin modules."
+sidebar_label: "Prefer using the `node:` protocol when importing Node.js builtin modules"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using the `node:` protocol when importing Node.js builtin modules.
+# Prefer using the `node:` protocol when importing Node.js builtin modules
 
 **org.openrewrite.codemods.cleanup.javascript.PreferNodeProtocol**
 
-_Prefer using the `node:` protocol when importing Node.js builtin modules. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md)_
+_Prefer using the `node:` protocol when importing Node.js builtin modules. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferNodeProtocol
-displayName: Prefer using the `node:` protocol when importing Node.js builtin modules.
+displayName: Prefer using the `node:` protocol when importing Node.js builtin modules
 description: |
-  Prefer using the `node:` protocol when importing Node.js builtin modules. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md)
+  Prefer using the `node:` protocol when importing Node.js builtin modules. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

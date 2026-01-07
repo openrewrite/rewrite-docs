@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.Quotes**
 
-_Enforce the consistent use of either backticks, double, or single quotes  See [rule details](https://eslint.style/rules/default/quotes)_
+_Enforce the consistent use of either backticks, double, or single quotes  See [rule details](https://eslint.style/rules/default/quotes)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.Quotes
 displayName: Enforce the consistent use of either backticks, double, or single quotes
 description: |
-  Enforce the consistent use of either backticks, double, or single quotes  See [rule details](https://eslint.style/rules/default/quotes)
+  Enforce the consistent use of either backticks, double, or single quotes  See [rule details](https://eslint.style/rules/default/quotes).
 tags:
   - eslint
   - stylistic

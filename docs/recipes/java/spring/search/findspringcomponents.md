@@ -19,6 +19,111 @@ _Find Spring components, including controllers, services, repositories, return t
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+###### Unchanged
+```java
+package test;
+
+class A {
+    public A(B b) {}
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package test;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+class Config {
+    @Bean
+    A a(B b) {
+        return new A(b);
+    }
+}
+```
+
+###### After
+```java
+package test;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+class Config {
+    /*~~(bean)~~>*/@Bean
+    A a(B b) {
+        return new A(b);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+@Configuration
+class Config {
+-   @Bean
++   /*~~(bean)~~>*/@Bean
+    A a(B b) {
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package test;
+import org.springframework.stereotype.Component;
+
+@Component
+class C {
+    public C(B b) {}
+}
+```
+
+###### After
+```java
+package test;
+import org.springframework.stereotype.Component;
+
+/*~~(component)~~>*/@Component
+class C {
+    public C(B b) {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+import org.springframework.stereotype.Component;
+
+-@Component
++/*~~(component)~~>*/@Component
+class C {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+package test; public class B {}
+```
+
 
 ## Usage
 

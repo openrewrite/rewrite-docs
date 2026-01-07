@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce better string content."
+sidebar_label: "Enforce better string content"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce better string content.
+# Enforce better string content
 
 **org.openrewrite.codemods.cleanup.javascript.StringContent**
 
-_Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md)_
+_Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.StringContent
-displayName: Enforce better string content.
+displayName: Enforce better string content
 description: |
-  Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md)
+  Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

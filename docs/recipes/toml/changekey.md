@@ -26,6 +26,43 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldKeyPath | A TOML path expression to locate a key. | `package.name` |
 | `String` | newKey | The new name for the key. | `project-name` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldKeyPath|`name`|
+|newKey|`project-name`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="toml" label="toml">
+
+
+###### Before
+```toml
+name = "my-project"
+version = "1.0.0"
+```
+
+###### After
+```toml
+project-name = "my-project"
+version = "1.0.0"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-name = "my-project"
++project-name = "my-project"
+version = "1.0.0"
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.SemiStyle**
 
-_Enforce location of semicolons  See [rule details](https://eslint.style/rules/default/semi-style)_
+_Enforce location of semicolons  See [rule details](https://eslint.style/rules/default/semi-style)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SemiStyle
 displayName: Enforce location of semicolons
 description: |
-  Enforce location of semicolons  See [rule details](https://eslint.style/rules/default/semi-style)
+  Enforce location of semicolons  See [rule details](https://eslint.style/rules/default/semi-style).
 tags:
   - eslint
   - stylistic

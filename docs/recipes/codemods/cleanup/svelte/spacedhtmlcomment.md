@@ -1,17 +1,17 @@
 ---
-sidebar_label: "enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment"
+sidebar_label: "Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment
+# Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment
 
 **org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment**
 
 ```
-enforce consistent spacing after the <!-- and before the --> in a HTML comment
-See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)
+Enforce consistent spacing after the <!-- and before the --> in a HTML comment
+See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/).
 ```
 
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/spaced-html-comment": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/spaced-html-comment": 2   } }. `
 
 </TabItem>
 
@@ -47,9 +47,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment
-displayName: enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment
+displayName: Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment
 description: |
-  enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)
+  Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/).
 tags:
   - svelte
   - ESLint
@@ -72,7 +72,7 @@ recipeList:
   "rules": {
     "svelte/spaced-html-comment": 2
   }
-}
+}.
 
 
 ```

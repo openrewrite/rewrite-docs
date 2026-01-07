@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.openapi.swagger.ConvertApiResponseToContent**
 
-_Convert API response to content annotation_
+_Add `content = @Content(mediaType = ...)` and `schema` to `@ApiResponse`._
 
 ## Recipe source
 

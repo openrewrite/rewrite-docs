@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;."
+sidebar_label: "Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;.
+# Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;
 
 **org.openrewrite.codemods.format.FuncCallSpacing**
 
-_Require or disallow spacing between function identifiers and their invocations. Alias of &#x60;function-call-spacing&#x60;.  See [rule details](https://eslint.style/rules/default/func-call-spacing)_
+_Require or disallow spacing between function identifiers and their invocations. Alias of &#x60;function-call-spacing&#x60;.  See [rule details](https://eslint.style/rules/default/func-call-spacing)._
 
 ### Tags
 
@@ -41,9 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.FuncCallSpacing
-displayName: Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;.
+displayName: Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;
 description: |
-  Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;.  See [rule details](https://eslint.style/rules/default/func-call-spacing)
+  Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;.  See [rule details](https://eslint.style/rules/default/func-call-spacing).
 tags:
   - eslint
   - stylistic

@@ -21,7 +21,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [io.moderne.hibernate.MigrateToHibernate71](https://docs.openrewrite.org/recipes/hibernate/migratetohibernate71-moderne-edition): This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x. 
+* [io.moderne.hibernate.MigrateToHibernate71](https://docs.openrewrite.org/recipes/hibernate/migratetohibernate71-moderne-edition): This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x.
 * [io.moderne.jasperreports.MigrateExporterConfigToJasper6](https://docs.openrewrite.org/recipes/jasperreports/migrateexporterconfigtojasper6): Updates deprecated exporter parameter imports to the new configuration classes introduced in JasperReports 6. This includes migrating from parameter classes to configuration classes for PDF, HTML, CSV, and other exporters. 
 * [io.moderne.jasperreports.MigrateXlsToXlsxExporter](https://docs.openrewrite.org/recipes/jasperreports/migratexlstoxlsxexporter): Migrates the deprecated `JRXlsExporter` to the new `JRXlsxExporter` class in JasperReports 6. Also updates related configuration classes from XLS to XLSX variants. 
 * [io.moderne.jasperreports.UpgradeToJasperReports5](https://docs.openrewrite.org/recipes/jasperreports/upgradetojasperreports5): Migrates JasperReports from 4.6.0 to 5.6.x. This recipe includes minimal breaking changes, allowing teams to test and validate the migration before proceeding to version 6. 

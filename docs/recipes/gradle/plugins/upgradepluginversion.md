@@ -50,9 +50,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 
-## Examples
-##### Example 1
-Upgrading a build plugin
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -91,97 +89,6 @@ plugins {
 -   id("org.openrewrite.rewrite") version("5.40.0")
 +   id("org.openrewrite.rewrite") version("5.40.6")
     id("com.github.johnrengelman.shadow") version("6.1.0")
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-Upgrading a settings plugin
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|pluginIdPattern|`com.gradle.enterprise`|
-|newVersion|`3.10.x`|
-|versionPattern|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="settingsGradle" label="settingsGradle">
-
-
-###### Before
-```settingsGradle
-plugins {
-    id 'com.gradle.enterprise' version '3.10'
-}
-```
-
-###### After
-```settingsGradle
-plugins {
-    id 'com.gradle.enterprise' version '3.10.3'
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,1 +2,1 @@
-plugins {
--   id 'com.gradle.enterprise' version '3.10'
-+   id 'com.gradle.enterprise' version '3.10.3'
-}
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 3
-Upgrading a build plugin with version in gradle.properties
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|pluginIdPattern|`org.openrewrite.rewrite`|
-|newVersion|`5.40.x`|
-|versionPattern|`null`|
-
-
-###### Unchanged
-```groovy title="build.gradle"
-plugins {
-    id 'org.openrewrite.rewrite' version "$rewriteVersion"
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
-}
-```
-
-<Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
-
-
-###### Before
-```properties
-rewriteVersion=5.40.0
-```
-
-###### After
-```properties
-rewriteVersion=5.40.6
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--rewriteVersion=5.40.0
-+rewriteVersion=5.40.6
-
 ```
 </TabItem>
 </Tabs>

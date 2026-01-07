@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce the style of numeric separators by correctly grouping digits."
+sidebar_label: "Enforce the style of numeric separators by correctly grouping digits"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce the style of numeric separators by correctly grouping digits.
+# Enforce the style of numeric separators by correctly grouping digits
 
 **org.openrewrite.codemods.cleanup.javascript.NumericSeparatorsStyle**
 
-_Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md)_
+_Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NumericSeparatorsStyle
-displayName: Enforce the style of numeric separators by correctly grouping digits.
+displayName: Enforce the style of numeric separators by correctly grouping digits
 description: |
-  Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md)
+  Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

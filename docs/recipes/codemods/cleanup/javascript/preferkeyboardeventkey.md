@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`."
+sidebar_label: "Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`.
+# Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferKeyboardEventKey**
 
-_Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md)_
+_Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferKeyboardEventKey
-displayName: Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`.
+displayName: Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`
 description: |
-  Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md)
+  Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,8 +1,10 @@
 ---
-description: Codec OpenRewrite recipes.
+description: Commons Codec OpenRewrite recipes.
 ---
 
-# Codec
+# Commons Codec
+
+_Recipes for [Apache Commons Codec](https://commons.apache.org/proper/commons-codec/) migrations._
 
 ## Recipes
 

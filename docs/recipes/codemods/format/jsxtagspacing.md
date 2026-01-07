@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxTagSpacing**
 
-_Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing)_
+_Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxTagSpacing
 displayName: Enforce whitespace in and around the JSX opening and closing brackets
 description: |
-  Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing)
+  Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing).
 tags:
   - eslint
   - stylistic

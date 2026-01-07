@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer reading a JSON file as a buffer."
+sidebar_label: "Prefer reading a JSON file as a buffer"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer reading a JSON file as a buffer.
+# Prefer reading a JSON file as a buffer
 
 **org.openrewrite.codemods.cleanup.javascript.PreferJsonParseBuffer**
 
-_Prefer reading a JSON file as a buffer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md)_
+_Prefer reading a JSON file as a buffer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferJsonParseBuffer
-displayName: Prefer reading a JSON file as a buffer.
+displayName: Prefer reading a JSON file as a buffer
 description: |
-  Prefer reading a JSON file as a buffer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md)
+  Prefer reading a JSON file as a buffer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

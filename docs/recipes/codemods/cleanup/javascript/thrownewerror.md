@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Require `new` when throwing an error."
+sidebar_label: "Require `new` when throwing an error"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require `new` when throwing an error.
+# Require `new` when throwing an error
 
 **org.openrewrite.codemods.cleanup.javascript.ThrowNewError**
 
-_Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md)_
+_Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ThrowNewError
-displayName: Require `new` when throwing an error.
+displayName: Require `new` when throwing an error
 description: |
-  Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md)
+  Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

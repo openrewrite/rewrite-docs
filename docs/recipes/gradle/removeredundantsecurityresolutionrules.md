@@ -29,6 +29,141 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | securityPattern | *Optional*. A regular expression pattern to identify security-related resolution rules by matching against the `because` clause. Rules matching this pattern will be considered for removal. The pattern is searched within the clause, so a `because` containing multiple identifiers (e.g., `CVE-2024-1234, GHSA-abcd-1234-efgh`) will match if any identifier matches. Default pattern matches CVE identifiers (e.g., `CVE-2024-1234`) and GitHub Security Advisory identifiers (e.g., `GHSA-xxxx-xxxx-xxxx`). | `(CVE-\d|GHSA-[a-z0-9])` |
 
+## Examples
+##### Example 1
+`RemoveRedundantSecurityResolutionRulesGroovyTest#removeRedundantCveRule`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|securityPattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories { mavenCentral() }
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == 'com.fasterxml.jackson.core' && details.requested.name == 'jackson-databind') {
+            details.useVersion('2.12.5')
+            details.because('CVE-2024-BAD')
+        }
+    }
+}
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:3.3.3')
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories { mavenCentral() }
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:3.3.3')
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,8 +5,0 @@
+}
+repositories { mavenCentral() }
+-configurations.all {
+-   resolutionStrategy.eachDependency { details ->
+-       if (details.requested.group == 'com.fasterxml.jackson.core' && details.requested.name == 'jackson-databind') {
+-           details.useVersion('2.12.5')
+-           details.because('CVE-2024-BAD')
+-       }
+-   }
+-}
+dependencies {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RemoveRedundantSecurityResolutionRulesKotlinTest#removeRedundantCveRule`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|securityPattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="buildGradleKts" label="buildGradleKts">
+
+
+###### Before
+```buildGradleKts
+plugins {
+    java
+}
+repositories { mavenCentral() }
+configurations.all {
+    resolutionStrategy.eachDependency {
+        if (requested.group == "com.fasterxml.jackson.core" && requested.name == "jackson-databind") {
+            useVersion("2.12.5")
+            because("CVE-2024-BAD")
+        }
+    }
+}
+dependencies {
+    implementation(platform("org.springframework.boot:spring-boot-dependencies:3.3.3"))
+    implementation("com.fasterxml.jackson.core:jackson-databind")
+}
+```
+
+###### After
+```buildGradleKts
+plugins {
+    java
+}
+repositories { mavenCentral() }
+dependencies {
+    implementation(platform("org.springframework.boot:spring-boot-dependencies:3.3.3"))
+    implementation("com.fasterxml.jackson.core:jackson-databind")
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,8 +5,0 @@
+}
+repositories { mavenCentral() }
+-configurations.all {
+-   resolutionStrategy.eachDependency {
+-       if (requested.group == "com.fasterxml.jackson.core" && requested.name == "jackson-databind") {
+-           useVersion("2.12.5")
+-           because("CVE-2024-BAD")
+-       }
+-   }
+-}
+dependencies {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

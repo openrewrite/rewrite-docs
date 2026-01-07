@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer using `Set#size` instead of `Array#length`."
+sidebar_label: "Prefer using `Set#size` instead of `Array#length`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using `Set#size` instead of `Array#length`.
+# Prefer using `Set#size` instead of `Array#length`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferSetSize**
 
-_Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md)_
+_Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferSetSize
-displayName: Prefer using `Set#size` instead of `Array#length`.
+displayName: Prefer using `Set#size` instead of `Array#length`
 description: |
-  Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md)
+  Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

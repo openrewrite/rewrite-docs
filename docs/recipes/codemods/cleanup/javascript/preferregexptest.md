@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`."
+sidebar_label: "Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`.
+# Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferRegexpTest**
 
-_Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md)_
+_Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferRegexpTest
-displayName: Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`.
+displayName: Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`
 description: |
-  Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md)
+  Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -43,45 +43,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|oldPropertyKey|`management.metrics.binders.*.enabled`|
-|newPropertyKey|`management.metrics.enable.process.files`|
-|relaxedBinding|`null`|
-|except|`null`|
-|filePattern|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
-
-
-###### Before
-```yaml
-management.metrics.binders.files.enabled: true
-```
-
-###### After
-```yaml
-management.metrics.enable.process.files: true
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--management.metrics.binders.files.enabled: true
-+management.metrics.enable.process.files: true
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
+`AvoidsRegenerativeChangesTest#changePathToOnePathShorter`
 
 ###### Parameters
 | Parameter | Value |
@@ -120,13 +82,14 @@ a.b.c: true
 
 ---
 
-##### Example 3
+##### Example 2
+`ChangePropertyKeyTest#singleEntry`
 
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|oldPropertyKey|`spring.profiles`|
-|newPropertyKey|`spring.config.activate.on-profile`|
+|oldPropertyKey|`management.metrics.binders.*.enabled`|
+|newPropertyKey|`management.metrics.enable.process.files`|
 |relaxedBinding|`null`|
 |except|`null`|
 |filePattern|`null`|
@@ -138,12 +101,12 @@ a.b.c: true
 
 ###### Before
 ```yaml
-spring.profiles.group.prod: proddb,prodmq,prodmetrics
+management.metrics.binders.files.enabled: true
 ```
 
 ###### After
 ```yaml
-spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
+management.metrics.enable.process.files: true
 ```
 
 </TabItem>
@@ -151,16 +114,16 @@ spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
 
 ```diff
 @@ -1,1 +1,1 @@
--spring.profiles.group.prod: proddb,prodmq,prodmetrics
-+spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
-
+-management.metrics.binders.files.enabled: true
++management.metrics.enable.process.files: true
 ```
 </TabItem>
 </Tabs>
 
 ---
 
-##### Example 4
+##### Example 3
+`ExceptTest#multipleExcludedEntries`
 
 ###### Parameters
 | Parameter | Value |
@@ -213,6 +176,47 @@ spring:
       prod: proddb,prodmq,prodmetrics
 + config.activate.on-profile:
 +   foo: bar
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`WhenOldPropertyKeyIsPrefixOfDotSeparatedKeyTest#scalarValue`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldPropertyKey|`spring.profiles`|
+|newPropertyKey|`spring.config.activate.on-profile`|
+|relaxedBinding|`null`|
+|except|`null`|
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+spring.profiles.group.prod: proddb,prodmq,prodmetrics
+```
+
+###### After
+```yaml
+spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-spring.profiles.group.prod: proddb,prodmq,prodmetrics
++spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
 
 ```
 </TabItem>

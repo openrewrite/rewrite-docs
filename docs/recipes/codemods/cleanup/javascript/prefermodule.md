@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer JavaScript modules (ESM) over CommonJS."
+sidebar_label: "Prefer JavaScript modules (ESM) over CommonJS"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer JavaScript modules (ESM) over CommonJS.
+# Prefer JavaScript modules (ESM) over CommonJS
 
 **org.openrewrite.codemods.cleanup.javascript.PreferModule**
 
-_Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md)_
+_Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferModule
-displayName: Prefer JavaScript modules (ESM) over CommonJS.
+displayName: Prefer JavaScript modules (ESM) over CommonJS
 description: |
-  Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md)
+  Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

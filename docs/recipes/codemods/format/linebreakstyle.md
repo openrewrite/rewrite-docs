@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.LinebreakStyle**
 
-_Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style)_
+_Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.LinebreakStyle
 displayName: Enforce consistent linebreak style
 description: |
-  Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style)
+  Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style).
 tags:
   - eslint
   - stylistic

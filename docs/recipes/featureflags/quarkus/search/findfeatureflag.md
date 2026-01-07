@@ -1,46 +1,49 @@
 ---
-sidebar_label: "Remove Jackson 2.x modules included in jackson-databind in 3.x."
+sidebar_label: "Find a Quarkus feature flag"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove Jackson 2.x modules included in jackson-databind in 3.x.
+# Find a Quarkus feature flag
 
-**org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_RemoveModules**
+**org.openrewrite.featureflags.quarkus.search.FindFeatureFlag**
 
-_Remove Jackson modules such as `jackson-module-parameter-names`, `jackson-datatype-jdk8`, and `jackson-datatype-jsr310` to depend on `jackson-databind` in Jackson 3.x._
-
-### Tags
-
-* [jackson-3](/reference/recipes-by-tag#jackson)
+_Find a Quarkus feature flag._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/jackson-2-3.yml),
-[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/quarkus/search/FindFeatureFlag.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | featureKey | *Optional*. The unique key for the feature flag. | `flag-key-123abc` |
 
 
 ## Definition
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
-  * groupId: `com.fasterxml.jackson.module`
-  * artifactId: `jackson-module-parameter-names`
-* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
-  * groupId: `com.fasterxml.jackson.datatype`
-  * artifactId: `jackson-datatype-jdk8`
-* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
-  * groupId: `com.fasterxml.jackson.datatype`
-  * artifactId: `jackson-datatype-jsr310`
+* [Find a feature flag](../../../featureflags/search/findfeatureflag)
+  * methodPattern: `io.quarkiverse.flags.Flags find(String)`
+* [Find a feature flag](../../../featureflags/search/findfeatureflag)
+  * methodPattern: `io.quarkiverse.flags.Flags findAndAwait(String)`
+* [Find a feature flag](../../../featureflags/search/findfeatureflag)
+  * methodPattern: `io.quarkiverse.flags.Flags isEnabled(String)`
+* [Find a feature flag](../../../featureflags/search/findfeatureflag)
+  * methodPattern: `io.quarkiverse.flags.Flags getString(String)`
+* [Find a feature flag](../../../featureflags/search/findfeatureflag)
+  * methodPattern: `io.quarkiverse.flags.Flags getInt(String)`
 
 </TabItem>
 
@@ -49,37 +52,88 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules
-displayName: Remove Jackson 2.x modules included in jackson-databind in 3.x.
+name: org.openrewrite.featureflags.quarkus.search.FindFeatureFlag
+displayName: Find a Quarkus feature flag
 description: |
-  Remove Jackson modules such as `jackson-module-parameter-names`, `jackson-datatype-jdk8`, and `jackson-datatype-jsr310` to depend on `jackson-databind` in Jackson 3.x.
-tags:
-  - jackson-3
+  Find a Quarkus feature flag.
+
 recipeList:
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: com.fasterxml.jackson.module
-      artifactId: jackson-module-parameter-names
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: com.fasterxml.jackson.datatype
-      artifactId: jackson-datatype-jdk8
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: com.fasterxml.jackson.datatype
-      artifactId: jackson-datatype-jsr310
+  - org.openrewrite.featureflags.search.FindFeatureFlag:
+      methodPattern: io.quarkiverse.flags.Flags find(String)
+  - org.openrewrite.featureflags.search.FindFeatureFlag:
+      methodPattern: io.quarkiverse.flags.Flags findAndAwait(String)
+  - org.openrewrite.featureflags.search.FindFeatureFlag:
+      methodPattern: io.quarkiverse.flags.Flags isEnabled(String)
+  - org.openrewrite.featureflags.search.FindFeatureFlag:
+      methodPattern: io.quarkiverse.flags.Flags getString(String)
+  - org.openrewrite.featureflags.search.FindFeatureFlag:
+      methodPattern: io.quarkiverse.flags.Flags getInt(String)
 
 ```
 </TabItem>
 </Tabs>
+## Example
 
-## Used by
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|featureKey|`null`|
 
-This recipe is used as part of the following composite recipes:
 
-* [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.quarkiverse.flags.Flags;
+
+class Test {
+    public void a(Flags flags) {
+        boolean flagValue = flags.isEnabled("flag-key-123abc");
+        if (flagValue) {
+            // Application code to show the feature
+        } else {
+            // The code to run if the feature is off
+        }
+    }
+}
+```
+
+###### After
+```java
+import io.quarkiverse.flags.Flags;
+
+class Test {
+    public void a(Flags flags) {
+        boolean flagValue = /*~~>*/flags.isEnabled("flag-key-123abc");
+        if (flagValue) {
+            // Application code to show the feature
+        } else {
+            // The code to run if the feature is off
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class Test {
+    public void a(Flags flags) {
+-       boolean flagValue = flags.isEnabled("flag-key-123abc");
++       boolean flagValue = /*~~>*/flags.isEnabled("flag-key-123abc");
+        if (flagValue) {
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-feature-flags` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -91,7 +145,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules")
+    activeRecipe("org.openrewrite.featureflags.quarkus.search.FindFeatureFlag")
     setExportDatatables(true)
 }
 
@@ -100,7 +154,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
+    rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}")
 }
 ```
 
@@ -121,10 +175,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
+        rewrite("org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules")
+        activeRecipe("org.openrewrite.featureflags.quarkus.search.FindFeatureFlag")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -159,14 +213,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules</recipe>
+            <recipe>org.openrewrite.featureflags.quarkus.search.FindFeatureFlag</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-jackson</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
+            <artifactId>rewrite-feature-flags</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -182,7 +236,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-feature-flags:RELEASE -Drewrite.activeRecipes=org.openrewrite.featureflags.quarkus.search.FindFeatureFlag -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -190,12 +244,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeJackson_2_3_RemoveModules
+mod run . --recipe FindFeatureFlag
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS}}
 ```
 </TabItem>
 </Tabs>
@@ -204,7 +258,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.featureflags.quarkus.search.FindFeatureFlag" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

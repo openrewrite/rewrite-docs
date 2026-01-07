@@ -75,9 +75,31 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `org.springframework.boot.test.autoconfigure.data.cassandra`
   * newPackageName: `org.springframework.boot.data.cassandra.test.autoconfigure`
   * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.data.jpa.autoconfigure.DataJpaRepositoriesAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesRegistrar`
+  * newFullyQualifiedTypeName: `org.springframework.boot.data.jpa.autoconfigure.DataJpaRepositoriesRegistrar`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.data.jpa`
+  * newPackageName: `org.springframework.boot.data.jpa.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.domain`
+  * newPackageName: `org.springframework.boot.persistence.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.dao`
+  * newPackageName: `org.springframework.boot.persistence.autoconfigure`
+  * recursive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.orm.jpa`
   * newPackageName: `org.springframework.boot.hibernate.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.actuate.autoconfigure.metrics.orm.jpa`
+  * newPackageName: `org.springframework.boot.hibernate.autoconfigure.metrics`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.test.autoconfigure.orm.jpa`
@@ -130,6 +152,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPackageName: `org.springframework.boot.security.oauth2.server.resource.autoconfigure`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.validation`
+  * newPackageName: `org.springframework.boot.validation.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.web.servlet`
   * newPackageName: `org.springframework.boot.webmvc.autoconfigure`
   * recursive: `true`
@@ -137,6 +163,18 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `org.springframework.boot.test.autoconfigure.web.servlet`
   * newPackageName: `org.springframework.boot.webmvc.test.autoconfigure`
   * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient`
+  * newFullyQualifiedTypeName: `org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.webtestclient.autoconfigure.WebTestClientAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.SpringBootWebTestClientBuilderCustomizer`
+  * newFullyQualifiedTypeName: `org.springframework.boot.webtestclient.autoconfigure.SpringBootWebTestClientBuilderCustomizer`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.web.reactive.server.WebTestClientBuilderCustomizer`
+  * newFullyQualifiedTypeName: `org.springframework.boot.webtestclient.autoconfigure.WebTestClientBuilderCustomizer`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.webservices`
   * newPackageName: `org.springframework.boot.webservices.autoconfigure`
@@ -221,9 +259,31 @@ recipeList:
       oldPackageName: org.springframework.boot.test.autoconfigure.data.cassandra
       newPackageName: org.springframework.boot.data.cassandra.test.autoconfigure
       recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.data.jpa.autoconfigure.DataJpaRepositoriesAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesRegistrar
+      newFullyQualifiedTypeName: org.springframework.boot.data.jpa.autoconfigure.DataJpaRepositoriesRegistrar
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.data.jpa
+      newPackageName: org.springframework.boot.data.jpa.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.domain
+      newPackageName: org.springframework.boot.persistence.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.dao
+      newPackageName: org.springframework.boot.persistence.autoconfigure
+      recursive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.orm.jpa
       newPackageName: org.springframework.boot.hibernate.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.actuate.autoconfigure.metrics.orm.jpa
+      newPackageName: org.springframework.boot.hibernate.autoconfigure.metrics
       recursive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.test.autoconfigure.orm.jpa
@@ -276,6 +336,10 @@ recipeList:
       newPackageName: org.springframework.boot.security.oauth2.server.resource.autoconfigure
       recursive: true
   - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.validation
+      newPackageName: org.springframework.boot.validation.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.web.servlet
       newPackageName: org.springframework.boot.webmvc.autoconfigure
       recursive: true
@@ -283,6 +347,18 @@ recipeList:
       oldPackageName: org.springframework.boot.test.autoconfigure.web.servlet
       newPackageName: org.springframework.boot.webmvc.test.autoconfigure
       recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
+      newFullyQualifiedTypeName: org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.webtestclient.autoconfigure.WebTestClientAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.SpringBootWebTestClientBuilderCustomizer
+      newFullyQualifiedTypeName: org.springframework.boot.webtestclient.autoconfigure.SpringBootWebTestClientBuilderCustomizer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.web.reactive.server.WebTestClientBuilderCustomizer
+      newFullyQualifiedTypeName: org.springframework.boot.webtestclient.autoconfigure.WebTestClientBuilderCustomizer
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.webservices
       newPackageName: org.springframework.boot.webservices.autoconfigure

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.plugins.RemoveDevelocityConfiguration**
 
-_Remove Develocity configuration from a Gradle build._
+_Remove the Develocity Gradle plugin and associated configuration._
 
 ## Recipe source
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gradle.plugins.RemoveDevelocityConfiguration
 displayName: Remove Develocity configuration
 description: |
-  Remove Develocity configuration from a Gradle build.
+  Remove the Develocity Gradle plugin and associated configuration.
 recipeList:
   - org.openrewrite.gradle.RemoveExtension:
       methodName: develocity

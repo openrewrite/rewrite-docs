@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank**
 
-_Disallow target="_blank" attribute without rel="noreferrer" See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md)_
+_Disallow target="_blank" attribute without rel="noreferrer" See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank
 displayName: Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;
 description: |
-  Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot; See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md)
+  Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot; See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

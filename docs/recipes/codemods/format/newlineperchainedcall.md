@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.NewlinePerChainedCall**
 
-_Require a newline after each call in a method chain  See [rule details](https://eslint.style/rules/default/newline-per-chained-call)_
+_Require a newline after each call in a method chain  See [rule details](https://eslint.style/rules/default/newline-per-chained-call)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NewlinePerChainedCall
 displayName: Require a newline after each call in a method chain
 description: |
-  Require a newline after each call in a method chain  See [rule details](https://eslint.style/rules/default/newline-per-chained-call)
+  Require a newline after each call in a method chain  See [rule details](https://eslint.style/rules/default/newline-per-chained-call).
 tags:
   - eslint
   - stylistic

@@ -27,6 +27,56 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | scope | *Optional*. Match dependencies in the specified scope. All scopes are searched by default. Valid options: `dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`, `bundledDependencies` | `dependencies` |
 | `Boolean` | onlyDirect | *Optional*. If enabled, transitive dependencies will not be considered. All dependencies are searched by default. | `true` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|packageNamePattern|`lodash`|
+|scope|`null`|
+|onlyDirect|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="packageJson" label="packageJson">
+
+
+###### Before
+```packageJson
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
+```
+
+###### After
+```packageJson
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "dependencies": {
+    /*~~>*/"lodash": "^4.17.21"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+  "version": "1.0.0",
+  "dependencies": {
+-   "lodash": "^4.17.21"
++   /*~~>*/"lodash": "^4.17.21"
+  }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

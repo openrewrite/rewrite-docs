@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxQuotes**
 
-_Enforce the consistent use of either double or single quotes in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-quotes)_
+_Enforce the consistent use of either double or single quotes in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-quotes)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxQuotes
 displayName: Enforce the consistent use of either double or single quotes in JSX attributes
 description: |
-  Enforce the consistent use of either double or single quotes in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-quotes)
+  Enforce the consistent use of either double or single quotes in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-quotes).
 tags:
   - eslint
   - stylistic

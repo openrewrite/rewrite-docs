@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Adds missing JDBC interface methods."
+sidebar_label: "Adds missing JDBC interface methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Adds missing JDBC interface methods.
+# Adds missing JDBC interface methods
 
 **org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods**
 
@@ -73,7 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods
-displayName: Adds missing JDBC interface methods.
+displayName: Adds missing JDBC interface methods
 description: |
   Add method implementations stubs to classes that implement JDBC interfaces.
 recipeList:

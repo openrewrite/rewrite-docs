@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.NoVar**
 
-_Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var)_
+_Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoVar
 displayName: Require `let` or `const` instead of `var`
 description: |
-  Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var)
+  Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -29,6 +29,61 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ## Examples
 ##### Example 1
+`BeanClasses#impliedName`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|type|`sample.Foo`|
+|oldName|`foo`|
+|newName|`bar`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package sample;
+
+import org.springframework.context.annotation.Configuration;
+import sample.MyType;
+
+@Configuration
+class Foo {
+}
+```
+
+###### After
+```java
+package sample;
+
+import org.springframework.context.annotation.Configuration;
+import sample.MyType;
+
+@Configuration
+class Bar {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+
+@Configuration
+-class Foo {
++class Bar {
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
 `BeanMethods#impliedName`
 
 ###### Parameters
@@ -83,61 +138,6 @@ class A {
 -   public MyType foo() {
 +   public MyType bar() {
         return new MyType();
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`BeanClasses#impliedName`
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|type|`sample.Foo`|
-|oldName|`foo`|
-|newName|`bar`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-package sample;
-
-import org.springframework.context.annotation.Configuration;
-import sample.MyType;
-
-@Configuration
-class Foo {
-}
-```
-
-###### After
-```java
-package sample;
-
-import org.springframework.context.annotation.Configuration;
-import sample.MyType;
-
-@Configuration
-class Bar {
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -7,1 +7,1 @@
-
-@Configuration
--class Foo {
-+class Bar {
-}
 ```
 </TabItem>
 </Tabs>

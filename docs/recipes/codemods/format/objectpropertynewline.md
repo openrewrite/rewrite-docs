@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.ObjectPropertyNewline**
 
-_Enforce placing object properties on separate lines  See [rule details](https://eslint.style/rules/default/object-property-newline)_
+_Enforce placing object properties on separate lines  See [rule details](https://eslint.style/rules/default/object-property-newline)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ObjectPropertyNewline
 displayName: Enforce placing object properties on separate lines
 description: |
-  Enforce placing object properties on separate lines  See [rule details](https://eslint.style/rules/default/object-property-newline)
+  Enforce placing object properties on separate lines  See [rule details](https://eslint.style/rules/default/object-property-newline).
 tags:
   - eslint
   - stylistic

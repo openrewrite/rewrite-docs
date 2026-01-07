@@ -1,41 +1,78 @@
 ---
-sidebar_label: "Find unit tests"
+sidebar_label: "Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find unit tests
+# Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)
 
-**org.openrewrite.java.testing.search.FindUnitTests**
+**org.openrewrite.java.testing.junit5.HandleExternalResourceRules**
 
-_Produces a data table showing how methods are used in unit tests._
+_Handles the usage of the ExternalResourceRule fields by adding the @ExtendWith(ExternalResourceSupport.class) annotation to the test class._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/search/FindUnitTests.java),
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/HandleExternalResourceRules.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+
 ## Example
 
 
-###### Unchanged
-```java
-import foo.Foo;
-import org.junit.jupiter.api.Test;
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
 
-public class FooTest {
-   @Test
-   public void test() {
-       Foo foo = new Foo();
-       foo.bar();
-       foo.baz();
-   }
+
+###### Before
+```java
+import org.junit.Rule;
+import io.grpc.testing.GrpcCleanupRule;
+
+public class EmptyTestClassWithExternalResourceRule {
+    @Rule public final GrpcCleanupRule grpcCleanup = new GrpcCleanupRule();
 }
 ```
+
+###### After
+```java
+import org.junit.Rule;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.migrationsupport.rules.ExternalResourceSupport;
+import io.grpc.testing.GrpcCleanupRule;
+
+@ExtendWith(ExternalResourceSupport.class)
+public class EmptyTestClassWithExternalResourceRule {
+    @Rule public final GrpcCleanupRule grpcCleanup = new GrpcCleanupRule();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,2 @@
+import org.junit.Rule;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.junit.jupiter.migrationsupport.rules.ExternalResourceSupport;
+import io.grpc.testing.GrpcCleanupRule;
+@@ -4,0 +6,1 @@
+import io.grpc.testing.GrpcCleanupRule;
+
++@ExtendWith(ExternalResourceSupport.class)
+public class EmptyTestClassWithExternalResourceRule {
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -52,7 +89,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.testing.search.FindUnitTests")
+    activeRecipe("org.openrewrite.java.testing.junit5.HandleExternalResourceRules")
     setExportDatatables(true)
 }
 
@@ -85,7 +122,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.testing.search.FindUnitTests")
+        activeRecipe("org.openrewrite.java.testing.junit5.HandleExternalResourceRules")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -120,7 +157,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.testing.search.FindUnitTests</recipe>
+            <recipe>org.openrewrite.java.testing.junit5.HandleExternalResourceRules</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -143,7 +180,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.search.FindUnitTests -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.junit5.HandleExternalResourceRules -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -151,7 +188,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindUnitTests
+mod run . --recipe HandleExternalResourceRules
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -165,7 +202,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.search.FindUnitTests" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.junit5.HandleExternalResourceRules" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -173,23 +210,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.java.testing.search.FindUnitTestTable" label="FindUnitTestTable">
-
-### Methods in unit tests
-**org.openrewrite.java.testing.search.FindUnitTestTable**
-
-_Method declarations used in unit tests_
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Full method name | The fully qualified name of the method declaration |
-| Method name | The name of the method declaration |
-| Method invocation | How the method declaration is used as method invocation in a unit test. |
-| Name of test | The name of the unit test where the method declaration is used. |
-| Location of test | The location of the unit test where the method declaration is used. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

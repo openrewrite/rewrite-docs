@@ -33,6 +33,129 @@ This recipe is used as part of the following composite recipes:
 * [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
 
+## Examples
+##### Example 1
+Add SCM section when missing
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|addIfMissing|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <scm>
+    <url>https://server.example.com/org/repo</url>
+    <connection>scm:git:https://server.example.com/org/repo.git</connection>
+    <developerConnection>scm:git:git@server.example.com:org/repo.git</developerConnection>
+  </scm>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,0 +6,5 @@
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <scm>
++   <url>https://server.example.com/org/repo</url>
++   <connection>scm:git:https://server.example.com/org/repo.git</connection>
++   <developerConnection>scm:git:git@server.example.com:org/repo.git</developerConnection>
++ </scm>
+</project>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpdateScmFromGitOriginTest#updatesScmFromGitOriginUsingHttps`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|addIfMissing|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <scm>
+    <url>https://old-server.example.com/org/repo</url>
+    <connection>scm:git:https://old-server.example.com/org/repo.git</connection>
+    <developerConnection>scm:git:git@old-server.example.com:org/repo.git</developerConnection>
+  </scm>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <scm>
+    <url>https://new-server.example.com/username/repo</url>
+    <connection>scm:git:https://new-server.example.com/username/repo.git</connection>
+    <developerConnection>scm:git:git@new-server.example.com:username/repo.git</developerConnection>
+  </scm>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,3 +7,3 @@
+  <version>1</version>
+  <scm>
+-   <url>https://old-server.example.com/org/repo</url>
+-   <connection>scm:git:https://old-server.example.com/org/repo.git</connection>
+-   <developerConnection>scm:git:git@old-server.example.com:org/repo.git</developerConnection>
++   <url>https://new-server.example.com/username/repo</url>
++   <connection>scm:git:https://new-server.example.com/username/repo.git</connection>
++   <developerConnection>scm:git:git@new-server.example.com:username/repo.git</developerConnection>
+  </scm>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

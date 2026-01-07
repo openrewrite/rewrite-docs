@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.ObjectCurlyNewline**
 
-_Enforce consistent line breaks after opening and before closing braces  See [rule details](https://eslint.style/rules/default/object-curly-newline)_
+_Enforce consistent line breaks after opening and before closing braces  See [rule details](https://eslint.style/rules/default/object-curly-newline)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ObjectCurlyNewline
 displayName: Enforce consistent line breaks after opening and before closing braces
 description: |
-  Enforce consistent line breaks after opening and before closing braces  See [rule details](https://eslint.style/rules/default/object-curly-newline)
+  Enforce consistent line breaks after opening and before closing braces  See [rule details](https://eslint.style/rules/default/object-curly-newline).
 tags:
   - eslint
   - stylistic

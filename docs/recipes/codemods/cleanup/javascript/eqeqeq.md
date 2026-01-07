@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.Eqeqeq**
 
-_Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq)_
+_Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.Eqeqeq
 displayName: Require the use of `===` and `!==`
 description: |
-  Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq)
+  Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

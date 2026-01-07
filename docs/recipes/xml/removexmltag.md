@@ -48,11 +48,11 @@ This recipe is used as part of the following composite recipes:
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="my/project/beans.xml" label="my/project/beans.xml">
 
 
 ###### Before
-```xml
+```xml title="my/project/beans.xml"
 <beans>
     <bean id='myBean.subpackage.subpackage2'/>
     <other id='myBean.subpackage.subpackage2'/>
@@ -60,7 +60,7 @@ This recipe is used as part of the following composite recipes:
 ```
 
 ###### After
-```xml
+```xml title="my/project/beans.xml"
 <beans>
     <other id='myBean.subpackage.subpackage2'/>
 </beans>
@@ -70,6 +70,8 @@ This recipe is used as part of the following composite recipes:
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- my/project/beans.xml
++++ my/project/beans.xml
 @@ -2,1 +2,0 @@
 <beans>
 -   <bean id='myBean.subpackage.subpackage2'/>

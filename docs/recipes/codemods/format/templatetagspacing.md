@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.TemplateTagSpacing**
 
-_Require or disallow spacing between template tags and their literals  See [rule details](https://eslint.style/rules/default/template-tag-spacing)_
+_Require or disallow spacing between template tags and their literals  See [rule details](https://eslint.style/rules/default/template-tag-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.TemplateTagSpacing
 displayName: Require or disallow spacing between template tags and their literals
 description: |
-  Require or disallow spacing between template tags and their literals  See [rule details](https://eslint.style/rules/default/template-tag-spacing)
+  Require or disallow spacing between template tags and their literals  See [rule details](https://eslint.style/rules/default/template-tag-spacing).
 tags:
   - eslint
   - stylistic

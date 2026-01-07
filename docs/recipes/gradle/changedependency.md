@@ -44,7 +44,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |newVersion|`3.11.x`|
 |versionPattern|`null`|
 |overrideManagedVersion|`null`|
-|changeManagedDependency||
+|changeManagedDependency|`true`|
 
 
 <Tabs groupId="beforeAfter">

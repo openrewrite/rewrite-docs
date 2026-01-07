@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Clean up various issues with the code."
+sidebar_label: "Clean up various issues with the code"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Clean up various issues with the code.
+# Clean up various issues with the code
 
 **org.openrewrite.java.dropwizard.CodeCleanup**
 
-_Clean up the code._
+_Shorten references, remove unused imports, and remove Dropwizard-specific code constructs._
 
 ## Recipe source
 
@@ -51,9 +51,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.dropwizard.CodeCleanup
-displayName: Clean up various issues with the code.
+displayName: Clean up various issues with the code
 description: |
-  Clean up the code.
+  Shorten references, remove unused imports, and remove Dropwizard-specific code constructs.
 recipeList:
   - org.openrewrite.java.ShortenFullyQualifiedTypeReferences
   - org.openrewrite.java.RemoveUnusedImports

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.ArrayBracketSpacing**
 
-_Enforce consistent spacing inside array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-spacing)_
+_Enforce consistent spacing inside array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ArrayBracketSpacing
 displayName: Enforce consistent spacing inside array brackets
 description: |
-  Enforce consistent spacing inside array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-spacing)
+  Enforce consistent spacing inside array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-spacing).
 tags:
   - eslint
   - stylistic

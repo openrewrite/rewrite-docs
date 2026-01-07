@@ -25,6 +25,47 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ## Examples
 ##### Example 1
+`RenameLocalVariablesToCamelCaseTest#regular`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+fun foo() {
+    var EMPTY_METAS = HashMap<String, Any>()
+    EMPTY_METAS.isEmpty()
+}
+```
+
+###### After
+```kotlin
+fun foo() {
+    var emptyMetas = HashMap<String, Any>()
+    emptyMetas.isEmpty()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,2 +2,2 @@
+fun foo() {
+-   var EMPTY_METAS = HashMap<String, Any>()
+-   EMPTY_METAS.isEmpty()
++   var emptyMetas = HashMap<String, Any>()
++   emptyMetas.isEmpty()
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
 `RenameLocalVariablesToCamelCaseTest#renameAllCapsAcronyms`
 
 
@@ -60,47 +101,6 @@ class Test {
 -       String ID;
 +       String id;
     }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`RenameLocalVariablesToCamelCaseTest#regular`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-fun foo() {
-    var EMPTY_METAS = HashMap<String, Any>()
-    EMPTY_METAS.isEmpty()
-}
-```
-
-###### After
-```kotlin
-fun foo() {
-    var emptyMetas = HashMap<String, Any>()
-    emptyMetas.isEmpty()
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,2 +2,2 @@
-fun foo() {
--   var EMPTY_METAS = HashMap<String, Any>()
--   EMPTY_METAS.isEmpty()
-+   var emptyMetas = HashMap<String, Any>()
-+   emptyMetas.isEmpty()
-}
 ```
 </TabItem>
 </Tabs>

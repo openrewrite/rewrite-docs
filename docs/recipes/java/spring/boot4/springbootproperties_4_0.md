@@ -242,6 +242,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPropertyKey: `spring.kafka.retry.topic.backoff.random`
   * newPropertyKey: `spring.kafka.retry.topic.backoff.jitter`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.rabbitmq.listener.direct.retry.max-attempts`
+  * newPropertyKey: `spring.rabbitmq.listener.direct.retry.max-retries`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.rabbitmq.listener.simple.retry.max-attempts`
+  * newPropertyKey: `spring.rabbitmq.listener.simple.retry.max-retries`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.rabbitmq.template.retry.max-attempts`
+  * newPropertyKey: `spring.rabbitmq.template.retry.max-retries`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.session.redis.cleanup-cron`
   * newPropertyKey: `spring.session.data.redis.cleanup-cron`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
@@ -378,10 +387,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * comment: `This property is deprecated: No longer required. To use Groovy Templates without auto-configuration, depend directly on Groovy Templates instead of spring-boot-groovy-templates.`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
   * propertyKey: `spring.jackson.generator`
-  * comment: `This property is deprecated: Partially replaced by 'spring.jackson.json.read'.`
+  * comment: `This property is deprecated: Partially replaced by 'spring.jackson.json.write'.`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
   * propertyKey: `spring.jackson.parser`
-  * comment: `This property is deprecated: Partially replaced by 'spring.jackson.json.write'.`
+  * comment: `This property is deprecated: Partially replaced by 'spring.jackson.json.read'.`
 * [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
   * propertyKey: `spring.jackson2.constructor-detector`
   * comment: `This property is deprecated: Deprecated in favor of Jackson 3`
@@ -664,6 +673,15 @@ recipeList:
       oldPropertyKey: spring.kafka.retry.topic.backoff.random
       newPropertyKey: spring.kafka.retry.topic.backoff.jitter
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.rabbitmq.listener.direct.retry.max-attempts
+      newPropertyKey: spring.rabbitmq.listener.direct.retry.max-retries
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.rabbitmq.listener.simple.retry.max-attempts
+      newPropertyKey: spring.rabbitmq.listener.simple.retry.max-retries
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.rabbitmq.template.retry.max-attempts
+      newPropertyKey: spring.rabbitmq.template.retry.max-retries
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.session.redis.cleanup-cron
       newPropertyKey: spring.session.data.redis.cleanup-cron
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
@@ -800,10 +818,10 @@ recipeList:
       comment: This property is deprecated: No longer required. To use Groovy Templates without auto-configuration, depend directly on Groovy Templates instead of spring-boot-groovy-templates.
   - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
       propertyKey: spring.jackson.generator
-      comment: This property is deprecated: Partially replaced by 'spring.jackson.json.read'.
+      comment: This property is deprecated: Partially replaced by 'spring.jackson.json.write'.
   - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
       propertyKey: spring.jackson.parser
-      comment: This property is deprecated: Partially replaced by 'spring.jackson.json.write'.
+      comment: This property is deprecated: Partially replaced by 'spring.jackson.json.read'.
   - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
       propertyKey: spring.jackson2.constructor-detector
       comment: This property is deprecated: Deprecated in favor of Jackson 3

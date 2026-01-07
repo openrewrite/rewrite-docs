@@ -8,13 +8,13 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 
 ## Categories
 
-* [Amqp](/recipes/java/spring/amqp)
+* [AMQP](/recipes/java/spring/amqp)
 * [Boot](/recipes/java/spring/boot)
 * [Boot4](/recipes/java/spring/boot4)
 * [Cloud2020](/recipes/java/spring/cloud2020)
 * [Cloud2021](/recipes/java/spring/cloud2021)
-* [Cloud2024](/recipes/java/spring/cloud2024)
 * [Cloud2025](/recipes/java/spring/cloud2025)
+* [Cloud20251](/recipes/java/spring/cloud20251)
 * [Doc](/recipes/java/spring/doc)
 * [Hibernate](/recipes/java/spring/hibernate)
 * [Http](/recipes/java/spring/http)
@@ -26,6 +26,7 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 * [Spring Boot 3.x](/recipes/java/spring/boot3)
 * [Spring Cloud 2022](/recipes/java/spring/cloud2022)
 * [Spring Cloud 2023](/recipes/java/spring/cloud2023)
+* [Spring Cloud 2024](/recipes/java/spring/cloud2024)
 * [Spring Data](/recipes/java/spring/data)
 * [Spring Framework](/recipes/java/spring/framework)
 * [Spring Kafka](/recipes/java/spring/kafka)

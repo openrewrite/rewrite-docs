@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxIndentProps**
 
-_Enforce props indentation in JSX  See [rule details](https://eslint.style/rules/default/jsx-indent-props)_
+_Enforce props indentation in JSX  See [rule details](https://eslint.style/rules/default/jsx-indent-props)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxIndentProps
 displayName: Enforce props indentation in JSX
 description: |
-  Enforce props indentation in JSX  See [rule details](https://eslint.style/rules/default/jsx-indent-props)
+  Enforce props indentation in JSX  See [rule details](https://eslint.style/rules/default/jsx-indent-props).
 tags:
   - eslint
   - stylistic

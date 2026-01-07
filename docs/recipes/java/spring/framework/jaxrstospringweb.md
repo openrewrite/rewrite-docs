@@ -18,6 +18,69 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+
+public class UserController {
+
+    @GET
+    @Path("/users")
+    public String getUsers() {
+        return "users";
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+    @GetMapping(value = "/users")
+    public String getUsers() {
+        return "users";
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import jakarta.ws.rs.GET;
+-import jakarta.ws.rs.Path;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.RestController;
+
+@@ -4,0 +4,1 @@
+import jakarta.ws.rs.Path;
+
++@RestController
+public class UserController {
+@@ -6,2 +7,1 @@
+public class UserController {
+
+-   @GET
+-   @Path("/users")
++   @GetMapping(value = "/users")
+    public String getUsers() {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxMaxPropsPerLine**
 
-_Enforce maximum of props on a single line in JSX  See [rule details](https://eslint.style/rules/default/jsx-max-props-per-line)_
+_Enforce maximum of props on a single line in JSX  See [rule details](https://eslint.style/rules/default/jsx-max-props-per-line)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxMaxPropsPerLine
 displayName: Enforce maximum of props on a single line in JSX
 description: |
-  Enforce maximum of props on a single line in JSX  See [rule details](https://eslint.style/rules/default/jsx-max-props-per-line)
+  Enforce maximum of props on a single line in JSX  See [rule details](https://eslint.style/rules/default/jsx-max-props-per-line).
 tags:
   - eslint
   - stylistic

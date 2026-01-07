@@ -15,8 +15,7 @@ import TabItem from '@theme/TabItem';
 - `_.isFunction(x)` -> `typeof(x) === 'function'`
 - `_.isNull(x)` -> `x === null`
 - `_.isString(x)` -> `typeof(x) === 'string'`
-- `_.isUndefined(x)` -> `typeof(x) === 'undefined'`
-
+- `_.isUndefined(x)` -> `typeof(x) === 'undefined'`.
 
 ### Tags
 
@@ -50,7 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.lodash.LodashUnderscoreUtil
 displayName: Replace lodash and underscore utility functions with native JavaScript
 description: |
-  - `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`
+  - `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`.
 tags:
   - codemods
   - lodash

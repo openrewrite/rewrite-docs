@@ -1,8 +1,10 @@
 ---
-description: Httpclient4 OpenRewrite recipes.
+description: HttpClient 4 OpenRewrite recipes.
 ---
 
-# Httpclient4
+# HttpClient 4
+
+_Recipes for migrating from [Apache HttpClient 4.x](https://hc.apache.org/httpcomponents-client-4.5.x/)._
 
 ## Composite Recipes
 

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow nested ternary expressions."
+sidebar_label: "Disallow nested ternary expressions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow nested ternary expressions.
+# Disallow nested ternary expressions
 
 **org.openrewrite.codemods.cleanup.javascript.NoNestedTernary**
 
-_Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md)_
+_Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoNestedTernary
-displayName: Disallow nested ternary expressions.
+displayName: Disallow nested ternary expressions
 description: |
-  Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md)
+  Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

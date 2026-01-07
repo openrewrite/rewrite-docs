@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Java 6](../../java/migrate/upgradetojava6)
-* [Adds missing JDBC interface methods.](../../java/migrate/jrejdbcinterfacenewmethods)
+* [Adds missing JDBC interface methods](../../java/migrate/jrejdbcinterfacenewmethods)
 * [Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`](../../java/migrate/jrethrowablefinalmethods)
 * [Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`](../../java/migrate/util/replacemathrandomwiththreadlocalrandomrecipe)
 * [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](../../java/migrate/bouncycastlefromjdk15ontojdk15to18)

@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/await-interactions": 2,     "storybook/default-exports": 2,     "storybook/hierarchy-separator": 2,     "storybook/no-redundant-story-name": 2,     "storybook/no-title-property-in-meta": 2,     "storybook/prefer-pascal-case": 2,     "storybook/use-storybook-expect": 2,     "storybook/use-storybook-testing-library": 2,   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/await-interactions": 2,     "storybook/default-exports": 2,     "storybook/hierarchy-separator": 2,     "storybook/no-redundant-story-name": 2,     "storybook/no-title-property-in-meta": 2,     "storybook/prefer-pascal-case": 2,     "storybook/use-storybook-expect": 2,     "storybook/use-storybook-testing-library": 2,   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -71,7 +71,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

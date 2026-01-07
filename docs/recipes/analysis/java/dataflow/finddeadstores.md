@@ -18,6 +18,53 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test() {
+        int x = 1;      // Dead store - immediately overwritten
+        x = 2;          // Dead store - never used
+        int z = 3;      // Dead store - never used
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test() {
+        /*~~>*/int x = 1;      // Dead store - immediately overwritten
+        /*~~>*/x = 2;          // Dead store - never used
+        /*~~>*/int z = 3;      // Dead store - never used
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,3 @@
+class Test {
+    void test() {
+-       int x = 1;      // Dead store - immediately overwritten
+-       x = 2;          // Dead store - never used
+-       int z = 3;      // Dead store - never used
++       /*~~>*/int x = 1;      // Dead store - immediately overwritten
++       /*~~>*/x = 2;          // Dead store - never used
++       /*~~>*/int z = 3;      // Dead store - never used
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

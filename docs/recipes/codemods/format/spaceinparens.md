@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.SpaceInParens**
 
-_Enforce consistent spacing inside parentheses  See [rule details](https://eslint.style/rules/default/space-in-parens)_
+_Enforce consistent spacing inside parentheses  See [rule details](https://eslint.style/rules/default/space-in-parens)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SpaceInParens
 displayName: Enforce consistent spacing inside parentheses
 description: |
-  Enforce consistent spacing inside parentheses  See [rule details](https://eslint.style/rules/default/space-in-parens)
+  Enforce consistent spacing inside parentheses  See [rule details](https://eslint.style/rules/default/space-in-parens).
 tags:
   - eslint
   - stylistic

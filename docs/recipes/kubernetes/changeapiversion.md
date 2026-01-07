@@ -38,6 +38,9 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Kubernetes API v1.27](/recipes/kubernetes/migrate/migratetoapiv1_27.md)
 * [Migrate to Kubernetes API v1.29](/recipes/kubernetes/migrate/migratetoapiv1_29.md)
 * [Migrate to Kubernetes API v1.32](/recipes/kubernetes/migrate/migratetoapiv1_32.md)
+* [Migrate to Kubernetes API v1.33](/recipes/kubernetes/migrate/migratetoapiv1_33.md)
+* [Migrate to Kubernetes API v1.34](/recipes/kubernetes/migrate/migratetoapiv1_34.md)
+* [Migrate to Kubernetes API v1.35](/recipes/kubernetes/migrate/migratetoapiv1_35.md)
 
 ## Example
 

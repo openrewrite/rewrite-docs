@@ -30,8 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | because | *Optional*. The reason for upgrading the transitive dependency. For example, we could be responding to a vulnerability. | `CVE-2021-1234` |
 | `List` | onlyForConfigurations | *Optional*. A list of configurations to consider during the upgrade. For example, For example using `implementation, runtimeOnly`, we could be responding to a deployable asset vulnerability only (ignoring test scoped vulnerabilities). | `implementation, runtimeOnly` |
 
-## Examples
-##### Example 1
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -94,71 +93,6 @@ dependencies {
 +   }
 +
     implementation 'org.openrewrite:rewrite-java:7.0.0'
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|groupId|`org.apache.commons`|
-|artifactId|`commons-lang3`|
-|version|`3.14.0`|
-|versionPattern|`null`|
-|because|`null`|
-|onlyForConfigurations|`List.of("implementation", "runtimeOnly")`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="build.gradle" label="build.gradle">
-
-
-###### Before
-```groovy title="build.gradle"
-plugins {
-    id 'info.solidsoft.pitest' version '1.15.0'
-    id 'java'
-}
-repositories { mavenCentral() }
-dependencies {
-    compileOnly 'org.apache.activemq:artemis-jakarta-server:2.28.0'
-}
-```
-
-###### After
-```groovy title="build.gradle"
-plugins {
-    id 'info.solidsoft.pitest' version '1.15.0'
-    id 'java'
-}
-repositories { mavenCentral() }
-dependencies {
-    constraints {
-        implementation('org.apache.commons:commons-lang3:3.14.0')
-    }
-
-    compileOnly 'org.apache.activemq:artemis-jakarta-server:2.28.0'
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- build.gradle
-+++ build.gradle
-@@ -7,0 +7,4 @@
-repositories { mavenCentral() }
-dependencies {
-+   constraints {
-+       implementation('org.apache.commons:commons-lang3:3.14.0')
-+   }
-+
-    compileOnly 'org.apache.activemq:artemis-jakarta-server:2.28.0'
 ```
 </TabItem>
 </Tabs>

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.CommaDangle**
 
-_Require or disallow trailing commas  See [rule details](https://eslint.style/rules/default/comma-dangle)_
+_Require or disallow trailing commas  See [rule details](https://eslint.style/rules/default/comma-dangle)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.CommaDangle
 displayName: Require or disallow trailing commas
 description: |
-  Require or disallow trailing commas  See [rule details](https://eslint.style/rules/default/comma-dangle)
+  Require or disallow trailing commas  See [rule details](https://eslint.style/rules/default/comma-dangle).
 tags:
   - eslint
   - stylistic

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.NoFloatingDecimal**
 
-_Disallow leading or trailing decimal points in numeric literals  See [rule details](https://eslint.style/rules/default/no-floating-decimal)_
+_Disallow leading or trailing decimal points in numeric literals  See [rule details](https://eslint.style/rules/default/no-floating-decimal)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoFloatingDecimal
 displayName: Disallow leading or trailing decimal points in numeric literals
 description: |
-  Disallow leading or trailing decimal points in numeric literals  See [rule details](https://eslint.style/rules/default/no-floating-decimal)
+  Disallow leading or trailing decimal points in numeric literals  See [rule details](https://eslint.style/rules/default/no-floating-decimal).
 tags:
   - eslint
   - stylistic

@@ -101,7 +101,7 @@ public class CryptoExample {
         SSLContext ctx = /*~~(PROTOCOL use)~~>*/SSLContext.getInstance(PROTOCOL);
 
         // Hardcoded provider
-        Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+        Cipher cipher = /*~~(ALGORITHM use)~~>*//*~~(CRYPTO_PROVIDER use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
 
         // Programmatic provider editing
         Provider provider = Security.getProvider("SunJCE");
@@ -145,7 +145,7 @@ public class CryptoExample {
 
         // Hardcoded provider
 -       Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
-+       Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
++       Cipher cipher = /*~~(ALGORITHM use)~~>*//*~~(CRYPTO_PROVIDER use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
 
 @@ -33,1 +33,1 @@
         // Programmatic provider editing
@@ -247,7 +247,7 @@ public class CryptoExample {
         SSLContext ctx = /*~~(PROTOCOL use)~~>*/SSLContext.getInstance(PROTOCOL);
 
         // Hardcoded provider
-        Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
+        Cipher cipher = /*~~(ALGORITHM use)~~>*//*~~(CRYPTO_PROVIDER use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
 
         // Programmatic provider editing
         Provider provider = Security.getProvider("SunJCE");
@@ -291,7 +291,7 @@ public class CryptoExample {
 
         // Hardcoded provider
 -       Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
-+       Cipher cipher = /*~~(ALGORITHM use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
++       Cipher cipher = /*~~(ALGORITHM use)~~>*//*~~(CRYPTO_PROVIDER use)~~>*/Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
 
 @@ -33,1 +33,1 @@
         // Programmatic provider editing

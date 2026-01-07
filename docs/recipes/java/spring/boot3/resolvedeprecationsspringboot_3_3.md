@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.java.spring.boot3.ResolveDeprecationsSpringBoot\_3\_3**
 
-_Migrates Deprecations in the Spring Boot 3.3 Release. Contains: - Removal of `DefaultJmsListenerContainerFactoryConfigurer.setObservationRegistry` - New parameter of `WebEndpointDiscoverer` constructor_
+_Migrates Deprecations in the Spring Boot 3.3 Release. Contains the removal of `DefaultJmsListenerContainerFactoryConfigurer.setObservationRegistry` and adds new parameter of `WebEndpointDiscoverer` constructor._
 
 ### Tags
 

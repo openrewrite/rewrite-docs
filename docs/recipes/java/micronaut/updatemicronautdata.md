@@ -96,6 +96,163 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 
+## Examples
+##### Example 1
+`UpdateMicronautDataTest#updateSQLAnnotations`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+import io.micronaut.data.jdbc.annotation.JoinColumn;
+import io.micronaut.data.jdbc.annotation.JoinColumns;
+import io.micronaut.data.jdbc.annotation.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+###### After
+```java
+import io.micronaut.data.annotation.sql.ColumnTransformer;
+import io.micronaut.data.annotation.sql.JoinColumn;
+import io.micronaut.data.annotation.sql.JoinColumns;
+import io.micronaut.data.annotation.sql.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+-import io.micronaut.data.jdbc.annotation.JoinColumn;
+-import io.micronaut.data.jdbc.annotation.JoinColumns;
+-import io.micronaut.data.jdbc.annotation.JoinTable;
++import io.micronaut.data.annotation.sql.ColumnTransformer;
++import io.micronaut.data.annotation.sql.JoinColumn;
++import io.micronaut.data.annotation.sql.JoinColumns;
++import io.micronaut.data.annotation.sql.JoinTable;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 2
+`UpdateMicronautDataTest#updateSQLAnnotations`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+import io.micronaut.data.jdbc.annotation.JoinColumn;
+import io.micronaut.data.jdbc.annotation.JoinColumns;
+import io.micronaut.data.jdbc.annotation.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+###### After
+```java
+import io.micronaut.data.annotation.sql.ColumnTransformer;
+import io.micronaut.data.annotation.sql.JoinColumn;
+import io.micronaut.data.annotation.sql.JoinColumns;
+import io.micronaut.data.annotation.sql.JoinTable;
+
+public class MyEntity {
+
+    @JoinTable(
+                name = "m2m_address_association",
+                joinColumns = @JoinColumns({
+                                      @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+                                      @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+                                  }))
+    List<String> addresses;
+
+    @ColumnTransformer(read = "UPPER(org)")
+    private String name;
+
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,4 @@
+-import io.micronaut.data.jdbc.annotation.ColumnTransformer;
+-import io.micronaut.data.jdbc.annotation.JoinColumn;
+-import io.micronaut.data.jdbc.annotation.JoinColumns;
+-import io.micronaut.data.jdbc.annotation.JoinTable;
++import io.micronaut.data.annotation.sql.ColumnTransformer;
++import io.micronaut.data.annotation.sql.JoinColumn;
++import io.micronaut.data.annotation.sql.JoinColumns;
++import io.micronaut.data.annotation.sql.JoinTable;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
 
 ## Usage
 

@@ -59,6 +59,429 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`MigrateToMaven4Test#comprehensiveMigration`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>child-a</module>
+        <module>child-b</module>
+    </modules>
+
+    <properties>
+        <project.root>${executionRootDirectory}</project.root>
+        <multi.root>${multiModuleProjectDirectory}</multi.root>
+        <my.version>${version}</my.version>
+        <my.basedir>${basedir}</my.basedir>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>pre-clean-task</id>
+                        <phase>pre-clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>pre-integration-test-task</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test-task</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <subprojects>
+        <subproject>child-a</subproject>
+        <subproject>child-b</subproject>
+    </subprojects>
+
+    <properties>
+        <project.root>${session.rootDirectory}</project.root>
+        <multi.root>${project.rootDirectory}</multi.root>
+        <my.version>${project.version}</my.version>
+        <my.basedir>${project.basedir}</my.basedir>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>pre-clean-task</id>
+                        <phase>before:clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>pre-integration-test-task</id>
+                        <phase>before:integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test-task</id>
+                        <phase>after:integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -1,1 +1,1 @@
+-<project xmlns="http://maven.apache.org/POM/4.0.0"
++<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -3,2 +3,2 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+-   <modelVersion>4.0.0</modelVersion>
++        xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
++   <modelVersion>4.1.0</modelVersion>
+    <groupId>com.example</groupId>
+@@ -10,4 +10,4 @@
+    <packaging>pom</packaging>
+
+-   <modules>
+-       <module>child-a</module>
+-       <module>child-b</module>
+-   </modules>
++   <subprojects>
++       <subproject>child-a</subproject>
++       <subproject>child-b</subproject>
++   </subprojects>
+
+@@ -16,4 +16,4 @@
+
+    <properties>
+-       <project.root>${executionRootDirectory}</project.root>
+-       <multi.root>${multiModuleProjectDirectory}</multi.root>
+-       <my.version>${version}</my.version>
+-       <my.basedir>${basedir}</my.basedir>
++       <project.root>${session.rootDirectory}</project.root>
++       <multi.root>${project.rootDirectory}</multi.root>
++       <my.version>${project.version}</my.version>
++       <my.basedir>${project.basedir}</my.basedir>
+    </properties>
+@@ -31,5 +31,0 @@
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+-               <artifactId>maven-compiler-plugin</artifactId>
+-               <version>3.8.1</version>
+-           </plugin>
+-           <plugin>
+-               <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+@@ -40,1 +35,1 @@
+                    <execution>
+                        <id>pre-clean-task</id>
+-                       <phase>pre-clean</phase>
++                       <phase>before:clean</phase>
+                        <goals>
+@@ -47,1 +42,1 @@
+                    <execution>
+                        <id>pre-integration-test-task</id>
+-                       <phase>pre-integration-test</phase>
++                       <phase>before:integration-test</phase>
+                        <goals>
+@@ -54,1 +49,1 @@
+                    <execution>
+                        <id>post-integration-test-task</id>
+-                       <phase>post-integration-test</phase>
++                       <phase>after:integration-test</phase>
+                        <goals>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateToMaven4Test#comprehensiveMigration`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>child-a</module>
+        <module>child-b</module>
+    </modules>
+
+    <properties>
+        <project.root>${executionRootDirectory}</project.root>
+        <multi.root>${multiModuleProjectDirectory}</multi.root>
+        <my.version>${version}</my.version>
+        <my.basedir>${basedir}</my.basedir>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>pre-clean-task</id>
+                        <phase>pre-clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>pre-integration-test-task</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test-task</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <subprojects>
+        <subproject>child-a</subproject>
+        <subproject>child-b</subproject>
+    </subprojects>
+
+    <properties>
+        <project.root>${session.rootDirectory}</project.root>
+        <multi.root>${project.rootDirectory}</multi.root>
+        <my.version>${project.version}</my.version>
+        <my.basedir>${project.basedir}</my.basedir>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>pre-clean-task</id>
+                        <phase>before:clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>pre-integration-test-task</id>
+                        <phase>before:integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test-task</id>
+                        <phase>after:integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -1,1 +1,1 @@
+-<project xmlns="http://maven.apache.org/POM/4.0.0"
++<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -3,2 +3,2 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+-   <modelVersion>4.0.0</modelVersion>
++        xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
++   <modelVersion>4.1.0</modelVersion>
+    <groupId>com.example</groupId>
+@@ -10,4 +10,4 @@
+    <packaging>pom</packaging>
+
+-   <modules>
+-       <module>child-a</module>
+-       <module>child-b</module>
+-   </modules>
++   <subprojects>
++       <subproject>child-a</subproject>
++       <subproject>child-b</subproject>
++   </subprojects>
+
+@@ -16,4 +16,4 @@
+
+    <properties>
+-       <project.root>${executionRootDirectory}</project.root>
+-       <multi.root>${multiModuleProjectDirectory}</multi.root>
+-       <my.version>${version}</my.version>
+-       <my.basedir>${basedir}</my.basedir>
++       <project.root>${session.rootDirectory}</project.root>
++       <multi.root>${project.rootDirectory}</multi.root>
++       <my.version>${project.version}</my.version>
++       <my.basedir>${project.basedir}</my.basedir>
+    </properties>
+@@ -31,5 +31,0 @@
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+-               <artifactId>maven-compiler-plugin</artifactId>
+-               <version>3.8.1</version>
+-           </plugin>
+-           <plugin>
+-               <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+@@ -40,1 +35,1 @@
+                    <execution>
+                        <id>pre-clean-task</id>
+-                       <phase>pre-clean</phase>
++                       <phase>before:clean</phase>
+                        <goals>
+@@ -47,1 +42,1 @@
+                    <execution>
+                        <id>pre-integration-test-task</id>
+-                       <phase>pre-integration-test</phase>
++                       <phase>before:integration-test</phase>
+                        <goals>
+@@ -54,1 +49,1 @@
+                    <execution>
+                        <id>post-integration-test-task</id>
+-                       <phase>post-integration-test</phase>
++                       <phase>after:integration-test</phase>
+                        <goals>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `Array#flat()` over legacy techniques to flatten arrays."
+sidebar_label: "Prefer `Array#flat()` over legacy techniques to flatten arrays"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Array#flat()` over legacy techniques to flatten arrays.
+# Prefer `Array#flat()` over legacy techniques to flatten arrays
 
 **org.openrewrite.codemods.cleanup.javascript.PreferArrayFlat**
 
-_Prefer `Array#flat()` over legacy techniques to flatten arrays. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md)_
+_Prefer `Array#flat()` over legacy techniques to flatten arrays. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferArrayFlat
-displayName: Prefer `Array#flat()` over legacy techniques to flatten arrays.
+displayName: Prefer `Array#flat()` over legacy techniques to flatten arrays
 description: |
-  Prefer `Array#flat()` over legacy techniques to flatten arrays. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md)
+  Prefer `Array#flat()` over legacy techniques to flatten arrays. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

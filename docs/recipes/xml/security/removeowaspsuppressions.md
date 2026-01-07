@@ -34,11 +34,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value="suppressions.xml" label="suppressions.xml">
 
 
 ###### Before
-```xml
+```xml title="suppressions.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
     <suppress until="2023-01-01">
@@ -49,7 +49,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```
 
 ###### After
-```xml
+```xml title="suppressions.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
 </suppressions>
@@ -59,6 +59,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- suppressions.xml
++++ suppressions.xml
 @@ -3,4 +3,0 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">

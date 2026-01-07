@@ -22,7 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add Jersey Configuration](./addjerseyconfiguration.md)
 * [Add Spring Boot Actuator](./migratehealthchecksandmetrics.md)
 * [Add Spring Boot Actuator Configuration](./addactuatorconfiguration.md)
-* [Clean up various issues with the code.](./codecleanup.md)
+* [Clean up various issues with the code](./codecleanup.md)
 * [Convert Health Check Implementations](./modifydropwizardhealthcheckstospringvariants.md)
 * [Create Spring Boot Application Entry Point](./coresetup.md)
 * [Migrate Configuration Class](./migrateconfigurationclass.md)
@@ -35,6 +35,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add application.properties if missing](./addmissingapplicationproperties.md)
-* [Clean up various issues with the code.](./migratetasksandcommands.md)
+* [Migrate `PostBodyTask` and `ConfiguredCommand`](./migratetasksandcommands.md)
 
 

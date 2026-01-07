@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce combining multiple `Array#push()` into one call."
+sidebar_label: "Enforce combining multiple `Array#push()` into one call"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce combining multiple `Array#push()` into one call.
+# Enforce combining multiple `Array#push()` into one call
 
 **org.openrewrite.codemods.cleanup.javascript.NoArrayPushPush**
 
-_Enforce combining multiple `Array#push()` into one call. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md)_
+_Enforce combining multiple `Array#push()` into one call. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoArrayPushPush
-displayName: Enforce combining multiple `Array#push()` into one call.
+displayName: Enforce combining multiple `Array#push()` into one call
 description: |
-  Enforce combining multiple `Array#push()` into one call. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md)
+  Enforce combining multiple `Array#push()` into one call. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

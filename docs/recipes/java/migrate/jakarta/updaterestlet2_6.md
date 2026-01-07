@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.jakarta.UpdateRestLet2\_6**
 
-_Update RestLet to 2.6.0_
+_Update RestLet to 2.6.0._
 
 ## Recipe source
 
@@ -51,7 +51,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateRestLet2_6
 displayName: Update RestLet to 2.6.0
 description: |
-  Update RestLet to 2.6.0
+  Update RestLet to 2.6.0.
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.restlet

@@ -40,6 +40,43 @@ This recipe is used as part of the following composite recipes:
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|annotationType|`TestAnnotation`|
+|attributeName|`deletedAttribute`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+@TestAnnotation(attributeA = "attributeValue", deletedAttribute = "deletedAttributeValue")
+class SomeClass {}
+```
+
+###### After
+```java
+@TestAnnotation(attributeA = "attributeValue")
+class SomeClass {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-@TestAnnotation(attributeA = "attributeValue", deletedAttribute = "deletedAttributeValue")
++@TestAnnotation(attributeA = "attributeValue")
+class SomeClass {}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

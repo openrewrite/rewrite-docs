@@ -53,8 +53,8 @@ This recipe is used as part of the following composite recipes:
 |newArtifactId|`jakarta.activation-api`|
 |newVersion|`null`|
 |versionPattern|`null`|
-|overrideManagedVersion||
-|changeManagedDependency||
+|overrideManagedVersion|`false`|
+|changeManagedDependency|`false`|
 
 
 <Tabs groupId="beforeAfter">

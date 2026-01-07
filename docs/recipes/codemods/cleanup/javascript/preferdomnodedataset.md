@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer using `.dataset` on DOM elements over calling attribute methods."
+sidebar_label: "Prefer using `.dataset` on DOM elements over calling attribute methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer using `.dataset` on DOM elements over calling attribute methods.
+# Prefer using `.dataset` on DOM elements over calling attribute methods
 
 **org.openrewrite.codemods.cleanup.javascript.PreferDomNodeDataset**
 
-_Prefer using `.dataset` on DOM elements over calling attribute methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-dataset.md)_
+_Prefer using `.dataset` on DOM elements over calling attribute methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-dataset.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferDomNodeDataset
-displayName: Prefer using `.dataset` on DOM elements over calling attribute methods.
+displayName: Prefer using `.dataset` on DOM elements over calling attribute methods
 description: |
-  Prefer using `.dataset` on DOM elements over calling attribute methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-dataset.md)
+  Prefer using `.dataset` on DOM elements over calling attribute methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-dataset.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

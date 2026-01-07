@@ -18,7 +18,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](./codehausclassestofasterxml.md)
 * [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](./codehaustofasterxml.md)
 * [Migrates from Jackson 2.x to Jackson 3.x](./upgradejackson_2_3.md)
-* [Remove Jackson 2.x modules included in jackson-databind in 3.x.](./upgradejackson_2_3_removemodules.md)
 * [Remove redundant Jackson 3 feature flag configurations](./upgradejackson_2_3_removeredundantfeatureflags.md)
 * [Rename Jackson 2.x methods to 3.x equivalents](./upgradejackson_2_3_methodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](./upgradejackson_2_3_jsongeneratormethodrenames.md)

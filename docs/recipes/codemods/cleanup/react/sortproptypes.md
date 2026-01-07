@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.SortPropTypes**
 
-_Enforce propTypes declarations alphabetical sorting See rule details for [react/sort-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/sort-prop-types.md)_
+_Enforce propTypes declarations alphabetical sorting See rule details for [react/sort-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/sort-prop-types.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.SortPropTypes
 displayName: Enforce propTypes declarations alphabetical sorting
 description: |
-  Enforce propTypes declarations alphabetical sorting See rule details for [react/sort-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/sort-prop-types.md)
+  Enforce propTypes declarations alphabetical sorting See rule details for [react/sort-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/sort-prop-types.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

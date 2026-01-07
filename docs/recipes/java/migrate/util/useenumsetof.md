@@ -27,6 +27,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ## Example
 
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|convertEmptySet|`null`|
+
 
 <Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">

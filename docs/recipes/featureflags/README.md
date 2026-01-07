@@ -11,6 +11,7 @@ _Recipes to perform feature flag migration tasks._
 * [FF4j](/recipes/featureflags/ff4j)
 * [LaunchDarkly](/recipes/featureflags/launchdarkly)
 * [OpenFeature](/recipes/featureflags/openfeature)
+* [Quarkus](/recipes/featureflags/quarkus)
 * [Search](/recipes/featureflags/search)
 * [Unleash](/recipes/featureflags/unleash)
 

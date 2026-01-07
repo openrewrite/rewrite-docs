@@ -25,6 +25,51 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'org.springframework.boot' version '3.4.0'
+}
+
+bootJar {
+    loaderImplementation = 'org.springframework.boot.loader.tools.LoaderImplementation.CLASSIC'
+    setLoaderImplementation('org.springframework.boot.loader.tools.LoaderImplementation.CLASSIC')
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'org.springframework.boot' version '3.4.0'
+}
+
+bootJar {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -6,2 +6,0 @@
+
+bootJar {
+-   loaderImplementation = 'org.springframework.boot.loader.tools.LoaderImplementation.CLASSIC'
+-   setLoaderImplementation('org.springframework.boot.loader.tools.LoaderImplementation.CLASSIC')
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

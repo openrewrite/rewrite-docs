@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.Semi**
 
-_Require or disallow semicolons instead of ASI  See [rule details](https://eslint.style/rules/default/semi)_
+_Require or disallow semicolons instead of ASI  See [rule details](https://eslint.style/rules/default/semi)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.Semi
 displayName: Require or disallow semicolons instead of ASI
 description: |
-  Require or disallow semicolons instead of ASI  See [rule details](https://eslint.style/rules/default/semi)
+  Require or disallow semicolons instead of ASI  See [rule details](https://eslint.style/rules/default/semi).
 tags:
   - eslint
   - stylistic

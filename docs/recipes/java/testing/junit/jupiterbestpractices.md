@@ -49,7 +49,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`](../../../java/testing/junit5/removetrycatchfailblocks)
 * [Make lifecycle methods non private](../../../java/testing/junit5/lifecyclenonprivate)
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](../../../java/testing/junit5/assertthrowsonlaststatement)
-* [assertTrue(x instanceof y) to assertInstanceOf(y.class, x)](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)
+* [`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)
 * [Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`](../../../java/testing/junit5/useassertsame)
 
 </TabItem>

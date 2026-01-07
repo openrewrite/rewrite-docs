@@ -38,11 +38,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
+<TabItem value="gradle/wrapper/gradle-wrapper.properties" label="gradle/wrapper/gradle-wrapper.properties">
 
 
 ###### Before
-```properties
+```properties title="gradle/wrapper/gradle-wrapper.properties"
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
 distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
@@ -51,7 +51,7 @@ zipStorePath=wrapper/dists
 ```
 
 ###### After
-```properties
+```properties title="gradle/wrapper/gradle-wrapper.properties"
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
 ~~>distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
@@ -63,6 +63,8 @@ zipStorePath=wrapper/dists
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- gradle/wrapper/gradle-wrapper.properties
++++ gradle/wrapper/gradle-wrapper.properties
 @@ -3,1 +3,1 @@
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists

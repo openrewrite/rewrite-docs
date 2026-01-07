@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `switch` over multiple `else-if`."
+sidebar_label: "Prefer `switch` over multiple `else-if`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `switch` over multiple `else-if`.
+# Prefer `switch` over multiple `else-if`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferSwitch**
 
-_Prefer `switch` over multiple `else-if`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md)_
+_Prefer `switch` over multiple `else-if`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferSwitch
-displayName: Prefer `switch` over multiple `else-if`.
+displayName: Prefer `switch` over multiple `else-if`
 description: |
-  Prefer `switch` over multiple `else-if`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md)
+  Prefer `switch` over multiple `else-if`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

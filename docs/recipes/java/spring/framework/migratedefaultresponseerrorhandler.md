@@ -30,6 +30,137 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 
+## Examples
+##### Example 1
+`MigrateDefaultResponseErrorHandlerTest#migrateHandleErrorMethod`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+
+import java.io.IOException;
+
+class CustomErrorHandler extends DefaultResponseErrorHandler {
+    @Override
+    public void handleError(ClientHttpResponse response) throws IOException {
+        // Custom error handling logic
+        int statusCode = response.getStatusCode().value();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.http.HttpMethod;
+import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+
+import java.io.IOException;
+import java.net.URI;
+
+class CustomErrorHandler extends DefaultResponseErrorHandler {
+    @Override
+    public void handleError(URI url, HttpMethod method, ClientHttpResponse response) throws IOException {
+        // Custom error handling logic
+        int statusCode = response.getStatusCode().value();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,1 @@
++import org.springframework.http.HttpMethod;
+import org.springframework.http.client.ClientHttpResponse;
+@@ -5,0 +6,1 @@
+
+import java.io.IOException;
++import java.net.URI;
+
+@@ -8,1 +10,1 @@
+class CustomErrorHandler extends DefaultResponseErrorHandler {
+    @Override
+-   public void handleError(ClientHttpResponse response) throws IOException {
++   public void handleError(URI url, HttpMethod method, ClientHttpResponse response) throws IOException {
+        // Custom error handling logic
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateDefaultResponseErrorHandlerTest#migrateHandleErrorMethod`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+
+import java.io.IOException;
+
+class CustomErrorHandler extends DefaultResponseErrorHandler {
+    @Override
+    public void handleError(ClientHttpResponse response) throws IOException {
+        // Custom error handling logic
+        int statusCode = response.getStatusCode().value();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.http.HttpMethod;
+import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+
+import java.io.IOException;
+import java.net.URI;
+
+class CustomErrorHandler extends DefaultResponseErrorHandler {
+    @Override
+    public void handleError(URI url, HttpMethod method, ClientHttpResponse response) throws IOException {
+        // Custom error handling logic
+        int statusCode = response.getStatusCode().value();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,1 @@
++import org.springframework.http.HttpMethod;
+import org.springframework.http.client.ClientHttpResponse;
+@@ -5,0 +6,1 @@
+
+import java.io.IOException;
++import java.net.URI;
+
+@@ -8,1 +10,1 @@
+class CustomErrorHandler extends DefaultResponseErrorHandler {
+    @Override
+-   public void handleError(ClientHttpResponse response) throws IOException {
++   public void handleError(URI url, HttpMethod method, ClientHttpResponse response) throws IOException {
+        // Custom error handling logic
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

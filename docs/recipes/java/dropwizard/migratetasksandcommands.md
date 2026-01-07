@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Clean up various issues with the code."
+sidebar_label: "Migrate `PostBodyTask` and `ConfiguredCommand`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Clean up various issues with the code.
+# Migrate `PostBodyTask` and `ConfiguredCommand`
 
 **org.openrewrite.java.dropwizard.MigrateTasksAndCommands**
 
-_Clean up the code._
+_Remove or change the superclasses of `PostBodyTask` and `ConfiguredCommand`._
 
 ## Recipe source
 
@@ -35,9 +35,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.dropwizard.MigrateTasksAndCommands
-displayName: Clean up various issues with the code.
+displayName: Migrate `PostBodyTask` and `ConfiguredCommand`
 description: |
-  Clean up the code.
+  Remove or change the superclasses of `PostBodyTask` and `ConfiguredCommand`.
 recipeList:
   - org.openrewrite.java.dropwizard.method.RemoveSuperTypeByType:
       typeToRemove: io.dropwizard.servlets.tasks.PostBodyTask

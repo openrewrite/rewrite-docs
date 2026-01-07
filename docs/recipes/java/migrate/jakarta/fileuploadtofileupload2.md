@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2**
 
-_Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`_
+_Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`._
 
 ## Recipe source
 
@@ -61,7 +61,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2
 displayName: Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`
 description: |
-  Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`
+  Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`.
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: commons-fileupload

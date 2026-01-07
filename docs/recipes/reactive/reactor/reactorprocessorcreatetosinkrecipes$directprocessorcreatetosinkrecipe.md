@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.reactive.reactor.ReactorProcessorCreateToSinkRecipes$DirectProcessorCreateToSinkRecipe**
 
-_As of 3.5 DirectProcessor is deprecated and Sinks are preferred_
+_As of 3.5 DirectProcessor is deprecated and Sinks are preferred._
 
 ## Recipe source
 

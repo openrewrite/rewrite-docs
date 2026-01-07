@@ -18,6 +18,97 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Examples
+##### Example 1
+`ContextSensitiveTaintAnalysisTest#contextSensitiveFieldPropagation`
+
+
+###### Unchanged
+```java
+import javax.servlet.http.HttpServletRequest;
+
+public class ContextExample {
+    private String command;
+
+    // Safe context - called with hardcoded value
+    public void initSafe() {
+        setCommand("ls -la");
+    }
+
+    // Unsafe context - called with user input
+    public void initUnsafe(HttpServletRequest request) {
+        String userCmd = request.getParameter("cmd");
+        setCommand(userCmd);
+    }
+
+    // Helper method that sets the field
+    private void setCommand(String cmd) {
+        this.command = cmd;
+    }
+
+    // Uses the field - should only be flagged if initUnsafe was called
+    public void execute() throws Exception {
+        Runtime.getRuntime().exec(this.command);
+    }
+}
+```
+
+---
+
+##### Example 2
+`ReturnValuePropagationTest#chainedMethodCalls`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+
+public class ChainedCalls {
+    public void handleRequest(HttpServletRequest request) throws Exception {
+        // Taint should flow through the chain
+        String cmd = request.getParameter("cmd")
+            .trim()
+            .toUpperCase()
+            .replace("BAD", "GOOD");
+        Runtime.getRuntime().exec(cmd);
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+
+public class ChainedCalls {
+    public void handleRequest(HttpServletRequest request) throws Exception {
+        // Taint should flow through the chain
+        String cmd = request.getParameter("cmd")
+            .trim()
+            .toUpperCase()
+            .replace("BAD", "GOOD");
+        /*~~>*/Runtime.getRuntime().exec(cmd);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,1 +10,1 @@
+            .toUpperCase()
+            .replace("BAD", "GOOD");
+-       Runtime.getRuntime().exec(cmd);
++       /*~~>*/Runtime.getRuntime().exec(cmd);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

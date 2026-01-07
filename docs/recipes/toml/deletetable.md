@@ -25,6 +25,61 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | tableName | The name of the TOML table to delete. | `dependencies` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|tableName|`package.contributors`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="toml" label="toml">
+
+
+###### Before
+```toml
+[package]
+name = "example-package"
+version = "1.0.0"
+authors = ["Alice Smith"]
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+
+[[package.contributors]]
+name = "Carol White"
+email = "carol@example.com"
+```
+
+###### After
+```toml
+[package]
+name = "example-package"
+version = "1.0.0"
+authors = ["Alice Smith"]
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,8 +6,0 @@
+authors = ["Alice Smith"]
+
+-[[package.contributors]]
+-name = "Bob Johnson"
+-email = "bob@example.com"
+-
+-[[package.contributors]]
+-name = "Carol White"
+-email = "carol@example.com"
+-
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

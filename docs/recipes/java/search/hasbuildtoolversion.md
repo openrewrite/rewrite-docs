@@ -26,40 +26,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Type` | type | The build tool to search for. | `Maven` |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. | `3.6.0-9999` |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|type|`BuildTool.Type.Maven`|
-|version|`3.6.0-3.8.0`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class A {}
-```
-
-###### After
-```java
-/*~~>*/class A {}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--class A {}
-+/*~~>*/class A {}
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 

@@ -58,6 +58,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `^6.8`
   * addIfMissing: `false`
 * [Migrate flyway and liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials)
+* [Upgrade Spock to a Groovy 3 compatible variant](../../../java/spring/boot2/upgradespocktogroovy3)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `mysql`
   * oldArtifactId: `mysql-connector-java`
@@ -117,6 +118,7 @@ recipeList:
       version: ^6.8
       addIfMissing: false
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials
+  - org.openrewrite.java.spring.boot2.UpgradeSpockToGroovy3
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: mysql
       oldArtifactId: mysql-connector-java
@@ -146,65 +148,61 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
-`Maven#switchArtifactIdAndUpdateVersionNumber`
+`Gradle#switchArtifactIdAndUpdateVersionNumber`
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
+<TabItem value="build.gradle" label="build.gradle">
 
 
 ###### Before
-```xml title="pom.xml"
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.30</version>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
-</project>
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
 ```
 
 ###### After
-```xml title="pom.xml"
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.33</version>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
-</project>
+```groovy title="build.gradle"
+plugins {
+  id 'java'
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
---- pom.xml
-+++ pom.xml
-@@ -8,3 +8,3 @@
-  <dependencies>
-    <dependency>
--     <groupId>mysql</groupId>
--     <artifactId>mysql-connector-java</artifactId>
--     <version>8.0.30</version>
-+     <groupId>com.mysql</groupId>
-+     <artifactId>mysql-connector-j</artifactId>
-+     <version>8.0.33</version>
-      <scope>runtime</scope>
+--- build.gradle
++++ build.gradle
+@@ -10,1 +10,1 @@
+
+dependencies {
+-   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
++   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
 ```
 </TabItem>
 </Tabs>
@@ -212,68 +210,6 @@ This recipe is used as part of the following composite recipes:
 ---
 
 ##### Example 2
-`Gradle#switchArtifactIdAndUpdateVersionNumber`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="build.gradle" label="build.gradle">
-
-
-###### Before
-```groovy title="build.gradle"
-plugins {
-  id 'java'
-}
-
-repositories {
-   mavenCentral()
-}
-
-dependencies {
-    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-}
-tasks.withType(Test).configureEach {
-    useJUnitPlatform()
-}
-```
-
-###### After
-```groovy title="build.gradle"
-plugins {
-  id 'java'
-}
-
-repositories {
-   mavenCentral()
-}
-
-dependencies {
-    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
-}
-tasks.withType(Test).configureEach {
-    useJUnitPlatform()
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-+   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
-}
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 3
 `Maven#switchArtifactIdAndUpdateVersionNumber`
 
 
@@ -339,7 +275,7 @@ dependencies {
 
 ---
 
-##### Example 4
+##### Example 3
 `Gradle#switchArtifactIdAndUpdateVersionNumber`
 
 
@@ -395,6 +331,72 @@ dependencies {
 -   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
 +   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
 }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`Maven#switchArtifactIdAndUpdateVersionNumber`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.30</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.0.33</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,3 +8,3 @@
+  <dependencies>
+    <dependency>
+-     <groupId>mysql</groupId>
+-     <artifactId>mysql-connector-java</artifactId>
+-     <version>8.0.30</version>
++     <groupId>com.mysql</groupId>
++     <artifactId>mysql-connector-j</artifactId>
++     <version>8.0.33</version>
+      <scope>runtime</scope>
 ```
 </TabItem>
 </Tabs>

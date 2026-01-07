@@ -26,6 +26,53 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger) {
+      logger.exiting("Test", "method");
+      logger.exiting("Test", "method", "result");
+    }
+}
+```
+
+###### After
+```java
+import java.util.logging.Logger;
+
+class Test {
+    void method(Logger logger) {
+      logger.traceExit();
+      logger.traceExit("result");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+class Test {
+    void method(Logger logger) {
+-     logger.exiting("Test", "method");
+-     logger.exiting("Test", "method", "result");
++     logger.traceExit();
++     logger.traceExit("result");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

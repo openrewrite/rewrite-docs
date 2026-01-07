@@ -30,6 +30,163 @@ The recipe will:
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Examples
+##### Example 1
+`MigrateDependenciesToVersionCatalogGroovyDSLTest#migrateStringNotationDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-core:5.3.0'
+    testImplementation 'junit:junit:4.13.2'
+    runtimeOnly 'com.h2database:h2:1.4.200'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation libs.springCore
+    testImplementation libs.junit
+    runtimeOnly libs.h2
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,3 +10,3 @@
+
+dependencies {
+-   implementation 'org.springframework:spring-core:5.3.0'
+-   testImplementation 'junit:junit:4.13.2'
+-   runtimeOnly 'com.h2database:h2:1.4.200'
++   implementation libs.springCore
++   testImplementation libs.junit
++   runtimeOnly libs.h2
+}
+```
+</TabItem>
+</Tabs>
+
+
+###### New file
+```toml title="gradle/libs.versions.toml"
+[versions]
+spring-core = "5.3.0"
+junit = "4.13.2"
+h2 = "1.4.200"
+
+[libraries]
+spring-core = { group = "org.springframework", name = "spring-core", version.ref = "spring-core" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+h2 = { group = "com.h2database", name = "h2", version.ref = "h2" }
+```
+
+
+---
+
+##### Example 2
+`MigrateDependenciesToVersionCatalogKotlinDSLTest#migrateStringNotationDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle.kts" label="build.gradle.kts">
+
+
+###### Before
+```buildGradleKts title="build.gradle.kts"
+plugins {
+    id("java")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.springframework:spring-core:5.3.0")
+    testImplementation("junit:junit:4.13.2")
+    runtimeOnly("com.h2database:h2:1.4.200")
+}
+```
+
+###### After
+```buildGradleKts title="build.gradle.kts"
+plugins {
+    id("java")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(libs.springCore)
+    testImplementation(libs.junit)
+    runtimeOnly(libs.h2)
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle.kts
++++ build.gradle.kts
+@@ -10,3 +10,3 @@
+
+dependencies {
+-   implementation("org.springframework:spring-core:5.3.0")
+-   testImplementation("junit:junit:4.13.2")
+-   runtimeOnly("com.h2database:h2:1.4.200")
++   implementation(libs.springCore)
++   testImplementation(libs.junit)
++   runtimeOnly(libs.h2)
+}
+```
+</TabItem>
+</Tabs>
+
+
+###### New file
+```toml title="gradle/libs.versions.toml"
+[versions]
+spring-core = "5.3.0"
+junit = "4.13.2"
+h2 = "1.4.200"
+
+[libraries]
+spring-core = { group = "org.springframework", name = "spring-core", version.ref = "spring-core" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+h2 = { group = "com.h2database", name = "h2", version.ref = "h2" }
+```
+
+
 
 ## Usage
 

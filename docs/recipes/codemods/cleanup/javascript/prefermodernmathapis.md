@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer modern Math APIs over legacy patterns."
+sidebar_label: "Prefer modern Math APIs over legacy patterns"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer modern Math APIs over legacy patterns.
+# Prefer modern Math APIs over legacy patterns
 
 **org.openrewrite.codemods.cleanup.javascript.PreferModernMathApis**
 
-_Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md)_
+_Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferModernMathApis
-displayName: Prefer modern Math APIs over legacy patterns.
+displayName: Prefer modern Math APIs over legacy patterns
 description: |
-  Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md)
+  Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

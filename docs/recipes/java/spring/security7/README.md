@@ -10,5 +10,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate to Spring Security 7.0](./upgradespringsecurity_7_0.md)
 * [Remove throws exception in `SecurityConfigurer` methods `init` and `configure`](./securityconfigurerremovethrowsexception.md)
+* [Spring Security 7 modularization](./modularizespringsecurity7.md)
 
 

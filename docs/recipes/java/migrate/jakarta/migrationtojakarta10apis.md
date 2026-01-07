@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Update Jakarta EE XML Web Services Dependencies for EE 10.](../../../java/migrate/jakarta/updatejakartaxmlwsee10)
+* [Update Jakarta EE XML Web Services Dependencies for EE 10](../../../java/migrate/jakarta/updatejakartaxmlwsee10)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.activation`
   * artifactId: `jakarta.activation-api`

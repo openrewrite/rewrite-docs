@@ -30,6 +30,59 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | propertyKey | The key of the property to update within the matched row. | `email` |
 | `String` | newValue | *Optional*. The new value to set for the property. If null, the property will be removed. | `"alice.new@example.com"` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|tableName|`package.contributors`|
+|identifyingKey|`name`|
+|identifyingValue|`Alice Smith`|
+|useRegex|`null`|
+|propertyKey|`email`|
+|newValue|`"alice.new@example.com"`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="toml" label="toml">
+
+
+###### Before
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice@example.com"
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+```
+
+###### After
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice.new@example.com"
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+[[package.contributors]]
+name = "Alice Smith"
+-email = "alice@example.com"
++email = "alice.new@example.com"
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

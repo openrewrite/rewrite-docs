@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator**
 
-_Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`_
+_Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`._
 
 ## Recipe source
 
@@ -46,7 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator
 displayName: Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`
 description: |
-  Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`
+  Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`.
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: io.micrometer

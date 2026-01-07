@@ -38,6 +38,64 @@ This recipe is used as part of the following composite recipes:
 * [Inline `log4j-api-2` methods annotated with `@InlineMe`](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
 * [Inline methods annotated with `@InlineMe`](/recipes/recipes/rewrite/inlinemethods.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`Lib deprecated()`|
+|replacement|`this.replacement()`|
+|imports|`null`|
+|staticImports|`null`|
+|classpathFromResources|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Lib {
+    @Deprecated
+    public void deprecated() {}
+
+    public void replacement() {}
+
+    public static void usage(Lib lib) {
+        lib.deprecated();
+    }
+}
+```
+
+###### After
+```java
+class Lib {
+    @Deprecated
+    public void deprecated() {}
+
+    public void replacement() {}
+
+    public static void usage(Lib lib) {
+        lib.replacement();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+
+    public static void usage(Lib lib) {
+-       lib.deprecated();
++       lib.replacement();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

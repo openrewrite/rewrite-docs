@@ -19,6 +19,59 @@ _Find the dependency handler containing any number of dependency definitions._
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'com.google.guava:guava:23.0'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+/*~~>*/dependencies {
+    api 'com.google.guava:guava:23.0'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -9,1 +9,1 @@
+}
+
+-dependencies {
++/*~~>*/dependencies {
+    api 'com.google.guava:guava:23.0'
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

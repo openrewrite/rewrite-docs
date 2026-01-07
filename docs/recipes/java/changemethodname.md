@@ -42,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 * [Change S3EventNotification methods to v2.](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
 * [Change SDK Exception types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
 * [Change TransferManager simple methods to v2.](/recipes/software/amazon/awssdk/v2migration/changetransfermanagersimplemethods.md)
-* [Change `List#add` to `List#plus` and verify.](/recipes/compiled/verification/changelistmethodandverify.md)
+* [Change `List#add` to `List#plus` and verify](/recipes/compiled/verification/changelistmethodandverify.md)
 * [Change auth related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeauthtypes.md)
 * [Change config related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeconfigtypes.md)
 * [Change dataformat fury to fury in xml/java dsl.](/recipes/org/apache/camel/upgrade/camel413/furydsl.md)

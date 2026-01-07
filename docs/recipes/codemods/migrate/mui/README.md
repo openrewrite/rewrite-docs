@@ -6,7 +6,7 @@ description: Mui OpenRewrite recipes.
 
 ## Recipes
 
-* [Adds `DefaultTheme` module augmentation to typescript projects.](./themeaugment.md)
+* [Adds `DefaultTheme` module augmentation to typescript projects](./themeaugment.md)
 * [Combination of all deprecations](./all.md)
 * [Converts ExpansionPanel to use ExpansionPanel component](./expansionpanelcomponent.md)
 * [Converts GridList to use Grid component](./gridlistcomponent.md)
@@ -63,7 +63,7 @@ description: Mui OpenRewrite recipes.
 * [Updates scroll buttons for Tabs component](./tabsscrollbuttons.md)
 * [Updates `size` prop for IconButton component](./iconbuttonsize.md)
 * [Updates the usage of `styled` from `@mui/system@v5` to be compatible with` @pigment-css/react`](./styled.md)
-* [Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs.](./gridvprops.md)
+* [Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs](./gridvprops.md)
 * [Updates theme breakpoints](./themebreakpoints.md)
 * [Updates theme options](./themeoptions.md)
 * [Updates theme palette mode](./themepalettemode.md)

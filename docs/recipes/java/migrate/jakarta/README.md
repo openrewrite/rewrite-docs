@@ -4,6 +4,8 @@ description: Jakarta OpenRewrite recipes.
 
 # Jakarta
 
+_Recipes for migrating to [Jakarta EE](https://jakarta.ee/)._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
@@ -79,7 +81,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Update Apache Shiro Dependencies to 2.0.x](./updateapacheshirodependencies.md)
 * [Update Fastjson for Jakarta EE 10](./migratefastjsonforjakarta10.md)
 * [Update GlassFish Jersey Dependencies to 3.1.x](./updatejerseydependencies.md)
-* [Update Jakarta EE XML Web Services Dependencies for EE 10.](./updatejakartaxmlwsee10.md)
+* [Update Jakarta EE XML Web Services Dependencies for EE 10](./updatejakartaxmlwsee10.md)
 * [Update Jetty EE9 to Jetty EE10](./jettyupgradeee10.md)
 * [Update Jetty9 to Jetty12](./jettyupgradeee9.md)
 * [Update Plugins for Jakarta EE 10](./migratepluginsforjakarta10.md)
@@ -104,11 +106,11 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Update Eclipse Yasson Dependencies to 3.0.x](./updateyassondependencies.md)
 * [Update EclipseLink Dependencies to 4.x](./updateeclipselinkdependencies.md)
 * [Update Faces `@ManagedBean` to use CDI `@Named`](./updatemanagedbeantonamed.md)
-* [Update Jakarta EE Java Faces Dependencies to 4.0.x.](./updatejakartafacesapi4.md)
+* [Update Jakarta EE Java Faces Dependencies to 4.0.x](./updatejakartafacesapi4.md)
 * [Update Jakarta EE Java Faces Dependencies to 4.1.x](./updatejakartafacesapi41.md)
 * [Update Jakarta EE Platform Dependencies to 10.0.0](./updatejakartaplatform10.md)
 * [Update Jakarta EE Platform Dependencies to 11.0.x](./updatejakartaplatform11.md)
-* [Update Jakarta EE annotation Dependencies to 2.1.x.](./updatejakartaannotations2.md)
+* [Update Jakarta EE annotation Dependencies to 2.1.x](./updatejakartaannotations2.md)
 * [Update annotation attributes using `javax` to `jakarta`](./updateannotationattributejavaxtojakarta.md)
 * [Update `fireEvent()` and `createInjectionTarget()` calls](./updatebeanmanagermethods.md)
 * [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](./updategetrealpath.md)

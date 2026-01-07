@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Change `List#add` to `List#plus` and verify.](/recipes/compiled/verification/changelistmethodandverify.md)
+* [Change `List#add` to `List#plus` and verify](/recipes/compiled/verification/changelistmethodandverify.md)
 
 
 ## Usage

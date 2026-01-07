@@ -24,6 +24,62 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | --- | --- | --- | --- |
 | `String` | componentName | *Optional*. The name of the React component to find. If `null`, finds all React components. | `Button` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|componentName|`Button`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="tsx" label="tsx">
+
+
+###### Before
+```tsx
+import {Button} from './components/Button';
+import {Card} from './components/Card';
+
+const App = () => {
+    return <>
+        <Button>Click me</Button>
+        <Card>Content</Card>
+    </>;
+};
+```
+
+###### After
+```tsx
+import {/*~~>*/Button} from './components/Button';
+import {Card} from './components/Card';
+
+const App = () => {
+    return <>
+        /*~~>*/<Button>Click me</Button>
+        <Card>Content</Card>
+    </>;
+};
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import {Button} from './components/Button';
++import {/*~~>*/Button} from './components/Button';
+import {Card} from './components/Card';
+@@ -6,1 +6,1 @@
+const App = () => {
+    return <>
+-       <Button>Click me</Button>
++       /*~~>*/<Button>Click me</Button>
+        <Card>Content</Card>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

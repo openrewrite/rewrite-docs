@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Find privileged `resource_type` definitions."
+sidebar_label: "Find privileged `resource_type` definitions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find privileged `resource_type` definitions.
+# Find privileged `resource_type` definitions
 
 **org.openrewrite.concourse.search.FindPrivilegedResourceType**
 

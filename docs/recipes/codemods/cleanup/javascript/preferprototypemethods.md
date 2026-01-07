@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer borrowing methods from the prototype instead of the instance."
+sidebar_label: "Prefer borrowing methods from the prototype instead of the instance"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer borrowing methods from the prototype instead of the instance.
+# Prefer borrowing methods from the prototype instead of the instance
 
 **org.openrewrite.codemods.cleanup.javascript.PreferPrototypeMethods**
 
-_Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md)_
+_Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferPrototypeMethods
-displayName: Prefer borrowing methods from the prototype instead of the instance.
+displayName: Prefer borrowing methods from the prototype instead of the instance
 description: |
-  Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md)
+  Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

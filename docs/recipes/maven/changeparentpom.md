@@ -47,6 +47,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`ChangeParentPomTest#changeParent`
 
 ###### Parameters
 | Parameter | Value |
@@ -60,7 +61,7 @@ This recipe is used as part of the following composite recipes:
 |newRelativePath|`null`|
 |versionPattern|`null`|
 |allowVersionDowngrades|`false`|
-|except||
+|except|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -124,6 +125,7 @@ This recipe is used as part of the following composite recipes:
 ---
 
 ##### Example 2
+`RetainVersions#dependencyWithExplicitVersionRemovedFromDepMgmt`
 
 ###### Parameters
 | Parameter | Value |
@@ -137,7 +139,7 @@ This recipe is used as part of the following composite recipes:
 |newRelativePath|`null`|
 |versionPattern|`null`|
 |allowVersionDowngrades|`null`|
-|except||
+|except|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -146,8 +148,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sample</groupId>
   <artifactId>sample</artifactId>
@@ -171,8 +172,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### After
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sample</groupId>
   <artifactId>sample</artifactId>
@@ -200,7 +200,7 @@ This recipe is used as part of the following composite recipes:
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -11,1 +11,1 @@
+@@ -10,1 +10,1 @@
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-config-dependencies</artifactId>
 -   <version>3.1.2</version>

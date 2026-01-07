@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.NoExtraLabel**
 
-_Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label)_
+_Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoExtraLabel
 displayName: Disallow unnecessary labels
 description: |
-  Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label)
+  Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

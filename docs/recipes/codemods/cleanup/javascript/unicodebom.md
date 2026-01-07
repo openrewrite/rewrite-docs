@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.UnicodeBom**
 
-_Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom)_
+_Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.UnicodeBom
 displayName: Require or disallow Unicode byte order mark (BOM)
 description: |
-  Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom)
+  Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

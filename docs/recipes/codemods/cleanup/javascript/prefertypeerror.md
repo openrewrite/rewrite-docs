@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce throwing `TypeError` in type checking conditions."
+sidebar_label: "Enforce throwing `TypeError` in type checking conditions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce throwing `TypeError` in type checking conditions.
+# Enforce throwing `TypeError` in type checking conditions
 
 **org.openrewrite.codemods.cleanup.javascript.PreferTypeError**
 
-_Enforce throwing `TypeError` in type checking conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md)_
+_Enforce throwing `TypeError` in type checking conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferTypeError
-displayName: Enforce throwing `TypeError` in type checking conditions.
+displayName: Enforce throwing `TypeError` in type checking conditions
 description: |
-  Enforce throwing `TypeError` in type checking conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md)
+  Enforce throwing `TypeError` in type checking conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

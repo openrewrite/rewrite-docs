@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow unnecessary spread."
+sidebar_label: "Disallow unnecessary spread"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow unnecessary spread.
+# Disallow unnecessary spread
 
 **org.openrewrite.codemods.cleanup.javascript.NoUselessSpread**
 
-_Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md)_
+_Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessSpread
-displayName: Disallow unnecessary spread.
+displayName: Disallow unnecessary spread
 description: |
-  Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md)
+  Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

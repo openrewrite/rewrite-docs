@@ -32,6 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Find a FF4j feature flag](/recipes/featureflags/ff4j/search/findfeatureflag.md)
+* [Find a Quarkus feature flag](/recipes/featureflags/quarkus/search/findfeatureflag.md)
 * [Find an OpenFeature feature flag](/recipes/featureflags/openfeature/search/findfeatureflag.md)
 * [Find an Unleash feature flag](/recipes/featureflags/unleash/search/findfeatureflag.md)
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.CommaSpacing**
 
-_Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing)_
+_Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.CommaSpacing
 displayName: Enforce consistent spacing before and after commas
 description: |
-  Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing)
+  Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing).
 tags:
   - eslint
   - stylistic

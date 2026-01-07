@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.micronaut.AddMicronautWebsocketDependencyIfNeeded**
 
-_This recipe will add the explicit Micronaut Websocket dependency if needed_
+_This recipe will add the explicit Micronaut Websocket dependency if needed._
 
 ## Recipe source
 
@@ -41,7 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.micronaut.AddMicronautWebsocketDependencyIfNeeded
 displayName: Update the Micronaut Websocket support
 description: |
-  This recipe will add the explicit Micronaut Websocket dependency if needed
+  This recipe will add the explicit Micronaut Websocket dependency if needed.
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.micronaut

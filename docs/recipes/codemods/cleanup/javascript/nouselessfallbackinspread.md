@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow useless fallback when spreading in object literals."
+sidebar_label: "Disallow useless fallback when spreading in object literals"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow useless fallback when spreading in object literals.
+# Disallow useless fallback when spreading in object literals
 
 **org.openrewrite.codemods.cleanup.javascript.NoUselessFallbackInSpread**
 
-_Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md)_
+_Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessFallbackInSpread
-displayName: Disallow useless fallback when spreading in object literals.
+displayName: Disallow useless fallback when spreading in object literals
 description: |
-  Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md)
+  Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

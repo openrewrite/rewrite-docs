@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.NoExtraParens**
 
-_Disallow unnecessary parentheses  See [rule details](https://eslint.style/rules/default/no-extra-parens)_
+_Disallow unnecessary parentheses  See [rule details](https://eslint.style/rules/default/no-extra-parens)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoExtraParens
 displayName: Disallow unnecessary parentheses
 description: |
-  Disallow unnecessary parentheses  See [rule details](https://eslint.style/rules/default/no-extra-parens)
+  Disallow unnecessary parentheses  See [rule details](https://eslint.style/rules/default/no-extra-parens).
 tags:
   - eslint
   - stylistic

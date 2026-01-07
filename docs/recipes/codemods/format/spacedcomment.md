@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.SpacedComment**
 
-_Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment)_
+_Enforce consistent spacing after the &#x60;//&#x60; or &#x60;/*&#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SpacedComment
 displayName: Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment
 description: |
-  Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment)
+  Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment).
 tags:
   - eslint
   - stylistic

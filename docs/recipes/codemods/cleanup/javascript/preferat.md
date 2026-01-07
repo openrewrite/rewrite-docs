@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `.at()` method for index access and `String#charAt()`."
+sidebar_label: "Prefer `.at()` method for index access and `String#charAt()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `.at()` method for index access and `String#charAt()`.
+# Prefer `.at()` method for index access and `String#charAt()`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferAt**
 
-_Prefer `.at()` method for index access and `String#charAt()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md)_
+_Prefer `.at()` method for index access and `String#charAt()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferAt
-displayName: Prefer `.at()` method for index access and `String#charAt()`.
+displayName: Prefer `.at()` method for index access and `String#charAt()`
 description: |
-  Prefer `.at()` method for index access and `String#charAt()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md)
+  Prefer `.at()` method for index access and `String#charAt()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

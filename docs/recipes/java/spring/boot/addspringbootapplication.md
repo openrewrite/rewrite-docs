@@ -31,6 +31,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Spring Framework to Spring Boot](/recipes/java/spring/boot/springtospringboot.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|applicationFolder|`null`|
+
+
+
+###### New file
+```java title="src/main/java/org/company/service/Application.java"
+package org.company.service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+}
+```
+
+
+###### Unchanged
+```java title="src/main/java/org/company/service/domain/subpackage/SubClass.java"
+package org.company.service.domain.subpackage;
+
+public class SubClass {}
+```
+
+###### Unchanged
+```java title="src/main/java/org/company/service/infrastructure/Configuration.java"
+package org.company.service.infrastructure;
+
+public class Configuration {}
+```
+
+###### Unchanged
+```java title="src/main/java/org/company/service/web/Controller.java"
+package org.company.service.web;
+
+public class Controller {}
+```
+
+###### Unchanged
+```mavenProject
+main
+```
+
 
 ## Usage
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.TemplateCurlySpacing**
 
-_Require or disallow spacing around embedded expressions of template strings  See [rule details](https://eslint.style/rules/default/template-curly-spacing)_
+_Require or disallow spacing around embedded expressions of template strings  See [rule details](https://eslint.style/rules/default/template-curly-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.TemplateCurlySpacing
 displayName: Require or disallow spacing around embedded expressions of template strings
 description: |
-  Require or disallow spacing around embedded expressions of template strings  See [rule details](https://eslint.style/rules/default/template-curly-spacing)
+  Require or disallow spacing around embedded expressions of template strings  See [rule details](https://eslint.style/rules/default/template-curly-spacing).
 tags:
   - eslint
   - stylistic

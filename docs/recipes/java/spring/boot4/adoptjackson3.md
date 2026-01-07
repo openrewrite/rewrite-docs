@@ -30,6 +30,109 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
 
+## Examples
+##### Example 1
+`AdoptJackson3Test#migrateDirectUsage`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+
+class WebConfig {
+    MappingJackson2HttpMessageConverter converter() {
+        return new MappingJackson2HttpMessageConverter();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
+
+class WebConfig {
+    JacksonJsonHttpMessageConverter converter() {
+        return new JacksonJsonHttpMessageConverter();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
+
+@@ -4,2 +4,2 @@
+
+class WebConfig {
+-   MappingJackson2HttpMessageConverter converter() {
+-       return new MappingJackson2HttpMessageConverter();
++   JacksonJsonHttpMessageConverter converter() {
++       return new JacksonJsonHttpMessageConverter();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`AdoptJackson3Test#migrateDirectUsage`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+
+class WebConfig {
+    MappingJackson2HttpMessageConverter converter() {
+        return new MappingJackson2HttpMessageConverter();
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
+
+class WebConfig {
+    JacksonJsonHttpMessageConverter converter() {
+        return new JacksonJsonHttpMessageConverter();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
+
+@@ -4,2 +4,2 @@
+
+class WebConfig {
+-   MappingJackson2HttpMessageConverter converter() {
+-       return new MappingJackson2HttpMessageConverter();
++   JacksonJsonHttpMessageConverter converter() {
++       return new JacksonJsonHttpMessageConverter();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

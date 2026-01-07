@@ -55,8 +55,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sample</groupId>
   <artifactId>sample</artifactId>
@@ -88,8 +87,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### After
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sample</groupId>
   <artifactId>sample</artifactId>
@@ -120,7 +118,7 @@ This recipe is used as part of the following composite recipes:
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -16,5 +16,0 @@
+@@ -15,5 +15,0 @@
         <dependencies>
           <dependency>
 -           <groupId>org.apache.maven.surefire</groupId>

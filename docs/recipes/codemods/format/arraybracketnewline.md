@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.ArrayBracketNewline**
 
-_Enforce linebreaks after opening and before closing array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-newline)_
+_Enforce linebreaks after opening and before closing array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-newline)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ArrayBracketNewline
 displayName: Enforce linebreaks after opening and before closing array brackets
 description: |
-  Enforce linebreaks after opening and before closing array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-newline)
+  Enforce linebreaks after opening and before closing array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-newline).
 tags:
   - eslint
   - stylistic

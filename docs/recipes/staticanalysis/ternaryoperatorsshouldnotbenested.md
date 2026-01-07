@@ -25,54 +25,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ## Examples
 ##### Example 1
-`SwitchExpressionNotSupported#doReplaceNestedOrTernaryWithIfFollowedByTernary`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class Test {
-  public String determineSomething(String a, String b) {
-    return "a".equals(a) ? "a" : "b".equals(b) ? "b" : "nope";
-  }
-}
-```
-
-###### After
-```java
-class Test {
-  public String determineSomething(String a, String b) {
-      if ("a".equals(a)) {
-          return "a";
-      }
-      return "b".equals(b) ? "b" : "nope";
-  }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,4 @@
-class Test {
-  public String determineSomething(String a, String b) {
--   return "a".equals(a) ? "a" : "b".equals(b) ? "b" : "nope";
-+     if ("a".equals(a)) {
-+         return "a";
-+     }
-+     return "b".equals(b) ? "b" : "nope";
-  }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
 `ReplaceWithSwitchExpression#doReplaceNestedOrTernaryWithSwitchExpression`
 
 
@@ -115,6 +67,54 @@ class Test {
 +       case "b" -> "b";
 +       default -> "nope";
 +   };
+  }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SwitchExpressionNotSupported#doReplaceNestedOrTernaryWithIfFollowedByTernary`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+  public String determineSomething(String a, String b) {
+    return "a".equals(a) ? "a" : "b".equals(b) ? "b" : "nope";
+  }
+}
+```
+
+###### After
+```java
+class Test {
+  public String determineSomething(String a, String b) {
+      if ("a".equals(a)) {
+          return "a";
+      }
+      return "b".equals(b) ? "b" : "nope";
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,4 @@
+class Test {
+  public String determineSomething(String a, String b) {
+-   return "a".equals(a) ? "a" : "b".equals(b) ? "b" : "nope";
++     if ("a".equals(a)) {
++         return "a";
++     }
++     return "b".equals(b) ? "b" : "nope";
   }
 ```
 </TabItem>

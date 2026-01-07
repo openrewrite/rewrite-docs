@@ -18,6 +18,117 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Examples
+##### Example 1
+`FindAiLibrariesInUseTest#findLibraries`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
+    testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    /*~~(org.springframework.ai:spring-ai-autoconfigure-model-chat-client:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-memory:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-embedding-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-image-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-openai:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-tool:1.1.0,org.springframework.ai:spring-ai-autoconfigure-retry:1.1.0,org.springframework.ai:spring-ai-client-chat:1.1.0,org.springframework.ai:spring-ai-commons:1.1.0,org.springframework.ai:spring-ai-model:1.1.0,org.springframework.ai:spring-ai-openai:1.1.0,org.springframework.ai:spring-ai-retry:1.1.0,org.springframework.ai:spring-ai-starter-model-openai:1.1.0,org.springframework.ai:spring-ai-template-st:1.1.0)~~>*/implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
+    /*~~(dev.langchain4j:langchain4j-bedrock:1.8.0,dev.langchain4j:langchain4j-core:1.8.0)~~>*//*~~(software.amazon.awssdk:bedrockruntime:2.33.5)~~>*/testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -8,2 +8,2 @@
+}
+dependencies {
+-   implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
+-   testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
++   /*~~(org.springframework.ai:spring-ai-autoconfigure-model-chat-client:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-memory:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-embedding-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-image-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-openai:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-tool:1.1.0,org.springframework.ai:spring-ai-autoconfigure-retry:1.1.0,org.springframework.ai:spring-ai-client-chat:1.1.0,org.springframework.ai:spring-ai-commons:1.1.0,org.springframework.ai:spring-ai-model:1.1.0,org.springframework.ai:spring-ai-openai:1.1.0,org.springframework.ai:spring-ai-retry:1.1.0,org.springframework.ai:spring-ai-starter-model-openai:1.1.0,org.springframework.ai:spring-ai-template-st:1.1.0)~~>*/implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
++   /*~~(dev.langchain4j:langchain4j-bedrock:1.8.0,dev.langchain4j:langchain4j-core:1.8.0)~~>*//*~~(software.amazon.awssdk:bedrockruntime:2.33.5)~~>*/testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`FindAiLibrariesInUseTest#findLibraries`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
+    testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    /*~~(org.springframework.ai:spring-ai-autoconfigure-model-chat-client:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-memory:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-embedding-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-image-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-openai:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-tool:1.1.0,org.springframework.ai:spring-ai-autoconfigure-retry:1.1.0,org.springframework.ai:spring-ai-client-chat:1.1.0,org.springframework.ai:spring-ai-commons:1.1.0,org.springframework.ai:spring-ai-model:1.1.0,org.springframework.ai:spring-ai-openai:1.1.0,org.springframework.ai:spring-ai-retry:1.1.0,org.springframework.ai:spring-ai-starter-model-openai:1.1.0,org.springframework.ai:spring-ai-template-st:1.1.0)~~>*/implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
+    /*~~(dev.langchain4j:langchain4j-bedrock:1.8.0,dev.langchain4j:langchain4j-core:1.8.0)~~>*//*~~(software.amazon.awssdk:bedrockruntime:2.33.5)~~>*/testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -8,2 +8,2 @@
+}
+dependencies {
+-   implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
+-   testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
++   /*~~(org.springframework.ai:spring-ai-autoconfigure-model-chat-client:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-memory:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-chat-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-embedding-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-image-observation:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-openai:1.1.0,org.springframework.ai:spring-ai-autoconfigure-model-tool:1.1.0,org.springframework.ai:spring-ai-autoconfigure-retry:1.1.0,org.springframework.ai:spring-ai-client-chat:1.1.0,org.springframework.ai:spring-ai-commons:1.1.0,org.springframework.ai:spring-ai-model:1.1.0,org.springframework.ai:spring-ai-openai:1.1.0,org.springframework.ai:spring-ai-retry:1.1.0,org.springframework.ai:spring-ai-starter-model-openai:1.1.0,org.springframework.ai:spring-ai-template-st:1.1.0)~~>*/implementation("org.springframework.ai:spring-ai-starter-model-openai:1.1.0")
++   /*~~(dev.langchain4j:langchain4j-bedrock:1.8.0,dev.langchain4j:langchain4j-core:1.8.0)~~>*//*~~(software.amazon.awssdk:bedrockruntime:2.33.5)~~>*/testImplementation("dev.langchain4j:langchain4j-bedrock:1.8.0")
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

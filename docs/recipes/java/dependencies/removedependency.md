@@ -57,7 +57,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 modular starters](/recipes/java/spring/boot4/migratetomodularstarters.md)
 * [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
-* [Remove Jackson 2.x modules included in jackson-databind in 3.x.](/recipes/java/jackson/upgradejackson_2_3_removemodules.md)
 * [Remove JavaEE dependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](/recipes/java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot.md)
 * [Remove unnecessary dependencies](/recipes/java/micronaut/removeunnecessarydependencies.md)

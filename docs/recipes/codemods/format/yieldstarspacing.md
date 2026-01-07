@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.YieldStarSpacing**
 
-_Require or disallow spacing around the &#x60;*&#x60; in &#x60;yield*&#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing)_
+_Require or disallow spacing around the &#x60;*&#x60; in &#x60;yield*&#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.YieldStarSpacing
 displayName: Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions
 description: |
-  Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing)
+  Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing).
 tags:
   - eslint
   - stylistic

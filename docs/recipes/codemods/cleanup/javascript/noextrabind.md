@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.NoExtraBind**
 
-_Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind)_
+_Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoExtraBind
 displayName: Disallow unnecessary calls to `.bind()`
 description: |
-  Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind)
+  Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

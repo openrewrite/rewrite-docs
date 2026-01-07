@@ -16,8 +16,7 @@ import TabItem from '@theme/TabItem';
 - `_.tail(x, n)` -> `x.slice(n)`
 - `_.rest` (alias for `_.tail`)
 - `_.last(x)` -> `x[x.length - 1]`
-- `_.last(x, n)` -> `x.slice(x.length - n)`
-
+- `_.last(x, n)` -> `x.slice(x.length - n)`.
 
 ### Tags
 
@@ -51,7 +50,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.lodash.LodashUnderscoreArray
 displayName: Replace lodash and underscore array functions with native JavaScript
 description: |
-  - `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`
+  - `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`.
 tags:
   - codemods
   - lodash

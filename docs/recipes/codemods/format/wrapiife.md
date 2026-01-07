@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.WrapIife**
 
-_Require parentheses around immediate &#x60;function&#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife)_
+_Require parentheses around immediate &#x60;function&#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.WrapIife
 displayName: Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations
 description: |
-  Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife)
+  Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife).
 tags:
   - eslint
   - stylistic

@@ -4,6 +4,8 @@ description: Lombok OpenRewrite recipes.
 
 # Lombok
 
+_Recipes for working with [Lombok](https://projectlombok.org/)._
+
 ## Categories
 
 * [Log](/recipes/java/migrate/lombok/log)

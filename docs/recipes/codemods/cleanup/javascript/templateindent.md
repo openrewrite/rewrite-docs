@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Fix whitespace-insensitive template indentation."
+sidebar_label: "Fix whitespace-insensitive template indentation"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Fix whitespace-insensitive template indentation.
+# Fix whitespace-insensitive template indentation
 
 **org.openrewrite.codemods.cleanup.javascript.TemplateIndent**
 
-_Fix whitespace-insensitive template indentation. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md)_
+_Fix whitespace-insensitive template indentation. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.TemplateIndent
-displayName: Fix whitespace-insensitive template indentation.
+displayName: Fix whitespace-insensitive template indentation
 description: |
-  Fix whitespace-insensitive template indentation. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md)
+  Fix whitespace-insensitive template indentation. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

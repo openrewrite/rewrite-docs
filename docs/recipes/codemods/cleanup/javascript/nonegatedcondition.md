@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow negated conditions."
+sidebar_label: "Disallow negated conditions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow negated conditions.
+# Disallow negated conditions
 
 **org.openrewrite.codemods.cleanup.javascript.NoNegatedCondition**
 
-_Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md)_
+_Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoNegatedCondition
-displayName: Disallow negated conditions.
+displayName: Disallow negated conditions
 description: |
-  Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md)
+  Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

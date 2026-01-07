@@ -68,66 +68,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|groupId|`org.jenkins-ci`|
-|artifactId|`jenkins`|
-|newVersion|`1.125`|
-|versionPattern|`null`|
-|onlyExternal|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <parent>
-        <groupId>org.jenkins-ci</groupId>
-        <artifactId>jenkins</artifactId>
-        <version>1.124</version>
-    </parent>
-    <artifactId>example</artifactId>
-    <version>1.0.0</version>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <parent>
-        <groupId>org.jenkins-ci</groupId>
-        <artifactId>jenkins</artifactId>
-        <version>1.125</version>
-    </parent>
-    <artifactId>example</artifactId>
-    <version>1.0.0</version>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -5,1 +5,1 @@
-        <groupId>org.jenkins-ci</groupId>
-        <artifactId>jenkins</artifactId>
--       <version>1.124</version>
-+       <version>1.125</version>
-    </parent>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
+`MavenDependencyFailuresTest#unresolvableParent`
 
 ###### Parameters
 | Parameter | Value |
@@ -184,6 +125,67 @@ https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
 + <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
 +https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
       <groupId>org.jenkins-ci.plugins</groupId>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeParentVersionTest#nonMavenCentralRepository`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupId|`org.jenkins-ci`|
+|artifactId|`jenkins`|
+|newVersion|`1.125`|
+|versionPattern|`null`|
+|onlyExternal|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>jenkins</artifactId>
+        <version>1.124</version>
+    </parent>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>jenkins</artifactId>
+        <version>1.125</version>
+    </parent>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,1 @@
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>jenkins</artifactId>
+-       <version>1.124</version>
++       <version>1.125</version>
+    </parent>
 ```
 </TabItem>
 </Tabs>

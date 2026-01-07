@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce a specific parameter name in catch clauses."
+sidebar_label: "Enforce a specific parameter name in catch clauses"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce a specific parameter name in catch clauses.
+# Enforce a specific parameter name in catch clauses
 
 **org.openrewrite.codemods.cleanup.javascript.CatchErrorName**
 
-_Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md)_
+_Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.CatchErrorName
-displayName: Enforce a specific parameter name in catch clauses.
+displayName: Enforce a specific parameter name in catch clauses
 description: |
-  Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md)
+  Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

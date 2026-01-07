@@ -39,18 +39,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 
 ###### New file
-```hcl
+```hcl title="to.tf"
 before {
 }
 ```
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="hcl" label="hcl">
+<TabItem value="from.tf" label="from.tf">
 
 
 ###### Before
-```hcl
+```hcl title="from.tf"
 after {
 }
 before {
@@ -58,7 +58,7 @@ before {
 ```
 
 ###### After
-```hcl
+```hcl title="from.tf"
 after {
 }
 ```
@@ -67,6 +67,8 @@ after {
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- from.tf
++++ from.tf
 @@ -3,2 +3,0 @@
 after {
 }

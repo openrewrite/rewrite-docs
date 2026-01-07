@@ -25,6 +25,59 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `String` | componentName | The name of the React component to analyze | `Button` |
 | `String` | propName | *Optional*. The name of the prop to find. If not provided, all props are matched. | `onClick` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|componentName|`Button`|
+|propName|`onClick`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="tsx" label="tsx">
+
+
+###### Before
+```tsx
+import {Button} from './components/Button';
+import {Card} from './components/Card';
+
+const App = () => {
+    return <>
+        <Button onClick={() => console.log('clicked')} variant='primary'>Click me</Button>
+        <Card onClick={() => console.log('clicked')}>Content</Card>
+    </>;
+};
+```
+
+###### After
+```tsx
+import {Button} from './components/Button';
+import {Card} from './components/Card';
+
+const App = () => {
+    return <>
+        <Button /*~~>*/onClick={() => console.log('clicked')} variant='primary'>Click me</Button>
+        <Card onClick={() => console.log('clicked')}>Content</Card>
+    </>;
+};
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+const App = () => {
+    return <>
+-       <Button onClick={() => console.log('clicked')} variant='primary'>Click me</Button>
++       <Button /*~~>*/onClick={() => console.log('clicked')} variant='primary'>Click me</Button>
+        <Card onClick={() => console.log('clicked')}>Content</Card>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

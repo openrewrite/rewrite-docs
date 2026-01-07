@@ -1,8 +1,10 @@
 ---
-description: Dbrider OpenRewrite recipes.
+description: DBRider OpenRewrite recipes.
 ---
 
-# Dbrider
+# DBRider
+
+_Recipes for [DBRider](https://database-rider.github.io/database-rider/) database testing framework._
 
 ## Composite Recipes
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.quarkus.spring.H2TestDriverToQuarkus**
 
-_Migrates `com.h2database:h2` with test scope to `io.quarkus:quarkus-jdbc-h2` with test scope_
+_Migrates `com.h2database:h2` with test scope to `io.quarkus:quarkus-jdbc-h2` with test scope._
 
 ### Tags
 
@@ -56,7 +56,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.quarkus.spring.H2TestDriverToQuarkus
 displayName: Replace H2 test driver with Quarkus JDBC H2 (test scope)
 description: |
-  Migrates `com.h2database:h2` with test scope to `io.quarkus:quarkus-jdbc-h2` with test scope
+  Migrates `com.h2database:h2` with test scope to `io.quarkus:quarkus-jdbc-h2` with test scope.
 tags:
   - spring
   - database

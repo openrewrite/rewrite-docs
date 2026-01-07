@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.reactive.reactor.ReactorProcessorCreateToSinkRecipes$EmitterProcessorCreateIntBooleanToSinkRecipe**
 
-_As of 3.5 EmitterProcessor is deprecated and Sinks are preferred_
+_As of 3.5 EmitterProcessor is deprecated and Sinks are preferred._
 
 ## Recipe source
 

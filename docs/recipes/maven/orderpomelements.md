@@ -30,7 +30,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
-* [Clean up various issues with the code.](/recipes/java/dropwizard/codecleanup.md)
+* [Clean up various issues with the code](/recipes/java/dropwizard/codecleanup.md)
 
 ## Example
 

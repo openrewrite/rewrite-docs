@@ -1,8 +1,10 @@
 ---
-description: Javaee7 OpenRewrite recipes.
+description: Java EE 7 OpenRewrite recipes.
 ---
 
-# Javaee7
+# Java EE 7
+
+_Recipes for migrating to [Java EE 7](https://javaee.github.io/javaee-spec/javadocs/)._
 
 ## Recipes
 

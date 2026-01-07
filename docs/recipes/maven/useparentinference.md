@@ -26,6 +26,68 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Maven 4](/recipes/maven/migratetomaven4.md)
 
+## Example
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+</project>
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="child/pom.xml" label="child/pom.xml">
+
+
+###### Before
+```xml title="child/pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>child</artifactId>
+</project>
+```
+
+###### After
+```xml title="child/pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent/>
+    <artifactId>child</artifactId>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- child/pom.xml
++++ child/pom.xml
+@@ -3,6 +3,1 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+-   <parent>
+-       <groupId>com.example</groupId>
+-       <artifactId>parent</artifactId>
+-       <version>1.0.0</version>
+-       <relativePath>..</relativePath>
+-   </parent>
++   <parent/>
+    <artifactId>child</artifactId>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

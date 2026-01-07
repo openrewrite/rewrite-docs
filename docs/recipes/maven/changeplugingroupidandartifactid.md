@@ -38,8 +38,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/io/quarkus/updates/core/quarkus30/additionalchanges.md)
 
-## Examples
-##### Example 1
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -139,80 +138,6 @@ This recipe is used as part of the following composite recipes:
 -                       <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
 +                       <artifactId>quarkus-extension-maven-plugin</artifactId>
                         <version>3.0.0.Beta1</version>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|oldGroupId|`io.quarkus`|
-|oldArtifactId|`quarkus-bootstrap-maven-plugin`|
-|newGroupId|`null`|
-|newArtifactId|`quarkus-extension-maven-plugin`|
-|newVersion|`4.0.0`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
-                <version>3.0.0.Beta1</version>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-extension-maven-plugin</artifactId>
-                <version>4.0.0</version>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -10,2 +10,2 @@
-            <plugin>
-                <groupId>io.quarkus</groupId>
--               <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
--               <version>3.0.0.Beta1</version>
-+               <artifactId>quarkus-extension-maven-plugin</artifactId>
-+               <version>4.0.0</version>
-            </plugin>
 ```
 </TabItem>
 </Tabs>

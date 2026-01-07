@@ -25,6 +25,61 @@ This recipe is used as part of the following composite recipes:
 
 * [Find security vulnerabilities using taint analysis](/recipes/analysis/java/security/findsecurityvulnerabilities.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.sql.Statement;
+
+/**
+ * @noinspection SqlSourceToSinkFlow
+ */
+public class UserController {
+    public void getUser(HttpServletRequest request, Statement stmt) throws Exception {
+        String userId = request.getParameter("id");
+        String query = "SELECT * FROM users WHERE id = '" + userId + "'";
+        stmt.execute(query);
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.sql.Statement;
+
+/**
+ * @noinspection SqlSourceToSinkFlow
+ */
+public class UserController {
+    public void getUser(HttpServletRequest request, Statement stmt) throws Exception {
+        String userId = request.getParameter("id");
+        String query = "SELECT * FROM users WHERE id = '" + userId + "'";
+        /*~~(SQL_INJECTION use)~~>*/stmt.execute(query);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -11,1 +11,1 @@
+        String userId = request.getParameter("id");
+        String query = "SELECT * FROM users WHERE id = '" + userId + "'";
+-       stmt.execute(query);
++       /*~~(SQL_INJECTION use)~~>*/stmt.execute(query);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

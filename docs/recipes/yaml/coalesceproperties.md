@@ -28,6 +28,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ## Example
 
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|exclusions|`null`|
+|applyTo|`null`|
+
 
 <Tabs groupId="beforeAfter">
 <TabItem value="yaml" label="yaml">
@@ -35,22 +41,22 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Before
 ```yaml
-    management:
-        metrics:
-            enable.process.files: true
-        endpoint:
-            health:
-                show-components: always
-                show-details: always
+management:
+    metrics:
+        enable.process.files: true
+    endpoint:
+        health:
+            show-components: always
+            show-details: always
 ```
 
 ###### After
 ```yaml
-    management:
-        metrics.enable.process.files: true
-        endpoint.health:
-            show-components: always
-            show-details: always
+management:
+    metrics.enable.process.files: true
+    endpoint.health:
+        show-components: always
+        show-details: always
 ```
 
 </TabItem>
@@ -58,17 +64,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ```diff
 @@ -2,6 +2,4 @@
-    management:
--       metrics:
--           enable.process.files: true
--       endpoint:
--           health:
--               show-components: always
--               show-details: always
-+       metrics.enable.process.files: true
-+       endpoint.health:
-+           show-components: always
-+           show-details: always
+management:
+-   metrics:
+-       enable.process.files: true
+-   endpoint:
+-       health:
+-           show-components: always
+-           show-details: always
++   metrics.enable.process.files: true
++   endpoint.health:
++       show-components: always
++       show-details: always
 
 ```
 </TabItem>

@@ -45,8 +45,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### Before
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sample</groupId>
   <artifactId>sample</artifactId>
@@ -65,8 +64,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 ###### After
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sample</groupId>
   <artifactId>sample</artifactId>
@@ -89,7 +87,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -9,1 +9,1 @@
+@@ -8,1 +8,1 @@
   <dependencyManagement>
     <dependencies>
 -     <dependency>
