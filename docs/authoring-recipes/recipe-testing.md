@@ -14,10 +14,13 @@ When developing new recipes, it's very important to test them to ensure that the
 
 To help you create tests that meet those standards, this guide will walk you through everything you need to know – from what dependencies to add, to example recipes and their tests, to advanced testing concepts. By the end, you should be writing great tests for your own recipes.
 
-<ReactPlayer url='https://www.youtube.com/watch?v=JAC9UIE80fs' controls="true" />
+<div style={{marginBottom: '1.5rem', display: 'flex', justifyContent: 'center'}}>
+  <ReactPlayer url='https://www.youtube.com/watch?v=JAC9UIE80fs' controls="true" />
+</div>
 
-<ReactPlayer url='https://www.youtube.com/watch?v=O9o4y_2TO0w' controls="true" />
-
+<div style={{marginBottom: '1.5rem', display: 'flex', justifyContent: 'center'}}>
+  <ReactPlayer url='https://www.youtube.com/watch?v=O9o4y_2TO0w' controls="true" />
+</div>
 
 ## Prerequisites
 
