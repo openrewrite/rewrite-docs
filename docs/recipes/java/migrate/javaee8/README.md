@@ -1,8 +1,10 @@
 ---
-description: Javaee8 OpenRewrite recipes.
+description: Java EE 8 OpenRewrite recipes.
 ---
 
-# Javaee8
+# Java EE 8
+
+_Recipes for migrating to [Java EE 8](https://javaee.github.io/javaee-spec/javadocs/)._
 
 ## Composite Recipes
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.NoUselessRename**
 
-_Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename)_
+_Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessRename
 displayName: Disallow renaming import, export, and destructured assignments to the same name
 description: |
-  Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename)
+  Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

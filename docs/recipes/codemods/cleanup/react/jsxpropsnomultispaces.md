@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.JsxPropsNoMultiSpaces**
 
-_Disallow multiple spaces between inline JSX props See rule details for [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-props-no-multi-spaces.md)_
+_Disallow multiple spaces between inline JSX props See rule details for [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-props-no-multi-spaces.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxPropsNoMultiSpaces
 displayName: Disallow multiple spaces between inline JSX props
 description: |
-  Disallow multiple spaces between inline JSX props See rule details for [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-props-no-multi-spaces.md)
+  Disallow multiple spaces between inline JSX props See rule details for [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-props-no-multi-spaces.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

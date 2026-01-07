@@ -55,6 +55,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`AddDependencyTest#addDependenciesOnEmptyProject`
 
 ###### Parameters
 | Parameter | Value |
@@ -126,6 +127,7 @@ This recipe is used as part of the following composite recipes:
 ---
 
 ##### Example 2
+`UpdateMavenModelTest#mavenUserPropertiesExistAfterUpdateMavenModel`
 
 ###### Parameters
 | Parameter | Value |

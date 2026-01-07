@@ -32,8 +32,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Add missing `isWrapperFor` and `unwrap` methods.](/recipes/java/migrate/jrewrapperinterface.md)
-* [Adds missing JDBC interface methods.](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
+* [Add missing `isWrapperFor` and `unwrap` methods](/recipes/java/migrate/jrewrapperinterface.md)
+* [Adds missing JDBC interface methods](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
 
 ## Example
 

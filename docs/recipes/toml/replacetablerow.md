@@ -27,6 +27,61 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | row | The TOML key-value pairs to replace with. Should contain the objectIdentifyingProperty. | `name = "Alice Smith"\nemail = "alice@example.com"` |
 | `String` | identifyingKey | The property name used to match existing rows. When a row with this property value exists, it will be replaced; otherwise, a new row will not be inserted (see MergeTableRow). | `name` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|tableName|`package.contributors`|
+|row|`name = "Alice Smith"
+email = "alice.new@example.com"`|
+|identifyingKey|`name`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="toml" label="toml">
+
+
+###### Before
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice@example.com"
+role = "maintainer"
+active = true
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+```
+
+###### After
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice.new@example.com"
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,1 @@
+[[package.contributors]]
+name = "Alice Smith"
+-email = "alice@example.com"
+-role = "maintainer"
+-active = true
++email = "alice.new@example.com"
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -15,6 +15,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit 5 best practices](./junit5bestpractices.md)
 * [JUnit Jupiter migration from JUnit 4.x](./junit4to5migration.md)
 * [Upgrade Surefire Plugin](./upgradesurefireplugin.md)
+* [Upgrade to JUnit 5.13](./upgradetojunit513.md)
 * [Upgrade to JUnit 5.14](./upgradetojunit514.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](./migrateassumptions.md)
 * [Use `MatcherAssert#assertThat(..)`](./usehamcrestassertthat.md)
@@ -31,6 +32,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](./assertthrowsonlaststatement.md)
 * [Cleanup JUnit imports](./cleanupjunitimports.md)
 * [Gradle `Test` use JUnit Jupiter](./gradleusejunitjupiter.md)
+* [Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)](./handleexternalresourcerules.md)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](./categorytotag.md)
 * [JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`](./timeoutruletoclassannotation.md)
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](./runnertoextension.md)
@@ -61,6 +63,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`](./useassertsame.md)
 * [Use XMLUnit Legacy for JUnit 5](./usexmlunitlegacy.md)
 * [Use wiremock extension](./usewiremockextension.md)
-* [assertTrue(x instanceof y) to assertInstanceOf(y.class, x)](./asserttrueinstanceoftoassertinstanceof.md)
+* [`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`](./asserttrueinstanceoftoassertinstanceof.md)
 
 

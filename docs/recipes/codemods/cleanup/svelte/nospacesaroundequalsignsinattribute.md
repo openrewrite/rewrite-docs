@@ -1,15 +1,15 @@
 ---
-sidebar_label: "disallow spaces around equal signs in attribute"
+sidebar_label: "Disallow spaces around equal signs in attribute"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# disallow spaces around equal signs in attribute
+# Disallow spaces around equal signs in attribute
 
 **org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute**
 
-_disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/)_
+_Disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/)._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-spaces-around-equal-signs-in-attribute": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-spaces-around-equal-signs-in-attribute": 2   } }. `
 
 </TabItem>
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute
-displayName: disallow spaces around equal signs in attribute
+displayName: Disallow spaces around equal signs in attribute
 description: |
-  disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/)
+  Disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/).
 tags:
   - svelte
   - ESLint
@@ -68,7 +68,7 @@ recipeList:
   "rules": {
     "svelte/no-spaces-around-equal-signs-in-attribute": 2
   }
-}
+}.
 
 
 ```

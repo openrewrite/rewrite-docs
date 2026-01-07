@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxClosingBracketLocation**
 
-_Enforce closing bracket location in JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-bracket-location)_
+_Enforce closing bracket location in JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-bracket-location)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxClosingBracketLocation
 displayName: Enforce closing bracket location in JSX
 description: |
-  Enforce closing bracket location in JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-bracket-location)
+  Enforce closing bracket location in JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-bracket-location).
 tags:
   - eslint
   - stylistic

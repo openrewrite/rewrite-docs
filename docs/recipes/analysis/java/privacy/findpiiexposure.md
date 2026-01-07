@@ -18,6 +18,83 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+class UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
+    static class User {
+        private String email;
+        private String ssn;
+        private String creditCardNumber;
+
+        public String getEmail() { return email; }
+        public String getSsn() { return ssn; }
+        public String getCreditCardNumber() { return creditCardNumber; }
+    }
+
+    void processUser(User user) {
+        logger.info("Processing user with email: " + user.getEmail());
+        logger.debug("User SSN: {}", user.getSsn());
+        logger.error("Failed to process credit card: " + user.getCreditCardNumber());
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+class UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
+    static class User {
+        private String email;
+        private String ssn;
+        private String creditCardNumber;
+
+        public String getEmail() { return email; }
+        public String getSsn() { return ssn; }
+        public String getCreditCardNumber() { return creditCardNumber; }
+    }
+
+    void processUser(User user) {
+        /*~~(PII logged)~~>*/logger.info("Processing user with email: " + user.getEmail());
+        /*~~(PII logged)~~>*/logger.debug("User SSN: {}", user.getSsn());
+        /*~~(PII logged)~~>*/logger.error("Failed to process credit card: " + user.getCreditCardNumber());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -18,3 +18,3 @@
+
+    void processUser(User user) {
+-       logger.info("Processing user with email: " + user.getEmail());
+-       logger.debug("User SSN: {}", user.getSsn());
+-       logger.error("Failed to process credit card: " + user.getCreditCardNumber());
++       /*~~(PII logged)~~>*/logger.info("Processing user with email: " + user.getEmail());
++       /*~~(PII logged)~~>*/logger.debug("User SSN: {}", user.getSsn());
++       /*~~(PII logged)~~>*/logger.error("Failed to process credit card: " + user.getCreditCardNumber());
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

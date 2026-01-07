@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.LinesAroundComment**
 
-_Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment)_
+_Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.LinesAroundComment
 displayName: Require empty lines around comments
 description: |
-  Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment)
+  Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment).
 tags:
   - eslint
   - stylistic

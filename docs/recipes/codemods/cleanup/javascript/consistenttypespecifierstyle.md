@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle**
 
-_Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md)_
+_Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle
 displayName: Enforce or ban the use of inline type-only markers for named imports
 description: |
-  Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md)
+  Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

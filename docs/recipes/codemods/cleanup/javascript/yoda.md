@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.Yoda**
 
-_Require or disallow "Yoda" conditions See [rule details](https://eslint.org/docs/latest/rules/yoda)_
+_Require or disallow "Yoda" conditions See [rule details](https://eslint.org/docs/latest/rules/yoda)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.Yoda
 displayName: Require or disallow &quot;Yoda&quot; conditions
 description: |
-  Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda)
+  Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

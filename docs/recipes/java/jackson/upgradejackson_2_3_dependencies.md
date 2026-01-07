@@ -32,7 +32,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Remove Jackson 2.x modules included in jackson-databind in 3.x.](../../java/jackson/upgradejackson_2_3_removemodules)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.fasterxml.jackson.core`
   * artifactId: `jackson-annotations`
@@ -168,7 +167,26 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
   * newVersion: `3.0.x`
-* [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.datatype`
+  * oldArtifactId: `jackson-datatype-*`
+  * newGroupId: `tools.jackson.datatype`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.jaxrs`
+  * oldArtifactId: `*`
+  * newGroupId: `tools.jackson.jaxrs`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.jakarta.rs`
+  * oldArtifactId: `*`
+  * newGroupId: `tools.jackson.jakarta.rs`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `com.fasterxml.jackson.jr`
+  * oldArtifactId: `*`
+  * newGroupId: `tools.jackson.jr`
+  * newVersion: `3.0.x`
 
 </TabItem>
 
@@ -184,7 +202,6 @@ description: |
 tags:
   - jackson-3
 recipeList:
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveModules
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson.core
       artifactId: jackson-annotations
@@ -320,7 +337,26 @@ recipeList:
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
       newVersion: 3.0.x
-  - org.openrewrite.maven.RemoveDuplicateDependencies
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.datatype
+      oldArtifactId: jackson-datatype-*
+      newGroupId: tools.jackson.datatype
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.jaxrs
+      oldArtifactId: "*"
+      newGroupId: tools.jackson.jaxrs
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.jakarta.rs
+      oldArtifactId: "*"
+      newGroupId: tools.jackson.jakarta.rs
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.fasterxml.jackson.jr
+      oldArtifactId: "*"
+      newGroupId: tools.jackson.jr
+      newVersion: 3.0.x
 
 ```
 </TabItem>

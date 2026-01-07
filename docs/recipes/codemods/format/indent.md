@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.Indent**
 
-_Enforce consistent indentation  See [rule details](https://eslint.style/rules/default/indent)_
+_Enforce consistent indentation  See [rule details](https://eslint.style/rules/default/indent)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.Indent
 displayName: Enforce consistent indentation
 description: |
-  Enforce consistent indentation  See [rule details](https://eslint.style/rules/default/indent)
+  Enforce consistent indentation  See [rule details](https://eslint.style/rules/default/indent).
 tags:
   - eslint
   - stylistic

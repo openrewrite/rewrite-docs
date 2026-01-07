@@ -26,6 +26,83 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Maven 4](/recipes/maven/migratetomaven4.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -17,5 +17,0 @@
+                <version>2.22.2</version>
+            </plugin>
+-           <plugin>
+-               <groupId>org.apache.maven.plugins</groupId>
+-               <artifactId>maven-compiler-plugin</artifactId>
+-               <version>3.11.0</version>
+-           </plugin>
+        </plugins>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

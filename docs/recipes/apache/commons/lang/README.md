@@ -1,8 +1,10 @@
 ---
-description: Lang OpenRewrite recipes.
+description: Commons Lang OpenRewrite recipes.
 ---
 
-# Lang
+# Commons Lang
+
+_Recipes for [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/) upgrades and migrations._
 
 ## Composite Recipes
 

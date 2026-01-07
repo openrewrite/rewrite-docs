@@ -18,6 +18,58 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+
+@SpringBootTest
+class MyTest {
+    @Autowired
+    private MockMvc mockMvc;
+}
+```
+
+###### After
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+
+@AutoConfigureMockMvc
+@SpringBootTest
+class MyTest {
+    @Autowired
+    private MockMvc mockMvc;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+@@ -5,0 +6,1 @@
+import org.springframework.test.web.servlet.MockMvc;
+
++@AutoConfigureMockMvc
+@SpringBootTest
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

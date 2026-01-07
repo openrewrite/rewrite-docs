@@ -368,56 +368,6 @@ class A {
 ---
 
 ##### Example 5
-`PreferJavaUtilOptionalTest#absentToEmpty`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.google.common.base.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.absent();
-    }
-}
-```
-
-###### After
-```java
-import java.util.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.empty();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
-
-@@ -5,1 +5,1 @@
-class A {
-    Optional<String> foo() {
--       return Optional.absent();
-+       return Optional.empty();
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 6
 `NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 
@@ -469,6 +419,56 @@ class A {
 -       } catch (IllegalStateException e) {
 +       } catch (NoSuchElementException e) {
             return "";
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+`PreferJavaUtilOptionalTest#absentToEmpty`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.absent();
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.empty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -5,1 +5,1 @@
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
 ```
 </TabItem>
 </Tabs>
@@ -689,56 +689,6 @@ class A {
 ---
 
 ##### Example 11
-`PreferJavaUtilOptionalTest#absentToEmpty`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import com.google.common.base.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.absent();
-    }
-}
-```
-
-###### After
-```java
-import java.util.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.empty();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
-
-@@ -5,1 +5,1 @@
-class A {
-    Optional<String> foo() {
--       return Optional.absent();
-+       return Optional.empty();
-    }
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 12
 `NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 
@@ -790,6 +740,56 @@ class A {
 -       } catch (IllegalStateException e) {
 +       } catch (NoSuchElementException e) {
             return "";
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 12
+`PreferJavaUtilOptionalTest#absentToEmpty`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.absent();
+    }
+}
+```
+
+###### After
+```java
+import java.util.Optional;
+
+class A {
+    Optional<String> foo() {
+        return Optional.empty();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.google.common.base.Optional;
++import java.util.Optional;
+
+@@ -5,1 +5,1 @@
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
 ```
 </TabItem>
 </Tabs>

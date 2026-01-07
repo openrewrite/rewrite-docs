@@ -17,5 +17,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade to SpringDoc 2.5](./upgradespringdoc_2_5.md)
 * [Upgrade to SpringDoc 2.6](./upgradespringdoc_2_6.md)
 * [Upgrade to SpringDoc 2.8](./upgradespringdoc_2_8.md)
+* [Upgrade to SpringDoc 3.0](./upgradespringdoc_3_0.md)
 
 

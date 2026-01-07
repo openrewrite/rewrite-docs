@@ -29,6 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Hibernate 7.0.x (Community Edition)](./migratetohibernate70-community-edition.md)
 * [Migrate to Hibernate 7.1.x (Moderne Edition)](./migratetohibernate71-moderne-edition.md)
 * [Migrate to Hibernate 7.1.x (Community Edition)](./migratetohibernate71-community-edition.md)
+* [Migrate to Hibernate 7.2.x (Moderne Edition)](./migratetohibernate72-moderne-edition.md)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)](./typedescriptortotype-community-edition.md)
 
 ## Recipes

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization**
 
-_Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228_
+_Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228._
 
 ### Tags
 
@@ -48,7 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization
 displayName: Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points
 description: |
-  Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228
+  Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228.
 tags:
   - spring
   - boot

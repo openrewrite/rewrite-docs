@@ -1,8 +1,10 @@
 ---
-description: Io OpenRewrite recipes.
+description: Commons IO OpenRewrite recipes.
 ---
 
-# Io
+# Commons IO
+
+_Recipes for [Apache Commons IO](https://commons.apache.org/proper/commons-io/) migrations._
 
 ## Composite Recipes
 

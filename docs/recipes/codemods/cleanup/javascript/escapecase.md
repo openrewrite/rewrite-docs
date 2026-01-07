@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Require escape sequences to use uppercase values."
+sidebar_label: "Require escape sequences to use uppercase values"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require escape sequences to use uppercase values.
+# Require escape sequences to use uppercase values
 
 **org.openrewrite.codemods.cleanup.javascript.EscapeCase**
 
-_Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md)_
+_Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.EscapeCase
-displayName: Require escape sequences to use uppercase values.
+displayName: Require escape sequences to use uppercase values
 description: |
-  Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md)
+  Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

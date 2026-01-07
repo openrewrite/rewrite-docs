@@ -1,8 +1,10 @@
 ---
-description: Cloud2024 OpenRewrite recipes.
+description: Spring Cloud 2024 OpenRewrite recipes.
 ---
 
-# Cloud2024
+# Spring Cloud 2024
+
+_Recipes for migrating to Spring Cloud 2024._
 
 ## Composite Recipes
 

@@ -38,7 +38,85 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade Android Gradle Plugin (AGP) version](/recipes/android/upgradeandroidgradlepluginversion.md)
 
-## Example
+## Examples
+##### Example 1
+`GradleMultiDependencyFilterTest#upgradesOnlyMatchingDependenciesInVarargs`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupId|`com.fasterxml.jackson.core`|
+|artifactId|`jackson-*`|
+|newVersion|`2.17.0`|
+|versionPattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+  id 'java-library'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation(
+    'com.fasterxml.jackson.core:jackson-databind:2.11.0',
+    'com.google.guava:guava:29.0-jre',
+    'com.fasterxml.jackson.core:jackson-core:2.11.0')
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+  id 'java-library'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation(
+    'com.fasterxml.jackson.core:jackson-databind:2.17.0',
+    'com.google.guava:guava:29.0-jre',
+    'com.fasterxml.jackson.core:jackson-core:2.17.0')
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -11,1 +11,1 @@
+dependencies {
+  implementation(
+-   'com.fasterxml.jackson.core:jackson-databind:2.11.0',
++   'com.fasterxml.jackson.core:jackson-databind:2.17.0',
+    'com.google.guava:guava:29.0-jre',
+@@ -13,1 +13,1 @@
+    'com.fasterxml.jackson.core:jackson-databind:2.11.0',
+    'com.google.guava:guava:29.0-jre',
+-   'com.fasterxml.jackson.core:jackson-core:2.11.0')
++   'com.fasterxml.jackson.core:jackson-core:2.17.0')
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeDependencyVersionTest#guavaCompileOnly`
 
 ###### Parameters
 | Parameter | Value |

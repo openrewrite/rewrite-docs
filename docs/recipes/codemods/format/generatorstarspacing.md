@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.GeneratorStarSpacing**
 
-_Enforce consistent spacing around &#x60;*&#x60; operators in generator functions  See [rule details](https://eslint.style/rules/default/generator-star-spacing)_
+_Enforce consistent spacing around &#x60;*&#x60; operators in generator functions  See [rule details](https://eslint.style/rules/default/generator-star-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.GeneratorStarSpacing
 displayName: Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions
 description: |
-  Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions  See [rule details](https://eslint.style/rules/default/generator-star-spacing)
+  Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions  See [rule details](https://eslint.style/rules/default/generator-star-spacing).
 tags:
   - eslint
   - stylistic

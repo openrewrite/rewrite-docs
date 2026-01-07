@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary**
 
-_Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md)_
+_Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/use-storybook-testing-library": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/use-storybook-testing-library": 2   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary
 displayName: Do not use testing-library directly on stories
 description: |
-  Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md)
+  Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md).
 tags:
   - eslint-plugin-storybook
   - ESLint
@@ -64,7 +64,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

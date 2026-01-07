@@ -18,6 +18,55 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.sql.Statement;
+
+public class UserController {
+    public void getUser(HttpServletRequest request, Statement stmt) throws Exception {
+        String userId = request.getParameter("id");
+        String query = "SELECT * FROM users WHERE id = '" + userId + "'";
+        stmt.execute(query);
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.sql.Statement;
+
+public class UserController {
+    public void getUser(HttpServletRequest request, Statement stmt) throws Exception {
+        String userId = request.getParameter("id");
+        String query = "SELECT * FROM users WHERE id = '" + userId + "'";
+        /*~~(SQL_INJECTION use)~~>*/stmt.execute(query);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+        String userId = request.getParameter("id");
+        String query = "SELECT * FROM users WHERE id = '" + userId + "'";
+-       stmt.execute(query);
++       /*~~(SQL_INJECTION use)~~>*/stmt.execute(query);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

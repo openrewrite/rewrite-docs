@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow unreadable array destructuring."
+sidebar_label: "Disallow unreadable array destructuring"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow unreadable array destructuring.
+# Disallow unreadable array destructuring
 
 **org.openrewrite.codemods.cleanup.javascript.NoUnreadableArrayDestructuring**
 
-_Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md)_
+_Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUnreadableArrayDestructuring
-displayName: Disallow unreadable array destructuring.
+displayName: Disallow unreadable array destructuring
 description: |
-  Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md)
+  Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

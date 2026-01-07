@@ -34,12 +34,12 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
-`ConfigurationOverEnableSecurityTest#enableWebSecurity`
+`ConfigurationOverEnableSecurityTest#enableWebSecurityForceAdd`
 
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|forceAddConfiguration|`false`|
+|forceAddConfiguration|`true`|
 
 
 <Tabs groupId="beforeAfter">
@@ -83,12 +83,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 ---
 
 ##### Example 2
-`ConfigurationOverEnableSecurityTest#enableWebSecurityForceAdd`
+`ConfigurationOverEnableSecurityTest#enableWebSecurity`
 
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|forceAddConfiguration|`true`|
+|forceAddConfiguration|`false`|
 
 
 <Tabs groupId="beforeAfter">

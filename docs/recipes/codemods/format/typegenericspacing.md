@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.TypeGenericSpacing**
 
-_Enforces consistent spacing inside TypeScript type generics  See [rule details](https://eslint.style/rules/default/type-generic-spacing)_
+_Enforces consistent spacing inside TypeScript type generics  See [rule details](https://eslint.style/rules/default/type-generic-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.TypeGenericSpacing
 displayName: Enforces consistent spacing inside TypeScript type generics
 description: |
-  Enforces consistent spacing inside TypeScript type generics  See [rule details](https://eslint.style/rules/default/type-generic-spacing)
+  Enforces consistent spacing inside TypeScript type generics  See [rule details](https://eslint.style/rules/default/type-generic-spacing).
 tags:
   - eslint
   - stylistic

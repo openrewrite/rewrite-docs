@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.struts.migrate6.MigrateStruts6**
 
-_Migrate Struts 2.x to Struts 6.0_
+_Migrate Struts 2.x to Struts 6.0._
 
 ## Recipe source
 
@@ -46,7 +46,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.struts.migrate6.MigrateStruts6
 displayName: Migrate to Struts 6.0
 description: |
-  Migrate Struts 2.x to Struts 6.0
+  Migrate Struts 2.x to Struts 6.0.
 recipeList:
   - org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces
   - org.openrewrite.java.struts.migrate6.MigrateDynamicMethodInvocation

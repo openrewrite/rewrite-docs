@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce using the separator argument with `Array#join()`."
+sidebar_label: "Enforce using the separator argument with `Array#join()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce using the separator argument with `Array#join()`.
+# Enforce using the separator argument with `Array#join()`
 
 **org.openrewrite.codemods.cleanup.javascript.RequireArrayJoinSeparator**
 
-_Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md)_
+_Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.RequireArrayJoinSeparator
-displayName: Enforce using the separator argument with `Array#join()`.
+displayName: Enforce using the separator argument with `Array#join()`
 description: |
-  Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md)
+  Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

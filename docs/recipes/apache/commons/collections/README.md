@@ -1,8 +1,10 @@
 ---
-description: Collections OpenRewrite recipes.
+description: Commons Collections OpenRewrite recipes.
 ---
 
-# Collections
+# Commons Collections
+
+_Recipes for [Apache Commons Collections](https://commons.apache.org/proper/commons-collections/) migrations._
 
 ## Composite Recipes
 

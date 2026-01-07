@@ -25,6 +25,45 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | keyPath | A TOML path expression to locate keys. Wildcards are supported. | `**.name` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|keyPath|`package.name`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="toml" label="toml">
+
+
+###### Before
+```toml
+[package]
+name = "my-package"
+version = "0.1.0"
+```
+
+###### After
+```toml
+[package]
+~~>name = "my-package"
+version = "0.1.0"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+[package]
+-name = "my-package"
++~~>name = "my-package"
+version = "0.1.0"
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

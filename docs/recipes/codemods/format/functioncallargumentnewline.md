@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.FunctionCallArgumentNewline**
 
-_Enforce line breaks between arguments of a function call  See [rule details](https://eslint.style/rules/default/function-call-argument-newline)_
+_Enforce line breaks between arguments of a function call  See [rule details](https://eslint.style/rules/default/function-call-argument-newline)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.FunctionCallArgumentNewline
 displayName: Enforce line breaks between arguments of a function call
 description: |
-  Enforce line breaks between arguments of a function call  See [rule details](https://eslint.style/rules/default/function-call-argument-newline)
+  Enforce line breaks between arguments of a function call  See [rule details](https://eslint.style/rules/default/function-call-argument-newline).
 tags:
   - eslint
   - stylistic

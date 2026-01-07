@@ -45,8 +45,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |groupId|`org.openrewrite`|
 |artifactId|`rewrite-core`|
 |configuration|`api`|
-|version||
-|versionPattern||
+|version|`null`|
+|versionPattern|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -58,11 +58,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 plugins {
     id 'java-library'
 }
-
 repositories {
     mavenCentral()
 }
-
 dependencies {
     api "org.openrewrite:rewrite-core:latest.release"
 }
@@ -73,11 +71,9 @@ dependencies {
 plugins {
     id 'java-library'
 }
-
 repositories {
     mavenCentral()
 }
-
 dependencies {
     /*~~>*/api "org.openrewrite:rewrite-core:latest.release"
 }
@@ -89,8 +85,8 @@ dependencies {
 ```diff
 --- build.gradle
 +++ build.gradle
-@@ -10,1 +10,1 @@
-
+@@ -8,1 +8,1 @@
+}
 dependencies {
 -   api "org.openrewrite:rewrite-core:latest.release"
 +   /*~~>*/api "org.openrewrite:rewrite-core:latest.release"

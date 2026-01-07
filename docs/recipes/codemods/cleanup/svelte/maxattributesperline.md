@@ -1,15 +1,15 @@
 ---
-sidebar_label: "enforce the maximum number of attributes per line"
+sidebar_label: "Enforce the maximum number of attributes per line"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# enforce the maximum number of attributes per line
+# Enforce the maximum number of attributes per line
 
 **org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine**
 
-_enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/)_
+_Enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/)._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/max-attributes-per-line": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/max-attributes-per-line": 2   } }. `
 
 </TabItem>
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine
-displayName: enforce the maximum number of attributes per line
+displayName: Enforce the maximum number of attributes per line
 description: |
-  enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/)
+  Enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/).
 tags:
   - svelte
   - ESLint
@@ -68,7 +68,7 @@ recipeList:
   "rules": {
     "svelte/max-attributes-per-line": 2
   }
-}
+}.
 
 
 ```

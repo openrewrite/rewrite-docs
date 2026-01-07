@@ -22,6 +22,75 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Examples
+##### Example 1
+`UpgradeToJasperReports6Test#upgradeDependencyVersion`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>jasper-app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>5.6.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.lowagie</groupId>
+                    <artifactId>itext</artifactId>
+                    <!-- they use a strange 2.1.7.js2 version that is not resolvable public doesn't matter for the migration-->
+                </exclusion>
+                <exclusion>
+                    <groupId>org.olap4j</groupId>
+                    <artifactId>olap4j</artifactId>
+                    <!-- they use a strange 0.9.7.309-JS-3 version that is not resolvable public doesn't matter for the migration-->
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`UpgradeToJasperReports6Test#upgradeDependencyVersion`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>jasper-app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>5.6.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.lowagie</groupId>
+                    <artifactId>itext</artifactId>
+                    <!-- they use a strange 2.1.7.js2 version that is not resolvable public doesn't matter for the migration-->
+                </exclusion>
+                <exclusion>
+                    <groupId>org.olap4j</groupId>
+                    <artifactId>olap4j</artifactId>
+                    <!-- they use a strange 0.9.7.309-JS-3 version that is not resolvable public doesn't matter for the migration-->
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+</project>
+```
+
 
 ## Usage
 

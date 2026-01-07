@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Adds `DefaultTheme` module augmentation to typescript projects."
+sidebar_label: "Adds `DefaultTheme` module augmentation to typescript projects"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Adds `DefaultTheme` module augmentation to typescript projects.
+# Adds `DefaultTheme` module augmentation to typescript projects
 
 **org.openrewrite.codemods.migrate.mui.ThemeAugment**
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.mui.ThemeAugment
-displayName: Adds `DefaultTheme` module augmentation to typescript projects.
+displayName: Adds `DefaultTheme` module augmentation to typescript projects
 description: |
   See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-augment).
 tags:

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Add missing `isWrapperFor` and `unwrap` methods."
+sidebar_label: "Add missing `isWrapperFor` and `unwrap` methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add missing `isWrapperFor` and `unwrap` methods.
+# Add missing `isWrapperFor` and `unwrap` methods
 
 **org.openrewrite.java.migrate.JREWrapperInterface**
 
@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.JREWrapperInterface
-displayName: Add missing `isWrapperFor` and `unwrap` methods.
+displayName: Add missing `isWrapperFor` and `unwrap` methods
 description: |
   Add method implementations stubs to classes that implement `java.sql.Wrapper`.
 recipeList:

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "enforce unified spacing in mustache"
+sidebar_label: "Enforce unified spacing in mustache"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# enforce unified spacing in mustache
+# Enforce unified spacing in mustache
 
 **org.openrewrite.codemods.cleanup.svelte.MustacheSpacing**
 
-_enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/)_
+_Enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/)._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/mustache-spacing": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/mustache-spacing": 2   } }. `
 
 </TabItem>
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.MustacheSpacing
-displayName: enforce unified spacing in mustache
+displayName: Enforce unified spacing in mustache
 description: |
-  enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/)
+  Enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/).
 tags:
   - svelte
   - ESLint
@@ -68,7 +68,7 @@ recipeList:
   "rules": {
     "svelte/mustache-spacing": 2
   }
-}
+}.
 
 
 ```

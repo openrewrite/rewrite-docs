@@ -38,17 +38,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value=".mvn/develocity.xml" label=".mvn/develocity.xml">
 
 
 ###### Before
-```xml
+```xml title=".mvn/develocity.xml"
 <develocity>
 </develocity>
 ```
 
 ###### After
-```xml
+```xml title=".mvn/develocity.xml"
 <develocity>
   <buildCache>
     <local>
@@ -66,6 +66,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- .mvn/develocity.xml
++++ .mvn/develocity.xml
 @@ -2,0 +2,9 @@
 <develocity>
 + <buildCache>

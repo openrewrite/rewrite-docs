@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta**
 
-_Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md)_
+_Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/no-title-property-in-meta": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/no-title-property-in-meta": 2   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta
 displayName: Do not define a title in meta
 description: |
-  Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md)
+  Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md).
 tags:
   - eslint-plugin-storybook
   - ESLint
@@ -64,7 +64,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

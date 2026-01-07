@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `Number` static properties over global ones."
+sidebar_label: "Prefer `Number` static properties over global ones"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Number` static properties over global ones.
+# Prefer `Number` static properties over global ones
 
 **org.openrewrite.codemods.cleanup.javascript.PreferNumberProperties**
 
-_Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md)_
+_Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferNumberProperties
-displayName: Prefer `Number` static properties over global ones.
+displayName: Prefer `Number` static properties over global ones
 description: |
-  Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md)
+  Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

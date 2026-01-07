@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread**
 
-_Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread)_
+_Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread
 displayName: Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead
 description: |
-  Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread)
+  Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

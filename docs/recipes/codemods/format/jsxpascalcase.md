@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxPascalCase**
 
-_Enforce PascalCase for user-defined JSX components  See [rule details](https://eslint.style/rules/default/jsx-pascal-case)_
+_Enforce PascalCase for user-defined JSX components  See [rule details](https://eslint.style/rules/default/jsx-pascal-case)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxPascalCase
 displayName: Enforce PascalCase for user-defined JSX components
 description: |
-  Enforce PascalCase for user-defined JSX components  See [rule details](https://eslint.style/rules/default/jsx-pascal-case)
+  Enforce PascalCase for user-defined JSX components  See [rule details](https://eslint.style/rules/default/jsx-pascal-case).
 tags:
   - eslint
   - stylistic

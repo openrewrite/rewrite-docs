@@ -26,6 +26,157 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Framework to Spring Boot](/recipes/java/spring/boot/springtospringboot.md)
 * [Migrate to Spring Boot 3.4 (Moderne Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
 
+## Examples
+##### Example 1
+`ModularSpringFrameworkDependenciesTest#replaceMonolithicSpringWithModularDependencies`
+
+
+###### Unchanged
+```java
+package com.example;
+
+import org.springframework.context.ApplicationContext;
+
+class Main {
+    private ApplicationContext context;
+}
+```
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,2 +8,2 @@
+        <dependency>
+            <groupId>org.springframework</groupId>
+-           <artifactId>spring</artifactId>
+-           <version>2.5.6</version>
++           <artifactId>spring-context</artifactId>
++           <version>3.2.18.RELEASE</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`ModularSpringFrameworkDependenciesTest#replaceMonolithicSpringWithModularDependencies`
+
+
+###### Unchanged
+```java
+package com.example;
+
+import org.springframework.context.ApplicationContext;
+
+class Main {
+    private ApplicationContext context;
+}
+```
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,2 +8,2 @@
+        <dependency>
+            <groupId>org.springframework</groupId>
+-           <artifactId>spring</artifactId>
+-           <version>2.5.6</version>
++           <artifactId>spring-context</artifactId>
++           <version>3.2.18.RELEASE</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

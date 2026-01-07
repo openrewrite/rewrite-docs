@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.TypeNamedTupleSpacing**
 
-_Expect space before the type declaration in the named tuple  See [rule details](https://eslint.style/rules/default/type-named-tuple-spacing)_
+_Expect space before the type declaration in the named tuple  See [rule details](https://eslint.style/rules/default/type-named-tuple-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.TypeNamedTupleSpacing
 displayName: Expect space before the type declaration in the named tuple
 description: |
-  Expect space before the type declaration in the named tuple  See [rule details](https://eslint.style/rules/default/type-named-tuple-spacing)
+  Expect space before the type declaration in the named tuple  See [rule details](https://eslint.style/rules/default/type-named-tuple-spacing).
 tags:
   - eslint
   - stylistic

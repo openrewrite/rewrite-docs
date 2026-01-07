@@ -57,6 +57,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud properties to 2020](/recipes/java/spring/cloud2020/springcloudproperties_2020.md)
 * [Migrate Spring Cloud properties to 2023](/recipes/java/spring/cloud2023/springcloudproperties_2023.md)
 * [Migrate Spring Cloud properties to 2024](/recipes/java/spring/cloud2024/springcloudproperties_2024.md)
+* [Migrate Spring Cloud properties to 2025.1](/recipes/java/spring/cloud20251/springcloudproperties_2025_1.md)
 * [Migrate Spring Cloud properties to 2025](/recipes/java/spring/cloud2025/springcloudproperties_2025.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](/recipes/java/spring/boot3/migratemaxhttpheadersize.md)
 * [Update OpenTelemetry resource attributes](/recipes/java/spring/boot3/updateopentelemetryresourceattributes.md)

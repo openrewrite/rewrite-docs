@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName**
 
-_A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md)_
+_A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/no-redundant-story-name": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/no-redundant-story-name": 2   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName
 displayName: A story should not have a redundant name property
 description: |
-  A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md)
+  A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md).
 tags:
   - eslint-plugin-storybook
   - ESLint
@@ -64,7 +64,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

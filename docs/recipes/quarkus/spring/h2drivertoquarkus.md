@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.quarkus.spring.H2DriverToQuarkus**
 
-_Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test scope)_
+_Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test scope)._
 
 ### Tags
 
@@ -55,7 +55,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.quarkus.spring.H2DriverToQuarkus
 displayName: Replace H2 driver with Quarkus JDBC H2
 description: |
-  Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test scope)
+  Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test scope).
 tags:
   - spring
   - database

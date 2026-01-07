@@ -138,6 +138,69 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 
+## Examples
+##### Example 1
+`UpdateBuildPluginsTest#updateGradleBuildPlugins`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.7.9"
+    id("io.micronaut.minimal.application") version "3.7.9"
+    id("io.micronaut.aot") version "3.7.9"
+    id("io.micronaut.component") version "3.7.9"
+    id("io.micronaut.crac") version "3.7.9"
+    id("io.micronaut.docker") version "3.7.9"
+    id("io.micronaut.graalvm") version "3.7.9"
+    id("io.micronaut.library") version "3.7.9"
+    id("io.micronaut.minimal.library") version "3.7.9"
+    id("io.micronaut.test-resources") version "3.5.1"
+}
+
+repositories {
+    mavenCentral()
+}
+```
+
+###### Unchanged
+```properties title="gradle.properties"
+micronautVersion=3.9.1
+```
+
+---
+
+##### Example 2
+`UpdateBuildPluginsTest#updateGradleBuildPlugins`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.7.9"
+    id("io.micronaut.minimal.application") version "3.7.9"
+    id("io.micronaut.aot") version "3.7.9"
+    id("io.micronaut.component") version "3.7.9"
+    id("io.micronaut.crac") version "3.7.9"
+    id("io.micronaut.docker") version "3.7.9"
+    id("io.micronaut.graalvm") version "3.7.9"
+    id("io.micronaut.library") version "3.7.9"
+    id("io.micronaut.minimal.library") version "3.7.9"
+    id("io.micronaut.test-resources") version "3.5.1"
+}
+
+repositories {
+    mavenCentral()
+}
+```
+
+###### Unchanged
+```properties title="gradle.properties"
+micronautVersion=3.9.1
+```
+
 
 ## Usage
 

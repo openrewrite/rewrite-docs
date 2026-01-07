@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.micronaut.UpdateMicronautSession**
 
-_This recipe will update the Micronaut Session dependency if needed_
+_This recipe will update the Micronaut Session dependency if needed._
 
 ## Recipe source
 
@@ -49,7 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.micronaut.UpdateMicronautSession
 displayName: Update the Micronaut Session support
 description: |
-  This recipe will update the Micronaut Session dependency if needed
+  This recipe will update the Micronaut Session dependency if needed.
 recipeList:
   - org.openrewrite.gradle.ChangeDependencyGroupId:
       groupId: io.micronaut
@@ -71,6 +71,119 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
+
+## Examples
+##### Example 1
+`UpdateMicronautSessionTest#updateGradleDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut.session:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,1 +5,1 @@
+}
+dependencies {
+-   implementation("io.micronaut:micronaut-session")
++   implementation("io.micronaut.session:micronaut-session")
+}
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+---
+
+##### Example 2
+`UpdateMicronautSessionTest#updateGradleDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+dependencies {
+    implementation("io.micronaut.session:micronaut-session")
+}
+repositories {
+    mavenCentral()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,1 +5,1 @@
+}
+dependencies {
+-   implementation("io.micronaut:micronaut-session")
++   implementation("io.micronaut.session:micronaut-session")
+}
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
 
 
 ## Usage

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn**
 
-_Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own)_
+_Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn
 displayName: Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)
 description: |
-  Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own)
+  Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

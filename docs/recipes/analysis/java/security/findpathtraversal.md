@@ -25,6 +25,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Find security vulnerabilities using taint analysis](/recipes/analysis/java/security/findsecurityvulnerabilities.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileInputStream;
+
+class PathTraversalExample {
+    void vulnerable(HttpServletRequest request) throws Exception {
+        String filename = request.getParameter("file");
+        File file = new File("/uploads/" + filename);
+        FileInputStream fis = new FileInputStream(file);
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileInputStream;
+
+class PathTraversalExample {
+    void vulnerable(HttpServletRequest request) throws Exception {
+        String filename = request.getParameter("file");
+        File file = /*~~(PATH_TRAVERSAL use)~~>*/new File("/uploads/" + filename);
+        FileInputStream fis = /*~~(PATH_TRAVERSAL use)~~>*/new FileInputStream(file);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,2 +8,2 @@
+    void vulnerable(HttpServletRequest request) throws Exception {
+        String filename = request.getParameter("file");
+-       File file = new File("/uploads/" + filename);
+-       FileInputStream fis = new FileInputStream(file);
++       File file = /*~~(PATH_TRAVERSAL use)~~>*/new File("/uploads/" + filename);
++       FileInputStream fis = /*~~(PATH_TRAVERSAL use)~~>*/new FileInputStream(file);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

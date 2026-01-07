@@ -29,6 +29,53 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | destinationKey | The key to create. | `myKey` |
 | `String` | destinationFilePath | *Optional*. The file path to the JSON file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.json` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|sourceKeyPath|`$.source`|
+|sourceFilePath|`null`|
+|destinationKeyPath|`$.`|
+|destinationKey|`copiedValue`|
+|destinationFilePath|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="a.json" label="a.json">
+
+
+###### Before
+```json title="a.json"
+{
+  "source": "value"
+}
+```
+
+###### After
+```json title="a.json"
+{
+  "source": "value",
+  "copiedValue": "value"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- a.json
++++ a.json
+@@ -2,1 +2,2 @@
+{
+- "source": "value"
++ "source": "value",
++ "copiedValue": "value"
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

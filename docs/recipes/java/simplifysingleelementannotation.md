@@ -27,6 +27,39 @@ This recipe is used as part of the following composite recipes:
 * [Code cleanup](/recipes/staticanalysis/codecleanup.md)
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+@Copyright(value = "2002 Yoyodyne Propulsion Systems, Inc.")
+class OscillationOverthruster {
+}
+```
+
+###### After
+```java
+@Copyright("2002 Yoyodyne Propulsion Systems, Inc.")
+class OscillationOverthruster {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-@Copyright(value = "2002 Yoyodyne Propulsion Systems, Inc.")
++@Copyright("2002 Yoyodyne Propulsion Systems, Inc.")
+class OscillationOverthruster {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

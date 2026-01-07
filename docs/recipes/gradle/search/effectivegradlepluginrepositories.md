@@ -25,6 +25,72 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `Boolean` | useMarkers | *Optional*. Whether to add markers for each effective Gradle plugin repository to the build or settings file. Default `false`. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|useMarkers|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+/*~~(https://plugins.gradle.org/m2)~~>*/plugins {
+    id 'java'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -1,1 +1,1 @@
+-plugins {
++/*~~(https://plugins.gradle.org/m2)~~>*/plugins {
+    id 'java'
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="settingsGradle" label="settingsGradle">
+
+
+###### Before
+```settingsGradle
+rootProject.name = 'my-project'
+```
+
+###### After
+```settingsGradle
+/*~~(https://plugins.gradle.org/m2)~~>*/rootProject.name = 'my-project'
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-rootProject.name = 'my-project'
++/*~~(https://plugins.gradle.org/m2)~~>*/rootProject.name = 'my-project'
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

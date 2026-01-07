@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals**
 
-_Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals)_
+_Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals
 displayName: Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals
 description: |
-  Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals)
+  Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

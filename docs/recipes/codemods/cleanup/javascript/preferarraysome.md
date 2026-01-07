@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`."
+sidebar_label: "Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`.
+# Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferArraySome**
 
-_Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md)_
+_Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferArraySome
-displayName: Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`.
+displayName: Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`
 description: |
-  Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md)
+  Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

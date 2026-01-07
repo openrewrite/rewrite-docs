@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow useless `undefined`."
+sidebar_label: "Disallow useless `undefined`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow useless `undefined`.
+# Disallow useless `undefined`
 
 **org.openrewrite.codemods.cleanup.javascript.NoUselessUndefined**
 
-_Disallow useless `undefined`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md)_
+_Disallow useless `undefined`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessUndefined
-displayName: Disallow useless `undefined`.
+displayName: Disallow useless `undefined`
 description: |
-  Disallow useless `undefined`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md)
+  Disallow useless `undefined`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

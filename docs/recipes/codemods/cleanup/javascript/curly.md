@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.Curly**
 
-_Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly)_
+_Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.Curly
 displayName: Enforce consistent brace style for all control statements
 description: |
-  Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly)
+  Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

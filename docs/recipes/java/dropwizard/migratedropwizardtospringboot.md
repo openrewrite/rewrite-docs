@@ -35,7 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate Hibernate](../../java/dropwizard/migratehibernate)
 * [Migrate Resource Classes](../../java/dropwizard/migrateresourcestospringjersey)
 * [Migrate Health Checks to Spring Boot](../../java/dropwizard/migratetests)
-* [Clean up various issues with the code.](../../java/dropwizard/codecleanup)
+* [Clean up various issues with the code](../../java/dropwizard/codecleanup)
 
 </TabItem>
 

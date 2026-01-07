@@ -25,6 +25,61 @@ This recipe is used as part of the following composite recipes:
 
 * [Find security vulnerabilities using taint analysis](/recipes/analysis/java/security/findsecurityvulnerabilities.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.naming.directory.DirContext;
+import javax.naming.directory.InitialDirContext;
+import javax.naming.directory.SearchControls;
+import javax.servlet.http.HttpServletRequest;
+
+public class LdapSearch {
+    public void searchUser(HttpServletRequest request, DirContext ctx) throws Exception {
+        String username = request.getParameter("username");
+        String filter = "(uid=" + username + ")";
+        SearchControls controls = new SearchControls();
+        ctx.search("ou=users,dc=example,dc=com", filter, controls);
+    }
+}
+```
+
+###### After
+```java
+import javax.naming.directory.DirContext;
+import javax.naming.directory.InitialDirContext;
+import javax.naming.directory.SearchControls;
+import javax.servlet.http.HttpServletRequest;
+
+public class LdapSearch {
+    public void searchUser(HttpServletRequest request, DirContext ctx) throws Exception {
+        String username = request.getParameter("username");
+        String filter = "(uid=" + username + ")";
+        SearchControls controls = new SearchControls();
+        /*~~(LDAP_INJECTION use)~~>*/ctx.search("ou=users,dc=example,dc=com", filter, controls);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -11,1 +11,1 @@
+        String filter = "(uid=" + username + ")";
+        SearchControls controls = new SearchControls();
+-       ctx.search("ou=users,dc=example,dc=com", filter, controls);
++       /*~~(LDAP_INJECTION use)~~>*/ctx.search("ou=users,dc=example,dc=com", filter, controls);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

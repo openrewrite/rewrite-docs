@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration**
 
-_Generate named exports from CommonJS modules_
+_Generate named exports from CommonJS modules._
 
 ### Tags
 
@@ -42,7 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration
 displayName: Generate named exports from CommonJS modules
 description: |
-  Generate named exports from CommonJS modules
+  Generate named exports from CommonJS modules.
 tags:
   - codemods
   - 5to6

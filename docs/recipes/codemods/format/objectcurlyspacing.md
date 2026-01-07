@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.ObjectCurlySpacing**
 
-_Enforce consistent spacing inside braces  See [rule details](https://eslint.style/rules/default/object-curly-spacing)_
+_Enforce consistent spacing inside braces  See [rule details](https://eslint.style/rules/default/object-curly-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ObjectCurlySpacing
 displayName: Enforce consistent spacing inside braces
 description: |
-  Enforce consistent spacing inside braces  See [rule details](https://eslint.style/rules/default/object-curly-spacing)
+  Enforce consistent spacing inside braces  See [rule details](https://eslint.style/rules/default/object-curly-spacing).
 tags:
   - eslint
   - stylistic

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.JsxClosingBracketLocation**
 
-_Enforce closing bracket location in JSX See rule details for [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-bracket-location.md)_
+_Enforce closing bracket location in JSX See rule details for [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-bracket-location.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxClosingBracketLocation
 displayName: Enforce closing bracket location in JSX
 description: |
-  Enforce closing bracket location in JSX See rule details for [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-bracket-location.md)
+  Enforce closing bracket location in JSX See rule details for [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-bracket-location.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

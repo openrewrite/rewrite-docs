@@ -1,15 +1,15 @@
 ---
-sidebar_label: "disallow dynamic slot name"
+sidebar_label: "Disallow dynamic slot name"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# disallow dynamic slot name
+# Disallow dynamic slot name
 
 **org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName**
 
-_disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/)_
+_Disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/)._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-dynamic-slot-name": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-dynamic-slot-name": 2   } }. `
 
 </TabItem>
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName
-displayName: disallow dynamic slot name
+displayName: Disallow dynamic slot name
 description: |
-  disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/)
+  Disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/).
 tags:
   - svelte
   - ESLint
@@ -68,7 +68,7 @@ recipeList:
   "rules": {
     "svelte/no-dynamic-slot-name": 2
   }
-}
+}.
 
 
 ```

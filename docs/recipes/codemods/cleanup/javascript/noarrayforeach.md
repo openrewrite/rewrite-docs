@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `for…of` over the `forEach` method."
+sidebar_label: "Prefer `for…of` over the `forEach` method"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `for…of` over the `forEach` method.
+# Prefer `for…of` over the `forEach` method
 
 **org.openrewrite.codemods.cleanup.javascript.NoArrayForEach**
 
-_Prefer `for…of` over the `forEach` method. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md)_
+_Prefer `for…of` over the `forEach` method. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoArrayForEach
-displayName: Prefer `for…of` over the `forEach` method.
+displayName: Prefer `for…of` over the `forEach` method
 description: |
-  Prefer `for…of` over the `forEach` method. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md)
+  Prefer `for…of` over the `forEach` method. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

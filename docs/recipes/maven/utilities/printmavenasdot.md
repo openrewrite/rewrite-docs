@@ -32,7 +32,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
-
   <dependencies>
     <dependency>
         <groupId>org.yaml</groupId>
@@ -77,7 +76,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
-
   <dependencies>
     <dependency>
         <groupId>org.yaml</groupId>

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.cloud2025.SpringCloudGatewayDeprecatedModulesAndStarters**
 
-_Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025_
+_Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025._
 
 ### Tags
 
@@ -37,26 +37,32 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-gateway-server`
   * newArtifactId: `spring-cloud-gateway-server-webflux`
+  * newVersion: `4.3.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-gateway-server-mvc`
   * newArtifactId: `spring-cloud-gateway-server-webmvc`
+  * newVersion: `4.3.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-starter-gateway`
   * newArtifactId: `spring-cloud-starter-gateway-server-webflux`
+  * newVersion: `4.3.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-starter-gateway-mvc`
   * newArtifactId: `spring-cloud-starter-gateway-server-webmvc`
+  * newVersion: `4.3.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-gateway-mvc`
   * newArtifactId: `spring-cloud-gateway-proxyexchange-webmvc`
+  * newVersion: `4.3.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-gateway-webflux`
   * newArtifactId: `spring-cloud-gateway-proxyexchange-webflux`
+  * newVersion: `4.3.x`
 
 </TabItem>
 
@@ -68,7 +74,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.cloud2025.SpringCloudGatewayDeprecatedModulesAndStarters
 displayName: Migrate to New Spring Cloud Gateway Modules and Starters
 description: |
-  Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025
+  Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025.
 tags:
   - spring
   - cloud
@@ -77,26 +83,32 @@ recipeList:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-gateway-server
       newArtifactId: spring-cloud-gateway-server-webflux
+      newVersion: 4.3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-gateway-server-mvc
       newArtifactId: spring-cloud-gateway-server-webmvc
+      newVersion: 4.3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-starter-gateway
       newArtifactId: spring-cloud-starter-gateway-server-webflux
+      newVersion: 4.3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-starter-gateway-mvc
       newArtifactId: spring-cloud-starter-gateway-server-webmvc
+      newVersion: 4.3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-gateway-mvc
       newArtifactId: spring-cloud-gateway-proxyexchange-webmvc
+      newVersion: 4.3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-gateway-webflux
       newArtifactId: spring-cloud-gateway-proxyexchange-webflux
+      newVersion: 4.3.x
 
 ```
 </TabItem>

@@ -29,6 +29,70 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. | `true` |
 | `String` | scope | *Optional*. Default any. If specified, only the requested scope's classpaths will be checked. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupId|`org.springframework`|
+|artifactId|`spring-beans`|
+|version|`null`|
+|onlyDirect|`true`|
+|scope|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>sample</artifactId>
+  <version>1.0.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<!--~~>--><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>sample</artifactId>
+  <version>1.0.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -1,1 +1,1 @@
+-<project>
++<!--~~>--><project>
+  <modelVersion>4.0.0</modelVersion>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
-* [Clean up various issues with the code.](/recipes/java/dropwizard/codecleanup.md)
+* [Clean up various issues with the code](/recipes/java/dropwizard/codecleanup.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
 * [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
@@ -52,7 +52,7 @@ This recipe is used as part of the following composite recipes:
 | --- | --- |
 |groupPattern|`null`|
 |artifactPattern|`null`|
-|onlyIfVersionsMatch|`(RemoveRedundantDependencyVersions.Comparator) null`|
+|onlyIfVersionsMatch|`null`|
 |onlyIfManagedVersionIs|`null`|
 |except||
 

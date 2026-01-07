@@ -1,8 +1,10 @@
 ---
-description: Archunit OpenRewrite recipes.
+description: ArchUnit OpenRewrite recipes.
 ---
 
-# Archunit
+# ArchUnit
+
+_Recipes for [ArchUnit](https://www.archunit.org/) architecture testing._
 
 ## Composite Recipes
 

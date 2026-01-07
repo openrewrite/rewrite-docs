@@ -51,7 +51,6 @@ class ReportExporter {
 ###### After
 ```java
 import net.sf.jasperreports.engine.JRExporter;
-import net.sf.jasperreports.engine.JRExporterParameter;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.export.SimpleExporterInput;
@@ -69,12 +68,16 @@ class ReportExporter {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,0 +5,1 @@
+@@ -2,1 +2,0 @@
+import net.sf.jasperreports.engine.JRExporter;
+-import net.sf.jasperreports.engine.JRExporterParameter;
+import net.sf.jasperreports.engine.JasperPrint;
+@@ -5,0 +4,1 @@
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
 +import net.sf.jasperreports.export.SimpleExporterInput;
 
-@@ -9,1 +10,1 @@
+@@ -9,1 +9,1 @@
     void export(JasperPrint jasperPrint) {
         JRExporter exporter = new JRPdfExporter();
 -       exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);

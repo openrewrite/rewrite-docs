@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch."
+sidebar_label: "Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.
+# Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch
 
 **org.openrewrite.codemods.cleanup.javascript.PreferDateNow**
 
-_Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md)_
+_Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferDateNow
-displayName: Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.
+displayName: Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch
 description: |
-  Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md)
+  Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

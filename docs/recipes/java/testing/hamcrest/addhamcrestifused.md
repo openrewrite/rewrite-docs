@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Add `org.hamcrest:hamcrest` if it is used."
+sidebar_label: "Add `org.hamcrest:hamcrest` if it is used"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add `org.hamcrest:hamcrest` if it is used.
+# Add `org.hamcrest:hamcrest` if it is used
 
 **org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed**
 
@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
-displayName: Add `org.hamcrest:hamcrest` if it is used.
+displayName: Add `org.hamcrest:hamcrest` if it is used
 description: |
   JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency.
 tags:

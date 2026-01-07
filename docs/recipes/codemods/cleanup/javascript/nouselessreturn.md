@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.NoUselessReturn**
 
-_Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return)_
+_Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessReturn
 displayName: Disallow redundant return statements
 description: |
-  Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return)
+  Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

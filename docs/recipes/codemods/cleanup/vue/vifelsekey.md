@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.VIfElseKey**
 
-_Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html)_
+_Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "vue-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",     "ecmaVersion": "2015",     "sourceType": "module",       "ecmaFeatures": {       "jsx": true,       "experimentalObjectRestSpread": true     }   },   "plugins": ["vue"],   "rules": {     "vue/v-if-else-key": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "vue-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",     "ecmaVersion": "2015",     "sourceType": "module",       "ecmaFeatures": {       "jsx": true,       "experimentalObjectRestSpread": true     }   },   "plugins": ["vue"],   "rules": {     "vue/v-if-else-key": 2   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.VIfElseKey
 displayName: Require key attribute for conditionally rendered repeated components
 description: |
-  Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html)
+  Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html).
 tags:
   - ESLint
   - vue
@@ -72,7 +72,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

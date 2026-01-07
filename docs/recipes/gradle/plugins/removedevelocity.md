@@ -65,6 +65,7 @@ recipeList:
 </Tabs>
 ## Examples
 ##### Example 1
+`RemoveDevelocityTest#removeGradleEnterprise`
 
 
 ###### Unchanged
@@ -94,6 +95,7 @@ gradleEnterprise {
 ---
 
 ##### Example 2
+`RemoveDevelocityTest#removeGradleEnterprise`
 
 
 ###### Unchanged

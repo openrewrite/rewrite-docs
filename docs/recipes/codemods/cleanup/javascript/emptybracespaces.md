@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce no spaces between braces."
+sidebar_label: "Enforce no spaces between braces"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce no spaces between braces.
+# Enforce no spaces between braces
 
 **org.openrewrite.codemods.cleanup.javascript.EmptyBraceSpaces**
 
-_Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md)_
+_Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.EmptyBraceSpaces
-displayName: Enforce no spaces between braces.
+displayName: Enforce no spaces between braces
 description: |
-  Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md)
+  Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

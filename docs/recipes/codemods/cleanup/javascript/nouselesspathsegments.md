@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments**
 
-_Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md)_
+_Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments
 displayName: Forbid unnecessary path segments in import and require statements
 description: |
-  Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md)
+  Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

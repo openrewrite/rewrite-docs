@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce using the digits argument with `Number#toFixed()`."
+sidebar_label: "Enforce using the digits argument with `Number#toFixed()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce using the digits argument with `Number#toFixed()`.
+# Enforce using the digits argument with `Number#toFixed()`
 
 **org.openrewrite.codemods.cleanup.javascript.RequireNumberToFixedDigitsArgument**
 
-_Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md)_
+_Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.RequireNumberToFixedDigitsArgument
-displayName: Enforce using the digits argument with `Number#toFixed()`.
+displayName: Enforce using the digits argument with `Number#toFixed()`
 description: |
-  Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md)
+  Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

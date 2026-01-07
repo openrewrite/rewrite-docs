@@ -27,11 +27,9 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ###### Before
 ```java
-package com.example;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Column;
 import org.hibernate.annotations.JdbcType;
 import org.hibernate.type.descriptor.jdbc.JsonJdbcType;
 
@@ -48,11 +46,9 @@ public class JsonExample {
 
 ###### After
 ```java
-package com.example;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Column;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
@@ -71,15 +67,15 @@ public class JsonExample {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -6,2 +6,2 @@
+@@ -4,2 +4,2 @@
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Column;
 -import org.hibernate.annotations.JdbcType;
 -import org.hibernate.type.descriptor.jdbc.JsonJdbcType;
 +import org.hibernate.annotations.JdbcTypeCode;
 +import org.hibernate.type.SqlTypes;
 
-@@ -14,1 +14,1 @@
+@@ -12,1 +12,1 @@
     private Long id;
 
 -   @JdbcType(JsonJdbcType.class)

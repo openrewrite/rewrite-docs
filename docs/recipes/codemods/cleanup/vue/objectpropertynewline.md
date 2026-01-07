@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline**
 
-_Enforce placing object properties on separate lines in `<template>` See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html)_
+_Enforce placing object properties on separate lines in `<template>` See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "vue-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",     "ecmaVersion": "2015",     "sourceType": "module",       "ecmaFeatures": {       "jsx": true,       "experimentalObjectRestSpread": true     }   },   "plugins": ["vue"],   "rules": {     "vue/object-property-newline": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "vue-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",     "ecmaVersion": "2015",     "sourceType": "module",       "ecmaFeatures": {       "jsx": true,       "experimentalObjectRestSpread": true     }   },   "plugins": ["vue"],   "rules": {     "vue/object-property-newline": 2   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline
 displayName: Enforce placing object properties on separate lines in `&lt;template&gt;`
 description: |
-  Enforce placing object properties on separate lines in `&lt;template&gt;` See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html)
+  Enforce placing object properties on separate lines in `&lt;template&gt;` See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html).
 tags:
   - ESLint
   - vue
@@ -72,7 +72,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.JsxNoLeakedRender**
 
-_Disallow problematic leaked values from being rendered See rule details for [react/jsx-no-leaked-render](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-leaked-render.md)_
+_Disallow problematic leaked values from being rendered See rule details for [react/jsx-no-leaked-render](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-leaked-render.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxNoLeakedRender
 displayName: Disallow problematic leaked values from being rendered
 description: |
-  Disallow problematic leaked values from being rendered See rule details for [react/jsx-no-leaked-render](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-leaked-render.md)
+  Disallow problematic leaked values from being rendered See rule details for [react/jsx-no-leaked-render](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-leaked-render.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

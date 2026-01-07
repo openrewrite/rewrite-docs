@@ -25,6 +25,54 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `Boolean` | useMarkers | *Optional*. Whether to add markers for each effective Gradle repository to the build file. Default `false`. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|useMarkers|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+
+repositories {
+    maven { url 'https://repo.spring.io/milestone' }
+}
+```
+
+###### After
+```groovy title="build.gradle"
+/*~~(https://repo.spring.io/milestone)~~>*/plugins {
+    id 'java'
+}
+
+repositories {
+    maven { url 'https://repo.spring.io/milestone' }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -1,1 +1,1 @@
+-plugins {
++/*~~(https://repo.spring.io/milestone)~~>*/plugins {
+    id 'java'
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

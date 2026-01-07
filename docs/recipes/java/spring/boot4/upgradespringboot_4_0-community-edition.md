@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `@MockBean` and `@SpyBean`](../../../java/spring/boot4/replacemockbeanandspybean)
 * [Migrate to Hibernate 7.1.x (Community Edition)](../../../hibernate/migratetohibernate71-community-edition)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
+* [Upgrade to SpringDoc 3.0](../../../java/springdoc/upgradespringdoc_3_0)
 * [Migrate to Spring Boot 4.0 modular starters](../../../java/spring/boot4/migratetomodularstarters)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
@@ -67,22 +68,27 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-oauth2-authorization-server`
   * newArtifactId: `spring-boot-starter-security-oauth2-authorization-server`
+  * newVersion: `4.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-oauth2-client`
   * newArtifactId: `spring-boot-starter-security-oauth2-client`
+  * newVersion: `4.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-oauth2-resource-server`
   * newArtifactId: `spring-boot-starter-security-oauth2-resource-server`
+  * newVersion: `4.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-web`
   * newArtifactId: `spring-boot-starter-webmvc`
+  * newVersion: `4.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-web-services`
   * newArtifactId: `spring-boot-starter-webservices`
+  * newVersion: `4.0.x`
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-aop`
@@ -91,6 +97,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-aop`
   * newArtifactId: `spring-boot-starter-aspectj`
+  * newVersion: `4.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `eu.michael-simons.neo4j`
+  * artifactId: `neo4j-migrations-spring-boot-starter`
+  * newVersion: `3.0.x`
+  * overrideManagedVersion: `true`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `io.github.wimdeblauwe`
+  * artifactId: `error-handling-spring-boot-starter`
+  * newVersion: `5.0.x`
+  * overrideManagedVersion: `true`
 
 </TabItem>
 
@@ -115,6 +132,7 @@ recipeList:
   - org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean
   - org.openrewrite.hibernate.MigrateToHibernate71
   - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
+  - org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0
   - org.openrewrite.java.spring.boot4.MigrateToModularStarters
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
@@ -141,22 +159,27 @@ recipeList:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-oauth2-authorization-server
       newArtifactId: spring-boot-starter-security-oauth2-authorization-server
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-oauth2-client
       newArtifactId: spring-boot-starter-security-oauth2-client
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-oauth2-resource-server
       newArtifactId: spring-boot-starter-security-oauth2-resource-server
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-web
       newArtifactId: spring-boot-starter-webmvc
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-web-services
       newArtifactId: spring-boot-starter-webservices
+      newVersion: 4.0.x
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-aop
@@ -165,6 +188,17 @@ recipeList:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-aop
       newArtifactId: spring-boot-starter-aspectj
+      newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: eu.michael-simons.neo4j
+      artifactId: neo4j-migrations-spring-boot-starter
+      newVersion: 3.0.x
+      overrideManagedVersion: true
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: io.github.wimdeblauwe
+      artifactId: error-handling-spring-boot-starter
+      newVersion: 5.0.x
+      overrideManagedVersion: true
 
 ```
 </TabItem>

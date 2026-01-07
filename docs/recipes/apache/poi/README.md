@@ -1,8 +1,10 @@
 ---
-description: Poi OpenRewrite recipes.
+description: Apache POI OpenRewrite recipes.
 ---
 
-# Poi
+# Apache POI
+
+_Recipes for [Apache POI](https://poi.apache.org/) spreadsheet library._
 
 ## Composite Recipes
 

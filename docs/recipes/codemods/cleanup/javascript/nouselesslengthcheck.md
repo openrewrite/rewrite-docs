@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow useless array `length` check."
+sidebar_label: "Disallow useless array `length` check"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow useless array `length` check.
+# Disallow useless array `length` check
 
 **org.openrewrite.codemods.cleanup.javascript.NoUselessLengthCheck**
 
-_Disallow useless array `length` check. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md)_
+_Disallow useless array `length` check. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUselessLengthCheck
-displayName: Disallow useless array `length` check.
+displayName: Disallow useless array `length` check
 description: |
-  Disallow useless array `length` check. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md)
+  Disallow useless array `length` check. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -106,6 +106,60 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.testcontainers.containers.ToxiproxyContainer`
   * newFullyQualifiedTypeName: `org.testcontainers.toxiproxy.ToxiproxyContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.gcloud.BigQueryEmulatorContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.gcloud.BigtableEmulatorContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.selenium.BrowserWebDriverContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.cassandra.CassandraContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.cockroachdb.CockroachContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.gcloud.DatastoreEmulatorContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.db2.Db2Container`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.gcloud.FirestoreEmulatorContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.kafka.KafkaContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.localstack.LocalStackContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.mariadb.MariaDBContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.mockserver.MockServerContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.mongodb.MongoDBContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.mssqlserver.MSSQLServerContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.mysql.MySQLContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.neo4j.Neo4jContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.nginx.NginxContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.orientdb.OrientDBContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.postgresql.PostgreSQLContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.gcloud.PubSubEmulatorContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.pulsar.PulsarContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.rabbitmq.RabbitMQContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.solr.SolrContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.gcloud.SpannerEmulatorContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.tidb.TiDBContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.toxiproxy.ToxiproxyContainer`
+* [Remove parameterized type arguments from a Java class](../../../java/testing/testcontainers/converttorawtype)
+  * fullyQualifiedTypeName: `org.testcontainers.trino.TrinoContainer`
 
 </TabItem>
 
@@ -197,6 +251,60 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.testcontainers.containers.ToxiproxyContainer
       newFullyQualifiedTypeName: org.testcontainers.toxiproxy.ToxiproxyContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.gcloud.BigQueryEmulatorContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.gcloud.BigtableEmulatorContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.selenium.BrowserWebDriverContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.cassandra.CassandraContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.cockroachdb.CockroachContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.gcloud.DatastoreEmulatorContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.db2.Db2Container
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.gcloud.FirestoreEmulatorContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.kafka.KafkaContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.localstack.LocalStackContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.mariadb.MariaDBContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.mockserver.MockServerContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.mongodb.MongoDBContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.mssqlserver.MSSQLServerContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.mysql.MySQLContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.neo4j.Neo4jContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.nginx.NginxContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.orientdb.OrientDBContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.postgresql.PostgreSQLContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.gcloud.PubSubEmulatorContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.pulsar.PulsarContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.rabbitmq.RabbitMQContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.solr.SolrContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.gcloud.SpannerEmulatorContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.tidb.TiDBContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.toxiproxy.ToxiproxyContainer
+  - org.openrewrite.java.testing.testcontainers.ConvertToRawType:
+      fullyQualifiedTypeName: org.testcontainers.trino.TrinoContainer
 
 ```
 </TabItem>
@@ -207,6 +315,97 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to testcontainers-java 2.x](/recipes/java/testing/testcontainers/testcontainers2migration.md)
+
+## Examples
+##### Example 1
+`ConvertToRawTypeTest#variableDeclaration`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.testcontainers.containers.NginxContainer;
+
+class Foo {
+    NginxContainer<?> container = new NginxContainer<>();
+}
+```
+
+###### After
+```java
+import org.testcontainers.nginx.NginxContainer;
+
+class Foo {
+    NginxContainer container = new NginxContainer();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.testcontainers.containers.NginxContainer;
++import org.testcontainers.nginx.NginxContainer;
+
+@@ -4,1 +4,1 @@
+
+class Foo {
+-   NginxContainer<?> container = new NginxContainer<>();
++   NginxContainer container = new NginxContainer();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`ConvertToRawTypeTest#variableDeclaration`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.testcontainers.containers.NginxContainer;
+
+class Foo {
+    NginxContainer<?> container = new NginxContainer<>();
+}
+```
+
+###### After
+```java
+import org.testcontainers.nginx.NginxContainer;
+
+class Foo {
+    NginxContainer container = new NginxContainer();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.testcontainers.containers.NginxContainer;
++import org.testcontainers.nginx.NginxContainer;
+
+@@ -4,1 +4,1 @@
+
+class Foo {
+-   NginxContainer<?> container = new NginxContainer<>();
++   NginxContainer container = new NginxContainer();
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

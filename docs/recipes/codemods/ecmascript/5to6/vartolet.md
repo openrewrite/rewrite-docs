@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.ecmascript.5to6.varToLet**
 
-_Convert `var` to `let`_
+_Convert `var` to `let`._
 
 ### Tags
 
@@ -42,7 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.ecmascript.5to6.varToLet
 displayName: Convert `var` to `let`
 description: |
-  Convert `var` to `let`
+  Convert `var` to `let`.
 tags:
   - codemods
   - 5to6

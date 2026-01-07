@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Upgrade to JUnit 5.13](../../../java/testing/junit5/upgradetojunit513)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.junit`
   * artifactId: `junit-bom`
@@ -86,6 +87,7 @@ tags:
   - junit
   - testing
 recipeList:
+  - org.openrewrite.java.testing.junit5.UpgradeToJUnit513
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.junit
       artifactId: junit-bom

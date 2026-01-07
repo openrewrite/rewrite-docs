@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary**
 
-_Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary)_
+_Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary
 displayName: Disallow ternary operators when simpler alternatives exist
 description: |
-  Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary)
+  Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

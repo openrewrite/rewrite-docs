@@ -4,6 +4,8 @@ description: Arquillian OpenRewrite recipes.
 
 # Arquillian
 
+_Recipes for [Arquillian](https://arquillian.org/) integration testing framework._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

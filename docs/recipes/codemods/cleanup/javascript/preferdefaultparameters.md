@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer default parameters over reassignment."
+sidebar_label: "Prefer default parameters over reassignment"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer default parameters over reassignment.
+# Prefer default parameters over reassignment
 
 **org.openrewrite.codemods.cleanup.javascript.PreferDefaultParameters**
 
-_Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md)_
+_Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferDefaultParameters
-displayName: Prefer default parameters over reassignment.
+displayName: Prefer default parameters over reassignment
 description: |
-  Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md)
+  Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

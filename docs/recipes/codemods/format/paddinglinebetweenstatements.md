@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.PaddingLineBetweenStatements**
 
-_Require or disallow padding lines between statements  See [rule details](https://eslint.style/rules/default/padding-line-between-statements)_
+_Require or disallow padding lines between statements  See [rule details](https://eslint.style/rules/default/padding-line-between-statements)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.PaddingLineBetweenStatements
 displayName: Require or disallow padding lines between statements
 description: |
-  Require or disallow padding lines between statements  See [rule details](https://eslint.style/rules/default/padding-line-between-statements)
+  Require or disallow padding lines between statements  See [rule details](https://eslint.style/rules/default/padding-line-between-statements).
 tags:
   - eslint
   - stylistic

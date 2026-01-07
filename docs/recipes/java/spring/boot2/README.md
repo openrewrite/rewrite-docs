@@ -33,6 +33,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Boot 2.7](./upgradespringboot_2_7.md)
 * [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](./maybeaddspringbootstarteractuator.md)
 * [Spring Boot 2.x best practices](./springboot2bestpractices.md)
+* [Upgrade Spock to a Groovy 3 compatible variant](./upgradespocktogroovy3.md)
 * [Upgrade to Spring Boot 2.5](./upgradespringboot_2_5.md)
 * [Use `WebServerFactoryCustomizer`](./migratetowebserverfactorycustomizer.md)
 * [Use `javax.validation.constraints`](./migratehibernateconstraintstojavax.md)

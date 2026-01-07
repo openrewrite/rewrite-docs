@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Use destructured variables over properties."
+sidebar_label: "Use destructured variables over properties"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use destructured variables over properties.
+# Use destructured variables over properties
 
 **org.openrewrite.codemods.cleanup.javascript.ConsistentDestructuring**
 
-_Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md)_
+_Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ConsistentDestructuring
-displayName: Use destructured variables over properties.
+displayName: Use destructured variables over properties
 description: |
-  Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md)
+  Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

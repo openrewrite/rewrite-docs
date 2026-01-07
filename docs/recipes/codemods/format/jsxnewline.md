@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Require or prevent a new line after jsx elements and expressions."
+sidebar_label: "Require or prevent a new line after jsx elements and expressions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Require or prevent a new line after jsx elements and expressions.
+# Require or prevent a new line after jsx elements and expressions
 
 **org.openrewrite.codemods.format.JsxNewline**
 
-_Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline)_
+_Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline)._
 
 ### Tags
 
@@ -41,9 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxNewline
-displayName: Require or prevent a new line after jsx elements and expressions.
+displayName: Require or prevent a new line after jsx elements and expressions
 description: |
-  Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline)
+  Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline).
 tags:
   - eslint
   - stylistic

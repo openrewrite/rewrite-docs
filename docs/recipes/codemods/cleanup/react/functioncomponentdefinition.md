@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.FunctionComponentDefinition**
 
-_Enforce a specific function type for function components See rule details for [react/function-component-definition](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/function-component-definition.md)_
+_Enforce a specific function type for function components See rule details for [react/function-component-definition](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/function-component-definition.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.FunctionComponentDefinition
 displayName: Enforce a specific function type for function components
 description: |
-  Enforce a specific function type for function components See rule details for [react/function-component-definition](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/function-component-definition.md)
+  Enforce a specific function type for function components See rule details for [react/function-component-definition](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/function-component-definition.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.NoArrowFunctionLifecycle**
 
-_Lifecycle methods should be methods on the prototype, not class fields See rule details for [react/no-arrow-function-lifecycle](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-arrow-function-lifecycle.md)_
+_Lifecycle methods should be methods on the prototype, not class fields See rule details for [react/no-arrow-function-lifecycle](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-arrow-function-lifecycle.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.NoArrowFunctionLifecycle
 displayName: Lifecycle methods should be methods on the prototype, not class fields
 description: |
-  Lifecycle methods should be methods on the prototype, not class fields See rule details for [react/no-arrow-function-lifecycle](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-arrow-function-lifecycle.md)
+  Lifecycle methods should be methods on the prototype, not class fields See rule details for [react/no-arrow-function-lifecycle](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-arrow-function-lifecycle.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.NoWhitespaceBeforeProperty**
 
-_Disallow whitespace before properties  See [rule details](https://eslint.style/rules/default/no-whitespace-before-property)_
+_Disallow whitespace before properties  See [rule details](https://eslint.style/rules/default/no-whitespace-before-property)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NoWhitespaceBeforeProperty
 displayName: Disallow whitespace before properties
 description: |
-  Disallow whitespace before properties  See [rule details](https://eslint.style/rules/default/no-whitespace-before-property)
+  Disallow whitespace before properties  See [rule details](https://eslint.style/rules/default/no-whitespace-before-property).
 tags:
   - eslint
   - stylistic

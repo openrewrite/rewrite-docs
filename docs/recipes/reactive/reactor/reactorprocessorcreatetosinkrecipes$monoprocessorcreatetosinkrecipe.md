@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.reactive.reactor.ReactorProcessorCreateToSinkRecipes$MonoProcessorCreateToSinkRecipe**
 
-_As of 3.5 MonoProcessor is deprecated and Sinks are preferred_
+_As of 3.5 MonoProcessor is deprecated and Sinks are preferred._
 
 ## Recipe source
 

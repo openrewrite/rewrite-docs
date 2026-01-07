@@ -19,6 +19,55 @@ _Finds any `<scm>` tag directly inside the `<project>` root of a Maven pom.xml f
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>1.0</version>
+  <scm>
+    <url>https://github.com/example/demo</url>
+  </scm>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>1.0</version>
+  <!--~~>--><scm>
+    <url>https://github.com/example/demo</url>
+  </scm>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,1 +6,1 @@
+  <artifactId>demo</artifactId>
+  <version>1.0</version>
+- <scm>
++ <!--~~>--><scm>
+    <url>https://github.com/example/demo</url>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

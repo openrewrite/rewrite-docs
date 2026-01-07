@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports."
+sidebar_label: "Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports.
+# Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports
 
 **org.openrewrite.codemods.cleanup.javascript.NoNamespace**
 
-_Forbid namespace (a.k.a. "wildcard" `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md)_
+_Forbid namespace (a.k.a. "wildcard" `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoNamespace
-displayName: Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports.
+displayName: Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports
 description: |
-  Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md)
+  Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Improve regexes by making them shorter, consistent, and safer."
+sidebar_label: "Improve regexes by making them shorter, consistent, and safer"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Improve regexes by making them shorter, consistent, and safer.
+# Improve regexes by making them shorter, consistent, and safer
 
 **org.openrewrite.codemods.cleanup.javascript.BetterRegex**
 
-_Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md)_
+_Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.BetterRegex
-displayName: Improve regexes by making them shorter, consistent, and safer.
+displayName: Improve regexes by making them shorter, consistent, and safer
 description: |
-  Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md)
+  Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

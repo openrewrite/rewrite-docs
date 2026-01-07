@@ -4,6 +4,8 @@ description: Hamcrest OpenRewrite recipes.
 
 # Hamcrest
 
+_Recipes for migrating from [Hamcrest](http://hamcrest.org/) matchers to AssertJ._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
@@ -14,7 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Add `org.hamcrest:hamcrest` if it is used.](./addhamcrestifused.md)
+* [Add `org.hamcrest:hamcrest` if it is used](./addhamcrestifused.md)
 * [Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ](./assertthatbooleantoassertj.md)
 * [Migrate Hamcrest `is(Object)` to AssertJ](./hamcrestismatchertoassertj.md)
 * [Migrate Hamcrest `not(Matcher)` to AssertJ](./hamcrestnotmatchertoassertj.md)

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow member access from `await` expression."
+sidebar_label: "Disallow member access from `await` expression"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow member access from `await` expression.
+# Disallow member access from `await` expression
 
 **org.openrewrite.codemods.cleanup.javascript.NoAwaitExpressionMember**
 
-_Disallow member access from `await` expression. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md)_
+_Disallow member access from `await` expression. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoAwaitExpressionMember
-displayName: Disallow member access from `await` expression.
+displayName: Disallow member access from `await` expression
 description: |
-  Disallow member access from `await` expression. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md)
+  Disallow member access from `await` expression. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

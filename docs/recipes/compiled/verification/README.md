@@ -8,7 +8,7 @@ description: Verification OpenRewrite recipes.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Change `List#add` to `List#plus` and verify.](./changelistmethodandverify.md)
+* [Change `List#add` to `List#plus` and verify](./changelistmethodandverify.md)
 
 ## Recipes
 

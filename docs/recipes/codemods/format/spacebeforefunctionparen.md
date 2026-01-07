@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.SpaceBeforeFunctionParen**
 
-_Enforce consistent spacing before &#x60;function&#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren)_
+_Enforce consistent spacing before &#x60;function&#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.SpaceBeforeFunctionParen
 displayName: Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis
 description: |
-  Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren)
+  Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren).
 tags:
   - eslint
   - stylistic

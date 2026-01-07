@@ -1,8 +1,10 @@
 ---
-description: Jspecify OpenRewrite recipes.
+description: JSpecify OpenRewrite recipes.
 ---
 
-# Jspecify
+# JSpecify
+
+_Recipes for adopting [JSpecify](https://jspecify.dev/) nullability annotations._
 
 ## Composite Recipes
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.boot3.SpringBootProperties\_3\_4\_EnabledToAccess**
 
-_Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'_
+_Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'._
 
 ### Tags
 
@@ -330,7 +330,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess
 displayName: Migrate Enabled to Access Spring Boot Properties
 description: |
-  Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'
+  Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'.
 tags:
   - spring
   - boot

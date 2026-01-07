@@ -41,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Change config related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeconfigtypes.md)
 * [Change region related classes](/recipes/software/amazon/awssdk/v2migration/changeregiontypes.md)
 * [Changed types of camel AI nested headers classes](/recipes/org/apache/camel/upgrade/camel415/ainestedheadersclasses.md)
-* [Clean up various issues with the code.](/recipes/java/dropwizard/codecleanup.md)
+* [Clean up various issues with the code](/recipes/java/dropwizard/codecleanup.md)
 * [Different java type for ServerCertificateValidator in camel-milo](/recipes/org/apache/camel/upgrade/camel416/camelmilocertificate.md)
 * [Each camel-debezium module has its own subpackage corresponding to the database type](/recipes/org/apache/camel/upgrade/camel49/debeziumchangetypes.md)
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)

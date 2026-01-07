@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.ecmascript.5to6.noStrict**
 
-_Remove "use strict" directives_
+_Remove "use strict" directives._
 
 ### Tags
 
@@ -42,7 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.ecmascript.5to6.noStrict
 displayName: Remove &quot;use strict&quot; directives
 description: |
-  Remove &quot;use strict&quot; directives
+  Remove &quot;use strict&quot; directives.
 tags:
   - codemods
   - 5to6

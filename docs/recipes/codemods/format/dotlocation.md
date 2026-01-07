@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.DotLocation**
 
-_Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location)_
+_Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.DotLocation
 displayName: Enforce consistent newlines before and after dots
 description: |
-  Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location)
+  Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location).
 tags:
   - eslint
   - stylistic

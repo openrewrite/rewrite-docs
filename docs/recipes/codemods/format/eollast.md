@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.EolLast**
 
-_Require or disallow newline at the end of files  See [rule details](https://eslint.style/rules/default/eol-last)_
+_Require or disallow newline at the end of files  See [rule details](https://eslint.style/rules/default/eol-last)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.EolLast
 displayName: Require or disallow newline at the end of files
 description: |
-  Require or disallow newline at the end of files  See [rule details](https://eslint.style/rules/default/eol-last)
+  Require or disallow newline at the end of files  See [rule details](https://eslint.style/rules/default/eol-last).
 tags:
   - eslint
   - stylistic

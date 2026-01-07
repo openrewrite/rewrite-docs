@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Upgrade JaCoCo](../../java/migrate/jacoco/upgradejacoco)
-* [Add missing `isWrapperFor` and `unwrap` methods.](../../java/migrate/jrewrapperinterface)
+* [Add missing `isWrapperFor` and `unwrap` methods](../../java/migrate/jrewrapperinterface)
 
 </TabItem>
 

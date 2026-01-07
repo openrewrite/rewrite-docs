@@ -1,15 +1,15 @@
 ---
-sidebar_label: "require or disallow a space before tag's closing brackets"
+sidebar_label: "Require or disallow a space before tag's closing brackets"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# require or disallow a space before tag's closing brackets
+# Require or disallow a space before tag's closing brackets
 
 **org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing**
 
-_require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)_
+_Require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/html-closing-bracket-spacing": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/html-closing-bracket-spacing": 2   } }. `
 
 </TabItem>
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing
-displayName: require or disallow a space before tag's closing brackets
+displayName: Require or disallow a space before tag's closing brackets
 description: |
-  require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/)
+  Require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/).
 tags:
   - svelte
   - ESLint
@@ -68,7 +68,7 @@ recipeList:
   "rules": {
     "svelte/html-closing-bracket-spacing": 2
   }
-}
+}.
 
 
 ```

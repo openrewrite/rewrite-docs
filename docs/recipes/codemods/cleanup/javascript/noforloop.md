@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Do not use a `for` loop that can be replaced with a `for-of` loop."
+sidebar_label: "Do not use a `for` loop that can be replaced with a `for-of` loop"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Do not use a `for` loop that can be replaced with a `for-of` loop.
+# Do not use a `for` loop that can be replaced with a `for-of` loop
 
 **org.openrewrite.codemods.cleanup.javascript.NoForLoop**
 
-_Do not use a `for` loop that can be replaced with a `for-of` loop. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md)_
+_Do not use a `for` loop that can be replaced with a `for-of` loop. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoForLoop
-displayName: Do not use a `for` loop that can be replaced with a `for-of` loop.
+displayName: Do not use a `for` loop that can be replaced with a `for-of` loop
 description: |
-  Do not use a `for` loop that can be replaced with a `for-of` loop. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md)
+  Do not use a `for` loop that can be replaced with a `for-of` loop. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

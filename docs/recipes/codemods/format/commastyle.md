@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.CommaStyle**
 
-_Enforce consistent comma style  See [rule details](https://eslint.style/rules/default/comma-style)_
+_Enforce consistent comma style  See [rule details](https://eslint.style/rules/default/comma-style)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.CommaStyle
 displayName: Enforce consistent comma style
 description: |
-  Enforce consistent comma style  See [rule details](https://eslint.style/rules/default/comma-style)
+  Enforce consistent comma style  See [rule details](https://eslint.style/rules/default/comma-style).
 tags:
   - eslint
   - stylistic

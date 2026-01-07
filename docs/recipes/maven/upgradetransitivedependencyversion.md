@@ -50,7 +50,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |releasesOnly|`null`|
 |onlyIfUsing|`null`|
 |addToRootPom|`null`|
-|because||
+|because|`null`|
 
 
 <Tabs groupId="beforeAfter">

@@ -27,6 +27,60 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | row | The TOML key-value pairs to merge. Should contain the objectIdentifyingProperty. | `name = "Alice Smith"\nemail = "alice@example.com"` |
 | `String` | identifyingKey | The property name used to match existing rows. When a row with this property value exists, it will be merged; otherwise, a new row is inserted. When the original row has more properties than the incoming row, these original properties are preserved. Entries with null values in the incoming row will result in the removal of the property from the original row. | `name` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|tableName|`package.contributors`|
+|row|`name = "Alice Smith"
+email = "alice.new@example.com"
+role = "maintainer"`|
+|identifyingKey|`name`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="toml" label="toml">
+
+
+###### Before
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice@example.com"
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+```
+
+###### After
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice.new@example.com"
+role = "maintainer"
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,2 @@
+[[package.contributors]]
+name = "Alice Smith"
+-email = "alice@example.com"
++email = "alice.new@example.com"
++role = "maintainer"
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

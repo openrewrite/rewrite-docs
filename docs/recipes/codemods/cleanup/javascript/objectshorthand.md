@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.ObjectShorthand**
 
-_Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand)_
+_Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.ObjectShorthand
 displayName: Require or disallow method and property shorthand syntax for object literals
 description: |
-  Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand)
+  Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

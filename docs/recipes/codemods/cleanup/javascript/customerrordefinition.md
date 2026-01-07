@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce correct `Error` subclassing."
+sidebar_label: "Enforce correct `Error` subclassing"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce correct `Error` subclassing.
+# Enforce correct `Error` subclassing
 
 **org.openrewrite.codemods.cleanup.javascript.CustomErrorDefinition**
 
-_Enforce correct `Error` subclassing. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/custom-error-definition.md)_
+_Enforce correct `Error` subclassing. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/custom-error-definition.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.CustomErrorDefinition
-displayName: Enforce correct `Error` subclassing.
+displayName: Enforce correct `Error` subclassing
 description: |
-  Enforce correct `Error` subclassing. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/custom-error-definition.md)
+  Enforce correct `Error` subclassing. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/custom-error-definition.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

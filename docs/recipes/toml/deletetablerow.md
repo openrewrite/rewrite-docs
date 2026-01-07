@@ -28,6 +28,63 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | identifyingValue | The value to match. Can be a regular expression if useRegex is true. | `example-*` |
 | `Boolean` | useRegex | *Optional*. Whether to interpret the value as a regular expression. Default is false. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|tableName|`package.contributors`|
+|identifyingKey|`name`|
+|identifyingValue|`Bob Johnson`|
+|useRegex|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="toml" label="toml">
+
+
+###### Before
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice@example.com"
+
+[[package.contributors]]
+name = "Bob Johnson"
+email = "bob@example.com"
+
+[[package.contributors]]
+name = "Carol White"
+email = "carol@example.com"
+```
+
+###### After
+```toml
+[[package.contributors]]
+name = "Alice Smith"
+email = "alice@example.com"
+
+[[package.contributors]]
+name = "Carol White"
+email = "carol@example.com"
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,4 +6,0 @@
+
+[[package.contributors]]
+-name = "Bob Johnson"
+-email = "bob@example.com"
+-
+-[[package.contributors]]
+name = "Carol White"
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

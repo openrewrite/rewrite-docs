@@ -26,8 +26,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -79,67 +78,6 @@ dependencies {
 -   implementation group: 'org.openrewrite', name: 'rewrite-core', version: 'latest.release'
 +   api("org.openrewrite:rewrite-core:latest.release")
 +   implementation "org.openrewrite:rewrite-core:latest.release"
-}
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="buildGradleKts" label="buildGradleKts">
-
-
-###### Before
-```buildGradleKts
-plugins {
-    `java-library`
-}
-
-repositories {
-    mavenCentral()
-}
-
-val version = "latest.release"
-
-dependencies {
-    api(group = "org.openrewrite", name = "rewrite-core", version = "latest.release")
-    implementation(group = "org.openrewrite", name = "rewrite-core", version = version, classifier = "sources")
-}
-```
-
-###### After
-```buildGradleKts
-plugins {
-    `java-library`
-}
-
-repositories {
-    mavenCentral()
-}
-
-val version = "latest.release"
-
-dependencies {
-    api("org.openrewrite:rewrite-core:latest.release")
-    implementation("org.openrewrite:rewrite-core:$version:sources")
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -12,2 +12,2 @@
-
-dependencies {
--   api(group = "org.openrewrite", name = "rewrite-core", version = "latest.release")
--   implementation(group = "org.openrewrite", name = "rewrite-core", version = version, classifier = "sources")
-+   api("org.openrewrite:rewrite-core:latest.release")
-+   implementation("org.openrewrite:rewrite-core:$version:sources")
 }
 ```
 </TabItem>

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`."
+sidebar_label: "Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`.
+# Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferStringStartsEndsWith**
 
-_Prefer `String#startsWith()` & `String#endsWith()` over `RegExp#test()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md)_
+_Prefer `String#startsWith()` & `String#endsWith()` over `RegExp#test()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferStringStartsEndsWith
-displayName: Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`.
+displayName: Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`
 description: |
-  Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md)
+  Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

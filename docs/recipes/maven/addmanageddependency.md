@@ -44,8 +44,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
 * [Migrate Spring Boot to Quarkus](/recipes/quarkus/spring/springboottoquarkus.md)
 
-## Examples
-##### Example 1
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -131,94 +130,6 @@ This recipe is used as part of the following composite recipes:
 +   </dependencies>
 + </dependencyManagement>
   <dependencies>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|groupId|`${quarkus.platform.group-id}`|
-|artifactId|`${quarkus.platform.artifact-id}`|
-|version|`${quarkus.platform.version}`|
-|scope|`import`|
-|type|`pom`|
-|classifier|`null`|
-|versionPattern|`null`|
-|releasesOnly|`null`|
-|onlyIfUsing|`null`|
-|addToRootPom|`null`|
-|because||
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>core</artifactId>
-  <version>1</version>
-  <properties>
-    <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-    <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>3.2.3.Final</quarkus.platform.version>
-  </properties>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>core</artifactId>
-  <version>1</version>
-  <properties>
-    <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-    <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>3.2.3.Final</quarkus.platform.version>
-  </properties>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>${quarkus.platform.group-id}</groupId>
-        <artifactId>${quarkus.platform.artifact-id}</artifactId>
-        <version>${quarkus.platform.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -10,0 +10,11 @@
-    <quarkus.platform.version>3.2.3.Final</quarkus.platform.version>
-  </properties>
-+ <dependencyManagement>
-+   <dependencies>
-+     <dependency>
-+       <groupId>${quarkus.platform.group-id}</groupId>
-+       <artifactId>${quarkus.platform.artifact-id}</artifactId>
-+       <version>${quarkus.platform.version}</version>
-+       <type>pom</type>
-+       <scope>import</scope>
-+     </dependency>
-+   </dependencies>
-+ </dependencyManagement>
-</project>
 ```
 </TabItem>
 </Tabs>

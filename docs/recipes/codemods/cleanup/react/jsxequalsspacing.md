@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.JsxEqualsSpacing**
 
-_Enforce or disallow spaces around equal signs in JSX attributes See rule details for [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-equals-spacing.md)_
+_Enforce or disallow spaces around equal signs in JSX attributes See rule details for [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-equals-spacing.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxEqualsSpacing
 displayName: Enforce or disallow spaces around equal signs in JSX attributes
 description: |
-  Enforce or disallow spaces around equal signs in JSX attributes See rule details for [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-equals-spacing.md)
+  Enforce or disallow spaces around equal signs in JSX attributes See rule details for [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-equals-spacing.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

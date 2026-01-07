@@ -28,42 +28,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fileContentsUrl | *Optional*. URL to file containing text content for the file. Use either `fileContents` or `fileContentsUrl` option. | `http://foo.bar/baz.yaml` |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|relativeFileName|`test/test.yaml`|
-|fileContents|`after: true`|
-|fileContentsUrl|`null`|
-|overwriteExisting|`true`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
-
-
-###### Before
-```yaml
-before: true
-```
-
-###### After
-```yaml
-after: true
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--before: true
-+after: true
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 

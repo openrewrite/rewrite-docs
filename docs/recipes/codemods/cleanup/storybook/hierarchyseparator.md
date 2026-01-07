@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.storybook.HierarchySeparator**
 
-_Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md)_
+_Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/hierarchy-separator": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["storybook"],   "rules": {     "storybook/hierarchy-separator": 2   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.storybook.HierarchySeparator
 displayName: Deprecated hierarchy separator in title property
 description: |
-  Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md)
+  Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md).
 tags:
   - eslint-plugin-storybook
   - ESLint
@@ -64,7 +64,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

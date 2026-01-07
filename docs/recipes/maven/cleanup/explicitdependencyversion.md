@@ -26,6 +26,25 @@ This recipe is used as part of the following composite recipes:
 
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
 
+## Example
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>LATEST</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
 
 ## Usage
 

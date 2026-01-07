@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.PreferReadOnlyProps**
 
-_Enforce that props are read-only See rule details for [react/prefer-read-only-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/prefer-read-only-props.md)_
+_Enforce that props are read-only See rule details for [react/prefer-read-only-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/prefer-read-only-props.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.PreferReadOnlyProps
 displayName: Enforce that props are read-only
 description: |
-  Enforce that props are read-only See rule details for [react/prefer-read-only-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/prefer-read-only-props.md)
+  Enforce that props are read-only See rule details for [react/prefer-read-only-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/prefer-read-only-props.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

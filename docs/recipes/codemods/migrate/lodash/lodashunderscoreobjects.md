@@ -14,8 +14,7 @@ import TabItem from '@theme/TabItem';
 - `_.extend(obj, x, y)` -> `Object.assign(obj, x, y)`
 - `_.keys(x)` -> `Object.keys(x)`
 - `_.pairs(x)` -> `Object.entries(x)`
-- `_.values(x)` -> `Object.values(x)`
-
+- `_.values(x)` -> `Object.values(x)`.
 
 ### Tags
 
@@ -49,7 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.migrate.lodash.LodashUnderscoreObjects
 displayName: Replace lodash and underscore object functions with native JavaScript
 description: |
-  - `_.clone(x)` -&gt; `{ ...x }` - `_.extend({}, x, y)` -&gt; `{ ...x, ...y }` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`
+  - `_.clone(x)` -&gt; `{ ...x }` - `_.extend({}, x, y)` -&gt; `{ ...x, ...y }` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`.
 tags:
   - codemods
   - lodash

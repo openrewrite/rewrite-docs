@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-dynamic-slot-name": 2,     "svelte/require-store-reactive-access": 2,     "svelte/no-useless-mustaches": 2,     "svelte/first-attribute-linebreak": 2,     "svelte/html-closing-bracket-spacing": 2,     "svelte/html-quotes": 2,     "svelte/html-self-closing": 2,     "svelte/indent": 2,     "svelte/max-attributes-per-line": 2,     "svelte/mustache-spacing": 2,     "svelte/no-spaces-around-equal-signs-in-attribute": 2,     "svelte/prefer-class-directive": 2,     "svelte/prefer-style-directive": 2,     "svelte/shorthand-attribute": 2,     "svelte/shorthand-directive": 2,     "svelte/sort-attributes": 2,     "svelte/spaced-html-comment": 2,   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-dynamic-slot-name": 2,     "svelte/require-store-reactive-access": 2,     "svelte/no-useless-mustaches": 2,     "svelte/first-attribute-linebreak": 2,     "svelte/html-closing-bracket-spacing": 2,     "svelte/html-quotes": 2,     "svelte/html-self-closing": 2,     "svelte/indent": 2,     "svelte/max-attributes-per-line": 2,     "svelte/mustache-spacing": 2,     "svelte/no-spaces-around-equal-signs-in-attribute": 2,     "svelte/prefer-class-directive": 2,     "svelte/prefer-style-directive": 2,     "svelte/shorthand-attribute": 2,     "svelte/shorthand-directive": 2,     "svelte/sort-attributes": 2,     "svelte/spaced-html-comment": 2,   } }. `
 
 </TabItem>
 
@@ -84,7 +84,7 @@ recipeList:
     "svelte/sort-attributes": 2,
     "svelte/spaced-html-comment": 2,
   }
-}
+}.
 
 
 ```

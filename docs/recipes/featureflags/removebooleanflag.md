@@ -35,6 +35,7 @@ This recipe is used as part of the following composite recipes:
 * [Remove FF4j's `check` for feature key](/recipes/featureflags/ff4j/removecheck.md)
 * [Remove LaunchDarkly's `boolVariation` for feature key](/recipes/featureflags/launchdarkly/removeboolvariation.md)
 * [Remove OpenFeature's `getBooleanValue` for feature key](/recipes/featureflags/openfeature/removegetbooleanvalue.md)
+* [Remove Quarkus feature flag's `isEnabled` for feature key](/recipes/featureflags/quarkus/removeisenabled.md)
 * [Remove Unleash's `isEnabled` for feature key](/recipes/featureflags/unleash/removeisenabled.md)
 
 ## Example

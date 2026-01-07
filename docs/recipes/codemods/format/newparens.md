@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.NewParens**
 
-_Enforce or disallow parentheses when invoking a constructor with no arguments  See [rule details](https://eslint.style/rules/default/new-parens)_
+_Enforce or disallow parentheses when invoking a constructor with no arguments  See [rule details](https://eslint.style/rules/default/new-parens)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.NewParens
 displayName: Enforce or disallow parentheses when invoking a constructor with no arguments
 description: |
-  Enforce or disallow parentheses when invoking a constructor with no arguments  See [rule details](https://eslint.style/rules/default/new-parens)
+  Enforce or disallow parentheses when invoking a constructor with no arguments  See [rule details](https://eslint.style/rules/default/new-parens).
 tags:
   - eslint
   - stylistic

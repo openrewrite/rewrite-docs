@@ -45,7 +45,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 
 ###### New file
-```xml
+```xml title=".mvn/gradle-enterprise.xml"
 <gradleEnterprise>
   <server>
     <url>https://foo</url>
@@ -55,18 +55,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
+<TabItem value=".mvn/extensions.xml" label=".mvn/extensions.xml">
 
 
 ###### Before
-```xml
+```xml title=".mvn/extensions.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <extensions>
 </extensions>
 ```
 
 ###### After
-```xml
+```xml title=".mvn/extensions.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <extensions>
   <extension>
@@ -81,6 +81,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- .mvn/extensions.xml
++++ .mvn/extensions.xml
 @@ -3,0 +3,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extensions>

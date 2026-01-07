@@ -75,6 +75,99 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`RetainVersions#dependencyWithExplicitVersionRemovedFromDepMgmt`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupId|`org.springframework.cloud`|
+|artifactId|`spring-cloud-config-dependencies`|
+|newVersion|`3.1.4`|
+|versionPattern|`null`|
+|overrideManagedVersion|`true`|
+|retainVersions|`singletonList("com.jcraft:jsch")`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>sample</artifactId>
+  <version>1.0.0</version>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-dependencies</artifactId>
+        <version>3.1.2</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.1.55</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>sample</artifactId>
+  <version>1.0.0</version>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-dependencies</artifactId>
+        <version>3.1.4</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.1.55</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -11,1 +11,1 @@
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-dependencies</artifactId>
+-       <version>3.1.2</version>
++       <version>3.1.4</version>
+        <type>pom</type>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeDependencyVersionTest#updateManagedDependencyVersion`
 
 ###### Parameters
 | Parameter | Value |
@@ -141,99 +234,6 @@ This recipe is used as part of the following composite recipes:
 -               <version>5.6.2</version>
 +               <version>5.7.2</version>
                 <scope>test</scope>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|groupId|`org.springframework.cloud`|
-|artifactId|`spring-cloud-config-dependencies`|
-|newVersion|`3.1.4`|
-|versionPattern|`null`|
-|overrideManagedVersion|`true`|
-|retainVersions|`Collections.singletonList("com.jcraft:jsch")`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sample</groupId>
-  <artifactId>sample</artifactId>
-  <version>1.0.0</version>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-config-dependencies</artifactId>
-        <version>3.1.2</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.jcraft</groupId>
-      <artifactId>jsch</artifactId>
-      <version>0.1.55</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sample</groupId>
-  <artifactId>sample</artifactId>
-  <version>1.0.0</version>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-config-dependencies</artifactId>
-        <version>3.1.4</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.jcraft</groupId>
-      <artifactId>jsch</artifactId>
-      <version>0.1.55</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,1 +12,1 @@
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-config-dependencies</artifactId>
--       <version>3.1.2</version>
-+       <version>3.1.4</version>
-        <type>pom</type>
 ```
 </TabItem>
 </Tabs>

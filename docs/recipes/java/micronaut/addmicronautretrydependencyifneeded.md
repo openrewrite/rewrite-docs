@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded**
 
-_This recipe will add the explicit Micronaut Retry dependency if needed_
+_This recipe will add the explicit Micronaut Retry dependency if needed._
 
 ## Recipe source
 
@@ -41,7 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded
 displayName: Update the Micronaut Retry support
 description: |
-  This recipe will add the explicit Micronaut Retry dependency if needed
+  This recipe will add the explicit Micronaut Retry dependency if needed.
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.micronaut

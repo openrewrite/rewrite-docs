@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxPropsNoMultiSpaces**
 
-_Disallow multiple spaces between inline JSX props  See [rule details](https://eslint.style/rules/default/jsx-props-no-multi-spaces)_
+_Disallow multiple spaces between inline JSX props  See [rule details](https://eslint.style/rules/default/jsx-props-no-multi-spaces)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxPropsNoMultiSpaces
 displayName: Disallow multiple spaces between inline JSX props
 description: |
-  Disallow multiple spaces between inline JSX props  See [rule details](https://eslint.style/rules/default/jsx-props-no-multi-spaces)
+  Disallow multiple spaces between inline JSX props  See [rule details](https://eslint.style/rules/default/jsx-props-no-multi-spaces).
 tags:
   - eslint
   - stylistic

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Update Jakarta EE Java Faces Dependencies to 4.0.x."
+sidebar_label: "Update Jakarta EE Java Faces Dependencies to 4.0.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update Jakarta EE Java Faces Dependencies to 4.0.x.
+# Update Jakarta EE Java Faces Dependencies to 4.0.x
 
 **org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4**
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4
-displayName: Update Jakarta EE Java Faces Dependencies to 4.0.x.
+displayName: Update Jakarta EE Java Faces Dependencies to 4.0.x
 description: |
   Update Jakarta EE Java Faces Dependencies to 4.0.x.
 recipeList:

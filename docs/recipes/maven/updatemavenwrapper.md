@@ -30,6 +30,28 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | addIfMissing | *Optional*. Add a Maven wrapper, if it's missing. Defaults to `true`. |  |
 | `Boolean` | enforceWrapperChecksumVerification | *Optional*. Enforce checksum verification for the maven-wrapper.jar. Enabling this feature may sporadically result in build failures, such as [MWRAPPER-103](https://issues.apache.org/jira/browse/MWRAPPER-103). Defaults to `false`. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|wrapperVersion|`3.1.x`|
+|wrapperDistribution|`null`|
+|distributionVersion|`3.8.x`|
+|repositoryUrl|`null`|
+|addIfMissing|`null`|
+|enforceWrapperChecksumVerification|`null`|
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>1.0.0</version>
+</project>
+```
+
 
 ## Usage
 

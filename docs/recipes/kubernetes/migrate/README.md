@@ -15,5 +15,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Kubernetes API v1.27](./migratetoapiv1_27.md)
 * [Migrate to Kubernetes API v1.29](./migratetoapiv1_29.md)
 * [Migrate to Kubernetes API v1.32](./migratetoapiv1_32.md)
+* [Migrate to Kubernetes API v1.33](./migratetoapiv1_33.md)
+* [Migrate to Kubernetes API v1.34](./migratetoapiv1_34.md)
+* [Migrate to Kubernetes API v1.35](./migratetoapiv1_35.md)
 
 

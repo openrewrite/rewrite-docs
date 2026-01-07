@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prevent abbreviations."
+sidebar_label: "Prevent abbreviations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prevent abbreviations.
+# Prevent abbreviations
 
 **org.openrewrite.codemods.cleanup.javascript.PreventAbbreviations**
 
-_Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md)_
+_Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreventAbbreviations
-displayName: Prevent abbreviations.
+displayName: Prevent abbreviations
 description: |
-  Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md)
+  Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

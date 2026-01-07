@@ -37,6 +37,71 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/springfoxtospringdoc.md)
 * [Replace deprecated RequestMatcherProvider with new API](/recipes/java/spring/boot4/replacedeprecatedrequestmatcherprovider.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|comment|`SHORT_COMMENT`|
+|methodPattern|`foo.Foo gar(..)`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import foo.Foo;
+
+class Other {
+    void method() {
+        Foo foo = new Foo();
+        // Existing Comment
+        foo.bar("a");
+        boolean gar = /* Existing Comment */ foo.gar();
+        String har = foo.har(/* Existing Comment */foo.gar());
+    }
+}
+```
+
+###### After
+```java
+import foo.Foo;
+
+class Other {
+    void method() {
+        Foo foo = new Foo();
+        // Existing Comment
+        /* Short comment to add */
+        foo.bar("a");
+        boolean gar = /* Existing Comment */ /* Short comment to add */ foo.gar();
+        String har = foo.har(/* Existing Comment *//* Short comment to add */foo.gar());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,0 +7,1 @@
+        Foo foo = new Foo();
+        // Existing Comment
++       /* Short comment to add */
+        foo.bar("a");
+@@ -8,2 +9,2 @@
+        // Existing Comment
+        foo.bar("a");
+-       boolean gar = /* Existing Comment */ foo.gar();
+-       String har = foo.har(/* Existing Comment */foo.gar());
++       boolean gar = /* Existing Comment */ /* Short comment to add */ foo.gar();
++       String har = foo.har(/* Existing Comment *//* Short comment to add */foo.gar());
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

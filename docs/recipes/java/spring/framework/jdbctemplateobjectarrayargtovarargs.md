@@ -39,20 +39,16 @@ package abc;
 import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
 
-public class MyDao {
+class MyDao {
 
-    final JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;
 
-    public MyDao(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-    public User getUser(String first, String last) {
+    User getUser(String first, String last) {
         Object[] args = new Object[]{first, last};
         return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", args, User.class);
     }
 
-    public User getUser2(String first, String last) {
+    User getUser2(String first, String last) {
         Object[] args = new Object[]{first, last};
          return jdbcTemplate.queryForObject("", args, (resultSet, i) -> {
             User user = new User();
@@ -70,20 +66,16 @@ package abc;
 import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
 
-public class MyDao {
+class MyDao {
 
-    final JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;
 
-    public MyDao(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-    public User getUser(String first, String last) {
+    User getUser(String first, String last) {
         Object[] args = new Object[]{first, last};
         return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", User.class, args);
     }
 
-    public User getUser2(String first, String last) {
+    User getUser2(String first, String last) {
         Object[] args = new Object[]{first, last};
          return jdbcTemplate.queryForObject("", (resultSet, i) -> {
             User user = new User();
@@ -99,19 +91,19 @@ public class MyDao {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -15,1 +15,1 @@
-    public User getUser(String first, String last) {
+@@ -11,1 +11,1 @@
+    User getUser(String first, String last) {
         Object[] args = new Object[]{first, last};
 -       return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", args, User.class);
 +       return jdbcTemplate.queryForObject("select NAME, AGE from USER where FIRST = ? && LAST = ?", User.class, args);
     }
-@@ -20,1 +20,1 @@
-    public User getUser2(String first, String last) {
+@@ -16,1 +16,1 @@
+    User getUser2(String first, String last) {
         Object[] args = new Object[]{first, last};
 -        return jdbcTemplate.queryForObject("", args, (resultSet, i) -> {
 +        return jdbcTemplate.queryForObject("", (resultSet, i) -> {
             User user = new User();
-@@ -25,1 +25,1 @@
+@@ -21,1 +21,1 @@
             user.setAge(resultSet.getInt("AGE"));
             return user;
 -       });

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `String#replaceAll()` over regex searches with the global flag."
+sidebar_label: "Prefer `String#replaceAll()` over regex searches with the global flag"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `String#replaceAll()` over regex searches with the global flag.
+# Prefer `String#replaceAll()` over regex searches with the global flag
 
 **org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll**
 
-_Prefer `String#replaceAll()` over regex searches with the global flag. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md)_
+_Prefer `String#replaceAll()` over regex searches with the global flag. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll
-displayName: Prefer `String#replaceAll()` over regex searches with the global flag.
+displayName: Prefer `String#replaceAll()` over regex searches with the global flag
 description: |
-  Prefer `String#replaceAll()` over regex searches with the global flag. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md)
+  Prefer `String#replaceAll()` over regex searches with the global flag. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

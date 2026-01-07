@@ -10,6 +10,8 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add Jackson2 for Jersey using JSON](./addjackson2forjerseyjson.md)
 * [Add MongoDB representation properties for UUID and BigDecimal](./addmongodbrepresentationproperties.md)
+* [Add Spring Boot 4.0 modular starters](./addmodularstarters.md)
+* [Add `spring-boot-starter-flyway` if using Flyway](./addspringbootstarterflyway.md)
 * [Adopt jackson 3](./adoptjackson3.md)
 * [Migrate Spring Boot properties to 4.0](./springbootproperties_4_0.md)
 * [Migrate Spring Retry to Spring Resilience](./migratespringretry.md)

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce consistent brace style for case clauses."
+sidebar_label: "Enforce consistent brace style for case clauses"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent brace style for case clauses.
+# Enforce consistent brace style for case clauses
 
 **org.openrewrite.codemods.cleanup.javascript.SwitchCaseBraces**
 
-_Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md)_
+_Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.SwitchCaseBraces
-displayName: Enforce consistent brace style for case clauses.
+displayName: Enforce consistent brace style for case clauses
 description: |
-  Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md)
+  Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce consistent case for text encoding identifiers."
+sidebar_label: "Enforce consistent case for text encoding identifiers"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent case for text encoding identifiers.
+# Enforce consistent case for text encoding identifiers
 
 **org.openrewrite.codemods.cleanup.javascript.TextEncodingIdentifierCase**
 
-_Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md)_
+_Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.TextEncodingIdentifierCase
-displayName: Enforce consistent case for text encoding identifiers.
+displayName: Enforce consistent case for text encoding identifiers
 description: |
-  Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md)
+  Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

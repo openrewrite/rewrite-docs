@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce the use of `Math.trunc()` instead of bitwise operators."
+sidebar_label: "Enforce the use of `Math.trunc()` instead of bitwise operators"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce the use of `Math.trunc()` instead of bitwise operators.
+# Enforce the use of `Math.trunc()` instead of bitwise operators
 
 **org.openrewrite.codemods.cleanup.javascript.PreferMathTrunc**
 
-_Enforce the use of `Math.trunc()` instead of bitwise operators. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-math-trunc.md)_
+_Enforce the use of `Math.trunc()` instead of bitwise operators. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-math-trunc.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferMathTrunc
-displayName: Enforce the use of `Math.trunc()` instead of bitwise operators.
+displayName: Enforce the use of `Math.trunc()` instead of bitwise operators
 description: |
-  Enforce the use of `Math.trunc()` instead of bitwise operators. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-math-trunc.md)
+  Enforce the use of `Math.trunc()` instead of bitwise operators. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-math-trunc.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

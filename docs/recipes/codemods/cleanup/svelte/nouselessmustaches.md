@@ -1,15 +1,15 @@
 ---
-sidebar_label: "disallow unnecessary mustache interpolations"
+sidebar_label: "Disallow unnecessary mustache interpolations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# disallow unnecessary mustache interpolations
+# Disallow unnecessary mustache interpolations
 
 **org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches**
 
-_disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/)_
+_Disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/)._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-useless-mustaches": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/no-useless-mustaches": 2   } }. `
 
 </TabItem>
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches
-displayName: disallow unnecessary mustache interpolations
+displayName: Disallow unnecessary mustache interpolations
 description: |
-  disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/)
+  Disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/).
 tags:
   - svelte
   - ESLint
@@ -68,7 +68,7 @@ recipeList:
   "rules": {
     "svelte/no-useless-mustaches": 2
   }
-}
+}.
 
 
 ```

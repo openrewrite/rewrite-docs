@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Enforce consistent relative URL style."
+sidebar_label: "Enforce consistent relative URL style"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Enforce consistent relative URL style.
+# Enforce consistent relative URL style
 
 **org.openrewrite.codemods.cleanup.javascript.RelativeUrlStyle**
 
-_Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md)_
+_Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.RelativeUrlStyle
-displayName: Enforce consistent relative URL style.
+displayName: Enforce consistent relative URL style
 description: |
-  Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md)
+  Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

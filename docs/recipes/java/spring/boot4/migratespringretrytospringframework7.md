@@ -25,6 +25,55 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Spring Retry to Spring Resilience](/recipes/java/spring/boot4/migratespringretry.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.retry.annotation.Retryable;
+import org.springframework.retry.annotation.Backoff;
+import java.io.IOException;
+
+public class MyService {
+    @Retryable(retryFor = IOException.class, maxAttempts = 5, backoff = @Backoff(delay = 100))
+    public void doWork() {}
+}
+```
+
+###### After
+```java
+import org.springframework.resilience.annotation.Retryable;
+import java.io.IOException;
+
+public class MyService {
+    @Retryable(includes = IOException.class, maxRetries = 4, delay = 100)
+    public void doWork() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.springframework.retry.annotation.Retryable;
+-import org.springframework.retry.annotation.Backoff;
++import org.springframework.resilience.annotation.Retryable;
+import java.io.IOException;
+@@ -6,1 +5,1 @@
+
+public class MyService {
+-   @Retryable(retryFor = IOException.class, maxAttempts = 5, backoff = @Backoff(delay = 100))
++   @Retryable(includes = IOException.class, maxRetries = 4, delay = 100)
+    public void doWork() {}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

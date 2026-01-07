@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Update Jakarta EE XML Web Services Dependencies for EE 10."
+sidebar_label: "Update Jakarta EE XML Web Services Dependencies for EE 10"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update Jakarta EE XML Web Services Dependencies for EE 10.
+# Update Jakarta EE XML Web Services Dependencies for EE 10
 
 **org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10**
 
@@ -53,7 +53,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10
-displayName: Update Jakarta EE XML Web Services Dependencies for EE 10.
+displayName: Update Jakarta EE XML Web Services Dependencies for EE 10
 description: |
   Update Jakarta EE XML Web Services Dependencies for EE 10.
 recipeList:

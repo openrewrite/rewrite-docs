@@ -50,9 +50,7 @@ demo
 
 ###### Before
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -68,9 +66,7 @@ demo
 
 ###### After
 ```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
 	<modelVersion>4.0.0</modelVersion>
 	<!--~~>--><parent>
 		<groupId>org.springframework.boot</groupId>
@@ -90,8 +86,8 @@ demo
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -5,1 +5,1 @@
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+@@ -3,1 +3,1 @@
+<project>
 	<modelVersion>4.0.0</modelVersion>
 -	<parent>
 +	<!--~~>--><parent>

@@ -1,8 +1,10 @@
 ---
-description: Jmockit OpenRewrite recipes.
+description: JMockit OpenRewrite recipes.
 ---
 
-# Jmockit
+# JMockit
+
+_Recipes for migrating from [JMockit](https://jmockit.github.io/) to Mockito._
 
 ## Composite Recipes
 

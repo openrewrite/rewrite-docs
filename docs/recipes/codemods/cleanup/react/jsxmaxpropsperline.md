@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.react.JsxMaxPropsPerLine**
 
-_Enforce maximum of props on a single line in JSX See rule details for [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-max-props-per-line.md)_
+_Enforce maximum of props on a single line in JSX See rule details for [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-max-props-per-line.md)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.react.JsxMaxPropsPerLine
 displayName: Enforce maximum of props on a single line in JSX
 description: |
-  Enforce maximum of props on a single line in JSX See rule details for [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-max-props-per-line.md)
+  Enforce maximum of props on a single line in JSX See rule details for [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-max-props-per-line.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

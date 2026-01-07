@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.CapitalizedComments**
 
-_Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments)_
+_Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments)._
 
 ## Recipe source
 
@@ -38,7 +38,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.CapitalizedComments
 displayName: Enforce or disallow capitalization of the first letter of a comment
 description: |
-  Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments)
+  Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

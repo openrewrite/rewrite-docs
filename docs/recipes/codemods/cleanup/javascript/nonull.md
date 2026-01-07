@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Disallow the use of the `null` literal."
+sidebar_label: "Disallow the use of the `null` literal"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Disallow the use of the `null` literal.
+# Disallow the use of the `null` literal
 
 **org.openrewrite.codemods.cleanup.javascript.NoNull**
 
-_Disallow the use of the `null` literal. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-null.md)_
+_Disallow the use of the `null` literal. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-null.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.NoNull
-displayName: Disallow the use of the `null` literal.
+displayName: Disallow the use of the `null` literal
 description: |
-  Disallow the use of the `null` literal. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-null.md)
+  Disallow the use of the `null` literal. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-null.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

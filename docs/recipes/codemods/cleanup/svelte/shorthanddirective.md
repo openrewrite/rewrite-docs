@@ -1,15 +1,15 @@
 ---
-sidebar_label: "enforce use of shorthand syntax in directives"
+sidebar_label: "Enforce use of shorthand syntax in directives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# enforce use of shorthand syntax in directives
+# Enforce use of shorthand syntax in directives
 
 **org.openrewrite.codemods.cleanup.svelte.ShorthandDirective**
 
-_enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)_
+_Enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Lint source code with ESLint](../../../codemods/eslint)
   * patterns: `[**/*.svelte]`
   * fix: `true`
-  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/shorthand-directive": 2   } } `
+  * configFile: `{   "root": true,   "globals": {     "browser": true,     "node": true   },   "parser": "svelte-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",   },   "plugins": ["svelte"],   "rules": {     "svelte/shorthand-directive": 2   } }. `
 
 </TabItem>
 
@@ -43,9 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.svelte.ShorthandDirective
-displayName: enforce use of shorthand syntax in directives
+displayName: Enforce use of shorthand syntax in directives
 description: |
-  enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/)
+  Enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/).
 tags:
   - svelte
   - ESLint
@@ -68,7 +68,7 @@ recipeList:
   "rules": {
     "svelte/shorthand-directive": 2
   }
-}
+}.
 
 
 ```

@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Add React imports](/recipes/codemods/migrate/nextjs/v10/addmissingreactimport.md)
-* [Adds `DefaultTheme` module augmentation to typescript projects.](/recipes/codemods/migrate/mui/themeaugment.md)
+* [Adds `DefaultTheme` module augmentation to typescript projects](/recipes/codemods/migrate/mui/themeaugment.md)
 * [Combination of all deprecations](/recipes/codemods/migrate/mui/all.md)
 * [Convert `var` to `let`](/recipes/codemods/ecmascript/5to6/vartolet.md)
 * [Converts ExpansionPanel to use ExpansionPanel component](/recipes/codemods/migrate/mui/expansionpanelcomponent.md)
@@ -114,7 +114,7 @@ This recipe is used as part of the following composite recipes:
 * [Updates props for Table component](/recipes/codemods/migrate/mui/tableprops.md)
 * [Updates scroll buttons for Tabs component](/recipes/codemods/migrate/mui/tabsscrollbuttons.md)
 * [Updates the usage of `styled` from `@mui/system@v5` to be compatible with` @pigment-css/react`](/recipes/codemods/migrate/mui/styled.md)
-* [Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs.](/recipes/codemods/migrate/mui/gridvprops.md)
+* [Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs](/recipes/codemods/migrate/mui/gridvprops.md)
 * [Updates theme breakpoints](/recipes/codemods/migrate/mui/themebreakpoints.md)
 * [Updates theme options](/recipes/codemods/migrate/mui/themeoptions.md)
 * [Updates theme palette mode](/recipes/codemods/migrate/mui/themepalettemode.md)

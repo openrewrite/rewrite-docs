@@ -61,6 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `org.springframework.boot`
   * newArtifactId: `spring-boot-starter-flyway`
   * newVersion: `4.0.x`
+* [Add `spring-boot-starter-flyway` if using Flyway](../../../java/spring/boot4/addspringbootstarterflyway)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.kafka`
   * oldArtifactId: `spring-kafka`
@@ -145,6 +146,7 @@ recipeList:
       newGroupId: org.springframework.boot
       newArtifactId: spring-boot-starter-flyway
       newVersion: 4.0.x
+  - org.openrewrite.java.spring.boot4.AddSpringBootStarterFlyway
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.kafka
       oldArtifactId: spring-kafka
@@ -193,6 +195,51 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
+
+## Examples
+##### Example 1
+`MigrateToModularStartersTest#migrateLiquibaseToStarterInMaven`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.24.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`MigrateToModularStartersTest#migrateLiquibaseToStarterInMaven`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.24.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 
 ## Usage

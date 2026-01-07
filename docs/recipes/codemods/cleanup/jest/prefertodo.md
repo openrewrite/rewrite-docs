@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.jest.PreferTodo**
 
-_Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md)_
+_Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["jest"],   "rules": {     "jest/prefer-todo": 2   },   "globals": {     "browser": true,     "node": true,     "jest": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["jest"],   "rules": {     "jest/prefer-todo": 2   },   "globals": {     "browser": true,     "node": true,     "jest": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.jest.PreferTodo
 displayName: Suggest using test.todo
 description: |
-  Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md)
+  Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md).
 tags:
   - ESLint
   - eslint-plugin-jest
@@ -65,7 +65,7 @@ recipeList:
     "node": true,
     "jest": true
   }
-}
+}.
 
 
 ```

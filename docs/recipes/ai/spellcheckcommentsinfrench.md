@@ -27,6 +27,52 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`Changed#singleLineComment`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test() {
+        // Description: Fabrique pour construire la r�ponse du service Compte?
+        // * - la valeur du champ "variable" doit ?tre remise ? la valeur par d?faut soit le transit courant
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test() {
+        // Omelette du fromage
+        // Omelette du fromage
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,2 @@
+class Test {
+    void test() {
+-       // Description: Fabrique pour construire la r�ponse du service Compte?
+-       // * - la valeur du champ "variable" doit ?tre remise ? la valeur par d?faut soit le transit courant
++       // Omelette du fromage
++       // Omelette du fromage
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
 `SpellCheckCommentsInFrenchPomXmlTest#pom`
 
 
@@ -82,52 +128,6 @@ This recipe is used as part of the following composite recipes:
 -     <!-- c'est une d?pendance incorpor? -->
 +     <!-- c'est une dépendance incorporé -->
       <groupId>com.google.guava</groupId>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`Changed#singleLineComment`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-class Test {
-    void test() {
-        // Description: Fabrique pour construire la r�ponse du service Compte?
-        // * - la valeur du champ "variable" doit ?tre remise ? la valeur par d?faut soit le transit courant
-    }
-}
-```
-
-###### After
-```java
-class Test {
-    void test() {
-        // Omelette du fromage
-        // Omelette du fromage
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,2 +3,2 @@
-class Test {
-    void test() {
--       // Description: Fabrique pour construire la r�ponse du service Compte?
--       // * - la valeur du champ "variable" doit ?tre remise ? la valeur par d?faut soit le transit courant
-+       // Omelette du fromage
-+       // Omelette du fromage
-    }
 ```
 </TabItem>
 </Tabs>

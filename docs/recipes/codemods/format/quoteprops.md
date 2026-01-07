@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.QuoteProps**
 
-_Require quotes around object literal property names  See [rule details](https://eslint.style/rules/default/quote-props)_
+_Require quotes around object literal property names  See [rule details](https://eslint.style/rules/default/quote-props)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.QuoteProps
 displayName: Require quotes around object literal property names
 description: |
-  Require quotes around object literal property names  See [rule details](https://eslint.style/rules/default/quote-props)
+  Require quotes around object literal property names  See [rule details](https://eslint.style/rules/default/quote-props).
 tags:
   - eslint
   - stylistic

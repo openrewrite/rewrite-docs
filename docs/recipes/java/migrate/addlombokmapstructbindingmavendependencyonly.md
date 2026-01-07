@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly**
 
-_Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks_
+_Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks._
 
 ## Recipe source
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly
 displayName: Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used
 description: |
-  Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks
+  Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
 recipeList:
   - org.openrewrite.maven.AddDependency:
       groupId: org.projectlombok

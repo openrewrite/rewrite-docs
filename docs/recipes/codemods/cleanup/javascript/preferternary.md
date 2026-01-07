@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer ternary expressions over simple `if-else` statements."
+sidebar_label: "Prefer ternary expressions over simple `if-else` statements"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer ternary expressions over simple `if-else` statements.
+# Prefer ternary expressions over simple `if-else` statements
 
 **org.openrewrite.codemods.cleanup.javascript.PreferTernary**
 
-_Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md)_
+_Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferTernary
-displayName: Prefer ternary expressions over simple `if-else` statements.
+displayName: Prefer ternary expressions over simple `if-else` statements
 description: |
-  Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md)
+  Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

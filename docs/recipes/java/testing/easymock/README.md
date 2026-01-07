@@ -1,8 +1,10 @@
 ---
-description: Easymock OpenRewrite recipes.
+description: EasyMock OpenRewrite recipes.
 ---
 
-# Easymock
+# EasyMock
+
+_Recipes for migrating from [EasyMock](https://easymock.org/) to Mockito._
 
 ## Composite Recipes
 

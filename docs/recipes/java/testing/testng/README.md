@@ -1,8 +1,10 @@
 ---
-description: Testng OpenRewrite recipes.
+description: TestNG OpenRewrite recipes.
 ---
 
-# Testng
+# TestNG
+
+_Recipes for migrating from [TestNG](https://testng.org/) to JUnit._
 
 ## Composite Recipes
 

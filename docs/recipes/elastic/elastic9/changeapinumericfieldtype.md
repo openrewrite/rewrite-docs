@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **io.moderne.elastic.elastic9.ChangeApiNumericFieldType**
 
-_Adds conversion methods with null checks for numeric type changes in Elasticsearch 9 API_
+_Adds conversion methods with null checks for numeric type changes in Elasticsearch 9 API._
 
 ## Recipe source
 

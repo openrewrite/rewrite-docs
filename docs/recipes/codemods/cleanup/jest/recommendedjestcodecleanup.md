@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["jest"],   "rules": {     "jest/consistent-test-it": 2,     "jest/no-alias-methods": 2,     "jest/no-jasmine-globals": 2,     "jest/no-test-prefixes": 2,     "jest/no-untyped-mock-factory": 2,     "jest/prefer-comparison-matcher": 2,     "jest/prefer-expect-resolves": 2,     "jest/prefer-lowercase-title": 2,     "jest/prefer-mock-promise-shorthand": 2,     "jest/prefer-spy-on": 2,     "jest/prefer-to-be": 2,     "jest/prefer-to-contain": 2,     "jest/prefer-to-have-length": 2,     "jest/prefer-todo": 2,     "jest/valid-title": 2,   },   "globals": {     "browser": true,     "node": true,     "jest": true   } } `
+  * configFile: `{   "root": true,   "parser": "@typescript-eslint/parser",   "parserOptions": { "project": ["./tsconfig.json"] },   "plugins": ["jest"],   "rules": {     "jest/consistent-test-it": 2,     "jest/no-alias-methods": 2,     "jest/no-jasmine-globals": 2,     "jest/no-test-prefixes": 2,     "jest/no-untyped-mock-factory": 2,     "jest/prefer-comparison-matcher": 2,     "jest/prefer-expect-resolves": 2,     "jest/prefer-lowercase-title": 2,     "jest/prefer-mock-promise-shorthand": 2,     "jest/prefer-spy-on": 2,     "jest/prefer-to-be": 2,     "jest/prefer-to-contain": 2,     "jest/prefer-to-have-length": 2,     "jest/prefer-todo": 2,     "jest/valid-title": 2,   },   "globals": {     "browser": true,     "node": true,     "jest": true   } }. `
 
 </TabItem>
 
@@ -79,7 +79,7 @@ recipeList:
     "node": true,
     "jest": true
   }
-}
+}.
 
 
 ```

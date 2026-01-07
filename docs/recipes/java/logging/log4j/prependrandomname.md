@@ -45,7 +45,7 @@ import org.apache.log4j.Logger;
 class Test {
     Logger logger;
     void test() {
-        logger.info("<rural_crew> test");
+        logger.info("<liquid_crowd> test");
     }
 }
 ```
@@ -58,7 +58,7 @@ class Test {
     Logger logger;
     void test() {
 -       logger.info("test");
-+       logger.info("<rural_crew> test");
++       logger.info("<liquid_crowd> test");
     }
 ```
 </TabItem>

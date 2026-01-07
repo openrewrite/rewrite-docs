@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.ImplicitArrowLinebreak**
 
-_Enforce the location of arrow function bodies  See [rule details](https://eslint.style/rules/default/implicit-arrow-linebreak)_
+_Enforce the location of arrow function bodies  See [rule details](https://eslint.style/rules/default/implicit-arrow-linebreak)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ImplicitArrowLinebreak
 displayName: Enforce the location of arrow function bodies
 description: |
-  Enforce the location of arrow function bodies  See [rule details](https://eslint.style/rules/default/implicit-arrow-linebreak)
+  Enforce the location of arrow function bodies  See [rule details](https://eslint.style/rules/default/implicit-arrow-linebreak).
 tags:
   - eslint
   - stylistic

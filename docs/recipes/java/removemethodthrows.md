@@ -34,6 +34,58 @@ This recipe is used as part of the following composite recipes:
 
 * [Remove throws exception in `SecurityConfigurer` methods `init` and `configure`](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`A foo(..)`|
+|matchOverrides|`true`|
+|exceptionTypePattern|`java.io.IOException`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.IOException;
+
+class A {
+    public void foo() throws IOException {
+        // no-op
+    }
+}
+```
+
+###### After
+```java
+class A {
+    public void foo() {
+        // no-op
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import java.io.IOException;
+-
+class A {
+@@ -4,1 +2,1 @@
+
+class A {
+-   public void foo() throws IOException {
++   public void foo() {
+        // no-op
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

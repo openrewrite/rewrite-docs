@@ -34,6 +34,135 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Elasticsearch 8 to 9](/recipes/elastic/elastic9/migratetoelasticsearch9.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|comment|`SHORT_COMMENT`|
+|typePattern|`foo.bar.Baz`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package blah;
+// Will not match direct package
+import foo.*;
+import foo.bar.*;
+import foo.bar.Baz;
+import static foo.bar.Baz.someStaticMethod;
+class OtherOne {}
+```
+
+###### After
+```java
+package blah;
+// Will not match direct package
+import foo.*;
+/* Short comment to add */
+import foo.bar.*;
+import foo.bar.Baz;
+import static foo.bar.Baz.someStaticMethod;
+class OtherOne {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,1 @@
+// Will not match direct package
+import foo.*;
++/* Short comment to add */
+import foo.bar.*;
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package blah;
+// Will not match direct package
+import foo.*;
+import foo.bar.Baz;
+import foo.bar.*;
+import static foo.bar.Baz.someStaticMethod;
+class OtherTwo {}
+```
+
+###### After
+```java
+package blah;
+// Will not match direct package
+import foo.*;
+/* Short comment to add */
+import foo.bar.Baz;
+import foo.bar.*;
+import static foo.bar.Baz.someStaticMethod;
+class OtherTwo {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,1 @@
+// Will not match direct package
+import foo.*;
++/* Short comment to add */
+import foo.bar.Baz;
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package blah;
+// Will not match direct package
+import foo.*;
+import static foo.bar.Baz.someStaticMethod;
+import foo.bar.*;
+import foo.bar.Baz;
+class OtherThree {}
+```
+
+###### After
+```java
+package blah;
+// Will not match direct package
+import foo.*;
+/* Short comment to add */
+import static foo.bar.Baz.someStaticMethod;
+import foo.bar.*;
+import foo.bar.Baz;
+class OtherThree {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,1 @@
+// Will not match direct package
+import foo.*;
++/* Short comment to add */
+import static foo.bar.Baz.someStaticMethod;
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

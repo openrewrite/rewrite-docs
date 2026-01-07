@@ -36,22 +36,6 @@ This recipe is used as part of the following composite recipes:
 * [Add implicit TLD with taglib 3.0](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
 * [Create `weblogic.xml` if it does not exist](/recipes/com/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md)
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|relativeFileName|`test/test.xml`|
-|fileContents|`fileContents`|
-|overwriteExisting|`true`|
-
-
-###### Unchanged
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<before/>
-```
-
 
 ## Usage
 

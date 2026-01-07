@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Prefer `.flatMap()` over `.map().flat()`."
+sidebar_label: "Prefer `.flatMap()` over `.map().flat()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `.flatMap()` over `.map().flat()`.
+# Prefer `.flatMap()` over `.map().flat()`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferArrayFlatMap**
 
-_Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md)_
+_Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md)._
 
 ## Recipe source
 
@@ -36,9 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.javascript.PreferArrayFlatMap
-displayName: Prefer `.flatMap()` over `.map().flat()`.
+displayName: Prefer `.flatMap()` over `.map().flat()`
 description: |
-  Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md)
+  Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md).
 recipeList:
   - org.openrewrite.codemods.ESLint:
       fix: true

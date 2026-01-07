@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.quarkus.spring.DerbyDriverToQuarkus**
 
-_Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope)_
+_Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope)._
 
 ### Tags
 
@@ -61,7 +61,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.quarkus.spring.DerbyDriverToQuarkus
 displayName: Replace Derby driver with Quarkus JDBC Derby
 description: |
-  Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope)
+  Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope).
 tags:
   - spring
   - database

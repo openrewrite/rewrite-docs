@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.ecmascript.5to6.cjsToEsm**
 
-_Transform CommonJS style `require()` calls to ES6 `import` statements_
+_Transform CommonJS style `require()` calls to ES6 `import` statements._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.ecmascript.5to6.cjsToEsm
 displayName: Transform CommonJS style `require()` calls to ES6 `import` statements
 description: |
-  Transform CommonJS style `require()` calls to ES6 `import` statements
+  Transform CommonJS style `require()` calls to ES6 `import` statements.
 tags:
   - codemods
   - 5to6

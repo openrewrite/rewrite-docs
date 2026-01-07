@@ -72,7 +72,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [JUnit 5 inner test classes should be annotated with `@Nested`](../../../java/testing/junit5/addmissingnested)
 * [Use OkHttp 3 MockWebServer for JUnit 5](../../../java/testing/junit5/upgradeokhttpmockwebserver)
 * [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension)
-* [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused)
+* [Add `org.hamcrest:hamcrest` if it is used](../../../java/testing/hamcrest/addhamcrestifused)
 * [Use XMLUnit Legacy for JUnit 5](../../../java/testing/junit5/usexmlunitlegacy)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `junit`
@@ -107,6 +107,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use Arquillian JUnit 5 Extension](../../../java/testing/arquillian/arquillianjunit4toarquillianjunit5)
 * [Use Byteman JUnit 5 dependency](../../../java/testing/byteman/bytemanjunit4tobytemanjunit5)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](../../../java/testing/dbrider/migratedbriderspringtodbriderjunit5)
+* [Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)](../../../java/testing/junit5/handleexternalresourcerules)
 
 </TabItem>
 
@@ -197,6 +198,7 @@ recipeList:
   - org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5
   - org.openrewrite.java.testing.byteman.BytemanJUnit4ToBytemanJUnit5
   - org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5
+  - org.openrewrite.java.testing.junit5.HandleExternalResourceRules
 
 ```
 </TabItem>

@@ -75,7 +75,7 @@ This recipe is used as part of the following composite recipes:
   <artifactId>my-app</artifactId>
   <version>1</version>
   <dependencies>
-    <!--~~>--><dependency>
+    <!--~~(com.google.guava:failureaccess:1.0.1,com.google.guava:guava:29.0-jre,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava)~~>--><dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>29.0-jre</version>
@@ -94,7 +94,7 @@ This recipe is used as part of the following composite recipes:
   <version>1</version>
   <dependencies>
 -   <dependency>
-+   <!--~~>--><dependency>
++   <!--~~(com.google.guava:failureaccess:1.0.1,com.google.guava:guava:29.0-jre,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava)~~>--><dependency>
         <groupId>com.google.guava</groupId>
 ```
 </TabItem>

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.ArrowSpacing**
 
-_Enforce consistent spacing before and after the arrow in arrow functions  See [rule details](https://eslint.style/rules/default/arrow-spacing)_
+_Enforce consistent spacing before and after the arrow in arrow functions  See [rule details](https://eslint.style/rules/default/arrow-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.ArrowSpacing
 displayName: Enforce consistent spacing before and after the arrow in arrow functions
 description: |
-  Enforce consistent spacing before and after the arrow in arrow functions  See [rule details](https://eslint.style/rules/default/arrow-spacing)
+  Enforce consistent spacing before and after the arrow in arrow functions  See [rule details](https://eslint.style/rules/default/arrow-spacing).
 tags:
   - eslint
   - stylistic

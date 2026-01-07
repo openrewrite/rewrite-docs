@@ -24,6 +24,58 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | --- | --- | --- | --- |
 | `String` | componentName | *Optional*. The name of the Angular component to find. If `null`, finds all Angular components. | `AppComponent` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|componentName|`AppComponent`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="typescript" label="typescript">
+
+
+###### Before
+```typescript
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header.component';
+
+const routes = [
+    { component: AppComponent },
+    { component: HeaderComponent }
+];
+```
+
+###### After
+```typescript
+import { /*~~>*/AppComponent } from './app.component';
+import { HeaderComponent } from './header.component';
+
+const routes = [
+    { component: /*~~>*/AppComponent },
+    { component: HeaderComponent }
+];
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import { AppComponent } from './app.component';
++import { /*~~>*/AppComponent } from './app.component';
+import { HeaderComponent } from './header.component';
+@@ -5,1 +5,1 @@
+
+const routes = [
+-   { component: AppComponent },
++   { component: /*~~>*/AppComponent },
+    { component: HeaderComponent }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

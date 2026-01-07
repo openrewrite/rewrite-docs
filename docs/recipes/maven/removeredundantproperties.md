@@ -34,6 +34,92 @@ This recipe is used as part of the following composite recipes:
 * [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|namePattern|`null`|
+|onlyIfValuesMatch|`null`|
+
+
+###### Unchanged
+```mavenProject
+child
+```
+
+###### Unchanged
+```mavenProject
+parent
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <groupId>com.example</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <properties>
+    <junit.version>5.9.1</junit.version>
+    <spring.version>6.0.0</spring.version>
+  </properties>
+  <modules>
+    <module>child</module>
+  </modules>
+</project>
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <parent>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>child</artifactId>
+  <properties>
+    <junit.version>5.9.1</junit.version>
+    <custom.property>value</custom.property>
+  </properties>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <parent>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>child</artifactId>
+  <properties>
+    <custom.property>value</custom.property>
+  </properties>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -9,1 +9,0 @@
+  <artifactId>child</artifactId>
+  <properties>
+-   <junit.version>5.9.1</junit.version>
+    <custom.property>value</custom.property>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

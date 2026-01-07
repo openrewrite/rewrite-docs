@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Update Jakarta EE annotation Dependencies to 2.1.x."
+sidebar_label: "Update Jakarta EE annotation Dependencies to 2.1.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update Jakarta EE annotation Dependencies to 2.1.x.
+# Update Jakarta EE annotation Dependencies to 2.1.x
 
 **org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2**
 

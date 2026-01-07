@@ -6,10 +6,10 @@ description: Commons OpenRewrite recipes.
 
 ## Categories
 
-* [Codec](/recipes/apache/commons/codec)
-* [Collections](/recipes/apache/commons/collections)
-* [Io](/recipes/apache/commons/io)
-* [Lang](/recipes/apache/commons/lang)
+* [Commons Codec](/recipes/apache/commons/codec)
+* [Commons Collections](/recipes/apache/commons/collections)
+* [Commons IO](/recipes/apache/commons/io)
+* [Commons Lang](/recipes/apache/commons/lang)
 * [Lang3](/recipes/apache/commons/lang3)
 * [Math](/recipes/apache/commons/math)
 

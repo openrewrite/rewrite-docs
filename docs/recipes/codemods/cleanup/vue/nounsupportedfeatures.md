@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.NoUnsupportedFeatures**
 
-_Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html)_
+_Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html)._
 
 ### Tags
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Lint source code with ESLint](../../../codemods/eslint)
   * fix: `true`
-  * configFile: `{   "root": true,   "parser": "vue-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",     "ecmaVersion": "2015",     "sourceType": "module",       "ecmaFeatures": {       "jsx": true,       "experimentalObjectRestSpread": true     }   },   "plugins": ["vue"],   "rules": {     "vue/no-unsupported-features": 2   },   "globals": {     "browser": true,     "node": true   } } `
+  * configFile: `{   "root": true,   "parser": "vue-eslint-parser",   "parserOptions": {     "parser": "@typescript-eslint/parser",     "ecmaVersion": "2015",     "sourceType": "module",       "ecmaFeatures": {       "jsx": true,       "experimentalObjectRestSpread": true     }   },   "plugins": ["vue"],   "rules": {     "vue/no-unsupported-features": 2   },   "globals": {     "browser": true,     "node": true   } }. `
 
 </TabItem>
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.cleanup.vue.NoUnsupportedFeatures
 displayName: Disallow unsupported Vue.js syntax on the specified version
 description: |
-  Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html)
+  Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html).
 tags:
   - ESLint
   - vue
@@ -72,7 +72,7 @@ recipeList:
     "browser": true,
     "node": true
   }
-}
+}.
 
 
 ```

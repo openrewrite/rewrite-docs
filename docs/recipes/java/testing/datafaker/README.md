@@ -1,8 +1,10 @@
 ---
-description: Datafaker OpenRewrite recipes.
+description: DataFaker OpenRewrite recipes.
 ---
 
-# Datafaker
+# DataFaker
+
+_Recipes for migrating from JavaFaker to [DataFaker](https://www.datafaker.net/)._
 
 ## Composite Recipes
 

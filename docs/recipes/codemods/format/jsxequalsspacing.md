@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.format.JsxEqualsSpacing**
 
-_Enforce or disallow spaces around equal signs in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-equals-spacing)_
+_Enforce or disallow spaces around equal signs in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-equals-spacing)._
 
 ### Tags
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.codemods.format.JsxEqualsSpacing
 displayName: Enforce or disallow spaces around equal signs in JSX attributes
 description: |
-  Enforce or disallow spaces around equal signs in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-equals-spacing)
+  Enforce or disallow spaces around equal signs in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-equals-spacing).
 tags:
   - eslint
   - stylistic

@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|xPath|`/project/dependencies/`|
+|xPath|`/project/dependencies`|
 |commentText|` Comment text `|
 
 
