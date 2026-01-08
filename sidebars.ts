@@ -141,6 +141,7 @@ const sidebars: SidebarsConfig = {
         keywords: ['lists'],
       },
       items: [
+        'reference/all-recipes',
         'reference/recipes-by-tag',
         'reference/recipes-with-data-tables',
         'reference/scanning-recipes',

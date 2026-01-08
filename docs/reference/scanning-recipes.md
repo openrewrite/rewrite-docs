@@ -9,815 +9,2241 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ## rewrite-ai-search
 
-* [Find method invocations that resemble a pattern](/recipes/ai/research/findcodethatresembles.md) - _This recipe uses two phase AI approach to find a method invocation that resembles a search string._
-* [Get recommendations](/recipes/ai/research/getrecommendations.md) - _This recipe calls an AI model to get recommendations for modernizing the code base by looking at a sample of method declarations._
+* [io.moderne.ai.research.FindCodeThatResembles](/recipes/ai/research/findcodethatresembles.md)
+  * **Find method invocations that resemble a pattern**
+  * This recipe uses two phase AI approach to find a method invocation that resembles a search string.
+* [io.moderne.ai.research.GetRecommendations](/recipes/ai/research/getrecommendations.md)
+  * **Get recommendations**
+  * This recipe calls an AI model to get recommendations for modernizing the code base by looking at a sample of method declarations.
 
 ## rewrite-all
 
-* [Find duplicate source files](/recipes/core/findduplicatesourcefiles.md) - _Record the presence of LSTs with duplicate paths, indicating that the same file was parsed more than once._
-* [Language composition report](/recipes/core/languagecomposition.md) - _Counts the number of lines of the various kinds of source code and data formats parsed by OpenRewrite. Comments are not included in line counts. This recipe emits its results as two data tables, making no changes to any source file. One data table is per-file, the other is per-repository._
+* [org.openrewrite.FindDuplicateSourceFiles](/recipes/core/findduplicatesourcefiles.md)
+  * **Find duplicate source files**
+  * Record the presence of LSTs with duplicate paths, indicating that the same file was parsed more than once.
+* [org.openrewrite.LanguageComposition](/recipes/core/languagecomposition.md)
+  * **Language composition report**
+  * Counts the number of lines of the various kinds of source code and data formats parsed by OpenRewrite. Comments are not included in line counts. This recipe emits its results as two data tables, making no changes to any source file. One data table is per-file, the other is per-repository.
 
 ## rewrite-analysis
 
-* [Finds flow between two methods](/recipes/analysis/search/findflowbetweenmethods.md) - _Takes two patterns for the start/end methods to find flow between._
+* [org.openrewrite.analysis.search.FindFlowBetweenMethods](/recipes/analysis/search/findflowbetweenmethods.md)
+  * **Finds flow between two methods**
+  * Takes two patterns for the start/end methods to find flow between.
 
 ## rewrite-azul
 
-* [Eliminate unused classes](/recipes/azul/eliminateunusedclasses.md) - _Deprecate and later delete classes that are unused, as detected by Azul Intelligence Cloud._
-* [Find reachable methods](/recipes/azul/search/findreachablemethods.md) - _Find all methods defined in the repository's source code that are reachable._
+* [io.moderne.azul.EliminateUnusedClasses](/recipes/azul/eliminateunusedclasses.md)
+  * **Eliminate unused classes**
+  * Deprecate and later delete classes that are unused, as detected by Azul Intelligence Cloud.
+* [io.moderne.azul.search.FindReachableMethods](/recipes/azul/search/findreachablemethods.md)
+  * **Find reachable methods**
+  * Find all methods defined in the repository's source code that are reachable.
 
 ## rewrite-codemods
 
-* [Applies a codemod to all source files](/recipes/codemods/applycodemod.md) - _Applies a codemod represented by an NPM package to all source files._
-* [Biome recommendations](/recipes/codemods/biome.md) - _Run [Biome](https://biomejs.dev/) recommended settings on your projects._
-* [Lint UI5 projects with UI5 linter](/recipes/codemods/ui5.md) - _Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings._
-* [Lint source code with ESLint](/recipes/codemods/eslint.md) - _Run [ESLint](https://eslint.org/) across the code to fix common static analysis issues in the code.  This requires the code to have an existing ESLint configuration._
-* [React i18next internationalization](/recipes/codemods/reacti18next.md) - _Automatically internationalizes React applications by extracting hardcoded strings and replacing them with [react-i18next](https://react.i18next.com) translation calls. Handles JSX text, attributes, and template literals with variables. Creates and updates a translation JSON file with extracted strings._
-* [Run Putout](/recipes/codemods/putout.md) - _Run [Putout](https://github.com/coderaiser/putout) on your projects._
+* [org.openrewrite.codemods.ApplyCodemod](/recipes/codemods/applycodemod.md)
+  * **Applies a codemod to all source files**
+  * Applies a codemod represented by an NPM package to all source files.
+* [org.openrewrite.codemods.Biome](/recipes/codemods/biome.md)
+  * **Biome recommendations**
+  * Run [Biome](https://biomejs.dev/) recommended settings on your projects.
+* [org.openrewrite.codemods.ESLint](/recipes/codemods/eslint.md)
+  * **Lint source code with ESLint**
+  * Run [ESLint](https://eslint.org/) across the code to fix common static analysis issues in the code.  This requires the code to have an existing ESLint configuration.
+* [org.openrewrite.codemods.Putout](/recipes/codemods/putout.md)
+  * **Run Putout**
+  * Run [Putout](https://github.com/coderaiser/putout) on your projects.
+* [org.openrewrite.codemods.ReactI18Next](/recipes/codemods/reacti18next.md)
+  * **React i18next internationalization**
+  * Automatically internationalizes React applications by extracting hardcoded strings and replacing them with [react-i18next](https://react.i18next.com) translation calls. Handles JSX text, attributes, and template literals with variables. Creates and updates a translation JSON file with extracted strings.
+* [org.openrewrite.codemods.UI5](/recipes/codemods/ui5.md)
+  * **Lint UI5 projects with UI5 linter**
+  * Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings.
 
 ## rewrite-codemods-ng
 
-* [Upgrade Angular versions](/recipes/codemods/migrate/angular/applyangularcli.md) - _Run `ng update` to upgrade Angular CLI and Angular Core to the specified version._
+* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](/recipes/codemods/migrate/angular/applyangularcli.md)
+  * **Upgrade Angular versions**
+  * Run `ng update` to upgrade Angular CLI and Angular Core to the specified version.
 
 ## rewrite-concourse
 
-* [Change Concourse value](/recipes/concourse/changevalue.md) - _Change every value matching the key pattern._
+* [org.openrewrite.concourse.ChangeValue](/recipes/concourse/changevalue.md)
+  * **Change Concourse value**
+  * Change every value matching the key pattern.
 
 ## rewrite-core
 
-* [Add entries to `.gitignore`](/recipes/core/addtogitignore.md) - _Adds entries to the project's `.gitignore` file. If no `.gitignore` file exists, one will be created. Existing entries that match will not be duplicated._
-* [Append to text file](/recipes/text/appendtotextfile.md) - _Appends or replaces content of an existing plain text file, or creates a new one if it doesn't already exist. Please note that this recipes requires existing plain text files' format to be successfully parsable by OpenRewrite. If a file is left unchanged, it might be parsed as a `Quark` rather than plain text. In such case, use the `plainTextMask` option. See the [Gradle](https://docs.openrewrite.org/reference/gradle-plugin-configuration#configuring-the-rewrite-dsl) or [Maven](https://openrewrite.github.io/rewrite-maven-plugin/run-mojo.html#plainTextMasks) plugin configuration page._
-* [Create text file](/recipes/text/createtextfile.md) - _Creates a new plain text file._
-* [Find LST provenance](/recipes/core/findlstprovenance.md) - _Produces a data table showing what versions of OpenRewrite/Moderne tooling was used to produce a given LST._
-* [Find colliding source files](/recipes/core/findcollidingsourcefiles.md) - _Finds source files which share a path with another source file. There should always be exactly one source file per path within a repository. This is a diagnostic for finding problems in OpenRewrite parsers/build plugins._
-* [Find committers on repositories](/recipes/search/findcommitters.md) - _List the committers on a repository._
-* [List runtime classpath](/recipes/core/listruntimeclasspath.md) - _A diagnostic utility which emits the runtime classpath to a data table._
-* [Remove ignoral of files or directories from .gitignore](/recipes/core/excludefilefromgitignore.md) - _This recipe will remove a file or directory from the .gitignore file. If the file or directory is already in the .gitignore file, it will be removed or negated. If the file or directory is not in the .gitignore file, no action will be taken._
-* [Repository contains file](/recipes/search/repositorycontainsfile.md) - _Intended to be used primarily as a precondition for other recipes, this recipe checks if a repository contains a specific file or files matching a pattern. If present all files in the repository are marked with a `SearchResult` marker. If you want to get only the matching file as a search result, use `FindSourceFiles` instead._
-* [Show Git source control metadata](/recipes/core/findgitprovenance.md) - _List out the contents of each unique `GitProvenance` marker in the set of source files. When everything is working correctly, exactly one such marker should be printed as all source files are expected to come from the same repository / branch / commit hash._
+* [org.openrewrite.AddToGitignore](/recipes/core/addtogitignore.md)
+  * **Add entries to `.gitignore`**
+  * Adds entries to the project's `.gitignore` file. If no `.gitignore` file exists, one will be created. Existing entries that match will not be duplicated.
+* [org.openrewrite.ExcludeFileFromGitignore](/recipes/core/excludefilefromgitignore.md)
+  * **Remove ignoral of files or directories from .gitignore**
+  * This recipe will remove a file or directory from the .gitignore file. If the file or directory is already in the .gitignore file, it will be removed or negated. If the file or directory is not in the .gitignore file, no action will be taken.
+* [org.openrewrite.FindCollidingSourceFiles](/recipes/core/findcollidingsourcefiles.md)
+  * **Find colliding source files**
+  * Finds source files which share a path with another source file. There should always be exactly one source file per path within a repository. This is a diagnostic for finding problems in OpenRewrite parsers/build plugins.
+* [org.openrewrite.FindGitProvenance](/recipes/core/findgitprovenance.md)
+  * **Show Git source control metadata**
+  * List out the contents of each unique `GitProvenance` marker in the set of source files. When everything is working correctly, exactly one such marker should be printed as all source files are expected to come from the same repository / branch / commit hash.
+* [org.openrewrite.FindLstProvenance](/recipes/core/findlstprovenance.md)
+  * **Find LST provenance**
+  * Produces a data table showing what versions of OpenRewrite/Moderne tooling was used to produce a given LST.
+* [org.openrewrite.ListRuntimeClasspath](/recipes/core/listruntimeclasspath.md)
+  * **List runtime classpath**
+  * A diagnostic utility which emits the runtime classpath to a data table.
+* [org.openrewrite.search.FindCommitters](/recipes/search/findcommitters.md)
+  * **Find committers on repositories**
+  * List the committers on a repository.
+* [org.openrewrite.search.RepositoryContainsFile](/recipes/search/repositorycontainsfile.md)
+  * **Repository contains file**
+  * Intended to be used primarily as a precondition for other recipes, this recipe checks if a repository contains a specific file or files matching a pattern. If present all files in the repository are marked with a `SearchResult` marker. If you want to get only the matching file as a search result, use `FindSourceFiles` instead.
+* [org.openrewrite.text.AppendToTextFile](/recipes/text/appendtotextfile.md)
+  * **Append to text file**
+  * Appends or replaces content of an existing plain text file, or creates a new one if it doesn't already exist. Please note that this recipes requires existing plain text files' format to be successfully parsable by OpenRewrite. If a file is left unchanged, it might be parsed as a `Quark` rather than plain text. In such case, use the `plainTextMask` option. See the [Gradle](https://docs.openrewrite.org/reference/gradle-plugin-configuration#configuring-the-rewrite-dsl) or [Maven](https://openrewrite.github.io/rewrite-maven-plugin/run-mojo.html#plainTextMasks) plugin configuration page.
+* [org.openrewrite.text.CreateTextFile](/recipes/text/createtextfile.md)
+  * **Create text file**
+  * Creates a new plain text file.
 
 ## rewrite-csharp
 
-* [A class that provides Equals(T) should implement IEquatable&lt;T&gt;](/recipes/csharp/recipes/meziantou/analyzer/equalityshouldbecorrectlyimplementedma0077.md) - __
-* [A readonly DependencyProperty must be set with DependencyPropertyKey](/recipes/csharp/recipes/wpfanalyzers/usedependencypropertykeyfixwpf0040.md) - _A readonly DependencyProperty must be set with DependencyPropertyKey._
-* [Abstract type should not have public constructors](/recipes/csharp/recipes/roslynator/analyzers/constructordeclarationrcs1160.md) - __
-* [Abstract types should not have public constructors](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/abstracttypesshouldnothaveconstructorsca1012.md) - _Constructors on abstract types can be called only by derived types. Because public constructors create instances of a type, and you cannot create instances of an abstract type, an abstract type that has a public constructor is incorrectly designed._
-* [Abstract types should not have public or internal constructors](/recipes/csharp/recipes/meziantou/analyzer/abstracttypesshouldnothaveconstructorsma0017.md) - __
-* [Access modifier should be declared](/recipes/csharp/recipes/stylecop/analyzers/sa1400sa1400.md) - _The access modifier for a C# element has not been explicitly defined._
-* [Accessible fields should begin with upper-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1307.md) - _The name of a public or internal field in C# does not begin with an upper-case letter._
-* [Accessor method for attached property should have standard documentation text](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0061.md) - _Accessor method for attached property should have standard documentation text._
-* [Add 'param' element to documentation comment](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1141.md) - __
-* [Add 'static' modifier to all partial class declarations](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1108.md) - __
-* [Add 'typeparam' element to documentation comment](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1142.md) - __
-* [Add MarkupExtensionReturnType attribute](/recipes/csharp/recipes/wpfanalyzers/markupextensionreturntypeattributefixwpf0080.md) - _Add MarkupExtensionReturnType attribute._
-* [Add StructLayoutAttribute](/recipes/csharp/recipes/meziantou/analyzer/usestructlayoutattributema0008.md) - __
-* [Add ValueConversion attribute](/recipes/csharp/recipes/wpfanalyzers/attachedpropertybrowsablefortypeattributefixwpf0071.md) - _Add ValueConversion attribute._
-* [Add ValueConversion attribute (unknown types)](/recipes/csharp/recipes/wpfanalyzers/valueconversionattributefixwpf0073.md) - _Add ValueConversion attribute (unknown types)._
-* [Add [AttachedPropertyBrowsableForType]](/recipes/csharp/recipes/wpfanalyzers/attachedpropertybrowsablefortypeattributefixwpf0033.md) - _Add [AttachedPropertyBrowsableForType]._
-* [Add [ConstructorArgument]](/recipes/csharp/recipes/wpfanalyzers/constructorargumentattributefixwpf0083.md) - _Add [ConstructorArgument] for the property._
-* [Add [TemplatePart] to the type](/recipes/csharp/recipes/wpfanalyzers/addattributelistfixwpf0130.md) - _Add [TemplatePart] to the type._
-* [Add a comma after the last value](/recipes/csharp/recipes/meziantou/analyzer/commama0007.md) - __
-* [Add braces](/recipes/csharp/recipes/roslynator/analyzers/addbracesrcs1007.md) - __
-* [Add braces (when expression spans over multiple lines)](/recipes/csharp/recipes/roslynator/analyzers/addbracesrcs1001.md) - __
-* [Add braces to if-else](/recipes/csharp/recipes/roslynator/analyzers/addbracesrcs1126.md) - __
-* [Add braces to if-else (when expression spans over multiple lines)](/recipes/csharp/recipes/roslynator/analyzers/addbracestoifelsercs1003.md) - __
-* [Add braces to switch section with multiple statements](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1111.md) - __
-* [Add default field to converter](/recipes/csharp/recipes/wpfanalyzers/adddefaultmemberfixwpf0070.md) - _Add default field to converter._
-* [Add exception to documentation comment](/recipes/csharp/recipes/roslynator/analyzers/addexceptiontodocumentationcommentrcs1140.md) - __
-* [Add or remove region name](/recipes/csharp/recipes/roslynator/analyzers/endregiondirectivetriviarcs1189.md) - __
-* [Add paragraph to documentation comment](/recipes/csharp/recipes/roslynator/analyzers/addparagraphtodocumentationcommentrcs1226.md) - __
-* [Add parameter name to improve readability](/recipes/csharp/recipes/meziantou/analyzer/namedparameterma0003.md) - __
-* [Add parentheses when necessary](/recipes/csharp/recipes/roslynator/analyzers/addparentheseswhennecessaryrcs1123.md) - __
-* [Add summary element to documentation comment](/recipes/csharp/recipes/roslynator/analyzers/documentationcommentrcs1139.md) - __
-* [Add/remove 'ConfigureAwait(false)' call](/recipes/csharp/recipes/roslynator/analyzers/awaitexpressionrcs1090.md) - __
-* [Add/remove accessibility modifiers](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1018.md) - __
-* [Add/remove parentheses from condition in conditional operator](/recipes/csharp/recipes/roslynator/analyzers/expressionrcs1051.md) - __
-* [Add/remove trailing comma](/recipes/csharp/recipes/roslynator/analyzers/addorremovetrailingcommarcs1260.md) - __
-* [All accessors should be single-line or multi-line](/recipes/csharp/recipes/stylecop/analyzers/sa1504sa1504.md) - _Within a C# property, indexer or event, at least one of the child accessors is written on a single line, and at least one of the child accessors is written across multiple lines._
-* [All members declared in parent interfaces must have an implementation in a DynamicInterfaceCastableImplementation-attributed interface](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdynamicinterfacecastableimplementationca2256.md) - _Types attributed with 'DynamicInterfaceCastableImplementationAttribute' act as an interface implementation for a type that implements the 'IDynamicInterfaceCastable' type. As a result, it must provide an implementation of all of the members defined in the inherited interfaces, because the type that implements 'IDynamicInterfaceCastable' will not provide them otherwise._
-* [Argument passed to TaskCompletionSource constructor should be TaskCreationOptions enum instead of TaskContinuationOptions enum](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotcreatetaskcompletionsourcewithwrongargumentsca2247.md) - _TaskCompletionSource has constructors that take TaskCreationOptions that control the underlying Task, and constructors that take object state that's stored in the task.  Accidentally passing a TaskContinuationOptions instead of a TaskCreationOptions will result in the call treating the options as state._
-* [Arithmetic expressions should declare precedence](/recipes/csharp/recipes/stylecop/analyzers/sa1407sa1408sa1407.md) - _A C# statement contains a complex arithmetic expression which omits parenthesis around operators._
-* [Attribute constructor should not use unnecessary parenthesis](/recipes/csharp/recipes/stylecop/analyzers/sa1410sa1411sa1411.md) - _TODO._
-* [Attributes should not share line](/recipes/csharp/recipes/stylecop/analyzers/sa1134sa1134.md) - _Each attribute should be placed on its own line of code._
-* [Avoid NullReferenceException](/recipes/csharp/recipes/roslynator/analyzers/avoidnullreferenceexceptionrcs1202.md) - __
-* [Avoid comparison with bool constant](/recipes/csharp/recipes/meziantou/analyzer/avoidcomparisonwithboolconstantma0073.md) - __
-* [Avoid constant arrays as arguments](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidconstarraysca1861.md) - _Constant arrays passed as arguments are not reused when called repeatedly, which implies a new array is created each time. Consider extracting them to 'static readonly' fields to improve performance if the passed array is not mutated within the called method._
-* [Avoid implicit culture-sensitive methods](/recipes/csharp/recipes/meziantou/analyzer/usestringcomparisonma0074.md) - __
-* [Avoid inexact read with 'Stream.Read'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidunreliablestreamreadca2022.md) - _A call to 'Stream.Read' may return fewer bytes than requested, resulting in unreliable code if the return value is not checked._
-* [Avoid locking on publicly accessible instance](/recipes/csharp/recipes/roslynator/analyzers/lockstatementrcs1059.md) - __
-* [Avoid nested ?: operators](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1238.md) - __
-* [Avoid redundant length argument](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidlengthcalculationwhenslicingtoendca1514.md) - _An explicit length calculation can be error-prone and can be avoided when slicing to end of the buffer._
-* [Avoid unnecessary boxing of value type](/recipes/csharp/recipes/roslynator/analyzers/avoidboxingofvaluetypercs1198.md) - __
-* [Avoid unsealed attributes](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidunsealedattributesca1813.md) - _The .NET Framework class library provides methods for retrieving custom attributes. By default, these methods search the attribute inheritance hierarchy. Sealing the attribute eliminates the search through the inheritance hierarchy and can improve performance._
-* [Avoid unused private fields](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidunusedprivatefieldsca1823.md) - _Private fields were detected that do not appear to be accessed in the assembly._
-* [Avoid usage of using alias directive](/recipes/csharp/recipes/roslynator/analyzers/usingdirectivercs1056.md) - __
-* [Avoid using 'Enumerable.Any()' extension method](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferlengthcountisemptyoveranyca1860.md) - _Prefer using 'IsEmpty', 'Count' or 'Length' properties whichever available, rather than calling 'Enumerable.Any()'. The intent is clearer and it is more performant than using 'Enumerable.Any()' extension method._
-* [Avoid using redundant else](/recipes/csharp/recipes/meziantou/analyzer/avoidusingredundantelsema0071.md) - _The 'if' block contains a jump statement (break, continue, goto, return, throw, yield break). Using 'else' is redundant and needlessly maintains a higher nesting level._
-* [Avoid zero-length array allocations](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidzerolengtharrayallocationsca1825.md) - __
-* [Backing field for a DependencyProperty should be static and readonly](/recipes/csharp/recipes/wpfanalyzers/makefieldstaticreadonlyfixwpf0030.md) - _Backing field for a DependencyProperty should be static and readonly._
-* [Backing field for a DependencyProperty should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0001.md) - _A dependency property's backing field should be named with the name it is registered with suffixed by 'Property'.  This is the convention in the framework._
-* [Backing field for a DependencyPropertyKey should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0002.md) - _A DependencyPropertyKey's backing field must be named with the name it is registered with suffixed by 'PropertyKey'._
-* [Backing field for a RoutedCommand should be static and readonly](/recipes/csharp/recipes/wpfanalyzers/makefieldstaticreadonlyfixwpf0123.md) - _Backing field for a RoutedCommand should be static and readonly._
-* [Backing field for a RoutedEvent should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0100.md) - _A routed event's backing field should be named with the name it is registered with suffixed by 'Event'._
-* [Backing member for DependencyProperty should have standard documentation text](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0060.md) - _Backing member for DependencyProperty should have standard documentation text._
-* [Backing member for RoutedEvent should have standard documentation text](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0108.md) - _Backing member for RoutedEvent should have standard documentation text._
-* [Backing member for a RoutedEvent should be static and readonly](/recipes/csharp/recipes/wpfanalyzers/makefieldstaticreadonlyfixwpf0107.md) - _Backing member for a RoutedEvent should be static and readonly._
-* [Braces for multi-line statements should not share line](/recipes/csharp/recipes/stylecop/analyzers/sa1500sa1500.md) - _The opening or closing brace within a C# statement, element, or expression is not placed on its own line._
-* [Braces should not be omitted](/recipes/csharp/recipes/stylecop/analyzers/sa1503sa1503.md) - _The opening and closing braces for a C# statement have been omitted._
-* [Braces should not be omitted from multi-line child statement](/recipes/csharp/recipes/stylecop/analyzers/sa1503sa1519.md) - _The opening and closing braces for a multi-line C# statement have been omitted._
-* [CLR accessor for attached property must match registered type](/recipes/csharp/recipes/wpfanalyzers/useregisteredtypefixwpf0013.md) - _CLR accessor for attached property must match registered type._
-* [CLR method for a DependencyProperty must match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0004.md) - _CLR methods for accessing a DependencyProperty must have names matching the name the DependencyProperty is registered with._
-* [CLR property for a DependencyProperty should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0003.md) - _A CLR property accessor for a DependencyProperty must have the same name as the DependencyProperty is registered with._
-* [CLR property type should match registered type](/recipes/csharp/recipes/wpfanalyzers/useregisteredtypefixwpf0012.md) - _CLR property type should match registered type._
-* [Call 'Enumerable.ThenBy' instead of 'Enumerable.OrderBy'](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1200.md) - __
-* [Call extension method as instance method](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1196.md) - __
-* [Cast sender to containing type](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0021.md) - _Cast sender to correct type._
-* [Cast sender to correct type](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0019.md) - _Cast sender to correct type._
-* [Cast value to correct type](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0020.md) - _Cast value to correct type._
-* [Cast value to correct type](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0022.md) - _Cast value to correct type._
-* [Chained statement blocks should not be preceded by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1510sa1510.md) - _Chained C# statements are separated by a blank line._
-* [Closing attribute brackets should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1017.md) - _A closing attribute bracket within a C# element is not spaced correctly._
-* [Closing brace should be followed by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1513sa1513.md) - _A closing brace within a C# element, statement, or expression is not followed by a blank line._
-* [Closing braces should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1013.md) - _A closing brace within a C# element is not spaced correctly._
-* [Closing braces should not be preceded by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1508sa1508.md) - _A closing brace within a C# element, statement, or expression is preceded by a blank line._
-* [Closing generic brackets should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1015.md) - _A closing generic bracket within a C# element is not spaced correctly._
-* [Closing parenthesis should be on line of last parameter](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1111.md) - _The closing parenthesis or bracket in a call to or declaration of a C# method/indexer/attribute/array/constructor/delegate is not placed on the same line as the last parameter._
-* [Closing parenthesis should be on line of opening parenthesis](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1112.md) - _The closing parenthesis or bracket in a call to a C# method or indexer, or the declaration of a method or indexer, is not placed on the same line as the opening bracket when the element does not take any parameters._
-* [Closing parenthesis should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1009.md) - _A closing parenthesis within a C# statement is not spaced correctly._
-* [Closing square brackets should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1011.md) - _A closing square bracket within a C# statement is not spaced correctly._
-* [Code analysis suppression should have justification](/recipes/csharp/recipes/stylecop/analyzers/sa1404sa1404.md) - _A Code Analysis SuppressMessage attribute does not include a justification._
-* [Code should not contain blank lines at start of file](/recipes/csharp/recipes/stylecop/analyzers/sa1517sa1517.md) - _The code file has blank lines at the start._
-* [Code should not contain empty statements](/recipes/csharp/recipes/stylecop/analyzers/sa1106sa1106.md) - _The C# code contains an extra semicolon._
-* [Code should not contain multiple blank lines in a row](/recipes/csharp/recipes/stylecop/analyzers/sa1507sa1507.md) - _The C# code contains multiple blank lines in a row._
-* [Code should not contain multiple statements on one line](/recipes/csharp/recipes/stylecop/analyzers/sa1107sa1107.md) - _The C# code contains more than one statement on a single line._
-* [Code should not contain multiple whitespace in a row](/recipes/csharp/recipes/stylecop/analyzers/sa1025sa1025.md) - _The code contains multiple whitespace characters in a row._
-* [Code should not contain space after new or stackalloc keyword in implicitly typed array allocation](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1026.md) - _An implicitly typed array allocation within a C# code file is not spaced correctly._
-* [Code should not contain trailing whitespace](/recipes/csharp/recipes/stylecop/analyzers/sa1028sa1028.md) - _There should not be any whitespace at the end of a line of code._
-* [Colons Should Be Spaced Correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1024.md) - _A colon within a C# element is not spaced correctly._
-* [Combine 'Enumerable.Where' method chain](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1112.md) - __
-* [Combine LINQ methods](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0029.md) - __
-* [Comma should be on the same line as previous parameter](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1113.md) - _A comma between two parameters in a call to a C# method or indexer, or in the declaration of a method or indexer, is not placed on the same line as the previous parameter._
-* [Commas should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1001.md) - _The spacing around a comma is incorrect, within a C# code file._
-* [Comments should contain text](/recipes/csharp/recipes/stylecop/analyzers/sa1120sa1120.md) - _The C# comment does not contain any comment text._
-* [Composite enum value contains undefined flag](/recipes/csharp/recipes/roslynator/analyzers/compositeenumvaluecontainsundefinedflagrcs1157.md) - __
-* [Conditional expressions should declare precedence](/recipes/csharp/recipes/stylecop/analyzers/sa1407sa1408sa1408.md) - _A C# statement contains a complex conditional expression which omits parenthesis around operators._
-* [Consider calling ConfigureAwait on the awaited task](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotdirectlyawaitataskca2007.md) - _When an asynchronous method awaits a Task directly, continuation occurs in the same thread that created the task. Consider calling Task.ConfigureAwait(Boolean) to signal your intention for continuation. Call ConfigureAwait(false) on the task to schedule continuations to the thread pool, thereby avoiding a deadlock on the UI thread. Passing false is a good option for app-independent libraries. Calling ConfigureAwait(true) on the task has the same behavior as not explicitly calling ConfigureAwait. By explicitly calling this method, you're letting readers know you intentionally want to perform the continuation on the original synchronization context._
-* [Consider making public types internal](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpmaketypesinternalca1515.md) - _Unlike a class library, an application's API isn't typically referenced publicly, so types can be marked internal._
-* [Consider using 'StringBuilder.Append(char)' when applicable](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/preferconstcharoverconstunitstringca1834.md) - _'StringBuilder.Append(char)' is more efficient than 'StringBuilder.Append(string)' when the string is a single character. When calling 'Append' with a constant, prefer using a constant char rather than a constant string containing one character._
-* [Consider using 'string.Contains' instead of 'string.IndexOf'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/preferstringcontainsoverindexofca2249.md) - _Calls to 'string.IndexOf' where the result is used to check for the presence/absence of a substring can be replaced by 'string.Contains'._
-* [Const field names should begin with upper-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1303.md) - _The name of a constant C# field should begin with an upper-case letter._
-* [Constant values should be placed on right side of comparisons](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1098.md) - __
-* [Constructor summary documentation should begin with standard text](/recipes/csharp/recipes/stylecop/analyzers/sa1642sa1643sa1642.md) - _The XML documentation header for a C# constructor does not contain the appropriate summary text._
-* [Containing type should be used as registered owner](/recipes/csharp/recipes/wpfanalyzers/usecontainingtypefixwpf0011.md) - _When registering a DependencyProperty register containing type as owner type._
-* [Containing type should be used as registered owner](/recipes/csharp/recipes/wpfanalyzers/usecontainingtypefixwpf0101.md) - _When registering a RoutedEvent register containing type as owner type._
-* [Convert 'if' to 'return' statement](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1073.md) - __
-* [Convert 'if' to assignment](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1103.md) - __
-* [Convert comment to documentation comment](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1181.md) - __
-* [Convert interpolated string to concatenation](/recipes/csharp/recipes/roslynator/analyzers/interpolatedstringrcs1217.md) - __
-* [Convert lambda expression body to expression body](/recipes/csharp/recipes/roslynator/analyzers/convertlambdaexpressionbodytoexpressionbodyrcs1021.md) - __
-* [Declaration keywords should follow order](/recipes/csharp/recipes/stylecop/analyzers/sa1206sa1206.md) - _The keywords within the declaration of an element do not follow a standard ordering scheme._
-* [Declare each attribute separately](/recipes/csharp/recipes/roslynator/analyzers/declareeachattributeseparatelyrcs1052.md) - __
-* [Declare each type in separate file](/recipes/csharp/recipes/roslynator/analyzers/extractmembertonewdocumentrcs1060.md) - __
-* [Declare enum member with zero value (when enum has FlagsAttribute)](/recipes/csharp/recipes/roslynator/analyzers/declareenummemberwithzerovaluercs1135.md) - __
-* [Declare enum value as combination of names](/recipes/csharp/recipes/roslynator/analyzers/enummemberdeclarationrcs1191.md) - __
-* [Declare type inside namespace](/recipes/csharp/recipes/roslynator/analyzers/declaretypeinsidenamespacercs1110.md) - __
-* [Declare using directive on top level](/recipes/csharp/recipes/roslynator/analyzers/namespacedeclarationrcs1094.md) - __
-* [Default label should be the last label in a switch section](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1099.md) - __
-* [Define accessors for attribute arguments](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/defineaccessorsforattributeargumentsca1019.md) - __
-* [DependencyPropertyKey member must be declared before DependencyProperty member](/recipes/csharp/recipes/wpfanalyzers/movefixwpf0031.md) - _DependencyPropertyKey member must be declared before DependencyProperty member._
-* [Dereference and access of symbols should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1023.md) - _A dereference symbol or an access-of symbol within a C# element is not spaced correctly._
-* [Destructor summary documentation should begin with standard text](/recipes/csharp/recipes/stylecop/analyzers/sa1642sa1643sa1643.md) - _The XML documentation header for a C# finalizer does not contain the appropriate summary text._
-* [Dispose methods should call base class dispose](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdisposemethodsshouldcallbaseclassdisposeca2215.md) - _A type that implements System.IDisposable inherits from a type that also implements IDisposable. The Dispose method of the inheriting type does not call the Dispose method of the parent type. To fix a violation of this rule, call base.Dispose in your Dispose method._
-* [Do not call ToImmutableCollection on an ImmutableCollection value](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotcalltoimmutablecollectiononanimmutablecollectionvalueca2009.md) - __
-* [Do not combine attributes](/recipes/csharp/recipes/stylecop/analyzers/sa1133sa1133.md) - _Each attribute usage should be placed in its own set of square brackets for maximum readability._
-* [Do not combine fields](/recipes/csharp/recipes/stylecop/analyzers/sa1132sa1132.md) - _Each field should be declared on its own line, in order to clearly see each field of a type and allow for proper documentation of the behavior of each field._
-* [Do not compare Span&lt;T&gt; to 'null' or 'default'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotcomparespantonullca2265.md) - _Comparing a span to 'null' or 'default' might not do what you intended. 'default' and the 'null' literal are implicitly converted to 'Span&lt;T&gt;.Empty'. Remove the redundant comparison or make the code more explicit by using 'IsEmpty'._
-* [Do not duplicate indexed element initializations](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpavoidduplicateelementinitializationca2244.md) - _Indexed elements in objects initializers must initialize unique elements. A duplicate index might overwrite a previous element initialization._
-* [Do not initialize unnecessarily](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotinitializeunnecessarilyca1805.md) - _The .NET runtime initializes all fields of reference types to their default values before running the constructor. In most cases, explicitly initializing a field to its default value in a constructor is redundant, adding maintenance costs and potentially degrading performance (such as with increased assembly size), and the explicit initialization can be removed.  In some cases, such as with static readonly fields that permanently retain their default value, consider instead changing them to be constants or properties._
-* [Do not mark enums with FlagsAttribute](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/enumwithflagsattributeca2217.md) - _An externally visible enumeration is marked by using FlagsAttribute, and it has one or more values that are not powers of two or a combination of the other defined values on the enumeration._
-* [Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotpassnonnullablevaluetoargumentnullexceptionthrowifnullca2264.md) - _'ArgumentNullException.ThrowIfNull' throws when the passed argument is 'null'. Certain constructs like non-nullable structs, 'nameof()' and 'new' expressions are known to never be null, so 'ArgumentNullException.ThrowIfNull' will never throw._
-* [Do not pass a nullable struct to 'ArgumentNullException.ThrowIfNull'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotpassnonnullablevaluetoargumentnullexceptionthrowifnullca1871.md) - _'ArgumentNullException.ThrowIfNull' accepts an 'object', so passing a nullable struct may cause the value to be boxed._
-* [Do not pass non-read-only struct by read-only reference](/recipes/csharp/recipes/roslynator/analyzers/parameterrcs1242.md) - __
-* [Do not place regions within elements](/recipes/csharp/recipes/stylecop/analyzers/removeregionsa1123.md) - _The C# code contains a region within the body of a code element._
-* [Do not prefix calls with base unless local implementation exists](/recipes/csharp/recipes/stylecop/analyzers/sa1100sa1100.md) - _A call to a member from an inherited class begins with 'base.', and the local class does not contain an override or implementation of the member._
-* [Do not prefix local calls with 'this.'](/recipes/csharp/recipes/stylecop/analyzers/sx1101sx1101.md) - _A call to an instance member of the local class or a base class is prefixed with `this.`._
-* [Do not use 'WaitAll' with a single task](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotusewhenallorwaitallwithsingleargumentca1843.md) - _Using 'WaitAll' with a single task may result in performance loss, await or return the task instead._
-* [Do not use 'WhenAll' with a single task](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotusewhenallorwaitallwithsingleargumentca1842.md) - _Using 'WhenAll' with a single task may result in performance loss, await or return the task instead._
-* [Do not use Count() or LongCount() when Any() can be used](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotusecountwhenanycanbeusedca1827.md) - _For non-empty collections, Count() and LongCount() enumerate the entire sequence, while Any() stops at the first item or the first item that satisfies a condition._
-* [Do not use CountAsync() or LongCountAsync() when AnyAsync() can be used](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotusecountwhenanycanbeusedca1828.md) - _For non-empty collections, CountAsync() and LongCountAsync() enumerate the entire sequence, while AnyAsync() stops at the first item or the first item that satisfies a condition._
-* [Do not use Enumerable methods on indexable collections](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotuseenumerablemethodsonindexablecollectionsinsteadusethecollectiondirectlyca1826.md) - _This collection is directly indexable. Going through LINQ here causes unnecessary allocations and CPU work._
-* [Do not use blocking calls in a sync method (need to make calling method async)](/recipes/csharp/recipes/meziantou/analyzer/donotuseblockingcallinasynccontextma0045.md) - __
-* [Do not use blocking calls in an async method](/recipes/csharp/recipes/meziantou/analyzer/donotuseblockingcallinasynccontextma0042.md) - __
-* [Do not use default value type constructor](/recipes/csharp/recipes/stylecop/analyzers/sa1129sa1129.md) - _When creating a new instance of a value type T, the syntax 'default(T)' is functionally equivalent to the syntax 'new T()'. To avoid confusion regarding the behavior of the resulting instance, the first form is preferred._
-* [Do not use placeholder elements](/recipes/csharp/recipes/stylecop/analyzers/sa1651sa1651.md) - _The element documentation contains a &lt;placeholder&gt; element._
-* [Do not use regions](/recipes/csharp/recipes/stylecop/analyzers/removeregionsa1124.md) - _The C# code contains a region._
-* [Documentation lines should begin with single space](/recipes/csharp/recipes/stylecop/analyzers/sa1004sa1004.md) - _A line within a documentation header above a C# element does not begin with a single space._
-* [Documentation text should end with a period](/recipes/csharp/recipes/stylecop/analyzers/sa1629sa1629.md) - _A section of the XML header documentation for a C# element does not end with a period._
-* [Don't set DataContext and Style using SetCurrentValue](/recipes/csharp/recipes/wpfanalyzers/usesetvaluefixwpf0043.md) - _Set DataContext and Style using SetValue._
-* [Duplicate enum value](/recipes/csharp/recipes/roslynator/analyzers/enummemberdeclarationrcs1234.md) - __
-* [Duplicate word in a comment](/recipes/csharp/recipes/roslynator/analyzers/duplicatewordincommentrcs1243.md) - __
-* [Element documentation header should be preceded by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1514sa1514.md) - _An element documentation header above a C# element is not preceded by a blank line._
-* [Element documentation headers should not be followed by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1506sa1506.md) - _An element documentation header above a C# element is followed by a blank line._
-* [Element return value documentation should have text](/recipes/csharp/recipes/stylecop/analyzers/sa1615sa1616sa1616.md) - _The &lt;returns&gt; tag within a C# element's documentation header is empty._
-* [Element return value should be documented](/recipes/csharp/recipes/stylecop/analyzers/sa1615sa1616sa1615.md) - _A C# element is missing documentation for its return value._
-* [Element should begin with upper-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1300.md) - _The name of a C# element does not begin with an upper-case letter._
-* [Element should not be on a single line](/recipes/csharp/recipes/stylecop/analyzers/sa1502sa1502.md) - _A C# element containing opening and closing braces is written completely on a single line._
-* [Elements should be documented](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1600.md) - _A C# code element is missing a documentation header._
-* [Elements should be separated by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1516sa1516.md) - _Adjacent C# elements are not separated by a blank line._
-* [Elements should have the same indentation](/recipes/csharp/recipes/stylecop/analyzers/indentationsa1137.md) - _Elements at the same level in the syntax tree should have the same indentation._
-* [Enum Storage should be Int32](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpenumstorageshouldbeint32ca1028.md) - _An enumeration is a value type that defines a set of related named constants. By default, the System.Int32 data type is used to store the constant value. Although you can change this underlying type, it is not required or recommended for most scenarios._
-* [Enum should declare explicit values](/recipes/csharp/recipes/roslynator/analyzers/enumdeclarationrcs1161.md) - __
-* [Enum values should be on separate lines](/recipes/csharp/recipes/stylecop/analyzers/sa1136sa1136.md) - _Enum values should be placed on their own lines for maximum readability._
-* [Enumeration items should be documented](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1602.md) - _An item within a C# enumeration is missing an Xml documentation header._
-* [Enums should have zero value](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpenumsshouldhavezerovalueca1008.md) - _The default value of an uninitialized enumeration, just as other value types, is zero. A nonflags-attributed enumeration should define a member by using the value of zero so that the default value is a valid value of the enumeration. If an enumeration that has the FlagsAttribute attribute applied defines a zero-valued member, its name should be &quot;&quot;None&quot;&quot; to indicate that no values have been set in the enumeration._
-* [Event accessors should follow order](/recipes/csharp/recipes/stylecop/analyzers/sa1212sa1213sa1213.md) - _An add accessor appears after a remove accessor within an event._
-* [EventArgs should not be null](/recipes/csharp/recipes/meziantou/analyzer/useeventargsemptyma0093.md) - __
-* [Exceptions should be public](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/exceptionsshouldbepublicca1064.md) - _An internal exception is visible only inside its own internal scope. After the exception falls outside the internal scope, only the base exception can be used to catch the exception. If the internal exception is inherited from T:System.Exception, T:System.SystemException, or T:System.ApplicationException, the external code will not have sufficient information to know what to do with the exception._
-* [Expression is always equal to true/false](/recipes/csharp/recipes/roslynator/analyzers/expressionrcs1215.md) - __
-* [Field names should begin with lower-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametolowercasesa1306.md) - _The name of a field in C# does not begin with a lower-case letter._
-* [Field names should begin with underscore](/recipes/csharp/recipes/stylecop/analyzers/sx1309sx1309.md) - _A field name in C# does not begin with an underscore._
-* [Field names should not begin with underscore](/recipes/csharp/recipes/stylecop/analyzers/sa1309sa1309.md) - _A field name in C# begins with an underscore._
-* [Field names should not contain underscore](/recipes/csharp/recipes/stylecop/analyzers/sa1310sa1310.md) - _A field name in C# contains an underscore._
-* [File contains no code](/recipes/csharp/recipes/roslynator/analyzers/documentrcs1093.md) - __
-* [File header company name text should match](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1641.md) - _The file header at the top of a C# code file does not contain the appropriate company name text._
-* [File header copyright text should match](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1636.md) - _The file header at the top of a C# code file does not contain the appropriate copyright text._
-* [File header file name documentation should match file name](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1638.md) - _The file attribute within copyright tag of the file header at the top of a C# code file does not contain the name of the file._
-* [File header should contain file name](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1637.md) - _The file header at the top of a C# code file is missing the file name._
-* [File header should have copyright text](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1635.md) - _The file header at the top of a C# code file is missing copyright text._
-* [File header should have summary](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1639.md) - _The file header at the top of a C# code file does not contain a filled-in summary tag._
-* [File header should have valid company text](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1640.md) - _The file header at the top of a C# code file does not contain company name text._
-* [File header should show copyright](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1634.md) - _The file header at the top of a C# code file is missing a copyright tag._
-* [File may only contain a single type](/recipes/csharp/recipes/stylecop/analyzers/sa1402sa1402.md) - _A C# code file contains more than one unique type._
-* [File name should match first type name](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1649.md) - _The file name of a C# code file does not match the first type declared in the file._
-* [File should have header](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1633.md) - _A C# code file is missing a standard file header._
-* [Fix documentation comment tag](/recipes/csharp/recipes/roslynator/analyzers/xmlnodercs1247.md) - __
-* [Format documentation comment summary](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1253.md) - __
-* [Forward the 'CancellationToken' parameter to methods](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpforwardcancellationtokentoinvocationsca2016.md) - _Forward the 'CancellationToken' parameter to methods to ensure the operation cancellation notifications gets properly propagated, or pass in 'CancellationToken.None' explicitly to indicate intentionally not propagating the token._
-* [Forward the CancellationToken parameter to methods that take one](/recipes/csharp/recipes/meziantou/analyzer/useanoverloadthathascancellationtokenfixer_argumentma0040.md) - __
-* [Forward the CancellationToken using .WithCancellation()](/recipes/csharp/recipes/meziantou/analyzer/useanoverloadthathascancellationtokenfixer_awaitforeachma0079.md) - __
-* [Forward the TimeProvider to methods that take one](/recipes/csharp/recipes/meziantou/analyzer/useanoverloadthathastimeproviderma0166.md) - __
-* [Generic type constraints should be on their own line](/recipes/csharp/recipes/stylecop/analyzers/sa1127sa1127.md) - _Each type constraint clause for a generic type parameter should be listed on a line of code by itself._
-* [IEqualityComparer&lt;string&gt; or IComparer&lt;string&gt; is missing](/recipes/csharp/recipes/meziantou/analyzer/usestringcomparerma0002.md) - __
-* [Identifiers should not contain underscores](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpidentifiersshouldnotcontainunderscoresca1707.md) - _By convention, identifier names do not contain the underscore (_) character. This rule checks namespaces, types, members, and parameters._
-* [Implement IEquatable when overriding Object.Equals](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/equatableca1066.md) - _When a type T overrides Object.Equals(object), the implementation must cast the object argument to the correct type T before performing the comparison. If the type implements IEquatable&lt;T&gt;, and therefore offers the method T.Equals(T), and if the argument is known at compile time to be of type T, then the compiler can call IEquatable&lt;T&gt;.Equals(T) instead of Object.Equals(object), and no cast is necessary, improving performance._
-* [Implement exception constructors](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1194.md) - __
-* [Implement non-generic counterpart](/recipes/csharp/recipes/roslynator/analyzers/implementnongenericcounterpartrcs1241.md) - __
-* [Implement standard exception constructors](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/implementstandardexceptionconstructorsca1032.md) - _Failure to provide the full set of constructors can make it difficult to correctly handle exceptions._
-* [Include/omit parentheses when creating new object](/recipes/csharp/recipes/roslynator/analyzers/addorremoveparentheseswhencreatingnewobjectrcs1050.md) - __
-* [Increment decrement symbols should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1020.md) - _An increment or decrement symbol within a C# element is not spaced correctly._
-* [Inline lazy initialization](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1180.md) - __
-* [Inline local variable](/recipes/csharp/recipes/roslynator/analyzers/localdeclarationstatementrcs1124.md) - __
-* [Instantiate argument exceptions correctly](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/instantiateargumentexceptionscorrectlyca2208.md) - _A call is made to the default (parameterless) constructor of an exception type that is or derives from ArgumentException, or an incorrect string argument is passed to a parameterized constructor of an exception type that is or derives from ArgumentException._
-* [Interface methods should be callable by child types](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/interfacemethodsshouldbecallablebychildtypesca1033.md) - _An unsealed externally visible type provides an explicit method implementation of a public interface and does not provide an alternative externally visible method that has the same name._
-* [Interface names should begin with I](/recipes/csharp/recipes/stylecop/analyzers/sa1302sa1302.md) - _The name of a C# interface does not begin with the capital letter I._
-* [Invalid argument null check](/recipes/csharp/recipes/roslynator/analyzers/invalidargumentnullcheckrcs1256.md) - __
-* [Invalid reference in a documentation comment](/recipes/csharp/recipes/roslynator/analyzers/removeelementindocumentationcommentrcs1263.md) - __
-* [Join string expressions](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1190.md) - __
-* [Keywords should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1000.md) - _The spacing around a C# keyword is incorrect._
-* [Make class sealed](/recipes/csharp/recipes/meziantou/analyzer/classmustbesealedma0053.md) - __
-* [Make class sealed](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1225.md) - __
-* [Make class static](/recipes/csharp/recipes/meziantou/analyzer/makeclassstaticma0036.md) - __
-* [Make class static](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1102.md) - __
-* [Make field read-only](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1169.md) - __
-* [Make interpolated string](/recipes/csharp/recipes/meziantou/analyzer/makeinterpolatedstringma0165.md) - __
-* [Make member readonly](/recipes/csharp/recipes/meziantou/analyzer/makememberreadonlyma0102.md) - __
-* [Make method an extension method](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1224.md) - __
-* [Make method static (deprecated, use CA1822 instead)](/recipes/csharp/recipes/meziantou/analyzer/makemethodstaticma0038.md) - __
-* [Make parameter ref read-only](/recipes/csharp/recipes/roslynator/analyzers/parameterrcs1231.md) - __
-* [Make property static (deprecated, use CA1822 instead)](/recipes/csharp/recipes/meziantou/analyzer/makemethodstaticma0041.md) - __
-* [Mark ISerializable types with serializable](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/marktypeswithserializableca2237.md) - _To be recognized by the common language runtime as serializable, types must be marked by using the SerializableAttribute attribute even when the type uses a custom serialization routine through implementation of the ISerializable interface._
-* [Mark all non-serializable fields](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpmarkallnonserializablefieldsca2235.md) - _An instance field of a type that is not serializable is declared in a type that is serializable._
-* [Mark attributes with AttributeUsageAttribute](/recipes/csharp/recipes/meziantou/analyzer/markattributeswithattributeusageattributema0010.md) - __
-* [Mark attributes with AttributeUsageAttribute](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/markattributeswithattributeusageca1018.md) - __
-* [Mark enums with FlagsAttribute](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/enumwithflagsattributeca1027.md) - _An enumeration is a value type that defines a set of related named constants. Apply FlagsAttribute to an enumeration when its named constants can be meaningfully combined._
-* [Mark local variable as const](/recipes/csharp/recipes/roslynator/analyzers/marklocalvariableasconstrcs1118.md) - __
-* [Mark members as static](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpmarkmembersasstaticca1822.md) - _Members that do not access instance data or call instance methods can be marked as static. After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code._
-* [Mark publicly visible type with DebuggerDisplay attribute](/recipes/csharp/recipes/roslynator/analyzers/marktypewithdebuggerdisplayattributercs1223.md) - __
-* [MarkupExtensionReturnType must use correct return type](/recipes/csharp/recipes/wpfanalyzers/changetypeoffixwpf0081.md) - _MarkupExtensionReturnType must use correct return type._
-* [Member access symbols should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1019.md) - _The spacing around a member access symbol is incorrect, within a C# code file._
-* [Members defined on an interface with the 'DynamicInterfaceCastableImplementationAttribute' should be 'static'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdynamicinterfacecastableimplementationca2257.md) - _Since a type that implements 'IDynamicInterfaceCastable' may not implement a dynamic interface in metadata, calls to an instance interface member that is not an explicit implementation defined on this type are likely to fail at runtime. Mark new interface members 'static' to avoid runtime errors._
-* [Merge 'else' with nested 'if'](/recipes/csharp/recipes/roslynator/analyzers/elseclausercs1006.md) - __
-* [Merge 'if' with nested 'if'](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1061.md) - __
-* [Merge preprocessor directives](/recipes/csharp/recipes/roslynator/analyzers/directivetriviarcs1222.md) - __
-* [Merge switch sections with equivalent content](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1136.md) - __
-* [Method overrides should not change default values](/recipes/csharp/recipes/meziantou/analyzer/methodoverridesshouldnotchangeparameterdefaultsma0061.md) - __
-* [Method overrides should not omit params keyword](/recipes/csharp/recipes/meziantou/analyzer/preserveparamsonoverridema0081.md) - __
-* [Name of CoerceValueCallback should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0006.md) - _Name of CoerceValueCallback should match registered name._
-* [Name of PropertyChangedCallback should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0005.md) - _Name of PropertyChangedCallback should match registered name._
-* [Name of ValidateValueCallback should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0007.md) - _Name of ValidateValueCallback should match registered name._
-* [Name of the event should match registered name](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0102.md) - _Name of the event should match registered name._
-* [Name the invoked method OnEventName](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0090.md) - _Name the invoked method OnEventName._
-* [Name the invoked method OnEventName](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0091.md) - _Name the invoked method OnEventName._
-* [Negative signs should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1021.md) - _A negative sign within a C# element is not spaced correctly._
-* [Non-private readonly fields should begin with upper-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1304.md) - _The name of a non-private readonly C# field should being with an upper-case letter._
-* [Normalize format of enum flag value](/recipes/csharp/recipes/roslynator/analyzers/enummemberdeclarationrcs1254.md) - __
-* [Normalize null check](/recipes/csharp/recipes/roslynator/analyzers/normalizenullcheckproviderrcs1248.md) - __
-* [Normalize usage of infinite loop](/recipes/csharp/recipes/roslynator/analyzers/normalizeusageofinfinitelooprcs1252.md) - __
-* [Nullable type symbols should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/sa1018sa1018.md) - _A nullable type symbol within a C# element is not spaced correctly._
-* [Opening attribute brackets should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1016.md) - _An opening attribute bracket within a C# element is not spaced correctly._
-* [Opening braces should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1012.md) - _An opening brace within a C# element is not spaced correctly._
-* [Opening braces should not be followed by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1505sa1505.md) - _An opening brace within a C# element, statement, or expression is followed by a blank line._
-* [Opening braces should not be preceded by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1509sa1509.md) - _An opening brace within a C# element, statement, or expression is preceded by a blank line._
-* [Opening generic brackets should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1014.md) - _An opening generic bracket within a C# element is not spaced correctly._
-* [Opening parenthesis or bracket should be on declaration line](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1110.md) - _The opening parenthesis or bracket is not placed on the same line as the method/indexer/attribute/array name._
-* [Opening parenthesis should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1008.md) - _An opening parenthesis within a C# statement is not spaced correctly._
-* [Opening square brackets should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1010.md) - _An opening square bracket within a C# statement is not spaced correctly._
-* [Operator is unnecessary](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1240.md) - __
-* [Operator keyword should be followed by space](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1007.md) - _The operator keyword within a C# operator overload method is not followed by any whitespace._
-* [Operator overloads have named alternates](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/operatoroverloadshavenamedalternatesca2225.md) - _An operator overload was detected, and the expected named alternative method was not found. The named alternative member provides access to the same functionality as the operator and is provided for developers who program in languages that do not support overloaded operators._
-* [Operators should have symmetrical overloads](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/operatorsshouldhavesymmetricaloverloadsca2226.md) - _A type implements the equality or inequality operator and does not implement the opposite operator._
-* [Optimize Enumerable.Count() usage](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0031.md) - __
-* [Optimize LINQ method call](/recipes/csharp/recipes/roslynator/analyzers/optimizelinqmethodcallrcs1077.md) - __
-* [Optimize StringBuilder usage](/recipes/csharp/recipes/meziantou/analyzer/optimizestringbuilderusagema0028.md) - __
-* [Optimize StringBuilder.Append/AppendLine call](/recipes/csharp/recipes/roslynator/analyzers/optimizestringbuilderappendcallrcs1197.md) - __
-* [Optimize method call](/recipes/csharp/recipes/roslynator/analyzers/optimizemethodcallrcs1235.md) - __
-* [Optimize string method usage](/recipes/csharp/recipes/meziantou/analyzer/optimizestartswithma0089.md) - __
-* [Order elements in documentation comment](/recipes/csharp/recipes/roslynator/analyzers/orderelementsindocumentationcommentrcs1232.md) - __
-* [Order modifiers](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1019.md) - __
-* [Order named arguments according to the order of parameters](/recipes/csharp/recipes/roslynator/analyzers/baseargumentlistrcs1205.md) - __
-* [Order type parameter constraints](/recipes/csharp/recipes/roslynator/analyzers/ordertypeparameterconstraintsrcs1209.md) - __
-* [Overload operator equals on overriding value type Equals](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/overloadoperatorequalsonoverridingvaluetypeequalsca2231.md) - _In most programming languages there is no default implementation of the equality operator (==) for value types. If your programming language supports operator overloads, you should consider implementing the equality operator. Its behavior should be identical to that of Equals._
-* [Override Object.Equals(object) when implementing IEquatable&lt;T&gt;](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/equatableca1067.md) - _When a type T implements the interface IEquatable&lt;T&gt;, it suggests to a user who sees a call to the Equals method in source code that an instance of the type can be equated with an instance of any other type. The user might be confused if their attempt to equate the type with an instance of another type fails to compile. This violates the &quot;principle of least surprise&quot;._
-* [Override equals and operator equals on value types](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpoverrideequalsandoperatorequalsonvaluetypesca1815.md) - _For value types, the inherited implementation of Equals uses the Reflection library and compares the contents of all fields. Reflection is computationally expensive, and comparing every field for equality might be unnecessary. If you expect users to compare or sort instances, or to use instances as hash table keys, your value type should implement Equals._
-* [Override methods on comparable types](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/overridemethodsoncomparabletypesca1036.md) - _A public or protected type implements the System.IComparable interface. It does not override Object.Equals nor does it overload the language-specific operator for equality, inequality, less than, less than or equal, greater than or greater than or equal._
-* [Overriding member should not change 'params' modifier](/recipes/csharp/recipes/roslynator/analyzers/parameterrcs1193.md) - __
-* [Parameter name differs from base name](/recipes/csharp/recipes/roslynator/analyzers/parameternamediffersfrombasercs1168.md) - __
-* [Parameter names should begin with lower-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametolowercasesa1313.md) - _The name of a parameter in C# does not begin with a lower-case letter._
-* [Parameter names should match base declaration](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/parameternamesshouldmatchbasedeclarationca1725.md) - _Consistent naming of parameters in an override hierarchy increases the usability of the method overrides. A parameter name in a derived method that differs from the name in the base declaration can cause confusion about whether the method is an override of the base method or a new overload of the method._
-* [Parameter type should be nullable](/recipes/csharp/recipes/wpfanalyzers/makenullablefixwpf0024.md) - _Parameter type should be nullable._
-* [Parameters with [EditorRequired] attributes should also be marked as [Parameter]](/recipes/csharp/recipes/meziantou/analyzer/parameterattributeforrazorcomponentma0117.md) - __
-* [Parameters with [SupplyParameterFromQuery] attributes should also be marked as [Parameter]](/recipes/csharp/recipes/meziantou/analyzer/parameterattributeforrazorcomponentma0116.md) - __
-* [Partial elements should be documented](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1601.md) - _A C# partial element is missing a documentation header._
-* [Partial elements should declare access](/recipes/csharp/recipes/stylecop/analyzers/sa1205sa1205.md) - _The partial element does not have an access modifier defined._
-* [Positive signs should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1022.md) - _A positive sign within a C# element is not spaced correctly._
-* [Prefer 'AsSpan' over 'Substring'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferasspanoversubstringca1846.md) - _'AsSpan' is more efficient than 'Substring'. 'Substring' performs an O(n) string copy, while 'AsSpan' does not and has a constant cost._
-* [Prefer 'Clear' over 'Fill'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusespanclearinsteadoffillca1855.md) - _It is more efficient to use 'Clear', instead of 'Fill' with default value._
-* [Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over call chains based on 'BitConverter.ToString'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/preferconverttohexstringoverbitconverterca1872.md) - _Use 'Convert.ToHexString' or 'Convert.ToHexStringLower' when encoding bytes to a hexadecimal string representation. These methods are more efficient and allocation-friendly than using 'BitConverter.ToString' in combination with 'String.Replace' to replace dashes and 'String.ToLower'._
-* [Prefer Dictionary.Contains methods](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferdictionarycontainsmethodsca1841.md) - _'ContainsKey' is usually O(1), while 'Keys.Contains' may be O(n) in some cases. Additionally, many dictionary implementations lazily initialize the Keys collection to cut back on allocations._
-* [Prefer IsEmpty over Count](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferisemptyovercountca1836.md) - _For determining whether the object contains or not any items, prefer using 'IsEmpty' property rather than retrieving the number of items from the 'Count' property and comparing it to 0 or 1._
-* [Prefer generic overload when type is known](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpprefergenericoverloadsca2263.md) - _Using a generic overload is preferable to the 'System.Type' overload when the type is known, promoting cleaner and more type-safe code with improved compile-time checks._
-* [Prefer rethrowing an exception implicitly](/recipes/csharp/recipes/meziantou/analyzer/donotremoveoriginalexceptionfromthrowstatementma0027.md) - __
-* [Prefer static 'HashData' method over 'ComputeHash'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferhashdataovercomputehashca1850.md) - _It is more efficient to use the static 'HashData' method over creating and managing a HashAlgorithm instance to call 'ComputeHash'._
-* [Prefer strongly-typed Append and Insert method overloads on StringBuilder](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/prefertypedstringbuilderappendoverloadsca1830.md) - _StringBuilder.Append and StringBuilder.Insert provide overloads for multiple types beyond System.String.  When possible, prefer the strongly-typed overloads over using ToString() and the string-based overload._
-* [Prefer the 'IDictionary.TryAdd(TKey, TValue)' method](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferdictionarytrymethodsovercontainskeyguardca1864.md) - _Prefer a 'TryAdd' call over an 'Add' call guarded by a 'ContainsKey' check. 'TryAdd' behaves the same as 'Add', except that when the specified key already exists, it returns 'false' instead of throwing an exception._
-* [Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferdictionarytrymethodsovercontainskeyguardca1854.md) - _Prefer a 'TryGetValue' call over a Dictionary indexer access guarded by a 'ContainsKey' check. 'ContainsKey' and the indexer both would lookup the key under the hood, so using 'TryGetValue' removes the extra lookup._
-* [Prefer the 'Memory'-based overloads for 'ReadAsync' and 'WriteAsync'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferstreamasyncmemoryoverloadsca1835.md) - _'Stream' has a 'ReadAsync' overload that takes a 'Memory&lt;Byte&gt;' as the first argument, and a 'WriteAsync' overload that takes a 'ReadOnlyMemory&lt;Byte&gt;' as the first argument. Prefer calling the memory based overloads, which are more efficient._
-* [Prefix local calls with this](/recipes/csharp/recipes/stylecop/analyzers/sa1101sa1101.md) - _A call to an instance member of the local class or a base class is not prefixed with 'this.', within a C# code file._
-* [Preprocessor keywords should not be preceded by space](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1006.md) - _A C# preprocessor-type keyword is preceded by space._
-* [Property accessors should follow order](/recipes/csharp/recipes/stylecop/analyzers/sa1212sa1213sa1212.md) - _A get accessor appears after a set accessor within a property or indexer._
-* [Property changed callback should have standard documentation text](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0062.md) - _Property changed callback should have standard documentation text._
-* [Property documentation should have value](/recipes/csharp/recipes/stylecop/analyzers/sa1609sa1610sa1609.md) - _The XML header documentation for a C# property does not contain a &lt;value&gt; tag._
-* [Property documentation should have value text](/recipes/csharp/recipes/stylecop/analyzers/sa1609sa1610sa1610.md) - _The XML header documentation for a C# property contains an empty &lt;value&gt; tag._
-* [Property summary documentation should match accessors](/recipes/csharp/recipes/stylecop/analyzers/propertysummarydocumentationsa1623.md) - _The documentation text within a C# property’s &lt;summary&gt; tag does not match the accessors within the property._
-* [Property summary documentation should omit accessor with restricted access](/recipes/csharp/recipes/stylecop/analyzers/propertysummarydocumentationsa1624.md) - _The documentation text within a C# property’s &lt;summary&gt; tag takes into account all of the accessors within the property, but one of the accessors has limited access._
-* [Protected should come before internal](/recipes/csharp/recipes/stylecop/analyzers/sa1207sa1207.md) - _The keyword '{0}' is positioned after the keyword '{1}' within the declaration of a {0} {1} C# element._
-* [Provide a parameterless constructor that is as visible as the containing type for concrete types derived from 'System.Runtime.InteropServices.SafeHandle'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/providepublicparameterlesssafehandleconstructorca1419.md) - _Providing a parameterless constructor that is as visible as the containing type for a type derived from 'System.Runtime.InteropServices.SafeHandle' enables better performance and usage with source-generated interop solutions._
-* [Put constructor initializers on their own line](/recipes/csharp/recipes/stylecop/analyzers/sa1128sa1128.md) - _A constructor initializer, including the colon character, should be on its own line._
-* [Query clause should begin on new line when previous clause spans multiple lines](/recipes/csharp/recipes/stylecop/analyzers/sa1104sa1105sa1104.md) - _A clause within a C# query expression begins on the same line as the previous clause, when the previous clause spans across multiple lines._
-* [Query clause should follow previous clause](/recipes/csharp/recipes/stylecop/analyzers/sa1102sa1102.md) - _A C# query clause does not begin on the same line as the previous clause, or on the next line._
-* [Query clauses should be on separate lines or all on one line](/recipes/csharp/recipes/stylecop/analyzers/sa1103sa1103.md) - _The clauses within a C# query expression are not all placed on the same line, and each clause is not placed on its own line._
-* [Query clauses spanning multiple lines should begin on own line](/recipes/csharp/recipes/stylecop/analyzers/sa1104sa1105sa1105.md) - _A clause within a C# query expression spans across multiple lines, and does not begin on its own line._
-* [Reduce 'if' nesting](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1208.md) - __
-* [Register containing member name as name for routed command](/recipes/csharp/recipes/wpfanalyzers/usenameoffixwpf0120.md) - _Register containing member name as name for routed command._
-* [Register containing type as owner for routed command](/recipes/csharp/recipes/wpfanalyzers/usecontainingtypefixwpf0121.md) - _Register containing type as owner for routed command._
-* [Register name and owning type for routed command](/recipes/csharp/recipes/wpfanalyzers/registerroutedcommandfixwpf0122.md) - _Register containing type as owner for routed command._
-* [Remove 'partial' modifier from type with a single part](/recipes/csharp/recipes/roslynator/analyzers/removepartialmodifierfromtypewithsinglepartrcs1043.md) - __
-* [Remove argument list from attribute](/recipes/csharp/recipes/roslynator/analyzers/attributeargumentlistrcs1039.md) - __
-* [Remove braces](/recipes/csharp/recipes/roslynator/analyzers/removebracesrcs1002.md) - __
-* [Remove braces from if-else](/recipes/csharp/recipes/roslynator/analyzers/removebracesfromifelsercs1004.md) - __
-* [Remove delegate parenthesis when possible](/recipes/csharp/recipes/stylecop/analyzers/sa1410sa1411sa1410.md) - _A call to a C# anonymous method does not contain any method parameters, yet the statement still includes parenthesis._
-* [Remove empty Finalizers](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/removeemptyfinalizersca1821.md) - _Finalizers should be avoided where possible, to avoid the additional performance overhead involved in tracking object lifetime._
-* [Remove empty statement](/recipes/csharp/recipes/meziantou/analyzer/removeemptystatementma0037.md) - __
-* [Remove empty syntax](/recipes/csharp/recipes/roslynator/analyzers/removeemptysyntaxrcs1259.md) - __
-* [Remove enum default underlying type](/recipes/csharp/recipes/roslynator/analyzers/removeenumdefaultbasetypercs1042.md) - __
-* [Remove original exception from throw statement](/recipes/csharp/recipes/roslynator/analyzers/removeoriginalexceptionrcs1044.md) - __
-* [Remove redundant 'ToCharArray' call](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1107.md) - __
-* [Remove redundant 'ToString' call](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1097.md) - __
-* [Remove redundant 'as' operator](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1145.md) - __
-* [Remove redundant 'sealed' modifier](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1034.md) - __
-* [Remove redundant Dispose/Close call](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1133.md) - __
-* [Remove redundant argument value](/recipes/csharp/recipes/meziantou/analyzer/simplifycallerargumentexpressionma0108.md) - __
-* [Remove redundant assignment](/recipes/csharp/recipes/roslynator/analyzers/removeredundantassignmentrcs1212.md) - __
-* [Remove redundant async/await](/recipes/csharp/recipes/roslynator/analyzers/removeredundantasyncawaitrcs1174.md) - __
-* [Remove redundant auto-property initialization](/recipes/csharp/recipes/roslynator/analyzers/propertydeclarationrcs1188.md) - __
-* [Remove redundant base constructor call](/recipes/csharp/recipes/roslynator/analyzers/constructordeclarationrcs1071.md) - __
-* [Remove redundant base interface](/recipes/csharp/recipes/roslynator/analyzers/basetypercs1182.md) - __
-* [Remove redundant boolean literal](/recipes/csharp/recipes/roslynator/analyzers/removeredundantbooleanliteralrcs1033.md) - __
-* [Remove redundant cast](/recipes/csharp/recipes/roslynator/analyzers/removeredundantcastrcs1151.md) - __
-* [Remove redundant catch block](/recipes/csharp/recipes/roslynator/analyzers/removeredundantcatchblockrcs1265.md) - __
-* [Remove redundant constructor](/recipes/csharp/recipes/roslynator/analyzers/constructordeclarationrcs1074.md) - __
-* [Remove redundant default switch section](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1070.md) - __
-* [Remove redundant delegate creation](/recipes/csharp/recipes/roslynator/analyzers/assignmentexpressionrcs1114.md) - __
-* [Remove redundant field initialization](/recipes/csharp/recipes/roslynator/analyzers/variabledeclaratorrcs1129.md) - __
-* [Remove redundant overriding member](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1132.md) - __
-* [Remove redundant parentheses](/recipes/csharp/recipes/roslynator/analyzers/parenthesizedexpressionrcs1032.md) - __
-* [Remove redundant statement](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1134.md) - __
-* [Remove trailing white-space](/recipes/csharp/recipes/roslynator/analyzers/whitespacetriviarcs1037.md) - __
-* [Remove unnecessary 'else'](/recipes/csharp/recipes/roslynator/analyzers/removeunnecessaryelsercs1211.md) - __
-* [Remove unnecessary braces from record declaration](/recipes/csharp/recipes/roslynator/analyzers/removeunnecessarybracesrcs1251.md) - __
-* [Remove unnecessary braces in switch section](/recipes/csharp/recipes/roslynator/analyzers/blockrcs1031.md) - __
-* [Remove unnecessary case label](/recipes/csharp/recipes/roslynator/analyzers/caseswitchlabelrcs1069.md) - __
-* [Remove unused member declaration](/recipes/csharp/recipes/roslynator/analyzers/unusedmemberrcs1213.md) - __
-* [Remove useless OrderBy call](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0030.md) - __
-* [Remove useless ToString call](/recipes/csharp/recipes/meziantou/analyzer/removeuselesstostringma0044.md) - __
-* [Replace constant Enum.ToString with nameof](/recipes/csharp/recipes/meziantou/analyzer/replaceenumtostringwithnameofma0052.md) - __
-* [Resource can be disposed asynchronously](/recipes/csharp/recipes/roslynator/analyzers/disposeresourceasynchronouslyrcs1261.md) - __
-* [Rethrow to preserve stack details](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/rethrowtopreservestackdetailsca2200.md) - __
-* [Return Task.FromResult instead of returning null](/recipes/csharp/recipes/meziantou/analyzer/returntaskfromresultinsteadofreturningnullma0022.md) - __
-* [Return completed task instead of returning null](/recipes/csharp/recipes/roslynator/analyzers/returncompletedtaskinsteadofnullrcs1210.md) - __
-* [Seal internal types](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/sealinternaltypesca1852.md) - _When a type is not accessible outside its assembly and has no subtypes within its containing assembly, it can be safely sealed. Sealing types can improve performance._
-* [Seal methods that satisfy private interfaces](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/sealmethodsthatsatisfyprivateinterfacesca2119.md) - _An inheritable public type provides an overridable method implementation of an internal (Friend in Visual Basic) interface. To fix a violation of this rule, prevent the method from being overridden outside the assembly._
-* [Semicolons should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1002.md) - _The spacing around a semicolon is incorrect, within a C# code file._
-* [Sender should be 'this' for instance events](/recipes/csharp/recipes/meziantou/analyzer/eventsshouldhaveproperargumentsma0091.md) - __
-* [Set mutable dependency properties using SetCurrentValue](/recipes/csharp/recipes/wpfanalyzers/usesetcurrentvaluefixwpf0041.md) - _Prefer setting mutable dependency properties using SetCurrentValue._
-* [Simplify 'default' expression](/recipes/csharp/recipes/roslynator/analyzers/defaultexpressionrcs1244.md) - __
-* [Simplify Nullable&lt;T&gt; to T?](/recipes/csharp/recipes/roslynator/analyzers/simplifynullableoftrcs1020.md) - __
-* [Simplify argument null check](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1255.md) - __
-* [Simplify boolean comparison](/recipes/csharp/recipes/roslynator/analyzers/simplifybooleancomparisonrcs1049.md) - __
-* [Simplify coalesce expression](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1143.md) - __
-* [Simplify code branching](/recipes/csharp/recipes/roslynator/analyzers/simplifycodebranchingrcs1218.md) - __
-* [Simplify conditional expression](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1104.md) - __
-* [Simplify lazy initialization](/recipes/csharp/recipes/roslynator/analyzers/blockrcs1171.md) - __
-* [Simplify logical negation](/recipes/csharp/recipes/roslynator/analyzers/simplifylogicalnegationrcs1068.md) - __
-* [Simplify nested using statement](/recipes/csharp/recipes/roslynator/analyzers/simplifynestedusingstatementrcs1005.md) - __
-* [Simplify numeric comparison](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1268.md) - __
-* [Single line comments should begin with single space](/recipes/csharp/recipes/stylecop/analyzers/sa1005sa1005.md) - _A single-line comment within a C# code file does not begin with a single space._
-* [Single-line comment should be preceded by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1515sa1515.md) - _A single-line comment within C# code is not preceded by a blank line._
-* [Single-line comments should not be followed by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1512sa1512.md) - _A single-line comment within C# code is followed by a blank line._
-* [Single-line comments should not use documentation style slashes](/recipes/csharp/recipes/stylecop/analyzers/sa1626sa1626.md) - _The C# code contains a single-line comment which begins with three forward slashes in a row._
-* [Sort enum members](/recipes/csharp/recipes/roslynator/analyzers/enumdeclarationrcs1154.md) - __
-* [Specify a culture or use an invariant version](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpspecifyculturefortolowerandtoupperca1311.md) - _Specify culture to help avoid accidental implicit dependency on current culture. Using an invariant version yields consistent results regardless of the culture of an application._
-* [Specify marshaling for P/Invoke string arguments](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpspecifymarshalingforpinvokestringargumentsca2101.md) - _A platform invoke member allows partially trusted callers, has a string parameter, and does not explicitly marshal the string. This can cause a potential security vulnerability._
-* [Split parameters should start on line after declaration](/recipes/csharp/recipes/stylecop/analyzers/sa1116sa1116.md) - _The parameters to a C# method or indexer call or declaration span across multiple lines, but the first parameter does not start on the line after the opening bracket._
-* [Split variable declaration](/recipes/csharp/recipes/roslynator/analyzers/variabledeclarationrcs1081.md) - __
-* [Statement should not be on a single line](/recipes/csharp/recipes/stylecop/analyzers/sa1501sa1501.md) - _A C# statement containing opening and closing braces is written completely on a single line._
-* [Statement should not use unnecessary parenthesis](/recipes/csharp/recipes/stylecop/analyzers/sa1119sa1119.md) - _A C# statement contains parenthesis which are unnecessary and should be removed._
-* [Statement should not use unnecessary parenthesis](/recipes/csharp/recipes/stylecop/analyzers/sa1119sa1119_p.md) - _A C# statement contains parenthesis which are unnecessary and should be removed._
-* [Static field names should begin with underscore](/recipes/csharp/recipes/stylecop/analyzers/sx1309sx1309s.md) - _A static field name in C# does not begin with an underscore._
-* [Static holder types should be Static or NotInheritable](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpstaticholdertypesca1052.md) - __
-* [Static readonly fields should begin with upper-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1311.md) - _The name of a static readonly field does not begin with an upper-case letter._
-* [Store files as UTF-8 with byte order mark](/recipes/csharp/recipes/stylecop/analyzers/sa1412sa1412.md) - _Source files should be saved using the UTF-8 encoding with a byte order mark_
-* [String contains an implicit end of line character](/recipes/csharp/recipes/meziantou/analyzer/stringshouldnotcontainsnondeterministicendoflinema0101.md) - __
-* [StringComparison is missing](/recipes/csharp/recipes/meziantou/analyzer/usestringcomparisonma0001.md) - __
-* [StyleTypedProperty is missing](/recipes/csharp/recipes/wpfanalyzers/addattributelistfixwpf0176.md) - _StyleTypedProperty is missing._
-* [Symbols should be spaced correctly](/recipes/csharp/recipes/stylecop/analyzers/sa1003sa1003.md) - _The spacing around an operator symbol is incorrect, within a C# code file._
-* [System using directives should be placed before other using directives](/recipes/csharp/recipes/stylecop/analyzers/usingsa1208.md) - _A using directive which declares a member of the 'System' namespace appears after a using directive which declares a member of a different namespace, within a C# code file._
-* [Test for NaN correctly](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharptestfornancorrectlyca2242.md) - _This expression tests a value against Single.Nan or Double.Nan. Use Single.IsNan(Single) or Double.IsNan(Double) to test the value._
-* [Test for empty strings using string length](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharptestforemptystringsusingstringlengthca1820.md) - _Comparing strings by using the String.Length property or the String.IsNullOrEmpty method is significantly faster than using Equals._
-* [The callback is trivial, convert to lambda](/recipes/csharp/recipes/wpfanalyzers/converttolambdafixwpf0023.md) - _The callback is trivial, convert to lambda for better locality._
-* [This method uses runtime marshalling even when the 'DisableRuntimeMarshallingAttribute' is applied](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdisableruntimemarshallingca1421.md) - _This method uses runtime marshalling even when runtime marshalling is disabled, which can cause unexpected behavior differences at runtime due to different expectations of a type's native layout._
-* [Type parameter names should begin with T](/recipes/csharp/recipes/stylecop/analyzers/sa1314sa1314.md) - _The name of a C# type parameter does not begin with the capital letter T._
-* [Types that own disposable fields should be disposable](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/typesthatowndisposablefieldsshouldbedisposableca1001.md) - _A class declares and implements an instance field that is a System.IDisposable type, and the class does not implement IDisposable. A class that declares an IDisposable field indirectly owns an unmanaged resource and should implement the IDisposable interface._
-* [URI-like parameters should not be strings](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/uriparametersshouldnotbestringsca1054.md) - _This rule assumes that the parameter represents a Uniform Resource Identifier (URI). A string representation or a URI is prone to parsing and encoding errors, and can lead to security vulnerabilities. 'System.Uri' class provides these services in a safe and secure manner._
-* [Unconstrained type parameter checked for null](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1165.md) - __
-* [Unnecessary assignment](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryassignmentrcs1179.md) - __
-* [Unnecessary call to 'Contains(item)'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotguardcallca1868.md) - _Do not guard 'Add(item)' or 'Remove(item)' with 'Contains(item)' for the set. The former two already check whether the item exists and will return if it was added or removed._
-* [Unnecessary call to 'Dictionary.ContainsKey(key)'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotguardcallca1853.md) - _Do not guard 'Dictionary.Remove(key)' with 'Dictionary.ContainsKey(key)'. The former already checks whether the key exists, and will not throw if it does not._
-* [Unnecessary enum flag](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryenumflagrcs1258.md) - __
-* [Unnecessary explicit use of enumerator](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryexplicituseofenumeratorrcs1230.md) - __
-* [Unnecessary interpolated string](/recipes/csharp/recipes/roslynator/analyzers/interpolatedstringrcs1214.md) - __
-* [Unnecessary interpolation](/recipes/csharp/recipes/roslynator/analyzers/interpolationrcs1105.md) - __
-* [Unnecessary null check](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1199.md) - __
-* [Unnecessary null-forgiving operator](/recipes/csharp/recipes/roslynator/analyzers/tokenrcs1249.md) - __
-* [Unnecessary raw string literal](/recipes/csharp/recipes/roslynator/analyzers/rawstringliteralrcs1262.md) - __
-* [Unnecessary semicolon at the end of declaration](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1055.md) - __
-* [Unnecessary unsafe context](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryunsafecontextrcs1216.md) - __
-* [Unnecessary usage of verbatim string literal](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryusageofverbatimstringliteralrcs1192.md) - __
-* [Unused element in a documentation comment](/recipes/csharp/recipes/roslynator/analyzers/removeelementindocumentationcommentrcs1228.md) - __
-* [Unused parameter](/recipes/csharp/recipes/roslynator/analyzers/unusedparameterrcs1163.md) - __
-* [Unused type parameter](/recipes/csharp/recipes/roslynator/analyzers/typeparameterrcs1164.md) - __
-* [Use &quot;&quot; or 'string.Empty'](/recipes/csharp/recipes/roslynator/analyzers/useemptystringliteralorstringemptyrcs1078.md) - __
-* [Use 'Cast' instead of 'Select' to cast](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0078.md) - __
-* [Use 'Count/Length' property instead of 'Any' method](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1080.md) - __
-* [Use 'Environment.CurrentManagedThreadId'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useenvironmentmembersca1840.md) - _'Environment.CurrentManagedThreadId' is simpler and faster than 'Thread.CurrentThread.ManagedThreadId'._
-* [Use 'Environment.ProcessId'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useenvironmentmembersca1837.md) - _'Environment.ProcessId' is simpler and faster than 'Process.GetCurrentProcess().Id'._
-* [Use 'Environment.ProcessPath'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useenvironmentmembersca1839.md) - _'Environment.ProcessPath' is simpler and faster than 'Process.GetCurrentProcess().MainModule.FileName'._
-* [Use 'HasFlag' method or bitwise operator](/recipes/csharp/recipes/roslynator/analyzers/usehasflagmethodorbitwiseoperatorrcs1096.md) - __
-* [Use 'Order' instead of 'OrderBy'](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0159.md) - __
-* [Use 'StartsWith' instead of 'IndexOf'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusestartswithinsteadofindexofcomparisonwithzerocodefixca1858.md) - _It is both clearer and faster to use 'StartsWith' instead of comparing the result of 'IndexOf' to zero._
-* [Use 'ThrowIfCancellationRequested'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/usecancellationtokenthrowifcancellationrequestedca2250.md) - _'ThrowIfCancellationRequested' automatically checks whether the token has been canceled, and throws an 'OperationCanceledException' if it has._
-* [Use 'for' statement instead of 'while' statement](/recipes/csharp/recipes/roslynator/analyzers/whilestatementrcs1239.md) - __
-* [Use 'is' operator instead of 'as' operator](/recipes/csharp/recipes/roslynator/analyzers/useisoperatorinsteadofasoperatorrcs1172.md) - __
-* [Use 'is' operator instead of SequenceEqual](/recipes/csharp/recipes/meziantou/analyzer/useispatterninsteadofsequenceequalma0128.md) - __
-* [Use 'string.Equals'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/usestringequalsoverstringcompareca2251.md) - _It is both clearer and likely faster to use 'string.Equals' instead of comparing the result of 'string.Compare' to zero._
-* [Use 'string.IsNullOrEmpty' method](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1113.md) - __
-* [Use 'var' or explicit type](/recipes/csharp/recipes/roslynator/analyzers/usevarorexplicittypercs1264.md) - __
-* [Use --/++ operator instead of assignment](/recipes/csharp/recipes/roslynator/analyzers/assignmentexpressionrcs1089.md) - __
-* [Use ArgumentException throw helper](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1511.md) - _Throw helpers are simpler and more efficient than an if block constructing a new exception instance._
-* [Use ArgumentNullException throw helper](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1510.md) - _Throw helpers are simpler and more efficient than an if block constructing a new exception instance._
-* [Use ArgumentOutOfRangeException throw helper](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1512.md) - _Throw helpers are simpler and more efficient than an if block constructing a new exception instance._
-* [Use Array.Empty&lt;T&gt;()](/recipes/csharp/recipes/meziantou/analyzer/usearrayemptyma0005.md) - __
-* [Use AsSpan or AsMemory instead of Range-based indexers when appropriate](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseasspaninsteadofrangeindexerca1831.md) - _The Range-based indexer on string values produces a copy of requested portion of the string. This copy is usually unnecessary when it is implicitly used as a ReadOnlySpan or ReadOnlyMemory value. Use the AsSpan method to avoid the unnecessary copy._
-* [Use AsSpan or AsMemory instead of Range-based indexers when appropriate](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseasspaninsteadofrangeindexerca1832.md) - _The Range-based indexer on array values produces a copy of requested portion of the array. This copy is usually unnecessary when it is implicitly used as a ReadOnlySpan or ReadOnlyMemory value. Use the AsSpan method to avoid the unnecessary copy._
-* [Use AsSpan or AsMemory instead of Range-based indexers when appropriate](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseasspaninsteadofrangeindexerca1833.md) - _The Range-based indexer on array values produces a copy of requested portion of the array. This copy is often unwanted when it is implicitly used as a Span or Memory value. Use the AsSpan method to avoid the copy._
-* [Use AttributeUsageAttribute](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1203.md) - __
-* [Use DateTime.UnixEpoch](/recipes/csharp/recipes/meziantou/analyzer/usedatetimeunixepochma0113.md) - __
-* [Use DateTimeOffset.UnixEpoch](/recipes/csharp/recipes/meziantou/analyzer/usedatetimeunixepochma0114.md) - __
-* [Use EventArgs.Empty](/recipes/csharp/recipes/meziantou/analyzer/useeventargsemptyma0019.md) - __
-* [Use EventArgs.Empty](/recipes/csharp/recipes/roslynator/analyzers/objectcreationexpressionrcs1204.md) - __
-* [Use EventHandler&lt;T&gt;](/recipes/csharp/recipes/roslynator/analyzers/typercs1159.md) - __
-* [Use Guid.Empty](/recipes/csharp/recipes/meziantou/analyzer/useguidemptyma0067.md) - __
-* [Use InvokeVoidAsync when the returned value is not used](/recipes/csharp/recipes/meziantou/analyzer/usejsruntimeinvokevoidasyncwhenreturnvalueisnotusedma0120.md) - __
-* [Use Length/Count property instead of Count() when available](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusepropertyinsteadofcountmethodwhenavailableca1829.md) - _Enumerable.Count() potentially enumerates the sequence while a Length/Count property is a direct access._
-* [Use ObjectDisposedException throw helper](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1513.md) - _Throw helpers are simpler and more efficient than an if block constructing a new exception instance._
-* [Use Regex instance instead of static method](/recipes/csharp/recipes/roslynator/analyzers/useregexinstanceinsteadofstaticmethodrcs1186.md) - __
-* [Use SequenceEqual instead of equality operator](/recipes/csharp/recipes/meziantou/analyzer/donotuseequalityoperatorsforspanofcharma0103.md) - __
-* [Use SetValue in setter](/recipes/csharp/recipes/wpfanalyzers/usesetvaluefixwpf0035.md) - _Use SetValue in setter._
-* [Use String.Equals instead of equality operator](/recipes/csharp/recipes/meziantou/analyzer/usestringequalsma0006.md) - __
-* [Use StringComparer.GetHashCode instead of string.GetHashCode](/recipes/csharp/recipes/meziantou/analyzer/donotusestringgethashcodema0021.md) - __
-* [Use StringComparison when comparing strings](/recipes/csharp/recipes/roslynator/analyzers/usestringcomparisonrcs1155.md) - __
-* [Use Task.ConfigureAwait](/recipes/csharp/recipes/meziantou/analyzer/useconfigureawaitma0004.md) - __
-* [Use ^ operator](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1195.md) - __
-* [Use a cached 'SearchValues' instance](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusesearchvaluesca1870.md) - _Using a cached 'SearchValues' instance is more efficient than passing values to 'IndexOfAny'/'ContainsAny' directly._
-* [Use an explicit StringComparer when possible](/recipes/csharp/recipes/meziantou/analyzer/donotuseequalitycomparerdefaultofstringma0024.md) - __
-* [Use anonymous function or method group](/recipes/csharp/recipes/roslynator/analyzers/useanonymousfunctionormethodgrouprcs1207.md) - __
-* [Use async/await when necessary](/recipes/csharp/recipes/roslynator/analyzers/useasyncawaitrcs1229.md) - __
-* [Use auto-implemented property](/recipes/csharp/recipes/roslynator/analyzers/useautopropertyrcs1085.md) - __
-* [Use block body or expression body](/recipes/csharp/recipes/roslynator/analyzers/useblockbodyorexpressionbodyrcs1016.md) - __
-* [Use braces consistently](/recipes/csharp/recipes/stylecop/analyzers/sa1503sa1520.md) - _The opening and closing braces of a chained if/else if/else construct were included for some clauses, but omitted for others._
-* [Use built-in type alias](/recipes/csharp/recipes/stylecop/analyzers/sa1121sa1121.md) - _The code uses one of the basic C# types, but does not use the built-in alias for the type._
-* [Use char literal for a single character lookup](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusestringcontainscharoverloadwithsinglecharactersca1847.md) - _'string.Contains(char)' is available as a better performing overload for single char lookup._
-* [Use char overload](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusestringmethodcharoverloadwithsinglecharactersca1865.md) - _The char overload is a better performing overload than a string with a single char._
-* [Use coalesce expression](/recipes/csharp/recipes/roslynator/analyzers/usecoalesceexpressionrcs1128.md) - __
-* [Use coalesce expression instead of 'if'](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1173.md) - __
-* [Use coalesce expression instead of conditional expression](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1084.md) - __
-* [Use compound assignment](/recipes/csharp/recipes/roslynator/analyzers/usecompoundassignmentrcs1058.md) - __
-* [Use conditional access](/recipes/csharp/recipes/roslynator/analyzers/useconditionalaccessrcs1146.md) - __
-* [Use conditional access instead of conditional expression](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1206.md) - __
-* [Use constant instead of field](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1187.md) - __
-* [Use containing member as key when creating a ComponentResourceKey](/recipes/csharp/recipes/wpfanalyzers/componentresourcekeyfixwpf0141.md) - _Use containing member as key when creating a ComponentResourceKey._
-* [Use containing type when creating a ComponentResourceKey](/recipes/csharp/recipes/wpfanalyzers/componentresourcekeyfixwpf0140.md) - _Use containing type when creating a ComponentResourceKey._
-* [Use correct argument for [AttachedPropertyBrowsableForType]](/recipes/csharp/recipes/wpfanalyzers/attachedpropertybrowsablefortypeargumentfixwpf0034.md) - _Use correct argument for [AttachedPropertyBrowsableForType]._
-* [Use correct handler type](/recipes/csharp/recipes/wpfanalyzers/usecorrectdelegatefixwpf0092.md) - _Use correct handler type._
-* [Use direct methods instead of LINQ methods](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0020.md) - __
-* [Use element access](/recipes/csharp/recipes/roslynator/analyzers/optimizelinqmethodcallrcs1246.md) - __
-* [Use enum field explicitly](/recipes/csharp/recipes/roslynator/analyzers/castexpressionrcs1257.md) - __
-* [Use exception filter](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1236.md) - __
-* [Use explicitly/implicitly typed array](/recipes/csharp/recipes/roslynator/analyzers/useexplicitlyorimplicitlytypedarrayrcs1014.md) - __
-* [Use implicit/explicit object creation](/recipes/csharp/recipes/roslynator/analyzers/useimplicitorexplicitobjectcreationrcs1250.md) - __
-* [Use indexer instead of LINQ methods](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0098.md) - __
-* [Use lambda expression instead of anonymous method](/recipes/csharp/recipes/roslynator/analyzers/anonymousmethodrcs1048.md) - __
-* [Use lambda syntax](/recipes/csharp/recipes/stylecop/analyzers/sa1130sa1130.md) - _Lambda expressions are more succinct and easier to read than anonymous methods, so they should are preferred whenever the two are functionally equivalent._
-* [Use langword in XML comment](/recipes/csharp/recipes/meziantou/analyzer/uselangwordinxmlcommentma0154.md) - __
-* [Use line endings correctly at end of file](/recipes/csharp/recipes/stylecop/analyzers/sa1518sa1518.md) - _Code should not contain blank lines at the end of the file_
-* [Use literal suffix notation instead of casting](/recipes/csharp/recipes/stylecop/analyzers/sa1139sa1139.md) - _Use literal suffix notation instead of casting, in order to improve readability, avoid bugs related to illegal casts and ensure that optimal IL is produced._
-* [Use literals where appropriate](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseliteralswhereappropriateca1802.md) - _A field is declared static and read-only (Shared and ReadOnly in Visual Basic), and is initialized by using a value that is computable at compile time. Because the value that is assigned to the targeted field is computable at compile time, change the declaration to a const (Const in Visual Basic) field so that the value is computed at compile time instead of at runtime._
-* [Use method chaining](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1201.md) - __
-* [Use nameof operator](/recipes/csharp/recipes/roslynator/analyzers/usenameofoperatorrcs1015.md) - __
-* [Use nameof operator in ArgumentException](/recipes/csharp/recipes/meziantou/analyzer/argumentexceptionshouldspecifyargumentnamema0043.md) - __
-* [Use nameof to express symbol names](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/usenameofinplaceofstringca1507.md) - _Using nameof helps keep your code valid when refactoring._
-* [Use nameof() instead of constant](/recipes/csharp/recipes/wpfanalyzers/usenameoffixwpf0151.md) - _Use nameof() as it is less fragile than constant._
-* [Use nameof() instead of literal](/recipes/csharp/recipes/wpfanalyzers/usenameoffixwpf0150.md) - _Use nameof() as it is less fragile than string literal._
-* [Use ordinal string comparison](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseordinalstringcomparisonca1309.md) - _A string comparison operation that is nonlinguistic does not set the StringComparison parameter to either Ordinal or OrdinalIgnoreCase. By explicitly setting the parameter to either StringComparison.Ordinal or StringComparison.OrdinalIgnoreCase, your code often gains speed, becomes more correct, and becomes more reliable._
-* [Use parentheses to make not pattern clearer](/recipes/csharp/recipes/meziantou/analyzer/notpatternshouldbeparenthesizedcodema0164.md) - __
-* [Use pattern matching instead of combination of 'as' operator and null check](/recipes/csharp/recipes/roslynator/analyzers/usepatternmatchinginsteadofasandnullcheckrcs1221.md) - __
-* [Use pattern matching instead of combination of 'is' operator and cast operator](/recipes/csharp/recipes/roslynator/analyzers/usepatternmatchinginsteadofisandcastrcs1220.md) - __
-* [Use pattern matching instead of equality operators for discrete value](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0148.md) - __
-* [Use pattern matching instead of equality operators for null check](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0142.md) - __
-* [Use pattern matching instead of inequality operators for discrete value](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0149.md) - __
-* [Use pattern matching instead of inequality operators for null check](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0141.md) - __
-* [Use predefined type](/recipes/csharp/recipes/roslynator/analyzers/usepredefinedtypercs1013.md) - __
-* [Use raw string literal](/recipes/csharp/recipes/roslynator/analyzers/rawstringliteralrcs1266.md) - __
-* [Use read-only auto-implemented property](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1170.md) - __
-* [Use readable conditions](/recipes/csharp/recipes/stylecop/analyzers/sa1131sa1131.md) - _When a comparison is made between a variable and a literal, the variable should be placed on the left-hand-side to maximize readability._
-* [Use short-circuiting operator](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1233.md) - __
-* [Use span-based 'string.Concat'](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusespanbasedstringconcatca1845.md) - _It is more efficient to use 'AsSpan' and 'string.Concat', instead of 'Substring' and a concatenation operator._
-* [Use string interpolation instead of 'string.Concat'](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1267.md) - __
-* [Use string.Create instead of FormattableString](/recipes/csharp/recipes/meziantou/analyzer/usestringcreateinsteadofformattablestringma0111.md) - __
-* [Use string.Empty for empty strings](/recipes/csharp/recipes/stylecop/analyzers/sa1122sa1122.md) - _The C# code includes an empty string, written as &quot;&quot;._
-* [Use string.Length instead of comparison with empty string](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1156.md) - __
-* [Use tabs correctly](/recipes/csharp/recipes/stylecop/analyzers/sa1027sa1027.md) - _The code contains a tab or space character which is not consistent with the current project settings._
-* [Use the 'StringComparison' method overloads to perform case-insensitive string comparisons](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharprecommendcaseinsensitivestringcomparisonca1862.md) - _Avoid calling 'ToLower', 'ToUpper', 'ToLowerInvariant' and 'ToUpperInvariant' to perform case-insensitive string comparisons because they lead to an allocation. Instead, prefer calling the method overloads of 'Contains', 'IndexOf' and 'StartsWith' that take a 'StringComparison' enum value to perform case-insensitive comparisons. Switching to using an overload that takes a 'StringComparison' might cause subtle changes in behavior, so it's important to conduct thorough testing after applying the suggestion. Additionally, if a culturally sensitive comparison is not required, consider using 'StringComparison.OrdinalIgnoreCase'._
-* [Use the Regex source generator](/recipes/csharp/recipes/meziantou/analyzer/useregexsourcegeneratorma0110.md) - __
-* [Use trailing comma in multi-line initializers](/recipes/csharp/recipes/stylecop/analyzers/sa1413sa1413.md) - _A multi-line initializer in a C# code file should use a comma on the last line._
-* [Using alias directives should be ordered alphabetically by alias name](/recipes/csharp/recipes/stylecop/analyzers/usingsa1211.md) - _The using-alias directives within a C# code file are not sorted alphabetically by alias name._
-* [Using alias directives should be placed after other using directives](/recipes/csharp/recipes/stylecop/analyzers/usingsa1209.md) - _A using-alias directive is positioned before a regular using directive._
-* [Using directives should be ordered alphabetically by namespace](/recipes/csharp/recipes/stylecop/analyzers/usingsa1210.md) - _The using directives within a C# code file are not sorted alphabetically by namespace._
-* [Using directives should be placed correctly](/recipes/csharp/recipes/stylecop/analyzers/usingsa1200.md) - _A C# using directive is placed outside of a namespace element._
-* [Using directives should be qualified](/recipes/csharp/recipes/stylecop/analyzers/sa1135sa1135.md) - _All using directives should be qualified._
-* [Using static directives should be ordered alphabetically](/recipes/csharp/recipes/stylecop/analyzers/usingsa1217.md) - _All using static directives should be ordered alphabetically._
-* [Using static directives should be placed at the correct location.](/recipes/csharp/recipes/stylecop/analyzers/usingsa1216.md) - _A using static directive is positioned before a regular or after an alias using directive._
-* [Validate arguments correctly](/recipes/csharp/recipes/roslynator/analyzers/validateargumentscorrectlyrcs1227.md) - __
-* [Validate arguments correctly in iterator methods](/recipes/csharp/recipes/meziantou/analyzer/validateargumentscorrectlyma0050.md) - __
-* [Value type object is never equal to null](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1166.md) - __
-* [ValueConversion must use correct types](/recipes/csharp/recipes/wpfanalyzers/valueconversionattributeargumentfixwpf0072.md) - _ValueConversion must use correct types._
-* [Variable names should begin with lower-case letter](/recipes/csharp/recipes/stylecop/analyzers/renametolowercasesa1312.md) - _The name of a variable in C# does not begin with a lower-case letter._
-* [Variable names should not be prefixed](/recipes/csharp/recipes/stylecop/analyzers/sa1308sa1308.md) - _A field name in C# is prefixed with 'm_', 's_', or 't_'._
-* [Void return value should not be documented](/recipes/csharp/recipes/stylecop/analyzers/sa1617sa1617.md) - _A C# code element does not contain a return value, or returns void, but the documentation header for the element contains a &lt;returns&gt; tag._
-* [While-do footer should not be preceded by blank line](/recipes/csharp/recipes/stylecop/analyzers/sa1511sa1511.md) - _The while footer at the bottom of a do-while statement is separated from the statement by a blank line._
-* [XmlnsDefinitions does not map all namespaces with public types](/recipes/csharp/recipes/wpfanalyzers/xmlnsdefinitionfixwpf0052.md) - _XmlnsDefinitions does not map all namespaces with public types._
-* [[ConstructorArgument] must match](/recipes/csharp/recipes/wpfanalyzers/constructorargumentattributeargumentfixwpf0082.md) - _[ConstructorArgument] must match the name of the constructor parameter._
-* [[deprecated] Avoid usage of do statement to create an infinite loop](/recipes/csharp/recipes/roslynator/analyzers/dostatementrcs1063.md) - __
-* [[deprecated] Avoid usage of for statement to create an infinite loop](/recipes/csharp/recipes/roslynator/analyzers/forstatementrcs1064.md) - __
-* [[deprecated] Avoid usage of while statement to create an infinite loop](/recipes/csharp/recipes/roslynator/analyzers/whilestatementrcs1065.md) - __
-* [[deprecated] Format documentation summary on a single line](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1100.md) - __
-* [[deprecated] Format documentation summary on multiple lines](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1101.md) - __
-* [[deprecated] Remove empty 'else' clause](/recipes/csharp/recipes/roslynator/analyzers/elseclausercs1040.md) - __
-* [[deprecated] Remove empty 'finally' clause](/recipes/csharp/recipes/roslynator/analyzers/finallyclausercs1066.md) - __
-* [[deprecated] Remove empty destructor](/recipes/csharp/recipes/roslynator/analyzers/destructordeclarationrcs1106.md) - __
-* [[deprecated] Remove empty initializer](/recipes/csharp/recipes/roslynator/analyzers/removeemptyinitializerrcs1041.md) - __
-* [[deprecated] Remove empty namespace declaration](/recipes/csharp/recipes/roslynator/analyzers/namespacedeclarationrcs1072.md) - __
-* [[deprecated] Remove empty region](/recipes/csharp/recipes/roslynator/analyzers/regiondirectivetriviarcs1091.md) - __
-* [[deprecated] Remove empty statement](/recipes/csharp/recipes/roslynator/analyzers/emptystatementrcs1038.md) - __
-* [[deprecated] Remove redundant comma in initializer](/recipes/csharp/recipes/roslynator/analyzers/initializerrcs1035.md) - __
-* [[deprecated] Remove unnecessary blank line](/recipes/csharp/recipes/roslynator/analyzers/whitespacetriviarcs1036.md) - __
-* [[deprecated] Use 'var' instead of explicit type (in foreach)](/recipes/csharp/recipes/roslynator/analyzers/usevarinsteadofexplicittypercs1177.md) - __
-* [[deprecated] Use 'var' instead of explicit type (when the type is not obvious)](/recipes/csharp/recipes/roslynator/analyzers/usevarinsteadofexplicittypercs1176.md) - __
-* [[deprecated] Use 'var' instead of explicit type (when the type is obvious)](/recipes/csharp/recipes/roslynator/analyzers/usevarinsteadofexplicittypercs1010.md) - __
-* [[deprecated] Use bit shift operator](/recipes/csharp/recipes/roslynator/analyzers/enumdeclarationrcs1237.md) - __
-* [[deprecated] Use explicit type instead of 'var' (foreach variable)](/recipes/csharp/recipes/roslynator/analyzers/useexplicittypeinsteadofvarinforeachrcs1009.md) - __
-* [[deprecated] Use explicit type instead of 'var' (when the type is not obvious)](/recipes/csharp/recipes/roslynator/analyzers/useexplicittypeinsteadofvarrcs1008.md) - __
-* [[deprecated] Use explicit type instead of 'var' (when the type is obvious)](/recipes/csharp/recipes/roslynator/analyzers/useexplicittypeinsteadofvarrcs1012.md) - __
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.AbstractTypesShouldNotHaveConstructorsMA0017](/recipes/csharp/recipes/meziantou/analyzer/abstracttypesshouldnothaveconstructorsma0017.md)
+  * **Abstract types should not have public or internal constructors**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.ArgumentExceptionShouldSpecifyArgumentNameMA0043](/recipes/csharp/recipes/meziantou/analyzer/argumentexceptionshouldspecifyargumentnamema0043.md)
+  * **Use nameof operator in ArgumentException**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.AvoidComparisonWithBoolConstantMA0073](/recipes/csharp/recipes/meziantou/analyzer/avoidcomparisonwithboolconstantma0073.md)
+  * **Avoid comparison with bool constant**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.AvoidUsingRedundantElseMA0071](/recipes/csharp/recipes/meziantou/analyzer/avoidusingredundantelsema0071.md)
+  * **Avoid using redundant else**
+  * The 'if' block contains a jump statement (break, continue, goto, return, throw, yield break). Using 'else' is redundant and needlessly maintains a higher nesting level.
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.ClassMustBeSealedMA0053](/recipes/csharp/recipes/meziantou/analyzer/classmustbesealedma0053.md)
+  * **Make class sealed**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.CommaMA0007](/recipes/csharp/recipes/meziantou/analyzer/commama0007.md)
+  * **Add a comma after the last value**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.DoNotRemoveOriginalExceptionFromThrowStatementMA0027](/recipes/csharp/recipes/meziantou/analyzer/donotremoveoriginalexceptionfromthrowstatementma0027.md)
+  * **Prefer rethrowing an exception implicitly**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.DoNotUseBlockingCallInAsyncContextMA0042](/recipes/csharp/recipes/meziantou/analyzer/donotuseblockingcallinasynccontextma0042.md)
+  * **Do not use blocking calls in an async method**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.DoNotUseBlockingCallInAsyncContextMA0045](/recipes/csharp/recipes/meziantou/analyzer/donotuseblockingcallinasynccontextma0045.md)
+  * **Do not use blocking calls in a sync method (need to make calling method async)**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.DoNotUseEqualityComparerDefaultOfStringMA0024](/recipes/csharp/recipes/meziantou/analyzer/donotuseequalitycomparerdefaultofstringma0024.md)
+  * **Use an explicit StringComparer when possible**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.DoNotUseEqualityOperatorsForSpanOfCharMA0103](/recipes/csharp/recipes/meziantou/analyzer/donotuseequalityoperatorsforspanofcharma0103.md)
+  * **Use SequenceEqual instead of equality operator**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.DoNotUseStringGetHashCodeMA0021](/recipes/csharp/recipes/meziantou/analyzer/donotusestringgethashcodema0021.md)
+  * **Use StringComparer.GetHashCode instead of string.GetHashCode**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.EqualityShouldBeCorrectlyImplementedMA0077](/recipes/csharp/recipes/meziantou/analyzer/equalityshouldbecorrectlyimplementedma0077.md)
+  * **A class that provides Equals(T) should implement IEquatable&lt;T&gt;**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.EventsShouldHaveProperArgumentsMA0091](/recipes/csharp/recipes/meziantou/analyzer/eventsshouldhaveproperargumentsma0091.md)
+  * **Sender should be 'this' for instance events**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.MakeClassStaticMA0036](/recipes/csharp/recipes/meziantou/analyzer/makeclassstaticma0036.md)
+  * **Make class static**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.MakeInterpolatedStringMA0165](/recipes/csharp/recipes/meziantou/analyzer/makeinterpolatedstringma0165.md)
+  * **Make interpolated string**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.MakeMemberReadOnlyMA0102](/recipes/csharp/recipes/meziantou/analyzer/makememberreadonlyma0102.md)
+  * **Make member readonly**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.MakeMethodStaticMA0038](/recipes/csharp/recipes/meziantou/analyzer/makemethodstaticma0038.md)
+  * **Make method static (deprecated, use CA1822 instead)**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.MakeMethodStaticMA0041](/recipes/csharp/recipes/meziantou/analyzer/makemethodstaticma0041.md)
+  * **Make property static (deprecated, use CA1822 instead)**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.MarkAttributesWithAttributeUsageAttributeMA0010](/recipes/csharp/recipes/meziantou/analyzer/markattributeswithattributeusageattributema0010.md)
+  * **Mark attributes with AttributeUsageAttribute**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.MethodOverridesShouldNotChangeParameterDefaultsMA0061](/recipes/csharp/recipes/meziantou/analyzer/methodoverridesshouldnotchangeparameterdefaultsma0061.md)
+  * **Method overrides should not change default values**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.NamedParameterMA0003](/recipes/csharp/recipes/meziantou/analyzer/namedparameterma0003.md)
+  * **Add parameter name to improve readability**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.NotPatternShouldBeParenthesizedCodeMA0164](/recipes/csharp/recipes/meziantou/analyzer/notpatternshouldbeparenthesizedcodema0164.md)
+  * **Use parentheses to make not pattern clearer**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0020](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0020.md)
+  * **Use direct methods instead of LINQ methods**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0029](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0029.md)
+  * **Combine LINQ methods**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0030](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0030.md)
+  * **Remove useless OrderBy call**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0031](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0031.md)
+  * **Optimize Enumerable.Count() usage**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0078](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0078.md)
+  * **Use 'Cast' instead of 'Select' to cast**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0098](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0098.md)
+  * **Use indexer instead of LINQ methods**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeLinqUsageMA0159](/recipes/csharp/recipes/meziantou/analyzer/optimizelinqusagema0159.md)
+  * **Use 'Order' instead of 'OrderBy'**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeStartsWithMA0089](/recipes/csharp/recipes/meziantou/analyzer/optimizestartswithma0089.md)
+  * **Optimize string method usage**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.OptimizeStringBuilderUsageMA0028](/recipes/csharp/recipes/meziantou/analyzer/optimizestringbuilderusagema0028.md)
+  * **Optimize StringBuilder usage**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.ParameterAttributeForRazorComponentMA0116](/recipes/csharp/recipes/meziantou/analyzer/parameterattributeforrazorcomponentma0116.md)
+  * **Parameters with [SupplyParameterFromQuery] attributes should also be marked as [Parameter]**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.ParameterAttributeForRazorComponentMA0117](/recipes/csharp/recipes/meziantou/analyzer/parameterattributeforrazorcomponentma0117.md)
+  * **Parameters with [EditorRequired] attributes should also be marked as [Parameter]**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.PreserveParamsOnOverrideMA0081](/recipes/csharp/recipes/meziantou/analyzer/preserveparamsonoverridema0081.md)
+  * **Method overrides should not omit params keyword**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.RemoveEmptyStatementMA0037](/recipes/csharp/recipes/meziantou/analyzer/removeemptystatementma0037.md)
+  * **Remove empty statement**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.RemoveUselessToStringMA0044](/recipes/csharp/recipes/meziantou/analyzer/removeuselesstostringma0044.md)
+  * **Remove useless ToString call**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.ReplaceEnumToStringWithNameofMA0052](/recipes/csharp/recipes/meziantou/analyzer/replaceenumtostringwithnameofma0052.md)
+  * **Replace constant Enum.ToString with nameof**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.ReturnTaskFromResultInsteadOfReturningNullMA0022](/recipes/csharp/recipes/meziantou/analyzer/returntaskfromresultinsteadofreturningnullma0022.md)
+  * **Return Task.FromResult instead of returning null**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.SimplifyCallerArgumentExpressionMA0108](/recipes/csharp/recipes/meziantou/analyzer/simplifycallerargumentexpressionma0108.md)
+  * **Remove redundant argument value**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.StringShouldNotContainsNonDeterministicEndOfLineMA0101](/recipes/csharp/recipes/meziantou/analyzer/stringshouldnotcontainsnondeterministicendoflinema0101.md)
+  * **String contains an implicit end of line character**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseAnOverloadThatHasCancellationTokenFixer_ArgumentMA0040](/recipes/csharp/recipes/meziantou/analyzer/useanoverloadthathascancellationtokenfixer_argumentma0040.md)
+  * **Forward the CancellationToken parameter to methods that take one**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseAnOverloadThatHasCancellationTokenFixer_AwaitForEachMA0079](/recipes/csharp/recipes/meziantou/analyzer/useanoverloadthathascancellationtokenfixer_awaitforeachma0079.md)
+  * **Forward the CancellationToken using .WithCancellation()**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseAnOverloadThatHasTimeProviderMA0166](/recipes/csharp/recipes/meziantou/analyzer/useanoverloadthathastimeproviderma0166.md)
+  * **Forward the TimeProvider to methods that take one**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseArrayEmptyMA0005](/recipes/csharp/recipes/meziantou/analyzer/usearrayemptyma0005.md)
+  * **Use Array.Empty&lt;T&gt;()**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseConfigureAwaitMA0004](/recipes/csharp/recipes/meziantou/analyzer/useconfigureawaitma0004.md)
+  * **Use Task.ConfigureAwait**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseDateTimeUnixEpochMA0113](/recipes/csharp/recipes/meziantou/analyzer/usedatetimeunixepochma0113.md)
+  * **Use DateTime.UnixEpoch**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseDateTimeUnixEpochMA0114](/recipes/csharp/recipes/meziantou/analyzer/usedatetimeunixepochma0114.md)
+  * **Use DateTimeOffset.UnixEpoch**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseEventArgsEmptyMA0019](/recipes/csharp/recipes/meziantou/analyzer/useeventargsemptyma0019.md)
+  * **Use EventArgs.Empty**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseEventArgsEmptyMA0093](/recipes/csharp/recipes/meziantou/analyzer/useeventargsemptyma0093.md)
+  * **EventArgs should not be null**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseGuidEmptyMA0067](/recipes/csharp/recipes/meziantou/analyzer/useguidemptyma0067.md)
+  * **Use Guid.Empty**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseIsPatternInsteadOfSequenceEqualMA0128](/recipes/csharp/recipes/meziantou/analyzer/useispatterninsteadofsequenceequalma0128.md)
+  * **Use 'is' operator instead of SequenceEqual**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseJSRuntimeInvokeVoidAsyncWhenReturnValueIsNotUsedMA0120](/recipes/csharp/recipes/meziantou/analyzer/usejsruntimeinvokevoidasyncwhenreturnvalueisnotusedma0120.md)
+  * **Use InvokeVoidAsync when the returned value is not used**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseLangwordInXmlCommentMA0154](/recipes/csharp/recipes/meziantou/analyzer/uselangwordinxmlcommentma0154.md)
+  * **Use langword in XML comment**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UsePatternMatchingForEqualityComparisonsMA0141](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0141.md)
+  * **Use pattern matching instead of inequality operators for null check**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UsePatternMatchingForEqualityComparisonsMA0142](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0142.md)
+  * **Use pattern matching instead of equality operators for null check**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UsePatternMatchingForEqualityComparisonsMA0148](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0148.md)
+  * **Use pattern matching instead of equality operators for discrete value**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UsePatternMatchingForEqualityComparisonsMA0149](/recipes/csharp/recipes/meziantou/analyzer/usepatternmatchingforequalitycomparisonsma0149.md)
+  * **Use pattern matching instead of inequality operators for discrete value**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseRegexSourceGeneratorMA0110](/recipes/csharp/recipes/meziantou/analyzer/useregexsourcegeneratorma0110.md)
+  * **Use the Regex source generator**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseStringComparerMA0002](/recipes/csharp/recipes/meziantou/analyzer/usestringcomparerma0002.md)
+  * **IEqualityComparer&lt;string&gt; or IComparer&lt;string&gt; is missing**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseStringComparisonMA0001](/recipes/csharp/recipes/meziantou/analyzer/usestringcomparisonma0001.md)
+  * **StringComparison is missing**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseStringComparisonMA0074](/recipes/csharp/recipes/meziantou/analyzer/usestringcomparisonma0074.md)
+  * **Avoid implicit culture-sensitive methods**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseStringCreateInsteadOfFormattableStringMA0111](/recipes/csharp/recipes/meziantou/analyzer/usestringcreateinsteadofformattablestringma0111.md)
+  * **Use string.Create instead of FormattableString**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseStringEqualsMA0006](/recipes/csharp/recipes/meziantou/analyzer/usestringequalsma0006.md)
+  * **Use String.Equals instead of equality operator**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.UseStructLayoutAttributeMA0008](/recipes/csharp/recipes/meziantou/analyzer/usestructlayoutattributema0008.md)
+  * **Add StructLayoutAttribute**
+  * 
+* [org.openrewrite.csharp.recipes.meziantou.analyzer.ValidateArgumentsCorrectlyMA0050](/recipes/csharp/recipes/meziantou/analyzer/validateargumentscorrectlyma0050.md)
+  * **Validate arguments correctly in iterator methods**
+  * 
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AbstractTypesShouldNotHaveConstructorsCA1012](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/abstracttypesshouldnothaveconstructorsca1012.md)
+  * **Abstract types should not have public constructors**
+  * Constructors on abstract types can be called only by derived types. Because public constructors create instances of a type, and you cannot create instances of an abstract type, an abstract type that has a public constructor is incorrectly designed.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AvoidConstArraysCA1861](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidconstarraysca1861.md)
+  * **Avoid constant arrays as arguments**
+  * Constant arrays passed as arguments are not reused when called repeatedly, which implies a new array is created each time. Consider extracting them to 'static readonly' fields to improve performance if the passed array is not mutated within the called method.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AvoidLengthCalculationWhenSlicingToEndCA1514](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidlengthcalculationwhenslicingtoendca1514.md)
+  * **Avoid redundant length argument**
+  * An explicit length calculation can be error-prone and can be avoided when slicing to end of the buffer.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AvoidUnreliableStreamReadCA2022](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidunreliablestreamreadca2022.md)
+  * **Avoid inexact read with 'Stream.Read'**
+  * A call to 'Stream.Read' may return fewer bytes than requested, resulting in unreliable code if the return value is not checked.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AvoidUnsealedAttributesCA1813](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidunsealedattributesca1813.md)
+  * **Avoid unsealed attributes**
+  * The .NET Framework class library provides methods for retrieving custom attributes. By default, these methods search the attribute inheritance hierarchy. Sealing the attribute eliminates the search through the inheritance hierarchy and can improve performance.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AvoidUnusedPrivateFieldsCA1823](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidunusedprivatefieldsca1823.md)
+  * **Avoid unused private fields**
+  * Private fields were detected that do not appear to be accessed in the assembly.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.AvoidZeroLengthArrayAllocationsCA1825](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/avoidzerolengtharrayallocationsca1825.md)
+  * **Avoid zero-length array allocations**
+  * 
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpAvoidDuplicateElementInitializationCA2244](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpavoidduplicateelementinitializationca2244.md)
+  * **Do not duplicate indexed element initializations**
+  * Indexed elements in objects initializers must initialize unique elements. A duplicate index might overwrite a previous element initialization.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDisableRuntimeMarshallingCA1421](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdisableruntimemarshallingca1421.md)
+  * **This method uses runtime marshalling even when the 'DisableRuntimeMarshallingAttribute' is applied**
+  * This method uses runtime marshalling even when runtime marshalling is disabled, which can cause unexpected behavior differences at runtime due to different expectations of a type's native layout.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDisposeMethodsShouldCallBaseClassDisposeCA2215](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdisposemethodsshouldcallbaseclassdisposeca2215.md)
+  * **Dispose methods should call base class dispose**
+  * A type that implements System.IDisposable inherits from a type that also implements IDisposable. The Dispose method of the inheriting type does not call the Dispose method of the parent type. To fix a violation of this rule, call base.Dispose in your Dispose method.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotCompareSpanToNullCA2265](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotcomparespantonullca2265.md)
+  * **Do not compare Span&lt;T&gt; to 'null' or 'default'**
+  * Comparing a span to 'null' or 'default' might not do what you intended. 'default' and the 'null' literal are implicitly converted to 'Span&lt;T&gt;.Empty'. Remove the redundant comparison or make the code more explicit by using 'IsEmpty'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotGuardCallCA1853](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotguardcallca1853.md)
+  * **Unnecessary call to 'Dictionary.ContainsKey(key)'**
+  * Do not guard 'Dictionary.Remove(key)' with 'Dictionary.ContainsKey(key)'. The former already checks whether the key exists, and will not throw if it does not.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotGuardCallCA1868](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotguardcallca1868.md)
+  * **Unnecessary call to 'Contains(item)'**
+  * Do not guard 'Add(item)' or 'Remove(item)' with 'Contains(item)' for the set. The former two already check whether the item exists and will return if it was added or removed.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotInitializeUnnecessarilyCA1805](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotinitializeunnecessarilyca1805.md)
+  * **Do not initialize unnecessarily**
+  * The .NET runtime initializes all fields of reference types to their default values before running the constructor. In most cases, explicitly initializing a field to its default value in a constructor is redundant, adding maintenance costs and potentially degrading performance (such as with increased assembly size), and the explicit initialization can be removed.  In some cases, such as with static readonly fields that permanently retain their default value, consider instead changing them to be constants or properties.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotPassNonNullableValueToArgumentNullExceptionThrowIfNullCA1871](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotpassnonnullablevaluetoargumentnullexceptionthrowifnullca1871.md)
+  * **Do not pass a nullable struct to 'ArgumentNullException.ThrowIfNull'**
+  * 'ArgumentNullException.ThrowIfNull' accepts an 'object', so passing a nullable struct may cause the value to be boxed.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotPassNonNullableValueToArgumentNullExceptionThrowIfNullCA2264](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotpassnonnullablevaluetoargumentnullexceptionthrowifnullca2264.md)
+  * **Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'**
+  * 'ArgumentNullException.ThrowIfNull' throws when the passed argument is 'null'. Certain constructs like non-nullable structs, 'nameof()' and 'new' expressions are known to never be null, so 'ArgumentNullException.ThrowIfNull' will never throw.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotUseCountWhenAnyCanBeUsedCA1827](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotusecountwhenanycanbeusedca1827.md)
+  * **Do not use Count() or LongCount() when Any() can be used**
+  * For non-empty collections, Count() and LongCount() enumerate the entire sequence, while Any() stops at the first item or the first item that satisfies a condition.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotUseCountWhenAnyCanBeUsedCA1828](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotusecountwhenanycanbeusedca1828.md)
+  * **Do not use CountAsync() or LongCountAsync() when AnyAsync() can be used**
+  * For non-empty collections, CountAsync() and LongCountAsync() enumerate the entire sequence, while AnyAsync() stops at the first item or the first item that satisfies a condition.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDoNotUseEnumerableMethodsOnIndexableCollectionsInsteadUseTheCollectionDirectlyCA1826](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdonotuseenumerablemethodsonindexablecollectionsinsteadusethecollectiondirectlyca1826.md)
+  * **Do not use Enumerable methods on indexable collections**
+  * This collection is directly indexable. Going through LINQ here causes unnecessary allocations and CPU work.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDynamicInterfaceCastableImplementationCA2256](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdynamicinterfacecastableimplementationca2256.md)
+  * **All members declared in parent interfaces must have an implementation in a DynamicInterfaceCastableImplementation-attributed interface**
+  * Types attributed with 'DynamicInterfaceCastableImplementationAttribute' act as an interface implementation for a type that implements the 'IDynamicInterfaceCastable' type. As a result, it must provide an implementation of all of the members defined in the inherited interfaces, because the type that implements 'IDynamicInterfaceCastable' will not provide them otherwise.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpDynamicInterfaceCastableImplementationCA2257](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpdynamicinterfacecastableimplementationca2257.md)
+  * **Members defined on an interface with the 'DynamicInterfaceCastableImplementationAttribute' should be 'static'**
+  * Since a type that implements 'IDynamicInterfaceCastable' may not implement a dynamic interface in metadata, calls to an instance interface member that is not an explicit implementation defined on this type are likely to fail at runtime. Mark new interface members 'static' to avoid runtime errors.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpEnumStorageShouldBeInt32CA1028](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpenumstorageshouldbeint32ca1028.md)
+  * **Enum Storage should be Int32**
+  * An enumeration is a value type that defines a set of related named constants. By default, the System.Int32 data type is used to store the constant value. Although you can change this underlying type, it is not required or recommended for most scenarios.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpEnumsShouldHaveZeroValueCA1008](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpenumsshouldhavezerovalueca1008.md)
+  * **Enums should have zero value**
+  * The default value of an uninitialized enumeration, just as other value types, is zero. A nonflags-attributed enumeration should define a member by using the value of zero so that the default value is a valid value of the enumeration. If an enumeration that has the FlagsAttribute attribute applied defines a zero-valued member, its name should be &quot;&quot;None&quot;&quot; to indicate that no values have been set in the enumeration.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpForwardCancellationTokenToInvocationsCA2016](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpforwardcancellationtokentoinvocationsca2016.md)
+  * **Forward the 'CancellationToken' parameter to methods**
+  * Forward the 'CancellationToken' parameter to methods to ensure the operation cancellation notifications gets properly propagated, or pass in 'CancellationToken.None' explicitly to indicate intentionally not propagating the token.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpIdentifiersShouldNotContainUnderscoresCA1707](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpidentifiersshouldnotcontainunderscoresca1707.md)
+  * **Identifiers should not contain underscores**
+  * By convention, identifier names do not contain the underscore (_) character. This rule checks namespaces, types, members, and parameters.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpMakeTypesInternalCA1515](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpmaketypesinternalca1515.md)
+  * **Consider making public types internal**
+  * Unlike a class library, an application's API isn't typically referenced publicly, so types can be marked internal.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpMarkAllNonSerializableFieldsCA2235](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpmarkallnonserializablefieldsca2235.md)
+  * **Mark all non-serializable fields**
+  * An instance field of a type that is not serializable is declared in a type that is serializable.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpMarkMembersAsStaticCA1822](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpmarkmembersasstaticca1822.md)
+  * **Mark members as static**
+  * Members that do not access instance data or call instance methods can be marked as static. After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpOverrideEqualsAndOperatorEqualsOnValueTypesCA1815](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpoverrideequalsandoperatorequalsonvaluetypesca1815.md)
+  * **Override equals and operator equals on value types**
+  * For value types, the inherited implementation of Equals uses the Reflection library and compares the contents of all fields. Reflection is computationally expensive, and comparing every field for equality might be unnecessary. If you expect users to compare or sort instances, or to use instances as hash table keys, your value type should implement Equals.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferAsSpanOverSubstringCA1846](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferasspanoversubstringca1846.md)
+  * **Prefer 'AsSpan' over 'Substring'**
+  * 'AsSpan' is more efficient than 'Substring'. 'Substring' performs an O(n) string copy, while 'AsSpan' does not and has a constant cost.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferDictionaryContainsMethodsCA1841](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferdictionarycontainsmethodsca1841.md)
+  * **Prefer Dictionary.Contains methods**
+  * 'ContainsKey' is usually O(1), while 'Keys.Contains' may be O(n) in some cases. Additionally, many dictionary implementations lazily initialize the Keys collection to cut back on allocations.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1854](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferdictionarytrymethodsovercontainskeyguardca1854.md)
+  * **Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method**
+  * Prefer a 'TryGetValue' call over a Dictionary indexer access guarded by a 'ContainsKey' check. 'ContainsKey' and the indexer both would lookup the key under the hood, so using 'TryGetValue' removes the extra lookup.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1864](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferdictionarytrymethodsovercontainskeyguardca1864.md)
+  * **Prefer the 'IDictionary.TryAdd(TKey, TValue)' method**
+  * Prefer a 'TryAdd' call over an 'Add' call guarded by a 'ContainsKey' check. 'TryAdd' behaves the same as 'Add', except that when the specified key already exists, it returns 'false' instead of throwing an exception.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferGenericOverloadsCA2263](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpprefergenericoverloadsca2263.md)
+  * **Prefer generic overload when type is known**
+  * Using a generic overload is preferable to the 'System.Type' overload when the type is known, promoting cleaner and more type-safe code with improved compile-time checks.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferHashDataOverComputeHashCA1850](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferhashdataovercomputehashca1850.md)
+  * **Prefer static 'HashData' method over 'ComputeHash'**
+  * It is more efficient to use the static 'HashData' method over creating and managing a HashAlgorithm instance to call 'ComputeHash'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferIsEmptyOverCountCA1836](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferisemptyovercountca1836.md)
+  * **Prefer IsEmpty over Count**
+  * For determining whether the object contains or not any items, prefer using 'IsEmpty' property rather than retrieving the number of items from the 'Count' property and comparing it to 0 or 1.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferLengthCountIsEmptyOverAnyCA1860](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferlengthcountisemptyoveranyca1860.md)
+  * **Avoid using 'Enumerable.Any()' extension method**
+  * Prefer using 'IsEmpty', 'Count' or 'Length' properties whichever available, rather than calling 'Enumerable.Any()'. The intent is clearer and it is more performant than using 'Enumerable.Any()' extension method.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpPreferStreamAsyncMemoryOverloadsCA1835](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharppreferstreamasyncmemoryoverloadsca1835.md)
+  * **Prefer the 'Memory'-based overloads for 'ReadAsync' and 'WriteAsync'**
+  * 'Stream' has a 'ReadAsync' overload that takes a 'Memory&lt;Byte&gt;' as the first argument, and a 'WriteAsync' overload that takes a 'ReadOnlyMemory&lt;Byte&gt;' as the first argument. Prefer calling the memory based overloads, which are more efficient.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpRecommendCaseInsensitiveStringComparisonCA1862](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharprecommendcaseinsensitivestringcomparisonca1862.md)
+  * **Use the 'StringComparison' method overloads to perform case-insensitive string comparisons**
+  * Avoid calling 'ToLower', 'ToUpper', 'ToLowerInvariant' and 'ToUpperInvariant' to perform case-insensitive string comparisons because they lead to an allocation. Instead, prefer calling the method overloads of 'Contains', 'IndexOf' and 'StartsWith' that take a 'StringComparison' enum value to perform case-insensitive comparisons. Switching to using an overload that takes a 'StringComparison' might cause subtle changes in behavior, so it's important to conduct thorough testing after applying the suggestion. Additionally, if a culturally sensitive comparison is not required, consider using 'StringComparison.OrdinalIgnoreCase'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpSpecifyCultureForToLowerAndToUpperCA1311](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpspecifyculturefortolowerandtoupperca1311.md)
+  * **Specify a culture or use an invariant version**
+  * Specify culture to help avoid accidental implicit dependency on current culture. Using an invariant version yields consistent results regardless of the culture of an application.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpSpecifyMarshalingForPInvokeStringArgumentsCA2101](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpspecifymarshalingforpinvokestringargumentsca2101.md)
+  * **Specify marshaling for P/Invoke string arguments**
+  * A platform invoke member allows partially trusted callers, has a string parameter, and does not explicitly marshal the string. This can cause a potential security vulnerability.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpStaticHolderTypesCA1052](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpstaticholdertypesca1052.md)
+  * **Static holder types should be Static or NotInheritable**
+  * 
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpTestForEmptyStringsUsingStringLengthCA1820](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharptestforemptystringsusingstringlengthca1820.md)
+  * **Test for empty strings using string length**
+  * Comparing strings by using the String.Length property or the String.IsNullOrEmpty method is significantly faster than using Equals.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpTestForNaNCorrectlyCA2242](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharptestfornancorrectlyca2242.md)
+  * **Test for NaN correctly**
+  * This expression tests a value against Single.Nan or Double.Nan. Use Single.IsNan(Single) or Double.IsNan(Double) to test the value.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseAsSpanInsteadOfRangeIndexerCA1831](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseasspaninsteadofrangeindexerca1831.md)
+  * **Use AsSpan or AsMemory instead of Range-based indexers when appropriate**
+  * The Range-based indexer on string values produces a copy of requested portion of the string. This copy is usually unnecessary when it is implicitly used as a ReadOnlySpan or ReadOnlyMemory value. Use the AsSpan method to avoid the unnecessary copy.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseAsSpanInsteadOfRangeIndexerCA1832](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseasspaninsteadofrangeindexerca1832.md)
+  * **Use AsSpan or AsMemory instead of Range-based indexers when appropriate**
+  * The Range-based indexer on array values produces a copy of requested portion of the array. This copy is usually unnecessary when it is implicitly used as a ReadOnlySpan or ReadOnlyMemory value. Use the AsSpan method to avoid the unnecessary copy.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseAsSpanInsteadOfRangeIndexerCA1833](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseasspaninsteadofrangeindexerca1833.md)
+  * **Use AsSpan or AsMemory instead of Range-based indexers when appropriate**
+  * The Range-based indexer on array values produces a copy of requested portion of the array. This copy is often unwanted when it is implicitly used as a Span or Memory value. Use the AsSpan method to avoid the copy.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseLiteralsWhereAppropriateCA1802](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseliteralswhereappropriateca1802.md)
+  * **Use literals where appropriate**
+  * A field is declared static and read-only (Shared and ReadOnly in Visual Basic), and is initialized by using a value that is computable at compile time. Because the value that is assigned to the targeted field is computable at compile time, change the declaration to a const (Const in Visual Basic) field so that the value is computed at compile time instead of at runtime.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseOrdinalStringComparisonCA1309](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpuseordinalstringcomparisonca1309.md)
+  * **Use ordinal string comparison**
+  * A string comparison operation that is nonlinguistic does not set the StringComparison parameter to either Ordinal or OrdinalIgnoreCase. By explicitly setting the parameter to either StringComparison.Ordinal or StringComparison.OrdinalIgnoreCase, your code often gains speed, becomes more correct, and becomes more reliable.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUsePropertyInsteadOfCountMethodWhenAvailableCA1829](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusepropertyinsteadofcountmethodwhenavailableca1829.md)
+  * **Use Length/Count property instead of Count() when available**
+  * Enumerable.Count() potentially enumerates the sequence while a Length/Count property is a direct access.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseSearchValuesCA1870](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusesearchvaluesca1870.md)
+  * **Use a cached 'SearchValues' instance**
+  * Using a cached 'SearchValues' instance is more efficient than passing values to 'IndexOfAny'/'ContainsAny' directly.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseSpanBasedStringConcatCA1845](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusespanbasedstringconcatca1845.md)
+  * **Use span-based 'string.Concat'**
+  * It is more efficient to use 'AsSpan' and 'string.Concat', instead of 'Substring' and a concatenation operator.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseSpanClearInsteadOfFillCA1855](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusespanclearinsteadoffillca1855.md)
+  * **Prefer 'Clear' over 'Fill'**
+  * It is more efficient to use 'Clear', instead of 'Fill' with default value.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseStartsWithInsteadOfIndexOfComparisonWithZeroCodeFixCA1858](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusestartswithinsteadofindexofcomparisonwithzerocodefixca1858.md)
+  * **Use 'StartsWith' instead of 'IndexOf'**
+  * It is both clearer and faster to use 'StartsWith' instead of comparing the result of 'IndexOf' to zero.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseStringContainsCharOverloadWithSingleCharactersCA1847](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusestringcontainscharoverloadwithsinglecharactersca1847.md)
+  * **Use char literal for a single character lookup**
+  * 'string.Contains(char)' is available as a better performing overload for single char lookup.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.CSharpUseStringMethodCharOverloadWithSingleCharactersCA1865](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/csharpusestringmethodcharoverloadwithsinglecharactersca1865.md)
+  * **Use char overload**
+  * The char overload is a better performing overload than a string with a single char.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DefineAccessorsForAttributeArgumentsCA1019](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/defineaccessorsforattributeargumentsca1019.md)
+  * **Define accessors for attribute arguments**
+  * 
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DoNotCallToImmutableCollectionOnAnImmutableCollectionValueCA2009](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotcalltoimmutablecollectiononanimmutablecollectionvalueca2009.md)
+  * **Do not call ToImmutableCollection on an ImmutableCollection value**
+  * 
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DoNotCreateTaskCompletionSourceWithWrongArgumentsCA2247](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotcreatetaskcompletionsourcewithwrongargumentsca2247.md)
+  * **Argument passed to TaskCompletionSource constructor should be TaskCreationOptions enum instead of TaskContinuationOptions enum**
+  * TaskCompletionSource has constructors that take TaskCreationOptions that control the underlying Task, and constructors that take object state that's stored in the task.  Accidentally passing a TaskContinuationOptions instead of a TaskCreationOptions will result in the call treating the options as state.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DoNotDirectlyAwaitATaskCA2007](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotdirectlyawaitataskca2007.md)
+  * **Consider calling ConfigureAwait on the awaited task**
+  * When an asynchronous method awaits a Task directly, continuation occurs in the same thread that created the task. Consider calling Task.ConfigureAwait(Boolean) to signal your intention for continuation. Call ConfigureAwait(false) on the task to schedule continuations to the thread pool, thereby avoiding a deadlock on the UI thread. Passing false is a good option for app-independent libraries. Calling ConfigureAwait(true) on the task has the same behavior as not explicitly calling ConfigureAwait. By explicitly calling this method, you're letting readers know you intentionally want to perform the continuation on the original synchronization context.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DoNotUseWhenAllOrWaitAllWithSingleArgumentCA1842](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotusewhenallorwaitallwithsingleargumentca1842.md)
+  * **Do not use 'WhenAll' with a single task**
+  * Using 'WhenAll' with a single task may result in performance loss, await or return the task instead.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.DoNotUseWhenAllOrWaitAllWithSingleArgumentCA1843](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/donotusewhenallorwaitallwithsingleargumentca1843.md)
+  * **Do not use 'WaitAll' with a single task**
+  * Using 'WaitAll' with a single task may result in performance loss, await or return the task instead.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.EnumWithFlagsAttributeCA1027](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/enumwithflagsattributeca1027.md)
+  * **Mark enums with FlagsAttribute**
+  * An enumeration is a value type that defines a set of related named constants. Apply FlagsAttribute to an enumeration when its named constants can be meaningfully combined.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.EnumWithFlagsAttributeCA2217](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/enumwithflagsattributeca2217.md)
+  * **Do not mark enums with FlagsAttribute**
+  * An externally visible enumeration is marked by using FlagsAttribute, and it has one or more values that are not powers of two or a combination of the other defined values on the enumeration.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.EquatableCA1066](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/equatableca1066.md)
+  * **Implement IEquatable when overriding Object.Equals**
+  * When a type T overrides Object.Equals(object), the implementation must cast the object argument to the correct type T before performing the comparison. If the type implements IEquatable&lt;T&gt;, and therefore offers the method T.Equals(T), and if the argument is known at compile time to be of type T, then the compiler can call IEquatable&lt;T&gt;.Equals(T) instead of Object.Equals(object), and no cast is necessary, improving performance.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.EquatableCA1067](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/equatableca1067.md)
+  * **Override Object.Equals(object) when implementing IEquatable&lt;T&gt;**
+  * When a type T implements the interface IEquatable&lt;T&gt;, it suggests to a user who sees a call to the Equals method in source code that an instance of the type can be equated with an instance of any other type. The user might be confused if their attempt to equate the type with an instance of another type fails to compile. This violates the &quot;principle of least surprise&quot;.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.ExceptionsShouldBePublicCA1064](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/exceptionsshouldbepublicca1064.md)
+  * **Exceptions should be public**
+  * An internal exception is visible only inside its own internal scope. After the exception falls outside the internal scope, only the base exception can be used to catch the exception. If the internal exception is inherited from T:System.Exception, T:System.SystemException, or T:System.ApplicationException, the external code will not have sufficient information to know what to do with the exception.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.ImplementStandardExceptionConstructorsCA1032](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/implementstandardexceptionconstructorsca1032.md)
+  * **Implement standard exception constructors**
+  * Failure to provide the full set of constructors can make it difficult to correctly handle exceptions.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.InstantiateArgumentExceptionsCorrectlyCA2208](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/instantiateargumentexceptionscorrectlyca2208.md)
+  * **Instantiate argument exceptions correctly**
+  * A call is made to the default (parameterless) constructor of an exception type that is or derives from ArgumentException, or an incorrect string argument is passed to a parameterized constructor of an exception type that is or derives from ArgumentException.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.InterfaceMethodsShouldBeCallableByChildTypesCA1033](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/interfacemethodsshouldbecallablebychildtypesca1033.md)
+  * **Interface methods should be callable by child types**
+  * An unsealed externally visible type provides an explicit method implementation of a public interface and does not provide an alternative externally visible method that has the same name.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.MarkAttributesWithAttributeUsageCA1018](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/markattributeswithattributeusageca1018.md)
+  * **Mark attributes with AttributeUsageAttribute**
+  * 
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.MarkTypesWithSerializableCA2237](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/marktypeswithserializableca2237.md)
+  * **Mark ISerializable types with serializable**
+  * To be recognized by the common language runtime as serializable, types must be marked by using the SerializableAttribute attribute even when the type uses a custom serialization routine through implementation of the ISerializable interface.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.OperatorOverloadsHaveNamedAlternatesCA2225](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/operatoroverloadshavenamedalternatesca2225.md)
+  * **Operator overloads have named alternates**
+  * An operator overload was detected, and the expected named alternative method was not found. The named alternative member provides access to the same functionality as the operator and is provided for developers who program in languages that do not support overloaded operators.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.OperatorsShouldHaveSymmetricalOverloadsCA2226](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/operatorsshouldhavesymmetricaloverloadsca2226.md)
+  * **Operators should have symmetrical overloads**
+  * A type implements the equality or inequality operator and does not implement the opposite operator.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.OverloadOperatorEqualsOnOverridingValueTypeEqualsCA2231](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/overloadoperatorequalsonoverridingvaluetypeequalsca2231.md)
+  * **Overload operator equals on overriding value type Equals**
+  * In most programming languages there is no default implementation of the equality operator (==) for value types. If your programming language supports operator overloads, you should consider implementing the equality operator. Its behavior should be identical to that of Equals.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.OverrideMethodsOnComparableTypesCA1036](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/overridemethodsoncomparabletypesca1036.md)
+  * **Override methods on comparable types**
+  * A public or protected type implements the System.IComparable interface. It does not override Object.Equals nor does it overload the language-specific operator for equality, inequality, less than, less than or equal, greater than or greater than or equal.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.ParameterNamesShouldMatchBaseDeclarationCA1725](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/parameternamesshouldmatchbasedeclarationca1725.md)
+  * **Parameter names should match base declaration**
+  * Consistent naming of parameters in an override hierarchy increases the usability of the method overrides. A parameter name in a derived method that differs from the name in the base declaration can cause confusion about whether the method is an override of the base method or a new overload of the method.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.PreferConstCharOverConstUnitStringCA1834](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/preferconstcharoverconstunitstringca1834.md)
+  * **Consider using 'StringBuilder.Append(char)' when applicable**
+  * 'StringBuilder.Append(char)' is more efficient than 'StringBuilder.Append(string)' when the string is a single character. When calling 'Append' with a constant, prefer using a constant char rather than a constant string containing one character.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.PreferConvertToHexStringOverBitConverterCA1872](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/preferconverttohexstringoverbitconverterca1872.md)
+  * **Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over call chains based on 'BitConverter.ToString'**
+  * Use 'Convert.ToHexString' or 'Convert.ToHexStringLower' when encoding bytes to a hexadecimal string representation. These methods are more efficient and allocation-friendly than using 'BitConverter.ToString' in combination with 'String.Replace' to replace dashes and 'String.ToLower'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.PreferStringContainsOverIndexOfCA2249](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/preferstringcontainsoverindexofca2249.md)
+  * **Consider using 'string.Contains' instead of 'string.IndexOf'**
+  * Calls to 'string.IndexOf' where the result is used to check for the presence/absence of a substring can be replaced by 'string.Contains'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.PreferTypedStringBuilderAppendOverloadsCA1830](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/prefertypedstringbuilderappendoverloadsca1830.md)
+  * **Prefer strongly-typed Append and Insert method overloads on StringBuilder**
+  * StringBuilder.Append and StringBuilder.Insert provide overloads for multiple types beyond System.String.  When possible, prefer the strongly-typed overloads over using ToString() and the string-based overload.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.ProvidePublicParameterlessSafeHandleConstructorCA1419](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/providepublicparameterlesssafehandleconstructorca1419.md)
+  * **Provide a parameterless constructor that is as visible as the containing type for concrete types derived from 'System.Runtime.InteropServices.SafeHandle'**
+  * Providing a parameterless constructor that is as visible as the containing type for a type derived from 'System.Runtime.InteropServices.SafeHandle' enables better performance and usage with source-generated interop solutions.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.RemoveEmptyFinalizersCA1821](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/removeemptyfinalizersca1821.md)
+  * **Remove empty Finalizers**
+  * Finalizers should be avoided where possible, to avoid the additional performance overhead involved in tracking object lifetime.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.RethrowToPreserveStackDetailsCA2200](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/rethrowtopreservestackdetailsca2200.md)
+  * **Rethrow to preserve stack details**
+  * 
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.SealInternalTypesCA1852](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/sealinternaltypesca1852.md)
+  * **Seal internal types**
+  * When a type is not accessible outside its assembly and has no subtypes within its containing assembly, it can be safely sealed. Sealing types can improve performance.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.SealMethodsThatSatisfyPrivateInterfacesCA2119](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/sealmethodsthatsatisfyprivateinterfacesca2119.md)
+  * **Seal methods that satisfy private interfaces**
+  * An inheritable public type provides an overridable method implementation of an internal (Friend in Visual Basic) interface. To fix a violation of this rule, prevent the method from being overridden outside the assembly.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.TypesThatOwnDisposableFieldsShouldBeDisposableCA1001](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/typesthatowndisposablefieldsshouldbedisposableca1001.md)
+  * **Types that own disposable fields should be disposable**
+  * A class declares and implements an instance field that is a System.IDisposable type, and the class does not implement IDisposable. A class that declares an IDisposable field indirectly owns an unmanaged resource and should implement the IDisposable interface.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UriParametersShouldNotBeStringsCA1054](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/uriparametersshouldnotbestringsca1054.md)
+  * **URI-like parameters should not be strings**
+  * This rule assumes that the parameter represents a Uniform Resource Identifier (URI). A string representation or a URI is prone to parsing and encoding errors, and can lead to security vulnerabilities. 'System.Uri' class provides these services in a safe and secure manner.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseCancellationTokenThrowIfCancellationRequestedCA2250](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/usecancellationtokenthrowifcancellationrequestedca2250.md)
+  * **Use 'ThrowIfCancellationRequested'**
+  * 'ThrowIfCancellationRequested' automatically checks whether the token has been canceled, and throws an 'OperationCanceledException' if it has.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseEnvironmentMembersCA1837](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useenvironmentmembersca1837.md)
+  * **Use 'Environment.ProcessId'**
+  * 'Environment.ProcessId' is simpler and faster than 'Process.GetCurrentProcess().Id'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseEnvironmentMembersCA1839](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useenvironmentmembersca1839.md)
+  * **Use 'Environment.ProcessPath'**
+  * 'Environment.ProcessPath' is simpler and faster than 'Process.GetCurrentProcess().MainModule.FileName'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseEnvironmentMembersCA1840](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useenvironmentmembersca1840.md)
+  * **Use 'Environment.CurrentManagedThreadId'**
+  * 'Environment.CurrentManagedThreadId' is simpler and faster than 'Thread.CurrentThread.ManagedThreadId'.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseExceptionThrowHelpersCA1510](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1510.md)
+  * **Use ArgumentNullException throw helper**
+  * Throw helpers are simpler and more efficient than an if block constructing a new exception instance.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseExceptionThrowHelpersCA1511](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1511.md)
+  * **Use ArgumentException throw helper**
+  * Throw helpers are simpler and more efficient than an if block constructing a new exception instance.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseExceptionThrowHelpersCA1512](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1512.md)
+  * **Use ArgumentOutOfRangeException throw helper**
+  * Throw helpers are simpler and more efficient than an if block constructing a new exception instance.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseExceptionThrowHelpersCA1513](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/useexceptionthrowhelpersca1513.md)
+  * **Use ObjectDisposedException throw helper**
+  * Throw helpers are simpler and more efficient than an if block constructing a new exception instance.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseNameOfInPlaceOfStringCA1507](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/usenameofinplaceofstringca1507.md)
+  * **Use nameof to express symbol names**
+  * Using nameof helps keep your code valid when refactoring.
+* [org.openrewrite.csharp.recipes.microsoft.codeanalysis.netanalyzers.UseStringEqualsOverStringCompareCA2251](/recipes/csharp/recipes/microsoft/codeanalysis/netanalyzers/usestringequalsoverstringcompareca2251.md)
+  * **Use 'string.Equals'**
+  * It is both clearer and likely faster to use 'string.Equals' instead of comparing the result of 'string.Compare' to zero.
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddBracesRCS1001](/recipes/csharp/recipes/roslynator/analyzers/addbracesrcs1001.md)
+  * **Add braces (when expression spans over multiple lines)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddBracesRCS1007](/recipes/csharp/recipes/roslynator/analyzers/addbracesrcs1007.md)
+  * **Add braces**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddBracesRCS1126](/recipes/csharp/recipes/roslynator/analyzers/addbracesrcs1126.md)
+  * **Add braces to if-else**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddBracesToIfElseRCS1003](/recipes/csharp/recipes/roslynator/analyzers/addbracestoifelsercs1003.md)
+  * **Add braces to if-else (when expression spans over multiple lines)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddExceptionToDocumentationCommentRCS1140](/recipes/csharp/recipes/roslynator/analyzers/addexceptiontodocumentationcommentrcs1140.md)
+  * **Add exception to documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddOrRemoveParenthesesWhenCreatingNewObjectRCS1050](/recipes/csharp/recipes/roslynator/analyzers/addorremoveparentheseswhencreatingnewobjectrcs1050.md)
+  * **Include/omit parentheses when creating new object**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddOrRemoveTrailingCommaRCS1260](/recipes/csharp/recipes/roslynator/analyzers/addorremovetrailingcommarcs1260.md)
+  * **Add/remove trailing comma**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddParagraphToDocumentationCommentRCS1226](/recipes/csharp/recipes/roslynator/analyzers/addparagraphtodocumentationcommentrcs1226.md)
+  * **Add paragraph to documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AddParenthesesWhenNecessaryRCS1123](/recipes/csharp/recipes/roslynator/analyzers/addparentheseswhennecessaryrcs1123.md)
+  * **Add parentheses when necessary**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AnonymousMethodRCS1048](/recipes/csharp/recipes/roslynator/analyzers/anonymousmethodrcs1048.md)
+  * **Use lambda expression instead of anonymous method**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AssignmentExpressionRCS1089](/recipes/csharp/recipes/roslynator/analyzers/assignmentexpressionrcs1089.md)
+  * **Use --/++ operator instead of assignment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AssignmentExpressionRCS1114](/recipes/csharp/recipes/roslynator/analyzers/assignmentexpressionrcs1114.md)
+  * **Remove redundant delegate creation**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AttributeArgumentListRCS1039](/recipes/csharp/recipes/roslynator/analyzers/attributeargumentlistrcs1039.md)
+  * **Remove argument list from attribute**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AvoidBoxingOfValueTypeRCS1198](/recipes/csharp/recipes/roslynator/analyzers/avoidboxingofvaluetypercs1198.md)
+  * **Avoid unnecessary boxing of value type**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AvoidNullReferenceExceptionRCS1202](/recipes/csharp/recipes/roslynator/analyzers/avoidnullreferenceexceptionrcs1202.md)
+  * **Avoid NullReferenceException**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.AwaitExpressionRCS1090](/recipes/csharp/recipes/roslynator/analyzers/awaitexpressionrcs1090.md)
+  * **Add/remove 'ConfigureAwait(false)' call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BaseArgumentListRCS1205](/recipes/csharp/recipes/roslynator/analyzers/baseargumentlistrcs1205.md)
+  * **Order named arguments according to the order of parameters**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BaseTypeRCS1182](/recipes/csharp/recipes/roslynator/analyzers/basetypercs1182.md)
+  * **Remove redundant base interface**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1098](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1098.md)
+  * **Constant values should be placed on right side of comparisons**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1113](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1113.md)
+  * **Use 'string.IsNullOrEmpty' method**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1143](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1143.md)
+  * **Simplify coalesce expression**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1145](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1145.md)
+  * **Remove redundant 'as' operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1156](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1156.md)
+  * **Use string.Length instead of comparison with empty string**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1165](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1165.md)
+  * **Unconstrained type parameter checked for null**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1166](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1166.md)
+  * **Value type object is never equal to null**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1190](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1190.md)
+  * **Join string expressions**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1195](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1195.md)
+  * **Use ^ operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1199](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1199.md)
+  * **Unnecessary null check**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1233](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1233.md)
+  * **Use short-circuiting operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1240](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1240.md)
+  * **Operator is unnecessary**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BinaryExpressionRCS1268](/recipes/csharp/recipes/roslynator/analyzers/binaryexpressionrcs1268.md)
+  * **Simplify numeric comparison**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BlockRCS1031](/recipes/csharp/recipes/roslynator/analyzers/blockrcs1031.md)
+  * **Remove unnecessary braces in switch section**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.BlockRCS1171](/recipes/csharp/recipes/roslynator/analyzers/blockrcs1171.md)
+  * **Simplify lazy initialization**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.CaseSwitchLabelRCS1069](/recipes/csharp/recipes/roslynator/analyzers/caseswitchlabelrcs1069.md)
+  * **Remove unnecessary case label**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.CastExpressionRCS1257](/recipes/csharp/recipes/roslynator/analyzers/castexpressionrcs1257.md)
+  * **Use enum field explicitly**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ClassDeclarationRCS1102](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1102.md)
+  * **Make class static**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ClassDeclarationRCS1108](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1108.md)
+  * **Add 'static' modifier to all partial class declarations**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ClassDeclarationRCS1194](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1194.md)
+  * **Implement exception constructors**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ClassDeclarationRCS1203](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1203.md)
+  * **Use AttributeUsageAttribute**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ClassDeclarationRCS1225](/recipes/csharp/recipes/roslynator/analyzers/classdeclarationrcs1225.md)
+  * **Make class sealed**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.CompositeEnumValueContainsUndefinedFlagRCS1157](/recipes/csharp/recipes/roslynator/analyzers/compositeenumvaluecontainsundefinedflagrcs1157.md)
+  * **Composite enum value contains undefined flag**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConditionalExpressionRCS1084](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1084.md)
+  * **Use coalesce expression instead of conditional expression**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConditionalExpressionRCS1104](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1104.md)
+  * **Simplify conditional expression**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConditionalExpressionRCS1206](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1206.md)
+  * **Use conditional access instead of conditional expression**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConditionalExpressionRCS1238](/recipes/csharp/recipes/roslynator/analyzers/conditionalexpressionrcs1238.md)
+  * **Avoid nested ?: operators**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConstructorDeclarationRCS1071](/recipes/csharp/recipes/roslynator/analyzers/constructordeclarationrcs1071.md)
+  * **Remove redundant base constructor call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConstructorDeclarationRCS1074](/recipes/csharp/recipes/roslynator/analyzers/constructordeclarationrcs1074.md)
+  * **Remove redundant constructor**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConstructorDeclarationRCS1160](/recipes/csharp/recipes/roslynator/analyzers/constructordeclarationrcs1160.md)
+  * **Abstract type should not have public constructors**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ConvertLambdaExpressionBodyToExpressionBodyRCS1021](/recipes/csharp/recipes/roslynator/analyzers/convertlambdaexpressionbodytoexpressionbodyrcs1021.md)
+  * **Convert lambda expression body to expression body**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DeclareEachAttributeSeparatelyRCS1052](/recipes/csharp/recipes/roslynator/analyzers/declareeachattributeseparatelyrcs1052.md)
+  * **Declare each attribute separately**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DeclareEnumMemberWithZeroValueRCS1135](/recipes/csharp/recipes/roslynator/analyzers/declareenummemberwithzerovaluercs1135.md)
+  * **Declare enum member with zero value (when enum has FlagsAttribute)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DeclareTypeInsideNamespaceRCS1110](/recipes/csharp/recipes/roslynator/analyzers/declaretypeinsidenamespacercs1110.md)
+  * **Declare type inside namespace**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DefaultExpressionRCS1244](/recipes/csharp/recipes/roslynator/analyzers/defaultexpressionrcs1244.md)
+  * **Simplify 'default' expression**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DestructorDeclarationRCS1106](/recipes/csharp/recipes/roslynator/analyzers/destructordeclarationrcs1106.md)
+  * **[deprecated] Remove empty destructor**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DirectiveTriviaRCS1222](/recipes/csharp/recipes/roslynator/analyzers/directivetriviarcs1222.md)
+  * **Merge preprocessor directives**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DisposeResourceAsynchronouslyRCS1261](/recipes/csharp/recipes/roslynator/analyzers/disposeresourceasynchronouslyrcs1261.md)
+  * **Resource can be disposed asynchronously**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DoStatementRCS1063](/recipes/csharp/recipes/roslynator/analyzers/dostatementrcs1063.md)
+  * **[deprecated] Avoid usage of do statement to create an infinite loop**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DocumentRCS1093](/recipes/csharp/recipes/roslynator/analyzers/documentrcs1093.md)
+  * **File contains no code**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DocumentationCommentRCS1139](/recipes/csharp/recipes/roslynator/analyzers/documentationcommentrcs1139.md)
+  * **Add summary element to documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.DuplicateWordInCommentRCS1243](/recipes/csharp/recipes/roslynator/analyzers/duplicatewordincommentrcs1243.md)
+  * **Duplicate word in a comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ElseClauseRCS1006](/recipes/csharp/recipes/roslynator/analyzers/elseclausercs1006.md)
+  * **Merge 'else' with nested 'if'**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ElseClauseRCS1040](/recipes/csharp/recipes/roslynator/analyzers/elseclausercs1040.md)
+  * **[deprecated] Remove empty 'else' clause**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EmptyStatementRCS1038](/recipes/csharp/recipes/roslynator/analyzers/emptystatementrcs1038.md)
+  * **[deprecated] Remove empty statement**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EndRegionDirectiveTriviaRCS1189](/recipes/csharp/recipes/roslynator/analyzers/endregiondirectivetriviarcs1189.md)
+  * **Add or remove region name**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EnumDeclarationRCS1154](/recipes/csharp/recipes/roslynator/analyzers/enumdeclarationrcs1154.md)
+  * **Sort enum members**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EnumDeclarationRCS1161](/recipes/csharp/recipes/roslynator/analyzers/enumdeclarationrcs1161.md)
+  * **Enum should declare explicit values**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EnumDeclarationRCS1237](/recipes/csharp/recipes/roslynator/analyzers/enumdeclarationrcs1237.md)
+  * **[deprecated] Use bit shift operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EnumMemberDeclarationRCS1191](/recipes/csharp/recipes/roslynator/analyzers/enummemberdeclarationrcs1191.md)
+  * **Declare enum value as combination of names**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EnumMemberDeclarationRCS1234](/recipes/csharp/recipes/roslynator/analyzers/enummemberdeclarationrcs1234.md)
+  * **Duplicate enum value**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.EnumMemberDeclarationRCS1254](/recipes/csharp/recipes/roslynator/analyzers/enummemberdeclarationrcs1254.md)
+  * **Normalize format of enum flag value**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ExpressionRCS1051](/recipes/csharp/recipes/roslynator/analyzers/expressionrcs1051.md)
+  * **Add/remove parentheses from condition in conditional operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ExpressionRCS1215](/recipes/csharp/recipes/roslynator/analyzers/expressionrcs1215.md)
+  * **Expression is always equal to true/false**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ExtractMemberToNewDocumentRCS1060](/recipes/csharp/recipes/roslynator/analyzers/extractmembertonewdocumentrcs1060.md)
+  * **Declare each type in separate file**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.FinallyClauseRCS1066](/recipes/csharp/recipes/roslynator/analyzers/finallyclausercs1066.md)
+  * **[deprecated] Remove empty 'finally' clause**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ForStatementRCS1064](/recipes/csharp/recipes/roslynator/analyzers/forstatementrcs1064.md)
+  * **[deprecated] Avoid usage of for statement to create an infinite loop**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1061](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1061.md)
+  * **Merge 'if' with nested 'if'**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1073](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1073.md)
+  * **Convert 'if' to 'return' statement**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1103](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1103.md)
+  * **Convert 'if' to assignment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1173](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1173.md)
+  * **Use coalesce expression instead of 'if'**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1208](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1208.md)
+  * **Reduce 'if' nesting**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1236](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1236.md)
+  * **Use exception filter**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.IfStatementRCS1255](/recipes/csharp/recipes/roslynator/analyzers/ifstatementrcs1255.md)
+  * **Simplify argument null check**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ImplementNonGenericCounterpartRCS1241](/recipes/csharp/recipes/roslynator/analyzers/implementnongenericcounterpartrcs1241.md)
+  * **Implement non-generic counterpart**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InitializerRCS1035](/recipes/csharp/recipes/roslynator/analyzers/initializerrcs1035.md)
+  * **[deprecated] Remove redundant comma in initializer**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InterpolatedStringRCS1214](/recipes/csharp/recipes/roslynator/analyzers/interpolatedstringrcs1214.md)
+  * **Unnecessary interpolated string**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InterpolatedStringRCS1217](/recipes/csharp/recipes/roslynator/analyzers/interpolatedstringrcs1217.md)
+  * **Convert interpolated string to concatenation**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InterpolationRCS1105](/recipes/csharp/recipes/roslynator/analyzers/interpolationrcs1105.md)
+  * **Unnecessary interpolation**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvalidArgumentNullCheckRCS1256](/recipes/csharp/recipes/roslynator/analyzers/invalidargumentnullcheckrcs1256.md)
+  * **Invalid argument null check**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1080](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1080.md)
+  * **Use 'Count/Length' property instead of 'Any' method**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1097](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1097.md)
+  * **Remove redundant 'ToString' call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1107](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1107.md)
+  * **Remove redundant 'ToCharArray' call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1112](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1112.md)
+  * **Combine 'Enumerable.Where' method chain**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1196](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1196.md)
+  * **Call extension method as instance method**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1200](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1200.md)
+  * **Call 'Enumerable.ThenBy' instead of 'Enumerable.OrderBy'**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.InvocationExpressionRCS1267](/recipes/csharp/recipes/roslynator/analyzers/invocationexpressionrcs1267.md)
+  * **Use string interpolation instead of 'string.Concat'**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.LocalDeclarationStatementRCS1124](/recipes/csharp/recipes/roslynator/analyzers/localdeclarationstatementrcs1124.md)
+  * **Inline local variable**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.LockStatementRCS1059](/recipes/csharp/recipes/roslynator/analyzers/lockstatementrcs1059.md)
+  * **Avoid locking on publicly accessible instance**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MarkLocalVariableAsConstRCS1118](/recipes/csharp/recipes/roslynator/analyzers/marklocalvariableasconstrcs1118.md)
+  * **Mark local variable as const**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MarkTypeWithDebuggerDisplayAttributeRCS1223](/recipes/csharp/recipes/roslynator/analyzers/marktypewithdebuggerdisplayattributercs1223.md)
+  * **Mark publicly visible type with DebuggerDisplay attribute**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1018](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1018.md)
+  * **Add/remove accessibility modifiers**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1019](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1019.md)
+  * **Order modifiers**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1034](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1034.md)
+  * **Remove redundant 'sealed' modifier**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1055](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1055.md)
+  * **Unnecessary semicolon at the end of declaration**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1132](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1132.md)
+  * **Remove redundant overriding member**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1169](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1169.md)
+  * **Make field read-only**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1170](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1170.md)
+  * **Use read-only auto-implemented property**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1181](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1181.md)
+  * **Convert comment to documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1187](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1187.md)
+  * **Use constant instead of field**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.MemberDeclarationRCS1224](/recipes/csharp/recipes/roslynator/analyzers/memberdeclarationrcs1224.md)
+  * **Make method an extension method**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.NamespaceDeclarationRCS1072](/recipes/csharp/recipes/roslynator/analyzers/namespacedeclarationrcs1072.md)
+  * **[deprecated] Remove empty namespace declaration**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.NamespaceDeclarationRCS1094](/recipes/csharp/recipes/roslynator/analyzers/namespacedeclarationrcs1094.md)
+  * **Declare using directive on top level**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.NormalizeNullCheckProviderRCS1248](/recipes/csharp/recipes/roslynator/analyzers/normalizenullcheckproviderrcs1248.md)
+  * **Normalize null check**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.NormalizeUsageOfInfiniteLoopRCS1252](/recipes/csharp/recipes/roslynator/analyzers/normalizeusageofinfinitelooprcs1252.md)
+  * **Normalize usage of infinite loop**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ObjectCreationExpressionRCS1204](/recipes/csharp/recipes/roslynator/analyzers/objectcreationexpressionrcs1204.md)
+  * **Use EventArgs.Empty**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.OptimizeLinqMethodCallRCS1077](/recipes/csharp/recipes/roslynator/analyzers/optimizelinqmethodcallrcs1077.md)
+  * **Optimize LINQ method call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.OptimizeLinqMethodCallRCS1246](/recipes/csharp/recipes/roslynator/analyzers/optimizelinqmethodcallrcs1246.md)
+  * **Use element access**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.OptimizeMethodCallRCS1235](/recipes/csharp/recipes/roslynator/analyzers/optimizemethodcallrcs1235.md)
+  * **Optimize method call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.OptimizeStringBuilderAppendCallRCS1197](/recipes/csharp/recipes/roslynator/analyzers/optimizestringbuilderappendcallrcs1197.md)
+  * **Optimize StringBuilder.Append/AppendLine call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.OrderElementsInDocumentationCommentRCS1232](/recipes/csharp/recipes/roslynator/analyzers/orderelementsindocumentationcommentrcs1232.md)
+  * **Order elements in documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.OrderTypeParameterConstraintsRCS1209](/recipes/csharp/recipes/roslynator/analyzers/ordertypeparameterconstraintsrcs1209.md)
+  * **Order type parameter constraints**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ParameterNameDiffersFromBaseRCS1168](/recipes/csharp/recipes/roslynator/analyzers/parameternamediffersfrombasercs1168.md)
+  * **Parameter name differs from base name**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ParameterRCS1193](/recipes/csharp/recipes/roslynator/analyzers/parameterrcs1193.md)
+  * **Overriding member should not change 'params' modifier**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ParameterRCS1231](/recipes/csharp/recipes/roslynator/analyzers/parameterrcs1231.md)
+  * **Make parameter ref read-only**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ParameterRCS1242](/recipes/csharp/recipes/roslynator/analyzers/parameterrcs1242.md)
+  * **Do not pass non-read-only struct by read-only reference**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ParenthesizedExpressionRCS1032](/recipes/csharp/recipes/roslynator/analyzers/parenthesizedexpressionrcs1032.md)
+  * **Remove redundant parentheses**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.PropertyDeclarationRCS1188](/recipes/csharp/recipes/roslynator/analyzers/propertydeclarationrcs1188.md)
+  * **Remove redundant auto-property initialization**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RawStringLiteralRCS1262](/recipes/csharp/recipes/roslynator/analyzers/rawstringliteralrcs1262.md)
+  * **Unnecessary raw string literal**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RawStringLiteralRCS1266](/recipes/csharp/recipes/roslynator/analyzers/rawstringliteralrcs1266.md)
+  * **Use raw string literal**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RegionDirectiveTriviaRCS1091](/recipes/csharp/recipes/roslynator/analyzers/regiondirectivetriviarcs1091.md)
+  * **[deprecated] Remove empty region**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveBracesFromIfElseRCS1004](/recipes/csharp/recipes/roslynator/analyzers/removebracesfromifelsercs1004.md)
+  * **Remove braces from if-else**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveBracesRCS1002](/recipes/csharp/recipes/roslynator/analyzers/removebracesrcs1002.md)
+  * **Remove braces**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveElementInDocumentationCommentRCS1228](/recipes/csharp/recipes/roslynator/analyzers/removeelementindocumentationcommentrcs1228.md)
+  * **Unused element in a documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveElementInDocumentationCommentRCS1263](/recipes/csharp/recipes/roslynator/analyzers/removeelementindocumentationcommentrcs1263.md)
+  * **Invalid reference in a documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveEmptyInitializerRCS1041](/recipes/csharp/recipes/roslynator/analyzers/removeemptyinitializerrcs1041.md)
+  * **[deprecated] Remove empty initializer**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveEmptySyntaxRCS1259](/recipes/csharp/recipes/roslynator/analyzers/removeemptysyntaxrcs1259.md)
+  * **Remove empty syntax**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveEnumDefaultBaseTypeRCS1042](/recipes/csharp/recipes/roslynator/analyzers/removeenumdefaultbasetypercs1042.md)
+  * **Remove enum default underlying type**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveOriginalExceptionRCS1044](/recipes/csharp/recipes/roslynator/analyzers/removeoriginalexceptionrcs1044.md)
+  * **Remove original exception from throw statement**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemovePartialModifierFromTypeWithSinglePartRCS1043](/recipes/csharp/recipes/roslynator/analyzers/removepartialmodifierfromtypewithsinglepartrcs1043.md)
+  * **Remove 'partial' modifier from type with a single part**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveRedundantAssignmentRCS1212](/recipes/csharp/recipes/roslynator/analyzers/removeredundantassignmentrcs1212.md)
+  * **Remove redundant assignment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveRedundantAsyncAwaitRCS1174](/recipes/csharp/recipes/roslynator/analyzers/removeredundantasyncawaitrcs1174.md)
+  * **Remove redundant async/await**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveRedundantBooleanLiteralRCS1033](/recipes/csharp/recipes/roslynator/analyzers/removeredundantbooleanliteralrcs1033.md)
+  * **Remove redundant boolean literal**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveRedundantCastRCS1151](/recipes/csharp/recipes/roslynator/analyzers/removeredundantcastrcs1151.md)
+  * **Remove redundant cast**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveRedundantCatchBlockRCS1265](/recipes/csharp/recipes/roslynator/analyzers/removeredundantcatchblockrcs1265.md)
+  * **Remove redundant catch block**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveUnnecessaryBracesRCS1251](/recipes/csharp/recipes/roslynator/analyzers/removeunnecessarybracesrcs1251.md)
+  * **Remove unnecessary braces from record declaration**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.RemoveUnnecessaryElseRCS1211](/recipes/csharp/recipes/roslynator/analyzers/removeunnecessaryelsercs1211.md)
+  * **Remove unnecessary 'else'**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ReturnCompletedTaskInsteadOfNullRCS1210](/recipes/csharp/recipes/roslynator/analyzers/returncompletedtaskinsteadofnullrcs1210.md)
+  * **Return completed task instead of returning null**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SimplifyBooleanComparisonRCS1049](/recipes/csharp/recipes/roslynator/analyzers/simplifybooleancomparisonrcs1049.md)
+  * **Simplify boolean comparison**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SimplifyCodeBranchingRCS1218](/recipes/csharp/recipes/roslynator/analyzers/simplifycodebranchingrcs1218.md)
+  * **Simplify code branching**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SimplifyLogicalNegationRCS1068](/recipes/csharp/recipes/roslynator/analyzers/simplifylogicalnegationrcs1068.md)
+  * **Simplify logical negation**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SimplifyNestedUsingStatementRCS1005](/recipes/csharp/recipes/roslynator/analyzers/simplifynestedusingstatementrcs1005.md)
+  * **Simplify nested using statement**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SimplifyNullableOfTRCS1020](/recipes/csharp/recipes/roslynator/analyzers/simplifynullableoftrcs1020.md)
+  * **Simplify Nullable&lt;T&gt; to T?**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SingleLineDocumentationCommentTriviaRCS1100](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1100.md)
+  * **[deprecated] Format documentation summary on a single line**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SingleLineDocumentationCommentTriviaRCS1101](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1101.md)
+  * **[deprecated] Format documentation summary on multiple lines**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SingleLineDocumentationCommentTriviaRCS1141](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1141.md)
+  * **Add 'param' element to documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SingleLineDocumentationCommentTriviaRCS1142](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1142.md)
+  * **Add 'typeparam' element to documentation comment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SingleLineDocumentationCommentTriviaRCS1253](/recipes/csharp/recipes/roslynator/analyzers/singlelinedocumentationcommenttriviarcs1253.md)
+  * **Format documentation comment summary**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.StatementRCS1133](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1133.md)
+  * **Remove redundant Dispose/Close call**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.StatementRCS1134](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1134.md)
+  * **Remove redundant statement**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.StatementRCS1180](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1180.md)
+  * **Inline lazy initialization**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.StatementRCS1201](/recipes/csharp/recipes/roslynator/analyzers/statementrcs1201.md)
+  * **Use method chaining**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SwitchSectionRCS1070](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1070.md)
+  * **Remove redundant default switch section**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SwitchSectionRCS1099](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1099.md)
+  * **Default label should be the last label in a switch section**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SwitchSectionRCS1111](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1111.md)
+  * **Add braces to switch section with multiple statements**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.SwitchSectionRCS1136](/recipes/csharp/recipes/roslynator/analyzers/switchsectionrcs1136.md)
+  * **Merge switch sections with equivalent content**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.TokenRCS1249](/recipes/csharp/recipes/roslynator/analyzers/tokenrcs1249.md)
+  * **Unnecessary null-forgiving operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.TypeParameterRCS1164](/recipes/csharp/recipes/roslynator/analyzers/typeparameterrcs1164.md)
+  * **Unused type parameter**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.TypeRCS1159](/recipes/csharp/recipes/roslynator/analyzers/typercs1159.md)
+  * **Use EventHandler&lt;T&gt;**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UnnecessaryAssignmentRCS1179](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryassignmentrcs1179.md)
+  * **Unnecessary assignment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UnnecessaryEnumFlagRCS1258](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryenumflagrcs1258.md)
+  * **Unnecessary enum flag**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UnnecessaryExplicitUseOfEnumeratorRCS1230](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryexplicituseofenumeratorrcs1230.md)
+  * **Unnecessary explicit use of enumerator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UnnecessaryUnsafeContextRCS1216](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryunsafecontextrcs1216.md)
+  * **Unnecessary unsafe context**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UnnecessaryUsageOfVerbatimStringLiteralRCS1192](/recipes/csharp/recipes/roslynator/analyzers/unnecessaryusageofverbatimstringliteralrcs1192.md)
+  * **Unnecessary usage of verbatim string literal**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UnusedMemberRCS1213](/recipes/csharp/recipes/roslynator/analyzers/unusedmemberrcs1213.md)
+  * **Remove unused member declaration**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UnusedParameterRCS1163](/recipes/csharp/recipes/roslynator/analyzers/unusedparameterrcs1163.md)
+  * **Unused parameter**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseAnonymousFunctionOrMethodGroupRCS1207](/recipes/csharp/recipes/roslynator/analyzers/useanonymousfunctionormethodgrouprcs1207.md)
+  * **Use anonymous function or method group**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseAsyncAwaitRCS1229](/recipes/csharp/recipes/roslynator/analyzers/useasyncawaitrcs1229.md)
+  * **Use async/await when necessary**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseAutoPropertyRCS1085](/recipes/csharp/recipes/roslynator/analyzers/useautopropertyrcs1085.md)
+  * **Use auto-implemented property**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseBlockBodyOrExpressionBodyRCS1016](/recipes/csharp/recipes/roslynator/analyzers/useblockbodyorexpressionbodyrcs1016.md)
+  * **Use block body or expression body**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseCoalesceExpressionRCS1128](/recipes/csharp/recipes/roslynator/analyzers/usecoalesceexpressionrcs1128.md)
+  * **Use coalesce expression**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseCompoundAssignmentRCS1058](/recipes/csharp/recipes/roslynator/analyzers/usecompoundassignmentrcs1058.md)
+  * **Use compound assignment**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseConditionalAccessRCS1146](/recipes/csharp/recipes/roslynator/analyzers/useconditionalaccessrcs1146.md)
+  * **Use conditional access**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseEmptyStringLiteralOrStringEmptyRCS1078](/recipes/csharp/recipes/roslynator/analyzers/useemptystringliteralorstringemptyrcs1078.md)
+  * **Use &quot;&quot; or 'string.Empty'**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseExplicitTypeInsteadOfVarInForEachRCS1009](/recipes/csharp/recipes/roslynator/analyzers/useexplicittypeinsteadofvarinforeachrcs1009.md)
+  * **[deprecated] Use explicit type instead of 'var' (foreach variable)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseExplicitTypeInsteadOfVarRCS1008](/recipes/csharp/recipes/roslynator/analyzers/useexplicittypeinsteadofvarrcs1008.md)
+  * **[deprecated] Use explicit type instead of 'var' (when the type is not obvious)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseExplicitTypeInsteadOfVarRCS1012](/recipes/csharp/recipes/roslynator/analyzers/useexplicittypeinsteadofvarrcs1012.md)
+  * **[deprecated] Use explicit type instead of 'var' (when the type is obvious)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseExplicitlyOrImplicitlyTypedArrayRCS1014](/recipes/csharp/recipes/roslynator/analyzers/useexplicitlyorimplicitlytypedarrayrcs1014.md)
+  * **Use explicitly/implicitly typed array**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseHasFlagMethodOrBitwiseOperatorRCS1096](/recipes/csharp/recipes/roslynator/analyzers/usehasflagmethodorbitwiseoperatorrcs1096.md)
+  * **Use 'HasFlag' method or bitwise operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseImplicitOrExplicitObjectCreationRCS1250](/recipes/csharp/recipes/roslynator/analyzers/useimplicitorexplicitobjectcreationrcs1250.md)
+  * **Use implicit/explicit object creation**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseIsOperatorInsteadOfAsOperatorRCS1172](/recipes/csharp/recipes/roslynator/analyzers/useisoperatorinsteadofasoperatorrcs1172.md)
+  * **Use 'is' operator instead of 'as' operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseNameOfOperatorRCS1015](/recipes/csharp/recipes/roslynator/analyzers/usenameofoperatorrcs1015.md)
+  * **Use nameof operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UsePatternMatchingInsteadOfAsAndNullCheckRCS1221](/recipes/csharp/recipes/roslynator/analyzers/usepatternmatchinginsteadofasandnullcheckrcs1221.md)
+  * **Use pattern matching instead of combination of 'as' operator and null check**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UsePatternMatchingInsteadOfIsAndCastRCS1220](/recipes/csharp/recipes/roslynator/analyzers/usepatternmatchinginsteadofisandcastrcs1220.md)
+  * **Use pattern matching instead of combination of 'is' operator and cast operator**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UsePredefinedTypeRCS1013](/recipes/csharp/recipes/roslynator/analyzers/usepredefinedtypercs1013.md)
+  * **Use predefined type**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseRegexInstanceInsteadOfStaticMethodRCS1186](/recipes/csharp/recipes/roslynator/analyzers/useregexinstanceinsteadofstaticmethodrcs1186.md)
+  * **Use Regex instance instead of static method**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseStringComparisonRCS1155](/recipes/csharp/recipes/roslynator/analyzers/usestringcomparisonrcs1155.md)
+  * **Use StringComparison when comparing strings**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseVarInsteadOfExplicitTypeRCS1010](/recipes/csharp/recipes/roslynator/analyzers/usevarinsteadofexplicittypercs1010.md)
+  * **[deprecated] Use 'var' instead of explicit type (when the type is obvious)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseVarInsteadOfExplicitTypeRCS1176](/recipes/csharp/recipes/roslynator/analyzers/usevarinsteadofexplicittypercs1176.md)
+  * **[deprecated] Use 'var' instead of explicit type (when the type is not obvious)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseVarInsteadOfExplicitTypeRCS1177](/recipes/csharp/recipes/roslynator/analyzers/usevarinsteadofexplicittypercs1177.md)
+  * **[deprecated] Use 'var' instead of explicit type (in foreach)**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UseVarOrExplicitTypeRCS1264](/recipes/csharp/recipes/roslynator/analyzers/usevarorexplicittypercs1264.md)
+  * **Use 'var' or explicit type**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.UsingDirectiveRCS1056](/recipes/csharp/recipes/roslynator/analyzers/usingdirectivercs1056.md)
+  * **Avoid usage of using alias directive**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.ValidateArgumentsCorrectlyRCS1227](/recipes/csharp/recipes/roslynator/analyzers/validateargumentscorrectlyrcs1227.md)
+  * **Validate arguments correctly**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.VariableDeclarationRCS1081](/recipes/csharp/recipes/roslynator/analyzers/variabledeclarationrcs1081.md)
+  * **Split variable declaration**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.VariableDeclaratorRCS1129](/recipes/csharp/recipes/roslynator/analyzers/variabledeclaratorrcs1129.md)
+  * **Remove redundant field initialization**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.WhileStatementRCS1065](/recipes/csharp/recipes/roslynator/analyzers/whilestatementrcs1065.md)
+  * **[deprecated] Avoid usage of while statement to create an infinite loop**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.WhileStatementRCS1239](/recipes/csharp/recipes/roslynator/analyzers/whilestatementrcs1239.md)
+  * **Use 'for' statement instead of 'while' statement**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.WhitespaceTriviaRCS1036](/recipes/csharp/recipes/roslynator/analyzers/whitespacetriviarcs1036.md)
+  * **[deprecated] Remove unnecessary blank line**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.WhitespaceTriviaRCS1037](/recipes/csharp/recipes/roslynator/analyzers/whitespacetriviarcs1037.md)
+  * **Remove trailing white-space**
+  * 
+* [org.openrewrite.csharp.recipes.roslynator.analyzers.XmlNodeRCS1247](/recipes/csharp/recipes/roslynator/analyzers/xmlnodercs1247.md)
+  * **Fix documentation comment tag**
+  * 
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.IndentationSA1137](/recipes/csharp/recipes/stylecop/analyzers/indentationsa1137.md)
+  * **Elements should have the same indentation**
+  * Elements at the same level in the syntax tree should have the same indentation.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.PropertySummaryDocumentationSA1623](/recipes/csharp/recipes/stylecop/analyzers/propertysummarydocumentationsa1623.md)
+  * **Property summary documentation should match accessors**
+  * The documentation text within a C# property’s &lt;summary&gt; tag does not match the accessors within the property.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.PropertySummaryDocumentationSA1624](/recipes/csharp/recipes/stylecop/analyzers/propertysummarydocumentationsa1624.md)
+  * **Property summary documentation should omit accessor with restricted access**
+  * The documentation text within a C# property’s &lt;summary&gt; tag takes into account all of the accessors within the property, but one of the accessors has limited access.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RemoveRegionSA1123](/recipes/csharp/recipes/stylecop/analyzers/removeregionsa1123.md)
+  * **Do not place regions within elements**
+  * The C# code contains a region within the body of a code element.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RemoveRegionSA1124](/recipes/csharp/recipes/stylecop/analyzers/removeregionsa1124.md)
+  * **Do not use regions**
+  * The C# code contains a region.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToLowerCaseSA1306](/recipes/csharp/recipes/stylecop/analyzers/renametolowercasesa1306.md)
+  * **Field names should begin with lower-case letter**
+  * The name of a field in C# does not begin with a lower-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToLowerCaseSA1312](/recipes/csharp/recipes/stylecop/analyzers/renametolowercasesa1312.md)
+  * **Variable names should begin with lower-case letter**
+  * The name of a variable in C# does not begin with a lower-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToLowerCaseSA1313](/recipes/csharp/recipes/stylecop/analyzers/renametolowercasesa1313.md)
+  * **Parameter names should begin with lower-case letter**
+  * The name of a parameter in C# does not begin with a lower-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToUpperCaseSA1300](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1300.md)
+  * **Element should begin with upper-case letter**
+  * The name of a C# element does not begin with an upper-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToUpperCaseSA1303](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1303.md)
+  * **Const field names should begin with upper-case letter**
+  * The name of a constant C# field should begin with an upper-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToUpperCaseSA1304](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1304.md)
+  * **Non-private readonly fields should begin with upper-case letter**
+  * The name of a non-private readonly C# field should being with an upper-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToUpperCaseSA1307](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1307.md)
+  * **Accessible fields should begin with upper-case letter**
+  * The name of a public or internal field in C# does not begin with an upper-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.RenameToUpperCaseSA1311](/recipes/csharp/recipes/stylecop/analyzers/renametouppercasesa1311.md)
+  * **Static readonly fields should begin with upper-case letter**
+  * The name of a static readonly field does not begin with an upper-case letter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1003SA1003](/recipes/csharp/recipes/stylecop/analyzers/sa1003sa1003.md)
+  * **Symbols should be spaced correctly**
+  * The spacing around an operator symbol is incorrect, within a C# code file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1004SA1004](/recipes/csharp/recipes/stylecop/analyzers/sa1004sa1004.md)
+  * **Documentation lines should begin with single space**
+  * A line within a documentation header above a C# element does not begin with a single space.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1005SA1005](/recipes/csharp/recipes/stylecop/analyzers/sa1005sa1005.md)
+  * **Single line comments should begin with single space**
+  * A single-line comment within a C# code file does not begin with a single space.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1018SA1018](/recipes/csharp/recipes/stylecop/analyzers/sa1018sa1018.md)
+  * **Nullable type symbols should be spaced correctly**
+  * A nullable type symbol within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1025SA1025](/recipes/csharp/recipes/stylecop/analyzers/sa1025sa1025.md)
+  * **Code should not contain multiple whitespace in a row**
+  * The code contains multiple whitespace characters in a row.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1027SA1027](/recipes/csharp/recipes/stylecop/analyzers/sa1027sa1027.md)
+  * **Use tabs correctly**
+  * The code contains a tab or space character which is not consistent with the current project settings.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1028SA1028](/recipes/csharp/recipes/stylecop/analyzers/sa1028sa1028.md)
+  * **Code should not contain trailing whitespace**
+  * There should not be any whitespace at the end of a line of code.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1100SA1100](/recipes/csharp/recipes/stylecop/analyzers/sa1100sa1100.md)
+  * **Do not prefix calls with base unless local implementation exists**
+  * A call to a member from an inherited class begins with 'base.', and the local class does not contain an override or implementation of the member.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1101SA1101](/recipes/csharp/recipes/stylecop/analyzers/sa1101sa1101.md)
+  * **Prefix local calls with this**
+  * A call to an instance member of the local class or a base class is not prefixed with 'this.', within a C# code file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1102SA1102](/recipes/csharp/recipes/stylecop/analyzers/sa1102sa1102.md)
+  * **Query clause should follow previous clause**
+  * A C# query clause does not begin on the same line as the previous clause, or on the next line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1103SA1103](/recipes/csharp/recipes/stylecop/analyzers/sa1103sa1103.md)
+  * **Query clauses should be on separate lines or all on one line**
+  * The clauses within a C# query expression are not all placed on the same line, and each clause is not placed on its own line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1104SA1105SA1104](/recipes/csharp/recipes/stylecop/analyzers/sa1104sa1105sa1104.md)
+  * **Query clause should begin on new line when previous clause spans multiple lines**
+  * A clause within a C# query expression begins on the same line as the previous clause, when the previous clause spans across multiple lines.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1104SA1105SA1105](/recipes/csharp/recipes/stylecop/analyzers/sa1104sa1105sa1105.md)
+  * **Query clauses spanning multiple lines should begin on own line**
+  * A clause within a C# query expression spans across multiple lines, and does not begin on its own line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1106SA1106](/recipes/csharp/recipes/stylecop/analyzers/sa1106sa1106.md)
+  * **Code should not contain empty statements**
+  * The C# code contains an extra semicolon.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1107SA1107](/recipes/csharp/recipes/stylecop/analyzers/sa1107sa1107.md)
+  * **Code should not contain multiple statements on one line**
+  * The C# code contains more than one statement on a single line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1116SA1116](/recipes/csharp/recipes/stylecop/analyzers/sa1116sa1116.md)
+  * **Split parameters should start on line after declaration**
+  * The parameters to a C# method or indexer call or declaration span across multiple lines, but the first parameter does not start on the line after the opening bracket.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1119SA1119](/recipes/csharp/recipes/stylecop/analyzers/sa1119sa1119.md)
+  * **Statement should not use unnecessary parenthesis**
+  * A C# statement contains parenthesis which are unnecessary and should be removed.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1119SA1119_p](/recipes/csharp/recipes/stylecop/analyzers/sa1119sa1119_p.md)
+  * **Statement should not use unnecessary parenthesis**
+  * A C# statement contains parenthesis which are unnecessary and should be removed.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1120SA1120](/recipes/csharp/recipes/stylecop/analyzers/sa1120sa1120.md)
+  * **Comments should contain text**
+  * The C# comment does not contain any comment text.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1121SA1121](/recipes/csharp/recipes/stylecop/analyzers/sa1121sa1121.md)
+  * **Use built-in type alias**
+  * The code uses one of the basic C# types, but does not use the built-in alias for the type.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1122SA1122](/recipes/csharp/recipes/stylecop/analyzers/sa1122sa1122.md)
+  * **Use string.Empty for empty strings**
+  * The C# code includes an empty string, written as &quot;&quot;.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1127SA1127](/recipes/csharp/recipes/stylecop/analyzers/sa1127sa1127.md)
+  * **Generic type constraints should be on their own line**
+  * Each type constraint clause for a generic type parameter should be listed on a line of code by itself.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1128SA1128](/recipes/csharp/recipes/stylecop/analyzers/sa1128sa1128.md)
+  * **Put constructor initializers on their own line**
+  * A constructor initializer, including the colon character, should be on its own line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1129SA1129](/recipes/csharp/recipes/stylecop/analyzers/sa1129sa1129.md)
+  * **Do not use default value type constructor**
+  * When creating a new instance of a value type T, the syntax 'default(T)' is functionally equivalent to the syntax 'new T()'. To avoid confusion regarding the behavior of the resulting instance, the first form is preferred.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1130SA1130](/recipes/csharp/recipes/stylecop/analyzers/sa1130sa1130.md)
+  * **Use lambda syntax**
+  * Lambda expressions are more succinct and easier to read than anonymous methods, so they should are preferred whenever the two are functionally equivalent.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1131SA1131](/recipes/csharp/recipes/stylecop/analyzers/sa1131sa1131.md)
+  * **Use readable conditions**
+  * When a comparison is made between a variable and a literal, the variable should be placed on the left-hand-side to maximize readability.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1132SA1132](/recipes/csharp/recipes/stylecop/analyzers/sa1132sa1132.md)
+  * **Do not combine fields**
+  * Each field should be declared on its own line, in order to clearly see each field of a type and allow for proper documentation of the behavior of each field.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1133SA1133](/recipes/csharp/recipes/stylecop/analyzers/sa1133sa1133.md)
+  * **Do not combine attributes**
+  * Each attribute usage should be placed in its own set of square brackets for maximum readability.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1134SA1134](/recipes/csharp/recipes/stylecop/analyzers/sa1134sa1134.md)
+  * **Attributes should not share line**
+  * Each attribute should be placed on its own line of code.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1135SA1135](/recipes/csharp/recipes/stylecop/analyzers/sa1135sa1135.md)
+  * **Using directives should be qualified**
+  * All using directives should be qualified.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1136SA1136](/recipes/csharp/recipes/stylecop/analyzers/sa1136sa1136.md)
+  * **Enum values should be on separate lines**
+  * Enum values should be placed on their own lines for maximum readability.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1139SA1139](/recipes/csharp/recipes/stylecop/analyzers/sa1139sa1139.md)
+  * **Use literal suffix notation instead of casting**
+  * Use literal suffix notation instead of casting, in order to improve readability, avoid bugs related to illegal casts and ensure that optimal IL is produced.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1205SA1205](/recipes/csharp/recipes/stylecop/analyzers/sa1205sa1205.md)
+  * **Partial elements should declare access**
+  * The partial element does not have an access modifier defined.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1206SA1206](/recipes/csharp/recipes/stylecop/analyzers/sa1206sa1206.md)
+  * **Declaration keywords should follow order**
+  * The keywords within the declaration of an element do not follow a standard ordering scheme.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1207SA1207](/recipes/csharp/recipes/stylecop/analyzers/sa1207sa1207.md)
+  * **Protected should come before internal**
+  * The keyword '{0}' is positioned after the keyword '{1}' within the declaration of a {0} {1} C# element.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1212SA1213SA1212](/recipes/csharp/recipes/stylecop/analyzers/sa1212sa1213sa1212.md)
+  * **Property accessors should follow order**
+  * A get accessor appears after a set accessor within a property or indexer.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1212SA1213SA1213](/recipes/csharp/recipes/stylecop/analyzers/sa1212sa1213sa1213.md)
+  * **Event accessors should follow order**
+  * An add accessor appears after a remove accessor within an event.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1302SA1302](/recipes/csharp/recipes/stylecop/analyzers/sa1302sa1302.md)
+  * **Interface names should begin with I**
+  * The name of a C# interface does not begin with the capital letter I.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1308SA1308](/recipes/csharp/recipes/stylecop/analyzers/sa1308sa1308.md)
+  * **Variable names should not be prefixed**
+  * A field name in C# is prefixed with 'm_', 's_', or 't_'.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1309SA1309](/recipes/csharp/recipes/stylecop/analyzers/sa1309sa1309.md)
+  * **Field names should not begin with underscore**
+  * A field name in C# begins with an underscore.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1310SA1310](/recipes/csharp/recipes/stylecop/analyzers/sa1310sa1310.md)
+  * **Field names should not contain underscore**
+  * A field name in C# contains an underscore.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1314SA1314](/recipes/csharp/recipes/stylecop/analyzers/sa1314sa1314.md)
+  * **Type parameter names should begin with T**
+  * The name of a C# type parameter does not begin with the capital letter T.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1400SA1400](/recipes/csharp/recipes/stylecop/analyzers/sa1400sa1400.md)
+  * **Access modifier should be declared**
+  * The access modifier for a C# element has not been explicitly defined.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1402SA1402](/recipes/csharp/recipes/stylecop/analyzers/sa1402sa1402.md)
+  * **File may only contain a single type**
+  * A C# code file contains more than one unique type.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1404SA1404](/recipes/csharp/recipes/stylecop/analyzers/sa1404sa1404.md)
+  * **Code analysis suppression should have justification**
+  * A Code Analysis SuppressMessage attribute does not include a justification.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1407SA1408SA1407](/recipes/csharp/recipes/stylecop/analyzers/sa1407sa1408sa1407.md)
+  * **Arithmetic expressions should declare precedence**
+  * A C# statement contains a complex arithmetic expression which omits parenthesis around operators.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1407SA1408SA1408](/recipes/csharp/recipes/stylecop/analyzers/sa1407sa1408sa1408.md)
+  * **Conditional expressions should declare precedence**
+  * A C# statement contains a complex conditional expression which omits parenthesis around operators.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1410SA1411SA1410](/recipes/csharp/recipes/stylecop/analyzers/sa1410sa1411sa1410.md)
+  * **Remove delegate parenthesis when possible**
+  * A call to a C# anonymous method does not contain any method parameters, yet the statement still includes parenthesis.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1410SA1411SA1411](/recipes/csharp/recipes/stylecop/analyzers/sa1410sa1411sa1411.md)
+  * **Attribute constructor should not use unnecessary parenthesis**
+  * TODO.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1412SA1412](/recipes/csharp/recipes/stylecop/analyzers/sa1412sa1412.md)
+  * **Store files as UTF-8 with byte order mark**
+  * Source files should be saved using the UTF-8 encoding with a byte order mark
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1413SA1413](/recipes/csharp/recipes/stylecop/analyzers/sa1413sa1413.md)
+  * **Use trailing comma in multi-line initializers**
+  * A multi-line initializer in a C# code file should use a comma on the last line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1500SA1500](/recipes/csharp/recipes/stylecop/analyzers/sa1500sa1500.md)
+  * **Braces for multi-line statements should not share line**
+  * The opening or closing brace within a C# statement, element, or expression is not placed on its own line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1501SA1501](/recipes/csharp/recipes/stylecop/analyzers/sa1501sa1501.md)
+  * **Statement should not be on a single line**
+  * A C# statement containing opening and closing braces is written completely on a single line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1502SA1502](/recipes/csharp/recipes/stylecop/analyzers/sa1502sa1502.md)
+  * **Element should not be on a single line**
+  * A C# element containing opening and closing braces is written completely on a single line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1503SA1503](/recipes/csharp/recipes/stylecop/analyzers/sa1503sa1503.md)
+  * **Braces should not be omitted**
+  * The opening and closing braces for a C# statement have been omitted.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1503SA1519](/recipes/csharp/recipes/stylecop/analyzers/sa1503sa1519.md)
+  * **Braces should not be omitted from multi-line child statement**
+  * The opening and closing braces for a multi-line C# statement have been omitted.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1503SA1520](/recipes/csharp/recipes/stylecop/analyzers/sa1503sa1520.md)
+  * **Use braces consistently**
+  * The opening and closing braces of a chained if/else if/else construct were included for some clauses, but omitted for others.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1504SA1504](/recipes/csharp/recipes/stylecop/analyzers/sa1504sa1504.md)
+  * **All accessors should be single-line or multi-line**
+  * Within a C# property, indexer or event, at least one of the child accessors is written on a single line, and at least one of the child accessors is written across multiple lines.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1505SA1505](/recipes/csharp/recipes/stylecop/analyzers/sa1505sa1505.md)
+  * **Opening braces should not be followed by blank line**
+  * An opening brace within a C# element, statement, or expression is followed by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1506SA1506](/recipes/csharp/recipes/stylecop/analyzers/sa1506sa1506.md)
+  * **Element documentation headers should not be followed by blank line**
+  * An element documentation header above a C# element is followed by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1507SA1507](/recipes/csharp/recipes/stylecop/analyzers/sa1507sa1507.md)
+  * **Code should not contain multiple blank lines in a row**
+  * The C# code contains multiple blank lines in a row.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1508SA1508](/recipes/csharp/recipes/stylecop/analyzers/sa1508sa1508.md)
+  * **Closing braces should not be preceded by blank line**
+  * A closing brace within a C# element, statement, or expression is preceded by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1509SA1509](/recipes/csharp/recipes/stylecop/analyzers/sa1509sa1509.md)
+  * **Opening braces should not be preceded by blank line**
+  * An opening brace within a C# element, statement, or expression is preceded by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1510SA1510](/recipes/csharp/recipes/stylecop/analyzers/sa1510sa1510.md)
+  * **Chained statement blocks should not be preceded by blank line**
+  * Chained C# statements are separated by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1511SA1511](/recipes/csharp/recipes/stylecop/analyzers/sa1511sa1511.md)
+  * **While-do footer should not be preceded by blank line**
+  * The while footer at the bottom of a do-while statement is separated from the statement by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1512SA1512](/recipes/csharp/recipes/stylecop/analyzers/sa1512sa1512.md)
+  * **Single-line comments should not be followed by blank line**
+  * A single-line comment within C# code is followed by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1513SA1513](/recipes/csharp/recipes/stylecop/analyzers/sa1513sa1513.md)
+  * **Closing brace should be followed by blank line**
+  * A closing brace within a C# element, statement, or expression is not followed by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1514SA1514](/recipes/csharp/recipes/stylecop/analyzers/sa1514sa1514.md)
+  * **Element documentation header should be preceded by blank line**
+  * An element documentation header above a C# element is not preceded by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1515SA1515](/recipes/csharp/recipes/stylecop/analyzers/sa1515sa1515.md)
+  * **Single-line comment should be preceded by blank line**
+  * A single-line comment within C# code is not preceded by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1516SA1516](/recipes/csharp/recipes/stylecop/analyzers/sa1516sa1516.md)
+  * **Elements should be separated by blank line**
+  * Adjacent C# elements are not separated by a blank line.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1517SA1517](/recipes/csharp/recipes/stylecop/analyzers/sa1517sa1517.md)
+  * **Code should not contain blank lines at start of file**
+  * The code file has blank lines at the start.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1518SA1518](/recipes/csharp/recipes/stylecop/analyzers/sa1518sa1518.md)
+  * **Use line endings correctly at end of file**
+  * Code should not contain blank lines at the end of the file
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1609SA1610SA1609](/recipes/csharp/recipes/stylecop/analyzers/sa1609sa1610sa1609.md)
+  * **Property documentation should have value**
+  * The XML header documentation for a C# property does not contain a &lt;value&gt; tag.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1609SA1610SA1610](/recipes/csharp/recipes/stylecop/analyzers/sa1609sa1610sa1610.md)
+  * **Property documentation should have value text**
+  * The XML header documentation for a C# property contains an empty &lt;value&gt; tag.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1615SA1616SA1615](/recipes/csharp/recipes/stylecop/analyzers/sa1615sa1616sa1615.md)
+  * **Element return value should be documented**
+  * A C# element is missing documentation for its return value.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1615SA1616SA1616](/recipes/csharp/recipes/stylecop/analyzers/sa1615sa1616sa1616.md)
+  * **Element return value documentation should have text**
+  * The &lt;returns&gt; tag within a C# element's documentation header is empty.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1617SA1617](/recipes/csharp/recipes/stylecop/analyzers/sa1617sa1617.md)
+  * **Void return value should not be documented**
+  * A C# code element does not contain a return value, or returns void, but the documentation header for the element contains a &lt;returns&gt; tag.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1626SA1626](/recipes/csharp/recipes/stylecop/analyzers/sa1626sa1626.md)
+  * **Single-line comments should not use documentation style slashes**
+  * The C# code contains a single-line comment which begins with three forward slashes in a row.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1629SA1629](/recipes/csharp/recipes/stylecop/analyzers/sa1629sa1629.md)
+  * **Documentation text should end with a period**
+  * A section of the XML header documentation for a C# element does not end with a period.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1642SA1643SA1642](/recipes/csharp/recipes/stylecop/analyzers/sa1642sa1643sa1642.md)
+  * **Constructor summary documentation should begin with standard text**
+  * The XML documentation header for a C# constructor does not contain the appropriate summary text.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1642SA1643SA1643](/recipes/csharp/recipes/stylecop/analyzers/sa1642sa1643sa1643.md)
+  * **Destructor summary documentation should begin with standard text**
+  * The XML documentation header for a C# finalizer does not contain the appropriate summary text.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SA1651SA1651](/recipes/csharp/recipes/stylecop/analyzers/sa1651sa1651.md)
+  * **Do not use placeholder elements**
+  * The element documentation contains a &lt;placeholder&gt; element.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SX1101SX1101](/recipes/csharp/recipes/stylecop/analyzers/sx1101sx1101.md)
+  * **Do not prefix local calls with 'this.'**
+  * A call to an instance member of the local class or a base class is prefixed with `this.`.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SX1309SX1309](/recipes/csharp/recipes/stylecop/analyzers/sx1309sx1309.md)
+  * **Field names should begin with underscore**
+  * A field name in C# does not begin with an underscore.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SX1309SX1309S](/recipes/csharp/recipes/stylecop/analyzers/sx1309sx1309s.md)
+  * **Static field names should begin with underscore**
+  * A static field name in C# does not begin with an underscore.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1600](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1600.md)
+  * **Elements should be documented**
+  * A C# code element is missing a documentation header.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1601](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1601.md)
+  * **Partial elements should be documented**
+  * A C# partial element is missing a documentation header.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1602](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1602.md)
+  * **Enumeration items should be documented**
+  * An item within a C# enumeration is missing an Xml documentation header.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1633](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1633.md)
+  * **File should have header**
+  * A C# code file is missing a standard file header.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1634](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1634.md)
+  * **File header should show copyright**
+  * The file header at the top of a C# code file is missing a copyright tag.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1635](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1635.md)
+  * **File header should have copyright text**
+  * The file header at the top of a C# code file is missing copyright text.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1636](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1636.md)
+  * **File header copyright text should match**
+  * The file header at the top of a C# code file does not contain the appropriate copyright text.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1637](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1637.md)
+  * **File header should contain file name**
+  * The file header at the top of a C# code file is missing the file name.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1638](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1638.md)
+  * **File header file name documentation should match file name**
+  * The file attribute within copyright tag of the file header at the top of a C# code file does not contain the name of the file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1639](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1639.md)
+  * **File header should have summary**
+  * The file header at the top of a C# code file does not contain a filled-in summary tag.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1640](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1640.md)
+  * **File header should have valid company text**
+  * The file header at the top of a C# code file does not contain company name text.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1641](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1641.md)
+  * **File header company name text should match**
+  * The file header at the top of a C# code file does not contain the appropriate company name text.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.SettingsFileSA1649](/recipes/csharp/recipes/stylecop/analyzers/settingsfilesa1649.md)
+  * **File name should match first type name**
+  * The file name of a C# code file does not match the first type declared in the file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1000](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1000.md)
+  * **Keywords should be spaced correctly**
+  * The spacing around a C# keyword is incorrect.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1001](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1001.md)
+  * **Commas should be spaced correctly**
+  * The spacing around a comma is incorrect, within a C# code file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1002](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1002.md)
+  * **Semicolons should be spaced correctly**
+  * The spacing around a semicolon is incorrect, within a C# code file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1006](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1006.md)
+  * **Preprocessor keywords should not be preceded by space**
+  * A C# preprocessor-type keyword is preceded by space.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1007](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1007.md)
+  * **Operator keyword should be followed by space**
+  * The operator keyword within a C# operator overload method is not followed by any whitespace.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1008](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1008.md)
+  * **Opening parenthesis should be spaced correctly**
+  * An opening parenthesis within a C# statement is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1009](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1009.md)
+  * **Closing parenthesis should be spaced correctly**
+  * A closing parenthesis within a C# statement is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1010](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1010.md)
+  * **Opening square brackets should be spaced correctly**
+  * An opening square bracket within a C# statement is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1011](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1011.md)
+  * **Closing square brackets should be spaced correctly**
+  * A closing square bracket within a C# statement is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1012](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1012.md)
+  * **Opening braces should be spaced correctly**
+  * An opening brace within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1013](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1013.md)
+  * **Closing braces should be spaced correctly**
+  * A closing brace within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1014](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1014.md)
+  * **Opening generic brackets should be spaced correctly**
+  * An opening generic bracket within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1015](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1015.md)
+  * **Closing generic brackets should be spaced correctly**
+  * A closing generic bracket within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1016](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1016.md)
+  * **Opening attribute brackets should be spaced correctly**
+  * An opening attribute bracket within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1017](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1017.md)
+  * **Closing attribute brackets should be spaced correctly**
+  * A closing attribute bracket within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1019](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1019.md)
+  * **Member access symbols should be spaced correctly**
+  * The spacing around a member access symbol is incorrect, within a C# code file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1020](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1020.md)
+  * **Increment decrement symbols should be spaced correctly**
+  * An increment or decrement symbol within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1021](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1021.md)
+  * **Negative signs should be spaced correctly**
+  * A negative sign within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1022](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1022.md)
+  * **Positive signs should be spaced correctly**
+  * A positive sign within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1023](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1023.md)
+  * **Dereference and access of symbols should be spaced correctly**
+  * A dereference symbol or an access-of symbol within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1024](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1024.md)
+  * **Colons Should Be Spaced Correctly**
+  * A colon within a C# element is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1026](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1026.md)
+  * **Code should not contain space after new or stackalloc keyword in implicitly typed array allocation**
+  * An implicitly typed array allocation within a C# code file is not spaced correctly.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1110](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1110.md)
+  * **Opening parenthesis or bracket should be on declaration line**
+  * The opening parenthesis or bracket is not placed on the same line as the method/indexer/attribute/array name.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1111](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1111.md)
+  * **Closing parenthesis should be on line of last parameter**
+  * The closing parenthesis or bracket in a call to or declaration of a C# method/indexer/attribute/array/constructor/delegate is not placed on the same line as the last parameter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1112](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1112.md)
+  * **Closing parenthesis should be on line of opening parenthesis**
+  * The closing parenthesis or bracket in a call to a C# method or indexer, or the declaration of a method or indexer, is not placed on the same line as the opening bracket when the element does not take any parameters.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.TokenSpacingSA1113](/recipes/csharp/recipes/stylecop/analyzers/tokenspacingsa1113.md)
+  * **Comma should be on the same line as previous parameter**
+  * A comma between two parameters in a call to a C# method or indexer, or in the declaration of a method or indexer, is not placed on the same line as the previous parameter.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.UsingSA1200](/recipes/csharp/recipes/stylecop/analyzers/usingsa1200.md)
+  * **Using directives should be placed correctly**
+  * A C# using directive is placed outside of a namespace element.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.UsingSA1208](/recipes/csharp/recipes/stylecop/analyzers/usingsa1208.md)
+  * **System using directives should be placed before other using directives**
+  * A using directive which declares a member of the 'System' namespace appears after a using directive which declares a member of a different namespace, within a C# code file.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.UsingSA1209](/recipes/csharp/recipes/stylecop/analyzers/usingsa1209.md)
+  * **Using alias directives should be placed after other using directives**
+  * A using-alias directive is positioned before a regular using directive.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.UsingSA1210](/recipes/csharp/recipes/stylecop/analyzers/usingsa1210.md)
+  * **Using directives should be ordered alphabetically by namespace**
+  * The using directives within a C# code file are not sorted alphabetically by namespace.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.UsingSA1211](/recipes/csharp/recipes/stylecop/analyzers/usingsa1211.md)
+  * **Using alias directives should be ordered alphabetically by alias name**
+  * The using-alias directives within a C# code file are not sorted alphabetically by alias name.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.UsingSA1216](/recipes/csharp/recipes/stylecop/analyzers/usingsa1216.md)
+  * **Using static directives should be placed at the correct location.**
+  * A using static directive is positioned before a regular or after an alias using directive.
+* [org.openrewrite.csharp.recipes.stylecop.analyzers.UsingSA1217](/recipes/csharp/recipes/stylecop/analyzers/usingsa1217.md)
+  * **Using static directives should be ordered alphabetically**
+  * All using static directives should be ordered alphabetically.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.AddAttributeListFixWPF0130](/recipes/csharp/recipes/wpfanalyzers/addattributelistfixwpf0130.md)
+  * **Add [TemplatePart] to the type**
+  * Add [TemplatePart] to the type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.AddAttributeListFixWPF0176](/recipes/csharp/recipes/wpfanalyzers/addattributelistfixwpf0176.md)
+  * **StyleTypedProperty is missing**
+  * StyleTypedProperty is missing.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.AddDefaultMemberFixWPF0070](/recipes/csharp/recipes/wpfanalyzers/adddefaultmemberfixwpf0070.md)
+  * **Add default field to converter**
+  * Add default field to converter.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.AttachedPropertyBrowsableForTypeArgumentFixWPF0034](/recipes/csharp/recipes/wpfanalyzers/attachedpropertybrowsablefortypeargumentfixwpf0034.md)
+  * **Use correct argument for [AttachedPropertyBrowsableForType]**
+  * Use correct argument for [AttachedPropertyBrowsableForType].
+* [org.openrewrite.csharp.recipes.wpfanalyzers.AttachedPropertyBrowsableForTypeAttributeFixWPF0033](/recipes/csharp/recipes/wpfanalyzers/attachedpropertybrowsablefortypeattributefixwpf0033.md)
+  * **Add [AttachedPropertyBrowsableForType]**
+  * Add [AttachedPropertyBrowsableForType].
+* [org.openrewrite.csharp.recipes.wpfanalyzers.AttachedPropertyBrowsableForTypeAttributeFixWPF0071](/recipes/csharp/recipes/wpfanalyzers/attachedpropertybrowsablefortypeattributefixwpf0071.md)
+  * **Add ValueConversion attribute**
+  * Add ValueConversion attribute.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.CastFixWPF0019](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0019.md)
+  * **Cast sender to correct type**
+  * Cast sender to correct type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.CastFixWPF0020](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0020.md)
+  * **Cast value to correct type**
+  * Cast value to correct type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.CastFixWPF0021](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0021.md)
+  * **Cast sender to containing type**
+  * Cast sender to correct type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.CastFixWPF0022](/recipes/csharp/recipes/wpfanalyzers/castfixwpf0022.md)
+  * **Cast value to correct type**
+  * Cast value to correct type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ChangeTypeofFixWPF0081](/recipes/csharp/recipes/wpfanalyzers/changetypeoffixwpf0081.md)
+  * **MarkupExtensionReturnType must use correct return type**
+  * MarkupExtensionReturnType must use correct return type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ComponentResourceKeyFixWPF0140](/recipes/csharp/recipes/wpfanalyzers/componentresourcekeyfixwpf0140.md)
+  * **Use containing type when creating a ComponentResourceKey**
+  * Use containing type when creating a ComponentResourceKey.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ComponentResourceKeyFixWPF0141](/recipes/csharp/recipes/wpfanalyzers/componentresourcekeyfixwpf0141.md)
+  * **Use containing member as key when creating a ComponentResourceKey**
+  * Use containing member as key when creating a ComponentResourceKey.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ConstructorArgumentAttributeArgumentFixWPF0082](/recipes/csharp/recipes/wpfanalyzers/constructorargumentattributeargumentfixwpf0082.md)
+  * **[ConstructorArgument] must match**
+  * [ConstructorArgument] must match the name of the constructor parameter.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ConstructorArgumentAttributeFixWPF0083](/recipes/csharp/recipes/wpfanalyzers/constructorargumentattributefixwpf0083.md)
+  * **Add [ConstructorArgument]**
+  * Add [ConstructorArgument] for the property.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ConvertToLambdaFixWPF0023](/recipes/csharp/recipes/wpfanalyzers/converttolambdafixwpf0023.md)
+  * **The callback is trivial, convert to lambda**
+  * The callback is trivial, convert to lambda for better locality.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.DocumentationFixWPF0060](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0060.md)
+  * **Backing member for DependencyProperty should have standard documentation text**
+  * Backing member for DependencyProperty should have standard documentation text.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.DocumentationFixWPF0061](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0061.md)
+  * **Accessor method for attached property should have standard documentation text**
+  * Accessor method for attached property should have standard documentation text.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.DocumentationFixWPF0062](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0062.md)
+  * **Property changed callback should have standard documentation text**
+  * Property changed callback should have standard documentation text.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.DocumentationFixWPF0108](/recipes/csharp/recipes/wpfanalyzers/documentationfixwpf0108.md)
+  * **Backing member for RoutedEvent should have standard documentation text**
+  * Backing member for RoutedEvent should have standard documentation text.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.MakeFieldStaticReadonlyFixWPF0030](/recipes/csharp/recipes/wpfanalyzers/makefieldstaticreadonlyfixwpf0030.md)
+  * **Backing field for a DependencyProperty should be static and readonly**
+  * Backing field for a DependencyProperty should be static and readonly.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.MakeFieldStaticReadonlyFixWPF0107](/recipes/csharp/recipes/wpfanalyzers/makefieldstaticreadonlyfixwpf0107.md)
+  * **Backing member for a RoutedEvent should be static and readonly**
+  * Backing member for a RoutedEvent should be static and readonly.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.MakeFieldStaticReadonlyFixWPF0123](/recipes/csharp/recipes/wpfanalyzers/makefieldstaticreadonlyfixwpf0123.md)
+  * **Backing field for a RoutedCommand should be static and readonly**
+  * Backing field for a RoutedCommand should be static and readonly.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.MakeNullableFixWPF0024](/recipes/csharp/recipes/wpfanalyzers/makenullablefixwpf0024.md)
+  * **Parameter type should be nullable**
+  * Parameter type should be nullable.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.MarkupExtensionReturnTypeAttributeFixWPF0080](/recipes/csharp/recipes/wpfanalyzers/markupextensionreturntypeattributefixwpf0080.md)
+  * **Add MarkupExtensionReturnType attribute**
+  * Add MarkupExtensionReturnType attribute.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.MoveFixWPF0031](/recipes/csharp/recipes/wpfanalyzers/movefixwpf0031.md)
+  * **DependencyPropertyKey member must be declared before DependencyProperty member**
+  * DependencyPropertyKey member must be declared before DependencyProperty member.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RegisterRoutedCommandFixWPF0122](/recipes/csharp/recipes/wpfanalyzers/registerroutedcommandfixwpf0122.md)
+  * **Register name and owning type for routed command**
+  * Register containing type as owner for routed command.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0001](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0001.md)
+  * **Backing field for a DependencyProperty should match registered name**
+  * A dependency property's backing field should be named with the name it is registered with suffixed by 'Property'.  This is the convention in the framework.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0002](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0002.md)
+  * **Backing field for a DependencyPropertyKey should match registered name**
+  * A DependencyPropertyKey's backing field must be named with the name it is registered with suffixed by 'PropertyKey'.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0003](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0003.md)
+  * **CLR property for a DependencyProperty should match registered name**
+  * A CLR property accessor for a DependencyProperty must have the same name as the DependencyProperty is registered with.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0004](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0004.md)
+  * **CLR method for a DependencyProperty must match registered name**
+  * CLR methods for accessing a DependencyProperty must have names matching the name the DependencyProperty is registered with.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0005](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0005.md)
+  * **Name of PropertyChangedCallback should match registered name**
+  * Name of PropertyChangedCallback should match registered name.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0006](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0006.md)
+  * **Name of CoerceValueCallback should match registered name**
+  * Name of CoerceValueCallback should match registered name.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0007](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0007.md)
+  * **Name of ValidateValueCallback should match registered name**
+  * Name of ValidateValueCallback should match registered name.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0090](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0090.md)
+  * **Name the invoked method OnEventName**
+  * Name the invoked method OnEventName.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0091](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0091.md)
+  * **Name the invoked method OnEventName**
+  * Name the invoked method OnEventName.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0100](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0100.md)
+  * **Backing field for a RoutedEvent should match registered name**
+  * A routed event's backing field should be named with the name it is registered with suffixed by 'Event'.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.RenameMemberFixWPF0102](/recipes/csharp/recipes/wpfanalyzers/renamememberfixwpf0102.md)
+  * **Name of the event should match registered name**
+  * Name of the event should match registered name.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseContainingTypeFixWPF0011](/recipes/csharp/recipes/wpfanalyzers/usecontainingtypefixwpf0011.md)
+  * **Containing type should be used as registered owner**
+  * When registering a DependencyProperty register containing type as owner type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseContainingTypeFixWPF0101](/recipes/csharp/recipes/wpfanalyzers/usecontainingtypefixwpf0101.md)
+  * **Containing type should be used as registered owner**
+  * When registering a RoutedEvent register containing type as owner type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseContainingTypeFixWPF0121](/recipes/csharp/recipes/wpfanalyzers/usecontainingtypefixwpf0121.md)
+  * **Register containing type as owner for routed command**
+  * Register containing type as owner for routed command.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseCorrectDelegateFixWPF0092](/recipes/csharp/recipes/wpfanalyzers/usecorrectdelegatefixwpf0092.md)
+  * **Use correct handler type**
+  * Use correct handler type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseDependencyPropertyKeyFixWPF0040](/recipes/csharp/recipes/wpfanalyzers/usedependencypropertykeyfixwpf0040.md)
+  * **A readonly DependencyProperty must be set with DependencyPropertyKey**
+  * A readonly DependencyProperty must be set with DependencyPropertyKey.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseNameofFixWPF0120](/recipes/csharp/recipes/wpfanalyzers/usenameoffixwpf0120.md)
+  * **Register containing member name as name for routed command**
+  * Register containing member name as name for routed command.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseNameofFixWPF0150](/recipes/csharp/recipes/wpfanalyzers/usenameoffixwpf0150.md)
+  * **Use nameof() instead of literal**
+  * Use nameof() as it is less fragile than string literal.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseNameofFixWPF0151](/recipes/csharp/recipes/wpfanalyzers/usenameoffixwpf0151.md)
+  * **Use nameof() instead of constant**
+  * Use nameof() as it is less fragile than constant.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseRegisteredTypeFixWPF0012](/recipes/csharp/recipes/wpfanalyzers/useregisteredtypefixwpf0012.md)
+  * **CLR property type should match registered type**
+  * CLR property type should match registered type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseRegisteredTypeFixWPF0013](/recipes/csharp/recipes/wpfanalyzers/useregisteredtypefixwpf0013.md)
+  * **CLR accessor for attached property must match registered type**
+  * CLR accessor for attached property must match registered type.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseSetCurrentValueFixWPF0041](/recipes/csharp/recipes/wpfanalyzers/usesetcurrentvaluefixwpf0041.md)
+  * **Set mutable dependency properties using SetCurrentValue**
+  * Prefer setting mutable dependency properties using SetCurrentValue.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseSetValueFixWPF0035](/recipes/csharp/recipes/wpfanalyzers/usesetvaluefixwpf0035.md)
+  * **Use SetValue in setter**
+  * Use SetValue in setter.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.UseSetValueFixWPF0043](/recipes/csharp/recipes/wpfanalyzers/usesetvaluefixwpf0043.md)
+  * **Don't set DataContext and Style using SetCurrentValue**
+  * Set DataContext and Style using SetValue.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ValueConversionAttributeArgumentFixWPF0072](/recipes/csharp/recipes/wpfanalyzers/valueconversionattributeargumentfixwpf0072.md)
+  * **ValueConversion must use correct types**
+  * ValueConversion must use correct types.
+* [org.openrewrite.csharp.recipes.wpfanalyzers.ValueConversionAttributeFixWPF0073](/recipes/csharp/recipes/wpfanalyzers/valueconversionattributefixwpf0073.md)
+  * **Add ValueConversion attribute (unknown types)**
+  * Add ValueConversion attribute (unknown types).
+* [org.openrewrite.csharp.recipes.wpfanalyzers.XmlnsDefinitionFixWPF0052](/recipes/csharp/recipes/wpfanalyzers/xmlnsdefinitionfixwpf0052.md)
+  * **XmlnsDefinitions does not map all namespaces with public types**
+  * XmlnsDefinitions does not map all namespaces with public types.
 
 ## rewrite-dotnet
 
-* [Analyze a .NET project using upgrade-assistant](/recipes/dotnet/upgradeassistantanalyze.md) - _Run [upgrade-assistant analyze](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to analyze changes required to upgrade projects to a newer version of .NET. This recipe will generate an `org.openrewrite.dotnet.UpgradeAssistantAnalysis` data table containing the report details._
-* [Upgrade a .NET project using upgrade-assistant](/recipes/dotnet/upgradeassistant.md) - _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to a newer version of .NET._
+* [org.openrewrite.dotnet.UpgradeAssistant](/recipes/dotnet/upgradeassistant.md)
+  * **Upgrade a .NET project using upgrade-assistant**
+  * Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to a newer version of .NET.
+* [org.openrewrite.dotnet.UpgradeAssistantAnalyze](/recipes/dotnet/upgradeassistantanalyze.md)
+  * **Analyze a .NET project using upgrade-assistant**
+  * Run [upgrade-assistant analyze](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to analyze changes required to upgrade projects to a newer version of .NET. This recipe will generate an `org.openrewrite.dotnet.UpgradeAssistantAnalysis` data table containing the report details.
 
 ## rewrite-gradle
 
-* [Add Gradle dependency](/recipes/gradle/adddependency.md) - _Add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used._
-* [Add Gradle platform dependency](/recipes/gradle/addplatformdependency.md) - _Add a gradle platform dependency to a `build.gradle` file in the correct configuration based on where it is used._
-* [Add Gradle property](/recipes/gradle/addproperty.md) - _Add a property to the `gradle.properties` file._
-* [Migrate Gradle project dependencies to version catalog](/recipes/gradle/migratedependenciestoversioncatalog.md) - _Migrates Gradle project dependencies to use the [version catalog](https://docs.gradle.org/current/userguide/platforms.html) feature. Supports migrating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`  * Property references: `&quot;group:artifact:$version&quot;` or `&quot;group:artifact:${version}&quot;`  The recipe will:  * Create a `gradle/libs.versions.toml` file with version declarations  * Replace dependency declarations with catalog references (e.g., `libs.springCore`)  * Migrate version properties from `gradle.properties` to the version catalog  * Preserve project dependencies unchanged  **Note:** If a version catalog already exists, the recipe will not modify it._
-* [Module has dependency](/recipes/gradle/search/modulehasdependency.md) - _Searches for Gradle Projects (modules) that have a dependency matching the specified id or implementing class. Places a `SearchResult` marker on all sources within a project with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file that use the dependency, use the `FindDependency` recipe instead._
-* [Module has plugin](/recipes/gradle/search/modulehasplugin.md) - _Searches for Gradle Projects (modules) that have a plugin matching the specified id or implementing class. Places a `SearchResult` marker on all sources within a project with a matching plugin. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that apply the spring dependency management plugin, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindPlugins` recipe instead._
-* [Update Gradle wrapper](/recipes/gradle/updategradlewrapper.md) - _Update the version of Gradle used in an existing Gradle wrapper. Queries services.gradle.org to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as services.gradle.org, then the recipe may suggest a version which is not available in your artifact repository._
-* [Update a Gradle plugin by id](/recipes/gradle/plugins/upgradepluginversion.md) - _Update a Gradle plugin by id to a later version defined by the plugins DSL. To upgrade a plugin dependency defined by `buildscript.dependencies`, use the `UpgradeDependencyVersion` recipe instead._
-* [Upgrade Gradle dependency versions](/recipes/gradle/upgradedependencyversion.md) - _Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations._
-* [Upgrade transitive Gradle dependencies](/recipes/gradle/upgradetransitivedependencyversion.md) - _Upgrades the version of a transitive dependency in a Gradle build file. There are many ways to do this in Gradle, so the mechanism for upgrading a transitive dependency must be considered carefully depending on your style of dependency management._
+* [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
+  * **Add Gradle dependency**
+  * Add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used.
+* [org.openrewrite.gradle.AddPlatformDependency](/recipes/gradle/addplatformdependency.md)
+  * **Add Gradle platform dependency**
+  * Add a gradle platform dependency to a `build.gradle` file in the correct configuration based on where it is used.
+* [org.openrewrite.gradle.AddProperty](/recipes/gradle/addproperty.md)
+  * **Add Gradle property**
+  * Add a property to the `gradle.properties` file.
+* [org.openrewrite.gradle.MigrateDependenciesToVersionCatalog](/recipes/gradle/migratedependenciestoversioncatalog.md)
+  * **Migrate Gradle project dependencies to version catalog**
+  * Migrates Gradle project dependencies to use the [version catalog](https://docs.gradle.org/current/userguide/platforms.html) feature. Supports migrating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`  * Property references: `&quot;group:artifact:$version&quot;` or `&quot;group:artifact:${version}&quot;`  The recipe will:  * Create a `gradle/libs.versions.toml` file with version declarations  * Replace dependency declarations with catalog references (e.g., `libs.springCore`)  * Migrate version properties from `gradle.properties` to the version catalog  * Preserve project dependencies unchanged  **Note:** If a version catalog already exists, the recipe will not modify it.
+* [org.openrewrite.gradle.UpdateGradleWrapper](/recipes/gradle/updategradlewrapper.md)
+  * **Update Gradle wrapper**
+  * Update the version of Gradle used in an existing Gradle wrapper. Queries services.gradle.org to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as services.gradle.org, then the recipe may suggest a version which is not available in your artifact repository.
+* [org.openrewrite.gradle.UpgradeDependencyVersion](/recipes/gradle/upgradedependencyversion.md)
+  * **Upgrade Gradle dependency versions**
+  * Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations.
+* [org.openrewrite.gradle.UpgradeTransitiveDependencyVersion](/recipes/gradle/upgradetransitivedependencyversion.md)
+  * **Upgrade transitive Gradle dependencies**
+  * Upgrades the version of a transitive dependency in a Gradle build file. There are many ways to do this in Gradle, so the mechanism for upgrading a transitive dependency must be considered carefully depending on your style of dependency management.
+* [org.openrewrite.gradle.plugins.UpgradePluginVersion](/recipes/gradle/plugins/upgradepluginversion.md)
+  * **Update a Gradle plugin by id**
+  * Update a Gradle plugin by id to a later version defined by the plugins DSL. To upgrade a plugin dependency defined by `buildscript.dependencies`, use the `UpgradeDependencyVersion` recipe instead.
+* [org.openrewrite.gradle.search.ModuleHasDependency](/recipes/gradle/search/modulehasdependency.md)
+  * **Module has dependency**
+  * Searches for Gradle Projects (modules) that have a dependency matching the specified id or implementing class. Places a `SearchResult` marker on all sources within a project with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file that use the dependency, use the `FindDependency` recipe instead.
+* [org.openrewrite.gradle.search.ModuleHasPlugin](/recipes/gradle/search/modulehasplugin.md)
+  * **Module has plugin**
+  * Searches for Gradle Projects (modules) that have a plugin matching the specified id or implementing class. Places a `SearchResult` marker on all sources within a project with a matching plugin. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that apply the spring dependency management plugin, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindPlugins` recipe instead.
 
 ## rewrite-hcl
 
-* [Move content to another file](/recipes/hcl/movecontenttofile.md) - _Move content to another HCL file, deleting it in the original file._
+* [org.openrewrite.hcl.MoveContentToFile](/recipes/hcl/movecontenttofile.md)
+  * **Move content to another file**
+  * Move content to another HCL file, deleting it in the original file.
 
 ## rewrite-hibernate
 
-* [Remove table from single table inherited entity (Moderne Edition)](/recipes/hibernate/update66/removetablefrominheritedentity-moderne-edition.md) - _For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error._
+* [io.moderne.hibernate.update66.RemoveTableFromInheritedEntity](/recipes/hibernate/update66/removetablefrominheritedentity-moderne-edition.md)
+  * **Remove table from single table inherited entity (Moderne Edition)**
+  * For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error.
 
 ## rewrite-java
 
-* [Create Java class](/recipes/java/createemptyjavaclass.md) - _Create a new, empty Java class._
-* [Find distinct methods in use](/recipes/java/search/finddistinctmethods.md) - _A sample of every distinct method in use in a repository. The code sample in the method calls data table will be a representative use of the method, though there may be many other such uses of the method._
-* [Find the oldest Java version in use](/recipes/java/search/hasminimumjavaversion.md) - _The oldest Java version in use is the lowest Java version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Java 8, but a test source set uses Java 17. In this case, the oldest Java version in use is Java 8._
-* [Find type mappings](/recipes/java/search/findtypemappings.md) - _Study the frequency of `J` types and their `JavaType` type attribution._
-* [Study the size of the classpath by source set](/recipes/java/search/classpathtypecounts.md) - _Emit one data table row per source set in a project, with the number of types in the source set._
+* [org.openrewrite.java.CreateEmptyJavaClass](/recipes/java/createemptyjavaclass.md)
+  * **Create Java class**
+  * Create a new, empty Java class.
+* [org.openrewrite.java.search.ClasspathTypeCounts](/recipes/java/search/classpathtypecounts.md)
+  * **Study the size of the classpath by source set**
+  * Emit one data table row per source set in a project, with the number of types in the source set.
+* [org.openrewrite.java.search.FindDistinctMethods](/recipes/java/search/finddistinctmethods.md)
+  * **Find distinct methods in use**
+  * A sample of every distinct method in use in a repository. The code sample in the method calls data table will be a representative use of the method, though there may be many other such uses of the method.
+* [org.openrewrite.java.search.FindTypeMappings](/recipes/java/search/findtypemappings.md)
+  * **Find type mappings**
+  * Study the frequency of `J` types and their `JavaType` type attribution.
+* [org.openrewrite.java.search.HasMinimumJavaVersion](/recipes/java/search/hasminimumjavaversion.md)
+  * **Find the oldest Java version in use**
+  * The oldest Java version in use is the lowest Java version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Java 8, but a test source set uses Java 17. In this case, the oldest Java version in use is Java 8.
 
 ## rewrite-java-dependencies
 
-* [Add Gradle or Maven dependency](/recipes/java/dependencies/adddependency.md) - _For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used._
-* [Dependency resolution diagnostic](/recipes/java/dependencies/dependencyresolutiondiagnostic.md) - _Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.   The Repository accessibility report lists all the artifact repositories known to the project and whether respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.   The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed._
-* [Find minimum JUnit version](/recipes/java/dependencies/search/findminimumjunitversion.md) - _A recipe to find the minimum version of JUnit dependencies. This recipe is designed to return the minimum version of JUnit in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the minimum version of JUnit 4. If a minimumVersion is provided, the recipe will search to see if the minimum version of JUnit used by the project is no lower than the minimumVersion. For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7. Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results._
-* [Find relocated dependencies](/recipes/java/dependencies/relocateddependencycheck.md) - _Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes._
-* [Find the oldest matching dependency version in use](/recipes/java/dependencies/search/findminimumdependencyversion.md) - _The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11._
-* [Module has dependency](/recipes/java/dependencies/search/modulehasdependency.md) - _Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead._
-* [Remove a Gradle or Maven dependency](/recipes/java/dependencies/removedependency.md) - _For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the pom.xml._
-* [Remove redundant explicit dependencies](/recipes/java/dependencies/removeredundantdependencies.md) - _Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared._
-* [Repository has dependency](/recipes/java/dependencies/search/repositoryhasdependency.md) - _Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a repository with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use a springframework dependency, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead._
-* [Upgrade Gradle or Maven dependency versions](/recipes/java/dependencies/upgradedependencyversion.md) - _For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
-* [Upgrade transitive Gradle or Maven dependencies](/recipes/java/dependencies/upgradetransitivedependencyversion.md) - _Upgrades the version of a transitive dependency in a Maven pom.xml or Gradle build.gradle. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive._
+* [org.openrewrite.java.dependencies.AddDependency](/recipes/java/dependencies/adddependency.md)
+  * **Add Gradle or Maven dependency**
+  * For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used.
+* [org.openrewrite.java.dependencies.DependencyResolutionDiagnostic](/recipes/java/dependencies/dependencyresolutiondiagnostic.md)
+  * **Dependency resolution diagnostic**
+  * Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.   The Repository accessibility report lists all the artifact repositories known to the project and whether respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.   The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed.
+* [org.openrewrite.java.dependencies.RelocatedDependencyCheck](/recipes/java/dependencies/relocateddependencycheck.md)
+  * **Find relocated dependencies**
+  * Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
+* [org.openrewrite.java.dependencies.RemoveDependency](/recipes/java/dependencies/removedependency.md)
+  * **Remove a Gradle or Maven dependency**
+  * For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the pom.xml.
+* [org.openrewrite.java.dependencies.RemoveRedundantDependencies](/recipes/java/dependencies/removeredundantdependencies.md)
+  * **Remove redundant explicit dependencies**
+  * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared.
+* [org.openrewrite.java.dependencies.UpgradeDependencyVersion](/recipes/java/dependencies/upgradedependencyversion.md)
+  * **Upgrade Gradle or Maven dependency versions**
+  * For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
+* [org.openrewrite.java.dependencies.UpgradeTransitiveDependencyVersion](/recipes/java/dependencies/upgradetransitivedependencyversion.md)
+  * **Upgrade transitive Gradle or Maven dependencies**
+  * Upgrades the version of a transitive dependency in a Maven pom.xml or Gradle build.gradle. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+* [org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion](/recipes/java/dependencies/search/findminimumdependencyversion.md)
+  * **Find the oldest matching dependency version in use**
+  * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11.
+* [org.openrewrite.java.dependencies.search.FindMinimumJUnitVersion](/recipes/java/dependencies/search/findminimumjunitversion.md)
+  * **Find minimum JUnit version**
+  * A recipe to find the minimum version of JUnit dependencies. This recipe is designed to return the minimum version of JUnit in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the minimum version of JUnit 4. If a minimumVersion is provided, the recipe will search to see if the minimum version of JUnit used by the project is no lower than the minimumVersion. For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7. Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
+* [org.openrewrite.java.dependencies.search.ModuleHasDependency](/recipes/java/dependencies/search/modulehasdependency.md)
+  * **Module has dependency**
+  * Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
+* [org.openrewrite.java.dependencies.search.RepositoryHasDependency](/recipes/java/dependencies/search/repositoryhasdependency.md)
+  * **Repository has dependency**
+  * Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a repository with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use a springframework dependency, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
 
 ## rewrite-java-security
 
-* [Enable CSRF attack prevention](/recipes/java/security/spring/csrfprotection.md) - _Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant message, or program causes a user's web browser to perform an unwanted action on a trusted site when the user is authenticated. See the full [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)._
-* [Find and fix vulnerable Nuget dependencies](/recipes/csharp/dependencies/dependencyvulnerabilitycheck.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable._
-* [Find and fix vulnerable dependencies](/recipes/java/dependencies/dependencyvulnerabilitycheck.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-05T1103._
-* [Find licenses in use in third-party dependencies](/recipes/java/dependencies/dependencylicensecheck.md) - _Locates and reports on all licenses in use._
-* [Prevent clickjacking](/recipes/java/security/spring/preventclickjacking.md) - _The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP response header to indicate whether or not a browser should be allowed to render a page in a `&lt;frame&gt;` or `&lt;iframe&gt;`. Sites can use this to avoid Clickjacking attacks by ensuring that their content is not embedded into other sites._
-* [Remove unused dependencies](/recipes/java/dependencies/removeunuseddependencies.md) - _Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed._
-* [Software bill of materials](/recipes/java/dependencies/softwarebillofmaterials.md) - _Produces a software bill of materials (SBOM) for a project. An SBOM is a complete list of all dependencies used in a project, including transitive dependencies. The produced SBOM is in the [CycloneDX](https://cyclonedx.org/) XML format. Supports Gradle and Maven. Places a file named sbom.xml adjacent to the Gradle or Maven build file._
-* [XML parser XXE vulnerability](/recipes/java/security/xmlparserxxevulnerability.md) - _Avoid exposing dangerous features of the XML parser by updating certain factory settings._
+* [org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck](/recipes/csharp/dependencies/dependencyvulnerabilitycheck.md)
+  * **Find and fix vulnerable Nuget dependencies**
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.
+* [org.openrewrite.java.dependencies.DependencyLicenseCheck](/recipes/java/dependencies/dependencylicensecheck.md)
+  * **Find licenses in use in third-party dependencies**
+  * Locates and reports on all licenses in use.
+* [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
+  * **Find and fix vulnerable dependencies**
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-05T1103.
+* [org.openrewrite.java.dependencies.RemoveUnusedDependencies](/recipes/java/dependencies/removeunuseddependencies.md)
+  * **Remove unused dependencies**
+  * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
+* [org.openrewrite.java.dependencies.SoftwareBillOfMaterials](/recipes/java/dependencies/softwarebillofmaterials.md)
+  * **Software bill of materials**
+  * Produces a software bill of materials (SBOM) for a project. An SBOM is a complete list of all dependencies used in a project, including transitive dependencies. The produced SBOM is in the [CycloneDX](https://cyclonedx.org/) XML format. Supports Gradle and Maven. Places a file named sbom.xml adjacent to the Gradle or Maven build file.
+* [org.openrewrite.java.security.XmlParserXXEVulnerability](/recipes/java/security/xmlparserxxevulnerability.md)
+  * **XML parser XXE vulnerability**
+  * Avoid exposing dangerous features of the XML parser by updating certain factory settings.
+* [org.openrewrite.java.security.spring.CsrfProtection](/recipes/java/security/spring/csrfprotection.md)
+  * **Enable CSRF attack prevention**
+  * Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant message, or program causes a user's web browser to perform an unwanted action on a trusted site when the user is authenticated. See the full [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html).
+* [org.openrewrite.java.security.spring.PreventClickjacking](/recipes/java/security/spring/preventclickjacking.md)
+  * **Prevent clickjacking**
+  * The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP response header to indicate whether or not a browser should be allowed to render a page in a `&lt;frame&gt;` or `&lt;iframe&gt;`. Sites can use this to avoid Clickjacking attacks by ensuring that their content is not embedded into other sites.
 
 ## rewrite-jenkins
 
-* [Add plugin developer team to CODEOWNERS](/recipes/jenkins/github/addteamtocodeowners.md) - _Adds the `{artifactId}-plugin-developers` team to all files in `.github/CODEOWNERS` if absent._
-* [Create `index.jelly` if it doesn't exist](/recipes/jenkins/createindexjelly.md) - _Jenkins tooling [requires](https://github.com/jenkinsci/maven-hpi-plugin/pull/302) `src/main/resources/index.jelly` exists with a description._
-* [Upgrade jenkins java version](/recipes/jenkins/upgradejavaversion.md) - _Upgrades the version of java specified in Jenkins groovy scripts. Will not downgrade if the version is newer than the specified version._
+* [org.openrewrite.jenkins.CreateIndexJelly](/recipes/jenkins/createindexjelly.md)
+  * **Create `index.jelly` if it doesn't exist**
+  * Jenkins tooling [requires](https://github.com/jenkinsci/maven-hpi-plugin/pull/302) `src/main/resources/index.jelly` exists with a description.
+* [org.openrewrite.jenkins.UpgradeJavaVersion](/recipes/jenkins/upgradejavaversion.md)
+  * **Upgrade jenkins java version**
+  * Upgrades the version of java specified in Jenkins groovy scripts. Will not downgrade if the version is newer than the specified version.
+* [org.openrewrite.jenkins.github.AddTeamToCodeowners](/recipes/jenkins/github/addteamtocodeowners.md)
+  * **Add plugin developer team to CODEOWNERS**
+  * Adds the `{artifactId}-plugin-developers` team to all files in `.github/CODEOWNERS` if absent.
 
 ## rewrite-joda
 
-* [Migrate Joda-Time to Java time](/recipes/java/joda/time/jodatimerecipe.md) - _Prefer the Java standard library over third-party usage of Joda Time._
+* [org.openrewrite.java.joda.time.JodaTimeRecipe](/recipes/java/joda/time/jodatimerecipe.md)
+  * **Migrate Joda-Time to Java time**
+  * Prefer the Java standard library over third-party usage of Joda Time.
 
 ## rewrite-json
 
-* [Copy JSON value](/recipes/json/copyvalue.md) - _Copies a JSON value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to create the new key if it does not exist._
-* [Create JSON file](/recipes/json/createjsonfile.md) - _Create a new JSON file._
+* [org.openrewrite.json.CopyValue](/recipes/json/copyvalue.md)
+  * **Copy JSON value**
+  * Copies a JSON value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to create the new key if it does not exist.
+* [org.openrewrite.json.CreateJsonFile](/recipes/json/createjsonfile.md)
+  * **Create JSON file**
+  * Create a new JSON file.
 
 ## rewrite-liberty
 
-* [Removes invalid JNDI properties](/recipes/java/liberty/removewas2libertynonportablejndilookup.md) - _Remove the use of invalid JNDI properties from Hashtable._
+* [org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup](/recipes/java/liberty/removewas2libertynonportablejndilookup.md)
+  * **Removes invalid JNDI properties**
+  * Remove the use of invalid JNDI properties from Hashtable.
 
 ## rewrite-maven
 
-* [Add Maven dependency](/recipes/maven/adddependency.md) - _Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used._
-* [Add a configuration option for the Maven runtime](/recipes/maven/addruntimeconfig.md) - _Add a new configuration option for the Maven runtime if not already present._
-* [Add managed Maven dependency](/recipes/maven/addmanageddependency.md) - _Add a managed Maven dependency to a `pom.xml` file._
-* [Add the Develocity Maven extension](/recipes/maven/adddevelocitymavenextension.md) - _To integrate the Develocity Maven extension into Maven projects, ensure that the `develocity-maven-extension` is added to the `.mvn/extensions.xml` file if not already present. Additionally, configure the extension by adding the `.mvn/develocity.xml` configuration file._
-* [Increment Maven project version](/recipes/maven/incrementprojectversion.md) - _Increase Maven project version by incrementing either the major, minor, or patch version as defined by [semver](https://semver.org/). Other versioning schemes are not supported._
-* [Manage dependencies](/recipes/maven/managedependencies.md) - _Make existing dependencies managed by moving their version to be specified in the dependencyManagement section of the POM._
-* [Module has dependency](/recipes/maven/search/modulehasdependency.md) - _Searches for Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindDependency` recipe instead._
-* [Module has plugin](/recipes/maven/search/modulehasplugin.md) - _Searches for Maven modules that have a plugin matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching plugin. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that apply the spring boot plugin, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindPlugins` recipe instead._
-* [Remove unused properties](/recipes/maven/removeunusedproperties.md) - _Detect and remove Maven property declarations which do not have any usage within the project._
-* [Update Maven wrapper](/recipes/maven/updatemavenwrapper.md) - _Update the version of Maven used in an existing Maven wrapper._
-* [Upgrade Maven dependency version](/recipes/maven/upgradedependencyversion.md) - _Upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
-* [Upgrade transitive Maven dependencies](/recipes/maven/upgradetransitivedependencyversion.md) - _Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive._
+* [org.openrewrite.maven.AddDependency](/recipes/maven/adddependency.md)
+  * **Add Maven dependency**
+  * Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used.
+* [org.openrewrite.maven.AddDevelocityMavenExtension](/recipes/maven/adddevelocitymavenextension.md)
+  * **Add the Develocity Maven extension**
+  * To integrate the Develocity Maven extension into Maven projects, ensure that the `develocity-maven-extension` is added to the `.mvn/extensions.xml` file if not already present. Additionally, configure the extension by adding the `.mvn/develocity.xml` configuration file.
+* [org.openrewrite.maven.AddManagedDependency](/recipes/maven/addmanageddependency.md)
+  * **Add managed Maven dependency**
+  * Add a managed Maven dependency to a `pom.xml` file.
+* [org.openrewrite.maven.AddRuntimeConfig](/recipes/maven/addruntimeconfig.md)
+  * **Add a configuration option for the Maven runtime**
+  * Add a new configuration option for the Maven runtime if not already present.
+* [org.openrewrite.maven.IncrementProjectVersion](/recipes/maven/incrementprojectversion.md)
+  * **Increment Maven project version**
+  * Increase Maven project version by incrementing either the major, minor, or patch version as defined by [semver](https://semver.org/). Other versioning schemes are not supported.
+* [org.openrewrite.maven.ManageDependencies](/recipes/maven/managedependencies.md)
+  * **Manage dependencies**
+  * Make existing dependencies managed by moving their version to be specified in the dependencyManagement section of the POM.
+* [org.openrewrite.maven.RemoveUnusedProperties](/recipes/maven/removeunusedproperties.md)
+  * **Remove unused properties**
+  * Detect and remove Maven property declarations which do not have any usage within the project.
+* [org.openrewrite.maven.UpdateMavenWrapper](/recipes/maven/updatemavenwrapper.md)
+  * **Update Maven wrapper**
+  * Update the version of Maven used in an existing Maven wrapper.
+* [org.openrewrite.maven.UpgradeDependencyVersion](/recipes/maven/upgradedependencyversion.md)
+  * **Upgrade Maven dependency version**
+  * Upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
+* [org.openrewrite.maven.UpgradeTransitiveDependencyVersion](/recipes/maven/upgradetransitivedependencyversion.md)
+  * **Upgrade transitive Maven dependencies**
+  * Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+* [org.openrewrite.maven.search.ModuleHasDependency](/recipes/maven/search/modulehasdependency.md)
+  * **Module has dependency**
+  * Searches for Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindDependency` recipe instead.
+* [org.openrewrite.maven.search.ModuleHasPlugin](/recipes/maven/search/modulehasplugin.md)
+  * **Module has plugin**
+  * Searches for Maven modules that have a plugin matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching plugin. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that apply the spring boot plugin, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindPlugins` recipe instead.
 
 ## rewrite-micronaut
 
-* [Add Maven annotation processor path](/recipes/java/micronaut/addannotationprocessorpath.md) - _Add the groupId, artifactId, version, and exclusions of a Maven annotation processor path._
-* [Add `@Introspected` to classes requiring a map representation](/recipes/java/micronaut/typerequiresintrospection.md) - _In Micronaut 2.x a reflection-based strategy was used to retrieve that information if the class was not annotated with `@Introspected`. As of Micronaut 3.x it is required to annotate classes with `@Introspected` that are used in this way._
-* [Add `snakeyaml` dependency if needed](/recipes/java/micronaut/addsnakeyamldependencyifneeded.md) - _This recipe will add the `snakeyaml` dependency to a Micronaut 4 application that uses yaml configuration._
-* [Copy non-inherited annotations from super class](/recipes/java/micronaut/copynoninheritedannotations.md) - _As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/micronaut-core/blob/3.0.x/src/main/docs/guide/appendix/breaks.adoc#annotation-inheritance) that are explicitly meta-annotated with `@Inherited` are inherited from parent classes and interfaces._
+* [org.openrewrite.java.micronaut.AddAnnotationProcessorPath](/recipes/java/micronaut/addannotationprocessorpath.md)
+  * **Add Maven annotation processor path**
+  * Add the groupId, artifactId, version, and exclusions of a Maven annotation processor path.
+* [org.openrewrite.java.micronaut.AddSnakeYamlDependencyIfNeeded](/recipes/java/micronaut/addsnakeyamldependencyifneeded.md)
+  * **Add `snakeyaml` dependency if needed**
+  * This recipe will add the `snakeyaml` dependency to a Micronaut 4 application that uses yaml configuration.
+* [org.openrewrite.java.micronaut.CopyNonInheritedAnnotations](/recipes/java/micronaut/copynoninheritedannotations.md)
+  * **Copy non-inherited annotations from super class**
+  * As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/micronaut-core/blob/3.0.x/src/main/docs/guide/appendix/breaks.adoc#annotation-inheritance) that are explicitly meta-annotated with `@Inherited` are inherited from parent classes and interfaces.
+* [org.openrewrite.java.micronaut.TypeRequiresIntrospection](/recipes/java/micronaut/typerequiresintrospection.md)
+  * **Add `@Introspected` to classes requiring a map representation**
+  * In Micronaut 2.x a reflection-based strategy was used to retrieve that information if the class was not annotated with `@Introspected`. As of Micronaut 3.x it is required to annotate classes with `@Introspected` that are used in this way.
 
 ## rewrite-migrate-java
 
-* [Add scope annotation to injected classes](/recipes/java/migrate/javax/addscopetoinjectedclass.md) - _Finds member variables annotated with `@Inject' and applies `@Dependent` scope annotation to the variable's type._
-* [Adds `static` modifier to `@Produces` fields that are in session beans](/recipes/java/migrate/addstaticvariableonproducersessionbean.md) - _Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`._
-* [Convert `@lombok.Value` class to Record](/recipes/java/migrate/lombok/lombokvaluetorecord.md) - _Convert Lombok `@Value` annotated classes to standard Java Records._
-* [Plan a Java version migration](/recipes/java/migrate/search/planjavamigration.md) - _Study the set of Java versions and associated tools in use across many repositories._
-* [Project has no Jakarta annotations](/recipes/java/migrate/jakarta/hasnojakartaannotations.md) - _Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present._
-* [Rename getter methods to fit Lombok](/recipes/java/migrate/lombok/adoptlombokgettermethodnames.md) - _Rename methods that are effectively getter to the name Lombok would give them.  Limitations:  - If two methods in a class are effectively the same getter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is._
-* [Rename setter methods to fit Lombok](/recipes/java/migrate/lombok/adoptlomboksettermethodnames.md) - _Rename methods that are effectively setter to the name Lombok would give them. Limitations:  - If two methods in a class are effectively the same setter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is._
-* [Unannotated entity attributes require a Transient annotation](/recipes/java/migrate/javax/addtransientannotationtoentity.md) - _In OpenJPA, attributes that are themselves entity classes are not persisted by default. EclipseLink has a different default behavior and tries to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated entity attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink._
-* [Use latest JAXB API and runtime for Jakarta EE 8](/recipes/java/migrate/javax/addjaxbruntime.md) - _Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
-* [`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation](/recipes/java/migrate/javax/removeembeddableid.md) - _According to the Java Persistence API (JPA) specification, if an entity defines an attribute with an `@EmbeddedId` annotation, the embeddable class cannot contain an attribute with an `@Id` annotation. If both the `@EmbeddedId` annotation and the `@Id` annotation are defined, OpenJPA ignores the `@Id` annotation, whereas EclipseLink throws an exception._
+* [org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean](/recipes/java/migrate/addstaticvariableonproducersessionbean.md)
+  * **Adds `static` modifier to `@Produces` fields that are in session beans**
+  * Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`.
+* [org.openrewrite.java.migrate.jakarta.HasNoJakartaAnnotations](/recipes/java/migrate/jakarta/hasnojakartaannotations.md)
+  * **Project has no Jakarta annotations**
+  * Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present.
+* [org.openrewrite.java.migrate.javax.AddJaxbRuntime](/recipes/java/migrate/javax/addjaxbruntime.md)
+  * **Use latest JAXB API and runtime for Jakarta EE 8**
+  * Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+* [org.openrewrite.java.migrate.javax.AddScopeToInjectedClass](/recipes/java/migrate/javax/addscopetoinjectedclass.md)
+  * **Add scope annotation to injected classes**
+  * Finds member variables annotated with `@Inject' and applies `@Dependent` scope annotation to the variable's type.
+* [org.openrewrite.java.migrate.javax.AddTransientAnnotationToEntity](/recipes/java/migrate/javax/addtransientannotationtoentity.md)
+  * **Unannotated entity attributes require a Transient annotation**
+  * In OpenJPA, attributes that are themselves entity classes are not persisted by default. EclipseLink has a different default behavior and tries to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated entity attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink.
+* [org.openrewrite.java.migrate.javax.RemoveEmbeddableId](/recipes/java/migrate/javax/removeembeddableid.md)
+  * **`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation**
+  * According to the Java Persistence API (JPA) specification, if an entity defines an attribute with an `@EmbeddedId` annotation, the embeddable class cannot contain an attribute with an `@Id` annotation. If both the `@EmbeddedId` annotation and the `@Id` annotation are defined, OpenJPA ignores the `@Id` annotation, whereas EclipseLink throws an exception.
+* [org.openrewrite.java.migrate.lombok.AdoptLombokGetterMethodNames](/recipes/java/migrate/lombok/adoptlombokgettermethodnames.md)
+  * **Rename getter methods to fit Lombok**
+  * Rename methods that are effectively getter to the name Lombok would give them.  Limitations:  - If two methods in a class are effectively the same getter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is.
+* [org.openrewrite.java.migrate.lombok.AdoptLombokSetterMethodNames](/recipes/java/migrate/lombok/adoptlomboksettermethodnames.md)
+  * **Rename setter methods to fit Lombok**
+  * Rename methods that are effectively setter to the name Lombok would give them. Limitations:  - If two methods in a class are effectively the same setter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() { return ba; } int getBa() { return foo; }` stays as it is.
+* [org.openrewrite.java.migrate.lombok.LombokValueToRecord](/recipes/java/migrate/lombok/lombokvaluetorecord.md)
+  * **Convert `@lombok.Value` class to Record**
+  * Convert Lombok `@Value` annotated classes to standard Java Records.
+* [org.openrewrite.java.migrate.search.PlanJavaMigration](/recipes/java/migrate/search/planjavamigration.md)
+  * **Plan a Java version migration**
+  * Study the set of Java versions and associated tools in use across many repositories.
 
 ## rewrite-nodejs
 
-* [Find Node.js projects](/recipes/nodejs/search/findnodeprojects.md) - _Find Node.js projects and summarize data about them._
-* [Find and fix vulnerable npm dependencies](/recipes/nodejs/dependencyvulnerabilitycheck.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable._
-* [Node.js dependency insight](/recipes/nodejs/search/dependencyinsight.md) - _Identify the direct and transitive Node.js dependencies used in a project._
+* [org.openrewrite.nodejs.DependencyVulnerabilityCheck](/recipes/nodejs/dependencyvulnerabilitycheck.md)
+  * **Find and fix vulnerable npm dependencies**
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.
+* [org.openrewrite.nodejs.search.DependencyInsight](/recipes/nodejs/search/dependencyinsight.md)
+  * **Node.js dependency insight**
+  * Identify the direct and transitive Node.js dependencies used in a project.
+* [org.openrewrite.nodejs.search.FindNodeProjects](/recipes/nodejs/search/findnodeprojects.md)
+  * **Find Node.js projects**
+  * Find Node.js projects and summarize data about them.
 
 ## rewrite-program-analysis
 
-* [Find LDAP injection vulnerabilities](/recipes/analysis/java/security/findldapinjection.md) - _Finds LDAP injection vulnerabilities by tracking tainted data flow from user input to LDAP queries._
-* [Find PII exposure in logs and external APIs](/recipes/analysis/java/privacy/findpiiexposure.md) - _Detects when Personally Identifiable Information (PII) is exposed through logging statements or sent to external APIs without proper sanitization. This helps prevent data leaks and ensures compliance with privacy regulations like GDPR and CCPA._
-* [Find SQL injection vulnerabilities](/recipes/analysis/java/security/findsqlinjection.md) - _Detects potential SQL injection vulnerabilities where user input flows to SQL execution methods without proper sanitization._
-* [Find XSS vulnerabilities](/recipes/analysis/java/security/findxssvulnerability.md) - _Detects potential cross-site scripting vulnerabilities where user input flows to output methods without proper sanitization._
-* [Find XXE vulnerabilities](/recipes/analysis/java/security/findxxevulnerability.md) - _Locates XML parsers that are not configured to prevent XML External Entity (XXE) attacks._
-* [Find command injection vulnerabilities](/recipes/analysis/java/security/findcommandinjection.md) - _Detects when user-controlled input flows into system command execution methods like Runtime.exec() or ProcessBuilder, which could allow attackers to execute arbitrary commands._
-* [Find path traversal vulnerabilities](/recipes/analysis/java/security/findpathtraversal.md) - _Detects potential path traversal vulnerabilities where user input flows to file system operations without proper validation._
-* [Find unencrypted PII storage](/recipes/analysis/java/security/findunencryptedpiistorage.md) - _Identifies when personally identifiable information (PII) is stored in databases, files, or other persistent storage without encryption._
-* [Track data lineage](/recipes/analysis/java/datalineage/trackdatalineage.md) - _Tracks the flow of data from database sources (JDBC queries, JPA entities) to API sinks (REST endpoints, GraphQL mutations) to understand data dependencies and support compliance requirements._
+* [org.openrewrite.analysis.java.datalineage.TrackDataLineage](/recipes/analysis/java/datalineage/trackdatalineage.md)
+  * **Track data lineage**
+  * Tracks the flow of data from database sources (JDBC queries, JPA entities) to API sinks (REST endpoints, GraphQL mutations) to understand data dependencies and support compliance requirements.
+* [org.openrewrite.analysis.java.privacy.FindPiiExposure](/recipes/analysis/java/privacy/findpiiexposure.md)
+  * **Find PII exposure in logs and external APIs**
+  * Detects when Personally Identifiable Information (PII) is exposed through logging statements or sent to external APIs without proper sanitization. This helps prevent data leaks and ensures compliance with privacy regulations like GDPR and CCPA.
+* [org.openrewrite.analysis.java.security.FindCommandInjection](/recipes/analysis/java/security/findcommandinjection.md)
+  * **Find command injection vulnerabilities**
+  * Detects when user-controlled input flows into system command execution methods like Runtime.exec() or ProcessBuilder, which could allow attackers to execute arbitrary commands.
+* [org.openrewrite.analysis.java.security.FindLdapInjection](/recipes/analysis/java/security/findldapinjection.md)
+  * **Find LDAP injection vulnerabilities**
+  * Finds LDAP injection vulnerabilities by tracking tainted data flow from user input to LDAP queries.
+* [org.openrewrite.analysis.java.security.FindPathTraversal](/recipes/analysis/java/security/findpathtraversal.md)
+  * **Find path traversal vulnerabilities**
+  * Detects potential path traversal vulnerabilities where user input flows to file system operations without proper validation.
+* [org.openrewrite.analysis.java.security.FindSqlInjection](/recipes/analysis/java/security/findsqlinjection.md)
+  * **Find SQL injection vulnerabilities**
+  * Detects potential SQL injection vulnerabilities where user input flows to SQL execution methods without proper sanitization.
+* [org.openrewrite.analysis.java.security.FindUnencryptedPiiStorage](/recipes/analysis/java/security/findunencryptedpiistorage.md)
+  * **Find unencrypted PII storage**
+  * Identifies when personally identifiable information (PII) is stored in databases, files, or other persistent storage without encryption.
+* [org.openrewrite.analysis.java.security.FindXssVulnerability](/recipes/analysis/java/security/findxssvulnerability.md)
+  * **Find XSS vulnerabilities**
+  * Detects potential cross-site scripting vulnerabilities where user input flows to output methods without proper sanitization.
+* [org.openrewrite.analysis.java.security.FindXxeVulnerability](/recipes/analysis/java/security/findxxevulnerability.md)
+  * **Find XXE vulnerabilities**
+  * Locates XML parsers that are not configured to prevent XML External Entity (XXE) attacks.
 
 ## rewrite-properties
 
-* [Create Properties file](/recipes/properties/createpropertiesfile.md) - _Create a new Properties file._
+* [org.openrewrite.properties.CreatePropertiesFile](/recipes/properties/createpropertiesfile.md)
+  * **Create Properties file**
+  * Create a new Properties file.
 
 ## rewrite-rewrite
 
-* [Extract documentation examples from tests](/recipes/java/recipes/examplesextractor.md) - _Extract the before/after sources from tests annotated with `@DocumentExample`, and generate a YAML file with those examples to be shown in the documentation to show usage._
+* [org.openrewrite.java.recipes.ExamplesExtractor](/recipes/java/recipes/examplesextractor.md)
+  * **Extract documentation examples from tests**
+  * Extract the before/after sources from tests annotated with `@DocumentExample`, and generate a YAML file with those examples to be shown in the documentation to show usage.
 
 ## rewrite-spring
 
-* [Add `@SpringBootApplication` class](/recipes/java/spring/boot/addspringbootapplication.md) - _Adds a `@SpringBootApplication` class containing a main method to bootify your Spring Framework application._
-* [Add logging.pattern.level for traceId and spanId](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md) - _Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set._
-* [Applications using logging shutdown hooks](/recipes/java/spring/boot2/search/loggingshutdownhooks.md) - _Spring Boot registers a logging shutdown hook by default for JAR-based applications to ensure that logging resources are released when the JVM exits. If your application is deployed as a WAR then the shutdown hook is not registered since the servlet container usually handles logging concerns.   Most applications will want the shutdown hook. However, if your application has complex context hierarchies, then you may need to disable it. You can use the `logging.register-shutdown-hook` property to do that._
-* [Integration scheduler pool size](/recipes/java/spring/boot2/search/integrationschedulerpoolrecipe.md) - _Spring Integration now reuses an available `TaskScheduler` rather than configuring its own. In a typical application setup relying on the auto-configuration, this means that Spring Integration uses the auto-configured task scheduler that has a pool size of 1. To restore Spring Integration’s default of 10 threads, use the `spring.task.scheduling.pool.size` property._
-* [Is likely a Spring Boot project](/recipes/java/spring/boot/islikelyspringboot.md) - _Marks the project if it's likely a Spring Boot project._
-* [Is likely a Spring Framework project](/recipes/java/spring/framework/islikelyspringframework.md) - _Marks the project if it's likely a Spring Framework project._
-* [Is likely not a Spring Boot project](/recipes/java/spring/boot/islikelynotspringboot.md) - _Marks the project if it's likely not a Spring Boot project._
-* [Maintain trailing slash URL mappings](/recipes/java/spring/boot3/maintaintrailingslashurlmappings.md) - _This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default value set to false. This means that previously, a controller `@GetMapping(&quot;/some/greeting&quot;)` would match both `GET /some/greeting` and `GET /some/greeting/`, but it doesn't match `GET /some/greeting/` anymore by default and will result in an HTTP 404 error. This recipe is to maintain trailing slash in all HTTP url mappings._
-* [Merge Spring `bootstrap.yml` with `application.yml`](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md) - _In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties should be merged with `application.yml`._
-* [Migrate Spring Framework dependencies to Spring Boot](/recipes/java/spring/boot/migratespringframeworkdependenciestospringboot.md) - _Migrate Spring Framework dependencies to Spring Boot._
-* [Migrate `Docket` to `GroupedOpenAPI`](/recipes/java/spring/doc/migratedocketbeantogroupedopenapibean.md) - _Migrate a `Docket` bean to a `GroupedOpenAPI` bean preserving group name, packages and paths. When possible the recipe will prefer property based configuration._
-* [Migrate `beans.xml` to Spring Framework configuration class](/recipes/java/spring/framework/beansxml/beansxmltoconfiguration.md) - _Converts Java/Jakarta EE `beans.xml` configuration files to Spring Framework `@Configuration` classes._
-* [Migrate `web.xml` to `WebApplicationInitializer`](/recipes/java/spring/framework/webxml/webxmltowebapplicationinitializer.md) - _Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests. It creates a `WebXmlWebAppInitializer` class in `src/main/java` with respect to submodules if they contain java files. **If it finds an existing `WebXmlWebAppInitializer`, it skips the creation**._
-* [Rename bean](/recipes/java/spring/renamebean.md) - _Renames a Spring bean, both declaration and references._
-* [Separate `application.properties` by profile](/recipes/java/spring/separateapplicationpropertiesbyprofile.md) - _Separating `application.properties` into separate files based on profiles._
-* [Separate application YAML by profile](/recipes/java/spring/separateapplicationyamlbyprofile.md) - _The Spring team's recommendation is to separate profile properties into their own YAML files now._
-* [Update the API manifest](/recipes/java/spring/updateapimanifest.md) - _Keep a consolidated manifest of the API endpoints that this application exposes up-to-date._
-* [Upgrade Spring dependencies](/recipes/maven/spring/upgradeexplicitspringbootdependencies.md) - _Upgrades dependencies according to the specified version of spring boot. Spring boot has many direct and transitive dependencies. When a module has an explicit dependency on one of these it may also need to be upgraded to match the version used by spring boot._
-* [Use `AutoConfiguration#imports`](/recipes/java/spring/boot2/moveautoconfigurationtoimportsfile.md) - _Use `AutoConfiguration#imports` instead of the deprecated entry `EnableAutoConfiguration` in `spring.factories` when defining autoconfiguration classes._
-* [Use `spring.reactor.context-propagation` property](/recipes/java/spring/boot3/migratehookstoreactorcontextproperty.md) - _Replace `Hooks.enableAutomaticContextPropagation()` with `spring.reactor.context-propagation=true`._
+* [io.moderne.java.spring.boot.AddSpringBootApplication](/recipes/java/spring/boot/addspringbootapplication.md)
+  * **Add `@SpringBootApplication` class**
+  * Adds a `@SpringBootApplication` class containing a main method to bootify your Spring Framework application.
+* [io.moderne.java.spring.boot.IsLikelyNotSpringBoot](/recipes/java/spring/boot/islikelynotspringboot.md)
+  * **Is likely not a Spring Boot project**
+  * Marks the project if it's likely not a Spring Boot project.
+* [io.moderne.java.spring.boot.IsLikelySpringBoot](/recipes/java/spring/boot/islikelyspringboot.md)
+  * **Is likely a Spring Boot project**
+  * Marks the project if it's likely a Spring Boot project.
+* [io.moderne.java.spring.boot.MigrateSpringFrameworkDependenciesToSpringBoot](/recipes/java/spring/boot/migratespringframeworkdependenciestospringboot.md)
+  * **Migrate Spring Framework dependencies to Spring Boot**
+  * Migrate Spring Framework dependencies to Spring Boot.
+* [io.moderne.java.spring.framework.IsLikelySpringFramework](/recipes/java/spring/framework/islikelyspringframework.md)
+  * **Is likely a Spring Framework project**
+  * Marks the project if it's likely a Spring Framework project.
+* [io.moderne.java.spring.framework.beansxml.BeansXmlToConfiguration](/recipes/java/spring/framework/beansxml/beansxmltoconfiguration.md)
+  * **Migrate `beans.xml` to Spring Framework configuration class**
+  * Converts Java/Jakarta EE `beans.xml` configuration files to Spring Framework `@Configuration` classes.
+* [io.moderne.java.spring.framework.webxml.WebXmlToWebApplicationInitializer](/recipes/java/spring/framework/webxml/webxmltowebapplicationinitializer.md)
+  * **Migrate `web.xml` to `WebApplicationInitializer`**
+  * Migrate `web.xml` to `WebApplicationInitializer` for Spring applications. This allows for programmatic configuration of the web application context, replacing the need for XML-based configuration. This recipe only picks up `web.xml` files located in the `src/main/webapp/WEB-INF` directory to avoid inference with tests. It creates a `WebXmlWebAppInitializer` class in `src/main/java` with respect to submodules if they contain java files. **If it finds an existing `WebXmlWebAppInitializer`, it skips the creation**.
+* [org.openrewrite.java.spring.RenameBean](/recipes/java/spring/renamebean.md)
+  * **Rename bean**
+  * Renames a Spring bean, both declaration and references.
+* [org.openrewrite.java.spring.SeparateApplicationPropertiesByProfile](/recipes/java/spring/separateapplicationpropertiesbyprofile.md)
+  * **Separate `application.properties` by profile**
+  * Separating `application.properties` into separate files based on profiles.
+* [org.openrewrite.java.spring.SeparateApplicationYamlByProfile](/recipes/java/spring/separateapplicationyamlbyprofile.md)
+  * **Separate application YAML by profile**
+  * The Spring team's recommendation is to separate profile properties into their own YAML files now.
+* [org.openrewrite.java.spring.UpdateApiManifest](/recipes/java/spring/updateapimanifest.md)
+  * **Update the API manifest**
+  * Keep a consolidated manifest of the API endpoints that this application exposes up-to-date.
+* [org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md)
+  * **Merge Spring `bootstrap.yml` with `application.yml`**
+  * In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties should be merged with `application.yml`.
+* [org.openrewrite.java.spring.boot2.MoveAutoConfigurationToImportsFile](/recipes/java/spring/boot2/moveautoconfigurationtoimportsfile.md)
+  * **Use `AutoConfiguration#imports`**
+  * Use `AutoConfiguration#imports` instead of the deprecated entry `EnableAutoConfiguration` in `spring.factories` when defining autoconfiguration classes.
+* [org.openrewrite.java.spring.boot2.search.IntegrationSchedulerPoolRecipe](/recipes/java/spring/boot2/search/integrationschedulerpoolrecipe.md)
+  * **Integration scheduler pool size**
+  * Spring Integration now reuses an available `TaskScheduler` rather than configuring its own. In a typical application setup relying on the auto-configuration, this means that Spring Integration uses the auto-configured task scheduler that has a pool size of 1. To restore Spring Integration’s default of 10 threads, use the `spring.task.scheduling.pool.size` property.
+* [org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks](/recipes/java/spring/boot2/search/loggingshutdownhooks.md)
+  * **Applications using logging shutdown hooks**
+  * Spring Boot registers a logging shutdown hook by default for JAR-based applications to ensure that logging resources are released when the JVM exits. If your application is deployed as a WAR then the shutdown hook is not registered since the servlet container usually handles logging concerns.   Most applications will want the shutdown hook. However, if your application has complex context hierarchies, then you may need to disable it. You can use the `logging.register-shutdown-hook` property to do that.
+* [org.openrewrite.java.spring.boot3.MaintainTrailingSlashURLMappings](/recipes/java/spring/boot3/maintaintrailingslashurlmappings.md)
+  * **Maintain trailing slash URL mappings**
+  * This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default value set to false. This means that previously, a controller `@GetMapping(&quot;/some/greeting&quot;)` would match both `GET /some/greeting` and `GET /some/greeting/`, but it doesn't match `GET /some/greeting/` anymore by default and will result in an HTTP 404 error. This recipe is to maintain trailing slash in all HTTP url mappings.
+* [org.openrewrite.java.spring.boot3.MigrateHooksToReactorContextProperty](/recipes/java/spring/boot3/migratehookstoreactorcontextproperty.md)
+  * **Use `spring.reactor.context-propagation` property**
+  * Replace `Hooks.enableAutomaticContextPropagation()` with `spring.reactor.context-propagation=true`.
+* [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
+  * **Add logging.pattern.level for traceId and spanId**
+  * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
+* [org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean](/recipes/java/spring/doc/migratedocketbeantogroupedopenapibean.md)
+  * **Migrate `Docket` to `GroupedOpenAPI`**
+  * Migrate a `Docket` bean to a `GroupedOpenAPI` bean preserving group name, packages and paths. When possible the recipe will prefer property based configuration.
+* [org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies](/recipes/maven/spring/upgradeexplicitspringbootdependencies.md)
+  * **Upgrade Spring dependencies**
+  * Upgrades dependencies according to the specified version of spring boot. Spring boot has many direct and transitive dependencies. When a module has an explicit dependency on one of these it may also need to be upgraded to match the version used by spring boot.
 
 ## rewrite-static-analysis
 
-* [Rename packages to lowercase](/recipes/staticanalysis/lowercasepackage.md) - _By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase._
-* [Standardize method name casing](/recipes/staticanalysis/methodnamecasing.md) - _Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`._
+* [org.openrewrite.staticanalysis.LowercasePackage](/recipes/staticanalysis/lowercasepackage.md)
+  * **Rename packages to lowercase**
+  * By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase.
+* [org.openrewrite.staticanalysis.MethodNameCasing](/recipes/staticanalysis/methodnamecasing.md)
+  * **Standardize method name casing**
+  * Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`.
 
 ## rewrite-testing-frameworks
 
-* [Add Hamcrest JUnit dependency](/recipes/java/testing/junit5/addhamcrestjunitdependency.md) - _Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is used._
-* [Add JUnit Jupiter dependencies](/recipes/java/testing/junit5/addjupiterdependencies.md) - _Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present._
-* [Remove `public` visibility of JUnit 5 tests](/recipes/java/testing/cleanup/testsshouldnotbepublic.md) - _Remove `public` and optionally `protected` modifiers from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestFactory`, `@BeforeEach`, `@AfterEach`, `@BeforeAll`, or `@AfterAll`. They no longer have to be public visibility to be usable by JUnit 5._
-* [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](/recipes/java/testing/mockito/anytonullable.md) - _Since Mockito 2.10 `anyString()` and `any()` no longer matches null values. Use `nullable(Class)` instead._
-* [Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`](/recipes/java/testing/mockito/verifyzerotonomoreinteractions.md) - _Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version &lt; 3.x._
+* [org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic](/recipes/java/testing/cleanup/testsshouldnotbepublic.md)
+  * **Remove `public` visibility of JUnit 5 tests**
+  * Remove `public` and optionally `protected` modifiers from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestFactory`, `@BeforeEach`, `@AfterEach`, `@BeforeAll`, or `@AfterAll`. They no longer have to be public visibility to be usable by JUnit 5.
+* [org.openrewrite.java.testing.junit5.AddHamcrestJUnitDependency](/recipes/java/testing/junit5/addhamcrestjunitdependency.md)
+  * **Add Hamcrest JUnit dependency**
+  * Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is used.
+* [org.openrewrite.java.testing.junit5.AddJupiterDependencies](/recipes/java/testing/junit5/addjupiterdependencies.md)
+  * **Add JUnit Jupiter dependencies**
+  * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present.
+* [org.openrewrite.java.testing.mockito.AnyToNullable](/recipes/java/testing/mockito/anytonullable.md)
+  * **Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`**
+  * Since Mockito 2.10 `anyString()` and `any()` no longer matches null values. Use `nullable(Class)` instead.
+* [org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions](/recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
+  * **Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`**
+  * Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version &lt; 3.x.
 
 ## rewrite-toml
 
-* [Create TOML file](/recipes/toml/createtomlfile.md) - _Create a new TOML file._
+* [org.openrewrite.toml.CreateTomlFile](/recipes/toml/createtomlfile.md)
+  * **Create TOML file**
+  * Create a new TOML file.
 
 ## rewrite-vulncheck
 
-* [Use VulnCheck Exploit Intelligence to fix vulnerabilities](/recipes/vulncheck/fixvulncheckvulnerabilities.md) - _This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from VulnCheck Vulnerability Intelligence. The recipe has an option to limit fixes to only those vulnerabilities that have evidence of exploitation at various levels of severity._
+* [io.moderne.vulncheck.FixVulnCheckVulnerabilities](/recipes/vulncheck/fixvulncheckvulnerabilities.md)
+  * **Use VulnCheck Exploit Intelligence to fix vulnerabilities**
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from VulnCheck Vulnerability Intelligence. The recipe has an option to limit fixes to only those vulnerabilities that have evidence of exploitation at various levels of severity.
 
 ## rewrite-xml
 
-* [Create XML file](/recipes/xml/createxmlfile.md) - _Create a new XML file._
-* [XML style Auto-detection debug](/recipes/xml/style/autodetectdebug.md) - _Runs XML Autodetect and records the results in data tables and search markers. A debugging tool for figuring out why XML documents get styled the way they do._
+* [org.openrewrite.xml.CreateXmlFile](/recipes/xml/createxmlfile.md)
+  * **Create XML file**
+  * Create a new XML file.
+* [org.openrewrite.xml.style.AutodetectDebug](/recipes/xml/style/autodetectdebug.md)
+  * **XML style Auto-detection debug**
+  * Runs XML Autodetect and records the results in data tables and search markers. A debugging tool for figuring out why XML documents get styled the way they do.
 
 ## rewrite-yaml
 
-* [Copy YAML value](/recipes/yaml/copyvalue.md) - _Copies a YAML value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to merge the copied value into the new key if it already exists. By default, attempts to create the new key if it does not exist._
-* [Create YAML file](/recipes/yaml/createyamlfile.md) - _Create a new YAML file._
+* [org.openrewrite.yaml.CopyValue](/recipes/yaml/copyvalue.md)
+  * **Copy YAML value**
+  * Copies a YAML value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to merge the copied value into the new key if it already exists. Attempts to create the new key if it does not exist.
+* [org.openrewrite.yaml.CreateYamlFile](/recipes/yaml/createyamlfile.md)
+  * **Create YAML file**
+  * Create a new YAML file.
