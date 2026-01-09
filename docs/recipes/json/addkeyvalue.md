@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | keyPath | A JsonPath expression to locate the *parent* JSON entry. | `'$.subjects.*' or '$.' or '$.x[1].y.*' etc.` |
 | `String` | key | The key to create. | `myKey` |
 | `String` | value | The value to add to the document at the specified key. Can be of any type representing JSON value. String values should be quoted to be inserted as Strings. | ``"myValue"` or `{"a": 1}` or `[ 123 ]`` |
-| `Boolean` | prepend | *Optional*. If set to `true` the value will be added to the beginning of the object |  |
+| `boolean` | prepend | *Optional*. If set to `true` the value will be added to the beginning of the object |  |
 
 ## Example
 
