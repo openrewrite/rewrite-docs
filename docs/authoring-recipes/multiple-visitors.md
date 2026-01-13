@@ -670,6 +670,8 @@ import org.openrewrite.marker.Markers;
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+@Value
+@EqualsAndHashCode(callSuper = false)
 public class FinalizeLocalVariables extends Recipe {
 
     String displayName = "Finalize local variables";
