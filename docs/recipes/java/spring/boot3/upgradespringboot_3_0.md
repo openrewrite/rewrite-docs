@@ -51,6 +51,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework`
   * artifactId: `*`
   * newVersion: `6.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.ws`
+  * artifactId: `*`
+  * newVersion: `4.x`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-maven-plugin`
@@ -125,6 +129,10 @@ recipeList:
       groupId: org.springframework
       artifactId: "*"
       newVersion: 6.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.ws
+      artifactId: "*"
+      newVersion: 4.x
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-maven-plugin

@@ -169,7 +169,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersIncrementer`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParametersInvalidException`
-  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersInvalidException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.InvalidJobParametersException`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParametersValidator`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersValidator`
@@ -197,6 +197,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.support.JobExplorerFactoryBean`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.support.JdbcJobExplorerFactoryBean`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.JobExecutionAlreadyRunningException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.launch.JobExecutionAlreadyRunningException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.launch.JobInstanceAlreadyCompleteException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.JobRestartException`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.launch.JobRestartException`
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.springframework.batch.core.step.job.JobStep setJobLauncher(org.springframework.batch.core.launch.JobLauncher)`
   * newMethodName: `setJobOperator`
@@ -367,7 +376,7 @@ recipeList:
       newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersIncrementer
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.JobParametersInvalidException
-      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersInvalidException
+      newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.InvalidJobParametersException
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.JobParametersValidator
       newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersValidator
@@ -395,6 +404,15 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.support.JobExplorerFactoryBean
       newFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.support.JdbcJobExplorerFactoryBean
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.repository.JobExecutionAlreadyRunningException
+      newFullyQualifiedTypeName: org.springframework.batch.core.launch.JobExecutionAlreadyRunningException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException
+      newFullyQualifiedTypeName: org.springframework.batch.core.launch.JobInstanceAlreadyCompleteException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.repository.JobRestartException
+      newFullyQualifiedTypeName: org.springframework.batch.core.launch.JobRestartException
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.batch.core.step.job.JobStep setJobLauncher(org.springframework.batch.core.launch.JobLauncher)
       newMethodName: setJobOperator

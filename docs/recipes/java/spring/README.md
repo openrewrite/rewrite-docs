@@ -18,6 +18,7 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 * [Doc](/recipes/java/spring/doc)
 * [Hibernate](/recipes/java/spring/hibernate)
 * [Http](/recipes/java/spring/http)
+* [Opentelemetry](/recipes/java/spring/opentelemetry)
 * [Orm](/recipes/java/spring/orm)
 * [Search](/recipes/java/spring/search)
 * [Security7](/recipes/java/spring/security7)
