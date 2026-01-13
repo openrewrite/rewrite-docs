@@ -1,18 +1,18 @@
 # 8.23.2 release (2024-04-05)
 
 :::info
-This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
+This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the releases page.
 :::
 
 ## New Recipes
 
-* [org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4](../recipes/apache/commons/collections/upgradeapachecommonscollections_3_4): Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions. 
-* [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](../recipes/apache/commons/lang/upgradeapachecommonslang_2_3): Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions. 
-* [org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3](../recipes/apache/commons/math/upgradeapachecommonsmath_2_3): Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions. 
+* org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4: Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions. 
+* org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3: Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions. 
+* org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3: Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions. 
 
 ## Changed Recipes
 
-* [org.openrewrite.maven.ChangeParentPom](../recipes/maven/changeparentpom) was changed:
+* org.openrewrite.maven.ChangeParentPom was changed:
   * Old Options:
     * `allowVersionDowngrades: { type: Boolean, required: false }`
     * `newArtifactId: { type: String, required: false }`
@@ -34,7 +34,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `oldGroupId: { type: String, required: true }`
     * `oldRelativePath: { type: String, required: false }`
     * `versionPattern: { type: String, required: false }`
-* [org.openrewrite.maven.UpgradeParentVersion](../recipes/maven/upgradeparentversion) was changed:
+* org.openrewrite.maven.UpgradeParentVersion was changed:
   * Old Options:
     * `artifactId: { type: String, required: true }`
     * `groupId: { type: String, required: true }`

@@ -1,12 +1,12 @@
 # 8.21.0 release (2024-03-20)
 
 :::info
-This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
+This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the releases page.
 :::
 
 ## New Recipes
 
-* [org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion](../recipes/java/migrate/maven/updatemavenprojectpropertyjavaversion): The Java version is determined by several project properties, including:
+* org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion: The Java version is determined by several project properties, including:
 
   * `java.version`
   * `jdk.version`
@@ -18,12 +18,12 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
   * `release.version`
 
    These project properties are not added if they are not currently set, but only updated in place. 
-* [org.openrewrite.java.testing.datafaker.JavaFakerToDataFaker](../recipes/java/testing/datafaker/javafakertodatafaker): Change imports and dependencies related to Java Faker to Datafaker replacements. 
-* [org.openrewrite.java.testing.junit5.GradleUseJunitJupiter](../recipes/java/testing/junit5/gradleusejunitjupiter): By default Gradle's `Test` tasks use JUnit 4. Gradle `Test` tasks must be configured with `useJUnitPlatform()` to run JUnit Jupiter tests. This recipe adds the `useJUnitPlatform()` method call to the `Test` task configuration. 
+* org.openrewrite.java.testing.datafaker.JavaFakerToDataFaker: Change imports and dependencies related to Java Faker to Datafaker replacements. 
+* org.openrewrite.java.testing.junit5.GradleUseJunitJupiter: By default Gradle's `Test` tasks use JUnit 4. Gradle `Test` tasks must be configured with `useJUnitPlatform()` to run JUnit Jupiter tests. This recipe adds the `useJUnitPlatform()` method call to the `Test` task configuration. 
 
 ## Changed Recipes
 
-* [org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration](../recipes/java/migrate/maven/usemavencompilerpluginreleaseconfiguration) was changed:
+* org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration was changed:
   * Old Options:
     * `releaseVersion: { type: String, required: true }`
   * New Options:

@@ -1,7 +1,7 @@
 # 8.25.0 release (2024-05-08)
 
 :::info
-This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
+This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the releases page.
 :::
 
 ## New Artifacts
@@ -9,17 +9,17 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [org.openrewrite.github.PreferSecretsInheritWorkflow](../recipes/github/prefersecretsinheritworkflow): Pass all secrets to a reusable workflow using `secrets: inherit`. See [Simplify using secrets with reusable workflows](https://github.blog/changelog/2022-05-03-github-actions-simplify-using-secrets-with-reusable-workflows/) for details. 
-* [org.openrewrite.java.jackson.CodehausToFasterXML](../recipes/java/jackson/codehaustofasterxml): In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML. 
-* [org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods](../recipes/java/liberty/websphereunavailablessomethods): This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application  Server Version 8.5 and might be removed in a future release. They are not available on Liberty. 
-* [org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo](../recipes/java/migrate/jacoco/upgradejacoco): This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions. 
-* [org.openrewrite.java.migrate.javax.AddTransientAnnotationToCollections](../recipes/java/migrate/javax/addtransientannotationtocollections): In OpenJPA, attributes that inherit from the `java.util.Collection<E>` interface are not a default persistent type, so these attributes are not persisted unless they are annotated. EclipseLink has a different default behavior and attempts to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated collection attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink. 
-* [org.openrewrite.java.migrate.javax.AddTransientAnnotationToEntity](../recipes/java/migrate/javax/addtransientannotationtoentity): In OpenJPA, attributes that are themselves entity classes are not persisted by default. EclipseLink has a different default behavior and tries to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated entity attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink. 
-* [org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor](../recipes/java/migrate/javax/addtransientannotationtoprivateaccessor): According to the JPA 2.1 specification, when property access is used, the property accessor methods must be public or protected. OpenJPA ignores any private accessor methods, whereas EclipseLink persists those attributes. To ignore private accessor methods in EclipseLink, the methods must have a `@Transient` annotation. 
-* [org.openrewrite.java.migrate.javax.RemoveTemporalAnnotation](../recipes/java/migrate/javax/removetemporalannotation): OpenJPA persists the fields of attributes of type `java.sql.Date`, `java.sql.Time`, or `java.sql.Timestamp` that have a `javax.persistence.Temporal` annotation, whereas EclipseLink throws an exception. Remove the `@Temporal` annotation so the behavior in EclipseLink will match the behavior in OpenJPA. 
+* org.openrewrite.github.PreferSecretsInheritWorkflow: Pass all secrets to a reusable workflow using `secrets: inherit`. See Simplify using secrets with reusable workflows for details. 
+* org.openrewrite.java.jackson.CodehausToFasterXML: In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML. 
+* org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods: This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application  Server Version 8.5 and might be removed in a future release. They are not available on Liberty. 
+* org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo: This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions. 
+* org.openrewrite.java.migrate.javax.AddTransientAnnotationToCollections: In OpenJPA, attributes that inherit from the `java.util.Collection<E>` interface are not a default persistent type, so these attributes are not persisted unless they are annotated. EclipseLink has a different default behavior and attempts to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated collection attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink. 
+* org.openrewrite.java.migrate.javax.AddTransientAnnotationToEntity: In OpenJPA, attributes that are themselves entity classes are not persisted by default. EclipseLink has a different default behavior and tries to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated entity attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink. 
+* org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor: According to the JPA 2.1 specification, when property access is used, the property accessor methods must be public or protected. OpenJPA ignores any private accessor methods, whereas EclipseLink persists those attributes. To ignore private accessor methods in EclipseLink, the methods must have a `@Transient` annotation. 
+* org.openrewrite.java.migrate.javax.RemoveTemporalAnnotation: OpenJPA persists the fields of attributes of type `java.sql.Date`, `java.sql.Time`, or `java.sql.Timestamp` that have a `javax.persistence.Temporal` annotation, whereas EclipseLink throws an exception. Remove the `@Temporal` annotation so the behavior in EclipseLink will match the behavior in OpenJPA. 
 * org.openrewrite.java.spring.boot3.AdditionalSpringBootProperties_3_0: Rename `management.metrics.export.atlas.aggrConfig` to `management.atlas.metrics.export.aggrConfig`. 
-* [org.openrewrite.java.spring.framework.MigrateSpringAssert](../recipes/java/spring/framework/migratespringassert): Assert methods without a message argument have been removed in Spring Framework 6.0. 
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](../recipes/java/spring/framework/upgradespringframework_6_0): Migrate applications to the latest Spring Framework 6.0 release. 
+* org.openrewrite.java.spring.framework.MigrateSpringAssert: Assert methods without a message argument have been removed in Spring Framework 6.0. 
+* org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0: Migrate applications to the latest Spring Framework 6.0 release. 
 
 ## Removed Recipes
 
@@ -32,7 +32,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## Changed Recipes
 
-* [org.openrewrite.gradle.plugins.AddBuildPlugin](../recipes/gradle/plugins/addbuildplugin) was changed:
+* org.openrewrite.gradle.plugins.AddBuildPlugin was changed:
   * Old Options:
     * `pluginId: { type: String, required: true }`
     * `version: { type: String, required: false }`
@@ -42,7 +42,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `pluginId: { type: String, required: true }`
     * `version: { type: String, required: false }`
     * `versionPattern: { type: String, required: false }`
-* [org.openrewrite.gradle.plugins.AddSettingsPlugin](../recipes/gradle/plugins/addsettingsplugin) was changed:
+* org.openrewrite.gradle.plugins.AddSettingsPlugin was changed:
   * Old Options:
     * `pluginId: { type: String, required: true }`
     * `version: { type: String, required: false }`
@@ -52,7 +52,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `pluginId: { type: String, required: true }`
     * `version: { type: String, required: false }`
     * `versionPattern: { type: String, required: false }`
-* [org.openrewrite.java.dependencies.ChangeDependency](../recipes/java/dependencies/changedependency) was changed:
+* org.openrewrite.java.dependencies.ChangeDependency was changed:
   * Old Options:
     * `newArtifactId: { type: String, required: false }`
     * `newGroupId: { type: String, required: false }`
@@ -70,7 +70,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `oldGroupId: { type: String, required: true }`
     * `overrideManagedVersion: { type: Boolean, required: false }`
     * `versionPattern: { type: String, required: false }`
-* [org.openrewrite.yaml.CreateYamlFile](../recipes/yaml/createyamlfile) was changed:
+* org.openrewrite.yaml.CreateYamlFile was changed:
   * Old Options:
     * `fileContents: { type: String, required: false }`
     * `overwriteExisting: { type: Boolean, required: false }`

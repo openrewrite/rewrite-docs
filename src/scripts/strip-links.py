@@ -1,6 +1,6 @@
 import re
 
-file_path = '/Users/mikesol/Desktop/code/rewrite-docs/docs/changelog/8-34-0-Release.md'
+file_path = '/Users/mikesol/Desktop/code/rewrite-docs/docs/changelog/earlier-releases/8-38-0-Release.md'
 
 def remove_links_from_markdown(file_path):
     with open(file_path, 'r') as file:
