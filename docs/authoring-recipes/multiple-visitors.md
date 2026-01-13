@@ -672,15 +672,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class FinalizeLocalVariables extends Recipe {
 
-    @Override
-    public String getDisplayName() {
-        return "Finalize local variables";
-    }
-
-    @Override
-    public String getDescription() {
-        return "Adds the `final` modifier keyword to local variables which are not reassigned.";
-    }
+    String displayName = "Finalize local variables";
+    String description = "Adds the `final` modifier keyword to local variables which are not reassigned.";
 
     @Override
     public JavaIsoVisitor<ExecutionContext> getVisitor() {

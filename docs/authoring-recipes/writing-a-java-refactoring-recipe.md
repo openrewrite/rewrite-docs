@@ -77,15 +77,9 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     String fullyQualifiedClassName;
 
-    @Override
-    public String getDisplayName() {
-        return "Say 'Hello'";
-    }
-
-    @Override
-    public String getDescription() {
-        return "Adds a `hello` method to the specified class.";
-    }
+    // With lombok you can use Strings directly instead of overriding the methods
+    String displayName = "Say 'Hello'";
+    String description = "Adds a `hello` method to the specified class.";
 
     // TODO: Override getVisitor() to return a JavaIsoVisitor to perform the refactoring
 }
@@ -465,15 +459,8 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     String fullyQualifiedClassName;
 
-    @Override
-    public String getDisplayName() {
-        return "Say 'Hello'";
-    }
-
-    @Override
-    public String getDescription() {
-        return "Adds a `hello` method to the specified class.";
-    }
+    String displayName = "Say 'Hello'";
+    String description = "Adds a `hello` method to the specified class.";
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {

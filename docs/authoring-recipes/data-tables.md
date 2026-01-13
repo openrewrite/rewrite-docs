@@ -116,15 +116,8 @@ public class ClassHierarchy extends Recipe {
 
     transient ClassHierarchyReport report = new ClassHierarchyReport(this);
 
-    @Override
-    public String getDisplayName() {
-        return "Class hierarchy";
-    }
-
-    @Override
-    public String getDescription() {
-        return "Produces a data table showing inheritance relationships between classes.";
-    }
+    String displayName = "Class hierarchy";
+    String description = "Produces a data table showing inheritance relationships between classes.";
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
