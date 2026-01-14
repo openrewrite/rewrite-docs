@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate from Spring Boot 1.x to 2.0](../../../java/spring/boot2/upgradespringboot_2_0)
+* [Migrate from Spring Boot 1.x to 2.0](../../../java/spring/boot2/upgradespringboot_2_0-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`

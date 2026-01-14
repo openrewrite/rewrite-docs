@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate to Spring Boot 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0-moderne-edition.md)
 
 ## Examples
 ##### Example 1

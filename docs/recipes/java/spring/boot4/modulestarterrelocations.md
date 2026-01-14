@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 4.0 modular starters](/recipes/java/spring/boot4/migratetomodularstarters.md)
+* [Migrate to Spring Boot 4.0 modular starters](/recipes/java/spring/boot4/migratetomodularstarters-moderne-edition.md)
 
 
 ## Usage

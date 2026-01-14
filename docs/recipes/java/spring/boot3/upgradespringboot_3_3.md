@@ -70,7 +70,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springdoc`
   * artifactId: `*`
   * newVersion: `2.6.x`
-* [Migrate to Hibernate 6.5.x (Community Edition)](../../../hibernate/migratetohibernate65-community-edition)
+* [Migrate to Hibernate 6.5.x (Community Edition)](../../../hibernate/migratetohibernate65)
 * [Migrate to Flyway 10](../../../java/flyway/migratetoflyway10)
 * [Upgrade to SpringDoc 2.6](../../../java/springdoc/upgradespringdoc_2_6)
 

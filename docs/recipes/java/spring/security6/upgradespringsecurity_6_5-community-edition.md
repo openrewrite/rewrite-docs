@@ -1,85 +1,90 @@
 ---
-sidebar_label: "Remove invalid `@GeneratedValue` annotation (Community Edition)"
+sidebar_label: "Migrate to Spring Security 6.5"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove invalid `@GeneratedValue` annotation (Community Edition)
+# Migrate to Spring Security 6.5
 
-**org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation**
+**org.openrewrite.java.spring.security6.UpgradeSpringSecurity\_6\_5**
 
-_Removes `@GeneratedValue` annotation from fields that are not also annotated with `@Id`._
+_Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+
+### Tags
+
+* [spring](/reference/recipes-by-tag#spring)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/RemoveInvalidHibernateGeneratedValueAnnotation.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-65.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `*`
+  * newVersion: `6.5.x`
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.security`
+  * artifactId: `spring-security-oauth2-authorization-server`
+  * newVersion: `1.5.x`
+  * overrideManagedVersion: `false`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5
+displayName: Migrate to Spring Security 6.5
+description: |
+  Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+tags:
+  - spring
+  - security
+recipeList:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: "*"
+      newVersion: 6.5.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.security
+      artifactId: spring-security-oauth2-authorization-server
+      newVersion: 1.5.x
+      overrideManagedVersion: false
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.4.x (Community Edition)](/recipes/hibernate/migratetohibernate64-community-edition.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
-class A {
-    @Id
-    Integer id;
-    @GeneratedValue
-    String name;
-}
-```
-
-###### After
-```java
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
-class A {
-    @Id
-    Integer id;
-    String name;
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,1 +2,0 @@
-import jakarta.persistence.Entity;
--import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-@@ -8,1 +7,0 @@
-    @Id
-    Integer id;
--   @GeneratedValue
-    String name;
-```
-</TabItem>
-</Tabs>
+* [Migrate to Spring Boot 3.5 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
+* [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5-moderne-edition.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -91,7 +96,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation")
+    activeRecipe("org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5")
     setExportDatatables(true)
 }
 
@@ -100,7 +105,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
 }
 ```
 
@@ -121,10 +126,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation")
+        activeRecipe("org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -159,14 +164,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation</recipe>
+            <recipe>org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-hibernate</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -182,7 +187,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -190,12 +195,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveInvalidHibernateGeneratedValueAnnotation
+mod run . --recipe UpgradeSpringSecurity_6_5
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -204,7 +209,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

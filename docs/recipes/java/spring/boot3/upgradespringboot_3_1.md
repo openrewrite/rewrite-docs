@@ -61,7 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springdoc`
   * artifactId: `*`
   * newVersion: `2.2.x`
-* [Migrate to Hibernate 6.2.x (Community Edition)](../../../hibernate/migratetohibernate62-community-edition)
+* [Migrate to Hibernate 6.2.x (Community Edition)](../../../hibernate/migratetohibernate62)
 * [Mockito 4 to 5.x upgrade only](../../../java/testing/mockito/mockito4to5only)
 * [Upgrade to SpringDoc 2.2](../../../java/springdoc/upgradespringdoc_2_2)
 

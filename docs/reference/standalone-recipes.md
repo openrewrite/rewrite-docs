@@ -1472,7 +1472,7 @@ Total standalone recipes: 1685
 * [org.openrewrite.gradle.plugins.RemoveDevelocity](/recipes/gradle/plugins/removedevelocity.md)
   * **Remove Develocity**
   * Remove the Develocity plugin and configuration from the Gradle build and settings files.
-* [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0-community-edition.md)
+* [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
   * **Migrate to Hibernate Validator 8.0.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
 * [org.openrewrite.java.AddApache2LicenseHeader](/recipes/java/addapache2licenseheader.md)
@@ -4073,13 +4073,13 @@ Total standalone recipes: 1685
 
 ## rewrite-hibernate
 
-* [io.moderne.hibernate.search.FindJPQLDefinitions](/recipes/hibernate/search/findjpqldefinitions-moderne-edition.md)
+* [io.moderne.hibernate.search.FindJPQLDefinitions](/recipes/hibernate/search/findjpqldefinitions.md)
   * **Find JPQL definitions (Moderne Edition)**
   * Find Java Persistence Query Language definitions in the codebase.
-* [io.moderne.hibernate.update70.MigrateJdbcTypeToJdbcTypeCode](/recipes/hibernate/update70/migratejdbctypetojdbctypecode-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateJdbcTypeToJdbcTypeCode](/recipes/hibernate/update70/migratejdbctypetojdbctypecode.md)
   * **Migrate @JdbcType to @JdbcTypeCode (Moderne Edition)**
   * In Hibernate 7.0, various JDBC types were moved to internal packages. Use @JdbcTypeCode with SqlTypes constants instead of @JdbcType with specific classes.
-* [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype-community-edition.md)
+* [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype.md)
   * **Migrate `UserType` to Hibernate 6 (Community Edition)**
   * With Hibernate 6 the `UserType` interface received a type parameter making it more strictly typed. This recipe applies the changes required to adhere to this change.
 

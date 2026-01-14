@@ -1,15 +1,20 @@
 ---
-sidebar_label: "Migrate antPathRequestMatcher to pathPatternRequestMatcher"
+sidebar_label: "Migrate to Spring Security 6.5"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate antPathRequestMatcher to pathPatternRequestMatcher
+# Migrate to Spring Security 6.5
 
-**io.moderne.java.spring.security6.MigrateAntPathRequestMatcher**
+**io.moderne.java.spring.security6.UpgradeSpringSecurity\_6\_5**
 
-_In Spring Security 6.5, `AntPathRequestMatcher` is deprecated in favor of `PathPatternRequestMatcher`. This recipe migrates static method calls and constructor usage to the new pattern._
+_Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+
+### Tags
+
+* [spring](/reference/recipes-by-tag#spring)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 
@@ -23,66 +28,62 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5-moderne-edition.md)
+* [Migrate to Spring Boot 3.5 (Moderne Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-moderne-edition.md)
 
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+## Examples
+##### Example 1
+`UpgradeSpringOauth2AuthorizationServerTest#verifyDependencyUpgrades`
 
 
-###### Before
-```java
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-class SecurityConfig {
-    SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-            .authorizeHttpRequests(req ->
-                req.requestMatchers(AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
-        return httpSecurity.build();
-    }
-}
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-authorization-server</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+    </dependencies>
+</project>
 ```
 
-###### After
-```java
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
+---
 
-class SecurityConfig {
-    SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-            .authorizeHttpRequests(req ->
-                req.requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/images/**")).permitAll());
-        return httpSecurity.build();
-    }
-}
+##### Example 2
+`UpgradeSpringOauth2AuthorizationServerTest#verifyDependencyUpgrades`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-authorization-server</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+    </dependencies>
+</project>
 ```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
--import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-+import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
-
-@@ -9,1 +9,1 @@
-        httpSecurity
-            .authorizeHttpRequests(req ->
--               req.requestMatchers(AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
-+               req.requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/images/**")).permitAll());
-        return httpSecurity.build();
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage
@@ -96,7 +97,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateAntPathRequestMatcher
+mod run . --recipe UpgradeSpringSecurity_6_5
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -110,7 +111,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.security6.MigrateAntPathRequestMatcher" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.security6.UpgradeSpringSecurity_6_5" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

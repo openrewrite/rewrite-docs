@@ -35,7 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
-* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
 * [Migrate to Gradle 5 from Gradle 4](/recipes/gradle/migratetogradle5.md)
 * [Migrate to Gradle 6 from Gradle 5](/recipes/gradle/migratetogradle6.md)
 * [Migrate to Gradle 7 from Gradle 6](/recipes/gradle/migratetogradle7.md)

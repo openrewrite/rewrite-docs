@@ -1,19 +1,19 @@
 ---
-sidebar_label: "`@Type` annotation type parameter migration (Community Edition)"
+sidebar_label: "Replace `@LazyCollection` with `jakarta.persistence.FetchType` (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# `@Type` annotation type parameter migration (Community Edition)
+# Replace `@LazyCollection` with `jakarta.persistence.FetchType` (Community Edition)
 
-**org.openrewrite.hibernate.TypeAnnotationParameter**
+**org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation**
 
-_Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type class._
+_Adds the `FetchType` to jakarta annotations and deletes `@LazyCollection`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/TypeAnnotationParameter.java),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/ReplaceLazyCollectionAnnotation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
+* [Migrate to Hibernate 6.2.x (Community Edition)](/recipes/hibernate/migratetohibernate62.md)
 
 ## Example
 
@@ -35,23 +35,43 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 
-public class TestApplication {
-    @Type(type = "java.util.concurrent.atomic.AtomicBoolean")
-    Object a;
+import java.util.HashSet;
+import java.util.Set;
+
+class SomeClass {
+
+    private Set<Object> items = new HashSet<>();
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
+    public Set<Object> getItems() {
+        return items;
+    }
 }
 ```
 
 ###### After
 ```java
-import org.hibernate.annotations.Type;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
 
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.HashSet;
+import java.util.Set;
 
-public class TestApplication {
-    @Type(AtomicBoolean.class)
-    Object a;
+class SomeClass {
+
+    private Set<Object> items = new HashSet<>();
+
+    @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE }, fetch = FetchType.EAGER)
+    public Set<Object> getItems() {
+        return items;
+    }
 }
 ```
 
@@ -59,18 +79,22 @@ public class TestApplication {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,0 +3,2 @@
-import org.hibernate.annotations.Type;
+@@ -1,2 +1,0 @@
+-import org.hibernate.annotations.LazyCollection;
+-import org.hibernate.annotations.LazyCollectionOption;
+import jakarta.persistence.CascadeType;
+@@ -4,0 +2,1 @@
+import org.hibernate.annotations.LazyCollectionOption;
+import jakarta.persistence.CascadeType;
++import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
+@@ -13,2 +12,1 @@
+    private Set<Object> items = new HashSet<>();
 
-+import java.util.concurrent.atomic.AtomicBoolean;
-+
-public class TestApplication {
-@@ -4,1 +6,1 @@
-
-public class TestApplication {
--   @Type(type = "java.util.concurrent.atomic.AtomicBoolean")
-+   @Type(AtomicBoolean.class)
-    Object a;
+-   @LazyCollection(LazyCollectionOption.FALSE)
+-   @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
++   @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE }, fetch = FetchType.EAGER)
+    public Set<Object> getItems() {
 ```
 </TabItem>
 </Tabs>
@@ -90,7 +114,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.TypeAnnotationParameter")
+    activeRecipe("org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation")
     setExportDatatables(true)
 }
 
@@ -123,7 +147,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.TypeAnnotationParameter")
+        activeRecipe("org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -158,7 +182,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.TypeAnnotationParameter</recipe>
+            <recipe>org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -181,7 +205,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.TypeAnnotationParameter -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -189,7 +213,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe TypeAnnotationParameter
+mod run . --recipe ReplaceLazyCollectionAnnotation
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -203,7 +227,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.TypeAnnotationParameter" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

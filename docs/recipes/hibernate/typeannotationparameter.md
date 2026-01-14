@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector` (Community Edition)"
+sidebar_label: "`@Type` annotation type parameter migration (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector` (Community Edition)
+# `@Type` annotation type parameter migration (Community Edition)
 
-**org.openrewrite.hibernate.EmptyInterceptorToInterface**
+**org.openrewrite.hibernate.TypeAnnotationParameter**
 
-_In Hibernate 6.0 the `Interceptor` interface received default implementations therefore the NOOP implementation that could be extended was no longer needed. This recipe migrates 5.x `Interceptor#onPrepareStatement(String)` to 6.0 `StatementInspector#inspect()`._
+_Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type class._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/EmptyInterceptorToInterface.java),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/TypeAnnotationParameter.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
+* [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60.md)
 
 ## Example
 
@@ -35,28 +35,23 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-import org.hibernate.EmptyInterceptor;
+import org.hibernate.annotations.Type;
 
-class MyInterceptor extends EmptyInterceptor {
-
-    @Override
-    public String onPrepareStatement(String sql) {
-        return sql;
-    }
+public class TestApplication {
+    @Type(type = "java.util.concurrent.atomic.AtomicBoolean")
+    Object a;
 }
 ```
 
 ###### After
 ```java
-import org.hibernate.Interceptor;
-import org.hibernate.resource.jdbc.spi.StatementInspector;
+import org.hibernate.annotations.Type;
 
-class MyInterceptor implements Interceptor, StatementInspector {
+import java.util.concurrent.atomic.AtomicBoolean;
 
-    @Override
-    public String inspect(String sql) {
-        return sql;
-    }
+public class TestApplication {
+    @Type(AtomicBoolean.class)
+    Object a;
 }
 ```
 
@@ -64,23 +59,18 @@ class MyInterceptor implements Interceptor, StatementInspector {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,2 @@
--import org.hibernate.EmptyInterceptor;
-+import org.hibernate.Interceptor;
-+import org.hibernate.resource.jdbc.spi.StatementInspector;
+@@ -3,0 +3,2 @@
+import org.hibernate.annotations.Type;
 
-@@ -3,1 +4,1 @@
-import org.hibernate.EmptyInterceptor;
++import java.util.concurrent.atomic.AtomicBoolean;
++
+public class TestApplication {
+@@ -4,1 +6,1 @@
 
--class MyInterceptor extends EmptyInterceptor {
-+class MyInterceptor implements Interceptor, StatementInspector {
-
-@@ -6,1 +7,1 @@
-
-    @Override
--   public String onPrepareStatement(String sql) {
-+   public String inspect(String sql) {
-        return sql;
+public class TestApplication {
+-   @Type(type = "java.util.concurrent.atomic.AtomicBoolean")
++   @Type(AtomicBoolean.class)
+    Object a;
 ```
 </TabItem>
 </Tabs>
@@ -100,7 +90,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.EmptyInterceptorToInterface")
+    activeRecipe("org.openrewrite.hibernate.TypeAnnotationParameter")
     setExportDatatables(true)
 }
 
@@ -133,7 +123,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.EmptyInterceptorToInterface")
+        activeRecipe("org.openrewrite.hibernate.TypeAnnotationParameter")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -168,7 +158,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.EmptyInterceptorToInterface</recipe>
+            <recipe>org.openrewrite.hibernate.TypeAnnotationParameter</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -191,7 +181,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.EmptyInterceptorToInterface -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.TypeAnnotationParameter -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -199,7 +189,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe EmptyInterceptorToInterface
+mod run . --recipe TypeAnnotationParameter
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -213,7 +203,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.EmptyInterceptorToInterface" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.TypeAnnotationParameter" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -70,7 +70,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 
 

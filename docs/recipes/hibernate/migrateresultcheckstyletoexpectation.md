@@ -1,68 +1,78 @@
 ---
-sidebar_label: "Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)"
+sidebar_label: "Migration of `ResultCheckStyle` to `Expectation` (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)
+# Migration of `ResultCheckStyle` to `Expectation` (Community Edition)
 
-**org.openrewrite.hibernate.TypeDescriptorToType**
+**org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation**
 
-_Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details._
+_Will migrate the usage of `org.hibernate.annotations.ResultCheckStyle` to `org.hibernate.jdbc.Expectation` in `@SQLInsert`, `@SqlUpdate`, `@SqlDelete` and `@SqlDeleteAll` annotations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.0.yml),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateResultCheckStyleToExpectation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Change type](../java/changetype)
-  * oldFullyQualifiedTypeName: `org.hibernate.type.descriptor.java.JavaTypeDescriptor`
-  * newFullyQualifiedTypeName: `org.hibernate.type.descriptor.java.JavaType`
-* [Change type](../java/changetype)
-  * oldFullyQualifiedTypeName: `org.hibernate.type.descriptor.sql.SqlTypeDescriptor`
-  * newFullyQualifiedTypeName: `org.hibernate.type.descriptor.sql.SqlType`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.TypeDescriptorToType
-displayName: Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)
-description: |
-  Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
-recipeList:
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.hibernate.type.descriptor.java.JavaTypeDescriptor
-      newFullyQualifiedTypeName: org.hibernate.type.descriptor.java.JavaType
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.hibernate.type.descriptor.sql.SqlTypeDescriptor
-      newFullyQualifiedTypeName: org.hibernate.type.descriptor.sql.SqlType
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
+* [Migrate to Hibernate 6.5.x (Community Edition)](/recipes/hibernate/migratetohibernate65.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.annotations.SQLInsert;
+import org.hibernate.annotations.ResultCheckStyle;
+
+import static org.hibernate.annotations.ResultCheckStyle.NONE;
+
+@SQLInsert(check = NONE, sql = "")
+class A {}
+```
+
+###### After
+```java
+import org.hibernate.annotations.SQLInsert;
+import org.hibernate.jdbc.Expectation;
+
+@SQLInsert(verify = Expectation.None.class, sql = "")
+class A {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import org.hibernate.annotations.SQLInsert;
+-import org.hibernate.annotations.ResultCheckStyle;
++import org.hibernate.jdbc.Expectation;
+
+@@ -4,3 +4,1 @@
+import org.hibernate.annotations.ResultCheckStyle;
+
+-import static org.hibernate.annotations.ResultCheckStyle.NONE;
+-
+-@SQLInsert(check = NONE, sql = "")
++@SQLInsert(verify = Expectation.None.class, sql = "")
+class A {}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -79,7 +89,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.TypeDescriptorToType")
+    activeRecipe("org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation")
     setExportDatatables(true)
 }
 
@@ -112,7 +122,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.TypeDescriptorToType")
+        activeRecipe("org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -147,7 +157,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.TypeDescriptorToType</recipe>
+            <recipe>org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -170,7 +180,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.TypeDescriptorToType -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -178,7 +188,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe TypeDescriptorToType
+mod run . --recipe MigrateResultCheckStyleToExpectation
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -192,7 +202,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.TypeDescriptorToType" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

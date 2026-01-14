@@ -6,6 +6,6 @@ description: Search OpenRewrite recipes.
 
 ## Recipes
 
-* [Find JPQL definitions (Moderne Edition)](./findjpqldefinitions-moderne-edition.md)
+* [Find JPQL definitions (Moderne Edition)](./findjpqldefinitions.md)
 
 
