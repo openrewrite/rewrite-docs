@@ -23,7 +23,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 7.2.x (Moderne Edition)](/recipes/hibernate/migratetohibernate72-moderne-edition.md)
+* [Migrate to Hibernate 7.2.x (Moderne Edition)](/recipes/hibernate/migratetohibernate72.md)
 
 
 ## Usage

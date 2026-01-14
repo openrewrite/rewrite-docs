@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Spring Boot properties to 3.5](../../../java/spring/boot3/springbootproperties_3_5)
 * [Migrate to Spring Cloud 2025](../../../java/spring/cloud2025/upgradespringcloud_2025)
 * [Update Prometheus Pushgateway Dependency Coordinates](../../../java/spring/boot3/updateprometheuspushgateway)
-* [Migrate to Spring Security 6.5](../../../java/spring/security6/upgradespringsecurity_6_5)
+* [Migrate to Spring Security 6.5](../../../java/spring/security6/upgradespringsecurity_6_5-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`

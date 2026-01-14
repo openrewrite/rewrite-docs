@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.5.x (Community Edition)](../hibernate/migratetohibernate65-community-edition)
+* [Migrate to Hibernate 6.5.x (Community Edition)](../hibernate/migratetohibernate65)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
   * artifactId: `*`

@@ -45,7 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Boot properties to 3.1](/recipes/java/spring/boot3/springbootproperties_3_1.md)
 * [Migrate Spring Boot properties to 3.2](/recipes/java/spring/boot3/springbootproperties_3_2.md)
 * [Migrate Spring Boot properties to 3.3](/recipes/java/spring/boot3/springbootproperties_3_3.md)
-* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
 * [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
 * [Migrate Spring Boot properties to 4.0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
 * [Migrate Spring Cloud Gateway Properties](/recipes/java/spring/cloud2025/springcloudgatewayproperties.md)

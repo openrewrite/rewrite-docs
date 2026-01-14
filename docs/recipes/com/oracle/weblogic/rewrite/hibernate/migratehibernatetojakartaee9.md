@@ -33,7 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.1.x (Community Edition)](../../../../../hibernate/migratetohibernate61-community-edition)
+* [Migrate to Hibernate 6.1.x (Community Edition)](../../../../../hibernate/migratetohibernate61)
 * [Add Hibernate ORM Core if has dependencies](../../../../../com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61)
 * [Upgrade Gradle or Maven dependency versions](../../../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.search`

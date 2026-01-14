@@ -1,25 +1,21 @@
 ---
-sidebar_label: "Migrate to Hibernate 6.3.x (Community Edition)"
+sidebar_label: "Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Hibernate 6.3.x (Community Edition)
+# Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)
 
-**org.openrewrite.hibernate.MigrateToHibernate63**
+**org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62**
 
-_This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x._
+_This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.3.yml),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.2.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -28,13 +24,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.2.x (Community Edition)](../hibernate/migratetohibernate62-community-edition)
-* [Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate62-community-edition)
-* [Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate63-community-edition)
-* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
-  * groupId: `org.hibernate.orm`
-  * artifactId: `*`
-  * newVersion: `6.3.x`
+* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
+  * oldGroupId: `io.hypersistence`
+  * oldArtifactId: `hypersistence-utils-hibernate-60`
+  * newGroupId: `io.hypersistence`
+  * newArtifactId: `hypersistence-utils-hibernate-62`
+  * newVersion: `3.7.x`
 
 </TabItem>
 
@@ -43,18 +38,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.MigrateToHibernate63
-displayName: Migrate to Hibernate 6.3.x (Community Edition)
+name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62
+displayName: Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)
 description: |
-  This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
+  This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`.
 recipeList:
-  - org.openrewrite.hibernate.MigrateToHibernate62
-  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62
-  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.hibernate.orm
-      artifactId: "*"
-      newVersion: 6.3.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: io.hypersistence
+      oldArtifactId: hypersistence-utils-hibernate-60
+      newGroupId: io.hypersistence
+      newArtifactId: hypersistence-utils-hibernate-62
+      newVersion: 3.7.x
 
 ```
 </TabItem>
@@ -64,7 +58,8 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.4.x (Community Edition)](/recipes/hibernate/migratetohibernate64-community-edition.md)
+* [Migrate to Hibernate 6.2.x (Community Edition)](/recipes/hibernate/migratetohibernate62.md)
+* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63.md)
 
 
 ## Usage
@@ -81,7 +76,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.MigrateToHibernate63")
+    activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62")
     setExportDatatables(true)
 }
 
@@ -114,7 +109,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.MigrateToHibernate63")
+        activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -149,7 +144,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.MigrateToHibernate63</recipe>
+            <recipe>org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -172,7 +167,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHibernate63 -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -180,7 +175,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToHibernate63
+mod run . --recipe MigrateToHypersistenceUtilsHibernate62
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -194,7 +189,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHibernate63" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

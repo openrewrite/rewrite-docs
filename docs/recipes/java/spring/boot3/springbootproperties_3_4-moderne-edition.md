@@ -1,15 +1,20 @@
 ---
-sidebar_label: "Migrate antPathRequestMatcher to pathPatternRequestMatcher"
+sidebar_label: "Migrate `@Endpoint` Security properties to 3.4"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate antPathRequestMatcher to pathPatternRequestMatcher
+# Migrate `@Endpoint` Security properties to 3.4
 
-**io.moderne.java.spring.security6.MigrateAntPathRequestMatcher**
+**io.moderne.java.spring.boot3.SpringBootProperties\_3\_4**
 
-_In Spring Security 6.5, `AntPathRequestMatcher` is deprecated in favor of `PathPatternRequestMatcher`. This recipe migrates static method calls and constructor usage to the new pattern._
+_Migrate the settings for Spring Boot Management Endpoint Security from `true`|`false` to `read-only`|`none`._
+
+### Tags
+
+* [spring](/reference/recipes-by-tag#spring)
+* [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
 
@@ -23,66 +28,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5-moderne-edition.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-class SecurityConfig {
-    SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-            .authorizeHttpRequests(req ->
-                req.requestMatchers(AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
-        return httpSecurity.build();
-    }
-}
-```
-
-###### After
-```java
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
-
-class SecurityConfig {
-    SecurityFilterChain createFrom(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-            .authorizeHttpRequests(req ->
-                req.requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/images/**")).permitAll());
-        return httpSecurity.build();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
--import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-+import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
-
-@@ -9,1 +9,1 @@
-        httpSecurity
-            .authorizeHttpRequests(req ->
--               req.requestMatchers(AntPathRequestMatcher.antMatcher("/images/**")).permitAll());
-+               req.requestMatchers(PathPatternRequestMatcher.withDefaults().matcher("/images/**")).permitAll());
-        return httpSecurity.build();
-```
-</TabItem>
-</Tabs>
+* [Migrate to Spring Boot 3.4 (Moderne Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-moderne-edition.md)
 
 
 ## Usage
@@ -96,7 +42,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateAntPathRequestMatcher
+mod run . --recipe SpringBootProperties_3_4
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -110,7 +56,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.security6.MigrateAntPathRequestMatcher" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.boot3.SpringBootProperties_3_4" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

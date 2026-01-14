@@ -1,102 +1,71 @@
 ---
-sidebar_label: "Replace boolean type mappings with converters (Community Edition)"
+sidebar_label: "Migrate to Hibernate 6.2.x (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace boolean type mappings with converters (Community Edition)
+# Migrate to Hibernate 6.2.x (Community Edition)
 
-**org.openrewrite.hibernate.MigrateBooleanMappings**
+**org.openrewrite.hibernate.MigrateToHibernate62**
 
-_Replaces type mapping of booleans with appropriate attribute converters._
+_This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateBooleanMappings.java),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.2.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Hibernate 6.1.x (Community Edition)](../hibernate/migratetohibernate61)
+* [Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate62)
+* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
+  * groupId: `org.hibernate.orm`
+  * artifactId: `*`
+  * newVersion: `6.2.x`
+* [Replace `@LazyCollection` with `jakarta.persistence.FetchType` (Community Edition)](../hibernate/replacelazycollectionannotation)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.hibernate.MigrateToHibernate62
+displayName: Migrate to Hibernate 6.2.x (Community Edition)
+description: |
+  This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x.
+recipeList:
+  - org.openrewrite.hibernate.MigrateToHibernate61
+  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.hibernate.orm
+      artifactId: "*"
+      newVersion: 6.2.x
+  - org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import jakarta.persistence.Column;
-import org.hibernate.annotations.Type;
-
-public class SomeClass {
-
-    @Column(name = "IS_SOMETHING")
-    @Type(type = "true_false")
-    private boolean isSomething;
-
-    @Column(name = "IS_SOMETHING_ELSE")
-    @Type(type = "org.hibernate.type.YesNoBooleanType")
-    private boolean isSomethingElse;
-
-}
-```
-
-###### After
-```java
-import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
-import org.hibernate.type.TrueFalseConverter;
-import org.hibernate.type.YesNoConverter;
-
-public class SomeClass {
-
-    @Column(name = "IS_SOMETHING")
-    @Convert(converter = TrueFalseConverter.class)
-    private boolean isSomething;
-
-    @Column(name = "IS_SOMETHING_ELSE")
-    @Convert(converter = YesNoConverter.class)
-    private boolean isSomethingElse;
-
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,1 +2,3 @@
-import jakarta.persistence.Column;
--import org.hibernate.annotations.Type;
-+import jakarta.persistence.Convert;
-+import org.hibernate.type.TrueFalseConverter;
-+import org.hibernate.type.YesNoConverter;
-
-@@ -7,1 +9,1 @@
-
-    @Column(name = "IS_SOMETHING")
--   @Type(type = "true_false")
-+   @Convert(converter = TrueFalseConverter.class)
-    private boolean isSomething;
-@@ -11,1 +13,1 @@
-
-    @Column(name = "IS_SOMETHING_ELSE")
--   @Type(type = "org.hibernate.type.YesNoBooleanType")
-+   @Convert(converter = YesNoConverter.class)
-    private boolean isSomethingElse;
-```
-</TabItem>
-</Tabs>
+* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63.md)
+* [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
 
 
 ## Usage
@@ -113,7 +82,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.MigrateBooleanMappings")
+    activeRecipe("org.openrewrite.hibernate.MigrateToHibernate62")
     setExportDatatables(true)
 }
 
@@ -146,7 +115,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.MigrateBooleanMappings")
+        activeRecipe("org.openrewrite.hibernate.MigrateToHibernate62")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -181,7 +150,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.MigrateBooleanMappings</recipe>
+            <recipe>org.openrewrite.hibernate.MigrateToHibernate62</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -204,7 +173,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateBooleanMappings -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHibernate62 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -212,7 +181,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateBooleanMappings
+mod run . --recipe MigrateToHibernate62
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -226,7 +195,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateBooleanMappings" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHibernate62" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

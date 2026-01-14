@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Hibernate 7.1.x (Community Edition)](../../../hibernate/migratetohibernate71-community-edition)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 * [Upgrade to SpringDoc 3.0](../../../java/springdoc/upgradespringdoc_3_0)
-* [Migrate to Spring Boot 4.0 modular starters](../../../java/spring/boot4/migratetomodularstarters)
+* [Migrate to Spring Boot 4.0 modular starters](../../../java/spring/boot4/migratetomodularstarters-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`

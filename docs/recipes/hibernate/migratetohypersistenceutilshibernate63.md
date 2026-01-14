@@ -1,25 +1,21 @@
 ---
-sidebar_label: "Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)"
+sidebar_label: "Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)
+# Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)
 
-**org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60**
+**org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63**
 
-_This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name._
+_This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.0.yml),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.3.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -29,45 +25,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Gradle or Maven dependency](../java/dependencies/changedependency)
-  * oldGroupId: `com.vladmihalcea`
-  * oldArtifactId: `hibernate-types-4`
+  * oldGroupId: `io.hypersistence`
+  * oldArtifactId: `hypersistence-utils-hibernate-62`
   * newGroupId: `io.hypersistence`
-  * newArtifactId: `hypersistence-utils-hibernate-60`
-  * newVersion: `3.5.x`
-* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
-  * oldGroupId: `com.vladmihalcea`
-  * oldArtifactId: `hibernate-types-5`
-  * newGroupId: `io.hypersistence`
-  * newArtifactId: `hypersistence-utils-hibernate-60`
-  * newVersion: `3.5.x`
-* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
-  * oldGroupId: `com.vladmihalcea`
-  * oldArtifactId: `hibernate-types-43`
-  * newGroupId: `io.hypersistence`
-  * newArtifactId: `hypersistence-utils-hibernate-60`
-  * newVersion: `3.5.x`
-* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
-  * oldGroupId: `com.vladmihalcea`
-  * oldArtifactId: `hibernate-types-52`
-  * newGroupId: `io.hypersistence`
-  * newArtifactId: `hypersistence-utils-hibernate-60`
-  * newVersion: `3.5.x`
-* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
-  * oldGroupId: `com.vladmihalcea`
-  * oldArtifactId: `hibernate-types-55`
-  * newGroupId: `io.hypersistence`
-  * newArtifactId: `hypersistence-utils-hibernate-60`
-  * newVersion: `3.5.x`
-* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
-  * oldGroupId: `com.vladmihalcea`
-  * oldArtifactId: `hibernate-types-60`
-  * newGroupId: `io.hypersistence`
-  * newArtifactId: `hypersistence-utils-hibernate-60`
-  * newVersion: `3.5.x`
-* [Rename package name](../java/changepackage)
-  * oldPackageName: `com.vladmihalcea`
-  * newPackageName: `io.hypersistence.utils`
-  * recursive: `true`
+  * newArtifactId: `hypersistence-utils-hibernate-63`
+  * newVersion: `3.8.x`
 
 </TabItem>
 
@@ -76,51 +38,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60
-displayName: Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)
+name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63
+displayName: Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)
 description: |
-  This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
+  This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.vladmihalcea
-      oldArtifactId: hibernate-types-4
+      oldGroupId: io.hypersistence
+      oldArtifactId: hypersistence-utils-hibernate-62
       newGroupId: io.hypersistence
-      newArtifactId: hypersistence-utils-hibernate-60
-      newVersion: 3.5.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.vladmihalcea
-      oldArtifactId: hibernate-types-5
-      newGroupId: io.hypersistence
-      newArtifactId: hypersistence-utils-hibernate-60
-      newVersion: 3.5.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.vladmihalcea
-      oldArtifactId: hibernate-types-43
-      newGroupId: io.hypersistence
-      newArtifactId: hypersistence-utils-hibernate-60
-      newVersion: 3.5.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.vladmihalcea
-      oldArtifactId: hibernate-types-52
-      newGroupId: io.hypersistence
-      newArtifactId: hypersistence-utils-hibernate-60
-      newVersion: 3.5.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.vladmihalcea
-      oldArtifactId: hibernate-types-55
-      newGroupId: io.hypersistence
-      newArtifactId: hypersistence-utils-hibernate-60
-      newVersion: 3.5.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.vladmihalcea
-      oldArtifactId: hibernate-types-60
-      newGroupId: io.hypersistence
-      newArtifactId: hypersistence-utils-hibernate-60
-      newVersion: 3.5.x
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: com.vladmihalcea
-      newPackageName: io.hypersistence.utils
-      recursive: true
+      newArtifactId: hypersistence-utils-hibernate-63
+      newVersion: 3.8.x
 
 ```
 </TabItem>
@@ -130,7 +58,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
+* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63.md)
 
 
 ## Usage
@@ -147,7 +75,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60")
+    activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63")
     setExportDatatables(true)
 }
 
@@ -180,7 +108,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60")
+        activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -215,7 +143,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60</recipe>
+            <recipe>org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -238,7 +166,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60 -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -246,7 +174,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToHypersistenceUtilsHibernate60
+mod run . --recipe MigrateToHypersistenceUtilsHibernate63
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -260,7 +188,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

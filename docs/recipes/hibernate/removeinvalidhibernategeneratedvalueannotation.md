@@ -1,71 +1,80 @@
 ---
-sidebar_label: "Migrate to Hibernate 6.2.x (Community Edition)"
+sidebar_label: "Remove invalid `@GeneratedValue` annotation (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Hibernate 6.2.x (Community Edition)
+# Remove invalid `@GeneratedValue` annotation (Community Edition)
 
-**org.openrewrite.hibernate.MigrateToHibernate62**
+**org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation**
 
-_This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x._
+_Removes `@GeneratedValue` annotation from fields that are not also annotated with `@Id`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.2.yml),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/RemoveInvalidHibernateGeneratedValueAnnotation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.1.x (Community Edition)](../hibernate/migratetohibernate61-community-edition)
-* [Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate62-community-edition)
-* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
-  * groupId: `org.hibernate.orm`
-  * artifactId: `*`
-  * newVersion: `6.2.x`
-* [Replace `@LazyCollection` with `jakarta.persistence.FetchType` (Community Edition)](../hibernate/replacelazycollectionannotation-community-edition)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.MigrateToHibernate62
-displayName: Migrate to Hibernate 6.2.x (Community Edition)
-description: |
-  This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x.
-recipeList:
-  - org.openrewrite.hibernate.MigrateToHibernate61
-  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.hibernate.orm
-      artifactId: "*"
-      newVersion: 6.2.x
-  - org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63-community-edition.md)
-* [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
+* [Migrate to Hibernate 6.4.x (Community Edition)](/recipes/hibernate/migratetohibernate64.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+class A {
+    @Id
+    Integer id;
+    @GeneratedValue
+    String name;
+}
+```
+
+###### After
+```java
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+class A {
+    @Id
+    Integer id;
+    String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import jakarta.persistence.Entity;
+-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+@@ -8,1 +7,0 @@
+    @Id
+    Integer id;
+-   @GeneratedValue
+    String name;
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -82,7 +91,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.MigrateToHibernate62")
+    activeRecipe("org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation")
     setExportDatatables(true)
 }
 
@@ -115,7 +124,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.MigrateToHibernate62")
+        activeRecipe("org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -150,7 +159,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.MigrateToHibernate62</recipe>
+            <recipe>org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -173,7 +182,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHibernate62 -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -181,7 +190,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToHibernate62
+mod run . --recipe RemoveInvalidHibernateGeneratedValueAnnotation
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -195,7 +204,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHibernate62" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

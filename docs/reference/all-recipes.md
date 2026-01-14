@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 5110
+Total recipes: 5117
 
 
 ## io.moderne.recipe:rewrite-angular
@@ -100,70 +100,70 @@ _License: Moderne Proprietary License_
 
 _22 recipes_
 
-* [io.moderne.hibernate.search.FindJPQLDefinitions](/recipes/hibernate/search/findjpqldefinitions-moderne-edition.md)
+* [io.moderne.hibernate.search.FindJPQLDefinitions](/recipes/hibernate/search/findjpqldefinitions.md)
   * **Find JPQL definitions (Moderne Edition)**
   * Find Java Persistence Query Language definitions in the codebase.
-* [io.moderne.hibernate.update66.FixConflictingClassTypeAnnotations](/recipes/hibernate/update66/fixconflictingclasstypeannotations-moderne-edition.md)
+* [io.moderne.hibernate.update66.FixConflictingClassTypeAnnotations](/recipes/hibernate/update66/fixconflictingclasstypeannotations.md)
   * **Fix conflicting class type annotation Hibernate 6.6 (Moderne Edition)**
   * Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`. For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table) but still accepted and therefore stays.
-* [io.moderne.hibernate.update66.RemoveTableFromInheritedEntity](/recipes/hibernate/update66/removetablefrominheritedentity-moderne-edition.md)
+* [io.moderne.hibernate.update66.RemoveTableFromInheritedEntity](/recipes/hibernate/update66/removetablefrominheritedentity.md)
   * **Remove table from single table inherited entity (Moderne Edition)**
   * For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error.
-* [io.moderne.hibernate.update70.AddCascadePersistToIdMappedAssociations](/recipes/hibernate/update70/addcascadepersisttoidmappedassociations-moderne-edition.md)
+* [io.moderne.hibernate.update70.AddCascadePersistToIdMappedAssociations](/recipes/hibernate/update70/addcascadepersisttoidmappedassociations.md)
   * **Migrate implicit cascade=PERSIST for @Id and @MapsId associations (Moderne Edition)**
   * Hibernate used to automatically enable cascade=PERSIST for association fields annotated @Id or @MapsId. This was undocumented and unexpected behavior, and no longer supported in Hibernate 7. Existing code which relies on this behavior will be modified by addition of explicit cascade=PERSIST to the association fields.
-* [io.moderne.hibernate.update70.CompositeUserTypeSessionFactoryImplementor](/recipes/hibernate/update70/compositeusertypesessionfactoryimplementor-moderne-edition.md)
+* [io.moderne.hibernate.update70.CompositeUserTypeSessionFactoryImplementor](/recipes/hibernate/update70/compositeusertypesessionfactoryimplementor.md)
   * **Remove leaking of SessionFactoryImplementor from `org.hibernate.usertype.CompositeUserType` invocations and implementations (Moderne Edition)**
   * Remove leaking of SessionFactoryImplementor from `org.hibernate.usertype.CompositeUserType` invocations and implementations.
-* [io.moderne.hibernate.update70.MigrateConfigurableToGeneratorCreationContext](/recipes/hibernate/update70/migrateconfigurabletogeneratorcreationcontext-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateConfigurableToGeneratorCreationContext](/recipes/hibernate/update70/migrateconfigurabletogeneratorcreationcontext.md)
   * **Migrate `Configurable.configure()` to use `GeneratorCreationContext` (Moderne Edition)**
   * In Hibernate 7.0, `Configurable.configure()` now takes a `GeneratorCreationContext` parameter instead of `ServiceRegistry`. This recipe migrates method signatures and call sites.
-* [io.moderne.hibernate.update70.MigrateIntegratorMethod](/recipes/hibernate/update70/migrateintegratormethod-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateIntegratorMethod](/recipes/hibernate/update70/migrateintegratormethod.md)
   * **Migrate Hibernate `Integrator#integrate` method (Moderne Edition)**
   * Migrate Hibernate `Integrator#integrate` method from deprecated signature to Hibernate 7 compatible signature. Changes `integrate(Metadata, SessionFactoryImplementor, SessionFactoryServiceRegistry)` to `integrate(Metadata, BootstrapContext, SessionFactoryImplementor)`.
-* [io.moderne.hibernate.update70.MigrateJdbcTypeToJdbcTypeCode](/recipes/hibernate/update70/migratejdbctypetojdbctypecode-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateJdbcTypeToJdbcTypeCode](/recipes/hibernate/update70/migratejdbctypetojdbctypecode.md)
   * **Migrate @JdbcType to @JdbcTypeCode (Moderne Edition)**
   * In Hibernate 7.0, various JDBC types were moved to internal packages. Use @JdbcTypeCode with SqlTypes constants instead of @JdbcType with specific classes.
-* [io.moderne.hibernate.update70.MigrateLockOptionsToDirectParameters](/recipes/hibernate/update70/migratelockoptionstodirectparameters-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateLockOptionsToDirectParameters](/recipes/hibernate/update70/migratelockoptionstodirectparameters.md)
   * **Migrate LockOptions to direct parameters (Moderne Edition)**
   * Migrates deprecated `LockOptions` usage to direct parameters in method calls. As of JPA 3.2 and Hibernate 7, `LockMode`, `Timeout`, and `PessimisticLockScope` are passed directly to `find()`, `refresh()`, and `lock()` methods instead of being wrapped in a `LockOptions` object.
-* [io.moderne.hibernate.update70.MigrateMetamodelImplementor](/recipes/hibernate/update70/migratemetamodelimplementor-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateMetamodelImplementor](/recipes/hibernate/update70/migratemetamodelimplementor.md)
   * **Migrate `MetamodelImplementor` to Hibernate 7.0 (Moderne Edition)**
   * In Hibernate 7.0, `MetamodelImplementor` has been split into `MappingMetamodel` for ORM-specific operations and `JpaMetamodel` for JPA-standard operations. This recipe migrates the usage based on which methods are called.
-* [io.moderne.hibernate.update70.MigrateNaturalIdLoadAccess](/recipes/hibernate/update70/migratenaturalidloadaccess-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateNaturalIdLoadAccess](/recipes/hibernate/update70/migratenaturalidloadaccess.md)
   * **Migrate NaturalIdLoadAccess method calls (Moderne Edition)**
   * Migrates NaturalIdLoadAccess#using(Object...) to using(Map.of(...)) variants for Hibernate 7.0.
-* [io.moderne.hibernate.update70.MigrateNaturalIdMultiLoadAccess](/recipes/hibernate/update70/migratenaturalidmultiloadaccess-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateNaturalIdMultiLoadAccess](/recipes/hibernate/update70/migratenaturalidmultiloadaccess.md)
   * **Migrate NaturalIdMultiLoadAccess method calls (Moderne Edition)**
   * Migrates NaturalIdMultiLoadAccess#compoundValue(Object...) to Map.of(...) variants for Hibernate 7.0.
-* [io.moderne.hibernate.update70.MigrateSessionInterface](/recipes/hibernate/update70/migratesessioninterface-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateSessionInterface](/recipes/hibernate/update70/migratesessioninterface.md)
   * **Migrate Session interface method calls (Moderne Edition)**
   * Migrates code using deprecated Session interface methods to their Hibernate 7.0 replacements.
-* [io.moderne.hibernate.update70.MigrateSessionToDeferToJPA](/recipes/hibernate/update70/migratesessiontodefertojpa-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateSessionToDeferToJPA](/recipes/hibernate/update70/migratesessiontodefertojpa.md)
   * **Migrate Session save/update/delete method calls (Moderne Edition)**
   * Migrates code using deprecated Session load/get/refresh/save/update/delete methods to their Hibernate 7.0 replacements.
-* [io.moderne.hibernate.update70.MigrateSetFlushModeToSetQueryFlushMode](/recipes/hibernate/update70/migratesetflushmodetosetqueryflushmode-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateSetFlushModeToSetQueryFlushMode](/recipes/hibernate/update70/migratesetflushmodetosetqueryflushmode.md)
   * **Migrate `setFlushMode()` to `setQueryFlushMode()` (Moderne Edition)**
   * In Hibernate 7.0, `CommonQueryContract.setFlushMode(FlushModeType)` has been replaced with `setQueryFlushMode(QueryFlushMode)`. This recipe migrates the method call and converts `FlushModeType` parameters to their `QueryFlushMode` equivalents.
-* [io.moderne.hibernate.update70.MigrateToTargetEmbeddable](/recipes/hibernate/update70/migratetotargetembeddable-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateToTargetEmbeddable](/recipes/hibernate/update70/migratetotargetembeddable.md)
   * **Migrate to @TargetEmbeddable (Moderne Edition)**
   * Migrates code using removed @Target to to Hibernate 7.0's @TargetEmbeddable equivalent. Removes misused @Target annotations.
-* [io.moderne.hibernate.update70.RemoveUnnecessaryCastToSession](/recipes/hibernate/update70/removeunnecessarycasttosession-moderne-edition.md)
+* [io.moderne.hibernate.update70.RemoveUnnecessaryCastToSession](/recipes/hibernate/update70/removeunnecessarycasttosession.md)
   * **Remove unnecessary cast to `Session` for `SessionFactory.createEntityManager()` (Moderne Edition)**
   * In Hibernate 7.0, `SessionFactory.createEntityManager()` explicitly returns Session, making casts to Session unnecessary.
-* [io.moderne.hibernate.update70.ReplaceHibernateWithJakartaAnnotations](/recipes/hibernate/update70/replacehibernatewithjakartaannotations-moderne-edition.md)
+* [io.moderne.hibernate.update70.ReplaceHibernateWithJakartaAnnotations](/recipes/hibernate/update70/replacehibernatewithjakartaannotations.md)
   * **Replace hibernate annotations with Jakarta variants (Moderne Edition)**
   * Tries to replaces annotations that have been removed in Hibernate 7.0 with its Jakarta equivalent, such as Table, @Where, @OrderBy, etc. If a annotation is used with arguments that do not have a direct replacement, the annotation is not replaced at all.
-* [io.moderne.hibernate.update70.ReplaceSessionLockRequest](/recipes/hibernate/update70/replacesessionlockrequest-moderne-edition.md)
+* [io.moderne.hibernate.update70.ReplaceSessionLockRequest](/recipes/hibernate/update70/replacesessionlockrequest.md)
   * **Replace Session.buildLockRequest with LockOptions (Moderne Edition)**
   * Migrates Session.buildLockRequest(LockOptions.X) calls to use session.lock(entity, new LockOptions(LockMode.X)) in Hibernate 7.0.
-* [io.moderne.hibernate.update70.UnboxingTransactionTimeout](/recipes/hibernate/update70/unboxingtransactiontimeout-moderne-edition.md)
+* [io.moderne.hibernate.update70.UnboxingTransactionTimeout](/recipes/hibernate/update70/unboxingtransactiontimeout.md)
   * **Null safe Transaction#getTimeout() (Moderne Edition)**
   * JPA 3.2 adds `#getTimeout` but uses `Integer` whereas Hibernate has historically used `int`. Note that this raises the possibility of a `NullPointerException` during migration if, e.g., performing direct comparisons on the timeout value against an in (auto unboxing). This recipe adds ternary operators where `Transaction#getTimeout()` is used and a negative value will be used if the `getTimeout()` resulted in a null value.
-* [io.moderne.hibernate.update70.UserTypeNullSafeGetSharedSessionContractImplementorRecipe](/recipes/hibernate/update70/usertypenullsafegetsharedsessioncontractimplementorrecipe-moderne-edition.md)
+* [io.moderne.hibernate.update70.UserTypeNullSafeGetSharedSessionContractImplementorRecipe](/recipes/hibernate/update70/usertypenullsafegetsharedsessioncontractimplementorrecipe.md)
   * **Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` invocations (Moderne Edition)**
   * Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` invocations.
-* [io.moderne.hibernate.update70.UserTypeSharedSessionContractImplementor](/recipes/hibernate/update70/usertypesharedsessioncontractimplementor-moderne-edition.md)
+* [io.moderne.hibernate.update70.UserTypeSharedSessionContractImplementor](/recipes/hibernate/update70/usertypesharedsessioncontractimplementor.md)
   * **Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` implementations (Moderne Edition)**
   * Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` implementations.
 
@@ -1157,28 +1157,28 @@ _License: Moderne Source Available License_
 
 _8 recipes_
 
-* [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes-community-edition.md)
+* [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes.md)
   * **AddScalarPreferStandardBasicTypesForHibernate5 (Community Edition)**
   * Prefer the use of `StandardBasicTypes.*` in `NativeQuery.addScalar(...)` invocations.
-* [org.openrewrite.hibernate.EmptyInterceptorToInterface](/recipes/hibernate/emptyinterceptortointerface-community-edition.md)
+* [org.openrewrite.hibernate.EmptyInterceptorToInterface](/recipes/hibernate/emptyinterceptortointerface.md)
   * **Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector` (Community Edition)**
   * In Hibernate 6.0 the `Interceptor` interface received default implementations therefore the NOOP implementation that could be extended was no longer needed. This recipe migrates 5.x `Interceptor#onPrepareStatement(String)` to 6.0 `StatementInspector#inspect()`.
-* [org.openrewrite.hibernate.MigrateBooleanMappings](/recipes/hibernate/migratebooleanmappings-community-edition.md)
+* [org.openrewrite.hibernate.MigrateBooleanMappings](/recipes/hibernate/migratebooleanmappings.md)
   * **Replace boolean type mappings with converters (Community Edition)**
   * Replaces type mapping of booleans with appropriate attribute converters.
-* [org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation](/recipes/hibernate/migrateresultcheckstyletoexpectation-community-edition.md)
+* [org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation](/recipes/hibernate/migrateresultcheckstyletoexpectation.md)
   * **Migration of `ResultCheckStyle` to `Expectation` (Community Edition)**
   * Will migrate the usage of `org.hibernate.annotations.ResultCheckStyle` to `org.hibernate.jdbc.Expectation` in `@SQLInsert`, `@SqlUpdate`, `@SqlDelete` and `@SqlDeleteAll` annotations.
-* [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype-community-edition.md)
+* [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype.md)
   * **Migrate `UserType` to Hibernate 6 (Community Edition)**
   * With Hibernate 6 the `UserType` interface received a type parameter making it more strictly typed. This recipe applies the changes required to adhere to this change.
-* [org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation](/recipes/hibernate/removeinvalidhibernategeneratedvalueannotation-community-edition.md)
+* [org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation](/recipes/hibernate/removeinvalidhibernategeneratedvalueannotation.md)
   * **Remove invalid `@GeneratedValue` annotation (Community Edition)**
   * Removes `@GeneratedValue` annotation from fields that are not also annotated with `@Id`.
-* [org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation](/recipes/hibernate/replacelazycollectionannotation-community-edition.md)
+* [org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation](/recipes/hibernate/replacelazycollectionannotation.md)
   * **Replace `@LazyCollection` with `jakarta.persistence.FetchType` (Community Edition)**
   * Adds the `FetchType` to jakarta annotations and deletes `@LazyCollection`.
-* [org.openrewrite.hibernate.TypeAnnotationParameter](/recipes/hibernate/typeannotationparameter-community-edition.md)
+* [org.openrewrite.hibernate.TypeAnnotationParameter](/recipes/hibernate/typeannotationparameter.md)
   * **`@Type` annotation type parameter migration (Community Edition)**
   * Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type class.
 
@@ -1306,7 +1306,7 @@ _32 recipes_
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-05T1103.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-12T1103.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](/recipes/java/dependencies/removeunuseddependencies.md)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -11287,7 +11287,7 @@ _17 recipes_
 
 _License: Unknown_
 
-_1513 recipes_
+_1520 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -11370,13 +11370,13 @@ _1513 recipes_
 * [io.moderne.hibernate.MigrateToHibernate71](/recipes/hibernate/migratetohibernate71-moderne-edition.md)
   * **Migrate to Hibernate 7.1.x (Moderne Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x.
-* [io.moderne.hibernate.MigrateToHibernate72](/recipes/hibernate/migratetohibernate72-moderne-edition.md)
+* [io.moderne.hibernate.MigrateToHibernate72](/recipes/hibernate/migratetohibernate72.md)
   * **Migrate to Hibernate 7.2.x (Moderne Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 7.2.x.
-* [io.moderne.hibernate.update66.MigrateCascadeTypes](/recipes/hibernate/update66/migratecascadetypes-moderne-edition.md)
+* [io.moderne.hibernate.update66.MigrateCascadeTypes](/recipes/hibernate/update66/migratecascadetypes.md)
   * **Migrate Hibernate CascadeType constants (Moderne Edition)**
   * Moving away from deprecated Hibernate CascadeType constants. CascadeType.SAVE_UPDATE -&gt; CascadeType.PERSIST and/or CascadeType.MERGE, CascadeType.DELETE -&gt; CascadeType.REMOVE.
-* [io.moderne.hibernate.update70.MigrateToHibernate7JFR](/recipes/hibernate/update70/migratetohibernate7jfr-moderne-edition.md)
+* [io.moderne.hibernate.update70.MigrateToHibernate7JFR](/recipes/hibernate/update70/migratetohibernate7jfr.md)
   * **Migrate to Hibernate 7 JFR APIs (Moderne Edition)**
   * Migrates deprecated JFR integration APIs to their Hibernate 7 replacements. `EventManager` becomes `EventMonitor` and `HibernateMonitoringEvent` becomes `DiagnosticEvent`.
 * [io.moderne.jasperreports.MigrateExporterConfigToJasper6](/recipes/jasperreports/migrateexporterconfigtojasper6.md)
@@ -11394,7 +11394,7 @@ _1513 recipes_
 * [io.moderne.java.spring.boot.SpringToSpringBoot](/recipes/java/spring/boot/springtospringboot.md)
   * **Migrate Spring Framework to Spring Boot**
   * Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application's build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin.
-* [io.moderne.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [io.moderne.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-moderne-edition.md)
   * **Migrate to Spring Boot 2.0**
   * Migrate applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [io.moderne.java.spring.boot3.CommentDeprecations](/recipes/java/spring/boot3/commentdeprecations.md)
@@ -11415,7 +11415,7 @@ _1513 recipes_
 * [io.moderne.java.spring.boot3.SpringBoot3BestPractices](/recipes/java/spring/boot3/springboot3bestpractices.md)
   * **Spring Boot 3.5 best practices**
   * Applies best practices to Spring Boot 3.5+ applications.
-* [io.moderne.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [io.moderne.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4-moderne-edition.md)
   * **Migrate `@Endpoint` Security properties to 3.4**
   * Migrate the settings for Spring Boot Management Endpoint Security from `true`|`false` to `read-only`|`none`.
 * [io.moderne.java.spring.boot3.UpdateOpenTelemetryResourceAttributes](/recipes/java/spring/boot3/updateopentelemetryresourceattributes.md)
@@ -11457,7 +11457,7 @@ _1513 recipes_
 * [io.moderne.java.spring.boot4.MigrateSpringRetry](/recipes/java/spring/boot4/migratespringretry.md)
   * **Migrate Spring Retry to Spring Resilience**
   * Handle spring-retry not longer managed by Spring Boot and the possible migration to Spring Core Resilience.
-* [io.moderne.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters.md)
+* [io.moderne.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-moderne-edition.md)
   * **Migrate to Spring Boot 4.0 modular starters**
   * Remove monolithic starters and adds the necessary Spring Boot 4.0 starter dependencies based on package usage, where any spring-boot-starter was used previously.
 * [io.moderne.java.spring.boot4.ModuleStarterRelocations](/recipes/java/spring/boot4/modulestarterrelocations.md)
@@ -11499,7 +11499,7 @@ _1513 recipes_
 * [io.moderne.java.spring.orm.SpringORM5](/recipes/java/spring/orm/springorm5.md)
   * **Migrate to Spring ORM to 5**
   * Migrate applications using Spring ORM Hibernate Support to Hibernate 5 compatible version. This will enable a further migration by the Spring Framework migration past 5.
-* [io.moderne.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md)
+* [io.moderne.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-moderne-edition.md)
   * **Migrate to Spring Security 6.5**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [io.moderne.java.spring.security7.ModularizeSpringSecurity7](/recipes/java/spring/security7/modularizespringsecurity7.md)
@@ -13149,22 +13149,22 @@ _1513 recipes_
 * [org.openrewrite.gradle.plugins.RemoveDevelocity](/recipes/gradle/plugins/removedevelocity.md)
   * **Remove Develocity**
   * Remove the Develocity plugin and configuration from the Gradle build and settings files.
-* [org.openrewrite.hibernate.MigrateToHibernate60](/recipes/hibernate/migratetohibernate60-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHibernate60](/recipes/hibernate/migratetohibernate60.md)
   * **Migrate to Hibernate 6.0.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
-* [org.openrewrite.hibernate.MigrateToHibernate61](/recipes/hibernate/migratetohibernate61-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHibernate61](/recipes/hibernate/migratetohibernate61.md)
   * **Migrate to Hibernate 6.1.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.1.x. The hibernate dependencies will   be updated to use the new org.hibernate.orm group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
-* [org.openrewrite.hibernate.MigrateToHibernate62](/recipes/hibernate/migratetohibernate62-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHibernate62](/recipes/hibernate/migratetohibernate62.md)
   * **Migrate to Hibernate 6.2.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x.
-* [org.openrewrite.hibernate.MigrateToHibernate63](/recipes/hibernate/migratetohibernate63-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHibernate63](/recipes/hibernate/migratetohibernate63.md)
   * **Migrate to Hibernate 6.3.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
-* [org.openrewrite.hibernate.MigrateToHibernate64](/recipes/hibernate/migratetohibernate64-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHibernate64](/recipes/hibernate/migratetohibernate64.md)
   * **Migrate to Hibernate 6.4.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.4.x.
-* [org.openrewrite.hibernate.MigrateToHibernate65](/recipes/hibernate/migratetohibernate65-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHibernate65](/recipes/hibernate/migratetohibernate65.md)
   * **Migrate to Hibernate 6.5.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
 * [org.openrewrite.hibernate.MigrateToHibernate66](/recipes/hibernate/migratetohibernate66-community-edition.md)
@@ -13176,22 +13176,22 @@ _1513 recipes_
 * [org.openrewrite.hibernate.MigrateToHibernate71](/recipes/hibernate/migratetohibernate71-community-edition.md)
   * **Migrate to Hibernate 7.1.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x.
-* [org.openrewrite.hibernate.MigrateToHibernateDependencies60](/recipes/hibernate/migratetohibernatedependencies60-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHibernateDependencies60](/recipes/hibernate/migratetohibernatedependencies60.md)
   * **Migrate Hibernate dependencies to 6.0.x (Community Edition)**
   * This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
-* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60](/recipes/hibernate/migratetohypersistenceutilshibernate60-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
   * **Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)**
   * This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
-* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62](/recipes/hibernate/migratetohypersistenceutilshibernate62-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62](/recipes/hibernate/migratetohypersistenceutilshibernate62.md)
   * **Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)**
   * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`.
-* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63](/recipes/hibernate/migratetohypersistenceutilshibernate63-community-edition.md)
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63](/recipes/hibernate/migratetohypersistenceutilshibernate63.md)
   * **Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)**
   * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
-* [org.openrewrite.hibernate.TypeDescriptorToType](/recipes/hibernate/typedescriptortotype-community-edition.md)
+* [org.openrewrite.hibernate.TypeDescriptorToType](/recipes/hibernate/typedescriptortotype.md)
   * **Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)**
   * Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
-* [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0-community-edition.md)
+* [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
   * **Migrate to Hibernate Validator 8.0.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
 * [org.openrewrite.java.AddApache2LicenseHeader](/recipes/java/addapache2licenseheader.md)
@@ -14373,7 +14373,7 @@ _1513 recipes_
 * [org.openrewrite.java.spring.boot2.UpgradeSpockToGroovy3](/recipes/java/spring/boot2/upgradespocktogroovy3.md)
   * **Upgrade Spock to a Groovy 3 compatible variant**
   * Upgrade Spock dependencies to a Groovy 3 compatible 2.0 variant when Groovy 3 is on the classpath.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
   * **Migrate from Spring Boot 1.x to 2.0**
   * Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
@@ -14451,7 +14451,7 @@ _1513 recipes_
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_3](/recipes/java/spring/boot3/springbootproperties_3_3.md)
   * **Migrate Spring Boot properties to 3.3**
   * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
   * **Migrate Spring Boot properties to 3.4**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
@@ -14517,7 +14517,7 @@ _1513 recipes_
 * [org.openrewrite.java.spring.boot4.MigrateAutoconfigurePackages](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
   * **Migrate packages to modular starters**
   * Migrate to new packages used for autoconfiguration by Spring Boot 4.0 modules.
-* [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters.md)
+* [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
   * **Migrate to Spring Boot 4.0 modular starters**
   * Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
 * [org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
@@ -14667,7 +14667,7 @@ _1513 recipes_
 * [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
   * **Migrate to Spring Security 6.4**
   * Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5.md)
+* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
   * **Migrate to Spring Security 6.5**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)

@@ -630,7 +630,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4.md)
+* [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
 
 
 ## Usage

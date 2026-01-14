@@ -1,64 +1,90 @@
 ---
-sidebar_label: "Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)"
+sidebar_label: "AddScalarPreferStandardBasicTypesForHibernate5 (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)
+# AddScalarPreferStandardBasicTypesForHibernate5 (Community Edition)
 
-**org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63**
+**org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes**
 
-_This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`._
+_Prefer the use of `StandardBasicTypes.*` in `NativeQuery.addScalar(...)` invocations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.3.yml),
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/AddScalarPreferStandardBasicTypes.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
-  * oldGroupId: `io.hypersistence`
-  * oldArtifactId: `hypersistence-utils-hibernate-62`
-  * newGroupId: `io.hypersistence`
-  * newArtifactId: `hypersistence-utils-hibernate-63`
-  * newVersion: `3.8.x`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63
-displayName: Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)
-description: |
-  This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
-recipeList:
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: io.hypersistence
-      oldArtifactId: hypersistence-utils-hibernate-62
-      newGroupId: io.hypersistence
-      newArtifactId: hypersistence-utils-hibernate-63
-      newVersion: 3.8.x
-
-```
-</TabItem>
-</Tabs>
-
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63-community-edition.md)
+* [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.Session;
+import org.hibernate.type.StringType;
+import org.hibernate.type.IntegerType;
+
+class MyRepository {
+    void callAddScalar(Session session) {
+        session.createNativeQuery("select * from foo")
+            .addScalar("name", new StringType())
+            .addScalar("age", IntegerType.INSTANCE)
+            .list();
+    }
+}
+```
+
+###### After
+```java
+import org.hibernate.Session;
+import org.hibernate.type.StandardBasicTypes;
+
+class MyRepository {
+    void callAddScalar(Session session) {
+        session.createNativeQuery("select * from foo")
+            .addScalar("name", StandardBasicTypes.STRING)
+            .addScalar("age", StandardBasicTypes.INTEGER)
+            .list();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,2 +2,1 @@
+import org.hibernate.Session;
+-import org.hibernate.type.StringType;
+-import org.hibernate.type.IntegerType;
++import org.hibernate.type.StandardBasicTypes;
+
+@@ -8,2 +7,2 @@
+    void callAddScalar(Session session) {
+        session.createNativeQuery("select * from foo")
+-           .addScalar("name", new StringType())
+-           .addScalar("age", IntegerType.INSTANCE)
++           .addScalar("name", StandardBasicTypes.STRING)
++           .addScalar("age", StandardBasicTypes.INTEGER)
+            .list();
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -75,7 +101,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63")
+    activeRecipe("org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes")
     setExportDatatables(true)
 }
 
@@ -108,7 +134,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-hibernate:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63")
+        activeRecipe("org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -143,7 +169,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63</recipe>
+            <recipe>org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -166,7 +192,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63 -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -174,7 +200,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToHypersistenceUtilsHibernate63
+mod run . --recipe AddScalarPreferStandardBasicTypes
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -188,7 +214,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-hibernate:{{VERSIO
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
