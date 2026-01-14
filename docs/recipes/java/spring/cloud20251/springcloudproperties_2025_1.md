@@ -30,6 +30,99 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Spring Cloud 2025.1](/recipes/java/spring/cloud20251/upgradespringcloud_2025_1.md)
 
+## Examples
+##### Example 1
+`SpringCloud20251PropertiesTest#migrateStubrunnerPropertiesFile`
+
+
+###### Unchanged
+```mavenProject
+test
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="application.properties" label="application.properties">
+
+
+###### Before
+```properties title="application.properties"
+stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
+stubrunner.repository-root=https://repo.spring.io/libs-snapshot
+stubrunner.stubs-mode=LOCAL
+```
+
+###### After
+```properties title="application.properties"
+spring.cloud.contract.stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
+spring.cloud.contract.stubrunner.repository-root=https://repo.spring.io/libs-snapshot
+spring.cloud.contract.stubrunner.stubs-mode=LOCAL
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- application.properties
++++ application.properties
+@@ -1,3 +1,3 @@
+-stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
+-stubrunner.repository-root=https://repo.spring.io/libs-snapshot
+-stubrunner.stubs-mode=LOCAL
++spring.cloud.contract.stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
++spring.cloud.contract.stubrunner.repository-root=https://repo.spring.io/libs-snapshot
++spring.cloud.contract.stubrunner.stubs-mode=LOCAL
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SpringCloud20251PropertiesTest#migrateStubrunnerPropertiesFile`
+
+
+###### Unchanged
+```mavenProject
+test
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="application.properties" label="application.properties">
+
+
+###### Before
+```properties title="application.properties"
+stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
+stubrunner.repository-root=https://repo.spring.io/libs-snapshot
+stubrunner.stubs-mode=LOCAL
+```
+
+###### After
+```properties title="application.properties"
+spring.cloud.contract.stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
+spring.cloud.contract.stubrunner.repository-root=https://repo.spring.io/libs-snapshot
+spring.cloud.contract.stubrunner.stubs-mode=LOCAL
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- application.properties
++++ application.properties
+@@ -1,3 +1,3 @@
+-stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
+-stubrunner.repository-root=https://repo.spring.io/libs-snapshot
+-stubrunner.stubs-mode=LOCAL
++spring.cloud.contract.stubrunner.ids=com.example:http-server-dsl:+:stubs:8080
++spring.cloud.contract.stubrunner.repository-root=https://repo.spring.io/libs-snapshot
++spring.cloud.contract.stubrunner.stubs-mode=LOCAL
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
