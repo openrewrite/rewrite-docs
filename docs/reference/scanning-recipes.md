@@ -42,28 +42,28 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ## rewrite-codemods
 
-* [org.openrewrite.codemods.ApplyCodemod](/recipes/codemods/applycodemod.md)
+* [org.openrewrite.codemods.ApplyCodemod](/recipes/javascript/codemods/applycodemod.md)
   * **Applies a codemod to all source files**
   * Applies a codemod represented by an NPM package to all source files.
-* [org.openrewrite.codemods.Biome](/recipes/codemods/biome.md)
+* [org.openrewrite.codemods.Biome](/recipes/javascript/codemods/biome.md)
   * **Biome recommendations**
   * Run [Biome](https://biomejs.dev/) recommended settings on your projects.
-* [org.openrewrite.codemods.ESLint](/recipes/codemods/eslint.md)
+* [org.openrewrite.codemods.ESLint](/recipes/javascript/codemods/eslint.md)
   * **Lint source code with ESLint**
   * Run [ESLint](https://eslint.org/) across the code to fix common static analysis issues in the code.  This requires the code to have an existing ESLint configuration.
-* [org.openrewrite.codemods.Putout](/recipes/codemods/putout.md)
+* [org.openrewrite.codemods.Putout](/recipes/javascript/codemods/putout.md)
   * **Run Putout**
   * Run [Putout](https://github.com/coderaiser/putout) on your projects.
-* [org.openrewrite.codemods.ReactI18Next](/recipes/codemods/reacti18next.md)
+* [org.openrewrite.codemods.ReactI18Next](/recipes/javascript/codemods/reacti18next.md)
   * **React i18next internationalization**
   * Automatically internationalizes React applications by extracting hardcoded strings and replacing them with [react-i18next](https://react.i18next.com) translation calls. Handles JSX text, attributes, and template literals with variables. Creates and updates a translation JSON file with extracted strings.
-* [org.openrewrite.codemods.UI5](/recipes/codemods/ui5.md)
+* [org.openrewrite.codemods.UI5](/recipes/javascript/codemods/ui5.md)
   * **Lint UI5 projects with UI5 linter**
   * Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings.
 
 ## rewrite-codemods-ng
 
-* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](/recipes/codemods/migrate/angular/applyangularcli.md)
+* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](/recipes/javascript/codemods/migrate/angular/applyangularcli.md)
   * **Upgrade Angular versions**
   * Run `ng update` to upgrade Angular CLI and Angular Core to the specified version.
 

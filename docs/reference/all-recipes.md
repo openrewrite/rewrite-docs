@@ -762,22 +762,22 @@ _License: Moderne Source Available License_
 
 _6 recipes_
 
-* [org.openrewrite.codemods.ApplyCodemod](/recipes/codemods/applycodemod.md)
+* [org.openrewrite.codemods.ApplyCodemod](/recipes/javascript/codemods/applycodemod.md)
   * **Applies a codemod to all source files**
   * Applies a codemod represented by an NPM package to all source files.
-* [org.openrewrite.codemods.Biome](/recipes/codemods/biome.md)
+* [org.openrewrite.codemods.Biome](/recipes/javascript/codemods/biome.md)
   * **Biome recommendations**
   * Run [Biome](https://biomejs.dev/) recommended settings on your projects.
-* [org.openrewrite.codemods.ESLint](/recipes/codemods/eslint.md)
+* [org.openrewrite.codemods.ESLint](/recipes/javascript/codemods/eslint.md)
   * **Lint source code with ESLint**
   * Run [ESLint](https://eslint.org/) across the code to fix common static analysis issues in the code.  This requires the code to have an existing ESLint configuration.
-* [org.openrewrite.codemods.Putout](/recipes/codemods/putout.md)
+* [org.openrewrite.codemods.Putout](/recipes/javascript/codemods/putout.md)
   * **Run Putout**
   * Run [Putout](https://github.com/coderaiser/putout) on your projects.
-* [org.openrewrite.codemods.ReactI18Next](/recipes/codemods/reacti18next.md)
+* [org.openrewrite.codemods.ReactI18Next](/recipes/javascript/codemods/reacti18next.md)
   * **React i18next internationalization**
   * Automatically internationalizes React applications by extracting hardcoded strings and replacing them with [react-i18next](https://react.i18next.com) translation calls. Handles JSX text, attributes, and template literals with variables. Creates and updates a translation JSON file with extracted strings.
-* [org.openrewrite.codemods.UI5](/recipes/codemods/ui5.md)
+* [org.openrewrite.codemods.UI5](/recipes/javascript/codemods/ui5.md)
   * **Lint UI5 projects with UI5 linter**
   * Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings.
 
@@ -787,7 +787,7 @@ _License: Moderne Proprietary License_
 
 _1 recipe_
 
-* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](/recipes/codemods/migrate/angular/applyangularcli.md)
+* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](/recipes/javascript/codemods/migrate/angular/applyangularcli.md)
   * **Upgrade Angular versions**
   * Run `ng update` to upgrade Angular CLI and Angular Core to the specified version.
 
@@ -11694,1363 +11694,1363 @@ _1520 recipes_
 * [org.openrewrite.apache.poi.UpgradeApachePoi_3_17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
   * **Migrates to Apache POI 3.17**
   * Migrates to the last Apache POI 3.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
-* [org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle](/recipes/codemods/cleanup/javascript/arrowbodystyle.md)
+* [org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle](/recipes/javascript/codemods/cleanup/javascript/arrowbodystyle.md)
   * **Require braces around arrow function bodies**
   * Require braces around arrow function bodies See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style).
-* [org.openrewrite.codemods.cleanup.javascript.BetterRegex](/recipes/codemods/cleanup/javascript/betterregex.md)
+* [org.openrewrite.codemods.cleanup.javascript.BetterRegex](/recipes/javascript/codemods/cleanup/javascript/betterregex.md)
   * **Improve regexes by making them shorter, consistent, and safer**
   * Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md).
-* [org.openrewrite.codemods.cleanup.javascript.CapitalizedComments](/recipes/codemods/cleanup/javascript/capitalizedcomments.md)
+* [org.openrewrite.codemods.cleanup.javascript.CapitalizedComments](/recipes/javascript/codemods/cleanup/javascript/capitalizedcomments.md)
   * **Enforce or disallow capitalization of the first letter of a comment**
   * Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments).
-* [org.openrewrite.codemods.cleanup.javascript.CatchErrorName](/recipes/codemods/cleanup/javascript/catcherrorname.md)
+* [org.openrewrite.codemods.cleanup.javascript.CatchErrorName](/recipes/javascript/codemods/cleanup/javascript/catcherrorname.md)
   * **Enforce a specific parameter name in catch clauses**
   * Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md).
-* [org.openrewrite.codemods.cleanup.javascript.ConsistentDestructuring](/recipes/codemods/cleanup/javascript/consistentdestructuring.md)
+* [org.openrewrite.codemods.cleanup.javascript.ConsistentDestructuring](/recipes/javascript/codemods/cleanup/javascript/consistentdestructuring.md)
   * **Use destructured variables over properties**
   * Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md).
-* [org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle](/recipes/codemods/cleanup/javascript/consistenttypespecifierstyle.md)
+* [org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle](/recipes/javascript/codemods/cleanup/javascript/consistenttypespecifierstyle.md)
   * **Enforce or ban the use of inline type-only markers for named imports**
   * Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md).
-* [org.openrewrite.codemods.cleanup.javascript.Curly](/recipes/codemods/cleanup/javascript/curly.md)
+* [org.openrewrite.codemods.cleanup.javascript.Curly](/recipes/javascript/codemods/cleanup/javascript/curly.md)
   * **Enforce consistent brace style for all control statements**
   * Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly).
-* [org.openrewrite.codemods.cleanup.javascript.CustomErrorDefinition](/recipes/codemods/cleanup/javascript/customerrordefinition.md)
+* [org.openrewrite.codemods.cleanup.javascript.CustomErrorDefinition](/recipes/javascript/codemods/cleanup/javascript/customerrordefinition.md)
   * **Enforce correct `Error` subclassing**
   * Enforce correct `Error` subclassing. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/custom-error-definition.md).
-* [org.openrewrite.codemods.cleanup.javascript.DotNotation](/recipes/codemods/cleanup/javascript/dotnotation.md)
+* [org.openrewrite.codemods.cleanup.javascript.DotNotation](/recipes/javascript/codemods/cleanup/javascript/dotnotation.md)
   * **Enforce dot notation whenever possible**
   * Enforce dot notation whenever possible  See [rule details](https://eslint.org/docs/latest/rules/dot-notation).
-* [org.openrewrite.codemods.cleanup.javascript.EmptyBraceSpaces](/recipes/codemods/cleanup/javascript/emptybracespaces.md)
+* [org.openrewrite.codemods.cleanup.javascript.EmptyBraceSpaces](/recipes/javascript/codemods/cleanup/javascript/emptybracespaces.md)
   * **Enforce no spaces between braces**
   * Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md).
-* [org.openrewrite.codemods.cleanup.javascript.Eqeqeq](/recipes/codemods/cleanup/javascript/eqeqeq.md)
+* [org.openrewrite.codemods.cleanup.javascript.Eqeqeq](/recipes/javascript/codemods/cleanup/javascript/eqeqeq.md)
   * **Require the use of `===` and `!==`**
   * Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq).
-* [org.openrewrite.codemods.cleanup.javascript.EscapeCase](/recipes/codemods/cleanup/javascript/escapecase.md)
+* [org.openrewrite.codemods.cleanup.javascript.EscapeCase](/recipes/javascript/codemods/cleanup/javascript/escapecase.md)
   * **Require escape sequences to use uppercase values**
   * Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md).
-* [org.openrewrite.codemods.cleanup.javascript.ExplicitLengthCheck](/recipes/codemods/cleanup/javascript/explicitlengthcheck.md)
+* [org.openrewrite.codemods.cleanup.javascript.ExplicitLengthCheck](/recipes/javascript/codemods/cleanup/javascript/explicitlengthcheck.md)
   * **Enforce explicitly comparing the length or size property of a value**
   * Enforce explicitly comparing the length or size property of a value. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/explicit-length-check.md).
-* [org.openrewrite.codemods.cleanup.javascript.First](/recipes/codemods/cleanup/javascript/first.md)
+* [org.openrewrite.codemods.cleanup.javascript.First](/recipes/javascript/codemods/cleanup/javascript/first.md)
   * **Ensure all imports appear before other statements**
   * Ensure all imports appear before other statements See rule details for [import/first](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/first.md).
-* [org.openrewrite.codemods.cleanup.javascript.LogicalAssignmentOperators](/recipes/codemods/cleanup/javascript/logicalassignmentoperators.md)
+* [org.openrewrite.codemods.cleanup.javascript.LogicalAssignmentOperators](/recipes/javascript/codemods/cleanup/javascript/logicalassignmentoperators.md)
   * **Require or disallow logical assignment operator shorthand**
   * Require or disallow logical assignment operator shorthand  See [rule details](https://eslint.org/docs/latest/rules/logical-assignment-operators).
-* [org.openrewrite.codemods.cleanup.javascript.MultilineCommentStyle](/recipes/codemods/cleanup/javascript/multilinecommentstyle.md)
+* [org.openrewrite.codemods.cleanup.javascript.MultilineCommentStyle](/recipes/javascript/codemods/cleanup/javascript/multilinecommentstyle.md)
   * **Enforce a particular style for multiline comments**
   * Enforce a particular style for multiline comments  See [rule details](https://eslint.org/docs/latest/rules/multiline-comment-style).
-* [org.openrewrite.codemods.cleanup.javascript.NewForBuiltins](/recipes/codemods/cleanup/javascript/newforbuiltins.md)
+* [org.openrewrite.codemods.cleanup.javascript.NewForBuiltins](/recipes/javascript/codemods/cleanup/javascript/newforbuiltins.md)
   * **Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`**
   * Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/new-for-builtins.md).
-* [org.openrewrite.codemods.cleanup.javascript.NewlineAfterImport](/recipes/codemods/cleanup/javascript/newlineafterimport.md)
+* [org.openrewrite.codemods.cleanup.javascript.NewlineAfterImport](/recipes/javascript/codemods/cleanup/javascript/newlineafterimport.md)
   * **Enforce a newline after import statements**
   * Enforce a newline after import statements See rule details for [import/newline-after-import](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/newline-after-import.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoAbsolutePath](/recipes/codemods/cleanup/javascript/noabsolutepath.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoAbsolutePath](/recipes/javascript/codemods/cleanup/javascript/noabsolutepath.md)
   * **Forbid import of modules using absolute paths**
   * Forbid import of modules using absolute paths See rule details for [import/no-absolute-path](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-absolute-path.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoArrayForEach](/recipes/codemods/cleanup/javascript/noarrayforeach.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoArrayForEach](/recipes/javascript/codemods/cleanup/javascript/noarrayforeach.md)
   * **Prefer `for…of` over the `forEach` method**
   * Prefer `for…of` over the `forEach` method. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoArrayMethodThisArgument](/recipes/codemods/cleanup/javascript/noarraymethodthisargument.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoArrayMethodThisArgument](/recipes/javascript/codemods/cleanup/javascript/noarraymethodthisargument.md)
   * **Disallow using the `this` argument in array methods**
   * Disallow using the `this` argument in array methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-method-this-argument.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoArrayPushPush](/recipes/codemods/cleanup/javascript/noarraypushpush.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoArrayPushPush](/recipes/javascript/codemods/cleanup/javascript/noarraypushpush.md)
   * **Enforce combining multiple `Array#push()` into one call**
   * Enforce combining multiple `Array#push()` into one call. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoAwaitExpressionMember](/recipes/codemods/cleanup/javascript/noawaitexpressionmember.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoAwaitExpressionMember](/recipes/javascript/codemods/cleanup/javascript/noawaitexpressionmember.md)
   * **Disallow member access from `await` expression**
   * Disallow member access from `await` expression. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoConsoleSpaces](/recipes/codemods/cleanup/javascript/noconsolespaces.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoConsoleSpaces](/recipes/javascript/codemods/cleanup/javascript/noconsolespaces.md)
   * **Do not use leading/trailing space between `console.log` parameters**
   * Do not use leading/trailing space between `console.log` parameters. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-console-spaces.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoDivRegex](/recipes/codemods/cleanup/javascript/nodivregex.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoDivRegex](/recipes/javascript/codemods/cleanup/javascript/nodivregex.md)
   * **Disallow equal signs explicitly at the beginning of regular expressions**
   * Disallow equal signs explicitly at the beginning of regular expressions  See [rule details](https://eslint.org/docs/latest/rules/no-div-regex).
-* [org.openrewrite.codemods.cleanup.javascript.NoDuplicates](/recipes/codemods/cleanup/javascript/noduplicates.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoDuplicates](/recipes/javascript/codemods/cleanup/javascript/noduplicates.md)
   * **Forbid repeated import of the same module in multiple places**
   * Forbid repeated import of the same module in multiple places See rule details for [import/no-duplicates](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-duplicates.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoElseReturn](/recipes/codemods/cleanup/javascript/noelsereturn.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoElseReturn](/recipes/javascript/codemods/cleanup/javascript/noelsereturn.md)
   * **Disallow else blocks after return statements in if statements**
   * Disallow else blocks after return statements in if statements  See [rule details](https://eslint.org/docs/latest/rules/no-else-return).
-* [org.openrewrite.codemods.cleanup.javascript.NoEmptyNamedBlocks](/recipes/codemods/cleanup/javascript/noemptynamedblocks.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoEmptyNamedBlocks](/recipes/javascript/codemods/cleanup/javascript/noemptynamedblocks.md)
   * **Forbid empty named import**
   * Forbid empty named import See rule details for [import/no-empty-named-blocks](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-empty-named-blocks.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoExtraBind](/recipes/codemods/cleanup/javascript/noextrabind.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoExtraBind](/recipes/javascript/codemods/cleanup/javascript/noextrabind.md)
   * **Disallow unnecessary calls to `.bind()`**
   * Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind).
-* [org.openrewrite.codemods.cleanup.javascript.NoExtraLabel](/recipes/codemods/cleanup/javascript/noextralabel.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoExtraLabel](/recipes/javascript/codemods/cleanup/javascript/noextralabel.md)
   * **Disallow unnecessary labels**
   * Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label).
-* [org.openrewrite.codemods.cleanup.javascript.NoForLoop](/recipes/codemods/cleanup/javascript/noforloop.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoForLoop](/recipes/javascript/codemods/cleanup/javascript/noforloop.md)
   * **Do not use a `for` loop that can be replaced with a `for-of` loop**
   * Do not use a `for` loop that can be replaced with a `for-of` loop. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoHexEscape](/recipes/codemods/cleanup/javascript/nohexescape.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoHexEscape](/recipes/javascript/codemods/cleanup/javascript/nohexescape.md)
   * **Enforce the use of Unicode escapes instead of hexadecimal escapes**
   * Enforce the use of Unicode escapes instead of hexadecimal escapes. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-hex-escape.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoImplicitCoercion](/recipes/codemods/cleanup/javascript/noimplicitcoercion.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoImplicitCoercion](/recipes/javascript/codemods/cleanup/javascript/noimplicitcoercion.md)
   * **Disallow shorthand type conversions**
   * Disallow shorthand type conversions  See [rule details](https://eslint.org/docs/latest/rules/no-implicit-coercion).
-* [org.openrewrite.codemods.cleanup.javascript.NoImportModuleExports](/recipes/codemods/cleanup/javascript/noimportmoduleexports.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoImportModuleExports](/recipes/javascript/codemods/cleanup/javascript/noimportmoduleexports.md)
   * **Forbid import statements with CommonJS module.exports**
   * Forbid import statements with CommonJS module.exports See rule details for [import/no-import-module-exports](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-import-module-exports.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoInstanceofArray](/recipes/codemods/cleanup/javascript/noinstanceofarray.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoInstanceofArray](/recipes/javascript/codemods/cleanup/javascript/noinstanceofarray.md)
   * **Require `Array.isArray()` instead of `instanceof Array`**
   * Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoLonelyIf](/recipes/codemods/cleanup/javascript/nolonelyif.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoLonelyIf](/recipes/javascript/codemods/cleanup/javascript/nolonelyif.md)
   * **Disallow if statements as the only statement in else blocks**
   * Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if).
-* [org.openrewrite.codemods.cleanup.javascript.NoNamespace](/recipes/codemods/cleanup/javascript/nonamespace.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoNamespace](/recipes/javascript/codemods/cleanup/javascript/nonamespace.md)
   * **Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports**
   * Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNegatedCondition](/recipes/codemods/cleanup/javascript/nonegatedcondition.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoNegatedCondition](/recipes/javascript/codemods/cleanup/javascript/nonegatedcondition.md)
   * **Disallow negated conditions**
   * Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNestedTernary](/recipes/codemods/cleanup/javascript/nonestedternary.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoNestedTernary](/recipes/javascript/codemods/cleanup/javascript/nonestedternary.md)
   * **Disallow nested ternary expressions**
   * Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNewArray](/recipes/codemods/cleanup/javascript/nonewarray.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoNewArray](/recipes/javascript/codemods/cleanup/javascript/nonewarray.md)
   * **Disallow `new Array()`**
   * Disallow `new Array()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-array.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNewBuffer](/recipes/codemods/cleanup/javascript/nonewbuffer.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoNewBuffer](/recipes/javascript/codemods/cleanup/javascript/nonewbuffer.md)
   * **Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`**
   * Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-buffer.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNull](/recipes/codemods/cleanup/javascript/nonull.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoNull](/recipes/javascript/codemods/cleanup/javascript/nonull.md)
   * **Disallow the use of the `null` literal**
   * Disallow the use of the `null` literal. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-null.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoRelativePackages](/recipes/codemods/cleanup/javascript/norelativepackages.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoRelativePackages](/recipes/javascript/codemods/cleanup/javascript/norelativepackages.md)
   * **Forbid importing packages through relative paths**
   * Forbid importing packages through relative paths See rule details for [import/no-relative-packages](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-relative-packages.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoStaticOnlyClass](/recipes/codemods/cleanup/javascript/nostaticonlyclass.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoStaticOnlyClass](/recipes/javascript/codemods/cleanup/javascript/nostaticonlyclass.md)
   * **Disallow classes that only have static members**
   * Disallow classes that only have static members. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-static-only-class.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoTypeofUndefined](/recipes/codemods/cleanup/javascript/notypeofundefined.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoTypeofUndefined](/recipes/javascript/codemods/cleanup/javascript/notypeofundefined.md)
   * **Disallow comparing `undefined` using `typeof`**
   * Disallow comparing `undefined` using `typeof`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-typeof-undefined.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUndefInit](/recipes/codemods/cleanup/javascript/noundefinit.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUndefInit](/recipes/javascript/codemods/cleanup/javascript/noundefinit.md)
   * **Disallow initializing variables to undefined**
   * Disallow initializing variables to undefined  See [rule details](https://eslint.org/docs/latest/rules/no-undef-init).
-* [org.openrewrite.codemods.cleanup.javascript.NoUnnecessaryAwait](/recipes/codemods/cleanup/javascript/nounnecessaryawait.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUnnecessaryAwait](/recipes/javascript/codemods/cleanup/javascript/nounnecessaryawait.md)
   * **Disallow awaiting non-promise values**
   * Disallow awaiting non-promise values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unnecessary-await.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary](/recipes/codemods/cleanup/javascript/nounneededternary.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary](/recipes/javascript/codemods/cleanup/javascript/nounneededternary.md)
   * **Disallow ternary operators when simpler alternatives exist**
   * Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary).
-* [org.openrewrite.codemods.cleanup.javascript.NoUnreadableArrayDestructuring](/recipes/codemods/cleanup/javascript/nounreadablearraydestructuring.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUnreadableArrayDestructuring](/recipes/javascript/codemods/cleanup/javascript/nounreadablearraydestructuring.md)
   * **Disallow unreadable array destructuring**
   * Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessComputedKey](/recipes/codemods/cleanup/javascript/nouselesscomputedkey.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessComputedKey](/recipes/javascript/codemods/cleanup/javascript/nouselesscomputedkey.md)
   * **Disallow unnecessary computed property keys in objects and classes**
   * Disallow unnecessary computed property keys in objects and classes  See [rule details](https://eslint.org/docs/latest/rules/no-useless-computed-key).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessFallbackInSpread](/recipes/codemods/cleanup/javascript/nouselessfallbackinspread.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessFallbackInSpread](/recipes/javascript/codemods/cleanup/javascript/nouselessfallbackinspread.md)
   * **Disallow useless fallback when spreading in object literals**
   * Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessLengthCheck](/recipes/codemods/cleanup/javascript/nouselesslengthcheck.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessLengthCheck](/recipes/javascript/codemods/cleanup/javascript/nouselesslengthcheck.md)
   * **Disallow useless array `length` check**
   * Disallow useless array `length` check. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments](/recipes/codemods/cleanup/javascript/nouselesspathsegments.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments](/recipes/javascript/codemods/cleanup/javascript/nouselesspathsegments.md)
   * **Forbid unnecessary path segments in import and require statements**
   * Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessPromiseResolveReject](/recipes/codemods/cleanup/javascript/nouselesspromiseresolvereject.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessPromiseResolveReject](/recipes/javascript/codemods/cleanup/javascript/nouselesspromiseresolvereject.md)
   * **Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks**
   * Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-promise-resolve-reject.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessRename](/recipes/codemods/cleanup/javascript/nouselessrename.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessRename](/recipes/javascript/codemods/cleanup/javascript/nouselessrename.md)
   * **Disallow renaming import, export, and destructured assignments to the same name**
   * Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessReturn](/recipes/codemods/cleanup/javascript/nouselessreturn.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessReturn](/recipes/javascript/codemods/cleanup/javascript/nouselessreturn.md)
   * **Disallow redundant return statements**
   * Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessSpread](/recipes/codemods/cleanup/javascript/nouselessspread.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessSpread](/recipes/javascript/codemods/cleanup/javascript/nouselessspread.md)
   * **Disallow unnecessary spread**
   * Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessUndefined](/recipes/codemods/cleanup/javascript/nouselessundefined.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessUndefined](/recipes/javascript/codemods/cleanup/javascript/nouselessundefined.md)
   * **Disallow useless `undefined`**
   * Disallow useless `undefined`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoVar](/recipes/codemods/cleanup/javascript/novar.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoVar](/recipes/javascript/codemods/cleanup/javascript/novar.md)
   * **Require `let` or `const` instead of `var`**
   * Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var).
-* [org.openrewrite.codemods.cleanup.javascript.NoZeroFractions](/recipes/codemods/cleanup/javascript/nozerofractions.md)
+* [org.openrewrite.codemods.cleanup.javascript.NoZeroFractions](/recipes/javascript/codemods/cleanup/javascript/nozerofractions.md)
   * **Disallow number literals with zero fractions or dangling dots**
   * Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md).
-* [org.openrewrite.codemods.cleanup.javascript.NumberLiteralCase](/recipes/codemods/cleanup/javascript/numberliteralcase.md)
+* [org.openrewrite.codemods.cleanup.javascript.NumberLiteralCase](/recipes/javascript/codemods/cleanup/javascript/numberliteralcase.md)
   * **Enforce proper case for numeric literals**
   * Enforce proper case for numeric literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md).
-* [org.openrewrite.codemods.cleanup.javascript.NumericSeparatorsStyle](/recipes/codemods/cleanup/javascript/numericseparatorsstyle.md)
+* [org.openrewrite.codemods.cleanup.javascript.NumericSeparatorsStyle](/recipes/javascript/codemods/cleanup/javascript/numericseparatorsstyle.md)
   * **Enforce the style of numeric separators by correctly grouping digits**
   * Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md).
-* [org.openrewrite.codemods.cleanup.javascript.ObjectShorthand](/recipes/codemods/cleanup/javascript/objectshorthand.md)
+* [org.openrewrite.codemods.cleanup.javascript.ObjectShorthand](/recipes/javascript/codemods/cleanup/javascript/objectshorthand.md)
   * **Require or disallow method and property shorthand syntax for object literals**
   * Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand).
-* [org.openrewrite.codemods.cleanup.javascript.OneVar](/recipes/codemods/cleanup/javascript/onevar.md)
+* [org.openrewrite.codemods.cleanup.javascript.OneVar](/recipes/javascript/codemods/cleanup/javascript/onevar.md)
   * **Enforce variables to be declared either together or separately in functions**
   * Enforce variables to be declared either together or separately in functions  See [rule details](https://eslint.org/docs/latest/rules/one-var).
-* [org.openrewrite.codemods.cleanup.javascript.OperatorAssignment](/recipes/codemods/cleanup/javascript/operatorassignment.md)
+* [org.openrewrite.codemods.cleanup.javascript.OperatorAssignment](/recipes/javascript/codemods/cleanup/javascript/operatorassignment.md)
   * **Require or disallow assignment operator shorthand where possible**
   * Require or disallow assignment operator shorthand where possible  See [rule details](https://eslint.org/docs/latest/rules/operator-assignment).
-* [org.openrewrite.codemods.cleanup.javascript.Order](/recipes/codemods/cleanup/javascript/order.md)
+* [org.openrewrite.codemods.cleanup.javascript.Order](/recipes/javascript/codemods/cleanup/javascript/order.md)
   * **Enforce a convention in module import order**
   * Enforce a convention in module import order See rule details for [import/order](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/order.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferAddEventListener](/recipes/codemods/cleanup/javascript/preferaddeventlistener.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferAddEventListener](/recipes/javascript/codemods/cleanup/javascript/preferaddeventlistener.md)
   * **Prefer `.addEventListener()` and `.removeEventListener()` over on-functions**
   * Prefer `.addEventListener()` and `.removeEventListener()` over on-functions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-add-event-listener.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFind](/recipes/codemods/cleanup/javascript/preferarrayfind.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFind](/recipes/javascript/codemods/cleanup/javascript/preferarrayfind.md)
   * **Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`**
   * Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlat](/recipes/codemods/cleanup/javascript/preferarrayflat.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlat](/recipes/javascript/codemods/cleanup/javascript/preferarrayflat.md)
   * **Prefer `Array#flat()` over legacy techniques to flatten arrays**
   * Prefer `Array#flat()` over legacy techniques to flatten arrays. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlatMap](/recipes/codemods/cleanup/javascript/preferarrayflatmap.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlatMap](/recipes/javascript/codemods/cleanup/javascript/preferarrayflatmap.md)
   * **Prefer `.flatMap()` over `.map().flat()`**
   * Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayIndexOf](/recipes/codemods/cleanup/javascript/preferarrayindexof.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayIndexOf](/recipes/javascript/codemods/cleanup/javascript/preferarrayindexof.md)
   * **Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item**
   * Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-index-of.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArraySome](/recipes/codemods/cleanup/javascript/preferarraysome.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferArraySome](/recipes/javascript/codemods/cleanup/javascript/preferarraysome.md)
   * **Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`**
   * Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback](/recipes/codemods/cleanup/javascript/preferarrowcallback.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback](/recipes/javascript/codemods/cleanup/javascript/preferarrowcallback.md)
   * **Require using arrow functions for callbacks**
   * Require using arrow functions for callbacks  See [rule details](https://eslint.org/docs/latest/rules/prefer-arrow-callback).
-* [org.openrewrite.codemods.cleanup.javascript.PreferAt](/recipes/codemods/cleanup/javascript/preferat.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferAt](/recipes/javascript/codemods/cleanup/javascript/preferat.md)
   * **Prefer `.at()` method for index access and `String#charAt()`**
   * Prefer `.at()` method for index access and `String#charAt()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferConst](/recipes/codemods/cleanup/javascript/preferconst.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferConst](/recipes/javascript/codemods/cleanup/javascript/preferconst.md)
   * **Require const declarations for variables that are never reassigned after declared**
   * Require const declarations for variables that are never reassigned after declared  See [rule details](https://eslint.org/docs/latest/rules/prefer-const).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDateNow](/recipes/codemods/cleanup/javascript/preferdatenow.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferDateNow](/recipes/javascript/codemods/cleanup/javascript/preferdatenow.md)
   * **Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch**
   * Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDefaultParameters](/recipes/codemods/cleanup/javascript/preferdefaultparameters.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferDefaultParameters](/recipes/javascript/codemods/cleanup/javascript/preferdefaultparameters.md)
   * **Prefer default parameters over reassignment**
   * Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDestructuring](/recipes/codemods/cleanup/javascript/preferdestructuring.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferDestructuring](/recipes/javascript/codemods/cleanup/javascript/preferdestructuring.md)
   * **Require destructuring from arrays and/or objects**
   * Require destructuring from arrays and/or objects  See [rule details](https://eslint.org/docs/latest/rules/prefer-destructuring).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeAppend](/recipes/codemods/cleanup/javascript/preferdomnodeappend.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeAppend](/recipes/javascript/codemods/cleanup/javascript/preferdomnodeappend.md)
   * **Prefer `Node#append()` over `Node#appendChild()`**
   * Prefer `Node#append()` over `Node#appendChild()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-append.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeDataset](/recipes/codemods/cleanup/javascript/preferdomnodedataset.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeDataset](/recipes/javascript/codemods/cleanup/javascript/preferdomnodedataset.md)
   * **Prefer using `.dataset` on DOM elements over calling attribute methods**
   * Prefer using `.dataset` on DOM elements over calling attribute methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-dataset.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeRemove](/recipes/codemods/cleanup/javascript/preferdomnoderemove.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeRemove](/recipes/javascript/codemods/cleanup/javascript/preferdomnoderemove.md)
   * **Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`**
   * Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-remove.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferExponentiationOperator](/recipes/codemods/cleanup/javascript/preferexponentiationoperator.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferExponentiationOperator](/recipes/javascript/codemods/cleanup/javascript/preferexponentiationoperator.md)
   * **Disallow the use of `Math.pow` in favor of the ** operator**
   * Disallow the use of `Math.pow` in favor of the ** operator  See [rule details](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator).
-* [org.openrewrite.codemods.cleanup.javascript.PreferExportFrom](/recipes/codemods/cleanup/javascript/preferexportfrom.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferExportFrom](/recipes/javascript/codemods/cleanup/javascript/preferexportfrom.md)
   * **Prefer `export…from` when re-exporting**
   * Prefer `export…from` when re-exporting. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-export-from.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferIncludes](/recipes/codemods/cleanup/javascript/preferincludes.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferIncludes](/recipes/javascript/codemods/cleanup/javascript/preferincludes.md)
   * **Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence**
   * Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-includes.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferJsonParseBuffer](/recipes/codemods/cleanup/javascript/preferjsonparsebuffer.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferJsonParseBuffer](/recipes/javascript/codemods/cleanup/javascript/preferjsonparsebuffer.md)
   * **Prefer reading a JSON file as a buffer**
   * Prefer reading a JSON file as a buffer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferKeyboardEventKey](/recipes/codemods/cleanup/javascript/preferkeyboardeventkey.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferKeyboardEventKey](/recipes/javascript/codemods/cleanup/javascript/preferkeyboardeventkey.md)
   * **Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`**
   * Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferMathTrunc](/recipes/codemods/cleanup/javascript/prefermathtrunc.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferMathTrunc](/recipes/javascript/codemods/cleanup/javascript/prefermathtrunc.md)
   * **Enforce the use of `Math.trunc()` instead of bitwise operators**
   * Enforce the use of `Math.trunc()` instead of bitwise operators. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-math-trunc.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferModernDomApis](/recipes/codemods/cleanup/javascript/prefermoderndomapis.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferModernDomApis](/recipes/javascript/codemods/cleanup/javascript/prefermoderndomapis.md)
   * **Prefer `.before()` over `.insertBefore()`, `.replaceWith()` over `.replaceChild()`, prefer one of `.before()`, `.after()`, `.append()` or `.prepend()` over `insertAdjacentText()` and `insertAdjacentElement()`**
   * Prefer `.before()` over `.insertBefore()`, `.replaceWith()` over `.replaceChild()`, prefer one of `.before()`, `.after()`, `.append()` or `.prepend()` over `insertAdjacentText()` and `insertAdjacentElement()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-dom-apis.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferModernMathApis](/recipes/codemods/cleanup/javascript/prefermodernmathapis.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferModernMathApis](/recipes/javascript/codemods/cleanup/javascript/prefermodernmathapis.md)
   * **Prefer modern Math APIs over legacy patterns**
   * Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferModule](/recipes/codemods/cleanup/javascript/prefermodule.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferModule](/recipes/javascript/codemods/cleanup/javascript/prefermodule.md)
   * **Prefer JavaScript modules (ESM) over CommonJS**
   * Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNativeCoercionFunctions](/recipes/codemods/cleanup/javascript/prefernativecoercionfunctions.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferNativeCoercionFunctions](/recipes/javascript/codemods/cleanup/javascript/prefernativecoercionfunctions.md)
   * **Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly**
   * Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-native-coercion-functions.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNegativeIndex](/recipes/codemods/cleanup/javascript/prefernegativeindex.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferNegativeIndex](/recipes/javascript/codemods/cleanup/javascript/prefernegativeindex.md)
   * **Prefer negative index over `.length - index` when possible**
   * Prefer negative index over `.length - index` when possible. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-negative-index.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNodeProtocol](/recipes/codemods/cleanup/javascript/prefernodeprotocol.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferNodeProtocol](/recipes/javascript/codemods/cleanup/javascript/prefernodeprotocol.md)
   * **Prefer using the `node:` protocol when importing Node.js builtin modules**
   * Prefer using the `node:` protocol when importing Node.js builtin modules. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNumberProperties](/recipes/codemods/cleanup/javascript/prefernumberproperties.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferNumberProperties](/recipes/javascript/codemods/cleanup/javascript/prefernumberproperties.md)
   * **Prefer `Number` static properties over global ones**
   * Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals](/recipes/codemods/cleanup/javascript/prefernumericliterals.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals](/recipes/javascript/codemods/cleanup/javascript/prefernumericliterals.md)
   * **Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals**
   * Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals).
-* [org.openrewrite.codemods.cleanup.javascript.PreferObjectFromEntries](/recipes/codemods/cleanup/javascript/preferobjectfromentries.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferObjectFromEntries](/recipes/javascript/codemods/cleanup/javascript/preferobjectfromentries.md)
   * **Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object**
   * Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn](/recipes/codemods/cleanup/javascript/preferobjecthasown.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn](/recipes/javascript/codemods/cleanup/javascript/preferobjecthasown.md)
   * **Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)**
   * Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own).
-* [org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread](/recipes/codemods/cleanup/javascript/preferobjectspread.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread](/recipes/javascript/codemods/cleanup/javascript/preferobjectspread.md)
   * **Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead**
   * Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread).
-* [org.openrewrite.codemods.cleanup.javascript.PreferOptionalCatchBinding](/recipes/codemods/cleanup/javascript/preferoptionalcatchbinding.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferOptionalCatchBinding](/recipes/javascript/codemods/cleanup/javascript/preferoptionalcatchbinding.md)
   * **Prefer omitting the catch binding parameter**
   * Prefer omitting the catch binding parameter. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferPrototypeMethods](/recipes/codemods/cleanup/javascript/preferprototypemethods.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferPrototypeMethods](/recipes/javascript/codemods/cleanup/javascript/preferprototypemethods.md)
   * **Prefer borrowing methods from the prototype instead of the instance**
   * Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferQuerySelector](/recipes/codemods/cleanup/javascript/preferqueryselector.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferQuerySelector](/recipes/javascript/codemods/cleanup/javascript/preferqueryselector.md)
   * **Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`**
   * Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-query-selector.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferReflectApply](/recipes/codemods/cleanup/javascript/preferreflectapply.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferReflectApply](/recipes/javascript/codemods/cleanup/javascript/preferreflectapply.md)
   * **Prefer `Reflect.apply()` over `Function#apply()`**
   * Prefer `Reflect.apply()` over `Function#apply()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-reflect-apply.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferRegexpTest](/recipes/codemods/cleanup/javascript/preferregexptest.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferRegexpTest](/recipes/javascript/codemods/cleanup/javascript/preferregexptest.md)
   * **Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`**
   * Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSetHas](/recipes/codemods/cleanup/javascript/prefersethas.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferSetHas](/recipes/javascript/codemods/cleanup/javascript/prefersethas.md)
   * **Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence**
   * Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSetSize](/recipes/codemods/cleanup/javascript/prefersetsize.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferSetSize](/recipes/javascript/codemods/cleanup/javascript/prefersetsize.md)
   * **Prefer using `Set#size` instead of `Array#length`**
   * Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSpread](/recipes/codemods/cleanup/javascript/preferspread.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferSpread](/recipes/javascript/codemods/cleanup/javascript/preferspread.md)
   * **Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`**
   * Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll](/recipes/codemods/cleanup/javascript/preferstringreplaceall.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll](/recipes/javascript/codemods/cleanup/javascript/preferstringreplaceall.md)
   * **Prefer `String#replaceAll()` over regex searches with the global flag**
   * Prefer `String#replaceAll()` over regex searches with the global flag. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringSlice](/recipes/codemods/cleanup/javascript/preferstringslice.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringSlice](/recipes/javascript/codemods/cleanup/javascript/preferstringslice.md)
   * **Prefer `String#slice()` over `String#substr()` and `String#substring()`**
   * Prefer `String#slice()` over `String#substr()` and `String#substring()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-slice.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringStartsEndsWith](/recipes/codemods/cleanup/javascript/preferstringstartsendswith.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringStartsEndsWith](/recipes/javascript/codemods/cleanup/javascript/preferstringstartsendswith.md)
   * **Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`**
   * Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringTrimStartEnd](/recipes/codemods/cleanup/javascript/preferstringtrimstartend.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringTrimStartEnd](/recipes/javascript/codemods/cleanup/javascript/preferstringtrimstartend.md)
   * **Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`**
   * Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-trim-start-end.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSwitch](/recipes/codemods/cleanup/javascript/preferswitch.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferSwitch](/recipes/javascript/codemods/cleanup/javascript/preferswitch.md)
   * **Prefer `switch` over multiple `else-if`**
   * Prefer `switch` over multiple `else-if`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferTemplate](/recipes/codemods/cleanup/javascript/prefertemplate.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferTemplate](/recipes/javascript/codemods/cleanup/javascript/prefertemplate.md)
   * **Require template literals instead of string concatenation**
   * Require template literals instead of string concatenation  See [rule details](https://eslint.org/docs/latest/rules/prefer-template).
-* [org.openrewrite.codemods.cleanup.javascript.PreferTernary](/recipes/codemods/cleanup/javascript/preferternary.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferTernary](/recipes/javascript/codemods/cleanup/javascript/preferternary.md)
   * **Prefer ternary expressions over simple `if-else` statements**
   * Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferTypeError](/recipes/codemods/cleanup/javascript/prefertypeerror.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreferTypeError](/recipes/javascript/codemods/cleanup/javascript/prefertypeerror.md)
   * **Enforce throwing `TypeError` in type checking conditions**
   * Enforce throwing `TypeError` in type checking conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreventAbbreviations](/recipes/codemods/cleanup/javascript/preventabbreviations.md)
+* [org.openrewrite.codemods.cleanup.javascript.PreventAbbreviations](/recipes/javascript/codemods/cleanup/javascript/preventabbreviations.md)
   * **Prevent abbreviations**
   * Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md).
-* [org.openrewrite.codemods.cleanup.javascript.RelativeUrlStyle](/recipes/codemods/cleanup/javascript/relativeurlstyle.md)
+* [org.openrewrite.codemods.cleanup.javascript.RelativeUrlStyle](/recipes/javascript/codemods/cleanup/javascript/relativeurlstyle.md)
   * **Enforce consistent relative URL style**
   * Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md).
-* [org.openrewrite.codemods.cleanup.javascript.RequireArrayJoinSeparator](/recipes/codemods/cleanup/javascript/requirearrayjoinseparator.md)
+* [org.openrewrite.codemods.cleanup.javascript.RequireArrayJoinSeparator](/recipes/javascript/codemods/cleanup/javascript/requirearrayjoinseparator.md)
   * **Enforce using the separator argument with `Array#join()`**
   * Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md).
-* [org.openrewrite.codemods.cleanup.javascript.RequireNumberToFixedDigitsArgument](/recipes/codemods/cleanup/javascript/requirenumbertofixeddigitsargument.md)
+* [org.openrewrite.codemods.cleanup.javascript.RequireNumberToFixedDigitsArgument](/recipes/javascript/codemods/cleanup/javascript/requirenumbertofixeddigitsargument.md)
   * **Enforce using the digits argument with `Number#toFixed()`**
   * Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md).
-* [org.openrewrite.codemods.cleanup.javascript.SortImports](/recipes/codemods/cleanup/javascript/sortimports.md)
+* [org.openrewrite.codemods.cleanup.javascript.SortImports](/recipes/javascript/codemods/cleanup/javascript/sortimports.md)
   * **Enforce sorted import declarations within modules**
   * Enforce sorted import declarations within modules  See [rule details](https://eslint.org/docs/latest/rules/sort-imports).
-* [org.openrewrite.codemods.cleanup.javascript.SortVars](/recipes/codemods/cleanup/javascript/sortvars.md)
+* [org.openrewrite.codemods.cleanup.javascript.SortVars](/recipes/javascript/codemods/cleanup/javascript/sortvars.md)
   * **Require variables within the same declaration block to be sorted**
   * Require variables within the same declaration block to be sorted  See [rule details](https://eslint.org/docs/latest/rules/sort-vars).
-* [org.openrewrite.codemods.cleanup.javascript.Strict](/recipes/codemods/cleanup/javascript/strict.md)
+* [org.openrewrite.codemods.cleanup.javascript.Strict](/recipes/javascript/codemods/cleanup/javascript/strict.md)
   * **Require or disallow strict mode directives**
   * Require or disallow strict mode directives  See [rule details](https://eslint.org/docs/latest/rules/strict).
-* [org.openrewrite.codemods.cleanup.javascript.StringContent](/recipes/codemods/cleanup/javascript/stringcontent.md)
+* [org.openrewrite.codemods.cleanup.javascript.StringContent](/recipes/javascript/codemods/cleanup/javascript/stringcontent.md)
   * **Enforce better string content**
   * Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md).
-* [org.openrewrite.codemods.cleanup.javascript.SwitchCaseBraces](/recipes/codemods/cleanup/javascript/switchcasebraces.md)
+* [org.openrewrite.codemods.cleanup.javascript.SwitchCaseBraces](/recipes/javascript/codemods/cleanup/javascript/switchcasebraces.md)
   * **Enforce consistent brace style for case clauses**
   * Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md).
-* [org.openrewrite.codemods.cleanup.javascript.TemplateIndent](/recipes/codemods/cleanup/javascript/templateindent.md)
+* [org.openrewrite.codemods.cleanup.javascript.TemplateIndent](/recipes/javascript/codemods/cleanup/javascript/templateindent.md)
   * **Fix whitespace-insensitive template indentation**
   * Fix whitespace-insensitive template indentation. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md).
-* [org.openrewrite.codemods.cleanup.javascript.TextEncodingIdentifierCase](/recipes/codemods/cleanup/javascript/textencodingidentifiercase.md)
+* [org.openrewrite.codemods.cleanup.javascript.TextEncodingIdentifierCase](/recipes/javascript/codemods/cleanup/javascript/textencodingidentifiercase.md)
   * **Enforce consistent case for text encoding identifiers**
   * Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md).
-* [org.openrewrite.codemods.cleanup.javascript.ThrowNewError](/recipes/codemods/cleanup/javascript/thrownewerror.md)
+* [org.openrewrite.codemods.cleanup.javascript.ThrowNewError](/recipes/javascript/codemods/cleanup/javascript/thrownewerror.md)
   * **Require `new` when throwing an error**
   * Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md).
-* [org.openrewrite.codemods.cleanup.javascript.UnicodeBom](/recipes/codemods/cleanup/javascript/unicodebom.md)
+* [org.openrewrite.codemods.cleanup.javascript.UnicodeBom](/recipes/javascript/codemods/cleanup/javascript/unicodebom.md)
   * **Require or disallow Unicode byte order mark (BOM)**
   * Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom).
-* [org.openrewrite.codemods.cleanup.javascript.Yoda](/recipes/codemods/cleanup/javascript/yoda.md)
+* [org.openrewrite.codemods.cleanup.javascript.Yoda](/recipes/javascript/codemods/cleanup/javascript/yoda.md)
   * **Require or disallow &quot;Yoda&quot; conditions**
   * Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda).
-* [org.openrewrite.codemods.cleanup.jest.ConsistentTestIt](/recipes/codemods/cleanup/jest/consistenttestit.md)
+* [org.openrewrite.codemods.cleanup.jest.ConsistentTestIt](/recipes/javascript/codemods/cleanup/jest/consistenttestit.md)
   * **Enforce test and it usage conventions**
   * Enforce test and it usage conventions See rule details for [jest/consistent-test-it](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/consistent-test-it.md).
-* [org.openrewrite.codemods.cleanup.jest.NoAliasMethods](/recipes/codemods/cleanup/jest/noaliasmethods.md)
+* [org.openrewrite.codemods.cleanup.jest.NoAliasMethods](/recipes/javascript/codemods/cleanup/jest/noaliasmethods.md)
   * **Disallow alias methods**
   * Disallow alias methods See rule details for [jest/no-alias-methods](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-alias-methods.md).
-* [org.openrewrite.codemods.cleanup.jest.NoDeprecatedFunctions27](/recipes/codemods/cleanup/jest/nodeprecatedfunctions27.md)
+* [org.openrewrite.codemods.cleanup.jest.NoDeprecatedFunctions27](/recipes/javascript/codemods/cleanup/jest/nodeprecatedfunctions27.md)
   * **Disallow use of deprecated functions from before version 27**
   * Disallow use of deprecated functions from before version 27 See rule details for [jest/no-deprecated-functions](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-deprecated-functions.md).
-* [org.openrewrite.codemods.cleanup.jest.NoJasmineGlobals](/recipes/codemods/cleanup/jest/nojasmineglobals.md)
+* [org.openrewrite.codemods.cleanup.jest.NoJasmineGlobals](/recipes/javascript/codemods/cleanup/jest/nojasmineglobals.md)
   * **Disallow Jasmine globals**
   * Disallow Jasmine globals See rule details for [jest/no-jasmine-globals](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-jasmine-globals.md).
-* [org.openrewrite.codemods.cleanup.jest.NoTestPrefixes](/recipes/codemods/cleanup/jest/notestprefixes.md)
+* [org.openrewrite.codemods.cleanup.jest.NoTestPrefixes](/recipes/javascript/codemods/cleanup/jest/notestprefixes.md)
   * **Require using .only and .skip over f and x**
   * Require using .only and .skip over f and x See rule details for [jest/no-test-prefixes](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-prefixes.md).
-* [org.openrewrite.codemods.cleanup.jest.NoUntypedMockFactory](/recipes/codemods/cleanup/jest/nountypedmockfactory.md)
+* [org.openrewrite.codemods.cleanup.jest.NoUntypedMockFactory](/recipes/javascript/codemods/cleanup/jest/nountypedmockfactory.md)
   * **Disallow using jest.mock() factories without an explicit type parameter**
   * Disallow using jest.mock() factories without an explicit type parameter See rule details for [jest/no-untyped-mock-factory](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-untyped-mock-factory.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferComparisonMatcher](/recipes/codemods/cleanup/jest/prefercomparisonmatcher.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferComparisonMatcher](/recipes/javascript/codemods/cleanup/jest/prefercomparisonmatcher.md)
   * **Suggest using the built-in comparison matchers**
   * Suggest using the built-in comparison matchers See rule details for [jest/prefer-comparison-matcher](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-comparison-matcher.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferExpectResolves](/recipes/codemods/cleanup/jest/preferexpectresolves.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferExpectResolves](/recipes/javascript/codemods/cleanup/jest/preferexpectresolves.md)
   * **Prefer await expect(...).resolves over expect(await ...) syntax**
   * Prefer await expect(...).resolves over expect(await ...) syntax See rule details for [jest/prefer-expect-resolves](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-expect-resolves.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferLowercaseTitle](/recipes/codemods/cleanup/jest/preferlowercasetitle.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferLowercaseTitle](/recipes/javascript/codemods/cleanup/jest/preferlowercasetitle.md)
   * **Enforce lowercase test names**
   * Enforce lowercase test names See rule details for [jest/prefer-lowercase-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-lowercase-title.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferMockPromiseShorthand](/recipes/codemods/cleanup/jest/prefermockpromiseshorthand.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferMockPromiseShorthand](/recipes/javascript/codemods/cleanup/jest/prefermockpromiseshorthand.md)
   * **Prefer mock resolved/rejected shorthands for promises**
   * Prefer mock resolved/rejected shorthands for promises See rule details for [jest/prefer-mock-promise-shorthand](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-mock-promise-shorthand.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferSpyOn](/recipes/codemods/cleanup/jest/preferspyon.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferSpyOn](/recipes/javascript/codemods/cleanup/jest/preferspyon.md)
   * **Suggest using jest.spyOn()**
   * Suggest using jest.spyOn() See rule details for [jest/prefer-spy-on](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferToBe](/recipes/codemods/cleanup/jest/prefertobe.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferToBe](/recipes/javascript/codemods/cleanup/jest/prefertobe.md)
   * **Suggest using toBe() for primitive literals**
   * Suggest using toBe() for primitive literals See rule details for [jest/prefer-to-be](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-be.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferToContain](/recipes/codemods/cleanup/jest/prefertocontain.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferToContain](/recipes/javascript/codemods/cleanup/jest/prefertocontain.md)
   * **Suggest using toContain()**
   * Suggest using toContain() See rule details for [jest/prefer-to-contain](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-contain.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferToHaveLength](/recipes/codemods/cleanup/jest/prefertohavelength.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferToHaveLength](/recipes/javascript/codemods/cleanup/jest/prefertohavelength.md)
   * **Suggest using toHaveLength()**
   * Suggest using toHaveLength() See rule details for [jest/prefer-to-have-length](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-have-length.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferTodo](/recipes/codemods/cleanup/jest/prefertodo.md)
+* [org.openrewrite.codemods.cleanup.jest.PreferTodo](/recipes/javascript/codemods/cleanup/jest/prefertodo.md)
   * **Suggest using test.todo**
   * Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md).
-* [org.openrewrite.codemods.cleanup.jest.RecommendedJestCodeCleanup](/recipes/codemods/cleanup/jest/recommendedjestcodecleanup.md)
+* [org.openrewrite.codemods.cleanup.jest.RecommendedJestCodeCleanup](/recipes/javascript/codemods/cleanup/jest/recommendedjestcodecleanup.md)
   * **Recommended Jest code cleanup**
   * Collection of cleanup ESLint rules that are recommended by [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest).
-* [org.openrewrite.codemods.cleanup.jest.ValidTitle](/recipes/codemods/cleanup/jest/validtitle.md)
+* [org.openrewrite.codemods.cleanup.jest.ValidTitle](/recipes/javascript/codemods/cleanup/jest/validtitle.md)
   * **Enforce valid titles**
   * Enforce valid titles See rule details for [jest/valid-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/valid-title.md).
-* [org.openrewrite.codemods.cleanup.react.DestructuringAssignment](/recipes/codemods/cleanup/react/destructuringassignment.md)
+* [org.openrewrite.codemods.cleanup.react.DestructuringAssignment](/recipes/javascript/codemods/cleanup/react/destructuringassignment.md)
   * **Enforce consistent usage of destructuring assignment of props, state, and context**
   * Enforce consistent usage of destructuring assignment of props, state, and context See rule details for [react/destructuring-assignment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/destructuring-assignment.md).
-* [org.openrewrite.codemods.cleanup.react.FunctionComponentDefinition](/recipes/codemods/cleanup/react/functioncomponentdefinition.md)
+* [org.openrewrite.codemods.cleanup.react.FunctionComponentDefinition](/recipes/javascript/codemods/cleanup/react/functioncomponentdefinition.md)
   * **Enforce a specific function type for function components**
   * Enforce a specific function type for function components See rule details for [react/function-component-definition](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/function-component-definition.md).
-* [org.openrewrite.codemods.cleanup.react.JsxBooleanValue](/recipes/codemods/cleanup/react/jsxbooleanvalue.md)
+* [org.openrewrite.codemods.cleanup.react.JsxBooleanValue](/recipes/javascript/codemods/cleanup/react/jsxbooleanvalue.md)
   * **Enforce boolean attributes notation in JSX**
   * Enforce boolean attributes notation in JSX See rule details for [react/jsx-boolean-value](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-boolean-value.md).
-* [org.openrewrite.codemods.cleanup.react.JsxClosingBracketLocation](/recipes/codemods/cleanup/react/jsxclosingbracketlocation.md)
+* [org.openrewrite.codemods.cleanup.react.JsxClosingBracketLocation](/recipes/javascript/codemods/cleanup/react/jsxclosingbracketlocation.md)
   * **Enforce closing bracket location in JSX**
   * Enforce closing bracket location in JSX See rule details for [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-bracket-location.md).
-* [org.openrewrite.codemods.cleanup.react.JsxClosingTagLocation](/recipes/codemods/cleanup/react/jsxclosingtaglocation.md)
+* [org.openrewrite.codemods.cleanup.react.JsxClosingTagLocation](/recipes/javascript/codemods/cleanup/react/jsxclosingtaglocation.md)
   * **Enforce closing tag location for multiline JSX**
   * Enforce closing tag location for multiline JSX See rule details for [react/jsx-closing-tag-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-tag-location.md).
-* [org.openrewrite.codemods.cleanup.react.JsxCurlyBracePresence](/recipes/codemods/cleanup/react/jsxcurlybracepresence.md)
+* [org.openrewrite.codemods.cleanup.react.JsxCurlyBracePresence](/recipes/javascript/codemods/cleanup/react/jsxcurlybracepresence.md)
   * **Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes**
   * Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes See rule details for [react/jsx-curly-brace-presence](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-brace-presence.md).
-* [org.openrewrite.codemods.cleanup.react.JsxCurlyNewline](/recipes/codemods/cleanup/react/jsxcurlynewline.md)
+* [org.openrewrite.codemods.cleanup.react.JsxCurlyNewline](/recipes/javascript/codemods/cleanup/react/jsxcurlynewline.md)
   * **Enforce consistent linebreaks in curly braces in JSX attributes and expressions**
   * Enforce consistent linebreaks in curly braces in JSX attributes and expressions See rule details for [react/jsx-curly-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-newline.md).
-* [org.openrewrite.codemods.cleanup.react.JsxCurlySpacing](/recipes/codemods/cleanup/react/jsxcurlyspacing.md)
+* [org.openrewrite.codemods.cleanup.react.JsxCurlySpacing](/recipes/javascript/codemods/cleanup/react/jsxcurlyspacing.md)
   * **Enforce or disallow spaces inside of curly braces in JSX attributes and expressions**
   * Enforce or disallow spaces inside of curly braces in JSX attributes and expressions See rule details for [react/jsx-curly-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-spacing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxEqualsSpacing](/recipes/codemods/cleanup/react/jsxequalsspacing.md)
+* [org.openrewrite.codemods.cleanup.react.JsxEqualsSpacing](/recipes/javascript/codemods/cleanup/react/jsxequalsspacing.md)
   * **Enforce or disallow spaces around equal signs in JSX attributes**
   * Enforce or disallow spaces around equal signs in JSX attributes See rule details for [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-equals-spacing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxFirstPropNewLine](/recipes/codemods/cleanup/react/jsxfirstpropnewline.md)
+* [org.openrewrite.codemods.cleanup.react.JsxFirstPropNewLine](/recipes/javascript/codemods/cleanup/react/jsxfirstpropnewline.md)
   * **Enforce proper position of the first property in JSX**
   * Enforce proper position of the first property in JSX See rule details for [react/jsx-first-prop-new-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-first-prop-new-line.md).
-* [org.openrewrite.codemods.cleanup.react.JsxFragments](/recipes/codemods/cleanup/react/jsxfragments.md)
+* [org.openrewrite.codemods.cleanup.react.JsxFragments](/recipes/javascript/codemods/cleanup/react/jsxfragments.md)
   * **Enforce shorthand or standard form for React fragments**
   * Enforce shorthand or standard form for React fragments See rule details for [react/jsx-fragments](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-fragments.md).
-* [org.openrewrite.codemods.cleanup.react.JsxIndent](/recipes/codemods/cleanup/react/jsxindent.md)
+* [org.openrewrite.codemods.cleanup.react.JsxIndent](/recipes/javascript/codemods/cleanup/react/jsxindent.md)
   * **Enforce JSX indentation**
   * Enforce JSX indentation See rule details for [react/jsx-indent](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent.md).
-* [org.openrewrite.codemods.cleanup.react.JsxIndentProps](/recipes/codemods/cleanup/react/jsxindentprops.md)
+* [org.openrewrite.codemods.cleanup.react.JsxIndentProps](/recipes/javascript/codemods/cleanup/react/jsxindentprops.md)
   * **Enforce props indentation in JSX**
   * Enforce props indentation in JSX See rule details for [react/jsx-indent-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent-props.md).
-* [org.openrewrite.codemods.cleanup.react.JsxMaxPropsPerLine](/recipes/codemods/cleanup/react/jsxmaxpropsperline.md)
+* [org.openrewrite.codemods.cleanup.react.JsxMaxPropsPerLine](/recipes/javascript/codemods/cleanup/react/jsxmaxpropsperline.md)
   * **Enforce maximum of props on a single line in JSX**
   * Enforce maximum of props on a single line in JSX See rule details for [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-max-props-per-line.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNewline](/recipes/codemods/cleanup/react/jsxnewline.md)
+* [org.openrewrite.codemods.cleanup.react.JsxNewline](/recipes/javascript/codemods/cleanup/react/jsxnewline.md)
   * **Require or prevent a new line after jsx elements and expressions**
   * Require or prevent a new line after jsx elements and expressions See rule details for [react/jsx-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-newline.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNoLeakedRender](/recipes/codemods/cleanup/react/jsxnoleakedrender.md)
+* [org.openrewrite.codemods.cleanup.react.JsxNoLeakedRender](/recipes/javascript/codemods/cleanup/react/jsxnoleakedrender.md)
   * **Disallow problematic leaked values from being rendered**
   * Disallow problematic leaked values from being rendered See rule details for [react/jsx-no-leaked-render](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-leaked-render.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank](/recipes/codemods/cleanup/react/jsxnotargetblank.md)
+* [org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank](/recipes/javascript/codemods/cleanup/react/jsxnotargetblank.md)
   * **Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;**
   * Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot; See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNoUselessFragment](/recipes/codemods/cleanup/react/jsxnouselessfragment.md)
+* [org.openrewrite.codemods.cleanup.react.JsxNoUselessFragment](/recipes/javascript/codemods/cleanup/react/jsxnouselessfragment.md)
   * **Disallow unnecessary fragments**
   * Disallow unnecessary fragments See rule details for [react/jsx-no-useless-fragment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-useless-fragment.md).
-* [org.openrewrite.codemods.cleanup.react.JsxOneExpressionPerLine](/recipes/codemods/cleanup/react/jsxoneexpressionperline.md)
+* [org.openrewrite.codemods.cleanup.react.JsxOneExpressionPerLine](/recipes/javascript/codemods/cleanup/react/jsxoneexpressionperline.md)
   * **Require one JSX element per line**
   * Require one JSX element per line See rule details for [react/jsx-one-expression-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-one-expression-per-line.md).
-* [org.openrewrite.codemods.cleanup.react.JsxPropsNoMultiSpaces](/recipes/codemods/cleanup/react/jsxpropsnomultispaces.md)
+* [org.openrewrite.codemods.cleanup.react.JsxPropsNoMultiSpaces](/recipes/javascript/codemods/cleanup/react/jsxpropsnomultispaces.md)
   * **Disallow multiple spaces between inline JSX props**
   * Disallow multiple spaces between inline JSX props See rule details for [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-props-no-multi-spaces.md).
-* [org.openrewrite.codemods.cleanup.react.JsxSortProps](/recipes/codemods/cleanup/react/jsxsortprops.md)
+* [org.openrewrite.codemods.cleanup.react.JsxSortProps](/recipes/javascript/codemods/cleanup/react/jsxsortprops.md)
   * **Enforce props alphabetical sorting**
   * Enforce props alphabetical sorting See rule details for [react/jsx-sort-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-sort-props.md).
-* [org.openrewrite.codemods.cleanup.react.JsxSpaceBeforeClosing](/recipes/codemods/cleanup/react/jsxspacebeforeclosing.md)
+* [org.openrewrite.codemods.cleanup.react.JsxSpaceBeforeClosing](/recipes/javascript/codemods/cleanup/react/jsxspacebeforeclosing.md)
   * **Enforce spacing before closing bracket in JSX**
   * Enforce spacing before closing bracket in JSX See rule details for [react/jsx-space-before-closing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-space-before-closing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxTagSpacing](/recipes/codemods/cleanup/react/jsxtagspacing.md)
+* [org.openrewrite.codemods.cleanup.react.JsxTagSpacing](/recipes/javascript/codemods/cleanup/react/jsxtagspacing.md)
   * **Enforce whitespace in and around the JSX opening and closing brackets**
   * Enforce whitespace in and around the JSX opening and closing brackets See rule details for [react/jsx-tag-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-tag-spacing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxWrapMultilines](/recipes/codemods/cleanup/react/jsxwrapmultilines.md)
+* [org.openrewrite.codemods.cleanup.react.JsxWrapMultilines](/recipes/javascript/codemods/cleanup/react/jsxwrapmultilines.md)
   * **Disallow missing parentheses around multiline JSX**
   * Disallow missing parentheses around multiline JSX See rule details for [react/jsx-wrap-multilines](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-wrap-multilines.md).
-* [org.openrewrite.codemods.cleanup.react.NoArrowFunctionLifecycle](/recipes/codemods/cleanup/react/noarrowfunctionlifecycle.md)
+* [org.openrewrite.codemods.cleanup.react.NoArrowFunctionLifecycle](/recipes/javascript/codemods/cleanup/react/noarrowfunctionlifecycle.md)
   * **Lifecycle methods should be methods on the prototype, not class fields**
   * Lifecycle methods should be methods on the prototype, not class fields See rule details for [react/no-arrow-function-lifecycle](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-arrow-function-lifecycle.md).
-* [org.openrewrite.codemods.cleanup.react.NoUnknownProperty](/recipes/codemods/cleanup/react/nounknownproperty.md)
+* [org.openrewrite.codemods.cleanup.react.NoUnknownProperty](/recipes/javascript/codemods/cleanup/react/nounknownproperty.md)
   * **Disallow usage of unknown DOM property**
   * Disallow usage of unknown DOM property See rule details for [react/no-unknown-property](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-unknown-property.md).
-* [org.openrewrite.codemods.cleanup.react.PreferReadOnlyProps](/recipes/codemods/cleanup/react/preferreadonlyprops.md)
+* [org.openrewrite.codemods.cleanup.react.PreferReadOnlyProps](/recipes/javascript/codemods/cleanup/react/preferreadonlyprops.md)
   * **Enforce that props are read-only**
   * Enforce that props are read-only See rule details for [react/prefer-read-only-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/prefer-read-only-props.md).
-* [org.openrewrite.codemods.cleanup.react.SelfClosingComp](/recipes/codemods/cleanup/react/selfclosingcomp.md)
+* [org.openrewrite.codemods.cleanup.react.SelfClosingComp](/recipes/javascript/codemods/cleanup/react/selfclosingcomp.md)
   * **Disallow extra closing tags for components without children**
   * Disallow extra closing tags for components without children See rule details for [react/self-closing-comp](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/self-closing-comp.md).
-* [org.openrewrite.codemods.cleanup.react.SortPropTypes](/recipes/codemods/cleanup/react/sortproptypes.md)
+* [org.openrewrite.codemods.cleanup.react.SortPropTypes](/recipes/javascript/codemods/cleanup/react/sortproptypes.md)
   * **Enforce propTypes declarations alphabetical sorting**
   * Enforce propTypes declarations alphabetical sorting See rule details for [react/sort-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/sort-prop-types.md).
-* [org.openrewrite.codemods.cleanup.storybook.AwaitInteractions](/recipes/codemods/cleanup/storybook/awaitinteractions.md)
+* [org.openrewrite.codemods.cleanup.storybook.AwaitInteractions](/recipes/javascript/codemods/cleanup/storybook/awaitinteractions.md)
   * **Interactions should be awaited**
   * Interactions should be awaited See rule details for [storybook/await-interactions](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md).
-* [org.openrewrite.codemods.cleanup.storybook.DefaultExports](/recipes/codemods/cleanup/storybook/defaultexports.md)
+* [org.openrewrite.codemods.cleanup.storybook.DefaultExports](/recipes/javascript/codemods/cleanup/storybook/defaultexports.md)
   * **Story files should have a default export**
   * Story files should have a default export See rule details for [storybook/default-exports](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md).
-* [org.openrewrite.codemods.cleanup.storybook.HierarchySeparator](/recipes/codemods/cleanup/storybook/hierarchyseparator.md)
+* [org.openrewrite.codemods.cleanup.storybook.HierarchySeparator](/recipes/javascript/codemods/cleanup/storybook/hierarchyseparator.md)
   * **Deprecated hierarchy separator in title property**
   * Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md).
-* [org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName](/recipes/codemods/cleanup/storybook/noredundantstoryname.md)
+* [org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName](/recipes/javascript/codemods/cleanup/storybook/noredundantstoryname.md)
   * **A story should not have a redundant name property**
   * A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md).
-* [org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta](/recipes/codemods/cleanup/storybook/notitlepropertyinmeta.md)
+* [org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta](/recipes/javascript/codemods/cleanup/storybook/notitlepropertyinmeta.md)
   * **Do not define a title in meta**
   * Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md).
-* [org.openrewrite.codemods.cleanup.storybook.PreferPascalCase](/recipes/codemods/cleanup/storybook/preferpascalcase.md)
+* [org.openrewrite.codemods.cleanup.storybook.PreferPascalCase](/recipes/javascript/codemods/cleanup/storybook/preferpascalcase.md)
   * **Stories should use PascalCase**
   * Stories should use PascalCase See rule details for [storybook/prefer-pascal-case](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md).
-* [org.openrewrite.codemods.cleanup.storybook.RecommendedStorybookCodeCleanup](/recipes/codemods/cleanup/storybook/recommendedstorybookcodecleanup.md)
+* [org.openrewrite.codemods.cleanup.storybook.RecommendedStorybookCodeCleanup](/recipes/javascript/codemods/cleanup/storybook/recommendedstorybookcodecleanup.md)
   * **Recommended Storybook code cleanup**
   * Collection of cleanup ESLint rules from [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme).
-* [org.openrewrite.codemods.cleanup.storybook.UseStorybookExpect](/recipes/codemods/cleanup/storybook/usestorybookexpect.md)
+* [org.openrewrite.codemods.cleanup.storybook.UseStorybookExpect](/recipes/javascript/codemods/cleanup/storybook/usestorybookexpect.md)
   * **Use expect from @storybook/jest**
   * Use expect from @storybook/jest See rule details for [storybook/use-storybook-expect](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-expect.md).
-* [org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary](/recipes/codemods/cleanup/storybook/usestorybooktestinglibrary.md)
+* [org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary](/recipes/javascript/codemods/cleanup/storybook/usestorybooktestinglibrary.md)
   * **Do not use testing-library directly on stories**
   * Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md).
-* [org.openrewrite.codemods.cleanup.svelte.FirstAttributeLinebreak](/recipes/codemods/cleanup/svelte/firstattributelinebreak.md)
+* [org.openrewrite.codemods.cleanup.svelte.FirstAttributeLinebreak](/recipes/javascript/codemods/cleanup/svelte/firstattributelinebreak.md)
   * **Enforce the location of first attribute**
   * Enforce the location of first attribute See rule details for [svelte/first-attribute-linebreak](https://sveltejs.github.io/eslint-plugin-svelte/rules/first-attribute-linebreak/).
-* [org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
+* [org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing](/recipes/javascript/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
   * **Require or disallow a space before tag's closing brackets**
   * Require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/).
-* [org.openrewrite.codemods.cleanup.svelte.HtmlQuotes](/recipes/codemods/cleanup/svelte/htmlquotes.md)
+* [org.openrewrite.codemods.cleanup.svelte.HtmlQuotes](/recipes/javascript/codemods/cleanup/svelte/htmlquotes.md)
   * **Enforce quotes style of HTML attributes**
   * Enforce quotes style of HTML attributes See rule details for [svelte/html-quotes](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-quotes/).
-* [org.openrewrite.codemods.cleanup.svelte.HtmlSelfClosing](/recipes/codemods/cleanup/svelte/htmlselfclosing.md)
+* [org.openrewrite.codemods.cleanup.svelte.HtmlSelfClosing](/recipes/javascript/codemods/cleanup/svelte/htmlselfclosing.md)
   * **Enforce self-closing style**
   * Enforce self-closing style See rule details for [svelte/html-self-closing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-self-closing/).
-* [org.openrewrite.codemods.cleanup.svelte.Indent](/recipes/codemods/cleanup/svelte/indent.md)
+* [org.openrewrite.codemods.cleanup.svelte.Indent](/recipes/javascript/codemods/cleanup/svelte/indent.md)
   * **Enforce consistent indentation**
   * Enforce consistent indentation See rule details for [svelte/indent](https://sveltejs.github.io/eslint-plugin-svelte/rules/indent/).
-* [org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine](/recipes/codemods/cleanup/svelte/maxattributesperline.md)
+* [org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine](/recipes/javascript/codemods/cleanup/svelte/maxattributesperline.md)
   * **Enforce the maximum number of attributes per line**
   * Enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/).
-* [org.openrewrite.codemods.cleanup.svelte.MustacheSpacing](/recipes/codemods/cleanup/svelte/mustachespacing.md)
+* [org.openrewrite.codemods.cleanup.svelte.MustacheSpacing](/recipes/javascript/codemods/cleanup/svelte/mustachespacing.md)
   * **Enforce unified spacing in mustache**
   * Enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/).
-* [org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName](/recipes/codemods/cleanup/svelte/nodynamicslotname.md)
+* [org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName](/recipes/javascript/codemods/cleanup/svelte/nodynamicslotname.md)
   * **Disallow dynamic slot name**
   * Disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/).
-* [org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute](/recipes/codemods/cleanup/svelte/nospacesaroundequalsignsinattribute.md)
+* [org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute](/recipes/javascript/codemods/cleanup/svelte/nospacesaroundequalsignsinattribute.md)
   * **Disallow spaces around equal signs in attribute**
   * Disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/).
-* [org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches](/recipes/codemods/cleanup/svelte/nouselessmustaches.md)
+* [org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches](/recipes/javascript/codemods/cleanup/svelte/nouselessmustaches.md)
   * **Disallow unnecessary mustache interpolations**
   * Disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/).
-* [org.openrewrite.codemods.cleanup.svelte.PreferClassDirective](/recipes/codemods/cleanup/svelte/preferclassdirective.md)
+* [org.openrewrite.codemods.cleanup.svelte.PreferClassDirective](/recipes/javascript/codemods/cleanup/svelte/preferclassdirective.md)
   * **Require class directives instead of ternary expressions**
   * Require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/).
-* [org.openrewrite.codemods.cleanup.svelte.PreferStyleDirective](/recipes/codemods/cleanup/svelte/preferstyledirective.md)
+* [org.openrewrite.codemods.cleanup.svelte.PreferStyleDirective](/recipes/javascript/codemods/cleanup/svelte/preferstyledirective.md)
   * **Require style directives instead of style attribute**
   * Require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/).
-* [org.openrewrite.codemods.cleanup.svelte.RecommendedsvelteCodeCleanup](/recipes/codemods/cleanup/svelte/recommendedsveltecodecleanup.md)
+* [org.openrewrite.codemods.cleanup.svelte.RecommendedsvelteCodeCleanup](/recipes/javascript/codemods/cleanup/svelte/recommendedsveltecodecleanup.md)
   * **Recommended svelte code cleanup**
   * Collection of cleanup ESLint rules from [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte).
-* [org.openrewrite.codemods.cleanup.svelte.RequireStoreReactiveAccess](/recipes/codemods/cleanup/svelte/requirestorereactiveaccess.md)
+* [org.openrewrite.codemods.cleanup.svelte.RequireStoreReactiveAccess](/recipes/javascript/codemods/cleanup/svelte/requirestorereactiveaccess.md)
   * **Disallow to use of the store itself as an operand. Need to use $ prefix or get function**
   * Disallow to use of the store itself as an operand. Need to use $ prefix or get function. See rule details for [svelte/require-store-reactive-access](https://sveltejs.github.io/eslint-plugin-svelte/rules/require-store-reactive-access/).
-* [org.openrewrite.codemods.cleanup.svelte.ShorthandAttribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md)
+* [org.openrewrite.codemods.cleanup.svelte.ShorthandAttribute](/recipes/javascript/codemods/cleanup/svelte/shorthandattribute.md)
   * **Enforce use of shorthand syntax in attribute**
   * Enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/).
-* [org.openrewrite.codemods.cleanup.svelte.ShorthandDirective](/recipes/codemods/cleanup/svelte/shorthanddirective.md)
+* [org.openrewrite.codemods.cleanup.svelte.ShorthandDirective](/recipes/javascript/codemods/cleanup/svelte/shorthanddirective.md)
   * **Enforce use of shorthand syntax in directives**
   * Enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/).
-* [org.openrewrite.codemods.cleanup.svelte.SortAttributes](/recipes/codemods/cleanup/svelte/sortattributes.md)
+* [org.openrewrite.codemods.cleanup.svelte.SortAttributes](/recipes/javascript/codemods/cleanup/svelte/sortattributes.md)
   * **Enforce order of attributes**
   * Enforce order of attributes See rule details for [svelte/sort-attributes](https://sveltejs.github.io/eslint-plugin-svelte/rules/sort-attributes/).
-* [org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment](/recipes/codemods/cleanup/svelte/spacedhtmlcomment.md)
+* [org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment](/recipes/javascript/codemods/cleanup/svelte/spacedhtmlcomment.md)
   * **Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment**
   * Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/).
-* [org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline](/recipes/codemods/cleanup/vue/arraybracketnewline.md)
+* [org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline](/recipes/javascript/codemods/cleanup/vue/arraybracketnewline.md)
   * **Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`**
   * Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing](/recipes/codemods/cleanup/vue/arraybracketspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing](/recipes/javascript/codemods/cleanup/vue/arraybracketspacing.md)
   * **Enforce consistent spacing inside array brackets in `&lt;template&gt;`**
   * Enforce consistent spacing inside array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.ArrayElementNewline](/recipes/codemods/cleanup/vue/arrayelementnewline.md)
+* [org.openrewrite.codemods.cleanup.vue.ArrayElementNewline](/recipes/javascript/codemods/cleanup/vue/arrayelementnewline.md)
   * **Enforce line breaks after each array element in `&lt;template&gt;`**
   * Enforce line breaks after each array element in `&lt;template&gt;` See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ArrowSpacing](/recipes/codemods/cleanup/vue/arrowspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.ArrowSpacing](/recipes/javascript/codemods/cleanup/vue/arrowspacing.md)
   * **Enforce consistent spacing before and after the arrow in arrow functions in `&lt;template&gt;`**
   * Enforce consistent spacing before and after the arrow in arrow functions in `&lt;template&gt;` See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.AttributesOrder](/recipes/codemods/cleanup/vue/attributesorder.md)
+* [org.openrewrite.codemods.cleanup.vue.AttributesOrder](/recipes/javascript/codemods/cleanup/vue/attributesorder.md)
   * **Enforce order of attributes**
   * Enforce order of attributes See rule details for [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order.html).
-* [org.openrewrite.codemods.cleanup.vue.BlockOrder](/recipes/codemods/cleanup/vue/blockorder.md)
+* [org.openrewrite.codemods.cleanup.vue.BlockOrder](/recipes/javascript/codemods/cleanup/vue/blockorder.md)
   * **Enforce order of component top-level elements**
   * Enforce order of component top-level elements See rule details for [vue/block-order](https://eslint.vuejs.org/rules/block-order.html).
-* [org.openrewrite.codemods.cleanup.vue.BlockSpacing](/recipes/codemods/cleanup/vue/blockspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.BlockSpacing](/recipes/javascript/codemods/cleanup/vue/blockspacing.md)
   * **Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`**
   * Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;` See rule details for [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.BlockTagNewline](/recipes/codemods/cleanup/vue/blocktagnewline.md)
+* [org.openrewrite.codemods.cleanup.vue.BlockTagNewline](/recipes/javascript/codemods/cleanup/vue/blocktagnewline.md)
   * **Enforce line breaks after opening and before closing block-level tags**
   * Enforce line breaks after opening and before closing block-level tags See rule details for [vue/block-tag-newline](https://eslint.vuejs.org/rules/block-tag-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.BraceStyle](/recipes/codemods/cleanup/vue/bracestyle.md)
+* [org.openrewrite.codemods.cleanup.vue.BraceStyle](/recipes/javascript/codemods/cleanup/vue/bracestyle.md)
   * **Enforce consistent brace style for blocks in `&lt;template&gt;`**
   * Enforce consistent brace style for blocks in `&lt;template&gt;` See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-style.html).
-* [org.openrewrite.codemods.cleanup.vue.CommaDangle](/recipes/codemods/cleanup/vue/commadangle.md)
+* [org.openrewrite.codemods.cleanup.vue.CommaDangle](/recipes/javascript/codemods/cleanup/vue/commadangle.md)
   * **Require or disallow trailing commas in `&lt;template&gt;`**
   * Require or disallow trailing commas in `&lt;template&gt;` See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html).
-* [org.openrewrite.codemods.cleanup.vue.CommaSpacing](/recipes/codemods/cleanup/vue/commaspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.CommaSpacing](/recipes/javascript/codemods/cleanup/vue/commaspacing.md)
   * **Enforce consistent spacing before and after commas in `&lt;template&gt;`**
   * Enforce consistent spacing before and after commas in `&lt;template&gt;` See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.CommaStyle](/recipes/codemods/cleanup/vue/commastyle.md)
+* [org.openrewrite.codemods.cleanup.vue.CommaStyle](/recipes/javascript/codemods/cleanup/vue/commastyle.md)
   * **Enforce consistent comma style in `&lt;template&gt;`**
   * Enforce consistent comma style in `&lt;template&gt;` See rule details for [vue/comma-style](https://eslint.vuejs.org/rules/comma-style.html).
-* [org.openrewrite.codemods.cleanup.vue.ComponentNameInTemplateCasing](/recipes/codemods/cleanup/vue/componentnameintemplatecasing.md)
+* [org.openrewrite.codemods.cleanup.vue.ComponentNameInTemplateCasing](/recipes/javascript/codemods/cleanup/vue/componentnameintemplatecasing.md)
   * **Enforce specific casing for the component naming style in template**
   * Enforce specific casing for the component naming style in template See rule details for [vue/component-name-in-template-casing](https://eslint.vuejs.org/rules/component-name-in-template-casing.html).
-* [org.openrewrite.codemods.cleanup.vue.ComponentOptionsNameCasing](/recipes/codemods/cleanup/vue/componentoptionsnamecasing.md)
+* [org.openrewrite.codemods.cleanup.vue.ComponentOptionsNameCasing](/recipes/javascript/codemods/cleanup/vue/componentoptionsnamecasing.md)
   * **Enforce the casing of component name in components options**
   * Enforce the casing of component name in components options See rule details for [vue/component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html).
-* [org.openrewrite.codemods.cleanup.vue.ComponentTagsOrder](/recipes/codemods/cleanup/vue/componenttagsorder.md)
+* [org.openrewrite.codemods.cleanup.vue.ComponentTagsOrder](/recipes/javascript/codemods/cleanup/vue/componenttagsorder.md)
   * **Enforce order of component top-level elements**
   * Enforce order of component top-level elements See rule details for [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html).
-* [org.openrewrite.codemods.cleanup.vue.DefineMacrosOrder](/recipes/codemods/cleanup/vue/definemacrosorder.md)
+* [org.openrewrite.codemods.cleanup.vue.DefineMacrosOrder](/recipes/javascript/codemods/cleanup/vue/definemacrosorder.md)
   * **Enforce order of defineEmits and defineProps compiler macros**
   * Enforce order of defineEmits and defineProps compiler macros See rule details for [vue/define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html).
-* [org.openrewrite.codemods.cleanup.vue.DotLocation](/recipes/codemods/cleanup/vue/dotlocation.md)
+* [org.openrewrite.codemods.cleanup.vue.DotLocation](/recipes/javascript/codemods/cleanup/vue/dotlocation.md)
   * **Enforce consistent newlines before and after dots in `&lt;template&gt;`**
   * Enforce consistent newlines before and after dots in `&lt;template&gt;` See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html).
-* [org.openrewrite.codemods.cleanup.vue.DotNotation](/recipes/codemods/cleanup/vue/dotnotation.md)
+* [org.openrewrite.codemods.cleanup.vue.DotNotation](/recipes/javascript/codemods/cleanup/vue/dotnotation.md)
   * **Enforce dot notation whenever possible in `&lt;template&gt;`**
   * Enforce dot notation whenever possible in `&lt;template&gt;` See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html).
-* [org.openrewrite.codemods.cleanup.vue.Eqeqeq](/recipes/codemods/cleanup/vue/eqeqeq.md)
+* [org.openrewrite.codemods.cleanup.vue.Eqeqeq](/recipes/javascript/codemods/cleanup/vue/eqeqeq.md)
   * **Require the use of === and !== in `&lt;template&gt;`**
   * Require the use of === and !== in `&lt;template&gt;` See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html).
-* [org.openrewrite.codemods.cleanup.vue.FuncCallSpacing](/recipes/codemods/cleanup/vue/funccallspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.FuncCallSpacing](/recipes/javascript/codemods/cleanup/vue/funccallspacing.md)
   * **Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`**
   * Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;` See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentNewline](/recipes/codemods/cleanup/vue/htmlcommentcontentnewline.md)
+* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentNewline](/recipes/javascript/codemods/cleanup/vue/htmlcommentcontentnewline.md)
   * **Enforce unified line brake in HTML comments**
   * Enforce unified line brake in HTML comments See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentSpacing](/recipes/codemods/cleanup/vue/htmlcommentcontentspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentSpacing](/recipes/javascript/codemods/cleanup/vue/htmlcommentcontentspacing.md)
   * **Enforce unified spacing in HTML comments**
   * Enforce unified spacing in HTML comments See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.HtmlCommentIndent](/recipes/codemods/cleanup/vue/htmlcommentindent.md)
+* [org.openrewrite.codemods.cleanup.vue.HtmlCommentIndent](/recipes/javascript/codemods/cleanup/vue/htmlcommentindent.md)
   * **Enforce consistent indentation in HTML comments**
   * Enforce consistent indentation in HTML comments See rule details for [vue/html-comment-indent](https://eslint.vuejs.org/rules/html-comment-indent.html).
-* [org.openrewrite.codemods.cleanup.vue.KeySpacing](/recipes/codemods/cleanup/vue/keyspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.KeySpacing](/recipes/javascript/codemods/cleanup/vue/keyspacing.md)
   * **Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;`**
   * Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;` See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.KeywordSpacing](/recipes/codemods/cleanup/vue/keywordspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.KeywordSpacing](/recipes/javascript/codemods/cleanup/vue/keywordspacing.md)
   * **Enforce consistent spacing before and after keywords in `&lt;template&gt;`**
   * Enforce consistent spacing before and after keywords in `&lt;template&gt;` See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keyword-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.MultilineTernary](/recipes/codemods/cleanup/vue/multilineternary.md)
+* [org.openrewrite.codemods.cleanup.vue.MultilineTernary](/recipes/javascript/codemods/cleanup/vue/multilineternary.md)
   * **Enforce newlines between operands of ternary expressions in `&lt;template&gt;`**
   * Enforce newlines between operands of ternary expressions in `&lt;template&gt;` See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html).
-* [org.openrewrite.codemods.cleanup.vue.NewLineBetweenMultiLineProperty](/recipes/codemods/cleanup/vue/newlinebetweenmultilineproperty.md)
+* [org.openrewrite.codemods.cleanup.vue.NewLineBetweenMultiLineProperty](/recipes/javascript/codemods/cleanup/vue/newlinebetweenmultilineproperty.md)
   * **Enforce new lines between multi-line properties in Vue components**
   * Enforce new lines between multi-line properties in Vue components See rule details for [vue/new-line-between-multi-line-property](https://eslint.vuejs.org/rules/new-line-between-multi-line-property.html).
-* [org.openrewrite.codemods.cleanup.vue.NextTickStyle](/recipes/codemods/cleanup/vue/nexttickstyle.md)
+* [org.openrewrite.codemods.cleanup.vue.NextTickStyle](/recipes/javascript/codemods/cleanup/vue/nexttickstyle.md)
   * **Enforce Promise or callback style in nextTick**
   * Enforce Promise or callback style in nextTick See rule details for [vue/next-tick-style](https://eslint.vuejs.org/rules/next-tick-style.html).
-* [org.openrewrite.codemods.cleanup.vue.NoExtraParens](/recipes/codemods/cleanup/vue/noextraparens.md)
+* [org.openrewrite.codemods.cleanup.vue.NoExtraParens](/recipes/javascript/codemods/cleanup/vue/noextraparens.md)
   * **Disallow unnecessary parentheses in `&lt;template&gt;`**
   * Disallow unnecessary parentheses in `&lt;template&gt;` See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html).
-* [org.openrewrite.codemods.cleanup.vue.NoRequiredPropWithDefault](/recipes/codemods/cleanup/vue/norequiredpropwithdefault.md)
+* [org.openrewrite.codemods.cleanup.vue.NoRequiredPropWithDefault](/recipes/javascript/codemods/cleanup/vue/norequiredpropwithdefault.md)
   * **Enforce props with default values to be optional**
   * Enforce props with default values to be optional See rule details for [vue/no-required-prop-with-default](https://eslint.vuejs.org/rules/no-required-prop-with-default.html).
-* [org.openrewrite.codemods.cleanup.vue.NoUnsupportedFeatures](/recipes/codemods/cleanup/vue/nounsupportedfeatures.md)
+* [org.openrewrite.codemods.cleanup.vue.NoUnsupportedFeatures](/recipes/javascript/codemods/cleanup/vue/nounsupportedfeatures.md)
   * **Disallow unsupported Vue.js syntax on the specified version**
   * Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html).
-* [org.openrewrite.codemods.cleanup.vue.NoUselessMustaches](/recipes/codemods/cleanup/vue/nouselessmustaches.md)
+* [org.openrewrite.codemods.cleanup.vue.NoUselessMustaches](/recipes/javascript/codemods/cleanup/vue/nouselessmustaches.md)
   * **Disallow unnecessary mustache interpolations**
   * Disallow unnecessary mustache interpolations See rule details for [vue/no-useless-mustaches](https://eslint.vuejs.org/rules/no-useless-mustaches.html).
-* [org.openrewrite.codemods.cleanup.vue.NoUselessVBind](/recipes/codemods/cleanup/vue/nouselessvbind.md)
+* [org.openrewrite.codemods.cleanup.vue.NoUselessVBind](/recipes/javascript/codemods/cleanup/vue/nouselessvbind.md)
   * **Disallow unnecessary v-bind directives**
   * Disallow unnecessary v-bind directives See rule details for [vue/no-useless-v-bind](https://eslint.vuejs.org/rules/no-useless-v-bind.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline](/recipes/codemods/cleanup/vue/objectcurlynewline.md)
+* [org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline](/recipes/javascript/codemods/cleanup/vue/objectcurlynewline.md)
   * **Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`**
   * Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;` See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectCurlySpacing](/recipes/codemods/cleanup/vue/objectcurlyspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.ObjectCurlySpacing](/recipes/javascript/codemods/cleanup/vue/objectcurlyspacing.md)
   * **Enforce consistent spacing inside braces in `&lt;template&gt;`**
   * Enforce consistent spacing inside braces in `&lt;template&gt;` See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/object-curly-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline](/recipes/codemods/cleanup/vue/objectpropertynewline.md)
+* [org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline](/recipes/javascript/codemods/cleanup/vue/objectpropertynewline.md)
   * **Enforce placing object properties on separate lines in `&lt;template&gt;`**
   * Enforce placing object properties on separate lines in `&lt;template&gt;` See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectShorthand](/recipes/codemods/cleanup/vue/objectshorthand.md)
+* [org.openrewrite.codemods.cleanup.vue.ObjectShorthand](/recipes/javascript/codemods/cleanup/vue/objectshorthand.md)
   * **Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;`**
   * Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;` See rule details for [vue/object-shorthand](https://eslint.vuejs.org/rules/object-shorthand.html).
-* [org.openrewrite.codemods.cleanup.vue.OperatorLinebreak](/recipes/codemods/cleanup/vue/operatorlinebreak.md)
+* [org.openrewrite.codemods.cleanup.vue.OperatorLinebreak](/recipes/javascript/codemods/cleanup/vue/operatorlinebreak.md)
   * **Enforce consistent linebreak style for operators in `&lt;template&gt;`**
   * Enforce consistent linebreak style for operators in `&lt;template&gt;` See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html).
-* [org.openrewrite.codemods.cleanup.vue.OrderInComponents](/recipes/codemods/cleanup/vue/orderincomponents.md)
+* [org.openrewrite.codemods.cleanup.vue.OrderInComponents](/recipes/javascript/codemods/cleanup/vue/orderincomponents.md)
   * **Enforce order of properties in components**
   * Enforce order of properties in components See rule details for [vue/order-in-components](https://eslint.vuejs.org/rules/order-in-components.html).
-* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenBlocks](/recipes/codemods/cleanup/vue/paddinglinebetweenblocks.md)
+* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenBlocks](/recipes/javascript/codemods/cleanup/vue/paddinglinebetweenblocks.md)
   * **Require or disallow padding lines between blocks**
   * Require or disallow padding lines between blocks See rule details for [vue/padding-line-between-blocks](https://eslint.vuejs.org/rules/padding-line-between-blocks.html).
-* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenTags](/recipes/codemods/cleanup/vue/paddinglinebetweentags.md)
+* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenTags](/recipes/javascript/codemods/cleanup/vue/paddinglinebetweentags.md)
   * **Require or disallow newlines between sibling tags in template**
   * Require or disallow newlines between sibling tags in template See rule details for [vue/padding-line-between-tags](https://eslint.vuejs.org/rules/padding-line-between-tags.html).
-* [org.openrewrite.codemods.cleanup.vue.PaddingLinesInComponentDefinition](/recipes/codemods/cleanup/vue/paddinglinesincomponentdefinition.md)
+* [org.openrewrite.codemods.cleanup.vue.PaddingLinesInComponentDefinition](/recipes/javascript/codemods/cleanup/vue/paddinglinesincomponentdefinition.md)
   * **Require or disallow padding lines in component definition**
   * Require or disallow padding lines in component definition See rule details for [vue/padding-lines-in-component-definition](https://eslint.vuejs.org/rules/padding-lines-in-component-definition.html).
-* [org.openrewrite.codemods.cleanup.vue.PreferDefineOptions](/recipes/codemods/cleanup/vue/preferdefineoptions.md)
+* [org.openrewrite.codemods.cleanup.vue.PreferDefineOptions](/recipes/javascript/codemods/cleanup/vue/preferdefineoptions.md)
   * **Enforce use of defineOptions instead of default export**
   * Enforce use of defineOptions instead of default export. See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html).
-* [org.openrewrite.codemods.cleanup.vue.PreferSeparateStaticClass](/recipes/codemods/cleanup/vue/preferseparatestaticclass.md)
+* [org.openrewrite.codemods.cleanup.vue.PreferSeparateStaticClass](/recipes/javascript/codemods/cleanup/vue/preferseparatestaticclass.md)
   * **Require static class names in template to be in a separate class attribute**
   * Require static class names in template to be in a separate class attribute See rule details for [vue/prefer-separate-static-class](https://eslint.vuejs.org/rules/prefer-separate-static-class.html).
-* [org.openrewrite.codemods.cleanup.vue.PreferTemplate](/recipes/codemods/cleanup/vue/prefertemplate.md)
+* [org.openrewrite.codemods.cleanup.vue.PreferTemplate](/recipes/javascript/codemods/cleanup/vue/prefertemplate.md)
   * **Require template literals instead of string concatenation in `&lt;template&gt;`**
   * Require template literals instead of string concatenation in `&lt;template&gt;` See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html).
-* [org.openrewrite.codemods.cleanup.vue.QuoteProps](/recipes/codemods/cleanup/vue/quoteprops.md)
+* [org.openrewrite.codemods.cleanup.vue.QuoteProps](/recipes/javascript/codemods/cleanup/vue/quoteprops.md)
   * **Require quotes around object literal property names in `&lt;template&gt;`**
   * Require quotes around object literal property names in `&lt;template&gt;` See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html).
-* [org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup](/recipes/codemods/cleanup/vue/recommendedvuecodecleanup.md)
+* [org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup](/recipes/javascript/codemods/cleanup/vue/recommendedvuecodecleanup.md)
   * **Recommended vue code cleanup**
   * Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuejs.org/).
-* [org.openrewrite.codemods.cleanup.vue.ScriptIndent](/recipes/codemods/cleanup/vue/scriptindent.md)
+* [org.openrewrite.codemods.cleanup.vue.ScriptIndent](/recipes/javascript/codemods/cleanup/vue/scriptindent.md)
   * **Enforce consistent indentation in `&lt;script&gt;`**
   * Enforce consistent indentation in `&lt;script&gt;` See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html).
-* [org.openrewrite.codemods.cleanup.vue.SpaceInParens](/recipes/codemods/cleanup/vue/spaceinparens.md)
+* [org.openrewrite.codemods.cleanup.vue.SpaceInParens](/recipes/javascript/codemods/cleanup/vue/spaceinparens.md)
   * **Enforce consistent spacing inside parentheses in `&lt;template&gt;`**
   * Enforce consistent spacing inside parentheses in `&lt;template&gt;` See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-in-parens.html).
-* [org.openrewrite.codemods.cleanup.vue.SpaceInfixOps](/recipes/codemods/cleanup/vue/spaceinfixops.md)
+* [org.openrewrite.codemods.cleanup.vue.SpaceInfixOps](/recipes/javascript/codemods/cleanup/vue/spaceinfixops.md)
   * **Require spacing around infix operators in `&lt;template&gt;`**
   * Require spacing around infix operators in `&lt;template&gt;` See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html).
-* [org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps](/recipes/codemods/cleanup/vue/spaceunaryops.md)
+* [org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps](/recipes/javascript/codemods/cleanup/vue/spaceunaryops.md)
   * **Enforce consistent spacing before or after unary operators in `&lt;template&gt;`**
   * Enforce consistent spacing before or after unary operators in `&lt;template&gt;` See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html).
-* [org.openrewrite.codemods.cleanup.vue.StaticClassNamesOrder](/recipes/codemods/cleanup/vue/staticclassnamesorder.md)
+* [org.openrewrite.codemods.cleanup.vue.StaticClassNamesOrder](/recipes/javascript/codemods/cleanup/vue/staticclassnamesorder.md)
   * **Enforce static class names order**
   * Enforce static class names order See rule details for [vue/static-class-names-order](https://eslint.vuejs.org/rules/static-class-names-order.html).
-* [org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing](/recipes/codemods/cleanup/vue/templatecurlyspacing.md)
+* [org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing](/recipes/javascript/codemods/cleanup/vue/templatecurlyspacing.md)
   * **Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;`**
   * Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;` See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.ThisInTemplate](/recipes/codemods/cleanup/vue/thisintemplate.md)
+* [org.openrewrite.codemods.cleanup.vue.ThisInTemplate](/recipes/javascript/codemods/cleanup/vue/thisintemplate.md)
   * **Disallow usage of this in template**
   * Disallow usage of this in template See rule details for [vue/this-in-template](https://eslint.vuejs.org/rules/this-in-template.html).
-* [org.openrewrite.codemods.cleanup.vue.VForDelimiterStyle](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md)
+* [org.openrewrite.codemods.cleanup.vue.VForDelimiterStyle](/recipes/javascript/codemods/cleanup/vue/vfordelimiterstyle.md)
   * **Enforce v-for directive's delimiter style**
   * Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html).
-* [org.openrewrite.codemods.cleanup.vue.VIfElseKey](/recipes/codemods/cleanup/vue/vifelsekey.md)
+* [org.openrewrite.codemods.cleanup.vue.VIfElseKey](/recipes/javascript/codemods/cleanup/vue/vifelsekey.md)
   * **Require key attribute for conditionally rendered repeated components**
   * Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html).
-* [org.openrewrite.codemods.cleanup.vue.VOnHandlerStyle](/recipes/codemods/cleanup/vue/vonhandlerstyle.md)
+* [org.openrewrite.codemods.cleanup.vue.VOnHandlerStyle](/recipes/javascript/codemods/cleanup/vue/vonhandlerstyle.md)
   * **Enforce writing style for handlers in v-on directives**
   * Enforce writing style for handlers in v-on directives See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html).
-* [org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices](/recipes/codemods/ecmascript/5to6/ecmascript6bestpractices.md)
+* [org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices](/recipes/javascript/codemods/ecmascript/5to6/ecmascript6bestpractices.md)
   * **Upgrade ECMAScript 5 to ECMAScript 6**
   * A collection of common ECMAScript 5 to ECMAScript 6 updates.
-* [org.openrewrite.codemods.ecmascript.5to6.amdToEsm](/recipes/codemods/ecmascript/5to6/amdtoesm.md)
+* [org.openrewrite.codemods.ecmascript.5to6.amdToEsm](/recipes/javascript/codemods/ecmascript/5to6/amdtoesm.md)
   * **Transform AMD style `define()` calls to ES6 `import` statements**
   * Transform AMD style `define()` calls to ES6 `import` statements.
-* [org.openrewrite.codemods.ecmascript.5to6.cjsToEsm](/recipes/codemods/ecmascript/5to6/cjstoesm.md)
+* [org.openrewrite.codemods.ecmascript.5to6.cjsToEsm](/recipes/javascript/codemods/ecmascript/5to6/cjstoesm.md)
   * **Transform CommonJS style `require()` calls to ES6 `import` statements**
   * Transform CommonJS style `require()` calls to ES6 `import` statements.
-* [org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration](/recipes/codemods/ecmascript/5to6/namedexportgeneration.md)
+* [org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration](/recipes/javascript/codemods/ecmascript/5to6/namedexportgeneration.md)
   * **Generate named exports from CommonJS modules**
   * Generate named exports from CommonJS modules.
-* [org.openrewrite.codemods.ecmascript.5to6.noStrict](/recipes/codemods/ecmascript/5to6/nostrict.md)
+* [org.openrewrite.codemods.ecmascript.5to6.noStrict](/recipes/javascript/codemods/ecmascript/5to6/nostrict.md)
   * **Remove &quot;use strict&quot; directives**
   * Remove &quot;use strict&quot; directives.
-* [org.openrewrite.codemods.ecmascript.5to6.simpleArrow](/recipes/codemods/ecmascript/5to6/simplearrow.md)
+* [org.openrewrite.codemods.ecmascript.5to6.simpleArrow](/recipes/javascript/codemods/ecmascript/5to6/simplearrow.md)
   * **Replace all function expressions with only `return` statement with simple arrow**
   * Replace all function expressions with only `return` statement with simple arrow function.
-* [org.openrewrite.codemods.ecmascript.5to6.varToLet](/recipes/codemods/ecmascript/5to6/vartolet.md)
+* [org.openrewrite.codemods.ecmascript.5to6.varToLet](/recipes/javascript/codemods/ecmascript/5to6/vartolet.md)
   * **Convert `var` to `let`**
   * Convert `var` to `let`.
-* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptDefaults](/recipes/codemods/ecmascript/eslinttypescriptdefaults.md)
+* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptDefaults](/recipes/javascript/codemods/ecmascript/eslinttypescriptdefaults.md)
   * **Lint TypeScript code using ESLint**
   * The default config includes the `@typescript-eslint` plugin and the corresponding `plugin:@typescript-eslint/recommended` extend.
-* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptPrettier](/recipes/codemods/ecmascript/eslinttypescriptprettier.md)
+* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptPrettier](/recipes/javascript/codemods/ecmascript/eslinttypescriptprettier.md)
   * **Format TypeScript using ESLint Prettier plugin**
   * Formats all TypeScript source code using the ESLint Prettier plugin.
-* [org.openrewrite.codemods.format.ArrayBracketNewline](/recipes/codemods/format/arraybracketnewline.md)
+* [org.openrewrite.codemods.format.ArrayBracketNewline](/recipes/javascript/codemods/format/arraybracketnewline.md)
   * **Enforce linebreaks after opening and before closing array brackets**
   * Enforce linebreaks after opening and before closing array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-newline).
-* [org.openrewrite.codemods.format.ArrayBracketSpacing](/recipes/codemods/format/arraybracketspacing.md)
+* [org.openrewrite.codemods.format.ArrayBracketSpacing](/recipes/javascript/codemods/format/arraybracketspacing.md)
   * **Enforce consistent spacing inside array brackets**
   * Enforce consistent spacing inside array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-spacing).
-* [org.openrewrite.codemods.format.ArrayElementNewline](/recipes/codemods/format/arrayelementnewline.md)
+* [org.openrewrite.codemods.format.ArrayElementNewline](/recipes/javascript/codemods/format/arrayelementnewline.md)
   * **Enforce line breaks after each array element**
   * Enforce line breaks after each array element  See [rule details](https://eslint.style/rules/default/array-element-newline).
-* [org.openrewrite.codemods.format.ArrowParens](/recipes/codemods/format/arrowparens.md)
+* [org.openrewrite.codemods.format.ArrowParens](/recipes/javascript/codemods/format/arrowparens.md)
   * **Require parentheses around arrow function arguments**
   * Require parentheses around arrow function arguments  See [rule details](https://eslint.style/rules/default/arrow-parens).
-* [org.openrewrite.codemods.format.ArrowSpacing](/recipes/codemods/format/arrowspacing.md)
+* [org.openrewrite.codemods.format.ArrowSpacing](/recipes/javascript/codemods/format/arrowspacing.md)
   * **Enforce consistent spacing before and after the arrow in arrow functions**
   * Enforce consistent spacing before and after the arrow in arrow functions  See [rule details](https://eslint.style/rules/default/arrow-spacing).
-* [org.openrewrite.codemods.format.BlockSpacing](/recipes/codemods/format/blockspacing.md)
+* [org.openrewrite.codemods.format.BlockSpacing](/recipes/javascript/codemods/format/blockspacing.md)
   * **Disallow or enforce spaces inside of blocks after opening block and before closing block**
   * Disallow or enforce spaces inside of blocks after opening block and before closing block  See [rule details](https://eslint.style/rules/default/block-spacing).
-* [org.openrewrite.codemods.format.BraceStyle](/recipes/codemods/format/bracestyle.md)
+* [org.openrewrite.codemods.format.BraceStyle](/recipes/javascript/codemods/format/bracestyle.md)
   * **Enforce consistent brace style for blocks**
   * Enforce consistent brace style for blocks  See [rule details](https://eslint.style/rules/default/brace-style).
-* [org.openrewrite.codemods.format.CommaDangle](/recipes/codemods/format/commadangle.md)
+* [org.openrewrite.codemods.format.CommaDangle](/recipes/javascript/codemods/format/commadangle.md)
   * **Require or disallow trailing commas**
   * Require or disallow trailing commas  See [rule details](https://eslint.style/rules/default/comma-dangle).
-* [org.openrewrite.codemods.format.CommaSpacing](/recipes/codemods/format/commaspacing.md)
+* [org.openrewrite.codemods.format.CommaSpacing](/recipes/javascript/codemods/format/commaspacing.md)
   * **Enforce consistent spacing before and after commas**
   * Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing).
-* [org.openrewrite.codemods.format.CommaStyle](/recipes/codemods/format/commastyle.md)
+* [org.openrewrite.codemods.format.CommaStyle](/recipes/javascript/codemods/format/commastyle.md)
   * **Enforce consistent comma style**
   * Enforce consistent comma style  See [rule details](https://eslint.style/rules/default/comma-style).
-* [org.openrewrite.codemods.format.ComputedPropertySpacing](/recipes/codemods/format/computedpropertyspacing.md)
+* [org.openrewrite.codemods.format.ComputedPropertySpacing](/recipes/javascript/codemods/format/computedpropertyspacing.md)
   * **Enforce consistent spacing inside computed property brackets**
   * Enforce consistent spacing inside computed property brackets  See [rule details](https://eslint.style/rules/default/computed-property-spacing).
-* [org.openrewrite.codemods.format.DotLocation](/recipes/codemods/format/dotlocation.md)
+* [org.openrewrite.codemods.format.DotLocation](/recipes/javascript/codemods/format/dotlocation.md)
   * **Enforce consistent newlines before and after dots**
   * Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location).
-* [org.openrewrite.codemods.format.EolLast](/recipes/codemods/format/eollast.md)
+* [org.openrewrite.codemods.format.EolLast](/recipes/javascript/codemods/format/eollast.md)
   * **Require or disallow newline at the end of files**
   * Require or disallow newline at the end of files  See [rule details](https://eslint.style/rules/default/eol-last).
-* [org.openrewrite.codemods.format.FuncCallSpacing](/recipes/codemods/format/funccallspacing.md)
+* [org.openrewrite.codemods.format.FuncCallSpacing](/recipes/javascript/codemods/format/funccallspacing.md)
   * **Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;**
   * Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;.  See [rule details](https://eslint.style/rules/default/func-call-spacing).
-* [org.openrewrite.codemods.format.FunctionCallArgumentNewline](/recipes/codemods/format/functioncallargumentnewline.md)
+* [org.openrewrite.codemods.format.FunctionCallArgumentNewline](/recipes/javascript/codemods/format/functioncallargumentnewline.md)
   * **Enforce line breaks between arguments of a function call**
   * Enforce line breaks between arguments of a function call  See [rule details](https://eslint.style/rules/default/function-call-argument-newline).
-* [org.openrewrite.codemods.format.FunctionCallSpacing](/recipes/codemods/format/functioncallspacing.md)
+* [org.openrewrite.codemods.format.FunctionCallSpacing](/recipes/javascript/codemods/format/functioncallspacing.md)
   * **Require or disallow spacing between function identifiers and their invocations**
   * Require or disallow spacing between function identifiers and their invocations  See [rule details](https://eslint.style/rules/default/function-call-spacing).
-* [org.openrewrite.codemods.format.FunctionParenNewline](/recipes/codemods/format/functionparennewline.md)
+* [org.openrewrite.codemods.format.FunctionParenNewline](/recipes/javascript/codemods/format/functionparennewline.md)
   * **Enforce consistent line breaks inside function parentheses**
   * Enforce consistent line breaks inside function parentheses  See [rule details](https://eslint.style/rules/default/function-paren-newline).
-* [org.openrewrite.codemods.format.GeneratorStarSpacing](/recipes/codemods/format/generatorstarspacing.md)
+* [org.openrewrite.codemods.format.GeneratorStarSpacing](/recipes/javascript/codemods/format/generatorstarspacing.md)
   * **Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions**
   * Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions  See [rule details](https://eslint.style/rules/default/generator-star-spacing).
-* [org.openrewrite.codemods.format.ImplicitArrowLinebreak](/recipes/codemods/format/implicitarrowlinebreak.md)
+* [org.openrewrite.codemods.format.ImplicitArrowLinebreak](/recipes/javascript/codemods/format/implicitarrowlinebreak.md)
   * **Enforce the location of arrow function bodies**
   * Enforce the location of arrow function bodies  See [rule details](https://eslint.style/rules/default/implicit-arrow-linebreak).
-* [org.openrewrite.codemods.format.Indent](/recipes/codemods/format/indent.md)
+* [org.openrewrite.codemods.format.Indent](/recipes/javascript/codemods/format/indent.md)
   * **Enforce consistent indentation**
   * Enforce consistent indentation  See [rule details](https://eslint.style/rules/default/indent).
-* [org.openrewrite.codemods.format.IndentBinaryOps](/recipes/codemods/format/indentbinaryops.md)
+* [org.openrewrite.codemods.format.IndentBinaryOps](/recipes/javascript/codemods/format/indentbinaryops.md)
   * **Indentation for binary operators**
   * Indentation for binary operators  See [rule details](https://eslint.style/rules/default/indent-binary-ops).
-* [org.openrewrite.codemods.format.JsxClosingBracketLocation](/recipes/codemods/format/jsxclosingbracketlocation.md)
+* [org.openrewrite.codemods.format.JsxClosingBracketLocation](/recipes/javascript/codemods/format/jsxclosingbracketlocation.md)
   * **Enforce closing bracket location in JSX**
   * Enforce closing bracket location in JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-bracket-location).
-* [org.openrewrite.codemods.format.JsxClosingTagLocation](/recipes/codemods/format/jsxclosingtaglocation.md)
+* [org.openrewrite.codemods.format.JsxClosingTagLocation](/recipes/javascript/codemods/format/jsxclosingtaglocation.md)
   * **Enforce closing tag location for multiline JSX**
   * Enforce closing tag location for multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-tag-location).
-* [org.openrewrite.codemods.format.JsxCurlyBracePresence](/recipes/codemods/format/jsxcurlybracepresence.md)
+* [org.openrewrite.codemods.format.JsxCurlyBracePresence](/recipes/javascript/codemods/format/jsxcurlybracepresence.md)
   * **Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes**
   * Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes  See [rule details](https://eslint.style/rules/default/jsx-curly-brace-presence).
-* [org.openrewrite.codemods.format.JsxCurlyNewline](/recipes/codemods/format/jsxcurlynewline.md)
+* [org.openrewrite.codemods.format.JsxCurlyNewline](/recipes/javascript/codemods/format/jsxcurlynewline.md)
   * **Enforce consistent linebreaks in curly braces in JSX attributes and expressions**
   * Enforce consistent linebreaks in curly braces in JSX attributes and expressions  See [rule details](https://eslint.style/rules/default/jsx-curly-newline).
-* [org.openrewrite.codemods.format.JsxCurlySpacing](/recipes/codemods/format/jsxcurlyspacing.md)
+* [org.openrewrite.codemods.format.JsxCurlySpacing](/recipes/javascript/codemods/format/jsxcurlyspacing.md)
   * **Enforce or disallow spaces inside of curly braces in JSX attributes and expressions**
   * Enforce or disallow spaces inside of curly braces in JSX attributes and expressions  See [rule details](https://eslint.style/rules/default/jsx-curly-spacing).
-* [org.openrewrite.codemods.format.JsxEqualsSpacing](/recipes/codemods/format/jsxequalsspacing.md)
+* [org.openrewrite.codemods.format.JsxEqualsSpacing](/recipes/javascript/codemods/format/jsxequalsspacing.md)
   * **Enforce or disallow spaces around equal signs in JSX attributes**
   * Enforce or disallow spaces around equal signs in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-equals-spacing).
-* [org.openrewrite.codemods.format.JsxFirstPropNewLine](/recipes/codemods/format/jsxfirstpropnewline.md)
+* [org.openrewrite.codemods.format.JsxFirstPropNewLine](/recipes/javascript/codemods/format/jsxfirstpropnewline.md)
   * **Enforce proper position of the first property in JSX**
   * Enforce proper position of the first property in JSX  See [rule details](https://eslint.style/rules/default/jsx-first-prop-new-line).
-* [org.openrewrite.codemods.format.JsxIndent](/recipes/codemods/format/jsxindent.md)
+* [org.openrewrite.codemods.format.JsxIndent](/recipes/javascript/codemods/format/jsxindent.md)
   * **Enforce JSX indentation**
   * Enforce JSX indentation  See [rule details](https://eslint.style/rules/default/jsx-indent).
-* [org.openrewrite.codemods.format.JsxIndentProps](/recipes/codemods/format/jsxindentprops.md)
+* [org.openrewrite.codemods.format.JsxIndentProps](/recipes/javascript/codemods/format/jsxindentprops.md)
   * **Enforce props indentation in JSX**
   * Enforce props indentation in JSX  See [rule details](https://eslint.style/rules/default/jsx-indent-props).
-* [org.openrewrite.codemods.format.JsxMaxPropsPerLine](/recipes/codemods/format/jsxmaxpropsperline.md)
+* [org.openrewrite.codemods.format.JsxMaxPropsPerLine](/recipes/javascript/codemods/format/jsxmaxpropsperline.md)
   * **Enforce maximum of props on a single line in JSX**
   * Enforce maximum of props on a single line in JSX  See [rule details](https://eslint.style/rules/default/jsx-max-props-per-line).
-* [org.openrewrite.codemods.format.JsxNewline](/recipes/codemods/format/jsxnewline.md)
+* [org.openrewrite.codemods.format.JsxNewline](/recipes/javascript/codemods/format/jsxnewline.md)
   * **Require or prevent a new line after jsx elements and expressions**
   * Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline).
-* [org.openrewrite.codemods.format.JsxOneExpressionPerLine](/recipes/codemods/format/jsxoneexpressionperline.md)
+* [org.openrewrite.codemods.format.JsxOneExpressionPerLine](/recipes/javascript/codemods/format/jsxoneexpressionperline.md)
   * **Require one JSX element per line**
   * Require one JSX element per line  See [rule details](https://eslint.style/rules/default/jsx-one-expression-per-line).
-* [org.openrewrite.codemods.format.JsxPascalCase](/recipes/codemods/format/jsxpascalcase.md)
+* [org.openrewrite.codemods.format.JsxPascalCase](/recipes/javascript/codemods/format/jsxpascalcase.md)
   * **Enforce PascalCase for user-defined JSX components**
   * Enforce PascalCase for user-defined JSX components  See [rule details](https://eslint.style/rules/default/jsx-pascal-case).
-* [org.openrewrite.codemods.format.JsxPropsNoMultiSpaces](/recipes/codemods/format/jsxpropsnomultispaces.md)
+* [org.openrewrite.codemods.format.JsxPropsNoMultiSpaces](/recipes/javascript/codemods/format/jsxpropsnomultispaces.md)
   * **Disallow multiple spaces between inline JSX props**
   * Disallow multiple spaces between inline JSX props  See [rule details](https://eslint.style/rules/default/jsx-props-no-multi-spaces).
-* [org.openrewrite.codemods.format.JsxQuotes](/recipes/codemods/format/jsxquotes.md)
+* [org.openrewrite.codemods.format.JsxQuotes](/recipes/javascript/codemods/format/jsxquotes.md)
   * **Enforce the consistent use of either double or single quotes in JSX attributes**
   * Enforce the consistent use of either double or single quotes in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-quotes).
-* [org.openrewrite.codemods.format.JsxSelfClosingComp](/recipes/codemods/format/jsxselfclosingcomp.md)
+* [org.openrewrite.codemods.format.JsxSelfClosingComp](/recipes/javascript/codemods/format/jsxselfclosingcomp.md)
   * **Disallow extra closing tags for components without children**
   * Disallow extra closing tags for components without children  See [rule details](https://eslint.style/rules/default/jsx-self-closing-comp).
-* [org.openrewrite.codemods.format.JsxSortProps](/recipes/codemods/format/jsxsortprops.md)
+* [org.openrewrite.codemods.format.JsxSortProps](/recipes/javascript/codemods/format/jsxsortprops.md)
   * **Enforce props alphabetical sorting**
   * Enforce props alphabetical sorting  See [rule details](https://eslint.style/rules/default/jsx-sort-props).
-* [org.openrewrite.codemods.format.JsxTagSpacing](/recipes/codemods/format/jsxtagspacing.md)
+* [org.openrewrite.codemods.format.JsxTagSpacing](/recipes/javascript/codemods/format/jsxtagspacing.md)
   * **Enforce whitespace in and around the JSX opening and closing brackets**
   * Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing).
-* [org.openrewrite.codemods.format.JsxWrapMultilines](/recipes/codemods/format/jsxwrapmultilines.md)
+* [org.openrewrite.codemods.format.JsxWrapMultilines](/recipes/javascript/codemods/format/jsxwrapmultilines.md)
   * **Disallow missing parentheses around multiline JSX**
   * Disallow missing parentheses around multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-wrap-multilines).
-* [org.openrewrite.codemods.format.KeySpacing](/recipes/codemods/format/keyspacing.md)
+* [org.openrewrite.codemods.format.KeySpacing](/recipes/javascript/codemods/format/keyspacing.md)
   * **Enforce consistent spacing between keys and values in object literal properties**
   * Enforce consistent spacing between keys and values in object literal properties  See [rule details](https://eslint.style/rules/default/key-spacing).
-* [org.openrewrite.codemods.format.KeywordSpacing](/recipes/codemods/format/keywordspacing.md)
+* [org.openrewrite.codemods.format.KeywordSpacing](/recipes/javascript/codemods/format/keywordspacing.md)
   * **Enforce consistent spacing before and after keywords**
   * Enforce consistent spacing before and after keywords  See [rule details](https://eslint.style/rules/default/keyword-spacing).
-* [org.openrewrite.codemods.format.LinebreakStyle](/recipes/codemods/format/linebreakstyle.md)
+* [org.openrewrite.codemods.format.LinebreakStyle](/recipes/javascript/codemods/format/linebreakstyle.md)
   * **Enforce consistent linebreak style**
   * Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style).
-* [org.openrewrite.codemods.format.LinesAroundComment](/recipes/codemods/format/linesaroundcomment.md)
+* [org.openrewrite.codemods.format.LinesAroundComment](/recipes/javascript/codemods/format/linesaroundcomment.md)
   * **Require empty lines around comments**
   * Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment).
-* [org.openrewrite.codemods.format.LinesBetweenClassMembers](/recipes/codemods/format/linesbetweenclassmembers.md)
+* [org.openrewrite.codemods.format.LinesBetweenClassMembers](/recipes/javascript/codemods/format/linesbetweenclassmembers.md)
   * **Require or disallow an empty line between class members**
   * Require or disallow an empty line between class members  See [rule details](https://eslint.style/rules/default/lines-between-class-members).
-* [org.openrewrite.codemods.format.MemberDelimiterStyle](/recipes/codemods/format/memberdelimiterstyle.md)
+* [org.openrewrite.codemods.format.MemberDelimiterStyle](/recipes/javascript/codemods/format/memberdelimiterstyle.md)
   * **Require a specific member delimiter style for interfaces and type literals**
   * Require a specific member delimiter style for interfaces and type literals  See [rule details](https://eslint.style/rules/default/member-delimiter-style).
-* [org.openrewrite.codemods.format.MultilineTernary](/recipes/codemods/format/multilineternary.md)
+* [org.openrewrite.codemods.format.MultilineTernary](/recipes/javascript/codemods/format/multilineternary.md)
   * **Enforce newlines between operands of ternary expressions**
   * Enforce newlines between operands of ternary expressions  See [rule details](https://eslint.style/rules/default/multiline-ternary).
-* [org.openrewrite.codemods.format.NewParens](/recipes/codemods/format/newparens.md)
+* [org.openrewrite.codemods.format.NewParens](/recipes/javascript/codemods/format/newparens.md)
   * **Enforce or disallow parentheses when invoking a constructor with no arguments**
   * Enforce or disallow parentheses when invoking a constructor with no arguments  See [rule details](https://eslint.style/rules/default/new-parens).
-* [org.openrewrite.codemods.format.NewlinePerChainedCall](/recipes/codemods/format/newlineperchainedcall.md)
+* [org.openrewrite.codemods.format.NewlinePerChainedCall](/recipes/javascript/codemods/format/newlineperchainedcall.md)
   * **Require a newline after each call in a method chain**
   * Require a newline after each call in a method chain  See [rule details](https://eslint.style/rules/default/newline-per-chained-call).
-* [org.openrewrite.codemods.format.NoConfusingArrow](/recipes/codemods/format/noconfusingarrow.md)
+* [org.openrewrite.codemods.format.NoConfusingArrow](/recipes/javascript/codemods/format/noconfusingarrow.md)
   * **Disallow arrow functions where they could be confused with comparisons**
   * Disallow arrow functions where they could be confused with comparisons  See [rule details](https://eslint.style/rules/default/no-confusing-arrow).
-* [org.openrewrite.codemods.format.NoExtraParens](/recipes/codemods/format/noextraparens.md)
+* [org.openrewrite.codemods.format.NoExtraParens](/recipes/javascript/codemods/format/noextraparens.md)
   * **Disallow unnecessary parentheses**
   * Disallow unnecessary parentheses  See [rule details](https://eslint.style/rules/default/no-extra-parens).
-* [org.openrewrite.codemods.format.NoExtraSemi](/recipes/codemods/format/noextrasemi.md)
+* [org.openrewrite.codemods.format.NoExtraSemi](/recipes/javascript/codemods/format/noextrasemi.md)
   * **Disallow unnecessary semicolons**
   * Disallow unnecessary semicolons  See [rule details](https://eslint.style/rules/default/no-extra-semi).
-* [org.openrewrite.codemods.format.NoFloatingDecimal](/recipes/codemods/format/nofloatingdecimal.md)
+* [org.openrewrite.codemods.format.NoFloatingDecimal](/recipes/javascript/codemods/format/nofloatingdecimal.md)
   * **Disallow leading or trailing decimal points in numeric literals**
   * Disallow leading or trailing decimal points in numeric literals  See [rule details](https://eslint.style/rules/default/no-floating-decimal).
-* [org.openrewrite.codemods.format.NoMultiSpaces](/recipes/codemods/format/nomultispaces.md)
+* [org.openrewrite.codemods.format.NoMultiSpaces](/recipes/javascript/codemods/format/nomultispaces.md)
   * **Disallow multiple spaces**
   * Disallow multiple spaces  See [rule details](https://eslint.style/rules/default/no-multi-spaces).
-* [org.openrewrite.codemods.format.NoMultipleEmptyLines](/recipes/codemods/format/nomultipleemptylines.md)
+* [org.openrewrite.codemods.format.NoMultipleEmptyLines](/recipes/javascript/codemods/format/nomultipleemptylines.md)
   * **Disallow multiple empty lines**
   * Disallow multiple empty lines  See [rule details](https://eslint.style/rules/default/no-multiple-empty-lines).
-* [org.openrewrite.codemods.format.NoTrailingSpaces](/recipes/codemods/format/notrailingspaces.md)
+* [org.openrewrite.codemods.format.NoTrailingSpaces](/recipes/javascript/codemods/format/notrailingspaces.md)
   * **Disallow trailing whitespace at the end of lines**
   * Disallow trailing whitespace at the end of lines  See [rule details](https://eslint.style/rules/default/no-trailing-spaces).
-* [org.openrewrite.codemods.format.NoWhitespaceBeforeProperty](/recipes/codemods/format/nowhitespacebeforeproperty.md)
+* [org.openrewrite.codemods.format.NoWhitespaceBeforeProperty](/recipes/javascript/codemods/format/nowhitespacebeforeproperty.md)
   * **Disallow whitespace before properties**
   * Disallow whitespace before properties  See [rule details](https://eslint.style/rules/default/no-whitespace-before-property).
-* [org.openrewrite.codemods.format.NonblockStatementBodyPosition](/recipes/codemods/format/nonblockstatementbodyposition.md)
+* [org.openrewrite.codemods.format.NonblockStatementBodyPosition](/recipes/javascript/codemods/format/nonblockstatementbodyposition.md)
   * **Enforce the location of single-line statements**
   * Enforce the location of single-line statements  See [rule details](https://eslint.style/rules/default/nonblock-statement-body-position).
-* [org.openrewrite.codemods.format.ObjectCurlyNewline](/recipes/codemods/format/objectcurlynewline.md)
+* [org.openrewrite.codemods.format.ObjectCurlyNewline](/recipes/javascript/codemods/format/objectcurlynewline.md)
   * **Enforce consistent line breaks after opening and before closing braces**
   * Enforce consistent line breaks after opening and before closing braces  See [rule details](https://eslint.style/rules/default/object-curly-newline).
-* [org.openrewrite.codemods.format.ObjectCurlySpacing](/recipes/codemods/format/objectcurlyspacing.md)
+* [org.openrewrite.codemods.format.ObjectCurlySpacing](/recipes/javascript/codemods/format/objectcurlyspacing.md)
   * **Enforce consistent spacing inside braces**
   * Enforce consistent spacing inside braces  See [rule details](https://eslint.style/rules/default/object-curly-spacing).
-* [org.openrewrite.codemods.format.ObjectPropertyNewline](/recipes/codemods/format/objectpropertynewline.md)
+* [org.openrewrite.codemods.format.ObjectPropertyNewline](/recipes/javascript/codemods/format/objectpropertynewline.md)
   * **Enforce placing object properties on separate lines**
   * Enforce placing object properties on separate lines  See [rule details](https://eslint.style/rules/default/object-property-newline).
-* [org.openrewrite.codemods.format.OneVarDeclarationPerLine](/recipes/codemods/format/onevardeclarationperline.md)
+* [org.openrewrite.codemods.format.OneVarDeclarationPerLine](/recipes/javascript/codemods/format/onevardeclarationperline.md)
   * **Require or disallow newlines around variable declarations**
   * Require or disallow newlines around variable declarations  See [rule details](https://eslint.style/rules/default/one-var-declaration-per-line).
-* [org.openrewrite.codemods.format.OperatorLinebreak](/recipes/codemods/format/operatorlinebreak.md)
+* [org.openrewrite.codemods.format.OperatorLinebreak](/recipes/javascript/codemods/format/operatorlinebreak.md)
   * **Enforce consistent linebreak style for operators**
   * Enforce consistent linebreak style for operators  See [rule details](https://eslint.style/rules/default/operator-linebreak).
-* [org.openrewrite.codemods.format.PaddedBlocks](/recipes/codemods/format/paddedblocks.md)
+* [org.openrewrite.codemods.format.PaddedBlocks](/recipes/javascript/codemods/format/paddedblocks.md)
   * **Require or disallow padding within blocks**
   * Require or disallow padding within blocks  See [rule details](https://eslint.style/rules/default/padded-blocks).
-* [org.openrewrite.codemods.format.PaddingLineBetweenStatements](/recipes/codemods/format/paddinglinebetweenstatements.md)
+* [org.openrewrite.codemods.format.PaddingLineBetweenStatements](/recipes/javascript/codemods/format/paddinglinebetweenstatements.md)
   * **Require or disallow padding lines between statements**
   * Require or disallow padding lines between statements  See [rule details](https://eslint.style/rules/default/padding-line-between-statements).
-* [org.openrewrite.codemods.format.QuoteProps](/recipes/codemods/format/quoteprops.md)
+* [org.openrewrite.codemods.format.QuoteProps](/recipes/javascript/codemods/format/quoteprops.md)
   * **Require quotes around object literal property names**
   * Require quotes around object literal property names  See [rule details](https://eslint.style/rules/default/quote-props).
-* [org.openrewrite.codemods.format.Quotes](/recipes/codemods/format/quotes.md)
+* [org.openrewrite.codemods.format.Quotes](/recipes/javascript/codemods/format/quotes.md)
   * **Enforce the consistent use of either backticks, double, or single quotes**
   * Enforce the consistent use of either backticks, double, or single quotes  See [rule details](https://eslint.style/rules/default/quotes).
-* [org.openrewrite.codemods.format.RecommendedESLintStyling](/recipes/codemods/format/recommendedeslintstyling.md)
+* [org.openrewrite.codemods.format.RecommendedESLintStyling](/recipes/javascript/codemods/format/recommendedeslintstyling.md)
   * **Recommended ESLint Styling**
   * Collection of stylistic ESLint rules that are recommended by the [ESLint Style.](https://eslint.style/).
-* [org.openrewrite.codemods.format.RestSpreadSpacing](/recipes/codemods/format/restspreadspacing.md)
+* [org.openrewrite.codemods.format.RestSpreadSpacing](/recipes/javascript/codemods/format/restspreadspacing.md)
   * **Enforce spacing between rest and spread operators and their expressions**
   * Enforce spacing between rest and spread operators and their expressions  See [rule details](https://eslint.style/rules/default/rest-spread-spacing).
-* [org.openrewrite.codemods.format.Semi](/recipes/codemods/format/semi.md)
+* [org.openrewrite.codemods.format.Semi](/recipes/javascript/codemods/format/semi.md)
   * **Require or disallow semicolons instead of ASI**
   * Require or disallow semicolons instead of ASI  See [rule details](https://eslint.style/rules/default/semi).
-* [org.openrewrite.codemods.format.SemiSpacing](/recipes/codemods/format/semispacing.md)
+* [org.openrewrite.codemods.format.SemiSpacing](/recipes/javascript/codemods/format/semispacing.md)
   * **Enforce consistent spacing before and after semicolons**
   * Enforce consistent spacing before and after semicolons  See [rule details](https://eslint.style/rules/default/semi-spacing).
-* [org.openrewrite.codemods.format.SemiStyle](/recipes/codemods/format/semistyle.md)
+* [org.openrewrite.codemods.format.SemiStyle](/recipes/javascript/codemods/format/semistyle.md)
   * **Enforce location of semicolons**
   * Enforce location of semicolons  See [rule details](https://eslint.style/rules/default/semi-style).
-* [org.openrewrite.codemods.format.SpaceBeforeBlocks](/recipes/codemods/format/spacebeforeblocks.md)
+* [org.openrewrite.codemods.format.SpaceBeforeBlocks](/recipes/javascript/codemods/format/spacebeforeblocks.md)
   * **Enforce consistent spacing before blocks**
   * Enforce consistent spacing before blocks  See [rule details](https://eslint.style/rules/default/space-before-blocks).
-* [org.openrewrite.codemods.format.SpaceBeforeFunctionParen](/recipes/codemods/format/spacebeforefunctionparen.md)
+* [org.openrewrite.codemods.format.SpaceBeforeFunctionParen](/recipes/javascript/codemods/format/spacebeforefunctionparen.md)
   * **Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis**
   * Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren).
-* [org.openrewrite.codemods.format.SpaceInParens](/recipes/codemods/format/spaceinparens.md)
+* [org.openrewrite.codemods.format.SpaceInParens](/recipes/javascript/codemods/format/spaceinparens.md)
   * **Enforce consistent spacing inside parentheses**
   * Enforce consistent spacing inside parentheses  See [rule details](https://eslint.style/rules/default/space-in-parens).
-* [org.openrewrite.codemods.format.SpaceInfixOps](/recipes/codemods/format/spaceinfixops.md)
+* [org.openrewrite.codemods.format.SpaceInfixOps](/recipes/javascript/codemods/format/spaceinfixops.md)
   * **Require spacing around infix operators**
   * Require spacing around infix operators  See [rule details](https://eslint.style/rules/default/space-infix-ops).
-* [org.openrewrite.codemods.format.SpaceUnaryOps](/recipes/codemods/format/spaceunaryops.md)
+* [org.openrewrite.codemods.format.SpaceUnaryOps](/recipes/javascript/codemods/format/spaceunaryops.md)
   * **Enforce consistent spacing before or after unary operators**
   * Enforce consistent spacing before or after unary operators  See [rule details](https://eslint.style/rules/default/space-unary-ops).
-* [org.openrewrite.codemods.format.SpacedComment](/recipes/codemods/format/spacedcomment.md)
+* [org.openrewrite.codemods.format.SpacedComment](/recipes/javascript/codemods/format/spacedcomment.md)
   * **Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment**
   * Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment).
-* [org.openrewrite.codemods.format.SwitchColonSpacing](/recipes/codemods/format/switchcolonspacing.md)
+* [org.openrewrite.codemods.format.SwitchColonSpacing](/recipes/javascript/codemods/format/switchcolonspacing.md)
   * **Enforce spacing around colons of switch statements**
   * Enforce spacing around colons of switch statements  See [rule details](https://eslint.style/rules/default/switch-colon-spacing).
-* [org.openrewrite.codemods.format.TemplateCurlySpacing](/recipes/codemods/format/templatecurlyspacing.md)
+* [org.openrewrite.codemods.format.TemplateCurlySpacing](/recipes/javascript/codemods/format/templatecurlyspacing.md)
   * **Require or disallow spacing around embedded expressions of template strings**
   * Require or disallow spacing around embedded expressions of template strings  See [rule details](https://eslint.style/rules/default/template-curly-spacing).
-* [org.openrewrite.codemods.format.TemplateTagSpacing](/recipes/codemods/format/templatetagspacing.md)
+* [org.openrewrite.codemods.format.TemplateTagSpacing](/recipes/javascript/codemods/format/templatetagspacing.md)
   * **Require or disallow spacing between template tags and their literals**
   * Require or disallow spacing between template tags and their literals  See [rule details](https://eslint.style/rules/default/template-tag-spacing).
-* [org.openrewrite.codemods.format.TypeAnnotationSpacing](/recipes/codemods/format/typeannotationspacing.md)
+* [org.openrewrite.codemods.format.TypeAnnotationSpacing](/recipes/javascript/codemods/format/typeannotationspacing.md)
   * **Require consistent spacing around type annotations**
   * Require consistent spacing around type annotations  See [rule details](https://eslint.style/rules/default/type-annotation-spacing).
-* [org.openrewrite.codemods.format.TypeGenericSpacing](/recipes/codemods/format/typegenericspacing.md)
+* [org.openrewrite.codemods.format.TypeGenericSpacing](/recipes/javascript/codemods/format/typegenericspacing.md)
   * **Enforces consistent spacing inside TypeScript type generics**
   * Enforces consistent spacing inside TypeScript type generics  See [rule details](https://eslint.style/rules/default/type-generic-spacing).
-* [org.openrewrite.codemods.format.TypeNamedTupleSpacing](/recipes/codemods/format/typenamedtuplespacing.md)
+* [org.openrewrite.codemods.format.TypeNamedTupleSpacing](/recipes/javascript/codemods/format/typenamedtuplespacing.md)
   * **Expect space before the type declaration in the named tuple**
   * Expect space before the type declaration in the named tuple  See [rule details](https://eslint.style/rules/default/type-named-tuple-spacing).
-* [org.openrewrite.codemods.format.WrapIife](/recipes/codemods/format/wrapiife.md)
+* [org.openrewrite.codemods.format.WrapIife](/recipes/javascript/codemods/format/wrapiife.md)
   * **Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations**
   * Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife).
-* [org.openrewrite.codemods.format.WrapRegex](/recipes/codemods/format/wrapregex.md)
+* [org.openrewrite.codemods.format.WrapRegex](/recipes/javascript/codemods/format/wrapregex.md)
   * **Require parenthesis around regex literals**
   * Require parenthesis around regex literals  See [rule details](https://eslint.style/rules/default/wrap-regex).
-* [org.openrewrite.codemods.format.YieldStarSpacing](/recipes/codemods/format/yieldstarspacing.md)
+* [org.openrewrite.codemods.format.YieldStarSpacing](/recipes/javascript/codemods/format/yieldstarspacing.md)
   * **Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions**
   * Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing).
-* [org.openrewrite.codemods.migrate.angular.v15](/recipes/codemods/migrate/angular/v15.md)
+* [org.openrewrite.codemods.migrate.angular.v15](/recipes/javascript/codemods/migrate/angular/v15.md)
   * **Update to Angular v15**
   * Upgrade to Angular v15 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v16](/recipes/codemods/migrate/angular/v16.md)
+* [org.openrewrite.codemods.migrate.angular.v16](/recipes/javascript/codemods/migrate/angular/v16.md)
   * **Update to Angular v16**
   * Upgrade to Angular v16 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v17](/recipes/codemods/migrate/angular/v17.md)
+* [org.openrewrite.codemods.migrate.angular.v17](/recipes/javascript/codemods/migrate/angular/v17.md)
   * **Update to Angular v17**
   * Upgrade to Angular v17 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v18](/recipes/codemods/migrate/angular/v18.md)
+* [org.openrewrite.codemods.migrate.angular.v18](/recipes/javascript/codemods/migrate/angular/v18.md)
   * **Update to Angular v18**
   * Upgrade to Angular v18 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v19](/recipes/codemods/migrate/angular/v19.md)
+* [org.openrewrite.codemods.migrate.angular.v19](/recipes/javascript/codemods/migrate/angular/v19.md)
   * **Update to Angular v19**
   * Upgrade to Angular v19 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreArray](/recipes/codemods/migrate/lodash/lodashunderscorearray.md)
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreArray](/recipes/javascript/codemods/migrate/lodash/lodashunderscorearray.md)
   * **Replace lodash and underscore array functions with native JavaScript**
   * - `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`.
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreFunction](/recipes/codemods/migrate/lodash/lodashunderscorefunction.md)
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreFunction](/recipes/javascript/codemods/migrate/lodash/lodashunderscorefunction.md)
   * **Replace lodash and underscore function functions with native JavaScript**
   * - `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`.
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreObjects](/recipes/codemods/migrate/lodash/lodashunderscoreobjects.md)
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreObjects](/recipes/javascript/codemods/migrate/lodash/lodashunderscoreobjects.md)
   * **Replace lodash and underscore object functions with native JavaScript**
   * - `_.clone(x)` -&gt; `{ ...x }` - `_.extend({}, x, y)` -&gt; `{ ...x, ...y }` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`.
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreUtil](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md)
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreUtil](/recipes/javascript/codemods/migrate/lodash/lodashunderscoreutil.md)
   * **Replace lodash and underscore utility functions with native JavaScript**
   * - `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`.
-* [org.openrewrite.codemods.migrate.mui.AdapterV](/recipes/codemods/migrate/mui/adapterv.md)
+* [org.openrewrite.codemods.migrate.mui.AdapterV](/recipes/javascript/codemods/migrate/mui/adapterv.md)
   * **Converts components to use the v4 adapter module**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#adapter-v4).
-* [org.openrewrite.codemods.migrate.mui.All](/recipes/codemods/migrate/mui/all.md)
+* [org.openrewrite.codemods.migrate.mui.All](/recipes/javascript/codemods/migrate/mui/all.md)
   * **Combination of all deprecations**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#all).
-* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameCloseicon](/recipes/codemods/migrate/mui/autocompleterenamecloseicon.md)
+* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameCloseicon](/recipes/javascript/codemods/migrate/mui/autocompleterenamecloseicon.md)
   * **Renames `closeIcon` prop to `closeButtonIcon`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#autocomplete-rename-closeicon).
-* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameOption](/recipes/codemods/migrate/mui/autocompleterenameoption.md)
+* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameOption](/recipes/javascript/codemods/migrate/mui/autocompleterenameoption.md)
   * **Renames `option` prop to `getOptionLabel`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#autocomplete-rename-option).
-* [org.openrewrite.codemods.migrate.mui.AvatarCircleCircular](/recipes/codemods/migrate/mui/avatarcirclecircular.md)
+* [org.openrewrite.codemods.migrate.mui.AvatarCircleCircular](/recipes/javascript/codemods/migrate/mui/avatarcirclecircular.md)
   * **Updates `circle` prop to `variant=&quot;circular&quot;`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#avatar-circle-circular).
-* [org.openrewrite.codemods.migrate.mui.BadgeOverlapValue](/recipes/codemods/migrate/mui/badgeoverlapvalue.md)
+* [org.openrewrite.codemods.migrate.mui.BadgeOverlapValue](/recipes/javascript/codemods/migrate/mui/badgeoverlapvalue.md)
   * **Updates `overlap` prop to `variant=&quot;dot&quot;`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#badge-overlap-value).
-* [org.openrewrite.codemods.migrate.mui.BaseHookImports](/recipes/codemods/migrate/mui/basehookimports.md)
+* [org.openrewrite.codemods.migrate.mui.BaseHookImports](/recipes/javascript/codemods/migrate/mui/basehookimports.md)
   * **Converts base imports to use React hooks**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-hook-imports).
-* [org.openrewrite.codemods.migrate.mui.BaseRemoveComponentProp](/recipes/codemods/migrate/mui/baseremovecomponentprop.md)
+* [org.openrewrite.codemods.migrate.mui.BaseRemoveComponentProp](/recipes/javascript/codemods/migrate/mui/baseremovecomponentprop.md)
   * **Removes `component` prop from base components**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-remove-component-prop).
-* [org.openrewrite.codemods.migrate.mui.BaseRemoveUnstyledSuffix](/recipes/codemods/migrate/mui/baseremoveunstyledsuffix.md)
+* [org.openrewrite.codemods.migrate.mui.BaseRemoveUnstyledSuffix](/recipes/javascript/codemods/migrate/mui/baseremoveunstyledsuffix.md)
   * **Removes `Unstyled` suffix from base components**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-remove-unstyled-suffix).
-* [org.openrewrite.codemods.migrate.mui.BaseRenameComponentsToSlots](/recipes/codemods/migrate/mui/baserenamecomponentstoslots.md)
+* [org.openrewrite.codemods.migrate.mui.BaseRenameComponentsToSlots](/recipes/javascript/codemods/migrate/mui/baserenamecomponentstoslots.md)
   * **Renames base components to slots**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-rename-components-to-slots).
-* [org.openrewrite.codemods.migrate.mui.BaseUseNamedExports](/recipes/codemods/migrate/mui/baseusenamedexports.md)
+* [org.openrewrite.codemods.migrate.mui.BaseUseNamedExports](/recipes/javascript/codemods/migrate/mui/baseusenamedexports.md)
   * **Updates base imports to use named exports**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-use-named-exports).
-* [org.openrewrite.codemods.migrate.mui.BoxBorderradiusValues](/recipes/codemods/migrate/mui/boxborderradiusvalues.md)
+* [org.openrewrite.codemods.migrate.mui.BoxBorderradiusValues](/recipes/javascript/codemods/migrate/mui/boxborderradiusvalues.md)
   * **Updates `borderRadius` prop values**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-borderradius-values).
-* [org.openrewrite.codemods.migrate.mui.BoxRenameCss](/recipes/codemods/migrate/mui/boxrenamecss.md)
+* [org.openrewrite.codemods.migrate.mui.BoxRenameCss](/recipes/javascript/codemods/migrate/mui/boxrenamecss.md)
   * **Renames CSS properties for Box component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-rename-css).
-* [org.openrewrite.codemods.migrate.mui.BoxRenameGap](/recipes/codemods/migrate/mui/boxrenamegap.md)
+* [org.openrewrite.codemods.migrate.mui.BoxRenameGap](/recipes/javascript/codemods/migrate/mui/boxrenamegap.md)
   * **Renames `gap` prop to `spacing`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-rename-gap).
-* [org.openrewrite.codemods.migrate.mui.BoxSxProp](/recipes/codemods/migrate/mui/boxsxprop.md)
+* [org.openrewrite.codemods.migrate.mui.BoxSxProp](/recipes/javascript/codemods/migrate/mui/boxsxprop.md)
   * **Converts `sx` prop to `sx` style prop**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-sx-prop).
-* [org.openrewrite.codemods.migrate.mui.ButtonColorProp](/recipes/codemods/migrate/mui/buttoncolorprop.md)
+* [org.openrewrite.codemods.migrate.mui.ButtonColorProp](/recipes/javascript/codemods/migrate/mui/buttoncolorprop.md)
   * **Renames `color` prop to `colorOverride`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#button-color-prop).
-* [org.openrewrite.codemods.migrate.mui.ChipVariantProp](/recipes/codemods/migrate/mui/chipvariantprop.md)
+* [org.openrewrite.codemods.migrate.mui.ChipVariantProp](/recipes/javascript/codemods/migrate/mui/chipvariantprop.md)
   * **Updates `variant` prop for Chip component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#chip-variant-prop).
-* [org.openrewrite.codemods.migrate.mui.CircularprogressVariant](/recipes/codemods/migrate/mui/circularprogressvariant.md)
+* [org.openrewrite.codemods.migrate.mui.CircularprogressVariant](/recipes/javascript/codemods/migrate/mui/circularprogressvariant.md)
   * **Updates `variant` prop for CircularProgress component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#circularprogress-variant).
-* [org.openrewrite.codemods.migrate.mui.CollapseRenameCollapsedheight](/recipes/codemods/migrate/mui/collapserenamecollapsedheight.md)
+* [org.openrewrite.codemods.migrate.mui.CollapseRenameCollapsedheight](/recipes/javascript/codemods/migrate/mui/collapserenamecollapsedheight.md)
   * **Renames `collapsedHeight` prop to `transitionCollapsedHeight`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#collapse-rename-collapsedheight).
-* [org.openrewrite.codemods.migrate.mui.ComponentRenameProp](/recipes/codemods/migrate/mui/componentrenameprop.md)
+* [org.openrewrite.codemods.migrate.mui.ComponentRenameProp](/recipes/javascript/codemods/migrate/mui/componentrenameprop.md)
   * **Renames `component` prop to `as`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#component-rename-prop).
-* [org.openrewrite.codemods.migrate.mui.CoreStylesImport](/recipes/codemods/migrate/mui/corestylesimport.md)
+* [org.openrewrite.codemods.migrate.mui.CoreStylesImport](/recipes/javascript/codemods/migrate/mui/corestylesimport.md)
   * **Updates import paths for core styles**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#core-styles-import).
-* [org.openrewrite.codemods.migrate.mui.CreateTheme](/recipes/codemods/migrate/mui/createtheme.md)
+* [org.openrewrite.codemods.migrate.mui.CreateTheme](/recipes/javascript/codemods/migrate/mui/createtheme.md)
   * **Updates createMuiTheme usage**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#create-theme).
-* [org.openrewrite.codemods.migrate.mui.DatePickersMovedToX](/recipes/codemods/migrate/mui/datepickersmovedtox.md)
+* [org.openrewrite.codemods.migrate.mui.DatePickersMovedToX](/recipes/javascript/codemods/migrate/mui/datepickersmovedtox.md)
   * **Moves date pickers to `@mui/x-date-picker`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#date-pickers-moved-to-x).
-* [org.openrewrite.codemods.migrate.mui.DialogProps](/recipes/codemods/migrate/mui/dialogprops.md)
+* [org.openrewrite.codemods.migrate.mui.DialogProps](/recipes/javascript/codemods/migrate/mui/dialogprops.md)
   * **Updates props for Dialog component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#dialog-props).
-* [org.openrewrite.codemods.migrate.mui.DialogTitleProps](/recipes/codemods/migrate/mui/dialogtitleprops.md)
+* [org.openrewrite.codemods.migrate.mui.DialogTitleProps](/recipes/javascript/codemods/migrate/mui/dialogtitleprops.md)
   * **Updates props for DialogTitle component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#dialog-title-props).
-* [org.openrewrite.codemods.migrate.mui.EmotionPrependCache](/recipes/codemods/migrate/mui/emotionprependcache.md)
+* [org.openrewrite.codemods.migrate.mui.EmotionPrependCache](/recipes/javascript/codemods/migrate/mui/emotionprependcache.md)
   * **Prepends emotion cache**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#emotion-prepend-cache).
-* [org.openrewrite.codemods.migrate.mui.ExpansionPanelComponent](/recipes/codemods/migrate/mui/expansionpanelcomponent.md)
+* [org.openrewrite.codemods.migrate.mui.ExpansionPanelComponent](/recipes/javascript/codemods/migrate/mui/expansionpanelcomponent.md)
   * **Converts ExpansionPanel to use ExpansionPanel component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#expansion-panel-component).
-* [org.openrewrite.codemods.migrate.mui.FabVariant](/recipes/codemods/migrate/mui/fabvariant.md)
+* [org.openrewrite.codemods.migrate.mui.FabVariant](/recipes/javascript/codemods/migrate/mui/fabvariant.md)
   * **Updates `variant` prop for Fab component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#fab-variant).
-* [org.openrewrite.codemods.migrate.mui.FadeRenameAlpha](/recipes/codemods/migrate/mui/faderenamealpha.md)
+* [org.openrewrite.codemods.migrate.mui.FadeRenameAlpha](/recipes/javascript/codemods/migrate/mui/faderenamealpha.md)
   * **Renames `alpha` prop to `opacity`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#fade-rename-alpha).
-* [org.openrewrite.codemods.migrate.mui.GridJustifyJustifycontent](/recipes/codemods/migrate/mui/gridjustifyjustifycontent.md)
+* [org.openrewrite.codemods.migrate.mui.GridJustifyJustifycontent](/recipes/javascript/codemods/migrate/mui/gridjustifyjustifycontent.md)
   * **Updates `justify` prop to `justifyContent` for Grid component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-justify-justifycontent).
-* [org.openrewrite.codemods.migrate.mui.GridListComponent](/recipes/codemods/migrate/mui/gridlistcomponent.md)
+* [org.openrewrite.codemods.migrate.mui.GridListComponent](/recipes/javascript/codemods/migrate/mui/gridlistcomponent.md)
   * **Converts GridList to use Grid component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-list-component).
-* [org.openrewrite.codemods.migrate.mui.GridVProps](/recipes/codemods/migrate/mui/gridvprops.md)
+* [org.openrewrite.codemods.migrate.mui.GridVProps](/recipes/javascript/codemods/migrate/mui/gridvprops.md)
   * **Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-v2-props).
-* [org.openrewrite.codemods.migrate.mui.HiddenDownProps](/recipes/codemods/migrate/mui/hiddendownprops.md)
+* [org.openrewrite.codemods.migrate.mui.HiddenDownProps](/recipes/javascript/codemods/migrate/mui/hiddendownprops.md)
   * **Updates `down` prop for Hidden component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#hidden-down-props).
-* [org.openrewrite.codemods.migrate.mui.IconButtonSize](/recipes/codemods/migrate/mui/iconbuttonsize.md)
+* [org.openrewrite.codemods.migrate.mui.IconButtonSize](/recipes/javascript/codemods/migrate/mui/iconbuttonsize.md)
   * **Updates `size` prop for IconButton component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#icon-button-size).
-* [org.openrewrite.codemods.migrate.mui.JoyAvatarRemoveImgprops](/recipes/codemods/migrate/mui/joyavatarremoveimgprops.md)
+* [org.openrewrite.codemods.migrate.mui.JoyAvatarRemoveImgprops](/recipes/javascript/codemods/migrate/mui/joyavatarremoveimgprops.md)
   * **Removes `imgProps` prop from Avatar component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-avatar-remove-imgProps).
-* [org.openrewrite.codemods.migrate.mui.JoyRenameClassnamePrefix](/recipes/codemods/migrate/mui/joyrenameclassnameprefix.md)
+* [org.openrewrite.codemods.migrate.mui.JoyRenameClassnamePrefix](/recipes/javascript/codemods/migrate/mui/joyrenameclassnameprefix.md)
   * **Renames `Mui` classname prefix**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-classname-prefix).
-* [org.openrewrite.codemods.migrate.mui.JoyRenameComponentsToSlots](/recipes/codemods/migrate/mui/joyrenamecomponentstoslots.md)
+* [org.openrewrite.codemods.migrate.mui.JoyRenameComponentsToSlots](/recipes/javascript/codemods/migrate/mui/joyrenamecomponentstoslots.md)
   * **Renames components to slots**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-components-to-slots).
-* [org.openrewrite.codemods.migrate.mui.JoyRenameRowProp](/recipes/codemods/migrate/mui/joyrenamerowprop.md)
+* [org.openrewrite.codemods.migrate.mui.JoyRenameRowProp](/recipes/javascript/codemods/migrate/mui/joyrenamerowprop.md)
   * **Renames `row` prop to `flexDirection=&quot;row&quot;`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-row-prop).
-* [org.openrewrite.codemods.migrate.mui.JoyTextFieldToInput](/recipes/codemods/migrate/mui/joytextfieldtoinput.md)
+* [org.openrewrite.codemods.migrate.mui.JoyTextFieldToInput](/recipes/javascript/codemods/migrate/mui/joytextfieldtoinput.md)
   * **Renames `TextField` to `Input`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-text-field-to-input).
-* [org.openrewrite.codemods.migrate.mui.JssToStyled](/recipes/codemods/migrate/mui/jsstostyled.md)
+* [org.openrewrite.codemods.migrate.mui.JssToStyled](/recipes/javascript/codemods/migrate/mui/jsstostyled.md)
   * **Converts JSS styles to styled-components**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#jss-to-styled).
-* [org.openrewrite.codemods.migrate.mui.JssToTssReact](/recipes/codemods/migrate/mui/jsstotssreact.md)
+* [org.openrewrite.codemods.migrate.mui.JssToTssReact](/recipes/javascript/codemods/migrate/mui/jsstotssreact.md)
   * **Converts JSS to TypeScript in React components**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#jss-to-tss-react).
-* [org.openrewrite.codemods.migrate.mui.LinkUnderlineHover](/recipes/codemods/migrate/mui/linkunderlinehover.md)
+* [org.openrewrite.codemods.migrate.mui.LinkUnderlineHover](/recipes/javascript/codemods/migrate/mui/linkunderlinehover.md)
   * **Updates link underline on hover**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#link-underline-hover).
-* [org.openrewrite.codemods.migrate.mui.MaterialUiStyles](/recipes/codemods/migrate/mui/materialuistyles.md)
+* [org.openrewrite.codemods.migrate.mui.MaterialUiStyles](/recipes/javascript/codemods/migrate/mui/materialuistyles.md)
   * **Updates usage of `@mui/styles`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#material-ui-styles).
-* [org.openrewrite.codemods.migrate.mui.MaterialUiTypes](/recipes/codemods/migrate/mui/materialuitypes.md)
+* [org.openrewrite.codemods.migrate.mui.MaterialUiTypes](/recipes/javascript/codemods/migrate/mui/materialuitypes.md)
   * **Updates usage of `@mui/types`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#material-ui-types).
-* [org.openrewrite.codemods.migrate.mui.ModalProps](/recipes/codemods/migrate/mui/modalprops.md)
+* [org.openrewrite.codemods.migrate.mui.ModalProps](/recipes/javascript/codemods/migrate/mui/modalprops.md)
   * **Updates props for Modal component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#modal-props).
-* [org.openrewrite.codemods.migrate.mui.MovedLabModules](/recipes/codemods/migrate/mui/movedlabmodules.md)
+* [org.openrewrite.codemods.migrate.mui.MovedLabModules](/recipes/javascript/codemods/migrate/mui/movedlabmodules.md)
   * **Moves lab modules to `@mui/material`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#moved-lab-modules).
-* [org.openrewrite.codemods.migrate.mui.MuiReplace](/recipes/codemods/migrate/mui/muireplace.md)
+* [org.openrewrite.codemods.migrate.mui.MuiReplace](/recipes/javascript/codemods/migrate/mui/muireplace.md)
   * **Replaces `@mui` imports with `@mui/material`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#mui-replace).
-* [org.openrewrite.codemods.migrate.mui.OptimalImports](/recipes/codemods/migrate/mui/optimalimports.md)
+* [org.openrewrite.codemods.migrate.mui.OptimalImports](/recipes/javascript/codemods/migrate/mui/optimalimports.md)
   * **Optimizes imports**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#optimal-imports).
-* [org.openrewrite.codemods.migrate.mui.PaginationRoundCircular](/recipes/codemods/migrate/mui/paginationroundcircular.md)
+* [org.openrewrite.codemods.migrate.mui.PaginationRoundCircular](/recipes/javascript/codemods/migrate/mui/paginationroundcircular.md)
   * **Updates `circular` prop to `variant=&quot;circular&quot;`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#pagination-round-circular).
-* [org.openrewrite.codemods.migrate.mui.PresetSafe](/recipes/codemods/migrate/mui/presetsafe.md)
+* [org.openrewrite.codemods.migrate.mui.PresetSafe](/recipes/javascript/codemods/migrate/mui/presetsafe.md)
   * **Ensures presets are safe to use**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#preset-safe).
-* [org.openrewrite.codemods.migrate.mui.RenameCssVariables](/recipes/codemods/migrate/mui/renamecssvariables.md)
+* [org.openrewrite.codemods.migrate.mui.RenameCssVariables](/recipes/javascript/codemods/migrate/mui/renamecssvariables.md)
   * **Renames CSS variables**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#rename-css-variables).
-* [org.openrewrite.codemods.migrate.mui.RootRef](/recipes/codemods/migrate/mui/rootref.md)
+* [org.openrewrite.codemods.migrate.mui.RootRef](/recipes/javascript/codemods/migrate/mui/rootref.md)
   * **Converts `rootRef` to `ref`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#root-ref).
-* [org.openrewrite.codemods.migrate.mui.SkeletonVariant](/recipes/codemods/migrate/mui/skeletonvariant.md)
+* [org.openrewrite.codemods.migrate.mui.SkeletonVariant](/recipes/javascript/codemods/migrate/mui/skeletonvariant.md)
   * **Updates `variant` prop for Skeleton component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#skeleton-variant).
-* [org.openrewrite.codemods.migrate.mui.Styled](/recipes/codemods/migrate/mui/styled.md)
+* [org.openrewrite.codemods.migrate.mui.Styled](/recipes/javascript/codemods/migrate/mui/styled.md)
   * **Updates the usage of `styled` from `@mui/system@v5` to be compatible with` @pigment-css/react`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#styled).
-* [org.openrewrite.codemods.migrate.mui.StyledEngineProvider](/recipes/codemods/migrate/mui/styledengineprovider.md)
+* [org.openrewrite.codemods.migrate.mui.StyledEngineProvider](/recipes/javascript/codemods/migrate/mui/styledengineprovider.md)
   * **Updates usage of styled engine provider**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#styled-engine-provider).
-* [org.openrewrite.codemods.migrate.mui.SxProp](/recipes/codemods/migrate/mui/sxprop.md)
+* [org.openrewrite.codemods.migrate.mui.SxProp](/recipes/javascript/codemods/migrate/mui/sxprop.md)
   * **Update the usage of the `sx` prop to be compatible with `@pigment-css/react`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#sx-prop).
-* [org.openrewrite.codemods.migrate.mui.SystemProps](/recipes/codemods/migrate/mui/systemprops.md)
+* [org.openrewrite.codemods.migrate.mui.SystemProps](/recipes/javascript/codemods/migrate/mui/systemprops.md)
   * **Remove system props and add them to the `sx` prop**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#system-props).
-* [org.openrewrite.codemods.migrate.mui.TableProps](/recipes/codemods/migrate/mui/tableprops.md)
+* [org.openrewrite.codemods.migrate.mui.TableProps](/recipes/javascript/codemods/migrate/mui/tableprops.md)
   * **Updates props for Table component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#table-props).
-* [org.openrewrite.codemods.migrate.mui.TabsScrollButtons](/recipes/codemods/migrate/mui/tabsscrollbuttons.md)
+* [org.openrewrite.codemods.migrate.mui.TabsScrollButtons](/recipes/javascript/codemods/migrate/mui/tabsscrollbuttons.md)
   * **Updates scroll buttons for Tabs component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#tabs-scroll-buttons).
-* [org.openrewrite.codemods.migrate.mui.TextareaMinmaxRows](/recipes/codemods/migrate/mui/textareaminmaxrows.md)
+* [org.openrewrite.codemods.migrate.mui.TextareaMinmaxRows](/recipes/javascript/codemods/migrate/mui/textareaminmaxrows.md)
   * **Updates `minRows` and `maxRows` props for TextareaAutosize component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#textarea-minmax-rows).
-* [org.openrewrite.codemods.migrate.mui.ThemeAugment](/recipes/codemods/migrate/mui/themeaugment.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeAugment](/recipes/javascript/codemods/migrate/mui/themeaugment.md)
   * **Adds `DefaultTheme` module augmentation to typescript projects**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-augment).
-* [org.openrewrite.codemods.migrate.mui.ThemeBreakpoints](/recipes/codemods/migrate/mui/themebreakpoints.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeBreakpoints](/recipes/javascript/codemods/migrate/mui/themebreakpoints.md)
   * **Updates theme breakpoints**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-breakpoints).
-* [org.openrewrite.codemods.migrate.mui.ThemeBreakpointsWidth](/recipes/codemods/migrate/mui/themebreakpointswidth.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeBreakpointsWidth](/recipes/javascript/codemods/migrate/mui/themebreakpointswidth.md)
   * **Updates `width` values for theme breakpoints**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-breakpoints-width).
-* [org.openrewrite.codemods.migrate.mui.ThemeOptions](/recipes/codemods/migrate/mui/themeoptions.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeOptions](/recipes/javascript/codemods/migrate/mui/themeoptions.md)
   * **Updates theme options**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-options).
-* [org.openrewrite.codemods.migrate.mui.ThemePaletteMode](/recipes/codemods/migrate/mui/themepalettemode.md)
+* [org.openrewrite.codemods.migrate.mui.ThemePaletteMode](/recipes/javascript/codemods/migrate/mui/themepalettemode.md)
   * **Updates theme palette mode**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-palette-mode).
-* [org.openrewrite.codemods.migrate.mui.ThemeProvider](/recipes/codemods/migrate/mui/themeprovider.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeProvider](/recipes/javascript/codemods/migrate/mui/themeprovider.md)
   * **Updates usage of ThemeProvider**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-provider).
-* [org.openrewrite.codemods.migrate.mui.ThemeSpacing](/recipes/codemods/migrate/mui/themespacing.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeSpacing](/recipes/javascript/codemods/migrate/mui/themespacing.md)
   * **Updates theme spacing**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-spacing).
-* [org.openrewrite.codemods.migrate.mui.ThemeSpacingApi](/recipes/codemods/migrate/mui/themespacingapi.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeSpacingApi](/recipes/javascript/codemods/migrate/mui/themespacingapi.md)
   * **Updates theme spacing API**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-spacing-api).
-* [org.openrewrite.codemods.migrate.mui.ThemeTypographyRound](/recipes/codemods/migrate/mui/themetypographyround.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeTypographyRound](/recipes/javascript/codemods/migrate/mui/themetypographyround.md)
   * **Updates `round` values for theme typography**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-typography-round).
-* [org.openrewrite.codemods.migrate.mui.ThemeV](/recipes/codemods/migrate/mui/themev.md)
+* [org.openrewrite.codemods.migrate.mui.ThemeV](/recipes/javascript/codemods/migrate/mui/themev.md)
   * **Update the theme creation from `@mui/system@v5` to be compatible with `@pigment-css/react`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-v6).
-* [org.openrewrite.codemods.migrate.mui.TopLevelImports](/recipes/codemods/migrate/mui/toplevelimports.md)
+* [org.openrewrite.codemods.migrate.mui.TopLevelImports](/recipes/javascript/codemods/migrate/mui/toplevelimports.md)
   * **Converts all `@mui/material` submodule imports to the root module**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#top-level-imports).
-* [org.openrewrite.codemods.migrate.mui.Transitions](/recipes/codemods/migrate/mui/transitions.md)
+* [org.openrewrite.codemods.migrate.mui.Transitions](/recipes/javascript/codemods/migrate/mui/transitions.md)
   * **Updates usage of transitions**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#transitions).
-* [org.openrewrite.codemods.migrate.mui.TreeViewMovedToX](/recipes/codemods/migrate/mui/treeviewmovedtox.md)
+* [org.openrewrite.codemods.migrate.mui.TreeViewMovedToX](/recipes/javascript/codemods/migrate/mui/treeviewmovedtox.md)
   * **Moves tree view to `@mui/x-tree-view`**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#tree-view-moved-to-x).
-* [org.openrewrite.codemods.migrate.mui.UseAutocomplete](/recipes/codemods/migrate/mui/useautocomplete.md)
+* [org.openrewrite.codemods.migrate.mui.UseAutocomplete](/recipes/javascript/codemods/migrate/mui/useautocomplete.md)
   * **Updates usage of useAutocomplete**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#use-autocomplete).
-* [org.openrewrite.codemods.migrate.mui.UseTransitionprops](/recipes/codemods/migrate/mui/usetransitionprops.md)
+* [org.openrewrite.codemods.migrate.mui.UseTransitionprops](/recipes/javascript/codemods/migrate/mui/usetransitionprops.md)
   * **Updates usage of useTransitionProps**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#use-transitionprops).
-* [org.openrewrite.codemods.migrate.mui.VariantProp](/recipes/codemods/migrate/mui/variantprop.md)
+* [org.openrewrite.codemods.migrate.mui.VariantProp](/recipes/javascript/codemods/migrate/mui/variantprop.md)
   * **Updates `variant` prop usage**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#variant-prop).
-* [org.openrewrite.codemods.migrate.mui.WithMobileDialog](/recipes/codemods/migrate/mui/withmobiledialog.md)
+* [org.openrewrite.codemods.migrate.mui.WithMobileDialog](/recipes/javascript/codemods/migrate/mui/withmobiledialog.md)
   * **Updates withMobileDialog higher-order component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#with-mobile-dialog).
-* [org.openrewrite.codemods.migrate.mui.WithWidth](/recipes/codemods/migrate/mui/withwidth.md)
+* [org.openrewrite.codemods.migrate.mui.WithWidth](/recipes/javascript/codemods/migrate/mui/withwidth.md)
   * **Updates withWidth higher-order component**
   * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#with-width).
-* [org.openrewrite.codemods.migrate.nextjs.NextJsCodemods](/recipes/codemods/migrate/nextjs/nextjscodemods.md)
+* [org.openrewrite.codemods.migrate.nextjs.NextJsCodemods](/recipes/javascript/codemods/migrate/nextjs/nextjscodemods.md)
   * **Next.js Codemods for API Updates**
   * Next.js provides Codemod transformations to help upgrade your [Next.js](https://nextjs.org/) codebase when an API is updated or deprecated.
-* [org.openrewrite.codemods.migrate.nextjs.v10.AddMissingReactImport](/recipes/codemods/migrate/nextjs/v10/addmissingreactimport.md)
+* [org.openrewrite.codemods.migrate.nextjs.v10.AddMissingReactImport](/recipes/javascript/codemods/migrate/nextjs/v10/addmissingreactimport.md)
   * **Add React imports**
   * Transforms files that do not import `React` to include the import in order for the new React JSX transform to work.
-* [org.openrewrite.codemods.migrate.nextjs.v11.CraToNext](/recipes/codemods/migrate/nextjs/v11/cratonext.md)
+* [org.openrewrite.codemods.migrate.nextjs.v11.CraToNext](/recipes/javascript/codemods/migrate/nextjs/v11/cratonext.md)
   * **Rename Next Image Imports**
   * Safely renames `next/image` imports in existing Next.js `10` `11` or `12` applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`.
-* [org.openrewrite.codemods.migrate.nextjs.v13_0.NewLink](/recipes/codemods/migrate/nextjs/v13_0/newlink.md)
+* [org.openrewrite.codemods.migrate.nextjs.v13_0.NewLink](/recipes/javascript/codemods/migrate/nextjs/v13_0/newlink.md)
   * **Remove `&lt;a&gt;` Tags From Link Components**
   * Remove `&amp;lt;a&amp;gt;` tags inside Link Components or add a `legacyBehavior` prop to Links that cannot be auto-fixed.
-* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageExperimental](/recipes/codemods/migrate/nextjs/v13_0/nextimageexperimental.md)
+* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageExperimental](/recipes/javascript/codemods/migrate/nextjs/v13_0/nextimageexperimental.md)
   * **Migrate to the New Image Component**
   * Dangerously migrates from `next/legacy/image` to the new `next/image` by adding inline styles and removing unused props.
-* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageToLegacyImage](/recipes/codemods/migrate/nextjs/v13_0/nextimagetolegacyimage.md)
+* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageToLegacyImage](/recipes/javascript/codemods/migrate/nextjs/v13_0/nextimagetolegacyimage.md)
   * **Rename Next Image Imports**
   * Safely renames `next/image` imports in existing Next.js `10` `11` or `12` applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`.
-* [org.openrewrite.codemods.migrate.nextjs.v13_2.BuiltInNextFont](/recipes/codemods/migrate/nextjs/v13_2/builtinnextfont.md)
+* [org.openrewrite.codemods.migrate.nextjs.v13_2.BuiltInNextFont](/recipes/javascript/codemods/migrate/nextjs/v13_2/builtinnextfont.md)
   * **Use Built-in Font**
   * This codemod uninstalls the `@next/font` package and transforms `@next/font` imports into the built-in `next/font`.
-* [org.openrewrite.codemods.migrate.nextjs.v14_0.MetadataToViewportExport](/recipes/codemods/migrate/nextjs/v14_0/metadatatoviewportexport.md)
+* [org.openrewrite.codemods.migrate.nextjs.v14_0.MetadataToViewportExport](/recipes/javascript/codemods/migrate/nextjs/v14_0/metadatatoviewportexport.md)
   * **Use `viewport` export**
   * This codemod migrates certain viewport metadata to `viewport` export.
-* [org.openrewrite.codemods.migrate.nextjs.v14_0.NextOgImport](/recipes/codemods/migrate/nextjs/v14_0/nextogimport.md)
+* [org.openrewrite.codemods.migrate.nextjs.v14_0.NextOgImport](/recipes/javascript/codemods/migrate/nextjs/v14_0/nextogimport.md)
   * **Migrate `ImageResponse` imports**
   * This codemod moves transforms imports from `next/server` to `next/og` for usage of Dynamic OG Image Generation.
-* [org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter](/recipes/codemods/migrate/nextjs/v6/urltowithrouter.md)
+* [org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter](/recipes/javascript/codemods/migrate/nextjs/v6/urltowithrouter.md)
   * **Use `withRouter`**
   * Transforms the deprecated automatically injected url property on top-level pages to using `withRouter` and the `router` property it injects. Read more [here](https://nextjs.org/docs/messages/url-deprecated).
-* [org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig](/recipes/codemods/migrate/nextjs/v8/withamptoconfig.md)
+* [org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig](/recipes/javascript/codemods/migrate/nextjs/v8/withamptoconfig.md)
   * **Transform AMP HOC into page config**
   * Transforms the `withAmp` HOC into Next.js 9 page configuration.
-* [org.openrewrite.codemods.migrate.nextjs.v9.NameDefaultComponent](/recipes/codemods/migrate/nextjs/v9/namedefaultcomponent.md)
+* [org.openrewrite.codemods.migrate.nextjs.v9.NameDefaultComponent](/recipes/javascript/codemods/migrate/nextjs/v9/namedefaultcomponent.md)
   * **Transform Anonymous Components into Named Components**
   * Transforms anonymous components into named components to make sure they work with Fast Refresh. The component will have a camel-cased name based on the name of the file, and it also works with arrow functions.
 * [org.openrewrite.concourse.search.FindPrivilegedResourceType](/recipes/concourse/search/findprivilegedresourcetype.md)

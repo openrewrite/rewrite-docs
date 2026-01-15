@@ -17,7 +17,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [io.quarkus.updates.camel.camel49.CamelQuarkusMigrationRecipe](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel49/camelquarkusmigrationrecipe): Migrates `camel 4.8` quarkus application to `camel 4.9`.
 * [io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus319/configurationpropertieschange):
 * [io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus319/moveaccesstokenannotationtonewpackage):
-* [org.openrewrite.codemods.Biome](https://docs.openrewrite.org/recipes/codemods/biome): Run [Biome](https://biomejs.dev/) recommended settings on your projects.
+* [org.openrewrite.codemods.Biome](https://docs.openrewrite.org/recipes/javascript/codemods/biome): Run [Biome](https://biomejs.dev/) recommended settings on your projects.
 * [org.openrewrite.java.migrate.net.URLConstructorToURICreate](https://docs.openrewrite.org/recipes/java/migrate/net/urlconstructortouricreate): Converts `new URL(String)` constructor to `URI.create(String).toURL()`.
 * [org.openrewrite.java.migrate.net.URLConstructorsToNewURI](https://docs.openrewrite.org/recipes/java/migrate/net/urlconstructorstonewuri): Converts `new URL(String, ..)` constructors to `new URI(String, ..).toURL()`.
 * [software.amazon.awssdk.v2migration.AddTransferManagerDependency](https://docs.openrewrite.org/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency): This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer Manager is used

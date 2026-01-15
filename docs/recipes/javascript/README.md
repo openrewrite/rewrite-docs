@@ -7,6 +7,7 @@ description: Javascript OpenRewrite recipes.
 ## Categories
 
 * [Cleanup](/recipes/javascript/cleanup)
+* [Codemods](/recipes/javascript/codemods)
 * [Dependencies](/recipes/javascript/dependencies)
 * [Format](/recipes/javascript/format)
 * [Migrate](/recipes/javascript/migrate)

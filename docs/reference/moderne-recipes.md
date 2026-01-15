@@ -126,22 +126,22 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-codemods-ng
 
-* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](/recipes/codemods/migrate/angular/applyangularcli.md)
+* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](/recipes/javascript/codemods/migrate/angular/applyangularcli.md)
   * **Upgrade Angular versions**
   * Run `ng update` to upgrade Angular CLI and Angular Core to the specified version.
-* [org.openrewrite.codemods.migrate.angular.v15](/recipes/codemods/migrate/angular/v15.md)
+* [org.openrewrite.codemods.migrate.angular.v15](/recipes/javascript/codemods/migrate/angular/v15.md)
   * **Update to Angular v15**
   * Upgrade to Angular v15 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v16](/recipes/codemods/migrate/angular/v16.md)
+* [org.openrewrite.codemods.migrate.angular.v16](/recipes/javascript/codemods/migrate/angular/v16.md)
   * **Update to Angular v16**
   * Upgrade to Angular v16 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v17](/recipes/codemods/migrate/angular/v17.md)
+* [org.openrewrite.codemods.migrate.angular.v17](/recipes/javascript/codemods/migrate/angular/v17.md)
   * **Update to Angular v17**
   * Upgrade to Angular v17 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v18](/recipes/codemods/migrate/angular/v18.md)
+* [org.openrewrite.codemods.migrate.angular.v18](/recipes/javascript/codemods/migrate/angular/v18.md)
   * **Update to Angular v18**
   * Upgrade to Angular v18 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v19](/recipes/codemods/migrate/angular/v19.md)
+* [org.openrewrite.codemods.migrate.angular.v19](/recipes/javascript/codemods/migrate/angular/v19.md)
   * **Update to Angular v19**
   * Upgrade to Angular v19 through `ApplyAngularCLI`.
 
