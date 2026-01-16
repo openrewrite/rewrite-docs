@@ -18,6 +18,12 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `List` | ignoredDependencies | *Optional*. A list of `groupId:artifactId` glob patterns for dependencies that should never be removed, even if they appear unused. For example, `com.google.*:*` would ignore all Google dependencies, and `*:lombok` would ignore Lombok regardless of group ID. | `org.projectlombok:lombok,com.google.*:*` |
+
 ## Example
 
 
