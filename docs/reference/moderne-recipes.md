@@ -144,6 +144,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.codemods.migrate.angular.v19](/recipes/codemods/migrate/angular/v19.md)
   * **Update to Angular v19**
   * Upgrade to Angular v19 through `ApplyAngularCLI`.
+* [org.openrewrite.codemods.migrate.angular.v20](/recipes/codemods/migrate/angular/v20.md)
+  * **Update to Angular v20**
+  * Upgrade to Angular v20 through `ApplyAngularCLI`.
+* [org.openrewrite.codemods.migrate.angular.v21](/recipes/codemods/migrate/angular/v21.md)
+  * **Update to Angular v21**
+  * Upgrade to Angular v21 through `ApplyAngularCLI`.
 
 
 ## rewrite-compiled-analysis
@@ -379,10 +385,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-12T1103.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-19T1104.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](/recipes/java/dependencies/removeunuseddependencies.md)
   * **Remove unused dependencies**
-  * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
+  * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
 * [org.openrewrite.java.dependencies.SoftwareBillOfMaterials](/recipes/java/dependencies/softwarebillofmaterials.md)
   * **Software bill of materials**
   * Produces a software bill of materials (SBOM) for a project. An SBOM is a complete list of all dependencies used in a project, including transitive dependencies. The produced SBOM is in the [CycloneDX](https://cyclonedx.org/) XML format. Supports Gradle and Maven. Places a file named sbom.xml adjacent to the Gradle or Maven build file.
@@ -999,6 +1005,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-spring
 
+* [io.moderne.java.jsf.MigrateToJsf_2_3](/recipes/java/jsf/migratetojsf_2_3.md)
+  * **Migrate to JSF 2.3**
+  * Complete migration to JSF 2.3, including associated technologies like RichFaces. Updates dependencies, transforms XHTML views, and migrates Java APIs.
+* [io.moderne.java.jsf.richfaces.ConvertExtendedDataTableHeightToStyle](/recipes/java/jsf/richfaces/convertextendeddatatableheighttostyle.md)
+  * **Convert height/width attributes to `extendedDataTable` style**
+  * Converts height and width attributes to inline style attribute for RichFaces `extendedDataTable` components.
+* [io.moderne.java.jsf.richfaces.MigrateRichFaces_4_5](/recipes/java/jsf/richfaces/migraterichfaces_4_5.md)
+  * **Migrate RichFaces 3.x to 4.5**
+  * Complete RichFaces 3.x to 4.5 migration including tag renames, attribute migrations, and Java API updates.
+* [io.moderne.java.jsf.richfaces.update45.UpdateXHTMLTags](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
+  * **Migrate RichFaces tags in `xhtml` files**
+  * Migrate RichFaces tags in `xhtml` files to RichFaces 4.
 * [io.moderne.java.spring.boot.AddSpringBootApplication](/recipes/java/spring/boot/addspringbootapplication.md)
   * **Add `@SpringBootApplication` class**
   * Adds a `@SpringBootApplication` class containing a main method to bootify your Spring Framework application.
@@ -1197,12 +1215,21 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework.MigrateDefaultResponseErrorHandler](/recipes/java/spring/framework/migratedefaultresponseerrorhandler.md)
   * **Migrate `DefaultResponseErrorHandler.handleError` method signature**
   * Migrates overridden `handleError(ClientHttpResponse response)` methods to the new signature `handleError(URI url, HttpMethod method, ClientHttpResponse response)` in classes extending `DefaultResponseErrorHandler`. The old single-argument method was removed in Spring Framework 7.0.
+* [io.moderne.java.spring.framework.MigrateDeprecatedBeanXmlProperties](/recipes/java/spring/framework/migratedeprecatedbeanxmlproperties.md)
+  * **Migrate Bean XML properties deprecated in Spring Framework 3.0**
+  * Migrate Bean XML properties that were deprecated in Spring Framework 3.0.
 * [io.moderne.java.spring.framework.ModularSpringFrameworkDependencies](/recipes/java/spring/framework/modularspringframeworkdependencies.md)
   * **Add Spring Framework modular dependencies**
   * Adds Spring Framework modular dependencies based on package usage, replacing legacy monolithic `org.springframework:spring`.
 * [io.moderne.java.spring.framework.NullableSpringWebParameters](/recipes/java/spring/framework/nullablespringwebparameters.md)
   * **Add `@Nullable` to optional Spring web parameters**
   * In Spring Boot 4, JSpecify's `@Nullable` annotation should be used to indicate that a parameter can be null. This recipe adds `@Nullable` to parameters annotated with `@PathVariable(required = false)` or `@RequestParam(required = false)` and removes the now-redundant `required = false` attribute.
+* [io.moderne.java.spring.framework.UpgradeSpringFramework_3_0](/recipes/java/spring/framework/upgradespringframework_3_0.md)
+  * **Migrate to Spring Framework 3.x**
+  * Migrate applications to the latest Spring Framework 3 release, pulling in additional proprietary Moderne recipes.
+* [io.moderne.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3-moderne-edition.md)
+  * **Migrate to Spring Framework 5.3**
+  * Migrate applications to the latest Spring Framework 5.3 release, pulling in additional proprietary Moderne recipes.
 * [io.moderne.java.spring.framework.beansxml.BeansXmlToConfiguration](/recipes/java/spring/framework/beansxml/beansxmltoconfiguration.md)
   * **Migrate `beans.xml` to Spring Framework configuration class**
   * Converts Java/Jakarta EE `beans.xml` configuration files to Spring Framework `@Configuration` classes.
@@ -1224,6 +1251,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-moderne-edition.md)
   * **Migrate to Spring Security 6.5**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [io.moderne.java.spring.security7.MigrateOAuth2AccessTokenResponseClient](/recipes/java/spring/security7/migrateoauth2accesstokenresponseclient.md)
+  * **Migrate `OAuth2AccessTokenResponseClient` from `RestOperations` to `RestClient` based implementations**
+  * A new set of `OAuth2AccessTokenResponseClient` implementations were introduced based on `RestClient`. This recipe replaces the `RestOperations`-based implementations which have been deprecated. The `RestClient` implementations are drop-in replacements for the deprecated implementations.
 * [io.moderne.java.spring.security7.ModularizeSpringSecurity7](/recipes/java/spring/security7/modularizespringsecurity7.md)
   * **Spring Security 7 modularization**
   * Spring Security Core was modularized in version 7, deprecated classes that are still a crucial part of some applications are moved to `spring-security-access`.
@@ -1264,6 +1294,43 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.sql.search.FindFunction](/recipes/sql/search/findfunction.md)
   * **Find SQL function**
   * Find SQL functions by name.
+
+
+## rewrite-tapestry
+
+* [org.openrewrite.tapestry.ChangeTapestryPackages](/recipes/tapestry/changetapestrypackages.md)
+  * **Change Tapestry 4 packages to Tapestry 5**
+  * Updates package imports from org.apache.tapestry to org.apache.tapestry5. Only renames packages that have direct equivalents in Tapestry 5.
+* [org.openrewrite.tapestry.ChangeTapestryTypes](/recipes/tapestry/changetapestrytypes.md)
+  * **Change Tapestry 4 types to Tapestry 5 equivalents**
+  * Renames Tapestry 4 types that have direct equivalents in Tapestry 5. This handles types from different packages that were reorganized in T5.
+* [org.openrewrite.tapestry.ConvertAnnotatedMethodToField](/recipes/tapestry/convertannotatedmethodtofield.md)
+  * **Convert annotated abstract method to field**
+  * Converts abstract getter methods annotated with `sourceAnnotation` to private fields annotated with `targetAnnotation`.
+* [org.openrewrite.tapestry.ConvertBeanAnnotation](/recipes/tapestry/convertbeanannotation.md)
+  * **Convert Tapestry 4 `@Bean` to `@Property`**
+  * Converts Tapestry 4's `@Bean` annotation to `@Property` fields. Bean initialization with 'initializer' attribute requires manual migration.
+* [org.openrewrite.tapestry.ConvertListenerInterfaces](/recipes/tapestry/convertlistenerinterfaces.md)
+  * **Convert Tapestry 4 listener interfaces to Tapestry 5 annotations**
+  * Converts Tapestry 4 page lifecycle listener interfaces (`PageBeginRenderListener`, `PageEndRenderListener`, etc.) to Tapestry 5 lifecycle annotations (`@SetupRender`, `@CleanupRender`, etc.) and removes the interface implementations.
+* [org.openrewrite.tapestry.MigrateTapestry4To5](/recipes/tapestry/migratetapestry4to5.md)
+  * **Migrate Tapestry 4 to Tapestry 5**
+  * Migrates Apache Tapestry 4 applications to Tapestry 5. This includes package renames, removing base class inheritance, converting listener interfaces to annotations, and updating dependencies.
+* [org.openrewrite.tapestry.RemoveIRequestCycleParameter](/recipes/tapestry/removeirequestcycleparameter.md)
+  * **Remove `IRequestCycle` parameters**
+  * Removes `IRequestCycle` parameters from methods. In Tapestry 5, event handler methods don't receive the request cycle as a parameter.
+* [org.openrewrite.tapestry.RemoveObsoleteFormTypes](/recipes/tapestry/removeobsoleteformtypes.md)
+  * **Remove obsolete Tapestry form types**
+  * Removes field declarations and imports for Tapestry 4 form component types (`IPropertySelectionModel`, `StringPropertySelectionModel`, etc.) that don't exist in Tapestry 5. Code using these types will need manual refactoring to use Tapestry 5's `SelectModel` pattern.
+* [org.openrewrite.tapestry.RemoveTapestryBaseClasses](/recipes/tapestry/removetapestrybaseclasses.md)
+  * **Remove Tapestry 4 base classes**
+  * Removes Tapestry 4 base class inheritance (`BasePage`, `BaseComponent`, `AbstractComponent`) and converts the class to a POJO suitable for Tapestry 5. Abstract getter/setter methods are converted to fields with `@Property` annotation.
+* [org.openrewrite.tapestry.ReplaceReverseComparator](/recipes/tapestry/replacereversecomparator.md)
+  * **Replace `ReverseComparator` with `Collections.reverseOrder()`**
+  * Replaces tapestry-contrib's `ReverseComparator` with the standard Java `Collections.reverseOrder()` method.
+* [org.openrewrite.tapestry.UpdateTapestryDependencies](/recipes/tapestry/updatetapestrydependencies.md)
+  * **Update Tapestry dependencies**
+  * Updates dependencies from Tapestry 4 to Tapestry 5.
 
 
 ## rewrite-terraform

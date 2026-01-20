@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 5117
+Total recipes: 5184
 
 
 ## io.moderne.recipe:rewrite-angular
@@ -42,8 +42,11 @@ _4 recipes_
 
 _License: Moderne Source Available License_
 
-_6 recipes_
+_7 recipes_
 
+* [io.moderne.devcenter.BuildToolCard](/recipes/devcenter/buildtoolcard.md)
+  * **Build tool**
+  * Track build tool versions across repositories.
 * [io.moderne.devcenter.DependencyVulnerabilityCheck](/recipes/devcenter/dependencyvulnerabilitycheck.md)
   * **Vulnerabilities status**
   * Determine the current state of a repository relative to its vulnerabilities.
@@ -289,8 +292,11 @@ _2 recipes_
 
 _License: Moderne Proprietary License_
 
-_38 recipes_
+_39 recipes_
 
+* [io.moderne.java.jsf.richfaces.ConvertExtendedDataTableHeightToStyle](/recipes/java/jsf/richfaces/convertextendeddatatableheighttostyle.md)
+  * **Convert height/width attributes to `extendedDataTable` style**
+  * Converts height and width attributes to inline style attribute for RichFaces `extendedDataTable` components.
 * [io.moderne.java.spring.boot.AddSpringBootApplication](/recipes/java/spring/boot/addspringbootapplication.md)
   * **Add `@SpringBootApplication` class**
   * Adds a `@SpringBootApplication` class containing a main method to bootify your Spring Framework application.
@@ -405,6 +411,34 @@ _38 recipes_
 * [io.moderne.java.spring.security6.MigrateAntPathRequestMatcher](/recipes/java/spring/security6/migrateantpathrequestmatcher.md)
   * **Migrate antPathRequestMatcher to pathPatternRequestMatcher**
   * In Spring Security 6.5, `AntPathRequestMatcher` is deprecated in favor of `PathPatternRequestMatcher`. This recipe migrates static method calls and constructor usage to the new pattern.
+
+## io.moderne.recipe:rewrite-tapestry
+
+_License: Moderne Proprietary License_
+
+_7 recipes_
+
+* [org.openrewrite.tapestry.ConvertAnnotatedMethodToField](/recipes/tapestry/convertannotatedmethodtofield.md)
+  * **Convert annotated abstract method to field**
+  * Converts abstract getter methods annotated with `sourceAnnotation` to private fields annotated with `targetAnnotation`.
+* [org.openrewrite.tapestry.ConvertBeanAnnotation](/recipes/tapestry/convertbeanannotation.md)
+  * **Convert Tapestry 4 `@Bean` to `@Property`**
+  * Converts Tapestry 4's `@Bean` annotation to `@Property` fields. Bean initialization with 'initializer' attribute requires manual migration.
+* [org.openrewrite.tapestry.ConvertListenerInterfaces](/recipes/tapestry/convertlistenerinterfaces.md)
+  * **Convert Tapestry 4 listener interfaces to Tapestry 5 annotations**
+  * Converts Tapestry 4 page lifecycle listener interfaces (`PageBeginRenderListener`, `PageEndRenderListener`, etc.) to Tapestry 5 lifecycle annotations (`@SetupRender`, `@CleanupRender`, etc.) and removes the interface implementations.
+* [org.openrewrite.tapestry.RemoveIRequestCycleParameter](/recipes/tapestry/removeirequestcycleparameter.md)
+  * **Remove `IRequestCycle` parameters**
+  * Removes `IRequestCycle` parameters from methods. In Tapestry 5, event handler methods don't receive the request cycle as a parameter.
+* [org.openrewrite.tapestry.RemoveObsoleteFormTypes](/recipes/tapestry/removeobsoleteformtypes.md)
+  * **Remove obsolete Tapestry form types**
+  * Removes field declarations and imports for Tapestry 4 form component types (`IPropertySelectionModel`, `StringPropertySelectionModel`, etc.) that don't exist in Tapestry 5. Code using these types will need manual refactoring to use Tapestry 5's `SelectModel` pattern.
+* [org.openrewrite.tapestry.RemoveTapestryBaseClasses](/recipes/tapestry/removetapestrybaseclasses.md)
+  * **Remove Tapestry 4 base classes**
+  * Removes Tapestry 4 base class inheritance (`BasePage`, `BaseComponent`, `AbstractComponent`) and converts the class to a POJO suitable for Tapestry 5. Abstract getter/setter methods are converted to fields with `@Property` annotation.
+* [org.openrewrite.tapestry.ReplaceReverseComparator](/recipes/tapestry/replacereversecomparator.md)
+  * **Replace `ReverseComparator` with `Collections.reverseOrder()`**
+  * Replaces tapestry-contrib's `ReverseComparator` with the standard Java `Collections.reverseOrder()` method.
 
 ## io.moderne.recipe:rewrite-vulncheck
 
@@ -1306,10 +1340,10 @@ _32 recipes_
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-12T1103.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-19T1104.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](/recipes/java/dependencies/removeunuseddependencies.md)
   * **Remove unused dependencies**
-  * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
+  * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
 * [org.openrewrite.java.dependencies.SoftwareBillOfMaterials](/recipes/java/dependencies/softwarebillofmaterials.md)
   * **Software bill of materials**
   * Produces a software bill of materials (SBOM) for a project. An SBOM is a complete list of all dependencies used in a project, including transitive dependencies. The produced SBOM is in the [CycloneDX](https://cyclonedx.org/) XML format. Supports Gradle and Maven. Places a file named sbom.xml adjacent to the Gradle or Maven build file.
@@ -1919,7 +1953,7 @@ _19 recipes_
 
 _License: Moderne Source Available License_
 
-_167 recipes_
+_169 recipes_
 
 * [org.openrewrite.java.migrate.AddJDeprScanPlugin](/recipes/java/migrate/addjdeprscanplugin.md)
   * **Add `JDeprScan` Maven Plug-in**
@@ -2269,6 +2303,9 @@ _167 recipes_
 * [org.openrewrite.java.migrate.lang.var.UseVarForPrimitive](/recipes/java/migrate/lang/var/usevarforprimitive.md)
   * **Use `var` for primitive-typed variables**
   * Try to apply local variable type inference `var` to primitive variables where possible. This recipe will not touch variable declarations with initializers containing ternary operators.
+* [org.openrewrite.java.migrate.lang.var.UseVarForTypeCast](/recipes/java/migrate/lang/var/usevarfortypecast.md)
+  * **Use `var` for variables initialized with type casts**
+  * Apply local variable type inference `var` to variables that are initialized by a cast expression where the cast type matches the declared variable type. This removes the redundant type duplication. For example, `String s = (String) obj;` becomes `var s = (String) obj;`.
 * [org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean](/recipes/java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean.md)
   * **Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`**
   * Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)` instead of the deprecated `LogManager#getLoggingMXBean()` in Java 9 or higher.
@@ -2362,6 +2399,9 @@ _167 recipes_
 * [org.openrewrite.java.migrate.search.FindJavaVersion](/recipes/java/migrate/search/findjavaversion.md)
   * **Find Java versions in use**
   * Finds Java versions in use.
+* [org.openrewrite.java.migrate.search.FindLocaleDateTimeFormats](/recipes/java/migrate/search/findlocaledatetimeformats.md)
+  * **Find locale-sensitive date/time formatting**
+  * Finds usages of locale-based date/time formatting APIs that may be affected by JDK 20+ CLDR locale data changes, where the space before AM/PM was changed from a regular space to a narrow no-break space (NNBSP).
 * [org.openrewrite.java.migrate.search.PlanJavaMigration](/recipes/java/migrate/search/planjavamigration.md)
   * **Plan a Java version migration**
   * Study the set of Java versions and associated tools in use across many repositories.
@@ -2465,7 +2505,7 @@ _4 recipes_
 
 _License: Apache License Version 2.0_
 
-_7 recipes_
+_8 recipes_
 
 * [org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings](/recipes/openapi/swagger/convertapiresponsecodestostrings.md)
   * **Convert API response codes to strings**
@@ -2479,6 +2519,9 @@ _7 recipes_
 * [org.openrewrite.openapi.swagger.MigrateApiModelToSchema](/recipes/openapi/swagger/migrateapimodeltoschema.md)
   * **Migrate from `@ApiModel` to `@Schema`**
   * Converts the `@ApiModel` annotation to `@Schema` and converts the &quot;value&quot; attribute to &quot;name&quot;.
+* [org.openrewrite.openapi.swagger.MigrateApiParamAllowableValues](/recipes/openapi/swagger/migrateapiparamallowablevalues.md)
+  * **Migrate `@ApiParam(allowableValues)` to `@Parameter(schema)`**
+  * Migrate `@ApiParam(allowableValues)` to `@Parameter(schema = @Schema(allowableValues))`.
 * [org.openrewrite.openapi.swagger.MigrateApiParamDefaultValue](/recipes/openapi/swagger/migrateapiparamdefaultvalue.md)
   * **Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`**
   * Migrate `@ApiParam(defaultValue)` to `@Parameter(schema = @Schema(defaultValue))`.
@@ -2627,7 +2670,7 @@ _23 recipes_
 
 _License: Moderne Source Available License_
 
-_20 recipes_
+_28 recipes_
 
 * [org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations](/recipes/java/recipes/blanklinesaroundfieldswithannotations.md)
   * **Add a blank line around fields with annotations**
@@ -2683,9 +2726,33 @@ _20 recipes_
 * [org.openrewrite.java.recipes.SourceSpecTextBlockNewLine](/recipes/java/recipes/sourcespectextblocknewline.md)
   * **New line at the end of `SourceSpecs` text blocks**
   * Text blocks that assert before and after source code should have a new line after it is closed.
+* [org.openrewrite.java.recipes.UseDisplayNameAndDescriptionFields](/recipes/java/recipes/usedisplaynameanddescriptionfields.md)
+  * **Replace `getDisplayName()` and `getDescription()` methods with fields**
+  * Recipe classes that return a simple string literal (or concatenation of string literals) from `getDisplayName()` or `getDescription()` can use Lombok annotated fields instead.
+* [org.openrewrite.java.recipes.UseEstimatedEffortPerOccurrenceField](/recipes/java/recipes/useestimatedeffortperoccurrencefield.md)
+  * **Replace `getEstimatedEffortPerOccurrence()` method with field**
+  * Recipe classes that return a simple expression from `getEstimatedEffortPerOccurrence()` can use a Lombok annotated field instead.
 * [org.openrewrite.java.recipes.UseRewriteTestDefaults](/recipes/java/recipes/userewritetestdefaults.md)
   * **Refactor RewriteTest to use defaults method**
   * When all `rewriteRun` methods in a test class use the same RecipeSpec configuration, refactor to use the `defaults` method instead.
+* [org.openrewrite.java.recipes.UseStringUtilsRecipes](/recipes/java/recipes/usestringutilsrecipes.md)
+  * **Use `StringUtils` utility methods**
+  * Replaces common string null and empty checks with `org.openrewrite.internal.StringUtils` utility methods.
+* [org.openrewrite.java.recipes.UseStringUtilsRecipes$StringUtilsIsBlankRecipe](/recipes/java/recipes/usestringutilsrecipes$stringutilsisblankrecipe.md)
+  * **Use `StringUtils#isBlank(String)`**
+  * Replace `str == null || str.trim().isEmpty()` with `StringUtils.isBlank(str)`.
+* [org.openrewrite.java.recipes.UseStringUtilsRecipes$StringUtilsIsNotBlankRecipe](/recipes/java/recipes/usestringutilsrecipes$stringutilsisnotblankrecipe.md)
+  * **Use `!StringUtils#isBlank(String)`**
+  * Replace `str != null &amp;&amp; !str.trim().isEmpty()` with `!StringUtils.isBlank(str)`.
+* [org.openrewrite.java.recipes.UseStringUtilsRecipes$StringUtilsIsNotEmptyRecipe](/recipes/java/recipes/usestringutilsrecipes$stringutilsisnotemptyrecipe.md)
+  * **Use `StringUtils#isNotEmpty(String)`**
+  * Replace `str != null &amp;&amp; !str.isEmpty()` with `StringUtils.isNotEmpty(str)`.
+* [org.openrewrite.java.recipes.UseStringUtilsRecipes$StringUtilsIsNullOrEmptyRecipe](/recipes/java/recipes/usestringutilsrecipes$stringutilsisnulloremptyrecipe.md)
+  * **Use `StringUtils#isNullOrEmpty(String)`**
+  * Replace `str == null || str.isEmpty()` with `StringUtils.isNullOrEmpty(str)`.
+* [org.openrewrite.java.recipes.UseTagsField](/recipes/java/recipes/usetagsfield.md)
+  * **Replace `getTags()` method with field**
+  * Recipe classes that return a simple expression from `getTags()` can use a Lombok annotated field instead.
 * [org.openrewrite.java.recipes.UseTreeRandomId](/recipes/java/recipes/usetreerandomid.md)
   * **Use `Tree.randomId()` in LST constructors**
   * Replaces occurrences of `UUID.randomUUID()` with `Tree.randomId()` when passed as an argument to a constructor call for LST elements.
@@ -2694,7 +2761,7 @@ _20 recipes_
 
 _License: Moderne Source Available License_
 
-_137 recipes_
+_138 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -2710,7 +2777,7 @@ _137 recipes_
   * Change Spring application property keys existing in either Properties or YAML files, and in `@Value`, `@ConditionalOnProperty` or `@SpringBootTest` annotations.
 * [org.openrewrite.java.spring.ChangeSpringPropertyValue](/recipes/java/spring/changespringpropertyvalue.md)
   * **Change the value of a spring application property**
-  * Change spring application property values existing in either Properties or Yaml files.
+  * Change Spring application property values existing in either Properties or YAML files, and in `@Value`, `@ConditionalOnProperty`, `@SpringBootTest`, or `@TestPropertySource` annotations.
 * [org.openrewrite.java.spring.CommentOutSpringPropertyKey](/recipes/java/spring/commentoutspringpropertykey.md)
   * **Comment out Spring properties**
   * Add comment to specified Spring properties, and comment out the property.
@@ -2912,6 +2979,9 @@ _137 recipes_
 * [org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderRequestFactoryMethod](/recipes/java/spring/boot3/replaceresttemplatebuilderrequestfactorymethod.md)
   * **Replace `RestTemplateBuilder.requestFactory(Function)` with `requestFactoryBuilder`**
   * `RestTemplateBuilder.requestFactory(java.util.function.Function)` was deprecated since Spring Boot 3.4, in favor of `requestFactoryBuilder(ClientHttpRequestFactoryBuilder)`.
+* [org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate](/recipes/java/spring/boot4/addautoconfiguretestresttemplate.md)
+  * **Add `@AutoConfigureTestRestTemplate` if necessary**
+  * Adds `@AutoConfigureTestRestTemplate` to test classes annotated with `@SpringBootTest` that use `TestRestTemplate` since this bean is no longer auto-configured as described in the [Spring Boot 4 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#using-webclient-or-testresttemplate-and-springboottest).
 * [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
   * **Add logging.pattern.level for traceId and spanId**
   * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
@@ -3696,7 +3766,7 @@ _4 recipes_
 
 _License: Moderne Source Available License_
 
-_166 recipes_
+_169 recipes_
 
 * [org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation](/recipes/java/testing/arquillian/replacearquillianinsequenceannotation.md)
   * **Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`**
@@ -4028,6 +4098,15 @@ _166 recipes_
 * [org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf](/recipes/java/testing/junit5/asserttrueinstanceoftoassertinstanceof.md)
   * **`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`**
   * Migration of JUnit4 (or potentially JUnit5) test case in form of assertTrue(x instanceof y) to assertInstanceOf(y.class, x).
+* [org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes](/recipes/java/testing/junit5/assumenotnulltoassumptionsrecipes.md)
+  * **Transform `Assume` methods to `Assumptions`**
+  * Transform `Assume` methods without a direct counterpart to equivalent assumptions in `Assumptions`.
+* [org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes$SingleArgRecipe](/recipes/java/testing/junit5/assumenotnulltoassumptionsrecipes$singleargrecipe.md)
+  * **Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`**
+  * Transform singlar `Assume.assumeNotNull(object)` to `Assumptions.assumeFalse(object == null)`.
+* [org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes$VarArgsRecipe](/recipes/java/testing/junit5/assumenotnulltoassumptionsrecipes$varargsrecipe.md)
+  * **Transform variadic `assumeNotNull(objects...)` to a stream of `assumeFalse(object == null)`**
+  * Transform `Assume.assumeNotNull(objects...)` to `Stream.of(object1, object2).forEach(o -&gt; Assumptions.assumeFalse(o == null))`.
 * [org.openrewrite.java.testing.junit5.CategoryToTag](/recipes/java/testing/junit5/categorytotag.md)
   * **JUnit 4 `@Category` to JUnit Jupiter `@Tag`**
   * Transforms the JUnit 4 `@Category`, which can list multiple categories, into one `@Tag` annotation per category listed.
@@ -4201,7 +4280,7 @@ _166 recipes_
 
 _License: Apache License Version 2.0_
 
-_1408 recipes_
+_1428 recipes_
 
 * [com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope](/recipes/com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
   * **Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.**
@@ -4545,6 +4624,9 @@ _1408 recipes_
 * [io.quarkus.updates.camel.camel410.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel410/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.9` application to `camel 4.10`**
   * Migrates `camel 4.9` quarkus application to `camel 4.10`.
+* [io.quarkus.updates.camel.camel410_4.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel410_4/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.10` application to `camel 4.10.4`**
+  * Migrates `camel 4.10` quarkus application to `camel 4.10.4`.
 * [io.quarkus.updates.camel.camel411.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel411/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.10` application to `camel 4.11`**
   * Migrates `camel 4.10` quarkus application to `camel 4.11`.
@@ -4560,6 +4642,12 @@ _1408 recipes_
 * [io.quarkus.updates.camel.camel415.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel415/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.14` application to `camel 4.15`**
   * Migrates `camel 4.14` Quarkus application to `camel 4.15`.
+* [io.quarkus.updates.camel.camel416.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel416/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.15` application to `camel 4.16`**
+  * Migrates `camel 4.15` Quarkus application to `camel 4.16`.
+* [io.quarkus.updates.camel.camel417.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.16` application to `camel 4.17`**
+  * Migrates `camel 4.16` Quarkus application to `camel 4.17`.
 * [io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.0` application to `camel 4.4`**
   * Migrates `camel 4.0` quarkus application to `camel 4.4`.
@@ -4848,6 +4936,9 @@ _1408 recipes_
 * [io.quarkus.updates.core.quarkus331.CoreUpdate331](/recipes/io/quarkus/updates/core/quarkus331/coreupdate331.md)
   * **io.quarkus.updates.core.quarkus331.CoreUpdate331**
   * 
+* [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix.md)
+  * **io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix**
+  * 
 * [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](/recipes/io/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith.md)
   * **io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith**
   * 
@@ -5118,6 +5209,12 @@ _1408 recipes_
 * [org.apache.camel.upgrade.camel416.camelMiloCertificate](/recipes/org/apache/camel/upgrade/camel416/camelmilocertificate.md)
   * **Different java type for ServerCertificateValidator in camel-milo**
   * Different java type for ServerCertificateValidator in camel-milo.
+* [org.apache.camel.upgrade.camel417.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel417/camelmigrationrecipe.md)
+  * **Migrates `camel 4.16` application to `camel 4.17`**
+  * Migrates `camel 4.16` application to `camel 4.17`.
+* [org.apache.camel.upgrade.camel417.YamlTransform417Recipe](/recipes/org/apache/camel/upgrade/camel417/yamltransform417recipe.md)
+  * **Camel YML transform changes**
+  * Apache Camel YML DSL migration from version 4.16 o 4.17.
 * [org.apache.camel.upgrade.camel42.CamelMainDebugger](/recipes/org/apache/camel/upgrade/camel42/camelmaindebugger.md)
   * **The option camel.main.debugger has been renamed**
   * The option camel.main.debugger has been renamed to camel.debug.enabled.
@@ -5345,7 +5442,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AbstractBigDecimalAssertIsNotEqualByComparingTo {          @BeforeTemplate     AbstractBigDecimalAssert&lt;?&gt; before(AbstractBigDecimalAssert&lt;?&gt; bigDecimalAssert, BigDecimal n) {         return Refaster.anyOf(bigDecimalAssert.isNotCloseTo(n, offset(BigDecimal.ZERO)), bigDecimalAssert.isNotCloseTo(n, withPercentage(0)));     }          @AfterTemplate     AbstractBigDecimalAssert&lt;?&gt; after(AbstractBigDecimalAssert&lt;?&gt; bigDecimalAssert, BigDecimal n) {         return bigDecimalAssert.isNotEqualByComparingTo(n);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes.md)
   * **`AssertJBigIntegerRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
+  * Refaster rules related to AssertJ assertions over `BigInteger`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
 * [tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisequaltorecipe.md)
   * **Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AbstractBigIntegerAssertIsEqualTo {          @BeforeTemplate     AbstractBigIntegerAssert&lt;?&gt; before(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert, BigInteger n) {         return Refaster.anyOf(bigIntegerAssert.isCloseTo(n, offset(BigInteger.ZERO)), bigIntegerAssert.isCloseTo(n, withPercentage(0)));     }          @AfterTemplate     AbstractBigIntegerAssert&lt;?&gt; after(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert, BigInteger n) {         return bigIntegerAssert.isEqualTo(n);     } } ``` .
@@ -5363,7 +5460,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AbstractBigIntegerAssertIsZero {          @BeforeTemplate     AbstractBigIntegerAssert&lt;?&gt; before(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert) {         return Refaster.anyOf(bigIntegerAssert.isZero(), bigIntegerAssert.isEqualTo(0L), bigIntegerAssert.isEqualTo(BigInteger.ZERO));     }          @AfterTemplate     AbstractBigIntegerAssert&lt;?&gt; after(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert) {         return bigIntegerAssert.isEqualTo(0);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjbooleanrulesrecipes.md)
   * **`AssertJBooleanRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBooleanRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules).
+  * Refaster rules related to AssertJ assertions over `boolean`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules).
 * [tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$abstractbooleanassertisequaltorecipe.md)
   * **Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AbstractBooleanAssertIsEqualTo {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(AbstractBooleanAssert&lt;?&gt; boolAssert, boolean other) {         return boolAssert.isNotEqualTo(!other);     }          @AfterTemplate     AbstractBooleanAssert&lt;?&gt; after(AbstractBooleanAssert&lt;?&gt; boolAssert, boolean other) {         return boolAssert.isEqualTo(other);     } } ``` .
@@ -5384,7 +5481,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatBooleanIsTrue {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(boolean b) {         return assertThat(!b).isFalse();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractBooleanAssert&lt;?&gt; after(boolean b) {         return assertThat(b).isTrue();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjbyterulesrecipes.md)
   * **`AssertJByteRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJByteRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules).
+  * Refaster rules related to AssertJ assertions over `byte`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules).
 * [tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisequaltorecipe.md)
   * **Refaster template `AssertJByteRules.AbstractByteAssertIsEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AbstractByteAssertIsEqualTo {          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(AbstractByteAssert&lt;?&gt; byteAssert, byte n) {         return Refaster.anyOf(byteAssert.isCloseTo(n, offset((byte)0)), byteAssert.isCloseTo(n, withPercentage(0)));     }          @AfterTemplate     AbstractByteAssert&lt;?&gt; after(AbstractByteAssert&lt;?&gt; byteAssert, byte n) {         return byteAssert.isEqualTo(n);     } } ``` .
@@ -5402,7 +5499,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AbstractByteAssertIsZero {          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(AbstractByteAssert&lt;?&gt; byteAssert) {         return byteAssert.isZero();     }          @AfterTemplate     AbstractByteAssert&lt;?&gt; after(AbstractByteAssert&lt;?&gt; byteAssert) {         return byteAssert.isEqualTo((byte)0);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes.md)
   * **`AssertJCharSequenceRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJCharSequenceRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules).
+  * Refaster rules related to AssertJ assertions over `CharSequence`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules).
 * [tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceHasSizeRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes$assertthatcharsequencehassizerecipe.md)
   * **Refaster template `AssertJCharSequenceRules.AssertThatCharSequenceHasSize`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatCharSequenceHasSize {          @BeforeTemplate     AbstractAssert&lt;?, ?&gt; before(CharSequence charSequence, int length) {         return assertThat(charSequence.length()).isEqualTo(length);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractAssert&lt;?, ?&gt; after(CharSequence charSequence, int length) {         return assertThat(charSequence).hasSize(length);     } } ``` .
@@ -5414,7 +5511,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatCharSequenceIsNotEmpty {          @BeforeTemplate     AbstractAssert&lt;?, ?&gt; before(CharSequence charSequence) {         return Refaster.anyOf(assertThat(charSequence.isEmpty()).isFalse(), assertThat(charSequence.length()).isNotEqualTo(0), assertThat(charSequence.length()).isPositive());     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractAssert&lt;?, ?&gt; after(CharSequence charSequence) {         return assertThat(charSequence).isNotEmpty();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjcomparablerulesrecipes.md)
   * **`AssertJComparableRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJComparableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules).
+  * Refaster rules related to AssertJ assertions over `Comparable`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules).
 * [tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes$AssertThatIsEqualByComparingToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjcomparablerulesrecipes$assertthatisequalbycomparingtorecipe.md)
   * **Refaster template `AssertJComparableRules.AssertThatIsEqualByComparingTo`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsEqualByComparingTo&lt;T extends Comparable&lt;? super T&gt;&gt; {          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(T actual, T expected) {         return assertThat(actual.compareTo(expected)).isEqualTo(0);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractComparableAssert&lt;?, ?&gt; after(T actual, T expected) {         return assertThat(actual).isEqualByComparingTo(expected);     } } ``` .
@@ -5435,7 +5532,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsNotEqualByComparingTo&lt;T extends Comparable&lt;? super T&gt;&gt; {          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(T actual, T expected) {         return assertThat(actual.compareTo(expected)).isNotEqualTo(0);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractComparableAssert&lt;?, ?&gt; after(T actual, T expected) {         return assertThat(actual).isNotEqualByComparingTo(expected);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjdoublerulesrecipes.md)
   * **`AssertJDoubleRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoubleRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
+  * Refaster rules related to AssertJ assertions over `double`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
 * [tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisclosetowithoffsetrecipe.md)
   * **Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsCloseToWithOffset`**
   * Recipe created for the following Refaster template: ```java static final class AbstractDoubleAssertIsCloseToWithOffset {          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; doubleAssert, double n, Offset&lt;Double&gt; offset) {         return doubleAssert.isEqualTo(n, offset);     }          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; doubleAssert, Double n, Offset&lt;Double&gt; offset) {         return doubleAssert.isEqualTo(n, offset);     }          @AfterTemplate     AbstractDoubleAssert&lt;?&gt; after(AbstractDoubleAssert&lt;?&gt; doubleAssert, double n, Offset&lt;Double&gt; offset) {         return doubleAssert.isCloseTo(n, offset);     } } ``` .
@@ -5486,7 +5583,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsZero {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(Duration duration) {         return assertThat(duration.isZero()).isTrue();     }          @BeforeTemplate     AbstractDurationAssert&lt;?&gt; before2(Duration duration) {         return assertThat(duration).isEqualTo(Duration.ZERO);     }          @AfterTemplate     AbstractDurationAssert&lt;?&gt; after(Duration duration) {         return assertThat(duration).isZero();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes.md)
   * **`AssertJEnumerableRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJEnumerableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules).
+  * Refaster rules related to AssertJ assertions over enumerable objects. [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules).
 * [tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSameSizeAsRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes$enumerableasserthassamesizeasrecipe.md)
   * **Refaster template `AssertJEnumerableRules.EnumerableAssertHasSameSizeAs`**
   * Recipe created for the following Refaster template: ```java static final class EnumerableAssertHasSameSizeAs&lt;S, E&gt; {          @BeforeTemplate     EnumerableAssert&lt;?, S&gt; before(EnumerableAssert&lt;?, S&gt; enumAssert, Iterable&lt;E&gt; iterable) {         return enumAssert.hasSize(Iterables.size(iterable));     }          @BeforeTemplate     EnumerableAssert&lt;?, S&gt; before(EnumerableAssert&lt;?, S&gt; enumAssert, Collection&lt;E&gt; iterable) {         return enumAssert.hasSize(iterable.size());     }          @BeforeTemplate     EnumerableAssert&lt;?, S&gt; before(EnumerableAssert&lt;?, S&gt; enumAssert, E[] iterable) {         return enumAssert.hasSize(iterable.length);     }          @BeforeTemplate     EnumerableAssert&lt;?, S&gt; before(EnumerableAssert&lt;?, S&gt; enumAssert, CharSequence iterable) {         return enumAssert.hasSize(iterable.length());     }          @AfterTemplate     EnumerableAssert&lt;?, S&gt; after(EnumerableAssert&lt;?, S&gt; enumAssert, Iterable&lt;E&gt; iterable) {         return enumAssert.hasSameSizeAs(iterable);     } } ``` .
@@ -5555,7 +5652,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsWritable {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(File actual) {         return assertThat(actual.canWrite()).isTrue();     }          @AfterTemplate     AbstractFileAssert&lt;?&gt; after(File actual) {         return assertThat(actual).isWritable();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjfloatrulesrecipes.md)
   * **`AssertJFloatRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJFloatRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFloatRules).
+  * Refaster rules related to AssertJ assertions over `float`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFloatRules).
 * [tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToWithOffsetRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisclosetowithoffsetrecipe.md)
   * **Refaster template `AssertJFloatRules.AbstractFloatAssertIsCloseToWithOffset`**
   * Recipe created for the following Refaster template: ```java static final class AbstractFloatAssertIsCloseToWithOffset {          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; floatAssert, float n, Offset&lt;Float&gt; offset) {         return floatAssert.isEqualTo(n, offset);     }          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; floatAssert, Float n, Offset&lt;Float&gt; offset) {         return floatAssert.isEqualTo(n, offset);     }          @AfterTemplate     AbstractFloatAssert&lt;?&gt; after(AbstractFloatAssert&lt;?&gt; floatAssert, float n, Offset&lt;Float&gt; offset) {         return floatAssert.isCloseTo(n, offset);     } } ``` .
@@ -5597,7 +5694,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsStrictlyBetween {          @BeforeTemplate     AbstractInstantAssert&lt;?&gt; before(Instant actual, Instant start, Instant end) {         return Refaster.anyOf(assertThat(actual).isAfter(start).isBefore(end), assertThat(actual).isBefore(end).isAfter(start));     }          @AfterTemplate     AbstractInstantAssert&lt;?&gt; after(Instant actual, Instant start, Instant end) {         return assertThat(actual).isStrictlyBetween(start, end);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjintegerrulesrecipes.md)
   * **`AssertJIntegerRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules).
+  * Refaster rules related to AssertJ assertions over `int`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules).
 * [tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisequaltorecipe.md)
   * **Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AbstractIntegerAssertIsEqualTo {          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(AbstractIntegerAssert&lt;?&gt; intAssert, int n) {         return Refaster.anyOf(intAssert.isCloseTo(n, offset(0)), intAssert.isCloseTo(n, withPercentage(0)));     }          @AfterTemplate     AbstractIntegerAssert&lt;?&gt; after(AbstractIntegerAssert&lt;?&gt; intAssert, int n) {         return intAssert.isEqualTo(n);     } } ``` .
@@ -5615,7 +5712,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AbstractIntegerAssertIsZero {          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(AbstractIntegerAssert&lt;?&gt; intAssert) {         return intAssert.isZero();     }          @AfterTemplate     AbstractIntegerAssert&lt;?&gt; after(AbstractIntegerAssert&lt;?&gt; intAssert) {         return intAssert.isEqualTo(0);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes.md)
   * **`AssertJIterableRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIterableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules).
+  * Refaster rules related to AssertJ assertions over `Iterable`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules).
 * [tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableHasOneElementEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterablehasoneelementequaltorecipe.md)
   * **Refaster template `AssertJIterableRules.AssertThatIterableHasOneElementEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatIterableHasOneElementEqualTo&lt;S, E extends S&gt; {          @BeforeTemplate     ObjectAssert&lt;S&gt; before(Iterable&lt;S&gt; iterable, E element) {         return assertThat(Iterables.getOnlyElement(iterable)).isEqualTo(element);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     IterableAssert&lt;S&gt; after(Iterable&lt;S&gt; iterable, E element) {         return assertThat(iterable).containsExactly(element);     } } ``` .
@@ -5630,7 +5727,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatIterableSize&lt;E&gt; {          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(Iterable&lt;E&gt; iterable) {         return assertThat(Iterables.size(iterable));     }          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(Collection&lt;E&gt; iterable) {         return assertThat(iterable.size());     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractIntegerAssert&lt;?&gt; after(Iterable&lt;E&gt; iterable) {         return assertThat(iterable).size();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjiteratorrulesrecipes.md)
   * **`AssertJIteratorRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIteratorRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIteratorRules).
+  * Refaster rules related to AssertJ assertions over `Iterator`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIteratorRules).
 * [tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes$AssertThatHasNextRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjiteratorrulesrecipes$assertthathasnextrecipe.md)
   * **Refaster template `AssertJIteratorRules.AssertThatHasNext`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatHasNext&lt;T&gt; {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(Iterator&lt;T&gt; iterator) {         return assertThat(iterator.hasNext()).isTrue();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     IteratorAssert&lt;T&gt; after(Iterator&lt;T&gt; iterator) {         return assertThat(iterator).hasNext();     } } ``` .
@@ -5639,7 +5736,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsExhausted&lt;T&gt; {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(Iterator&lt;T&gt; iterator) {         return assertThat(iterator.hasNext()).isFalse();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     IteratorAssert&lt;T&gt; after(Iterator&lt;T&gt; iterator) {         return assertThat(iterator).isExhausted();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes.md)
   * **`AssertJLongRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJLongRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules).
+  * Refaster rules related to AssertJ assertions over `long`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules).
 * [tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisequaltorecipe.md)
   * **Refaster template `AssertJLongRules.AbstractLongAssertIsEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AbstractLongAssertIsEqualTo {          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(AbstractLongAssert&lt;?&gt; longAssert, long n) {         return Refaster.anyOf(longAssert.isCloseTo(n, offset(0L)), longAssert.isCloseTo(n, withPercentage(0)));     }          @AfterTemplate     AbstractLongAssert&lt;?&gt; after(AbstractLongAssert&lt;?&gt; longAssert, long n) {         return longAssert.isEqualTo(n);     } } ``` .
@@ -5657,7 +5754,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AbstractLongAssertIsZero {          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(AbstractLongAssert&lt;?&gt; longAssert) {         return longAssert.isZero();     }          @AfterTemplate     AbstractLongAssert&lt;?&gt; after(AbstractLongAssert&lt;?&gt; longAssert) {         return longAssert.isEqualTo(0);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes.md)
   * **`AssertJMapRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJMapRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules).
+  * Refaster rules related to AssertJ assertions over `Map`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules).
 * [tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertContainsExactlyEntriesOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$abstractmapassertcontainsexactlyentriesofrecipe.md)
   * **Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyEntriesOf`**
   * Recipe created for the following Refaster template: ```java static final class AbstractMapAssertContainsExactlyEntriesOf&lt;K, V&gt; {          @BeforeTemplate     AbstractMapAssert&lt;?, ?, K, V&gt; before(AbstractMapAssert&lt;?, ?, K, V&gt; mapAssert, K key, V value) {         return mapAssert.containsExactlyInAnyOrderEntriesOf(ImmutableMap.of(key, value));     }          @AfterTemplate     AbstractMapAssert&lt;?, ?, K, V&gt; after(AbstractMapAssert&lt;?, ?, K, V&gt; mapAssert, K key, V value) {         return mapAssert.containsExactlyEntriesOf(ImmutableMap.of(key, value));     } } ``` .
@@ -5690,7 +5787,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatMapIsEmpty&lt;K, V&gt; {          @BeforeTemplate     void before(Map&lt;K, V&gt; map) {         Refaster.anyOf(assertThat(map).hasSize(0), assertThat(map.isEmpty()).isTrue(), assertThat(map.size()).isEqualTo(0L), assertThat(map.size()).isNotPositive());     }          @BeforeTemplate     void before2(Map&lt;K, V&gt; map) {         assertThat(Refaster.anyOf(map.keySet(), map.values(), map.entrySet())).isEmpty();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Map&lt;K, V&gt; map) {         assertThat(map).isEmpty();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes.md)
   * **`AssertJNumberRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJNumberRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules).
+  * Refaster rules related to AssertJ assertions over numeric values. [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules).
 * [tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsNegativeRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes$numberassertisnegativerecipe.md)
   * **Refaster template `AssertJNumberRules.NumberAssertIsNegative`**
   * Recipe created for the following Refaster template: ```java static final class NumberAssertIsNegative {          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(AbstractByteAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isLessThan((byte)0), numberAssert.isLessThanOrEqualTo((byte)-1));     }          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(AbstractShortAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isLessThan((short)0), numberAssert.isLessThanOrEqualTo((short)-1));     }          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(AbstractIntegerAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));     }          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(AbstractLongAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));     }          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; numberAssert) {         return numberAssert.isLessThan(0);     }          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; numberAssert) {         return numberAssert.isLessThan(0);     }          @BeforeTemplate     AbstractBigIntegerAssert&lt;?&gt; before(AbstractBigIntegerAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isLessThan(BigInteger.ZERO), numberAssert.isLessThanOrEqualTo(BigInteger.valueOf(-1)));     }          @BeforeTemplate     AbstractBigDecimalAssert&lt;?&gt; before(AbstractBigDecimalAssert&lt;?&gt; numberAssert) {         return numberAssert.isLessThan(BigDecimal.ZERO);     }          @AfterTemplate     NumberAssert&lt;?, ?&gt; after(NumberAssert&lt;?, ?&gt; numberAssert) {         return numberAssert.isNegative();     } } ``` .
@@ -5705,7 +5802,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class NumberAssertIsPositive {          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(AbstractByteAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isGreaterThan((byte)0), numberAssert.isGreaterThanOrEqualTo((byte)1));     }          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(AbstractShortAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isGreaterThan((short)0), numberAssert.isGreaterThanOrEqualTo((short)1));     }          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(AbstractIntegerAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isGreaterThan(0), numberAssert.isGreaterThanOrEqualTo(1));     }          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(AbstractLongAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isGreaterThan(0), numberAssert.isGreaterThanOrEqualTo(1));     }          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; numberAssert) {         return numberAssert.isGreaterThan(0);     }          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; numberAssert) {         return numberAssert.isGreaterThan(0);     }          @BeforeTemplate     AbstractBigIntegerAssert&lt;?&gt; before(AbstractBigIntegerAssert&lt;?&gt; numberAssert) {         return Refaster.anyOf(numberAssert.isGreaterThan(BigInteger.ZERO), numberAssert.isGreaterThanOrEqualTo(BigInteger.valueOf(1)));     }          @BeforeTemplate     AbstractBigDecimalAssert&lt;?&gt; before(AbstractBigDecimalAssert&lt;?&gt; numberAssert) {         return numberAssert.isGreaterThan(BigDecimal.ZERO);     }          @AfterTemplate     NumberAssert&lt;?, ?&gt; after(NumberAssert&lt;?, ?&gt; numberAssert) {         return numberAssert.isPositive();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes.md)
   * **`AssertJObjectRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJObjectRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
+  * Refaster rules related to AssertJ assertions over arbitrary objects. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
 * [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasSameHashCodeAsRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthathassamehashcodeasrecipe.md)
   * **Refaster template `AssertJObjectRules.AssertThatHasSameHashCodeAs`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatHasSameHashCodeAs&lt;T&gt; {          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(T object1, T object2) {         return assertThat(object1.hashCode()).isEqualTo(object2.hashCode());     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ObjectAssert&lt;T&gt; after(T object1, T object2) {         return assertThat(object1).hasSameHashCodeAs(object2);     } } ``` .
@@ -5735,7 +5832,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsSameAs&lt;T&gt; {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(T object1, T object2) {         return Refaster.anyOf(assertThat(object1 == object2).isTrue(), assertThat(object1 != object2).isFalse());     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ObjectAssert&lt;T&gt; after(T object1, T object2) {         return assertThat(object1).isSameAs(object2);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjoptionalrulesrecipes.md)
   * **`AssertJOptionalRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJOptionalRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules).
+  * Refaster rules related to AssertJ assertions over `Optional`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules).
 * [tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertContainsSameRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$abstractoptionalassertcontainssamerecipe.md)
   * **Refaster template `AssertJOptionalRules.AbstractOptionalAssertContainsSame`**
   * Recipe created for the following Refaster template: ```java static final class AbstractOptionalAssertContainsSame&lt;T&gt; {          @BeforeTemplate     AbstractAssert&lt;?, ?&gt; before(AbstractOptionalAssert&lt;?, T&gt; optionalAssert, T value) {         return Refaster.anyOf(optionalAssert.get().isSameAs(value), optionalAssert.isPresent().isSameAs(value));     }          @AfterTemplate     AbstractOptionalAssert&lt;?, T&gt; after(AbstractOptionalAssert&lt;?, T&gt; optionalAssert, T value) {         return optionalAssert.containsSame(value);     } } ``` .
@@ -5810,7 +5907,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatStartsWithRaw {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(Path actual, Path other) {         return assertThat(actual.startsWith(other)).isTrue();     }          @AfterTemplate     AbstractPathAssert&lt;?&gt; after(Path actual, Path other) {         return assertThat(actual).startsWithRaw(other);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes.md)
   * **`AssertJPrimitiveRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJPrimitiveRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules).
+  * Refaster rules related to AssertJ assertions over primitive values. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules).
 * [tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes$assertthatisequaltorecipe.md)
   * **Refaster template `AssertJPrimitiveRules.AssertThatIsEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatIsEqualTo {          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(boolean actual, boolean expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(byte actual, byte expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @BeforeTemplate     AbstractCharacterAssert&lt;?&gt; before(char actual, char expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(short actual, short expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(int actual, int expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(long actual, long expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(float actual, float expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(double actual, double expected) {         return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractBooleanAssert&lt;?&gt; after(boolean actual, boolean expected) {         return assertThat(actual).isEqualTo(expected);     } } ``` .
@@ -5864,13 +5961,13 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatSetsAreEqual&lt;S, T extends S&gt; {          @BeforeTemplate     AbstractCollectionAssert&lt;?, ?, S, ?&gt; before(Set&lt;S&gt; set1, Iterable&lt;T&gt; set2) {         return Refaster.anyOf(assertThat(set1).isEqualTo(set2), assertThat(set1).containsExactlyInAnyOrderElementsOf(set2));     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractCollectionAssert&lt;?, ?, S, ?&gt; after(Set&lt;S&gt; set1, Iterable&lt;T&gt; set2) {         return assertThat(set1).hasSameElementsAs(set2);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAllRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsallrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamContainsAll`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsAll&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAll(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAll(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).containsAll(iterable);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsAll&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAll(iterable);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAll(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAll(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).containsAll(iterable);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAnyElementsOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsanyelementsofrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamContainsAnyElementsOf`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsAnyElementsOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyElementsOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyElementsOf(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).containsAnyElementsOf(iterable);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsAnyElementsOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyElementsOf(iterable);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyElementsOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyElementsOf(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).containsAnyElementsOf(iterable);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAnyOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsanyofrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamContainsAnyOf`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsAnyOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyOf(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyOf(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).containsAnyOf(array);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsAnyOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyOf(array);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyOf(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsAnyOf(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).containsAnyOf(array);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyElementsOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyelementsofrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamContainsExactlyElementsOf`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsExactlyElementsOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsExactlyElementsOf(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).containsExactlyElementsOf(iterable);     } } ``` .
@@ -5885,10 +5982,10 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsExactly&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsExactly(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).containsExactly(array);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsOnlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsonlyrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamContainsOnly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsOnly&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsOnly(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsOnly(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).containsOnly(array);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsOnly&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsOnly(array);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsOnly(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsOnly(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).containsOnly(array);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamContains`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContains&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).contains(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).contains(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).contains(array);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContains&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).contains(array);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).contains(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).contains(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).contains(array);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsSequenceRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainssequencerecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamContainsSequence`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsSequence&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsSequence(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsSequence(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).containsSequence(iterable);     } } ``` .
@@ -5897,28 +5994,19 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AssertThatStreamContainsSubsequence&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsSubsequence(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).containsSubsequence(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).containsSubsequence(iterable);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainAnyElementsOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainanyelementsofrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamDoesNotContainAnyElementsOf`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamDoesNotContainAnyElementsOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContainAnyElementsOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContainAnyElementsOf(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).doesNotContainAnyElementsOf(iterable);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamDoesNotContainAnyElementsOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContainAnyElementsOf(iterable);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContainAnyElementsOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContainAnyElementsOf(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).doesNotContainAnyElementsOf(iterable);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamDoesNotContain`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamDoesNotContain&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContain(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContain(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).doesNotContain(array);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamDoesNotContain&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContain(array);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContain(array);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, U[] array, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContain(array);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] array) {         return assertThat(stream).doesNotContain(array);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainSequenceRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainsequencerecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamDoesNotContainSequence`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatStreamDoesNotContainSequence&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContainSequence(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).doesNotContainSequence(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).doesNotContainSequence(iterable);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamHasSameElementsAsRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamhassameelementsasrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamHasSameElementsAs`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamHasSameElementsAs&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).hasSameElementsAs(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).hasSameElementsAs(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).hasSameElementsAs(iterable);     } } ``` .
-* [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamHasSizeRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamhassizerecipe.md)
-  * **Refaster template `AssertJRules.AssertThatStreamHasSize`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamHasSize&lt;T&gt; {          @BeforeTemplate     void before(Stream&lt;T&gt; stream, int size) {         assertThat(stream.count()).isEqualTo(size);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Stream&lt;T&gt; stream, int size) {         assertThat(stream).hasSize(size);     } } ``` .
-* [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamisemptyrecipe.md)
-  * **Refaster template `AssertJRules.AssertThatStreamIsEmpty`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamIsEmpty&lt;S, T extends S&gt; {          @BeforeTemplate     void before(Stream&lt;S&gt; stream, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         assertThat(stream.collect(collector)).isEmpty();     }          @BeforeTemplate     void before2(Stream&lt;S&gt; stream, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         assertThat(stream.collect(collector)).isEmpty();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Stream&lt;S&gt; stream) {         assertThat(stream).isEmpty();     } } ``` .
-* [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsNotEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamisnotemptyrecipe.md)
-  * **Refaster template `AssertJRules.AssertThatStreamIsNotEmpty`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamIsNotEmpty&lt;S, T extends S&gt; {          @BeforeTemplate     void before(Stream&lt;S&gt; stream, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         assertThat(stream.collect(collector)).isNotEmpty();     }          @BeforeTemplate     void before2(Stream&lt;S&gt; stream, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         assertThat(stream.collect(collector)).isNotEmpty();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Stream&lt;S&gt; stream) {         assertThat(stream).isNotEmpty();     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamHasSameElementsAs&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).hasSameElementsAs(iterable);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).hasSameElementsAs(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).hasSameElementsAs(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable) {         return assertThat(stream).hasSameElementsAs(iterable);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsSubsetOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamissubsetofrecipe.md)
   * **Refaster template `AssertJRules.AssertThatStreamIsSubsetOf`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamIsSubsetOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before2(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] iterable) {         return assertThat(stream).isSubsetOf(iterable);     } } ``` .
+  * Recipe created for the following Refaster template: ```java static final class AssertThatStreamIsSubsetOf&lt;S, T extends S, U extends T&gt; {          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     IterableAssert&lt;T&gt; before(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends Iterable&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     AbstractCollectionAssert&lt;?, Collection&lt;? extends T&gt;, T, ObjectAssert&lt;T&gt;&gt; before2(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends Collection&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, Iterable&lt;U&gt; iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @BeforeTemplate     ListAssert&lt;T&gt; before3(Stream&lt;S&gt; stream, U[] iterable, Collector&lt;S, ?, ? extends List&lt;T&gt;&gt; collector) {         return assertThat(stream.collect(collector)).isSubsetOf(iterable);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;S&gt; after(Stream&lt;S&gt; stream, U[] iterable) {         return assertThat(stream).isSubsetOf(iterable);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$ObjectEnumerableContainsOneElementRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjrulesrecipes$objectenumerablecontainsoneelementrecipe.md)
   * **Refaster template `AssertJRules.ObjectEnumerableContainsOneElement`**
   * Recipe created for the following Refaster template: ```java static final class ObjectEnumerableContainsOneElement&lt;S, T extends S&gt; {          @BeforeTemplate     @SuppressWarnings(value = &quot;unchecked&quot;)     ObjectEnumerableAssert&lt;?, S&gt; before(ObjectEnumerableAssert&lt;?, S&gt; iterAssert, T element) {         return Refaster.anyOf(iterAssert.containsAnyOf(element), iterAssert.containsSequence(element), iterAssert.containsSubsequence(element));     }          @AfterTemplate     @SuppressWarnings(value = &quot;unchecked&quot;)     ObjectEnumerableAssert&lt;?, S&gt; after(ObjectEnumerableAssert&lt;?, S&gt; iterAssert, T element) {         return iterAssert.contains(element);     } } ``` .
@@ -5927,7 +6015,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class ObjectEnumerableDoesNotContainOneElement&lt;S, T extends S&gt; {          @BeforeTemplate     @SuppressWarnings(value = &quot;unchecked&quot;)     ObjectEnumerableAssert&lt;?, S&gt; before(ObjectEnumerableAssert&lt;?, S&gt; iterAssert, T element) {         return iterAssert.doesNotContainSequence(element);     }          @AfterTemplate     @SuppressWarnings(value = &quot;unchecked&quot;)     ObjectEnumerableAssert&lt;?, S&gt; after(ObjectEnumerableAssert&lt;?, S&gt; iterAssert, T element) {         return iterAssert.doesNotContain(element);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjshortrulesrecipes.md)
   * **`AssertJShortRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJShortRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJShortRules).
+  * Refaster rules related to AssertJ assertions over `short`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJShortRules).
 * [tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisequaltorecipe.md)
   * **Refaster template `AssertJShortRules.AbstractShortAssertIsEqualTo`**
   * Recipe created for the following Refaster template: ```java static final class AbstractShortAssertIsEqualTo {          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(AbstractShortAssert&lt;?&gt; shortAssert, short n) {         return Refaster.anyOf(shortAssert.isCloseTo(n, offset((short)0)), shortAssert.isCloseTo(n, withPercentage(0)));     }          @AfterTemplate     AbstractShortAssert&lt;?&gt; after(AbstractShortAssert&lt;?&gt; shortAssert, short n) {         return shortAssert.isEqualTo(n);     } } ``` .
@@ -5945,7 +6033,7 @@ _1408 recipes_
   * Recipe created for the following Refaster template: ```java static final class AbstractShortAssertIsZero {          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(AbstractShortAssert&lt;?&gt; shortAssert) {         return shortAssert.isZero();     }          @AfterTemplate     AbstractShortAssert&lt;?&gt; after(AbstractShortAssert&lt;?&gt; shortAssert) {         return shortAssert.isEqualTo((short)0);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes.md)
   * **`AssertJStreamRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStreamRules).
+  * Refaster rules related to AssertJ assertions over `Stream`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStreamRules).
 * [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatAnyMatchRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatanymatchrecipe.md)
   * **Refaster template `AssertJStreamRules.AssertThatAnyMatch`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatAnyMatch&lt;T&gt; {          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         return assertThat(stream).filteredOn(predicate).isNotEmpty();     }          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before2(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         return Refaster.anyOf(assertThat(stream.anyMatch(predicate)).isTrue(), assertThat(stream.noneMatch(predicate)).isFalse());     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;T&gt; after(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         return assertThat(stream).anyMatch(predicate);     } } ``` .
@@ -5955,12 +6043,21 @@ _1408 recipes_
 * [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatFilteredOnRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatfilteredonrecipe.md)
   * **Refaster template `AssertJStreamRules.AssertThatFilteredOn`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatFilteredOn&lt;T&gt; {          @BeforeTemplate     ListAssert&lt;T&gt; before(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         return assertThat(stream.filter(predicate));     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;T&gt; after(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         return assertThat(stream).filteredOn(predicate);     } } ``` .
+* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatHasSizeRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthathassizerecipe.md)
+  * **Refaster template `AssertJStreamRules.AssertThatHasSize`**
+  * Recipe created for the following Refaster template: ```java static final class AssertThatHasSize&lt;T&gt; {          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(Stream&lt;T&gt; stream, int size) {         return assertThat(stream.count()).isEqualTo(size);     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     ListAssert&lt;T&gt; after(Stream&lt;T&gt; stream, int size) {         return assertThat(stream).hasSize(size);     } } ``` .
+* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatIsEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatisemptyrecipe.md)
+  * **Refaster template `AssertJStreamRules.AssertThatIsEmpty`**
+  * Recipe created for the following Refaster template: ```java static final class AssertThatIsEmpty&lt;T, S&gt; {          @BeforeTemplate     void before(Stream&lt;T&gt; stream) {         assertThat(stream.findAny()).isEmpty();     }          @BeforeTemplate     void before2(Stream&lt;T&gt; stream) {         assertThat(stream.findFirst()).isEmpty();     }          @BeforeTemplate     void before3(Stream&lt;T&gt; stream) {         assertThat(stream.toArray()).isEmpty();     }          @BeforeTemplate     void before4(Stream&lt;T&gt; stream, IntFunction&lt;S[]&gt; generator) {         assertThat(stream.toArray(generator)).isEmpty();     }          @BeforeTemplate     void before5(Stream&lt;T&gt; stream) {         assertThat(stream.toList()).isEmpty();     }          @BeforeTemplate     void before6(Stream&lt;T&gt; stream, Collector&lt;T, ?, ? extends Iterable&lt;S&gt;&gt; collector) {         assertThat(stream.collect(collector)).isEmpty();     }          @BeforeTemplate     void before7(Stream&lt;T&gt; stream, Collector&lt;T, ?, ? extends Collection&lt;S&gt;&gt; collector) {         assertThat(stream.collect(collector)).isEmpty();     }          @BeforeTemplate     void before8(Stream&lt;T&gt; stream, Collector&lt;T, ?, ? extends List&lt;S&gt;&gt; collector) {         assertThat(stream.collect(collector)).isEmpty();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Stream&lt;T&gt; stream) {         assertThat(stream).isEmpty();     } } ``` .
+* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatIsNotEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatisnotemptyrecipe.md)
+  * **Refaster template `AssertJStreamRules.AssertThatIsNotEmpty`**
+  * Recipe created for the following Refaster template: ```java static final class AssertThatIsNotEmpty&lt;T, S&gt; {          @BeforeTemplate     void before(Stream&lt;T&gt; stream) {         assertThat(stream.count()).isNotEqualTo(0);     }          @BeforeTemplate     void before2(Stream&lt;T&gt; stream) {         assertThat(stream.findAny()).isPresent();     }          @BeforeTemplate     void before3(Stream&lt;T&gt; stream) {         assertThat(stream.findFirst()).isPresent();     }          @BeforeTemplate     void before4(Stream&lt;T&gt; stream) {         assertThat(stream.toArray()).isNotEmpty();     }          @BeforeTemplate     void before5(Stream&lt;T&gt; stream, IntFunction&lt;S[]&gt; generator) {         assertThat(stream.toArray(generator)).isNotEmpty();     }          @BeforeTemplate     void before6(Stream&lt;T&gt; stream) {         assertThat(stream.toList()).isNotEmpty();     }          @BeforeTemplate     void before7(Stream&lt;T&gt; stream, Collector&lt;? super T, ?, ? extends Iterable&lt;S&gt;&gt; collector) {         assertThat(stream.collect(collector)).isNotEmpty();     }          @BeforeTemplate     void before8(Stream&lt;T&gt; stream, Collector&lt;? super T, ?, ? extends Collection&lt;S&gt;&gt; collector) {         assertThat(stream.collect(collector)).isNotEmpty();     }          @BeforeTemplate     void before9(Stream&lt;T&gt; stream, Collector&lt;? super T, ?, ? extends List&lt;S&gt;&gt; collector) {         assertThat(stream.collect(collector)).isNotEmpty();     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Stream&lt;T&gt; stream) {         assertThat(stream).isNotEmpty();     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatNoneMatchRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatnonematchrecipe.md)
   * **Refaster template `AssertJStreamRules.AssertThatNoneMatch`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatNoneMatch&lt;T&gt; {          @BeforeTemplate     void before(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         assertThat(stream).filteredOn(predicate).isEmpty();     }          @BeforeTemplate     void before2(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         Refaster.anyOf(assertThat(stream.anyMatch(predicate)).isFalse(), assertThat(stream.noneMatch(predicate)).isTrue());     }          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Stream&lt;T&gt; stream, Predicate&lt;? super T&gt; predicate) {         assertThat(stream).noneMatch(predicate);     } } ``` .
 * [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes.md)
   * **`AssertJStringRules` Refaster recipes**
-  * Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStringRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules).
+  * Refaster rules related to AssertJ assertions over `String`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules).
 * [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$abstractstringassertstringisemptyrecipe.md)
   * **Refaster template `AssertJStringRules.AbstractStringAssertStringIsEmpty`**
   * Recipe created for the following Refaster template: ```java static final class AbstractStringAssertStringIsEmpty {          @BeforeTemplate     void before(AbstractStringAssert&lt;?&gt; stringAssert) {         stringAssert.isEqualTo(&quot;&quot;);     }          @AfterTemplate     void after(AbstractStringAssert&lt;?&gt; stringAssert) {         stringAssert.isEmpty();     } } ``` .
@@ -6336,6 +6433,36 @@ _1408 recipes_
 * [tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingReversedRecipe](/recipes/tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparingreversedrecipe.md)
   * **Refaster template `ComparatorRules.ThenComparingReversed`**
   * Don't explicitly create `Comparator`s unnecessarily.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes.md)
+  * **`DequeRules` Refaster recipes**
+  * Refaster rules related to expressions dealing with `Deque` instances. [Source](https://error-prone.picnic.tech/refasterrules/DequeRules).
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeAddFirstRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequeaddfirstrecipe.md)
+  * **Refaster template `DequeRules.DequeAddFirst`**
+  * Prefer `Deque#addLast(Object)` over less clear alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeDescendingIteratorRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequedescendingiteratorrecipe.md)
+  * **Refaster template `DequeRules.DequeDescendingIterator`**
+  * Prefer `Deque#descendingIterator()` over more contrived alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeGetFirstRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequegetfirstrecipe.md)
+  * **Refaster template `DequeRules.DequeGetFirst`**
+  * Prefer `Deque#pollFirst()` over less clear alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeIteratorRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequeiteratorrecipe.md)
+  * **Refaster template `DequeRules.DequeIterator`**
+  * Prefer `Deque#iterator()` over more contrived alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeOfferLastRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequeofferlastrecipe.md)
+  * **Refaster template `DequeRules.DequeOfferLast`**
+  * Prefer `Deque#offerLast(Object)` over less clear alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequePeekFirstRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequepeekfirstrecipe.md)
+  * **Refaster template `DequeRules.DequePeekFirst`**
+  * Prefer `Deque#peekFirst()` over less clear alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequePollFirstRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequepollfirstrecipe.md)
+  * **Refaster template `DequeRules.DequePollFirst`**
+  * Prefer `Deque#pollFirst()` over less clear alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeRemoveFirstOccurrenceRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequeremovefirstoccurrencerecipe.md)
+  * **Refaster template `DequeRules.DequeRemoveFirstOccurrence`**
+  * Prefer `Deque#removeFirstOccurrence(Object)` over less clear alternatives.
+* [tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeRemoveFirstRecipe](/recipes/tech/picnic/errorprone/refasterrules/dequerulesrecipes$dequeremovefirstrecipe.md)
+  * **Refaster template `DequeRules.DequeRemoveFirst`**
+  * Prefer `Deque#removeFirst()` over less clear alternatives.
 * [tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes.md)
   * **`DoubleStreamRules` Refaster recipes**
   * Refaster rules related to expressions dealing with `DoubleStream`s. [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
@@ -6474,6 +6601,9 @@ _1408 recipes_
 * [tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$EntryToImmutableListMultimapRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablelistmultimaprulesrecipes$entrytoimmutablelistmultimaprecipe.md)
   * **Refaster template `ImmutableListMultimapRules.EntryToImmutableListMultimap`**
   * Prefer `ImmutableListMultimap#of(Object, Object)` over more contrived or less-specific alternatives.
+* [tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$ImmutableListMultimapBuilderPutRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablelistmultimaprulesrecipes$immutablelistmultimapbuilderputrecipe.md)
+  * **Refaster template `ImmutableListMultimapRules.ImmutableListMultimapBuilderPut`**
+  * Prefer `ImmutableListMultimap.Builder#put(Object, Object)` over more contrived or less efficient alternatives.
 * [tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$ImmutableListMultimapBuilderRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablelistmultimaprulesrecipes$immutablelistmultimapbuilderrecipe.md)
   * **Refaster template `ImmutableListMultimapRules.ImmutableListMultimapBuilder`**
   * Prefer `ImmutableListMultimap#builder()` over the associated constructor on constructions that produce a less-specific type.
@@ -6537,6 +6667,9 @@ _1408 recipes_
 * [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderBuildOrThrowRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapbuilderbuildorthrowrecipe.md)
   * **Refaster template `ImmutableMapRules.ImmutableMapBuilderBuildOrThrow`**
   * Prefer `ImmutableMap.Builder#buildOrThrow()` over the less explicit `ImmutableMap.Builder#build()`.
+* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderPutRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapbuilderputrecipe.md)
+  * **Refaster template `ImmutableMapRules.ImmutableMapBuilderPut`**
+  * Prefer `ImmutableMap.Builder#put(Object, Object)` over more contrived alternatives.
 * [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapbuilderrecipe.md)
   * **Refaster template `ImmutableMapRules.ImmutableMapBuilder`**
   * Prefer `ImmutableMap#builder()` over the associated constructor.
@@ -6582,6 +6715,9 @@ _1408 recipes_
 * [tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$EntryToImmutableSetMultimapRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$entrytoimmutablesetmultimaprecipe.md)
   * **Refaster template `ImmutableSetMultimapRules.EntryToImmutableSetMultimap`**
   * Prefer `ImmutableSetMultimap#of(Object, Object)` over more contrived alternatives.
+* [tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapBuilderPutRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapbuilderputrecipe.md)
+  * **Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapBuilderPut`**
+  * Prefer `ImmutableSetMultimap.Builder#put(Object, Object)` over more contrived alternatives.
 * [tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapBuilderRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapbuilderrecipe.md)
   * **Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapBuilder`**
   * Prefer `ImmutableSetMultimap#builder()` over the associated constructor.
@@ -6723,6 +6859,9 @@ _1408 recipes_
 * [tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderBuildOrThrowRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderbuildorthrowrecipe.md)
   * **Refaster template `ImmutableTableRules.ImmutableTableBuilderBuildOrThrow`**
   * Prefer `ImmutableTable.Builder#buildOrThrow()` over the less explicit `ImmutableTable.Builder#build()`.
+* [tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderPutRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderputrecipe.md)
+  * **Refaster template `ImmutableTableRules.ImmutableTableBuilderPut`**
+  * Prefer `ImmutableTable.Builder#put(Object, Object, Object)` over more contrived alternatives.
 * [tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderRecipe](/recipes/tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderrecipe.md)
   * **Refaster template `ImmutableTableRules.ImmutableTableBuilder`**
   * Prefer `ImmutableTable#builder()` over the associated constructor.
@@ -10841,14 +10980,14 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_76 recipes_
+_77 recipes_
 
 * [org.openrewrite.maven.AddAnnotationProcessor](/recipes/maven/addannotationprocessor.md)
   * **Add an annotation processor to `maven-compiler-plugin`**
   * Add an annotation processor to the maven compiler plugin. Will not do anything if it already exists. Also doesn't add anything when no other annotation processors are defined yet. (Perhaps `ChangePluginConfiguration` can be used).
 * [org.openrewrite.maven.AddCommentToMavenDependency](/recipes/maven/addcommenttomavendependency.md)
-  * **Add a comment to a `Maven` dependency**
-  * Adds a comment as the first element in a `Maven` dependency.
+  * **Add a comment to a `Maven` dependency or plugin**
+  * Adds a comment as the first element in a `Maven` dependency or plugin.
 * [org.openrewrite.maven.AddDependency](/recipes/maven/adddependency.md)
   * **Add Maven dependency**
   * Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used.
@@ -10888,6 +11027,9 @@ _76 recipes_
 * [org.openrewrite.maven.ChangeDependencyScope](/recipes/maven/changedependencyscope.md)
   * **Change Maven dependency scope**
   * Add or alter the scope of the specified dependency.
+* [org.openrewrite.maven.ChangeExclusion](/recipes/maven/changeexclusion.md)
+  * **Change Maven dependency exclusion**
+  * Modify Maven dependency exclusions, changing the group ID, artifact Id, or both. Useful when an excluded dependency has been renamed and references to it must be updated.
 * [org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId](/recipes/maven/changemanageddependencygroupidandartifactid.md)
   * **Change Maven managed dependency groupId, artifactId and optionally the version**
   * Change the groupId, artifactId and optionally the version of a specified Maven managed dependency.
@@ -11141,7 +11283,7 @@ _10 recipes_
 
 _License: Apache License Version 2.0_
 
-_27 recipes_
+_28 recipes_
 
 * [org.openrewrite.xml.AddCommentToXmlTag](/recipes/xml/addcommenttoxmltag.md)
   * **Add a comment to an XML tag**
@@ -11158,6 +11300,9 @@ _27 recipes_
 * [org.openrewrite.xml.ChangeTagAttribute](/recipes/xml/changetagattribute.md)
   * **Change XML attribute**
   * Alters XML attribute value on a specified element.
+* [org.openrewrite.xml.ChangeTagAttributeKey](/recipes/xml/changetagattributekey.md)
+  * **Change XML attribute key**
+  * Change an attributes key on XML elements using an XPath expression.
 * [org.openrewrite.xml.ChangeTagName](/recipes/xml/changetagname.md)
   * **Change XML tag name**
   * Alters the name of XML tags matching the provided expression.
@@ -11287,7 +11432,7 @@ _17 recipes_
 
 _License: Unknown_
 
-_1520 recipes_
+_1541 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -11325,6 +11470,9 @@ _1520 recipes_
 * [io.moderne.devcenter.ApacheMavenDevCenter](/recipes/devcenter/apachemavendevcenter.md)
   * **DevCenter for Apache Maven**
   * A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices. This DevCenter includes recipes to upgrade the parent POMs of Apache Maven, as well as a collection of best practices for Maven POMs.
+* [io.moderne.devcenter.BuildToolStarter](/recipes/devcenter/buildtoolstarter.md)
+  * **DevCenter for Gradle and Maven**
+  * Track and automate upgrades for Gradle, Maven, and Java versions.
 * [io.moderne.devcenter.DevCenterStarter](/recipes/devcenter/devcenterstarter.md)
   * **DevCenter**
   * This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
@@ -11352,6 +11500,9 @@ _1520 recipes_
 * [io.moderne.devcenter.UpgradeQuarkusUniverseBom](/recipes/devcenter/upgradequarkusuniversebom.md)
   * **Upgrade Quarkus Universe BOM**
   * Upgrades the Quarkus Universe BOM parent to the latest version.
+* [io.moderne.devcenter.VulnerabilitiesDevCenter](/recipes/devcenter/vulnerabilitiesdevcenter.md)
+  * **DevCenter for Vulnerability Management**
+  * Recipes to analyze and manage dependency vulnerabilities using Moderne DevCenter.
 * [io.moderne.elastic.elastic9.ChangeApiNumericFieldTypes](/recipes/elastic/elastic9/changeapinumericfieldtypes.md)
   * **Change numeric field types for Elasticsearch 9**
   * Handles changes between different numeric types (`Long` to `Integer`, `int` to `Long`...) in Elasticsearch 9 API responses by adding appropriate conversion methods with null checks.
@@ -11391,6 +11542,15 @@ _1520 recipes_
 * [io.moderne.jasperreports.UpgradeToJasperReports6](/recipes/jasperreports/upgradetojasperreports6.md)
   * **Migrate to JasperReports 6**
   * Migrates JasperReports from 5.x to 6.x with the new exporter API, XLS to XLSX move, and removal of Spring JasperReports views.
+* [io.moderne.java.jsf.MigrateToJsf_2_3](/recipes/java/jsf/migratetojsf_2_3.md)
+  * **Migrate to JSF 2.3**
+  * Complete migration to JSF 2.3, including associated technologies like RichFaces. Updates dependencies, transforms XHTML views, and migrates Java APIs.
+* [io.moderne.java.jsf.richfaces.MigrateRichFaces_4_5](/recipes/java/jsf/richfaces/migraterichfaces_4_5.md)
+  * **Migrate RichFaces 3.x to 4.5**
+  * Complete RichFaces 3.x to 4.5 migration including tag renames, attribute migrations, and Java API updates.
+* [io.moderne.java.jsf.richfaces.update45.UpdateXHTMLTags](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
+  * **Migrate RichFaces tags in `xhtml` files**
+  * Migrate RichFaces tags in `xhtml` files to RichFaces 4.
 * [io.moderne.java.spring.boot.SpringToSpringBoot](/recipes/java/spring/boot/springtospringboot.md)
   * **Migrate Spring Framework to Spring Boot**
   * Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application's build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin.
@@ -11493,15 +11653,27 @@ _1520 recipes_
 * [io.moderne.java.spring.framework.MigrateDefaultResponseErrorHandler](/recipes/java/spring/framework/migratedefaultresponseerrorhandler.md)
   * **Migrate `DefaultResponseErrorHandler.handleError` method signature**
   * Migrates overridden `handleError(ClientHttpResponse response)` methods to the new signature `handleError(URI url, HttpMethod method, ClientHttpResponse response)` in classes extending `DefaultResponseErrorHandler`. The old single-argument method was removed in Spring Framework 7.0.
+* [io.moderne.java.spring.framework.MigrateDeprecatedBeanXmlProperties](/recipes/java/spring/framework/migratedeprecatedbeanxmlproperties.md)
+  * **Migrate Bean XML properties deprecated in Spring Framework 3.0**
+  * Migrate Bean XML properties that were deprecated in Spring Framework 3.0.
 * [io.moderne.java.spring.framework.ModularSpringFrameworkDependencies](/recipes/java/spring/framework/modularspringframeworkdependencies.md)
   * **Add Spring Framework modular dependencies**
   * Adds Spring Framework modular dependencies based on package usage, replacing legacy monolithic `org.springframework:spring`.
+* [io.moderne.java.spring.framework.UpgradeSpringFramework_3_0](/recipes/java/spring/framework/upgradespringframework_3_0.md)
+  * **Migrate to Spring Framework 3.x**
+  * Migrate applications to the latest Spring Framework 3 release, pulling in additional proprietary Moderne recipes.
+* [io.moderne.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3-moderne-edition.md)
+  * **Migrate to Spring Framework 5.3**
+  * Migrate applications to the latest Spring Framework 5.3 release, pulling in additional proprietary Moderne recipes.
 * [io.moderne.java.spring.orm.SpringORM5](/recipes/java/spring/orm/springorm5.md)
   * **Migrate to Spring ORM to 5**
   * Migrate applications using Spring ORM Hibernate Support to Hibernate 5 compatible version. This will enable a further migration by the Spring Framework migration past 5.
 * [io.moderne.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-moderne-edition.md)
   * **Migrate to Spring Security 6.5**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [io.moderne.java.spring.security7.MigrateOAuth2AccessTokenResponseClient](/recipes/java/spring/security7/migrateoauth2accesstokenresponseclient.md)
+  * **Migrate `OAuth2AccessTokenResponseClient` from `RestOperations` to `RestClient` based implementations**
+  * A new set of `OAuth2AccessTokenResponseClient` implementations were introduced based on `RestClient`. This recipe replaces the `RestOperations`-based implementations which have been deprecated. The `RestClient` implementations are drop-in replacements for the deprecated implementations.
 * [io.moderne.java.spring.security7.ModularizeSpringSecurity7](/recipes/java/spring/security7/modularizespringsecurity7.md)
   * **Spring Security 7 modularization**
   * Spring Security Core was modularized in version 7, deprecated classes that are still a crucial part of some applications are moved to `spring-security-access`.
@@ -11640,6 +11812,9 @@ _1520 recipes_
 * [org.openrewrite.apache.commons.lang.WordUtilsToCommonsText](/recipes/apache/commons/lang/wordutilstocommonstext.md)
   * **Migrate `WordUtils` to Apache Commons Text**
   * Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUtils` and add the Commons Text dependency.
+* [org.openrewrite.apache.commons.lang3.MigrateSystemUtilsDeprecations](/recipes/apache/commons/lang3/migratesystemutilsdeprecations.md)
+  * **Migrate deprecated SystemUtils constants**
+  * Replaces deprecated constants in org.apache.commons.lang3.SystemUtils with their recommended replacements (e.g., File.separator, System.lineSeparator()).
 * [org.openrewrite.apache.commons.lang3.UseStandardCharsets](/recipes/apache/commons/lang3/usestandardcharsets.md)
   * **Prefer `java.nio.charset.StandardCharsets`**
   * Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`.
@@ -12771,6 +12946,12 @@ _1520 recipes_
 * [org.openrewrite.codemods.migrate.angular.v19](/recipes/codemods/migrate/angular/v19.md)
   * **Update to Angular v19**
   * Upgrade to Angular v19 through `ApplyAngularCLI`.
+* [org.openrewrite.codemods.migrate.angular.v20](/recipes/codemods/migrate/angular/v20.md)
+  * **Update to Angular v20**
+  * Upgrade to Angular v20 through `ApplyAngularCLI`.
+* [org.openrewrite.codemods.migrate.angular.v21](/recipes/codemods/migrate/angular/v21.md)
+  * **Update to Angular v21**
+  * Upgrade to Angular v21 through `ApplyAngularCLI`.
 * [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreArray](/recipes/codemods/migrate/lodash/lodashunderscorearray.md)
   * **Replace lodash and underscore array functions with native JavaScript**
   * - `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`.
@@ -14610,7 +14791,7 @@ _1520 recipes_
 * [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
   * **Migrate to Spring Framework 5.2**
   * Migrate applications to the latest Spring Framework 5.2 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
   * **Migrate to Spring Framework 5.3**
   * Migrate applications to the latest Spring Framework 5.3 release.
 * [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
@@ -14631,9 +14812,36 @@ _1520 recipes_
 * [org.openrewrite.java.spring.http.SpringWebDependency](/recipes/java/spring/http/springwebdependency.md)
   * **Find Spring Web dependency**
   * Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
+* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_2_8_ErrorHandlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
+  * **Migrates Spring Kafka deprecated error handlers**
+  * Migrate error handlers deprecated in Spring Kafka `2.8.x` to their replacements.
 * [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_3_0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
   * **Migrate to Spring Kafka 3.0**
   * Migrate applications to the latest Spring Kafka 3.0 release.
+* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_4_0](/recipes/java/spring/kafka/upgradespringkafka_4_0.md)
+  * **Migrate to Spring Kafka 4.0**
+  * Migrate applications to the latest Spring Kafka 4.0 release.
+* [org.openrewrite.java.spring.opentelemetry.MigrateBraveToOpenTelemetry](/recipes/java/spring/opentelemetry/migratebravetoopentelemetry.md)
+  * **Migrate Brave API to OpenTelemetry API**
+  * Migrate Java code using Brave (Zipkin) tracing API to OpenTelemetry API. This recipe handles the migration of Brave Tracer, Span, and related classes to OpenTelemetry equivalents.
+* [org.openrewrite.java.spring.opentelemetry.MigrateDatadogToOpenTelemetry](/recipes/java/spring/opentelemetry/migratedatadogtoopentelemetry.md)
+  * **Migrate Datadog tracing to OpenTelemetry**
+  * Migrate from Datadog Java tracing annotations to OpenTelemetry annotations. Replace Datadog @Trace annotations with @WithSpan annotations.
+* [org.openrewrite.java.spring.opentelemetry.MigrateFromZipkinToOpenTelemetry](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
+  * **Migrate from Zipkin to OpenTelemetry OTLP**
+  * Migrate from Zipkin tracing to OpenTelemetry OTLP. This recipe replaces Zipkin dependencies with OpenTelemetry OTLP exporter and updates the related configuration properties.
+* [org.openrewrite.java.spring.opentelemetry.MigrateNewRelicToOpenTelemetry](/recipes/java/spring/opentelemetry/migratenewrelictoopentelemetry.md)
+  * **Migrate New Relic Agent to OpenTelemetry**
+  * Migrate from New Relic Java Agent annotations to OpenTelemetry annotations. Replace @Trace annotations with @WithSpan annotations.
+* [org.openrewrite.java.spring.opentelemetry.MigrateOpenTracingToOpenTelemetry](/recipes/java/spring/opentelemetry/migrateopentracingtoopentelemetry.md)
+  * **Migrate OpenTracing API to OpenTelemetry API**
+  * Migrate Java code using OpenTracing API to OpenTelemetry API. OpenTracing has been superseded by OpenTelemetry and is no longer actively maintained.
+* [org.openrewrite.java.spring.opentelemetry.MigrateSleuthToOpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
+  * **Migrate from Spring Cloud Sleuth to OpenTelemetry**
+  * Migrate from Spring Cloud Sleuth to OpenTelemetry. [Spring Cloud Sleuth has been deprecated](https://github.com/spring-cloud/spring-cloud-sleuth#spring-cloud-sleuth) and is replaced by Micrometer Tracing with OpenTelemetry as a backend. This recipe removes Sleuth dependencies and adds OpenTelemetry instrumentation.
+* [org.openrewrite.java.spring.opentelemetry.MigrateToOpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
+  * **Complete migration to OpenTelemetry**
+  * Comprehensive migration to OpenTelemetry including dependencies, configuration properties, and Java code changes. This recipe handles migration from Spring Cloud Sleuth, Brave/Zipkin, and OpenTracing to OpenTelemetry.
 * [org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
   * **Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`**
   * Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`.
@@ -15198,9 +15406,18 @@ _1520 recipes_
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_26_0](/recipes/quarkus/migratetoquarkus_v3_26_0.md)
   * **Quarkus Updates Aggregate 3.26.0**
   * Quarkus update recipes to upgrade your application to 3.26.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_29_0](/recipes/quarkus/migratetoquarkus_v3_29_0.md)
+  * **Quarkus Updates Aggregate 3.29.0**
+  * Quarkus update recipes to upgrade your application to 3.29.0.
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0](/recipes/quarkus/migratetoquarkus_v3_2_0.md)
   * **Quarkus Updates Aggregate 3.2.0**
   * Quarkus update recipes to upgrade your application to 3.2.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_30_0](/recipes/quarkus/migratetoquarkus_v3_30_0.md)
+  * **Quarkus Updates Aggregate 3.30.0**
+  * Quarkus update recipes to upgrade your application to 3.30.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_31_0](/recipes/quarkus/migratetoquarkus_v3_31_0.md)
+  * **Quarkus Updates Aggregate 3.31.0**
+  * Quarkus update recipes to upgrade your application to 3.31.0.
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
   * **Quarkus Updates Aggregate 3.3.0**
   * Quarkus update recipes to upgrade your application to 3.3.0.
@@ -15420,6 +15637,18 @@ _1520 recipes_
 * [org.openrewrite.staticanalysis.UseMapContainsKey](/recipes/staticanalysis/usemapcontainskey.md)
   * **Use `Map#containsKey`**
   * `map.keySet().contains(a)` can be simplified to `map.containsKey(a)`.
+* [org.openrewrite.tapestry.ChangeTapestryPackages](/recipes/tapestry/changetapestrypackages.md)
+  * **Change Tapestry 4 packages to Tapestry 5**
+  * Updates package imports from org.apache.tapestry to org.apache.tapestry5. Only renames packages that have direct equivalents in Tapestry 5.
+* [org.openrewrite.tapestry.ChangeTapestryTypes](/recipes/tapestry/changetapestrytypes.md)
+  * **Change Tapestry 4 types to Tapestry 5 equivalents**
+  * Renames Tapestry 4 types that have direct equivalents in Tapestry 5. This handles types from different packages that were reorganized in T5.
+* [org.openrewrite.tapestry.MigrateTapestry4To5](/recipes/tapestry/migratetapestry4to5.md)
+  * **Migrate Tapestry 4 to Tapestry 5**
+  * Migrates Apache Tapestry 4 applications to Tapestry 5. This includes package renames, removing base class inheritance, converting listener interfaces to annotations, and updating dependencies.
+* [org.openrewrite.tapestry.UpdateTapestryDependencies](/recipes/tapestry/updatetapestrydependencies.md)
+  * **Update Tapestry dependencies**
+  * Updates dependencies from Tapestry 4 to Tapestry 5.
 * [org.openrewrite.terraform.aws.AWSBestPractices](/recipes/terraform/aws/awsbestpractices.md)
   * **Best practices for AWS**
   * Securely operate on Amazon Web Services.
@@ -15825,6 +16054,6 @@ _1520 recipes_
 * [software.amazon.awssdk.v2migration.UpgradeSdkDependencies](/recipes/software/amazon/awssdk/v2migration/upgradesdkdependencies.md)
   * **Change v1 Maven/Gradle dependencies to v2**
   * Change v1 Maven/Gradle dependencies to v2.
-* [tech.picnic.errorprone.refasterrules.tech.picnic.errorprone.refasterrules.AllRefasterRules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [tech.picnic.errorprone.refasterrules.AllRefasterRules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
   * **All Picnic Refaster rules**
   * Collection of all Refaster rules from Picnic's error-prone-contrib project.

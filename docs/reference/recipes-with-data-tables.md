@@ -89,6 +89,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
 
 
+### [io.moderne.devcenter.BuildToolCard](/recipes/devcenter/buildtoolcard.md)
+  * **Build tool**
+  * Track build tool versions across repositories.
+
+#### Data tables:
+
+  * **io.moderne.devcenter.table.UpgradesAndMigrations**: *Progress towards organizational objectives on library or language migrations and upgrades.*
+
+
 ### [io.moderne.devcenter.DependencyVulnerabilityCheck](/recipes/devcenter/dependencyvulnerabilitycheck.md)
   * **Vulnerabilities status**
   * Determine the current state of a repository relative to its vulnerabilities.
@@ -173,6 +182,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
 
 
+### [io.moderne.devcenter.BuildToolStarter](/recipes/devcenter/buildtoolstarter.md)
+  * **DevCenter for Gradle and Maven**
+  * Track and automate upgrades for Gradle, Maven, and Java versions.
+
+#### Data tables:
+
+  * **io.moderne.devcenter.table.UpgradesAndMigrations**: *Progress towards organizational objectives on library or language migrations and upgrades.*
+
+
 ### [io.moderne.devcenter.DevCenterStarter](/recipes/devcenter/devcenterstarter.md)
   * **DevCenter**
   * This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
@@ -212,6 +230,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [io.moderne.devcenter.VulnerabilitiesDevCenter](/recipes/devcenter/vulnerabilitiesdevcenter.md)
+  * **DevCenter for Vulnerability Management**
+  * Recipes to analyze and manage dependency vulnerabilities using Moderne DevCenter.
+
+#### Data tables:
+
+  * **io.moderne.devcenter.table.UpgradesAndMigrations**: *Progress towards organizational objectives on library or language migrations and upgrades.*
 
 
 ### [io.moderne.hibernate.search.FindJPQLDefinitions](/recipes/hibernate/search/findjpqldefinitions.md)
@@ -785,15 +812,6 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [org.openrewrite.maven.ChangeParentPom](/recipes/maven/changeparentpom.md)
-  * **Change Maven parent**
-  * Change the parent pom of a Maven pom.xml by matching the existing parent via groupId and artifactId, and updating it to a new groupId, artifactId, version, and optional relativePath. Also updates the project to retain dependency management and properties previously inherited from the old parent that are no longer provided by the new parent. Removes redundant dependency versions already managed by the new parent.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
 ### [org.openrewrite.maven.ChangePluginGroupIdAndArtifactId](/recipes/maven/changeplugingroupidandartifactid.md)
   * **Change Maven plugin group and artifact ID**
   * Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version. This recipe does not perform any validation and assumes all values passed are valid.
@@ -906,6 +924,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ### [org.openrewrite.maven.AddManagedDependency](/recipes/maven/addmanageddependency.md)
   * **Add managed Maven dependency**
   * Add a managed Maven dependency to a `pom.xml` file.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [org.openrewrite.maven.ChangeParentPom](/recipes/maven/changeparentpom.md)
+  * **Change Maven parent**
+  * Change the parent pom of a Maven pom.xml by matching the existing parent via groupId and artifactId, and updating it to a new groupId, artifactId, version, and optional relativePath. Also updates the project to retain dependency management and properties previously inherited from the old parent that are no longer provided by the new parent. Removes redundant dependency versions already managed by the new parent.
 
 #### Data tables:
 
@@ -4406,7 +4433,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-12T1103.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-01-19T1104.
 
 #### Data tables:
 
@@ -4417,7 +4444,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### [org.openrewrite.java.dependencies.RemoveUnusedDependencies](/recipes/java/dependencies/removeunuseddependencies.md)
   * **Remove unused dependencies**
-  * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This recipe takes reflective access into account: When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed. This recipe takes transitive dependencies into account: When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
+  * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
 
 #### Data tables:
 
@@ -5520,6 +5547,33 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ### [org.openrewrite.quarkus.MigrateToQuarkus_v3_26_0](/recipes/quarkus/migratetoquarkus_v3_26_0.md)
   * **Quarkus Updates Aggregate 3.26.0**
   * Quarkus update recipes to upgrade your application to 3.26.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [org.openrewrite.quarkus.MigrateToQuarkus_v3_29_0](/recipes/quarkus/migratetoquarkus_v3_29_0.md)
+  * **Quarkus Updates Aggregate 3.29.0**
+  * Quarkus update recipes to upgrade your application to 3.29.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [org.openrewrite.quarkus.MigrateToQuarkus_v3_30_0](/recipes/quarkus/migratetoquarkus_v3_30_0.md)
+  * **Quarkus Updates Aggregate 3.30.0**
+  * Quarkus update recipes to upgrade your application to 3.30.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [org.openrewrite.quarkus.MigrateToQuarkus_v3_31_0](/recipes/quarkus/migratetoquarkus_v3_31_0.md)
+  * **Quarkus Updates Aggregate 3.31.0**
+  * Quarkus update recipes to upgrade your application to 3.31.0.
 
 #### Data tables:
 
